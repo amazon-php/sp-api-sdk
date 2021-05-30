@@ -1,0 +1,37 @@
+{
+    "name": "amazon-php/sp-api-sdk",
+    "description": "Amazon Selling Partner API - PHP SDK",
+    "keywords": ["amazon", "selling-partner-api", "php", "sdk", "rest", "api"],
+    "homepage": "https://openapi-generator.tech",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Norbert Orzechowicz",
+            "homepage": "https://norbert.tech"
+        },
+        {
+            "name": "OpenAPI-Generator contributors",
+            "homepage": "https://openapi-generator.tech"
+        }
+    ],
+    "require": {
+        "php": ">=7.4",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "psr/http-client": "^1.0.1",
+        "psr/http-factory": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "nyholm/psr7": "^1.4",
+        "kriswallsmith/buzz": "^1.2",
+        "symfony/var-dumper": "^5.2"
+    },
+    "autoload": {
+        "psr-4": { "AmazonPHP\\" : "src/AmazonPHP/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "AmazonPHP\\Test\\" : "test/" }
+    }
+}
