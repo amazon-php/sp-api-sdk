@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Api\CatalogApi;
+namespace AmazonPHP\SellingPartner\Api;
 
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
@@ -29,8 +29,8 @@ final class CatalogItemSDK
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getCatalogItem(string $marketplaceId, string $asin) : \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse
     {
@@ -45,7 +45,7 @@ final class CatalogItemSDK
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -156,11 +156,11 @@ final class CatalogItemSDK
      * Operation listCatalogCategories.
      *
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
+     * @param null|string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function listCatalogCategories(string $marketplaceId, string $aSIN = null, string $sellerSKU = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse
     {
@@ -173,10 +173,10 @@ final class CatalogItemSDK
      * Create request for operation 'listCatalogCategories'.
      *
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
+     * @param null|string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -288,16 +288,16 @@ final class CatalogItemSDK
      * Operation listCatalogItems.
      *
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
-     * @param string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     * @param string $uPC A 12-digit bar code used for retail packaging. (optional)
-     * @param string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
-     * @param string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
-     * @param string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
+     * @param null|string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param null|string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
+     * @param null|string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $uPC A 12-digit bar code used for retail packaging. (optional)
+     * @param null|string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
+     * @param null|string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
+     * @param null|string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function listCatalogItems(string $marketplaceId, string $query = null, string $queryContextId = null, string $sellerSKU = null, string $uPC = null, string $eAN = null, string $iSBN = null, string $jAN = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse
     {
@@ -310,15 +310,15 @@ final class CatalogItemSDK
      * Create request for operation 'listCatalogItems'.
      *
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
-     * @param string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     * @param string $uPC A 12-digit bar code used for retail packaging. (optional)
-     * @param string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
-     * @param string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
-     * @param string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
+     * @param null|string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param null|string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
+     * @param null|string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $uPC A 12-digit bar code used for retail packaging. (optional)
+     * @param null|string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
+     * @param null|string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
+     * @param null|string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -472,10 +472,10 @@ final class CatalogItemSDK
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse>
      */
     private function getCatalogItemWithHttpInfo(string $marketplaceId, string $asin) : array
     {
@@ -562,13 +562,13 @@ final class CatalogItemSDK
      * Operation listCatalogCategoriesWithHttpInfo.
      *
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
+     * @param null|string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse>
      */
     private function listCatalogCategoriesWithHttpInfo(string $marketplaceId, string $aSIN = null, string $sellerSKU = null) : array
     {
@@ -655,18 +655,18 @@ final class CatalogItemSDK
      * Operation listCatalogItemsWithHttpInfo.
      *
      * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
-     * @param string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     * @param string $uPC A 12-digit bar code used for retail packaging. (optional)
-     * @param string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
-     * @param string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
-     * @param string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
+     * @param null|string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
+     * @param null|string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
+     * @param null|string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $uPC A 12-digit bar code used for retail packaging. (optional)
+     * @param null|string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
+     * @param null|string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
+     * @param null|string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse>
      */
     private function listCatalogItemsWithHttpInfo(string $marketplaceId, string $query = null, string $queryContextId = null, string $sellerSKU = null, string $uPC = null, string $eAN = null, string $iSBN = null, string $jAN = null) : array
     {

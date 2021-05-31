@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * Error.
+ * GetItemEligibilityPreviewResponse.
  *
  * PHP version 7.4
  *
@@ -26,9 +26,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-namespace AmazonPHP\SellingPartner\Model\FBAInboundEligibility;
+namespace AmazonPHP\SellingPartner\Model\FBAInbound;
 
-use AmazonPHP\SellingPartner\Model\ModelInterface;
+use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
@@ -39,7 +39,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
+class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'Error';
+    protected static string $openAPIModelName = 'GetItemEligibilityPreviewResponse';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -56,9 +56,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'code' => 'string',
-        'message' => 'string',
-        'details' => 'string',
+        'payload' => '\AmazonPHP\SellingPartner\Model\FBAInbound\ItemEligibilityPreview',
+        'errors' => '\AmazonPHP\SellingPartner\Model\FBAInbound\Error[]',
     ];
 
     /**
@@ -69,9 +68,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'code' => null,
-        'message' => null,
-        'details' => null,
+        'payload' => null,
+        'errors' => null,
     ];
 
     /**
@@ -81,9 +79,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'code' => 'code',
-        'message' => 'message',
-        'details' => 'details',
+        'payload' => 'payload',
+        'errors' => 'errors',
     ];
 
     /**
@@ -92,9 +89,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'code' => 'setCode',
-        'message' => 'setMessage',
-        'details' => 'setDetails',
+        'payload' => 'setPayload',
+        'errors' => 'setErrors',
     ];
 
     /**
@@ -103,9 +99,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'code' => 'getCode',
-        'message' => 'getMessage',
-        'details' => 'getDetails',
+        'payload' => 'getPayload',
+        'errors' => 'getErrors',
     ];
 
     /**
@@ -123,9 +118,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['code'] = $data['code'] ?? null;
-        $this->container['message'] = $data['message'] ?? null;
-        $this->container['details'] = $data['details'] ?? null;
+        $this->container['payload'] = $data['payload'] ?? null;
+        $this->container['errors'] = $data['errors'] ?? null;
     }
 
     /**
@@ -205,13 +199,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -226,61 +214,43 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets code.
+     * Gets payload.
      */
-    public function getCode() : string
+    public function getPayload() : ?ItemEligibilityPreview
     {
-        return $this->container['code'];
+        return $this->container['payload'];
     }
 
     /**
-     * Sets code.
+     * Sets payload.
      *
-     * @param string $code an error code that identifies the type of error that occurred
+     * @param null|\AmazonPHP\SellingPartner\Model\FBAInbound\ItemEligibilityPreview $payload payload
      */
-    public function setCode(string $code) : self
+    public function setPayload(?ItemEligibilityPreview $payload) : self
     {
-        $this->container['code'] = $code;
+        $this->container['payload'] = $payload;
 
         return $this;
     }
 
     /**
-     * Gets message.
-     */
-    public function getMessage() : ?string
-    {
-        return $this->container['message'];
-    }
-
-    /**
-     * Sets message.
+     * Gets errors.
      *
-     * @param null|string $message a message that describes the error condition in a human-readable form
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInbound\Error[]
      */
-    public function setMessage(?string $message) : self
+    public function getErrors() : ?array
     {
-        $this->container['message'] = $message;
-
-        return $this;
+        return $this->container['errors'];
     }
 
     /**
-     * Gets details.
-     */
-    public function getDetails() : ?string
-    {
-        return $this->container['details'];
-    }
-
-    /**
-     * Sets details.
+     * Sets errors.
      *
-     * @param null|string $details additional information that can help the caller understand or fix the issue
+     * @param null|\AmazonPHP\SellingPartner\Model\FBAInbound\Error[] $errors a list of error responses returned when a request is unsuccessful
      */
-    public function setDetails(?string $details) : self
+    public function setErrors(?array $errors) : self
     {
-        $this->container['details'] = $details;
+        $this->container['errors'] = $errors;
 
         return $this;
     }

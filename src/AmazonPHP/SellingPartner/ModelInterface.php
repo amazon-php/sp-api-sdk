@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Model;
+namespace AmazonPHP\SellingPartner;
 
 interface ModelInterface
 {

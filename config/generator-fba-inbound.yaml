@@ -4,9 +4,9 @@ additionalProperties:
   invokerPackage: AmazonPHP\SellingPartner
   srcBasePath: src/AmazonPHP/SellingPartner
   variableNamingConvention: camelCase
-  modelPackage: Model\FBAInboundEligibility
-  packageName: FBAInboundEligibilitySDK
+  modelPackage: Model\FBAInbound
+  packageName: FBAInboundSDK
 files:
   api.mustache:
     templateType: API
-    destinationFilename: /FBAInboundEligibilitySDK.php
+    destinationFilename: /FBAInboundSDK.php

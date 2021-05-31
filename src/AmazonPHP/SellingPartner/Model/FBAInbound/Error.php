@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * GetItemEligibilityPreviewResponse.
+ * Error.
  *
  * PHP version 7.4
  *
@@ -26,9 +26,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-namespace AmazonPHP\SellingPartner\Model\FBAInboundEligibility;
+namespace AmazonPHP\SellingPartner\Model\FBAInbound;
 
-use AmazonPHP\SellingPartner\Model\ModelInterface;
+use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
@@ -39,7 +39,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -48,7 +48,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetItemEligibilityPreviewResponse';
+    protected static string $openAPIModelName = 'Error';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -56,8 +56,9 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\FBAInboundEligibility\ItemEligibilityPreview',
-        'errors' => '\AmazonPHP\SellingPartner\Model\FBAInboundEligibility\Error[]',
+        'code' => 'string',
+        'message' => 'string',
+        'details' => 'string',
     ];
 
     /**
@@ -68,8 +69,9 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'code' => null,
+        'message' => null,
+        'details' => null,
     ];
 
     /**
@@ -79,8 +81,9 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'code' => 'code',
+        'message' => 'message',
+        'details' => 'details',
     ];
 
     /**
@@ -89,8 +92,9 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'code' => 'setCode',
+        'message' => 'setMessage',
+        'details' => 'setDetails',
     ];
 
     /**
@@ -99,8 +103,9 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'code' => 'getCode',
+        'message' => 'getMessage',
+        'details' => 'getDetails',
     ];
 
     /**
@@ -118,8 +123,9 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['code'] = $data['code'] ?? null;
+        $this->container['message'] = $data['message'] ?? null;
+        $this->container['details'] = $data['details'] ?? null;
     }
 
     /**
@@ -199,7 +205,13 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      */
     public function listInvalidProperties() : array
     {
-        return [];
+        $invalidProperties = [];
+
+        if ($this->container['code'] === null) {
+            $invalidProperties[] = "'code' can't be null";
+        }
+
+        return $invalidProperties;
     }
 
     /**
@@ -214,43 +226,61 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Gets payload.
+     * Gets code.
      */
-    public function getPayload() : ?ItemEligibilityPreview
+    public function getCode() : string
     {
-        return $this->container['payload'];
+        return $this->container['code'];
     }
 
     /**
-     * Sets payload.
+     * Sets code.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInboundEligibility\ItemEligibilityPreview $payload payload
+     * @param string $code an error code that identifies the type of error that occurred
      */
-    public function setPayload(?ItemEligibilityPreview $payload) : self
+    public function setCode(string $code) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['code'] = $code;
 
         return $this;
     }
 
     /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInboundEligibility\Error[]
+     * Gets message.
      */
-    public function getErrors() : ?array
+    public function getMessage() : ?string
     {
-        return $this->container['errors'];
+        return $this->container['message'];
     }
 
     /**
-     * Sets errors.
+     * Sets message.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInboundEligibility\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|string $message a message that describes the error condition in a human-readable form
      */
-    public function setErrors(?array $errors) : self
+    public function setMessage(?string $message) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['message'] = $message;
+
+        return $this;
+    }
+
+    /**
+     * Gets details.
+     */
+    public function getDetails() : ?string
+    {
+        return $this->container['details'];
+    }
+
+    /**
+     * Sets details.
+     *
+     * @param null|string $details additional information that can help the caller understand or fix the issue
+     */
+    public function setDetails(?string $details) : self
+    {
+        $this->container['details'] = $details;
 
         return $this;
     }

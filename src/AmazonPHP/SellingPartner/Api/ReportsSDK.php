@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Api\ReportsApi;
+namespace AmazonPHP\SellingPartner\Api;
 
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
@@ -28,8 +28,8 @@ final class ReportsSDK
      *
      * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function cancelReport(string $reportId) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse
     {
@@ -43,7 +43,7 @@ final class ReportsSDK
      *
      * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -140,8 +140,8 @@ final class ReportsSDK
      *
      * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function cancelReportSchedule(string $reportScheduleId) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse
     {
@@ -155,7 +155,7 @@ final class ReportsSDK
      *
      * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -252,8 +252,8 @@ final class ReportsSDK
      *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function createReport(\AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
     {
@@ -267,7 +267,7 @@ final class ReportsSDK
      *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -363,8 +363,8 @@ final class ReportsSDK
      *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function createReportSchedule(\AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
     {
@@ -378,7 +378,7 @@ final class ReportsSDK
      *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -474,8 +474,8 @@ final class ReportsSDK
      *
      * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getReport(string $reportId) : \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse
     {
@@ -489,7 +489,7 @@ final class ReportsSDK
      *
      * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -586,8 +586,8 @@ final class ReportsSDK
      *
      * @param string $reportDocumentId The identifier for the report document. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getReportDocument(string $reportDocumentId) : \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse
     {
@@ -601,7 +601,7 @@ final class ReportsSDK
      *
      * @param string $reportDocumentId The identifier for the report document. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -698,8 +698,8 @@ final class ReportsSDK
      *
      * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getReportSchedule(string $reportScheduleId) : \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse
     {
@@ -713,7 +713,7 @@ final class ReportsSDK
      *
      * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -808,10 +808,10 @@ final class ReportsSDK
     /**
      * Operation getReportSchedules.
      *
-     * @param string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param array<array-key, string> $reportTypes A list of report types used to filter report schedules. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getReportSchedules(array $reportTypes) : \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse
     {
@@ -823,9 +823,9 @@ final class ReportsSDK
     /**
      * Create request for operation 'getReportSchedules'.
      *
-     * @param string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param array<array-key, string> $reportTypes A list of report types used to filter report schedules. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -928,16 +928,16 @@ final class ReportsSDK
     /**
      * Operation getReports.
      *
-     * @param string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
-     * @param string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
-     * @param string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
+     * @param array<array-key, string>|null $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param array<array-key, string>|null $processingStatuses A list of processing statuses used to filter reports. (optional)
+     * @param array<array-key, string>|null $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param \DateTime|null $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param \DateTime|null $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param null|string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getReports(array $reportTypes = null, array $processingStatuses = null, array $marketplaceIds = null, int $pageSize = 10, \DateTime $createdSince = null, \DateTime $createdUntil = null, string $nextToken = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
@@ -949,15 +949,15 @@ final class ReportsSDK
     /**
      * Create request for operation 'getReports'.
      *
-     * @param string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
-     * @param string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
-     * @param string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
+     * @param array<array-key, string>|null $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param array<array-key, string>|null $processingStatuses A list of processing statuses used to filter reports. (optional)
+     * @param array<array-key, string>|null $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param \DateTime|null $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param \DateTime|null $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param null|string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -1123,10 +1123,10 @@ final class ReportsSDK
      *
      * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse>
      */
     private function cancelReportWithHttpInfo(string $reportId) : array
     {
@@ -1216,10 +1216,10 @@ final class ReportsSDK
      *
      * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse>
      */
     private function cancelReportScheduleWithHttpInfo(string $reportScheduleId) : array
     {
@@ -1309,10 +1309,10 @@ final class ReportsSDK
      *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse>
      */
     private function createReportWithHttpInfo(\AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : array
     {
@@ -1402,10 +1402,10 @@ final class ReportsSDK
      *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse>
      */
     private function createReportScheduleWithHttpInfo(\AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : array
     {
@@ -1495,10 +1495,10 @@ final class ReportsSDK
      *
      * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\GetReportResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse>
      */
     private function getReportWithHttpInfo(string $reportId) : array
     {
@@ -1588,10 +1588,10 @@ final class ReportsSDK
      *
      * @param string $reportDocumentId The identifier for the report document. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse>
      */
     private function getReportDocumentWithHttpInfo(string $reportDocumentId) : array
     {
@@ -1681,10 +1681,10 @@ final class ReportsSDK
      *
      * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse>
      */
     private function getReportScheduleWithHttpInfo(string $reportScheduleId) : array
     {
@@ -1772,12 +1772,12 @@ final class ReportsSDK
     /**
      * Operation getReportSchedulesWithHttpInfo.
      *
-     * @param string[] $reportTypes A list of report types used to filter report schedules. (required)
+     * @param array<array-key, string> $reportTypes A list of report types used to filter report schedules. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse>
      */
     private function getReportSchedulesWithHttpInfo(array $reportTypes) : array
     {
@@ -1865,18 +1865,18 @@ final class ReportsSDK
     /**
      * Operation getReportsWithHttpInfo.
      *
-     * @param string[] $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
-     * @param string[] $processingStatuses A list of processing statuses used to filter reports. (optional)
-     * @param string[] $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
+     * @param array<array-key, string>|null $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param array<array-key, string>|null $processingStatuses A list of processing statuses used to filter reports. (optional)
+     * @param array<array-key, string>|null $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param \DateTime $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param \DateTime $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param \DateTime|null $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param \DateTime|null $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param null|string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse>
      */
     private function getReportsWithHttpInfo(array $reportTypes = null, array $processingStatuses = null, array $marketplaceIds = null, int $pageSize = 10, \DateTime $createdSince = null, \DateTime $createdUntil = null, string $nextToken = null) : array
     {

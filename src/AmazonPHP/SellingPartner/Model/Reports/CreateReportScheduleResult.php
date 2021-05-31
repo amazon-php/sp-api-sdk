@@ -28,7 +28,7 @@
  */
 namespace AmazonPHP\SellingPartner\Model\Reports;
 
-use AmazonPHP\SellingPartner\Model\ModelInterface;
+use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Api\AuthorizationApi;
+namespace AmazonPHP\SellingPartner\Api;
 
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
@@ -32,8 +32,8 @@ final class AuthorizationSDK
      * @param string $developerId Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
      * @param string $mwsAuthToken The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getAuthorizationCode(string $sellingPartnerId, string $developerId, string $mwsAuthToken) : \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse
     {
@@ -49,7 +49,7 @@ final class AuthorizationSDK
      * @param string $developerId Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
      * @param string $mwsAuthToken The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -178,10 +178,10 @@ final class AuthorizationSDK
      * @param string $developerId Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
      * @param string $mwsAuthToken The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse>
      */
     private function getAuthorizationCodeWithHttpInfo(string $sellingPartnerId, string $developerId, string $mwsAuthToken) : array
     {

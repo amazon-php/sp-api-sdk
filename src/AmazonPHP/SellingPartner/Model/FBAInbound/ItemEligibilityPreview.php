@@ -26,9 +26,9 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-namespace AmazonPHP\SellingPartner\Model\FBAInboundEligibility;
+namespace AmazonPHP\SellingPartner\Model\FBAInbound;
 
-use AmazonPHP\SellingPartner\Model\ModelInterface;
+use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**

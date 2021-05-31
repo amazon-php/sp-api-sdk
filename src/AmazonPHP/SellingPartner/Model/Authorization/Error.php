@@ -28,7 +28,7 @@
  */
 namespace AmazonPHP\SellingPartner\Model\Authorization;
 
-use AmazonPHP\SellingPartner\Model\ModelInterface;
+use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Api\FbaInventoryApi;
+namespace AmazonPHP\SellingPartner\Api;
 
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
@@ -28,14 +28,14 @@ final class FBAInventorySDK
      *
      * @param string $granularityType The granularity type for the inventory aggregation level. (required)
      * @param string $granularityId The granularity ID for the inventory aggregation level. (required)
-     * @param string[] $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param array<array-key, string> $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[] $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string $nextToken String token returned in the response of your previous request. (optional)
+     * @param \DateTime|null $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param array<array-key, string>|null $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param null|string $nextToken String token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      */
     public function getInventorySummaries(string $granularityType, string $granularityId, array $marketplaceIds, bool $details = false, \DateTime $startDateTime = null, array $sellerSkus = null, string $nextToken = null) : \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse
     {
@@ -49,13 +49,13 @@ final class FBAInventorySDK
      *
      * @param string $granularityType The granularity type for the inventory aggregation level. (required)
      * @param string $granularityId The granularity ID for the inventory aggregation level. (required)
-     * @param string[] $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param array<array-key, string> $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[] $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string $nextToken String token returned in the response of your previous request. (optional)
+     * @param \DateTime|null $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param array<array-key, string>|null $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param null|string $nextToken String token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -220,16 +220,16 @@ final class FBAInventorySDK
      *
      * @param string $granularityType The granularity type for the inventory aggregation level. (required)
      * @param string $granularityId The granularity ID for the inventory aggregation level. (required)
-     * @param string[] $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param array<array-key, string> $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param string[] $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param string $nextToken String token returned in the response of your previous request. (optional)
+     * @param \DateTime|null $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param array<array-key, string>|null $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param null|string $nextToken String token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
      *
-     * @return array<\AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse>
+     * @return array<array-key, \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse>
      */
     private function getInventorySummariesWithHttpInfo(string $granularityType, string $granularityId, array $marketplaceIds, bool $details = false, \DateTime $startDateTime = null, array $sellerSkus = null, string $nextToken = null) : array
     {
