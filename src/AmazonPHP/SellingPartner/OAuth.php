@@ -33,25 +33,23 @@ final class OAuth
     public function accessToken() : AccessToken
     {
         if ($this->accessToken === null) {
-            if ($this->refreshToken) {
-                $this->accessToken = $this->exchangeRefresh();
-            }
+            $this->accessToken = $this->exchangeRefresh();
         }
 
         return $this->accessToken;
     }
 
-    public function client(): ClientInterface
+    public function client() : ClientInterface
     {
         return $this->client;
     }
 
-    public function requestFactory(): HttpFactory
+    public function requestFactory() : HttpFactory
     {
         return $this->requestFactory;
     }
 
-    public function configuration(): Configuration
+    public function configuration() : Configuration
     {
         return $this->configuration;
     }
@@ -67,7 +65,8 @@ final class OAuth
                             'refresh_token' => $this->refreshToken,
                             'client_id' => $this->configuration->clientId(),
                             'client_secret' => $this->configuration->clientSecret(),
-                        ]
+                        ],
+                        JSON_THROW_ON_ERROR
                     )
                 )
             )

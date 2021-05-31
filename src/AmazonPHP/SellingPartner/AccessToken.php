@@ -7,7 +7,9 @@ namespace AmazonPHP\SellingPartner;
 final class AccessToken
 {
     private string $token;
+
     private string $type;
+
     private int $expiresIn;
 
     public function __construct(string $token, string $type, int $expiresIn)
@@ -28,16 +30,17 @@ final class AccessToken
         );
     }
 
-    public function token(): string
+    public function token() : string
     {
         return $this->token;
     }
 
-    public function type(): string
+    public function type() : string
     {
         return $this->type;
     }
-    public function expiresIn(): int
+
+    public function expiresIn() : int
     {
         return $this->expiresIn;
     }

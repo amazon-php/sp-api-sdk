@@ -34,11 +34,26 @@
         "psr-4": { "AmazonPHP\\Test\\" : "test/" }
     },
     "scripts": {
+        "generate": [
+            "Composer\\Config::disableProcessTimeout",
+            "bin/generate.sh",
+            "@rector:process:force",
+            "@rector:process:force",
+            "@cs:php:fix"
+        ],
         "build": [
             "@static:analyze"
         ],
         "static:analyze": [
             "tools/vendor/bin/php-cs-fixer fix --dry-run"
+        ],
+        "rector:process": [
+            "Composer\\Config::disableProcessTimeout",
+            "tools/vendor/bin/rector process src --dry-run"
+        ],
+        "rector:process:force": [
+            "Composer\\Config::disableProcessTimeout",
+            "tools/vendor/bin/rector process src"
         ],
         "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
         "tools:install": "composer install --working-dir=./tools",

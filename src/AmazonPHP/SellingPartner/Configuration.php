@@ -39,22 +39,22 @@ final class Configuration
         return new self($clientId, $clientSecret, $region, $accessKey, $secretKey);
     }
 
-    public static function forIAMRole(string $clientId, string $clientSecret, string $region, string $accessKey, string $secretKey, string $roleARN) : self
+    public static function forIAMRole(string $clientId, string $clientSecret, string $region, string $accessKey, string $secretKey, string $roleARN) : void
     {
-        throw new \RuntimeException("IAM Role authentication is not supported yet");
+        throw new \RuntimeException('IAM Role authentication is not supported yet');
     }
 
-    public function clientId(): string
+    public function clientId() : string
     {
         return $this->clientId;
     }
 
-    public function clientSecret(): string
+    public function clientSecret() : string
     {
         return $this->clientSecret;
     }
 
-    public function region(): string
+    public function region() : string
     {
         return $this->region;
     }
@@ -73,17 +73,18 @@ final class Configuration
                 return 'sellingpartnerapi-fe.amazon.com';
             case Regions::NORTH_AMERICA:
                 return 'sellingpartnerapi-na.amazon.com';
+
             default:
-                throw new \RuntimeException("unknown region");
+                throw new \RuntimeException('unknown region');
         }
     }
 
-    public function accessKey(): string
+    public function accessKey() : string
     {
         return $this->accessKey;
     }
 
-    public function secretKey(): string
+    public function secretKey() : string
     {
         return $this->secretKey;
     }

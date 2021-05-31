@@ -6,5 +6,4 @@ namespace AmazonPHP\SellingPartner\Exception;
 
 class Exception extends \Exception
 {
-
 }

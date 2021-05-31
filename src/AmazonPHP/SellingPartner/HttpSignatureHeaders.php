@@ -16,7 +16,7 @@ final class HttpSignatureHeaders
         $uri = '',
         $queryString = '',
         $data = []
-    ): array {
+    ) : array {
         return self::calculateSignatureForService(
             $config->apiHost(),
             $method,
@@ -35,6 +35,8 @@ final class HttpSignatureHeaders
 
     /**
      * @source https://github.com/clousale/amazon-sp-api-php
+     *
+     * @return array<string, mixed>
      */
     private static function calculateSignatureForService(
         string $host,
@@ -49,15 +51,16 @@ final class HttpSignatureHeaders
         $accessToken,
         $securityToken,
         $userAgent
-    ): array {
+    ) : array {
         $terminationString = 'aws4_request';
         $algorithm = 'AWS4-HMAC-SHA256';
-        $amzdate = gmdate('Ymd\THis\Z');
-        $date = substr($amzdate, 0, 8);
+        $amzdate = \gmdate('Ymd\THis\Z');
+        $date = \substr($amzdate, 0, 8);
 
         // Prepare payload
-        if (is_array($data)) {
-            $param = json_encode($data);
+        if (\is_array($data)) {
+            $param = \json_encode($data, JSON_THROW_ON_ERROR);
+
             if ('[]' == $param) {
                 $requestPayload = '';
             } else {
@@ -68,7 +71,7 @@ final class HttpSignatureHeaders
         }
 
         // Hashed payload
-        $hashedPayload = hash('sha256', $requestPayload);
+        $hashedPayload = \hash('sha256', $requestPayload);
 
         //Compute Canonical Headers
         $canonicalHeaders = [
@@ -77,45 +80,46 @@ final class HttpSignatureHeaders
         ];
 
         // Check and attach access token to request header.
-        if (!is_null($accessToken)) {
+        if (null !== $accessToken) {
             $canonicalHeaders['x-amz-access-token'] = $accessToken;
         }
         $canonicalHeaders['x-amz-date'] = $amzdate;
         // Check and attach STS token to request header.
-        if (!is_null($securityToken)) {
+        if (null !== $securityToken) {
             $canonicalHeaders['x-amz-security-token'] = $securityToken;
         }
 
         $canonicalHeadersStr = '';
+
         foreach ($canonicalHeaders as $h => $v) {
-            $canonicalHeadersStr .= $h.':'.$v."\n";
+            $canonicalHeadersStr .= $h . ':' . $v . "\n";
         }
-        $signedHeadersStr = join(';', array_keys($canonicalHeaders));
+        $signedHeadersStr = \implode(';', \array_keys($canonicalHeaders));
 
         //Prepare credentials scope
-        $credentialScope = $date.'/'.$region.'/'.$service.'/'.$terminationString;
+        $credentialScope = $date . '/' . $region . '/' . $service . '/' . $terminationString;
 
         //prepare canonical request
-        $canonicalRequest = $method."\n".$uri."\n".$queryString."\n".$canonicalHeadersStr."\n".$signedHeadersStr."\n".$hashedPayload;
+        $canonicalRequest = $method . "\n" . $uri . "\n" . $queryString . "\n" . $canonicalHeadersStr . "\n" . $signedHeadersStr . "\n" . $hashedPayload;
 
         //Prepare the string to sign
-        $stringToSign = $algorithm."\n".$amzdate."\n".$credentialScope."\n".hash('sha256', $canonicalRequest);
+        $stringToSign = $algorithm . "\n" . $amzdate . "\n" . $credentialScope . "\n" . \hash('sha256', $canonicalRequest);
 
         //Start signing locker process
         //Reference : https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-        $kSecret = 'AWS4'.$secretKey;
-        $kDate = hash_hmac('sha256', $date, $kSecret, true);
-        $kRegion = hash_hmac('sha256', $region, $kDate, true);
-        $kService = hash_hmac('sha256', $service, $kRegion, true);
-        $kSigning = hash_hmac('sha256', $terminationString, $kService, true);
+        $kSecret = 'AWS4' . $secretKey;
+        $kDate = \hash_hmac('sha256', $date, $kSecret, true);
+        $kRegion = \hash_hmac('sha256', $region, $kDate, true);
+        $kService = \hash_hmac('sha256', $service, $kRegion, true);
+        $kSigning = \hash_hmac('sha256', $terminationString, $kService, true);
 
         //Compute the signature
-        $signature = trim(hash_hmac('sha256', $stringToSign, $kSigning));
+        $signature = \trim(\hash_hmac('sha256', $stringToSign, $kSigning));
 
         //Finalize the authorization structure
-        $authorizationHeader = $algorithm." Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
+        $authorizationHeader = $algorithm . " Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
 
-        return array_merge($canonicalHeaders, [
+        return \array_merge($canonicalHeaders, [
             'Authorization' => $authorizationHeader,
         ]);
     }
