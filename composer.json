@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4",
+        "php": "^7.4 || ^8.0",
         "ext-curl": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
@@ -23,7 +23,6 @@
         "psr/http-factory": "^1.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.4",
         "nyholm/psr7": "^1.4",
         "kriswallsmith/buzz": "^1.2",
         "symfony/var-dumper": "^5.2"
@@ -33,5 +32,21 @@
     },
     "autoload-dev": {
         "psr-4": { "AmazonPHP\\Test\\" : "test/" }
+    },
+    "scripts": {
+        "build": [
+            "@static:analyze"
+        ],
+        "static:analyze": [
+            "tools/vendor/bin/php-cs-fixer fix --dry-run"
+        ],
+        "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
+        "tools:install": "composer install --working-dir=./tools",
+        "post-install-cmd": [
+            "@tools:install"
+        ],
+        "post-update-cmd": [
+            "@tools:install"
+        ]
     }
 }
