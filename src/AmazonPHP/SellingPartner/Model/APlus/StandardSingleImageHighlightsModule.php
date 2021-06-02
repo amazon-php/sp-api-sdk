@@ -58,10 +58,10 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     protected static array $openAPITypes = [
         'image' => '\AmazonPHP\SellingPartner\Model\APlus\ImageComponent',
         'headline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
-        'textBlock1' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
-        'textBlock2' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
-        'textBlock3' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
-        'bulletedListBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock',
+        'text_block1' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
+        'text_block2' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
+        'text_block3' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
+        'bulleted_list_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock',
     ];
 
     /**
@@ -74,10 +74,10 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     protected static array $openAPIFormats = [
         'image' => null,
         'headline' => null,
-        'textBlock1' => null,
-        'textBlock2' => null,
-        'textBlock3' => null,
-        'bulletedListBlock' => null,
+        'text_block1' => null,
+        'text_block2' => null,
+        'text_block3' => null,
+        'bulleted_list_block' => null,
     ];
 
     /**
@@ -89,10 +89,10 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     protected static array $attributeMap = [
         'image' => 'image',
         'headline' => 'headline',
-        'textBlock1' => 'textBlock1',
-        'textBlock2' => 'textBlock2',
-        'textBlock3' => 'textBlock3',
-        'bulletedListBlock' => 'bulletedListBlock',
+        'text_block1' => 'textBlock1',
+        'text_block2' => 'textBlock2',
+        'text_block3' => 'textBlock3',
+        'bulleted_list_block' => 'bulletedListBlock',
     ];
 
     /**
@@ -103,10 +103,10 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     protected static array $setters = [
         'image' => 'setImage',
         'headline' => 'setHeadline',
-        'textBlock1' => 'setTextBlock1',
-        'textBlock2' => 'setTextBlock2',
-        'textBlock3' => 'setTextBlock3',
-        'bulletedListBlock' => 'setBulletedListBlock',
+        'text_block1' => 'setTextBlock1',
+        'text_block2' => 'setTextBlock2',
+        'text_block3' => 'setTextBlock3',
+        'bulleted_list_block' => 'setBulletedListBlock',
     ];
 
     /**
@@ -117,10 +117,10 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     protected static array $getters = [
         'image' => 'getImage',
         'headline' => 'getHeadline',
-        'textBlock1' => 'getTextBlock1',
-        'textBlock2' => 'getTextBlock2',
-        'textBlock3' => 'getTextBlock3',
-        'bulletedListBlock' => 'getBulletedListBlock',
+        'text_block1' => 'getTextBlock1',
+        'text_block2' => 'getTextBlock2',
+        'text_block3' => 'getTextBlock3',
+        'bulleted_list_block' => 'getBulletedListBlock',
     ];
 
     /**
@@ -140,10 +140,10 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     {
         $this->container['image'] = $data['image'] ?? null;
         $this->container['headline'] = $data['headline'] ?? null;
-        $this->container['textBlock1'] = $data['textBlock1'] ?? null;
-        $this->container['textBlock2'] = $data['textBlock2'] ?? null;
-        $this->container['textBlock3'] = $data['textBlock3'] ?? null;
-        $this->container['bulletedListBlock'] = $data['bulletedListBlock'] ?? null;
+        $this->container['text_block1'] = $data['text_block1'] ?? null;
+        $this->container['text_block2'] = $data['text_block2'] ?? null;
+        $this->container['text_block3'] = $data['text_block3'] ?? null;
+        $this->container['bulleted_list_block'] = $data['bulleted_list_block'] ?? null;
     }
 
     /**
@@ -278,81 +278,81 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets textBlock1.
+     * Gets text_block1.
      */
     public function getTextBlock1() : ?StandardTextBlock
     {
-        return $this->container['textBlock1'];
+        return $this->container['text_block1'];
     }
 
     /**
-     * Sets textBlock1.
+     * Sets text_block1.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $textBlock1 textBlock1
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block1 text_block1
      */
-    public function setTextBlock1(?StandardTextBlock $textBlock1) : self
+    public function setTextBlock1(?StandardTextBlock $text_block1) : self
     {
-        $this->container['textBlock1'] = $textBlock1;
+        $this->container['text_block1'] = $text_block1;
 
         return $this;
     }
 
     /**
-     * Gets textBlock2.
+     * Gets text_block2.
      */
     public function getTextBlock2() : ?StandardTextBlock
     {
-        return $this->container['textBlock2'];
+        return $this->container['text_block2'];
     }
 
     /**
-     * Sets textBlock2.
+     * Sets text_block2.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $textBlock2 textBlock2
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block2 text_block2
      */
-    public function setTextBlock2(?StandardTextBlock $textBlock2) : self
+    public function setTextBlock2(?StandardTextBlock $text_block2) : self
     {
-        $this->container['textBlock2'] = $textBlock2;
+        $this->container['text_block2'] = $text_block2;
 
         return $this;
     }
 
     /**
-     * Gets textBlock3.
+     * Gets text_block3.
      */
     public function getTextBlock3() : ?StandardTextBlock
     {
-        return $this->container['textBlock3'];
+        return $this->container['text_block3'];
     }
 
     /**
-     * Sets textBlock3.
+     * Sets text_block3.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $textBlock3 textBlock3
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block3 text_block3
      */
-    public function setTextBlock3(?StandardTextBlock $textBlock3) : self
+    public function setTextBlock3(?StandardTextBlock $text_block3) : self
     {
-        $this->container['textBlock3'] = $textBlock3;
+        $this->container['text_block3'] = $text_block3;
 
         return $this;
     }
 
     /**
-     * Gets bulletedListBlock.
+     * Gets bulleted_list_block.
      */
     public function getBulletedListBlock() : ?StandardHeaderTextListBlock
     {
-        return $this->container['bulletedListBlock'];
+        return $this->container['bulleted_list_block'];
     }
 
     /**
-     * Sets bulletedListBlock.
+     * Sets bulleted_list_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock $bulletedListBlock bulletedListBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock $bulleted_list_block bulleted_list_block
      */
-    public function setBulletedListBlock(?StandardHeaderTextListBlock $bulletedListBlock) : self
+    public function setBulletedListBlock(?StandardHeaderTextListBlock $bulleted_list_block) : self
     {
-        $this->container['bulletedListBlock'] = $bulletedListBlock;
+        $this->container['bulleted_list_block'] = $bulleted_list_block;
 
         return $this;
     }

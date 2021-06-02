@@ -56,7 +56,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'publishRecordList' => '\AmazonPHP\SellingPartner\Model\APlus\PublishRecord[]',
+        'publish_record_list' => '\AmazonPHP\SellingPartner\Model\APlus\PublishRecord[]',
     ];
 
     /**
@@ -67,7 +67,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'publishRecordList' => null,
+        'publish_record_list' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $attributeMap = [
-        'publishRecordList' => 'publishRecordList',
+        'publish_record_list' => 'publishRecordList',
     ];
 
     /**
@@ -86,7 +86,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $setters = [
-        'publishRecordList' => 'setPublishRecordList',
+        'publish_record_list' => 'setPublishRecordList',
     ];
 
     /**
@@ -95,7 +95,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static array $getters = [
-        'publishRecordList' => 'getPublishRecordList',
+        'publish_record_list' => 'getPublishRecordList',
     ];
 
     /**
@@ -113,7 +113,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->container['publishRecordList'] = $data['publishRecordList'] ?? null;
+        $this->container['publish_record_list'] = $data['publish_record_list'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['publishRecordList'] === null) {
-            $invalidProperties[] = "'publishRecordList' can't be null";
+        if ($this->container['publish_record_list'] === null) {
+            $invalidProperties[] = "'publish_record_list' can't be null";
         }
 
         return $invalidProperties;
@@ -214,23 +214,23 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets publishRecordList.
+     * Gets publish_record_list.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[]
      */
     public function getPublishRecordList() : array
     {
-        return $this->container['publishRecordList'];
+        return $this->container['publish_record_list'];
     }
 
     /**
-     * Sets publishRecordList.
+     * Sets publish_record_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[] $publishRecordList a list of A+ Content publishing records
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[] $publish_record_list a list of A+ Content publishing records
      */
-    public function setPublishRecordList(array $publishRecordList) : self
+    public function setPublishRecordList(array $publish_record_list) : self
     {
-        $this->container['publishRecordList'] = $publishRecordList;
+        $this->container['publish_record_list'] = $publish_record_list;
 
         return $this;
     }

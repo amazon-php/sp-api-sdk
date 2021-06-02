@@ -57,11 +57,11 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $openAPITypes = [
         'headline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
-        'imageCaptionBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageCaptionBlock',
-        'descriptionTextBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
-        'descriptionListBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock',
-        'sidebarImageTextBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock',
-        'sidebarListBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock',
+        'image_caption_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageCaptionBlock',
+        'description_text_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
+        'description_list_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock',
+        'sidebar_image_text_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock',
+        'sidebar_list_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock',
     ];
 
     /**
@@ -73,11 +73,11 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $openAPIFormats = [
         'headline' => null,
-        'imageCaptionBlock' => null,
-        'descriptionTextBlock' => null,
-        'descriptionListBlock' => null,
-        'sidebarImageTextBlock' => null,
-        'sidebarListBlock' => null,
+        'image_caption_block' => null,
+        'description_text_block' => null,
+        'description_list_block' => null,
+        'sidebar_image_text_block' => null,
+        'sidebar_list_block' => null,
     ];
 
     /**
@@ -88,11 +88,11 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $attributeMap = [
         'headline' => 'headline',
-        'imageCaptionBlock' => 'imageCaptionBlock',
-        'descriptionTextBlock' => 'descriptionTextBlock',
-        'descriptionListBlock' => 'descriptionListBlock',
-        'sidebarImageTextBlock' => 'sidebarImageTextBlock',
-        'sidebarListBlock' => 'sidebarListBlock',
+        'image_caption_block' => 'imageCaptionBlock',
+        'description_text_block' => 'descriptionTextBlock',
+        'description_list_block' => 'descriptionListBlock',
+        'sidebar_image_text_block' => 'sidebarImageTextBlock',
+        'sidebar_list_block' => 'sidebarListBlock',
     ];
 
     /**
@@ -102,11 +102,11 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $setters = [
         'headline' => 'setHeadline',
-        'imageCaptionBlock' => 'setImageCaptionBlock',
-        'descriptionTextBlock' => 'setDescriptionTextBlock',
-        'descriptionListBlock' => 'setDescriptionListBlock',
-        'sidebarImageTextBlock' => 'setSidebarImageTextBlock',
-        'sidebarListBlock' => 'setSidebarListBlock',
+        'image_caption_block' => 'setImageCaptionBlock',
+        'description_text_block' => 'setDescriptionTextBlock',
+        'description_list_block' => 'setDescriptionListBlock',
+        'sidebar_image_text_block' => 'setSidebarImageTextBlock',
+        'sidebar_list_block' => 'setSidebarListBlock',
     ];
 
     /**
@@ -116,11 +116,11 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $getters = [
         'headline' => 'getHeadline',
-        'imageCaptionBlock' => 'getImageCaptionBlock',
-        'descriptionTextBlock' => 'getDescriptionTextBlock',
-        'descriptionListBlock' => 'getDescriptionListBlock',
-        'sidebarImageTextBlock' => 'getSidebarImageTextBlock',
-        'sidebarListBlock' => 'getSidebarListBlock',
+        'image_caption_block' => 'getImageCaptionBlock',
+        'description_text_block' => 'getDescriptionTextBlock',
+        'description_list_block' => 'getDescriptionListBlock',
+        'sidebar_image_text_block' => 'getSidebarImageTextBlock',
+        'sidebar_list_block' => 'getSidebarListBlock',
     ];
 
     /**
@@ -139,11 +139,11 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
     public function __construct(array $data = null)
     {
         $this->container['headline'] = $data['headline'] ?? null;
-        $this->container['imageCaptionBlock'] = $data['imageCaptionBlock'] ?? null;
-        $this->container['descriptionTextBlock'] = $data['descriptionTextBlock'] ?? null;
-        $this->container['descriptionListBlock'] = $data['descriptionListBlock'] ?? null;
-        $this->container['sidebarImageTextBlock'] = $data['sidebarImageTextBlock'] ?? null;
-        $this->container['sidebarListBlock'] = $data['sidebarListBlock'] ?? null;
+        $this->container['image_caption_block'] = $data['image_caption_block'] ?? null;
+        $this->container['description_text_block'] = $data['description_text_block'] ?? null;
+        $this->container['description_list_block'] = $data['description_list_block'] ?? null;
+        $this->container['sidebar_image_text_block'] = $data['sidebar_image_text_block'] ?? null;
+        $this->container['sidebar_list_block'] = $data['sidebar_list_block'] ?? null;
     }
 
     /**
@@ -258,101 +258,101 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
     }
 
     /**
-     * Gets imageCaptionBlock.
+     * Gets image_caption_block.
      */
     public function getImageCaptionBlock() : ?StandardImageCaptionBlock
     {
-        return $this->container['imageCaptionBlock'];
+        return $this->container['image_caption_block'];
     }
 
     /**
-     * Sets imageCaptionBlock.
+     * Sets image_caption_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageCaptionBlock $imageCaptionBlock imageCaptionBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageCaptionBlock $image_caption_block image_caption_block
      */
-    public function setImageCaptionBlock(?StandardImageCaptionBlock $imageCaptionBlock) : self
+    public function setImageCaptionBlock(?StandardImageCaptionBlock $image_caption_block) : self
     {
-        $this->container['imageCaptionBlock'] = $imageCaptionBlock;
+        $this->container['image_caption_block'] = $image_caption_block;
 
         return $this;
     }
 
     /**
-     * Gets descriptionTextBlock.
+     * Gets description_text_block.
      */
     public function getDescriptionTextBlock() : ?StandardTextBlock
     {
-        return $this->container['descriptionTextBlock'];
+        return $this->container['description_text_block'];
     }
 
     /**
-     * Sets descriptionTextBlock.
+     * Sets description_text_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $descriptionTextBlock descriptionTextBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $description_text_block description_text_block
      */
-    public function setDescriptionTextBlock(?StandardTextBlock $descriptionTextBlock) : self
+    public function setDescriptionTextBlock(?StandardTextBlock $description_text_block) : self
     {
-        $this->container['descriptionTextBlock'] = $descriptionTextBlock;
+        $this->container['description_text_block'] = $description_text_block;
 
         return $this;
     }
 
     /**
-     * Gets descriptionListBlock.
+     * Gets description_list_block.
      */
     public function getDescriptionListBlock() : ?StandardTextListBlock
     {
-        return $this->container['descriptionListBlock'];
+        return $this->container['description_list_block'];
     }
 
     /**
-     * Sets descriptionListBlock.
+     * Sets description_list_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock $descriptionListBlock descriptionListBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock $description_list_block description_list_block
      */
-    public function setDescriptionListBlock(?StandardTextListBlock $descriptionListBlock) : self
+    public function setDescriptionListBlock(?StandardTextListBlock $description_list_block) : self
     {
-        $this->container['descriptionListBlock'] = $descriptionListBlock;
+        $this->container['description_list_block'] = $description_list_block;
 
         return $this;
     }
 
     /**
-     * Gets sidebarImageTextBlock.
+     * Gets sidebar_image_text_block.
      */
     public function getSidebarImageTextBlock() : ?StandardImageTextBlock
     {
-        return $this->container['sidebarImageTextBlock'];
+        return $this->container['sidebar_image_text_block'];
     }
 
     /**
-     * Sets sidebarImageTextBlock.
+     * Sets sidebar_image_text_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $sidebarImageTextBlock sidebarImageTextBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $sidebar_image_text_block sidebar_image_text_block
      */
-    public function setSidebarImageTextBlock(?StandardImageTextBlock $sidebarImageTextBlock) : self
+    public function setSidebarImageTextBlock(?StandardImageTextBlock $sidebar_image_text_block) : self
     {
-        $this->container['sidebarImageTextBlock'] = $sidebarImageTextBlock;
+        $this->container['sidebar_image_text_block'] = $sidebar_image_text_block;
 
         return $this;
     }
 
     /**
-     * Gets sidebarListBlock.
+     * Gets sidebar_list_block.
      */
     public function getSidebarListBlock() : ?StandardTextListBlock
     {
-        return $this->container['sidebarListBlock'];
+        return $this->container['sidebar_list_block'];
     }
 
     /**
-     * Sets sidebarListBlock.
+     * Sets sidebar_list_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock $sidebarListBlock sidebarListBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock $sidebar_list_block sidebar_list_block
      */
-    public function setSidebarListBlock(?StandardTextListBlock $sidebarListBlock) : self
+    public function setSidebarListBlock(?StandardTextListBlock $sidebar_list_block) : self
     {
-        $this->container['sidebarListBlock'] = $sidebarListBlock;
+        $this->container['sidebar_list_block'] = $sidebar_list_block;
 
         return $this;
     }

@@ -56,11 +56,11 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'reportOptions' => 'array<string,string>',
-        'reportType' => 'string',
-        'dataStartTime' => '\DateTime',
-        'dataEndTime' => '\DateTime',
-        'marketplaceIds' => 'string[]',
+        'report_options' => 'array<string,string>',
+        'report_type' => 'string',
+        'data_start_time' => '\DateTime',
+        'data_end_time' => '\DateTime',
+        'marketplace_ids' => 'string[]',
     ];
 
     /**
@@ -71,11 +71,11 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'reportOptions' => null,
-        'reportType' => null,
-        'dataStartTime' => 'date-time',
-        'dataEndTime' => 'date-time',
-        'marketplaceIds' => null,
+        'report_options' => null,
+        'report_type' => null,
+        'data_start_time' => 'date-time',
+        'data_end_time' => 'date-time',
+        'marketplace_ids' => null,
     ];
 
     /**
@@ -85,11 +85,11 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $attributeMap = [
-        'reportOptions' => 'reportOptions',
-        'reportType' => 'reportType',
-        'dataStartTime' => 'dataStartTime',
-        'dataEndTime' => 'dataEndTime',
-        'marketplaceIds' => 'marketplaceIds',
+        'report_options' => 'reportOptions',
+        'report_type' => 'reportType',
+        'data_start_time' => 'dataStartTime',
+        'data_end_time' => 'dataEndTime',
+        'marketplace_ids' => 'marketplaceIds',
     ];
 
     /**
@@ -98,11 +98,11 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $setters = [
-        'reportOptions' => 'setReportOptions',
-        'reportType' => 'setReportType',
-        'dataStartTime' => 'setDataStartTime',
-        'dataEndTime' => 'setDataEndTime',
-        'marketplaceIds' => 'setMarketplaceIds',
+        'report_options' => 'setReportOptions',
+        'report_type' => 'setReportType',
+        'data_start_time' => 'setDataStartTime',
+        'data_end_time' => 'setDataEndTime',
+        'marketplace_ids' => 'setMarketplaceIds',
     ];
 
     /**
@@ -111,11 +111,11 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $getters = [
-        'reportOptions' => 'getReportOptions',
-        'reportType' => 'getReportType',
-        'dataStartTime' => 'getDataStartTime',
-        'dataEndTime' => 'getDataEndTime',
-        'marketplaceIds' => 'getMarketplaceIds',
+        'report_options' => 'getReportOptions',
+        'report_type' => 'getReportType',
+        'data_start_time' => 'getDataStartTime',
+        'data_end_time' => 'getDataEndTime',
+        'marketplace_ids' => 'getMarketplaceIds',
     ];
 
     /**
@@ -133,11 +133,11 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function __construct(array $data = null)
     {
-        $this->container['reportOptions'] = $data['reportOptions'] ?? null;
-        $this->container['reportType'] = $data['reportType'] ?? null;
-        $this->container['dataStartTime'] = $data['dataStartTime'] ?? null;
-        $this->container['dataEndTime'] = $data['dataEndTime'] ?? null;
-        $this->container['marketplaceIds'] = $data['marketplaceIds'] ?? null;
+        $this->container['report_options'] = $data['report_options'] ?? null;
+        $this->container['report_type'] = $data['report_type'] ?? null;
+        $this->container['data_start_time'] = $data['data_start_time'] ?? null;
+        $this->container['data_end_time'] = $data['data_end_time'] ?? null;
+        $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
     }
 
     /**
@@ -219,20 +219,20 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
     {
         $invalidProperties = [];
 
-        if ($this->container['reportType'] === null) {
-            $invalidProperties[] = "'reportType' can't be null";
+        if ($this->container['report_type'] === null) {
+            $invalidProperties[] = "'report_type' can't be null";
         }
 
-        if ($this->container['marketplaceIds'] === null) {
-            $invalidProperties[] = "'marketplaceIds' can't be null";
+        if ($this->container['marketplace_ids'] === null) {
+            $invalidProperties[] = "'marketplace_ids' can't be null";
         }
 
-        if ((\count($this->container['marketplaceIds']) > 25)) {
-            $invalidProperties[] = "invalid value for 'marketplaceIds', number of items must be less than or equal to 25.";
+        if ((\count($this->container['marketplace_ids']) > 25)) {
+            $invalidProperties[] = "invalid value for 'marketplace_ids', number of items must be less than or equal to 25.";
         }
 
-        if ((\count($this->container['marketplaceIds']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplaceIds', number of items must be greater than or equal to 1.";
+        if ((\count($this->container['marketplace_ids']) < 1)) {
+            $invalidProperties[] = "invalid value for 'marketplace_ids', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -250,112 +250,112 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
     }
 
     /**
-     * Gets reportOptions.
+     * Gets report_options.
      *
      * @return null|array<string,string>
      */
     public function getReportOptions() : ?array
     {
-        return $this->container['reportOptions'];
+        return $this->container['report_options'];
     }
 
     /**
-     * Sets reportOptions.
+     * Sets report_options.
      *
-     * @param null|array<string,string> $reportOptions Additional information passed to reports. This varies by report type.
+     * @param null|array<string,string> $report_options Additional information passed to reports. This varies by report type.
      */
-    public function setReportOptions(?array $reportOptions) : self
+    public function setReportOptions(?array $report_options) : self
     {
-        $this->container['reportOptions'] = $reportOptions;
+        $this->container['report_options'] = $report_options;
 
         return $this;
     }
 
     /**
-     * Gets reportType.
+     * Gets report_type.
      */
     public function getReportType() : string
     {
-        return $this->container['reportType'];
+        return $this->container['report_type'];
     }
 
     /**
-     * Sets reportType.
+     * Sets report_type.
      *
-     * @param string $reportType the report type
+     * @param string $report_type the report type
      */
-    public function setReportType(string $reportType) : self
+    public function setReportType(string $report_type) : self
     {
-        $this->container['reportType'] = $reportType;
+        $this->container['report_type'] = $report_type;
 
         return $this;
     }
 
     /**
-     * Gets dataStartTime.
+     * Gets data_start_time.
      */
     public function getDataStartTime() : ?\DateTime
     {
-        return $this->container['dataStartTime'];
+        return $this->container['data_start_time'];
     }
 
     /**
-     * Sets dataStartTime.
+     * Sets data_start_time.
      *
-     * @param null|\DateTime $dataStartTime The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param null|\DateTime $data_start_time The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      */
-    public function setDataStartTime(?\DateTime $dataStartTime) : self
+    public function setDataStartTime(?\DateTime $data_start_time) : self
     {
-        $this->container['dataStartTime'] = $dataStartTime;
+        $this->container['data_start_time'] = $data_start_time;
 
         return $this;
     }
 
     /**
-     * Gets dataEndTime.
+     * Gets data_end_time.
      */
     public function getDataEndTime() : ?\DateTime
     {
-        return $this->container['dataEndTime'];
+        return $this->container['data_end_time'];
     }
 
     /**
-     * Sets dataEndTime.
+     * Sets data_end_time.
      *
-     * @param null|\DateTime $dataEndTime The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param null|\DateTime $data_end_time The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      */
-    public function setDataEndTime(?\DateTime $dataEndTime) : self
+    public function setDataEndTime(?\DateTime $data_end_time) : self
     {
-        $this->container['dataEndTime'] = $dataEndTime;
+        $this->container['data_end_time'] = $data_end_time;
 
         return $this;
     }
 
     /**
-     * Gets marketplaceIds.
+     * Gets marketplace_ids.
      *
      * @return string[]
      */
     public function getMarketplaceIds() : array
     {
-        return $this->container['marketplaceIds'];
+        return $this->container['marketplace_ids'];
     }
 
     /**
-     * Sets marketplaceIds.
+     * Sets marketplace_ids.
      *
-     * @param string[] $marketplaceIds A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
+     * @param string[] $marketplace_ids A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
      */
-    public function setMarketplaceIds(array $marketplaceIds) : self
+    public function setMarketplaceIds(array $marketplace_ids) : self
     {
-        if ((\count($marketplaceIds) > 25)) {
-            throw new \InvalidArgumentException('invalid value for $marketplaceIds when calling CreateReportSpecification., number of items must be less than or equal to 25.');
+        if ((\count($marketplace_ids) > 25)) {
+            throw new \InvalidArgumentException('invalid value for $marketplace_ids when calling CreateReportSpecification., number of items must be less than or equal to 25.');
         }
 
-        if ((\count($marketplaceIds) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplaceIds when calling CreateReportSpecification., number of items must be greater than or equal to 1.');
+        if ((\count($marketplace_ids) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $marketplace_ids when calling CreateReportSpecification., number of items must be greater than or equal to 1.');
         }
-        $this->container['marketplaceIds'] = $marketplaceIds;
+        $this->container['marketplace_ids'] = $marketplace_ids;
 
         return $this;
     }

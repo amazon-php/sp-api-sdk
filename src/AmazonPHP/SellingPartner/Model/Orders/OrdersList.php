@@ -57,9 +57,9 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPITypes = [
         'orders' => '\AmazonPHP\SellingPartner\Model\Orders\Order[]',
-        'nextToken' => 'string',
-        'lastUpdatedBefore' => 'string',
-        'createdBefore' => 'string',
+        'next_token' => 'string',
+        'last_updated_before' => 'string',
+        'created_before' => 'string',
     ];
 
     /**
@@ -71,9 +71,9 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPIFormats = [
         'orders' => null,
-        'nextToken' => null,
-        'lastUpdatedBefore' => null,
-        'createdBefore' => null,
+        'next_token' => null,
+        'last_updated_before' => null,
+        'created_before' => null,
     ];
 
     /**
@@ -84,9 +84,9 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $attributeMap = [
         'orders' => 'Orders',
-        'nextToken' => 'NextToken',
-        'lastUpdatedBefore' => 'LastUpdatedBefore',
-        'createdBefore' => 'CreatedBefore',
+        'next_token' => 'NextToken',
+        'last_updated_before' => 'LastUpdatedBefore',
+        'created_before' => 'CreatedBefore',
     ];
 
     /**
@@ -96,9 +96,9 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $setters = [
         'orders' => 'setOrders',
-        'nextToken' => 'setNextToken',
-        'lastUpdatedBefore' => 'setLastUpdatedBefore',
-        'createdBefore' => 'setCreatedBefore',
+        'next_token' => 'setNextToken',
+        'last_updated_before' => 'setLastUpdatedBefore',
+        'created_before' => 'setCreatedBefore',
     ];
 
     /**
@@ -108,9 +108,9 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $getters = [
         'orders' => 'getOrders',
-        'nextToken' => 'getNextToken',
-        'lastUpdatedBefore' => 'getLastUpdatedBefore',
-        'createdBefore' => 'getCreatedBefore',
+        'next_token' => 'getNextToken',
+        'last_updated_before' => 'getLastUpdatedBefore',
+        'created_before' => 'getCreatedBefore',
     ];
 
     /**
@@ -129,9 +129,9 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function __construct(array $data = null)
     {
         $this->container['orders'] = $data['orders'] ?? null;
-        $this->container['nextToken'] = $data['nextToken'] ?? null;
-        $this->container['lastUpdatedBefore'] = $data['lastUpdatedBefore'] ?? null;
-        $this->container['createdBefore'] = $data['createdBefore'] ?? null;
+        $this->container['next_token'] = $data['next_token'] ?? null;
+        $this->container['last_updated_before'] = $data['last_updated_before'] ?? null;
+        $this->container['created_before'] = $data['created_before'] ?? null;
     }
 
     /**
@@ -254,61 +254,61 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets nextToken.
+     * Gets next_token.
      */
     public function getNextToken() : ?string
     {
-        return $this->container['nextToken'];
+        return $this->container['next_token'];
     }
 
     /**
-     * Sets nextToken.
+     * Sets next_token.
      *
-     * @param null|string $nextToken when present and not empty, pass this string token in the next request to return the next response page
+     * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
      */
-    public function setNextToken(?string $nextToken) : self
+    public function setNextToken(?string $next_token) : self
     {
-        $this->container['nextToken'] = $nextToken;
+        $this->container['next_token'] = $next_token;
 
         return $this;
     }
 
     /**
-     * Gets lastUpdatedBefore.
+     * Gets last_updated_before.
      */
     public function getLastUpdatedBefore() : ?string
     {
-        return $this->container['lastUpdatedBefore'];
+        return $this->container['last_updated_before'];
     }
 
     /**
-     * Sets lastUpdatedBefore.
+     * Sets last_updated_before.
      *
-     * @param null|string $lastUpdatedBefore A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in ISO 8601 format.
+     * @param null|string $last_updated_before A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in ISO 8601 format.
      */
-    public function setLastUpdatedBefore(?string $lastUpdatedBefore) : self
+    public function setLastUpdatedBefore(?string $last_updated_before) : self
     {
-        $this->container['lastUpdatedBefore'] = $lastUpdatedBefore;
+        $this->container['last_updated_before'] = $last_updated_before;
 
         return $this;
     }
 
     /**
-     * Gets createdBefore.
+     * Gets created_before.
      */
     public function getCreatedBefore() : ?string
     {
-        return $this->container['createdBefore'];
+        return $this->container['created_before'];
     }
 
     /**
-     * Sets createdBefore.
+     * Sets created_before.
      *
-     * @param null|string $createdBefore A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
+     * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
      */
-    public function setCreatedBefore(?string $createdBefore) : self
+    public function setCreatedBefore(?string $created_before) : self
     {
-        $this->container['createdBefore'] = $createdBefore;
+        $this->container['created_before'] = $created_before;
 
         return $this;
     }

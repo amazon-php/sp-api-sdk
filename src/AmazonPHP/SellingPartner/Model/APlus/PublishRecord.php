@@ -56,12 +56,12 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'marketplaceId' => 'string',
+        'marketplace_id' => 'string',
         'locale' => 'string',
         'asin' => 'string',
-        'contentType' => '\AmazonPHP\SellingPartner\Model\APlus\ContentType',
-        'contentSubType' => 'string',
-        'contentReferenceKey' => 'string',
+        'content_type' => '\AmazonPHP\SellingPartner\Model\APlus\ContentType',
+        'content_sub_type' => 'string',
+        'content_reference_key' => 'string',
     ];
 
     /**
@@ -72,12 +72,12 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'marketplaceId' => null,
+        'marketplace_id' => null,
         'locale' => null,
         'asin' => null,
-        'contentType' => null,
-        'contentSubType' => null,
-        'contentReferenceKey' => null,
+        'content_type' => null,
+        'content_sub_type' => null,
+        'content_reference_key' => null,
     ];
 
     /**
@@ -87,12 +87,12 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'marketplaceId' => 'marketplaceId',
+        'marketplace_id' => 'marketplaceId',
         'locale' => 'locale',
         'asin' => 'asin',
-        'contentType' => 'contentType',
-        'contentSubType' => 'contentSubType',
-        'contentReferenceKey' => 'contentReferenceKey',
+        'content_type' => 'contentType',
+        'content_sub_type' => 'contentSubType',
+        'content_reference_key' => 'contentReferenceKey',
     ];
 
     /**
@@ -101,12 +101,12 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'marketplaceId' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'locale' => 'setLocale',
         'asin' => 'setAsin',
-        'contentType' => 'setContentType',
-        'contentSubType' => 'setContentSubType',
-        'contentReferenceKey' => 'setContentReferenceKey',
+        'content_type' => 'setContentType',
+        'content_sub_type' => 'setContentSubType',
+        'content_reference_key' => 'setContentReferenceKey',
     ];
 
     /**
@@ -115,12 +115,12 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'marketplaceId' => 'getMarketplaceId',
+        'marketplace_id' => 'getMarketplaceId',
         'locale' => 'getLocale',
         'asin' => 'getAsin',
-        'contentType' => 'getContentType',
-        'contentSubType' => 'getContentSubType',
-        'contentReferenceKey' => 'getContentReferenceKey',
+        'content_type' => 'getContentType',
+        'content_sub_type' => 'getContentSubType',
+        'content_reference_key' => 'getContentReferenceKey',
     ];
 
     /**
@@ -138,12 +138,12 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
         $this->container['locale'] = $data['locale'] ?? null;
         $this->container['asin'] = $data['asin'] ?? null;
-        $this->container['contentType'] = $data['contentType'] ?? null;
-        $this->container['contentSubType'] = $data['contentSubType'] ?? null;
-        $this->container['contentReferenceKey'] = $data['contentReferenceKey'] ?? null;
+        $this->container['content_type'] = $data['content_type'] ?? null;
+        $this->container['content_sub_type'] = $data['content_sub_type'] ?? null;
+        $this->container['content_reference_key'] = $data['content_reference_key'] ?? null;
     }
 
     /**
@@ -225,12 +225,12 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['marketplaceId'] === null) {
-            $invalidProperties[] = "'marketplaceId' can't be null";
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['marketplaceId']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplaceId', the character length must be bigger than or equal to 1.";
+        if ((\mb_strlen($this->container['marketplace_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['locale'] === null) {
@@ -249,20 +249,20 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "invalid value for 'asin', the character length must be bigger than or equal to 10.";
         }
 
-        if ($this->container['contentType'] === null) {
-            $invalidProperties[] = "'contentType' can't be null";
+        if ($this->container['content_type'] === null) {
+            $invalidProperties[] = "'content_type' can't be null";
         }
 
-        if (null !== $this->container['contentSubType'] && (\mb_strlen($this->container['contentSubType']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contentSubType', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['content_sub_type'] && (\mb_strlen($this->container['content_sub_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'content_sub_type', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['contentReferenceKey'] === null) {
-            $invalidProperties[] = "'contentReferenceKey' can't be null";
+        if ($this->container['content_reference_key'] === null) {
+            $invalidProperties[] = "'content_reference_key' can't be null";
         }
 
-        if ((\mb_strlen($this->container['contentReferenceKey']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contentReferenceKey', the character length must be bigger than or equal to 1.";
+        if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -280,25 +280,25 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets marketplaceId.
+     * Gets marketplace_id.
      */
     public function getMarketplaceId() : string
     {
-        return $this->container['marketplaceId'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets marketplaceId.
+     * Sets marketplace_id.
      *
-     * @param string $marketplaceId the identifier for the marketplace where the A+ Content is published
+     * @param string $marketplace_id the identifier for the marketplace where the A+ Content is published
      */
-    public function setMarketplaceId(string $marketplaceId) : self
+    public function setMarketplaceId(string $marketplace_id) : self
     {
-        if ((\mb_strlen($marketplaceId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplaceId when calling PublishRecord., must be bigger than or equal to 1.');
+        if ((\mb_strlen($marketplace_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling PublishRecord., must be bigger than or equal to 1.');
         }
 
-        $this->container['marketplaceId'] = $marketplaceId;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
@@ -352,69 +352,69 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets contentType.
+     * Gets content_type.
      */
     public function getContentType() : ContentType
     {
-        return $this->container['contentType'];
+        return $this->container['content_type'];
     }
 
     /**
-     * Sets contentType.
+     * Sets content_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentType $contentType contentType
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentType $content_type content_type
      */
-    public function setContentType(ContentType $contentType) : self
+    public function setContentType(ContentType $content_type) : self
     {
-        $this->container['contentType'] = $contentType;
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }
 
     /**
-     * Gets contentSubType.
+     * Gets content_sub_type.
      */
     public function getContentSubType() : ?string
     {
-        return $this->container['contentSubType'];
+        return $this->container['content_sub_type'];
     }
 
     /**
-     * Sets contentSubType.
+     * Sets content_sub_type.
      *
-     * @param null|string $contentSubType The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
+     * @param null|string $content_sub_type The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
      */
-    public function setContentSubType(?string $contentSubType) : self
+    public function setContentSubType(?string $content_sub_type) : self
     {
-        if (null !== $contentSubType && (\mb_strlen($contentSubType) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contentSubType when calling PublishRecord., must be bigger than or equal to 1.');
+        if (null !== $content_sub_type && (\mb_strlen($content_sub_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $content_sub_type when calling PublishRecord., must be bigger than or equal to 1.');
         }
 
-        $this->container['contentSubType'] = $contentSubType;
+        $this->container['content_sub_type'] = $content_sub_type;
 
         return $this;
     }
 
     /**
-     * Gets contentReferenceKey.
+     * Gets content_reference_key.
      */
     public function getContentReferenceKey() : string
     {
-        return $this->container['contentReferenceKey'];
+        return $this->container['content_reference_key'];
     }
 
     /**
-     * Sets contentReferenceKey.
+     * Sets content_reference_key.
      *
-     * @param string $contentReferenceKey A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
      */
-    public function setContentReferenceKey(string $contentReferenceKey) : self
+    public function setContentReferenceKey(string $content_reference_key) : self
     {
-        if ((\mb_strlen($contentReferenceKey) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contentReferenceKey when calling PublishRecord., must be bigger than or equal to 1.');
+        if ((\mb_strlen($content_reference_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $content_reference_key when calling PublishRecord., must be bigger than or equal to 1.');
         }
 
-        $this->container['contentReferenceKey'] = $contentReferenceKey;
+        $this->container['content_reference_key'] = $content_reference_key;
 
         return $this;
     }

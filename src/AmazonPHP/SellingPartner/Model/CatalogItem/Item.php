@@ -57,9 +57,9 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPITypes = [
         'identifiers' => '\AmazonPHP\SellingPartner\Model\CatalogItem\IdentifierType',
-        'attributeSets' => '\AmazonPHP\SellingPartner\Model\CatalogItem\AttributeSetListType[]',
+        'attribute_sets' => '\AmazonPHP\SellingPartner\Model\CatalogItem\AttributeSetListType[]',
         'relationships' => '\AmazonPHP\SellingPartner\Model\CatalogItem\RelationshipType[]',
-        'salesRankings' => '\AmazonPHP\SellingPartner\Model\CatalogItem\SalesRankType[]',
+        'sales_rankings' => '\AmazonPHP\SellingPartner\Model\CatalogItem\SalesRankType[]',
     ];
 
     /**
@@ -71,9 +71,9 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPIFormats = [
         'identifiers' => null,
-        'attributeSets' => null,
+        'attribute_sets' => null,
         'relationships' => null,
-        'salesRankings' => null,
+        'sales_rankings' => null,
     ];
 
     /**
@@ -84,9 +84,9 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $attributeMap = [
         'identifiers' => 'Identifiers',
-        'attributeSets' => 'AttributeSets',
+        'attribute_sets' => 'AttributeSets',
         'relationships' => 'Relationships',
-        'salesRankings' => 'SalesRankings',
+        'sales_rankings' => 'SalesRankings',
     ];
 
     /**
@@ -96,9 +96,9 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $setters = [
         'identifiers' => 'setIdentifiers',
-        'attributeSets' => 'setAttributeSets',
+        'attribute_sets' => 'setAttributeSets',
         'relationships' => 'setRelationships',
-        'salesRankings' => 'setSalesRankings',
+        'sales_rankings' => 'setSalesRankings',
     ];
 
     /**
@@ -108,9 +108,9 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $getters = [
         'identifiers' => 'getIdentifiers',
-        'attributeSets' => 'getAttributeSets',
+        'attribute_sets' => 'getAttributeSets',
         'relationships' => 'getRelationships',
-        'salesRankings' => 'getSalesRankings',
+        'sales_rankings' => 'getSalesRankings',
     ];
 
     /**
@@ -129,9 +129,9 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function __construct(array $data = null)
     {
         $this->container['identifiers'] = $data['identifiers'] ?? null;
-        $this->container['attributeSets'] = $data['attributeSets'] ?? null;
+        $this->container['attribute_sets'] = $data['attribute_sets'] ?? null;
         $this->container['relationships'] = $data['relationships'] ?? null;
-        $this->container['salesRankings'] = $data['salesRankings'] ?? null;
+        $this->container['sales_rankings'] = $data['sales_rankings'] ?? null;
     }
 
     /**
@@ -252,23 +252,23 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets attributeSets.
+     * Gets attribute_sets.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\AttributeSetListType[]
      */
     public function getAttributeSets() : ?array
     {
-        return $this->container['attributeSets'];
+        return $this->container['attribute_sets'];
     }
 
     /**
-     * Sets attributeSets.
+     * Sets attribute_sets.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\AttributeSetListType[] $attributeSets a list of attributes for the item
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\AttributeSetListType[] $attribute_sets a list of attributes for the item
      */
-    public function setAttributeSets(?array $attributeSets) : self
+    public function setAttributeSets(?array $attribute_sets) : self
     {
-        $this->container['attributeSets'] = $attributeSets;
+        $this->container['attribute_sets'] = $attribute_sets;
 
         return $this;
     }
@@ -296,23 +296,23 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets salesRankings.
+     * Gets sales_rankings.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\SalesRankType[]
      */
     public function getSalesRankings() : ?array
     {
-        return $this->container['salesRankings'];
+        return $this->container['sales_rankings'];
     }
 
     /**
-     * Sets salesRankings.
+     * Sets sales_rankings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\SalesRankType[] $salesRankings a list of sales rank information for the item by category
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\SalesRankType[] $sales_rankings a list of sales rank information for the item by category
      */
-    public function setSalesRankings(?array $salesRankings) : self
+    public function setSalesRankings(?array $sales_rankings) : self
     {
-        $this->container['salesRankings'] = $salesRankings;
+        $this->container['sales_rankings'] = $sales_rankings;
 
         return $this;
     }

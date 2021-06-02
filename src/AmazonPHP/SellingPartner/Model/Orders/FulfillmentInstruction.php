@@ -56,7 +56,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'fulfillmentSupplySourceId' => 'string',
+        'fulfillment_supply_source_id' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'fulfillmentSupplySourceId' => null,
+        'fulfillment_supply_source_id' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'fulfillmentSupplySourceId' => 'FulfillmentSupplySourceId',
+        'fulfillment_supply_source_id' => 'FulfillmentSupplySourceId',
     ];
 
     /**
@@ -86,7 +86,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'fulfillmentSupplySourceId' => 'setFulfillmentSupplySourceId',
+        'fulfillment_supply_source_id' => 'setFulfillmentSupplySourceId',
     ];
 
     /**
@@ -95,7 +95,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'fulfillmentSupplySourceId' => 'getFulfillmentSupplySourceId',
+        'fulfillment_supply_source_id' => 'getFulfillmentSupplySourceId',
     ];
 
     /**
@@ -113,7 +113,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['fulfillmentSupplySourceId'] = $data['fulfillmentSupplySourceId'] ?? null;
+        $this->container['fulfillment_supply_source_id'] = $data['fulfillment_supply_source_id'] ?? null;
     }
 
     /**
@@ -208,21 +208,21 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets fulfillmentSupplySourceId.
+     * Gets fulfillment_supply_source_id.
      */
     public function getFulfillmentSupplySourceId() : ?string
     {
-        return $this->container['fulfillmentSupplySourceId'];
+        return $this->container['fulfillment_supply_source_id'];
     }
 
     /**
-     * Sets fulfillmentSupplySourceId.
+     * Sets fulfillment_supply_source_id.
      *
-     * @param null|string $fulfillmentSupplySourceId denotes the recommended sourceId where the order should be fulfilled from
+     * @param null|string $fulfillment_supply_source_id denotes the recommended sourceId where the order should be fulfilled from
      */
-    public function setFulfillmentSupplySourceId(?string $fulfillmentSupplySourceId) : self
+    public function setFulfillmentSupplySourceId(?string $fulfillment_supply_source_id) : self
     {
-        $this->container['fulfillmentSupplySourceId'] = $fulfillmentSupplySourceId;
+        $this->container['fulfillment_supply_source_id'] = $fulfillment_supply_source_id;
 
         return $this;
     }

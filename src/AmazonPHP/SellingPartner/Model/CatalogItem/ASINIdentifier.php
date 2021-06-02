@@ -56,8 +56,8 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'marketplaceId' => 'string',
-        'aSIN' => 'string',
+        'marketplace_id' => 'string',
+        'asin' => 'string',
     ];
 
     /**
@@ -68,8 +68,8 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'marketplaceId' => null,
-        'aSIN' => null,
+        'marketplace_id' => null,
+        'asin' => null,
     ];
 
     /**
@@ -79,8 +79,8 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'marketplaceId' => 'MarketplaceId',
-        'aSIN' => 'ASIN',
+        'marketplace_id' => 'MarketplaceId',
+        'asin' => 'ASIN',
     ];
 
     /**
@@ -89,8 +89,8 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'marketplaceId' => 'setMarketplaceId',
-        'aSIN' => 'setASIN',
+        'marketplace_id' => 'setMarketplaceId',
+        'asin' => 'setAsin',
     ];
 
     /**
@@ -99,8 +99,8 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'marketplaceId' => 'getMarketplaceId',
-        'aSIN' => 'getASIN',
+        'marketplace_id' => 'getMarketplaceId',
+        'asin' => 'getAsin',
     ];
 
     /**
@@ -118,8 +118,8 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
-        $this->container['aSIN'] = $data['aSIN'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['asin'] = $data['asin'] ?? null;
     }
 
     /**
@@ -201,12 +201,12 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['marketplaceId'] === null) {
-            $invalidProperties[] = "'marketplaceId' can't be null";
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
         }
 
-        if ($this->container['aSIN'] === null) {
-            $invalidProperties[] = "'aSIN' can't be null";
+        if ($this->container['asin'] === null) {
+            $invalidProperties[] = "'asin' can't be null";
         }
 
         return $invalidProperties;
@@ -224,41 +224,41 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets marketplaceId.
+     * Gets marketplace_id.
      */
     public function getMarketplaceId() : string
     {
-        return $this->container['marketplaceId'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets marketplaceId.
+     * Sets marketplace_id.
      *
-     * @param string $marketplaceId a marketplace identifier
+     * @param string $marketplace_id a marketplace identifier
      */
-    public function setMarketplaceId(string $marketplaceId) : self
+    public function setMarketplaceId(string $marketplace_id) : self
     {
-        $this->container['marketplaceId'] = $marketplaceId;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
 
     /**
-     * Gets aSIN.
+     * Gets asin.
      */
-    public function getASIN() : string
+    public function getAsin() : string
     {
-        return $this->container['aSIN'];
+        return $this->container['asin'];
     }
 
     /**
-     * Sets aSIN.
+     * Sets asin.
      *
-     * @param string $aSIN the Amazon Standard Identification Number (ASIN) of the item
+     * @param string $asin the Amazon Standard Identification Number (ASIN) of the item
      */
-    public function setASIN(string $aSIN) : self
+    public function setAsin(string $asin) : self
     {
-        $this->container['aSIN'] = $aSIN;
+        $this->container['asin'] = $asin;
 
         return $this;
     }

@@ -56,7 +56,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'restrictedResources' => '\AmazonPHP\SellingPartner\Model\Tokens\RestrictedResource[]',
+        'restricted_resources' => '\AmazonPHP\SellingPartner\Model\Tokens\RestrictedResource[]',
     ];
 
     /**
@@ -67,7 +67,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'restrictedResources' => null,
+        'restricted_resources' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $attributeMap = [
-        'restrictedResources' => 'restrictedResources',
+        'restricted_resources' => 'restrictedResources',
     ];
 
     /**
@@ -86,7 +86,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $setters = [
-        'restrictedResources' => 'setRestrictedResources',
+        'restricted_resources' => 'setRestrictedResources',
     ];
 
     /**
@@ -95,7 +95,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $getters = [
-        'restrictedResources' => 'getRestrictedResources',
+        'restricted_resources' => 'getRestrictedResources',
     ];
 
     /**
@@ -113,7 +113,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['restrictedResources'] = $data['restrictedResources'] ?? null;
+        $this->container['restricted_resources'] = $data['restricted_resources'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['restrictedResources'] === null) {
-            $invalidProperties[] = "'restrictedResources' can't be null";
+        if ($this->container['restricted_resources'] === null) {
+            $invalidProperties[] = "'restricted_resources' can't be null";
         }
 
         return $invalidProperties;
@@ -214,23 +214,23 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets restrictedResources.
+     * Gets restricted_resources.
      *
      * @return \AmazonPHP\SellingPartner\Model\Tokens\RestrictedResource[]
      */
     public function getRestrictedResources() : array
     {
-        return $this->container['restrictedResources'];
+        return $this->container['restricted_resources'];
     }
 
     /**
-     * Sets restrictedResources.
+     * Sets restricted_resources.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Tokens\RestrictedResource[] $restrictedResources A list of restricted resources. Maximum: 50
+     * @param \AmazonPHP\SellingPartner\Model\Tokens\RestrictedResource[] $restricted_resources A list of restricted resources. Maximum: 50
      */
-    public function setRestrictedResources(array $restrictedResources) : self
+    public function setRestrictedResources(array $restricted_resources) : self
     {
-        $this->container['restrictedResources'] = $restrictedResources;
+        $this->container['restricted_resources'] = $restricted_resources;
 
         return $this;
     }

@@ -56,7 +56,7 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'contentRecord' => '\AmazonPHP\SellingPartner\Model\APlus\ContentRecord',
+        'content_record' => '\AmazonPHP\SellingPartner\Model\APlus\ContentRecord',
     ];
 
     /**
@@ -67,7 +67,7 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'contentRecord' => null,
+        'content_record' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $attributeMap = [
-        'contentRecord' => 'contentRecord',
+        'content_record' => 'contentRecord',
     ];
 
     /**
@@ -86,7 +86,7 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $setters = [
-        'contentRecord' => 'setContentRecord',
+        'content_record' => 'setContentRecord',
     ];
 
     /**
@@ -95,7 +95,7 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static array $getters = [
-        'contentRecord' => 'getContentRecord',
+        'content_record' => 'getContentRecord',
     ];
 
     /**
@@ -113,7 +113,7 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->container['contentRecord'] = $data['contentRecord'] ?? null;
+        $this->container['content_record'] = $data['content_record'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['contentRecord'] === null) {
-            $invalidProperties[] = "'contentRecord' can't be null";
+        if ($this->container['content_record'] === null) {
+            $invalidProperties[] = "'content_record' can't be null";
         }
 
         return $invalidProperties;
@@ -214,21 +214,21 @@ class GetContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets contentRecord.
+     * Gets content_record.
      */
     public function getContentRecord() : ContentRecord
     {
-        return $this->container['contentRecord'];
+        return $this->container['content_record'];
     }
 
     /**
-     * Sets contentRecord.
+     * Sets content_record.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentRecord $contentRecord contentRecord
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentRecord $content_record content_record
      */
-    public function setContentRecord(ContentRecord $contentRecord) : self
+    public function setContentRecord(ContentRecord $content_record) : self
     {
-        $this->container['contentRecord'] = $contentRecord;
+        $this->container['content_record'] = $content_record;
 
         return $this;
     }

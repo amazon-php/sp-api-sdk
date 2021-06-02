@@ -2,12 +2,15 @@
 
 namespace AmazonPHP\SellingPartner\Api;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -16,11 +19,17 @@ use Psr\Http\Message\RequestInterface;
  */
 final class TokensSDK
 {
-    private OAuth $oauth;
+    private ClientInterface $client;
 
-    public function __construct(OAuth $authentication)
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration)
     {
-        $this->oauth = $authentication;
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
     }
 
     /**
@@ -31,9 +40,9 @@ final class TokensSDK
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function createRestrictedDataToken(\AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse
+    public function createRestrictedDataToken(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse
     {
-        [$response] = $this->createRestrictedDataTokenWithHttpInfo($body);
+        [$response] = $this->createRestrictedDataTokenWithHttpInfo($accessToken, $region, $body);
 
         return $response;
     }
@@ -47,7 +56,7 @@ final class TokensSDK
      *
      * @return RequestInterface
      */
-    public function createRestrictedDataTokenRequest(\AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : RequestInterface
+    public function createRestrictedDataTokenRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
@@ -68,28 +77,34 @@ final class TokensSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
 
-            $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString($httpBody));
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
@@ -105,33 +120,23 @@ final class TokensSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
@@ -144,13 +149,13 @@ final class TokensSDK
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse>
      */
-    private function createRestrictedDataTokenWithHttpInfo(\AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : array
+    private function createRestrictedDataTokenWithHttpInfo(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : array
     {
-        $request = $this->createRestrictedDataTokenRequest($body);
+        $request = $this->createRestrictedDataTokenRequest($accessToken, $region, $body);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -180,7 +185,12 @@ final class TokensSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -195,7 +205,12 @@ final class TokensSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Tokens\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Tokens\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -205,7 +220,12 @@ final class TokensSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -213,6 +233,7 @@ final class TokensSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class,
                         $e->getResponseHeaders()
@@ -229,6 +250,7 @@ final class TokensSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Tokens\ErrorList::class,
                         $e->getResponseHeaders()

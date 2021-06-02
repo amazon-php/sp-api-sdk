@@ -57,8 +57,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      */
     protected static array $openAPITypes = [
         'warnings' => '\AmazonPHP\SellingPartner\Model\APlus\Error[]',
-        'nextPageToken' => 'string',
-        'contentMetadataRecords' => '\AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[]',
+        'next_page_token' => 'string',
+        'content_metadata_records' => '\AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[]',
     ];
 
     /**
@@ -70,8 +70,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      */
     protected static array $openAPIFormats = [
         'warnings' => null,
-        'nextPageToken' => null,
-        'contentMetadataRecords' => null,
+        'next_page_token' => null,
+        'content_metadata_records' => null,
     ];
 
     /**
@@ -82,8 +82,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      */
     protected static array $attributeMap = [
         'warnings' => 'warnings',
-        'nextPageToken' => 'nextPageToken',
-        'contentMetadataRecords' => 'contentMetadataRecords',
+        'next_page_token' => 'nextPageToken',
+        'content_metadata_records' => 'contentMetadataRecords',
     ];
 
     /**
@@ -93,8 +93,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      */
     protected static array $setters = [
         'warnings' => 'setWarnings',
-        'nextPageToken' => 'setNextPageToken',
-        'contentMetadataRecords' => 'setContentMetadataRecords',
+        'next_page_token' => 'setNextPageToken',
+        'content_metadata_records' => 'setContentMetadataRecords',
     ];
 
     /**
@@ -104,8 +104,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      */
     protected static array $getters = [
         'warnings' => 'getWarnings',
-        'nextPageToken' => 'getNextPageToken',
-        'contentMetadataRecords' => 'getContentMetadataRecords',
+        'next_page_token' => 'getNextPageToken',
+        'content_metadata_records' => 'getContentMetadataRecords',
     ];
 
     /**
@@ -124,8 +124,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     public function __construct(array $data = null)
     {
         $this->container['warnings'] = $data['warnings'] ?? null;
-        $this->container['nextPageToken'] = $data['nextPageToken'] ?? null;
-        $this->container['contentMetadataRecords'] = $data['contentMetadataRecords'] ?? null;
+        $this->container['next_page_token'] = $data['next_page_token'] ?? null;
+        $this->container['content_metadata_records'] = $data['content_metadata_records'] ?? null;
     }
 
     /**
@@ -207,12 +207,12 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['nextPageToken'] && (\mb_strlen($this->container['nextPageToken']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nextPageToken', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['next_page_token'] && (\mb_strlen($this->container['next_page_token']) < 1)) {
+            $invalidProperties[] = "invalid value for 'next_page_token', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['contentMetadataRecords'] === null) {
-            $invalidProperties[] = "'contentMetadataRecords' can't be null";
+        if ($this->container['content_metadata_records'] === null) {
+            $invalidProperties[] = "'content_metadata_records' can't be null";
         }
 
         return $invalidProperties;
@@ -252,47 +252,47 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     }
 
     /**
-     * Gets nextPageToken.
+     * Gets next_page_token.
      */
     public function getNextPageToken() : ?string
     {
-        return $this->container['nextPageToken'];
+        return $this->container['next_page_token'];
     }
 
     /**
-     * Sets nextPageToken.
+     * Sets next_page_token.
      *
-     * @param null|string $nextPageToken A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     * @param null|string $next_page_token A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
      */
-    public function setNextPageToken(?string $nextPageToken) : self
+    public function setNextPageToken(?string $next_page_token) : self
     {
-        if (null !== $nextPageToken && (\mb_strlen($nextPageToken) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nextPageToken when calling SearchContentDocumentsResponse., must be bigger than or equal to 1.');
+        if (null !== $next_page_token && (\mb_strlen($next_page_token) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $next_page_token when calling SearchContentDocumentsResponse., must be bigger than or equal to 1.');
         }
 
-        $this->container['nextPageToken'] = $nextPageToken;
+        $this->container['next_page_token'] = $next_page_token;
 
         return $this;
     }
 
     /**
-     * Gets contentMetadataRecords.
+     * Gets content_metadata_records.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[]
      */
     public function getContentMetadataRecords() : array
     {
-        return $this->container['contentMetadataRecords'];
+        return $this->container['content_metadata_records'];
     }
 
     /**
-     * Sets contentMetadataRecords.
+     * Sets content_metadata_records.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[] $contentMetadataRecords a list of A+ Content metadata records
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[] $content_metadata_records a list of A+ Content metadata records
      */
-    public function setContentMetadataRecords(array $contentMetadataRecords) : self
+    public function setContentMetadataRecords(array $content_metadata_records) : self
     {
-        $this->container['contentMetadataRecords'] = $contentMetadataRecords;
+        $this->container['content_metadata_records'] = $content_metadata_records;
 
         return $this;
     }

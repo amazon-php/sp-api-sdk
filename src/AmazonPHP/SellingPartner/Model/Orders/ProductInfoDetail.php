@@ -56,7 +56,7 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'numberOfItems' => 'int',
+        'number_of_items' => 'int',
     ];
 
     /**
@@ -67,7 +67,7 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'numberOfItems' => null,
+        'number_of_items' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'numberOfItems' => 'NumberOfItems',
+        'number_of_items' => 'NumberOfItems',
     ];
 
     /**
@@ -86,7 +86,7 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $setters = [
-        'numberOfItems' => 'setNumberOfItems',
+        'number_of_items' => 'setNumberOfItems',
     ];
 
     /**
@@ -95,7 +95,7 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $getters = [
-        'numberOfItems' => 'getNumberOfItems',
+        'number_of_items' => 'getNumberOfItems',
     ];
 
     /**
@@ -113,7 +113,7 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function __construct(array $data = null)
     {
-        $this->container['numberOfItems'] = $data['numberOfItems'] ?? null;
+        $this->container['number_of_items'] = $data['number_of_items'] ?? null;
     }
 
     /**
@@ -208,21 +208,21 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
     }
 
     /**
-     * Gets numberOfItems.
+     * Gets number_of_items.
      */
     public function getNumberOfItems() : ?int
     {
-        return $this->container['numberOfItems'];
+        return $this->container['number_of_items'];
     }
 
     /**
-     * Sets numberOfItems.
+     * Sets number_of_items.
      *
-     * @param null|int $numberOfItems the total number of items that are included in the ASIN
+     * @param null|int $number_of_items the total number of items that are included in the ASIN
      */
-    public function setNumberOfItems(?int $numberOfItems) : self
+    public function setNumberOfItems(?int $number_of_items) : self
     {
-        $this->container['numberOfItems'] = $numberOfItems;
+        $this->container['number_of_items'] = $number_of_items;
 
         return $this;
     }

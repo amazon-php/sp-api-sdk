@@ -56,12 +56,12 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'orderItemId' => 'string',
-        'buyerCustomizedInfo' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail',
-        'giftWrapPrice' => '\AmazonPHP\SellingPartner\Model\Orders\Money',
-        'giftWrapTax' => '\AmazonPHP\SellingPartner\Model\Orders\Money',
-        'giftMessageText' => 'string',
-        'giftWrapLevel' => 'string',
+        'order_item_id' => 'string',
+        'buyer_customized_info' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail',
+        'gift_wrap_price' => '\AmazonPHP\SellingPartner\Model\Orders\Money',
+        'gift_wrap_tax' => '\AmazonPHP\SellingPartner\Model\Orders\Money',
+        'gift_message_text' => 'string',
+        'gift_wrap_level' => 'string',
     ];
 
     /**
@@ -72,12 +72,12 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'orderItemId' => null,
-        'buyerCustomizedInfo' => null,
-        'giftWrapPrice' => null,
-        'giftWrapTax' => null,
-        'giftMessageText' => null,
-        'giftWrapLevel' => null,
+        'order_item_id' => null,
+        'buyer_customized_info' => null,
+        'gift_wrap_price' => null,
+        'gift_wrap_tax' => null,
+        'gift_message_text' => null,
+        'gift_wrap_level' => null,
     ];
 
     /**
@@ -87,12 +87,12 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $attributeMap = [
-        'orderItemId' => 'OrderItemId',
-        'buyerCustomizedInfo' => 'BuyerCustomizedInfo',
-        'giftWrapPrice' => 'GiftWrapPrice',
-        'giftWrapTax' => 'GiftWrapTax',
-        'giftMessageText' => 'GiftMessageText',
-        'giftWrapLevel' => 'GiftWrapLevel',
+        'order_item_id' => 'OrderItemId',
+        'buyer_customized_info' => 'BuyerCustomizedInfo',
+        'gift_wrap_price' => 'GiftWrapPrice',
+        'gift_wrap_tax' => 'GiftWrapTax',
+        'gift_message_text' => 'GiftMessageText',
+        'gift_wrap_level' => 'GiftWrapLevel',
     ];
 
     /**
@@ -101,12 +101,12 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $setters = [
-        'orderItemId' => 'setOrderItemId',
-        'buyerCustomizedInfo' => 'setBuyerCustomizedInfo',
-        'giftWrapPrice' => 'setGiftWrapPrice',
-        'giftWrapTax' => 'setGiftWrapTax',
-        'giftMessageText' => 'setGiftMessageText',
-        'giftWrapLevel' => 'setGiftWrapLevel',
+        'order_item_id' => 'setOrderItemId',
+        'buyer_customized_info' => 'setBuyerCustomizedInfo',
+        'gift_wrap_price' => 'setGiftWrapPrice',
+        'gift_wrap_tax' => 'setGiftWrapTax',
+        'gift_message_text' => 'setGiftMessageText',
+        'gift_wrap_level' => 'setGiftWrapLevel',
     ];
 
     /**
@@ -115,12 +115,12 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $getters = [
-        'orderItemId' => 'getOrderItemId',
-        'buyerCustomizedInfo' => 'getBuyerCustomizedInfo',
-        'giftWrapPrice' => 'getGiftWrapPrice',
-        'giftWrapTax' => 'getGiftWrapTax',
-        'giftMessageText' => 'getGiftMessageText',
-        'giftWrapLevel' => 'getGiftWrapLevel',
+        'order_item_id' => 'getOrderItemId',
+        'buyer_customized_info' => 'getBuyerCustomizedInfo',
+        'gift_wrap_price' => 'getGiftWrapPrice',
+        'gift_wrap_tax' => 'getGiftWrapTax',
+        'gift_message_text' => 'getGiftMessageText',
+        'gift_wrap_level' => 'getGiftWrapLevel',
     ];
 
     /**
@@ -138,12 +138,12 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->container['orderItemId'] = $data['orderItemId'] ?? null;
-        $this->container['buyerCustomizedInfo'] = $data['buyerCustomizedInfo'] ?? null;
-        $this->container['giftWrapPrice'] = $data['giftWrapPrice'] ?? null;
-        $this->container['giftWrapTax'] = $data['giftWrapTax'] ?? null;
-        $this->container['giftMessageText'] = $data['giftMessageText'] ?? null;
-        $this->container['giftWrapLevel'] = $data['giftWrapLevel'] ?? null;
+        $this->container['order_item_id'] = $data['order_item_id'] ?? null;
+        $this->container['buyer_customized_info'] = $data['buyer_customized_info'] ?? null;
+        $this->container['gift_wrap_price'] = $data['gift_wrap_price'] ?? null;
+        $this->container['gift_wrap_tax'] = $data['gift_wrap_tax'] ?? null;
+        $this->container['gift_message_text'] = $data['gift_message_text'] ?? null;
+        $this->container['gift_wrap_level'] = $data['gift_wrap_level'] ?? null;
     }
 
     /**
@@ -225,8 +225,8 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     {
         $invalidProperties = [];
 
-        if ($this->container['orderItemId'] === null) {
-            $invalidProperties[] = "'orderItemId' can't be null";
+        if ($this->container['order_item_id'] === null) {
+            $invalidProperties[] = "'order_item_id' can't be null";
         }
 
         return $invalidProperties;
@@ -244,121 +244,121 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     }
 
     /**
-     * Gets orderItemId.
+     * Gets order_item_id.
      */
     public function getOrderItemId() : string
     {
-        return $this->container['orderItemId'];
+        return $this->container['order_item_id'];
     }
 
     /**
-     * Sets orderItemId.
+     * Sets order_item_id.
      *
-     * @param string $orderItemId an Amazon-defined order item identifier
+     * @param string $order_item_id an Amazon-defined order item identifier
      */
-    public function setOrderItemId(string $orderItemId) : self
+    public function setOrderItemId(string $order_item_id) : self
     {
-        $this->container['orderItemId'] = $orderItemId;
+        $this->container['order_item_id'] = $order_item_id;
 
         return $this;
     }
 
     /**
-     * Gets buyerCustomizedInfo.
+     * Gets buyer_customized_info.
      */
     public function getBuyerCustomizedInfo() : ?BuyerCustomizedInfoDetail
     {
-        return $this->container['buyerCustomizedInfo'];
+        return $this->container['buyer_customized_info'];
     }
 
     /**
-     * Sets buyerCustomizedInfo.
+     * Sets buyer_customized_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail $buyerCustomizedInfo buyerCustomizedInfo
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
      */
-    public function setBuyerCustomizedInfo(?BuyerCustomizedInfoDetail $buyerCustomizedInfo) : self
+    public function setBuyerCustomizedInfo(?BuyerCustomizedInfoDetail $buyer_customized_info) : self
     {
-        $this->container['buyerCustomizedInfo'] = $buyerCustomizedInfo;
+        $this->container['buyer_customized_info'] = $buyer_customized_info;
 
         return $this;
     }
 
     /**
-     * Gets giftWrapPrice.
+     * Gets gift_wrap_price.
      */
     public function getGiftWrapPrice() : ?Money
     {
-        return $this->container['giftWrapPrice'];
+        return $this->container['gift_wrap_price'];
     }
 
     /**
-     * Sets giftWrapPrice.
+     * Sets gift_wrap_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $giftWrapPrice giftWrapPrice
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $gift_wrap_price gift_wrap_price
      */
-    public function setGiftWrapPrice(?Money $giftWrapPrice) : self
+    public function setGiftWrapPrice(?Money $gift_wrap_price) : self
     {
-        $this->container['giftWrapPrice'] = $giftWrapPrice;
+        $this->container['gift_wrap_price'] = $gift_wrap_price;
 
         return $this;
     }
 
     /**
-     * Gets giftWrapTax.
+     * Gets gift_wrap_tax.
      */
     public function getGiftWrapTax() : ?Money
     {
-        return $this->container['giftWrapTax'];
+        return $this->container['gift_wrap_tax'];
     }
 
     /**
-     * Sets giftWrapTax.
+     * Sets gift_wrap_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $giftWrapTax giftWrapTax
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $gift_wrap_tax gift_wrap_tax
      */
-    public function setGiftWrapTax(?Money $giftWrapTax) : self
+    public function setGiftWrapTax(?Money $gift_wrap_tax) : self
     {
-        $this->container['giftWrapTax'] = $giftWrapTax;
+        $this->container['gift_wrap_tax'] = $gift_wrap_tax;
 
         return $this;
     }
 
     /**
-     * Gets giftMessageText.
+     * Gets gift_message_text.
      */
     public function getGiftMessageText() : ?string
     {
-        return $this->container['giftMessageText'];
+        return $this->container['gift_message_text'];
     }
 
     /**
-     * Sets giftMessageText.
+     * Sets gift_message_text.
      *
-     * @param null|string $giftMessageText a gift message provided by the buyer
+     * @param null|string $gift_message_text a gift message provided by the buyer
      */
-    public function setGiftMessageText(?string $giftMessageText) : self
+    public function setGiftMessageText(?string $gift_message_text) : self
     {
-        $this->container['giftMessageText'] = $giftMessageText;
+        $this->container['gift_message_text'] = $gift_message_text;
 
         return $this;
     }
 
     /**
-     * Gets giftWrapLevel.
+     * Gets gift_wrap_level.
      */
     public function getGiftWrapLevel() : ?string
     {
-        return $this->container['giftWrapLevel'];
+        return $this->container['gift_wrap_level'];
     }
 
     /**
-     * Sets giftWrapLevel.
+     * Sets gift_wrap_level.
      *
-     * @param null|string $giftWrapLevel the gift wrap level specified by the buyer
+     * @param null|string $gift_wrap_level the gift wrap level specified by the buyer
      */
-    public function setGiftWrapLevel(?string $giftWrapLevel) : self
+    public function setGiftWrapLevel(?string $gift_wrap_level) : self
     {
-        $this->container['giftWrapLevel'] = $giftWrapLevel;
+        $this->container['gift_wrap_level'] = $gift_wrap_level;
 
         return $this;
     }

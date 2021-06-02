@@ -56,8 +56,8 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'productCategoryId' => 'string',
-        'productCategoryName' => 'string',
+        'product_category_id' => 'string',
+        'product_category_name' => 'string',
         'parent' => 'object',
     ];
 
@@ -69,8 +69,8 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'productCategoryId' => null,
-        'productCategoryName' => null,
+        'product_category_id' => null,
+        'product_category_name' => null,
         'parent' => null,
     ];
 
@@ -81,8 +81,8 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'productCategoryId' => 'ProductCategoryId',
-        'productCategoryName' => 'ProductCategoryName',
+        'product_category_id' => 'ProductCategoryId',
+        'product_category_name' => 'ProductCategoryName',
         'parent' => 'parent',
     ];
 
@@ -92,8 +92,8 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'productCategoryId' => 'setProductCategoryId',
-        'productCategoryName' => 'setProductCategoryName',
+        'product_category_id' => 'setProductCategoryId',
+        'product_category_name' => 'setProductCategoryName',
         'parent' => 'setParent',
     ];
 
@@ -103,8 +103,8 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'productCategoryId' => 'getProductCategoryId',
-        'productCategoryName' => 'getProductCategoryName',
+        'product_category_id' => 'getProductCategoryId',
+        'product_category_name' => 'getProductCategoryName',
         'parent' => 'getParent',
     ];
 
@@ -123,8 +123,8 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['productCategoryId'] = $data['productCategoryId'] ?? null;
-        $this->container['productCategoryName'] = $data['productCategoryName'] ?? null;
+        $this->container['product_category_id'] = $data['product_category_id'] ?? null;
+        $this->container['product_category_name'] = $data['product_category_name'] ?? null;
         $this->container['parent'] = $data['parent'] ?? null;
     }
 
@@ -220,41 +220,41 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets productCategoryId.
+     * Gets product_category_id.
      */
     public function getProductCategoryId() : ?string
     {
-        return $this->container['productCategoryId'];
+        return $this->container['product_category_id'];
     }
 
     /**
-     * Sets productCategoryId.
+     * Sets product_category_id.
      *
-     * @param null|string $productCategoryId the identifier for the product category (or browse node)
+     * @param null|string $product_category_id the identifier for the product category (or browse node)
      */
-    public function setProductCategoryId(?string $productCategoryId) : self
+    public function setProductCategoryId(?string $product_category_id) : self
     {
-        $this->container['productCategoryId'] = $productCategoryId;
+        $this->container['product_category_id'] = $product_category_id;
 
         return $this;
     }
 
     /**
-     * Gets productCategoryName.
+     * Gets product_category_name.
      */
     public function getProductCategoryName() : ?string
     {
-        return $this->container['productCategoryName'];
+        return $this->container['product_category_name'];
     }
 
     /**
-     * Sets productCategoryName.
+     * Sets product_category_name.
      *
-     * @param null|string $productCategoryName the name of the product category (or browse node)
+     * @param null|string $product_category_name the name of the product category (or browse node)
      */
-    public function setProductCategoryName(?string $productCategoryName) : self
+    public function setProductCategoryName(?string $product_category_name) : self
     {
-        $this->container['productCategoryName'] = $productCategoryName;
+        $this->container['product_category_name'] = $product_category_name;
 
         return $this;
     }

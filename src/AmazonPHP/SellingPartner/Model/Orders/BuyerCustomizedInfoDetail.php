@@ -56,7 +56,7 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'customizedURL' => 'string',
+        'customized_url' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, Mode
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'customizedURL' => null,
+        'customized_url' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $attributeMap = [
-        'customizedURL' => 'CustomizedURL',
+        'customized_url' => 'CustomizedURL',
     ];
 
     /**
@@ -86,7 +86,7 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $setters = [
-        'customizedURL' => 'setCustomizedURL',
+        'customized_url' => 'setCustomizedUrl',
     ];
 
     /**
@@ -95,7 +95,7 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $getters = [
-        'customizedURL' => 'getCustomizedURL',
+        'customized_url' => 'getCustomizedUrl',
     ];
 
     /**
@@ -113,7 +113,7 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function __construct(array $data = null)
     {
-        $this->container['customizedURL'] = $data['customizedURL'] ?? null;
+        $this->container['customized_url'] = $data['customized_url'] ?? null;
     }
 
     /**
@@ -208,21 +208,21 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, Mode
     }
 
     /**
-     * Gets customizedURL.
+     * Gets customized_url.
      */
-    public function getCustomizedURL() : ?string
+    public function getCustomizedUrl() : ?string
     {
-        return $this->container['customizedURL'];
+        return $this->container['customized_url'];
     }
 
     /**
-     * Sets customizedURL.
+     * Sets customized_url.
      *
-     * @param null|string $customizedURL the location of a zip file containing Amazon Custom data
+     * @param null|string $customized_url the location of a zip file containing Amazon Custom data
      */
-    public function setCustomizedURL(?string $customizedURL) : self
+    public function setCustomizedUrl(?string $customized_url) : self
     {
-        $this->container['customizedURL'] = $customizedURL;
+        $this->container['customized_url'] = $customized_url;
 
         return $this;
     }

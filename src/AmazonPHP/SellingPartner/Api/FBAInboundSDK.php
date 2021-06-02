@@ -2,12 +2,15 @@
 
 namespace AmazonPHP\SellingPartner\Api;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -16,11 +19,17 @@ use Psr\Http\Message\RequestInterface;
  */
 final class FBAInboundSDK
 {
-    private OAuth $oauth;
+    private ClientInterface $client;
 
-    public function __construct(OAuth $authentication)
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration)
     {
-        $this->oauth = $authentication;
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
     }
 
     /**
@@ -28,14 +37,14 @@ final class FBAInboundSDK
      *
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
-     * @param array<array-key, string>|null $marketplaceIds The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param array<array-key, string>|null $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getItemEligibilityPreview(string $asin, string $program, array $marketplaceIds = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
+    public function getItemEligibilityPreview(AccessToken $accessToken, string $region, string $asin, string $program, array $marketplace_ids = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
     {
-        [$response] = $this->getItemEligibilityPreviewWithHttpInfo($asin, $program, $marketplaceIds);
+        [$response] = $this->getItemEligibilityPreviewWithHttpInfo($accessToken, $region, $asin, $program, $marketplace_ids);
 
         return $response;
     }
@@ -45,13 +54,13 @@ final class FBAInboundSDK
      *
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
-     * @param array<array-key, string>|null $marketplaceIds The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param array<array-key, string>|null $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getItemEligibilityPreviewRequest(string $asin, string $program, array $marketplaceIds = null) : RequestInterface
+    public function getItemEligibilityPreviewRequest(AccessToken $accessToken, string $region, string $asin, string $program, array $marketplace_ids = null) : RequestInterface
     {
         // verify the required parameter 'asin' is set
         if ($asin === null || (\is_array($asin) && \count($asin) === 0)) {
@@ -66,8 +75,8 @@ final class FBAInboundSDK
             );
         }
 
-        if ($marketplaceIds !== null && \count($marketplaceIds) > 1) {
-            throw new InvalidArgumentException('invalid value for "$marketplaceIds" when calling FbaInboundApi.getItemEligibilityPreview, number of items must be less than or equal to 1.');
+        if ($marketplace_ids !== null && \count($marketplace_ids) > 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling FbaInboundApi.getItemEligibilityPreview, number of items must be less than or equal to 1.');
         }
 
         $resourcePath = '/fba/inbound/v1/eligibility/itemPreview';
@@ -78,12 +87,12 @@ final class FBAInboundSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceIds)) {
-            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        if (\is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
-        if ($marketplaceIds !== null) {
-            $queryParams['marketplaceIds'] = $marketplaceIds;
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
         if (\is_array($asin)) {
@@ -107,17 +116,23 @@ final class FBAInboundSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -136,33 +151,23 @@ final class FBAInboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
@@ -170,20 +175,20 @@ final class FBAInboundSDK
      *
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
-     * @param array<array-key, string>|null $marketplaceIds The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param array<array-key, string>|null $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse>
      */
-    private function getItemEligibilityPreviewWithHttpInfo(string $asin, string $program, array $marketplaceIds = null) : array
+    private function getItemEligibilityPreviewWithHttpInfo(AccessToken $accessToken, string $region, string $asin, string $program, array $marketplace_ids = null) : array
     {
-        $request = $this->getItemEligibilityPreviewRequest($asin, $program, $marketplaceIds);
+        $request = $this->getItemEligibilityPreviewRequest($accessToken, $region, $asin, $program, $marketplace_ids);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -220,7 +225,12 @@ final class FBAInboundSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -230,7 +240,12 @@ final class FBAInboundSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -245,6 +260,7 @@ final class FBAInboundSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse::class,
                         $e->getResponseHeaders()

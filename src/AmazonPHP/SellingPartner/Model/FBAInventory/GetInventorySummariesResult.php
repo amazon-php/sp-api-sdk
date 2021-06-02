@@ -57,7 +57,7 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
      */
     protected static array $openAPITypes = [
         'granularity' => '\AmazonPHP\SellingPartner\Model\FBAInventory\Granularity',
-        'inventorySummaries' => '\AmazonPHP\SellingPartner\Model\FBAInventory\InventorySummary[]',
+        'inventory_summaries' => '\AmazonPHP\SellingPartner\Model\FBAInventory\InventorySummary[]',
     ];
 
     /**
@@ -69,7 +69,7 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
      */
     protected static array $openAPIFormats = [
         'granularity' => null,
-        'inventorySummaries' => null,
+        'inventory_summaries' => null,
     ];
 
     /**
@@ -80,7 +80,7 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
      */
     protected static array $attributeMap = [
         'granularity' => 'granularity',
-        'inventorySummaries' => 'inventorySummaries',
+        'inventory_summaries' => 'inventorySummaries',
     ];
 
     /**
@@ -90,7 +90,7 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
      */
     protected static array $setters = [
         'granularity' => 'setGranularity',
-        'inventorySummaries' => 'setInventorySummaries',
+        'inventory_summaries' => 'setInventorySummaries',
     ];
 
     /**
@@ -100,7 +100,7 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
      */
     protected static array $getters = [
         'granularity' => 'getGranularity',
-        'inventorySummaries' => 'getInventorySummaries',
+        'inventory_summaries' => 'getInventorySummaries',
     ];
 
     /**
@@ -119,7 +119,7 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
     public function __construct(array $data = null)
     {
         $this->container['granularity'] = $data['granularity'] ?? null;
-        $this->container['inventorySummaries'] = $data['inventorySummaries'] ?? null;
+        $this->container['inventory_summaries'] = $data['inventory_summaries'] ?? null;
     }
 
     /**
@@ -205,8 +205,8 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
             $invalidProperties[] = "'granularity' can't be null";
         }
 
-        if ($this->container['inventorySummaries'] === null) {
-            $invalidProperties[] = "'inventorySummaries' can't be null";
+        if ($this->container['inventory_summaries'] === null) {
+            $invalidProperties[] = "'inventory_summaries' can't be null";
         }
 
         return $invalidProperties;
@@ -244,23 +244,23 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
     }
 
     /**
-     * Gets inventorySummaries.
+     * Gets inventory_summaries.
      *
      * @return \AmazonPHP\SellingPartner\Model\FBAInventory\InventorySummary[]
      */
     public function getInventorySummaries() : array
     {
-        return $this->container['inventorySummaries'];
+        return $this->container['inventory_summaries'];
     }
 
     /**
-     * Sets inventorySummaries.
+     * Sets inventory_summaries.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FBAInventory\InventorySummary[] $inventorySummaries a list of inventory summaries
+     * @param \AmazonPHP\SellingPartner\Model\FBAInventory\InventorySummary[] $inventory_summaries a list of inventory summaries
      */
-    public function setInventorySummaries(array $inventorySummaries) : self
+    public function setInventorySummaries(array $inventory_summaries) : self
     {
-        $this->container['inventorySummaries'] = $inventorySummaries;
+        $this->container['inventory_summaries'] = $inventory_summaries;
 
         return $this;
     }

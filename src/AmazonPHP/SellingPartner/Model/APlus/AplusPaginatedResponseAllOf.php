@@ -56,7 +56,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'nextPageToken' => 'string',
+        'next_page_token' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'nextPageToken' => null,
+        'next_page_token' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $attributeMap = [
-        'nextPageToken' => 'nextPageToken',
+        'next_page_token' => 'nextPageToken',
     ];
 
     /**
@@ -86,7 +86,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $setters = [
-        'nextPageToken' => 'setNextPageToken',
+        'next_page_token' => 'setNextPageToken',
     ];
 
     /**
@@ -95,7 +95,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $getters = [
-        'nextPageToken' => 'getNextPageToken',
+        'next_page_token' => 'getNextPageToken',
     ];
 
     /**
@@ -113,7 +113,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function __construct(array $data = null)
     {
-        $this->container['nextPageToken'] = $data['nextPageToken'] ?? null;
+        $this->container['next_page_token'] = $data['next_page_token'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['nextPageToken'] && (\mb_strlen($this->container['nextPageToken']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nextPageToken', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['next_page_token'] && (\mb_strlen($this->container['next_page_token']) < 1)) {
+            $invalidProperties[] = "invalid value for 'next_page_token', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -214,25 +214,25 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
     }
 
     /**
-     * Gets nextPageToken.
+     * Gets next_page_token.
      */
     public function getNextPageToken() : ?string
     {
-        return $this->container['nextPageToken'];
+        return $this->container['next_page_token'];
     }
 
     /**
-     * Sets nextPageToken.
+     * Sets next_page_token.
      *
-     * @param null|string $nextPageToken A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     * @param null|string $next_page_token A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
      */
-    public function setNextPageToken(?string $nextPageToken) : self
+    public function setNextPageToken(?string $next_page_token) : self
     {
-        if (null !== $nextPageToken && (\mb_strlen($nextPageToken) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nextPageToken when calling AplusPaginatedResponseAllOf., must be bigger than or equal to 1.');
+        if (null !== $next_page_token && (\mb_strlen($next_page_token) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $next_page_token when calling AplusPaginatedResponseAllOf., must be bigger than or equal to 1.');
         }
 
-        $this->container['nextPageToken'] = $nextPageToken;
+        $this->container['next_page_token'] = $next_page_token;
 
         return $this;
     }

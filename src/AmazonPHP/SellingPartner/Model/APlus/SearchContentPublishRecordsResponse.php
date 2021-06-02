@@ -57,8 +57,8 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
      */
     protected static array $openAPITypes = [
         'warnings' => '\AmazonPHP\SellingPartner\Model\APlus\Error[]',
-        'nextPageToken' => 'string',
-        'publishRecordList' => '\AmazonPHP\SellingPartner\Model\APlus\PublishRecord[]',
+        'next_page_token' => 'string',
+        'publish_record_list' => '\AmazonPHP\SellingPartner\Model\APlus\PublishRecord[]',
     ];
 
     /**
@@ -70,8 +70,8 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
      */
     protected static array $openAPIFormats = [
         'warnings' => null,
-        'nextPageToken' => null,
-        'publishRecordList' => null,
+        'next_page_token' => null,
+        'publish_record_list' => null,
     ];
 
     /**
@@ -82,8 +82,8 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
      */
     protected static array $attributeMap = [
         'warnings' => 'warnings',
-        'nextPageToken' => 'nextPageToken',
-        'publishRecordList' => 'publishRecordList',
+        'next_page_token' => 'nextPageToken',
+        'publish_record_list' => 'publishRecordList',
     ];
 
     /**
@@ -93,8 +93,8 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
      */
     protected static array $setters = [
         'warnings' => 'setWarnings',
-        'nextPageToken' => 'setNextPageToken',
-        'publishRecordList' => 'setPublishRecordList',
+        'next_page_token' => 'setNextPageToken',
+        'publish_record_list' => 'setPublishRecordList',
     ];
 
     /**
@@ -104,8 +104,8 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
      */
     protected static array $getters = [
         'warnings' => 'getWarnings',
-        'nextPageToken' => 'getNextPageToken',
-        'publishRecordList' => 'getPublishRecordList',
+        'next_page_token' => 'getNextPageToken',
+        'publish_record_list' => 'getPublishRecordList',
     ];
 
     /**
@@ -124,8 +124,8 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     public function __construct(array $data = null)
     {
         $this->container['warnings'] = $data['warnings'] ?? null;
-        $this->container['nextPageToken'] = $data['nextPageToken'] ?? null;
-        $this->container['publishRecordList'] = $data['publishRecordList'] ?? null;
+        $this->container['next_page_token'] = $data['next_page_token'] ?? null;
+        $this->container['publish_record_list'] = $data['publish_record_list'] ?? null;
     }
 
     /**
@@ -207,12 +207,12 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['nextPageToken'] && (\mb_strlen($this->container['nextPageToken']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nextPageToken', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['next_page_token'] && (\mb_strlen($this->container['next_page_token']) < 1)) {
+            $invalidProperties[] = "invalid value for 'next_page_token', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['publishRecordList'] === null) {
-            $invalidProperties[] = "'publishRecordList' can't be null";
+        if ($this->container['publish_record_list'] === null) {
+            $invalidProperties[] = "'publish_record_list' can't be null";
         }
 
         return $invalidProperties;
@@ -252,47 +252,47 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets nextPageToken.
+     * Gets next_page_token.
      */
     public function getNextPageToken() : ?string
     {
-        return $this->container['nextPageToken'];
+        return $this->container['next_page_token'];
     }
 
     /**
-     * Sets nextPageToken.
+     * Sets next_page_token.
      *
-     * @param null|string $nextPageToken A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     * @param null|string $next_page_token A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
      */
-    public function setNextPageToken(?string $nextPageToken) : self
+    public function setNextPageToken(?string $next_page_token) : self
     {
-        if (null !== $nextPageToken && (\mb_strlen($nextPageToken) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nextPageToken when calling SearchContentPublishRecordsResponse., must be bigger than or equal to 1.');
+        if (null !== $next_page_token && (\mb_strlen($next_page_token) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $next_page_token when calling SearchContentPublishRecordsResponse., must be bigger than or equal to 1.');
         }
 
-        $this->container['nextPageToken'] = $nextPageToken;
+        $this->container['next_page_token'] = $next_page_token;
 
         return $this;
     }
 
     /**
-     * Gets publishRecordList.
+     * Gets publish_record_list.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[]
      */
     public function getPublishRecordList() : array
     {
-        return $this->container['publishRecordList'];
+        return $this->container['publish_record_list'];
     }
 
     /**
-     * Sets publishRecordList.
+     * Sets publish_record_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[] $publishRecordList a list of A+ Content publishing records
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[] $publish_record_list a list of A+ Content publishing records
      */
-    public function setPublishRecordList(array $publishRecordList) : self
+    public function setPublishRecordList(array $publish_record_list) : self
     {
-        $this->container['publishRecordList'] = $publishRecordList;
+        $this->container['publish_record_list'] = $publish_record_list;
 
         return $this;
     }

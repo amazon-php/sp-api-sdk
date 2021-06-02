@@ -2,12 +2,15 @@
 
 namespace AmazonPHP\SellingPartner\Api;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -16,24 +19,30 @@ use Psr\Http\Message\RequestInterface;
  */
 final class ReportsSDK
 {
-    private OAuth $oauth;
+    private ClientInterface $client;
 
-    public function __construct(OAuth $authentication)
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration)
     {
-        $this->oauth = $authentication;
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
     }
 
     /**
      * Operation cancelReport.
      *
-     * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function cancelReport(string $reportId) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse
+    public function cancelReport(AccessToken $accessToken, string $region, string $report_id) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse
     {
-        [$response] = $this->cancelReportWithHttpInfo($reportId);
+        [$response] = $this->cancelReportWithHttpInfo($accessToken, $region, $report_id);
 
         return $response;
     }
@@ -41,18 +50,18 @@ final class ReportsSDK
     /**
      * Create request for operation 'cancelReport'.
      *
-     * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function cancelReportRequest(string $reportId) : RequestInterface
+    public function cancelReportRequest(AccessToken $accessToken, string $region, string $report_id) : RequestInterface
     {
-        // verify the required parameter 'reportId' is set
-        if ($reportId === null || (\is_array($reportId) && \count($reportId) === 0)) {
+        // verify the required parameter 'report_id' is set
+        if ($report_id === null || (\is_array($report_id) && \count($report_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $reportId when calling cancelReport'
+                'Missing the required parameter $report_id when calling cancelReport'
             );
         }
 
@@ -68,26 +77,32 @@ final class ReportsSDK
         }
 
         // path params
-        if ($reportId !== null) {
+        if ($report_id !== null) {
             $resourcePath = \str_replace(
                 '{' . 'reportId' . '}',
-                ObjectSerializer::toPathValue($reportId),
+                ObjectSerializer::toPathValue($report_id),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -106,46 +121,36 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation cancelReportSchedule.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function cancelReportSchedule(string $reportScheduleId) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse
+    public function cancelReportSchedule(AccessToken $accessToken, string $region, string $report_schedule_id) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse
     {
-        [$response] = $this->cancelReportScheduleWithHttpInfo($reportScheduleId);
+        [$response] = $this->cancelReportScheduleWithHttpInfo($accessToken, $region, $report_schedule_id);
 
         return $response;
     }
@@ -153,18 +158,18 @@ final class ReportsSDK
     /**
      * Create request for operation 'cancelReportSchedule'.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function cancelReportScheduleRequest(string $reportScheduleId) : RequestInterface
+    public function cancelReportScheduleRequest(AccessToken $accessToken, string $region, string $report_schedule_id) : RequestInterface
     {
-        // verify the required parameter 'reportScheduleId' is set
-        if ($reportScheduleId === null || (\is_array($reportScheduleId) && \count($reportScheduleId) === 0)) {
+        // verify the required parameter 'report_schedule_id' is set
+        if ($report_schedule_id === null || (\is_array($report_schedule_id) && \count($report_schedule_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $reportScheduleId when calling cancelReportSchedule'
+                'Missing the required parameter $report_schedule_id when calling cancelReportSchedule'
             );
         }
 
@@ -180,26 +185,32 @@ final class ReportsSDK
         }
 
         // path params
-        if ($reportScheduleId !== null) {
+        if ($report_schedule_id !== null) {
             $resourcePath = \str_replace(
                 '{' . 'reportScheduleId' . '}',
-                ObjectSerializer::toPathValue($reportScheduleId),
+                ObjectSerializer::toPathValue($report_schedule_id),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -218,33 +229,23 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
@@ -255,9 +256,9 @@ final class ReportsSDK
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function createReport(\AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
+    public function createReport(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
     {
-        [$response] = $this->createReportWithHttpInfo($body);
+        [$response] = $this->createReportWithHttpInfo($accessToken, $region, $body);
 
         return $response;
     }
@@ -271,7 +272,7 @@ final class ReportsSDK
      *
      * @return RequestInterface
      */
-    public function createReportRequest(\AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : RequestInterface
+    public function createReportRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
@@ -292,28 +293,34 @@ final class ReportsSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
 
-            $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString($httpBody));
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
@@ -329,33 +336,23 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
@@ -366,9 +363,9 @@ final class ReportsSDK
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function createReportSchedule(\AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
+    public function createReportSchedule(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
     {
-        [$response] = $this->createReportScheduleWithHttpInfo($body);
+        [$response] = $this->createReportScheduleWithHttpInfo($accessToken, $region, $body);
 
         return $response;
     }
@@ -382,7 +379,7 @@ final class ReportsSDK
      *
      * @return RequestInterface
      */
-    public function createReportScheduleRequest(\AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : RequestInterface
+    public function createReportScheduleRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
@@ -403,28 +400,34 @@ final class ReportsSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === 'application/json') {
+            if ($headers['Content-Type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
 
-            $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString($httpBody));
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
@@ -440,46 +443,36 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getReport.
      *
-     * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getReport(string $reportId) : \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse
+    public function getReport(AccessToken $accessToken, string $region, string $report_id) : \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse
     {
-        [$response] = $this->getReportWithHttpInfo($reportId);
+        [$response] = $this->getReportWithHttpInfo($accessToken, $region, $report_id);
 
         return $response;
     }
@@ -487,18 +480,18 @@ final class ReportsSDK
     /**
      * Create request for operation 'getReport'.
      *
-     * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getReportRequest(string $reportId) : RequestInterface
+    public function getReportRequest(AccessToken $accessToken, string $region, string $report_id) : RequestInterface
     {
-        // verify the required parameter 'reportId' is set
-        if ($reportId === null || (\is_array($reportId) && \count($reportId) === 0)) {
+        // verify the required parameter 'report_id' is set
+        if ($report_id === null || (\is_array($report_id) && \count($report_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $reportId when calling getReport'
+                'Missing the required parameter $report_id when calling getReport'
             );
         }
 
@@ -514,26 +507,32 @@ final class ReportsSDK
         }
 
         // path params
-        if ($reportId !== null) {
+        if ($report_id !== null) {
             $resourcePath = \str_replace(
                 '{' . 'reportId' . '}',
-                ObjectSerializer::toPathValue($reportId),
+                ObjectSerializer::toPathValue($report_id),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -552,46 +551,36 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getReportDocument.
      *
-     * @param string $reportDocumentId The identifier for the report document. (required)
+     * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getReportDocument(string $reportDocumentId) : \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse
+    public function getReportDocument(AccessToken $accessToken, string $region, string $report_document_id) : \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse
     {
-        [$response] = $this->getReportDocumentWithHttpInfo($reportDocumentId);
+        [$response] = $this->getReportDocumentWithHttpInfo($accessToken, $region, $report_document_id);
 
         return $response;
     }
@@ -599,18 +588,18 @@ final class ReportsSDK
     /**
      * Create request for operation 'getReportDocument'.
      *
-     * @param string $reportDocumentId The identifier for the report document. (required)
+     * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getReportDocumentRequest(string $reportDocumentId) : RequestInterface
+    public function getReportDocumentRequest(AccessToken $accessToken, string $region, string $report_document_id) : RequestInterface
     {
-        // verify the required parameter 'reportDocumentId' is set
-        if ($reportDocumentId === null || (\is_array($reportDocumentId) && \count($reportDocumentId) === 0)) {
+        // verify the required parameter 'report_document_id' is set
+        if ($report_document_id === null || (\is_array($report_document_id) && \count($report_document_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $reportDocumentId when calling getReportDocument'
+                'Missing the required parameter $report_document_id when calling getReportDocument'
             );
         }
 
@@ -626,26 +615,32 @@ final class ReportsSDK
         }
 
         // path params
-        if ($reportDocumentId !== null) {
+        if ($report_document_id !== null) {
             $resourcePath = \str_replace(
                 '{' . 'reportDocumentId' . '}',
-                ObjectSerializer::toPathValue($reportDocumentId),
+                ObjectSerializer::toPathValue($report_document_id),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -664,46 +659,36 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getReportSchedule.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getReportSchedule(string $reportScheduleId) : \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse
+    public function getReportSchedule(AccessToken $accessToken, string $region, string $report_schedule_id) : \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse
     {
-        [$response] = $this->getReportScheduleWithHttpInfo($reportScheduleId);
+        [$response] = $this->getReportScheduleWithHttpInfo($accessToken, $region, $report_schedule_id);
 
         return $response;
     }
@@ -711,18 +696,18 @@ final class ReportsSDK
     /**
      * Create request for operation 'getReportSchedule'.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getReportScheduleRequest(string $reportScheduleId) : RequestInterface
+    public function getReportScheduleRequest(AccessToken $accessToken, string $region, string $report_schedule_id) : RequestInterface
     {
-        // verify the required parameter 'reportScheduleId' is set
-        if ($reportScheduleId === null || (\is_array($reportScheduleId) && \count($reportScheduleId) === 0)) {
+        // verify the required parameter 'report_schedule_id' is set
+        if ($report_schedule_id === null || (\is_array($report_schedule_id) && \count($report_schedule_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $reportScheduleId when calling getReportSchedule'
+                'Missing the required parameter $report_schedule_id when calling getReportSchedule'
             );
         }
 
@@ -738,26 +723,32 @@ final class ReportsSDK
         }
 
         // path params
-        if ($reportScheduleId !== null) {
+        if ($report_schedule_id !== null) {
             $resourcePath = \str_replace(
                 '{' . 'reportScheduleId' . '}',
-                ObjectSerializer::toPathValue($reportScheduleId),
+                ObjectSerializer::toPathValue($report_schedule_id),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -776,46 +767,36 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getReportSchedules.
      *
-     * @param array<array-key, string> $reportTypes A list of report types used to filter report schedules. (required)
+     * @param array<array-key, string> $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getReportSchedules(array $reportTypes) : \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse
+    public function getReportSchedules(AccessToken $accessToken, string $region, array $report_types) : \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse
     {
-        [$response] = $this->getReportSchedulesWithHttpInfo($reportTypes);
+        [$response] = $this->getReportSchedulesWithHttpInfo($accessToken, $region, $report_types);
 
         return $response;
     }
@@ -823,27 +804,27 @@ final class ReportsSDK
     /**
      * Create request for operation 'getReportSchedules'.
      *
-     * @param array<array-key, string> $reportTypes A list of report types used to filter report schedules. (required)
+     * @param array<array-key, string> $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getReportSchedulesRequest(array $reportTypes) : RequestInterface
+    public function getReportSchedulesRequest(AccessToken $accessToken, string $region, array $report_types) : RequestInterface
     {
-        // verify the required parameter 'reportTypes' is set
-        if ($reportTypes === null || (\is_array($reportTypes) && \count($reportTypes) === 0)) {
+        // verify the required parameter 'report_types' is set
+        if ($report_types === null || (\is_array($report_types) && \count($report_types) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $reportTypes when calling getReportSchedules'
+                'Missing the required parameter $report_types when calling getReportSchedules'
             );
         }
 
-        if (\count($reportTypes) > 10) {
-            throw new InvalidArgumentException('invalid value for "$reportTypes" when calling ReportsApi.getReportSchedules, number of items must be less than or equal to 10.');
+        if (\count($report_types) > 10) {
+            throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReportSchedules, number of items must be less than or equal to 10.');
         }
 
-        if (\count($reportTypes) < 1) {
-            throw new InvalidArgumentException('invalid value for "$reportTypes" when calling ReportsApi.getReportSchedules, number of items must be greater than or equal to 1.');
+        if (\count($report_types) < 1) {
+            throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReportSchedules, number of items must be greater than or equal to 1.');
         }
 
         $resourcePath = '/reports/2020-09-04/schedules';
@@ -854,12 +835,12 @@ final class ReportsSDK
         $query = '';
 
         // query params
-        if (\is_array($reportTypes)) {
-            $reportTypes = ObjectSerializer::serializeCollection($reportTypes, 'form', true);
+        if (\is_array($report_types)) {
+            $report_types = ObjectSerializer::serializeCollection($report_types, 'form', true);
         }
 
-        if ($reportTypes !== null) {
-            $queryParams['reportTypes'] = $reportTypes;
+        if ($report_types !== null) {
+            $queryParams['reportTypes'] = $report_types;
         }
 
         if (\count($queryParams)) {
@@ -867,17 +848,23 @@ final class ReportsSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -896,52 +883,42 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getReports.
      *
-     * @param array<array-key, string>|null $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
-     * @param array<array-key, string>|null $processingStatuses A list of processing statuses used to filter reports. (optional)
-     * @param array<array-key, string>|null $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param \DateTime|null $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param \DateTime|null $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param null|string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param array<array-key, string>|null $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param array<array-key, string>|null $processing_statuses A list of processing statuses used to filter reports. (optional)
+     * @param array<array-key, string>|null $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
+     * @param null|\DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param null|\DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param null|string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getReports(array $reportTypes = null, array $processingStatuses = null, array $marketplaceIds = null, int $pageSize = 10, \DateTime $createdSince = null, \DateTime $createdUntil = null, string $nextToken = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
+    public function getReports(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
-        [$response] = $this->getReportsWithHttpInfo($reportTypes, $processingStatuses, $marketplaceIds, $pageSize, $createdSince, $createdUntil, $nextToken);
+        [$response] = $this->getReportsWithHttpInfo($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 
         return $response;
     }
@@ -949,46 +926,46 @@ final class ReportsSDK
     /**
      * Create request for operation 'getReports'.
      *
-     * @param array<array-key, string>|null $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
-     * @param array<array-key, string>|null $processingStatuses A list of processing statuses used to filter reports. (optional)
-     * @param array<array-key, string>|null $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param \DateTime|null $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param \DateTime|null $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param null|string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param array<array-key, string>|null $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param array<array-key, string>|null $processing_statuses A list of processing statuses used to filter reports. (optional)
+     * @param array<array-key, string>|null $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
+     * @param null|\DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param null|\DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param null|string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getReportsRequest(array $reportTypes = null, array $processingStatuses = null, array $marketplaceIds = null, int $pageSize = 10, \DateTime $createdSince = null, \DateTime $createdUntil = null, string $nextToken = null) : RequestInterface
+    public function getReportsRequest(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : RequestInterface
     {
-        if ($reportTypes !== null && \count($reportTypes) > 10) {
-            throw new InvalidArgumentException('invalid value for "$reportTypes" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');
+        if ($report_types !== null && \count($report_types) > 10) {
+            throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');
         }
 
-        if ($reportTypes !== null && \count($reportTypes) < 1) {
-            throw new InvalidArgumentException('invalid value for "$reportTypes" when calling ReportsApi.getReports, number of items must be greater than or equal to 1.');
+        if ($report_types !== null && \count($report_types) < 1) {
+            throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReports, number of items must be greater than or equal to 1.');
         }
 
-        if ($processingStatuses !== null && \count($processingStatuses) < 1) {
-            throw new InvalidArgumentException('invalid value for "$processingStatuses" when calling ReportsApi.getReports, number of items must be greater than or equal to 1.');
+        if ($processing_statuses !== null && \count($processing_statuses) < 1) {
+            throw new InvalidArgumentException('invalid value for "$processing_statuses" when calling ReportsApi.getReports, number of items must be greater than or equal to 1.');
         }
 
-        if ($marketplaceIds !== null && \count($marketplaceIds) > 10) {
-            throw new InvalidArgumentException('invalid value for "$marketplaceIds" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');
+        if ($marketplace_ids !== null && \count($marketplace_ids) > 10) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');
         }
 
-        if ($marketplaceIds !== null && \count($marketplaceIds) < 1) {
-            throw new InvalidArgumentException('invalid value for "$marketplaceIds" when calling ReportsApi.getReports, number of items must be greater than or equal to 1.');
+        if ($marketplace_ids !== null && \count($marketplace_ids) < 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling ReportsApi.getReports, number of items must be greater than or equal to 1.');
         }
 
-        if ($pageSize !== null && $pageSize > 100) {
-            throw new InvalidArgumentException('invalid value for "$pageSize" when calling ReportsApi.getReports, must be smaller than or equal to 100.');
+        if ($page_size !== null && $page_size > 100) {
+            throw new InvalidArgumentException('invalid value for "$page_size" when calling ReportsApi.getReports, must be smaller than or equal to 100.');
         }
 
-        if ($pageSize !== null && $pageSize < 1) {
-            throw new InvalidArgumentException('invalid value for "$pageSize" when calling ReportsApi.getReports, must be bigger than or equal to 1.');
+        if ($page_size !== null && $page_size < 1) {
+            throw new InvalidArgumentException('invalid value for "$page_size" when calling ReportsApi.getReports, must be bigger than or equal to 1.');
         }
 
         $resourcePath = '/reports/2020-09-04/reports';
@@ -999,60 +976,60 @@ final class ReportsSDK
         $query = '';
 
         // query params
-        if (\is_array($reportTypes)) {
-            $reportTypes = ObjectSerializer::serializeCollection($reportTypes, 'form', true);
+        if (\is_array($report_types)) {
+            $report_types = ObjectSerializer::serializeCollection($report_types, 'form', true);
         }
 
-        if ($reportTypes !== null) {
-            $queryParams['reportTypes'] = $reportTypes;
+        if ($report_types !== null) {
+            $queryParams['reportTypes'] = $report_types;
         }
         // query params
-        if (\is_array($processingStatuses)) {
-            $processingStatuses = ObjectSerializer::serializeCollection($processingStatuses, 'form', true);
+        if (\is_array($processing_statuses)) {
+            $processing_statuses = ObjectSerializer::serializeCollection($processing_statuses, 'form', true);
         }
 
-        if ($processingStatuses !== null) {
-            $queryParams['processingStatuses'] = $processingStatuses;
+        if ($processing_statuses !== null) {
+            $queryParams['processingStatuses'] = $processing_statuses;
         }
         // query params
-        if (\is_array($marketplaceIds)) {
-            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        if (\is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
-        if ($marketplaceIds !== null) {
-            $queryParams['marketplaceIds'] = $marketplaceIds;
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
-        if (\is_array($pageSize)) {
-            $pageSize = ObjectSerializer::serializeCollection($pageSize, '', true);
+        if (\is_array($page_size)) {
+            $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
 
-        if ($pageSize !== null) {
-            $queryParams['pageSize'] = $pageSize;
+        if ($page_size !== null) {
+            $queryParams['pageSize'] = $page_size;
         }
         // query params
-        if (\is_array($createdSince)) {
-            $createdSince = ObjectSerializer::serializeCollection($createdSince, '', true);
+        if (\is_array($created_since)) {
+            $created_since = ObjectSerializer::serializeCollection($created_since, '', true);
         }
 
-        if ($createdSince !== null) {
-            $queryParams['createdSince'] = $createdSince;
+        if ($created_since !== null) {
+            $queryParams['createdSince'] = $created_since;
         }
         // query params
-        if (\is_array($createdUntil)) {
-            $createdUntil = ObjectSerializer::serializeCollection($createdUntil, '', true);
+        if (\is_array($created_until)) {
+            $created_until = ObjectSerializer::serializeCollection($created_until, '', true);
         }
 
-        if ($createdUntil !== null) {
-            $queryParams['createdUntil'] = $createdUntil;
+        if ($created_until !== null) {
+            $queryParams['createdUntil'] = $created_until;
         }
         // query params
-        if (\is_array($nextToken)) {
-            $nextToken = ObjectSerializer::serializeCollection($nextToken, '', true);
+        if (\is_array($next_token)) {
+            $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
-        if ($nextToken !== null) {
-            $queryParams['nextToken'] = $nextToken;
+        if ($next_token !== null) {
+            $queryParams['nextToken'] = $next_token;
         }
 
         if (\count($queryParams)) {
@@ -1060,17 +1037,23 @@ final class ReportsSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -1089,52 +1072,42 @@ final class ReportsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation cancelReportWithHttpInfo.
      *
-     * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse>
      */
-    private function cancelReportWithHttpInfo(string $reportId) : array
+    private function cancelReportWithHttpInfo(AccessToken $accessToken, string $region, string $report_id) : array
     {
-        $request = $this->cancelReportRequest($reportId);
+        $request = $this->cancelReportRequest($accessToken, $region, $report_id);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1172,7 +1145,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1182,7 +1160,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1198,6 +1181,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse::class,
                         $e->getResponseHeaders()
@@ -1214,20 +1198,20 @@ final class ReportsSDK
     /**
      * Operation cancelReportScheduleWithHttpInfo.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse>
      */
-    private function cancelReportScheduleWithHttpInfo(string $reportScheduleId) : array
+    private function cancelReportScheduleWithHttpInfo(AccessToken $accessToken, string $region, string $report_schedule_id) : array
     {
-        $request = $this->cancelReportScheduleRequest($reportScheduleId);
+        $request = $this->cancelReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1265,7 +1249,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1275,7 +1264,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1291,6 +1285,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse::class,
                         $e->getResponseHeaders()
@@ -1314,13 +1309,13 @@ final class ReportsSDK
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse>
      */
-    private function createReportWithHttpInfo(\AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : array
+    private function createReportWithHttpInfo(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : array
     {
-        $request = $this->createReportRequest($body);
+        $request = $this->createReportRequest($accessToken, $region, $body);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1358,7 +1353,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1368,7 +1368,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1384,6 +1389,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class,
                         $e->getResponseHeaders()
@@ -1407,13 +1413,13 @@ final class ReportsSDK
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse>
      */
-    private function createReportScheduleWithHttpInfo(\AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : array
+    private function createReportScheduleWithHttpInfo(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : array
     {
-        $request = $this->createReportScheduleRequest($body);
+        $request = $this->createReportScheduleRequest($accessToken, $region, $body);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1451,7 +1457,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1461,7 +1472,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1477,6 +1493,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class,
                         $e->getResponseHeaders()
@@ -1493,20 +1510,20 @@ final class ReportsSDK
     /**
      * Operation getReportWithHttpInfo.
      *
-     * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse>
      */
-    private function getReportWithHttpInfo(string $reportId) : array
+    private function getReportWithHttpInfo(AccessToken $accessToken, string $region, string $report_id) : array
     {
-        $request = $this->getReportRequest($reportId);
+        $request = $this->getReportRequest($accessToken, $region, $report_id);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1544,7 +1561,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1554,7 +1576,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1570,6 +1597,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse::class,
                         $e->getResponseHeaders()
@@ -1586,20 +1614,20 @@ final class ReportsSDK
     /**
      * Operation getReportDocumentWithHttpInfo.
      *
-     * @param string $reportDocumentId The identifier for the report document. (required)
+     * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse>
      */
-    private function getReportDocumentWithHttpInfo(string $reportDocumentId) : array
+    private function getReportDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $report_document_id) : array
     {
-        $request = $this->getReportDocumentRequest($reportDocumentId);
+        $request = $this->getReportDocumentRequest($accessToken, $region, $report_document_id);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1637,7 +1665,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1647,7 +1680,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1663,6 +1701,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse::class,
                         $e->getResponseHeaders()
@@ -1679,20 +1718,20 @@ final class ReportsSDK
     /**
      * Operation getReportScheduleWithHttpInfo.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse>
      */
-    private function getReportScheduleWithHttpInfo(string $reportScheduleId) : array
+    private function getReportScheduleWithHttpInfo(AccessToken $accessToken, string $region, string $report_schedule_id) : array
     {
-        $request = $this->getReportScheduleRequest($reportScheduleId);
+        $request = $this->getReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1730,7 +1769,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1740,7 +1784,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1756,6 +1805,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse::class,
                         $e->getResponseHeaders()
@@ -1772,20 +1822,20 @@ final class ReportsSDK
     /**
      * Operation getReportSchedulesWithHttpInfo.
      *
-     * @param array<array-key, string> $reportTypes A list of report types used to filter report schedules. (required)
+     * @param array<array-key, string> $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse>
      */
-    private function getReportSchedulesWithHttpInfo(array $reportTypes) : array
+    private function getReportSchedulesWithHttpInfo(AccessToken $accessToken, string $region, array $report_types) : array
     {
-        $request = $this->getReportSchedulesRequest($reportTypes);
+        $request = $this->getReportSchedulesRequest($accessToken, $region, $report_types);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1823,7 +1873,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1833,7 +1888,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1849,6 +1909,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse::class,
                         $e->getResponseHeaders()
@@ -1865,26 +1926,26 @@ final class ReportsSDK
     /**
      * Operation getReportsWithHttpInfo.
      *
-     * @param array<array-key, string>|null $reportTypes A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
-     * @param array<array-key, string>|null $processingStatuses A list of processing statuses used to filter reports. (optional)
-     * @param array<array-key, string>|null $marketplaceIds A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int $pageSize The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param \DateTime|null $createdSince The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param \DateTime|null $createdUntil The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param null|string $nextToken A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
+     * @param array<array-key, string>|null $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param array<array-key, string>|null $processing_statuses A list of processing statuses used to filter reports. (optional)
+     * @param array<array-key, string>|null $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
+     * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
+     * @param null|\DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
+     * @param null|\DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
+     * @param null|string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse>
      */
-    private function getReportsWithHttpInfo(array $reportTypes = null, array $processingStatuses = null, array $marketplaceIds = null, int $pageSize = 10, \DateTime $createdSince = null, \DateTime $createdUntil = null, string $nextToken = null) : array
+    private function getReportsWithHttpInfo(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : array
     {
-        $request = $this->getReportsRequest($reportTypes, $processingStatuses, $marketplaceIds, $pageSize, $createdSince, $createdUntil, $nextToken);
+        $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1922,7 +1983,12 @@ final class ReportsSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1932,7 +1998,12 @@ final class ReportsSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1948,6 +2019,7 @@ final class ReportsSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class,
                         $e->getResponseHeaders()

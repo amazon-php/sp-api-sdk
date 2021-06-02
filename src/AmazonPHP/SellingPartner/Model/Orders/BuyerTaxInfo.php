@@ -56,9 +56,9 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'companyLegalName' => 'string',
-        'taxingRegion' => 'string',
-        'taxClassifications' => '\AmazonPHP\SellingPartner\Model\Orders\TaxClassification[]',
+        'company_legal_name' => 'string',
+        'taxing_region' => 'string',
+        'tax_classifications' => '\AmazonPHP\SellingPartner\Model\Orders\TaxClassification[]',
     ];
 
     /**
@@ -69,9 +69,9 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'companyLegalName' => null,
-        'taxingRegion' => null,
-        'taxClassifications' => null,
+        'company_legal_name' => null,
+        'taxing_region' => null,
+        'tax_classifications' => null,
     ];
 
     /**
@@ -81,9 +81,9 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'companyLegalName' => 'CompanyLegalName',
-        'taxingRegion' => 'TaxingRegion',
-        'taxClassifications' => 'TaxClassifications',
+        'company_legal_name' => 'CompanyLegalName',
+        'taxing_region' => 'TaxingRegion',
+        'tax_classifications' => 'TaxClassifications',
     ];
 
     /**
@@ -92,9 +92,9 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'companyLegalName' => 'setCompanyLegalName',
-        'taxingRegion' => 'setTaxingRegion',
-        'taxClassifications' => 'setTaxClassifications',
+        'company_legal_name' => 'setCompanyLegalName',
+        'taxing_region' => 'setTaxingRegion',
+        'tax_classifications' => 'setTaxClassifications',
     ];
 
     /**
@@ -103,9 +103,9 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'companyLegalName' => 'getCompanyLegalName',
-        'taxingRegion' => 'getTaxingRegion',
-        'taxClassifications' => 'getTaxClassifications',
+        'company_legal_name' => 'getCompanyLegalName',
+        'taxing_region' => 'getTaxingRegion',
+        'tax_classifications' => 'getTaxClassifications',
     ];
 
     /**
@@ -123,9 +123,9 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['companyLegalName'] = $data['companyLegalName'] ?? null;
-        $this->container['taxingRegion'] = $data['taxingRegion'] ?? null;
-        $this->container['taxClassifications'] = $data['taxClassifications'] ?? null;
+        $this->container['company_legal_name'] = $data['company_legal_name'] ?? null;
+        $this->container['taxing_region'] = $data['taxing_region'] ?? null;
+        $this->container['tax_classifications'] = $data['tax_classifications'] ?? null;
     }
 
     /**
@@ -220,63 +220,63 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets companyLegalName.
+     * Gets company_legal_name.
      */
     public function getCompanyLegalName() : ?string
     {
-        return $this->container['companyLegalName'];
+        return $this->container['company_legal_name'];
     }
 
     /**
-     * Sets companyLegalName.
+     * Sets company_legal_name.
      *
-     * @param null|string $companyLegalName the legal name of the company
+     * @param null|string $company_legal_name the legal name of the company
      */
-    public function setCompanyLegalName(?string $companyLegalName) : self
+    public function setCompanyLegalName(?string $company_legal_name) : self
     {
-        $this->container['companyLegalName'] = $companyLegalName;
+        $this->container['company_legal_name'] = $company_legal_name;
 
         return $this;
     }
 
     /**
-     * Gets taxingRegion.
+     * Gets taxing_region.
      */
     public function getTaxingRegion() : ?string
     {
-        return $this->container['taxingRegion'];
+        return $this->container['taxing_region'];
     }
 
     /**
-     * Sets taxingRegion.
+     * Sets taxing_region.
      *
-     * @param null|string $taxingRegion the country or region imposing the tax
+     * @param null|string $taxing_region the country or region imposing the tax
      */
-    public function setTaxingRegion(?string $taxingRegion) : self
+    public function setTaxingRegion(?string $taxing_region) : self
     {
-        $this->container['taxingRegion'] = $taxingRegion;
+        $this->container['taxing_region'] = $taxing_region;
 
         return $this;
     }
 
     /**
-     * Gets taxClassifications.
+     * Gets tax_classifications.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\Orders\TaxClassification[]
      */
     public function getTaxClassifications() : ?array
     {
-        return $this->container['taxClassifications'];
+        return $this->container['tax_classifications'];
     }
 
     /**
-     * Sets taxClassifications.
+     * Sets tax_classifications.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\TaxClassification[] $taxClassifications a list of tax classifications that apply to the order
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\TaxClassification[] $tax_classifications a list of tax classifications that apply to the order
      */
-    public function setTaxClassifications(?array $taxClassifications) : self
+    public function setTaxClassifications(?array $tax_classifications) : self
     {
-        $this->container['taxClassifications'] = $taxClassifications;
+        $this->container['tax_classifications'] = $tax_classifications;
 
         return $this;
     }

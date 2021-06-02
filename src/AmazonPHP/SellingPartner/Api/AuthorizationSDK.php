@@ -2,12 +2,15 @@
 
 namespace AmazonPHP\SellingPartner\Api;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -16,11 +19,17 @@ use Psr\Http\Message\RequestInterface;
  */
 final class AuthorizationSDK
 {
-    private OAuth $oauth;
+    private ClientInterface $client;
 
-    public function __construct(OAuth $authentication)
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration)
     {
-        $this->oauth = $authentication;
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
     }
 
     /**
@@ -28,16 +37,16 @@ final class AuthorizationSDK
      *
      * Returns the Login with Amazon (LWA) authorization code for an existing Amazon MWS authorization.
      *
-     * @param string $sellingPartnerId The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore. (required)
-     * @param string $developerId Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
-     * @param string $mwsAuthToken The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
+     * @param string $selling_partner_id The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore. (required)
+     * @param string $developer_id Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
+     * @param string $mws_auth_token The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getAuthorizationCode(string $sellingPartnerId, string $developerId, string $mwsAuthToken) : \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse
+    public function getAuthorizationCode(AccessToken $accessToken, string $region, string $selling_partner_id, string $developer_id, string $mws_auth_token) : \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse
     {
-        [$response] = $this->getAuthorizationCodeWithHttpInfo($sellingPartnerId, $developerId, $mwsAuthToken);
+        [$response] = $this->getAuthorizationCodeWithHttpInfo($accessToken, $region, $selling_partner_id, $developer_id, $mws_auth_token);
 
         return $response;
     }
@@ -45,32 +54,32 @@ final class AuthorizationSDK
     /**
      * Create request for operation 'getAuthorizationCode'.
      *
-     * @param string $sellingPartnerId The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore. (required)
-     * @param string $developerId Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
-     * @param string $mwsAuthToken The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
+     * @param string $selling_partner_id The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore. (required)
+     * @param string $developer_id Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
+     * @param string $mws_auth_token The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getAuthorizationCodeRequest(string $sellingPartnerId, string $developerId, string $mwsAuthToken) : RequestInterface
+    public function getAuthorizationCodeRequest(AccessToken $accessToken, string $region, string $selling_partner_id, string $developer_id, string $mws_auth_token) : RequestInterface
     {
-        // verify the required parameter 'sellingPartnerId' is set
-        if ($sellingPartnerId === null || (\is_array($sellingPartnerId) && \count($sellingPartnerId) === 0)) {
+        // verify the required parameter 'selling_partner_id' is set
+        if ($selling_partner_id === null || (\is_array($selling_partner_id) && \count($selling_partner_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $sellingPartnerId when calling getAuthorizationCode'
+                'Missing the required parameter $selling_partner_id when calling getAuthorizationCode'
             );
         }
-        // verify the required parameter 'developerId' is set
-        if ($developerId === null || (\is_array($developerId) && \count($developerId) === 0)) {
+        // verify the required parameter 'developer_id' is set
+        if ($developer_id === null || (\is_array($developer_id) && \count($developer_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $developerId when calling getAuthorizationCode'
+                'Missing the required parameter $developer_id when calling getAuthorizationCode'
             );
         }
-        // verify the required parameter 'mwsAuthToken' is set
-        if ($mwsAuthToken === null || (\is_array($mwsAuthToken) && \count($mwsAuthToken) === 0)) {
+        // verify the required parameter 'mws_auth_token' is set
+        if ($mws_auth_token === null || (\is_array($mws_auth_token) && \count($mws_auth_token) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $mwsAuthToken when calling getAuthorizationCode'
+                'Missing the required parameter $mws_auth_token when calling getAuthorizationCode'
             );
         }
 
@@ -82,28 +91,28 @@ final class AuthorizationSDK
         $query = '';
 
         // query params
-        if (\is_array($sellingPartnerId)) {
-            $sellingPartnerId = ObjectSerializer::serializeCollection($sellingPartnerId, '', true);
+        if (\is_array($selling_partner_id)) {
+            $selling_partner_id = ObjectSerializer::serializeCollection($selling_partner_id, '', true);
         }
 
-        if ($sellingPartnerId !== null) {
-            $queryParams['sellingPartnerId'] = $sellingPartnerId;
+        if ($selling_partner_id !== null) {
+            $queryParams['sellingPartnerId'] = $selling_partner_id;
         }
         // query params
-        if (\is_array($developerId)) {
-            $developerId = ObjectSerializer::serializeCollection($developerId, '', true);
+        if (\is_array($developer_id)) {
+            $developer_id = ObjectSerializer::serializeCollection($developer_id, '', true);
         }
 
-        if ($developerId !== null) {
-            $queryParams['developerId'] = $developerId;
+        if ($developer_id !== null) {
+            $queryParams['developerId'] = $developer_id;
         }
         // query params
-        if (\is_array($mwsAuthToken)) {
-            $mwsAuthToken = ObjectSerializer::serializeCollection($mwsAuthToken, '', true);
+        if (\is_array($mws_auth_token)) {
+            $mws_auth_token = ObjectSerializer::serializeCollection($mws_auth_token, '', true);
         }
 
-        if ($mwsAuthToken !== null) {
-            $queryParams['mwsAuthToken'] = $mwsAuthToken;
+        if ($mws_auth_token !== null) {
+            $queryParams['mwsAuthToken'] = $mws_auth_token;
         }
 
         if (\count($queryParams)) {
@@ -111,17 +120,23 @@ final class AuthorizationSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -140,33 +155,23 @@ final class AuthorizationSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
@@ -174,22 +179,22 @@ final class AuthorizationSDK
      *
      * Returns the Login with Amazon (LWA) authorization code for an existing Amazon MWS authorization.
      *
-     * @param string $sellingPartnerId The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore. (required)
-     * @param string $developerId Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
-     * @param string $mwsAuthToken The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
+     * @param string $selling_partner_id The seller ID of the seller for whom you are requesting Selling Partner API authorization. This must be the seller ID of the seller who authorized your application on the Marketplace Appstore. (required)
+     * @param string $developer_id Your developer ID. This must be one of the developer ID values that you provided when you registered your application in Developer Central. (required)
+     * @param string $mws_auth_token The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse>
      */
-    private function getAuthorizationCodeWithHttpInfo(string $sellingPartnerId, string $developerId, string $mwsAuthToken) : array
+    private function getAuthorizationCodeWithHttpInfo(AccessToken $accessToken, string $region, string $selling_partner_id, string $developer_id, string $mws_auth_token) : array
     {
-        $request = $this->getAuthorizationCodeRequest($sellingPartnerId, $developerId, $mwsAuthToken);
+        $request = $this->getAuthorizationCodeRequest($accessToken, $region, $selling_partner_id, $developer_id, $mws_auth_token);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -227,7 +232,12 @@ final class AuthorizationSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -237,7 +247,12 @@ final class AuthorizationSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -253,6 +268,7 @@ final class AuthorizationSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse::class,
                         $e->getResponseHeaders()

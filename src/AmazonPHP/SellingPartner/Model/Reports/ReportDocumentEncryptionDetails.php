@@ -59,7 +59,7 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPITypes = [
         'standard' => 'string',
-        'initializationVector' => 'string',
+        'initialization_vector' => 'string',
         'key' => 'string',
     ];
 
@@ -72,7 +72,7 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
      */
     protected static array $openAPIFormats = [
         'standard' => null,
-        'initializationVector' => null,
+        'initialization_vector' => null,
         'key' => null,
     ];
 
@@ -84,7 +84,7 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
      */
     protected static array $attributeMap = [
         'standard' => 'standard',
-        'initializationVector' => 'initializationVector',
+        'initialization_vector' => 'initializationVector',
         'key' => 'key',
     ];
 
@@ -95,7 +95,7 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
      */
     protected static array $setters = [
         'standard' => 'setStandard',
-        'initializationVector' => 'setInitializationVector',
+        'initialization_vector' => 'setInitializationVector',
         'key' => 'setKey',
     ];
 
@@ -106,7 +106,7 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
      */
     protected static array $getters = [
         'standard' => 'getStandard',
-        'initializationVector' => 'getInitializationVector',
+        'initialization_vector' => 'getInitializationVector',
         'key' => 'getKey',
     ];
 
@@ -126,7 +126,7 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
     public function __construct(array $data = null)
     {
         $this->container['standard'] = $data['standard'] ?? null;
-        $this->container['initializationVector'] = $data['initializationVector'] ?? null;
+        $this->container['initialization_vector'] = $data['initialization_vector'] ?? null;
         $this->container['key'] = $data['key'] ?? null;
     }
 
@@ -234,8 +234,8 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
             );
         }
 
-        if ($this->container['initializationVector'] === null) {
-            $invalidProperties[] = "'initializationVector' can't be null";
+        if ($this->container['initialization_vector'] === null) {
+            $invalidProperties[] = "'initialization_vector' can't be null";
         }
 
         if ($this->container['key'] === null) {
@@ -288,21 +288,21 @@ class ReportDocumentEncryptionDetails implements \ArrayAccess, \JsonSerializable
     }
 
     /**
-     * Gets initializationVector.
+     * Gets initialization_vector.
      */
     public function getInitializationVector() : string
     {
-        return $this->container['initializationVector'];
+        return $this->container['initialization_vector'];
     }
 
     /**
-     * Sets initializationVector.
+     * Sets initialization_vector.
      *
-     * @param string $initializationVector the vector to decrypt the document contents using Cipher Block Chaining (CBC)
+     * @param string $initialization_vector the vector to decrypt the document contents using Cipher Block Chaining (CBC)
      */
-    public function setInitializationVector(string $initializationVector) : self
+    public function setInitializationVector(string $initialization_vector) : self
     {
-        $this->container['initializationVector'] = $initializationVector;
+        $this->container['initialization_vector'] = $initialization_vector;
 
         return $this;
     }

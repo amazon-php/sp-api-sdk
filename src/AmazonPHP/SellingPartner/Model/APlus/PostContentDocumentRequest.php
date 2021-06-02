@@ -56,7 +56,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'contentDocument' => '\AmazonPHP\SellingPartner\Model\APlus\ContentDocument',
+        'content_document' => '\AmazonPHP\SellingPartner\Model\APlus\ContentDocument',
     ];
 
     /**
@@ -67,7 +67,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'contentDocument' => null,
+        'content_document' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $attributeMap = [
-        'contentDocument' => 'contentDocument',
+        'content_document' => 'contentDocument',
     ];
 
     /**
@@ -86,7 +86,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $setters = [
-        'contentDocument' => 'setContentDocument',
+        'content_document' => 'setContentDocument',
     ];
 
     /**
@@ -95,7 +95,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $getters = [
-        'contentDocument' => 'getContentDocument',
+        'content_document' => 'getContentDocument',
     ];
 
     /**
@@ -113,7 +113,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function __construct(array $data = null)
     {
-        $this->container['contentDocument'] = $data['contentDocument'] ?? null;
+        $this->container['content_document'] = $data['content_document'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     {
         $invalidProperties = [];
 
-        if ($this->container['contentDocument'] === null) {
-            $invalidProperties[] = "'contentDocument' can't be null";
+        if ($this->container['content_document'] === null) {
+            $invalidProperties[] = "'content_document' can't be null";
         }
 
         return $invalidProperties;
@@ -214,21 +214,21 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     }
 
     /**
-     * Gets contentDocument.
+     * Gets content_document.
      */
     public function getContentDocument() : ContentDocument
     {
-        return $this->container['contentDocument'];
+        return $this->container['content_document'];
     }
 
     /**
-     * Sets contentDocument.
+     * Sets content_document.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentDocument $contentDocument contentDocument
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentDocument $content_document content_document
      */
-    public function setContentDocument(ContentDocument $contentDocument) : self
+    public function setContentDocument(ContentDocument $content_document) : self
     {
-        $this->container['contentDocument'] = $contentDocument;
+        $this->container['content_document'] = $content_document;
 
         return $this;
     }

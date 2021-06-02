@@ -60,25 +60,25 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
         'color' => 'string',
         'edition' => 'string',
         'flavor' => 'string',
-        'gemType' => 'string[]',
-        'golfClubFlex' => 'string',
-        'handOrientation' => 'string',
-        'hardwarePlatform' => 'string',
-        'materialType' => 'string[]',
-        'metalType' => 'string',
+        'gem_type' => 'string[]',
+        'golf_club_flex' => 'string',
+        'hand_orientation' => 'string',
+        'hardware_platform' => 'string',
+        'material_type' => 'string[]',
+        'metal_type' => 'string',
         'model' => 'string',
-        'operatingSystem' => 'string[]',
-        'productTypeSubcategory' => 'string',
-        'ringSize' => 'string',
-        'shaftMaterial' => 'string',
+        'operating_system' => 'string[]',
+        'product_type_subcategory' => 'string',
+        'ring_size' => 'string',
+        'shaft_material' => 'string',
         'scent' => 'string',
         'size' => 'string',
-        'sizePerPearl' => 'string',
-        'golfClubLoft' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'totalDiamondWeight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'totalGemWeight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'packageQuantity' => 'int',
-        'itemDimensions' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType',
+        'size_per_pearl' => 'string',
+        'golf_club_loft' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'total_diamond_weight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'total_gem_weight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'package_quantity' => 'int',
+        'item_dimensions' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType',
     ];
 
     /**
@@ -93,25 +93,25 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
         'color' => null,
         'edition' => null,
         'flavor' => null,
-        'gemType' => null,
-        'golfClubFlex' => null,
-        'handOrientation' => null,
-        'hardwarePlatform' => null,
-        'materialType' => null,
-        'metalType' => null,
+        'gem_type' => null,
+        'golf_club_flex' => null,
+        'hand_orientation' => null,
+        'hardware_platform' => null,
+        'material_type' => null,
+        'metal_type' => null,
         'model' => null,
-        'operatingSystem' => null,
-        'productTypeSubcategory' => null,
-        'ringSize' => null,
-        'shaftMaterial' => null,
+        'operating_system' => null,
+        'product_type_subcategory' => null,
+        'ring_size' => null,
+        'shaft_material' => null,
         'scent' => null,
         'size' => null,
-        'sizePerPearl' => null,
-        'golfClubLoft' => null,
-        'totalDiamondWeight' => null,
-        'totalGemWeight' => null,
-        'packageQuantity' => null,
-        'itemDimensions' => null,
+        'size_per_pearl' => null,
+        'golf_club_loft' => null,
+        'total_diamond_weight' => null,
+        'total_gem_weight' => null,
+        'package_quantity' => null,
+        'item_dimensions' => null,
     ];
 
     /**
@@ -125,25 +125,25 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
         'color' => 'Color',
         'edition' => 'Edition',
         'flavor' => 'Flavor',
-        'gemType' => 'GemType',
-        'golfClubFlex' => 'GolfClubFlex',
-        'handOrientation' => 'HandOrientation',
-        'hardwarePlatform' => 'HardwarePlatform',
-        'materialType' => 'MaterialType',
-        'metalType' => 'MetalType',
+        'gem_type' => 'GemType',
+        'golf_club_flex' => 'GolfClubFlex',
+        'hand_orientation' => 'HandOrientation',
+        'hardware_platform' => 'HardwarePlatform',
+        'material_type' => 'MaterialType',
+        'metal_type' => 'MetalType',
         'model' => 'Model',
-        'operatingSystem' => 'OperatingSystem',
-        'productTypeSubcategory' => 'ProductTypeSubcategory',
-        'ringSize' => 'RingSize',
-        'shaftMaterial' => 'ShaftMaterial',
+        'operating_system' => 'OperatingSystem',
+        'product_type_subcategory' => 'ProductTypeSubcategory',
+        'ring_size' => 'RingSize',
+        'shaft_material' => 'ShaftMaterial',
         'scent' => 'Scent',
         'size' => 'Size',
-        'sizePerPearl' => 'SizePerPearl',
-        'golfClubLoft' => 'GolfClubLoft',
-        'totalDiamondWeight' => 'TotalDiamondWeight',
-        'totalGemWeight' => 'TotalGemWeight',
-        'packageQuantity' => 'PackageQuantity',
-        'itemDimensions' => 'ItemDimensions',
+        'size_per_pearl' => 'SizePerPearl',
+        'golf_club_loft' => 'GolfClubLoft',
+        'total_diamond_weight' => 'TotalDiamondWeight',
+        'total_gem_weight' => 'TotalGemWeight',
+        'package_quantity' => 'PackageQuantity',
+        'item_dimensions' => 'ItemDimensions',
     ];
 
     /**
@@ -156,25 +156,25 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
         'color' => 'setColor',
         'edition' => 'setEdition',
         'flavor' => 'setFlavor',
-        'gemType' => 'setGemType',
-        'golfClubFlex' => 'setGolfClubFlex',
-        'handOrientation' => 'setHandOrientation',
-        'hardwarePlatform' => 'setHardwarePlatform',
-        'materialType' => 'setMaterialType',
-        'metalType' => 'setMetalType',
+        'gem_type' => 'setGemType',
+        'golf_club_flex' => 'setGolfClubFlex',
+        'hand_orientation' => 'setHandOrientation',
+        'hardware_platform' => 'setHardwarePlatform',
+        'material_type' => 'setMaterialType',
+        'metal_type' => 'setMetalType',
         'model' => 'setModel',
-        'operatingSystem' => 'setOperatingSystem',
-        'productTypeSubcategory' => 'setProductTypeSubcategory',
-        'ringSize' => 'setRingSize',
-        'shaftMaterial' => 'setShaftMaterial',
+        'operating_system' => 'setOperatingSystem',
+        'product_type_subcategory' => 'setProductTypeSubcategory',
+        'ring_size' => 'setRingSize',
+        'shaft_material' => 'setShaftMaterial',
         'scent' => 'setScent',
         'size' => 'setSize',
-        'sizePerPearl' => 'setSizePerPearl',
-        'golfClubLoft' => 'setGolfClubLoft',
-        'totalDiamondWeight' => 'setTotalDiamondWeight',
-        'totalGemWeight' => 'setTotalGemWeight',
-        'packageQuantity' => 'setPackageQuantity',
-        'itemDimensions' => 'setItemDimensions',
+        'size_per_pearl' => 'setSizePerPearl',
+        'golf_club_loft' => 'setGolfClubLoft',
+        'total_diamond_weight' => 'setTotalDiamondWeight',
+        'total_gem_weight' => 'setTotalGemWeight',
+        'package_quantity' => 'setPackageQuantity',
+        'item_dimensions' => 'setItemDimensions',
     ];
 
     /**
@@ -187,25 +187,25 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
         'color' => 'getColor',
         'edition' => 'getEdition',
         'flavor' => 'getFlavor',
-        'gemType' => 'getGemType',
-        'golfClubFlex' => 'getGolfClubFlex',
-        'handOrientation' => 'getHandOrientation',
-        'hardwarePlatform' => 'getHardwarePlatform',
-        'materialType' => 'getMaterialType',
-        'metalType' => 'getMetalType',
+        'gem_type' => 'getGemType',
+        'golf_club_flex' => 'getGolfClubFlex',
+        'hand_orientation' => 'getHandOrientation',
+        'hardware_platform' => 'getHardwarePlatform',
+        'material_type' => 'getMaterialType',
+        'metal_type' => 'getMetalType',
         'model' => 'getModel',
-        'operatingSystem' => 'getOperatingSystem',
-        'productTypeSubcategory' => 'getProductTypeSubcategory',
-        'ringSize' => 'getRingSize',
-        'shaftMaterial' => 'getShaftMaterial',
+        'operating_system' => 'getOperatingSystem',
+        'product_type_subcategory' => 'getProductTypeSubcategory',
+        'ring_size' => 'getRingSize',
+        'shaft_material' => 'getShaftMaterial',
         'scent' => 'getScent',
         'size' => 'getSize',
-        'sizePerPearl' => 'getSizePerPearl',
-        'golfClubLoft' => 'getGolfClubLoft',
-        'totalDiamondWeight' => 'getTotalDiamondWeight',
-        'totalGemWeight' => 'getTotalGemWeight',
-        'packageQuantity' => 'getPackageQuantity',
-        'itemDimensions' => 'getItemDimensions',
+        'size_per_pearl' => 'getSizePerPearl',
+        'golf_club_loft' => 'getGolfClubLoft',
+        'total_diamond_weight' => 'getTotalDiamondWeight',
+        'total_gem_weight' => 'getTotalGemWeight',
+        'package_quantity' => 'getPackageQuantity',
+        'item_dimensions' => 'getItemDimensions',
     ];
 
     /**
@@ -227,25 +227,25 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
         $this->container['color'] = $data['color'] ?? null;
         $this->container['edition'] = $data['edition'] ?? null;
         $this->container['flavor'] = $data['flavor'] ?? null;
-        $this->container['gemType'] = $data['gemType'] ?? null;
-        $this->container['golfClubFlex'] = $data['golfClubFlex'] ?? null;
-        $this->container['handOrientation'] = $data['handOrientation'] ?? null;
-        $this->container['hardwarePlatform'] = $data['hardwarePlatform'] ?? null;
-        $this->container['materialType'] = $data['materialType'] ?? null;
-        $this->container['metalType'] = $data['metalType'] ?? null;
+        $this->container['gem_type'] = $data['gem_type'] ?? null;
+        $this->container['golf_club_flex'] = $data['golf_club_flex'] ?? null;
+        $this->container['hand_orientation'] = $data['hand_orientation'] ?? null;
+        $this->container['hardware_platform'] = $data['hardware_platform'] ?? null;
+        $this->container['material_type'] = $data['material_type'] ?? null;
+        $this->container['metal_type'] = $data['metal_type'] ?? null;
         $this->container['model'] = $data['model'] ?? null;
-        $this->container['operatingSystem'] = $data['operatingSystem'] ?? null;
-        $this->container['productTypeSubcategory'] = $data['productTypeSubcategory'] ?? null;
-        $this->container['ringSize'] = $data['ringSize'] ?? null;
-        $this->container['shaftMaterial'] = $data['shaftMaterial'] ?? null;
+        $this->container['operating_system'] = $data['operating_system'] ?? null;
+        $this->container['product_type_subcategory'] = $data['product_type_subcategory'] ?? null;
+        $this->container['ring_size'] = $data['ring_size'] ?? null;
+        $this->container['shaft_material'] = $data['shaft_material'] ?? null;
         $this->container['scent'] = $data['scent'] ?? null;
         $this->container['size'] = $data['size'] ?? null;
-        $this->container['sizePerPearl'] = $data['sizePerPearl'] ?? null;
-        $this->container['golfClubLoft'] = $data['golfClubLoft'] ?? null;
-        $this->container['totalDiamondWeight'] = $data['totalDiamondWeight'] ?? null;
-        $this->container['totalGemWeight'] = $data['totalGemWeight'] ?? null;
-        $this->container['packageQuantity'] = $data['packageQuantity'] ?? null;
-        $this->container['itemDimensions'] = $data['itemDimensions'] ?? null;
+        $this->container['size_per_pearl'] = $data['size_per_pearl'] ?? null;
+        $this->container['golf_club_loft'] = $data['golf_club_loft'] ?? null;
+        $this->container['total_diamond_weight'] = $data['total_diamond_weight'] ?? null;
+        $this->container['total_gem_weight'] = $data['total_gem_weight'] ?? null;
+        $this->container['package_quantity'] = $data['package_quantity'] ?? null;
+        $this->container['item_dimensions'] = $data['item_dimensions'] ?? null;
     }
 
     /**
@@ -420,125 +420,125 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Gets gemType.
+     * Gets gem_type.
      *
      * @return null|string[]
      */
     public function getGemType() : ?array
     {
-        return $this->container['gemType'];
+        return $this->container['gem_type'];
     }
 
     /**
-     * Sets gemType.
+     * Sets gem_type.
      *
-     * @param null|string[] $gemType the gem type variations of the item
+     * @param null|string[] $gem_type the gem type variations of the item
      */
-    public function setGemType(?array $gemType) : self
+    public function setGemType(?array $gem_type) : self
     {
-        $this->container['gemType'] = $gemType;
+        $this->container['gem_type'] = $gem_type;
 
         return $this;
     }
 
     /**
-     * Gets golfClubFlex.
+     * Gets golf_club_flex.
      */
     public function getGolfClubFlex() : ?string
     {
-        return $this->container['golfClubFlex'];
+        return $this->container['golf_club_flex'];
     }
 
     /**
-     * Sets golfClubFlex.
+     * Sets golf_club_flex.
      *
-     * @param null|string $golfClubFlex the golf club flex variation of an item
+     * @param null|string $golf_club_flex the golf club flex variation of an item
      */
-    public function setGolfClubFlex(?string $golfClubFlex) : self
+    public function setGolfClubFlex(?string $golf_club_flex) : self
     {
-        $this->container['golfClubFlex'] = $golfClubFlex;
+        $this->container['golf_club_flex'] = $golf_club_flex;
 
         return $this;
     }
 
     /**
-     * Gets handOrientation.
+     * Gets hand_orientation.
      */
     public function getHandOrientation() : ?string
     {
-        return $this->container['handOrientation'];
+        return $this->container['hand_orientation'];
     }
 
     /**
-     * Sets handOrientation.
+     * Sets hand_orientation.
      *
-     * @param null|string $handOrientation the hand orientation variation of an item
+     * @param null|string $hand_orientation the hand orientation variation of an item
      */
-    public function setHandOrientation(?string $handOrientation) : self
+    public function setHandOrientation(?string $hand_orientation) : self
     {
-        $this->container['handOrientation'] = $handOrientation;
+        $this->container['hand_orientation'] = $hand_orientation;
 
         return $this;
     }
 
     /**
-     * Gets hardwarePlatform.
+     * Gets hardware_platform.
      */
     public function getHardwarePlatform() : ?string
     {
-        return $this->container['hardwarePlatform'];
+        return $this->container['hardware_platform'];
     }
 
     /**
-     * Sets hardwarePlatform.
+     * Sets hardware_platform.
      *
-     * @param null|string $hardwarePlatform the hardware platform variation of an item
+     * @param null|string $hardware_platform the hardware platform variation of an item
      */
-    public function setHardwarePlatform(?string $hardwarePlatform) : self
+    public function setHardwarePlatform(?string $hardware_platform) : self
     {
-        $this->container['hardwarePlatform'] = $hardwarePlatform;
+        $this->container['hardware_platform'] = $hardware_platform;
 
         return $this;
     }
 
     /**
-     * Gets materialType.
+     * Gets material_type.
      *
      * @return null|string[]
      */
     public function getMaterialType() : ?array
     {
-        return $this->container['materialType'];
+        return $this->container['material_type'];
     }
 
     /**
-     * Sets materialType.
+     * Sets material_type.
      *
-     * @param null|string[] $materialType the material type variations of an item
+     * @param null|string[] $material_type the material type variations of an item
      */
-    public function setMaterialType(?array $materialType) : self
+    public function setMaterialType(?array $material_type) : self
     {
-        $this->container['materialType'] = $materialType;
+        $this->container['material_type'] = $material_type;
 
         return $this;
     }
 
     /**
-     * Gets metalType.
+     * Gets metal_type.
      */
     public function getMetalType() : ?string
     {
-        return $this->container['metalType'];
+        return $this->container['metal_type'];
     }
 
     /**
-     * Sets metalType.
+     * Sets metal_type.
      *
-     * @param null|string $metalType the metal type variation of an item
+     * @param null|string $metal_type the metal type variation of an item
      */
-    public function setMetalType(?string $metalType) : self
+    public function setMetalType(?string $metal_type) : self
     {
-        $this->container['metalType'] = $metalType;
+        $this->container['metal_type'] = $metal_type;
 
         return $this;
     }
@@ -564,83 +564,83 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Gets operatingSystem.
+     * Gets operating_system.
      *
      * @return null|string[]
      */
     public function getOperatingSystem() : ?array
     {
-        return $this->container['operatingSystem'];
+        return $this->container['operating_system'];
     }
 
     /**
-     * Sets operatingSystem.
+     * Sets operating_system.
      *
-     * @param null|string[] $operatingSystem the operating system variations of an item
+     * @param null|string[] $operating_system the operating system variations of an item
      */
-    public function setOperatingSystem(?array $operatingSystem) : self
+    public function setOperatingSystem(?array $operating_system) : self
     {
-        $this->container['operatingSystem'] = $operatingSystem;
+        $this->container['operating_system'] = $operating_system;
 
         return $this;
     }
 
     /**
-     * Gets productTypeSubcategory.
+     * Gets product_type_subcategory.
      */
     public function getProductTypeSubcategory() : ?string
     {
-        return $this->container['productTypeSubcategory'];
+        return $this->container['product_type_subcategory'];
     }
 
     /**
-     * Sets productTypeSubcategory.
+     * Sets product_type_subcategory.
      *
-     * @param null|string $productTypeSubcategory the product type subcategory variation of an item
+     * @param null|string $product_type_subcategory the product type subcategory variation of an item
      */
-    public function setProductTypeSubcategory(?string $productTypeSubcategory) : self
+    public function setProductTypeSubcategory(?string $product_type_subcategory) : self
     {
-        $this->container['productTypeSubcategory'] = $productTypeSubcategory;
+        $this->container['product_type_subcategory'] = $product_type_subcategory;
 
         return $this;
     }
 
     /**
-     * Gets ringSize.
+     * Gets ring_size.
      */
     public function getRingSize() : ?string
     {
-        return $this->container['ringSize'];
+        return $this->container['ring_size'];
     }
 
     /**
-     * Sets ringSize.
+     * Sets ring_size.
      *
-     * @param null|string $ringSize the ring size variation of an item
+     * @param null|string $ring_size the ring size variation of an item
      */
-    public function setRingSize(?string $ringSize) : self
+    public function setRingSize(?string $ring_size) : self
     {
-        $this->container['ringSize'] = $ringSize;
+        $this->container['ring_size'] = $ring_size;
 
         return $this;
     }
 
     /**
-     * Gets shaftMaterial.
+     * Gets shaft_material.
      */
     public function getShaftMaterial() : ?string
     {
-        return $this->container['shaftMaterial'];
+        return $this->container['shaft_material'];
     }
 
     /**
-     * Sets shaftMaterial.
+     * Sets shaft_material.
      *
-     * @param null|string $shaftMaterial the shaft material variation of an item
+     * @param null|string $shaft_material the shaft material variation of an item
      */
-    public function setShaftMaterial(?string $shaftMaterial) : self
+    public function setShaftMaterial(?string $shaft_material) : self
     {
-        $this->container['shaftMaterial'] = $shaftMaterial;
+        $this->container['shaft_material'] = $shaft_material;
 
         return $this;
     }
@@ -686,121 +686,121 @@ class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Gets sizePerPearl.
+     * Gets size_per_pearl.
      */
     public function getSizePerPearl() : ?string
     {
-        return $this->container['sizePerPearl'];
+        return $this->container['size_per_pearl'];
     }
 
     /**
-     * Sets sizePerPearl.
+     * Sets size_per_pearl.
      *
-     * @param null|string $sizePerPearl the size per pearl variation of an item
+     * @param null|string $size_per_pearl the size per pearl variation of an item
      */
-    public function setSizePerPearl(?string $sizePerPearl) : self
+    public function setSizePerPearl(?string $size_per_pearl) : self
     {
-        $this->container['sizePerPearl'] = $sizePerPearl;
+        $this->container['size_per_pearl'] = $size_per_pearl;
 
         return $this;
     }
 
     /**
-     * Gets golfClubLoft.
+     * Gets golf_club_loft.
      */
     public function getGolfClubLoft() : ?DecimalWithUnits
     {
-        return $this->container['golfClubLoft'];
+        return $this->container['golf_club_loft'];
     }
 
     /**
-     * Sets golfClubLoft.
+     * Sets golf_club_loft.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $golfClubLoft golfClubLoft
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $golf_club_loft golf_club_loft
      */
-    public function setGolfClubLoft(?DecimalWithUnits $golfClubLoft) : self
+    public function setGolfClubLoft(?DecimalWithUnits $golf_club_loft) : self
     {
-        $this->container['golfClubLoft'] = $golfClubLoft;
+        $this->container['golf_club_loft'] = $golf_club_loft;
 
         return $this;
     }
 
     /**
-     * Gets totalDiamondWeight.
+     * Gets total_diamond_weight.
      */
     public function getTotalDiamondWeight() : ?DecimalWithUnits
     {
-        return $this->container['totalDiamondWeight'];
+        return $this->container['total_diamond_weight'];
     }
 
     /**
-     * Sets totalDiamondWeight.
+     * Sets total_diamond_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $totalDiamondWeight totalDiamondWeight
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $total_diamond_weight total_diamond_weight
      */
-    public function setTotalDiamondWeight(?DecimalWithUnits $totalDiamondWeight) : self
+    public function setTotalDiamondWeight(?DecimalWithUnits $total_diamond_weight) : self
     {
-        $this->container['totalDiamondWeight'] = $totalDiamondWeight;
+        $this->container['total_diamond_weight'] = $total_diamond_weight;
 
         return $this;
     }
 
     /**
-     * Gets totalGemWeight.
+     * Gets total_gem_weight.
      */
     public function getTotalGemWeight() : ?DecimalWithUnits
     {
-        return $this->container['totalGemWeight'];
+        return $this->container['total_gem_weight'];
     }
 
     /**
-     * Sets totalGemWeight.
+     * Sets total_gem_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $totalGemWeight totalGemWeight
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $total_gem_weight total_gem_weight
      */
-    public function setTotalGemWeight(?DecimalWithUnits $totalGemWeight) : self
+    public function setTotalGemWeight(?DecimalWithUnits $total_gem_weight) : self
     {
-        $this->container['totalGemWeight'] = $totalGemWeight;
+        $this->container['total_gem_weight'] = $total_gem_weight;
 
         return $this;
     }
 
     /**
-     * Gets packageQuantity.
+     * Gets package_quantity.
      */
     public function getPackageQuantity() : ?int
     {
-        return $this->container['packageQuantity'];
+        return $this->container['package_quantity'];
     }
 
     /**
-     * Sets packageQuantity.
+     * Sets package_quantity.
      *
-     * @param null|int $packageQuantity the package quantity variation of an item
+     * @param null|int $package_quantity the package quantity variation of an item
      */
-    public function setPackageQuantity(?int $packageQuantity) : self
+    public function setPackageQuantity(?int $package_quantity) : self
     {
-        $this->container['packageQuantity'] = $packageQuantity;
+        $this->container['package_quantity'] = $package_quantity;
 
         return $this;
     }
 
     /**
-     * Gets itemDimensions.
+     * Gets item_dimensions.
      */
     public function getItemDimensions() : ?DimensionType
     {
-        return $this->container['itemDimensions'];
+        return $this->container['item_dimensions'];
     }
 
     /**
-     * Sets itemDimensions.
+     * Sets item_dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType $itemDimensions itemDimensions
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType $item_dimensions item_dimensions
      */
-    public function setItemDimensions(?DimensionType $itemDimensions) : self
+    public function setItemDimensions(?DimensionType $item_dimensions) : self
     {
-        $this->container['itemDimensions'] = $itemDimensions;
+        $this->container['item_dimensions'] = $item_dimensions;
 
         return $this;
     }

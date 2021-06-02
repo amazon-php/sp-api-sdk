@@ -58,7 +58,7 @@ class LanguageType implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $openAPITypes = [
         'name' => 'string',
         'type' => 'string',
-        'audioFormat' => 'string',
+        'audio_format' => 'string',
     ];
 
     /**
@@ -71,7 +71,7 @@ class LanguageType implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $openAPIFormats = [
         'name' => null,
         'type' => null,
-        'audioFormat' => null,
+        'audio_format' => null,
     ];
 
     /**
@@ -83,7 +83,7 @@ class LanguageType implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $attributeMap = [
         'name' => 'Name',
         'type' => 'Type',
-        'audioFormat' => 'AudioFormat',
+        'audio_format' => 'AudioFormat',
     ];
 
     /**
@@ -94,7 +94,7 @@ class LanguageType implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $setters = [
         'name' => 'setName',
         'type' => 'setType',
-        'audioFormat' => 'setAudioFormat',
+        'audio_format' => 'setAudioFormat',
     ];
 
     /**
@@ -105,7 +105,7 @@ class LanguageType implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $getters = [
         'name' => 'getName',
         'type' => 'getType',
-        'audioFormat' => 'getAudioFormat',
+        'audio_format' => 'getAudioFormat',
     ];
 
     /**
@@ -125,7 +125,7 @@ class LanguageType implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $this->container['name'] = $data['name'] ?? null;
         $this->container['type'] = $data['type'] ?? null;
-        $this->container['audioFormat'] = $data['audioFormat'] ?? null;
+        $this->container['audio_format'] = $data['audio_format'] ?? null;
     }
 
     /**
@@ -260,21 +260,21 @@ class LanguageType implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets audioFormat.
+     * Gets audio_format.
      */
     public function getAudioFormat() : ?string
     {
-        return $this->container['audioFormat'];
+        return $this->container['audio_format'];
     }
 
     /**
-     * Sets audioFormat.
+     * Sets audio_format.
      *
-     * @param null|string $audioFormat the audio format attribute of the item
+     * @param null|string $audio_format the audio format attribute of the item
      */
-    public function setAudioFormat(?string $audioFormat) : self
+    public function setAudioFormat(?string $audio_format) : self
     {
-        $this->container['audioFormat'] = $audioFormat;
+        $this->container['audio_format'] = $audio_format;
 
         return $this;
     }

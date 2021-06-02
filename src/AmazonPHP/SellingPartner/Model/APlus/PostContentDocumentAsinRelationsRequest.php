@@ -56,7 +56,7 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'asinSet' => 'string[]',
+        'asin_set' => 'string[]',
     ];
 
     /**
@@ -67,7 +67,7 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'asinSet' => null,
+        'asin_set' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $attributeMap = [
-        'asinSet' => 'asinSet',
+        'asin_set' => 'asinSet',
     ];
 
     /**
@@ -86,7 +86,7 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $setters = [
-        'asinSet' => 'setAsinSet',
+        'asin_set' => 'setAsinSet',
     ];
 
     /**
@@ -95,7 +95,7 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
      * @var string[]
      */
     protected static array $getters = [
-        'asinSet' => 'getAsinSet',
+        'asin_set' => 'getAsinSet',
     ];
 
     /**
@@ -113,7 +113,7 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
      */
     public function __construct(array $data = null)
     {
-        $this->container['asinSet'] = $data['asinSet'] ?? null;
+        $this->container['asin_set'] = $data['asin_set'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
     {
         $invalidProperties = [];
 
-        if ($this->container['asinSet'] === null) {
-            $invalidProperties[] = "'asinSet' can't be null";
+        if ($this->container['asin_set'] === null) {
+            $invalidProperties[] = "'asin_set' can't be null";
         }
 
         return $invalidProperties;
@@ -214,23 +214,23 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
     }
 
     /**
-     * Gets asinSet.
+     * Gets asin_set.
      *
      * @return string[]
      */
     public function getAsinSet() : array
     {
-        return $this->container['asinSet'];
+        return $this->container['asin_set'];
     }
 
     /**
-     * Sets asinSet.
+     * Sets asin_set.
      *
-     * @param string[] $asinSet the set of ASINs
+     * @param string[] $asin_set the set of ASINs
      */
-    public function setAsinSet(array $asinSet) : self
+    public function setAsinSet(array $asin_set) : self
     {
-        $this->container['asinSet'] = $asinSet;
+        $this->container['asin_set'] = $asin_set;
 
         return $this;
     }

@@ -58,12 +58,12 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     protected static array $openAPITypes = [
         'headline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
         'image' => '\AmazonPHP\SellingPartner\Model\APlus\ImageComponent',
-        'descriptionHeadline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
-        'descriptionBlock1' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
-        'descriptionBlock2' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
-        'specificationHeadline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
-        'specificationListBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock',
-        'specificationTextBlock' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
+        'description_headline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
+        'description_block1' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
+        'description_block2' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
+        'specification_headline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
+        'specification_list_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock',
+        'specification_text_block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock',
     ];
 
     /**
@@ -76,12 +76,12 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     protected static array $openAPIFormats = [
         'headline' => null,
         'image' => null,
-        'descriptionHeadline' => null,
-        'descriptionBlock1' => null,
-        'descriptionBlock2' => null,
-        'specificationHeadline' => null,
-        'specificationListBlock' => null,
-        'specificationTextBlock' => null,
+        'description_headline' => null,
+        'description_block1' => null,
+        'description_block2' => null,
+        'specification_headline' => null,
+        'specification_list_block' => null,
+        'specification_text_block' => null,
     ];
 
     /**
@@ -93,12 +93,12 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     protected static array $attributeMap = [
         'headline' => 'headline',
         'image' => 'image',
-        'descriptionHeadline' => 'descriptionHeadline',
-        'descriptionBlock1' => 'descriptionBlock1',
-        'descriptionBlock2' => 'descriptionBlock2',
-        'specificationHeadline' => 'specificationHeadline',
-        'specificationListBlock' => 'specificationListBlock',
-        'specificationTextBlock' => 'specificationTextBlock',
+        'description_headline' => 'descriptionHeadline',
+        'description_block1' => 'descriptionBlock1',
+        'description_block2' => 'descriptionBlock2',
+        'specification_headline' => 'specificationHeadline',
+        'specification_list_block' => 'specificationListBlock',
+        'specification_text_block' => 'specificationTextBlock',
     ];
 
     /**
@@ -109,12 +109,12 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     protected static array $setters = [
         'headline' => 'setHeadline',
         'image' => 'setImage',
-        'descriptionHeadline' => 'setDescriptionHeadline',
-        'descriptionBlock1' => 'setDescriptionBlock1',
-        'descriptionBlock2' => 'setDescriptionBlock2',
-        'specificationHeadline' => 'setSpecificationHeadline',
-        'specificationListBlock' => 'setSpecificationListBlock',
-        'specificationTextBlock' => 'setSpecificationTextBlock',
+        'description_headline' => 'setDescriptionHeadline',
+        'description_block1' => 'setDescriptionBlock1',
+        'description_block2' => 'setDescriptionBlock2',
+        'specification_headline' => 'setSpecificationHeadline',
+        'specification_list_block' => 'setSpecificationListBlock',
+        'specification_text_block' => 'setSpecificationTextBlock',
     ];
 
     /**
@@ -125,12 +125,12 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     protected static array $getters = [
         'headline' => 'getHeadline',
         'image' => 'getImage',
-        'descriptionHeadline' => 'getDescriptionHeadline',
-        'descriptionBlock1' => 'getDescriptionBlock1',
-        'descriptionBlock2' => 'getDescriptionBlock2',
-        'specificationHeadline' => 'getSpecificationHeadline',
-        'specificationListBlock' => 'getSpecificationListBlock',
-        'specificationTextBlock' => 'getSpecificationTextBlock',
+        'description_headline' => 'getDescriptionHeadline',
+        'description_block1' => 'getDescriptionBlock1',
+        'description_block2' => 'getDescriptionBlock2',
+        'specification_headline' => 'getSpecificationHeadline',
+        'specification_list_block' => 'getSpecificationListBlock',
+        'specification_text_block' => 'getSpecificationTextBlock',
     ];
 
     /**
@@ -150,12 +150,12 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     {
         $this->container['headline'] = $data['headline'] ?? null;
         $this->container['image'] = $data['image'] ?? null;
-        $this->container['descriptionHeadline'] = $data['descriptionHeadline'] ?? null;
-        $this->container['descriptionBlock1'] = $data['descriptionBlock1'] ?? null;
-        $this->container['descriptionBlock2'] = $data['descriptionBlock2'] ?? null;
-        $this->container['specificationHeadline'] = $data['specificationHeadline'] ?? null;
-        $this->container['specificationListBlock'] = $data['specificationListBlock'] ?? null;
-        $this->container['specificationTextBlock'] = $data['specificationTextBlock'] ?? null;
+        $this->container['description_headline'] = $data['description_headline'] ?? null;
+        $this->container['description_block1'] = $data['description_block1'] ?? null;
+        $this->container['description_block2'] = $data['description_block2'] ?? null;
+        $this->container['specification_headline'] = $data['specification_headline'] ?? null;
+        $this->container['specification_list_block'] = $data['specification_list_block'] ?? null;
+        $this->container['specification_text_block'] = $data['specification_text_block'] ?? null;
     }
 
     /**
@@ -290,121 +290,121 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Gets descriptionHeadline.
+     * Gets description_headline.
      */
     public function getDescriptionHeadline() : ?TextComponent
     {
-        return $this->container['descriptionHeadline'];
+        return $this->container['description_headline'];
     }
 
     /**
-     * Sets descriptionHeadline.
+     * Sets description_headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $descriptionHeadline descriptionHeadline
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $description_headline description_headline
      */
-    public function setDescriptionHeadline(?TextComponent $descriptionHeadline) : self
+    public function setDescriptionHeadline(?TextComponent $description_headline) : self
     {
-        $this->container['descriptionHeadline'] = $descriptionHeadline;
+        $this->container['description_headline'] = $description_headline;
 
         return $this;
     }
 
     /**
-     * Gets descriptionBlock1.
+     * Gets description_block1.
      */
     public function getDescriptionBlock1() : ?StandardTextBlock
     {
-        return $this->container['descriptionBlock1'];
+        return $this->container['description_block1'];
     }
 
     /**
-     * Sets descriptionBlock1.
+     * Sets description_block1.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $descriptionBlock1 descriptionBlock1
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $description_block1 description_block1
      */
-    public function setDescriptionBlock1(?StandardTextBlock $descriptionBlock1) : self
+    public function setDescriptionBlock1(?StandardTextBlock $description_block1) : self
     {
-        $this->container['descriptionBlock1'] = $descriptionBlock1;
+        $this->container['description_block1'] = $description_block1;
 
         return $this;
     }
 
     /**
-     * Gets descriptionBlock2.
+     * Gets description_block2.
      */
     public function getDescriptionBlock2() : ?StandardTextBlock
     {
-        return $this->container['descriptionBlock2'];
+        return $this->container['description_block2'];
     }
 
     /**
-     * Sets descriptionBlock2.
+     * Sets description_block2.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $descriptionBlock2 descriptionBlock2
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $description_block2 description_block2
      */
-    public function setDescriptionBlock2(?StandardTextBlock $descriptionBlock2) : self
+    public function setDescriptionBlock2(?StandardTextBlock $description_block2) : self
     {
-        $this->container['descriptionBlock2'] = $descriptionBlock2;
+        $this->container['description_block2'] = $description_block2;
 
         return $this;
     }
 
     /**
-     * Gets specificationHeadline.
+     * Gets specification_headline.
      */
     public function getSpecificationHeadline() : ?TextComponent
     {
-        return $this->container['specificationHeadline'];
+        return $this->container['specification_headline'];
     }
 
     /**
-     * Sets specificationHeadline.
+     * Sets specification_headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $specificationHeadline specificationHeadline
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $specification_headline specification_headline
      */
-    public function setSpecificationHeadline(?TextComponent $specificationHeadline) : self
+    public function setSpecificationHeadline(?TextComponent $specification_headline) : self
     {
-        $this->container['specificationHeadline'] = $specificationHeadline;
+        $this->container['specification_headline'] = $specification_headline;
 
         return $this;
     }
 
     /**
-     * Gets specificationListBlock.
+     * Gets specification_list_block.
      */
     public function getSpecificationListBlock() : ?StandardHeaderTextListBlock
     {
-        return $this->container['specificationListBlock'];
+        return $this->container['specification_list_block'];
     }
 
     /**
-     * Sets specificationListBlock.
+     * Sets specification_list_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock $specificationListBlock specificationListBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock $specification_list_block specification_list_block
      */
-    public function setSpecificationListBlock(?StandardHeaderTextListBlock $specificationListBlock) : self
+    public function setSpecificationListBlock(?StandardHeaderTextListBlock $specification_list_block) : self
     {
-        $this->container['specificationListBlock'] = $specificationListBlock;
+        $this->container['specification_list_block'] = $specification_list_block;
 
         return $this;
     }
 
     /**
-     * Gets specificationTextBlock.
+     * Gets specification_text_block.
      */
     public function getSpecificationTextBlock() : ?StandardTextBlock
     {
-        return $this->container['specificationTextBlock'];
+        return $this->container['specification_text_block'];
     }
 
     /**
-     * Sets specificationTextBlock.
+     * Sets specification_text_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $specificationTextBlock specificationTextBlock
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $specification_text_block specification_text_block
      */
-    public function setSpecificationTextBlock(?StandardTextBlock $specificationTextBlock) : self
+    public function setSpecificationTextBlock(?StandardTextBlock $specification_text_block) : self
     {
-        $this->container['specificationTextBlock'] = $specificationTextBlock;
+        $this->container['specification_text_block'] = $specification_text_block;
 
         return $this;
     }

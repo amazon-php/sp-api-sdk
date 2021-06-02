@@ -56,12 +56,12 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'reportScheduleId' => 'string',
-        'reportType' => 'string',
-        'marketplaceIds' => 'string[]',
-        'reportOptions' => 'array<string,string>',
+        'report_schedule_id' => 'string',
+        'report_type' => 'string',
+        'marketplace_ids' => 'string[]',
+        'report_options' => 'array<string,string>',
         'period' => 'string',
-        'nextReportCreationTime' => '\DateTime',
+        'next_report_creation_time' => '\DateTime',
     ];
 
     /**
@@ -72,12 +72,12 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'reportScheduleId' => null,
-        'reportType' => null,
-        'marketplaceIds' => null,
-        'reportOptions' => null,
+        'report_schedule_id' => null,
+        'report_type' => null,
+        'marketplace_ids' => null,
+        'report_options' => null,
         'period' => null,
-        'nextReportCreationTime' => 'date-time',
+        'next_report_creation_time' => 'date-time',
     ];
 
     /**
@@ -87,12 +87,12 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'reportScheduleId' => 'reportScheduleId',
-        'reportType' => 'reportType',
-        'marketplaceIds' => 'marketplaceIds',
-        'reportOptions' => 'reportOptions',
+        'report_schedule_id' => 'reportScheduleId',
+        'report_type' => 'reportType',
+        'marketplace_ids' => 'marketplaceIds',
+        'report_options' => 'reportOptions',
         'period' => 'period',
-        'nextReportCreationTime' => 'nextReportCreationTime',
+        'next_report_creation_time' => 'nextReportCreationTime',
     ];
 
     /**
@@ -101,12 +101,12 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'reportScheduleId' => 'setReportScheduleId',
-        'reportType' => 'setReportType',
-        'marketplaceIds' => 'setMarketplaceIds',
-        'reportOptions' => 'setReportOptions',
+        'report_schedule_id' => 'setReportScheduleId',
+        'report_type' => 'setReportType',
+        'marketplace_ids' => 'setMarketplaceIds',
+        'report_options' => 'setReportOptions',
         'period' => 'setPeriod',
-        'nextReportCreationTime' => 'setNextReportCreationTime',
+        'next_report_creation_time' => 'setNextReportCreationTime',
     ];
 
     /**
@@ -115,12 +115,12 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'reportScheduleId' => 'getReportScheduleId',
-        'reportType' => 'getReportType',
-        'marketplaceIds' => 'getMarketplaceIds',
-        'reportOptions' => 'getReportOptions',
+        'report_schedule_id' => 'getReportScheduleId',
+        'report_type' => 'getReportType',
+        'marketplace_ids' => 'getMarketplaceIds',
+        'report_options' => 'getReportOptions',
         'period' => 'getPeriod',
-        'nextReportCreationTime' => 'getNextReportCreationTime',
+        'next_report_creation_time' => 'getNextReportCreationTime',
     ];
 
     /**
@@ -138,12 +138,12 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['reportScheduleId'] = $data['reportScheduleId'] ?? null;
-        $this->container['reportType'] = $data['reportType'] ?? null;
-        $this->container['marketplaceIds'] = $data['marketplaceIds'] ?? null;
-        $this->container['reportOptions'] = $data['reportOptions'] ?? null;
+        $this->container['report_schedule_id'] = $data['report_schedule_id'] ?? null;
+        $this->container['report_type'] = $data['report_type'] ?? null;
+        $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
+        $this->container['report_options'] = $data['report_options'] ?? null;
         $this->container['period'] = $data['period'] ?? null;
-        $this->container['nextReportCreationTime'] = $data['nextReportCreationTime'] ?? null;
+        $this->container['next_report_creation_time'] = $data['next_report_creation_time'] ?? null;
     }
 
     /**
@@ -225,12 +225,12 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['reportScheduleId'] === null) {
-            $invalidProperties[] = "'reportScheduleId' can't be null";
+        if ($this->container['report_schedule_id'] === null) {
+            $invalidProperties[] = "'report_schedule_id' can't be null";
         }
 
-        if ($this->container['reportType'] === null) {
-            $invalidProperties[] = "'reportType' can't be null";
+        if ($this->container['report_type'] === null) {
+            $invalidProperties[] = "'report_type' can't be null";
         }
 
         if ($this->container['period'] === null) {
@@ -252,85 +252,85 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets reportScheduleId.
+     * Gets report_schedule_id.
      */
     public function getReportScheduleId() : string
     {
-        return $this->container['reportScheduleId'];
+        return $this->container['report_schedule_id'];
     }
 
     /**
-     * Sets reportScheduleId.
+     * Sets report_schedule_id.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
      */
-    public function setReportScheduleId(string $reportScheduleId) : self
+    public function setReportScheduleId(string $report_schedule_id) : self
     {
-        $this->container['reportScheduleId'] = $reportScheduleId;
+        $this->container['report_schedule_id'] = $report_schedule_id;
 
         return $this;
     }
 
     /**
-     * Gets reportType.
+     * Gets report_type.
      */
     public function getReportType() : string
     {
-        return $this->container['reportType'];
+        return $this->container['report_type'];
     }
 
     /**
-     * Sets reportType.
+     * Sets report_type.
      *
-     * @param string $reportType the report type
+     * @param string $report_type the report type
      */
-    public function setReportType(string $reportType) : self
+    public function setReportType(string $report_type) : self
     {
-        $this->container['reportType'] = $reportType;
+        $this->container['report_type'] = $report_type;
 
         return $this;
     }
 
     /**
-     * Gets marketplaceIds.
+     * Gets marketplace_ids.
      *
      * @return null|string[]
      */
     public function getMarketplaceIds() : ?array
     {
-        return $this->container['marketplaceIds'];
+        return $this->container['marketplace_ids'];
     }
 
     /**
-     * Sets marketplaceIds.
+     * Sets marketplace_ids.
      *
-     * @param null|string[] $marketplaceIds A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
+     * @param null|string[] $marketplace_ids A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
      */
-    public function setMarketplaceIds(?array $marketplaceIds) : self
+    public function setMarketplaceIds(?array $marketplace_ids) : self
     {
-        $this->container['marketplaceIds'] = $marketplaceIds;
+        $this->container['marketplace_ids'] = $marketplace_ids;
 
         return $this;
     }
 
     /**
-     * Gets reportOptions.
+     * Gets report_options.
      *
      * @return null|array<string,string>
      */
     public function getReportOptions() : ?array
     {
-        return $this->container['reportOptions'];
+        return $this->container['report_options'];
     }
 
     /**
-     * Sets reportOptions.
+     * Sets report_options.
      *
-     * @param null|array<string,string> $reportOptions Additional information passed to reports. This varies by report type.
+     * @param null|array<string,string> $report_options Additional information passed to reports. This varies by report type.
      */
-    public function setReportOptions(?array $reportOptions) : self
+    public function setReportOptions(?array $report_options) : self
     {
-        $this->container['reportOptions'] = $reportOptions;
+        $this->container['report_options'] = $report_options;
 
         return $this;
     }
@@ -356,21 +356,21 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets nextReportCreationTime.
+     * Gets next_report_creation_time.
      */
     public function getNextReportCreationTime() : ?\DateTime
     {
-        return $this->container['nextReportCreationTime'];
+        return $this->container['next_report_creation_time'];
     }
 
     /**
-     * Sets nextReportCreationTime.
+     * Sets next_report_creation_time.
      *
-     * @param null|\DateTime $nextReportCreationTime the date and time when the schedule will create its next report, in ISO 8601 date time format
+     * @param null|\DateTime $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
      */
-    public function setNextReportCreationTime(?\DateTime $nextReportCreationTime) : self
+    public function setNextReportCreationTime(?\DateTime $next_report_creation_time) : self
     {
-        $this->container['nextReportCreationTime'] = $nextReportCreationTime;
+        $this->container['next_report_creation_time'] = $next_report_creation_time;
 
         return $this;
     }

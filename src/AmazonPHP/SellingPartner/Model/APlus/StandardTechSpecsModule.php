@@ -57,8 +57,8 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     protected static array $openAPITypes = [
         'headline' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent',
-        'specificationList' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[]',
-        'tableCount' => 'int',
+        'specification_list' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[]',
+        'table_count' => 'int',
     ];
 
     /**
@@ -70,8 +70,8 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     protected static array $openAPIFormats = [
         'headline' => null,
-        'specificationList' => null,
-        'tableCount' => null,
+        'specification_list' => null,
+        'table_count' => null,
     ];
 
     /**
@@ -82,8 +82,8 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     protected static array $attributeMap = [
         'headline' => 'headline',
-        'specificationList' => 'specificationList',
-        'tableCount' => 'tableCount',
+        'specification_list' => 'specificationList',
+        'table_count' => 'tableCount',
     ];
 
     /**
@@ -93,8 +93,8 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     protected static array $setters = [
         'headline' => 'setHeadline',
-        'specificationList' => 'setSpecificationList',
-        'tableCount' => 'setTableCount',
+        'specification_list' => 'setSpecificationList',
+        'table_count' => 'setTableCount',
     ];
 
     /**
@@ -104,8 +104,8 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     protected static array $getters = [
         'headline' => 'getHeadline',
-        'specificationList' => 'getSpecificationList',
-        'tableCount' => 'getTableCount',
+        'specification_list' => 'getSpecificationList',
+        'table_count' => 'getTableCount',
     ];
 
     /**
@@ -124,8 +124,8 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     public function __construct(array $data = null)
     {
         $this->container['headline'] = $data['headline'] ?? null;
-        $this->container['specificationList'] = $data['specificationList'] ?? null;
-        $this->container['tableCount'] = $data['tableCount'] ?? null;
+        $this->container['specification_list'] = $data['specification_list'] ?? null;
+        $this->container['table_count'] = $data['table_count'] ?? null;
     }
 
     /**
@@ -207,24 +207,24 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     {
         $invalidProperties = [];
 
-        if ($this->container['specificationList'] === null) {
-            $invalidProperties[] = "'specificationList' can't be null";
+        if ($this->container['specification_list'] === null) {
+            $invalidProperties[] = "'specification_list' can't be null";
         }
 
-        if ((\count($this->container['specificationList']) > 16)) {
-            $invalidProperties[] = "invalid value for 'specificationList', number of items must be less than or equal to 16.";
+        if ((\count($this->container['specification_list']) > 16)) {
+            $invalidProperties[] = "invalid value for 'specification_list', number of items must be less than or equal to 16.";
         }
 
-        if ((\count($this->container['specificationList']) < 4)) {
-            $invalidProperties[] = "invalid value for 'specificationList', number of items must be greater than or equal to 4.";
+        if ((\count($this->container['specification_list']) < 4)) {
+            $invalidProperties[] = "invalid value for 'specification_list', number of items must be greater than or equal to 4.";
         }
 
-        if (null !== $this->container['tableCount'] && ($this->container['tableCount'] > 2)) {
-            $invalidProperties[] = "invalid value for 'tableCount', must be smaller than or equal to 2.";
+        if (null !== $this->container['table_count'] && ($this->container['table_count'] > 2)) {
+            $invalidProperties[] = "invalid value for 'table_count', must be smaller than or equal to 2.";
         }
 
-        if (null !== $this->container['tableCount'] && ($this->container['tableCount'] < 1)) {
-            $invalidProperties[] = "invalid value for 'tableCount', must be bigger than or equal to 1.";
+        if (null !== $this->container['table_count'] && ($this->container['table_count'] < 1)) {
+            $invalidProperties[] = "invalid value for 'table_count', must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -262,58 +262,58 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     }
 
     /**
-     * Gets specificationList.
+     * Gets specification_list.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[]
      */
     public function getSpecificationList() : array
     {
-        return $this->container['specificationList'];
+        return $this->container['specification_list'];
     }
 
     /**
-     * Sets specificationList.
+     * Sets specification_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[] $specificationList the specification list
+     * @param \AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[] $specification_list the specification list
      */
-    public function setSpecificationList(array $specificationList) : self
+    public function setSpecificationList(array $specification_list) : self
     {
-        if ((\count($specificationList) > 16)) {
-            throw new \InvalidArgumentException('invalid value for $specificationList when calling StandardTechSpecsModule., number of items must be less than or equal to 16.');
+        if ((\count($specification_list) > 16)) {
+            throw new \InvalidArgumentException('invalid value for $specification_list when calling StandardTechSpecsModule., number of items must be less than or equal to 16.');
         }
 
-        if ((\count($specificationList) < 4)) {
-            throw new \InvalidArgumentException('invalid length for $specificationList when calling StandardTechSpecsModule., number of items must be greater than or equal to 4.');
+        if ((\count($specification_list) < 4)) {
+            throw new \InvalidArgumentException('invalid length for $specification_list when calling StandardTechSpecsModule., number of items must be greater than or equal to 4.');
         }
-        $this->container['specificationList'] = $specificationList;
+        $this->container['specification_list'] = $specification_list;
 
         return $this;
     }
 
     /**
-     * Gets tableCount.
+     * Gets table_count.
      */
     public function getTableCount() : ?int
     {
-        return $this->container['tableCount'];
+        return $this->container['table_count'];
     }
 
     /**
-     * Sets tableCount.
+     * Sets table_count.
      *
-     * @param null|int $tableCount The number of tables to present. Features are evenly divided between the tables.
+     * @param null|int $table_count The number of tables to present. Features are evenly divided between the tables.
      */
-    public function setTableCount(?int $tableCount) : self
+    public function setTableCount(?int $table_count) : self
     {
-        if (null !== $tableCount && ($tableCount > 2)) {
-            throw new \InvalidArgumentException('invalid value for $tableCount when calling StandardTechSpecsModule., must be smaller than or equal to 2.');
+        if (null !== $table_count && ($table_count > 2)) {
+            throw new \InvalidArgumentException('invalid value for $table_count when calling StandardTechSpecsModule., must be smaller than or equal to 2.');
         }
 
-        if (null !== $tableCount && ($tableCount < 1)) {
-            throw new \InvalidArgumentException('invalid value for $tableCount when calling StandardTechSpecsModule., must be bigger than or equal to 1.');
+        if (null !== $table_count && ($table_count < 1)) {
+            throw new \InvalidArgumentException('invalid value for $table_count when calling StandardTechSpecsModule., must be bigger than or equal to 1.');
         }
 
-        $this->container['tableCount'] = $tableCount;
+        $this->container['table_count'] = $table_count;
 
         return $this;
     }

@@ -56,7 +56,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'textList' => '\AmazonPHP\SellingPartner\Model\APlus\TextItem[]',
+        'text_list' => '\AmazonPHP\SellingPartner\Model\APlus\TextItem[]',
     ];
 
     /**
@@ -67,7 +67,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'textList' => null,
+        'text_list' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * @var string[]
      */
     protected static array $attributeMap = [
-        'textList' => 'textList',
+        'text_list' => 'textList',
     ];
 
     /**
@@ -86,7 +86,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * @var string[]
      */
     protected static array $setters = [
-        'textList' => 'setTextList',
+        'text_list' => 'setTextList',
     ];
 
     /**
@@ -95,7 +95,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * @var string[]
      */
     protected static array $getters = [
-        'textList' => 'getTextList',
+        'text_list' => 'getTextList',
     ];
 
     /**
@@ -113,7 +113,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function __construct(array $data = null)
     {
-        $this->container['textList'] = $data['textList'] ?? null;
+        $this->container['text_list'] = $data['text_list'] ?? null;
     }
 
     /**
@@ -195,16 +195,16 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     {
         $invalidProperties = [];
 
-        if ($this->container['textList'] === null) {
-            $invalidProperties[] = "'textList' can't be null";
+        if ($this->container['text_list'] === null) {
+            $invalidProperties[] = "'text_list' can't be null";
         }
 
-        if ((\count($this->container['textList']) > 8)) {
-            $invalidProperties[] = "invalid value for 'textList', number of items must be less than or equal to 8.";
+        if ((\count($this->container['text_list']) > 8)) {
+            $invalidProperties[] = "invalid value for 'text_list', number of items must be less than or equal to 8.";
         }
 
-        if ((\count($this->container['textList']) < 0)) {
-            $invalidProperties[] = "invalid value for 'textList', number of items must be greater than or equal to 0.";
+        if ((\count($this->container['text_list']) < 0)) {
+            $invalidProperties[] = "invalid value for 'text_list', number of items must be greater than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -222,30 +222,30 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Gets textList.
+     * Gets text_list.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\TextItem[]
      */
     public function getTextList() : array
     {
-        return $this->container['textList'];
+        return $this->container['text_list'];
     }
 
     /**
-     * Sets textList.
+     * Sets text_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\TextItem[] $textList textList
+     * @param \AmazonPHP\SellingPartner\Model\APlus\TextItem[] $text_list text_list
      */
-    public function setTextList(array $textList) : self
+    public function setTextList(array $text_list) : self
     {
-        if ((\count($textList) > 8)) {
-            throw new \InvalidArgumentException('invalid value for $textList when calling StandardTextListBlock., number of items must be less than or equal to 8.');
+        if ((\count($text_list) > 8)) {
+            throw new \InvalidArgumentException('invalid value for $text_list when calling StandardTextListBlock., number of items must be less than or equal to 8.');
         }
 
-        if ((\count($textList) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $textList when calling StandardTextListBlock., number of items must be greater than or equal to 0.');
+        if ((\count($text_list) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $text_list when calling StandardTextListBlock., number of items must be greater than or equal to 0.');
         }
-        $this->container['textList'] = $textList;
+        $this->container['text_list'] = $text_list;
 
         return $this;
     }

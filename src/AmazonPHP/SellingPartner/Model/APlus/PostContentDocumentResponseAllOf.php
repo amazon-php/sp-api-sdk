@@ -56,7 +56,7 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'contentReferenceKey' => 'string',
+        'content_reference_key' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'contentReferenceKey' => null,
+        'content_reference_key' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $attributeMap = [
-        'contentReferenceKey' => 'contentReferenceKey',
+        'content_reference_key' => 'contentReferenceKey',
     ];
 
     /**
@@ -86,7 +86,7 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $setters = [
-        'contentReferenceKey' => 'setContentReferenceKey',
+        'content_reference_key' => 'setContentReferenceKey',
     ];
 
     /**
@@ -95,7 +95,7 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $getters = [
-        'contentReferenceKey' => 'getContentReferenceKey',
+        'content_reference_key' => 'getContentReferenceKey',
     ];
 
     /**
@@ -113,7 +113,7 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['contentReferenceKey'] = $data['contentReferenceKey'] ?? null;
+        $this->container['content_reference_key'] = $data['content_reference_key'] ?? null;
     }
 
     /**
@@ -195,12 +195,12 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
     {
         $invalidProperties = [];
 
-        if ($this->container['contentReferenceKey'] === null) {
-            $invalidProperties[] = "'contentReferenceKey' can't be null";
+        if ($this->container['content_reference_key'] === null) {
+            $invalidProperties[] = "'content_reference_key' can't be null";
         }
 
-        if ((\mb_strlen($this->container['contentReferenceKey']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contentReferenceKey', the character length must be bigger than or equal to 1.";
+        if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -218,25 +218,25 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets contentReferenceKey.
+     * Gets content_reference_key.
      */
     public function getContentReferenceKey() : string
     {
-        return $this->container['contentReferenceKey'];
+        return $this->container['content_reference_key'];
     }
 
     /**
-     * Sets contentReferenceKey.
+     * Sets content_reference_key.
      *
-     * @param string $contentReferenceKey A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
      */
-    public function setContentReferenceKey(string $contentReferenceKey) : self
+    public function setContentReferenceKey(string $content_reference_key) : self
     {
-        if ((\mb_strlen($contentReferenceKey) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contentReferenceKey when calling PostContentDocumentResponseAllOf., must be bigger than or equal to 1.');
+        if ((\mb_strlen($content_reference_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $content_reference_key when calling PostContentDocumentResponseAllOf., must be bigger than or equal to 1.');
         }
 
-        $this->container['contentReferenceKey'] = $contentReferenceKey;
+        $this->container['content_reference_key'] = $content_reference_key;
 
         return $this;
     }

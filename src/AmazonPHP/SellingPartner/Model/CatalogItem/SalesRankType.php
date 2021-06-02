@@ -56,7 +56,7 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'productCategoryId' => 'string',
+        'product_category_id' => 'string',
         'rank' => 'int',
     ];
 
@@ -68,7 +68,7 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'productCategoryId' => null,
+        'product_category_id' => null,
         'rank' => 'int32',
     ];
 
@@ -79,7 +79,7 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'productCategoryId' => 'ProductCategoryId',
+        'product_category_id' => 'ProductCategoryId',
         'rank' => 'Rank',
     ];
 
@@ -89,7 +89,7 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'productCategoryId' => 'setProductCategoryId',
+        'product_category_id' => 'setProductCategoryId',
         'rank' => 'setRank',
     ];
 
@@ -99,7 +99,7 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'productCategoryId' => 'getProductCategoryId',
+        'product_category_id' => 'getProductCategoryId',
         'rank' => 'getRank',
     ];
 
@@ -118,7 +118,7 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['productCategoryId'] = $data['productCategoryId'] ?? null;
+        $this->container['product_category_id'] = $data['product_category_id'] ?? null;
         $this->container['rank'] = $data['rank'] ?? null;
     }
 
@@ -201,8 +201,8 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['productCategoryId'] === null) {
-            $invalidProperties[] = "'productCategoryId' can't be null";
+        if ($this->container['product_category_id'] === null) {
+            $invalidProperties[] = "'product_category_id' can't be null";
         }
 
         if ($this->container['rank'] === null) {
@@ -224,21 +224,21 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets productCategoryId.
+     * Gets product_category_id.
      */
     public function getProductCategoryId() : string
     {
-        return $this->container['productCategoryId'];
+        return $this->container['product_category_id'];
     }
 
     /**
-     * Sets productCategoryId.
+     * Sets product_category_id.
      *
-     * @param string $productCategoryId identifies the item category from which the sales rank is taken
+     * @param string $product_category_id identifies the item category from which the sales rank is taken
      */
-    public function setProductCategoryId(string $productCategoryId) : self
+    public function setProductCategoryId(string $product_category_id) : self
     {
-        $this->container['productCategoryId'] = $productCategoryId;
+        $this->container['product_category_id'] = $product_category_id;
 
         return $this;
     }

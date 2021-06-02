@@ -57,7 +57,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $openAPITypes = [
         'payment' => '\AmazonPHP\SellingPartner\Model\Orders\Money',
-        'paymentMethod' => 'string',
+        'payment_method' => 'string',
     ];
 
     /**
@@ -69,7 +69,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $openAPIFormats = [
         'payment' => null,
-        'paymentMethod' => null,
+        'payment_method' => null,
     ];
 
     /**
@@ -80,7 +80,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $attributeMap = [
         'payment' => 'Payment',
-        'paymentMethod' => 'PaymentMethod',
+        'payment_method' => 'PaymentMethod',
     ];
 
     /**
@@ -90,7 +90,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $setters = [
         'payment' => 'setPayment',
-        'paymentMethod' => 'setPaymentMethod',
+        'payment_method' => 'setPaymentMethod',
     ];
 
     /**
@@ -100,7 +100,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     protected static array $getters = [
         'payment' => 'getPayment',
-        'paymentMethod' => 'getPaymentMethod',
+        'payment_method' => 'getPaymentMethod',
     ];
 
     /**
@@ -119,7 +119,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
     public function __construct(array $data = null)
     {
         $this->container['payment'] = $data['payment'] ?? null;
-        $this->container['paymentMethod'] = $data['paymentMethod'] ?? null;
+        $this->container['payment_method'] = $data['payment_method'] ?? null;
     }
 
     /**
@@ -205,8 +205,8 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
             $invalidProperties[] = "'payment' can't be null";
         }
 
-        if ($this->container['paymentMethod'] === null) {
-            $invalidProperties[] = "'paymentMethod' can't be null";
+        if ($this->container['payment_method'] === null) {
+            $invalidProperties[] = "'payment_method' can't be null";
         }
 
         return $invalidProperties;
@@ -244,21 +244,21 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
     }
 
     /**
-     * Gets paymentMethod.
+     * Gets payment_method.
      */
     public function getPaymentMethod() : string
     {
-        return $this->container['paymentMethod'];
+        return $this->container['payment_method'];
     }
 
     /**
-     * Sets paymentMethod.
+     * Sets payment_method.
      *
-     * @param string $paymentMethod A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.
+     * @param string $payment_method A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.
      */
-    public function setPaymentMethod(string $paymentMethod) : self
+    public function setPaymentMethod(string $payment_method) : self
     {
-        $this->container['paymentMethod'] = $paymentMethod;
+        $this->container['payment_method'] = $payment_method;
 
         return $this;
     }

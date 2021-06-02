@@ -58,100 +58,100 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     protected static array $openAPITypes = [
         'actor' => 'string[]',
         'artist' => 'string[]',
-        'aspectRatio' => 'string',
-        'audienceRating' => 'string',
+        'aspect_ratio' => 'string',
+        'audience_rating' => 'string',
         'author' => 'string[]',
-        'backFinding' => 'string',
-        'bandMaterialType' => 'string',
+        'back_finding' => 'string',
+        'band_material_type' => 'string',
         'binding' => 'string',
-        'blurayRegion' => 'string',
+        'bluray_region' => 'string',
         'brand' => 'string',
-        'ceroAgeRating' => 'string',
-        'chainType' => 'string',
-        'claspType' => 'string',
+        'cero_age_rating' => 'string',
+        'chain_type' => 'string',
+        'clasp_type' => 'string',
         'color' => 'string',
-        'cpuManufacturer' => 'string',
-        'cpuSpeed' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'cpuType' => 'string',
+        'cpu_manufacturer' => 'string',
+        'cpu_speed' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'cpu_type' => 'string',
         'creator' => '\AmazonPHP\SellingPartner\Model\CatalogItem\CreatorType[]',
         'department' => 'string',
         'director' => 'string[]',
-        'displaySize' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'display_size' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
         'edition' => 'string',
-        'episodeSequence' => 'string',
-        'esrbAgeRating' => 'string',
+        'episode_sequence' => 'string',
+        'esrb_age_rating' => 'string',
         'feature' => 'string[]',
         'flavor' => 'string',
         'format' => 'string[]',
-        'gemType' => 'string[]',
+        'gem_type' => 'string[]',
         'genre' => 'string',
-        'golfClubFlex' => 'string',
-        'golfClubLoft' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'handOrientation' => 'string',
-        'hardDiskInterface' => 'string',
-        'hardDiskSize' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'hardwarePlatform' => 'string',
-        'hazardousMaterialType' => 'string',
-        'itemDimensions' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType',
-        'isAdultProduct' => 'bool',
-        'isAutographed' => 'bool',
-        'isEligibleForTradeIn' => 'bool',
-        'isMemorabilia' => 'bool',
-        'issuesPerYear' => 'string',
-        'itemPartNumber' => 'string',
+        'golf_club_flex' => 'string',
+        'golf_club_loft' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'hand_orientation' => 'string',
+        'hard_disk_interface' => 'string',
+        'hard_disk_size' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'hardware_platform' => 'string',
+        'hazardous_material_type' => 'string',
+        'item_dimensions' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType',
+        'is_adult_product' => 'bool',
+        'is_autographed' => 'bool',
+        'is_eligible_for_trade_in' => 'bool',
+        'is_memorabilia' => 'bool',
+        'issues_per_year' => 'string',
+        'item_part_number' => 'string',
         'label' => 'string',
         'languages' => '\AmazonPHP\SellingPartner\Model\CatalogItem\LanguageType[]',
-        'legalDisclaimer' => 'string',
-        'listPrice' => '\AmazonPHP\SellingPartner\Model\CatalogItem\Price',
+        'legal_disclaimer' => 'string',
+        'list_price' => '\AmazonPHP\SellingPartner\Model\CatalogItem\Price',
         'manufacturer' => 'string',
-        'manufacturerMaximumAge' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'manufacturerMinimumAge' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'manufacturerPartsWarrantyDescription' => 'string',
-        'materialType' => 'string[]',
-        'maximumResolution' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'mediaType' => 'string[]',
-        'metalStamp' => 'string',
-        'metalType' => 'string',
+        'manufacturer_maximum_age' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'manufacturer_minimum_age' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'manufacturer_parts_warranty_description' => 'string',
+        'material_type' => 'string[]',
+        'maximum_resolution' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'media_type' => 'string[]',
+        'metal_stamp' => 'string',
+        'metal_type' => 'string',
         'model' => 'string',
-        'numberOfDiscs' => 'int',
-        'numberOfIssues' => 'int',
-        'numberOfItems' => 'int',
-        'numberOfPages' => 'int',
-        'numberOfTracks' => 'int',
-        'operatingSystem' => 'string[]',
-        'opticalZoom' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'packageDimensions' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType',
-        'packageQuantity' => 'int',
-        'partNumber' => 'string',
-        'pegiRating' => 'string',
+        'number_of_discs' => 'int',
+        'number_of_issues' => 'int',
+        'number_of_items' => 'int',
+        'number_of_pages' => 'int',
+        'number_of_tracks' => 'int',
+        'operating_system' => 'string[]',
+        'optical_zoom' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'package_dimensions' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType',
+        'package_quantity' => 'int',
+        'part_number' => 'string',
+        'pegi_rating' => 'string',
         'platform' => 'string[]',
-        'processorCount' => 'int',
-        'productGroup' => 'string',
-        'productTypeName' => 'string',
-        'productTypeSubcategory' => 'string',
-        'publicationDate' => 'string',
+        'processor_count' => 'int',
+        'product_group' => 'string',
+        'product_type_name' => 'string',
+        'product_type_subcategory' => 'string',
+        'publication_date' => 'string',
         'publisher' => 'string',
-        'regionCode' => 'string',
-        'releaseDate' => 'string',
-        'ringSize' => 'string',
-        'runningTime' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'shaftMaterial' => 'string',
+        'region_code' => 'string',
+        'release_date' => 'string',
+        'ring_size' => 'string',
+        'running_time' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'shaft_material' => 'string',
         'scent' => 'string',
-        'seasonSequence' => 'string',
-        'seikodoProductCode' => 'string',
+        'season_sequence' => 'string',
+        'seikodo_product_code' => 'string',
         'size' => 'string',
-        'sizePerPearl' => 'string',
-        'smallImage' => '\AmazonPHP\SellingPartner\Model\CatalogItem\Image',
+        'size_per_pearl' => 'string',
+        'small_image' => '\AmazonPHP\SellingPartner\Model\CatalogItem\Image',
         'studio' => 'string',
-        'subscriptionLength' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'systemMemorySize' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'systemMemoryType' => 'string',
-        'theatricalReleaseDate' => 'string',
+        'subscription_length' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'system_memory_size' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'system_memory_type' => 'string',
+        'theatrical_release_date' => 'string',
         'title' => 'string',
-        'totalDiamondWeight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
-        'totalGemWeight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'total_diamond_weight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
+        'total_gem_weight' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
         'warranty' => 'string',
-        'weeeTaxValue' => '\AmazonPHP\SellingPartner\Model\CatalogItem\Price',
+        'weee_tax_value' => '\AmazonPHP\SellingPartner\Model\CatalogItem\Price',
     ];
 
     /**
@@ -164,100 +164,100 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     protected static array $openAPIFormats = [
         'actor' => null,
         'artist' => null,
-        'aspectRatio' => null,
-        'audienceRating' => null,
+        'aspect_ratio' => null,
+        'audience_rating' => null,
         'author' => null,
-        'backFinding' => null,
-        'bandMaterialType' => null,
+        'back_finding' => null,
+        'band_material_type' => null,
         'binding' => null,
-        'blurayRegion' => null,
+        'bluray_region' => null,
         'brand' => null,
-        'ceroAgeRating' => null,
-        'chainType' => null,
-        'claspType' => null,
+        'cero_age_rating' => null,
+        'chain_type' => null,
+        'clasp_type' => null,
         'color' => null,
-        'cpuManufacturer' => null,
-        'cpuSpeed' => null,
-        'cpuType' => null,
+        'cpu_manufacturer' => null,
+        'cpu_speed' => null,
+        'cpu_type' => null,
         'creator' => null,
         'department' => null,
         'director' => null,
-        'displaySize' => null,
+        'display_size' => null,
         'edition' => null,
-        'episodeSequence' => null,
-        'esrbAgeRating' => null,
+        'episode_sequence' => null,
+        'esrb_age_rating' => null,
         'feature' => null,
         'flavor' => null,
         'format' => null,
-        'gemType' => null,
+        'gem_type' => null,
         'genre' => null,
-        'golfClubFlex' => null,
-        'golfClubLoft' => null,
-        'handOrientation' => null,
-        'hardDiskInterface' => null,
-        'hardDiskSize' => null,
-        'hardwarePlatform' => null,
-        'hazardousMaterialType' => null,
-        'itemDimensions' => null,
-        'isAdultProduct' => null,
-        'isAutographed' => null,
-        'isEligibleForTradeIn' => null,
-        'isMemorabilia' => null,
-        'issuesPerYear' => null,
-        'itemPartNumber' => null,
+        'golf_club_flex' => null,
+        'golf_club_loft' => null,
+        'hand_orientation' => null,
+        'hard_disk_interface' => null,
+        'hard_disk_size' => null,
+        'hardware_platform' => null,
+        'hazardous_material_type' => null,
+        'item_dimensions' => null,
+        'is_adult_product' => null,
+        'is_autographed' => null,
+        'is_eligible_for_trade_in' => null,
+        'is_memorabilia' => null,
+        'issues_per_year' => null,
+        'item_part_number' => null,
         'label' => null,
         'languages' => null,
-        'legalDisclaimer' => null,
-        'listPrice' => null,
+        'legal_disclaimer' => null,
+        'list_price' => null,
         'manufacturer' => null,
-        'manufacturerMaximumAge' => null,
-        'manufacturerMinimumAge' => null,
-        'manufacturerPartsWarrantyDescription' => null,
-        'materialType' => null,
-        'maximumResolution' => null,
-        'mediaType' => null,
-        'metalStamp' => null,
-        'metalType' => null,
+        'manufacturer_maximum_age' => null,
+        'manufacturer_minimum_age' => null,
+        'manufacturer_parts_warranty_description' => null,
+        'material_type' => null,
+        'maximum_resolution' => null,
+        'media_type' => null,
+        'metal_stamp' => null,
+        'metal_type' => null,
         'model' => null,
-        'numberOfDiscs' => null,
-        'numberOfIssues' => null,
-        'numberOfItems' => null,
-        'numberOfPages' => null,
-        'numberOfTracks' => null,
-        'operatingSystem' => null,
-        'opticalZoom' => null,
-        'packageDimensions' => null,
-        'packageQuantity' => null,
-        'partNumber' => null,
-        'pegiRating' => null,
+        'number_of_discs' => null,
+        'number_of_issues' => null,
+        'number_of_items' => null,
+        'number_of_pages' => null,
+        'number_of_tracks' => null,
+        'operating_system' => null,
+        'optical_zoom' => null,
+        'package_dimensions' => null,
+        'package_quantity' => null,
+        'part_number' => null,
+        'pegi_rating' => null,
         'platform' => null,
-        'processorCount' => null,
-        'productGroup' => null,
-        'productTypeName' => null,
-        'productTypeSubcategory' => null,
-        'publicationDate' => null,
+        'processor_count' => null,
+        'product_group' => null,
+        'product_type_name' => null,
+        'product_type_subcategory' => null,
+        'publication_date' => null,
         'publisher' => null,
-        'regionCode' => null,
-        'releaseDate' => null,
-        'ringSize' => null,
-        'runningTime' => null,
-        'shaftMaterial' => null,
+        'region_code' => null,
+        'release_date' => null,
+        'ring_size' => null,
+        'running_time' => null,
+        'shaft_material' => null,
         'scent' => null,
-        'seasonSequence' => null,
-        'seikodoProductCode' => null,
+        'season_sequence' => null,
+        'seikodo_product_code' => null,
         'size' => null,
-        'sizePerPearl' => null,
-        'smallImage' => null,
+        'size_per_pearl' => null,
+        'small_image' => null,
         'studio' => null,
-        'subscriptionLength' => null,
-        'systemMemorySize' => null,
-        'systemMemoryType' => null,
-        'theatricalReleaseDate' => null,
+        'subscription_length' => null,
+        'system_memory_size' => null,
+        'system_memory_type' => null,
+        'theatrical_release_date' => null,
         'title' => null,
-        'totalDiamondWeight' => null,
-        'totalGemWeight' => null,
+        'total_diamond_weight' => null,
+        'total_gem_weight' => null,
         'warranty' => null,
-        'weeeTaxValue' => null,
+        'weee_tax_value' => null,
     ];
 
     /**
@@ -269,100 +269,100 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     protected static array $attributeMap = [
         'actor' => 'Actor',
         'artist' => 'Artist',
-        'aspectRatio' => 'AspectRatio',
-        'audienceRating' => 'AudienceRating',
+        'aspect_ratio' => 'AspectRatio',
+        'audience_rating' => 'AudienceRating',
         'author' => 'Author',
-        'backFinding' => 'BackFinding',
-        'bandMaterialType' => 'BandMaterialType',
+        'back_finding' => 'BackFinding',
+        'band_material_type' => 'BandMaterialType',
         'binding' => 'Binding',
-        'blurayRegion' => 'BlurayRegion',
+        'bluray_region' => 'BlurayRegion',
         'brand' => 'Brand',
-        'ceroAgeRating' => 'CeroAgeRating',
-        'chainType' => 'ChainType',
-        'claspType' => 'ClaspType',
+        'cero_age_rating' => 'CeroAgeRating',
+        'chain_type' => 'ChainType',
+        'clasp_type' => 'ClaspType',
         'color' => 'Color',
-        'cpuManufacturer' => 'CpuManufacturer',
-        'cpuSpeed' => 'CpuSpeed',
-        'cpuType' => 'CpuType',
+        'cpu_manufacturer' => 'CpuManufacturer',
+        'cpu_speed' => 'CpuSpeed',
+        'cpu_type' => 'CpuType',
         'creator' => 'Creator',
         'department' => 'Department',
         'director' => 'Director',
-        'displaySize' => 'DisplaySize',
+        'display_size' => 'DisplaySize',
         'edition' => 'Edition',
-        'episodeSequence' => 'EpisodeSequence',
-        'esrbAgeRating' => 'EsrbAgeRating',
+        'episode_sequence' => 'EpisodeSequence',
+        'esrb_age_rating' => 'EsrbAgeRating',
         'feature' => 'Feature',
         'flavor' => 'Flavor',
         'format' => 'Format',
-        'gemType' => 'GemType',
+        'gem_type' => 'GemType',
         'genre' => 'Genre',
-        'golfClubFlex' => 'GolfClubFlex',
-        'golfClubLoft' => 'GolfClubLoft',
-        'handOrientation' => 'HandOrientation',
-        'hardDiskInterface' => 'HardDiskInterface',
-        'hardDiskSize' => 'HardDiskSize',
-        'hardwarePlatform' => 'HardwarePlatform',
-        'hazardousMaterialType' => 'HazardousMaterialType',
-        'itemDimensions' => 'ItemDimensions',
-        'isAdultProduct' => 'IsAdultProduct',
-        'isAutographed' => 'IsAutographed',
-        'isEligibleForTradeIn' => 'IsEligibleForTradeIn',
-        'isMemorabilia' => 'IsMemorabilia',
-        'issuesPerYear' => 'IssuesPerYear',
-        'itemPartNumber' => 'ItemPartNumber',
+        'golf_club_flex' => 'GolfClubFlex',
+        'golf_club_loft' => 'GolfClubLoft',
+        'hand_orientation' => 'HandOrientation',
+        'hard_disk_interface' => 'HardDiskInterface',
+        'hard_disk_size' => 'HardDiskSize',
+        'hardware_platform' => 'HardwarePlatform',
+        'hazardous_material_type' => 'HazardousMaterialType',
+        'item_dimensions' => 'ItemDimensions',
+        'is_adult_product' => 'IsAdultProduct',
+        'is_autographed' => 'IsAutographed',
+        'is_eligible_for_trade_in' => 'IsEligibleForTradeIn',
+        'is_memorabilia' => 'IsMemorabilia',
+        'issues_per_year' => 'IssuesPerYear',
+        'item_part_number' => 'ItemPartNumber',
         'label' => 'Label',
         'languages' => 'Languages',
-        'legalDisclaimer' => 'LegalDisclaimer',
-        'listPrice' => 'ListPrice',
+        'legal_disclaimer' => 'LegalDisclaimer',
+        'list_price' => 'ListPrice',
         'manufacturer' => 'Manufacturer',
-        'manufacturerMaximumAge' => 'ManufacturerMaximumAge',
-        'manufacturerMinimumAge' => 'ManufacturerMinimumAge',
-        'manufacturerPartsWarrantyDescription' => 'ManufacturerPartsWarrantyDescription',
-        'materialType' => 'MaterialType',
-        'maximumResolution' => 'MaximumResolution',
-        'mediaType' => 'MediaType',
-        'metalStamp' => 'MetalStamp',
-        'metalType' => 'MetalType',
+        'manufacturer_maximum_age' => 'ManufacturerMaximumAge',
+        'manufacturer_minimum_age' => 'ManufacturerMinimumAge',
+        'manufacturer_parts_warranty_description' => 'ManufacturerPartsWarrantyDescription',
+        'material_type' => 'MaterialType',
+        'maximum_resolution' => 'MaximumResolution',
+        'media_type' => 'MediaType',
+        'metal_stamp' => 'MetalStamp',
+        'metal_type' => 'MetalType',
         'model' => 'Model',
-        'numberOfDiscs' => 'NumberOfDiscs',
-        'numberOfIssues' => 'NumberOfIssues',
-        'numberOfItems' => 'NumberOfItems',
-        'numberOfPages' => 'NumberOfPages',
-        'numberOfTracks' => 'NumberOfTracks',
-        'operatingSystem' => 'OperatingSystem',
-        'opticalZoom' => 'OpticalZoom',
-        'packageDimensions' => 'PackageDimensions',
-        'packageQuantity' => 'PackageQuantity',
-        'partNumber' => 'PartNumber',
-        'pegiRating' => 'PegiRating',
+        'number_of_discs' => 'NumberOfDiscs',
+        'number_of_issues' => 'NumberOfIssues',
+        'number_of_items' => 'NumberOfItems',
+        'number_of_pages' => 'NumberOfPages',
+        'number_of_tracks' => 'NumberOfTracks',
+        'operating_system' => 'OperatingSystem',
+        'optical_zoom' => 'OpticalZoom',
+        'package_dimensions' => 'PackageDimensions',
+        'package_quantity' => 'PackageQuantity',
+        'part_number' => 'PartNumber',
+        'pegi_rating' => 'PegiRating',
         'platform' => 'Platform',
-        'processorCount' => 'ProcessorCount',
-        'productGroup' => 'ProductGroup',
-        'productTypeName' => 'ProductTypeName',
-        'productTypeSubcategory' => 'ProductTypeSubcategory',
-        'publicationDate' => 'PublicationDate',
+        'processor_count' => 'ProcessorCount',
+        'product_group' => 'ProductGroup',
+        'product_type_name' => 'ProductTypeName',
+        'product_type_subcategory' => 'ProductTypeSubcategory',
+        'publication_date' => 'PublicationDate',
         'publisher' => 'Publisher',
-        'regionCode' => 'RegionCode',
-        'releaseDate' => 'ReleaseDate',
-        'ringSize' => 'RingSize',
-        'runningTime' => 'RunningTime',
-        'shaftMaterial' => 'ShaftMaterial',
+        'region_code' => 'RegionCode',
+        'release_date' => 'ReleaseDate',
+        'ring_size' => 'RingSize',
+        'running_time' => 'RunningTime',
+        'shaft_material' => 'ShaftMaterial',
         'scent' => 'Scent',
-        'seasonSequence' => 'SeasonSequence',
-        'seikodoProductCode' => 'SeikodoProductCode',
+        'season_sequence' => 'SeasonSequence',
+        'seikodo_product_code' => 'SeikodoProductCode',
         'size' => 'Size',
-        'sizePerPearl' => 'SizePerPearl',
-        'smallImage' => 'SmallImage',
+        'size_per_pearl' => 'SizePerPearl',
+        'small_image' => 'SmallImage',
         'studio' => 'Studio',
-        'subscriptionLength' => 'SubscriptionLength',
-        'systemMemorySize' => 'SystemMemorySize',
-        'systemMemoryType' => 'SystemMemoryType',
-        'theatricalReleaseDate' => 'TheatricalReleaseDate',
+        'subscription_length' => 'SubscriptionLength',
+        'system_memory_size' => 'SystemMemorySize',
+        'system_memory_type' => 'SystemMemoryType',
+        'theatrical_release_date' => 'TheatricalReleaseDate',
         'title' => 'Title',
-        'totalDiamondWeight' => 'TotalDiamondWeight',
-        'totalGemWeight' => 'TotalGemWeight',
+        'total_diamond_weight' => 'TotalDiamondWeight',
+        'total_gem_weight' => 'TotalGemWeight',
         'warranty' => 'Warranty',
-        'weeeTaxValue' => 'WeeeTaxValue',
+        'weee_tax_value' => 'WeeeTaxValue',
     ];
 
     /**
@@ -373,100 +373,100 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     protected static array $setters = [
         'actor' => 'setActor',
         'artist' => 'setArtist',
-        'aspectRatio' => 'setAspectRatio',
-        'audienceRating' => 'setAudienceRating',
+        'aspect_ratio' => 'setAspectRatio',
+        'audience_rating' => 'setAudienceRating',
         'author' => 'setAuthor',
-        'backFinding' => 'setBackFinding',
-        'bandMaterialType' => 'setBandMaterialType',
+        'back_finding' => 'setBackFinding',
+        'band_material_type' => 'setBandMaterialType',
         'binding' => 'setBinding',
-        'blurayRegion' => 'setBlurayRegion',
+        'bluray_region' => 'setBlurayRegion',
         'brand' => 'setBrand',
-        'ceroAgeRating' => 'setCeroAgeRating',
-        'chainType' => 'setChainType',
-        'claspType' => 'setClaspType',
+        'cero_age_rating' => 'setCeroAgeRating',
+        'chain_type' => 'setChainType',
+        'clasp_type' => 'setClaspType',
         'color' => 'setColor',
-        'cpuManufacturer' => 'setCpuManufacturer',
-        'cpuSpeed' => 'setCpuSpeed',
-        'cpuType' => 'setCpuType',
+        'cpu_manufacturer' => 'setCpuManufacturer',
+        'cpu_speed' => 'setCpuSpeed',
+        'cpu_type' => 'setCpuType',
         'creator' => 'setCreator',
         'department' => 'setDepartment',
         'director' => 'setDirector',
-        'displaySize' => 'setDisplaySize',
+        'display_size' => 'setDisplaySize',
         'edition' => 'setEdition',
-        'episodeSequence' => 'setEpisodeSequence',
-        'esrbAgeRating' => 'setEsrbAgeRating',
+        'episode_sequence' => 'setEpisodeSequence',
+        'esrb_age_rating' => 'setEsrbAgeRating',
         'feature' => 'setFeature',
         'flavor' => 'setFlavor',
         'format' => 'setFormat',
-        'gemType' => 'setGemType',
+        'gem_type' => 'setGemType',
         'genre' => 'setGenre',
-        'golfClubFlex' => 'setGolfClubFlex',
-        'golfClubLoft' => 'setGolfClubLoft',
-        'handOrientation' => 'setHandOrientation',
-        'hardDiskInterface' => 'setHardDiskInterface',
-        'hardDiskSize' => 'setHardDiskSize',
-        'hardwarePlatform' => 'setHardwarePlatform',
-        'hazardousMaterialType' => 'setHazardousMaterialType',
-        'itemDimensions' => 'setItemDimensions',
-        'isAdultProduct' => 'setIsAdultProduct',
-        'isAutographed' => 'setIsAutographed',
-        'isEligibleForTradeIn' => 'setIsEligibleForTradeIn',
-        'isMemorabilia' => 'setIsMemorabilia',
-        'issuesPerYear' => 'setIssuesPerYear',
-        'itemPartNumber' => 'setItemPartNumber',
+        'golf_club_flex' => 'setGolfClubFlex',
+        'golf_club_loft' => 'setGolfClubLoft',
+        'hand_orientation' => 'setHandOrientation',
+        'hard_disk_interface' => 'setHardDiskInterface',
+        'hard_disk_size' => 'setHardDiskSize',
+        'hardware_platform' => 'setHardwarePlatform',
+        'hazardous_material_type' => 'setHazardousMaterialType',
+        'item_dimensions' => 'setItemDimensions',
+        'is_adult_product' => 'setIsAdultProduct',
+        'is_autographed' => 'setIsAutographed',
+        'is_eligible_for_trade_in' => 'setIsEligibleForTradeIn',
+        'is_memorabilia' => 'setIsMemorabilia',
+        'issues_per_year' => 'setIssuesPerYear',
+        'item_part_number' => 'setItemPartNumber',
         'label' => 'setLabel',
         'languages' => 'setLanguages',
-        'legalDisclaimer' => 'setLegalDisclaimer',
-        'listPrice' => 'setListPrice',
+        'legal_disclaimer' => 'setLegalDisclaimer',
+        'list_price' => 'setListPrice',
         'manufacturer' => 'setManufacturer',
-        'manufacturerMaximumAge' => 'setManufacturerMaximumAge',
-        'manufacturerMinimumAge' => 'setManufacturerMinimumAge',
-        'manufacturerPartsWarrantyDescription' => 'setManufacturerPartsWarrantyDescription',
-        'materialType' => 'setMaterialType',
-        'maximumResolution' => 'setMaximumResolution',
-        'mediaType' => 'setMediaType',
-        'metalStamp' => 'setMetalStamp',
-        'metalType' => 'setMetalType',
+        'manufacturer_maximum_age' => 'setManufacturerMaximumAge',
+        'manufacturer_minimum_age' => 'setManufacturerMinimumAge',
+        'manufacturer_parts_warranty_description' => 'setManufacturerPartsWarrantyDescription',
+        'material_type' => 'setMaterialType',
+        'maximum_resolution' => 'setMaximumResolution',
+        'media_type' => 'setMediaType',
+        'metal_stamp' => 'setMetalStamp',
+        'metal_type' => 'setMetalType',
         'model' => 'setModel',
-        'numberOfDiscs' => 'setNumberOfDiscs',
-        'numberOfIssues' => 'setNumberOfIssues',
-        'numberOfItems' => 'setNumberOfItems',
-        'numberOfPages' => 'setNumberOfPages',
-        'numberOfTracks' => 'setNumberOfTracks',
-        'operatingSystem' => 'setOperatingSystem',
-        'opticalZoom' => 'setOpticalZoom',
-        'packageDimensions' => 'setPackageDimensions',
-        'packageQuantity' => 'setPackageQuantity',
-        'partNumber' => 'setPartNumber',
-        'pegiRating' => 'setPegiRating',
+        'number_of_discs' => 'setNumberOfDiscs',
+        'number_of_issues' => 'setNumberOfIssues',
+        'number_of_items' => 'setNumberOfItems',
+        'number_of_pages' => 'setNumberOfPages',
+        'number_of_tracks' => 'setNumberOfTracks',
+        'operating_system' => 'setOperatingSystem',
+        'optical_zoom' => 'setOpticalZoom',
+        'package_dimensions' => 'setPackageDimensions',
+        'package_quantity' => 'setPackageQuantity',
+        'part_number' => 'setPartNumber',
+        'pegi_rating' => 'setPegiRating',
         'platform' => 'setPlatform',
-        'processorCount' => 'setProcessorCount',
-        'productGroup' => 'setProductGroup',
-        'productTypeName' => 'setProductTypeName',
-        'productTypeSubcategory' => 'setProductTypeSubcategory',
-        'publicationDate' => 'setPublicationDate',
+        'processor_count' => 'setProcessorCount',
+        'product_group' => 'setProductGroup',
+        'product_type_name' => 'setProductTypeName',
+        'product_type_subcategory' => 'setProductTypeSubcategory',
+        'publication_date' => 'setPublicationDate',
         'publisher' => 'setPublisher',
-        'regionCode' => 'setRegionCode',
-        'releaseDate' => 'setReleaseDate',
-        'ringSize' => 'setRingSize',
-        'runningTime' => 'setRunningTime',
-        'shaftMaterial' => 'setShaftMaterial',
+        'region_code' => 'setRegionCode',
+        'release_date' => 'setReleaseDate',
+        'ring_size' => 'setRingSize',
+        'running_time' => 'setRunningTime',
+        'shaft_material' => 'setShaftMaterial',
         'scent' => 'setScent',
-        'seasonSequence' => 'setSeasonSequence',
-        'seikodoProductCode' => 'setSeikodoProductCode',
+        'season_sequence' => 'setSeasonSequence',
+        'seikodo_product_code' => 'setSeikodoProductCode',
         'size' => 'setSize',
-        'sizePerPearl' => 'setSizePerPearl',
-        'smallImage' => 'setSmallImage',
+        'size_per_pearl' => 'setSizePerPearl',
+        'small_image' => 'setSmallImage',
         'studio' => 'setStudio',
-        'subscriptionLength' => 'setSubscriptionLength',
-        'systemMemorySize' => 'setSystemMemorySize',
-        'systemMemoryType' => 'setSystemMemoryType',
-        'theatricalReleaseDate' => 'setTheatricalReleaseDate',
+        'subscription_length' => 'setSubscriptionLength',
+        'system_memory_size' => 'setSystemMemorySize',
+        'system_memory_type' => 'setSystemMemoryType',
+        'theatrical_release_date' => 'setTheatricalReleaseDate',
         'title' => 'setTitle',
-        'totalDiamondWeight' => 'setTotalDiamondWeight',
-        'totalGemWeight' => 'setTotalGemWeight',
+        'total_diamond_weight' => 'setTotalDiamondWeight',
+        'total_gem_weight' => 'setTotalGemWeight',
         'warranty' => 'setWarranty',
-        'weeeTaxValue' => 'setWeeeTaxValue',
+        'weee_tax_value' => 'setWeeeTaxValue',
     ];
 
     /**
@@ -477,100 +477,100 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     protected static array $getters = [
         'actor' => 'getActor',
         'artist' => 'getArtist',
-        'aspectRatio' => 'getAspectRatio',
-        'audienceRating' => 'getAudienceRating',
+        'aspect_ratio' => 'getAspectRatio',
+        'audience_rating' => 'getAudienceRating',
         'author' => 'getAuthor',
-        'backFinding' => 'getBackFinding',
-        'bandMaterialType' => 'getBandMaterialType',
+        'back_finding' => 'getBackFinding',
+        'band_material_type' => 'getBandMaterialType',
         'binding' => 'getBinding',
-        'blurayRegion' => 'getBlurayRegion',
+        'bluray_region' => 'getBlurayRegion',
         'brand' => 'getBrand',
-        'ceroAgeRating' => 'getCeroAgeRating',
-        'chainType' => 'getChainType',
-        'claspType' => 'getClaspType',
+        'cero_age_rating' => 'getCeroAgeRating',
+        'chain_type' => 'getChainType',
+        'clasp_type' => 'getClaspType',
         'color' => 'getColor',
-        'cpuManufacturer' => 'getCpuManufacturer',
-        'cpuSpeed' => 'getCpuSpeed',
-        'cpuType' => 'getCpuType',
+        'cpu_manufacturer' => 'getCpuManufacturer',
+        'cpu_speed' => 'getCpuSpeed',
+        'cpu_type' => 'getCpuType',
         'creator' => 'getCreator',
         'department' => 'getDepartment',
         'director' => 'getDirector',
-        'displaySize' => 'getDisplaySize',
+        'display_size' => 'getDisplaySize',
         'edition' => 'getEdition',
-        'episodeSequence' => 'getEpisodeSequence',
-        'esrbAgeRating' => 'getEsrbAgeRating',
+        'episode_sequence' => 'getEpisodeSequence',
+        'esrb_age_rating' => 'getEsrbAgeRating',
         'feature' => 'getFeature',
         'flavor' => 'getFlavor',
         'format' => 'getFormat',
-        'gemType' => 'getGemType',
+        'gem_type' => 'getGemType',
         'genre' => 'getGenre',
-        'golfClubFlex' => 'getGolfClubFlex',
-        'golfClubLoft' => 'getGolfClubLoft',
-        'handOrientation' => 'getHandOrientation',
-        'hardDiskInterface' => 'getHardDiskInterface',
-        'hardDiskSize' => 'getHardDiskSize',
-        'hardwarePlatform' => 'getHardwarePlatform',
-        'hazardousMaterialType' => 'getHazardousMaterialType',
-        'itemDimensions' => 'getItemDimensions',
-        'isAdultProduct' => 'getIsAdultProduct',
-        'isAutographed' => 'getIsAutographed',
-        'isEligibleForTradeIn' => 'getIsEligibleForTradeIn',
-        'isMemorabilia' => 'getIsMemorabilia',
-        'issuesPerYear' => 'getIssuesPerYear',
-        'itemPartNumber' => 'getItemPartNumber',
+        'golf_club_flex' => 'getGolfClubFlex',
+        'golf_club_loft' => 'getGolfClubLoft',
+        'hand_orientation' => 'getHandOrientation',
+        'hard_disk_interface' => 'getHardDiskInterface',
+        'hard_disk_size' => 'getHardDiskSize',
+        'hardware_platform' => 'getHardwarePlatform',
+        'hazardous_material_type' => 'getHazardousMaterialType',
+        'item_dimensions' => 'getItemDimensions',
+        'is_adult_product' => 'getIsAdultProduct',
+        'is_autographed' => 'getIsAutographed',
+        'is_eligible_for_trade_in' => 'getIsEligibleForTradeIn',
+        'is_memorabilia' => 'getIsMemorabilia',
+        'issues_per_year' => 'getIssuesPerYear',
+        'item_part_number' => 'getItemPartNumber',
         'label' => 'getLabel',
         'languages' => 'getLanguages',
-        'legalDisclaimer' => 'getLegalDisclaimer',
-        'listPrice' => 'getListPrice',
+        'legal_disclaimer' => 'getLegalDisclaimer',
+        'list_price' => 'getListPrice',
         'manufacturer' => 'getManufacturer',
-        'manufacturerMaximumAge' => 'getManufacturerMaximumAge',
-        'manufacturerMinimumAge' => 'getManufacturerMinimumAge',
-        'manufacturerPartsWarrantyDescription' => 'getManufacturerPartsWarrantyDescription',
-        'materialType' => 'getMaterialType',
-        'maximumResolution' => 'getMaximumResolution',
-        'mediaType' => 'getMediaType',
-        'metalStamp' => 'getMetalStamp',
-        'metalType' => 'getMetalType',
+        'manufacturer_maximum_age' => 'getManufacturerMaximumAge',
+        'manufacturer_minimum_age' => 'getManufacturerMinimumAge',
+        'manufacturer_parts_warranty_description' => 'getManufacturerPartsWarrantyDescription',
+        'material_type' => 'getMaterialType',
+        'maximum_resolution' => 'getMaximumResolution',
+        'media_type' => 'getMediaType',
+        'metal_stamp' => 'getMetalStamp',
+        'metal_type' => 'getMetalType',
         'model' => 'getModel',
-        'numberOfDiscs' => 'getNumberOfDiscs',
-        'numberOfIssues' => 'getNumberOfIssues',
-        'numberOfItems' => 'getNumberOfItems',
-        'numberOfPages' => 'getNumberOfPages',
-        'numberOfTracks' => 'getNumberOfTracks',
-        'operatingSystem' => 'getOperatingSystem',
-        'opticalZoom' => 'getOpticalZoom',
-        'packageDimensions' => 'getPackageDimensions',
-        'packageQuantity' => 'getPackageQuantity',
-        'partNumber' => 'getPartNumber',
-        'pegiRating' => 'getPegiRating',
+        'number_of_discs' => 'getNumberOfDiscs',
+        'number_of_issues' => 'getNumberOfIssues',
+        'number_of_items' => 'getNumberOfItems',
+        'number_of_pages' => 'getNumberOfPages',
+        'number_of_tracks' => 'getNumberOfTracks',
+        'operating_system' => 'getOperatingSystem',
+        'optical_zoom' => 'getOpticalZoom',
+        'package_dimensions' => 'getPackageDimensions',
+        'package_quantity' => 'getPackageQuantity',
+        'part_number' => 'getPartNumber',
+        'pegi_rating' => 'getPegiRating',
         'platform' => 'getPlatform',
-        'processorCount' => 'getProcessorCount',
-        'productGroup' => 'getProductGroup',
-        'productTypeName' => 'getProductTypeName',
-        'productTypeSubcategory' => 'getProductTypeSubcategory',
-        'publicationDate' => 'getPublicationDate',
+        'processor_count' => 'getProcessorCount',
+        'product_group' => 'getProductGroup',
+        'product_type_name' => 'getProductTypeName',
+        'product_type_subcategory' => 'getProductTypeSubcategory',
+        'publication_date' => 'getPublicationDate',
         'publisher' => 'getPublisher',
-        'regionCode' => 'getRegionCode',
-        'releaseDate' => 'getReleaseDate',
-        'ringSize' => 'getRingSize',
-        'runningTime' => 'getRunningTime',
-        'shaftMaterial' => 'getShaftMaterial',
+        'region_code' => 'getRegionCode',
+        'release_date' => 'getReleaseDate',
+        'ring_size' => 'getRingSize',
+        'running_time' => 'getRunningTime',
+        'shaft_material' => 'getShaftMaterial',
         'scent' => 'getScent',
-        'seasonSequence' => 'getSeasonSequence',
-        'seikodoProductCode' => 'getSeikodoProductCode',
+        'season_sequence' => 'getSeasonSequence',
+        'seikodo_product_code' => 'getSeikodoProductCode',
         'size' => 'getSize',
-        'sizePerPearl' => 'getSizePerPearl',
-        'smallImage' => 'getSmallImage',
+        'size_per_pearl' => 'getSizePerPearl',
+        'small_image' => 'getSmallImage',
         'studio' => 'getStudio',
-        'subscriptionLength' => 'getSubscriptionLength',
-        'systemMemorySize' => 'getSystemMemorySize',
-        'systemMemoryType' => 'getSystemMemoryType',
-        'theatricalReleaseDate' => 'getTheatricalReleaseDate',
+        'subscription_length' => 'getSubscriptionLength',
+        'system_memory_size' => 'getSystemMemorySize',
+        'system_memory_type' => 'getSystemMemoryType',
+        'theatrical_release_date' => 'getTheatricalReleaseDate',
         'title' => 'getTitle',
-        'totalDiamondWeight' => 'getTotalDiamondWeight',
-        'totalGemWeight' => 'getTotalGemWeight',
+        'total_diamond_weight' => 'getTotalDiamondWeight',
+        'total_gem_weight' => 'getTotalGemWeight',
         'warranty' => 'getWarranty',
-        'weeeTaxValue' => 'getWeeeTaxValue',
+        'weee_tax_value' => 'getWeeeTaxValue',
     ];
 
     /**
@@ -590,100 +590,100 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     {
         $this->container['actor'] = $data['actor'] ?? null;
         $this->container['artist'] = $data['artist'] ?? null;
-        $this->container['aspectRatio'] = $data['aspectRatio'] ?? null;
-        $this->container['audienceRating'] = $data['audienceRating'] ?? null;
+        $this->container['aspect_ratio'] = $data['aspect_ratio'] ?? null;
+        $this->container['audience_rating'] = $data['audience_rating'] ?? null;
         $this->container['author'] = $data['author'] ?? null;
-        $this->container['backFinding'] = $data['backFinding'] ?? null;
-        $this->container['bandMaterialType'] = $data['bandMaterialType'] ?? null;
+        $this->container['back_finding'] = $data['back_finding'] ?? null;
+        $this->container['band_material_type'] = $data['band_material_type'] ?? null;
         $this->container['binding'] = $data['binding'] ?? null;
-        $this->container['blurayRegion'] = $data['blurayRegion'] ?? null;
+        $this->container['bluray_region'] = $data['bluray_region'] ?? null;
         $this->container['brand'] = $data['brand'] ?? null;
-        $this->container['ceroAgeRating'] = $data['ceroAgeRating'] ?? null;
-        $this->container['chainType'] = $data['chainType'] ?? null;
-        $this->container['claspType'] = $data['claspType'] ?? null;
+        $this->container['cero_age_rating'] = $data['cero_age_rating'] ?? null;
+        $this->container['chain_type'] = $data['chain_type'] ?? null;
+        $this->container['clasp_type'] = $data['clasp_type'] ?? null;
         $this->container['color'] = $data['color'] ?? null;
-        $this->container['cpuManufacturer'] = $data['cpuManufacturer'] ?? null;
-        $this->container['cpuSpeed'] = $data['cpuSpeed'] ?? null;
-        $this->container['cpuType'] = $data['cpuType'] ?? null;
+        $this->container['cpu_manufacturer'] = $data['cpu_manufacturer'] ?? null;
+        $this->container['cpu_speed'] = $data['cpu_speed'] ?? null;
+        $this->container['cpu_type'] = $data['cpu_type'] ?? null;
         $this->container['creator'] = $data['creator'] ?? null;
         $this->container['department'] = $data['department'] ?? null;
         $this->container['director'] = $data['director'] ?? null;
-        $this->container['displaySize'] = $data['displaySize'] ?? null;
+        $this->container['display_size'] = $data['display_size'] ?? null;
         $this->container['edition'] = $data['edition'] ?? null;
-        $this->container['episodeSequence'] = $data['episodeSequence'] ?? null;
-        $this->container['esrbAgeRating'] = $data['esrbAgeRating'] ?? null;
+        $this->container['episode_sequence'] = $data['episode_sequence'] ?? null;
+        $this->container['esrb_age_rating'] = $data['esrb_age_rating'] ?? null;
         $this->container['feature'] = $data['feature'] ?? null;
         $this->container['flavor'] = $data['flavor'] ?? null;
         $this->container['format'] = $data['format'] ?? null;
-        $this->container['gemType'] = $data['gemType'] ?? null;
+        $this->container['gem_type'] = $data['gem_type'] ?? null;
         $this->container['genre'] = $data['genre'] ?? null;
-        $this->container['golfClubFlex'] = $data['golfClubFlex'] ?? null;
-        $this->container['golfClubLoft'] = $data['golfClubLoft'] ?? null;
-        $this->container['handOrientation'] = $data['handOrientation'] ?? null;
-        $this->container['hardDiskInterface'] = $data['hardDiskInterface'] ?? null;
-        $this->container['hardDiskSize'] = $data['hardDiskSize'] ?? null;
-        $this->container['hardwarePlatform'] = $data['hardwarePlatform'] ?? null;
-        $this->container['hazardousMaterialType'] = $data['hazardousMaterialType'] ?? null;
-        $this->container['itemDimensions'] = $data['itemDimensions'] ?? null;
-        $this->container['isAdultProduct'] = $data['isAdultProduct'] ?? null;
-        $this->container['isAutographed'] = $data['isAutographed'] ?? null;
-        $this->container['isEligibleForTradeIn'] = $data['isEligibleForTradeIn'] ?? null;
-        $this->container['isMemorabilia'] = $data['isMemorabilia'] ?? null;
-        $this->container['issuesPerYear'] = $data['issuesPerYear'] ?? null;
-        $this->container['itemPartNumber'] = $data['itemPartNumber'] ?? null;
+        $this->container['golf_club_flex'] = $data['golf_club_flex'] ?? null;
+        $this->container['golf_club_loft'] = $data['golf_club_loft'] ?? null;
+        $this->container['hand_orientation'] = $data['hand_orientation'] ?? null;
+        $this->container['hard_disk_interface'] = $data['hard_disk_interface'] ?? null;
+        $this->container['hard_disk_size'] = $data['hard_disk_size'] ?? null;
+        $this->container['hardware_platform'] = $data['hardware_platform'] ?? null;
+        $this->container['hazardous_material_type'] = $data['hazardous_material_type'] ?? null;
+        $this->container['item_dimensions'] = $data['item_dimensions'] ?? null;
+        $this->container['is_adult_product'] = $data['is_adult_product'] ?? null;
+        $this->container['is_autographed'] = $data['is_autographed'] ?? null;
+        $this->container['is_eligible_for_trade_in'] = $data['is_eligible_for_trade_in'] ?? null;
+        $this->container['is_memorabilia'] = $data['is_memorabilia'] ?? null;
+        $this->container['issues_per_year'] = $data['issues_per_year'] ?? null;
+        $this->container['item_part_number'] = $data['item_part_number'] ?? null;
         $this->container['label'] = $data['label'] ?? null;
         $this->container['languages'] = $data['languages'] ?? null;
-        $this->container['legalDisclaimer'] = $data['legalDisclaimer'] ?? null;
-        $this->container['listPrice'] = $data['listPrice'] ?? null;
+        $this->container['legal_disclaimer'] = $data['legal_disclaimer'] ?? null;
+        $this->container['list_price'] = $data['list_price'] ?? null;
         $this->container['manufacturer'] = $data['manufacturer'] ?? null;
-        $this->container['manufacturerMaximumAge'] = $data['manufacturerMaximumAge'] ?? null;
-        $this->container['manufacturerMinimumAge'] = $data['manufacturerMinimumAge'] ?? null;
-        $this->container['manufacturerPartsWarrantyDescription'] = $data['manufacturerPartsWarrantyDescription'] ?? null;
-        $this->container['materialType'] = $data['materialType'] ?? null;
-        $this->container['maximumResolution'] = $data['maximumResolution'] ?? null;
-        $this->container['mediaType'] = $data['mediaType'] ?? null;
-        $this->container['metalStamp'] = $data['metalStamp'] ?? null;
-        $this->container['metalType'] = $data['metalType'] ?? null;
+        $this->container['manufacturer_maximum_age'] = $data['manufacturer_maximum_age'] ?? null;
+        $this->container['manufacturer_minimum_age'] = $data['manufacturer_minimum_age'] ?? null;
+        $this->container['manufacturer_parts_warranty_description'] = $data['manufacturer_parts_warranty_description'] ?? null;
+        $this->container['material_type'] = $data['material_type'] ?? null;
+        $this->container['maximum_resolution'] = $data['maximum_resolution'] ?? null;
+        $this->container['media_type'] = $data['media_type'] ?? null;
+        $this->container['metal_stamp'] = $data['metal_stamp'] ?? null;
+        $this->container['metal_type'] = $data['metal_type'] ?? null;
         $this->container['model'] = $data['model'] ?? null;
-        $this->container['numberOfDiscs'] = $data['numberOfDiscs'] ?? null;
-        $this->container['numberOfIssues'] = $data['numberOfIssues'] ?? null;
-        $this->container['numberOfItems'] = $data['numberOfItems'] ?? null;
-        $this->container['numberOfPages'] = $data['numberOfPages'] ?? null;
-        $this->container['numberOfTracks'] = $data['numberOfTracks'] ?? null;
-        $this->container['operatingSystem'] = $data['operatingSystem'] ?? null;
-        $this->container['opticalZoom'] = $data['opticalZoom'] ?? null;
-        $this->container['packageDimensions'] = $data['packageDimensions'] ?? null;
-        $this->container['packageQuantity'] = $data['packageQuantity'] ?? null;
-        $this->container['partNumber'] = $data['partNumber'] ?? null;
-        $this->container['pegiRating'] = $data['pegiRating'] ?? null;
+        $this->container['number_of_discs'] = $data['number_of_discs'] ?? null;
+        $this->container['number_of_issues'] = $data['number_of_issues'] ?? null;
+        $this->container['number_of_items'] = $data['number_of_items'] ?? null;
+        $this->container['number_of_pages'] = $data['number_of_pages'] ?? null;
+        $this->container['number_of_tracks'] = $data['number_of_tracks'] ?? null;
+        $this->container['operating_system'] = $data['operating_system'] ?? null;
+        $this->container['optical_zoom'] = $data['optical_zoom'] ?? null;
+        $this->container['package_dimensions'] = $data['package_dimensions'] ?? null;
+        $this->container['package_quantity'] = $data['package_quantity'] ?? null;
+        $this->container['part_number'] = $data['part_number'] ?? null;
+        $this->container['pegi_rating'] = $data['pegi_rating'] ?? null;
         $this->container['platform'] = $data['platform'] ?? null;
-        $this->container['processorCount'] = $data['processorCount'] ?? null;
-        $this->container['productGroup'] = $data['productGroup'] ?? null;
-        $this->container['productTypeName'] = $data['productTypeName'] ?? null;
-        $this->container['productTypeSubcategory'] = $data['productTypeSubcategory'] ?? null;
-        $this->container['publicationDate'] = $data['publicationDate'] ?? null;
+        $this->container['processor_count'] = $data['processor_count'] ?? null;
+        $this->container['product_group'] = $data['product_group'] ?? null;
+        $this->container['product_type_name'] = $data['product_type_name'] ?? null;
+        $this->container['product_type_subcategory'] = $data['product_type_subcategory'] ?? null;
+        $this->container['publication_date'] = $data['publication_date'] ?? null;
         $this->container['publisher'] = $data['publisher'] ?? null;
-        $this->container['regionCode'] = $data['regionCode'] ?? null;
-        $this->container['releaseDate'] = $data['releaseDate'] ?? null;
-        $this->container['ringSize'] = $data['ringSize'] ?? null;
-        $this->container['runningTime'] = $data['runningTime'] ?? null;
-        $this->container['shaftMaterial'] = $data['shaftMaterial'] ?? null;
+        $this->container['region_code'] = $data['region_code'] ?? null;
+        $this->container['release_date'] = $data['release_date'] ?? null;
+        $this->container['ring_size'] = $data['ring_size'] ?? null;
+        $this->container['running_time'] = $data['running_time'] ?? null;
+        $this->container['shaft_material'] = $data['shaft_material'] ?? null;
         $this->container['scent'] = $data['scent'] ?? null;
-        $this->container['seasonSequence'] = $data['seasonSequence'] ?? null;
-        $this->container['seikodoProductCode'] = $data['seikodoProductCode'] ?? null;
+        $this->container['season_sequence'] = $data['season_sequence'] ?? null;
+        $this->container['seikodo_product_code'] = $data['seikodo_product_code'] ?? null;
         $this->container['size'] = $data['size'] ?? null;
-        $this->container['sizePerPearl'] = $data['sizePerPearl'] ?? null;
-        $this->container['smallImage'] = $data['smallImage'] ?? null;
+        $this->container['size_per_pearl'] = $data['size_per_pearl'] ?? null;
+        $this->container['small_image'] = $data['small_image'] ?? null;
         $this->container['studio'] = $data['studio'] ?? null;
-        $this->container['subscriptionLength'] = $data['subscriptionLength'] ?? null;
-        $this->container['systemMemorySize'] = $data['systemMemorySize'] ?? null;
-        $this->container['systemMemoryType'] = $data['systemMemoryType'] ?? null;
-        $this->container['theatricalReleaseDate'] = $data['theatricalReleaseDate'] ?? null;
+        $this->container['subscription_length'] = $data['subscription_length'] ?? null;
+        $this->container['system_memory_size'] = $data['system_memory_size'] ?? null;
+        $this->container['system_memory_type'] = $data['system_memory_type'] ?? null;
+        $this->container['theatrical_release_date'] = $data['theatrical_release_date'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
-        $this->container['totalDiamondWeight'] = $data['totalDiamondWeight'] ?? null;
-        $this->container['totalGemWeight'] = $data['totalGemWeight'] ?? null;
+        $this->container['total_diamond_weight'] = $data['total_diamond_weight'] ?? null;
+        $this->container['total_gem_weight'] = $data['total_gem_weight'] ?? null;
         $this->container['warranty'] = $data['warranty'] ?? null;
-        $this->container['weeeTaxValue'] = $data['weeeTaxValue'] ?? null;
+        $this->container['weee_tax_value'] = $data['weee_tax_value'] ?? null;
     }
 
     /**
@@ -822,41 +822,41 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets aspectRatio.
+     * Gets aspect_ratio.
      */
     public function getAspectRatio() : ?string
     {
-        return $this->container['aspectRatio'];
+        return $this->container['aspect_ratio'];
     }
 
     /**
-     * Sets aspectRatio.
+     * Sets aspect_ratio.
      *
-     * @param null|string $aspectRatio the aspect ratio attribute of the item
+     * @param null|string $aspect_ratio the aspect ratio attribute of the item
      */
-    public function setAspectRatio(?string $aspectRatio) : self
+    public function setAspectRatio(?string $aspect_ratio) : self
     {
-        $this->container['aspectRatio'] = $aspectRatio;
+        $this->container['aspect_ratio'] = $aspect_ratio;
 
         return $this;
     }
 
     /**
-     * Gets audienceRating.
+     * Gets audience_rating.
      */
     public function getAudienceRating() : ?string
     {
-        return $this->container['audienceRating'];
+        return $this->container['audience_rating'];
     }
 
     /**
-     * Sets audienceRating.
+     * Sets audience_rating.
      *
-     * @param null|string $audienceRating the audience rating attribute of the item
+     * @param null|string $audience_rating the audience rating attribute of the item
      */
-    public function setAudienceRating(?string $audienceRating) : self
+    public function setAudienceRating(?string $audience_rating) : self
     {
-        $this->container['audienceRating'] = $audienceRating;
+        $this->container['audience_rating'] = $audience_rating;
 
         return $this;
     }
@@ -884,41 +884,41 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets backFinding.
+     * Gets back_finding.
      */
     public function getBackFinding() : ?string
     {
-        return $this->container['backFinding'];
+        return $this->container['back_finding'];
     }
 
     /**
-     * Sets backFinding.
+     * Sets back_finding.
      *
-     * @param null|string $backFinding the back finding attribute of the item
+     * @param null|string $back_finding the back finding attribute of the item
      */
-    public function setBackFinding(?string $backFinding) : self
+    public function setBackFinding(?string $back_finding) : self
     {
-        $this->container['backFinding'] = $backFinding;
+        $this->container['back_finding'] = $back_finding;
 
         return $this;
     }
 
     /**
-     * Gets bandMaterialType.
+     * Gets band_material_type.
      */
     public function getBandMaterialType() : ?string
     {
-        return $this->container['bandMaterialType'];
+        return $this->container['band_material_type'];
     }
 
     /**
-     * Sets bandMaterialType.
+     * Sets band_material_type.
      *
-     * @param null|string $bandMaterialType the band material type attribute of the item
+     * @param null|string $band_material_type the band material type attribute of the item
      */
-    public function setBandMaterialType(?string $bandMaterialType) : self
+    public function setBandMaterialType(?string $band_material_type) : self
     {
-        $this->container['bandMaterialType'] = $bandMaterialType;
+        $this->container['band_material_type'] = $band_material_type;
 
         return $this;
     }
@@ -944,21 +944,21 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets blurayRegion.
+     * Gets bluray_region.
      */
     public function getBlurayRegion() : ?string
     {
-        return $this->container['blurayRegion'];
+        return $this->container['bluray_region'];
     }
 
     /**
-     * Sets blurayRegion.
+     * Sets bluray_region.
      *
-     * @param null|string $blurayRegion the Bluray region attribute of the item
+     * @param null|string $bluray_region the Bluray region attribute of the item
      */
-    public function setBlurayRegion(?string $blurayRegion) : self
+    public function setBlurayRegion(?string $bluray_region) : self
     {
-        $this->container['blurayRegion'] = $blurayRegion;
+        $this->container['bluray_region'] = $bluray_region;
 
         return $this;
     }
@@ -984,61 +984,61 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets ceroAgeRating.
+     * Gets cero_age_rating.
      */
     public function getCeroAgeRating() : ?string
     {
-        return $this->container['ceroAgeRating'];
+        return $this->container['cero_age_rating'];
     }
 
     /**
-     * Sets ceroAgeRating.
+     * Sets cero_age_rating.
      *
-     * @param null|string $ceroAgeRating the CERO age rating attribute of the item
+     * @param null|string $cero_age_rating the CERO age rating attribute of the item
      */
-    public function setCeroAgeRating(?string $ceroAgeRating) : self
+    public function setCeroAgeRating(?string $cero_age_rating) : self
     {
-        $this->container['ceroAgeRating'] = $ceroAgeRating;
+        $this->container['cero_age_rating'] = $cero_age_rating;
 
         return $this;
     }
 
     /**
-     * Gets chainType.
+     * Gets chain_type.
      */
     public function getChainType() : ?string
     {
-        return $this->container['chainType'];
+        return $this->container['chain_type'];
     }
 
     /**
-     * Sets chainType.
+     * Sets chain_type.
      *
-     * @param null|string $chainType the chain type attribute of the item
+     * @param null|string $chain_type the chain type attribute of the item
      */
-    public function setChainType(?string $chainType) : self
+    public function setChainType(?string $chain_type) : self
     {
-        $this->container['chainType'] = $chainType;
+        $this->container['chain_type'] = $chain_type;
 
         return $this;
     }
 
     /**
-     * Gets claspType.
+     * Gets clasp_type.
      */
     public function getClaspType() : ?string
     {
-        return $this->container['claspType'];
+        return $this->container['clasp_type'];
     }
 
     /**
-     * Sets claspType.
+     * Sets clasp_type.
      *
-     * @param null|string $claspType the clasp type attribute of the item
+     * @param null|string $clasp_type the clasp type attribute of the item
      */
-    public function setClaspType(?string $claspType) : self
+    public function setClaspType(?string $clasp_type) : self
     {
-        $this->container['claspType'] = $claspType;
+        $this->container['clasp_type'] = $clasp_type;
 
         return $this;
     }
@@ -1064,61 +1064,61 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets cpuManufacturer.
+     * Gets cpu_manufacturer.
      */
     public function getCpuManufacturer() : ?string
     {
-        return $this->container['cpuManufacturer'];
+        return $this->container['cpu_manufacturer'];
     }
 
     /**
-     * Sets cpuManufacturer.
+     * Sets cpu_manufacturer.
      *
-     * @param null|string $cpuManufacturer the CPU manufacturer attribute of the item
+     * @param null|string $cpu_manufacturer the CPU manufacturer attribute of the item
      */
-    public function setCpuManufacturer(?string $cpuManufacturer) : self
+    public function setCpuManufacturer(?string $cpu_manufacturer) : self
     {
-        $this->container['cpuManufacturer'] = $cpuManufacturer;
+        $this->container['cpu_manufacturer'] = $cpu_manufacturer;
 
         return $this;
     }
 
     /**
-     * Gets cpuSpeed.
+     * Gets cpu_speed.
      */
     public function getCpuSpeed() : ?DecimalWithUnits
     {
-        return $this->container['cpuSpeed'];
+        return $this->container['cpu_speed'];
     }
 
     /**
-     * Sets cpuSpeed.
+     * Sets cpu_speed.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $cpuSpeed cpuSpeed
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $cpu_speed cpu_speed
      */
-    public function setCpuSpeed(?DecimalWithUnits $cpuSpeed) : self
+    public function setCpuSpeed(?DecimalWithUnits $cpu_speed) : self
     {
-        $this->container['cpuSpeed'] = $cpuSpeed;
+        $this->container['cpu_speed'] = $cpu_speed;
 
         return $this;
     }
 
     /**
-     * Gets cpuType.
+     * Gets cpu_type.
      */
     public function getCpuType() : ?string
     {
-        return $this->container['cpuType'];
+        return $this->container['cpu_type'];
     }
 
     /**
-     * Sets cpuType.
+     * Sets cpu_type.
      *
-     * @param null|string $cpuType the CPU type attribute of the item
+     * @param null|string $cpu_type the CPU type attribute of the item
      */
-    public function setCpuType(?string $cpuType) : self
+    public function setCpuType(?string $cpu_type) : self
     {
-        $this->container['cpuType'] = $cpuType;
+        $this->container['cpu_type'] = $cpu_type;
 
         return $this;
     }
@@ -1188,21 +1188,21 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets displaySize.
+     * Gets display_size.
      */
     public function getDisplaySize() : ?DecimalWithUnits
     {
-        return $this->container['displaySize'];
+        return $this->container['display_size'];
     }
 
     /**
-     * Sets displaySize.
+     * Sets display_size.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $displaySize displaySize
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $display_size display_size
      */
-    public function setDisplaySize(?DecimalWithUnits $displaySize) : self
+    public function setDisplaySize(?DecimalWithUnits $display_size) : self
     {
-        $this->container['displaySize'] = $displaySize;
+        $this->container['display_size'] = $display_size;
 
         return $this;
     }
@@ -1228,41 +1228,41 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets episodeSequence.
+     * Gets episode_sequence.
      */
     public function getEpisodeSequence() : ?string
     {
-        return $this->container['episodeSequence'];
+        return $this->container['episode_sequence'];
     }
 
     /**
-     * Sets episodeSequence.
+     * Sets episode_sequence.
      *
-     * @param null|string $episodeSequence the episode sequence attribute of the item
+     * @param null|string $episode_sequence the episode sequence attribute of the item
      */
-    public function setEpisodeSequence(?string $episodeSequence) : self
+    public function setEpisodeSequence(?string $episode_sequence) : self
     {
-        $this->container['episodeSequence'] = $episodeSequence;
+        $this->container['episode_sequence'] = $episode_sequence;
 
         return $this;
     }
 
     /**
-     * Gets esrbAgeRating.
+     * Gets esrb_age_rating.
      */
     public function getEsrbAgeRating() : ?string
     {
-        return $this->container['esrbAgeRating'];
+        return $this->container['esrb_age_rating'];
     }
 
     /**
-     * Sets esrbAgeRating.
+     * Sets esrb_age_rating.
      *
-     * @param null|string $esrbAgeRating the ESRB age rating attribute of the item
+     * @param null|string $esrb_age_rating the ESRB age rating attribute of the item
      */
-    public function setEsrbAgeRating(?string $esrbAgeRating) : self
+    public function setEsrbAgeRating(?string $esrb_age_rating) : self
     {
-        $this->container['esrbAgeRating'] = $esrbAgeRating;
+        $this->container['esrb_age_rating'] = $esrb_age_rating;
 
         return $this;
     }
@@ -1332,23 +1332,23 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets gemType.
+     * Gets gem_type.
      *
      * @return null|string[]
      */
     public function getGemType() : ?array
     {
-        return $this->container['gemType'];
+        return $this->container['gem_type'];
     }
 
     /**
-     * Sets gemType.
+     * Sets gem_type.
      *
-     * @param null|string[] $gemType the gem type attributes of the item
+     * @param null|string[] $gem_type the gem type attributes of the item
      */
-    public function setGemType(?array $gemType) : self
+    public function setGemType(?array $gem_type) : self
     {
-        $this->container['gemType'] = $gemType;
+        $this->container['gem_type'] = $gem_type;
 
         return $this;
     }
@@ -1374,281 +1374,281 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets golfClubFlex.
+     * Gets golf_club_flex.
      */
     public function getGolfClubFlex() : ?string
     {
-        return $this->container['golfClubFlex'];
+        return $this->container['golf_club_flex'];
     }
 
     /**
-     * Sets golfClubFlex.
+     * Sets golf_club_flex.
      *
-     * @param null|string $golfClubFlex the golf club flex attribute of the item
+     * @param null|string $golf_club_flex the golf club flex attribute of the item
      */
-    public function setGolfClubFlex(?string $golfClubFlex) : self
+    public function setGolfClubFlex(?string $golf_club_flex) : self
     {
-        $this->container['golfClubFlex'] = $golfClubFlex;
+        $this->container['golf_club_flex'] = $golf_club_flex;
 
         return $this;
     }
 
     /**
-     * Gets golfClubLoft.
+     * Gets golf_club_loft.
      */
     public function getGolfClubLoft() : ?DecimalWithUnits
     {
-        return $this->container['golfClubLoft'];
+        return $this->container['golf_club_loft'];
     }
 
     /**
-     * Sets golfClubLoft.
+     * Sets golf_club_loft.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $golfClubLoft golfClubLoft
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $golf_club_loft golf_club_loft
      */
-    public function setGolfClubLoft(?DecimalWithUnits $golfClubLoft) : self
+    public function setGolfClubLoft(?DecimalWithUnits $golf_club_loft) : self
     {
-        $this->container['golfClubLoft'] = $golfClubLoft;
+        $this->container['golf_club_loft'] = $golf_club_loft;
 
         return $this;
     }
 
     /**
-     * Gets handOrientation.
+     * Gets hand_orientation.
      */
     public function getHandOrientation() : ?string
     {
-        return $this->container['handOrientation'];
+        return $this->container['hand_orientation'];
     }
 
     /**
-     * Sets handOrientation.
+     * Sets hand_orientation.
      *
-     * @param null|string $handOrientation the hand orientation attribute of the item
+     * @param null|string $hand_orientation the hand orientation attribute of the item
      */
-    public function setHandOrientation(?string $handOrientation) : self
+    public function setHandOrientation(?string $hand_orientation) : self
     {
-        $this->container['handOrientation'] = $handOrientation;
+        $this->container['hand_orientation'] = $hand_orientation;
 
         return $this;
     }
 
     /**
-     * Gets hardDiskInterface.
+     * Gets hard_disk_interface.
      */
     public function getHardDiskInterface() : ?string
     {
-        return $this->container['hardDiskInterface'];
+        return $this->container['hard_disk_interface'];
     }
 
     /**
-     * Sets hardDiskInterface.
+     * Sets hard_disk_interface.
      *
-     * @param null|string $hardDiskInterface the hard disk interface attribute of the item
+     * @param null|string $hard_disk_interface the hard disk interface attribute of the item
      */
-    public function setHardDiskInterface(?string $hardDiskInterface) : self
+    public function setHardDiskInterface(?string $hard_disk_interface) : self
     {
-        $this->container['hardDiskInterface'] = $hardDiskInterface;
+        $this->container['hard_disk_interface'] = $hard_disk_interface;
 
         return $this;
     }
 
     /**
-     * Gets hardDiskSize.
+     * Gets hard_disk_size.
      */
     public function getHardDiskSize() : ?DecimalWithUnits
     {
-        return $this->container['hardDiskSize'];
+        return $this->container['hard_disk_size'];
     }
 
     /**
-     * Sets hardDiskSize.
+     * Sets hard_disk_size.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $hardDiskSize hardDiskSize
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $hard_disk_size hard_disk_size
      */
-    public function setHardDiskSize(?DecimalWithUnits $hardDiskSize) : self
+    public function setHardDiskSize(?DecimalWithUnits $hard_disk_size) : self
     {
-        $this->container['hardDiskSize'] = $hardDiskSize;
+        $this->container['hard_disk_size'] = $hard_disk_size;
 
         return $this;
     }
 
     /**
-     * Gets hardwarePlatform.
+     * Gets hardware_platform.
      */
     public function getHardwarePlatform() : ?string
     {
-        return $this->container['hardwarePlatform'];
+        return $this->container['hardware_platform'];
     }
 
     /**
-     * Sets hardwarePlatform.
+     * Sets hardware_platform.
      *
-     * @param null|string $hardwarePlatform the hardware platform attribute of the item
+     * @param null|string $hardware_platform the hardware platform attribute of the item
      */
-    public function setHardwarePlatform(?string $hardwarePlatform) : self
+    public function setHardwarePlatform(?string $hardware_platform) : self
     {
-        $this->container['hardwarePlatform'] = $hardwarePlatform;
+        $this->container['hardware_platform'] = $hardware_platform;
 
         return $this;
     }
 
     /**
-     * Gets hazardousMaterialType.
+     * Gets hazardous_material_type.
      */
     public function getHazardousMaterialType() : ?string
     {
-        return $this->container['hazardousMaterialType'];
+        return $this->container['hazardous_material_type'];
     }
 
     /**
-     * Sets hazardousMaterialType.
+     * Sets hazardous_material_type.
      *
-     * @param null|string $hazardousMaterialType the hazardous material type attribute of the item
+     * @param null|string $hazardous_material_type the hazardous material type attribute of the item
      */
-    public function setHazardousMaterialType(?string $hazardousMaterialType) : self
+    public function setHazardousMaterialType(?string $hazardous_material_type) : self
     {
-        $this->container['hazardousMaterialType'] = $hazardousMaterialType;
+        $this->container['hazardous_material_type'] = $hazardous_material_type;
 
         return $this;
     }
 
     /**
-     * Gets itemDimensions.
+     * Gets item_dimensions.
      */
     public function getItemDimensions() : ?DimensionType
     {
-        return $this->container['itemDimensions'];
+        return $this->container['item_dimensions'];
     }
 
     /**
-     * Sets itemDimensions.
+     * Sets item_dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType $itemDimensions itemDimensions
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType $item_dimensions item_dimensions
      */
-    public function setItemDimensions(?DimensionType $itemDimensions) : self
+    public function setItemDimensions(?DimensionType $item_dimensions) : self
     {
-        $this->container['itemDimensions'] = $itemDimensions;
+        $this->container['item_dimensions'] = $item_dimensions;
 
         return $this;
     }
 
     /**
-     * Gets isAdultProduct.
+     * Gets is_adult_product.
      */
     public function getIsAdultProduct() : ?bool
     {
-        return $this->container['isAdultProduct'];
+        return $this->container['is_adult_product'];
     }
 
     /**
-     * Sets isAdultProduct.
+     * Sets is_adult_product.
      *
-     * @param null|bool $isAdultProduct the adult product attribute of the item
+     * @param null|bool $is_adult_product the adult product attribute of the item
      */
-    public function setIsAdultProduct(?bool $isAdultProduct) : self
+    public function setIsAdultProduct(?bool $is_adult_product) : self
     {
-        $this->container['isAdultProduct'] = $isAdultProduct;
+        $this->container['is_adult_product'] = $is_adult_product;
 
         return $this;
     }
 
     /**
-     * Gets isAutographed.
+     * Gets is_autographed.
      */
     public function getIsAutographed() : ?bool
     {
-        return $this->container['isAutographed'];
+        return $this->container['is_autographed'];
     }
 
     /**
-     * Sets isAutographed.
+     * Sets is_autographed.
      *
-     * @param null|bool $isAutographed the autographed attribute of the item
+     * @param null|bool $is_autographed the autographed attribute of the item
      */
-    public function setIsAutographed(?bool $isAutographed) : self
+    public function setIsAutographed(?bool $is_autographed) : self
     {
-        $this->container['isAutographed'] = $isAutographed;
+        $this->container['is_autographed'] = $is_autographed;
 
         return $this;
     }
 
     /**
-     * Gets isEligibleForTradeIn.
+     * Gets is_eligible_for_trade_in.
      */
     public function getIsEligibleForTradeIn() : ?bool
     {
-        return $this->container['isEligibleForTradeIn'];
+        return $this->container['is_eligible_for_trade_in'];
     }
 
     /**
-     * Sets isEligibleForTradeIn.
+     * Sets is_eligible_for_trade_in.
      *
-     * @param null|bool $isEligibleForTradeIn the is eligible for trade in attribute of the item
+     * @param null|bool $is_eligible_for_trade_in the is eligible for trade in attribute of the item
      */
-    public function setIsEligibleForTradeIn(?bool $isEligibleForTradeIn) : self
+    public function setIsEligibleForTradeIn(?bool $is_eligible_for_trade_in) : self
     {
-        $this->container['isEligibleForTradeIn'] = $isEligibleForTradeIn;
+        $this->container['is_eligible_for_trade_in'] = $is_eligible_for_trade_in;
 
         return $this;
     }
 
     /**
-     * Gets isMemorabilia.
+     * Gets is_memorabilia.
      */
     public function getIsMemorabilia() : ?bool
     {
-        return $this->container['isMemorabilia'];
+        return $this->container['is_memorabilia'];
     }
 
     /**
-     * Sets isMemorabilia.
+     * Sets is_memorabilia.
      *
-     * @param null|bool $isMemorabilia the is memorabilia attribute of the item
+     * @param null|bool $is_memorabilia the is memorabilia attribute of the item
      */
-    public function setIsMemorabilia(?bool $isMemorabilia) : self
+    public function setIsMemorabilia(?bool $is_memorabilia) : self
     {
-        $this->container['isMemorabilia'] = $isMemorabilia;
+        $this->container['is_memorabilia'] = $is_memorabilia;
 
         return $this;
     }
 
     /**
-     * Gets issuesPerYear.
+     * Gets issues_per_year.
      */
     public function getIssuesPerYear() : ?string
     {
-        return $this->container['issuesPerYear'];
+        return $this->container['issues_per_year'];
     }
 
     /**
-     * Sets issuesPerYear.
+     * Sets issues_per_year.
      *
-     * @param null|string $issuesPerYear the issues per year attribute of the item
+     * @param null|string $issues_per_year the issues per year attribute of the item
      */
-    public function setIssuesPerYear(?string $issuesPerYear) : self
+    public function setIssuesPerYear(?string $issues_per_year) : self
     {
-        $this->container['issuesPerYear'] = $issuesPerYear;
+        $this->container['issues_per_year'] = $issues_per_year;
 
         return $this;
     }
 
     /**
-     * Gets itemPartNumber.
+     * Gets item_part_number.
      */
     public function getItemPartNumber() : ?string
     {
-        return $this->container['itemPartNumber'];
+        return $this->container['item_part_number'];
     }
 
     /**
-     * Sets itemPartNumber.
+     * Sets item_part_number.
      *
-     * @param null|string $itemPartNumber the item part number attribute of the item
+     * @param null|string $item_part_number the item part number attribute of the item
      */
-    public function setItemPartNumber(?string $itemPartNumber) : self
+    public function setItemPartNumber(?string $item_part_number) : self
     {
-        $this->container['itemPartNumber'] = $itemPartNumber;
+        $this->container['item_part_number'] = $item_part_number;
 
         return $this;
     }
@@ -1696,41 +1696,41 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets legalDisclaimer.
+     * Gets legal_disclaimer.
      */
     public function getLegalDisclaimer() : ?string
     {
-        return $this->container['legalDisclaimer'];
+        return $this->container['legal_disclaimer'];
     }
 
     /**
-     * Sets legalDisclaimer.
+     * Sets legal_disclaimer.
      *
-     * @param null|string $legalDisclaimer the legal disclaimer attribute of the item
+     * @param null|string $legal_disclaimer the legal disclaimer attribute of the item
      */
-    public function setLegalDisclaimer(?string $legalDisclaimer) : self
+    public function setLegalDisclaimer(?string $legal_disclaimer) : self
     {
-        $this->container['legalDisclaimer'] = $legalDisclaimer;
+        $this->container['legal_disclaimer'] = $legal_disclaimer;
 
         return $this;
     }
 
     /**
-     * Gets listPrice.
+     * Gets list_price.
      */
     public function getListPrice() : ?Price
     {
-        return $this->container['listPrice'];
+        return $this->container['list_price'];
     }
 
     /**
-     * Sets listPrice.
+     * Sets list_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Price $listPrice listPrice
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Price $list_price list_price
      */
-    public function setListPrice(?Price $listPrice) : self
+    public function setListPrice(?Price $list_price) : self
     {
-        $this->container['listPrice'] = $listPrice;
+        $this->container['list_price'] = $list_price;
 
         return $this;
     }
@@ -1756,165 +1756,165 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets manufacturerMaximumAge.
+     * Gets manufacturer_maximum_age.
      */
     public function getManufacturerMaximumAge() : ?DecimalWithUnits
     {
-        return $this->container['manufacturerMaximumAge'];
+        return $this->container['manufacturer_maximum_age'];
     }
 
     /**
-     * Sets manufacturerMaximumAge.
+     * Sets manufacturer_maximum_age.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $manufacturerMaximumAge manufacturerMaximumAge
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $manufacturer_maximum_age manufacturer_maximum_age
      */
-    public function setManufacturerMaximumAge(?DecimalWithUnits $manufacturerMaximumAge) : self
+    public function setManufacturerMaximumAge(?DecimalWithUnits $manufacturer_maximum_age) : self
     {
-        $this->container['manufacturerMaximumAge'] = $manufacturerMaximumAge;
+        $this->container['manufacturer_maximum_age'] = $manufacturer_maximum_age;
 
         return $this;
     }
 
     /**
-     * Gets manufacturerMinimumAge.
+     * Gets manufacturer_minimum_age.
      */
     public function getManufacturerMinimumAge() : ?DecimalWithUnits
     {
-        return $this->container['manufacturerMinimumAge'];
+        return $this->container['manufacturer_minimum_age'];
     }
 
     /**
-     * Sets manufacturerMinimumAge.
+     * Sets manufacturer_minimum_age.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $manufacturerMinimumAge manufacturerMinimumAge
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $manufacturer_minimum_age manufacturer_minimum_age
      */
-    public function setManufacturerMinimumAge(?DecimalWithUnits $manufacturerMinimumAge) : self
+    public function setManufacturerMinimumAge(?DecimalWithUnits $manufacturer_minimum_age) : self
     {
-        $this->container['manufacturerMinimumAge'] = $manufacturerMinimumAge;
+        $this->container['manufacturer_minimum_age'] = $manufacturer_minimum_age;
 
         return $this;
     }
 
     /**
-     * Gets manufacturerPartsWarrantyDescription.
+     * Gets manufacturer_parts_warranty_description.
      */
     public function getManufacturerPartsWarrantyDescription() : ?string
     {
-        return $this->container['manufacturerPartsWarrantyDescription'];
+        return $this->container['manufacturer_parts_warranty_description'];
     }
 
     /**
-     * Sets manufacturerPartsWarrantyDescription.
+     * Sets manufacturer_parts_warranty_description.
      *
-     * @param null|string $manufacturerPartsWarrantyDescription the manufacturer parts warranty description attribute of the item
+     * @param null|string $manufacturer_parts_warranty_description the manufacturer parts warranty description attribute of the item
      */
-    public function setManufacturerPartsWarrantyDescription(?string $manufacturerPartsWarrantyDescription) : self
+    public function setManufacturerPartsWarrantyDescription(?string $manufacturer_parts_warranty_description) : self
     {
-        $this->container['manufacturerPartsWarrantyDescription'] = $manufacturerPartsWarrantyDescription;
+        $this->container['manufacturer_parts_warranty_description'] = $manufacturer_parts_warranty_description;
 
         return $this;
     }
 
     /**
-     * Gets materialType.
+     * Gets material_type.
      *
      * @return null|string[]
      */
     public function getMaterialType() : ?array
     {
-        return $this->container['materialType'];
+        return $this->container['material_type'];
     }
 
     /**
-     * Sets materialType.
+     * Sets material_type.
      *
-     * @param null|string[] $materialType the material type attributes of the item
+     * @param null|string[] $material_type the material type attributes of the item
      */
-    public function setMaterialType(?array $materialType) : self
+    public function setMaterialType(?array $material_type) : self
     {
-        $this->container['materialType'] = $materialType;
+        $this->container['material_type'] = $material_type;
 
         return $this;
     }
 
     /**
-     * Gets maximumResolution.
+     * Gets maximum_resolution.
      */
     public function getMaximumResolution() : ?DecimalWithUnits
     {
-        return $this->container['maximumResolution'];
+        return $this->container['maximum_resolution'];
     }
 
     /**
-     * Sets maximumResolution.
+     * Sets maximum_resolution.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $maximumResolution maximumResolution
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $maximum_resolution maximum_resolution
      */
-    public function setMaximumResolution(?DecimalWithUnits $maximumResolution) : self
+    public function setMaximumResolution(?DecimalWithUnits $maximum_resolution) : self
     {
-        $this->container['maximumResolution'] = $maximumResolution;
+        $this->container['maximum_resolution'] = $maximum_resolution;
 
         return $this;
     }
 
     /**
-     * Gets mediaType.
+     * Gets media_type.
      *
      * @return null|string[]
      */
     public function getMediaType() : ?array
     {
-        return $this->container['mediaType'];
+        return $this->container['media_type'];
     }
 
     /**
-     * Sets mediaType.
+     * Sets media_type.
      *
-     * @param null|string[] $mediaType the media type attributes of the item
+     * @param null|string[] $media_type the media type attributes of the item
      */
-    public function setMediaType(?array $mediaType) : self
+    public function setMediaType(?array $media_type) : self
     {
-        $this->container['mediaType'] = $mediaType;
+        $this->container['media_type'] = $media_type;
 
         return $this;
     }
 
     /**
-     * Gets metalStamp.
+     * Gets metal_stamp.
      */
     public function getMetalStamp() : ?string
     {
-        return $this->container['metalStamp'];
+        return $this->container['metal_stamp'];
     }
 
     /**
-     * Sets metalStamp.
+     * Sets metal_stamp.
      *
-     * @param null|string $metalStamp the metal stamp attribute of the item
+     * @param null|string $metal_stamp the metal stamp attribute of the item
      */
-    public function setMetalStamp(?string $metalStamp) : self
+    public function setMetalStamp(?string $metal_stamp) : self
     {
-        $this->container['metalStamp'] = $metalStamp;
+        $this->container['metal_stamp'] = $metal_stamp;
 
         return $this;
     }
 
     /**
-     * Gets metalType.
+     * Gets metal_type.
      */
     public function getMetalType() : ?string
     {
-        return $this->container['metalType'];
+        return $this->container['metal_type'];
     }
 
     /**
-     * Sets metalType.
+     * Sets metal_type.
      *
-     * @param null|string $metalType the metal type attribute of the item
+     * @param null|string $metal_type the metal type attribute of the item
      */
-    public function setMetalType(?string $metalType) : self
+    public function setMetalType(?string $metal_type) : self
     {
-        $this->container['metalType'] = $metalType;
+        $this->container['metal_type'] = $metal_type;
 
         return $this;
     }
@@ -1940,223 +1940,223 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets numberOfDiscs.
+     * Gets number_of_discs.
      */
     public function getNumberOfDiscs() : ?int
     {
-        return $this->container['numberOfDiscs'];
+        return $this->container['number_of_discs'];
     }
 
     /**
-     * Sets numberOfDiscs.
+     * Sets number_of_discs.
      *
-     * @param null|int $numberOfDiscs the number of discs attribute of the item
+     * @param null|int $number_of_discs the number of discs attribute of the item
      */
-    public function setNumberOfDiscs(?int $numberOfDiscs) : self
+    public function setNumberOfDiscs(?int $number_of_discs) : self
     {
-        $this->container['numberOfDiscs'] = $numberOfDiscs;
+        $this->container['number_of_discs'] = $number_of_discs;
 
         return $this;
     }
 
     /**
-     * Gets numberOfIssues.
+     * Gets number_of_issues.
      */
     public function getNumberOfIssues() : ?int
     {
-        return $this->container['numberOfIssues'];
+        return $this->container['number_of_issues'];
     }
 
     /**
-     * Sets numberOfIssues.
+     * Sets number_of_issues.
      *
-     * @param null|int $numberOfIssues the number of issues attribute of the item
+     * @param null|int $number_of_issues the number of issues attribute of the item
      */
-    public function setNumberOfIssues(?int $numberOfIssues) : self
+    public function setNumberOfIssues(?int $number_of_issues) : self
     {
-        $this->container['numberOfIssues'] = $numberOfIssues;
+        $this->container['number_of_issues'] = $number_of_issues;
 
         return $this;
     }
 
     /**
-     * Gets numberOfItems.
+     * Gets number_of_items.
      */
     public function getNumberOfItems() : ?int
     {
-        return $this->container['numberOfItems'];
+        return $this->container['number_of_items'];
     }
 
     /**
-     * Sets numberOfItems.
+     * Sets number_of_items.
      *
-     * @param null|int $numberOfItems the number of items attribute of the item
+     * @param null|int $number_of_items the number of items attribute of the item
      */
-    public function setNumberOfItems(?int $numberOfItems) : self
+    public function setNumberOfItems(?int $number_of_items) : self
     {
-        $this->container['numberOfItems'] = $numberOfItems;
+        $this->container['number_of_items'] = $number_of_items;
 
         return $this;
     }
 
     /**
-     * Gets numberOfPages.
+     * Gets number_of_pages.
      */
     public function getNumberOfPages() : ?int
     {
-        return $this->container['numberOfPages'];
+        return $this->container['number_of_pages'];
     }
 
     /**
-     * Sets numberOfPages.
+     * Sets number_of_pages.
      *
-     * @param null|int $numberOfPages the number of pages attribute of the item
+     * @param null|int $number_of_pages the number of pages attribute of the item
      */
-    public function setNumberOfPages(?int $numberOfPages) : self
+    public function setNumberOfPages(?int $number_of_pages) : self
     {
-        $this->container['numberOfPages'] = $numberOfPages;
+        $this->container['number_of_pages'] = $number_of_pages;
 
         return $this;
     }
 
     /**
-     * Gets numberOfTracks.
+     * Gets number_of_tracks.
      */
     public function getNumberOfTracks() : ?int
     {
-        return $this->container['numberOfTracks'];
+        return $this->container['number_of_tracks'];
     }
 
     /**
-     * Sets numberOfTracks.
+     * Sets number_of_tracks.
      *
-     * @param null|int $numberOfTracks the number of tracks attribute of the item
+     * @param null|int $number_of_tracks the number of tracks attribute of the item
      */
-    public function setNumberOfTracks(?int $numberOfTracks) : self
+    public function setNumberOfTracks(?int $number_of_tracks) : self
     {
-        $this->container['numberOfTracks'] = $numberOfTracks;
+        $this->container['number_of_tracks'] = $number_of_tracks;
 
         return $this;
     }
 
     /**
-     * Gets operatingSystem.
+     * Gets operating_system.
      *
      * @return null|string[]
      */
     public function getOperatingSystem() : ?array
     {
-        return $this->container['operatingSystem'];
+        return $this->container['operating_system'];
     }
 
     /**
-     * Sets operatingSystem.
+     * Sets operating_system.
      *
-     * @param null|string[] $operatingSystem the operating system attributes of the item
+     * @param null|string[] $operating_system the operating system attributes of the item
      */
-    public function setOperatingSystem(?array $operatingSystem) : self
+    public function setOperatingSystem(?array $operating_system) : self
     {
-        $this->container['operatingSystem'] = $operatingSystem;
+        $this->container['operating_system'] = $operating_system;
 
         return $this;
     }
 
     /**
-     * Gets opticalZoom.
+     * Gets optical_zoom.
      */
     public function getOpticalZoom() : ?DecimalWithUnits
     {
-        return $this->container['opticalZoom'];
+        return $this->container['optical_zoom'];
     }
 
     /**
-     * Sets opticalZoom.
+     * Sets optical_zoom.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $opticalZoom opticalZoom
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $optical_zoom optical_zoom
      */
-    public function setOpticalZoom(?DecimalWithUnits $opticalZoom) : self
+    public function setOpticalZoom(?DecimalWithUnits $optical_zoom) : self
     {
-        $this->container['opticalZoom'] = $opticalZoom;
+        $this->container['optical_zoom'] = $optical_zoom;
 
         return $this;
     }
 
     /**
-     * Gets packageDimensions.
+     * Gets package_dimensions.
      */
     public function getPackageDimensions() : ?DimensionType
     {
-        return $this->container['packageDimensions'];
+        return $this->container['package_dimensions'];
     }
 
     /**
-     * Sets packageDimensions.
+     * Sets package_dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType $packageDimensions packageDimensions
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DimensionType $package_dimensions package_dimensions
      */
-    public function setPackageDimensions(?DimensionType $packageDimensions) : self
+    public function setPackageDimensions(?DimensionType $package_dimensions) : self
     {
-        $this->container['packageDimensions'] = $packageDimensions;
+        $this->container['package_dimensions'] = $package_dimensions;
 
         return $this;
     }
 
     /**
-     * Gets packageQuantity.
+     * Gets package_quantity.
      */
     public function getPackageQuantity() : ?int
     {
-        return $this->container['packageQuantity'];
+        return $this->container['package_quantity'];
     }
 
     /**
-     * Sets packageQuantity.
+     * Sets package_quantity.
      *
-     * @param null|int $packageQuantity the package quantity attribute of the item
+     * @param null|int $package_quantity the package quantity attribute of the item
      */
-    public function setPackageQuantity(?int $packageQuantity) : self
+    public function setPackageQuantity(?int $package_quantity) : self
     {
-        $this->container['packageQuantity'] = $packageQuantity;
+        $this->container['package_quantity'] = $package_quantity;
 
         return $this;
     }
 
     /**
-     * Gets partNumber.
+     * Gets part_number.
      */
     public function getPartNumber() : ?string
     {
-        return $this->container['partNumber'];
+        return $this->container['part_number'];
     }
 
     /**
-     * Sets partNumber.
+     * Sets part_number.
      *
-     * @param null|string $partNumber the part number attribute of the item
+     * @param null|string $part_number the part number attribute of the item
      */
-    public function setPartNumber(?string $partNumber) : self
+    public function setPartNumber(?string $part_number) : self
     {
-        $this->container['partNumber'] = $partNumber;
+        $this->container['part_number'] = $part_number;
 
         return $this;
     }
 
     /**
-     * Gets pegiRating.
+     * Gets pegi_rating.
      */
     public function getPegiRating() : ?string
     {
-        return $this->container['pegiRating'];
+        return $this->container['pegi_rating'];
     }
 
     /**
-     * Sets pegiRating.
+     * Sets pegi_rating.
      *
-     * @param null|string $pegiRating the PEGI rating attribute of the item
+     * @param null|string $pegi_rating the PEGI rating attribute of the item
      */
-    public function setPegiRating(?string $pegiRating) : self
+    public function setPegiRating(?string $pegi_rating) : self
     {
-        $this->container['pegiRating'] = $pegiRating;
+        $this->container['pegi_rating'] = $pegi_rating;
 
         return $this;
     }
@@ -2184,101 +2184,101 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets processorCount.
+     * Gets processor_count.
      */
     public function getProcessorCount() : ?int
     {
-        return $this->container['processorCount'];
+        return $this->container['processor_count'];
     }
 
     /**
-     * Sets processorCount.
+     * Sets processor_count.
      *
-     * @param null|int $processorCount the processor count attribute of the item
+     * @param null|int $processor_count the processor count attribute of the item
      */
-    public function setProcessorCount(?int $processorCount) : self
+    public function setProcessorCount(?int $processor_count) : self
     {
-        $this->container['processorCount'] = $processorCount;
+        $this->container['processor_count'] = $processor_count;
 
         return $this;
     }
 
     /**
-     * Gets productGroup.
+     * Gets product_group.
      */
     public function getProductGroup() : ?string
     {
-        return $this->container['productGroup'];
+        return $this->container['product_group'];
     }
 
     /**
-     * Sets productGroup.
+     * Sets product_group.
      *
-     * @param null|string $productGroup the product group attribute of the item
+     * @param null|string $product_group the product group attribute of the item
      */
-    public function setProductGroup(?string $productGroup) : self
+    public function setProductGroup(?string $product_group) : self
     {
-        $this->container['productGroup'] = $productGroup;
+        $this->container['product_group'] = $product_group;
 
         return $this;
     }
 
     /**
-     * Gets productTypeName.
+     * Gets product_type_name.
      */
     public function getProductTypeName() : ?string
     {
-        return $this->container['productTypeName'];
+        return $this->container['product_type_name'];
     }
 
     /**
-     * Sets productTypeName.
+     * Sets product_type_name.
      *
-     * @param null|string $productTypeName the product type name attribute of the item
+     * @param null|string $product_type_name the product type name attribute of the item
      */
-    public function setProductTypeName(?string $productTypeName) : self
+    public function setProductTypeName(?string $product_type_name) : self
     {
-        $this->container['productTypeName'] = $productTypeName;
+        $this->container['product_type_name'] = $product_type_name;
 
         return $this;
     }
 
     /**
-     * Gets productTypeSubcategory.
+     * Gets product_type_subcategory.
      */
     public function getProductTypeSubcategory() : ?string
     {
-        return $this->container['productTypeSubcategory'];
+        return $this->container['product_type_subcategory'];
     }
 
     /**
-     * Sets productTypeSubcategory.
+     * Sets product_type_subcategory.
      *
-     * @param null|string $productTypeSubcategory the product type subcategory attribute of the item
+     * @param null|string $product_type_subcategory the product type subcategory attribute of the item
      */
-    public function setProductTypeSubcategory(?string $productTypeSubcategory) : self
+    public function setProductTypeSubcategory(?string $product_type_subcategory) : self
     {
-        $this->container['productTypeSubcategory'] = $productTypeSubcategory;
+        $this->container['product_type_subcategory'] = $product_type_subcategory;
 
         return $this;
     }
 
     /**
-     * Gets publicationDate.
+     * Gets publication_date.
      */
     public function getPublicationDate() : ?string
     {
-        return $this->container['publicationDate'];
+        return $this->container['publication_date'];
     }
 
     /**
-     * Sets publicationDate.
+     * Sets publication_date.
      *
-     * @param null|string $publicationDate the publication date attribute of the item
+     * @param null|string $publication_date the publication date attribute of the item
      */
-    public function setPublicationDate(?string $publicationDate) : self
+    public function setPublicationDate(?string $publication_date) : self
     {
-        $this->container['publicationDate'] = $publicationDate;
+        $this->container['publication_date'] = $publication_date;
 
         return $this;
     }
@@ -2304,101 +2304,101 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets regionCode.
+     * Gets region_code.
      */
     public function getRegionCode() : ?string
     {
-        return $this->container['regionCode'];
+        return $this->container['region_code'];
     }
 
     /**
-     * Sets regionCode.
+     * Sets region_code.
      *
-     * @param null|string $regionCode the region code attribute of the item
+     * @param null|string $region_code the region code attribute of the item
      */
-    public function setRegionCode(?string $regionCode) : self
+    public function setRegionCode(?string $region_code) : self
     {
-        $this->container['regionCode'] = $regionCode;
+        $this->container['region_code'] = $region_code;
 
         return $this;
     }
 
     /**
-     * Gets releaseDate.
+     * Gets release_date.
      */
     public function getReleaseDate() : ?string
     {
-        return $this->container['releaseDate'];
+        return $this->container['release_date'];
     }
 
     /**
-     * Sets releaseDate.
+     * Sets release_date.
      *
-     * @param null|string $releaseDate the release date attribute of the item
+     * @param null|string $release_date the release date attribute of the item
      */
-    public function setReleaseDate(?string $releaseDate) : self
+    public function setReleaseDate(?string $release_date) : self
     {
-        $this->container['releaseDate'] = $releaseDate;
+        $this->container['release_date'] = $release_date;
 
         return $this;
     }
 
     /**
-     * Gets ringSize.
+     * Gets ring_size.
      */
     public function getRingSize() : ?string
     {
-        return $this->container['ringSize'];
+        return $this->container['ring_size'];
     }
 
     /**
-     * Sets ringSize.
+     * Sets ring_size.
      *
-     * @param null|string $ringSize the ring size attribute of the item
+     * @param null|string $ring_size the ring size attribute of the item
      */
-    public function setRingSize(?string $ringSize) : self
+    public function setRingSize(?string $ring_size) : self
     {
-        $this->container['ringSize'] = $ringSize;
+        $this->container['ring_size'] = $ring_size;
 
         return $this;
     }
 
     /**
-     * Gets runningTime.
+     * Gets running_time.
      */
     public function getRunningTime() : ?DecimalWithUnits
     {
-        return $this->container['runningTime'];
+        return $this->container['running_time'];
     }
 
     /**
-     * Sets runningTime.
+     * Sets running_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $runningTime runningTime
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $running_time running_time
      */
-    public function setRunningTime(?DecimalWithUnits $runningTime) : self
+    public function setRunningTime(?DecimalWithUnits $running_time) : self
     {
-        $this->container['runningTime'] = $runningTime;
+        $this->container['running_time'] = $running_time;
 
         return $this;
     }
 
     /**
-     * Gets shaftMaterial.
+     * Gets shaft_material.
      */
     public function getShaftMaterial() : ?string
     {
-        return $this->container['shaftMaterial'];
+        return $this->container['shaft_material'];
     }
 
     /**
-     * Sets shaftMaterial.
+     * Sets shaft_material.
      *
-     * @param null|string $shaftMaterial the shaft material attribute of the item
+     * @param null|string $shaft_material the shaft material attribute of the item
      */
-    public function setShaftMaterial(?string $shaftMaterial) : self
+    public function setShaftMaterial(?string $shaft_material) : self
     {
-        $this->container['shaftMaterial'] = $shaftMaterial;
+        $this->container['shaft_material'] = $shaft_material;
 
         return $this;
     }
@@ -2424,41 +2424,41 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets seasonSequence.
+     * Gets season_sequence.
      */
     public function getSeasonSequence() : ?string
     {
-        return $this->container['seasonSequence'];
+        return $this->container['season_sequence'];
     }
 
     /**
-     * Sets seasonSequence.
+     * Sets season_sequence.
      *
-     * @param null|string $seasonSequence the season sequence attribute of the item
+     * @param null|string $season_sequence the season sequence attribute of the item
      */
-    public function setSeasonSequence(?string $seasonSequence) : self
+    public function setSeasonSequence(?string $season_sequence) : self
     {
-        $this->container['seasonSequence'] = $seasonSequence;
+        $this->container['season_sequence'] = $season_sequence;
 
         return $this;
     }
 
     /**
-     * Gets seikodoProductCode.
+     * Gets seikodo_product_code.
      */
     public function getSeikodoProductCode() : ?string
     {
-        return $this->container['seikodoProductCode'];
+        return $this->container['seikodo_product_code'];
     }
 
     /**
-     * Sets seikodoProductCode.
+     * Sets seikodo_product_code.
      *
-     * @param null|string $seikodoProductCode the Seikodo product code attribute of the item
+     * @param null|string $seikodo_product_code the Seikodo product code attribute of the item
      */
-    public function setSeikodoProductCode(?string $seikodoProductCode) : self
+    public function setSeikodoProductCode(?string $seikodo_product_code) : self
     {
-        $this->container['seikodoProductCode'] = $seikodoProductCode;
+        $this->container['seikodo_product_code'] = $seikodo_product_code;
 
         return $this;
     }
@@ -2484,41 +2484,41 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets sizePerPearl.
+     * Gets size_per_pearl.
      */
     public function getSizePerPearl() : ?string
     {
-        return $this->container['sizePerPearl'];
+        return $this->container['size_per_pearl'];
     }
 
     /**
-     * Sets sizePerPearl.
+     * Sets size_per_pearl.
      *
-     * @param null|string $sizePerPearl the size per pearl attribute of the item
+     * @param null|string $size_per_pearl the size per pearl attribute of the item
      */
-    public function setSizePerPearl(?string $sizePerPearl) : self
+    public function setSizePerPearl(?string $size_per_pearl) : self
     {
-        $this->container['sizePerPearl'] = $sizePerPearl;
+        $this->container['size_per_pearl'] = $size_per_pearl;
 
         return $this;
     }
 
     /**
-     * Gets smallImage.
+     * Gets small_image.
      */
     public function getSmallImage() : ?Image
     {
-        return $this->container['smallImage'];
+        return $this->container['small_image'];
     }
 
     /**
-     * Sets smallImage.
+     * Sets small_image.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Image $smallImage smallImage
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Image $small_image small_image
      */
-    public function setSmallImage(?Image $smallImage) : self
+    public function setSmallImage(?Image $small_image) : self
     {
-        $this->container['smallImage'] = $smallImage;
+        $this->container['small_image'] = $small_image;
 
         return $this;
     }
@@ -2544,81 +2544,81 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets subscriptionLength.
+     * Gets subscription_length.
      */
     public function getSubscriptionLength() : ?DecimalWithUnits
     {
-        return $this->container['subscriptionLength'];
+        return $this->container['subscription_length'];
     }
 
     /**
-     * Sets subscriptionLength.
+     * Sets subscription_length.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $subscriptionLength subscriptionLength
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $subscription_length subscription_length
      */
-    public function setSubscriptionLength(?DecimalWithUnits $subscriptionLength) : self
+    public function setSubscriptionLength(?DecimalWithUnits $subscription_length) : self
     {
-        $this->container['subscriptionLength'] = $subscriptionLength;
+        $this->container['subscription_length'] = $subscription_length;
 
         return $this;
     }
 
     /**
-     * Gets systemMemorySize.
+     * Gets system_memory_size.
      */
     public function getSystemMemorySize() : ?DecimalWithUnits
     {
-        return $this->container['systemMemorySize'];
+        return $this->container['system_memory_size'];
     }
 
     /**
-     * Sets systemMemorySize.
+     * Sets system_memory_size.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $systemMemorySize systemMemorySize
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $system_memory_size system_memory_size
      */
-    public function setSystemMemorySize(?DecimalWithUnits $systemMemorySize) : self
+    public function setSystemMemorySize(?DecimalWithUnits $system_memory_size) : self
     {
-        $this->container['systemMemorySize'] = $systemMemorySize;
+        $this->container['system_memory_size'] = $system_memory_size;
 
         return $this;
     }
 
     /**
-     * Gets systemMemoryType.
+     * Gets system_memory_type.
      */
     public function getSystemMemoryType() : ?string
     {
-        return $this->container['systemMemoryType'];
+        return $this->container['system_memory_type'];
     }
 
     /**
-     * Sets systemMemoryType.
+     * Sets system_memory_type.
      *
-     * @param null|string $systemMemoryType the system memory type attribute of the item
+     * @param null|string $system_memory_type the system memory type attribute of the item
      */
-    public function setSystemMemoryType(?string $systemMemoryType) : self
+    public function setSystemMemoryType(?string $system_memory_type) : self
     {
-        $this->container['systemMemoryType'] = $systemMemoryType;
+        $this->container['system_memory_type'] = $system_memory_type;
 
         return $this;
     }
 
     /**
-     * Gets theatricalReleaseDate.
+     * Gets theatrical_release_date.
      */
     public function getTheatricalReleaseDate() : ?string
     {
-        return $this->container['theatricalReleaseDate'];
+        return $this->container['theatrical_release_date'];
     }
 
     /**
-     * Sets theatricalReleaseDate.
+     * Sets theatrical_release_date.
      *
-     * @param null|string $theatricalReleaseDate the theatrical release date attribute of the item
+     * @param null|string $theatrical_release_date the theatrical release date attribute of the item
      */
-    public function setTheatricalReleaseDate(?string $theatricalReleaseDate) : self
+    public function setTheatricalReleaseDate(?string $theatrical_release_date) : self
     {
-        $this->container['theatricalReleaseDate'] = $theatricalReleaseDate;
+        $this->container['theatrical_release_date'] = $theatrical_release_date;
 
         return $this;
     }
@@ -2644,41 +2644,41 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets totalDiamondWeight.
+     * Gets total_diamond_weight.
      */
     public function getTotalDiamondWeight() : ?DecimalWithUnits
     {
-        return $this->container['totalDiamondWeight'];
+        return $this->container['total_diamond_weight'];
     }
 
     /**
-     * Sets totalDiamondWeight.
+     * Sets total_diamond_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $totalDiamondWeight totalDiamondWeight
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $total_diamond_weight total_diamond_weight
      */
-    public function setTotalDiamondWeight(?DecimalWithUnits $totalDiamondWeight) : self
+    public function setTotalDiamondWeight(?DecimalWithUnits $total_diamond_weight) : self
     {
-        $this->container['totalDiamondWeight'] = $totalDiamondWeight;
+        $this->container['total_diamond_weight'] = $total_diamond_weight;
 
         return $this;
     }
 
     /**
-     * Gets totalGemWeight.
+     * Gets total_gem_weight.
      */
     public function getTotalGemWeight() : ?DecimalWithUnits
     {
-        return $this->container['totalGemWeight'];
+        return $this->container['total_gem_weight'];
     }
 
     /**
-     * Sets totalGemWeight.
+     * Sets total_gem_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $totalGemWeight totalGemWeight
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits $total_gem_weight total_gem_weight
      */
-    public function setTotalGemWeight(?DecimalWithUnits $totalGemWeight) : self
+    public function setTotalGemWeight(?DecimalWithUnits $total_gem_weight) : self
     {
-        $this->container['totalGemWeight'] = $totalGemWeight;
+        $this->container['total_gem_weight'] = $total_gem_weight;
 
         return $this;
     }
@@ -2704,21 +2704,21 @@ class AttributeSetListType implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets weeeTaxValue.
+     * Gets weee_tax_value.
      */
     public function getWeeeTaxValue() : ?Price
     {
-        return $this->container['weeeTaxValue'];
+        return $this->container['weee_tax_value'];
     }
 
     /**
-     * Sets weeeTaxValue.
+     * Sets weee_tax_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Price $weeeTaxValue weeeTaxValue
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Price $weee_tax_value weee_tax_value
      */
-    public function setWeeeTaxValue(?Price $weeeTaxValue) : self
+    public function setWeeeTaxValue(?Price $weee_tax_value) : self
     {
-        $this->container['weeeTaxValue'] = $weeeTaxValue;
+        $this->container['weee_tax_value'] = $weee_tax_value;
 
         return $this;
     }

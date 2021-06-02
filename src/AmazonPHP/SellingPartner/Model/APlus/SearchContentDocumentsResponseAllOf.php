@@ -56,7 +56,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'contentMetadataRecords' => '\AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[]',
+        'content_metadata_records' => '\AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[]',
     ];
 
     /**
@@ -67,7 +67,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'contentMetadataRecords' => null,
+        'content_metadata_records' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $attributeMap = [
-        'contentMetadataRecords' => 'contentMetadataRecords',
+        'content_metadata_records' => 'contentMetadataRecords',
     ];
 
     /**
@@ -86,7 +86,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $setters = [
-        'contentMetadataRecords' => 'setContentMetadataRecords',
+        'content_metadata_records' => 'setContentMetadataRecords',
     ];
 
     /**
@@ -95,7 +95,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $getters = [
-        'contentMetadataRecords' => 'getContentMetadataRecords',
+        'content_metadata_records' => 'getContentMetadataRecords',
     ];
 
     /**
@@ -113,7 +113,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->container['contentMetadataRecords'] = $data['contentMetadataRecords'] ?? null;
+        $this->container['content_metadata_records'] = $data['content_metadata_records'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['contentMetadataRecords'] === null) {
-            $invalidProperties[] = "'contentMetadataRecords' can't be null";
+        if ($this->container['content_metadata_records'] === null) {
+            $invalidProperties[] = "'content_metadata_records' can't be null";
         }
 
         return $invalidProperties;
@@ -214,23 +214,23 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets contentMetadataRecords.
+     * Gets content_metadata_records.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[]
      */
     public function getContentMetadataRecords() : array
     {
-        return $this->container['contentMetadataRecords'];
+        return $this->container['content_metadata_records'];
     }
 
     /**
-     * Sets contentMetadataRecords.
+     * Sets content_metadata_records.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[] $contentMetadataRecords a list of A+ Content metadata records
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[] $content_metadata_records a list of A+ Content metadata records
      */
-    public function setContentMetadataRecords(array $contentMetadataRecords) : self
+    public function setContentMetadataRecords(array $content_metadata_records) : self
     {
-        $this->container['contentMetadataRecords'] = $contentMetadataRecords;
+        $this->container['content_metadata_records'] = $content_metadata_records;
 
         return $this;
     }

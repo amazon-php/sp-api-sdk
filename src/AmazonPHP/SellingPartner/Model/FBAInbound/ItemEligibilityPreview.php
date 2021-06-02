@@ -137,10 +137,10 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $openAPITypes = [
         'asin' => 'string',
-        'marketplaceId' => 'string',
+        'marketplace_id' => 'string',
         'program' => 'string',
-        'isEligibleForProgram' => 'bool',
-        'ineligibilityReasonList' => 'string[]',
+        'is_eligible_for_program' => 'bool',
+        'ineligibility_reason_list' => 'string[]',
     ];
 
     /**
@@ -152,10 +152,10 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $openAPIFormats = [
         'asin' => null,
-        'marketplaceId' => null,
+        'marketplace_id' => null,
         'program' => null,
-        'isEligibleForProgram' => null,
-        'ineligibilityReasonList' => null,
+        'is_eligible_for_program' => null,
+        'ineligibility_reason_list' => null,
     ];
 
     /**
@@ -166,10 +166,10 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $attributeMap = [
         'asin' => 'asin',
-        'marketplaceId' => 'marketplaceId',
+        'marketplace_id' => 'marketplaceId',
         'program' => 'program',
-        'isEligibleForProgram' => 'isEligibleForProgram',
-        'ineligibilityReasonList' => 'ineligibilityReasonList',
+        'is_eligible_for_program' => 'isEligibleForProgram',
+        'ineligibility_reason_list' => 'ineligibilityReasonList',
     ];
 
     /**
@@ -179,10 +179,10 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $setters = [
         'asin' => 'setAsin',
-        'marketplaceId' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'program' => 'setProgram',
-        'isEligibleForProgram' => 'setIsEligibleForProgram',
-        'ineligibilityReasonList' => 'setIneligibilityReasonList',
+        'is_eligible_for_program' => 'setIsEligibleForProgram',
+        'ineligibility_reason_list' => 'setIneligibilityReasonList',
     ];
 
     /**
@@ -192,10 +192,10 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $getters = [
         'asin' => 'getAsin',
-        'marketplaceId' => 'getMarketplaceId',
+        'marketplace_id' => 'getMarketplaceId',
         'program' => 'getProgram',
-        'isEligibleForProgram' => 'getIsEligibleForProgram',
-        'ineligibilityReasonList' => 'getIneligibilityReasonList',
+        'is_eligible_for_program' => 'getIsEligibleForProgram',
+        'ineligibility_reason_list' => 'getIneligibilityReasonList',
     ];
 
     /**
@@ -214,10 +214,10 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     public function __construct(array $data = null)
     {
         $this->container['asin'] = $data['asin'] ?? null;
-        $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
         $this->container['program'] = $data['program'] ?? null;
-        $this->container['isEligibleForProgram'] = $data['isEligibleForProgram'] ?? null;
-        $this->container['ineligibilityReasonList'] = $data['ineligibilityReasonList'] ?? null;
+        $this->container['is_eligible_for_program'] = $data['is_eligible_for_program'] ?? null;
+        $this->container['ineligibility_reason_list'] = $data['ineligibility_reason_list'] ?? null;
     }
 
     /**
@@ -378,8 +378,8 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
             );
         }
 
-        if ($this->container['isEligibleForProgram'] === null) {
-            $invalidProperties[] = "'isEligibleForProgram' can't be null";
+        if ($this->container['is_eligible_for_program'] === null) {
+            $invalidProperties[] = "'is_eligible_for_program' can't be null";
         }
 
         return $invalidProperties;
@@ -417,21 +417,21 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets marketplaceId.
+     * Gets marketplace_id.
      */
     public function getMarketplaceId() : ?string
     {
-        return $this->container['marketplaceId'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets marketplaceId.
+     * Sets marketplace_id.
      *
-     * @param null|string $marketplaceId the marketplace for which eligibility was determined
+     * @param null|string $marketplace_id the marketplace for which eligibility was determined
      */
-    public function setMarketplaceId(?string $marketplaceId) : self
+    public function setMarketplaceId(?string $marketplace_id) : self
     {
-        $this->container['marketplaceId'] = $marketplaceId;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
@@ -468,53 +468,53 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets isEligibleForProgram.
+     * Gets is_eligible_for_program.
      */
     public function getIsEligibleForProgram() : bool
     {
-        return $this->container['isEligibleForProgram'];
+        return $this->container['is_eligible_for_program'];
     }
 
     /**
-     * Sets isEligibleForProgram.
+     * Sets is_eligible_for_program.
      *
-     * @param bool $isEligibleForProgram indicates if the item is eligible for the program
+     * @param bool $is_eligible_for_program indicates if the item is eligible for the program
      */
-    public function setIsEligibleForProgram(bool $isEligibleForProgram) : self
+    public function setIsEligibleForProgram(bool $is_eligible_for_program) : self
     {
-        $this->container['isEligibleForProgram'] = $isEligibleForProgram;
+        $this->container['is_eligible_for_program'] = $is_eligible_for_program;
 
         return $this;
     }
 
     /**
-     * Gets ineligibilityReasonList.
+     * Gets ineligibility_reason_list.
      *
      * @return null|string[]
      */
     public function getIneligibilityReasonList() : ?array
     {
-        return $this->container['ineligibilityReasonList'];
+        return $this->container['ineligibility_reason_list'];
     }
 
     /**
-     * Sets ineligibilityReasonList.
+     * Sets ineligibility_reason_list.
      *
-     * @param null|string[] $ineligibilityReasonList potential Ineligibility Reason Codes
+     * @param null|string[] $ineligibility_reason_list potential Ineligibility Reason Codes
      */
-    public function setIneligibilityReasonList(?array $ineligibilityReasonList) : self
+    public function setIneligibilityReasonList(?array $ineligibility_reason_list) : self
     {
         $allowedValues = $this->getIneligibilityReasonListAllowableValues();
 
-        if (null !== $ineligibilityReasonList && \array_diff($ineligibilityReasonList, $allowedValues)) {
+        if (null !== $ineligibility_reason_list && \array_diff($ineligibility_reason_list, $allowedValues)) {
             throw new \InvalidArgumentException(
                 \sprintf(
-                    "Invalid value for 'ineligibilityReasonList', must be one of '%s'",
+                    "Invalid value for 'ineligibility_reason_list', must be one of '%s'",
                     \implode("', '", $allowedValues)
                 )
             );
         }
-        $this->container['ineligibilityReasonList'] = $ineligibilityReasonList;
+        $this->container['ineligibility_reason_list'] = $ineligibility_reason_list;
 
         return $this;
     }

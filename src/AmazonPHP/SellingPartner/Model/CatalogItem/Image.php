@@ -56,7 +56,7 @@ class Image implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'uRL' => 'string',
+        'url' => 'string',
         'height' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
         'width' => '\AmazonPHP\SellingPartner\Model\CatalogItem\DecimalWithUnits',
     ];
@@ -69,7 +69,7 @@ class Image implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'uRL' => null,
+        'url' => null,
         'height' => null,
         'width' => null,
     ];
@@ -81,7 +81,7 @@ class Image implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'uRL' => 'URL',
+        'url' => 'URL',
         'height' => 'Height',
         'width' => 'Width',
     ];
@@ -92,7 +92,7 @@ class Image implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'uRL' => 'setURL',
+        'url' => 'setUrl',
         'height' => 'setHeight',
         'width' => 'setWidth',
     ];
@@ -103,7 +103,7 @@ class Image implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'uRL' => 'getURL',
+        'url' => 'getUrl',
         'height' => 'getHeight',
         'width' => 'getWidth',
     ];
@@ -123,7 +123,7 @@ class Image implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['uRL'] = $data['uRL'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
         $this->container['height'] = $data['height'] ?? null;
         $this->container['width'] = $data['width'] ?? null;
     }
@@ -220,21 +220,21 @@ class Image implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets uRL.
+     * Gets url.
      */
-    public function getURL() : ?string
+    public function getUrl() : ?string
     {
-        return $this->container['uRL'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets uRL.
+     * Sets url.
      *
-     * @param null|string $uRL the image URL attribute of the item
+     * @param null|string $url the image URL attribute of the item
      */
-    public function setURL(?string $uRL) : self
+    public function setUrl(?string $url) : self
     {
-        $this->container['uRL'] = $uRL;
+        $this->container['url'] = $url;
 
         return $this;
     }

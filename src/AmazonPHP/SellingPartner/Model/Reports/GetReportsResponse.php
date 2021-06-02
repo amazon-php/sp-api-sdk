@@ -57,7 +57,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     protected static array $openAPITypes = [
         'payload' => '\AmazonPHP\SellingPartner\Model\Reports\Report[]',
-        'nextToken' => 'string',
+        'next_token' => 'string',
         'errors' => '\AmazonPHP\SellingPartner\Model\Reports\Error[]',
     ];
 
@@ -70,7 +70,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     protected static array $openAPIFormats = [
         'payload' => null,
-        'nextToken' => null,
+        'next_token' => null,
         'errors' => null,
     ];
 
@@ -82,7 +82,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     protected static array $attributeMap = [
         'payload' => 'payload',
-        'nextToken' => 'nextToken',
+        'next_token' => 'nextToken',
         'errors' => 'errors',
     ];
 
@@ -93,7 +93,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     protected static array $setters = [
         'payload' => 'setPayload',
-        'nextToken' => 'setNextToken',
+        'next_token' => 'setNextToken',
         'errors' => 'setErrors',
     ];
 
@@ -104,7 +104,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     protected static array $getters = [
         'payload' => 'getPayload',
-        'nextToken' => 'getNextToken',
+        'next_token' => 'getNextToken',
         'errors' => 'getErrors',
     ];
 
@@ -124,7 +124,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
     public function __construct(array $data = null)
     {
         $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['nextToken'] = $data['nextToken'] ?? null;
+        $this->container['next_token'] = $data['next_token'] ?? null;
         $this->container['errors'] = $data['errors'] ?? null;
     }
 
@@ -242,21 +242,21 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
     }
 
     /**
-     * Gets nextToken.
+     * Gets next_token.
      */
     public function getNextToken() : ?string
     {
-        return $this->container['nextToken'];
+        return $this->container['next_token'];
     }
 
     /**
-     * Sets nextToken.
+     * Sets next_token.
      *
-     * @param null|string $nextToken Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
+     * @param null|string $next_token Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
      */
-    public function setNextToken(?string $nextToken) : self
+    public function setNextToken(?string $next_token) : self
     {
-        $this->container['nextToken'] = $nextToken;
+        $this->container['next_token'] = $next_token;
 
         return $this;
     }

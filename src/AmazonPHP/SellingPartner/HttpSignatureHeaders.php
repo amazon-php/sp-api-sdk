@@ -4,123 +4,134 @@ declare(strict_types=1);
 
 namespace AmazonPHP\SellingPartner;
 
+use Psr\Http\Message\RequestInterface;
+
 final class HttpSignatureHeaders
 {
-    /**
-     * @return array{host: string, user-agent: string, x-amz-access-token: string, x-amz-date: string, Authorization: string}
-     */
+    private static array $cache = [];
+
     public static function forIAMUser(
         Configuration $config,
-        string $method,
-        ?AccessToken $accessToken,
-        $uri = '',
-        $queryString = '',
-        $data = []
-    ) : array {
-        return self::calculateSignatureForService(
-            $config->apiHost(),
-            $method,
-            $uri,
-            $queryString,
-            $data,
-            'execute-api',
-            $config->accessKey(),
-            $config->secretKey(),
-            $config->region(),
-            $accessToken->token(),
-            null,
-            $config->userAgent()
-        );
-    }
-
-    /**
-     * @source https://github.com/clousale/amazon-sp-api-php
-     *
-     * @return array<string, mixed>
-     */
-    private static function calculateSignatureForService(
-        string $host,
-        string $method,
-        $uri,
-        $queryString,
-        $data,
-        string $service,
-        string $accessKey,
-        string $secretKey,
+        AccessToken $accessToken,
         string $region,
-        $accessToken,
-        $securityToken,
-        $userAgent
-    ) : array {
-        $terminationString = 'aws4_request';
+        RequestInterface $request
+    ) : RequestInterface {
         $algorithm = 'AWS4-HMAC-SHA256';
         $amzdate = \gmdate('Ymd\THis\Z');
-        $date = \substr($amzdate, 0, 8);
-
-        // Prepare payload
-        if (\is_array($data)) {
-            $param = \json_encode($data, JSON_THROW_ON_ERROR);
-
-            if ('[]' == $param) {
-                $requestPayload = '';
-            } else {
-                $requestPayload = $param;
-            }
-        } else {
-            $requestPayload = $data;
-        }
+        $shortDate = \substr($amzdate, 0, 8);
+        $service = 'execute-api';
 
         // Hashed payload
-        $hashedPayload = \hash('sha256', $requestPayload);
-
-        //Compute Canonical Headers
-        $canonicalHeaders = [
-            'host' => $host,
-            'user-agent' => $userAgent,
-        ];
+        $hashedPayload = \hash('sha256', (string) $request->getBody());
 
         // Check and attach access token to request header.
-        if (null !== $accessToken) {
-            $canonicalHeaders['x-amz-access-token'] = $accessToken;
-        }
-        $canonicalHeaders['x-amz-date'] = $amzdate;
-        // Check and attach STS token to request header.
-        if (null !== $securityToken) {
-            $canonicalHeaders['x-amz-security-token'] = $securityToken;
-        }
+        $allHeaders = \array_merge(
+            [
+                'x-amz-access-token' => [$accessToken->token()],
+                'x-amz-date' => [$amzdate],
+            ],
+            $request->getHeaders()
+        );
 
         $canonicalHeadersStr = '';
 
-        foreach ($canonicalHeaders as $h => $v) {
-            $canonicalHeadersStr .= $h . ':' . $v . "\n";
+        $blacklistHeaders = [
+            'cache-control',
+            'content-type',
+            'content-length',
+            'expect',
+            'max-forwards',
+            'pragma',
+            'range',
+            'te',
+            'if-match',
+            'if-none-match',
+            'if-modified-since',
+            'if-unmodified-since',
+            'if-range',
+            'accept',
+            'authorization',
+            'proxy-authorization',
+            'from',
+            'referer',
+            'user-agent',
+            'x-amzn-trace-id',
+            'aws-sdk-invocation-id',
+            'aws-sdk-retry',
+        ];
+
+        \ksort($allHeaders);
+        $canonicalHeaders = [];
+
+        foreach ($allHeaders as $headerName => $headerValue) {
+            if (\in_array(\strtolower($headerName), $blacklistHeaders, true)) {
+                continue;
+            }
+
+            $canonicalHeaders[$headerName] = $headerValue;
+
+            if (\count($headerValue) > 0) {
+                \sort($headerValue);
+            }
+
+            $canonicalHeadersStr .= $headerName . ':' . \implode(',', $headerValue) . "\n";
         }
+
         $signedHeadersStr = \implode(';', \array_keys($canonicalHeaders));
 
         //Prepare credentials scope
-        $credentialScope = $date . '/' . $region . '/' . $service . '/' . $terminationString;
+        $credentialScope = $shortDate . '/' . $region . '/' . $service . '/aws4_request';
+
+        \parse_str($request->getUri()->getQuery(), $queryElements);
+        \ksort($queryElements);
 
         //prepare canonical request
-        $canonicalRequest = $method . "\n" . $uri . "\n" . $queryString . "\n" . $canonicalHeadersStr . "\n" . $signedHeadersStr . "\n" . $hashedPayload;
+        $canonicalString = $request->getMethod()
+            . "\n" . $request->getUri()->getPath()
+            . "\n" . \http_build_query($queryElements)
+            . "\n" . $canonicalHeadersStr
+            . "\n" . $signedHeadersStr
+            . "\n" . $hashedPayload;
 
         //Prepare the string to sign
-        $stringToSign = $algorithm . "\n" . $amzdate . "\n" . $credentialScope . "\n" . \hash('sha256', $canonicalRequest);
+        $stringToSign = $algorithm . "\n"
+            . $amzdate . "\n"
+            . $credentialScope . "\n"
+            . \hash('sha256', $canonicalString);
 
-        //Start signing locker process
-        //Reference : https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html
-        $kSecret = 'AWS4' . $secretKey;
-        $kDate = \hash_hmac('sha256', $date, $kSecret, true);
-        $kRegion = \hash_hmac('sha256', $region, $kDate, true);
-        $kService = \hash_hmac('sha256', $service, $kRegion, true);
-        $kSigning = \hash_hmac('sha256', $terminationString, $kService, true);
+        $k = $shortDate . '_' . $region . '_' . $service . '_' . $config->secretKey();
+
+        if (!isset(self::$cache[$k])) {
+            // Clear the cache when it reaches 50 entries
+            if (\count(self::$cache) > 50) {
+                self::$cache = [];
+            }
+
+            $dateKey = \hash_hmac(
+                'sha256',
+                $shortDate,
+                "AWS4{$config->secretKey()}",
+                true
+            );
+            $regionKey = \hash_hmac('sha256', $region, $dateKey, true);
+            $serviceKey = \hash_hmac('sha256', $service, $regionKey, true);
+            self::$cache[$k] = \hash_hmac(
+                'sha256',
+                'aws4_request',
+                $serviceKey,
+                true
+            );
+        }
 
         //Compute the signature
-        $signature = \trim(\hash_hmac('sha256', $stringToSign, $kSigning));
+        $signature = \hash_hmac('sha256', $stringToSign, self::$cache[$k]);
 
         //Finalize the authorization structure
-        $authorizationHeader = $algorithm . " Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
+        $authorizationHeader = $algorithm . " Credential={$config->accessKey()}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
 
-        return \array_merge($canonicalHeaders, [
-            'Authorization' => $authorizationHeader,
-        ]);
+        return $request
+            ->withHeader('x-amz-date', $amzdate)
+            ->withHeader('x-amz-access-token', $accessToken->token())
+            ->withHeader('Authorization', $authorizationHeader);
     }
 }
