@@ -56,7 +56,7 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'reportScheduleId' => 'string',
+        'report_schedule_id' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'reportScheduleId' => null,
+        'report_schedule_id' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $attributeMap = [
-        'reportScheduleId' => 'reportScheduleId',
+        'report_schedule_id' => 'reportScheduleId',
     ];
 
     /**
@@ -86,7 +86,7 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $setters = [
-        'reportScheduleId' => 'setReportScheduleId',
+        'report_schedule_id' => 'setReportScheduleId',
     ];
 
     /**
@@ -95,7 +95,7 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $getters = [
-        'reportScheduleId' => 'getReportScheduleId',
+        'report_schedule_id' => 'getReportScheduleId',
     ];
 
     /**
@@ -113,7 +113,7 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function __construct(array $data = null)
     {
-        $this->container['reportScheduleId'] = $data['reportScheduleId'] ?? null;
+        $this->container['report_schedule_id'] = $data['report_schedule_id'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
     {
         $invalidProperties = [];
 
-        if ($this->container['reportScheduleId'] === null) {
-            $invalidProperties[] = "'reportScheduleId' can't be null";
+        if ($this->container['report_schedule_id'] === null) {
+            $invalidProperties[] = "'report_schedule_id' can't be null";
         }
 
         return $invalidProperties;
@@ -214,21 +214,21 @@ class CreateReportScheduleResult implements \ArrayAccess, \JsonSerializable, Mod
     }
 
     /**
-     * Gets reportScheduleId.
+     * Gets report_schedule_id.
      */
     public function getReportScheduleId() : string
     {
-        return $this->container['reportScheduleId'];
+        return $this->container['report_schedule_id'];
     }
 
     /**
-     * Sets reportScheduleId.
+     * Sets report_schedule_id.
      *
-     * @param string $reportScheduleId The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
      */
-    public function setReportScheduleId(string $reportScheduleId) : self
+    public function setReportScheduleId(string $report_schedule_id) : self
     {
-        $this->container['reportScheduleId'] = $reportScheduleId;
+        $this->container['report_schedule_id'] = $report_schedule_id;
 
         return $this;
     }

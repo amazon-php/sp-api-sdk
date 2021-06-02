@@ -56,8 +56,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'marketplaceASIN' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ASINIdentifier',
-        'sKUIdentifier' => '\AmazonPHP\SellingPartner\Model\CatalogItem\SellerSKUIdentifier',
+        'marketplace_asin' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ASINIdentifier',
+        'sku_identifier' => '\AmazonPHP\SellingPartner\Model\CatalogItem\SellerSKUIdentifier',
     ];
 
     /**
@@ -68,8 +68,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'marketplaceASIN' => null,
-        'sKUIdentifier' => null,
+        'marketplace_asin' => null,
+        'sku_identifier' => null,
     ];
 
     /**
@@ -79,8 +79,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'marketplaceASIN' => 'MarketplaceASIN',
-        'sKUIdentifier' => 'SKUIdentifier',
+        'marketplace_asin' => 'MarketplaceASIN',
+        'sku_identifier' => 'SKUIdentifier',
     ];
 
     /**
@@ -89,8 +89,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'marketplaceASIN' => 'setMarketplaceASIN',
-        'sKUIdentifier' => 'setSKUIdentifier',
+        'marketplace_asin' => 'setMarketplaceAsin',
+        'sku_identifier' => 'setSkuIdentifier',
     ];
 
     /**
@@ -99,8 +99,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'marketplaceASIN' => 'getMarketplaceASIN',
-        'sKUIdentifier' => 'getSKUIdentifier',
+        'marketplace_asin' => 'getMarketplaceAsin',
+        'sku_identifier' => 'getSkuIdentifier',
     ];
 
     /**
@@ -118,8 +118,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplaceASIN'] = $data['marketplaceASIN'] ?? null;
-        $this->container['sKUIdentifier'] = $data['sKUIdentifier'] ?? null;
+        $this->container['marketplace_asin'] = $data['marketplace_asin'] ?? null;
+        $this->container['sku_identifier'] = $data['sku_identifier'] ?? null;
     }
 
     /**
@@ -214,41 +214,41 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets marketplaceASIN.
+     * Gets marketplace_asin.
      */
-    public function getMarketplaceASIN() : ?ASINIdentifier
+    public function getMarketplaceAsin() : ?ASINIdentifier
     {
-        return $this->container['marketplaceASIN'];
+        return $this->container['marketplace_asin'];
     }
 
     /**
-     * Sets marketplaceASIN.
+     * Sets marketplace_asin.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ASINIdentifier $marketplaceASIN marketplaceASIN
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ASINIdentifier $marketplace_asin marketplace_asin
      */
-    public function setMarketplaceASIN(?ASINIdentifier $marketplaceASIN) : self
+    public function setMarketplaceAsin(?ASINIdentifier $marketplace_asin) : self
     {
-        $this->container['marketplaceASIN'] = $marketplaceASIN;
+        $this->container['marketplace_asin'] = $marketplace_asin;
 
         return $this;
     }
 
     /**
-     * Gets sKUIdentifier.
+     * Gets sku_identifier.
      */
-    public function getSKUIdentifier() : ?SellerSKUIdentifier
+    public function getSkuIdentifier() : ?SellerSKUIdentifier
     {
-        return $this->container['sKUIdentifier'];
+        return $this->container['sku_identifier'];
     }
 
     /**
-     * Sets sKUIdentifier.
+     * Sets sku_identifier.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\SellerSKUIdentifier $sKUIdentifier sKUIdentifier
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\SellerSKUIdentifier $sku_identifier sku_identifier
      */
-    public function setSKUIdentifier(?SellerSKUIdentifier $sKUIdentifier) : self
+    public function setSkuIdentifier(?SellerSKUIdentifier $sku_identifier) : self
     {
-        $this->container['sKUIdentifier'] = $sKUIdentifier;
+        $this->container['sku_identifier'] = $sku_identifier;
 
         return $this;
     }

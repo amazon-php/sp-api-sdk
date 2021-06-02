@@ -57,8 +57,8 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
      */
     protected static array $openAPITypes = [
         'warnings' => '\AmazonPHP\SellingPartner\Model\APlus\Error[]',
-        'nextPageToken' => 'string',
-        'asinMetadataSet' => '\AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[]',
+        'next_page_token' => 'string',
+        'asin_metadata_set' => '\AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[]',
     ];
 
     /**
@@ -70,8 +70,8 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
      */
     protected static array $openAPIFormats = [
         'warnings' => null,
-        'nextPageToken' => null,
-        'asinMetadataSet' => null,
+        'next_page_token' => null,
+        'asin_metadata_set' => null,
     ];
 
     /**
@@ -82,8 +82,8 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
      */
     protected static array $attributeMap = [
         'warnings' => 'warnings',
-        'nextPageToken' => 'nextPageToken',
-        'asinMetadataSet' => 'asinMetadataSet',
+        'next_page_token' => 'nextPageToken',
+        'asin_metadata_set' => 'asinMetadataSet',
     ];
 
     /**
@@ -93,8 +93,8 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
      */
     protected static array $setters = [
         'warnings' => 'setWarnings',
-        'nextPageToken' => 'setNextPageToken',
-        'asinMetadataSet' => 'setAsinMetadataSet',
+        'next_page_token' => 'setNextPageToken',
+        'asin_metadata_set' => 'setAsinMetadataSet',
     ];
 
     /**
@@ -104,8 +104,8 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
      */
     protected static array $getters = [
         'warnings' => 'getWarnings',
-        'nextPageToken' => 'getNextPageToken',
-        'asinMetadataSet' => 'getAsinMetadataSet',
+        'next_page_token' => 'getNextPageToken',
+        'asin_metadata_set' => 'getAsinMetadataSet',
     ];
 
     /**
@@ -124,8 +124,8 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     public function __construct(array $data = null)
     {
         $this->container['warnings'] = $data['warnings'] ?? null;
-        $this->container['nextPageToken'] = $data['nextPageToken'] ?? null;
-        $this->container['asinMetadataSet'] = $data['asinMetadataSet'] ?? null;
+        $this->container['next_page_token'] = $data['next_page_token'] ?? null;
+        $this->container['asin_metadata_set'] = $data['asin_metadata_set'] ?? null;
     }
 
     /**
@@ -207,12 +207,12 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['nextPageToken'] && (\mb_strlen($this->container['nextPageToken']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nextPageToken', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['next_page_token'] && (\mb_strlen($this->container['next_page_token']) < 1)) {
+            $invalidProperties[] = "invalid value for 'next_page_token', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['asinMetadataSet'] === null) {
-            $invalidProperties[] = "'asinMetadataSet' can't be null";
+        if ($this->container['asin_metadata_set'] === null) {
+            $invalidProperties[] = "'asin_metadata_set' can't be null";
         }
 
         return $invalidProperties;
@@ -252,47 +252,47 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     }
 
     /**
-     * Gets nextPageToken.
+     * Gets next_page_token.
      */
     public function getNextPageToken() : ?string
     {
-        return $this->container['nextPageToken'];
+        return $this->container['next_page_token'];
     }
 
     /**
-     * Sets nextPageToken.
+     * Sets next_page_token.
      *
-     * @param null|string $nextPageToken A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     * @param null|string $next_page_token A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
      */
-    public function setNextPageToken(?string $nextPageToken) : self
+    public function setNextPageToken(?string $next_page_token) : self
     {
-        if (null !== $nextPageToken && (\mb_strlen($nextPageToken) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nextPageToken when calling ListContentDocumentAsinRelationsResponse., must be bigger than or equal to 1.');
+        if (null !== $next_page_token && (\mb_strlen($next_page_token) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $next_page_token when calling ListContentDocumentAsinRelationsResponse., must be bigger than or equal to 1.');
         }
 
-        $this->container['nextPageToken'] = $nextPageToken;
+        $this->container['next_page_token'] = $next_page_token;
 
         return $this;
     }
 
     /**
-     * Gets asinMetadataSet.
+     * Gets asin_metadata_set.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[]
      */
     public function getAsinMetadataSet() : array
     {
-        return $this->container['asinMetadataSet'];
+        return $this->container['asin_metadata_set'];
     }
 
     /**
-     * Sets asinMetadataSet.
+     * Sets asin_metadata_set.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[] $asinMetadataSet the set of ASIN metadata
+     * @param \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[] $asin_metadata_set the set of ASIN metadata
      */
-    public function setAsinMetadataSet(array $asinMetadataSet) : self
+    public function setAsinMetadataSet(array $asin_metadata_set) : self
     {
-        $this->container['asinMetadataSet'] = $asinMetadataSet;
+        $this->container['asin_metadata_set'] = $asin_metadata_set;
 
         return $this;
     }

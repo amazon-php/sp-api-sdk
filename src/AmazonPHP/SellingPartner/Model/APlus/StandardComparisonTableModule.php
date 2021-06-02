@@ -56,8 +56,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'productColumns' => '\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[]',
-        'metricRowLabels' => '\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[]',
+        'product_columns' => '\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[]',
+        'metric_row_labels' => '\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[]',
     ];
 
     /**
@@ -68,8 +68,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'productColumns' => null,
-        'metricRowLabels' => null,
+        'product_columns' => null,
+        'metric_row_labels' => null,
     ];
 
     /**
@@ -79,8 +79,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'productColumns' => 'productColumns',
-        'metricRowLabels' => 'metricRowLabels',
+        'product_columns' => 'productColumns',
+        'metric_row_labels' => 'metricRowLabels',
     ];
 
     /**
@@ -89,8 +89,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $setters = [
-        'productColumns' => 'setProductColumns',
-        'metricRowLabels' => 'setMetricRowLabels',
+        'product_columns' => 'setProductColumns',
+        'metric_row_labels' => 'setMetricRowLabels',
     ];
 
     /**
@@ -99,8 +99,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $getters = [
-        'productColumns' => 'getProductColumns',
-        'metricRowLabels' => 'getMetricRowLabels',
+        'product_columns' => 'getProductColumns',
+        'metric_row_labels' => 'getMetricRowLabels',
     ];
 
     /**
@@ -118,8 +118,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['productColumns'] = $data['productColumns'] ?? null;
-        $this->container['metricRowLabels'] = $data['metricRowLabels'] ?? null;
+        $this->container['product_columns'] = $data['product_columns'] ?? null;
+        $this->container['metric_row_labels'] = $data['metric_row_labels'] ?? null;
     }
 
     /**
@@ -201,20 +201,20 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['productColumns'] && (\count($this->container['productColumns']) > 6)) {
-            $invalidProperties[] = "invalid value for 'productColumns', number of items must be less than or equal to 6.";
+        if (null !== $this->container['product_columns'] && (\count($this->container['product_columns']) > 6)) {
+            $invalidProperties[] = "invalid value for 'product_columns', number of items must be less than or equal to 6.";
         }
 
-        if (null !== $this->container['productColumns'] && (\count($this->container['productColumns']) < 0)) {
-            $invalidProperties[] = "invalid value for 'productColumns', number of items must be greater than or equal to 0.";
+        if (null !== $this->container['product_columns'] && (\count($this->container['product_columns']) < 0)) {
+            $invalidProperties[] = "invalid value for 'product_columns', number of items must be greater than or equal to 0.";
         }
 
-        if (null !== $this->container['metricRowLabels'] && (\count($this->container['metricRowLabels']) > 10)) {
-            $invalidProperties[] = "invalid value for 'metricRowLabels', number of items must be less than or equal to 10.";
+        if (null !== $this->container['metric_row_labels'] && (\count($this->container['metric_row_labels']) > 10)) {
+            $invalidProperties[] = "invalid value for 'metric_row_labels', number of items must be less than or equal to 10.";
         }
 
-        if (null !== $this->container['metricRowLabels'] && (\count($this->container['metricRowLabels']) < 0)) {
-            $invalidProperties[] = "invalid value for 'metricRowLabels', number of items must be greater than or equal to 0.";
+        if (null !== $this->container['metric_row_labels'] && (\count($this->container['metric_row_labels']) < 0)) {
+            $invalidProperties[] = "invalid value for 'metric_row_labels', number of items must be greater than or equal to 0.";
         }
 
         return $invalidProperties;
@@ -232,59 +232,59 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     }
 
     /**
-     * Gets productColumns.
+     * Gets product_columns.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[]
      */
     public function getProductColumns() : ?array
     {
-        return $this->container['productColumns'];
+        return $this->container['product_columns'];
     }
 
     /**
-     * Sets productColumns.
+     * Sets product_columns.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[] $productColumns productColumns
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[] $product_columns product_columns
      */
-    public function setProductColumns(?array $productColumns) : self
+    public function setProductColumns(?array $product_columns) : self
     {
-        if (null !== $productColumns && (\count($productColumns) > 6)) {
-            throw new \InvalidArgumentException('invalid value for $productColumns when calling StandardComparisonTableModule., number of items must be less than or equal to 6.');
+        if (null !== $product_columns && (\count($product_columns) > 6)) {
+            throw new \InvalidArgumentException('invalid value for $product_columns when calling StandardComparisonTableModule., number of items must be less than or equal to 6.');
         }
 
-        if (null !== $productColumns && (\count($productColumns) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $productColumns when calling StandardComparisonTableModule., number of items must be greater than or equal to 0.');
+        if (null !== $product_columns && (\count($product_columns) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $product_columns when calling StandardComparisonTableModule., number of items must be greater than or equal to 0.');
         }
-        $this->container['productColumns'] = $productColumns;
+        $this->container['product_columns'] = $product_columns;
 
         return $this;
     }
 
     /**
-     * Gets metricRowLabels.
+     * Gets metric_row_labels.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[]
      */
     public function getMetricRowLabels() : ?array
     {
-        return $this->container['metricRowLabels'];
+        return $this->container['metric_row_labels'];
     }
 
     /**
-     * Sets metricRowLabels.
+     * Sets metric_row_labels.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[] $metricRowLabels metricRowLabels
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[] $metric_row_labels metric_row_labels
      */
-    public function setMetricRowLabels(?array $metricRowLabels) : self
+    public function setMetricRowLabels(?array $metric_row_labels) : self
     {
-        if (null !== $metricRowLabels && (\count($metricRowLabels) > 10)) {
-            throw new \InvalidArgumentException('invalid value for $metricRowLabels when calling StandardComparisonTableModule., number of items must be less than or equal to 10.');
+        if (null !== $metric_row_labels && (\count($metric_row_labels) > 10)) {
+            throw new \InvalidArgumentException('invalid value for $metric_row_labels when calling StandardComparisonTableModule., number of items must be less than or equal to 10.');
         }
 
-        if (null !== $metricRowLabels && (\count($metricRowLabels) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $metricRowLabels when calling StandardComparisonTableModule., number of items must be greater than or equal to 0.');
+        if (null !== $metric_row_labels && (\count($metric_row_labels) < 0)) {
+            throw new \InvalidArgumentException('invalid length for $metric_row_labels when calling StandardComparisonTableModule., number of items must be greater than or equal to 0.');
         }
-        $this->container['metricRowLabels'] = $metricRowLabels;
+        $this->container['metric_row_labels'] = $metric_row_labels;
 
         return $this;
     }

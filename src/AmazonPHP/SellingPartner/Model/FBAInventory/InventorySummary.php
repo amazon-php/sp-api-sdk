@@ -57,13 +57,13 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     protected static array $openAPITypes = [
         'asin' => 'string',
-        'fnSku' => 'string',
-        'sellerSku' => 'string',
+        'fn_sku' => 'string',
+        'seller_sku' => 'string',
         'condition' => 'string',
-        'inventoryDetails' => '\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails',
-        'lastUpdatedTime' => '\DateTime',
-        'productName' => 'string',
-        'totalQuantity' => 'int',
+        'inventory_details' => '\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails',
+        'last_updated_time' => '\DateTime',
+        'product_name' => 'string',
+        'total_quantity' => 'int',
     ];
 
     /**
@@ -75,13 +75,13 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     protected static array $openAPIFormats = [
         'asin' => null,
-        'fnSku' => null,
-        'sellerSku' => null,
+        'fn_sku' => null,
+        'seller_sku' => null,
         'condition' => null,
-        'inventoryDetails' => null,
-        'lastUpdatedTime' => 'date-time',
-        'productName' => null,
-        'totalQuantity' => null,
+        'inventory_details' => null,
+        'last_updated_time' => 'date-time',
+        'product_name' => null,
+        'total_quantity' => null,
     ];
 
     /**
@@ -92,13 +92,13 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     protected static array $attributeMap = [
         'asin' => 'asin',
-        'fnSku' => 'fnSku',
-        'sellerSku' => 'sellerSku',
+        'fn_sku' => 'fnSku',
+        'seller_sku' => 'sellerSku',
         'condition' => 'condition',
-        'inventoryDetails' => 'inventoryDetails',
-        'lastUpdatedTime' => 'lastUpdatedTime',
-        'productName' => 'productName',
-        'totalQuantity' => 'totalQuantity',
+        'inventory_details' => 'inventoryDetails',
+        'last_updated_time' => 'lastUpdatedTime',
+        'product_name' => 'productName',
+        'total_quantity' => 'totalQuantity',
     ];
 
     /**
@@ -108,13 +108,13 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     protected static array $setters = [
         'asin' => 'setAsin',
-        'fnSku' => 'setFnSku',
-        'sellerSku' => 'setSellerSku',
+        'fn_sku' => 'setFnSku',
+        'seller_sku' => 'setSellerSku',
         'condition' => 'setCondition',
-        'inventoryDetails' => 'setInventoryDetails',
-        'lastUpdatedTime' => 'setLastUpdatedTime',
-        'productName' => 'setProductName',
-        'totalQuantity' => 'setTotalQuantity',
+        'inventory_details' => 'setInventoryDetails',
+        'last_updated_time' => 'setLastUpdatedTime',
+        'product_name' => 'setProductName',
+        'total_quantity' => 'setTotalQuantity',
     ];
 
     /**
@@ -124,13 +124,13 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     protected static array $getters = [
         'asin' => 'getAsin',
-        'fnSku' => 'getFnSku',
-        'sellerSku' => 'getSellerSku',
+        'fn_sku' => 'getFnSku',
+        'seller_sku' => 'getSellerSku',
         'condition' => 'getCondition',
-        'inventoryDetails' => 'getInventoryDetails',
-        'lastUpdatedTime' => 'getLastUpdatedTime',
-        'productName' => 'getProductName',
-        'totalQuantity' => 'getTotalQuantity',
+        'inventory_details' => 'getInventoryDetails',
+        'last_updated_time' => 'getLastUpdatedTime',
+        'product_name' => 'getProductName',
+        'total_quantity' => 'getTotalQuantity',
     ];
 
     /**
@@ -149,13 +149,13 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     public function __construct(array $data = null)
     {
         $this->container['asin'] = $data['asin'] ?? null;
-        $this->container['fnSku'] = $data['fnSku'] ?? null;
-        $this->container['sellerSku'] = $data['sellerSku'] ?? null;
+        $this->container['fn_sku'] = $data['fn_sku'] ?? null;
+        $this->container['seller_sku'] = $data['seller_sku'] ?? null;
         $this->container['condition'] = $data['condition'] ?? null;
-        $this->container['inventoryDetails'] = $data['inventoryDetails'] ?? null;
-        $this->container['lastUpdatedTime'] = $data['lastUpdatedTime'] ?? null;
-        $this->container['productName'] = $data['productName'] ?? null;
-        $this->container['totalQuantity'] = $data['totalQuantity'] ?? null;
+        $this->container['inventory_details'] = $data['inventory_details'] ?? null;
+        $this->container['last_updated_time'] = $data['last_updated_time'] ?? null;
+        $this->container['product_name'] = $data['product_name'] ?? null;
+        $this->container['total_quantity'] = $data['total_quantity'] ?? null;
     }
 
     /**
@@ -270,41 +270,41 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Gets fnSku.
+     * Gets fn_sku.
      */
     public function getFnSku() : ?string
     {
-        return $this->container['fnSku'];
+        return $this->container['fn_sku'];
     }
 
     /**
-     * Sets fnSku.
+     * Sets fn_sku.
      *
-     * @param null|string $fnSku amazon's fulfillment network SKU identifier
+     * @param null|string $fn_sku amazon's fulfillment network SKU identifier
      */
-    public function setFnSku(?string $fnSku) : self
+    public function setFnSku(?string $fn_sku) : self
     {
-        $this->container['fnSku'] = $fnSku;
+        $this->container['fn_sku'] = $fn_sku;
 
         return $this;
     }
 
     /**
-     * Gets sellerSku.
+     * Gets seller_sku.
      */
     public function getSellerSku() : ?string
     {
-        return $this->container['sellerSku'];
+        return $this->container['seller_sku'];
     }
 
     /**
-     * Sets sellerSku.
+     * Sets seller_sku.
      *
-     * @param null|string $sellerSku the seller SKU of the item
+     * @param null|string $seller_sku the seller SKU of the item
      */
-    public function setSellerSku(?string $sellerSku) : self
+    public function setSellerSku(?string $seller_sku) : self
     {
-        $this->container['sellerSku'] = $sellerSku;
+        $this->container['seller_sku'] = $seller_sku;
 
         return $this;
     }
@@ -330,81 +330,81 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Gets inventoryDetails.
+     * Gets inventory_details.
      */
     public function getInventoryDetails() : ?InventoryDetails
     {
-        return $this->container['inventoryDetails'];
+        return $this->container['inventory_details'];
     }
 
     /**
-     * Sets inventoryDetails.
+     * Sets inventory_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails $inventoryDetails inventoryDetails
+     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails $inventory_details inventory_details
      */
-    public function setInventoryDetails(?InventoryDetails $inventoryDetails) : self
+    public function setInventoryDetails(?InventoryDetails $inventory_details) : self
     {
-        $this->container['inventoryDetails'] = $inventoryDetails;
+        $this->container['inventory_details'] = $inventory_details;
 
         return $this;
     }
 
     /**
-     * Gets lastUpdatedTime.
+     * Gets last_updated_time.
      */
     public function getLastUpdatedTime() : ?\DateTime
     {
-        return $this->container['lastUpdatedTime'];
+        return $this->container['last_updated_time'];
     }
 
     /**
-     * Sets lastUpdatedTime.
+     * Sets last_updated_time.
      *
-     * @param null|\DateTime $lastUpdatedTime the date and time that any quantity was last updated
+     * @param null|\DateTime $last_updated_time the date and time that any quantity was last updated
      */
-    public function setLastUpdatedTime(?\DateTime $lastUpdatedTime) : self
+    public function setLastUpdatedTime(?\DateTime $last_updated_time) : self
     {
-        $this->container['lastUpdatedTime'] = $lastUpdatedTime;
+        $this->container['last_updated_time'] = $last_updated_time;
 
         return $this;
     }
 
     /**
-     * Gets productName.
+     * Gets product_name.
      */
     public function getProductName() : ?string
     {
-        return $this->container['productName'];
+        return $this->container['product_name'];
     }
 
     /**
-     * Sets productName.
+     * Sets product_name.
      *
-     * @param null|string $productName the localized language product title of the item within the specific marketplace
+     * @param null|string $product_name the localized language product title of the item within the specific marketplace
      */
-    public function setProductName(?string $productName) : self
+    public function setProductName(?string $product_name) : self
     {
-        $this->container['productName'] = $productName;
+        $this->container['product_name'] = $product_name;
 
         return $this;
     }
 
     /**
-     * Gets totalQuantity.
+     * Gets total_quantity.
      */
     public function getTotalQuantity() : ?int
     {
-        return $this->container['totalQuantity'];
+        return $this->container['total_quantity'];
     }
 
     /**
-     * Sets totalQuantity.
+     * Sets total_quantity.
      *
-     * @param null|int $totalQuantity the total number of units in an inbound shipment or in Amazon fulfillment centers
+     * @param null|int $total_quantity the total number of units in an inbound shipment or in Amazon fulfillment centers
      */
-    public function setTotalQuantity(?int $totalQuantity) : self
+    public function setTotalQuantity(?int $total_quantity) : self
     {
-        $this->container['totalQuantity'] = $totalQuantity;
+        $this->container['total_quantity'] = $total_quantity;
 
         return $this;
     }

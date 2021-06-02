@@ -56,7 +56,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'overlayColorType' => '\AmazonPHP\SellingPartner\Model\APlus\ColorType',
+        'overlay_color_type' => '\AmazonPHP\SellingPartner\Model\APlus\ColorType',
         'block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock',
     ];
 
@@ -68,7 +68,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'overlayColorType' => null,
+        'overlay_color_type' => null,
         'block' => null,
     ];
 
@@ -79,7 +79,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * @var string[]
      */
     protected static array $attributeMap = [
-        'overlayColorType' => 'overlayColorType',
+        'overlay_color_type' => 'overlayColorType',
         'block' => 'block',
     ];
 
@@ -89,7 +89,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * @var string[]
      */
     protected static array $setters = [
-        'overlayColorType' => 'setOverlayColorType',
+        'overlay_color_type' => 'setOverlayColorType',
         'block' => 'setBlock',
     ];
 
@@ -99,7 +99,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * @var string[]
      */
     protected static array $getters = [
-        'overlayColorType' => 'getOverlayColorType',
+        'overlay_color_type' => 'getOverlayColorType',
         'block' => 'getBlock',
     ];
 
@@ -118,7 +118,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      */
     public function __construct(array $data = null)
     {
-        $this->container['overlayColorType'] = $data['overlayColorType'] ?? null;
+        $this->container['overlay_color_type'] = $data['overlay_color_type'] ?? null;
         $this->container['block'] = $data['block'] ?? null;
     }
 
@@ -201,8 +201,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     {
         $invalidProperties = [];
 
-        if ($this->container['overlayColorType'] === null) {
-            $invalidProperties[] = "'overlayColorType' can't be null";
+        if ($this->container['overlay_color_type'] === null) {
+            $invalidProperties[] = "'overlay_color_type' can't be null";
         }
 
         return $invalidProperties;
@@ -220,21 +220,21 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     }
 
     /**
-     * Gets overlayColorType.
+     * Gets overlay_color_type.
      */
     public function getOverlayColorType() : ColorType
     {
-        return $this->container['overlayColorType'];
+        return $this->container['overlay_color_type'];
     }
 
     /**
-     * Sets overlayColorType.
+     * Sets overlay_color_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ColorType $overlayColorType overlayColorType
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ColorType $overlay_color_type overlay_color_type
      */
-    public function setOverlayColorType(ColorType $overlayColorType) : self
+    public function setOverlayColorType(ColorType $overlay_color_type) : self
     {
-        $this->container['overlayColorType'] = $overlayColorType;
+        $this->container['overlay_color_type'] = $overlay_color_type;
 
         return $this;
     }

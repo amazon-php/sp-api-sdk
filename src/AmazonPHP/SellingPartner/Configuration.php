@@ -8,11 +8,9 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
 
 final class Configuration
 {
-    private string $clientId;
+    private string $lwaClientID;
 
-    private string $clientSecret;
-
-    private string $region;
+    private string $lwaClientSecret;
 
     private string $accessKey;
 
@@ -20,53 +18,55 @@ final class Configuration
 
     private string $userAgent;
 
-    private function __construct(string $clientId, string $clientSecret, string $region, string $accessKey, string $secretKey)
-    {
-        if (!Regions::isValid($region)) {
-            throw new InvalidArgumentException("Invalid region {$region}");
-        }
+    private string $tmpFolderPath;
 
-        $this->clientId = $clientId;
-        $this->clientSecret = $clientSecret;
-        $this->region = $region;
+    private function __construct(string $lwaClientID, string $lwaClientSecret, string $accessKey, string $secretKey)
+    {
+        $this->lwaClientID = $lwaClientID;
+        $this->lwaClientSecret = $lwaClientSecret;
         $this->accessKey = $accessKey;
         $this->secretKey = $secretKey;
-        $this->userAgent = 'norberttech/sp-api-php';
+        // https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#include-a-user-agent-header-in-all-requests
+        $this->userAgent = 'Library amazon-php/sp-api-php (language=PHP ' . \phpversion() . '; Platform=' . \php_uname('s') . ' ' . \php_uname('r') . ' ' . \php_uname('m') . ')';
+        $this->tmpFolderPath = \sys_get_temp_dir();
     }
 
-    public static function forIAMUser(string $clientId, string $clientSecret, string $region, string $accessKey, string $secretKey) : self
+    public static function forIAMUser(string $clientId, string $clientSecret, string $accessKey, string $secretKey) : self
     {
-        return new self($clientId, $clientSecret, $region, $accessKey, $secretKey);
+        return new self($clientId, $clientSecret, $accessKey, $secretKey);
     }
 
-    public static function forIAMRole(string $clientId, string $clientSecret, string $region, string $accessKey, string $secretKey, string $roleARN) : void
+    public static function forIAMRole(string $clientId, string $clientSecret, string $accessKey, string $secretKey, string $roleARN) : void
     {
         throw new \RuntimeException('IAM Role authentication is not supported yet');
     }
 
-    public function clientId() : string
+    public function lwaClientID() : string
     {
-        return $this->clientId;
+        return $this->lwaClientID;
     }
 
-    public function clientSecret() : string
+    public function lwaClientSecret() : string
     {
-        return $this->clientSecret;
+        return $this->lwaClientSecret;
     }
 
-    public function region() : string
+    public function apiURL(string $awsRegion) : string
     {
-        return $this->region;
+        if (!Regions::isValid($awsRegion)) {
+            throw new InvalidArgumentException("Invalid region {$awsRegion}");
+        }
+
+        return 'https://' . $this->apiHost($awsRegion);
     }
 
-    public function apiURL() : string
+    public function apiHost(string $awsRegion) : string
     {
-        return 'https://' . $this->apiHost();
-    }
+        if (!Regions::isValid($awsRegion)) {
+            throw new InvalidArgumentException("Invalid region {$awsRegion}");
+        }
 
-    public function apiHost() : string
-    {
-        switch ($this->region) {
+        switch ($awsRegion) {
             case Regions::EUROPE:
                 return 'sellingpartnerapi-eu.amazon.com';
             case Regions::FAR_EAST:
@@ -99,5 +99,20 @@ final class Configuration
         $this->userAgent = $userAgent;
 
         return $this;
+    }
+
+    /**
+     * SDK's that are receiving files will use this path to write the file there.
+     */
+    public function setTmpFolderPath(string $path) : self
+    {
+        $this->tmpFolderPath = $path;
+
+        return $this;
+    }
+
+    public function tmpFolderPath() : string
+    {
+        return $this->tmpFolderPath;
     }
 }

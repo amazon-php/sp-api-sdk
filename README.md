@@ -8,7 +8,11 @@ however most of them comes with all issues of auto generated code.
 - hardcoded `guzzlehttp/guzzle` or `aws/aws-sdk-php` dependency 
 - legacy code base (7.2)
 - no logger
+- SDK's are oriented around single seller which is not suitable for bigger systems
+- missing or lacking support for `client_credentials` grant type
+- not all API covered
 
+This API goal is to resolve all above mentioned issues. 
 
 ### Development
 
@@ -34,7 +38,10 @@ composer generate
 ```php
 <?php
 
-use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
+use AmazonPHP\SellingPartner\Api\AuthorizationSDK;
+use AmazonPHP\SellingPartner\Api\CatalogItemSDK;
+use AmazonPHP\SellingPartner\Marketplace;
+use AmazonPHP\SellingPartner\Regions;
 use Buzz\Client\Curl;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\OAuth;
@@ -47,23 +54,32 @@ require_once __DIR__ . '/vendor/autoload.php';
 $factory = new Psr17Factory();
 $client = new Curl($factory);
 
-$catalog = new CatalogItemSDK(
-    new OAuth(
-        $client,
-        new HttpFactory($factory, $factory),
-        Configuration::forIAMUser(
-            'client_id',
-            'client_secret',
-            'eu-west-1',
-            'access_key',
-            'secret_key'
-        ),
-        'seller_refresh_token'
+$oauth = new OAuth(
+    $client,
+    $httpFactory = new HttpFactory($factory, $factory),
+    $config = Configuration::forIAMUser(
+        'lwaClientID',
+        'lwaClientID',
+        'awsAccessKey',
+        'awsSecretKey'
     )
 );
 
+$accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
+
+$catalog = new CatalogItemSDK(
+    $client,
+    new HttpFactory($factory, $factory),
+    $config
+);
+
 try {
-    $item = $catalog->getCatalogItem($marketplace_id = 'A1C3SOZRARQ6R3', $asin = 'B07W13KJZC');
+    $item = $catalog->getCatalogItem(
+        $accessToken,
+        Regions::NORTH_AMERICA,
+        $marketplaceId = Marketplace::US()->id(),
+        $asin = 'B07W13KJZC'
+    );
     dump($item);
 } catch (ApiException $exception) {
     dump($exception->getMessage());

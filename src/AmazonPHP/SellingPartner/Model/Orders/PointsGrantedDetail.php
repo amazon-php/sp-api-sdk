@@ -56,8 +56,8 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'pointsNumber' => 'int',
-        'pointsMonetaryValue' => '\AmazonPHP\SellingPartner\Model\Orders\Money',
+        'points_number' => 'int',
+        'points_monetary_value' => '\AmazonPHP\SellingPartner\Model\Orders\Money',
     ];
 
     /**
@@ -68,8 +68,8 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, ModelInter
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'pointsNumber' => null,
-        'pointsMonetaryValue' => null,
+        'points_number' => null,
+        'points_monetary_value' => null,
     ];
 
     /**
@@ -79,8 +79,8 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $attributeMap = [
-        'pointsNumber' => 'PointsNumber',
-        'pointsMonetaryValue' => 'PointsMonetaryValue',
+        'points_number' => 'PointsNumber',
+        'points_monetary_value' => 'PointsMonetaryValue',
     ];
 
     /**
@@ -89,8 +89,8 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $setters = [
-        'pointsNumber' => 'setPointsNumber',
-        'pointsMonetaryValue' => 'setPointsMonetaryValue',
+        'points_number' => 'setPointsNumber',
+        'points_monetary_value' => 'setPointsMonetaryValue',
     ];
 
     /**
@@ -99,8 +99,8 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $getters = [
-        'pointsNumber' => 'getPointsNumber',
-        'pointsMonetaryValue' => 'getPointsMonetaryValue',
+        'points_number' => 'getPointsNumber',
+        'points_monetary_value' => 'getPointsMonetaryValue',
     ];
 
     /**
@@ -118,8 +118,8 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function __construct(array $data = null)
     {
-        $this->container['pointsNumber'] = $data['pointsNumber'] ?? null;
-        $this->container['pointsMonetaryValue'] = $data['pointsMonetaryValue'] ?? null;
+        $this->container['points_number'] = $data['points_number'] ?? null;
+        $this->container['points_monetary_value'] = $data['points_monetary_value'] ?? null;
     }
 
     /**
@@ -214,41 +214,41 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Gets pointsNumber.
+     * Gets points_number.
      */
     public function getPointsNumber() : ?int
     {
-        return $this->container['pointsNumber'];
+        return $this->container['points_number'];
     }
 
     /**
-     * Sets pointsNumber.
+     * Sets points_number.
      *
-     * @param null|int $pointsNumber the number of Amazon Points granted with the purchase of an item
+     * @param null|int $points_number the number of Amazon Points granted with the purchase of an item
      */
-    public function setPointsNumber(?int $pointsNumber) : self
+    public function setPointsNumber(?int $points_number) : self
     {
-        $this->container['pointsNumber'] = $pointsNumber;
+        $this->container['points_number'] = $points_number;
 
         return $this;
     }
 
     /**
-     * Gets pointsMonetaryValue.
+     * Gets points_monetary_value.
      */
     public function getPointsMonetaryValue() : ?Money
     {
-        return $this->container['pointsMonetaryValue'];
+        return $this->container['points_monetary_value'];
     }
 
     /**
-     * Sets pointsMonetaryValue.
+     * Sets points_monetary_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $pointsMonetaryValue pointsMonetaryValue
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $points_monetary_value points_monetary_value
      */
-    public function setPointsMonetaryValue(?Money $pointsMonetaryValue) : self
+    public function setPointsMonetaryValue(?Money $points_monetary_value) : self
     {
-        $this->container['pointsMonetaryValue'] = $pointsMonetaryValue;
+        $this->container['points_monetary_value'] = $points_monetary_value;
 
         return $this;
     }

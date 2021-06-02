@@ -56,12 +56,12 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'itemCondition' => 'string',
-        'itemSubcondition' => 'string',
-        'fulfillmentChannel' => 'string',
-        'shipsDomestically' => 'string',
-        'shippingTime' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ShippingTimeType',
-        'sellerPositiveFeedbackRating' => 'string',
+        'item_condition' => 'string',
+        'item_subcondition' => 'string',
+        'fulfillment_channel' => 'string',
+        'ships_domestically' => 'string',
+        'shipping_time' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ShippingTimeType',
+        'seller_positive_feedback_rating' => 'string',
     ];
 
     /**
@@ -72,12 +72,12 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'itemCondition' => null,
-        'itemSubcondition' => null,
-        'fulfillmentChannel' => null,
-        'shipsDomestically' => null,
-        'shippingTime' => null,
-        'sellerPositiveFeedbackRating' => null,
+        'item_condition' => null,
+        'item_subcondition' => null,
+        'fulfillment_channel' => null,
+        'ships_domestically' => null,
+        'shipping_time' => null,
+        'seller_positive_feedback_rating' => null,
     ];
 
     /**
@@ -87,12 +87,12 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'itemCondition' => 'ItemCondition',
-        'itemSubcondition' => 'ItemSubcondition',
-        'fulfillmentChannel' => 'FulfillmentChannel',
-        'shipsDomestically' => 'ShipsDomestically',
-        'shippingTime' => 'ShippingTime',
-        'sellerPositiveFeedbackRating' => 'SellerPositiveFeedbackRating',
+        'item_condition' => 'ItemCondition',
+        'item_subcondition' => 'ItemSubcondition',
+        'fulfillment_channel' => 'FulfillmentChannel',
+        'ships_domestically' => 'ShipsDomestically',
+        'shipping_time' => 'ShippingTime',
+        'seller_positive_feedback_rating' => 'SellerPositiveFeedbackRating',
     ];
 
     /**
@@ -101,12 +101,12 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'itemCondition' => 'setItemCondition',
-        'itemSubcondition' => 'setItemSubcondition',
-        'fulfillmentChannel' => 'setFulfillmentChannel',
-        'shipsDomestically' => 'setShipsDomestically',
-        'shippingTime' => 'setShippingTime',
-        'sellerPositiveFeedbackRating' => 'setSellerPositiveFeedbackRating',
+        'item_condition' => 'setItemCondition',
+        'item_subcondition' => 'setItemSubcondition',
+        'fulfillment_channel' => 'setFulfillmentChannel',
+        'ships_domestically' => 'setShipsDomestically',
+        'shipping_time' => 'setShippingTime',
+        'seller_positive_feedback_rating' => 'setSellerPositiveFeedbackRating',
     ];
 
     /**
@@ -115,12 +115,12 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'itemCondition' => 'getItemCondition',
-        'itemSubcondition' => 'getItemSubcondition',
-        'fulfillmentChannel' => 'getFulfillmentChannel',
-        'shipsDomestically' => 'getShipsDomestically',
-        'shippingTime' => 'getShippingTime',
-        'sellerPositiveFeedbackRating' => 'getSellerPositiveFeedbackRating',
+        'item_condition' => 'getItemCondition',
+        'item_subcondition' => 'getItemSubcondition',
+        'fulfillment_channel' => 'getFulfillmentChannel',
+        'ships_domestically' => 'getShipsDomestically',
+        'shipping_time' => 'getShippingTime',
+        'seller_positive_feedback_rating' => 'getSellerPositiveFeedbackRating',
     ];
 
     /**
@@ -138,12 +138,12 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['itemCondition'] = $data['itemCondition'] ?? null;
-        $this->container['itemSubcondition'] = $data['itemSubcondition'] ?? null;
-        $this->container['fulfillmentChannel'] = $data['fulfillmentChannel'] ?? null;
-        $this->container['shipsDomestically'] = $data['shipsDomestically'] ?? null;
-        $this->container['shippingTime'] = $data['shippingTime'] ?? null;
-        $this->container['sellerPositiveFeedbackRating'] = $data['sellerPositiveFeedbackRating'] ?? null;
+        $this->container['item_condition'] = $data['item_condition'] ?? null;
+        $this->container['item_subcondition'] = $data['item_subcondition'] ?? null;
+        $this->container['fulfillment_channel'] = $data['fulfillment_channel'] ?? null;
+        $this->container['ships_domestically'] = $data['ships_domestically'] ?? null;
+        $this->container['shipping_time'] = $data['shipping_time'] ?? null;
+        $this->container['seller_positive_feedback_rating'] = $data['seller_positive_feedback_rating'] ?? null;
     }
 
     /**
@@ -225,28 +225,28 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['itemCondition'] === null) {
-            $invalidProperties[] = "'itemCondition' can't be null";
+        if ($this->container['item_condition'] === null) {
+            $invalidProperties[] = "'item_condition' can't be null";
         }
 
-        if ($this->container['itemSubcondition'] === null) {
-            $invalidProperties[] = "'itemSubcondition' can't be null";
+        if ($this->container['item_subcondition'] === null) {
+            $invalidProperties[] = "'item_subcondition' can't be null";
         }
 
-        if ($this->container['fulfillmentChannel'] === null) {
-            $invalidProperties[] = "'fulfillmentChannel' can't be null";
+        if ($this->container['fulfillment_channel'] === null) {
+            $invalidProperties[] = "'fulfillment_channel' can't be null";
         }
 
-        if ($this->container['shipsDomestically'] === null) {
-            $invalidProperties[] = "'shipsDomestically' can't be null";
+        if ($this->container['ships_domestically'] === null) {
+            $invalidProperties[] = "'ships_domestically' can't be null";
         }
 
-        if ($this->container['shippingTime'] === null) {
-            $invalidProperties[] = "'shippingTime' can't be null";
+        if ($this->container['shipping_time'] === null) {
+            $invalidProperties[] = "'shipping_time' can't be null";
         }
 
-        if ($this->container['sellerPositiveFeedbackRating'] === null) {
-            $invalidProperties[] = "'sellerPositiveFeedbackRating' can't be null";
+        if ($this->container['seller_positive_feedback_rating'] === null) {
+            $invalidProperties[] = "'seller_positive_feedback_rating' can't be null";
         }
 
         return $invalidProperties;
@@ -264,121 +264,121 @@ class QualifiersType implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets itemCondition.
+     * Gets item_condition.
      */
     public function getItemCondition() : string
     {
-        return $this->container['itemCondition'];
+        return $this->container['item_condition'];
     }
 
     /**
-     * Sets itemCondition.
+     * Sets item_condition.
      *
-     * @param string $itemCondition The condition of the item. Possible values: New, Used, Collectible, Refurbished, or Club.
+     * @param string $item_condition The condition of the item. Possible values: New, Used, Collectible, Refurbished, or Club.
      */
-    public function setItemCondition(string $itemCondition) : self
+    public function setItemCondition(string $item_condition) : self
     {
-        $this->container['itemCondition'] = $itemCondition;
+        $this->container['item_condition'] = $item_condition;
 
         return $this;
     }
 
     /**
-     * Gets itemSubcondition.
+     * Gets item_subcondition.
      */
     public function getItemSubcondition() : string
     {
-        return $this->container['itemSubcondition'];
+        return $this->container['item_subcondition'];
     }
 
     /**
-     * Sets itemSubcondition.
+     * Sets item_subcondition.
      *
-     * @param string $itemSubcondition The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
+     * @param string $item_subcondition The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
      */
-    public function setItemSubcondition(string $itemSubcondition) : self
+    public function setItemSubcondition(string $item_subcondition) : self
     {
-        $this->container['itemSubcondition'] = $itemSubcondition;
+        $this->container['item_subcondition'] = $item_subcondition;
 
         return $this;
     }
 
     /**
-     * Gets fulfillmentChannel.
+     * Gets fulfillment_channel.
      */
     public function getFulfillmentChannel() : string
     {
-        return $this->container['fulfillmentChannel'];
+        return $this->container['fulfillment_channel'];
     }
 
     /**
-     * Sets fulfillmentChannel.
+     * Sets fulfillment_channel.
      *
-     * @param string $fulfillmentChannel The fulfillment channel for the item. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
+     * @param string $fulfillment_channel The fulfillment channel for the item. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
      */
-    public function setFulfillmentChannel(string $fulfillmentChannel) : self
+    public function setFulfillmentChannel(string $fulfillment_channel) : self
     {
-        $this->container['fulfillmentChannel'] = $fulfillmentChannel;
+        $this->container['fulfillment_channel'] = $fulfillment_channel;
 
         return $this;
     }
 
     /**
-     * Gets shipsDomestically.
+     * Gets ships_domestically.
      */
     public function getShipsDomestically() : string
     {
-        return $this->container['shipsDomestically'];
+        return $this->container['ships_domestically'];
     }
 
     /**
-     * Sets shipsDomestically.
+     * Sets ships_domestically.
      *
-     * @param string $shipsDomestically Indicates whether the marketplace specified in the request and the location that the item ships from are in the same country. Possible values: True, False, or Unknown.
+     * @param string $ships_domestically Indicates whether the marketplace specified in the request and the location that the item ships from are in the same country. Possible values: True, False, or Unknown.
      */
-    public function setShipsDomestically(string $shipsDomestically) : self
+    public function setShipsDomestically(string $ships_domestically) : self
     {
-        $this->container['shipsDomestically'] = $shipsDomestically;
+        $this->container['ships_domestically'] = $ships_domestically;
 
         return $this;
     }
 
     /**
-     * Gets shippingTime.
+     * Gets shipping_time.
      */
     public function getShippingTime() : ShippingTimeType
     {
-        return $this->container['shippingTime'];
+        return $this->container['shipping_time'];
     }
 
     /**
-     * Sets shippingTime.
+     * Sets shipping_time.
      *
-     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\ShippingTimeType $shippingTime shippingTime
+     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\ShippingTimeType $shipping_time shipping_time
      */
-    public function setShippingTime(ShippingTimeType $shippingTime) : self
+    public function setShippingTime(ShippingTimeType $shipping_time) : self
     {
-        $this->container['shippingTime'] = $shippingTime;
+        $this->container['shipping_time'] = $shipping_time;
 
         return $this;
     }
 
     /**
-     * Gets sellerPositiveFeedbackRating.
+     * Gets seller_positive_feedback_rating.
      */
     public function getSellerPositiveFeedbackRating() : string
     {
-        return $this->container['sellerPositiveFeedbackRating'];
+        return $this->container['seller_positive_feedback_rating'];
     }
 
     /**
-     * Sets sellerPositiveFeedbackRating.
+     * Sets seller_positive_feedback_rating.
      *
-     * @param string $sellerPositiveFeedbackRating (98-100%, 95-97%, 90-94%, 80-89%, 70-79%, Less than 70%, or Just launched ) – Indicates the percentage of feedback ratings that were positive over the past 12 months
+     * @param string $seller_positive_feedback_rating (98-100%, 95-97%, 90-94%, 80-89%, 70-79%, Less than 70%, or Just launched ) – Indicates the percentage of feedback ratings that were positive over the past 12 months
      */
-    public function setSellerPositiveFeedbackRating(string $sellerPositiveFeedbackRating) : self
+    public function setSellerPositiveFeedbackRating(string $seller_positive_feedback_rating) : self
     {
-        $this->container['sellerPositiveFeedbackRating'] = $sellerPositiveFeedbackRating;
+        $this->container['seller_positive_feedback_rating'] = $seller_positive_feedback_rating;
 
         return $this;
     }

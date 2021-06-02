@@ -2,12 +2,15 @@
 
 namespace AmazonPHP\SellingPartner\Api;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -16,25 +19,31 @@ use Psr\Http\Message\RequestInterface;
  */
 final class APlusSDK
 {
-    private OAuth $oauth;
+    private ClientInterface $client;
 
-    public function __construct(OAuth $authentication)
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration)
     {
-        $this->oauth = $authentication;
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
     }
 
     /**
      * Operation createContentDocument.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function createContentDocument(string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
+    public function createContentDocument(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
-        [$response] = $this->createContentDocumentWithHttpInfo($marketplaceId, $postContentDocumentRequest);
+        [$response] = $this->createContentDocumentWithHttpInfo($accessToken, $region, $marketplace_id, $post_content_document_request);
 
         return $response;
     }
@@ -42,30 +51,30 @@ final class APlusSDK
     /**
      * Create request for operation 'createContentDocument'.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function createContentDocumentRequest(string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest) : RequestInterface
+    public function createContentDocumentRequest(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : RequestInterface
     {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling createContentDocument'
+                'Missing the required parameter $marketplace_id when calling createContentDocument'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.createContentDocument, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.createContentDocument, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'postContentDocumentRequest' is set
-        if ($postContentDocumentRequest === null || (\is_array($postContentDocumentRequest) && \count($postContentDocumentRequest) === 0)) {
+        // verify the required parameter 'post_content_document_request' is set
+        if ($post_content_document_request === null || (\is_array($post_content_document_request) && \count($post_content_document_request) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $postContentDocumentRequest when calling createContentDocument'
+                'Missing the required parameter $post_content_document_request when calling createContentDocument'
             );
         }
 
@@ -77,12 +86,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
 
         if (\count($queryParams)) {
@@ -90,28 +99,34 @@ final class APlusSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
-        if (isset($postContentDocumentRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($postContentDocumentRequest), JSON_THROW_ON_ERROR);
+        if (isset($post_content_document_request)) {
+            if ($headers['Content-Type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_request), JSON_THROW_ON_ERROR);
             } else {
-                $httpBody = $postContentDocumentRequest;
+                $httpBody = $post_content_document_request;
             }
 
-            $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString($httpBody));
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
@@ -127,48 +142,38 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getContentDocument.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string> $includedDataSet The set of A+ Content data types to include in the response. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param array<array-key, string> $included_data_set The set of A+ Content data types to include in the response. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getContentDocument(string $contentReferenceKey, string $marketplaceId, array $includedDataSet) : \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse
+    public function getContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse
     {
-        [$response] = $this->getContentDocumentWithHttpInfo($contentReferenceKey, $marketplaceId, $includedDataSet);
+        [$response] = $this->getContentDocumentWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set);
 
         return $response;
     }
@@ -176,47 +181,47 @@ final class APlusSDK
     /**
      * Create request for operation 'getContentDocument'.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string> $includedDataSet The set of A+ Content data types to include in the response. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param array<array-key, string> $included_data_set The set of A+ Content data types to include in the response. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getContentDocumentRequest(string $contentReferenceKey, string $marketplaceId, array $includedDataSet) : RequestInterface
+    public function getContentDocumentRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : RequestInterface
     {
-        // verify the required parameter 'contentReferenceKey' is set
-        if ($contentReferenceKey === null || (\is_array($contentReferenceKey) && \count($contentReferenceKey) === 0)) {
+        // verify the required parameter 'content_reference_key' is set
+        if ($content_reference_key === null || (\is_array($content_reference_key) && \count($content_reference_key) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $contentReferenceKey when calling getContentDocument'
+                'Missing the required parameter $content_reference_key when calling getContentDocument'
             );
         }
 
-        if (\strlen($contentReferenceKey) < 1) {
-            throw new InvalidArgumentException('invalid length for "$contentReferenceKey" when calling AplusContentApi.getContentDocument, must be bigger than or equal to 1.');
+        if (\strlen($content_reference_key) < 1) {
+            throw new InvalidArgumentException('invalid length for "$content_reference_key" when calling AplusContentApi.getContentDocument, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling getContentDocument'
+                'Missing the required parameter $marketplace_id when calling getContentDocument'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.getContentDocument, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.getContentDocument, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'includedDataSet' is set
-        if ($includedDataSet === null || (\is_array($includedDataSet) && \count($includedDataSet) === 0)) {
+        // verify the required parameter 'included_data_set' is set
+        if ($included_data_set === null || (\is_array($included_data_set) && \count($included_data_set) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $includedDataSet when calling getContentDocument'
+                'Missing the required parameter $included_data_set when calling getContentDocument'
             );
         }
 
-        if (\count($includedDataSet) < 1) {
-            throw new InvalidArgumentException('invalid value for "$includedDataSet" when calling AplusContentApi.getContentDocument, number of items must be greater than or equal to 1.');
+        if (\count($included_data_set) < 1) {
+            throw new InvalidArgumentException('invalid value for "$included_data_set" when calling AplusContentApi.getContentDocument, number of items must be greater than or equal to 1.');
         }
 
         $resourcePath = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}';
@@ -227,20 +232,20 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
-        if (\is_array($includedDataSet)) {
-            $includedDataSet = ObjectSerializer::serializeCollection($includedDataSet, 'form', true);
+        if (\is_array($included_data_set)) {
+            $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
         }
 
-        if ($includedDataSet !== null) {
-            $queryParams['includedDataSet'] = $includedDataSet;
+        if ($included_data_set !== null) {
+            $queryParams['includedDataSet'] = $included_data_set;
         }
 
         if (\count($queryParams)) {
@@ -248,26 +253,32 @@ final class APlusSDK
         }
 
         // path params
-        if ($contentReferenceKey !== null) {
+        if ($content_reference_key !== null) {
             $resourcePath = \str_replace(
                 '{' . 'contentReferenceKey' . '}',
-                ObjectSerializer::toPathValue($contentReferenceKey),
+                ObjectSerializer::toPathValue($content_reference_key),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -286,50 +297,40 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation listContentDocumentAsinRelations.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string>|null $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
-     * @param array<array-key, string>|null $asinSet The set of ASINs. (optional)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param array<array-key, string>|null $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function listContentDocumentAsinRelations(string $contentReferenceKey, string $marketplaceId, array $includedDataSet = null, array $asinSet = null, string $pageToken = null) : \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse
+    public function listContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set = null, array $asin_set = null, string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse
     {
-        [$response] = $this->listContentDocumentAsinRelationsWithHttpInfo($contentReferenceKey, $marketplaceId, $includedDataSet, $asinSet, $pageToken);
+        [$response] = $this->listContentDocumentAsinRelationsWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
 
         return $response;
     }
@@ -337,46 +338,46 @@ final class APlusSDK
     /**
      * Create request for operation 'listContentDocumentAsinRelations'.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string>|null $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
-     * @param array<array-key, string>|null $asinSet The set of ASINs. (optional)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param array<array-key, string>|null $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function listContentDocumentAsinRelationsRequest(string $contentReferenceKey, string $marketplaceId, array $includedDataSet = null, array $asinSet = null, string $pageToken = null) : RequestInterface
+    public function listContentDocumentAsinRelationsRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set = null, array $asin_set = null, string $page_token = null) : RequestInterface
     {
-        // verify the required parameter 'contentReferenceKey' is set
-        if ($contentReferenceKey === null || (\is_array($contentReferenceKey) && \count($contentReferenceKey) === 0)) {
+        // verify the required parameter 'content_reference_key' is set
+        if ($content_reference_key === null || (\is_array($content_reference_key) && \count($content_reference_key) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $contentReferenceKey when calling listContentDocumentAsinRelations'
+                'Missing the required parameter $content_reference_key when calling listContentDocumentAsinRelations'
             );
         }
 
-        if (\strlen($contentReferenceKey) < 1) {
-            throw new InvalidArgumentException('invalid length for "$contentReferenceKey" when calling AplusContentApi.listContentDocumentAsinRelations, must be bigger than or equal to 1.');
+        if (\strlen($content_reference_key) < 1) {
+            throw new InvalidArgumentException('invalid length for "$content_reference_key" when calling AplusContentApi.listContentDocumentAsinRelations, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling listContentDocumentAsinRelations'
+                'Missing the required parameter $marketplace_id when calling listContentDocumentAsinRelations'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.listContentDocumentAsinRelations, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.listContentDocumentAsinRelations, must be bigger than or equal to 1.');
         }
 
-        if ($includedDataSet !== null && \count($includedDataSet) < 0) {
-            throw new InvalidArgumentException('invalid value for "$includedDataSet" when calling AplusContentApi.listContentDocumentAsinRelations, number of items must be greater than or equal to 0.');
+        if ($included_data_set !== null && \count($included_data_set) < 0) {
+            throw new InvalidArgumentException('invalid value for "$included_data_set" when calling AplusContentApi.listContentDocumentAsinRelations, number of items must be greater than or equal to 0.');
         }
 
-        if ($pageToken !== null && \strlen($pageToken) < 1) {
-            throw new InvalidArgumentException('invalid length for "$pageToken" when calling AplusContentApi.listContentDocumentAsinRelations, must be bigger than or equal to 1.');
+        if ($page_token !== null && \strlen($page_token) < 1) {
+            throw new InvalidArgumentException('invalid length for "$page_token" when calling AplusContentApi.listContentDocumentAsinRelations, must be bigger than or equal to 1.');
         }
 
         $resourcePath = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins';
@@ -387,36 +388,36 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
-        if (\is_array($includedDataSet)) {
-            $includedDataSet = ObjectSerializer::serializeCollection($includedDataSet, 'form', true);
+        if (\is_array($included_data_set)) {
+            $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
         }
 
-        if ($includedDataSet !== null) {
-            $queryParams['includedDataSet'] = $includedDataSet;
+        if ($included_data_set !== null) {
+            $queryParams['includedDataSet'] = $included_data_set;
         }
         // query params
-        if (\is_array($asinSet)) {
-            $asinSet = ObjectSerializer::serializeCollection($asinSet, 'form', true);
+        if (\is_array($asin_set)) {
+            $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
         }
 
-        if ($asinSet !== null) {
-            $queryParams['asinSet'] = $asinSet;
+        if ($asin_set !== null) {
+            $queryParams['asinSet'] = $asin_set;
         }
         // query params
-        if (\is_array($pageToken)) {
-            $pageToken = ObjectSerializer::serializeCollection($pageToken, '', true);
+        if (\is_array($page_token)) {
+            $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
-        if ($pageToken !== null) {
-            $queryParams['pageToken'] = $pageToken;
+        if ($page_token !== null) {
+            $queryParams['pageToken'] = $page_token;
         }
 
         if (\count($queryParams)) {
@@ -424,26 +425,32 @@ final class APlusSDK
         }
 
         // path params
-        if ($contentReferenceKey !== null) {
+        if ($content_reference_key !== null) {
             $resourcePath = \str_replace(
                 '{' . 'contentReferenceKey' . '}',
-                ObjectSerializer::toPathValue($contentReferenceKey),
+                ObjectSerializer::toPathValue($content_reference_key),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -462,47 +469,37 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation postContentDocumentApprovalSubmission.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function postContentDocumentApprovalSubmission(string $contentReferenceKey, string $marketplaceId) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse
+    public function postContentDocumentApprovalSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse
     {
-        [$response] = $this->postContentDocumentApprovalSubmissionWithHttpInfo($contentReferenceKey, $marketplaceId);
+        [$response] = $this->postContentDocumentApprovalSubmissionWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id);
 
         return $response;
     }
@@ -510,35 +507,35 @@ final class APlusSDK
     /**
      * Create request for operation 'postContentDocumentApprovalSubmission'.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function postContentDocumentApprovalSubmissionRequest(string $contentReferenceKey, string $marketplaceId) : RequestInterface
+    public function postContentDocumentApprovalSubmissionRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : RequestInterface
     {
-        // verify the required parameter 'contentReferenceKey' is set
-        if ($contentReferenceKey === null || (\is_array($contentReferenceKey) && \count($contentReferenceKey) === 0)) {
+        // verify the required parameter 'content_reference_key' is set
+        if ($content_reference_key === null || (\is_array($content_reference_key) && \count($content_reference_key) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $contentReferenceKey when calling postContentDocumentApprovalSubmission'
+                'Missing the required parameter $content_reference_key when calling postContentDocumentApprovalSubmission'
             );
         }
 
-        if (\strlen($contentReferenceKey) < 1) {
-            throw new InvalidArgumentException('invalid length for "$contentReferenceKey" when calling AplusContentApi.postContentDocumentApprovalSubmission, must be bigger than or equal to 1.');
+        if (\strlen($content_reference_key) < 1) {
+            throw new InvalidArgumentException('invalid length for "$content_reference_key" when calling AplusContentApi.postContentDocumentApprovalSubmission, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling postContentDocumentApprovalSubmission'
+                'Missing the required parameter $marketplace_id when calling postContentDocumentApprovalSubmission'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.postContentDocumentApprovalSubmission, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.postContentDocumentApprovalSubmission, must be bigger than or equal to 1.');
         }
 
         $resourcePath = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions';
@@ -549,12 +546,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
 
         if (\count($queryParams)) {
@@ -562,26 +559,32 @@ final class APlusSDK
         }
 
         // path params
-        if ($contentReferenceKey !== null) {
+        if ($content_reference_key !== null) {
             $resourcePath = \str_replace(
                 '{' . 'contentReferenceKey' . '}',
-                ObjectSerializer::toPathValue($contentReferenceKey),
+                ObjectSerializer::toPathValue($content_reference_key),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -600,48 +603,38 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation postContentDocumentAsinRelations.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request The content document ASIN relations request details. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function postContentDocumentAsinRelations(string $contentReferenceKey, string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse
+    public function postContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse
     {
-        [$response] = $this->postContentDocumentAsinRelationsWithHttpInfo($contentReferenceKey, $marketplaceId, $postContentDocumentAsinRelationsRequest);
+        [$response] = $this->postContentDocumentAsinRelationsWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
 
         return $response;
     }
@@ -649,42 +642,42 @@ final class APlusSDK
     /**
      * Create request for operation 'postContentDocumentAsinRelations'.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request The content document ASIN relations request details. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function postContentDocumentAsinRelationsRequest(string $contentReferenceKey, string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest) : RequestInterface
+    public function postContentDocumentAsinRelationsRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : RequestInterface
     {
-        // verify the required parameter 'contentReferenceKey' is set
-        if ($contentReferenceKey === null || (\is_array($contentReferenceKey) && \count($contentReferenceKey) === 0)) {
+        // verify the required parameter 'content_reference_key' is set
+        if ($content_reference_key === null || (\is_array($content_reference_key) && \count($content_reference_key) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $contentReferenceKey when calling postContentDocumentAsinRelations'
+                'Missing the required parameter $content_reference_key when calling postContentDocumentAsinRelations'
             );
         }
 
-        if (\strlen($contentReferenceKey) < 1) {
-            throw new InvalidArgumentException('invalid length for "$contentReferenceKey" when calling AplusContentApi.postContentDocumentAsinRelations, must be bigger than or equal to 1.');
+        if (\strlen($content_reference_key) < 1) {
+            throw new InvalidArgumentException('invalid length for "$content_reference_key" when calling AplusContentApi.postContentDocumentAsinRelations, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling postContentDocumentAsinRelations'
+                'Missing the required parameter $marketplace_id when calling postContentDocumentAsinRelations'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.postContentDocumentAsinRelations, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.postContentDocumentAsinRelations, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'postContentDocumentAsinRelationsRequest' is set
-        if ($postContentDocumentAsinRelationsRequest === null || (\is_array($postContentDocumentAsinRelationsRequest) && \count($postContentDocumentAsinRelationsRequest) === 0)) {
+        // verify the required parameter 'post_content_document_asin_relations_request' is set
+        if ($post_content_document_asin_relations_request === null || (\is_array($post_content_document_asin_relations_request) && \count($post_content_document_asin_relations_request) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $postContentDocumentAsinRelationsRequest when calling postContentDocumentAsinRelations'
+                'Missing the required parameter $post_content_document_asin_relations_request when calling postContentDocumentAsinRelations'
             );
         }
 
@@ -696,12 +689,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
 
         if (\count($queryParams)) {
@@ -709,37 +702,43 @@ final class APlusSDK
         }
 
         // path params
-        if ($contentReferenceKey !== null) {
+        if ($content_reference_key !== null) {
             $resourcePath = \str_replace(
                 '{' . 'contentReferenceKey' . '}',
-                ObjectSerializer::toPathValue($contentReferenceKey),
+                ObjectSerializer::toPathValue($content_reference_key),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
-        if (isset($postContentDocumentAsinRelationsRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($postContentDocumentAsinRelationsRequest), JSON_THROW_ON_ERROR);
+        if (isset($post_content_document_asin_relations_request)) {
+            if ($headers['Content-Type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_asin_relations_request), JSON_THROW_ON_ERROR);
             } else {
-                $httpBody = $postContentDocumentAsinRelationsRequest;
+                $httpBody = $post_content_document_asin_relations_request;
             }
 
-            $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString($httpBody));
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
@@ -755,47 +754,37 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation postContentDocumentSuspendSubmission.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function postContentDocumentSuspendSubmission(string $contentReferenceKey, string $marketplaceId) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse
+    public function postContentDocumentSuspendSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse
     {
-        [$response] = $this->postContentDocumentSuspendSubmissionWithHttpInfo($contentReferenceKey, $marketplaceId);
+        [$response] = $this->postContentDocumentSuspendSubmissionWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id);
 
         return $response;
     }
@@ -803,35 +792,35 @@ final class APlusSDK
     /**
      * Create request for operation 'postContentDocumentSuspendSubmission'.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function postContentDocumentSuspendSubmissionRequest(string $contentReferenceKey, string $marketplaceId) : RequestInterface
+    public function postContentDocumentSuspendSubmissionRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : RequestInterface
     {
-        // verify the required parameter 'contentReferenceKey' is set
-        if ($contentReferenceKey === null || (\is_array($contentReferenceKey) && \count($contentReferenceKey) === 0)) {
+        // verify the required parameter 'content_reference_key' is set
+        if ($content_reference_key === null || (\is_array($content_reference_key) && \count($content_reference_key) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $contentReferenceKey when calling postContentDocumentSuspendSubmission'
+                'Missing the required parameter $content_reference_key when calling postContentDocumentSuspendSubmission'
             );
         }
 
-        if (\strlen($contentReferenceKey) < 1) {
-            throw new InvalidArgumentException('invalid length for "$contentReferenceKey" when calling AplusContentApi.postContentDocumentSuspendSubmission, must be bigger than or equal to 1.');
+        if (\strlen($content_reference_key) < 1) {
+            throw new InvalidArgumentException('invalid length for "$content_reference_key" when calling AplusContentApi.postContentDocumentSuspendSubmission, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling postContentDocumentSuspendSubmission'
+                'Missing the required parameter $marketplace_id when calling postContentDocumentSuspendSubmission'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.postContentDocumentSuspendSubmission, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.postContentDocumentSuspendSubmission, must be bigger than or equal to 1.');
         }
 
         $resourcePath = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions';
@@ -842,12 +831,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
 
         if (\count($queryParams)) {
@@ -855,26 +844,32 @@ final class APlusSDK
         }
 
         // path params
-        if ($contentReferenceKey !== null) {
+        if ($content_reference_key !== null) {
             $resourcePath = \str_replace(
                 '{' . 'contentReferenceKey' . '}',
-                ObjectSerializer::toPathValue($contentReferenceKey),
+                ObjectSerializer::toPathValue($content_reference_key),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -893,47 +888,37 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation searchContentDocuments.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function searchContentDocuments(string $marketplaceId, string $pageToken = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse
+    public function searchContentDocuments(AccessToken $accessToken, string $region, string $marketplace_id, string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse
     {
-        [$response] = $this->searchContentDocumentsWithHttpInfo($marketplaceId, $pageToken);
+        [$response] = $this->searchContentDocumentsWithHttpInfo($accessToken, $region, $marketplace_id, $page_token);
 
         return $response;
     }
@@ -941,28 +926,28 @@ final class APlusSDK
     /**
      * Create request for operation 'searchContentDocuments'.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function searchContentDocumentsRequest(string $marketplaceId, string $pageToken = null) : RequestInterface
+    public function searchContentDocumentsRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $page_token = null) : RequestInterface
     {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling searchContentDocuments'
+                'Missing the required parameter $marketplace_id when calling searchContentDocuments'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.searchContentDocuments, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.searchContentDocuments, must be bigger than or equal to 1.');
         }
 
-        if ($pageToken !== null && \strlen($pageToken) < 1) {
-            throw new InvalidArgumentException('invalid length for "$pageToken" when calling AplusContentApi.searchContentDocuments, must be bigger than or equal to 1.');
+        if ($page_token !== null && \strlen($page_token) < 1) {
+            throw new InvalidArgumentException('invalid length for "$page_token" when calling AplusContentApi.searchContentDocuments, must be bigger than or equal to 1.');
         }
 
         $resourcePath = '/aplus/2020-11-01/contentDocuments';
@@ -973,20 +958,20 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
-        if (\is_array($pageToken)) {
-            $pageToken = ObjectSerializer::serializeCollection($pageToken, '', true);
+        if (\is_array($page_token)) {
+            $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
-        if ($pageToken !== null) {
-            $queryParams['pageToken'] = $pageToken;
+        if ($page_token !== null) {
+            $queryParams['pageToken'] = $page_token;
         }
 
         if (\count($queryParams)) {
@@ -994,17 +979,23 @@ final class APlusSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -1023,48 +1014,38 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation searchContentPublishRecords.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function searchContentPublishRecords(string $marketplaceId, string $asin, string $pageToken = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse
+    public function searchContentPublishRecords(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse
     {
-        [$response] = $this->searchContentPublishRecordsWithHttpInfo($marketplaceId, $asin, $pageToken);
+        [$response] = $this->searchContentPublishRecordsWithHttpInfo($accessToken, $region, $marketplace_id, $asin, $page_token);
 
         return $response;
     }
@@ -1072,25 +1053,25 @@ final class APlusSDK
     /**
      * Create request for operation 'searchContentPublishRecords'.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function searchContentPublishRecordsRequest(string $marketplaceId, string $asin, string $pageToken = null) : RequestInterface
+    public function searchContentPublishRecordsRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, string $page_token = null) : RequestInterface
     {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling searchContentPublishRecords'
+                'Missing the required parameter $marketplace_id when calling searchContentPublishRecords'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.searchContentPublishRecords, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.searchContentPublishRecords, must be bigger than or equal to 1.');
         }
 
         // verify the required parameter 'asin' is set
@@ -1104,8 +1085,8 @@ final class APlusSDK
             throw new InvalidArgumentException('invalid length for "$asin" when calling AplusContentApi.searchContentPublishRecords, must be bigger than or equal to 10.');
         }
 
-        if ($pageToken !== null && \strlen($pageToken) < 1) {
-            throw new InvalidArgumentException('invalid length for "$pageToken" when calling AplusContentApi.searchContentPublishRecords, must be bigger than or equal to 1.');
+        if ($page_token !== null && \strlen($page_token) < 1) {
+            throw new InvalidArgumentException('invalid length for "$page_token" when calling AplusContentApi.searchContentPublishRecords, must be bigger than or equal to 1.');
         }
 
         $resourcePath = '/aplus/2020-11-01/contentPublishRecords';
@@ -1116,12 +1097,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
         if (\is_array($asin)) {
@@ -1132,12 +1113,12 @@ final class APlusSDK
             $queryParams['asin'] = $asin;
         }
         // query params
-        if (\is_array($pageToken)) {
-            $pageToken = ObjectSerializer::serializeCollection($pageToken, '', true);
+        if (\is_array($page_token)) {
+            $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
-        if ($pageToken !== null) {
-            $queryParams['pageToken'] = $pageToken;
+        if ($page_token !== null) {
+            $queryParams['pageToken'] = $page_token;
         }
 
         if (\count($queryParams)) {
@@ -1145,17 +1126,23 @@ final class APlusSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -1174,48 +1161,38 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation updateContentDocument.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function updateContentDocument(string $contentReferenceKey, string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
+    public function updateContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
-        [$response] = $this->updateContentDocumentWithHttpInfo($contentReferenceKey, $marketplaceId, $postContentDocumentRequest);
+        [$response] = $this->updateContentDocumentWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_request);
 
         return $response;
     }
@@ -1223,42 +1200,42 @@ final class APlusSDK
     /**
      * Create request for operation 'updateContentDocument'.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function updateContentDocumentRequest(string $contentReferenceKey, string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest) : RequestInterface
+    public function updateContentDocumentRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : RequestInterface
     {
-        // verify the required parameter 'contentReferenceKey' is set
-        if ($contentReferenceKey === null || (\is_array($contentReferenceKey) && \count($contentReferenceKey) === 0)) {
+        // verify the required parameter 'content_reference_key' is set
+        if ($content_reference_key === null || (\is_array($content_reference_key) && \count($content_reference_key) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $contentReferenceKey when calling updateContentDocument'
+                'Missing the required parameter $content_reference_key when calling updateContentDocument'
             );
         }
 
-        if (\strlen($contentReferenceKey) < 1) {
-            throw new InvalidArgumentException('invalid length for "$contentReferenceKey" when calling AplusContentApi.updateContentDocument, must be bigger than or equal to 1.');
+        if (\strlen($content_reference_key) < 1) {
+            throw new InvalidArgumentException('invalid length for "$content_reference_key" when calling AplusContentApi.updateContentDocument, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling updateContentDocument'
+                'Missing the required parameter $marketplace_id when calling updateContentDocument'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.updateContentDocument, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.updateContentDocument, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'postContentDocumentRequest' is set
-        if ($postContentDocumentRequest === null || (\is_array($postContentDocumentRequest) && \count($postContentDocumentRequest) === 0)) {
+        // verify the required parameter 'post_content_document_request' is set
+        if ($post_content_document_request === null || (\is_array($post_content_document_request) && \count($post_content_document_request) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $postContentDocumentRequest when calling updateContentDocument'
+                'Missing the required parameter $post_content_document_request when calling updateContentDocument'
             );
         }
 
@@ -1270,12 +1247,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
 
         if (\count($queryParams)) {
@@ -1283,37 +1260,43 @@ final class APlusSDK
         }
 
         // path params
-        if ($contentReferenceKey !== null) {
+        if ($content_reference_key !== null) {
             $resourcePath = \str_replace(
                 '{' . 'contentReferenceKey' . '}',
-                ObjectSerializer::toPathValue($contentReferenceKey),
+                ObjectSerializer::toPathValue($content_reference_key),
                 $resourcePath
             );
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
-        if (isset($postContentDocumentRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($postContentDocumentRequest), JSON_THROW_ON_ERROR);
+        if (isset($post_content_document_request)) {
+            if ($headers['Content-Type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_request), JSON_THROW_ON_ERROR);
             } else {
-                $httpBody = $postContentDocumentRequest;
+                $httpBody = $post_content_document_request;
             }
 
-            $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString($httpBody));
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
@@ -1329,48 +1312,38 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation validateContentDocumentAsinRelations.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
-     * @param array<array-key, string>|null $asinSet The set of ASINs. (optional)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
+     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function validateContentDocumentAsinRelations(string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest, array $asinSet = null) : \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse
+    public function validateContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, array $asin_set = null) : \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse
     {
-        [$response] = $this->validateContentDocumentAsinRelationsWithHttpInfo($marketplaceId, $postContentDocumentRequest, $asinSet);
+        [$response] = $this->validateContentDocumentAsinRelationsWithHttpInfo($accessToken, $region, $marketplace_id, $post_content_document_request, $asin_set);
 
         return $response;
     }
@@ -1378,31 +1351,31 @@ final class APlusSDK
     /**
      * Create request for operation 'validateContentDocumentAsinRelations'.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
-     * @param array<array-key, string>|null $asinSet The set of ASINs. (optional)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
+     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function validateContentDocumentAsinRelationsRequest(string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest, array $asinSet = null) : RequestInterface
+    public function validateContentDocumentAsinRelationsRequest(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, array $asin_set = null) : RequestInterface
     {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling validateContentDocumentAsinRelations'
+                'Missing the required parameter $marketplace_id when calling validateContentDocumentAsinRelations'
             );
         }
 
-        if (\strlen($marketplaceId) < 1) {
-            throw new InvalidArgumentException('invalid length for "$marketplaceId" when calling AplusContentApi.validateContentDocumentAsinRelations, must be bigger than or equal to 1.');
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling AplusContentApi.validateContentDocumentAsinRelations, must be bigger than or equal to 1.');
         }
 
-        // verify the required parameter 'postContentDocumentRequest' is set
-        if ($postContentDocumentRequest === null || (\is_array($postContentDocumentRequest) && \count($postContentDocumentRequest) === 0)) {
+        // verify the required parameter 'post_content_document_request' is set
+        if ($post_content_document_request === null || (\is_array($post_content_document_request) && \count($post_content_document_request) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $postContentDocumentRequest when calling validateContentDocumentAsinRelations'
+                'Missing the required parameter $post_content_document_request when calling validateContentDocumentAsinRelations'
             );
         }
 
@@ -1414,20 +1387,20 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['marketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
-        if (\is_array($asinSet)) {
-            $asinSet = ObjectSerializer::serializeCollection($asinSet, 'form', true);
+        if (\is_array($asin_set)) {
+            $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
         }
 
-        if ($asinSet !== null) {
-            $queryParams['asinSet'] = $asinSet;
+        if ($asin_set !== null) {
+            $queryParams['asinSet'] = $asin_set;
         }
 
         if (\count($queryParams)) {
@@ -1435,28 +1408,34 @@ final class APlusSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
-        if (isset($postContentDocumentRequest)) {
-            if ($headers['Content-Type'] === 'application/json') {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($postContentDocumentRequest), JSON_THROW_ON_ERROR);
+        if (isset($post_content_document_request)) {
+            if ($headers['Content-Type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_request), JSON_THROW_ON_ERROR);
             } else {
-                $httpBody = $postContentDocumentRequest;
+                $httpBody = $post_content_document_request;
             }
 
-            $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString($httpBody));
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
@@ -1472,53 +1451,43 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation createContentDocumentWithHttpInfo.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse>
      */
-    private function createContentDocumentWithHttpInfo(string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest) : array
+    private function createContentDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : array
     {
-        $request = $this->createContentDocumentRequest($marketplaceId, $postContentDocumentRequest);
+        $request = $this->createContentDocumentRequest($accessToken, $region, $marketplace_id, $post_content_document_request);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1548,7 +1517,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1562,7 +1536,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1572,7 +1551,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1580,6 +1564,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
                         $e->getResponseHeaders()
@@ -1595,6 +1580,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -1611,22 +1597,22 @@ final class APlusSDK
     /**
      * Operation getContentDocumentWithHttpInfo.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string> $includedDataSet The set of A+ Content data types to include in the response. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param array<array-key, string> $included_data_set The set of A+ Content data types to include in the response. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse>
      */
-    private function getContentDocumentWithHttpInfo(string $contentReferenceKey, string $marketplaceId, array $includedDataSet) : array
+    private function getContentDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : array
     {
-        $request = $this->getContentDocumentRequest($contentReferenceKey, $marketplaceId, $includedDataSet);
+        $request = $this->getContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1656,7 +1642,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1671,7 +1662,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1681,7 +1677,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1689,6 +1690,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse::class,
                         $e->getResponseHeaders()
@@ -1705,6 +1707,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -1721,24 +1724,24 @@ final class APlusSDK
     /**
      * Operation listContentDocumentAsinRelationsWithHttpInfo.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string>|null $includedDataSet The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
-     * @param array<array-key, string>|null $asinSet The set of ASINs. (optional)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param array<array-key, string>|null $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse>
      */
-    private function listContentDocumentAsinRelationsWithHttpInfo(string $contentReferenceKey, string $marketplaceId, array $includedDataSet = null, array $asinSet = null, string $pageToken = null) : array
+    private function listContentDocumentAsinRelationsWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set = null, array $asin_set = null, string $page_token = null) : array
     {
-        $request = $this->listContentDocumentAsinRelationsRequest($contentReferenceKey, $marketplaceId, $includedDataSet, $asinSet, $pageToken);
+        $request = $this->listContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1768,7 +1771,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1783,7 +1791,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1793,7 +1806,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1801,6 +1819,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse::class,
                         $e->getResponseHeaders()
@@ -1817,6 +1836,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -1833,21 +1853,21 @@ final class APlusSDK
     /**
      * Operation postContentDocumentApprovalSubmissionWithHttpInfo.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse>
      */
-    private function postContentDocumentApprovalSubmissionWithHttpInfo(string $contentReferenceKey, string $marketplaceId) : array
+    private function postContentDocumentApprovalSubmissionWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : array
     {
-        $request = $this->postContentDocumentApprovalSubmissionRequest($contentReferenceKey, $marketplaceId);
+        $request = $this->postContentDocumentApprovalSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1877,7 +1897,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1892,7 +1917,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -1902,7 +1932,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -1910,6 +1945,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse::class,
                         $e->getResponseHeaders()
@@ -1926,6 +1962,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -1942,22 +1979,22 @@ final class APlusSDK
     /**
      * Operation postContentDocumentAsinRelationsWithHttpInfo.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest The content document ASIN relations request details. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request The content document ASIN relations request details. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse>
      */
-    private function postContentDocumentAsinRelationsWithHttpInfo(string $contentReferenceKey, string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $postContentDocumentAsinRelationsRequest) : array
+    private function postContentDocumentAsinRelationsWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : array
     {
-        $request = $this->postContentDocumentAsinRelationsRequest($contentReferenceKey, $marketplaceId, $postContentDocumentAsinRelationsRequest);
+        $request = $this->postContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -1987,7 +2024,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2002,7 +2044,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2012,7 +2059,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -2020,6 +2072,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse::class,
                         $e->getResponseHeaders()
@@ -2036,6 +2089,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -2052,21 +2106,21 @@ final class APlusSDK
     /**
      * Operation postContentDocumentSuspendSubmissionWithHttpInfo.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse>
      */
-    private function postContentDocumentSuspendSubmissionWithHttpInfo(string $contentReferenceKey, string $marketplaceId) : array
+    private function postContentDocumentSuspendSubmissionWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : array
     {
-        $request = $this->postContentDocumentSuspendSubmissionRequest($contentReferenceKey, $marketplaceId);
+        $request = $this->postContentDocumentSuspendSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -2096,7 +2150,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2111,7 +2170,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2121,7 +2185,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -2129,6 +2198,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse::class,
                         $e->getResponseHeaders()
@@ -2145,6 +2215,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -2161,21 +2232,21 @@ final class APlusSDK
     /**
      * Operation searchContentDocumentsWithHttpInfo.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse>
      */
-    private function searchContentDocumentsWithHttpInfo(string $marketplaceId, string $pageToken = null) : array
+    private function searchContentDocumentsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $page_token = null) : array
     {
-        $request = $this->searchContentDocumentsRequest($marketplaceId, $pageToken);
+        $request = $this->searchContentDocumentsRequest($accessToken, $region, $marketplace_id, $page_token);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -2205,7 +2276,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2220,7 +2296,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2230,7 +2311,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -2238,6 +2324,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse::class,
                         $e->getResponseHeaders()
@@ -2254,6 +2341,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -2270,22 +2358,22 @@ final class APlusSDK
     /**
      * Operation searchContentPublishRecordsWithHttpInfo.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param null|string $pageToken A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
+     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse>
      */
-    private function searchContentPublishRecordsWithHttpInfo(string $marketplaceId, string $asin, string $pageToken = null) : array
+    private function searchContentPublishRecordsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, string $page_token = null) : array
     {
-        $request = $this->searchContentPublishRecordsRequest($marketplaceId, $asin, $pageToken);
+        $request = $this->searchContentPublishRecordsRequest($accessToken, $region, $marketplace_id, $asin, $page_token);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -2315,7 +2403,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2329,7 +2422,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2339,7 +2437,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -2347,6 +2450,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse::class,
                         $e->getResponseHeaders()
@@ -2362,6 +2466,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -2378,22 +2483,22 @@ final class APlusSDK
     /**
      * Operation updateContentDocumentWithHttpInfo.
      *
-     * @param string $contentReferenceKey The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
+     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse>
      */
-    private function updateContentDocumentWithHttpInfo(string $contentReferenceKey, string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest) : array
+    private function updateContentDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : array
     {
-        $request = $this->updateContentDocumentRequest($contentReferenceKey, $marketplaceId, $postContentDocumentRequest);
+        $request = $this->updateContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_request);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -2423,7 +2528,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2438,7 +2548,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2448,7 +2563,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -2456,6 +2576,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
                         $e->getResponseHeaders()
@@ -2472,6 +2593,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()
@@ -2488,22 +2610,22 @@ final class APlusSDK
     /**
      * Operation validateContentDocumentAsinRelationsWithHttpInfo.
      *
-     * @param string $marketplaceId The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest The content document request details. (required)
-     * @param array<array-key, string>|null $asinSet The set of ASINs. (optional)
+     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
+     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse>
      */
-    private function validateContentDocumentAsinRelationsWithHttpInfo(string $marketplaceId, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $postContentDocumentRequest, array $asinSet = null) : array
+    private function validateContentDocumentAsinRelationsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, array $asin_set = null) : array
     {
-        $request = $this->validateContentDocumentAsinRelationsRequest($marketplaceId, $postContentDocumentRequest, $asinSet);
+        $request = $this->validateContentDocumentAsinRelationsRequest($accessToken, $region, $marketplace_id, $post_content_document_request, $asin_set);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -2533,7 +2655,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2547,7 +2674,12 @@ final class APlusSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -2557,7 +2689,12 @@ final class APlusSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -2565,6 +2702,7 @@ final class APlusSDK
             switch ($e->getCode()) {
                 case 200:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse::class,
                         $e->getResponseHeaders()
@@ -2580,6 +2718,7 @@ final class APlusSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
                         $e->getResponseHeaders()

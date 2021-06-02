@@ -2,12 +2,15 @@
 
 namespace AmazonPHP\SellingPartner\Api;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -16,30 +19,36 @@ use Psr\Http\Message\RequestInterface;
  */
 final class FBAInventorySDK
 {
-    private OAuth $oauth;
+    private ClientInterface $client;
 
-    public function __construct(OAuth $authentication)
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration)
     {
-        $this->oauth = $authentication;
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
     }
 
     /**
      * Operation getInventorySummaries.
      *
-     * @param string $granularityType The granularity type for the inventory aggregation level. (required)
-     * @param string $granularityId The granularity ID for the inventory aggregation level. (required)
-     * @param array<array-key, string> $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param array<array-key, string> $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime|null $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param array<array-key, string>|null $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param null|string $nextToken String token returned in the response of your previous request. (optional)
+     * @param \DateTime|null $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param array<array-key, string>|null $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param null|string $next_token String token returned in the response of your previous request. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getInventorySummaries(string $granularityType, string $granularityId, array $marketplaceIds, bool $details = false, \DateTime $startDateTime = null, array $sellerSkus = null, string $nextToken = null) : \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse
+    public function getInventorySummaries(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse
     {
-        [$response] = $this->getInventorySummariesWithHttpInfo($granularityType, $granularityId, $marketplaceIds, $details, $startDateTime, $sellerSkus, $nextToken);
+        [$response] = $this->getInventorySummariesWithHttpInfo($accessToken, $region, $granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
 
         return $response;
     }
@@ -47,45 +56,45 @@ final class FBAInventorySDK
     /**
      * Create request for operation 'getInventorySummaries'.
      *
-     * @param string $granularityType The granularity type for the inventory aggregation level. (required)
-     * @param string $granularityId The granularity ID for the inventory aggregation level. (required)
-     * @param array<array-key, string> $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param array<array-key, string> $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime|null $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param array<array-key, string>|null $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param null|string $nextToken String token returned in the response of your previous request. (optional)
+     * @param \DateTime|null $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param array<array-key, string>|null $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param null|string $next_token String token returned in the response of your previous request. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getInventorySummariesRequest(string $granularityType, string $granularityId, array $marketplaceIds, bool $details = false, \DateTime $startDateTime = null, array $sellerSkus = null, string $nextToken = null) : RequestInterface
+    public function getInventorySummariesRequest(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null) : RequestInterface
     {
-        // verify the required parameter 'granularityType' is set
-        if ($granularityType === null || (\is_array($granularityType) && \count($granularityType) === 0)) {
+        // verify the required parameter 'granularity_type' is set
+        if ($granularity_type === null || (\is_array($granularity_type) && \count($granularity_type) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $granularityType when calling getInventorySummaries'
+                'Missing the required parameter $granularity_type when calling getInventorySummaries'
             );
         }
-        // verify the required parameter 'granularityId' is set
-        if ($granularityId === null || (\is_array($granularityId) && \count($granularityId) === 0)) {
+        // verify the required parameter 'granularity_id' is set
+        if ($granularity_id === null || (\is_array($granularity_id) && \count($granularity_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $granularityId when calling getInventorySummaries'
+                'Missing the required parameter $granularity_id when calling getInventorySummaries'
             );
         }
-        // verify the required parameter 'marketplaceIds' is set
-        if ($marketplaceIds === null || (\is_array($marketplaceIds) && \count($marketplaceIds) === 0)) {
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceIds when calling getInventorySummaries'
+                'Missing the required parameter $marketplace_ids when calling getInventorySummaries'
             );
         }
 
-        if (\count($marketplaceIds) > 1) {
-            throw new InvalidArgumentException('invalid value for "$marketplaceIds" when calling FbaInventoryApi.getInventorySummaries, number of items must be less than or equal to 1.');
+        if (\count($marketplace_ids) > 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling FbaInventoryApi.getInventorySummaries, number of items must be less than or equal to 1.');
         }
 
-        if ($sellerSkus !== null && \count($sellerSkus) > 50) {
-            throw new InvalidArgumentException('invalid value for "$sellerSkus" when calling FbaInventoryApi.getInventorySummaries, number of items must be less than or equal to 50.');
+        if ($seller_skus !== null && \count($seller_skus) > 50) {
+            throw new InvalidArgumentException('invalid value for "$seller_skus" when calling FbaInventoryApi.getInventorySummaries, number of items must be less than or equal to 50.');
         }
 
         $resourcePath = '/fba/inventory/v1/summaries';
@@ -104,52 +113,52 @@ final class FBAInventorySDK
             $queryParams['details'] = $details;
         }
         // query params
-        if (\is_array($granularityType)) {
-            $granularityType = ObjectSerializer::serializeCollection($granularityType, '', true);
+        if (\is_array($granularity_type)) {
+            $granularity_type = ObjectSerializer::serializeCollection($granularity_type, '', true);
         }
 
-        if ($granularityType !== null) {
-            $queryParams['granularityType'] = $granularityType;
+        if ($granularity_type !== null) {
+            $queryParams['granularityType'] = $granularity_type;
         }
         // query params
-        if (\is_array($granularityId)) {
-            $granularityId = ObjectSerializer::serializeCollection($granularityId, '', true);
+        if (\is_array($granularity_id)) {
+            $granularity_id = ObjectSerializer::serializeCollection($granularity_id, '', true);
         }
 
-        if ($granularityId !== null) {
-            $queryParams['granularityId'] = $granularityId;
+        if ($granularity_id !== null) {
+            $queryParams['granularityId'] = $granularity_id;
         }
         // query params
-        if (\is_array($startDateTime)) {
-            $startDateTime = ObjectSerializer::serializeCollection($startDateTime, '', true);
+        if (\is_array($start_date_time)) {
+            $start_date_time = ObjectSerializer::serializeCollection($start_date_time, '', true);
         }
 
-        if ($startDateTime !== null) {
-            $queryParams['startDateTime'] = $startDateTime;
+        if ($start_date_time !== null) {
+            $queryParams['startDateTime'] = $start_date_time;
         }
         // query params
-        if (\is_array($sellerSkus)) {
-            $sellerSkus = ObjectSerializer::serializeCollection($sellerSkus, 'form', true);
+        if (\is_array($seller_skus)) {
+            $seller_skus = ObjectSerializer::serializeCollection($seller_skus, 'form', true);
         }
 
-        if ($sellerSkus !== null) {
-            $queryParams['sellerSkus'] = $sellerSkus;
+        if ($seller_skus !== null) {
+            $queryParams['sellerSkus'] = $seller_skus;
         }
         // query params
-        if (\is_array($nextToken)) {
-            $nextToken = ObjectSerializer::serializeCollection($nextToken, '', true);
+        if (\is_array($next_token)) {
+            $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
-        if ($nextToken !== null) {
-            $queryParams['nextToken'] = $nextToken;
+        if ($next_token !== null) {
+            $queryParams['nextToken'] = $next_token;
         }
         // query params
-        if (\is_array($marketplaceIds)) {
-            $marketplaceIds = ObjectSerializer::serializeCollection($marketplaceIds, 'form', true);
+        if (\is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
-        if ($marketplaceIds !== null) {
-            $queryParams['marketplaceIds'] = $marketplaceIds;
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
         }
 
         if (\count($queryParams)) {
@@ -157,17 +166,23 @@ final class FBAInventorySDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -186,58 +201,48 @@ final class FBAInventorySDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getInventorySummariesWithHttpInfo.
      *
-     * @param string $granularityType The granularity type for the inventory aggregation level. (required)
-     * @param string $granularityId The granularity ID for the inventory aggregation level. (required)
-     * @param array<array-key, string> $marketplaceIds The marketplace ID for the marketplace for which to return inventory summaries. (required)
+     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
+     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
+     * @param array<array-key, string> $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
      * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param \DateTime|null $startDateTime A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param array<array-key, string>|null $sellerSkus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param null|string $nextToken String token returned in the response of your previous request. (optional)
+     * @param \DateTime|null $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
+     * @param array<array-key, string>|null $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
+     * @param null|string $next_token String token returned in the response of your previous request. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse>
      */
-    private function getInventorySummariesWithHttpInfo(string $granularityType, string $granularityId, array $marketplaceIds, bool $details = false, \DateTime $startDateTime = null, array $sellerSkus = null, string $nextToken = null) : array
+    private function getInventorySummariesWithHttpInfo(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null) : array
     {
-        $request = $this->getInventorySummariesRequest($granularityType, $granularityId, $marketplaceIds, $details, $startDateTime, $sellerSkus, $nextToken);
+        $request = $this->getInventorySummariesRequest($accessToken, $region, $granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -273,7 +278,12 @@ final class FBAInventorySDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -283,7 +293,12 @@ final class FBAInventorySDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -297,6 +312,7 @@ final class FBAInventorySDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class,
                         $e->getResponseHeaders()

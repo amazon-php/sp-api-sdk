@@ -56,7 +56,7 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'reportId' => 'string',
+        'report_id' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'reportId' => null,
+        'report_id' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $attributeMap = [
-        'reportId' => 'reportId',
+        'report_id' => 'reportId',
     ];
 
     /**
@@ -86,7 +86,7 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $setters = [
-        'reportId' => 'setReportId',
+        'report_id' => 'setReportId',
     ];
 
     /**
@@ -95,7 +95,7 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $getters = [
-        'reportId' => 'getReportId',
+        'report_id' => 'getReportId',
     ];
 
     /**
@@ -113,7 +113,7 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->container['reportId'] = $data['reportId'] ?? null;
+        $this->container['report_id'] = $data['report_id'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
     {
         $invalidProperties = [];
 
-        if ($this->container['reportId'] === null) {
-            $invalidProperties[] = "'reportId' can't be null";
+        if ($this->container['report_id'] === null) {
+            $invalidProperties[] = "'report_id' can't be null";
         }
 
         return $invalidProperties;
@@ -214,21 +214,21 @@ class CreateReportResult implements \ArrayAccess, \JsonSerializable, ModelInterf
     }
 
     /**
-     * Gets reportId.
+     * Gets report_id.
      */
     public function getReportId() : string
     {
-        return $this->container['reportId'];
+        return $this->container['report_id'];
     }
 
     /**
-     * Sets reportId.
+     * Sets report_id.
      *
-     * @param string $reportId The identifier for the report. This identifier is unique only in combination with a seller ID.
+     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID.
      */
-    public function setReportId(string $reportId) : self
+    public function setReportId(string $report_id) : self
     {
-        $this->container['reportId'] = $reportId;
+        $this->container['report_id'] = $report_id;
 
         return $this;
     }

@@ -56,7 +56,7 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'currencyCode' => 'string',
+        'currency_code' => 'string',
         'amount' => 'string',
     ];
 
@@ -68,7 +68,7 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'currencyCode' => null,
+        'currency_code' => null,
         'amount' => null,
     ];
 
@@ -79,7 +79,7 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'currencyCode' => 'CurrencyCode',
+        'currency_code' => 'CurrencyCode',
         'amount' => 'Amount',
     ];
 
@@ -89,7 +89,7 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'currencyCode' => 'setCurrencyCode',
+        'currency_code' => 'setCurrencyCode',
         'amount' => 'setAmount',
     ];
 
@@ -99,7 +99,7 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'currencyCode' => 'getCurrencyCode',
+        'currency_code' => 'getCurrencyCode',
         'amount' => 'getAmount',
     ];
 
@@ -118,7 +118,7 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['currencyCode'] = $data['currencyCode'] ?? null;
+        $this->container['currency_code'] = $data['currency_code'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;
     }
 
@@ -214,21 +214,21 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets currencyCode.
+     * Gets currency_code.
      */
     public function getCurrencyCode() : ?string
     {
-        return $this->container['currencyCode'];
+        return $this->container['currency_code'];
     }
 
     /**
-     * Sets currencyCode.
+     * Sets currency_code.
      *
-     * @param null|string $currencyCode The three-digit currency code. In ISO 4217 format.
+     * @param null|string $currency_code The three-digit currency code. In ISO 4217 format.
      */
-    public function setCurrencyCode(?string $currencyCode) : self
+    public function setCurrencyCode(?string $currency_code) : self
     {
-        $this->container['currencyCode'] = $currencyCode;
+        $this->container['currency_code'] = $currency_code;
 
         return $this;
     }

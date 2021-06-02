@@ -57,10 +57,10 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPITypes = [
         'name' => 'string',
-        'marketplaceId' => 'string',
+        'marketplace_id' => 'string',
         'status' => '\AmazonPHP\SellingPartner\Model\APlus\ContentStatus',
-        'badgeSet' => '\AmazonPHP\SellingPartner\Model\APlus\ContentBadge[]',
-        'updateTime' => '\DateTime',
+        'badge_set' => '\AmazonPHP\SellingPartner\Model\APlus\ContentBadge[]',
+        'update_time' => '\DateTime',
     ];
 
     /**
@@ -72,10 +72,10 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPIFormats = [
         'name' => null,
-        'marketplaceId' => null,
+        'marketplace_id' => null,
         'status' => null,
-        'badgeSet' => null,
-        'updateTime' => 'date-time',
+        'badge_set' => null,
+        'update_time' => 'date-time',
     ];
 
     /**
@@ -86,10 +86,10 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $attributeMap = [
         'name' => 'name',
-        'marketplaceId' => 'marketplaceId',
+        'marketplace_id' => 'marketplaceId',
         'status' => 'status',
-        'badgeSet' => 'badgeSet',
-        'updateTime' => 'updateTime',
+        'badge_set' => 'badgeSet',
+        'update_time' => 'updateTime',
     ];
 
     /**
@@ -99,10 +99,10 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $setters = [
         'name' => 'setName',
-        'marketplaceId' => 'setMarketplaceId',
+        'marketplace_id' => 'setMarketplaceId',
         'status' => 'setStatus',
-        'badgeSet' => 'setBadgeSet',
-        'updateTime' => 'setUpdateTime',
+        'badge_set' => 'setBadgeSet',
+        'update_time' => 'setUpdateTime',
     ];
 
     /**
@@ -112,10 +112,10 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $getters = [
         'name' => 'getName',
-        'marketplaceId' => 'getMarketplaceId',
+        'marketplace_id' => 'getMarketplaceId',
         'status' => 'getStatus',
-        'badgeSet' => 'getBadgeSet',
-        'updateTime' => 'getUpdateTime',
+        'badge_set' => 'getBadgeSet',
+        'update_time' => 'getUpdateTime',
     ];
 
     /**
@@ -134,10 +134,10 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
-        $this->container['badgeSet'] = $data['badgeSet'] ?? null;
-        $this->container['updateTime'] = $data['updateTime'] ?? null;
+        $this->container['badge_set'] = $data['badge_set'] ?? null;
+        $this->container['update_time'] = $data['update_time'] ?? null;
     }
 
     /**
@@ -231,24 +231,24 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['marketplaceId'] === null) {
-            $invalidProperties[] = "'marketplaceId' can't be null";
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['marketplaceId']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplaceId', the character length must be bigger than or equal to 1.";
+        if ((\mb_strlen($this->container['marketplace_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
         }
 
-        if ($this->container['badgeSet'] === null) {
-            $invalidProperties[] = "'badgeSet' can't be null";
+        if ($this->container['badge_set'] === null) {
+            $invalidProperties[] = "'badge_set' can't be null";
         }
 
-        if ($this->container['updateTime'] === null) {
-            $invalidProperties[] = "'updateTime' can't be null";
+        if ($this->container['update_time'] === null) {
+            $invalidProperties[] = "'update_time' can't be null";
         }
 
         return $invalidProperties;
@@ -294,25 +294,25 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets marketplaceId.
+     * Gets marketplace_id.
      */
     public function getMarketplaceId() : string
     {
-        return $this->container['marketplaceId'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets marketplaceId.
+     * Sets marketplace_id.
      *
-     * @param string $marketplaceId the identifier for the marketplace where the A+ Content is published
+     * @param string $marketplace_id the identifier for the marketplace where the A+ Content is published
      */
-    public function setMarketplaceId(string $marketplaceId) : self
+    public function setMarketplaceId(string $marketplace_id) : self
     {
-        if ((\mb_strlen($marketplaceId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplaceId when calling ContentMetadata., must be bigger than or equal to 1.');
+        if ((\mb_strlen($marketplace_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling ContentMetadata., must be bigger than or equal to 1.');
         }
 
-        $this->container['marketplaceId'] = $marketplaceId;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
@@ -338,43 +338,43 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets badgeSet.
+     * Gets badge_set.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\ContentBadge[]
      */
     public function getBadgeSet() : array
     {
-        return $this->container['badgeSet'];
+        return $this->container['badge_set'];
     }
 
     /**
-     * Sets badgeSet.
+     * Sets badge_set.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentBadge[] $badgeSet the set of content badges
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentBadge[] $badge_set the set of content badges
      */
-    public function setBadgeSet(array $badgeSet) : self
+    public function setBadgeSet(array $badge_set) : self
     {
-        $this->container['badgeSet'] = $badgeSet;
+        $this->container['badge_set'] = $badge_set;
 
         return $this;
     }
 
     /**
-     * Gets updateTime.
+     * Gets update_time.
      */
     public function getUpdateTime() : \DateTime
     {
-        return $this->container['updateTime'];
+        return $this->container['update_time'];
     }
 
     /**
-     * Sets updateTime.
+     * Sets update_time.
      *
-     * @param \DateTime $updateTime the approximate age of the A+ Content document and metadata
+     * @param \DateTime $update_time the approximate age of the A+ Content document and metadata
      */
-    public function setUpdateTime(\DateTime $updateTime) : self
+    public function setUpdateTime(\DateTime $update_time) : self
     {
-        $this->container['updateTime'] = $updateTime;
+        $this->container['update_time'] = $update_time;
 
         return $this;
     }

@@ -4,7 +4,7 @@ namespace AmazonPHP\SellingPartner;
 
 final class ObjectSerializer
 {
-    private static string $dateTimeFormat = \DateTime::ATOM;
+    private static string $dateTimeFormat = \DateTimeInterface::ATOM;
 
     /**
      * Change the date format.
@@ -92,7 +92,7 @@ final class ObjectSerializer
      *
      * @return string the sanitized filename
      */
-    public static function sanitizeFilename($filename)
+    public static function sanitizeFilename(string $filename)
     {
         if (\preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
             return $match[1];
@@ -109,7 +109,7 @@ final class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toPathValue($value)
+    public static function toPathValue(string $value)
     {
         return \rawurlencode(self::toString($value));
     }
@@ -235,14 +235,14 @@ final class ObjectSerializer
     /**
      * Deserialize a JSON string into an object.
      *
+     * @param Configuration $configuration
      * @param mixed $data object or primitive to be deserialized
      * @param string $class class name is passed as a string
      * @param string[] $httpHeaders HTTP headers
-     * @param string $discriminator discriminator if polymorphism is used
      *
      * @return null|array|object a single or an array of $class instances
      */
-    public static function deserialize($data, $class, $httpHeaders = null)
+    public static function deserialize(Configuration $configuration, $data, string $class, array $httpHeaders = null)
     {
         if (null === $data) {
             return null;
@@ -259,7 +259,7 @@ final class ObjectSerializer
             $values = [];
 
             foreach ($data as $value) {
-                $values[] = self::deserialize($value, $subClass, null);
+                $values[] = self::deserialize($configuration, $value, $subClass, null);
             }
 
             return $values;
@@ -276,7 +276,7 @@ final class ObjectSerializer
                 $subClass = $subClass_array[1];
 
                 foreach ($data as $key => $value) {
-                    $deserialized[$key] = self::deserialize($value, $subClass, null);
+                    $deserialized[$key] = self::deserialize($configuration, $value, $subClass, null);
                 }
             }
 
@@ -322,9 +322,9 @@ final class ObjectSerializer
             // determine file name
             if (\array_key_exists('Content-Disposition', $httpHeaders) &&
                 \preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)) {
-                $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . DIRECTORY_SEPARATOR . self::sanitizeFilename($match[1]);
+                $filename = $configuration->tmpFolderPath() . DIRECTORY_SEPARATOR . self::sanitizeFilename($match[1]);
             } else {
-                $filename = \tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');
+                $filename = \tempnam($configuration->tmpFolderPath(), '');
             }
 
             $file = \fopen($filename, 'w');
@@ -346,7 +346,12 @@ final class ObjectSerializer
 
             return $data;
         }
-        $data = \is_string($data) ? \json_decode($data, null, 512, JSON_THROW_ON_ERROR) : $data;
+
+        try {
+            $data = \is_string($data) ? \json_decode($data, null, 512, JSON_THROW_ON_ERROR) : $data;
+        } catch (\JsonException $e) {
+        }
+
         // If a discriminator is defined and points to a valid subclass, use it.
         $discriminator = $class::DISCRIMINATOR;
 
@@ -369,7 +374,7 @@ final class ObjectSerializer
 
             if (isset($data->{$instance::attributeMap()[$property]})) {
                 $propertyValue = $data->{$instance::attributeMap()[$property]};
-                $instance->{$propertySetter}(self::deserialize($propertyValue, $type, null));
+                $instance->{$propertySetter}(self::deserialize($configuration, $propertyValue, $type, null));
             }
         }
 

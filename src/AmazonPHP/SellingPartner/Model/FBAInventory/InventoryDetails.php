@@ -56,13 +56,13 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'fulfillableQuantity' => 'int',
-        'inboundWorkingQuantity' => 'int',
-        'inboundShippedQuantity' => 'int',
-        'inboundReceivingQuantity' => 'int',
-        'reservedQuantity' => '\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity',
-        'researchingQuantity' => '\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity',
-        'unfulfillableQuantity' => '\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity',
+        'fulfillable_quantity' => 'int',
+        'inbound_working_quantity' => 'int',
+        'inbound_shipped_quantity' => 'int',
+        'inbound_receiving_quantity' => 'int',
+        'reserved_quantity' => '\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity',
+        'researching_quantity' => '\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity',
+        'unfulfillable_quantity' => '\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity',
     ];
 
     /**
@@ -73,13 +73,13 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'fulfillableQuantity' => null,
-        'inboundWorkingQuantity' => null,
-        'inboundShippedQuantity' => null,
-        'inboundReceivingQuantity' => null,
-        'reservedQuantity' => null,
-        'researchingQuantity' => null,
-        'unfulfillableQuantity' => null,
+        'fulfillable_quantity' => null,
+        'inbound_working_quantity' => null,
+        'inbound_shipped_quantity' => null,
+        'inbound_receiving_quantity' => null,
+        'reserved_quantity' => null,
+        'researching_quantity' => null,
+        'unfulfillable_quantity' => null,
     ];
 
     /**
@@ -89,13 +89,13 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @var string[]
      */
     protected static array $attributeMap = [
-        'fulfillableQuantity' => 'fulfillableQuantity',
-        'inboundWorkingQuantity' => 'inboundWorkingQuantity',
-        'inboundShippedQuantity' => 'inboundShippedQuantity',
-        'inboundReceivingQuantity' => 'inboundReceivingQuantity',
-        'reservedQuantity' => 'reservedQuantity',
-        'researchingQuantity' => 'researchingQuantity',
-        'unfulfillableQuantity' => 'unfulfillableQuantity',
+        'fulfillable_quantity' => 'fulfillableQuantity',
+        'inbound_working_quantity' => 'inboundWorkingQuantity',
+        'inbound_shipped_quantity' => 'inboundShippedQuantity',
+        'inbound_receiving_quantity' => 'inboundReceivingQuantity',
+        'reserved_quantity' => 'reservedQuantity',
+        'researching_quantity' => 'researchingQuantity',
+        'unfulfillable_quantity' => 'unfulfillableQuantity',
     ];
 
     /**
@@ -104,13 +104,13 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @var string[]
      */
     protected static array $setters = [
-        'fulfillableQuantity' => 'setFulfillableQuantity',
-        'inboundWorkingQuantity' => 'setInboundWorkingQuantity',
-        'inboundShippedQuantity' => 'setInboundShippedQuantity',
-        'inboundReceivingQuantity' => 'setInboundReceivingQuantity',
-        'reservedQuantity' => 'setReservedQuantity',
-        'researchingQuantity' => 'setResearchingQuantity',
-        'unfulfillableQuantity' => 'setUnfulfillableQuantity',
+        'fulfillable_quantity' => 'setFulfillableQuantity',
+        'inbound_working_quantity' => 'setInboundWorkingQuantity',
+        'inbound_shipped_quantity' => 'setInboundShippedQuantity',
+        'inbound_receiving_quantity' => 'setInboundReceivingQuantity',
+        'reserved_quantity' => 'setReservedQuantity',
+        'researching_quantity' => 'setResearchingQuantity',
+        'unfulfillable_quantity' => 'setUnfulfillableQuantity',
     ];
 
     /**
@@ -119,13 +119,13 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @var string[]
      */
     protected static array $getters = [
-        'fulfillableQuantity' => 'getFulfillableQuantity',
-        'inboundWorkingQuantity' => 'getInboundWorkingQuantity',
-        'inboundShippedQuantity' => 'getInboundShippedQuantity',
-        'inboundReceivingQuantity' => 'getInboundReceivingQuantity',
-        'reservedQuantity' => 'getReservedQuantity',
-        'researchingQuantity' => 'getResearchingQuantity',
-        'unfulfillableQuantity' => 'getUnfulfillableQuantity',
+        'fulfillable_quantity' => 'getFulfillableQuantity',
+        'inbound_working_quantity' => 'getInboundWorkingQuantity',
+        'inbound_shipped_quantity' => 'getInboundShippedQuantity',
+        'inbound_receiving_quantity' => 'getInboundReceivingQuantity',
+        'reserved_quantity' => 'getReservedQuantity',
+        'researching_quantity' => 'getResearchingQuantity',
+        'unfulfillable_quantity' => 'getUnfulfillableQuantity',
     ];
 
     /**
@@ -143,13 +143,13 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function __construct(array $data = null)
     {
-        $this->container['fulfillableQuantity'] = $data['fulfillableQuantity'] ?? null;
-        $this->container['inboundWorkingQuantity'] = $data['inboundWorkingQuantity'] ?? null;
-        $this->container['inboundShippedQuantity'] = $data['inboundShippedQuantity'] ?? null;
-        $this->container['inboundReceivingQuantity'] = $data['inboundReceivingQuantity'] ?? null;
-        $this->container['reservedQuantity'] = $data['reservedQuantity'] ?? null;
-        $this->container['researchingQuantity'] = $data['researchingQuantity'] ?? null;
-        $this->container['unfulfillableQuantity'] = $data['unfulfillableQuantity'] ?? null;
+        $this->container['fulfillable_quantity'] = $data['fulfillable_quantity'] ?? null;
+        $this->container['inbound_working_quantity'] = $data['inbound_working_quantity'] ?? null;
+        $this->container['inbound_shipped_quantity'] = $data['inbound_shipped_quantity'] ?? null;
+        $this->container['inbound_receiving_quantity'] = $data['inbound_receiving_quantity'] ?? null;
+        $this->container['reserved_quantity'] = $data['reserved_quantity'] ?? null;
+        $this->container['researching_quantity'] = $data['researching_quantity'] ?? null;
+        $this->container['unfulfillable_quantity'] = $data['unfulfillable_quantity'] ?? null;
     }
 
     /**
@@ -244,141 +244,141 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Gets fulfillableQuantity.
+     * Gets fulfillable_quantity.
      */
     public function getFulfillableQuantity() : ?int
     {
-        return $this->container['fulfillableQuantity'];
+        return $this->container['fulfillable_quantity'];
     }
 
     /**
-     * Sets fulfillableQuantity.
+     * Sets fulfillable_quantity.
      *
-     * @param null|int $fulfillableQuantity the item quantity that can be picked, packed, and shipped
+     * @param null|int $fulfillable_quantity the item quantity that can be picked, packed, and shipped
      */
-    public function setFulfillableQuantity(?int $fulfillableQuantity) : self
+    public function setFulfillableQuantity(?int $fulfillable_quantity) : self
     {
-        $this->container['fulfillableQuantity'] = $fulfillableQuantity;
+        $this->container['fulfillable_quantity'] = $fulfillable_quantity;
 
         return $this;
     }
 
     /**
-     * Gets inboundWorkingQuantity.
+     * Gets inbound_working_quantity.
      */
     public function getInboundWorkingQuantity() : ?int
     {
-        return $this->container['inboundWorkingQuantity'];
+        return $this->container['inbound_working_quantity'];
     }
 
     /**
-     * Sets inboundWorkingQuantity.
+     * Sets inbound_working_quantity.
      *
-     * @param null|int $inboundWorkingQuantity the number of units in an inbound shipment for which you have notified Amazon
+     * @param null|int $inbound_working_quantity the number of units in an inbound shipment for which you have notified Amazon
      */
-    public function setInboundWorkingQuantity(?int $inboundWorkingQuantity) : self
+    public function setInboundWorkingQuantity(?int $inbound_working_quantity) : self
     {
-        $this->container['inboundWorkingQuantity'] = $inboundWorkingQuantity;
+        $this->container['inbound_working_quantity'] = $inbound_working_quantity;
 
         return $this;
     }
 
     /**
-     * Gets inboundShippedQuantity.
+     * Gets inbound_shipped_quantity.
      */
     public function getInboundShippedQuantity() : ?int
     {
-        return $this->container['inboundShippedQuantity'];
+        return $this->container['inbound_shipped_quantity'];
     }
 
     /**
-     * Sets inboundShippedQuantity.
+     * Sets inbound_shipped_quantity.
      *
-     * @param null|int $inboundShippedQuantity the number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number
+     * @param null|int $inbound_shipped_quantity the number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number
      */
-    public function setInboundShippedQuantity(?int $inboundShippedQuantity) : self
+    public function setInboundShippedQuantity(?int $inbound_shipped_quantity) : self
     {
-        $this->container['inboundShippedQuantity'] = $inboundShippedQuantity;
+        $this->container['inbound_shipped_quantity'] = $inbound_shipped_quantity;
 
         return $this;
     }
 
     /**
-     * Gets inboundReceivingQuantity.
+     * Gets inbound_receiving_quantity.
      */
     public function getInboundReceivingQuantity() : ?int
     {
-        return $this->container['inboundReceivingQuantity'];
+        return $this->container['inbound_receiving_quantity'];
     }
 
     /**
-     * Sets inboundReceivingQuantity.
+     * Sets inbound_receiving_quantity.
      *
-     * @param null|int $inboundReceivingQuantity the number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed
+     * @param null|int $inbound_receiving_quantity the number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed
      */
-    public function setInboundReceivingQuantity(?int $inboundReceivingQuantity) : self
+    public function setInboundReceivingQuantity(?int $inbound_receiving_quantity) : self
     {
-        $this->container['inboundReceivingQuantity'] = $inboundReceivingQuantity;
+        $this->container['inbound_receiving_quantity'] = $inbound_receiving_quantity;
 
         return $this;
     }
 
     /**
-     * Gets reservedQuantity.
+     * Gets reserved_quantity.
      */
     public function getReservedQuantity() : ?ReservedQuantity
     {
-        return $this->container['reservedQuantity'];
+        return $this->container['reserved_quantity'];
     }
 
     /**
-     * Sets reservedQuantity.
+     * Sets reserved_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity $reservedQuantity reservedQuantity
+     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity $reserved_quantity reserved_quantity
      */
-    public function setReservedQuantity(?ReservedQuantity $reservedQuantity) : self
+    public function setReservedQuantity(?ReservedQuantity $reserved_quantity) : self
     {
-        $this->container['reservedQuantity'] = $reservedQuantity;
+        $this->container['reserved_quantity'] = $reserved_quantity;
 
         return $this;
     }
 
     /**
-     * Gets researchingQuantity.
+     * Gets researching_quantity.
      */
     public function getResearchingQuantity() : ?ResearchingQuantity
     {
-        return $this->container['researchingQuantity'];
+        return $this->container['researching_quantity'];
     }
 
     /**
-     * Sets researchingQuantity.
+     * Sets researching_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity $researchingQuantity researchingQuantity
+     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity $researching_quantity researching_quantity
      */
-    public function setResearchingQuantity(?ResearchingQuantity $researchingQuantity) : self
+    public function setResearchingQuantity(?ResearchingQuantity $researching_quantity) : self
     {
-        $this->container['researchingQuantity'] = $researchingQuantity;
+        $this->container['researching_quantity'] = $researching_quantity;
 
         return $this;
     }
 
     /**
-     * Gets unfulfillableQuantity.
+     * Gets unfulfillable_quantity.
      */
     public function getUnfulfillableQuantity() : ?UnfulfillableQuantity
     {
-        return $this->container['unfulfillableQuantity'];
+        return $this->container['unfulfillable_quantity'];
     }
 
     /**
-     * Sets unfulfillableQuantity.
+     * Sets unfulfillable_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity $unfulfillableQuantity unfulfillableQuantity
+     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity $unfulfillable_quantity unfulfillable_quantity
      */
-    public function setUnfulfillableQuantity(?UnfulfillableQuantity $unfulfillableQuantity) : self
+    public function setUnfulfillableQuantity(?UnfulfillableQuantity $unfulfillable_quantity) : self
     {
-        $this->container['unfulfillableQuantity'] = $unfulfillableQuantity;
+        $this->container['unfulfillable_quantity'] = $unfulfillable_quantity;
 
         return $this;
     }

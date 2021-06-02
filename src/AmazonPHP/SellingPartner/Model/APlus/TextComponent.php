@@ -57,7 +57,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPITypes = [
         'value' => 'string',
-        'decoratorSet' => '\AmazonPHP\SellingPartner\Model\APlus\Decorator[]',
+        'decorator_set' => '\AmazonPHP\SellingPartner\Model\APlus\Decorator[]',
     ];
 
     /**
@@ -69,7 +69,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPIFormats = [
         'value' => null,
-        'decoratorSet' => null,
+        'decorator_set' => null,
     ];
 
     /**
@@ -80,7 +80,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $attributeMap = [
         'value' => 'value',
-        'decoratorSet' => 'decoratorSet',
+        'decorator_set' => 'decoratorSet',
     ];
 
     /**
@@ -90,7 +90,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $setters = [
         'value' => 'setValue',
-        'decoratorSet' => 'setDecoratorSet',
+        'decorator_set' => 'setDecoratorSet',
     ];
 
     /**
@@ -100,7 +100,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $getters = [
         'value' => 'getValue',
-        'decoratorSet' => 'getDecoratorSet',
+        'decorator_set' => 'getDecoratorSet',
     ];
 
     /**
@@ -119,7 +119,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function __construct(array $data = null)
     {
         $this->container['value'] = $data['value'] ?? null;
-        $this->container['decoratorSet'] = $data['decoratorSet'] ?? null;
+        $this->container['decorator_set'] = $data['decorator_set'] ?? null;
     }
 
     /**
@@ -256,23 +256,23 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets decoratorSet.
+     * Gets decorator_set.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\APlus\Decorator[]
      */
     public function getDecoratorSet() : ?array
     {
-        return $this->container['decoratorSet'];
+        return $this->container['decorator_set'];
     }
 
     /**
-     * Sets decoratorSet.
+     * Sets decorator_set.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Decorator[] $decoratorSet a set of content decorators
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Decorator[] $decorator_set a set of content decorators
      */
-    public function setDecoratorSet(?array $decoratorSet) : self
+    public function setDecoratorSet(?array $decorator_set) : self
     {
-        $this->container['decoratorSet'] = $decoratorSet;
+        $this->container['decorator_set'] = $decorator_set;
 
         return $this;
     }

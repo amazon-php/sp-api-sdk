@@ -56,8 +56,8 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'amazonOrderId' => 'string',
-        'shippingAddress' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
+        'amazon_order_id' => 'string',
+        'shipping_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
     ];
 
     /**
@@ -68,8 +68,8 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'amazonOrderId' => null,
-        'shippingAddress' => null,
+        'amazon_order_id' => null,
+        'shipping_address' => null,
     ];
 
     /**
@@ -79,8 +79,8 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'amazonOrderId' => 'AmazonOrderId',
-        'shippingAddress' => 'ShippingAddress',
+        'amazon_order_id' => 'AmazonOrderId',
+        'shipping_address' => 'ShippingAddress',
     ];
 
     /**
@@ -89,8 +89,8 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'amazonOrderId' => 'setAmazonOrderId',
-        'shippingAddress' => 'setShippingAddress',
+        'amazon_order_id' => 'setAmazonOrderId',
+        'shipping_address' => 'setShippingAddress',
     ];
 
     /**
@@ -99,8 +99,8 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'amazonOrderId' => 'getAmazonOrderId',
-        'shippingAddress' => 'getShippingAddress',
+        'amazon_order_id' => 'getAmazonOrderId',
+        'shipping_address' => 'getShippingAddress',
     ];
 
     /**
@@ -118,8 +118,8 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['amazonOrderId'] = $data['amazonOrderId'] ?? null;
-        $this->container['shippingAddress'] = $data['shippingAddress'] ?? null;
+        $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
+        $this->container['shipping_address'] = $data['shipping_address'] ?? null;
     }
 
     /**
@@ -201,8 +201,8 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['amazonOrderId'] === null) {
-            $invalidProperties[] = "'amazonOrderId' can't be null";
+        if ($this->container['amazon_order_id'] === null) {
+            $invalidProperties[] = "'amazon_order_id' can't be null";
         }
 
         return $invalidProperties;
@@ -220,41 +220,41 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets amazonOrderId.
+     * Gets amazon_order_id.
      */
     public function getAmazonOrderId() : string
     {
-        return $this->container['amazonOrderId'];
+        return $this->container['amazon_order_id'];
     }
 
     /**
-     * Sets amazonOrderId.
+     * Sets amazon_order_id.
      *
-     * @param string $amazonOrderId an Amazon-defined order identifier, in 3-7-7 format
+     * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
      */
-    public function setAmazonOrderId(string $amazonOrderId) : self
+    public function setAmazonOrderId(string $amazon_order_id) : self
     {
-        $this->container['amazonOrderId'] = $amazonOrderId;
+        $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
     }
 
     /**
-     * Gets shippingAddress.
+     * Gets shipping_address.
      */
     public function getShippingAddress() : ?Address
     {
-        return $this->container['shippingAddress'];
+        return $this->container['shipping_address'];
     }
 
     /**
-     * Sets shippingAddress.
+     * Sets shipping_address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Address $shippingAddress shippingAddress
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Address $shipping_address shipping_address
      */
-    public function setShippingAddress(?Address $shippingAddress) : self
+    public function setShippingAddress(?Address $shipping_address) : self
     {
-        $this->container['shippingAddress'] = $shippingAddress;
+        $this->container['shipping_address'] = $shipping_address;
 
         return $this;
     }

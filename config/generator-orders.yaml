@@ -3,7 +3,6 @@ templateDir: sp-api/resources/php-amazon-selling-partner-api
 additionalProperties:
   invokerPackage: AmazonPHP\SellingPartner
   srcBasePath: src/AmazonPHP/SellingPartner
-  variableNamingConvention: camelCase
   modelPackage: Model\Orders
   packageName: OrdersSDK
   useTags: false

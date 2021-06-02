@@ -56,7 +56,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'textList' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent[]',
+        'text_list' => '\AmazonPHP\SellingPartner\Model\APlus\TextComponent[]',
     ];
 
     /**
@@ -67,7 +67,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'textList' => null,
+        'text_list' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $attributeMap = [
-        'textList' => 'textList',
+        'text_list' => 'textList',
     ];
 
     /**
@@ -86,7 +86,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $setters = [
-        'textList' => 'setTextList',
+        'text_list' => 'setTextList',
     ];
 
     /**
@@ -95,7 +95,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @var string[]
      */
     protected static array $getters = [
-        'textList' => 'getTextList',
+        'text_list' => 'getTextList',
     ];
 
     /**
@@ -113,7 +113,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function __construct(array $data = null)
     {
-        $this->container['textList'] = $data['textList'] ?? null;
+        $this->container['text_list'] = $data['text_list'] ?? null;
     }
 
     /**
@@ -195,16 +195,16 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
     {
         $invalidProperties = [];
 
-        if ($this->container['textList'] === null) {
-            $invalidProperties[] = "'textList' can't be null";
+        if ($this->container['text_list'] === null) {
+            $invalidProperties[] = "'text_list' can't be null";
         }
 
-        if ((\count($this->container['textList']) > 100)) {
-            $invalidProperties[] = "invalid value for 'textList', number of items must be less than or equal to 100.";
+        if ((\count($this->container['text_list']) > 100)) {
+            $invalidProperties[] = "invalid value for 'text_list', number of items must be less than or equal to 100.";
         }
 
-        if ((\count($this->container['textList']) < 1)) {
-            $invalidProperties[] = "invalid value for 'textList', number of items must be greater than or equal to 1.";
+        if ((\count($this->container['text_list']) < 1)) {
+            $invalidProperties[] = "invalid value for 'text_list', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -222,30 +222,30 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, ModelInterf
     }
 
     /**
-     * Gets textList.
+     * Gets text_list.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\TextComponent[]
      */
     public function getTextList() : array
     {
-        return $this->container['textList'];
+        return $this->container['text_list'];
     }
 
     /**
-     * Sets textList.
+     * Sets text_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\TextComponent[] $textList textList
+     * @param \AmazonPHP\SellingPartner\Model\APlus\TextComponent[] $text_list text_list
      */
-    public function setTextList(array $textList) : self
+    public function setTextList(array $text_list) : self
     {
-        if ((\count($textList) > 100)) {
-            throw new \InvalidArgumentException('invalid value for $textList when calling ParagraphComponent., number of items must be less than or equal to 100.');
+        if ((\count($text_list) > 100)) {
+            throw new \InvalidArgumentException('invalid value for $text_list when calling ParagraphComponent., number of items must be less than or equal to 100.');
         }
 
-        if ((\count($textList) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $textList when calling ParagraphComponent., number of items must be greater than or equal to 1.');
+        if ((\count($text_list) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $text_list when calling ParagraphComponent., number of items must be greater than or equal to 1.');
         }
-        $this->container['textList'] = $textList;
+        $this->container['text_list'] = $text_list;
 
         return $this;
     }

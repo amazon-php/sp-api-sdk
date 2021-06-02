@@ -56,22 +56,22 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'contentModuleType' => '\AmazonPHP\SellingPartner\Model\APlus\ContentModuleType',
-        'standardCompanyLogo' => '\AmazonPHP\SellingPartner\Model\APlus\StandardCompanyLogoModule',
-        'standardComparisonTable' => '\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonTableModule',
-        'standardFourImageText' => '\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextModule',
-        'standardFourImageTextQuadrant' => '\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextQuadrantModule',
-        'standardHeaderImageText' => '\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderImageTextModule',
-        'standardImageSidebar' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageSidebarModule',
-        'standardImageTextOverlay' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextOverlayModule',
-        'standardMultipleImageText' => '\AmazonPHP\SellingPartner\Model\APlus\StandardMultipleImageTextModule',
-        'standardProductDescription' => '\AmazonPHP\SellingPartner\Model\APlus\StandardProductDescriptionModule',
-        'standardSingleImageHighlights' => '\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageHighlightsModule',
-        'standardSingleImageSpecsDetail' => '\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageSpecsDetailModule',
-        'standardSingleSideImage' => '\AmazonPHP\SellingPartner\Model\APlus\StandardSingleSideImageModule',
-        'standardTechSpecs' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTechSpecsModule',
-        'standardText' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextModule',
-        'standardThreeImageText' => '\AmazonPHP\SellingPartner\Model\APlus\StandardThreeImageTextModule',
+        'content_module_type' => '\AmazonPHP\SellingPartner\Model\APlus\ContentModuleType',
+        'standard_company_logo' => '\AmazonPHP\SellingPartner\Model\APlus\StandardCompanyLogoModule',
+        'standard_comparison_table' => '\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonTableModule',
+        'standard_four_image_text' => '\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextModule',
+        'standard_four_image_text_quadrant' => '\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextQuadrantModule',
+        'standard_header_image_text' => '\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderImageTextModule',
+        'standard_image_sidebar' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageSidebarModule',
+        'standard_image_text_overlay' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextOverlayModule',
+        'standard_multiple_image_text' => '\AmazonPHP\SellingPartner\Model\APlus\StandardMultipleImageTextModule',
+        'standard_product_description' => '\AmazonPHP\SellingPartner\Model\APlus\StandardProductDescriptionModule',
+        'standard_single_image_highlights' => '\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageHighlightsModule',
+        'standard_single_image_specs_detail' => '\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageSpecsDetailModule',
+        'standard_single_side_image' => '\AmazonPHP\SellingPartner\Model\APlus\StandardSingleSideImageModule',
+        'standard_tech_specs' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTechSpecsModule',
+        'standard_text' => '\AmazonPHP\SellingPartner\Model\APlus\StandardTextModule',
+        'standard_three_image_text' => '\AmazonPHP\SellingPartner\Model\APlus\StandardThreeImageTextModule',
     ];
 
     /**
@@ -82,22 +82,22 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'contentModuleType' => null,
-        'standardCompanyLogo' => null,
-        'standardComparisonTable' => null,
-        'standardFourImageText' => null,
-        'standardFourImageTextQuadrant' => null,
-        'standardHeaderImageText' => null,
-        'standardImageSidebar' => null,
-        'standardImageTextOverlay' => null,
-        'standardMultipleImageText' => null,
-        'standardProductDescription' => null,
-        'standardSingleImageHighlights' => null,
-        'standardSingleImageSpecsDetail' => null,
-        'standardSingleSideImage' => null,
-        'standardTechSpecs' => null,
-        'standardText' => null,
-        'standardThreeImageText' => null,
+        'content_module_type' => null,
+        'standard_company_logo' => null,
+        'standard_comparison_table' => null,
+        'standard_four_image_text' => null,
+        'standard_four_image_text_quadrant' => null,
+        'standard_header_image_text' => null,
+        'standard_image_sidebar' => null,
+        'standard_image_text_overlay' => null,
+        'standard_multiple_image_text' => null,
+        'standard_product_description' => null,
+        'standard_single_image_highlights' => null,
+        'standard_single_image_specs_detail' => null,
+        'standard_single_side_image' => null,
+        'standard_tech_specs' => null,
+        'standard_text' => null,
+        'standard_three_image_text' => null,
     ];
 
     /**
@@ -107,22 +107,22 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'contentModuleType' => 'contentModuleType',
-        'standardCompanyLogo' => 'standardCompanyLogo',
-        'standardComparisonTable' => 'standardComparisonTable',
-        'standardFourImageText' => 'standardFourImageText',
-        'standardFourImageTextQuadrant' => 'standardFourImageTextQuadrant',
-        'standardHeaderImageText' => 'standardHeaderImageText',
-        'standardImageSidebar' => 'standardImageSidebar',
-        'standardImageTextOverlay' => 'standardImageTextOverlay',
-        'standardMultipleImageText' => 'standardMultipleImageText',
-        'standardProductDescription' => 'standardProductDescription',
-        'standardSingleImageHighlights' => 'standardSingleImageHighlights',
-        'standardSingleImageSpecsDetail' => 'standardSingleImageSpecsDetail',
-        'standardSingleSideImage' => 'standardSingleSideImage',
-        'standardTechSpecs' => 'standardTechSpecs',
-        'standardText' => 'standardText',
-        'standardThreeImageText' => 'standardThreeImageText',
+        'content_module_type' => 'contentModuleType',
+        'standard_company_logo' => 'standardCompanyLogo',
+        'standard_comparison_table' => 'standardComparisonTable',
+        'standard_four_image_text' => 'standardFourImageText',
+        'standard_four_image_text_quadrant' => 'standardFourImageTextQuadrant',
+        'standard_header_image_text' => 'standardHeaderImageText',
+        'standard_image_sidebar' => 'standardImageSidebar',
+        'standard_image_text_overlay' => 'standardImageTextOverlay',
+        'standard_multiple_image_text' => 'standardMultipleImageText',
+        'standard_product_description' => 'standardProductDescription',
+        'standard_single_image_highlights' => 'standardSingleImageHighlights',
+        'standard_single_image_specs_detail' => 'standardSingleImageSpecsDetail',
+        'standard_single_side_image' => 'standardSingleSideImage',
+        'standard_tech_specs' => 'standardTechSpecs',
+        'standard_text' => 'standardText',
+        'standard_three_image_text' => 'standardThreeImageText',
     ];
 
     /**
@@ -131,22 +131,22 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'contentModuleType' => 'setContentModuleType',
-        'standardCompanyLogo' => 'setStandardCompanyLogo',
-        'standardComparisonTable' => 'setStandardComparisonTable',
-        'standardFourImageText' => 'setStandardFourImageText',
-        'standardFourImageTextQuadrant' => 'setStandardFourImageTextQuadrant',
-        'standardHeaderImageText' => 'setStandardHeaderImageText',
-        'standardImageSidebar' => 'setStandardImageSidebar',
-        'standardImageTextOverlay' => 'setStandardImageTextOverlay',
-        'standardMultipleImageText' => 'setStandardMultipleImageText',
-        'standardProductDescription' => 'setStandardProductDescription',
-        'standardSingleImageHighlights' => 'setStandardSingleImageHighlights',
-        'standardSingleImageSpecsDetail' => 'setStandardSingleImageSpecsDetail',
-        'standardSingleSideImage' => 'setStandardSingleSideImage',
-        'standardTechSpecs' => 'setStandardTechSpecs',
-        'standardText' => 'setStandardText',
-        'standardThreeImageText' => 'setStandardThreeImageText',
+        'content_module_type' => 'setContentModuleType',
+        'standard_company_logo' => 'setStandardCompanyLogo',
+        'standard_comparison_table' => 'setStandardComparisonTable',
+        'standard_four_image_text' => 'setStandardFourImageText',
+        'standard_four_image_text_quadrant' => 'setStandardFourImageTextQuadrant',
+        'standard_header_image_text' => 'setStandardHeaderImageText',
+        'standard_image_sidebar' => 'setStandardImageSidebar',
+        'standard_image_text_overlay' => 'setStandardImageTextOverlay',
+        'standard_multiple_image_text' => 'setStandardMultipleImageText',
+        'standard_product_description' => 'setStandardProductDescription',
+        'standard_single_image_highlights' => 'setStandardSingleImageHighlights',
+        'standard_single_image_specs_detail' => 'setStandardSingleImageSpecsDetail',
+        'standard_single_side_image' => 'setStandardSingleSideImage',
+        'standard_tech_specs' => 'setStandardTechSpecs',
+        'standard_text' => 'setStandardText',
+        'standard_three_image_text' => 'setStandardThreeImageText',
     ];
 
     /**
@@ -155,22 +155,22 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'contentModuleType' => 'getContentModuleType',
-        'standardCompanyLogo' => 'getStandardCompanyLogo',
-        'standardComparisonTable' => 'getStandardComparisonTable',
-        'standardFourImageText' => 'getStandardFourImageText',
-        'standardFourImageTextQuadrant' => 'getStandardFourImageTextQuadrant',
-        'standardHeaderImageText' => 'getStandardHeaderImageText',
-        'standardImageSidebar' => 'getStandardImageSidebar',
-        'standardImageTextOverlay' => 'getStandardImageTextOverlay',
-        'standardMultipleImageText' => 'getStandardMultipleImageText',
-        'standardProductDescription' => 'getStandardProductDescription',
-        'standardSingleImageHighlights' => 'getStandardSingleImageHighlights',
-        'standardSingleImageSpecsDetail' => 'getStandardSingleImageSpecsDetail',
-        'standardSingleSideImage' => 'getStandardSingleSideImage',
-        'standardTechSpecs' => 'getStandardTechSpecs',
-        'standardText' => 'getStandardText',
-        'standardThreeImageText' => 'getStandardThreeImageText',
+        'content_module_type' => 'getContentModuleType',
+        'standard_company_logo' => 'getStandardCompanyLogo',
+        'standard_comparison_table' => 'getStandardComparisonTable',
+        'standard_four_image_text' => 'getStandardFourImageText',
+        'standard_four_image_text_quadrant' => 'getStandardFourImageTextQuadrant',
+        'standard_header_image_text' => 'getStandardHeaderImageText',
+        'standard_image_sidebar' => 'getStandardImageSidebar',
+        'standard_image_text_overlay' => 'getStandardImageTextOverlay',
+        'standard_multiple_image_text' => 'getStandardMultipleImageText',
+        'standard_product_description' => 'getStandardProductDescription',
+        'standard_single_image_highlights' => 'getStandardSingleImageHighlights',
+        'standard_single_image_specs_detail' => 'getStandardSingleImageSpecsDetail',
+        'standard_single_side_image' => 'getStandardSingleSideImage',
+        'standard_tech_specs' => 'getStandardTechSpecs',
+        'standard_text' => 'getStandardText',
+        'standard_three_image_text' => 'getStandardThreeImageText',
     ];
 
     /**
@@ -188,22 +188,22 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['contentModuleType'] = $data['contentModuleType'] ?? null;
-        $this->container['standardCompanyLogo'] = $data['standardCompanyLogo'] ?? null;
-        $this->container['standardComparisonTable'] = $data['standardComparisonTable'] ?? null;
-        $this->container['standardFourImageText'] = $data['standardFourImageText'] ?? null;
-        $this->container['standardFourImageTextQuadrant'] = $data['standardFourImageTextQuadrant'] ?? null;
-        $this->container['standardHeaderImageText'] = $data['standardHeaderImageText'] ?? null;
-        $this->container['standardImageSidebar'] = $data['standardImageSidebar'] ?? null;
-        $this->container['standardImageTextOverlay'] = $data['standardImageTextOverlay'] ?? null;
-        $this->container['standardMultipleImageText'] = $data['standardMultipleImageText'] ?? null;
-        $this->container['standardProductDescription'] = $data['standardProductDescription'] ?? null;
-        $this->container['standardSingleImageHighlights'] = $data['standardSingleImageHighlights'] ?? null;
-        $this->container['standardSingleImageSpecsDetail'] = $data['standardSingleImageSpecsDetail'] ?? null;
-        $this->container['standardSingleSideImage'] = $data['standardSingleSideImage'] ?? null;
-        $this->container['standardTechSpecs'] = $data['standardTechSpecs'] ?? null;
-        $this->container['standardText'] = $data['standardText'] ?? null;
-        $this->container['standardThreeImageText'] = $data['standardThreeImageText'] ?? null;
+        $this->container['content_module_type'] = $data['content_module_type'] ?? null;
+        $this->container['standard_company_logo'] = $data['standard_company_logo'] ?? null;
+        $this->container['standard_comparison_table'] = $data['standard_comparison_table'] ?? null;
+        $this->container['standard_four_image_text'] = $data['standard_four_image_text'] ?? null;
+        $this->container['standard_four_image_text_quadrant'] = $data['standard_four_image_text_quadrant'] ?? null;
+        $this->container['standard_header_image_text'] = $data['standard_header_image_text'] ?? null;
+        $this->container['standard_image_sidebar'] = $data['standard_image_sidebar'] ?? null;
+        $this->container['standard_image_text_overlay'] = $data['standard_image_text_overlay'] ?? null;
+        $this->container['standard_multiple_image_text'] = $data['standard_multiple_image_text'] ?? null;
+        $this->container['standard_product_description'] = $data['standard_product_description'] ?? null;
+        $this->container['standard_single_image_highlights'] = $data['standard_single_image_highlights'] ?? null;
+        $this->container['standard_single_image_specs_detail'] = $data['standard_single_image_specs_detail'] ?? null;
+        $this->container['standard_single_side_image'] = $data['standard_single_side_image'] ?? null;
+        $this->container['standard_tech_specs'] = $data['standard_tech_specs'] ?? null;
+        $this->container['standard_text'] = $data['standard_text'] ?? null;
+        $this->container['standard_three_image_text'] = $data['standard_three_image_text'] ?? null;
     }
 
     /**
@@ -285,8 +285,8 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['contentModuleType'] === null) {
-            $invalidProperties[] = "'contentModuleType' can't be null";
+        if ($this->container['content_module_type'] === null) {
+            $invalidProperties[] = "'content_module_type' can't be null";
         }
 
         return $invalidProperties;
@@ -304,321 +304,321 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets contentModuleType.
+     * Gets content_module_type.
      */
     public function getContentModuleType() : ContentModuleType
     {
-        return $this->container['contentModuleType'];
+        return $this->container['content_module_type'];
     }
 
     /**
-     * Sets contentModuleType.
+     * Sets content_module_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentModuleType $contentModuleType contentModuleType
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentModuleType $content_module_type content_module_type
      */
-    public function setContentModuleType(ContentModuleType $contentModuleType) : self
+    public function setContentModuleType(ContentModuleType $content_module_type) : self
     {
-        $this->container['contentModuleType'] = $contentModuleType;
+        $this->container['content_module_type'] = $content_module_type;
 
         return $this;
     }
 
     /**
-     * Gets standardCompanyLogo.
+     * Gets standard_company_logo.
      */
     public function getStandardCompanyLogo() : ?StandardCompanyLogoModule
     {
-        return $this->container['standardCompanyLogo'];
+        return $this->container['standard_company_logo'];
     }
 
     /**
-     * Sets standardCompanyLogo.
+     * Sets standard_company_logo.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardCompanyLogoModule $standardCompanyLogo standardCompanyLogo
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardCompanyLogoModule $standard_company_logo standard_company_logo
      */
-    public function setStandardCompanyLogo(?StandardCompanyLogoModule $standardCompanyLogo) : self
+    public function setStandardCompanyLogo(?StandardCompanyLogoModule $standard_company_logo) : self
     {
-        $this->container['standardCompanyLogo'] = $standardCompanyLogo;
+        $this->container['standard_company_logo'] = $standard_company_logo;
 
         return $this;
     }
 
     /**
-     * Gets standardComparisonTable.
+     * Gets standard_comparison_table.
      */
     public function getStandardComparisonTable() : ?StandardComparisonTableModule
     {
-        return $this->container['standardComparisonTable'];
+        return $this->container['standard_comparison_table'];
     }
 
     /**
-     * Sets standardComparisonTable.
+     * Sets standard_comparison_table.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonTableModule $standardComparisonTable standardComparisonTable
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonTableModule $standard_comparison_table standard_comparison_table
      */
-    public function setStandardComparisonTable(?StandardComparisonTableModule $standardComparisonTable) : self
+    public function setStandardComparisonTable(?StandardComparisonTableModule $standard_comparison_table) : self
     {
-        $this->container['standardComparisonTable'] = $standardComparisonTable;
+        $this->container['standard_comparison_table'] = $standard_comparison_table;
 
         return $this;
     }
 
     /**
-     * Gets standardFourImageText.
+     * Gets standard_four_image_text.
      */
     public function getStandardFourImageText() : ?StandardFourImageTextModule
     {
-        return $this->container['standardFourImageText'];
+        return $this->container['standard_four_image_text'];
     }
 
     /**
-     * Sets standardFourImageText.
+     * Sets standard_four_image_text.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextModule $standardFourImageText standardFourImageText
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextModule $standard_four_image_text standard_four_image_text
      */
-    public function setStandardFourImageText(?StandardFourImageTextModule $standardFourImageText) : self
+    public function setStandardFourImageText(?StandardFourImageTextModule $standard_four_image_text) : self
     {
-        $this->container['standardFourImageText'] = $standardFourImageText;
+        $this->container['standard_four_image_text'] = $standard_four_image_text;
 
         return $this;
     }
 
     /**
-     * Gets standardFourImageTextQuadrant.
+     * Gets standard_four_image_text_quadrant.
      */
     public function getStandardFourImageTextQuadrant() : ?StandardFourImageTextQuadrantModule
     {
-        return $this->container['standardFourImageTextQuadrant'];
+        return $this->container['standard_four_image_text_quadrant'];
     }
 
     /**
-     * Sets standardFourImageTextQuadrant.
+     * Sets standard_four_image_text_quadrant.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextQuadrantModule $standardFourImageTextQuadrant standardFourImageTextQuadrant
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardFourImageTextQuadrantModule $standard_four_image_text_quadrant standard_four_image_text_quadrant
      */
-    public function setStandardFourImageTextQuadrant(?StandardFourImageTextQuadrantModule $standardFourImageTextQuadrant) : self
+    public function setStandardFourImageTextQuadrant(?StandardFourImageTextQuadrantModule $standard_four_image_text_quadrant) : self
     {
-        $this->container['standardFourImageTextQuadrant'] = $standardFourImageTextQuadrant;
+        $this->container['standard_four_image_text_quadrant'] = $standard_four_image_text_quadrant;
 
         return $this;
     }
 
     /**
-     * Gets standardHeaderImageText.
+     * Gets standard_header_image_text.
      */
     public function getStandardHeaderImageText() : ?StandardHeaderImageTextModule
     {
-        return $this->container['standardHeaderImageText'];
+        return $this->container['standard_header_image_text'];
     }
 
     /**
-     * Sets standardHeaderImageText.
+     * Sets standard_header_image_text.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderImageTextModule $standardHeaderImageText standardHeaderImageText
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderImageTextModule $standard_header_image_text standard_header_image_text
      */
-    public function setStandardHeaderImageText(?StandardHeaderImageTextModule $standardHeaderImageText) : self
+    public function setStandardHeaderImageText(?StandardHeaderImageTextModule $standard_header_image_text) : self
     {
-        $this->container['standardHeaderImageText'] = $standardHeaderImageText;
+        $this->container['standard_header_image_text'] = $standard_header_image_text;
 
         return $this;
     }
 
     /**
-     * Gets standardImageSidebar.
+     * Gets standard_image_sidebar.
      */
     public function getStandardImageSidebar() : ?StandardImageSidebarModule
     {
-        return $this->container['standardImageSidebar'];
+        return $this->container['standard_image_sidebar'];
     }
 
     /**
-     * Sets standardImageSidebar.
+     * Sets standard_image_sidebar.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageSidebarModule $standardImageSidebar standardImageSidebar
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageSidebarModule $standard_image_sidebar standard_image_sidebar
      */
-    public function setStandardImageSidebar(?StandardImageSidebarModule $standardImageSidebar) : self
+    public function setStandardImageSidebar(?StandardImageSidebarModule $standard_image_sidebar) : self
     {
-        $this->container['standardImageSidebar'] = $standardImageSidebar;
+        $this->container['standard_image_sidebar'] = $standard_image_sidebar;
 
         return $this;
     }
 
     /**
-     * Gets standardImageTextOverlay.
+     * Gets standard_image_text_overlay.
      */
     public function getStandardImageTextOverlay() : ?StandardImageTextOverlayModule
     {
-        return $this->container['standardImageTextOverlay'];
+        return $this->container['standard_image_text_overlay'];
     }
 
     /**
-     * Sets standardImageTextOverlay.
+     * Sets standard_image_text_overlay.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextOverlayModule $standardImageTextOverlay standardImageTextOverlay
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextOverlayModule $standard_image_text_overlay standard_image_text_overlay
      */
-    public function setStandardImageTextOverlay(?StandardImageTextOverlayModule $standardImageTextOverlay) : self
+    public function setStandardImageTextOverlay(?StandardImageTextOverlayModule $standard_image_text_overlay) : self
     {
-        $this->container['standardImageTextOverlay'] = $standardImageTextOverlay;
+        $this->container['standard_image_text_overlay'] = $standard_image_text_overlay;
 
         return $this;
     }
 
     /**
-     * Gets standardMultipleImageText.
+     * Gets standard_multiple_image_text.
      */
     public function getStandardMultipleImageText() : ?StandardMultipleImageTextModule
     {
-        return $this->container['standardMultipleImageText'];
+        return $this->container['standard_multiple_image_text'];
     }
 
     /**
-     * Sets standardMultipleImageText.
+     * Sets standard_multiple_image_text.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardMultipleImageTextModule $standardMultipleImageText standardMultipleImageText
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardMultipleImageTextModule $standard_multiple_image_text standard_multiple_image_text
      */
-    public function setStandardMultipleImageText(?StandardMultipleImageTextModule $standardMultipleImageText) : self
+    public function setStandardMultipleImageText(?StandardMultipleImageTextModule $standard_multiple_image_text) : self
     {
-        $this->container['standardMultipleImageText'] = $standardMultipleImageText;
+        $this->container['standard_multiple_image_text'] = $standard_multiple_image_text;
 
         return $this;
     }
 
     /**
-     * Gets standardProductDescription.
+     * Gets standard_product_description.
      */
     public function getStandardProductDescription() : ?StandardProductDescriptionModule
     {
-        return $this->container['standardProductDescription'];
+        return $this->container['standard_product_description'];
     }
 
     /**
-     * Sets standardProductDescription.
+     * Sets standard_product_description.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardProductDescriptionModule $standardProductDescription standardProductDescription
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardProductDescriptionModule $standard_product_description standard_product_description
      */
-    public function setStandardProductDescription(?StandardProductDescriptionModule $standardProductDescription) : self
+    public function setStandardProductDescription(?StandardProductDescriptionModule $standard_product_description) : self
     {
-        $this->container['standardProductDescription'] = $standardProductDescription;
+        $this->container['standard_product_description'] = $standard_product_description;
 
         return $this;
     }
 
     /**
-     * Gets standardSingleImageHighlights.
+     * Gets standard_single_image_highlights.
      */
     public function getStandardSingleImageHighlights() : ?StandardSingleImageHighlightsModule
     {
-        return $this->container['standardSingleImageHighlights'];
+        return $this->container['standard_single_image_highlights'];
     }
 
     /**
-     * Sets standardSingleImageHighlights.
+     * Sets standard_single_image_highlights.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageHighlightsModule $standardSingleImageHighlights standardSingleImageHighlights
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageHighlightsModule $standard_single_image_highlights standard_single_image_highlights
      */
-    public function setStandardSingleImageHighlights(?StandardSingleImageHighlightsModule $standardSingleImageHighlights) : self
+    public function setStandardSingleImageHighlights(?StandardSingleImageHighlightsModule $standard_single_image_highlights) : self
     {
-        $this->container['standardSingleImageHighlights'] = $standardSingleImageHighlights;
+        $this->container['standard_single_image_highlights'] = $standard_single_image_highlights;
 
         return $this;
     }
 
     /**
-     * Gets standardSingleImageSpecsDetail.
+     * Gets standard_single_image_specs_detail.
      */
     public function getStandardSingleImageSpecsDetail() : ?StandardSingleImageSpecsDetailModule
     {
-        return $this->container['standardSingleImageSpecsDetail'];
+        return $this->container['standard_single_image_specs_detail'];
     }
 
     /**
-     * Sets standardSingleImageSpecsDetail.
+     * Sets standard_single_image_specs_detail.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageSpecsDetailModule $standardSingleImageSpecsDetail standardSingleImageSpecsDetail
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardSingleImageSpecsDetailModule $standard_single_image_specs_detail standard_single_image_specs_detail
      */
-    public function setStandardSingleImageSpecsDetail(?StandardSingleImageSpecsDetailModule $standardSingleImageSpecsDetail) : self
+    public function setStandardSingleImageSpecsDetail(?StandardSingleImageSpecsDetailModule $standard_single_image_specs_detail) : self
     {
-        $this->container['standardSingleImageSpecsDetail'] = $standardSingleImageSpecsDetail;
+        $this->container['standard_single_image_specs_detail'] = $standard_single_image_specs_detail;
 
         return $this;
     }
 
     /**
-     * Gets standardSingleSideImage.
+     * Gets standard_single_side_image.
      */
     public function getStandardSingleSideImage() : ?StandardSingleSideImageModule
     {
-        return $this->container['standardSingleSideImage'];
+        return $this->container['standard_single_side_image'];
     }
 
     /**
-     * Sets standardSingleSideImage.
+     * Sets standard_single_side_image.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardSingleSideImageModule $standardSingleSideImage standardSingleSideImage
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardSingleSideImageModule $standard_single_side_image standard_single_side_image
      */
-    public function setStandardSingleSideImage(?StandardSingleSideImageModule $standardSingleSideImage) : self
+    public function setStandardSingleSideImage(?StandardSingleSideImageModule $standard_single_side_image) : self
     {
-        $this->container['standardSingleSideImage'] = $standardSingleSideImage;
+        $this->container['standard_single_side_image'] = $standard_single_side_image;
 
         return $this;
     }
 
     /**
-     * Gets standardTechSpecs.
+     * Gets standard_tech_specs.
      */
     public function getStandardTechSpecs() : ?StandardTechSpecsModule
     {
-        return $this->container['standardTechSpecs'];
+        return $this->container['standard_tech_specs'];
     }
 
     /**
-     * Sets standardTechSpecs.
+     * Sets standard_tech_specs.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTechSpecsModule $standardTechSpecs standardTechSpecs
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTechSpecsModule $standard_tech_specs standard_tech_specs
      */
-    public function setStandardTechSpecs(?StandardTechSpecsModule $standardTechSpecs) : self
+    public function setStandardTechSpecs(?StandardTechSpecsModule $standard_tech_specs) : self
     {
-        $this->container['standardTechSpecs'] = $standardTechSpecs;
+        $this->container['standard_tech_specs'] = $standard_tech_specs;
 
         return $this;
     }
 
     /**
-     * Gets standardText.
+     * Gets standard_text.
      */
     public function getStandardText() : ?StandardTextModule
     {
-        return $this->container['standardText'];
+        return $this->container['standard_text'];
     }
 
     /**
-     * Sets standardText.
+     * Sets standard_text.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextModule $standardText standardText
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextModule $standard_text standard_text
      */
-    public function setStandardText(?StandardTextModule $standardText) : self
+    public function setStandardText(?StandardTextModule $standard_text) : self
     {
-        $this->container['standardText'] = $standardText;
+        $this->container['standard_text'] = $standard_text;
 
         return $this;
     }
 
     /**
-     * Gets standardThreeImageText.
+     * Gets standard_three_image_text.
      */
     public function getStandardThreeImageText() : ?StandardThreeImageTextModule
     {
-        return $this->container['standardThreeImageText'];
+        return $this->container['standard_three_image_text'];
     }
 
     /**
-     * Sets standardThreeImageText.
+     * Sets standard_three_image_text.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardThreeImageTextModule $standardThreeImageText standardThreeImageText
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardThreeImageTextModule $standard_three_image_text standard_three_image_text
      */
-    public function setStandardThreeImageText(?StandardThreeImageTextModule $standardThreeImageText) : self
+    public function setStandardThreeImageText(?StandardThreeImageTextModule $standard_three_image_text) : self
     {
-        $this->container['standardThreeImageText'] = $standardThreeImageText;
+        $this->container['standard_three_image_text'] = $standard_three_image_text;
 
         return $this;
     }

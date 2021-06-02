@@ -14,47 +14,17 @@ final class OAuth
 
     private Configuration $configuration;
 
-    private string $refreshToken;
-
-    private ?AccessToken $accessToken = null;
-
     public function __construct(
         ClientInterface $client,
         HttpFactory $requestFactory,
-        Configuration $configuration,
-        string $refreshToken
+        Configuration $configuration
     ) {
         $this->client = $client;
         $this->requestFactory = $requestFactory;
         $this->configuration = $configuration;
-        $this->refreshToken = $refreshToken;
     }
 
-    public function accessToken() : AccessToken
-    {
-        if ($this->accessToken === null) {
-            $this->accessToken = $this->exchangeRefresh();
-        }
-
-        return $this->accessToken;
-    }
-
-    public function client() : ClientInterface
-    {
-        return $this->client;
-    }
-
-    public function requestFactory() : HttpFactory
-    {
-        return $this->requestFactory;
-    }
-
-    public function configuration() : Configuration
-    {
-        return $this->configuration;
-    }
-
-    private function exchangeRefresh() : AccessToken
+    public function exchangeRefreshToken(string $refreshToken) : AccessToken
     {
         $request = $this->requestFactory->createRequest('POST', 'https://api.amazon.com/auth/o2/token')
             ->withBody(
@@ -62,9 +32,9 @@ final class OAuth
                     \json_encode(
                         [
                             'grant_type' => 'refresh_token',
-                            'refresh_token' => $this->refreshToken,
-                            'client_id' => $this->configuration->clientId(),
-                            'client_secret' => $this->configuration->clientSecret(),
+                            'refresh_token' => $refreshToken,
+                            'client_id' => $this->configuration->lwaClientID(),
+                            'client_secret' => $this->configuration->lwaClientSecret(),
                         ],
                         JSON_THROW_ON_ERROR
                     )
@@ -75,6 +45,30 @@ final class OAuth
 
         $response = $this->client->sendRequest($request);
 
-        return AccessToken::fromJSON((string) $response->getBody());
+        return AccessToken::fromJSON((string) $response->getBody(), 'refresh_token');
+    }
+
+    public function clientCredentials(string $scope) : AccessToken
+    {
+        $request = $this->requestFactory->createRequest('POST', 'https://api.amazon.com/auth/o2/token')
+            ->withBody(
+                $this->requestFactory->createStreamFromString(
+                    \json_encode(
+                        [
+                            'grant_type' => 'client_credentials',
+                            'scope' => $scope,
+                            'client_id' => $this->configuration->lwaClientID(),
+                            'client_secret' => $this->configuration->lwaClientSecret(),
+                        ],
+                        JSON_THROW_ON_ERROR
+                    )
+                )
+            )
+            ->withHeader('Accept', ['application/json'])
+            ->withHeader('Content-Type', ['application/json']);
+
+        $response = $this->client->sendRequest($request);
+
+        return AccessToken::fromJSON((string) $response->getBody(), 'client_credentials');
     }
 }

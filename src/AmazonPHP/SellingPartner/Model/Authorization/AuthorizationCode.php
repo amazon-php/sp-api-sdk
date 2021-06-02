@@ -56,7 +56,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'authorizationCode' => 'string',
+        'authorization_code' => 'string',
     ];
 
     /**
@@ -67,7 +67,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'authorizationCode' => null,
+        'authorization_code' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'authorizationCode' => 'authorizationCode',
+        'authorization_code' => 'authorizationCode',
     ];
 
     /**
@@ -86,7 +86,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $setters = [
-        'authorizationCode' => 'setAuthorizationCode',
+        'authorization_code' => 'setAuthorizationCode',
     ];
 
     /**
@@ -95,7 +95,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @var string[]
      */
     protected static array $getters = [
-        'authorizationCode' => 'getAuthorizationCode',
+        'authorization_code' => 'getAuthorizationCode',
     ];
 
     /**
@@ -113,7 +113,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function __construct(array $data = null)
     {
-        $this->container['authorizationCode'] = $data['authorizationCode'] ?? null;
+        $this->container['authorization_code'] = $data['authorization_code'] ?? null;
     }
 
     /**
@@ -208,21 +208,21 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
     }
 
     /**
-     * Gets authorizationCode.
+     * Gets authorization_code.
      */
     public function getAuthorizationCode() : ?string
     {
-        return $this->container['authorizationCode'];
+        return $this->container['authorization_code'];
     }
 
     /**
-     * Sets authorizationCode.
+     * Sets authorization_code.
      *
-     * @param null|string $authorizationCode a Login with Amazon (LWA) authorization code that can be exchanged for a refresh token and access token that authorize you to make calls to a Selling Partner API
+     * @param null|string $authorization_code a Login with Amazon (LWA) authorization code that can be exchanged for a refresh token and access token that authorize you to make calls to a Selling Partner API
      */
-    public function setAuthorizationCode(?string $authorizationCode) : self
+    public function setAuthorizationCode(?string $authorization_code) : self
     {
-        $this->container['authorizationCode'] = $authorizationCode;
+        $this->container['authorization_code'] = $authorization_code;
 
         return $this;
     }

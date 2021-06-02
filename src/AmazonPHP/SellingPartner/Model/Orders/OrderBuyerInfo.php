@@ -56,12 +56,12 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'amazonOrderId' => 'string',
-        'buyerEmail' => 'string',
-        'buyerName' => 'string',
-        'buyerCounty' => 'string',
-        'buyerTaxInfo' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo',
-        'purchaseOrderNumber' => 'string',
+        'amazon_order_id' => 'string',
+        'buyer_email' => 'string',
+        'buyer_name' => 'string',
+        'buyer_county' => 'string',
+        'buyer_tax_info' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo',
+        'purchase_order_number' => 'string',
     ];
 
     /**
@@ -72,12 +72,12 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'amazonOrderId' => null,
-        'buyerEmail' => null,
-        'buyerName' => null,
-        'buyerCounty' => null,
-        'buyerTaxInfo' => null,
-        'purchaseOrderNumber' => null,
+        'amazon_order_id' => null,
+        'buyer_email' => null,
+        'buyer_name' => null,
+        'buyer_county' => null,
+        'buyer_tax_info' => null,
+        'purchase_order_number' => null,
     ];
 
     /**
@@ -87,12 +87,12 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'amazonOrderId' => 'AmazonOrderId',
-        'buyerEmail' => 'BuyerEmail',
-        'buyerName' => 'BuyerName',
-        'buyerCounty' => 'BuyerCounty',
-        'buyerTaxInfo' => 'BuyerTaxInfo',
-        'purchaseOrderNumber' => 'PurchaseOrderNumber',
+        'amazon_order_id' => 'AmazonOrderId',
+        'buyer_email' => 'BuyerEmail',
+        'buyer_name' => 'BuyerName',
+        'buyer_county' => 'BuyerCounty',
+        'buyer_tax_info' => 'BuyerTaxInfo',
+        'purchase_order_number' => 'PurchaseOrderNumber',
     ];
 
     /**
@@ -101,12 +101,12 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'amazonOrderId' => 'setAmazonOrderId',
-        'buyerEmail' => 'setBuyerEmail',
-        'buyerName' => 'setBuyerName',
-        'buyerCounty' => 'setBuyerCounty',
-        'buyerTaxInfo' => 'setBuyerTaxInfo',
-        'purchaseOrderNumber' => 'setPurchaseOrderNumber',
+        'amazon_order_id' => 'setAmazonOrderId',
+        'buyer_email' => 'setBuyerEmail',
+        'buyer_name' => 'setBuyerName',
+        'buyer_county' => 'setBuyerCounty',
+        'buyer_tax_info' => 'setBuyerTaxInfo',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
     ];
 
     /**
@@ -115,12 +115,12 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'amazonOrderId' => 'getAmazonOrderId',
-        'buyerEmail' => 'getBuyerEmail',
-        'buyerName' => 'getBuyerName',
-        'buyerCounty' => 'getBuyerCounty',
-        'buyerTaxInfo' => 'getBuyerTaxInfo',
-        'purchaseOrderNumber' => 'getPurchaseOrderNumber',
+        'amazon_order_id' => 'getAmazonOrderId',
+        'buyer_email' => 'getBuyerEmail',
+        'buyer_name' => 'getBuyerName',
+        'buyer_county' => 'getBuyerCounty',
+        'buyer_tax_info' => 'getBuyerTaxInfo',
+        'purchase_order_number' => 'getPurchaseOrderNumber',
     ];
 
     /**
@@ -138,12 +138,12 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['amazonOrderId'] = $data['amazonOrderId'] ?? null;
-        $this->container['buyerEmail'] = $data['buyerEmail'] ?? null;
-        $this->container['buyerName'] = $data['buyerName'] ?? null;
-        $this->container['buyerCounty'] = $data['buyerCounty'] ?? null;
-        $this->container['buyerTaxInfo'] = $data['buyerTaxInfo'] ?? null;
-        $this->container['purchaseOrderNumber'] = $data['purchaseOrderNumber'] ?? null;
+        $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
+        $this->container['buyer_email'] = $data['buyer_email'] ?? null;
+        $this->container['buyer_name'] = $data['buyer_name'] ?? null;
+        $this->container['buyer_county'] = $data['buyer_county'] ?? null;
+        $this->container['buyer_tax_info'] = $data['buyer_tax_info'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
     }
 
     /**
@@ -225,8 +225,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['amazonOrderId'] === null) {
-            $invalidProperties[] = "'amazonOrderId' can't be null";
+        if ($this->container['amazon_order_id'] === null) {
+            $invalidProperties[] = "'amazon_order_id' can't be null";
         }
 
         return $invalidProperties;
@@ -244,121 +244,121 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets amazonOrderId.
+     * Gets amazon_order_id.
      */
     public function getAmazonOrderId() : string
     {
-        return $this->container['amazonOrderId'];
+        return $this->container['amazon_order_id'];
     }
 
     /**
-     * Sets amazonOrderId.
+     * Sets amazon_order_id.
      *
-     * @param string $amazonOrderId an Amazon-defined order identifier, in 3-7-7 format
+     * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
      */
-    public function setAmazonOrderId(string $amazonOrderId) : self
+    public function setAmazonOrderId(string $amazon_order_id) : self
     {
-        $this->container['amazonOrderId'] = $amazonOrderId;
+        $this->container['amazon_order_id'] = $amazon_order_id;
 
         return $this;
     }
 
     /**
-     * Gets buyerEmail.
+     * Gets buyer_email.
      */
     public function getBuyerEmail() : ?string
     {
-        return $this->container['buyerEmail'];
+        return $this->container['buyer_email'];
     }
 
     /**
-     * Sets buyerEmail.
+     * Sets buyer_email.
      *
-     * @param null|string $buyerEmail the anonymized email address of the buyer
+     * @param null|string $buyer_email the anonymized email address of the buyer
      */
-    public function setBuyerEmail(?string $buyerEmail) : self
+    public function setBuyerEmail(?string $buyer_email) : self
     {
-        $this->container['buyerEmail'] = $buyerEmail;
+        $this->container['buyer_email'] = $buyer_email;
 
         return $this;
     }
 
     /**
-     * Gets buyerName.
+     * Gets buyer_name.
      */
     public function getBuyerName() : ?string
     {
-        return $this->container['buyerName'];
+        return $this->container['buyer_name'];
     }
 
     /**
-     * Sets buyerName.
+     * Sets buyer_name.
      *
-     * @param null|string $buyerName the name of the buyer
+     * @param null|string $buyer_name the name of the buyer
      */
-    public function setBuyerName(?string $buyerName) : self
+    public function setBuyerName(?string $buyer_name) : self
     {
-        $this->container['buyerName'] = $buyerName;
+        $this->container['buyer_name'] = $buyer_name;
 
         return $this;
     }
 
     /**
-     * Gets buyerCounty.
+     * Gets buyer_county.
      */
     public function getBuyerCounty() : ?string
     {
-        return $this->container['buyerCounty'];
+        return $this->container['buyer_county'];
     }
 
     /**
-     * Sets buyerCounty.
+     * Sets buyer_county.
      *
-     * @param null|string $buyerCounty the county of the buyer
+     * @param null|string $buyer_county the county of the buyer
      */
-    public function setBuyerCounty(?string $buyerCounty) : self
+    public function setBuyerCounty(?string $buyer_county) : self
     {
-        $this->container['buyerCounty'] = $buyerCounty;
+        $this->container['buyer_county'] = $buyer_county;
 
         return $this;
     }
 
     /**
-     * Gets buyerTaxInfo.
+     * Gets buyer_tax_info.
      */
     public function getBuyerTaxInfo() : ?BuyerTaxInfo
     {
-        return $this->container['buyerTaxInfo'];
+        return $this->container['buyer_tax_info'];
     }
 
     /**
-     * Sets buyerTaxInfo.
+     * Sets buyer_tax_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo $buyerTaxInfo buyerTaxInfo
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo $buyer_tax_info buyer_tax_info
      */
-    public function setBuyerTaxInfo(?BuyerTaxInfo $buyerTaxInfo) : self
+    public function setBuyerTaxInfo(?BuyerTaxInfo $buyer_tax_info) : self
     {
-        $this->container['buyerTaxInfo'] = $buyerTaxInfo;
+        $this->container['buyer_tax_info'] = $buyer_tax_info;
 
         return $this;
     }
 
     /**
-     * Gets purchaseOrderNumber.
+     * Gets purchase_order_number.
      */
     public function getPurchaseOrderNumber() : ?string
     {
-        return $this->container['purchaseOrderNumber'];
+        return $this->container['purchase_order_number'];
     }
 
     /**
-     * Sets purchaseOrderNumber.
+     * Sets purchase_order_number.
      *
-     * @param null|string $purchaseOrderNumber The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+     * @param null|string $purchase_order_number The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
      */
-    public function setPurchaseOrderNumber(?string $purchaseOrderNumber) : self
+    public function setPurchaseOrderNumber(?string $purchase_order_number) : self
     {
-        $this->container['purchaseOrderNumber'] = $purchaseOrderNumber;
+        $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;
     }

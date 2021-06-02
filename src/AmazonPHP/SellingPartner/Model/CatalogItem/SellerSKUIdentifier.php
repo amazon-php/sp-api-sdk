@@ -56,9 +56,9 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'marketplaceId' => 'string',
-        'sellerId' => 'string',
-        'sellerSKU' => 'string',
+        'marketplace_id' => 'string',
+        'seller_id' => 'string',
+        'seller_sku' => 'string',
     ];
 
     /**
@@ -69,9 +69,9 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'marketplaceId' => null,
-        'sellerId' => null,
-        'sellerSKU' => null,
+        'marketplace_id' => null,
+        'seller_id' => null,
+        'seller_sku' => null,
     ];
 
     /**
@@ -81,9 +81,9 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $attributeMap = [
-        'marketplaceId' => 'MarketplaceId',
-        'sellerId' => 'SellerId',
-        'sellerSKU' => 'SellerSKU',
+        'marketplace_id' => 'MarketplaceId',
+        'seller_id' => 'SellerId',
+        'seller_sku' => 'SellerSKU',
     ];
 
     /**
@@ -92,9 +92,9 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $setters = [
-        'marketplaceId' => 'setMarketplaceId',
-        'sellerId' => 'setSellerId',
-        'sellerSKU' => 'setSellerSKU',
+        'marketplace_id' => 'setMarketplaceId',
+        'seller_id' => 'setSellerId',
+        'seller_sku' => 'setSellerSku',
     ];
 
     /**
@@ -103,9 +103,9 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $getters = [
-        'marketplaceId' => 'getMarketplaceId',
-        'sellerId' => 'getSellerId',
-        'sellerSKU' => 'getSellerSKU',
+        'marketplace_id' => 'getMarketplaceId',
+        'seller_id' => 'getSellerId',
+        'seller_sku' => 'getSellerSku',
     ];
 
     /**
@@ -123,9 +123,9 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplaceId'] = $data['marketplaceId'] ?? null;
-        $this->container['sellerId'] = $data['sellerId'] ?? null;
-        $this->container['sellerSKU'] = $data['sellerSKU'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['seller_id'] = $data['seller_id'] ?? null;
+        $this->container['seller_sku'] = $data['seller_sku'] ?? null;
     }
 
     /**
@@ -207,16 +207,16 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
     {
         $invalidProperties = [];
 
-        if ($this->container['marketplaceId'] === null) {
-            $invalidProperties[] = "'marketplaceId' can't be null";
+        if ($this->container['marketplace_id'] === null) {
+            $invalidProperties[] = "'marketplace_id' can't be null";
         }
 
-        if ($this->container['sellerId'] === null) {
-            $invalidProperties[] = "'sellerId' can't be null";
+        if ($this->container['seller_id'] === null) {
+            $invalidProperties[] = "'seller_id' can't be null";
         }
 
-        if ($this->container['sellerSKU'] === null) {
-            $invalidProperties[] = "'sellerSKU' can't be null";
+        if ($this->container['seller_sku'] === null) {
+            $invalidProperties[] = "'seller_sku' can't be null";
         }
 
         return $invalidProperties;
@@ -234,61 +234,61 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Gets marketplaceId.
+     * Gets marketplace_id.
      */
     public function getMarketplaceId() : string
     {
-        return $this->container['marketplaceId'];
+        return $this->container['marketplace_id'];
     }
 
     /**
-     * Sets marketplaceId.
+     * Sets marketplace_id.
      *
-     * @param string $marketplaceId a marketplace identifier
+     * @param string $marketplace_id a marketplace identifier
      */
-    public function setMarketplaceId(string $marketplaceId) : self
+    public function setMarketplaceId(string $marketplace_id) : self
     {
-        $this->container['marketplaceId'] = $marketplaceId;
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
 
     /**
-     * Gets sellerId.
+     * Gets seller_id.
      */
     public function getSellerId() : string
     {
-        return $this->container['sellerId'];
+        return $this->container['seller_id'];
     }
 
     /**
-     * Sets sellerId.
+     * Sets seller_id.
      *
-     * @param string $sellerId the seller identifier submitted for the operation
+     * @param string $seller_id the seller identifier submitted for the operation
      */
-    public function setSellerId(string $sellerId) : self
+    public function setSellerId(string $seller_id) : self
     {
-        $this->container['sellerId'] = $sellerId;
+        $this->container['seller_id'] = $seller_id;
 
         return $this;
     }
 
     /**
-     * Gets sellerSKU.
+     * Gets seller_sku.
      */
-    public function getSellerSKU() : string
+    public function getSellerSku() : string
     {
-        return $this->container['sellerSKU'];
+        return $this->container['seller_sku'];
     }
 
     /**
-     * Sets sellerSKU.
+     * Sets seller_sku.
      *
-     * @param string $sellerSKU the seller stock keeping unit (SKU) of the item
+     * @param string $seller_sku the seller stock keeping unit (SKU) of the item
      */
-    public function setSellerSKU(string $sellerSKU) : self
+    public function setSellerSku(string $seller_sku) : self
     {
-        $this->container['sellerSKU'] = $sellerSKU;
+        $this->container['seller_sku'] = $seller_sku;
 
         return $this;
     }

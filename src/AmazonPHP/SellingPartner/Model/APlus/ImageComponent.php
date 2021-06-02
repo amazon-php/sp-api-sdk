@@ -56,9 +56,9 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'uploadDestinationId' => 'string',
-        'imageCropSpecification' => '\AmazonPHP\SellingPartner\Model\APlus\ImageCropSpecification',
-        'altText' => 'string',
+        'upload_destination_id' => 'string',
+        'image_crop_specification' => '\AmazonPHP\SellingPartner\Model\APlus\ImageCropSpecification',
+        'alt_text' => 'string',
     ];
 
     /**
@@ -69,9 +69,9 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'uploadDestinationId' => null,
-        'imageCropSpecification' => null,
-        'altText' => null,
+        'upload_destination_id' => null,
+        'image_crop_specification' => null,
+        'alt_text' => null,
     ];
 
     /**
@@ -81,9 +81,9 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'uploadDestinationId' => 'uploadDestinationId',
-        'imageCropSpecification' => 'imageCropSpecification',
-        'altText' => 'altText',
+        'upload_destination_id' => 'uploadDestinationId',
+        'image_crop_specification' => 'imageCropSpecification',
+        'alt_text' => 'altText',
     ];
 
     /**
@@ -92,9 +92,9 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'uploadDestinationId' => 'setUploadDestinationId',
-        'imageCropSpecification' => 'setImageCropSpecification',
-        'altText' => 'setAltText',
+        'upload_destination_id' => 'setUploadDestinationId',
+        'image_crop_specification' => 'setImageCropSpecification',
+        'alt_text' => 'setAltText',
     ];
 
     /**
@@ -103,9 +103,9 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'uploadDestinationId' => 'getUploadDestinationId',
-        'imageCropSpecification' => 'getImageCropSpecification',
-        'altText' => 'getAltText',
+        'upload_destination_id' => 'getUploadDestinationId',
+        'image_crop_specification' => 'getImageCropSpecification',
+        'alt_text' => 'getAltText',
     ];
 
     /**
@@ -123,9 +123,9 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['uploadDestinationId'] = $data['uploadDestinationId'] ?? null;
-        $this->container['imageCropSpecification'] = $data['imageCropSpecification'] ?? null;
-        $this->container['altText'] = $data['altText'] ?? null;
+        $this->container['upload_destination_id'] = $data['upload_destination_id'] ?? null;
+        $this->container['image_crop_specification'] = $data['image_crop_specification'] ?? null;
+        $this->container['alt_text'] = $data['alt_text'] ?? null;
     }
 
     /**
@@ -207,28 +207,28 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['uploadDestinationId'] === null) {
-            $invalidProperties[] = "'uploadDestinationId' can't be null";
+        if ($this->container['upload_destination_id'] === null) {
+            $invalidProperties[] = "'upload_destination_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['uploadDestinationId']) < 1)) {
-            $invalidProperties[] = "invalid value for 'uploadDestinationId', the character length must be bigger than or equal to 1.";
+        if ((\mb_strlen($this->container['upload_destination_id']) < 1)) {
+            $invalidProperties[] = "invalid value for 'upload_destination_id', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['imageCropSpecification'] === null) {
-            $invalidProperties[] = "'imageCropSpecification' can't be null";
+        if ($this->container['image_crop_specification'] === null) {
+            $invalidProperties[] = "'image_crop_specification' can't be null";
         }
 
-        if ($this->container['altText'] === null) {
-            $invalidProperties[] = "'altText' can't be null";
+        if ($this->container['alt_text'] === null) {
+            $invalidProperties[] = "'alt_text' can't be null";
         }
 
-        if ((\mb_strlen($this->container['altText']) > 100)) {
-            $invalidProperties[] = "invalid value for 'altText', the character length must be smaller than or equal to 100.";
+        if ((\mb_strlen($this->container['alt_text']) > 100)) {
+            $invalidProperties[] = "invalid value for 'alt_text', the character length must be smaller than or equal to 100.";
         }
 
-        if ((\mb_strlen($this->container['altText']) < 1)) {
-            $invalidProperties[] = "invalid value for 'altText', the character length must be bigger than or equal to 1.";
+        if ((\mb_strlen($this->container['alt_text']) < 1)) {
+            $invalidProperties[] = "invalid value for 'alt_text', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -246,73 +246,73 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets uploadDestinationId.
+     * Gets upload_destination_id.
      */
     public function getUploadDestinationId() : string
     {
-        return $this->container['uploadDestinationId'];
+        return $this->container['upload_destination_id'];
     }
 
     /**
-     * Sets uploadDestinationId.
+     * Sets upload_destination_id.
      *
-     * @param string $uploadDestinationId this identifier is provided by the Selling Partner API for Uploads
+     * @param string $upload_destination_id this identifier is provided by the Selling Partner API for Uploads
      */
-    public function setUploadDestinationId(string $uploadDestinationId) : self
+    public function setUploadDestinationId(string $upload_destination_id) : self
     {
-        if ((\mb_strlen($uploadDestinationId) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $uploadDestinationId when calling ImageComponent., must be bigger than or equal to 1.');
+        if ((\mb_strlen($upload_destination_id) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $upload_destination_id when calling ImageComponent., must be bigger than or equal to 1.');
         }
 
-        $this->container['uploadDestinationId'] = $uploadDestinationId;
+        $this->container['upload_destination_id'] = $upload_destination_id;
 
         return $this;
     }
 
     /**
-     * Gets imageCropSpecification.
+     * Gets image_crop_specification.
      */
     public function getImageCropSpecification() : ImageCropSpecification
     {
-        return $this->container['imageCropSpecification'];
+        return $this->container['image_crop_specification'];
     }
 
     /**
-     * Sets imageCropSpecification.
+     * Sets image_crop_specification.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ImageCropSpecification $imageCropSpecification imageCropSpecification
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ImageCropSpecification $image_crop_specification image_crop_specification
      */
-    public function setImageCropSpecification(ImageCropSpecification $imageCropSpecification) : self
+    public function setImageCropSpecification(ImageCropSpecification $image_crop_specification) : self
     {
-        $this->container['imageCropSpecification'] = $imageCropSpecification;
+        $this->container['image_crop_specification'] = $image_crop_specification;
 
         return $this;
     }
 
     /**
-     * Gets altText.
+     * Gets alt_text.
      */
     public function getAltText() : string
     {
-        return $this->container['altText'];
+        return $this->container['alt_text'];
     }
 
     /**
-     * Sets altText.
+     * Sets alt_text.
      *
-     * @param string $altText the alternative text for the image
+     * @param string $alt_text the alternative text for the image
      */
-    public function setAltText(string $altText) : self
+    public function setAltText(string $alt_text) : self
     {
-        if ((\mb_strlen($altText) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $altText when calling ImageComponent., must be smaller than or equal to 100.');
+        if ((\mb_strlen($alt_text) > 100)) {
+            throw new \InvalidArgumentException('invalid length for $alt_text when calling ImageComponent., must be smaller than or equal to 100.');
         }
 
-        if ((\mb_strlen($altText) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $altText when calling ImageComponent., must be bigger than or equal to 1.');
+        if ((\mb_strlen($alt_text) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $alt_text when calling ImageComponent., must be bigger than or equal to 1.');
         }
 
-        $this->container['altText'] = $altText;
+        $this->container['alt_text'] = $alt_text;
 
         return $this;
     }

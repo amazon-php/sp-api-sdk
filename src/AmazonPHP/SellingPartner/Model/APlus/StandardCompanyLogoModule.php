@@ -56,7 +56,7 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'companyLogo' => '\AmazonPHP\SellingPartner\Model\APlus\ImageComponent',
+        'company_logo' => '\AmazonPHP\SellingPartner\Model\APlus\ImageComponent',
     ];
 
     /**
@@ -67,7 +67,7 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'companyLogo' => null,
+        'company_logo' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $attributeMap = [
-        'companyLogo' => 'companyLogo',
+        'company_logo' => 'companyLogo',
     ];
 
     /**
@@ -86,7 +86,7 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $setters = [
-        'companyLogo' => 'setCompanyLogo',
+        'company_logo' => 'setCompanyLogo',
     ];
 
     /**
@@ -95,7 +95,7 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
      * @var string[]
      */
     protected static array $getters = [
-        'companyLogo' => 'getCompanyLogo',
+        'company_logo' => 'getCompanyLogo',
     ];
 
     /**
@@ -113,7 +113,7 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function __construct(array $data = null)
     {
-        $this->container['companyLogo'] = $data['companyLogo'] ?? null;
+        $this->container['company_logo'] = $data['company_logo'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
     {
         $invalidProperties = [];
 
-        if ($this->container['companyLogo'] === null) {
-            $invalidProperties[] = "'companyLogo' can't be null";
+        if ($this->container['company_logo'] === null) {
+            $invalidProperties[] = "'company_logo' can't be null";
         }
 
         return $invalidProperties;
@@ -214,21 +214,21 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
     }
 
     /**
-     * Gets companyLogo.
+     * Gets company_logo.
      */
     public function getCompanyLogo() : ImageComponent
     {
-        return $this->container['companyLogo'];
+        return $this->container['company_logo'];
     }
 
     /**
-     * Sets companyLogo.
+     * Sets company_logo.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ImageComponent $companyLogo companyLogo
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ImageComponent $company_logo company_logo
      */
-    public function setCompanyLogo(ImageComponent $companyLogo) : self
+    public function setCompanyLogo(ImageComponent $company_logo) : self
     {
-        $this->container['companyLogo'] = $companyLogo;
+        $this->container['company_logo'] = $company_logo;
 
         return $this;
     }

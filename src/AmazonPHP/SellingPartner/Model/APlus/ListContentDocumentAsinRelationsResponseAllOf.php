@@ -56,7 +56,7 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'asinMetadataSet' => '\AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[]',
+        'asin_metadata_set' => '\AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[]',
     ];
 
     /**
@@ -67,7 +67,7 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'asinMetadataSet' => null,
+        'asin_metadata_set' => null,
     ];
 
     /**
@@ -77,7 +77,7 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
      * @var string[]
      */
     protected static array $attributeMap = [
-        'asinMetadataSet' => 'asinMetadataSet',
+        'asin_metadata_set' => 'asinMetadataSet',
     ];
 
     /**
@@ -86,7 +86,7 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
      * @var string[]
      */
     protected static array $setters = [
-        'asinMetadataSet' => 'setAsinMetadataSet',
+        'asin_metadata_set' => 'setAsinMetadataSet',
     ];
 
     /**
@@ -95,7 +95,7 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
      * @var string[]
      */
     protected static array $getters = [
-        'asinMetadataSet' => 'getAsinMetadataSet',
+        'asin_metadata_set' => 'getAsinMetadataSet',
     ];
 
     /**
@@ -113,7 +113,7 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
      */
     public function __construct(array $data = null)
     {
-        $this->container['asinMetadataSet'] = $data['asinMetadataSet'] ?? null;
+        $this->container['asin_metadata_set'] = $data['asin_metadata_set'] ?? null;
     }
 
     /**
@@ -195,8 +195,8 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
     {
         $invalidProperties = [];
 
-        if ($this->container['asinMetadataSet'] === null) {
-            $invalidProperties[] = "'asinMetadataSet' can't be null";
+        if ($this->container['asin_metadata_set'] === null) {
+            $invalidProperties[] = "'asin_metadata_set' can't be null";
         }
 
         return $invalidProperties;
@@ -214,23 +214,23 @@ class ListContentDocumentAsinRelationsResponseAllOf implements \ArrayAccess, \Js
     }
 
     /**
-     * Gets asinMetadataSet.
+     * Gets asin_metadata_set.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[]
      */
     public function getAsinMetadataSet() : array
     {
-        return $this->container['asinMetadataSet'];
+        return $this->container['asin_metadata_set'];
     }
 
     /**
-     * Sets asinMetadataSet.
+     * Sets asin_metadata_set.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[] $asinMetadataSet the set of ASIN metadata
+     * @param \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[] $asin_metadata_set the set of ASIN metadata
      */
-    public function setAsinMetadataSet(array $asinMetadataSet) : self
+    public function setAsinMetadataSet(array $asin_metadata_set) : self
     {
-        $this->container['asinMetadataSet'] = $asinMetadataSet;
+        $this->container['asin_metadata_set'] = $asin_metadata_set;
 
         return $this;
     }

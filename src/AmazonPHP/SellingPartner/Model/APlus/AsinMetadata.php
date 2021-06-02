@@ -57,11 +57,11 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPITypes = [
         'asin' => 'string',
-        'badgeSet' => '\AmazonPHP\SellingPartner\Model\APlus\AsinBadge[]',
+        'badge_set' => '\AmazonPHP\SellingPartner\Model\APlus\AsinBadge[]',
         'parent' => 'string',
         'title' => 'string',
-        'imageUrl' => 'string',
-        'contentReferenceKeySet' => 'string[]',
+        'image_url' => 'string',
+        'content_reference_key_set' => 'string[]',
     ];
 
     /**
@@ -73,11 +73,11 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPIFormats = [
         'asin' => null,
-        'badgeSet' => null,
+        'badge_set' => null,
         'parent' => null,
         'title' => null,
-        'imageUrl' => null,
-        'contentReferenceKeySet' => null,
+        'image_url' => null,
+        'content_reference_key_set' => null,
     ];
 
     /**
@@ -88,11 +88,11 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $attributeMap = [
         'asin' => 'asin',
-        'badgeSet' => 'badgeSet',
+        'badge_set' => 'badgeSet',
         'parent' => 'parent',
         'title' => 'title',
-        'imageUrl' => 'imageUrl',
-        'contentReferenceKeySet' => 'contentReferenceKeySet',
+        'image_url' => 'imageUrl',
+        'content_reference_key_set' => 'contentReferenceKeySet',
     ];
 
     /**
@@ -102,11 +102,11 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $setters = [
         'asin' => 'setAsin',
-        'badgeSet' => 'setBadgeSet',
+        'badge_set' => 'setBadgeSet',
         'parent' => 'setParent',
         'title' => 'setTitle',
-        'imageUrl' => 'setImageUrl',
-        'contentReferenceKeySet' => 'setContentReferenceKeySet',
+        'image_url' => 'setImageUrl',
+        'content_reference_key_set' => 'setContentReferenceKeySet',
     ];
 
     /**
@@ -116,11 +116,11 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $getters = [
         'asin' => 'getAsin',
-        'badgeSet' => 'getBadgeSet',
+        'badge_set' => 'getBadgeSet',
         'parent' => 'getParent',
         'title' => 'getTitle',
-        'imageUrl' => 'getImageUrl',
-        'contentReferenceKeySet' => 'getContentReferenceKeySet',
+        'image_url' => 'getImageUrl',
+        'content_reference_key_set' => 'getContentReferenceKeySet',
     ];
 
     /**
@@ -139,11 +139,11 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function __construct(array $data = null)
     {
         $this->container['asin'] = $data['asin'] ?? null;
-        $this->container['badgeSet'] = $data['badgeSet'] ?? null;
+        $this->container['badge_set'] = $data['badge_set'] ?? null;
         $this->container['parent'] = $data['parent'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
-        $this->container['imageUrl'] = $data['imageUrl'] ?? null;
-        $this->container['contentReferenceKeySet'] = $data['contentReferenceKeySet'] ?? null;
+        $this->container['image_url'] = $data['image_url'] ?? null;
+        $this->container['content_reference_key_set'] = $data['content_reference_key_set'] ?? null;
     }
 
     /**
@@ -241,8 +241,8 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
         }
 
-        if (null !== $this->container['imageUrl'] && (\mb_strlen($this->container['imageUrl']) < 1)) {
-            $invalidProperties[] = "invalid value for 'imageUrl', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['image_url'] && (\mb_strlen($this->container['image_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'image_url', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -284,23 +284,23 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets badgeSet.
+     * Gets badge_set.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\APlus\AsinBadge[]
      */
     public function getBadgeSet() : ?array
     {
-        return $this->container['badgeSet'];
+        return $this->container['badge_set'];
     }
 
     /**
-     * Sets badgeSet.
+     * Sets badge_set.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\AsinBadge[] $badgeSet the set of ASIN badges
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\AsinBadge[] $badge_set the set of ASIN badges
      */
-    public function setBadgeSet(?array $badgeSet) : self
+    public function setBadgeSet(?array $badge_set) : self
     {
-        $this->container['badgeSet'] = $badgeSet;
+        $this->container['badge_set'] = $badge_set;
 
         return $this;
     }
@@ -354,47 +354,47 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets imageUrl.
+     * Gets image_url.
      */
     public function getImageUrl() : ?string
     {
-        return $this->container['imageUrl'];
+        return $this->container['image_url'];
     }
 
     /**
-     * Sets imageUrl.
+     * Sets image_url.
      *
-     * @param null|string $imageUrl the default image for the ASIN in the Amazon catalog
+     * @param null|string $image_url the default image for the ASIN in the Amazon catalog
      */
-    public function setImageUrl(?string $imageUrl) : self
+    public function setImageUrl(?string $image_url) : self
     {
-        if (null !== $imageUrl && (\mb_strlen($imageUrl) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $imageUrl when calling AsinMetadata., must be bigger than or equal to 1.');
+        if (null !== $image_url && (\mb_strlen($image_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $image_url when calling AsinMetadata., must be bigger than or equal to 1.');
         }
 
-        $this->container['imageUrl'] = $imageUrl;
+        $this->container['image_url'] = $image_url;
 
         return $this;
     }
 
     /**
-     * Gets contentReferenceKeySet.
+     * Gets content_reference_key_set.
      *
      * @return null|string[]
      */
     public function getContentReferenceKeySet() : ?array
     {
-        return $this->container['contentReferenceKeySet'];
+        return $this->container['content_reference_key_set'];
     }
 
     /**
-     * Sets contentReferenceKeySet.
+     * Sets content_reference_key_set.
      *
-     * @param null|string[] $contentReferenceKeySet a set of content reference keys
+     * @param null|string[] $content_reference_key_set a set of content reference keys
      */
-    public function setContentReferenceKeySet(?array $contentReferenceKeySet) : self
+    public function setContentReferenceKeySet(?array $content_reference_key_set) : self
     {
-        $this->container['contentReferenceKeySet'] = $contentReferenceKeySet;
+        $this->container['content_reference_key_set'] = $content_reference_key_set;
 
         return $this;
     }

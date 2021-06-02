@@ -56,9 +56,9 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'contentReferenceKey' => 'string',
-        'contentMetadata' => '\AmazonPHP\SellingPartner\Model\APlus\ContentMetadata',
-        'contentDocument' => '\AmazonPHP\SellingPartner\Model\APlus\ContentDocument',
+        'content_reference_key' => 'string',
+        'content_metadata' => '\AmazonPHP\SellingPartner\Model\APlus\ContentMetadata',
+        'content_document' => '\AmazonPHP\SellingPartner\Model\APlus\ContentDocument',
     ];
 
     /**
@@ -69,9 +69,9 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'contentReferenceKey' => null,
-        'contentMetadata' => null,
-        'contentDocument' => null,
+        'content_reference_key' => null,
+        'content_metadata' => null,
+        'content_document' => null,
     ];
 
     /**
@@ -81,9 +81,9 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'contentReferenceKey' => 'contentReferenceKey',
-        'contentMetadata' => 'contentMetadata',
-        'contentDocument' => 'contentDocument',
+        'content_reference_key' => 'contentReferenceKey',
+        'content_metadata' => 'contentMetadata',
+        'content_document' => 'contentDocument',
     ];
 
     /**
@@ -92,9 +92,9 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'contentReferenceKey' => 'setContentReferenceKey',
-        'contentMetadata' => 'setContentMetadata',
-        'contentDocument' => 'setContentDocument',
+        'content_reference_key' => 'setContentReferenceKey',
+        'content_metadata' => 'setContentMetadata',
+        'content_document' => 'setContentDocument',
     ];
 
     /**
@@ -103,9 +103,9 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'contentReferenceKey' => 'getContentReferenceKey',
-        'contentMetadata' => 'getContentMetadata',
-        'contentDocument' => 'getContentDocument',
+        'content_reference_key' => 'getContentReferenceKey',
+        'content_metadata' => 'getContentMetadata',
+        'content_document' => 'getContentDocument',
     ];
 
     /**
@@ -123,9 +123,9 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['contentReferenceKey'] = $data['contentReferenceKey'] ?? null;
-        $this->container['contentMetadata'] = $data['contentMetadata'] ?? null;
-        $this->container['contentDocument'] = $data['contentDocument'] ?? null;
+        $this->container['content_reference_key'] = $data['content_reference_key'] ?? null;
+        $this->container['content_metadata'] = $data['content_metadata'] ?? null;
+        $this->container['content_document'] = $data['content_document'] ?? null;
     }
 
     /**
@@ -207,12 +207,12 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if ($this->container['contentReferenceKey'] === null) {
-            $invalidProperties[] = "'contentReferenceKey' can't be null";
+        if ($this->container['content_reference_key'] === null) {
+            $invalidProperties[] = "'content_reference_key' can't be null";
         }
 
-        if ((\mb_strlen($this->container['contentReferenceKey']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contentReferenceKey', the character length must be bigger than or equal to 1.";
+        if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
+            $invalidProperties[] = "invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -230,65 +230,65 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets contentReferenceKey.
+     * Gets content_reference_key.
      */
     public function getContentReferenceKey() : string
     {
-        return $this->container['contentReferenceKey'];
+        return $this->container['content_reference_key'];
     }
 
     /**
-     * Sets contentReferenceKey.
+     * Sets content_reference_key.
      *
-     * @param string $contentReferenceKey A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
      */
-    public function setContentReferenceKey(string $contentReferenceKey) : self
+    public function setContentReferenceKey(string $content_reference_key) : self
     {
-        if ((\mb_strlen($contentReferenceKey) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contentReferenceKey when calling ContentRecord., must be bigger than or equal to 1.');
+        if ((\mb_strlen($content_reference_key) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $content_reference_key when calling ContentRecord., must be bigger than or equal to 1.');
         }
 
-        $this->container['contentReferenceKey'] = $contentReferenceKey;
+        $this->container['content_reference_key'] = $content_reference_key;
 
         return $this;
     }
 
     /**
-     * Gets contentMetadata.
+     * Gets content_metadata.
      */
     public function getContentMetadata() : ?ContentMetadata
     {
-        return $this->container['contentMetadata'];
+        return $this->container['content_metadata'];
     }
 
     /**
-     * Sets contentMetadata.
+     * Sets content_metadata.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ContentMetadata $contentMetadata contentMetadata
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ContentMetadata $content_metadata content_metadata
      */
-    public function setContentMetadata(?ContentMetadata $contentMetadata) : self
+    public function setContentMetadata(?ContentMetadata $content_metadata) : self
     {
-        $this->container['contentMetadata'] = $contentMetadata;
+        $this->container['content_metadata'] = $content_metadata;
 
         return $this;
     }
 
     /**
-     * Gets contentDocument.
+     * Gets content_document.
      */
     public function getContentDocument() : ?ContentDocument
     {
-        return $this->container['contentDocument'];
+        return $this->container['content_document'];
     }
 
     /**
-     * Sets contentDocument.
+     * Sets content_document.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ContentDocument $contentDocument contentDocument
+     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ContentDocument $content_document content_document
      */
-    public function setContentDocument(?ContentDocument $contentDocument) : self
+    public function setContentDocument(?ContentDocument $content_document) : self
     {
-        $this->container['contentDocument'] = $contentDocument;
+        $this->container['content_document'] = $content_document;
 
         return $this;
     }

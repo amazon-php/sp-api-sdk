@@ -57,7 +57,7 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $openAPITypes = [
         'warnings' => '\AmazonPHP\SellingPartner\Model\APlus\Error[]',
-        'nextPageToken' => 'string',
+        'next_page_token' => 'string',
     ];
 
     /**
@@ -69,7 +69,7 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $openAPIFormats = [
         'warnings' => null,
-        'nextPageToken' => null,
+        'next_page_token' => null,
     ];
 
     /**
@@ -80,7 +80,7 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $attributeMap = [
         'warnings' => 'warnings',
-        'nextPageToken' => 'nextPageToken',
+        'next_page_token' => 'nextPageToken',
     ];
 
     /**
@@ -90,7 +90,7 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $setters = [
         'warnings' => 'setWarnings',
-        'nextPageToken' => 'setNextPageToken',
+        'next_page_token' => 'setNextPageToken',
     ];
 
     /**
@@ -100,7 +100,7 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     protected static array $getters = [
         'warnings' => 'getWarnings',
-        'nextPageToken' => 'getNextPageToken',
+        'next_page_token' => 'getNextPageToken',
     ];
 
     /**
@@ -119,7 +119,7 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     public function __construct(array $data = null)
     {
         $this->container['warnings'] = $data['warnings'] ?? null;
-        $this->container['nextPageToken'] = $data['nextPageToken'] ?? null;
+        $this->container['next_page_token'] = $data['next_page_token'] ?? null;
     }
 
     /**
@@ -201,8 +201,8 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['nextPageToken'] && (\mb_strlen($this->container['nextPageToken']) < 1)) {
-            $invalidProperties[] = "invalid value for 'nextPageToken', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['next_page_token'] && (\mb_strlen($this->container['next_page_token']) < 1)) {
+            $invalidProperties[] = "invalid value for 'next_page_token', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -242,25 +242,25 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets nextPageToken.
+     * Gets next_page_token.
      */
     public function getNextPageToken() : ?string
     {
-        return $this->container['nextPageToken'];
+        return $this->container['next_page_token'];
     }
 
     /**
-     * Sets nextPageToken.
+     * Sets next_page_token.
      *
-     * @param null|string $nextPageToken A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     * @param null|string $next_page_token A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
      */
-    public function setNextPageToken(?string $nextPageToken) : self
+    public function setNextPageToken(?string $next_page_token) : self
     {
-        if (null !== $nextPageToken && (\mb_strlen($nextPageToken) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $nextPageToken when calling AplusPaginatedResponse., must be bigger than or equal to 1.');
+        if (null !== $next_page_token && (\mb_strlen($next_page_token) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $next_page_token when calling AplusPaginatedResponse., must be bigger than or equal to 1.');
         }
 
-        $this->container['nextPageToken'] = $nextPageToken;
+        $this->container['next_page_token'] = $next_page_token;
 
         return $this;
     }

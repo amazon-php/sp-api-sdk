@@ -56,7 +56,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'imagePositionType' => '\AmazonPHP\SellingPartner\Model\APlus\PositionType',
+        'image_position_type' => '\AmazonPHP\SellingPartner\Model\APlus\PositionType',
         'block' => '\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock',
     ];
 
@@ -68,7 +68,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'imagePositionType' => null,
+        'image_position_type' => null,
         'block' => null,
     ];
 
@@ -79,7 +79,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'imagePositionType' => 'imagePositionType',
+        'image_position_type' => 'imagePositionType',
         'block' => 'block',
     ];
 
@@ -89,7 +89,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $setters = [
-        'imagePositionType' => 'setImagePositionType',
+        'image_position_type' => 'setImagePositionType',
         'block' => 'setBlock',
     ];
 
@@ -99,7 +99,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * @var string[]
      */
     protected static array $getters = [
-        'imagePositionType' => 'getImagePositionType',
+        'image_position_type' => 'getImagePositionType',
         'block' => 'getBlock',
     ];
 
@@ -118,7 +118,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['imagePositionType'] = $data['imagePositionType'] ?? null;
+        $this->container['image_position_type'] = $data['image_position_type'] ?? null;
         $this->container['block'] = $data['block'] ?? null;
     }
 
@@ -201,8 +201,8 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
     {
         $invalidProperties = [];
 
-        if ($this->container['imagePositionType'] === null) {
-            $invalidProperties[] = "'imagePositionType' can't be null";
+        if ($this->container['image_position_type'] === null) {
+            $invalidProperties[] = "'image_position_type' can't be null";
         }
 
         return $invalidProperties;
@@ -220,21 +220,21 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
     }
 
     /**
-     * Gets imagePositionType.
+     * Gets image_position_type.
      */
     public function getImagePositionType() : PositionType
     {
-        return $this->container['imagePositionType'];
+        return $this->container['image_position_type'];
     }
 
     /**
-     * Sets imagePositionType.
+     * Sets image_position_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PositionType $imagePositionType imagePositionType
+     * @param \AmazonPHP\SellingPartner\Model\APlus\PositionType $image_position_type image_position_type
      */
-    public function setImagePositionType(PositionType $imagePositionType) : self
+    public function setImagePositionType(PositionType $image_position_type) : self
     {
-        $this->container['imagePositionType'] = $imagePositionType;
+        $this->container['image_position_type'] = $image_position_type;
 
         return $this;
     }

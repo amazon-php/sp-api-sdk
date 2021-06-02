@@ -2,12 +2,15 @@
 
 namespace AmazonPHP\SellingPartner\Api;
 
+use AmazonPHP\SellingPartner\AccessToken;
+use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use Psr\Http\Client\ClientExceptionInterface;
+use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestInterface;
 
 /**
@@ -16,25 +19,31 @@ use Psr\Http\Message\RequestInterface;
  */
 final class CatalogItemSDK
 {
-    private OAuth $oauth;
+    private ClientInterface $client;
 
-    public function __construct(OAuth $authentication)
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration)
     {
-        $this->oauth = $authentication;
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
     }
 
     /**
      * Operation getCatalogItem.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getCatalogItem(string $marketplaceId, string $asin) : \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse
+    public function getCatalogItem(AccessToken $accessToken, string $region, string $marketplace_id, string $asin) : \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse
     {
-        [$response] = $this->getCatalogItemWithHttpInfo($marketplaceId, $asin);
+        [$response] = $this->getCatalogItemWithHttpInfo($accessToken, $region, $marketplace_id, $asin);
 
         return $response;
     }
@@ -42,19 +51,19 @@ final class CatalogItemSDK
     /**
      * Create request for operation 'getCatalogItem'.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function getCatalogItemRequest(string $marketplaceId, string $asin) : RequestInterface
+    public function getCatalogItemRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $asin) : RequestInterface
     {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling getCatalogItem'
+                'Missing the required parameter $marketplace_id when calling getCatalogItem'
             );
         }
         // verify the required parameter 'asin' is set
@@ -72,12 +81,12 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['MarketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['MarketplaceId'] = $marketplace_id;
         }
 
         if (\count($queryParams)) {
@@ -94,17 +103,23 @@ final class CatalogItemSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -123,48 +138,38 @@ final class CatalogItemSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation listCatalogCategories.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param null|string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param null|string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
+     * @param null|string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
+     * @param null|string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function listCatalogCategories(string $marketplaceId, string $aSIN = null, string $sellerSKU = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse
+    public function listCatalogCategories(AccessToken $accessToken, string $region, string $marketplace_id, string $asin = null, string $seller_sku = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse
     {
-        [$response] = $this->listCatalogCategoriesWithHttpInfo($marketplaceId, $aSIN, $sellerSKU);
+        [$response] = $this->listCatalogCategoriesWithHttpInfo($accessToken, $region, $marketplace_id, $asin, $seller_sku);
 
         return $response;
     }
@@ -172,20 +177,20 @@ final class CatalogItemSDK
     /**
      * Create request for operation 'listCatalogCategories'.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param null|string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param null|string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
+     * @param null|string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
+     * @param null|string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function listCatalogCategoriesRequest(string $marketplaceId, string $aSIN = null, string $sellerSKU = null) : RequestInterface
+    public function listCatalogCategoriesRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $asin = null, string $seller_sku = null) : RequestInterface
     {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling listCatalogCategories'
+                'Missing the required parameter $marketplace_id when calling listCatalogCategories'
             );
         }
 
@@ -197,28 +202,28 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['MarketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['MarketplaceId'] = $marketplace_id;
         }
         // query params
-        if (\is_array($aSIN)) {
-            $aSIN = ObjectSerializer::serializeCollection($aSIN, '', true);
+        if (\is_array($asin)) {
+            $asin = ObjectSerializer::serializeCollection($asin, '', true);
         }
 
-        if ($aSIN !== null) {
-            $queryParams['ASIN'] = $aSIN;
+        if ($asin !== null) {
+            $queryParams['ASIN'] = $asin;
         }
         // query params
-        if (\is_array($sellerSKU)) {
-            $sellerSKU = ObjectSerializer::serializeCollection($sellerSKU, '', true);
+        if (\is_array($seller_sku)) {
+            $seller_sku = ObjectSerializer::serializeCollection($seller_sku, '', true);
         }
 
-        if ($sellerSKU !== null) {
-            $queryParams['SellerSKU'] = $sellerSKU;
+        if ($seller_sku !== null) {
+            $queryParams['SellerSKU'] = $seller_sku;
         }
 
         if (\count($queryParams)) {
@@ -226,17 +231,23 @@ final class CatalogItemSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -255,53 +266,43 @@ final class CatalogItemSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation listCatalogItems.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
      * @param null|string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
-     * @param null|string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param null|string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     * @param null|string $uPC A 12-digit bar code used for retail packaging. (optional)
-     * @param null|string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
-     * @param null|string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
-     * @param null|string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
+     * @param null|string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
+     * @param null|string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $upc A 12-digit bar code used for retail packaging. (optional)
+     * @param null|string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
+     * @param null|string $isbn The unique commercial book identifier used to identify books internationally. (optional)
+     * @param null|string $jan A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function listCatalogItems(string $marketplaceId, string $query = null, string $queryContextId = null, string $sellerSKU = null, string $uPC = null, string $eAN = null, string $iSBN = null, string $jAN = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse
+    public function listCatalogItems(AccessToken $accessToken, string $region, string $marketplace_id, string $query = null, string $query_context_id = null, string $seller_sku = null, string $upc = null, string $ean = null, string $isbn = null, string $jan = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse
     {
-        [$response] = $this->listCatalogItemsWithHttpInfo($marketplaceId, $query, $queryContextId, $sellerSKU, $uPC, $eAN, $iSBN, $jAN);
+        [$response] = $this->listCatalogItemsWithHttpInfo($accessToken, $region, $marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
 
         return $response;
     }
@@ -309,25 +310,25 @@ final class CatalogItemSDK
     /**
      * Create request for operation 'listCatalogItems'.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
      * @param null|string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
-     * @param null|string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param null|string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     * @param null|string $uPC A 12-digit bar code used for retail packaging. (optional)
-     * @param null|string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
-     * @param null|string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
-     * @param null|string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
+     * @param null|string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
+     * @param null|string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $upc A 12-digit bar code used for retail packaging. (optional)
+     * @param null|string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
+     * @param null|string $isbn The unique commercial book identifier used to identify books internationally. (optional)
+     * @param null|string $jan A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
      *
      * @throws InvalidArgumentException
      *
      * @return RequestInterface
      */
-    public function listCatalogItemsRequest(string $marketplaceId, string $query = null, string $queryContextId = null, string $sellerSKU = null, string $uPC = null, string $eAN = null, string $iSBN = null, string $jAN = null) : RequestInterface
+    public function listCatalogItemsRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $query = null, string $query_context_id = null, string $seller_sku = null, string $upc = null, string $ean = null, string $isbn = null, string $jan = null) : RequestInterface
     {
-        // verify the required parameter 'marketplaceId' is set
-        if ($marketplaceId === null || (\is_array($marketplaceId) && \count($marketplaceId) === 0)) {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
-                'Missing the required parameter $marketplaceId when calling listCatalogItems'
+                'Missing the required parameter $marketplace_id when calling listCatalogItems'
             );
         }
 
@@ -339,12 +340,12 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
-        if (\is_array($marketplaceId)) {
-            $marketplaceId = ObjectSerializer::serializeCollection($marketplaceId, '', true);
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
-        if ($marketplaceId !== null) {
-            $queryParams['MarketplaceId'] = $marketplaceId;
+        if ($marketplace_id !== null) {
+            $queryParams['MarketplaceId'] = $marketplace_id;
         }
         // query params
         if (\is_array($query)) {
@@ -355,52 +356,52 @@ final class CatalogItemSDK
             $queryParams['Query'] = $query;
         }
         // query params
-        if (\is_array($queryContextId)) {
-            $queryContextId = ObjectSerializer::serializeCollection($queryContextId, '', true);
+        if (\is_array($query_context_id)) {
+            $query_context_id = ObjectSerializer::serializeCollection($query_context_id, '', true);
         }
 
-        if ($queryContextId !== null) {
-            $queryParams['QueryContextId'] = $queryContextId;
+        if ($query_context_id !== null) {
+            $queryParams['QueryContextId'] = $query_context_id;
         }
         // query params
-        if (\is_array($sellerSKU)) {
-            $sellerSKU = ObjectSerializer::serializeCollection($sellerSKU, '', true);
+        if (\is_array($seller_sku)) {
+            $seller_sku = ObjectSerializer::serializeCollection($seller_sku, '', true);
         }
 
-        if ($sellerSKU !== null) {
-            $queryParams['SellerSKU'] = $sellerSKU;
+        if ($seller_sku !== null) {
+            $queryParams['SellerSKU'] = $seller_sku;
         }
         // query params
-        if (\is_array($uPC)) {
-            $uPC = ObjectSerializer::serializeCollection($uPC, '', true);
+        if (\is_array($upc)) {
+            $upc = ObjectSerializer::serializeCollection($upc, '', true);
         }
 
-        if ($uPC !== null) {
-            $queryParams['UPC'] = $uPC;
+        if ($upc !== null) {
+            $queryParams['UPC'] = $upc;
         }
         // query params
-        if (\is_array($eAN)) {
-            $eAN = ObjectSerializer::serializeCollection($eAN, '', true);
+        if (\is_array($ean)) {
+            $ean = ObjectSerializer::serializeCollection($ean, '', true);
         }
 
-        if ($eAN !== null) {
-            $queryParams['EAN'] = $eAN;
+        if ($ean !== null) {
+            $queryParams['EAN'] = $ean;
         }
         // query params
-        if (\is_array($iSBN)) {
-            $iSBN = ObjectSerializer::serializeCollection($iSBN, '', true);
+        if (\is_array($isbn)) {
+            $isbn = ObjectSerializer::serializeCollection($isbn, '', true);
         }
 
-        if ($iSBN !== null) {
-            $queryParams['ISBN'] = $iSBN;
+        if ($isbn !== null) {
+            $queryParams['ISBN'] = $isbn;
         }
         // query params
-        if (\is_array($jAN)) {
-            $jAN = ObjectSerializer::serializeCollection($jAN, '', true);
+        if (\is_array($jan)) {
+            $jan = ObjectSerializer::serializeCollection($jan, '', true);
         }
 
-        if ($jAN !== null) {
-            $queryParams['JAN'] = $jAN;
+        if ($jan !== null) {
+            $queryParams['JAN'] = $jan;
         }
 
         if (\count($queryParams)) {
@@ -408,17 +409,23 @@ final class CatalogItemSDK
         }
 
         if ($multipart) {
-            $headers = ['Accept' => ['application/json']];
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
         } else {
             $headers = [
-                'Content-Type' => ['application/json'],
-                'Accept' => ['application/json'],
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
             ];
         }
 
-        $request = $this->oauth->requestFactory()->createRequest(
-            $method = 'GET',
-            $host = $this->oauth->configuration()->apiURL() . $resourcePath . '?' . $query
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
         // for model (json/xml)
@@ -437,39 +444,29 @@ final class CatalogItemSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === 'application/json') {
-                $request = $request->withBody($this->oauth->requestFactory()->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } elseif ($headers['Content-Type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
         }
 
-        $defaultHeaders = HttpSignatureHeaders::forIAMUser(
-            $this->oauth->configuration(),
-            $method,
-            $this->oauth->accessToken(),
-            $resourcePath,
-            $query,
-            (string) $request->getBody()
-        );
-
-        $headers = \array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        foreach ($headers as $name => $header) {
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
             $request = $request->withHeader($name, $header);
         }
 
-        return $request;
+        return HttpSignatureHeaders::forIAMUser(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
     }
 
     /**
      * Operation getCatalogItemWithHttpInfo.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
      * @throws ApiException on non-2xx response
@@ -477,13 +474,13 @@ final class CatalogItemSDK
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse>
      */
-    private function getCatalogItemWithHttpInfo(string $marketplaceId, string $asin) : array
+    private function getCatalogItemWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $asin) : array
     {
-        $request = $this->getCatalogItemRequest($marketplaceId, $asin);
+        $request = $this->getCatalogItemRequest($accessToken, $region, $marketplace_id, $asin);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -520,7 +517,12 @@ final class CatalogItemSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -530,7 +532,12 @@ final class CatalogItemSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -545,6 +552,7 @@ final class CatalogItemSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse::class,
                         $e->getResponseHeaders()
@@ -561,22 +569,22 @@ final class CatalogItemSDK
     /**
      * Operation listCatalogCategoriesWithHttpInfo.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param null|string $aSIN The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param null|string $sellerSKU Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
+     * @param null|string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
+     * @param null|string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse>
      */
-    private function listCatalogCategoriesWithHttpInfo(string $marketplaceId, string $aSIN = null, string $sellerSKU = null) : array
+    private function listCatalogCategoriesWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $asin = null, string $seller_sku = null) : array
     {
-        $request = $this->listCatalogCategoriesRequest($marketplaceId, $aSIN, $sellerSKU);
+        $request = $this->listCatalogCategoriesRequest($accessToken, $region, $marketplace_id, $asin, $seller_sku);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -613,7 +621,12 @@ final class CatalogItemSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -623,7 +636,12 @@ final class CatalogItemSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -638,6 +656,7 @@ final class CatalogItemSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse::class,
                         $e->getResponseHeaders()
@@ -654,27 +673,27 @@ final class CatalogItemSDK
     /**
      * Operation listCatalogItemsWithHttpInfo.
      *
-     * @param string $marketplaceId A marketplace identifier. Specifies the marketplace for which items are returned. (required)
+     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
      * @param null|string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
-     * @param null|string $queryContextId An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param null|string $sellerSKU Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     * @param null|string $uPC A 12-digit bar code used for retail packaging. (optional)
-     * @param null|string $eAN A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
-     * @param null|string $iSBN The unique commercial book identifier used to identify books internationally. (optional)
-     * @param null|string $jAN A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
+     * @param null|string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
+     * @param null|string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
+     * @param null|string $upc A 12-digit bar code used for retail packaging. (optional)
+     * @param null|string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
+     * @param null|string $isbn The unique commercial book identifier used to identify books internationally. (optional)
+     * @param null|string $jan A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse>
      */
-    private function listCatalogItemsWithHttpInfo(string $marketplaceId, string $query = null, string $queryContextId = null, string $sellerSKU = null, string $uPC = null, string $eAN = null, string $iSBN = null, string $jAN = null) : array
+    private function listCatalogItemsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $query = null, string $query_context_id = null, string $seller_sku = null, string $upc = null, string $ean = null, string $isbn = null, string $jan = null) : array
     {
-        $request = $this->listCatalogItemsRequest($marketplaceId, $query, $queryContextId, $sellerSKU, $uPC, $eAN, $iSBN, $jAN);
+        $request = $this->listCatalogItemsRequest($accessToken, $region, $marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
 
         try {
             try {
-                $response = $this->oauth->client()->sendRequest($request);
+                $response = $this->client->sendRequest($request);
             } catch (ClientExceptionInterface $e) {
                 throw new ApiException(
                     "[{$e->getCode()}] {$e->getMessage()}",
@@ -711,7 +730,12 @@ final class CatalogItemSDK
                     $content = (string) $response->getBody()->getContents();
 
                     return [
-                        ObjectSerializer::deserialize($content, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse::class, []),
+                        ObjectSerializer::deserialize(
+                            $this->configuration,
+                            $content,
+                            \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse::class,
+                            []
+                        ),
                         $response->getStatusCode(),
                         $response->getHeaders(),
                     ];
@@ -721,7 +745,12 @@ final class CatalogItemSDK
             $content = (string) $response->getBody()->getContents();
 
             return [
-                ObjectSerializer::deserialize($content, $returnType, []),
+                ObjectSerializer::deserialize(
+                    $this->configuration,
+                    $content,
+                    $returnType,
+                    []
+                ),
                 $response->getStatusCode(),
                 $response->getHeaders(),
             ];
@@ -736,6 +765,7 @@ final class CatalogItemSDK
                 case 500:
                 case 503:
                     $data = ObjectSerializer::deserialize(
+                        $this->configuration,
                         $e->getResponseBody(),
                         \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse::class,
                         $e->getResponseHeaders()

@@ -56,8 +56,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'totalResearchingQuantity' => 'int',
-        'researchingQuantityBreakdown' => '\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[]',
+        'total_researching_quantity' => 'int',
+        'researching_quantity_breakdown' => '\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[]',
     ];
 
     /**
@@ -68,8 +68,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'totalResearchingQuantity' => null,
-        'researchingQuantityBreakdown' => null,
+        'total_researching_quantity' => null,
+        'researching_quantity_breakdown' => null,
     ];
 
     /**
@@ -79,8 +79,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $attributeMap = [
-        'totalResearchingQuantity' => 'totalResearchingQuantity',
-        'researchingQuantityBreakdown' => 'researchingQuantityBreakdown',
+        'total_researching_quantity' => 'totalResearchingQuantity',
+        'researching_quantity_breakdown' => 'researchingQuantityBreakdown',
     ];
 
     /**
@@ -89,8 +89,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $setters = [
-        'totalResearchingQuantity' => 'setTotalResearchingQuantity',
-        'researchingQuantityBreakdown' => 'setResearchingQuantityBreakdown',
+        'total_researching_quantity' => 'setTotalResearchingQuantity',
+        'researching_quantity_breakdown' => 'setResearchingQuantityBreakdown',
     ];
 
     /**
@@ -99,8 +99,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * @var string[]
      */
     protected static array $getters = [
-        'totalResearchingQuantity' => 'getTotalResearchingQuantity',
-        'researchingQuantityBreakdown' => 'getResearchingQuantityBreakdown',
+        'total_researching_quantity' => 'getTotalResearchingQuantity',
+        'researching_quantity_breakdown' => 'getResearchingQuantityBreakdown',
     ];
 
     /**
@@ -118,8 +118,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function __construct(array $data = null)
     {
-        $this->container['totalResearchingQuantity'] = $data['totalResearchingQuantity'] ?? null;
-        $this->container['researchingQuantityBreakdown'] = $data['researchingQuantityBreakdown'] ?? null;
+        $this->container['total_researching_quantity'] = $data['total_researching_quantity'] ?? null;
+        $this->container['researching_quantity_breakdown'] = $data['researching_quantity_breakdown'] ?? null;
     }
 
     /**
@@ -214,43 +214,43 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Gets totalResearchingQuantity.
+     * Gets total_researching_quantity.
      */
     public function getTotalResearchingQuantity() : ?int
     {
-        return $this->container['totalResearchingQuantity'];
+        return $this->container['total_researching_quantity'];
     }
 
     /**
-     * Sets totalResearchingQuantity.
+     * Sets total_researching_quantity.
      *
-     * @param null|int $totalResearchingQuantity the total number of units currently being researched in Amazon's fulfillment network
+     * @param null|int $total_researching_quantity the total number of units currently being researched in Amazon's fulfillment network
      */
-    public function setTotalResearchingQuantity(?int $totalResearchingQuantity) : self
+    public function setTotalResearchingQuantity(?int $total_researching_quantity) : self
     {
-        $this->container['totalResearchingQuantity'] = $totalResearchingQuantity;
+        $this->container['total_researching_quantity'] = $total_researching_quantity;
 
         return $this;
     }
 
     /**
-     * Gets researchingQuantityBreakdown.
+     * Gets researching_quantity_breakdown.
      *
      * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[]
      */
     public function getResearchingQuantityBreakdown() : ?array
     {
-        return $this->container['researchingQuantityBreakdown'];
+        return $this->container['researching_quantity_breakdown'];
     }
 
     /**
-     * Sets researchingQuantityBreakdown.
+     * Sets researching_quantity_breakdown.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[] $researchingQuantityBreakdown a list of quantity details for items currently being researched
+     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[] $researching_quantity_breakdown a list of quantity details for items currently being researched
      */
-    public function setResearchingQuantityBreakdown(?array $researchingQuantityBreakdown) : self
+    public function setResearchingQuantityBreakdown(?array $researching_quantity_breakdown) : self
     {
-        $this->container['researchingQuantityBreakdown'] = $researchingQuantityBreakdown;
+        $this->container['researching_quantity_breakdown'] = $researching_quantity_breakdown;
 
         return $this;
     }

@@ -57,10 +57,10 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPITypes = [
         'name' => 'string',
-        'contentType' => '\AmazonPHP\SellingPartner\Model\APlus\ContentType',
-        'contentSubType' => 'string',
+        'content_type' => '\AmazonPHP\SellingPartner\Model\APlus\ContentType',
+        'content_sub_type' => 'string',
         'locale' => 'string',
-        'contentModuleList' => '\AmazonPHP\SellingPartner\Model\APlus\ContentModule[]',
+        'content_module_list' => '\AmazonPHP\SellingPartner\Model\APlus\ContentModule[]',
     ];
 
     /**
@@ -72,10 +72,10 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPIFormats = [
         'name' => null,
-        'contentType' => null,
-        'contentSubType' => null,
+        'content_type' => null,
+        'content_sub_type' => null,
         'locale' => null,
-        'contentModuleList' => null,
+        'content_module_list' => null,
     ];
 
     /**
@@ -86,10 +86,10 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $attributeMap = [
         'name' => 'name',
-        'contentType' => 'contentType',
-        'contentSubType' => 'contentSubType',
+        'content_type' => 'contentType',
+        'content_sub_type' => 'contentSubType',
         'locale' => 'locale',
-        'contentModuleList' => 'contentModuleList',
+        'content_module_list' => 'contentModuleList',
     ];
 
     /**
@@ -99,10 +99,10 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $setters = [
         'name' => 'setName',
-        'contentType' => 'setContentType',
-        'contentSubType' => 'setContentSubType',
+        'content_type' => 'setContentType',
+        'content_sub_type' => 'setContentSubType',
         'locale' => 'setLocale',
-        'contentModuleList' => 'setContentModuleList',
+        'content_module_list' => 'setContentModuleList',
     ];
 
     /**
@@ -112,10 +112,10 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $getters = [
         'name' => 'getName',
-        'contentType' => 'getContentType',
-        'contentSubType' => 'getContentSubType',
+        'content_type' => 'getContentType',
+        'content_sub_type' => 'getContentSubType',
         'locale' => 'getLocale',
-        'contentModuleList' => 'getContentModuleList',
+        'content_module_list' => 'getContentModuleList',
     ];
 
     /**
@@ -134,10 +134,10 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
-        $this->container['contentType'] = $data['contentType'] ?? null;
-        $this->container['contentSubType'] = $data['contentSubType'] ?? null;
+        $this->container['content_type'] = $data['content_type'] ?? null;
+        $this->container['content_sub_type'] = $data['content_sub_type'] ?? null;
         $this->container['locale'] = $data['locale'] ?? null;
-        $this->container['contentModuleList'] = $data['contentModuleList'] ?? null;
+        $this->container['content_module_list'] = $data['content_module_list'] ?? null;
     }
 
     /**
@@ -231,12 +231,12 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
         }
 
-        if ($this->container['contentType'] === null) {
-            $invalidProperties[] = "'contentType' can't be null";
+        if ($this->container['content_type'] === null) {
+            $invalidProperties[] = "'content_type' can't be null";
         }
 
-        if (null !== $this->container['contentSubType'] && (\mb_strlen($this->container['contentSubType']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contentSubType', the character length must be bigger than or equal to 1.";
+        if (null !== $this->container['content_sub_type'] && (\mb_strlen($this->container['content_sub_type']) < 1)) {
+            $invalidProperties[] = "invalid value for 'content_sub_type', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['locale'] === null) {
@@ -247,16 +247,16 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "invalid value for 'locale', the character length must be bigger than or equal to 5.";
         }
 
-        if ($this->container['contentModuleList'] === null) {
-            $invalidProperties[] = "'contentModuleList' can't be null";
+        if ($this->container['content_module_list'] === null) {
+            $invalidProperties[] = "'content_module_list' can't be null";
         }
 
-        if ((\count($this->container['contentModuleList']) > 100)) {
-            $invalidProperties[] = "invalid value for 'contentModuleList', number of items must be less than or equal to 100.";
+        if ((\count($this->container['content_module_list']) > 100)) {
+            $invalidProperties[] = "invalid value for 'content_module_list', number of items must be less than or equal to 100.";
         }
 
-        if ((\count($this->container['contentModuleList']) < 1)) {
-            $invalidProperties[] = "invalid value for 'contentModuleList', number of items must be greater than or equal to 1.";
+        if ((\count($this->container['content_module_list']) < 1)) {
+            $invalidProperties[] = "invalid value for 'content_module_list', number of items must be greater than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -302,45 +302,45 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets contentType.
+     * Gets content_type.
      */
     public function getContentType() : ContentType
     {
-        return $this->container['contentType'];
+        return $this->container['content_type'];
     }
 
     /**
-     * Sets contentType.
+     * Sets content_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentType $contentType contentType
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentType $content_type content_type
      */
-    public function setContentType(ContentType $contentType) : self
+    public function setContentType(ContentType $content_type) : self
     {
-        $this->container['contentType'] = $contentType;
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }
 
     /**
-     * Gets contentSubType.
+     * Gets content_sub_type.
      */
     public function getContentSubType() : ?string
     {
-        return $this->container['contentSubType'];
+        return $this->container['content_sub_type'];
     }
 
     /**
-     * Sets contentSubType.
+     * Sets content_sub_type.
      *
-     * @param null|string $contentSubType The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
+     * @param null|string $content_sub_type The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
      */
-    public function setContentSubType(?string $contentSubType) : self
+    public function setContentSubType(?string $content_sub_type) : self
     {
-        if (null !== $contentSubType && (\mb_strlen($contentSubType) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contentSubType when calling ContentDocument., must be bigger than or equal to 1.');
+        if (null !== $content_sub_type && (\mb_strlen($content_sub_type) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $content_sub_type when calling ContentDocument., must be bigger than or equal to 1.');
         }
 
-        $this->container['contentSubType'] = $contentSubType;
+        $this->container['content_sub_type'] = $content_sub_type;
 
         return $this;
     }
@@ -370,30 +370,30 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets contentModuleList.
+     * Gets content_module_list.
      *
      * @return \AmazonPHP\SellingPartner\Model\APlus\ContentModule[]
      */
     public function getContentModuleList() : array
     {
-        return $this->container['contentModuleList'];
+        return $this->container['content_module_list'];
     }
 
     /**
-     * Sets contentModuleList.
+     * Sets content_module_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentModule[] $contentModuleList a list of A+ Content modules
+     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentModule[] $content_module_list a list of A+ Content modules
      */
-    public function setContentModuleList(array $contentModuleList) : self
+    public function setContentModuleList(array $content_module_list) : self
     {
-        if ((\count($contentModuleList) > 100)) {
-            throw new \InvalidArgumentException('invalid value for $contentModuleList when calling ContentDocument., number of items must be less than or equal to 100.');
+        if ((\count($content_module_list) > 100)) {
+            throw new \InvalidArgumentException('invalid value for $content_module_list when calling ContentDocument., number of items must be less than or equal to 100.');
         }
 
-        if ((\count($contentModuleList) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $contentModuleList when calling ContentDocument., number of items must be greater than or equal to 1.');
+        if ((\count($content_module_list) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $content_module_list when calling ContentDocument., number of items must be greater than or equal to 1.');
         }
-        $this->container['contentModuleList'] = $contentModuleList;
+        $this->container['content_module_list'] = $content_module_list;
 
         return $this;
     }
