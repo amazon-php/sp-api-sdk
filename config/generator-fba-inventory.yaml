@@ -4,7 +4,7 @@ additionalProperties:
   invokerPackage: AmazonPHP\SellingPartner
   srcBasePath: src/AmazonPHP/SellingPartner
   modelPackage: Model\FBAInventory
-  packageName: FBAInventorySDK
+  packageName: FBAInventory
 files:
   api.mustache:
     templateType: API

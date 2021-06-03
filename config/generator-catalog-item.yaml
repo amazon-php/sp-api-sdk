@@ -4,7 +4,7 @@ additionalProperties:
   invokerPackage: AmazonPHP\SellingPartner
   srcBasePath: src/AmazonPHP/SellingPartner
   modelPackage: Model\CatalogItem
-  packageName: CatalogItemSDK
+  packageName: CatalogItem
 files:
   api.mustache:
     templateType: API
