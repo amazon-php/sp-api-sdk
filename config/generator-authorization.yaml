@@ -4,7 +4,7 @@ additionalProperties:
   invokerPackage: AmazonPHP\SellingPartner
   srcBasePath: src/AmazonPHP/SellingPartner
   modelPackage: Model\Authorization
-  packageName: AuthorizationSDK
+  packageName: Authorization
 files:
   api.mustache:
     templateType: API

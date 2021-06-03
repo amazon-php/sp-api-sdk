@@ -4,7 +4,7 @@ additionalProperties:
   invokerPackage: AmazonPHP\SellingPartner
   srcBasePath: src/AmazonPHP/SellingPartner
   modelPackage: Model\APlus
-  packageName: APlusSDK
+  packageName: APlus
 files:
   api.mustache:
     templateType: API

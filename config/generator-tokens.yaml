@@ -4,7 +4,7 @@ additionalProperties:
   invokerPackage: AmazonPHP\SellingPartner
   srcBasePath: src/AmazonPHP/SellingPartner
   modelPackage: Model\Tokens
-  packageName: TokensSDK
+  packageName: Tokens
   useTags: false
 files:
   api.mustache:

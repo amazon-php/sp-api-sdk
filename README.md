@@ -67,11 +67,10 @@ $oauth = new OAuth(
 
 $accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
 
-$catalog = new CatalogItemSDK(
-    $client,
-    new HttpFactory($factory, $factory),
-    $config
-);
+$logger = new Logger('name');
+$logger->pushHandler(new StreamHandler(__DIR__ . '/sp-api-php.log', Logger::DEBUG));
+
+$catalog = new CatalogItemSDK($client, $httpFactory, $config, $logger);
 
 try {
     $item = $catalog->getCatalogItem(
@@ -84,4 +83,38 @@ try {
 } catch (ApiException $exception) {
     dump($exception->getMessage());
 }
+```
+
+### Logging
+
+Default log level is set up to DEBUG, but it can be changed in configuration to any other 
+level for all operations in all APIs or only for given operation in given API. 
+
+```
+$configuration->setDefaultLogLevel(\Psr\Log\LogLevel::INFO);
+```
+
+Specific API's or only given operations can be also excluded from logging (for example APIs with PII or sensitive data).
+
+```
+$configuration->setLogLevel(CatalogItemSDK::API_NAME, CatalogItemSDK::OPERATION_GETCATALOGITEM, LogLevel::INFO);
+$configuration->setSkipLogging(TokensSDK::API_NAME);
+$configuration->setSkipLogging(AuthorizationSDK::API_NAME, AuthorizationSDK::OPERATION_GETAUTHORIZATIONCODE);
+```
+
+Finally, you can also ignore specific headers when logging http request/response.
+By default, configuration is set to ignore following sensitive authorization headers:
+
+```
+'authorization',
+'x-amz-access-token',
+'proxy-authorization',
+'www-authenticate',
+'proxy-authenticate',
+```
+
+you can also add your own ignored headers: 
+
+```
+$configuration->loggingAddSkippedHeader('some-sensitive-key');
 ```

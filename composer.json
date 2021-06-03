@@ -20,12 +20,15 @@
         "ext-json": "*",
         "ext-mbstring": "*",
         "psr/http-client": "^1.0.1",
-        "psr/http-factory": "^1.0"
+        "psr/http-factory": "^1.0",
+        "psr/log": "^1.1",
+        "symfony/polyfill-uuid": "^1.23"
     },
     "require-dev": {
         "nyholm/psr7": "^1.4",
         "kriswallsmith/buzz": "^1.2",
-        "symfony/var-dumper": "^5.2"
+        "symfony/var-dumper": "^5.2",
+        "monolog/monolog": "^2.2"
     },
     "autoload": {
         "psr-4": { "AmazonPHP\\" : "src/AmazonPHP/" }
