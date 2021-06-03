@@ -43,9 +43,39 @@ final class APlusSDK
      */
     public function createContentDocument(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
-        [$response] = $this->createContentDocumentWithHttpInfo($accessToken, $region, $marketplace_id, $post_content_document_request);
+        $request = $this->createContentDocumentRequest($accessToken, $region, $marketplace_id, $post_content_document_request);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
+            []
+        );
     }
 
     /**
@@ -173,9 +203,39 @@ final class APlusSDK
      */
     public function getContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse
     {
-        [$response] = $this->getContentDocumentWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set);
+        $request = $this->getContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse::class,
+            []
+        );
     }
 
     /**
@@ -330,9 +390,39 @@ final class APlusSDK
      */
     public function listContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set = null, array $asin_set = null, string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse
     {
-        [$response] = $this->listContentDocumentAsinRelationsWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
+        $request = $this->listContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse::class,
+            []
+        );
     }
 
     /**
@@ -499,9 +589,39 @@ final class APlusSDK
      */
     public function postContentDocumentApprovalSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse
     {
-        [$response] = $this->postContentDocumentApprovalSubmissionWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id);
+        $request = $this->postContentDocumentApprovalSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse::class,
+            []
+        );
     }
 
     /**
@@ -634,9 +754,39 @@ final class APlusSDK
      */
     public function postContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse
     {
-        [$response] = $this->postContentDocumentAsinRelationsWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
+        $request = $this->postContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse::class,
+            []
+        );
     }
 
     /**
@@ -784,9 +934,39 @@ final class APlusSDK
      */
     public function postContentDocumentSuspendSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse
     {
-        [$response] = $this->postContentDocumentSuspendSubmissionWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id);
+        $request = $this->postContentDocumentSuspendSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse::class,
+            []
+        );
     }
 
     /**
@@ -918,9 +1098,39 @@ final class APlusSDK
      */
     public function searchContentDocuments(AccessToken $accessToken, string $region, string $marketplace_id, string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse
     {
-        [$response] = $this->searchContentDocumentsWithHttpInfo($accessToken, $region, $marketplace_id, $page_token);
+        $request = $this->searchContentDocumentsRequest($accessToken, $region, $marketplace_id, $page_token);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse::class,
+            []
+        );
     }
 
     /**
@@ -1045,9 +1255,39 @@ final class APlusSDK
      */
     public function searchContentPublishRecords(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse
     {
-        [$response] = $this->searchContentPublishRecordsWithHttpInfo($accessToken, $region, $marketplace_id, $asin, $page_token);
+        $request = $this->searchContentPublishRecordsRequest($accessToken, $region, $marketplace_id, $asin, $page_token);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse::class,
+            []
+        );
     }
 
     /**
@@ -1192,9 +1432,39 @@ final class APlusSDK
      */
     public function updateContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
-        [$response] = $this->updateContentDocumentWithHttpInfo($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_request);
+        $request = $this->updateContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_request);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
+            []
+        );
     }
 
     /**
@@ -1343,9 +1613,39 @@ final class APlusSDK
      */
     public function validateContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, array $asin_set = null) : \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse
     {
-        [$response] = $this->validateContentDocumentAsinRelationsWithHttpInfo($accessToken, $region, $marketplace_id, $post_content_document_request, $asin_set);
+        $request = $this->validateContentDocumentAsinRelationsRequest($accessToken, $region, $marketplace_id, $post_content_document_request, $asin_set);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse::class,
+            []
+        );
     }
 
     /**
@@ -1468,1267 +1768,5 @@ final class APlusSDK
             $region,
             $request
         );
-    }
-
-    /**
-     * Operation createContentDocumentWithHttpInfo.
-     *
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse>
-     */
-    private function createContentDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : array
-    {
-        $request = $this->createContentDocumentRequest($accessToken, $region, $marketplace_id, $post_content_document_request);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getContentDocumentWithHttpInfo.
-     *
-     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string> $included_data_set The set of A+ Content data types to include in the response. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse>
-     */
-    private function getContentDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : array
-    {
-        $request = $this->getContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation listContentDocumentAsinRelationsWithHttpInfo.
-     *
-     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string>|null $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
-     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
-     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse>
-     */
-    private function listContentDocumentAsinRelationsWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set = null, array $asin_set = null, string $page_token = null) : array
-    {
-        $request = $this->listContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation postContentDocumentApprovalSubmissionWithHttpInfo.
-     *
-     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse>
-     */
-    private function postContentDocumentApprovalSubmissionWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : array
-    {
-        $request = $this->postContentDocumentApprovalSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation postContentDocumentAsinRelationsWithHttpInfo.
-     *
-     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request The content document ASIN relations request details. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse>
-     */
-    private function postContentDocumentAsinRelationsWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : array
-    {
-        $request = $this->postContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation postContentDocumentSuspendSubmissionWithHttpInfo.
-     *
-     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse>
-     */
-    private function postContentDocumentSuspendSubmissionWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : array
-    {
-        $request = $this->postContentDocumentSuspendSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation searchContentDocumentsWithHttpInfo.
-     *
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse>
-     */
-    private function searchContentDocumentsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $page_token = null) : array
-    {
-        $request = $this->searchContentDocumentsRequest($accessToken, $region, $marketplace_id, $page_token);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation searchContentPublishRecordsWithHttpInfo.
-     *
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param string $asin The Amazon Standard Identification Number (ASIN). (required)
-     * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse>
-     */
-    private function searchContentPublishRecordsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, string $page_token = null) : array
-    {
-        $request = $this->searchContentPublishRecordsRequest($accessToken, $region, $marketplace_id, $asin, $page_token);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation updateContentDocumentWithHttpInfo.
-     *
-     * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse>
-     */
-    private function updateContentDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : array
-    {
-        $request = $this->updateContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_request);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 410:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation validateContentDocumentAsinRelationsWithHttpInfo.
-     *
-     * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
-     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse>
-     */
-    private function validateContentDocumentAsinRelationsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, array $asin_set = null) : array
-    {
-        $request = $this->validateContentDocumentAsinRelationsRequest($accessToken, $region, $marketplace_id, $post_content_document_request, $asin_set);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\APlus\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
     }
 }

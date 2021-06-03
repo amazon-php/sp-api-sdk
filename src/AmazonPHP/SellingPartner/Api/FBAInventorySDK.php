@@ -48,9 +48,39 @@ final class FBAInventorySDK
      */
     public function getInventorySummaries(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse
     {
-        [$response] = $this->getInventorySummariesWithHttpInfo($accessToken, $region, $granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
+        $request = $this->getInventorySummariesRequest($accessToken, $region, $granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class,
+            []
+        );
     }
 
     /**
@@ -218,111 +248,5 @@ final class FBAInventorySDK
             $region,
             $request
         );
-    }
-
-    /**
-     * Operation getInventorySummariesWithHttpInfo.
-     *
-     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
-     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param null|\DateTime $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param array<array-key, string>|null $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param null|string $next_token String token returned in the response of your previous request. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse>
-     */
-    private function getInventorySummariesWithHttpInfo(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null) : array
-    {
-        $request = $this->getInventorySummariesRequest($accessToken, $region, $granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
     }
 }

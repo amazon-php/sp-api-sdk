@@ -70,48 +70,6 @@ final {{#operations}}class {{packageName}}
      */
     public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}, {{#allParams}}${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}}){{#returnType}}: {{returnType}}{{/returnType}}
     {
-        {{#returnType}}list($response) = {{/returnType}}$this->{{operationId}}WithHttpInfo($accessToken, $region, {{^vendorExtensions.x-group-parameters}}{{#allParams}}${{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}});{{#returnType}}
-        return $response;{{/returnType}}
-    }
-
-    /**
-     * Operation {{{operationId}}}WithHttpInfo
-{{#summary}}
-     *
-     * {{.}}
-{{/summary}}
-     *
-{{#description}}
-     * {{.}}
-     *
-{{/description}}
-{{#vendorExtensions.x-group-parameters}}
-     * Note: the input parameter is an associative array with the keys listed as the parameter name below
-     *
-{{/vendorExtensions.x-group-parameters}}
-{{#servers}}
-{{#-first}}
-     * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-{{/-first}}
-     * URL: {{{url}}}
-{{#-last}}
-     *
-{{/-last}}
-{{/servers}}
-     * @param AccessToken $accessToken
-     * @param string $region
-{{#allParams}}
-     * @param  {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
-{{/allParams}}
-     *
-     * @throws \{{invokerPackage}}\Exception\ApiException on non-2xx response
-     * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
-    {{#returnType}}
-     * @return array<{{returnType}}>
-    {{/returnType}}
-     */
-    private function {{operationId}}WithHttpInfo(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}, {{#allParams}}${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}}) : array
-    {
         $request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}, {{#allParams}}${{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}});
 
         try {
@@ -141,66 +99,33 @@ final {{#operations}}class {{packageName}}
                 );
             }
             {{#returnType}}
-            {{#responses}}
-            {{#-first}}
 
-            switch($statusCode) {
-            {{/-first}}
-            {{#dataType}}
-                {{^isWildcard}}case {{code}}:{{/isWildcard}}{{#isWildcard}}default:{{/isWildcard}}
-                    $content = (string) $response->getBody()->getContents();
+            /** @var {{{returnType}}} $result */
+            $result = ObjectSerializer::deserialize(
+                $this->configuration,
+                (string) $response->getBody()->getContents(),
+                {{{returnType}}}::class,
+                []
+            );
 
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            {{{dataType}}}::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            {{/dataType}}
-            {{#-last}}
-            }
-            {{/-last}}
-            {{/responses}}
-
-            $returnType = {{{returnType}}}::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
+            return $result;
             {{/returnType}}
             {{^returnType}}
 
-            return [null, $statusCode, $response->getHeaders()];
+            return null;
             {{/returnType}}
 
         } catch (ApiException $e) {
-            switch ($e->getCode()) {
-        {{#responses}}
             {{#dataType}}
-                {{^isWildcard}}case {{code}}:{{/isWildcard}}{{#isWildcard}}default:{{/isWildcard}}
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        {{{dataType}}}::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
+            $data = ObjectSerializer::deserialize(
+                $this->configuration,
+                $e->getResponseBody(),
+                {{{dataType}}}::class,
+                $e->getResponseHeaders()
+            );
+            $e->setResponseObject($data);
+            break;
             {{/dataType}}
-        {{/responses}}
-            }
             throw $e;
         }
     }
@@ -224,7 +149,7 @@ final {{#operations}}class {{packageName}}
      * @param AccessToken $accessToken
      * @param string $region
 {{#allParams}}
-     * @param  {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
+     * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
 {{/allParams}}
      *
      * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
@@ -375,7 +300,6 @@ final {{#operations}}class {{packageName}}
             {{/isFile}}
         }
         {{/formParams}}
-
 
         if ($multipart) {
             $headers = [

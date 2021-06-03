@@ -42,9 +42,39 @@ final class ReportsSDK
      */
     public function cancelReport(AccessToken $accessToken, string $region, string $report_id) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse
     {
-        [$response] = $this->cancelReportWithHttpInfo($accessToken, $region, $report_id);
+        $request = $this->cancelReportRequest($accessToken, $region, $report_id);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse::class,
+            []
+        );
     }
 
     /**
@@ -150,9 +180,39 @@ final class ReportsSDK
      */
     public function cancelReportSchedule(AccessToken $accessToken, string $region, string $report_schedule_id) : \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse
     {
-        [$response] = $this->cancelReportScheduleWithHttpInfo($accessToken, $region, $report_schedule_id);
+        $request = $this->cancelReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse::class,
+            []
+        );
     }
 
     /**
@@ -258,9 +318,39 @@ final class ReportsSDK
      */
     public function createReport(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
     {
-        [$response] = $this->createReportWithHttpInfo($accessToken, $region, $body);
+        $request = $this->createReportRequest($accessToken, $region, $body);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class,
+            []
+        );
     }
 
     /**
@@ -365,9 +455,39 @@ final class ReportsSDK
      */
     public function createReportSchedule(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
     {
-        [$response] = $this->createReportScheduleWithHttpInfo($accessToken, $region, $body);
+        $request = $this->createReportScheduleRequest($accessToken, $region, $body);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class,
+            []
+        );
     }
 
     /**
@@ -472,9 +592,39 @@ final class ReportsSDK
      */
     public function getReport(AccessToken $accessToken, string $region, string $report_id) : \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse
     {
-        [$response] = $this->getReportWithHttpInfo($accessToken, $region, $report_id);
+        $request = $this->getReportRequest($accessToken, $region, $report_id);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse::class,
+            []
+        );
     }
 
     /**
@@ -580,9 +730,39 @@ final class ReportsSDK
      */
     public function getReportDocument(AccessToken $accessToken, string $region, string $report_document_id) : \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse
     {
-        [$response] = $this->getReportDocumentWithHttpInfo($accessToken, $region, $report_document_id);
+        $request = $this->getReportDocumentRequest($accessToken, $region, $report_document_id);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse::class,
+            []
+        );
     }
 
     /**
@@ -688,9 +868,39 @@ final class ReportsSDK
      */
     public function getReportSchedule(AccessToken $accessToken, string $region, string $report_schedule_id) : \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse
     {
-        [$response] = $this->getReportScheduleWithHttpInfo($accessToken, $region, $report_schedule_id);
+        $request = $this->getReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse::class,
+            []
+        );
     }
 
     /**
@@ -796,9 +1006,39 @@ final class ReportsSDK
      */
     public function getReportSchedules(AccessToken $accessToken, string $region, array $report_types) : \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse
     {
-        [$response] = $this->getReportSchedulesWithHttpInfo($accessToken, $region, $report_types);
+        $request = $this->getReportSchedulesRequest($accessToken, $region, $report_types);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse::class,
+            []
+        );
     }
 
     /**
@@ -918,9 +1158,39 @@ final class ReportsSDK
      */
     public function getReports(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
-        [$response] = $this->getReportsWithHttpInfo($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
+        $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class,
+            []
+        );
     }
 
     /**
@@ -1089,947 +1359,5 @@ final class ReportsSDK
             $region,
             $request
         );
-    }
-
-    /**
-     * Operation cancelReportWithHttpInfo.
-     *
-     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse>
-     */
-    private function cancelReportWithHttpInfo(AccessToken $accessToken, string $region, string $report_id) : array
-    {
-        $request = $this->cancelReportRequest($accessToken, $region, $report_id);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation cancelReportScheduleWithHttpInfo.
-     *
-     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse>
-     */
-    private function cancelReportScheduleWithHttpInfo(AccessToken $accessToken, string $region, string $report_schedule_id) : array
-    {
-        $request = $this->cancelReportScheduleRequest($accessToken, $region, $report_schedule_id);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createReportWithHttpInfo.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse>
-     */
-    private function createReportWithHttpInfo(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : array
-    {
-        $request = $this->createReportRequest($accessToken, $region, $body);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 202:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 202:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation createReportScheduleWithHttpInfo.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse>
-     */
-    private function createReportScheduleWithHttpInfo(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : array
-    {
-        $request = $this->createReportScheduleRequest($accessToken, $region, $body);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 201:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 201:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getReportWithHttpInfo.
-     *
-     * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse>
-     */
-    private function getReportWithHttpInfo(AccessToken $accessToken, string $region, string $report_id) : array
-    {
-        $request = $this->getReportRequest($accessToken, $region, $report_id);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getReportDocumentWithHttpInfo.
-     *
-     * @param string $report_document_id The identifier for the report document. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse>
-     */
-    private function getReportDocumentWithHttpInfo(AccessToken $accessToken, string $region, string $report_document_id) : array
-    {
-        $request = $this->getReportDocumentRequest($accessToken, $region, $report_document_id);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getReportScheduleWithHttpInfo.
-     *
-     * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse>
-     */
-    private function getReportScheduleWithHttpInfo(AccessToken $accessToken, string $region, string $report_schedule_id) : array
-    {
-        $request = $this->getReportScheduleRequest($accessToken, $region, $report_schedule_id);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getReportSchedulesWithHttpInfo.
-     *
-     * @param array<array-key, string> $report_types A list of report types used to filter report schedules. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse>
-     */
-    private function getReportSchedulesWithHttpInfo(AccessToken $accessToken, string $region, array $report_types) : array
-    {
-        $request = $this->getReportSchedulesRequest($accessToken, $region, $report_types);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getReportsWithHttpInfo.
-     *
-     * @param array<array-key, string>|null $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
-     * @param array<array-key, string>|null $processing_statuses A list of processing statuses used to filter reports. (optional)
-     * @param array<array-key, string>|null $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
-     * @param null|\DateTime $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
-     * @param null|\DateTime $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
-     * @param null|string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse>
-     */
-    private function getReportsWithHttpInfo(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : array
-    {
-        $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
     }
 }

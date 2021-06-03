@@ -43,9 +43,39 @@ final class CatalogItemSDK
      */
     public function getCatalogItem(AccessToken $accessToken, string $region, string $marketplace_id, string $asin) : \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse
     {
-        [$response] = $this->getCatalogItemWithHttpInfo($accessToken, $region, $marketplace_id, $asin);
+        $request = $this->getCatalogItemRequest($accessToken, $region, $marketplace_id, $asin);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse::class,
+            []
+        );
     }
 
     /**
@@ -169,9 +199,39 @@ final class CatalogItemSDK
      */
     public function listCatalogCategories(AccessToken $accessToken, string $region, string $marketplace_id, string $asin = null, string $seller_sku = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse
     {
-        [$response] = $this->listCatalogCategoriesWithHttpInfo($accessToken, $region, $marketplace_id, $asin, $seller_sku);
+        $request = $this->listCatalogCategoriesRequest($accessToken, $region, $marketplace_id, $asin, $seller_sku);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse::class,
+            []
+        );
     }
 
     /**
@@ -302,9 +362,39 @@ final class CatalogItemSDK
      */
     public function listCatalogItems(AccessToken $accessToken, string $region, string $marketplace_id, string $query = null, string $query_context_id = null, string $seller_sku = null, string $upc = null, string $ean = null, string $isbn = null, string $jan = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse
     {
-        [$response] = $this->listCatalogItemsWithHttpInfo($accessToken, $region, $marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
+        $request = $this->listCatalogItemsRequest($accessToken, $region, $marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse::class,
+            []
+        );
     }
 
     /**
@@ -461,321 +551,5 @@ final class CatalogItemSDK
             $region,
             $request
         );
-    }
-
-    /**
-     * Operation getCatalogItemWithHttpInfo.
-     *
-     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse>
-     */
-    private function getCatalogItemWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $asin) : array
-    {
-        $request = $this->getCatalogItemRequest($accessToken, $region, $marketplace_id, $asin);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation listCatalogCategoriesWithHttpInfo.
-     *
-     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for the item. (required)
-     * @param null|string $asin The Amazon Standard Identification Number (ASIN) of the item. (optional)
-     * @param null|string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse>
-     */
-    private function listCatalogCategoriesWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $asin = null, string $seller_sku = null) : array
-    {
-        $request = $this->listCatalogCategoriesRequest($accessToken, $region, $marketplace_id, $asin, $seller_sku);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation listCatalogItemsWithHttpInfo.
-     *
-     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which items are returned. (required)
-     * @param null|string $query Keyword(s) to use to search for items in the catalog. Example: &#39;harry potter books&#39;. (optional)
-     * @param null|string $query_context_id An identifier for the context within which the given search will be performed. A marketplace might provide mechanisms for constraining a search to a subset of potential items. For example, the retail marketplace allows queries to be constrained to a specific category. The QueryContextId parameter specifies such a subset. If it is omitted, the search will be performed using the default context for the marketplace, which will typically contain the largest set of items. (optional)
-     * @param null|string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
-     * @param null|string $upc A 12-digit bar code used for retail packaging. (optional)
-     * @param null|string $ean A European article number that uniquely identifies the catalog item, manufacturer, and its attributes. (optional)
-     * @param null|string $isbn The unique commercial book identifier used to identify books internationally. (optional)
-     * @param null|string $jan A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse>
-     */
-    private function listCatalogItemsWithHttpInfo(AccessToken $accessToken, string $region, string $marketplace_id, string $query = null, string $query_context_id = null, string $seller_sku = null, string $upc = null, string $ean = null, string $isbn = null, string $jan = null) : array
-    {
-        $request = $this->listCatalogItemsRequest($accessToken, $region, $marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
     }
 }

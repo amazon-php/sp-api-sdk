@@ -42,9 +42,39 @@ final class TokensSDK
      */
     public function createRestrictedDataToken(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse
     {
-        [$response] = $this->createRestrictedDataTokenWithHttpInfo($accessToken, $region, $body);
+        $request = $this->createRestrictedDataTokenRequest($accessToken, $region, $body);
 
-        return $response;
+        try {
+            $response = $this->client->sendRequest($request);
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null
+            );
+        }
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+        /** @var \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse $result */
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody()->getContents(),
+            \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class,
+            []
+        );
     }
 
     /**
@@ -137,130 +167,5 @@ final class TokensSDK
             $region,
             $request
         );
-    }
-
-    /**
-     * Operation createRestrictedDataTokenWithHttpInfo.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body The restricted data token request details. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     *
-     * @return array<array-key, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse>
-     */
-    private function createRestrictedDataTokenWithHttpInfo(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : array
-    {
-        $request = $this->createRestrictedDataTokenRequest($accessToken, $region, $body);
-
-        try {
-            try {
-                $response = $this->client->sendRequest($request);
-            } catch (ClientExceptionInterface $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    \sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch ($statusCode) {
-                case 200:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $content = (string) $response->getBody()->getContents();
-
-                    return [
-                        ObjectSerializer::deserialize(
-                            $this->configuration,
-                            $content,
-                            \AmazonPHP\SellingPartner\Model\Tokens\ErrorList::class,
-                            []
-                        ),
-                        $response->getStatusCode(),
-                        $response->getHeaders(),
-                    ];
-            }
-
-            $returnType = \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class;
-            $content = (string) $response->getBody()->getContents();
-
-            return [
-                ObjectSerializer::deserialize(
-                    $this->configuration,
-                    $content,
-                    $returnType,
-                    []
-                ),
-                $response->getStatusCode(),
-                $response->getHeaders(),
-            ];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-                case 400:
-                case 401:
-                case 403:
-                case 404:
-                case 415:
-                case 429:
-                case 500:
-                case 503:
-                    $data = ObjectSerializer::deserialize(
-                        $this->configuration,
-                        $e->getResponseBody(),
-                        \AmazonPHP\SellingPartner\Model\Tokens\ErrorList::class,
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-
-                    break;
-            }
-
-            throw $e;
-        }
     }
 }
