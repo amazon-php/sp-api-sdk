@@ -73,6 +73,34 @@
             "@tools:install"
         ],
         "cs:php:fix:namespaces": [
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\DefaultAPI\\FinancesSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/DefaultAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\DefinitionsAPI\\ProductTypesDefinitionsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/DefinitionsAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\FbaOutboundApi\\FulfillmentOutboundSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/FulfillmentOutboundAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\FeedsApi\\FeedsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/FeedsAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\FeesApi\\ProductFeesSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/FeesAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\ListingsApi\\ListingsItemsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/ListingsAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\MessagingApi\\MessagingSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/MessagingAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\NotificationsApi\\NotificationsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/NotificationsApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\ProductPricingApi\\ProductPricingSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/ProductPricingApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\SellersApi\\SellersSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/SellersApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\ServiceApi\\ServicesSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/ServiceApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\SmallAndLightApi\\FBASmallAndLightSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/SmallAndLightApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\SolicitationsApi\\SolicitationsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/SolicitationsApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\UploadsApi\\UploadsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/UploadsApi",
             "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\AplusContentApi\\APlusSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
             "rm -rf src/AmazonPHP/SellingPartner/Api/AplusContentApi",
             "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\AuthorizationApi\\AuthorizationSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
@@ -88,7 +116,11 @@
             "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\ReportsApi\\ReportsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
             "rm -rf src/AmazonPHP/SellingPartner/Api/ReportsApi",
             "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\TokensApi\\TokensSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
-            "rm -rf src/AmazonPHP/SellingPartner/Api/TokensApi"
+            "rm -rf src/AmazonPHP/SellingPartner/Api/TokensApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\SalesApi\\SalesSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/SalesApi",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\ShipmentInvoiceApi\\ShipmentInvoicingSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/ShipmentInvoiceApi"
         ]
     }
 }

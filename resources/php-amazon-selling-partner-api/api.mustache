@@ -78,9 +78,9 @@ final {{#operations}}class {{packageName}}SDK
      * @return {{returnType}}
 {{/returnType}}
      */
-    public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}, {{#allParams}}${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}}){{#returnType}}: {{returnType}}{{/returnType}}
+    public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}){{#returnType}}: {{returnType}}{{/returnType}}
     {
-        $request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}, {{#allParams}}${{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}});
+        $request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
 
         $this->configuration->extensions()->preRequest('{{packageName}}', '{{operationId}}', $request);
 
@@ -201,7 +201,7 @@ final {{#operations}}class {{packageName}}SDK
      * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
      * @return RequestInterface
      */
-    public function {{operationId}}Request(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}, {{#allParams}}${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}}) : RequestInterface
+    public function {{operationId}}Request(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}) : RequestInterface
     {
         {{#vendorExtensions.x-group-parameters}}
         // unbox the parameters from the associative array

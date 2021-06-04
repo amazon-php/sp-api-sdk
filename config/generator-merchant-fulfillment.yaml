@@ -1,0 +1,11 @@
+generatorName: php
+templateDir: sp-api/resources/php-amazon-selling-partner-api
+additionalProperties:
+  invokerPackage: AmazonPHP\SellingPartner
+  srcBasePath: src/AmazonPHP/SellingPartner
+  modelPackage: Model\MerchantFulfillment
+  packageName: MerchantFulfillment
+files:
+  api.mustache:
+    templateType: API
+    destinationFilename: /MerchantFulfillmentSDK.php
