@@ -71,6 +71,8 @@ final class APlusSDK
     {
         $request = $this->createContentDocumentRequest($accessToken, $region, $marketplace_id, $post_content_document_request);
 
+        $this->configuration->extensions()->preRequest('APlus', 'createContentDocument', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -96,6 +98,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'createContentDocument', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'createContentDocument')) {
                 $sanitizedResponse = $response;
@@ -278,6 +282,8 @@ final class APlusSDK
     {
         $request = $this->getContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set);
 
+        $this->configuration->extensions()->preRequest('APlus', 'getContentDocument', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -303,6 +309,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'getContentDocument', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'getContentDocument')) {
                 $sanitizedResponse = $response;
@@ -512,6 +520,8 @@ final class APlusSDK
     {
         $request = $this->listContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $included_data_set, $asin_set, $page_token);
 
+        $this->configuration->extensions()->preRequest('APlus', 'listContentDocumentAsinRelations', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -537,6 +547,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'listContentDocumentAsinRelations', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'listContentDocumentAsinRelations')) {
                 $sanitizedResponse = $response;
@@ -758,6 +770,8 @@ final class APlusSDK
     {
         $request = $this->postContentDocumentApprovalSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
 
+        $this->configuration->extensions()->preRequest('APlus', 'postContentDocumentApprovalSubmission', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -783,6 +797,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'postContentDocumentApprovalSubmission', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'postContentDocumentApprovalSubmission')) {
                 $sanitizedResponse = $response;
@@ -970,6 +986,8 @@ final class APlusSDK
     {
         $request = $this->postContentDocumentAsinRelationsRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_asin_relations_request);
 
+        $this->configuration->extensions()->preRequest('APlus', 'postContentDocumentAsinRelations', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -995,6 +1013,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'postContentDocumentAsinRelations', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'postContentDocumentAsinRelations')) {
                 $sanitizedResponse = $response;
@@ -1197,6 +1217,8 @@ final class APlusSDK
     {
         $request = $this->postContentDocumentSuspendSubmissionRequest($accessToken, $region, $content_reference_key, $marketplace_id);
 
+        $this->configuration->extensions()->preRequest('APlus', 'postContentDocumentSuspendSubmission', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1222,6 +1244,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'postContentDocumentSuspendSubmission', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'postContentDocumentSuspendSubmission')) {
                 $sanitizedResponse = $response;
@@ -1408,6 +1432,8 @@ final class APlusSDK
     {
         $request = $this->searchContentDocumentsRequest($accessToken, $region, $marketplace_id, $page_token);
 
+        $this->configuration->extensions()->preRequest('APlus', 'searchContentDocuments', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1433,6 +1459,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'searchContentDocuments', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'searchContentDocuments')) {
                 $sanitizedResponse = $response;
@@ -1612,6 +1640,8 @@ final class APlusSDK
     {
         $request = $this->searchContentPublishRecordsRequest($accessToken, $region, $marketplace_id, $asin, $page_token);
 
+        $this->configuration->extensions()->preRequest('APlus', 'searchContentPublishRecords', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1637,6 +1667,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'searchContentPublishRecords', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'searchContentPublishRecords')) {
                 $sanitizedResponse = $response;
@@ -1836,6 +1868,8 @@ final class APlusSDK
     {
         $request = $this->updateContentDocumentRequest($accessToken, $region, $content_reference_key, $marketplace_id, $post_content_document_request);
 
+        $this->configuration->extensions()->preRequest('APlus', 'updateContentDocument', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1861,6 +1895,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'updateContentDocument', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'updateContentDocument')) {
                 $sanitizedResponse = $response;
@@ -2064,6 +2100,8 @@ final class APlusSDK
     {
         $request = $this->validateContentDocumentAsinRelationsRequest($accessToken, $region, $marketplace_id, $post_content_document_request, $asin_set);
 
+        $this->configuration->extensions()->preRequest('APlus', 'validateContentDocumentAsinRelations', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -2089,6 +2127,8 @@ final class APlusSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('APlus', 'validateContentDocumentAsinRelations', $request, $response);
 
             if ($this->configuration->loggingEnabled('APlus', 'validateContentDocumentAsinRelations')) {
                 $sanitizedResponse = $response;

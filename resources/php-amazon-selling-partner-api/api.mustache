@@ -82,6 +82,8 @@ final {{#operations}}class {{packageName}}SDK
     {
         $request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}, {{#allParams}}${{paramName}}{{^-last}}, {{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}$associative_array{{/vendorExtensions.x-group-parameters}});
 
+        $this->configuration->extensions()->preRequest('{{packageName}}', '{{operationId}}', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -108,6 +110,8 @@ final {{#operations}}class {{packageName}}SDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('{{packageName}}', '{{operationId}}', $request, $response);
 
             if ($this->configuration->loggingEnabled('{{packageName}}', '{{operationId}}')) {
 

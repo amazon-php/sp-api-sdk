@@ -68,6 +68,8 @@ final class ReportsSDK
     {
         $request = $this->cancelReportRequest($accessToken, $region, $report_id);
 
+        $this->configuration->extensions()->preRequest('Reports', 'cancelReport', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -93,6 +95,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'cancelReport', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'cancelReport')) {
                 $sanitizedResponse = $response;
@@ -253,6 +257,8 @@ final class ReportsSDK
     {
         $request = $this->cancelReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
+        $this->configuration->extensions()->preRequest('Reports', 'cancelReportSchedule', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -278,6 +284,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'cancelReportSchedule', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'cancelReportSchedule')) {
                 $sanitizedResponse = $response;
@@ -438,6 +446,8 @@ final class ReportsSDK
     {
         $request = $this->createReportRequest($accessToken, $region, $body);
 
+        $this->configuration->extensions()->preRequest('Reports', 'createReport', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -463,6 +473,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'createReport', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'createReport')) {
                 $sanitizedResponse = $response;
@@ -622,6 +634,8 @@ final class ReportsSDK
     {
         $request = $this->createReportScheduleRequest($accessToken, $region, $body);
 
+        $this->configuration->extensions()->preRequest('Reports', 'createReportSchedule', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -647,6 +661,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'createReportSchedule', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'createReportSchedule')) {
                 $sanitizedResponse = $response;
@@ -806,6 +822,8 @@ final class ReportsSDK
     {
         $request = $this->getReportRequest($accessToken, $region, $report_id);
 
+        $this->configuration->extensions()->preRequest('Reports', 'getReport', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -831,6 +849,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'getReport', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'getReport')) {
                 $sanitizedResponse = $response;
@@ -991,6 +1011,8 @@ final class ReportsSDK
     {
         $request = $this->getReportDocumentRequest($accessToken, $region, $report_document_id);
 
+        $this->configuration->extensions()->preRequest('Reports', 'getReportDocument', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1016,6 +1038,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'getReportDocument', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'getReportDocument')) {
                 $sanitizedResponse = $response;
@@ -1176,6 +1200,8 @@ final class ReportsSDK
     {
         $request = $this->getReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
+        $this->configuration->extensions()->preRequest('Reports', 'getReportSchedule', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1201,6 +1227,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'getReportSchedule', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'getReportSchedule')) {
                 $sanitizedResponse = $response;
@@ -1361,6 +1389,8 @@ final class ReportsSDK
     {
         $request = $this->getReportSchedulesRequest($accessToken, $region, $report_types);
 
+        $this->configuration->extensions()->preRequest('Reports', 'getReportSchedules', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1386,6 +1416,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'getReportSchedules', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'getReportSchedules')) {
                 $sanitizedResponse = $response;
@@ -1560,6 +1592,8 @@ final class ReportsSDK
     {
         $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 
+        $this->configuration->extensions()->preRequest('Reports', 'getReports', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1585,6 +1619,8 @@ final class ReportsSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Reports', 'getReports', $request, $response);
 
             if ($this->configuration->loggingEnabled('Reports', 'getReports')) {
                 $sanitizedResponse = $response;

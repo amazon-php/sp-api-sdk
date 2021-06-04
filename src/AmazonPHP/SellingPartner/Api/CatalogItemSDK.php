@@ -57,6 +57,8 @@ final class CatalogItemSDK
     {
         $request = $this->getCatalogItemRequest($accessToken, $region, $marketplace_id, $asin);
 
+        $this->configuration->extensions()->preRequest('CatalogItem', 'getCatalogItem', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -82,6 +84,8 @@ final class CatalogItemSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('CatalogItem', 'getCatalogItem', $request, $response);
 
             if ($this->configuration->loggingEnabled('CatalogItem', 'getCatalogItem')) {
                 $sanitizedResponse = $response;
@@ -260,6 +264,8 @@ final class CatalogItemSDK
     {
         $request = $this->listCatalogCategoriesRequest($accessToken, $region, $marketplace_id, $asin, $seller_sku);
 
+        $this->configuration->extensions()->preRequest('CatalogItem', 'listCatalogCategories', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -285,6 +291,8 @@ final class CatalogItemSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('CatalogItem', 'listCatalogCategories', $request, $response);
 
             if ($this->configuration->loggingEnabled('CatalogItem', 'listCatalogCategories')) {
                 $sanitizedResponse = $response;
@@ -470,6 +478,8 @@ final class CatalogItemSDK
     {
         $request = $this->listCatalogItemsRequest($accessToken, $region, $marketplace_id, $query, $query_context_id, $seller_sku, $upc, $ean, $isbn, $jan);
 
+        $this->configuration->extensions()->preRequest('CatalogItem', 'listCatalogItems', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -495,6 +505,8 @@ final class CatalogItemSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('CatalogItem', 'listCatalogItems', $request, $response);
 
             if ($this->configuration->loggingEnabled('CatalogItem', 'listCatalogItems')) {
                 $sanitizedResponse = $response;

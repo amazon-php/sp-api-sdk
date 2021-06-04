@@ -62,6 +62,8 @@ final class OrdersSDK
     {
         $request = $this->getOrderRequest($accessToken, $region, $order_id);
 
+        $this->configuration->extensions()->preRequest('Orders', 'getOrder', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -87,6 +89,8 @@ final class OrdersSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'getOrder', $request, $response);
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrder')) {
                 $sanitizedResponse = $response;
@@ -247,6 +251,8 @@ final class OrdersSDK
     {
         $request = $this->getOrderAddressRequest($accessToken, $region, $order_id);
 
+        $this->configuration->extensions()->preRequest('Orders', 'getOrderAddress', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -272,6 +278,8 @@ final class OrdersSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'getOrderAddress', $request, $response);
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderAddress')) {
                 $sanitizedResponse = $response;
@@ -432,6 +440,8 @@ final class OrdersSDK
     {
         $request = $this->getOrderBuyerInfoRequest($accessToken, $region, $order_id);
 
+        $this->configuration->extensions()->preRequest('Orders', 'getOrderBuyerInfo', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -457,6 +467,8 @@ final class OrdersSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'getOrderBuyerInfo', $request, $response);
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderBuyerInfo')) {
                 $sanitizedResponse = $response;
@@ -618,6 +630,8 @@ final class OrdersSDK
     {
         $request = $this->getOrderItemsRequest($accessToken, $region, $order_id, $next_token);
 
+        $this->configuration->extensions()->preRequest('Orders', 'getOrderItems', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -643,6 +657,8 @@ final class OrdersSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'getOrderItems', $request, $response);
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderItems')) {
                 $sanitizedResponse = $response;
@@ -814,6 +830,8 @@ final class OrdersSDK
     {
         $request = $this->getOrderItemsBuyerInfoRequest($accessToken, $region, $order_id, $next_token);
 
+        $this->configuration->extensions()->preRequest('Orders', 'getOrderItemsBuyerInfo', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -839,6 +857,8 @@ final class OrdersSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'getOrderItemsBuyerInfo', $request, $response);
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderItemsBuyerInfo')) {
                 $sanitizedResponse = $response;
@@ -1025,6 +1045,8 @@ final class OrdersSDK
     {
         $request = $this->getOrdersRequest($accessToken, $region, $marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
 
+        $this->configuration->extensions()->preRequest('Orders', 'getOrders', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -1050,6 +1072,8 @@ final class OrdersSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'getOrders', $request, $response);
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrders')) {
                 $sanitizedResponse = $response;
