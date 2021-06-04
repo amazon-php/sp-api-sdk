@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-06-04
 
 ### Added
+- [#6](https://github.com/amazon-php/sp-api-sdk/pull/6) - **custom extensions system** - [@norberttech](https://github.com/norberttech)
 - [#4](https://github.com/amazon-php/sp-api-sdk/pull/4) - **PSR logger to all SDK's** - [@norberttech](https://github.com/norberttech)
 - [#4](https://github.com/amazon-php/sp-api-sdk/pull/4) - **Logger configuration** - [@norberttech](https://github.com/norberttech)
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **OAuth client credentials authorization** - [@norberttech](https://github.com/norberttech)
