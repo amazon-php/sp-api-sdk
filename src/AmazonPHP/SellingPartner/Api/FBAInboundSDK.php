@@ -54,6 +54,8 @@ final class FBAInboundSDK
     {
         $request = $this->getItemEligibilityPreviewRequest($accessToken, $region, $asin, $program, $marketplace_ids);
 
+        $this->configuration->extensions()->preRequest('FBAInbound', 'getItemEligibilityPreview', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -79,6 +81,8 @@ final class FBAInboundSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FBAInbound', 'getItemEligibilityPreview', $request, $response);
 
             if ($this->configuration->loggingEnabled('FBAInbound', 'getItemEligibilityPreview')) {
                 $sanitizedResponse = $response;

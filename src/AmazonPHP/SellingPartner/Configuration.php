@@ -24,11 +24,14 @@ final class Configuration
 
     private LoggerConfiguration $loggerConfiguration;
 
+    private Extensions $extensions;
+
     private function __construct(
         string $lwaClientID,
         string $lwaClientSecret,
         string $accessKey,
         string $secretKey,
+        Extensions $extensions = null,
         LoggerConfiguration $loggerConfiguration = null
     ) {
         $this->lwaClientID = $lwaClientID;
@@ -39,6 +42,7 @@ final class Configuration
         $this->userAgent = 'Library amazon-php/sp-api-php (language=PHP ' . \phpversion() . '; Platform=' . \php_uname('s') . ' ' . \php_uname('r') . ' ' . \php_uname('m') . ')';
         $this->tmpFolderPath = \sys_get_temp_dir();
         $this->loggerConfiguration = $loggerConfiguration ? $loggerConfiguration : new LoggerConfiguration();
+        $this->extensions = $extensions ? $extensions : new Extensions();
     }
 
     public static function forIAMUser(string $clientId, string $clientSecret, string $accessKey, string $secretKey) : self
@@ -174,5 +178,15 @@ final class Configuration
     public function loggingSkipHeaders() : array
     {
         return $this->loggerConfiguration->skipHeaders();
+    }
+
+    public function registerExtension(Extension $extension) : void
+    {
+        $this->extensions->register($extension);
+    }
+
+    public function extensions() : Extensions
+    {
+        return $this->extensions;
     }
 }

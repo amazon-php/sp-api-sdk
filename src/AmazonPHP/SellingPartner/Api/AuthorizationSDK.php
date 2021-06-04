@@ -56,6 +56,8 @@ final class AuthorizationSDK
     {
         $request = $this->getAuthorizationCodeRequest($accessToken, $region, $selling_partner_id, $developer_id, $mws_auth_token);
 
+        $this->configuration->extensions()->preRequest('Authorization', 'getAuthorizationCode', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -81,6 +83,8 @@ final class AuthorizationSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Authorization', 'getAuthorizationCode', $request, $response);
 
             if ($this->configuration->loggingEnabled('Authorization', 'getAuthorizationCode')) {
                 $sanitizedResponse = $response;

@@ -58,6 +58,8 @@ final class FBAInventorySDK
     {
         $request = $this->getInventorySummariesRequest($accessToken, $region, $granularity_type, $granularity_id, $marketplace_ids, $details, $start_date_time, $seller_skus, $next_token);
 
+        $this->configuration->extensions()->preRequest('FBAInventory', 'getInventorySummaries', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -83,6 +85,8 @@ final class FBAInventorySDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FBAInventory', 'getInventorySummaries', $request, $response);
 
             if ($this->configuration->loggingEnabled('FBAInventory', 'getInventorySummaries')) {
                 $sanitizedResponse = $response;

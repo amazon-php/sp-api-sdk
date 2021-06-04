@@ -52,6 +52,8 @@ final class TokensSDK
     {
         $request = $this->createRestrictedDataTokenRequest($accessToken, $region, $body);
 
+        $this->configuration->extensions()->preRequest('Tokens', 'createRestrictedDataToken', $request);
+
         try {
             $correlationId = \uuid_create(UUID_TYPE_RANDOM);
 
@@ -77,6 +79,8 @@ final class TokensSDK
             }
 
             $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Tokens', 'createRestrictedDataToken', $request, $response);
 
             if ($this->configuration->loggingEnabled('Tokens', 'createRestrictedDataToken')) {
                 $sanitizedResponse = $response;

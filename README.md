@@ -11,6 +11,7 @@ however most of them comes with all issues of auto generated code.
 - SDK's are oriented around single seller which is not suitable for bigger systems
 - missing or lacking support for `client_credentials` grant type
 - not all API covered
+- no extensions 
 
 This API goal is to resolve all above mentioned issues. 
 
@@ -117,4 +118,25 @@ you can also add your own ignored headers:
 
 ```
 $configuration->loggingAddSkippedHeader('some-sensitive-key');
+```
+
+### Extensions
+
+Each SDK allows you to register custom extensions executed before and after sending API requests.
+
+```php
+<?php 
+
+$configuration->registerExtension(new class implements \AmazonPHP\SellingPartner\Extension {
+    public function preRequest(string $api, string $operation, RequestInterface $request): void
+    {
+        echo "pre: " . $api . "::" . $operation . " " . $request->getUri() . "\n";
+    }
+
+    public function postRequest(string $api, string $operation, RequestInterface $request, ResponseInterface $response): void
+    {
+        echo "post: " . $api . "::" . $operation . " " . $request->getUri() . " " 
+            . $response->getStatusCode() . " rate limit: " . implode(' ', $response->getHeader('x-amzn-RateLimit-Limit')) . "\n";
+    }
+});
 ```
