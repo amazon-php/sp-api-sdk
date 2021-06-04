@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-03
+## [Unreleased] - 2021-06-04
 
 ### Added
 - [#4](https://github.com/amazon-php/sp-api-sdk/pull/4) - **PSR logger to all SDK's** - [@norberttech](https://github.com/norberttech)
