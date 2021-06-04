@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-06-04
 
 ### Added
+- [93b5b9](https://github.com/amazon-php/sp-api-sdk/commit/93b5b99ee00fe343b34bad9ca5d9805182cc3fd6) - **remaining SP seller APIs** - [@norberttech](https://github.com/norberttech)
 - [#6](https://github.com/amazon-php/sp-api-sdk/pull/6) - **custom extensions system** - [@norberttech](https://github.com/norberttech)
 - [#4](https://github.com/amazon-php/sp-api-sdk/pull/4) - **PSR logger to all SDK's** - [@norberttech](https://github.com/norberttech)
 - [#4](https://github.com/amazon-php/sp-api-sdk/pull/4) - **Logger configuration** - [@norberttech](https://github.com/norberttech)
