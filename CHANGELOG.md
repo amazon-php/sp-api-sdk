@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-04
+## [Unreleased] - 2021-06-05
 
 ### Added
 - [93b5b9](https://github.com/amazon-php/sp-api-sdk/commit/93b5b99ee00fe343b34bad9ca5d9805182cc3fd6) - **remaining SP seller APIs** - [@norberttech](https://github.com/norberttech)
@@ -10,6 +10,7 @@
 - [31b435](https://github.com/amazon-php/sp-api-sdk/commit/31b43531dba8e0924a3a0c68f2fa38b208a66e07) - **tools and CS fixes** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [c51271](https://github.com/amazon-php/sp-api-sdk/commit/c51271af3c5e6be6b8de759ac4a6abb02d8b0bc0) - **README** - [@norberttech](https://github.com/norberttech)
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
