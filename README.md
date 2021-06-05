@@ -1,11 +1,13 @@
 # Amazon Selling Partner API - PHP SDK
 
+This repository is not an official amazon PHP library for their SP API. 
+
 ### Why next library? 
 
-There are already few php sp api sdk's available for [PHP](https://packagist.org/?query=sp%20api%20)
-however most of them comes with all issues of auto generated code. 
+There are already few php sp api SDKs available for [PHP](https://packagist.org/?query=sp%20api%20)
+however most of them comes with many issues of auto generated code. 
 
-- hardcoded `guzzlehttp/guzzle` or `aws/aws-sdk-php` dependency 
+- hardcoded dependencies like `guzzlehttp/guzzle` or `aws/aws-sdk-php` 
 - legacy code base (7.2)
 - no logger
 - SDK's are oriented around single seller which is not suitable for bigger systems
@@ -13,7 +15,93 @@ however most of them comes with all issues of auto generated code.
 - not all API covered
 - no extensions 
 
-This API goal is to resolve all above mentioned issues. 
+This library goal is to resolve all above mentioned issues. 
+
+### Installations
+
+```
+composer install amazon-php/sp-api-sdk^1.0@dev
+```
+
+This library is not in a stable stage yet, please use with caution.
+
+### Available SDKs
+
+* [APlusSDK](/src/AmazonPHP/SellingPartner/Api/APlusSDK.php)
+* [AuthorizationSDK](/src/AmazonPHP/SellingPartner/Api/AuthorizationSDK.php)
+* [CatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogItemSDK.php)
+* [FBAInboundSDK](/src/AmazonPHP/SellingPartner/Api/FBAInboundSDK.php)
+* [FBAInventorySDK](/src/AmazonPHP/SellingPartner/Api/FBAInventorySDK.php)
+* [FBASmallAndLightSDK](/src/AmazonPHP/SellingPartner/Api/FBASmallAndLightSDK.php)
+* [FeedsSDK](/src/AmazonPHP/SellingPartner/Api/FeedsSDK.php)
+* [FinancesSDK](/src/AmazonPHP/SellingPartner/Api/FinancesSDK.php)
+* [FulfillmentOutboundSDK](/src/AmazonPHP/SellingPartner/Api/FulfillmentOutboundSDK.php)
+* [ListingsItemsSDK](/src/AmazonPHP/SellingPartner/Api/ListingsItemsSDK.php)
+* [MessagingSDK](/src/AmazonPHP/SellingPartner/Api/MessagingSDK.php)
+* [NotificationsSDK](/src/AmazonPHP/SellingPartner/Api/NotificationsSDK.php)
+* [OrdersSDK](/src/AmazonPHP/SellingPartner/Api/OrdersSDK.php)
+* [ProductFeesSDK](/src/AmazonPHP/SellingPartner/Api/ProductFeesSDK.php)
+* [ProductPricingSDK](/src/AmazonPHP/SellingPartner/Api/ProductPricingSDK.php)
+* [ProductTypesDefinitionsSDK](/src/AmazonPHP/SellingPartner/Api/ProductTypesDefinitionsSDK.php)
+* [ReportsSDK](/src/AmazonPHP/SellingPartner/Api/ReportsSDK.php)
+* [SalesSDK](/src/AmazonPHP/SellingPartner/Api/SalesSDK.php)
+* [SellersSDK](/src/AmazonPHP/SellingPartner/Api/SellersSDK.php)
+* [ServicesSDK](/src/AmazonPHP/SellingPartner/Api/ServicesSDK.php)
+* [ShipmentInvoicingSDK](/src/AmazonPHP/SellingPartner/Api/ShipmentInvoicingSDK.php)
+* [SolicitationsSDK](/src/AmazonPHP/SellingPartner/Api/SolicitationsSDK.php)
+* [TokensSDK](/src/AmazonPHP/SellingPartner/Api/TokensSDK.php)
+* [UploadsSDK](/src/AmazonPHP/SellingPartner/Api/UploadsSDK.php)
+                         
+### Authorization
+
+In order to start using SP API you need to first register as a Developer and create application.
+Whole process is described in [Amazon Official Guides](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md).
+
+Normally amazon recommends to use Role IAM when creating application however this requires and additional
+API call when obtaining refresh token. It's easier to use User IAM and just make sure that the user 
+has following Inline Policy 
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "execute-api:Invoke",
+            "Resource": "arn:aws:execute-api:*:*:*"
+        }
+    ]
+}
+```
+
+#### IAM User 
+
+Example of changing refresh token into access token. 
+
+```
+<?php
+
+use AmazonPHP\SellingPartner\OAuth;
+use AmazonPHP\SellingPartner\Configuration;
+use AmazonPHP\SellingPartner\HttpFactory;
+
+$oauth = new OAuth(
+    $client,
+    $httpFactory = new HttpFactory($factory, $factory),
+    $config = Configuration::forIAMUser(
+        'lwaClientID',
+        'lwaClientID',
+        'awsAccessKey',
+        'awsSecretKey'
+    )
+);
+
+$accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
+```
+
+#### IAM Role 
+
+@TODO 
 
 ### Development
 
