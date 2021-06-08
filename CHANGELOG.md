@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-06-08
 
 ### Added
+- [#11](https://github.com/amazon-php/sp-api-sdk/pull/11) - **OAuth::exchangeLwaCode(string $code) : AccessToken - method to exchange auth code for access token** - [@norberttech](https://github.com/norberttech)
 - [#10](https://github.com/amazon-php/sp-api-sdk/pull/10) - **SellingPartnerSDK Facade to simplify building whole SDK** - [@norberttech](https://github.com/norberttech)
 - [93b5b9](https://github.com/amazon-php/sp-api-sdk/commit/93b5b99ee00fe343b34bad9ca5d9805182cc3fd6) - **remaining SP seller APIs** - [@norberttech](https://github.com/norberttech)
 - [#6](https://github.com/amazon-php/sp-api-sdk/pull/6) - **custom extensions system** - [@norberttech](https://github.com/norberttech)
