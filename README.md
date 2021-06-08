@@ -27,6 +27,7 @@ This library is not in a stable stage yet, please use with caution.
 
 ### Available SDKs
 
+[SellingPartnerSDK](/src/AmazonPHP/SellingPartner/SellingPartnerSDK.php) - Facade for all SDK's
 * [APlusSDK](/src/AmazonPHP/SellingPartner/Api/APlusSDK.php)
 * [AuthorizationSDK](/src/AmazonPHP/SellingPartner/Api/AuthorizationSDK.php)
 * [CatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogItemSDK.php)
@@ -51,7 +52,7 @@ This library is not in a stable stage yet, please use with caution.
 * [SolicitationsSDK](/src/AmazonPHP/SellingPartner/Api/SolicitationsSDK.php)
 * [TokensSDK](/src/AmazonPHP/SellingPartner/Api/TokensSDK.php)
 * [UploadsSDK](/src/AmazonPHP/SellingPartner/Api/UploadsSDK.php)
-                         
+
 ### Authorization
 
 In order to start using SP API you need to first register as a Developer and create application.
@@ -127,15 +128,14 @@ composer generate
 ```php
 <?php
 
-use AmazonPHP\SellingPartner\Api\AuthorizationSDK;
-use AmazonPHP\SellingPartner\Api\CatalogItemSDK;
 use AmazonPHP\SellingPartner\Marketplace;
 use AmazonPHP\SellingPartner\Regions;
+use AmazonPHP\SellingPartner\SellingPartnerSDK;
 use Buzz\Client\Curl;
 use AmazonPHP\SellingPartner\Exception\ApiException;
-use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\Configuration;
-use AmazonPHP\SellingPartner\HttpFactory;
+use Monolog\Handler\StreamHandler;
+use Monolog\Logger;
 use Nyholm\Psr7\Factory\Psr17Factory;
 
 require_once __DIR__ . '/vendor/autoload.php';
@@ -143,26 +143,22 @@ require_once __DIR__ . '/vendor/autoload.php';
 $factory = new Psr17Factory();
 $client = new Curl($factory);
 
-$oauth = new OAuth(
-    $client,
-    $httpFactory = new HttpFactory($factory, $factory),
-    $config = Configuration::forIAMUser(
-        'lwaClientID',
-        'lwaClientID',
-        'awsAccessKey',
-        'awsSecretKey'
-    )
+$configuration = Configuration::forIAMUser(
+    'lwaClientID',
+    'lwaClientID',
+    'awsAccessKey',
+    'awsSecretKey'
 );
-
-$accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
 
 $logger = new Logger('name');
 $logger->pushHandler(new StreamHandler(__DIR__ . '/sp-api-php.log', Logger::DEBUG));
 
-$catalog = new CatalogItemSDK($client, $httpFactory, $config, $logger);
+$sdk = SellingPartnerSDK::create($client, $factory, $factory, $configuration, $logger);
+
+$accessToken = $sdk->oAuth()->exchangeRefreshToken('seller_oauth_refresh_token');
 
 try {
-    $item = $catalog->getCatalogItem(
+    $item = $sdk->catalogItem()->getCatalogItem(
         $accessToken,
         Regions::NORTH_AMERICA,
         $marketplaceId = Marketplace::US()->id(),
