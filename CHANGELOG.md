@@ -1,6 +1,7 @@
-## [Unreleased] - 2021-06-05
+## [Unreleased] - 2021-06-08
 
 ### Added
+- [#10](https://github.com/amazon-php/sp-api-sdk/pull/10) - **SellingPartnerSDK Facade to simplify building whole SDK** - [@norberttech](https://github.com/norberttech)
 - [93b5b9](https://github.com/amazon-php/sp-api-sdk/commit/93b5b99ee00fe343b34bad9ca5d9805182cc3fd6) - **remaining SP seller APIs** - [@norberttech](https://github.com/norberttech)
 - [#6](https://github.com/amazon-php/sp-api-sdk/pull/6) - **custom extensions system** - [@norberttech](https://github.com/norberttech)
 - [#4](https://github.com/amazon-php/sp-api-sdk/pull/4) - **PSR logger to all SDK's** - [@norberttech](https://github.com/norberttech)
