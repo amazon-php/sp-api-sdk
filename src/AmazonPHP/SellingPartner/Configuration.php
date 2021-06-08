@@ -6,7 +6,6 @@ namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Configuration\LoggerConfiguration;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Log\LogLevel;
 
 final class Configuration
 {
@@ -26,7 +25,7 @@ final class Configuration
 
     private Extensions $extensions;
 
-    private function __construct(
+    public function __construct(
         string $lwaClientID,
         string $lwaClientSecret,
         string $accessKey,
