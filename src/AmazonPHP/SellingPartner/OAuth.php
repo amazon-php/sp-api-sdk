@@ -48,6 +48,30 @@ final class OAuth
         return AccessToken::fromJSON((string) $response->getBody(), 'refresh_token');
     }
 
+    public function exchangeLwaCode(string $lwaCode) : AccessToken
+    {
+        $request = $this->requestFactory->createRequest('POST', 'https://api.amazon.com/auth/o2/token')
+            ->withBody(
+                $this->requestFactory->createStreamFromString(
+                    \json_encode(
+                        [
+                            'grant_type' => 'authorization_code',
+                            'code' => $lwaCode,
+                            'client_id' => $this->configuration->lwaClientID(),
+                            'client_secret' => $this->configuration->lwaClientSecret(),
+                        ],
+                        JSON_THROW_ON_ERROR
+                    )
+                )
+            )
+            ->withHeader('Accept', ['application/json'])
+            ->withHeader('Content-Type', ['application/json']);
+
+        $response = $this->client->sendRequest($request);
+
+        return AccessToken::fromJSON((string) $response->getBody(), 'authorization_code');
+    }
+
     public function clientCredentials(string $scope) : AccessToken
     {
         $request = $this->requestFactory->createRequest('POST', 'https://api.amazon.com/auth/o2/token')

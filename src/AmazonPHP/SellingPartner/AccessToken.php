@@ -6,7 +6,9 @@ namespace AmazonPHP\SellingPartner;
 
 final class AccessToken
 {
-    private string $token;
+    private string $accessToken;
+
+    private string $refreshToken;
 
     private string $type;
 
@@ -14,9 +16,10 @@ final class AccessToken
 
     private string $grantType;
 
-    public function __construct(string $token, string $type, int $expiresIn, string $grantType)
+    public function __construct(string $accessToken, string $refreshToken, string $type, int $expiresIn, string $grantType)
     {
-        $this->token = $token;
+        $this->accessToken = $accessToken;
+        $this->refreshToken = $refreshToken;
         $this->type = $type;
         $this->expiresIn = $expiresIn;
         $this->grantType = $grantType;
@@ -28,6 +31,7 @@ final class AccessToken
 
         return new self(
             $data['access_token'],
+            $data['refresh_token'],
             $data['token_type'],
             $data['expires_in'],
             $grantType
@@ -36,7 +40,15 @@ final class AccessToken
 
     public function token() : string
     {
-        return $this->token;
+        return $this->accessToken;
+    }
+
+    /**
+     * @return string
+     */
+    public function refreshToken() : string
+    {
+        return $this->refreshToken;
     }
 
     public function type() : string
