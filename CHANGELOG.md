@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-08
+## [Unreleased] - 2021-06-09
 
 ### Added
 - [#11](https://github.com/amazon-php/sp-api-sdk/pull/11) - **OAuth::exchangeLwaCode(string $code) : AccessToken - method to exchange auth code for access token** - [@norberttech](https://github.com/norberttech)
