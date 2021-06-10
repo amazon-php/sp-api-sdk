@@ -1,6 +1,8 @@
-## [Unreleased] - 2021-06-09
+## [Unreleased] - 2021-06-10
 
 ### Added
+- [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace URL to Marketplace object** - [@norberttech](https://github.com/norberttech)
+- [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace from country code constructor** - [@norberttech](https://github.com/norberttech)
 - [#11](https://github.com/amazon-php/sp-api-sdk/pull/11) - **OAuth::exchangeLwaCode(string $code) : AccessToken - method to exchange auth code for access token** - [@norberttech](https://github.com/norberttech)
 - [#10](https://github.com/amazon-php/sp-api-sdk/pull/10) - **SellingPartnerSDK Facade to simplify building whole SDK** - [@norberttech](https://github.com/norberttech)
 - [93b5b9](https://github.com/amazon-php/sp-api-sdk/commit/93b5b99ee00fe343b34bad9ca5d9805182cc3fd6) - **remaining SP seller APIs** - [@norberttech](https://github.com/norberttech)
