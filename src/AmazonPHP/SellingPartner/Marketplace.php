@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace AmazonPHP\SellingPartner;
 
+use AmazonPHP\SellingPartner\Exception\Exception;
+use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+
 final class Marketplace
 {
     private string $name;
@@ -20,6 +23,62 @@ final class Marketplace
         $this->id = $id;
         $this->countryCode = $countryCode;
         $this->region = $region;
+    }
+
+    public static function fromCountry(string $countryCode) : self
+    {
+        $countryCode = \strtoupper($countryCode);
+
+        switch ($countryCode) {
+            case 'CA':
+            case 'US':
+            case 'MX':
+            case 'BR':
+            case 'ES':
+            case 'GB':
+            case 'FR':
+            case 'NL':
+            case 'DE':
+            case 'IT':
+            case 'SE':
+            case 'PL':
+            case 'TR':
+            case 'AE':
+            case 'IN':
+            case 'SG':
+            case 'AU':
+            case 'JP':
+                return self::$countryCode();
+        }
+
+        throw new InvalidArgumentException("Unexpected country code {$countryCode}");
+    }
+
+    /**
+     * @return array<self>
+     */
+    public static function all() : array
+    {
+        return [
+            self::CA(),
+            self::US(),
+            self::MX(),
+            self::BR(),
+            self::ES(),
+            self::GB(),
+            self::FR(),
+            self::NL(),
+            self::DE(),
+            self::IT(),
+            self::SE(),
+            self::PL(),
+            self::TR(),
+            self::AE(),
+            self::IN(),
+            self::SG(),
+            self::AU(),
+            self::JP(),
+        ];
     }
 
     public static function US() : self
@@ -135,5 +194,49 @@ final class Marketplace
     public function region() : string
     {
         return $this->region;
+    }
+
+    public function sellerCentralUrl() : string
+    {
+        switch ($this->countryCode) {
+            case 'CA':
+                return 'https://sellercentral.amazon.ca';
+            case 'US':
+                return 'https://sellercentral.amazon.com';
+            case 'MX':
+                return 'https://sellercentral.amazon.com.mx';
+            case 'BR':
+                return 'https://sellercentral.amazon.com.br';
+            case 'ES':
+                return 'https://sellercentral-europe.amazon.com';
+            case 'GB':
+                return 'https://sellercentral-europe.amazon.com';
+            case 'FR':
+                return 'https://sellercentral-europe.amazon.com';
+            case 'NL':
+                return 'https://sellercentral.amazon.nl';
+            case 'DE':
+                return 'https://sellercentral-europe.amazon.com';
+            case 'IT':
+                return 'https://sellercentral-europe.amazon.com';
+            case 'SE':
+                return 'https://sellercentral.amazon.se';
+            case 'PL':
+                return 'https://sellercentral.amazon.pl';
+            case 'TR':
+                return 'https://sellercentral.amazon.com.tr';
+            case 'AE':
+                return 'https://sellercentral.amazon.ae';
+            case 'IN':
+                return 'https://sellercentral.amazon.in';
+            case 'SG':
+                return 'https://sellercentral.amazon.sg';
+            case 'AU':
+                return 'https://sellercentral.amazon.com.au';
+            case 'JP':
+                return 'https://sellercentral.amazon.co.jp';
+        }
+
+        throw new Exception("Unexpected country code {$this->countryCode}");
     }
 }
