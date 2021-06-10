@@ -43,9 +43,6 @@ final class AccessToken
         return $this->accessToken;
     }
 
-    /**
-     * @return string
-     */
     public function refreshToken() : string
     {
         return $this->refreshToken;

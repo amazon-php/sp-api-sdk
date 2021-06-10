@@ -55,6 +55,8 @@ final class SellingPartnerSDK
 
     private Api\ShipmentInvoicingSDK $shipmentInvoicing;
 
+    private Api\ShippingSDK $shipping;
+
     private Api\SolicitationsSDK $solicitations;
 
     private Api\TokensSDK $tokens;
@@ -84,6 +86,7 @@ final class SellingPartnerSDK
         Api\SellersSDK $sellers,
         Api\ServicesSDK $services,
         Api\ShipmentInvoicingSDK $shipmentInvoicing,
+        Api\ShippingSDK $shipping,
         Api\SolicitationsSDK $solicitations,
         Api\TokensSDK $tokens,
         Api\UploadsSDK $uploads
@@ -110,6 +113,7 @@ final class SellingPartnerSDK
         $this->sellers = $sellers;
         $this->services = $services;
         $this->shipmentInvoicing = $shipmentInvoicing;
+        $this->shipping = $shipping;
         $this->solicitations = $solicitations;
         $this->tokens = $tokens;
         $this->uploads = $uploads;
@@ -147,6 +151,7 @@ final class SellingPartnerSDK
             new Api\SellersSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\ServicesSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\ShipmentInvoicingSDK($httpClient, $httpFactory, $configuration, $logger),
+            new Api\ShippingSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\SolicitationsSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\TokensSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\UploadsSDK($httpClient, $httpFactory, $configuration, $logger),
@@ -261,6 +266,11 @@ final class SellingPartnerSDK
     public function shipmentInvoicing() : Api\ShipmentInvoicingSDK
     {
         return $this->shipmentInvoicing;
+    }
+
+    public function shipping(): Api\ShippingSDK
+    {
+        return $this->shipping;
     }
 
     public function solicitations() : Api\SolicitationsSDK
