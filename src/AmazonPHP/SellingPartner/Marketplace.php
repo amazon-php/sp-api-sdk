@@ -208,15 +208,12 @@ final class Marketplace
             case 'BR':
                 return 'https://sellercentral.amazon.com.br';
             case 'ES':
-                return 'https://sellercentral-europe.amazon.com';
             case 'GB':
-                return 'https://sellercentral-europe.amazon.com';
             case 'FR':
                 return 'https://sellercentral-europe.amazon.com';
             case 'NL':
                 return 'https://sellercentral.amazon.nl';
             case 'DE':
-                return 'https://sellercentral-europe.amazon.com';
             case 'IT':
                 return 'https://sellercentral-europe.amazon.com';
             case 'SE':

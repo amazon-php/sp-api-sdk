@@ -49,6 +49,7 @@ This library is not in a stable stage yet, please use with caution.
 * [SellersSDK](/src/AmazonPHP/SellingPartner/Api/SellersSDK.php)
 * [ServicesSDK](/src/AmazonPHP/SellingPartner/Api/ServicesSDK.php)
 * [ShipmentInvoicingSDK](/src/AmazonPHP/SellingPartner/Api/ShipmentInvoicingSDK.php)
+* [ShippingSDK](/src/AmazonPHP/SellingPartner/Api/ShippingSDK.php)
 * [SolicitationsSDK](/src/AmazonPHP/SellingPartner/Api/SolicitationsSDK.php)
 * [TokensSDK](/src/AmazonPHP/SellingPartner/Api/TokensSDK.php)
 * [UploadsSDK](/src/AmazonPHP/SellingPartner/Api/UploadsSDK.php)
