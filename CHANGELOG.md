@@ -18,6 +18,7 @@
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#14](https://github.com/amazon-php/sp-api-sdk/pull/14) - **ShippingSDK generator configuration** - [@norberttech](https://github.com/norberttech)
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **signing HTTP requests** - [@norberttech](https://github.com/norberttech)
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **deserialization of error messages** - [@norberttech](https://github.com/norberttech)
 - [ce2f6f](https://github.com/amazon-php/sp-api-sdk/commit/ce2f6f86400e29c6e3b27e03f621cb43dfc95db5) - **SDK namespaces** - [@norberttech](https://github.com/norberttech)
