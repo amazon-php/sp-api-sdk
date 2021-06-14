@@ -268,7 +268,7 @@ final class SellingPartnerSDK
         return $this->shipmentInvoicing;
     }
 
-    public function shipping(): Api\ShippingSDK
+    public function shipping() : Api\ShippingSDK
     {
         return $this->shipping;
     }
