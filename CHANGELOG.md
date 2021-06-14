@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-10
+## [Unreleased] - 2021-06-14
 
 ### Added
 - [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace URL to Marketplace object** - [@norberttech](https://github.com/norberttech)
@@ -18,6 +18,7 @@
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [6221ef](https://github.com/amazon-php/sp-api-sdk/commit/6221ef447047de14273cb4a4d23c7d7110db3678) - **coding standard** - [@norberttech](https://github.com/norberttech)
 - [#14](https://github.com/amazon-php/sp-api-sdk/pull/14) - **ShippingSDK generator configuration** - [@norberttech](https://github.com/norberttech)
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **signing HTTP requests** - [@norberttech](https://github.com/norberttech)
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **deserialization of error messages** - [@norberttech](https://github.com/norberttech)
