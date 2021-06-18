@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-14
+## [Unreleased] - 2021-06-18
 
 ### Added
 - [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace URL to Marketplace object** - [@norberttech](https://github.com/norberttech)
