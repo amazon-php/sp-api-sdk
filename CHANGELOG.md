@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-06-19
 
 ### Added
+- [004e10](https://github.com/amazon-php/sp-api-sdk/commit/004e10d98bb73c94738e958d1a1f919a353a10a3) - **github workflows to auto update models** - [@norberttech](https://github.com/norberttech)
 - [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace URL to Marketplace object** - [@norberttech](https://github.com/norberttech)
 - [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace from country code constructor** - [@norberttech](https://github.com/norberttech)
 - [#11](https://github.com/amazon-php/sp-api-sdk/pull/11) - **OAuth::exchangeLwaCode(string $code) : AccessToken - method to exchange auth code for access token** - [@norberttech](https://github.com/norberttech)
