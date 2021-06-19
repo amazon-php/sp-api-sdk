@@ -224,7 +224,7 @@ class CreateRestrictedDataTokenResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets restricted_data_token.
      *
-     * @param null|string $restricted_data_token A Restricted Data Token (RDT). This is a short-lived access token that authorizes you to access the restricted resources that you specified. Pass this value with the x-amzn-access-token header when making subsequent calls to these restricted resources.
+     * @param null|string $restricted_data_token A Restricted Data Token (RDT). This is a short-lived access token that authorizes you to access the restricted resources that you specified. Pass this value with the x-amz-access-token header when making subsequent calls to these restricted resources.
      */
     public function setRestrictedDataToken(?string $restricted_data_token) : self
     {
