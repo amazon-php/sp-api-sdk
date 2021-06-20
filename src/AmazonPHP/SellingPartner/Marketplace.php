@@ -25,7 +25,7 @@ final class Marketplace
         $this->region = $region;
     }
 
-    public static function fromCountry(string $countryCode) : self
+    public static function fromCountry(string $countryCode) : string
     {
         $countryCode = \strtoupper($countryCode);
 
