@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-19
+## [Unreleased] - 2021-06-20
 
 ### Added
 - [004e10](https://github.com/amazon-php/sp-api-sdk/commit/004e10d98bb73c94738e958d1a1f919a353a10a3) - **github workflows to auto update models** - [@norberttech](https://github.com/norberttech)
@@ -15,6 +15,7 @@
 - [31b435](https://github.com/amazon-php/sp-api-sdk/commit/31b43531dba8e0924a3a0c68f2fa38b208a66e07) - **tools and CS fixes** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [1c0add](https://github.com/amazon-php/sp-api-sdk/commit/1c0add601e7d61c7ad7b41e767203a31cdcbb4f1) - **Use sudo to generate models** - [@norberttech](https://github.com/norberttech)
 - [26aba3](https://github.com/amazon-php/sp-api-sdk/commit/26aba3017bcfca3ca6be9bed06165fbeb191998d) - **SDK to latest open api schema** - [@norberttech](https://github.com/norberttech)
 - [c51271](https://github.com/amazon-php/sp-api-sdk/commit/c51271af3c5e6be6b8de759ac4a6abb02d8b0bc0) - **README** - [@norberttech](https://github.com/norberttech)
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
