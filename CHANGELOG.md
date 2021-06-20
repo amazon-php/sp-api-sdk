@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-06-20
 
 ### Added
+- [4e177f](https://github.com/amazon-php/sp-api-sdk/commit/4e177f06f1c770dd177c960b2fa2c21daa1fc6c7) - **phpstorm meta and skipp Marketplace in rector config** - [@norberttech](https://github.com/norberttech)
 - [004e10](https://github.com/amazon-php/sp-api-sdk/commit/004e10d98bb73c94738e958d1a1f919a353a10a3) - **github workflows to auto update models** - [@norberttech](https://github.com/norberttech)
 - [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace URL to Marketplace object** - [@norberttech](https://github.com/norberttech)
 - [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace from country code constructor** - [@norberttech](https://github.com/norberttech)
