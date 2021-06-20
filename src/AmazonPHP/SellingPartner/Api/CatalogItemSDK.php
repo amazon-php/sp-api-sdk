@@ -132,7 +132,6 @@ final class CatalogItemSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\CatalogItem\GetCatalogItemResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -339,7 +338,6 @@ final class CatalogItemSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogCategoriesResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -553,7 +551,6 @@ final class CatalogItemSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\CatalogItem\ListCatalogItemsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

@@ -131,7 +131,6 @@ final class AuthorizationSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

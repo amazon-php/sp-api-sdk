@@ -320,7 +320,6 @@ final class FeedsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -508,7 +507,6 @@ final class FeedsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -696,7 +694,6 @@ final class FeedsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Feeds\Feed $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -885,7 +882,6 @@ final class FeedsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Feeds\FeedDocument $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1080,7 +1076,6 @@ final class FeedsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

@@ -137,7 +137,6 @@ final class ProductPricingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -379,7 +378,6 @@ final class ProductPricingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -611,7 +609,6 @@ final class ProductPricingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -845,7 +842,6 @@ final class ProductPricingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

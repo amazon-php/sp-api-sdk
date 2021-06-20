@@ -134,7 +134,6 @@ final class ListingsItemsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -367,7 +366,6 @@ final class ListingsItemsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -615,7 +613,6 @@ final class ListingsItemsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

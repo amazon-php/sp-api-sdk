@@ -137,7 +137,6 @@ final class OrdersSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Orders\GetOrderResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -326,7 +325,6 @@ final class OrdersSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Orders\GetOrderAddressResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -515,7 +513,6 @@ final class OrdersSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Orders\GetOrderBuyerInfoResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -705,7 +702,6 @@ final class OrdersSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -905,7 +901,6 @@ final class OrdersSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsBuyerInfoResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1120,7 +1115,6 @@ final class OrdersSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

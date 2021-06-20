@@ -129,7 +129,6 @@ final class FBAInboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

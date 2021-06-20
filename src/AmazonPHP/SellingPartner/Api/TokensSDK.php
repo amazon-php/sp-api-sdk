@@ -127,7 +127,6 @@ final class TokensSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

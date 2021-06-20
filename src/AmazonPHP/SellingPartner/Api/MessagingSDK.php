@@ -151,7 +151,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -378,7 +377,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -605,7 +603,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -832,7 +829,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1059,7 +1055,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1286,7 +1281,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1513,7 +1507,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1739,7 +1732,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateNegativeFeedbackRemovalResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1950,7 +1942,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -2177,7 +2168,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -2403,7 +2393,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -2613,7 +2602,6 @@ final class MessagingSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

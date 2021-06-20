@@ -340,7 +340,6 @@ final class FBASmallAndLightSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEligibility $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -550,7 +549,6 @@ final class FBASmallAndLightSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -759,7 +757,6 @@ final class FBASmallAndLightSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviews $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -948,7 +945,6 @@ final class FBASmallAndLightSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

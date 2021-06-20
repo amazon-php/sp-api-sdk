@@ -138,7 +138,6 @@ final class ServicesSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -352,7 +351,6 @@ final class ServicesSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -578,7 +576,6 @@ final class ServicesSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -775,7 +772,6 @@ final class ServicesSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -984,7 +980,6 @@ final class ServicesSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1303,7 +1298,6 @@ final class ServicesSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

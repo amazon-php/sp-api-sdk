@@ -149,7 +149,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CancelFulfillmentOrderResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -342,7 +341,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -531,7 +529,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -737,7 +734,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -953,7 +949,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureSkuResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1173,7 +1168,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeaturesResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1362,7 +1356,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentOrderResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1555,7 +1548,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1743,7 +1735,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetPackageTrackingDetailsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1933,7 +1924,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -2127,7 +2117,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -2350,7 +2339,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

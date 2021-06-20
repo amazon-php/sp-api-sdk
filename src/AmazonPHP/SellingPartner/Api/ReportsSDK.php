@@ -143,7 +143,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\CancelReportResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -332,7 +331,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\CancelReportScheduleResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -521,7 +519,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -709,7 +706,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -897,7 +893,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1086,7 +1081,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportDocumentResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1275,7 +1269,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportScheduleResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1464,7 +1457,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportSchedulesResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1667,7 +1659,6 @@ final class ReportsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

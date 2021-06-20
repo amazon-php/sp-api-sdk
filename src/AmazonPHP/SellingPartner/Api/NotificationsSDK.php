@@ -141,7 +141,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -330,7 +329,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -534,7 +532,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\DeleteDestinationResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -724,7 +721,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\DeleteSubscriptionByIdResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -928,7 +924,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1115,7 +1110,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1286,7 +1280,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1476,7 +1469,6 @@ final class NotificationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionByIdResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

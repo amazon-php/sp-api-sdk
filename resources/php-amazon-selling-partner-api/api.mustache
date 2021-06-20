@@ -160,15 +160,12 @@ final {{#operations}}class {{packageName}}SDK
         }
         {{#returnType}}
 
-        /** @var {{{returnType}}} $result */
-        $result = ObjectSerializer::deserialize(
+        return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
             {{{returnType}}}::class,
             []
         );
-
-        return $result;
         {{/returnType}}
         {{^returnType}}
 

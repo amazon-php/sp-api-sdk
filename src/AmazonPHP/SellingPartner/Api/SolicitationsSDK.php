@@ -130,7 +130,6 @@ final class SolicitationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -340,7 +339,6 @@ final class SolicitationsSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

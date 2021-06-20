@@ -146,7 +146,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -357,7 +356,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -595,7 +593,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -845,7 +842,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1061,7 +1057,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1292,7 +1287,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1507,7 +1501,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1715,7 +1708,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -1943,7 +1935,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
@@ -2175,7 +2166,6 @@ final class APlusSDK
             );
         }
 
-        /** @var \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse $result */
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),

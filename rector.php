@@ -13,8 +13,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // paths to refactor; solid alternative to CLI arguments
     $parameters->set(Option::PATHS, [
-        __DIR__ . '/src/AmazonPHP/SellingPartner/Api',
-        __DIR__ . '/src/AmazonPHP/SellingPartner/Model',
+        __DIR__ . '/src',
+    ]);
+
+    $parameters->set(Option::SKIP, [
+        // single file
+        __DIR__ . '/src/AmazonPHP/SellingPartner/Marketplace.php',
     ]);
 
     // Define what rule sets will be applied
