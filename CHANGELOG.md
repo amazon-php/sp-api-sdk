@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-21
+## [Unreleased] - 2021-06-23
 
 ### Added
 - [4e177f](https://github.com/amazon-php/sp-api-sdk/commit/4e177f06f1c770dd177c960b2fa2c21daa1fc6c7) - **phpstorm meta and skipp Marketplace in rector config** - [@norberttech](https://github.com/norberttech)
