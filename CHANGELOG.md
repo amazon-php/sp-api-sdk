@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-06-24
 
 ### Added
+- [#21](https://github.com/amazon-php/sp-api-sdk/pull/21) - **Logger to OAuth API SDK** - [@norberttech](https://github.com/norberttech)
 - [4e177f](https://github.com/amazon-php/sp-api-sdk/commit/4e177f06f1c770dd177c960b2fa2c21daa1fc6c7) - **phpstorm meta and skipp Marketplace in rector config** - [@norberttech](https://github.com/norberttech)
 - [004e10](https://github.com/amazon-php/sp-api-sdk/commit/004e10d98bb73c94738e958d1a1f919a353a10a3) - **github workflows to auto update models** - [@norberttech](https://github.com/norberttech)
 - [#13](https://github.com/amazon-php/sp-api-sdk/pull/13) - **Marketplace URL to Marketplace object** - [@norberttech](https://github.com/norberttech)
@@ -22,6 +23,7 @@
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#21](https://github.com/amazon-php/sp-api-sdk/pull/21) - **Building Access Token for client credentials grant type** - [@norberttech](https://github.com/norberttech)
 - [6221ef](https://github.com/amazon-php/sp-api-sdk/commit/6221ef447047de14273cb4a4d23c7d7110db3678) - **coding standard** - [@norberttech](https://github.com/norberttech)
 - [#14](https://github.com/amazon-php/sp-api-sdk/pull/14) - **ShippingSDK generator configuration** - [@norberttech](https://github.com/norberttech)
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **signing HTTP requests** - [@norberttech](https://github.com/norberttech)
