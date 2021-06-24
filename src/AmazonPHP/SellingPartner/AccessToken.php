@@ -31,7 +31,7 @@ final class AccessToken
 
         return new self(
             $data['access_token'],
-            $data['refresh_token'],
+            $grantType === 'client_credentials' ? '' : $data['refresh_token'],
             $data['token_type'],
             $data['expires_in'],
             $grantType
