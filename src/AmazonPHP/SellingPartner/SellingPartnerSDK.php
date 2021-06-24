@@ -129,7 +129,7 @@ final class SellingPartnerSDK
         $httpFactory = new HttpFactory($requestFactory, $streamFactory);
 
         return new self(
-            new OAuth($httpClient, $httpFactory, $configuration),
+            new OAuth($httpClient, $httpFactory, $configuration, $logger),
             new Api\APlusSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\AuthorizationSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\CatalogItemSDK($httpClient, $httpFactory, $configuration, $logger),
