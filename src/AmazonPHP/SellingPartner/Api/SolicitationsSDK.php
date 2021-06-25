@@ -24,7 +24,11 @@ final class SolicitationsSDK
 
     public const OPERATION_CREATEPRODUCTREVIEWANDSELLERFEEDBACKSOLICITATION = 'createProductReviewAndSellerFeedbackSolicitation';
 
+    public const OPERATION_CREATEPRODUCTREVIEWANDSELLERFEEDBACKSOLICITATION_PATH = '/solicitations/v1/orders/{amazonOrderId}/solicitations/productReviewAndSellerFeedback';
+
     public const OPERATION_GETSOLICITATIONACTIONSFORORDER = 'getSolicitationActionsForOrder';
+
+    public const OPERATION_GETSOLICITATIONACTIONSFORORDER_PATH = '/solicitations/v1/orders/{amazonOrderId}';
 
     private ClientInterface $client;
 

@@ -24,13 +24,23 @@ final class FBASmallAndLightSDK
 
     public const OPERATION_DELETESMALLANDLIGHTENROLLMENTBYSELLERSKU = 'deleteSmallAndLightEnrollmentBySellerSKU';
 
+    public const OPERATION_DELETESMALLANDLIGHTENROLLMENTBYSELLERSKU_PATH = '/fba/smallAndLight/v1/enrollments/{sellerSKU}';
+
     public const OPERATION_GETSMALLANDLIGHTELIGIBILITYBYSELLERSKU = 'getSmallAndLightEligibilityBySellerSKU';
+
+    public const OPERATION_GETSMALLANDLIGHTELIGIBILITYBYSELLERSKU_PATH = '/fba/smallAndLight/v1/eligibilities/{sellerSKU}';
 
     public const OPERATION_GETSMALLANDLIGHTENROLLMENTBYSELLERSKU = 'getSmallAndLightEnrollmentBySellerSKU';
 
+    public const OPERATION_GETSMALLANDLIGHTENROLLMENTBYSELLERSKU_PATH = '/fba/smallAndLight/v1/enrollments/{sellerSKU}';
+
     public const OPERATION_GETSMALLANDLIGHTFEEPREVIEW = 'getSmallAndLightFeePreview';
 
+    public const OPERATION_GETSMALLANDLIGHTFEEPREVIEW_PATH = '/fba/smallAndLight/v1/feePreviews';
+
     public const OPERATION_PUTSMALLANDLIGHTENROLLMENTBYSELLERSKU = 'putSmallAndLightEnrollmentBySellerSKU';
+
+    public const OPERATION_PUTSMALLANDLIGHTENROLLMENTBYSELLERSKU_PATH = '/fba/smallAndLight/v1/enrollments/{sellerSKU}';
 
     private ClientInterface $client;
 

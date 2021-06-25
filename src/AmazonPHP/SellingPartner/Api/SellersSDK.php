@@ -24,6 +24,8 @@ final class SellersSDK
 
     public const OPERATION_GETMARKETPLACEPARTICIPATIONS = 'getMarketplaceParticipations';
 
+    public const OPERATION_GETMARKETPLACEPARTICIPATIONS_PATH = '/sellers/v1/marketplaceParticipations';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;

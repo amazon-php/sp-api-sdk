@@ -24,7 +24,11 @@ final class ProductFeesSDK
 
     public const OPERATION_GETMYFEESESTIMATEFORASIN = 'getMyFeesEstimateForASIN';
 
+    public const OPERATION_GETMYFEESESTIMATEFORASIN_PATH = '/products/fees/v0/items/{Asin}/feesEstimate';
+
     public const OPERATION_GETMYFEESESTIMATEFORSKU = 'getMyFeesEstimateForSKU';
+
+    public const OPERATION_GETMYFEESESTIMATEFORSKU_PATH = '/products/fees/v0/listings/{SellerSKU}/feesEstimate';
 
     private ClientInterface $client;
 

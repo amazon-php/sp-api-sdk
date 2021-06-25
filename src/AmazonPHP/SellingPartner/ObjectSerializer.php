@@ -11,7 +11,7 @@ final class ObjectSerializer
      *
      * @param string $format the new date format to use
      */
-    public static function setDateTimeFormat($format) : void
+    public static function setDateTimeFormat(string $format) : void
     {
         self::$dateTimeFormat = $format;
     }
@@ -25,7 +25,7 @@ final class ObjectSerializer
      *
      * @return null|array|object|scalar serialized form of $data
      */
-    public static function sanitizeForSerialization($data, $type = null, $format = null)
+    public static function sanitizeForSerialization($data, string $type = null, string $format = null)
     {
         if (\is_scalar($data) || null === $data) {
             return $data;
@@ -78,7 +78,7 @@ final class ObjectSerializer
                 }
             }
 
-            return (object) $values;
+            return $values;
         }
 
         return (string) $data;
@@ -90,7 +90,7 @@ final class ObjectSerializer
      *
      * @param string $filename filename to be sanitized
      *
-     * @return string the sanitized filename
+     * @return mixed|string the sanitized filename
      */
     public static function sanitizeFilename(string $filename)
     {
@@ -109,7 +109,7 @@ final class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toPathValue(string $value)
+    public static function toPathValue(string $value) : string
     {
         return \rawurlencode(self::toString($value));
     }
@@ -124,7 +124,7 @@ final class ObjectSerializer
      *
      * @return string the serialized object
      */
-    public static function toQueryValue($object)
+    public static function toQueryValue($object) : string
     {
         if (\is_array($object)) {
             return \implode(',', $object);
@@ -140,9 +140,9 @@ final class ObjectSerializer
      *
      * @param string $value a string which will be part of the header
      *
-     * @return string the header string
+     * @return mixed|string the header string
      */
-    public static function toHeaderValue($value)
+    public static function toHeaderValue(string $value)
     {
         $callable = [$value, 'toHeaderValue'];
 
@@ -160,7 +160,7 @@ final class ObjectSerializer
      *
      * @param \SplFileObject|string $value the value of the form parameter
      *
-     * @return string the form string
+     * @return bool|string the form string
      */
     public static function toFormValue($value)
     {
@@ -181,7 +181,7 @@ final class ObjectSerializer
      *
      * @return string the header string
      */
-    public static function toString($value)
+    public static function toString($value) : string
     {
         if ($value instanceof \DateTime) { // datetime in ISO8601 format
             return $value->format(self::$dateTimeFormat);
@@ -202,9 +202,9 @@ final class ObjectSerializer
      *                      ssv, tsv, pipes, multi)
      * @param bool $allowCollectionFormatMulti allow collection format to be a multidimensional array
      *
-     * @return string
+     * @return null|string|void
      */
-    public static function serializeCollection(array $collection, $style, $allowCollectionFormatMulti = false)
+    public static function serializeCollection(array $collection, string $style, bool $allowCollectionFormatMulti = false)
     {
         if ($allowCollectionFormatMulti && ('multi' === $style)) {
             // http_build_query() almost does the job for us. We just
@@ -235,7 +235,6 @@ final class ObjectSerializer
     /**
      * Deserialize a JSON string into an object.
      *
-     * @param Configuration $configuration
      * @param mixed $data object or primitive to be deserialized
      * @param string $class class name is passed as a string
      * @param string[] $httpHeaders HTTP headers

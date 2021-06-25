@@ -24,9 +24,15 @@ final class CatalogItemSDK
 
     public const OPERATION_GETCATALOGITEM = 'getCatalogItem';
 
+    public const OPERATION_GETCATALOGITEM_PATH = '/catalog/v0/items/{asin}';
+
     public const OPERATION_LISTCATALOGCATEGORIES = 'listCatalogCategories';
 
+    public const OPERATION_LISTCATALOGCATEGORIES_PATH = '/catalog/v0/categories';
+
     public const OPERATION_LISTCATALOGITEMS = 'listCatalogItems';
+
+    public const OPERATION_LISTCATALOGITEMS_PATH = '/catalog/v0/items';
 
     private ClientInterface $client;
 

@@ -70,7 +70,17 @@ final class Configuration
             throw new InvalidArgumentException("Invalid region {$awsRegion}");
         }
 
-        return 'https://' . $this->apiHost($awsRegion);
+        switch ($awsRegion) {
+            case Regions::EUROPE:
+                return Regions::EUROPE_URL;
+            case Regions::FAR_EAST:
+                return Regions::FAR_EAST_URL;
+            case Regions::NORTH_AMERICA:
+                return Regions::NORTH_AMERICA_URL;
+
+            default:
+                throw new \RuntimeException('unknown region');
+        }
     }
 
     public function apiHost(string $awsRegion) : string
@@ -81,11 +91,11 @@ final class Configuration
 
         switch ($awsRegion) {
             case Regions::EUROPE:
-                return 'sellingpartnerapi-eu.amazon.com';
+                return Regions::EUROPE_HOST;
             case Regions::FAR_EAST:
-                return 'sellingpartnerapi-fe.amazon.com';
+                return Regions::FAR_EAST_HOST;
             case Regions::NORTH_AMERICA:
-                return 'sellingpartnerapi-na.amazon.com';
+                return Regions::NORTH_AMERICA_HOST;
 
             default:
                 throw new \RuntimeException('unknown region');

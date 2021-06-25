@@ -24,15 +24,27 @@ final class FeedsSDK
 
     public const OPERATION_CANCELFEED = 'cancelFeed';
 
+    public const OPERATION_CANCELFEED_PATH = '/feeds/2021-06-30/feeds/{feedId}';
+
     public const OPERATION_CREATEFEED = 'createFeed';
+
+    public const OPERATION_CREATEFEED_PATH = '/feeds/2021-06-30/feeds';
 
     public const OPERATION_CREATEFEEDDOCUMENT = 'createFeedDocument';
 
+    public const OPERATION_CREATEFEEDDOCUMENT_PATH = '/feeds/2021-06-30/documents';
+
     public const OPERATION_GETFEED = 'getFeed';
+
+    public const OPERATION_GETFEED_PATH = '/feeds/2021-06-30/feeds/{feedId}';
 
     public const OPERATION_GETFEEDDOCUMENT = 'getFeedDocument';
 
+    public const OPERATION_GETFEEDDOCUMENT_PATH = '/feeds/2021-06-30/documents/{feedDocumentId}';
+
     public const OPERATION_GETFEEDS = 'getFeeds';
+
+    public const OPERATION_GETFEEDS_PATH = '/feeds/2021-06-30/feeds';
 
     private ClientInterface $client;
 

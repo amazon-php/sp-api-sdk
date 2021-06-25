@@ -24,21 +24,39 @@ final class ReportsSDK
 
     public const OPERATION_CANCELREPORT = 'cancelReport';
 
+    public const OPERATION_CANCELREPORT_PATH = '/reports/2020-09-04/reports/{reportId}';
+
     public const OPERATION_CANCELREPORTSCHEDULE = 'cancelReportSchedule';
+
+    public const OPERATION_CANCELREPORTSCHEDULE_PATH = '/reports/2020-09-04/schedules/{reportScheduleId}';
 
     public const OPERATION_CREATEREPORT = 'createReport';
 
+    public const OPERATION_CREATEREPORT_PATH = '/reports/2020-09-04/reports';
+
     public const OPERATION_CREATEREPORTSCHEDULE = 'createReportSchedule';
+
+    public const OPERATION_CREATEREPORTSCHEDULE_PATH = '/reports/2020-09-04/schedules';
 
     public const OPERATION_GETREPORT = 'getReport';
 
+    public const OPERATION_GETREPORT_PATH = '/reports/2020-09-04/reports/{reportId}';
+
     public const OPERATION_GETREPORTDOCUMENT = 'getReportDocument';
+
+    public const OPERATION_GETREPORTDOCUMENT_PATH = '/reports/2020-09-04/documents/{reportDocumentId}';
 
     public const OPERATION_GETREPORTSCHEDULE = 'getReportSchedule';
 
+    public const OPERATION_GETREPORTSCHEDULE_PATH = '/reports/2020-09-04/schedules/{reportScheduleId}';
+
     public const OPERATION_GETREPORTSCHEDULES = 'getReportSchedules';
 
+    public const OPERATION_GETREPORTSCHEDULES_PATH = '/reports/2020-09-04/schedules';
+
     public const OPERATION_GETREPORTS = 'getReports';
+
+    public const OPERATION_GETREPORTS_PATH = '/reports/2020-09-04/reports';
 
     private ClientInterface $client;
 

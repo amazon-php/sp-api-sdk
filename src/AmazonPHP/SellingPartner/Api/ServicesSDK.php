@@ -24,15 +24,27 @@ final class ServicesSDK
 
     public const OPERATION_ADDAPPOINTMENTFORSERVICEJOBBYSERVICEJOBID = 'addAppointmentForServiceJobByServiceJobId';
 
+    public const OPERATION_ADDAPPOINTMENTFORSERVICEJOBBYSERVICEJOBID_PATH = '/service/v1/serviceJobs/{serviceJobId}/appointments';
+
     public const OPERATION_CANCELSERVICEJOBBYSERVICEJOBID = 'cancelServiceJobByServiceJobId';
+
+    public const OPERATION_CANCELSERVICEJOBBYSERVICEJOBID_PATH = '/service/v1/serviceJobs/{serviceJobId}/cancellations';
 
     public const OPERATION_COMPLETESERVICEJOBBYSERVICEJOBID = 'completeServiceJobByServiceJobId';
 
+    public const OPERATION_COMPLETESERVICEJOBBYSERVICEJOBID_PATH = '/service/v1/serviceJobs/{serviceJobId}/completions';
+
     public const OPERATION_GETSERVICEJOBBYSERVICEJOBID = 'getServiceJobByServiceJobId';
+
+    public const OPERATION_GETSERVICEJOBBYSERVICEJOBID_PATH = '/service/v1/serviceJobs/{serviceJobId}';
 
     public const OPERATION_GETSERVICEJOBS = 'getServiceJobs';
 
+    public const OPERATION_GETSERVICEJOBS_PATH = '/service/v1/serviceJobs';
+
     public const OPERATION_RESCHEDULEAPPOINTMENTFORSERVICEJOBBYSERVICEJOBID = 'rescheduleAppointmentForServiceJobByServiceJobId';
+
+    public const OPERATION_RESCHEDULEAPPOINTMENTFORSERVICEJOBBYSERVICEJOBID_PATH = '/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}';
 
     private ClientInterface $client;
 

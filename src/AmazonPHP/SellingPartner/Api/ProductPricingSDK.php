@@ -24,11 +24,19 @@ final class ProductPricingSDK
 
     public const OPERATION_GETCOMPETITIVEPRICING = 'getCompetitivePricing';
 
+    public const OPERATION_GETCOMPETITIVEPRICING_PATH = '/products/pricing/v0/competitivePrice';
+
     public const OPERATION_GETITEMOFFERS = 'getItemOffers';
+
+    public const OPERATION_GETITEMOFFERS_PATH = '/products/pricing/v0/items/{Asin}/offers';
 
     public const OPERATION_GETLISTINGOFFERS = 'getListingOffers';
 
+    public const OPERATION_GETLISTINGOFFERS_PATH = '/products/pricing/v0/listings/{SellerSKU}/offers';
+
     public const OPERATION_GETPRICING = 'getPricing';
+
+    public const OPERATION_GETPRICING_PATH = '/products/pricing/v0/price';
 
     private ClientInterface $client;
 

@@ -420,7 +420,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
      */
     public function jsonSerialize() : string
     {
-       return ObjectSerializer::sanitizeForSerialization($this);
+       return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**

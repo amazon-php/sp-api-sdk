@@ -24,19 +24,35 @@ final class NotificationsSDK
 
     public const OPERATION_CREATEDESTINATION = 'createDestination';
 
+    public const OPERATION_CREATEDESTINATION_PATH = '/notifications/v1/destinations';
+
     public const OPERATION_CREATESUBSCRIPTION = 'createSubscription';
+
+    public const OPERATION_CREATESUBSCRIPTION_PATH = '/notifications/v1/subscriptions/{notificationType}';
 
     public const OPERATION_DELETEDESTINATION = 'deleteDestination';
 
+    public const OPERATION_DELETEDESTINATION_PATH = '/notifications/v1/destinations/{destinationId}';
+
     public const OPERATION_DELETESUBSCRIPTIONBYID = 'deleteSubscriptionById';
+
+    public const OPERATION_DELETESUBSCRIPTIONBYID_PATH = '/notifications/v1/subscriptions/{notificationType}/{subscriptionId}';
 
     public const OPERATION_GETDESTINATION = 'getDestination';
 
+    public const OPERATION_GETDESTINATION_PATH = '/notifications/v1/destinations/{destinationId}';
+
     public const OPERATION_GETDESTINATIONS = 'getDestinations';
+
+    public const OPERATION_GETDESTINATIONS_PATH = '/notifications/v1/destinations';
 
     public const OPERATION_GETSUBSCRIPTION = 'getSubscription';
 
+    public const OPERATION_GETSUBSCRIPTION_PATH = '/notifications/v1/subscriptions/{notificationType}';
+
     public const OPERATION_GETSUBSCRIPTIONBYID = 'getSubscriptionById';
+
+    public const OPERATION_GETSUBSCRIPTIONBYID_PATH = '/notifications/v1/subscriptions/{notificationType}/{subscriptionId}';
 
     private ClientInterface $client;
 

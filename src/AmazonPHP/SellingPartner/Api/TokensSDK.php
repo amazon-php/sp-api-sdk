@@ -24,6 +24,8 @@ final class TokensSDK
 
     public const OPERATION_CREATERESTRICTEDDATATOKEN = 'createRestrictedDataToken';
 
+    public const OPERATION_CREATERESTRICTEDDATATOKEN_PATH = '/tokens/2021-03-01/restrictedDataToken';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;

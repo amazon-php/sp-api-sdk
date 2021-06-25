@@ -24,9 +24,15 @@ final class ListingsItemsSDK
 
     public const OPERATION_DELETELISTINGSITEM = 'deleteListingsItem';
 
+    public const OPERATION_DELETELISTINGSITEM_PATH = '/listings/2020-09-01/items/{sellerId}/{sku}';
+
     public const OPERATION_PATCHLISTINGSITEM = 'patchListingsItem';
 
+    public const OPERATION_PATCHLISTINGSITEM_PATH = '/listings/2020-09-01/items/{sellerId}/{sku}';
+
     public const OPERATION_PUTLISTINGSITEM = 'putListingsItem';
+
+    public const OPERATION_PUTLISTINGSITEM_PATH = '/listings/2020-09-01/items/{sellerId}/{sku}';
 
     private ClientInterface $client;
 

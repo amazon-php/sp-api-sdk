@@ -24,9 +24,15 @@ final class ShipmentInvoicingSDK
 
     public const OPERATION_GETINVOICESTATUS = 'getInvoiceStatus';
 
+    public const OPERATION_GETINVOICESTATUS_PATH = '/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice/status';
+
     public const OPERATION_GETSHIPMENTDETAILS = 'getShipmentDetails';
 
+    public const OPERATION_GETSHIPMENTDETAILS_PATH = '/fba/outbound/brazil/v0/shipments/{shipmentId}';
+
     public const OPERATION_SUBMITINVOICE = 'submitInvoice';
+
+    public const OPERATION_SUBMITINVOICE_PATH = '/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice';
 
     private ClientInterface $client;
 

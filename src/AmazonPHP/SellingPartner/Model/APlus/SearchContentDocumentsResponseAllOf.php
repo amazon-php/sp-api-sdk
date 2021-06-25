@@ -292,7 +292,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      */
     public function jsonSerialize() : string
     {
-        return ObjectSerializer::sanitizeForSerialization($this);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**

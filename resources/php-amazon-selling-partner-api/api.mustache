@@ -24,6 +24,8 @@ final {{#operations}}class {{packageName}}SDK
 
     {{#operation}}
     public const OPERATION_{{#lambda.uppercase}}{{operationId}}{{/lambda.uppercase}} = '{{operationId}}';
+
+    public const OPERATION_{{#lambda.uppercase}}{{operationId}}{{/lambda.uppercase}}_PATH = '{{path}}';
     {{/operation}}
 
     private ClientInterface $client;
