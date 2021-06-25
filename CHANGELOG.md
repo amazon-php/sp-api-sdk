@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-06-24
+## [Unreleased] - 2021-06-25
 
 ### Added
 - [#21](https://github.com/amazon-php/sp-api-sdk/pull/21) - **Logger to OAuth API SDK** - [@norberttech](https://github.com/norberttech)
