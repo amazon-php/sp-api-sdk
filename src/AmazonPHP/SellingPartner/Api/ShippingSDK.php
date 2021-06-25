@@ -24,21 +24,39 @@ final class ShippingSDK
 
     public const OPERATION_CANCELSHIPMENT = 'cancelShipment';
 
+    public const OPERATION_CANCELSHIPMENT_PATH = '/shipping/v1/shipments/{shipmentId}/cancel';
+
     public const OPERATION_CREATESHIPMENT = 'createShipment';
+
+    public const OPERATION_CREATESHIPMENT_PATH = '/shipping/v1/shipments';
 
     public const OPERATION_GETACCOUNT = 'getAccount';
 
+    public const OPERATION_GETACCOUNT_PATH = '/shipping/v1/account';
+
     public const OPERATION_GETRATES = 'getRates';
+
+    public const OPERATION_GETRATES_PATH = '/shipping/v1/rates';
 
     public const OPERATION_GETSHIPMENT = 'getShipment';
 
+    public const OPERATION_GETSHIPMENT_PATH = '/shipping/v1/shipments/{shipmentId}';
+
     public const OPERATION_GETTRACKINGINFORMATION = 'getTrackingInformation';
+
+    public const OPERATION_GETTRACKINGINFORMATION_PATH = '/shipping/v1/tracking/{trackingId}';
 
     public const OPERATION_PURCHASELABELS = 'purchaseLabels';
 
+    public const OPERATION_PURCHASELABELS_PATH = '/shipping/v1/shipments/{shipmentId}/purchaseLabels';
+
     public const OPERATION_PURCHASESHIPMENT = 'purchaseShipment';
 
+    public const OPERATION_PURCHASESHIPMENT_PATH = '/shipping/v1/purchaseShipment';
+
     public const OPERATION_RETRIEVESHIPPINGLABEL = 'retrieveShippingLabel';
+
+    public const OPERATION_RETRIEVESHIPPINGLABEL_PATH = '/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label';
 
     private ClientInterface $client;
 

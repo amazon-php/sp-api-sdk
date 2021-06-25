@@ -24,23 +24,43 @@ final class APlusSDK
 
     public const OPERATION_CREATECONTENTDOCUMENT = 'createContentDocument';
 
+    public const OPERATION_CREATECONTENTDOCUMENT_PATH = '/aplus/2020-11-01/contentDocuments';
+
     public const OPERATION_GETCONTENTDOCUMENT = 'getContentDocument';
+
+    public const OPERATION_GETCONTENTDOCUMENT_PATH = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}';
 
     public const OPERATION_LISTCONTENTDOCUMENTASINRELATIONS = 'listContentDocumentAsinRelations';
 
+    public const OPERATION_LISTCONTENTDOCUMENTASINRELATIONS_PATH = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins';
+
     public const OPERATION_POSTCONTENTDOCUMENTAPPROVALSUBMISSION = 'postContentDocumentApprovalSubmission';
+
+    public const OPERATION_POSTCONTENTDOCUMENTAPPROVALSUBMISSION_PATH = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/approvalSubmissions';
 
     public const OPERATION_POSTCONTENTDOCUMENTASINRELATIONS = 'postContentDocumentAsinRelations';
 
+    public const OPERATION_POSTCONTENTDOCUMENTASINRELATIONS_PATH = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins';
+
     public const OPERATION_POSTCONTENTDOCUMENTSUSPENDSUBMISSION = 'postContentDocumentSuspendSubmission';
+
+    public const OPERATION_POSTCONTENTDOCUMENTSUSPENDSUBMISSION_PATH = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/suspendSubmissions';
 
     public const OPERATION_SEARCHCONTENTDOCUMENTS = 'searchContentDocuments';
 
+    public const OPERATION_SEARCHCONTENTDOCUMENTS_PATH = '/aplus/2020-11-01/contentDocuments';
+
     public const OPERATION_SEARCHCONTENTPUBLISHRECORDS = 'searchContentPublishRecords';
+
+    public const OPERATION_SEARCHCONTENTPUBLISHRECORDS_PATH = '/aplus/2020-11-01/contentPublishRecords';
 
     public const OPERATION_UPDATECONTENTDOCUMENT = 'updateContentDocument';
 
+    public const OPERATION_UPDATECONTENTDOCUMENT_PATH = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}';
+
     public const OPERATION_VALIDATECONTENTDOCUMENTASINRELATIONS = 'validateContentDocumentAsinRelations';
+
+    public const OPERATION_VALIDATECONTENTDOCUMENTASINRELATIONS_PATH = '/aplus/2020-11-01/contentAsinValidations';
 
     private ClientInterface $client;
 

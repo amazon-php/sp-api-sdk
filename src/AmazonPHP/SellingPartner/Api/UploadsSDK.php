@@ -24,6 +24,8 @@ final class UploadsSDK
 
     public const OPERATION_CREATEUPLOADDESTINATIONFORRESOURCE = 'createUploadDestinationForResource';
 
+    public const OPERATION_CREATEUPLOADDESTINATIONFORRESOURCE_PATH = '/uploads/2020-11-01/uploadDestinations/{resource}';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;

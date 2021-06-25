@@ -24,15 +24,27 @@ final class OrdersSDK
 
     public const OPERATION_GETORDER = 'getOrder';
 
+    public const OPERATION_GETORDER_PATH = '/orders/v0/orders/{orderId}';
+
     public const OPERATION_GETORDERADDRESS = 'getOrderAddress';
+
+    public const OPERATION_GETORDERADDRESS_PATH = '/orders/v0/orders/{orderId}/address';
 
     public const OPERATION_GETORDERBUYERINFO = 'getOrderBuyerInfo';
 
+    public const OPERATION_GETORDERBUYERINFO_PATH = '/orders/v0/orders/{orderId}/buyerInfo';
+
     public const OPERATION_GETORDERITEMS = 'getOrderItems';
+
+    public const OPERATION_GETORDERITEMS_PATH = '/orders/v0/orders/{orderId}/orderItems';
 
     public const OPERATION_GETORDERITEMSBUYERINFO = 'getOrderItemsBuyerInfo';
 
+    public const OPERATION_GETORDERITEMSBUYERINFO_PATH = '/orders/v0/orders/{orderId}/orderItems/buyerInfo';
+
     public const OPERATION_GETORDERS = 'getOrders';
+
+    public const OPERATION_GETORDERS_PATH = '/orders/v0/orders';
 
     private ClientInterface $client;
 

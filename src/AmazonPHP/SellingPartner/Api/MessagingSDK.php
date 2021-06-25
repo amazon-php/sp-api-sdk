@@ -24,27 +24,51 @@ final class MessagingSDK
 
     public const OPERATION_CONFIRMCUSTOMIZATIONDETAILS = 'confirmCustomizationDetails';
 
+    public const OPERATION_CONFIRMCUSTOMIZATIONDETAILS_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails';
+
     public const OPERATION_CREATEAMAZONMOTORS = 'createAmazonMotors';
+
+    public const OPERATION_CREATEAMAZONMOTORS_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/amazonMotors';
 
     public const OPERATION_CREATECONFIRMDELIVERYDETAILS = 'createConfirmDeliveryDetails';
 
+    public const OPERATION_CREATECONFIRMDELIVERYDETAILS_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/confirmDeliveryDetails';
+
     public const OPERATION_CREATECONFIRMORDERDETAILS = 'createConfirmOrderDetails';
+
+    public const OPERATION_CREATECONFIRMORDERDETAILS_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/confirmOrderDetails';
 
     public const OPERATION_CREATECONFIRMSERVICEDETAILS = 'createConfirmServiceDetails';
 
+    public const OPERATION_CREATECONFIRMSERVICEDETAILS_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/confirmServiceDetails';
+
     public const OPERATION_CREATEDIGITALACCESSKEY = 'createDigitalAccessKey';
+
+    public const OPERATION_CREATEDIGITALACCESSKEY_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey';
 
     public const OPERATION_CREATELEGALDISCLOSURE = 'createLegalDisclosure';
 
+    public const OPERATION_CREATELEGALDISCLOSURE_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure';
+
     public const OPERATION_CREATENEGATIVEFEEDBACKREMOVAL = 'createNegativeFeedbackRemoval';
+
+    public const OPERATION_CREATENEGATIVEFEEDBACKREMOVAL_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/negativeFeedbackRemoval';
 
     public const OPERATION_CREATEUNEXPECTEDPROBLEM = 'createUnexpectedProblem';
 
+    public const OPERATION_CREATEUNEXPECTEDPROBLEM_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/unexpectedProblem';
+
     public const OPERATION_CREATEWARRANTY = 'createWarranty';
+
+    public const OPERATION_CREATEWARRANTY_PATH = '/messaging/v1/orders/{amazonOrderId}/messages/warranty';
 
     public const OPERATION_GETATTRIBUTES = 'getAttributes';
 
+    public const OPERATION_GETATTRIBUTES_PATH = '/messaging/v1/orders/{amazonOrderId}/attributes';
+
     public const OPERATION_GETMESSAGINGACTIONSFORORDER = 'getMessagingActionsForOrder';
+
+    public const OPERATION_GETMESSAGINGACTIONSFORORDER_PATH = '/messaging/v1/orders/{amazonOrderId}';
 
     private ClientInterface $client;
 

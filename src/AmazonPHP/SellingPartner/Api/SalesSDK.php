@@ -24,6 +24,8 @@ final class SalesSDK
 
     public const OPERATION_GETORDERMETRICS = 'getOrderMetrics';
 
+    public const OPERATION_GETORDERMETRICS_PATH = '/sales/v1/orderMetrics';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;

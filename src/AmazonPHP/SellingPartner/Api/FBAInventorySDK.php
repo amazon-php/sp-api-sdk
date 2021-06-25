@@ -24,6 +24,8 @@ final class FBAInventorySDK
 
     public const OPERATION_GETINVENTORYSUMMARIES = 'getInventorySummaries';
 
+    public const OPERATION_GETINVENTORYSUMMARIES_PATH = '/fba/inventory/v1/summaries';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;

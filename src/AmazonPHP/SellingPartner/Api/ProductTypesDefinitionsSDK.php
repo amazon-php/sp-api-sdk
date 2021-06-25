@@ -24,7 +24,11 @@ final class ProductTypesDefinitionsSDK
 
     public const OPERATION_GETDEFINITIONSPRODUCTTYPE = 'getDefinitionsProductType';
 
+    public const OPERATION_GETDEFINITIONSPRODUCTTYPE_PATH = '/definitions/2020-09-01/productTypes/{productType}';
+
     public const OPERATION_SEARCHDEFINITIONSPRODUCTTYPES = 'searchDefinitionsProductTypes';
+
+    public const OPERATION_SEARCHDEFINITIONSPRODUCTTYPES_PATH = '/definitions/2020-09-01/productTypes';
 
     private ClientInterface $client;
 

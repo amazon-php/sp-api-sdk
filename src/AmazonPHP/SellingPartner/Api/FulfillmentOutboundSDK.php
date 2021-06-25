@@ -24,27 +24,51 @@ final class FulfillmentOutboundSDK
 
     public const OPERATION_CANCELFULFILLMENTORDER = 'cancelFulfillmentOrder';
 
+    public const OPERATION_CANCELFULFILLMENTORDER_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/cancel';
+
     public const OPERATION_CREATEFULFILLMENTORDER = 'createFulfillmentOrder';
+
+    public const OPERATION_CREATEFULFILLMENTORDER_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders';
 
     public const OPERATION_CREATEFULFILLMENTRETURN = 'createFulfillmentReturn';
 
+    public const OPERATION_CREATEFULFILLMENTRETURN_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/return';
+
     public const OPERATION_GETFEATUREINVENTORY = 'getFeatureInventory';
+
+    public const OPERATION_GETFEATUREINVENTORY_PATH = '/fba/outbound/2020-07-01/features/inventory/{featureName}';
 
     public const OPERATION_GETFEATURESKU = 'getFeatureSKU';
 
+    public const OPERATION_GETFEATURESKU_PATH = '/fba/outbound/2020-07-01/features/inventory/{featureName}/{sellerSku}';
+
     public const OPERATION_GETFEATURES = 'getFeatures';
+
+    public const OPERATION_GETFEATURES_PATH = '/fba/outbound/2020-07-01/features';
 
     public const OPERATION_GETFULFILLMENTORDER = 'getFulfillmentOrder';
 
+    public const OPERATION_GETFULFILLMENTORDER_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}';
+
     public const OPERATION_GETFULFILLMENTPREVIEW = 'getFulfillmentPreview';
+
+    public const OPERATION_GETFULFILLMENTPREVIEW_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/preview';
 
     public const OPERATION_GETPACKAGETRACKINGDETAILS = 'getPackageTrackingDetails';
 
+    public const OPERATION_GETPACKAGETRACKINGDETAILS_PATH = '/fba/outbound/2020-07-01/tracking';
+
     public const OPERATION_LISTALLFULFILLMENTORDERS = 'listAllFulfillmentOrders';
+
+    public const OPERATION_LISTALLFULFILLMENTORDERS_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders';
 
     public const OPERATION_LISTRETURNREASONCODES = 'listReturnReasonCodes';
 
+    public const OPERATION_LISTRETURNREASONCODES_PATH = '/fba/outbound/2020-07-01/returnReasonCodes';
+
     public const OPERATION_UPDATEFULFILLMENTORDER = 'updateFulfillmentOrder';
+
+    public const OPERATION_UPDATEFULFILLMENTORDER_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}';
 
     private ClientInterface $client;
 

@@ -24,11 +24,19 @@ final class FinancesSDK
 
     public const OPERATION_LISTFINANCIALEVENTGROUPS = 'listFinancialEventGroups';
 
+    public const OPERATION_LISTFINANCIALEVENTGROUPS_PATH = '/finances/v0/financialEventGroups';
+
     public const OPERATION_LISTFINANCIALEVENTS = 'listFinancialEvents';
+
+    public const OPERATION_LISTFINANCIALEVENTS_PATH = '/finances/v0/financialEvents';
 
     public const OPERATION_LISTFINANCIALEVENTSBYGROUPID = 'listFinancialEventsByGroupId';
 
+    public const OPERATION_LISTFINANCIALEVENTSBYGROUPID_PATH = '/finances/v0/financialEventGroups/{eventGroupId}/financialEvents';
+
     public const OPERATION_LISTFINANCIALEVENTSBYORDERID = 'listFinancialEventsByOrderId';
+
+    public const OPERATION_LISTFINANCIALEVENTSBYORDERID_PATH = '/finances/v0/orders/{orderId}/financialEvents';
 
     private ClientInterface $client;
 

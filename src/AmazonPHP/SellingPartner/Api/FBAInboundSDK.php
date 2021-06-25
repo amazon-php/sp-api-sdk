@@ -24,6 +24,8 @@ final class FBAInboundSDK
 
     public const OPERATION_GETITEMELIGIBILITYPREVIEW = 'getItemEligibilityPreview';
 
+    public const OPERATION_GETITEMELIGIBILITYPREVIEW_PATH = '/fba/inbound/v1/eligibility/itemPreview';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;

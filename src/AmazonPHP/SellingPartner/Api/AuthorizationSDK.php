@@ -24,6 +24,8 @@ final class AuthorizationSDK
 
     public const OPERATION_GETAUTHORIZATIONCODE = 'getAuthorizationCode';
 
+    public const OPERATION_GETAUTHORIZATIONCODE_PATH = '/authorization/v1/authorizationCode';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;
