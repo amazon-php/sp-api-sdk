@@ -87,6 +87,8 @@
             "rm -rf src/AmazonPHP/SellingPartner/Api/ListingsAPI",
             "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\MessagingApi\\MessagingSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
             "rm -rf src/AmazonPHP/SellingPartner/Api/MessagingAPI",
+            "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\MerchantFulfillmentApi\\MerchantFulfillmentSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
+            "rm -rf src/AmazonPHP/SellingPartner/Api/MerchantFulfillmentApi",
             "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\NotificationsApi\\NotificationsSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",
             "rm -rf src/AmazonPHP/SellingPartner/Api/NotificationsApi",
             "tools/vendor/bin/psalm-refactor --move \"AmazonPHP\\SellingPartner\\Api\\ProductPricingApi\\ProductPricingSDK\" --into \"AmazonPHP\\SellingPartner\\Api\"",

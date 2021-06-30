@@ -362,7 +362,7 @@ final {{#operations}}class {{packageName}}SDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            '{{httpMethod}}',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 

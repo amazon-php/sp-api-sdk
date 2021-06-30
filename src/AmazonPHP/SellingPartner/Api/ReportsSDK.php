@@ -223,7 +223,7 @@ final class ReportsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'DELETE',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -411,7 +411,7 @@ final class ReportsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'DELETE',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -590,7 +590,7 @@ final class ReportsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -777,7 +777,7 @@ final class ReportsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
