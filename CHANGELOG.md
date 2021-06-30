@@ -1,6 +1,7 @@
-## [Unreleased] - 2021-06-29
+## [Unreleased] - 2021-06-30
 
 ### Added
+- [#26](https://github.com/amazon-php/sp-api-sdk/pull/26) - **MerchantFulfillment SDK** - [@norberttech](https://github.com/norberttech)
 - [#23](https://github.com/amazon-php/sp-api-sdk/pull/23) - **operations paths in API constatns** - [@norberttech](https://github.com/norberttech)
 - [#23](https://github.com/amazon-php/sp-api-sdk/pull/23) - **region URLs** - [@norberttech](https://github.com/norberttech)
 - [#21](https://github.com/amazon-php/sp-api-sdk/pull/21) - **Logger to OAuth API SDK** - [@norberttech](https://github.com/norberttech)
@@ -25,6 +26,7 @@
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#26](https://github.com/amazon-php/sp-api-sdk/pull/26) - **Wrong HttpMethods** - [@norberttech](https://github.com/norberttech)
 - [#23](https://github.com/amazon-php/sp-api-sdk/pull/23) - **jsonSerialize method at Models** - [@norberttech](https://github.com/norberttech)
 - [#21](https://github.com/amazon-php/sp-api-sdk/pull/21) - **Building Access Token for client credentials grant type** - [@norberttech](https://github.com/norberttech)
 - [6221ef](https://github.com/amazon-php/sp-api-sdk/commit/6221ef447047de14273cb4a4d23c7d7110db3678) - **coding standard** - [@norberttech](https://github.com/norberttech)
