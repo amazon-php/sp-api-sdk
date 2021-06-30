@@ -240,7 +240,7 @@ final class APlusSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -949,7 +949,7 @@ final class APlusSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -1172,7 +1172,7 @@ final class APlusSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -1394,7 +1394,7 @@ final class APlusSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -2050,7 +2050,7 @@ final class APlusSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -2269,7 +2269,7 @@ final class APlusSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 

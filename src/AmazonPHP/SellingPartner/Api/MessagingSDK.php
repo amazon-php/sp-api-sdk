@@ -265,7 +265,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -491,7 +491,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -717,7 +717,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -943,7 +943,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -1169,7 +1169,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -1395,7 +1395,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -1621,7 +1621,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -1838,7 +1838,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -2056,7 +2056,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -2282,7 +2282,7 @@ final class MessagingSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 

@@ -242,7 +242,7 @@ final class ListingsItemsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'DELETE',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -481,7 +481,7 @@ final class ListingsItemsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'PATCH',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -728,7 +728,7 @@ final class ListingsItemsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'PUT',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 

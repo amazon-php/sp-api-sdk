@@ -228,7 +228,7 @@ final class ServicesSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -462,7 +462,7 @@ final class ServicesSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'PUT',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -658,7 +658,7 @@ final class ServicesSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'PUT',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -1412,7 +1412,7 @@ final class ServicesSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 

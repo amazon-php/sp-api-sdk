@@ -216,7 +216,7 @@ final class SolicitationsSDK
         }
 
         $request = $this->httpFactory->createRequest(
-            'GET',
+            'POST',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 

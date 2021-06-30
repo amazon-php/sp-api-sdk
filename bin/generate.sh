@@ -68,7 +68,7 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/merchant-fulfillment-api-model/merchantFulfillmentV0.json \
     -c /sp-api/config/generator-merchant-fulfillment.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
-    -o /sp-api
+    -o /sp-api --skip-validate-spec
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/messaging-api-model/messaging.json \
