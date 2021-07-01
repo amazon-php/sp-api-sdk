@@ -55,7 +55,7 @@ final class ListingsItemsSDK
      *
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
-     * @param array<array-key, string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param array<string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -153,7 +153,7 @@ final class ListingsItemsSDK
      *
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
-     * @param array<array-key, string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param array<string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws InvalidArgumentException
@@ -262,7 +262,7 @@ final class ListingsItemsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -286,7 +286,7 @@ final class ListingsItemsSDK
      *
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
-     * @param array<array-key, string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param array<string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body The request body schema for the patchListingsItem operation. (required)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
@@ -385,7 +385,7 @@ final class ListingsItemsSDK
      *
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
-     * @param array<array-key, string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param array<string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body The request body schema for the patchListingsItem operation. (required)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
@@ -487,7 +487,7 @@ final class ListingsItemsSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -509,7 +509,7 @@ final class ListingsItemsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -533,7 +533,7 @@ final class ListingsItemsSDK
      *
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
-     * @param array<array-key, string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param array<string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body The request body schema for the putListingsItem operation. (required)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
@@ -632,7 +632,7 @@ final class ListingsItemsSDK
      *
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
-     * @param array<array-key, string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param array<string> $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body The request body schema for the putListingsItem operation. (required)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
@@ -734,7 +734,7 @@ final class ListingsItemsSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -756,7 +756,7 @@ final class ListingsItemsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);

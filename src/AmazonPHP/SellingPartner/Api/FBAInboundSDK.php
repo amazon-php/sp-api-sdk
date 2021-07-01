@@ -47,7 +47,7 @@ final class FBAInboundSDK
      *
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
-     * @param array<array-key, string>|null $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param null|array<string> $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -144,7 +144,7 @@ final class FBAInboundSDK
      *
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
-     * @param array<array-key, string>|null $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
+     * @param null|array<string> $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
      * @throws InvalidArgumentException
      *
@@ -241,7 +241,7 @@ final class FBAInboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);

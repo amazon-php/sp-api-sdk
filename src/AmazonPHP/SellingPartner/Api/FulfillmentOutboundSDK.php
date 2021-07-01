@@ -259,7 +259,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -424,7 +424,7 @@ final class FulfillmentOutboundSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -446,7 +446,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -628,7 +628,7 @@ final class FulfillmentOutboundSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -650,7 +650,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -865,7 +865,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1086,7 +1086,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1274,7 +1274,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1466,7 +1466,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1631,7 +1631,7 @@ final class FulfillmentOutboundSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -1653,7 +1653,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1841,7 +1841,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2032,7 +2032,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2256,7 +2256,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2443,7 +2443,7 @@ final class FulfillmentOutboundSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -2465,7 +2465,7 @@ final class FulfillmentOutboundSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);

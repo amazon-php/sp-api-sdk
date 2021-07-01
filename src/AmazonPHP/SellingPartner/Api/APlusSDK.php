@@ -246,7 +246,7 @@ final class APlusSDK
 
         // for model (json/xml)
         if (isset($post_content_document_request)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_request), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $post_content_document_request;
@@ -268,7 +268,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -292,7 +292,7 @@ final class APlusSDK
      *
      * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string> $included_data_set The set of A+ Content data types to include in the response. (required)
+     * @param array<string> $included_data_set The set of A+ Content data types to include in the response. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -389,7 +389,7 @@ final class APlusSDK
      *
      * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string> $included_data_set The set of A+ Content data types to include in the response. (required)
+     * @param array<string> $included_data_set The set of A+ Content data types to include in the response. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -503,7 +503,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -527,8 +527,8 @@ final class APlusSDK
      *
      * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string>|null $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
-     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
+     * @param null|array<string> $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param null|array<string> $asin_set The set of ASINs. (optional)
      * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -626,8 +626,8 @@ final class APlusSDK
      *
      * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ Content identifier. (required)
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
-     * @param array<array-key, string>|null $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
-     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
+     * @param null|array<string> $included_data_set The set of A+ Content data types to include in the response. If you do not include this parameter, the operation returns the related ASINs without metadata. (optional)
+     * @param null|array<string> $asin_set The set of ASINs. (optional)
      * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
      * @throws InvalidArgumentException
@@ -755,7 +755,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -969,7 +969,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1178,7 +1178,7 @@ final class APlusSDK
 
         // for model (json/xml)
         if (isset($post_content_document_asin_relations_request)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_asin_relations_request), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $post_content_document_asin_relations_request;
@@ -1200,7 +1200,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1414,7 +1414,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1620,7 +1620,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1847,7 +1847,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2056,7 +2056,7 @@ final class APlusSDK
 
         // for model (json/xml)
         if (isset($post_content_document_request)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_request), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $post_content_document_request;
@@ -2078,7 +2078,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2102,7 +2102,7 @@ final class APlusSDK
      *
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
-     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
+     * @param null|array<string> $asin_set The set of ASINs. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -2199,7 +2199,7 @@ final class APlusSDK
      *
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
-     * @param array<array-key, string>|null $asin_set The set of ASINs. (optional)
+     * @param null|array<string> $asin_set The set of ASINs. (optional)
      *
      * @throws InvalidArgumentException
      *
@@ -2275,7 +2275,7 @@ final class APlusSDK
 
         // for model (json/xml)
         if (isset($post_content_document_request)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($post_content_document_request), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $post_content_document_request;
@@ -2297,7 +2297,7 @@ final class APlusSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);

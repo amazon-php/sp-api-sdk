@@ -234,7 +234,7 @@ final class ServicesSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -256,7 +256,7 @@ final class ServicesSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -482,7 +482,7 @@ final class ServicesSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -678,7 +678,7 @@ final class ServicesSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -874,7 +874,7 @@ final class ServicesSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -896,9 +896,9 @@ final class ServicesSDK
     /**
      * Operation getServiceJobs.
      *
-     * @param array<array-key, string> $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
-     * @param array<array-key, string>|null $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
-     * @param array<array-key, string>|null $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
+     * @param array<string> $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
+     * @param null|array<string> $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param null|array<string> $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
      * @param null|string $page_token String returned in the response of your previous request. (optional)
      * @param int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param null|string $sort_field Sort fields on which you want to sort the output. (optional)
@@ -1003,9 +1003,9 @@ final class ServicesSDK
     /**
      * Create request for operation 'getServiceJobs'.
      *
-     * @param array<array-key, string> $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
-     * @param array<array-key, string>|null $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
-     * @param array<array-key, string>|null $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
+     * @param array<string> $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
+     * @param null|array<string> $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param null|array<string> $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
      * @param null|string $page_token String returned in the response of your previous request. (optional)
      * @param int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param null|string $sort_field Sort fields on which you want to sort the output. (optional)
@@ -1202,7 +1202,7 @@ final class ServicesSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1418,7 +1418,7 @@ final class ServicesSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -1440,7 +1440,7 @@ final class ServicesSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);

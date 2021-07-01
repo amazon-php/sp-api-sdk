@@ -50,7 +50,7 @@ final class SolicitationsSDK
      * Operation createProductReviewAndSellerFeedbackSolicitation.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a solicitation is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -146,7 +146,7 @@ final class SolicitationsSDK
      * Create request for operation 'createProductReviewAndSellerFeedbackSolicitation'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a solicitation is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -236,7 +236,7 @@ final class SolicitationsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -259,7 +259,7 @@ final class SolicitationsSDK
      * Operation getSolicitationActionsForOrder.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -355,7 +355,7 @@ final class SolicitationsSDK
      * Create request for operation 'getSolicitationActionsForOrder'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -445,7 +445,7 @@ final class SolicitationsSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
