@@ -26,6 +26,7 @@
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#29](https://github.com/amazon-php/sp-api-sdk/pull/29) - **fixed contnet-type token to be lowercase everywhere** - [@norberttech](https://github.com/norberttech)
 - [#26](https://github.com/amazon-php/sp-api-sdk/pull/26) - **Wrong HttpMethods** - [@norberttech](https://github.com/norberttech)
 - [#23](https://github.com/amazon-php/sp-api-sdk/pull/23) - **jsonSerialize method at Models** - [@norberttech](https://github.com/norberttech)
 - [#21](https://github.com/amazon-php/sp-api-sdk/pull/21) - **Building Access Token for client credentials grant type** - [@norberttech](https://github.com/norberttech)
