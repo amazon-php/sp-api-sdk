@@ -62,7 +62,7 @@ final class FBASmallAndLightSDK
      * Operation deleteSmallAndLightEnrollmentBySellerSKU.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -153,7 +153,7 @@ final class FBASmallAndLightSDK
      * Create request for operation 'deleteSmallAndLightEnrollmentBySellerSKU'.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -243,7 +243,7 @@ final class FBASmallAndLightSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -266,7 +266,7 @@ final class FBASmallAndLightSDK
      * Operation getSmallAndLightEligibilityBySellerSKU.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -362,7 +362,7 @@ final class FBASmallAndLightSDK
      * Create request for operation 'getSmallAndLightEligibilityBySellerSKU'.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -452,7 +452,7 @@ final class FBASmallAndLightSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -475,7 +475,7 @@ final class FBASmallAndLightSDK
      * Operation getSmallAndLightEnrollmentBySellerSKU.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -571,7 +571,7 @@ final class FBASmallAndLightSDK
      * Create request for operation 'getSmallAndLightEnrollmentBySellerSKU'.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -661,7 +661,7 @@ final class FBASmallAndLightSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -826,7 +826,7 @@ final class FBASmallAndLightSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -848,7 +848,7 @@ final class FBASmallAndLightSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -871,7 +871,7 @@ final class FBASmallAndLightSDK
      * Operation putSmallAndLightEnrollmentBySellerSKU.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -967,7 +967,7 @@ final class FBASmallAndLightSDK
      * Create request for operation 'putSmallAndLightEnrollmentBySellerSKU'.
      *
      * @param string $seller_sku The seller SKU that identifies the item. (required)
-     * @param array<array-key, string> $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
+     * @param array<string> $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -1057,7 +1057,7 @@ final class FBASmallAndLightSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);

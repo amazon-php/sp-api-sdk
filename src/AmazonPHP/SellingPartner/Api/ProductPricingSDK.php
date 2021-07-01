@@ -59,8 +59,8 @@ final class ProductPricingSDK
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
-     * @param array<array-key, string>|null $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
-     * @param array<array-key, string>|null $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param null|string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -158,8 +158,8 @@ final class ProductPricingSDK
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
-     * @param array<array-key, string>|null $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
-     * @param array<array-key, string>|null $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param null|string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws InvalidArgumentException
@@ -277,7 +277,7 @@ final class ProductPricingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -508,7 +508,7 @@ final class ProductPricingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -739,7 +739,7 @@ final class ProductPricingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -763,8 +763,8 @@ final class ProductPricingSDK
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. (required)
-     * @param array<array-key, string>|null $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
-     * @param array<array-key, string>|null $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param null|string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
      * @param null|string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
@@ -863,8 +863,8 @@ final class ProductPricingSDK
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. (required)
-     * @param array<array-key, string>|null $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
-     * @param array<array-key, string>|null $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
+     * @param null|array<string> $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param null|string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
      * @param null|string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
@@ -991,7 +991,7 @@ final class ProductPricingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);

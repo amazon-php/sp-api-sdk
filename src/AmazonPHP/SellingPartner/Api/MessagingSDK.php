@@ -90,7 +90,7 @@ final class MessagingSDK
      * Operation confirmCustomizationDetails.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -187,7 +187,7 @@ final class MessagingSDK
      * Create request for operation 'confirmCustomizationDetails'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -271,7 +271,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -293,7 +293,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -316,7 +316,7 @@ final class MessagingSDK
      * Operation createAmazonMotors.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -413,7 +413,7 @@ final class MessagingSDK
      * Create request for operation 'createAmazonMotors'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -497,7 +497,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -519,7 +519,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -542,7 +542,7 @@ final class MessagingSDK
      * Operation createConfirmDeliveryDetails.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -639,7 +639,7 @@ final class MessagingSDK
      * Create request for operation 'createConfirmDeliveryDetails'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -723,7 +723,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -745,7 +745,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -768,7 +768,7 @@ final class MessagingSDK
      * Operation createConfirmOrderDetails.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -865,7 +865,7 @@ final class MessagingSDK
      * Create request for operation 'createConfirmOrderDetails'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -949,7 +949,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -971,7 +971,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -994,7 +994,7 @@ final class MessagingSDK
      * Operation createConfirmServiceDetails.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -1091,7 +1091,7 @@ final class MessagingSDK
      * Create request for operation 'createConfirmServiceDetails'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -1175,7 +1175,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -1197,7 +1197,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1220,7 +1220,7 @@ final class MessagingSDK
      * Operation createDigitalAccessKey.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -1317,7 +1317,7 @@ final class MessagingSDK
      * Create request for operation 'createDigitalAccessKey'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -1401,7 +1401,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -1423,7 +1423,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1446,7 +1446,7 @@ final class MessagingSDK
      * Operation createLegalDisclosure.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -1543,7 +1543,7 @@ final class MessagingSDK
      * Create request for operation 'createLegalDisclosure'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -1627,7 +1627,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -1649,7 +1649,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1672,7 +1672,7 @@ final class MessagingSDK
      * Operation createNegativeFeedbackRemoval.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -1768,7 +1768,7 @@ final class MessagingSDK
      * Create request for operation 'createNegativeFeedbackRemoval'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -1858,7 +1858,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -1881,7 +1881,7 @@ final class MessagingSDK
      * Operation createUnexpectedProblem.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -1978,7 +1978,7 @@ final class MessagingSDK
      * Create request for operation 'createUnexpectedProblem'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -2062,7 +2062,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -2084,7 +2084,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2107,7 +2107,7 @@ final class MessagingSDK
      * Operation createWarranty.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -2204,7 +2204,7 @@ final class MessagingSDK
      * Create request for operation 'createWarranty'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyRequest $body (required)
      *
      * @throws InvalidArgumentException
@@ -2288,7 +2288,7 @@ final class MessagingSDK
 
         // for model (json/xml)
         if (isset($body)) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
@@ -2310,7 +2310,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2333,7 +2333,7 @@ final class MessagingSDK
      * Operation getAttributes.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -2429,7 +2429,7 @@ final class MessagingSDK
      * Create request for operation 'getAttributes'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -2519,7 +2519,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
@@ -2542,7 +2542,7 @@ final class MessagingSDK
      * Operation getMessagingActionsForOrder.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -2638,7 +2638,7 @@ final class MessagingSDK
      * Create request for operation 'getMessagingActionsForOrder'.
      *
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
-     * @param array<array-key, string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
      * @throws InvalidArgumentException
      *
@@ -2728,7 +2728,7 @@ final class MessagingSDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
