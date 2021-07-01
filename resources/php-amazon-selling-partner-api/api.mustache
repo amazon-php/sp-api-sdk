@@ -369,7 +369,7 @@ final {{#operations}}class {{packageName}}SDK
         // for model (json/xml)
         {{#bodyParams}}
         if (isset(${{paramName}})) {
-            if ($headers['Content-Type'] === ['application/json']) {
+            if ($headers['content-type'] === ['application/json']) {
                 $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization(${{paramName}}));
             } else {
                 $httpBody = ${{paramName}};
@@ -393,7 +393,7 @@ final {{#operations}}class {{packageName}}SDK
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['Content-Type'] === ['application/json']) {
+            } elseif ($headers['content-type'] === ['application/json']) {
                 $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
