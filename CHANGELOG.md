@@ -20,12 +20,14 @@
 - [31b435](https://github.com/amazon-php/sp-api-sdk/commit/31b43531dba8e0924a3a0c68f2fa38b208a66e07) - **tools and CS fixes** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [#35](https://github.com/amazon-php/sp-api-sdk/pull/35) - **Updated Order Model** - [@norberttech](https://github.com/norberttech)
 - [1c0add](https://github.com/amazon-php/sp-api-sdk/commit/1c0add601e7d61c7ad7b41e767203a31cdcbb4f1) - **Use sudo to generate models** - [@norberttech](https://github.com/norberttech)
 - [26aba3](https://github.com/amazon-php/sp-api-sdk/commit/26aba3017bcfca3ca6be9bed06165fbeb191998d) - **SDK to latest open api schema** - [@norberttech](https://github.com/norberttech)
 - [c51271](https://github.com/amazon-php/sp-api-sdk/commit/c51271af3c5e6be6b8de759ac4a6abb02d8b0bc0) - **README** - [@norberttech](https://github.com/norberttech)
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#35](https://github.com/amazon-php/sp-api-sdk/pull/35) - **shipment invoice models path** - [@norberttech](https://github.com/norberttech)
 - [#29](https://github.com/amazon-php/sp-api-sdk/pull/29) - **fixed contnet-type token to be lowercase everywhere** - [@norberttech](https://github.com/norberttech)
 - [#26](https://github.com/amazon-php/sp-api-sdk/pull/26) - **Wrong HttpMethods** - [@norberttech](https://github.com/norberttech)
 - [#23](https://github.com/amazon-php/sp-api-sdk/pull/23) - **jsonSerialize method at Models** - [@norberttech](https://github.com/norberttech)
