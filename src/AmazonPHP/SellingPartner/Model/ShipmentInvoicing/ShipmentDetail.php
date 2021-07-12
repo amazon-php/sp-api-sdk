@@ -67,6 +67,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_name' => 'string',
         'buyer_county' => 'string',
         'buyer_tax_info' => '\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\BuyerTaxInfo',
+        'marketplace_tax_info' => '\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\MarketplaceTaxInfo',
+        'seller_display_name' => 'string',
         'shipment_items' => '\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentItem[]',
     ];
 
@@ -89,6 +91,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_name' => null,
         'buyer_county' => null,
         'buyer_tax_info' => null,
+        'marketplace_tax_info' => null,
+        'seller_display_name' => null,
         'shipment_items' => null,
     ];
 
@@ -110,6 +114,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_name' => 'BuyerName',
         'buyer_county' => 'BuyerCounty',
         'buyer_tax_info' => 'BuyerTaxInfo',
+        'marketplace_tax_info' => 'MarketplaceTaxInfo',
+        'seller_display_name' => 'SellerDisplayName',
         'shipment_items' => 'ShipmentItems',
     ];
 
@@ -130,6 +136,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_name' => 'setBuyerName',
         'buyer_county' => 'setBuyerCounty',
         'buyer_tax_info' => 'setBuyerTaxInfo',
+        'marketplace_tax_info' => 'setMarketplaceTaxInfo',
+        'seller_display_name' => 'setSellerDisplayName',
         'shipment_items' => 'setShipmentItems',
     ];
 
@@ -150,6 +158,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_name' => 'getBuyerName',
         'buyer_county' => 'getBuyerCounty',
         'buyer_tax_info' => 'getBuyerTaxInfo',
+        'marketplace_tax_info' => 'getMarketplaceTaxInfo',
+        'seller_display_name' => 'getSellerDisplayName',
         'shipment_items' => 'getShipmentItems',
     ];
 
@@ -179,6 +189,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['buyer_name'] = $data['buyer_name'] ?? null;
         $this->container['buyer_county'] = $data['buyer_county'] ?? null;
         $this->container['buyer_tax_info'] = $data['buyer_tax_info'] ?? null;
+        $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
+        $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
         $this->container['shipment_items'] = $data['shipment_items'] ?? null;
     }
 
@@ -491,6 +503,46 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setBuyerTaxInfo(?BuyerTaxInfo $buyer_tax_info) : self
     {
         $this->container['buyer_tax_info'] = $buyer_tax_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplace_tax_info.
+     */
+    public function getMarketplaceTaxInfo() : ?MarketplaceTaxInfo
+    {
+        return $this->container['marketplace_tax_info'];
+    }
+
+    /**
+     * Sets marketplace_tax_info.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\MarketplaceTaxInfo $marketplace_tax_info marketplace_tax_info
+     */
+    public function setMarketplaceTaxInfo(?MarketplaceTaxInfo $marketplace_tax_info) : self
+    {
+        $this->container['marketplace_tax_info'] = $marketplace_tax_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets seller_display_name.
+     */
+    public function getSellerDisplayName() : ?string
+    {
+        return $this->container['seller_display_name'];
+    }
+
+    /**
+     * Sets seller_display_name.
+     *
+     * @param null|string $seller_display_name the seller’s friendly name registered in the marketplace
+     */
+    public function setSellerDisplayName(?string $seller_display_name) : self
+    {
+        $this->container['seller_display_name'] = $seller_display_name;
 
         return $this;
     }

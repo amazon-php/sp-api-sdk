@@ -1026,7 +1026,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets ioss_number.
      *
-     * @param null|string $ioss_number The IOSS number of the seller. Sellers selling in the EU will be assigned a unique IOSS number that must be listed on all packages sent to the EU.
+     * @param null|string $ioss_number The IOSS number for the marketplace. Sellers shipping to the European Union (EU) from outside of the EU must provide this IOSS number to their carrier when Amazon has collected the VAT on the sale.
      */
     public function setIossNumber(?string $ioss_number) : self
     {
