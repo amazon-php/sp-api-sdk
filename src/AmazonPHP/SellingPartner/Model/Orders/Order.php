@@ -128,6 +128,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'default_ship_from_location_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
         'fulfillment_instruction' => '\AmazonPHP\SellingPartner\Model\Orders\FulfillmentInstruction',
         'is_ispu' => 'bool',
+        'marketplace_tax_info' => '\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo',
+        'seller_display_name' => 'string',
     ];
 
     /**
@@ -174,6 +176,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'default_ship_from_location_address' => null,
         'fulfillment_instruction' => null,
         'is_ispu' => null,
+        'marketplace_tax_info' => null,
+        'seller_display_name' => null,
     ];
 
     /**
@@ -219,6 +223,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'default_ship_from_location_address' => 'DefaultShipFromLocationAddress',
         'fulfillment_instruction' => 'FulfillmentInstruction',
         'is_ispu' => 'IsISPU',
+        'marketplace_tax_info' => 'MarketplaceTaxInfo',
+        'seller_display_name' => 'SellerDisplayName',
     ];
 
     /**
@@ -263,6 +269,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'default_ship_from_location_address' => 'setDefaultShipFromLocationAddress',
         'fulfillment_instruction' => 'setFulfillmentInstruction',
         'is_ispu' => 'setIsIspu',
+        'marketplace_tax_info' => 'setMarketplaceTaxInfo',
+        'seller_display_name' => 'setSellerDisplayName',
     ];
 
     /**
@@ -307,6 +315,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'default_ship_from_location_address' => 'getDefaultShipFromLocationAddress',
         'fulfillment_instruction' => 'getFulfillmentInstruction',
         'is_ispu' => 'getIsIspu',
+        'marketplace_tax_info' => 'getMarketplaceTaxInfo',
+        'seller_display_name' => 'getSellerDisplayName',
     ];
 
     /**
@@ -360,6 +370,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['default_ship_from_location_address'] = $data['default_ship_from_location_address'] ?? null;
         $this->container['fulfillment_instruction'] = $data['fulfillment_instruction'] ?? null;
         $this->container['is_ispu'] = $data['is_ispu'] ?? null;
+        $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
+        $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
     }
 
     /**
@@ -1336,6 +1348,46 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setIsIspu(?bool $is_ispu) : self
     {
         $this->container['is_ispu'] = $is_ispu;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplace_tax_info.
+     */
+    public function getMarketplaceTaxInfo() : ?MarketplaceTaxInfo
+    {
+        return $this->container['marketplace_tax_info'];
+    }
+
+    /**
+     * Sets marketplace_tax_info.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo $marketplace_tax_info marketplace_tax_info
+     */
+    public function setMarketplaceTaxInfo(?MarketplaceTaxInfo $marketplace_tax_info) : self
+    {
+        $this->container['marketplace_tax_info'] = $marketplace_tax_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets seller_display_name.
+     */
+    public function getSellerDisplayName() : ?string
+    {
+        return $this->container['seller_display_name'];
+    }
+
+    /**
+     * Sets seller_display_name.
+     *
+     * @param null|string $seller_display_name the seller’s friendly name registered in the marketplace
+     */
+    public function setSellerDisplayName(?string $seller_display_name) : self
+    {
+        $this->container['seller_display_name'] = $seller_display_name;
 
         return $this;
     }
