@@ -62,7 +62,7 @@
         ],
         "rector:process:force": [
             "Composer\\Config::disableProcessTimeout",
-            "tools/vendor/bin/rector process src"
+            "tools/vendor/bin/rector process src --no-diffs --no-progress-bar"
         ],
         "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
         "tools:install": "composer install --working-dir=./tools",
