@@ -68,7 +68,8 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/merchant-fulfillment-api-model/merchantFulfillmentV0.json \
     -c /sp-api/config/generator-merchant-fulfillment.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
-    -o /sp-api --skip-validate-spec
+    -o /sp-api \
+    --skip-validate-spec
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/messaging-api-model/messaging.json \
@@ -136,14 +137,12 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api
 
-## Model from official repo is broken
-## https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/shipping-api-model/shipping.json
-## -attribute paths.'/shipping/v1/shipments'(post).[body].example is unexpected
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i /sp-api/resources/api-model/shipping-api-model/shipping.json \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/shipping-api-model/shipping.json \
     -c /sp-api/config/generator-shipping.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
-    -o /sp-api
+    -o /sp-api \
+    --skip-validate-spec
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/solicitations-api-model/solicitations.json \

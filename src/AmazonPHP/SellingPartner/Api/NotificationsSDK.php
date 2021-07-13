@@ -73,10 +73,11 @@ final class NotificationsSDK
     /**
      * Operation createDestination.
      *
+     * @param AccessToken $accessToken
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body body (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function createDestination(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body) : \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationResponse
     {
@@ -168,9 +169,10 @@ final class NotificationsSDK
     /**
      * Create request for operation 'createDestination'.
      *
+     * @param AccessToken $accessToken
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -260,11 +262,12 @@ final class NotificationsSDK
     /**
      * Operation createSubscription.
      *
+     * @param AccessToken $accessToken
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body body (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function createSubscription(AccessToken $accessToken, string $region, string $notification_type, \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body) : \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionResponse
     {
@@ -356,10 +359,11 @@ final class NotificationsSDK
     /**
      * Create request for operation 'createSubscription'.
      *
+     * @param AccessToken $accessToken
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -464,10 +468,11 @@ final class NotificationsSDK
     /**
      * Operation deleteDestination.
      *
+     * @param AccessToken $accessToken
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function deleteDestination(AccessToken $accessToken, string $region, string $destination_id) : \AmazonPHP\SellingPartner\Model\Notifications\DeleteDestinationResponse
     {
@@ -559,9 +564,10 @@ final class NotificationsSDK
     /**
      * Create request for operation 'deleteDestination'.
      *
+     * @param AccessToken $accessToken
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -652,11 +658,12 @@ final class NotificationsSDK
     /**
      * Operation deleteSubscriptionById.
      *
+     * @param AccessToken $accessToken
      * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function deleteSubscriptionById(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\DeleteSubscriptionByIdResponse
     {
@@ -748,10 +755,11 @@ final class NotificationsSDK
     /**
      * Create request for operation 'deleteSubscriptionById'.
      *
+     * @param AccessToken $accessToken
      * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -856,10 +864,11 @@ final class NotificationsSDK
     /**
      * Operation getDestination.
      *
+     * @param AccessToken $accessToken
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getDestination(AccessToken $accessToken, string $region, string $destination_id) : \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationResponse
     {
@@ -951,9 +960,10 @@ final class NotificationsSDK
     /**
      * Create request for operation 'getDestination'.
      *
+     * @param AccessToken $accessToken
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -1044,8 +1054,10 @@ final class NotificationsSDK
     /**
      * Operation getDestinations.
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @param AccessToken $accessToken
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getDestinations(AccessToken $accessToken, string $region) : \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationsResponse
     {
@@ -1137,7 +1149,9 @@ final class NotificationsSDK
     /**
      * Create request for operation 'getDestinations'.
      *
-     * @throws InvalidArgumentException
+     * @param AccessToken $accessToken
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -1212,10 +1226,11 @@ final class NotificationsSDK
     /**
      * Operation getSubscription.
      *
+     * @param AccessToken $accessToken
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getSubscription(AccessToken $accessToken, string $region, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionResponse
     {
@@ -1307,9 +1322,10 @@ final class NotificationsSDK
     /**
      * Create request for operation 'getSubscription'.
      *
+     * @param AccessToken $accessToken
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -1400,11 +1416,12 @@ final class NotificationsSDK
     /**
      * Operation getSubscriptionById.
      *
+     * @param AccessToken $accessToken
      * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getSubscriptionById(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionByIdResponse
     {
@@ -1496,10 +1513,11 @@ final class NotificationsSDK
     /**
      * Create request for operation 'getSubscriptionById'.
      *
+     * @param AccessToken $accessToken
      * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification to which you want to subscribe.   For more information about notification types, see the Notifications API Use Case Guide. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */

@@ -49,11 +49,12 @@ final class SolicitationsSDK
     /**
      * Operation createProductReviewAndSellerFeedbackSolicitation.
      *
+     * @param AccessToken $accessToken
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a solicitation is sent. (required)
-     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function createProductReviewAndSellerFeedbackSolicitation(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
     {
@@ -145,10 +146,11 @@ final class SolicitationsSDK
     /**
      * Create request for operation 'createProductReviewAndSellerFeedbackSolicitation'.
      *
+     * @param AccessToken $accessToken
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a solicitation is sent. (required)
-     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -258,11 +260,12 @@ final class SolicitationsSDK
     /**
      * Operation getSolicitationActionsForOrder.
      *
+     * @param AccessToken $accessToken
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. (required)
-     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getSolicitationActionsForOrder(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponse
     {
@@ -354,10 +357,11 @@ final class SolicitationsSDK
     /**
      * Create request for operation 'getSolicitationActionsForOrder'.
      *
+     * @param AccessToken $accessToken
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available solicitation types. (required)
-     * @param array<string> $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
+     * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */

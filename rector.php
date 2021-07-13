@@ -19,6 +19,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::SKIP, [
         // single file
         __DIR__ . '/src/AmazonPHP/SellingPartner/Marketplace.php',
+        __DIR__ . '/src/AmazonPHP/SellingPartner/AccessToken.php',
     ]);
 
     // Define what rule sets will be applied

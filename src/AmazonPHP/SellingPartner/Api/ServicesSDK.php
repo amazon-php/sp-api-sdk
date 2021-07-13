@@ -65,11 +65,12 @@ final class ServicesSDK
     /**
      * Operation addAppointmentForServiceJobByServiceJobId.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function addAppointmentForServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id, \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body) : \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse
     {
@@ -161,10 +162,11 @@ final class ServicesSDK
     /**
      * Create request for operation 'addAppointmentForServiceJobByServiceJobId'.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -278,11 +280,12 @@ final class ServicesSDK
     /**
      * Operation cancelServiceJobByServiceJobId.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function cancelServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id, string $cancellation_reason_code) : \AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse
     {
@@ -374,10 +377,11 @@ final class ServicesSDK
     /**
      * Create request for operation 'cancelServiceJobByServiceJobId'.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -504,10 +508,11 @@ final class ServicesSDK
     /**
      * Operation completeServiceJobByServiceJobId.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function completeServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id) : \AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse
     {
@@ -599,9 +604,10 @@ final class ServicesSDK
     /**
      * Create request for operation 'completeServiceJobByServiceJobId'.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -700,10 +706,11 @@ final class ServicesSDK
     /**
      * Operation getServiceJobByServiceJobId.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id A service job identifier. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse
     {
@@ -795,9 +802,10 @@ final class ServicesSDK
     /**
      * Create request for operation 'getServiceJobByServiceJobId'.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id A service job identifier. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -896,22 +904,23 @@ final class ServicesSDK
     /**
      * Operation getServiceJobs.
      *
-     * @param array<string> $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
-     * @param null|array<string> $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
-     * @param null|array<string> $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
-     * @param null|string $page_token String returned in the response of your previous request. (optional)
+     * @param AccessToken $accessToken
+     * @param string[] $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
+     * @param string[] $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param string[] $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
+     * @param string $page_token String returned in the response of your previous request. (optional)
      * @param int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
-     * @param null|string $sort_field Sort fields on which you want to sort the output. (optional)
-     * @param null|string $sort_order Sort order for the query you want to perform. (optional)
-     * @param null|string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param null|string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param null|string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param null|string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param null|string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param null|string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param string $sort_field Sort fields on which you want to sort the output. (optional)
+     * @param string $sort_order Sort order for the query you want to perform. (optional)
+     * @param string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
+     * @param string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
+     * @param string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
+     * @param string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
+     * @param string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getServiceJobs(AccessToken $accessToken, string $region, array $marketplace_ids, array $service_order_ids = null, array $service_job_status = null, string $page_token = null, int $page_size = 20, string $sort_field = null, string $sort_order = null, string $created_after = null, string $created_before = null, string $last_updated_after = null, string $last_updated_before = null, string $schedule_start_date = null, string $schedule_end_date = null) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse
     {
@@ -1003,21 +1012,22 @@ final class ServicesSDK
     /**
      * Create request for operation 'getServiceJobs'.
      *
-     * @param array<string> $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
-     * @param null|array<string> $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
-     * @param null|array<string> $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
-     * @param null|string $page_token String returned in the response of your previous request. (optional)
+     * @param AccessToken $accessToken
+     * @param string[] $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
+     * @param string[] $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
+     * @param string[] $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
+     * @param string $page_token String returned in the response of your previous request. (optional)
      * @param int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
-     * @param null|string $sort_field Sort fields on which you want to sort the output. (optional)
-     * @param null|string $sort_order Sort order for the query you want to perform. (optional)
-     * @param null|string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param null|string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param null|string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
-     * @param null|string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
-     * @param null|string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
-     * @param null|string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param string $sort_field Sort fields on which you want to sort the output. (optional)
+     * @param string $sort_order Sort order for the query you want to perform. (optional)
+     * @param string $created_after A date used for selecting jobs created after (or at) a specified time must be in ISO 8601 format. Required if LastUpdatedAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
+     * @param string $created_before A date used for selecting jobs created before (or at) a specified time must be in ISO 8601 format. (optional)
+     * @param string $last_updated_after A date used for selecting jobs updated after (or at) a specified time must be in ISO 8601 format. Required if createdAfter is not specified.Specifying both CreatedAfter and LastUpdatedAfter returns an error. (optional)
+     * @param string $last_updated_before A date used for selecting jobs updated before (or at) a specified time must be in ISO 8601 format. (optional)
+     * @param string $schedule_start_date A date used for filtering jobs schedule after (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
+     * @param string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -1224,12 +1234,13 @@ final class ServicesSDK
     /**
      * Operation rescheduleAppointmentForServiceJobByServiceJobId.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $appointment_id An existing appointment identifier for the Service Job. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function rescheduleAppointmentForServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body) : \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse
     {
@@ -1321,11 +1332,12 @@ final class ServicesSDK
     /**
      * Create request for operation 'rescheduleAppointmentForServiceJobByServiceJobId'.
      *
+     * @param AccessToken $accessToken
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $appointment_id An existing appointment identifier for the Service Job. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */

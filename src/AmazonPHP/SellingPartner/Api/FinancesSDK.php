@@ -57,13 +57,14 @@ final class FinancesSDK
     /**
      * Operation listFinancialEventGroups.
      *
+     * @param AccessToken $accessToken
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|\DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
-     * @param null|\DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
+     * @param \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function listFinancialEventGroups(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $financial_event_group_started_before = null, \DateTime $financial_event_group_started_after = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
     {
@@ -155,12 +156,13 @@ final class FinancesSDK
     /**
      * Create request for operation 'listFinancialEventGroups'.
      *
+     * @param AccessToken $accessToken
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|\DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
-     * @param null|\DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
+     * @param \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -276,13 +278,14 @@ final class FinancesSDK
     /**
      * Operation listFinancialEvents.
      *
+     * @param AccessToken $accessToken
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|\DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
-     * @param null|\DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
+     * @param \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function listFinancialEvents(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $posted_after = null, \DateTime $posted_before = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
@@ -374,12 +377,13 @@ final class FinancesSDK
     /**
      * Create request for operation 'listFinancialEvents'.
      *
+     * @param AccessToken $accessToken
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|\DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
-     * @param null|\DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
+     * @param \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -495,12 +499,13 @@ final class FinancesSDK
     /**
      * Operation listFinancialEventsByGroupId.
      *
+     * @param AccessToken $accessToken
      * @param string $event_group_id The identifier of the financial event group to which the events belong. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function listFinancialEventsByGroupId(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
@@ -592,11 +597,12 @@ final class FinancesSDK
     /**
      * Create request for operation 'listFinancialEventsByGroupId'.
      *
+     * @param AccessToken $accessToken
      * @param string $event_group_id The identifier of the financial event group to which the events belong. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
@@ -712,12 +718,13 @@ final class FinancesSDK
     /**
      * Operation listFinancialEventsByOrderId.
      *
+     * @param AccessToken $accessToken
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function listFinancialEventsByOrderId(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
@@ -809,11 +816,12 @@ final class FinancesSDK
     /**
      * Create request for operation 'listFinancialEventsByOrderId'.
      *
+     * @param AccessToken $accessToken
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
+     * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws InvalidArgumentException
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */

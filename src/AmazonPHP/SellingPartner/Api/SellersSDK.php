@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Exception\ApiException;
-use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
 use AmazonPHP\SellingPartner\HttpFactory;
 use AmazonPHP\SellingPartner\HttpSignatureHeaders;
 use AmazonPHP\SellingPartner\ObjectSerializer;
@@ -45,8 +44,10 @@ final class SellersSDK
     /**
      * Operation getMarketplaceParticipations.
      *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
+     * @param AccessToken $accessToken
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
     public function getMarketplaceParticipations(AccessToken $accessToken, string $region) : \AmazonPHP\SellingPartner\Model\Sellers\GetMarketplaceParticipationsResponse
     {
@@ -138,7 +139,9 @@ final class SellersSDK
     /**
      * Create request for operation 'getMarketplaceParticipations'.
      *
-     * @throws InvalidArgumentException
+     * @param AccessToken $accessToken
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
      * @return RequestInterface
      */
