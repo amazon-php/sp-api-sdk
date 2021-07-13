@@ -2,14 +2,14 @@ name: "Update Models"
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron:  '0 8 * * *'
+#  schedule:
+#    - cron:  '0 8 * * *'
 
 jobs:
-  fetch-holidays:
-    name: "Fetch Holidays"
+  update-models:
+    name: "Update Models"
 
-    runs-on: ${{ matrix.operating-system }}
+    runs-on: "ubuntu-latest"
 
     strategy:
       matrix:
@@ -26,7 +26,7 @@ jobs:
         uses: "shivammathur/setup-php@v2"
         with:
           tools: composer:v2
-          php-version: "${{ matrix.php-version }}"
+          php-version: "7.4"
           ini-values: memory_limit=-1
 
       - name: "Cache dependencies"
@@ -35,8 +35,8 @@ jobs:
           path: |
             ~/.composer/cache
             vendor
-          key: "php-${{ matrix.php-version }}-${{ matrix.dependencies }}"
-          restore-keys: "php-${{ matrix.php-version }}-${{ matrix.dependencies }}"
+          key: "php-7.4-locked"
+          restore-keys: "php-7.4"
 
       - name: "Install locked dependencies"
         run: "composer install --no-interaction --no-progress --no-suggest"
