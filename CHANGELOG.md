@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-07-12
+## [Unreleased] - 2021-07-13
 
 ### Added
 - [#26](https://github.com/amazon-php/sp-api-sdk/pull/26) - **MerchantFulfillment SDK** - [@norberttech](https://github.com/norberttech)
@@ -20,6 +20,7 @@
 - [31b435](https://github.com/amazon-php/sp-api-sdk/commit/31b43531dba8e0924a3a0c68f2fa38b208a66e07) - **tools and CS fixes** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [60faad](https://github.com/amazon-php/sp-api-sdk/commit/60faad8e9a37f4269359aea24a0b4245a831ef6b) - **github workflow name and disabled schedule** - [@norberttech](https://github.com/norberttech)
 - [#35](https://github.com/amazon-php/sp-api-sdk/pull/35) - **Updated Order Model** - [@norberttech](https://github.com/norberttech)
 - [1c0add](https://github.com/amazon-php/sp-api-sdk/commit/1c0add601e7d61c7ad7b41e767203a31cdcbb4f1) - **Use sudo to generate models** - [@norberttech](https://github.com/norberttech)
 - [26aba3](https://github.com/amazon-php/sp-api-sdk/commit/26aba3017bcfca3ca6be9bed06165fbeb191998d) - **SDK to latest open api schema** - [@norberttech](https://github.com/norberttech)
