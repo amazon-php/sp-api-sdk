@@ -130,6 +130,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_ispu' => 'bool',
         'marketplace_tax_info' => '\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo',
         'seller_display_name' => 'string',
+        'shipping_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
+        'buyer_info' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo',
     ];
 
     /**
@@ -178,6 +180,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_ispu' => null,
         'marketplace_tax_info' => null,
         'seller_display_name' => null,
+        'shipping_address' => null,
+        'buyer_info' => null,
     ];
 
     /**
@@ -225,6 +229,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_ispu' => 'IsISPU',
         'marketplace_tax_info' => 'MarketplaceTaxInfo',
         'seller_display_name' => 'SellerDisplayName',
+        'shipping_address' => 'ShippingAddress',
+        'buyer_info' => 'BuyerInfo',
     ];
 
     /**
@@ -271,6 +277,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_ispu' => 'setIsIspu',
         'marketplace_tax_info' => 'setMarketplaceTaxInfo',
         'seller_display_name' => 'setSellerDisplayName',
+        'shipping_address' => 'setShippingAddress',
+        'buyer_info' => 'setBuyerInfo',
     ];
 
     /**
@@ -317,6 +325,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_ispu' => 'getIsIspu',
         'marketplace_tax_info' => 'getMarketplaceTaxInfo',
         'seller_display_name' => 'getSellerDisplayName',
+        'shipping_address' => 'getShippingAddress',
+        'buyer_info' => 'getBuyerInfo',
     ];
 
     /**
@@ -372,6 +382,8 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['is_ispu'] = $data['is_ispu'] ?? null;
         $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
         $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
+        $this->container['shipping_address'] = $data['shipping_address'] ?? null;
+        $this->container['buyer_info'] = $data['buyer_info'] ?? null;
     }
 
     /**
@@ -1388,6 +1400,46 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setSellerDisplayName(?string $seller_display_name) : self
     {
         $this->container['seller_display_name'] = $seller_display_name;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipping_address.
+     */
+    public function getShippingAddress() : ?Address
+    {
+        return $this->container['shipping_address'];
+    }
+
+    /**
+     * Sets shipping_address.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Address $shipping_address shipping_address
+     */
+    public function setShippingAddress(?Address $shipping_address) : self
+    {
+        $this->container['shipping_address'] = $shipping_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_info.
+     */
+    public function getBuyerInfo() : ?BuyerInfo
+    {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo $buyer_info buyer_info
+     */
+    public function setBuyerInfo(?BuyerInfo $buyer_info) : self
+    {
+        $this->container['buyer_info'] = $buyer_info;
 
         return $this;
     }

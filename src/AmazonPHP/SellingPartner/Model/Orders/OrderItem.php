@@ -92,6 +92,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'ioss_number' => 'string',
         'store_chain_store_id' => 'string',
         'deemed_reseller_category' => 'string',
+        'buyer_info' => '\AmazonPHP\SellingPartner\Model\Orders\ItemBuyerInfo',
     ];
 
     /**
@@ -134,6 +135,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'ioss_number' => null,
         'store_chain_store_id' => null,
         'deemed_reseller_category' => null,
+        'buyer_info' => null,
     ];
 
     /**
@@ -175,6 +177,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'ioss_number' => 'IossNumber',
         'store_chain_store_id' => 'StoreChainStoreId',
         'deemed_reseller_category' => 'DeemedResellerCategory',
+        'buyer_info' => 'BuyerInfo',
     ];
 
     /**
@@ -215,6 +218,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'ioss_number' => 'setIossNumber',
         'store_chain_store_id' => 'setStoreChainStoreId',
         'deemed_reseller_category' => 'setDeemedResellerCategory',
+        'buyer_info' => 'setBuyerInfo',
     ];
 
     /**
@@ -255,6 +259,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'ioss_number' => 'getIossNumber',
         'store_chain_store_id' => 'getStoreChainStoreId',
         'deemed_reseller_category' => 'getDeemedResellerCategory',
+        'buyer_info' => 'getBuyerInfo',
     ];
 
     /**
@@ -304,6 +309,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['ioss_number'] = $data['ioss_number'] ?? null;
         $this->container['store_chain_store_id'] = $data['store_chain_store_id'] ?? null;
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
+        $this->container['buyer_info'] = $data['buyer_info'] ?? null;
     }
 
     /**
@@ -1082,6 +1088,26 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
             );
         }
         $this->container['deemed_reseller_category'] = $deemed_reseller_category;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_info.
+     */
+    public function getBuyerInfo() : ?ItemBuyerInfo
+    {
+        return $this->container['buyer_info'];
+    }
+
+    /**
+     * Sets buyer_info.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemBuyerInfo $buyer_info buyer_info
+     */
+    public function setBuyerInfo(?ItemBuyerInfo $buyer_info) : self
+    {
+        $this->container['buyer_info'] = $buyer_info;
 
         return $this;
     }
