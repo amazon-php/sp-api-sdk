@@ -1,6 +1,7 @@
-## [Unreleased] - 2021-08-03
+## [Unreleased] - 2021-08-05
 
 ### Added
+- [#47](https://github.com/amazon-php/sp-api-sdk/pull/47) - **Updated models according to the last SP API changes** - [@norberttech](https://github.com/norberttech)
 - [#26](https://github.com/amazon-php/sp-api-sdk/pull/26) - **MerchantFulfillment SDK** - [@norberttech](https://github.com/norberttech)
 - [#23](https://github.com/amazon-php/sp-api-sdk/pull/23) - **operations paths in API constatns** - [@norberttech](https://github.com/norberttech)
 - [#23](https://github.com/amazon-php/sp-api-sdk/pull/23) - **region URLs** - [@norberttech](https://github.com/norberttech)
