@@ -20,7 +20,7 @@ This library goal is to resolve all above mentioned issues.
 ### Installations
 
 ```
-composer install amazon-php/sp-api-sdk^1.0@dev
+composer install amazon-php/sp-api-sdk^1.0
 ```
 
 This library is not in a stable stage yet, please use with caution.
