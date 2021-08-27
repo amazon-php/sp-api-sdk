@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-08-24
+## [Unreleased] - 2021-08-27
 
 ### Changed
 - [f9c829](https://github.com/amazon-php/sp-api-sdk/commit/f9c8294244f03906535e16ef9beb5d452d2d6244) - **Update README.md** - [@norberttech](https://github.com/norberttech)
