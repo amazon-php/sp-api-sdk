@@ -37,7 +37,7 @@ class QuantityDiscountType
     /**
      * Possible values of this enum.
      */
-    public const QUANTITY_DISCOUNT = 'QuantityDiscount';
+    public const QUANTITY_DISCOUNT = 'QUANTITY_DISCOUNT';
 
     /**
      * Gets allowable values of the enum.

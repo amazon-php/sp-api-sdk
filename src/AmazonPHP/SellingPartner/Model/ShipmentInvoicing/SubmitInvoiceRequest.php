@@ -57,6 +57,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $openAPITypes = [
         'invoice_content' => 'string',
+        'marketplace_id' => 'string',
         'content_md5_value' => 'string',
     ];
 
@@ -69,6 +70,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $openAPIFormats = [
         'invoice_content' => 'byte',
+        'marketplace_id' => null,
         'content_md5_value' => null,
     ];
 
@@ -80,6 +82,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $attributeMap = [
         'invoice_content' => 'InvoiceContent',
+        'marketplace_id' => 'MarketplaceId',
         'content_md5_value' => 'ContentMD5Value',
     ];
 
@@ -90,6 +93,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $setters = [
         'invoice_content' => 'setInvoiceContent',
+        'marketplace_id' => 'setMarketplaceId',
         'content_md5_value' => 'setContentMd5Value',
     ];
 
@@ -100,6 +104,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $getters = [
         'invoice_content' => 'getInvoiceContent',
+        'marketplace_id' => 'getMarketplaceId',
         'content_md5_value' => 'getContentMd5Value',
     ];
 
@@ -119,6 +124,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     public function __construct(array $data = null)
     {
         $this->container['invoice_content'] = $data['invoice_content'] ?? null;
+        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
         $this->container['content_md5_value'] = $data['content_md5_value'] ?? null;
     }
 
@@ -239,6 +245,26 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     public function setInvoiceContent(string $invoice_content) : self
     {
         $this->container['invoice_content'] = $invoice_content;
+
+        return $this;
+    }
+
+    /**
+     * Gets marketplace_id.
+     */
+    public function getMarketplaceId() : ?string
+    {
+        return $this->container['marketplace_id'];
+    }
+
+    /**
+     * Sets marketplace_id.
+     *
+     * @param null|string $marketplace_id an Amazon marketplace identifier
+     */
+    public function setMarketplaceId(?string $marketplace_id) : self
+    {
+        $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
     }
