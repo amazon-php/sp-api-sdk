@@ -58,7 +58,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     protected static array $openAPITypes = [
         'quantity_tier' => 'int',
         'quantity_discount_type' => '\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType',
-        'price' => '\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType',
+        'listing_price' => '\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType',
     ];
 
     /**
@@ -71,7 +71,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     protected static array $openAPIFormats = [
         'quantity_tier' => 'int32',
         'quantity_discount_type' => null,
-        'price' => null,
+        'listing_price' => null,
     ];
 
     /**
@@ -83,7 +83,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     protected static array $attributeMap = [
         'quantity_tier' => 'quantityTier',
         'quantity_discount_type' => 'quantityDiscountType',
-        'price' => 'price',
+        'listing_price' => 'listingPrice',
     ];
 
     /**
@@ -94,7 +94,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     protected static array $setters = [
         'quantity_tier' => 'setQuantityTier',
         'quantity_discount_type' => 'setQuantityDiscountType',
-        'price' => 'setPrice',
+        'listing_price' => 'setListingPrice',
     ];
 
     /**
@@ -105,7 +105,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     protected static array $getters = [
         'quantity_tier' => 'getQuantityTier',
         'quantity_discount_type' => 'getQuantityDiscountType',
-        'price' => 'getPrice',
+        'listing_price' => 'getListingPrice',
     ];
 
     /**
@@ -125,7 +125,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     {
         $this->container['quantity_tier'] = $data['quantity_tier'] ?? null;
         $this->container['quantity_discount_type'] = $data['quantity_discount_type'] ?? null;
-        $this->container['price'] = $data['price'] ?? null;
+        $this->container['listing_price'] = $data['listing_price'] ?? null;
     }
 
     /**
@@ -215,8 +215,8 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
             $invalidProperties[] = "'quantity_discount_type' can't be null";
         }
 
-        if ($this->container['price'] === null) {
-            $invalidProperties[] = "'price' can't be null";
+        if ($this->container['listing_price'] === null) {
+            $invalidProperties[] = "'listing_price' can't be null";
         }
 
         return $invalidProperties;
@@ -274,21 +274,21 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     }
 
     /**
-     * Gets price.
+     * Gets listing_price.
      */
-    public function getPrice() : MoneyType
+    public function getListingPrice() : MoneyType
     {
-        return $this->container['price'];
+        return $this->container['listing_price'];
     }
 
     /**
-     * Sets price.
+     * Sets listing_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $price price
+     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $listing_price listing_price
      */
-    public function setPrice(MoneyType $price) : self
+    public function setListingPrice(MoneyType $listing_price) : self
     {
-        $this->container['price'] = $price;
+        $this->container['listing_price'] = $listing_price;
 
         return $this;
     }

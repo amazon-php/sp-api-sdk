@@ -60,7 +60,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
         'price' => '\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType',
         'fee_breakdown' => '\AmazonPHP\SellingPartner\Model\FBASmallAndLight\FeeLineItem[]',
         'total_fees' => '\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType',
-        'errors' => '\AmazonPHP\SellingPartner\Model\FBASmallAndLight\ErrorList',
+        'errors' => '\AmazonPHP\SellingPartner\Model\FBASmallAndLight\Error[]',
     ];
 
     /**
@@ -315,8 +315,10 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets errors.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\Error[]
      */
-    public function getErrors() : ?ErrorList
+    public function getErrors() : ?array
     {
         return $this->container['errors'];
     }
@@ -324,9 +326,9 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\ErrorList $errors errors
+     * @param null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\Error[] $errors one or more unexpected errors occurred during the getSmallAndLightFeePreview operation
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setErrors(?array $errors) : self
     {
         $this->container['errors'] = $errors;
 

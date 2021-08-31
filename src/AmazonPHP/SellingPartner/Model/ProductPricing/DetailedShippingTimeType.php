@@ -64,7 +64,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     protected static array $openAPITypes = [
         'minimum_hours' => 'int',
         'maximum_hours' => 'int',
-        'available_date' => 'float',
+        'available_date' => 'string',
         'availability_type' => 'string',
     ];
 
@@ -300,7 +300,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Gets available_date.
      */
-    public function getAvailableDate() : ?float
+    public function getAvailableDate() : ?string
     {
         return $this->container['available_date'];
     }
@@ -308,9 +308,9 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Sets available_date.
      *
-     * @param null|float $available_date The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
+     * @param null|string $available_date The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
      */
-    public function setAvailableDate(?float $available_date) : self
+    public function setAvailableDate(?string $available_date) : self
     {
         $this->container['available_date'] = $available_date;
 

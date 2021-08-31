@@ -56,10 +56,11 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'seller_id' => 'string',
         'my_offer' => 'bool',
         'offer_type' => '\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType',
         'sub_condition' => 'string',
+        'seller_id' => 'string',
+        'condition_notes' => 'string',
         'seller_feedback_rating' => '\AmazonPHP\SellingPartner\Model\ProductPricing\SellerFeedbackType',
         'shipping_time' => '\AmazonPHP\SellingPartner\Model\ProductPricing\DetailedShippingTimeType',
         'listing_price' => '\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType',
@@ -68,6 +69,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping' => '\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType',
         'ships_from' => '\AmazonPHP\SellingPartner\Model\ProductPricing\ShipsFromType',
         'is_fulfilled_by_amazon' => 'bool',
+        'prime_information' => '\AmazonPHP\SellingPartner\Model\ProductPricing\PrimeInformationType',
         'is_buy_box_winner' => 'bool',
         'is_featured_merchant' => 'bool',
     ];
@@ -80,10 +82,11 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'seller_id' => null,
         'my_offer' => null,
         'offer_type' => null,
         'sub_condition' => null,
+        'seller_id' => null,
+        'condition_notes' => null,
         'seller_feedback_rating' => null,
         'shipping_time' => null,
         'listing_price' => null,
@@ -92,6 +95,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping' => null,
         'ships_from' => null,
         'is_fulfilled_by_amazon' => null,
+        'prime_information' => null,
         'is_buy_box_winner' => null,
         'is_featured_merchant' => null,
     ];
@@ -103,10 +107,11 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $attributeMap = [
-        'seller_id' => 'sellerId',
         'my_offer' => 'MyOffer',
         'offer_type' => 'offerType',
         'sub_condition' => 'SubCondition',
+        'seller_id' => 'SellerId',
+        'condition_notes' => 'ConditionNotes',
         'seller_feedback_rating' => 'SellerFeedbackRating',
         'shipping_time' => 'ShippingTime',
         'listing_price' => 'ListingPrice',
@@ -115,6 +120,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping' => 'Shipping',
         'ships_from' => 'ShipsFrom',
         'is_fulfilled_by_amazon' => 'IsFulfilledByAmazon',
+        'prime_information' => 'PrimeInformation',
         'is_buy_box_winner' => 'IsBuyBoxWinner',
         'is_featured_merchant' => 'IsFeaturedMerchant',
     ];
@@ -125,10 +131,11 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $setters = [
-        'seller_id' => 'setSellerId',
         'my_offer' => 'setMyOffer',
         'offer_type' => 'setOfferType',
         'sub_condition' => 'setSubCondition',
+        'seller_id' => 'setSellerId',
+        'condition_notes' => 'setConditionNotes',
         'seller_feedback_rating' => 'setSellerFeedbackRating',
         'shipping_time' => 'setShippingTime',
         'listing_price' => 'setListingPrice',
@@ -137,6 +144,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping' => 'setShipping',
         'ships_from' => 'setShipsFrom',
         'is_fulfilled_by_amazon' => 'setIsFulfilledByAmazon',
+        'prime_information' => 'setPrimeInformation',
         'is_buy_box_winner' => 'setIsBuyBoxWinner',
         'is_featured_merchant' => 'setIsFeaturedMerchant',
     ];
@@ -147,10 +155,11 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $getters = [
-        'seller_id' => 'getSellerId',
         'my_offer' => 'getMyOffer',
         'offer_type' => 'getOfferType',
         'sub_condition' => 'getSubCondition',
+        'seller_id' => 'getSellerId',
+        'condition_notes' => 'getConditionNotes',
         'seller_feedback_rating' => 'getSellerFeedbackRating',
         'shipping_time' => 'getShippingTime',
         'listing_price' => 'getListingPrice',
@@ -159,6 +168,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping' => 'getShipping',
         'ships_from' => 'getShipsFrom',
         'is_fulfilled_by_amazon' => 'getIsFulfilledByAmazon',
+        'prime_information' => 'getPrimeInformation',
         'is_buy_box_winner' => 'getIsBuyBoxWinner',
         'is_featured_merchant' => 'getIsFeaturedMerchant',
     ];
@@ -182,6 +192,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['my_offer'] = $data['my_offer'] ?? null;
         $this->container['offer_type'] = $data['offer_type'] ?? null;
         $this->container['sub_condition'] = $data['sub_condition'] ?? null;
+        $this->container['seller_id'] = $data['seller_id'] ?? null;
+        $this->container['condition_notes'] = $data['condition_notes'] ?? null;
         $this->container['seller_feedback_rating'] = $data['seller_feedback_rating'] ?? null;
         $this->container['shipping_time'] = $data['shipping_time'] ?? null;
         $this->container['listing_price'] = $data['listing_price'] ?? null;
@@ -190,6 +202,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['shipping'] = $data['shipping'] ?? null;
         $this->container['ships_from'] = $data['ships_from'] ?? null;
         $this->container['is_fulfilled_by_amazon'] = $data['is_fulfilled_by_amazon'] ?? null;
+        $this->container['prime_information'] = $data['prime_information'] ?? null;
         $this->container['is_buy_box_winner'] = $data['is_buy_box_winner'] ?? null;
         $this->container['is_featured_merchant'] = $data['is_featured_merchant'] ?? null;
     }
@@ -388,6 +401,46 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
+     * Gets seller_id.
+     */
+    public function getSellerId() : ?string
+    {
+        return $this->container['seller_id'];
+    }
+
+    /**
+     * Sets seller_id.
+     *
+     * @param null|string $seller_id the seller identifier for the offer
+     */
+    public function setSellerId(?string $seller_id) : self
+    {
+        $this->container['seller_id'] = $seller_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets condition_notes.
+     */
+    public function getConditionNotes() : ?string
+    {
+        return $this->container['condition_notes'];
+    }
+
+    /**
+     * Sets condition_notes.
+     *
+     * @param null|string $condition_notes information about the condition of the item
+     */
+    public function setConditionNotes(?string $condition_notes) : self
+    {
+        $this->container['condition_notes'] = $condition_notes;
+
+        return $this;
+    }
+
+    /**
      * Gets seller_feedback_rating.
      */
     public function getSellerFeedbackRating() : ?SellerFeedbackType
@@ -545,6 +598,26 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setIsFulfilledByAmazon(bool $is_fulfilled_by_amazon) : self
     {
         $this->container['is_fulfilled_by_amazon'] = $is_fulfilled_by_amazon;
+
+        return $this;
+    }
+
+    /**
+     * Gets prime_information.
+     */
+    public function getPrimeInformation() : ?PrimeInformationType
+    {
+        return $this->container['prime_information'];
+    }
+
+    /**
+     * Sets prime_information.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\PrimeInformationType $prime_information prime_information
+     */
+    public function setPrimeInformation(?PrimeInformationType $prime_information) : self
+    {
+        $this->container['prime_information'] = $prime_information;
 
         return $this;
     }
