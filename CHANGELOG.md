@@ -1,3 +1,8 @@
+## [Unreleased] - 2021-09-10
+
+### Fixed
+- [#63](https://github.com/amazon-php/sp-api-sdk/pull/63) - **Changed ApiException response headers argument to nullable** - [@owsiakl](https://github.com/owsiakl)
+
 ## [1.0.1] - 2021-08-31
 
 ### Changed
