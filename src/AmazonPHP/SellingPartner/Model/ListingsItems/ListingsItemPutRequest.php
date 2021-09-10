@@ -319,8 +319,6 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Sets attributes.
-     *
-     * @param object $attributes JSON object containing structured listings item attribute data keyed by attribute name
      */
     public function setAttributes(object $attributes) : self
     {

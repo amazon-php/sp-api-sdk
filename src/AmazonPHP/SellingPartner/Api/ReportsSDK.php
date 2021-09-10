@@ -1615,7 +1615,7 @@ final class ReportsSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReports(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
+    public function getReports(AccessToken $accessToken, string $region, $report_types = null, $processing_statuses = null, $marketplace_ids = null, int $page_size = 10, $created_since = null, $created_until = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
         $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 
@@ -1718,7 +1718,7 @@ final class ReportsSDK
      *
      * @return RequestInterface
      */
-    public function getReportsRequest(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : RequestInterface
+    public function getReportsRequest(AccessToken $accessToken, string $region, $report_types = null, $processing_statuses = null, $marketplace_ids = null, int $page_size = 10, $created_since = null, $created_until = null, $next_token = null) : RequestInterface
     {
         if ($report_types !== null && \count($report_types) > 10) {
             throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');

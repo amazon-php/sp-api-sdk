@@ -1305,7 +1305,7 @@ final class FulfillmentInboundSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getInboundGuidance(AccessToken $accessToken, string $region, string $marketplace_id, array $seller_sku_list = null, array $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse
+    public function getInboundGuidance(AccessToken $accessToken, string $region, string $marketplace_id, $seller_sku_list = null, $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse
     {
         $request = $this->getInboundGuidanceRequest($accessToken, $region, $marketplace_id, $seller_sku_list, $asin_list);
 
@@ -1404,7 +1404,7 @@ final class FulfillmentInboundSDK
      *
      * @return RequestInterface
      */
-    public function getInboundGuidanceRequest(AccessToken $accessToken, string $region, string $marketplace_id, array $seller_sku_list = null, array $asin_list = null) : RequestInterface
+    public function getInboundGuidanceRequest(AccessToken $accessToken, string $region, string $marketplace_id, $seller_sku_list = null, $asin_list = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
@@ -1528,7 +1528,7 @@ final class FulfillmentInboundSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getLabels(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, int $number_of_packages = null, array $package_labels_to_print = null, int $number_of_pallets = null, int $page_size = null, int $page_start_index = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse
+    public function getLabels(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse
     {
         $request = $this->getLabelsRequest($accessToken, $region, $shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index);
 
@@ -1632,7 +1632,7 @@ final class FulfillmentInboundSDK
      *
      * @return RequestInterface
      */
-    public function getLabelsRequest(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, int $number_of_packages = null, array $package_labels_to_print = null, int $number_of_pallets = null, int $page_size = null, int $page_start_index = null) : RequestInterface
+    public function getLabelsRequest(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null) : RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
         if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
@@ -2007,7 +2007,7 @@ final class FulfillmentInboundSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getPrepInstructions(AccessToken $accessToken, string $region, string $ship_to_country_code, array $seller_sku_list = null, array $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse
+    public function getPrepInstructions(AccessToken $accessToken, string $region, string $ship_to_country_code, $seller_sku_list = null, $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse
     {
         $request = $this->getPrepInstructionsRequest($accessToken, $region, $ship_to_country_code, $seller_sku_list, $asin_list);
 
@@ -2106,7 +2106,7 @@ final class FulfillmentInboundSDK
      *
      * @return RequestInterface
      */
-    public function getPrepInstructionsRequest(AccessToken $accessToken, string $region, string $ship_to_country_code, array $seller_sku_list = null, array $asin_list = null) : RequestInterface
+    public function getPrepInstructionsRequest(AccessToken $accessToken, string $region, string $ship_to_country_code, $seller_sku_list = null, $asin_list = null) : RequestInterface
     {
         // verify the required parameter 'ship_to_country_code' is set
         if ($ship_to_country_code === null || (\is_array($ship_to_country_code) && \count($ship_to_country_code) === 0)) {
@@ -2227,7 +2227,7 @@ final class FulfillmentInboundSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getShipmentItems(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, \DateTime $last_updated_after = null, \DateTime $last_updated_before = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
+    public function getShipmentItems(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
     {
         $request = $this->getShipmentItemsRequest($accessToken, $region, $query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
 
@@ -2328,7 +2328,7 @@ final class FulfillmentInboundSDK
      *
      * @return RequestInterface
      */
-    public function getShipmentItemsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, \DateTime $last_updated_after = null, \DateTime $last_updated_before = null, string $next_token = null) : RequestInterface
+    public function getShipmentItemsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null) : RequestInterface
     {
         // verify the required parameter 'query_type' is set
         if ($query_type === null || (\is_array($query_type) && \count($query_type) === 0)) {
@@ -2672,7 +2672,7 @@ final class FulfillmentInboundSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getShipments(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, array $shipment_status_list = null, array $shipment_id_list = null, \DateTime $last_updated_after = null, \DateTime $last_updated_before = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse
+    public function getShipments(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse
     {
         $request = $this->getShipmentsRequest($accessToken, $region, $query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
 
@@ -2775,7 +2775,7 @@ final class FulfillmentInboundSDK
      *
      * @return RequestInterface
      */
-    public function getShipmentsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, array $shipment_status_list = null, array $shipment_id_list = null, \DateTime $last_updated_after = null, \DateTime $last_updated_before = null, string $next_token = null) : RequestInterface
+    public function getShipmentsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null) : RequestInterface
     {
         // verify the required parameter 'query_type' is set
         if ($query_type === null || (\is_array($query_type) && \count($query_type) === 0)) {

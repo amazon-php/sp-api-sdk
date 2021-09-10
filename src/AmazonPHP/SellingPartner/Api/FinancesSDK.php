@@ -66,7 +66,7 @@ final class FinancesSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventGroups(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $financial_event_group_started_before = null, \DateTime $financial_event_group_started_after = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
+    public function listFinancialEventGroups(AccessToken $accessToken, string $region, int $max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
     {
         $request = $this->listFinancialEventGroupsRequest($accessToken, $region, $max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
 
@@ -166,7 +166,7 @@ final class FinancesSDK
      *
      * @return RequestInterface
      */
-    public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $financial_event_group_started_before = null, \DateTime $financial_event_group_started_after = null, string $next_token = null) : RequestInterface
+    public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, $financial_event_group_started_before = null, $financial_event_group_started_after = null, $next_token = null) : RequestInterface
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
             throw new InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventGroups, must be smaller than or equal to 100.');
@@ -287,7 +287,7 @@ final class FinancesSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEvents(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $posted_after = null, \DateTime $posted_before = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
+    public function listFinancialEvents(AccessToken $accessToken, string $region, int $max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
         $request = $this->listFinancialEventsRequest($accessToken, $region, $max_results_per_page, $posted_after, $posted_before, $next_token);
 
@@ -387,7 +387,7 @@ final class FinancesSDK
      *
      * @return RequestInterface
      */
-    public function listFinancialEventsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $posted_after = null, \DateTime $posted_before = null, string $next_token = null) : RequestInterface
+    public function listFinancialEventsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, $posted_after = null, $posted_before = null, $next_token = null) : RequestInterface
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
             throw new InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEvents, must be smaller than or equal to 100.');
@@ -507,7 +507,7 @@ final class FinancesSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventsByGroupId(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
+    public function listFinancialEventsByGroupId(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
         $request = $this->listFinancialEventsByGroupIdRequest($accessToken, $region, $event_group_id, $max_results_per_page, $next_token);
 
@@ -606,7 +606,7 @@ final class FinancesSDK
      *
      * @return RequestInterface
      */
-    public function listFinancialEventsByGroupIdRequest(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, string $next_token = null) : RequestInterface
+    public function listFinancialEventsByGroupIdRequest(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, $next_token = null) : RequestInterface
     {
         // verify the required parameter 'event_group_id' is set
         if ($event_group_id === null || (\is_array($event_group_id) && \count($event_group_id) === 0)) {
@@ -726,7 +726,7 @@ final class FinancesSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventsByOrderId(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
+    public function listFinancialEventsByOrderId(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
         $request = $this->listFinancialEventsByOrderIdRequest($accessToken, $region, $order_id, $max_results_per_page, $next_token);
 
@@ -825,7 +825,7 @@ final class FinancesSDK
      *
      * @return RequestInterface
      */
-    public function listFinancialEventsByOrderIdRequest(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, string $next_token = null) : RequestInterface
+    public function listFinancialEventsByOrderIdRequest(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, $next_token = null) : RequestInterface
     {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (\is_array($order_id) && \count($order_id) === 0)) {

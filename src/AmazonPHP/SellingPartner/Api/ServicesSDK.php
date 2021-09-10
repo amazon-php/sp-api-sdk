@@ -922,7 +922,7 @@ final class ServicesSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getServiceJobs(AccessToken $accessToken, string $region, array $marketplace_ids, array $service_order_ids = null, array $service_job_status = null, string $page_token = null, int $page_size = 20, string $sort_field = null, string $sort_order = null, string $created_after = null, string $created_before = null, string $last_updated_after = null, string $last_updated_before = null, string $schedule_start_date = null, string $schedule_end_date = null) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse
+    public function getServiceJobs(AccessToken $accessToken, string $region, array $marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, int $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse
     {
         $request = $this->getServiceJobsRequest($accessToken, $region, $marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date);
 
@@ -1031,7 +1031,7 @@ final class ServicesSDK
      *
      * @return RequestInterface
      */
-    public function getServiceJobsRequest(AccessToken $accessToken, string $region, array $marketplace_ids, array $service_order_ids = null, array $service_job_status = null, string $page_token = null, int $page_size = 20, string $sort_field = null, string $sort_order = null, string $created_after = null, string $created_before = null, string $last_updated_after = null, string $last_updated_before = null, string $schedule_start_date = null, string $schedule_end_date = null) : RequestInterface
+    public function getServiceJobsRequest(AccessToken $accessToken, string $region, array $marketplace_ids, $service_order_ids = null, $service_job_status = null, $page_token = null, int $page_size = 20, $sort_field = null, $sort_order = null, $created_after = null, $created_before = null, $last_updated_after = null, $last_updated_before = null, $schedule_start_date = null, $schedule_end_date = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
