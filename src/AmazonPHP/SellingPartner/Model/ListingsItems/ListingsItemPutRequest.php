@@ -26,6 +26,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+
 namespace AmazonPHP\SellingPartner\Model\ListingsItems;
 
 use AmazonPHP\SellingPartner\ModelInterface;
@@ -319,6 +320,8 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Sets attributes.
+     *
+     * @param object $attributes JSON object containing structured listings item attribute data keyed by attribute name
      */
     public function setAttributes(object $attributes) : self
     {
