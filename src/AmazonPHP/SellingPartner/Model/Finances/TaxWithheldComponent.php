@@ -26,6 +26,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+
 namespace AmazonPHP\SellingPartner\Model\Finances;
 
 use AmazonPHP\SellingPartner\ModelInterface;
