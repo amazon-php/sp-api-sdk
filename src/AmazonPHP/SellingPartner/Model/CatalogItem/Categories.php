@@ -262,6 +262,8 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets parent.
+     *
+     * @return null|object
      */
     public function getParent() : ?object
     {

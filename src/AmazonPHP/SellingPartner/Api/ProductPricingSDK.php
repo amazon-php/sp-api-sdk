@@ -67,7 +67,7 @@ final class ProductPricingSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getCompetitivePricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
+    public function getCompetitivePricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, $asins = null, $skus = null, $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
     {
         $request = $this->getCompetitivePricingRequest($accessToken, $region, $marketplace_id, $item_type, $asins, $skus, $customer_type);
 
@@ -168,7 +168,7 @@ final class ProductPricingSDK
      *
      * @return RequestInterface
      */
-    public function getCompetitivePricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $customer_type = null) : RequestInterface
+    public function getCompetitivePricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, $asins = null, $skus = null, $customer_type = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
@@ -310,7 +310,7 @@ final class ProductPricingSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getItemOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
+    public function getItemOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
     {
         $request = $this->getItemOffersRequest($accessToken, $region, $marketplace_id, $item_condition, $asin, $customer_type);
 
@@ -410,7 +410,7 @@ final class ProductPricingSDK
      *
      * @return RequestInterface
      */
-    public function getItemOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, string $customer_type = null) : RequestInterface
+    public function getItemOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, $customer_type = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
@@ -543,7 +543,7 @@ final class ProductPricingSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getListingOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
+    public function getListingOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
     {
         $request = $this->getListingOffersRequest($accessToken, $region, $marketplace_id, $item_condition, $seller_sku, $customer_type);
 
@@ -643,7 +643,7 @@ final class ProductPricingSDK
      *
      * @return RequestInterface
      */
-    public function getListingOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, string $customer_type = null) : RequestInterface
+    public function getListingOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, $customer_type = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
@@ -778,7 +778,7 @@ final class ProductPricingSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getPricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $item_condition = null, string $offer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
+    public function getPricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
     {
         $request = $this->getPricingRequest($accessToken, $region, $marketplace_id, $item_type, $asins, $skus, $item_condition, $offer_type);
 
@@ -880,7 +880,7 @@ final class ProductPricingSDK
      *
      * @return RequestInterface
      */
-    public function getPricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $item_condition = null, string $offer_type = null) : RequestInterface
+    public function getPricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, $asins = null, $skus = null, $item_condition = null, $offer_type = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {

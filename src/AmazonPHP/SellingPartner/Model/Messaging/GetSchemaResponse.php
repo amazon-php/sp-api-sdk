@@ -242,6 +242,8 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets payload.
+     *
+     * @return null|object
      */
     public function getPayload() : ?object
     {

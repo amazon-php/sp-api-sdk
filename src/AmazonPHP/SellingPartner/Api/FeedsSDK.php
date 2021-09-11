@@ -1020,7 +1020,7 @@ final class FeedsSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getFeeds(AccessToken $accessToken, string $region, array $feed_types = null, array $marketplace_ids = null, int $page_size = 10, array $processing_statuses = null, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse
+    public function getFeeds(AccessToken $accessToken, string $region, $feed_types = null, $marketplace_ids = null, int $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse
     {
         $request = $this->getFeedsRequest($accessToken, $region, $feed_types, $marketplace_ids, $page_size, $processing_statuses, $created_since, $created_until, $next_token);
 
@@ -1123,7 +1123,7 @@ final class FeedsSDK
      *
      * @return RequestInterface
      */
-    public function getFeedsRequest(AccessToken $accessToken, string $region, array $feed_types = null, array $marketplace_ids = null, int $page_size = 10, array $processing_statuses = null, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : RequestInterface
+    public function getFeedsRequest(AccessToken $accessToken, string $region, $feed_types = null, $marketplace_ids = null, int $page_size = 10, $processing_statuses = null, $created_since = null, $created_until = null, $next_token = null) : RequestInterface
     {
         if ($feed_types !== null && \count($feed_types) > 10) {
             throw new InvalidArgumentException('invalid value for "$feed_types" when calling FeedsApi.getFeeds, number of items must be less than or equal to 10.');

@@ -46,7 +46,6 @@
             "@clean",
             "bin/generate.sh",
             "@rector:process:force",
-            "@rector:process:force",
             "@cs:php:fix:namespaces",
             "@cs:php:fix"
         ],
