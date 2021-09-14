@@ -1,6 +1,9 @@
 # Amazon Selling Partner API - PHP SDK
 
-This repository is not an official amazon PHP library for their SP API. 
+This repository is not an official Amazon PHP library for their SP API. 
+
+![social-preview](https://repository-images.githubusercontent.com/372302167/e16f602b-c263-48ee-a36a-a06177d1fa68)
+
 
 ### Why next library? 
 
