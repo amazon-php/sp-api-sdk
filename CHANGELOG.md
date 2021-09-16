@@ -1,6 +1,7 @@
 ## [Unreleased] - 2021-09-16
 
 ### Changed
+- [#69](https://github.com/amazon-php/sp-api-sdk/pull/69) - **Updated models 2021-09-16** - [@norberttech](https://github.com/norberttech)
 - [a2caf2](https://github.com/amazon-php/sp-api-sdk/commit/a2caf27dfacff29699ffc647b897bee7b0c09b42) - **Update README.md** - [@norberttech](https://github.com/norberttech)
 
 ## [1.0.2] - 2021-09-10
