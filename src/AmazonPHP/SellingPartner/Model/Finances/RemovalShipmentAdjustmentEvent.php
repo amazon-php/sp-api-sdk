@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * TDSReimbursementEvent.
+ * RemovalShipmentAdjustmentEvent.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
+class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'TDSReimbursementEvent';
+    protected static string $openAPIModelName = 'RemovalShipmentAdjustmentEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -58,8 +58,11 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     protected static array $openAPITypes = [
         'posted_date' => '\DateTime',
-        'tds_order_id' => 'string',
-        'reimbursed_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'adjustment_event_id' => 'string',
+        'merchant_order_id' => 'string',
+        'order_id' => 'string',
+        'transaction_type' => 'string',
+        'removal_shipment_item_adjustment_list' => '\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItemAdjustment[]',
     ];
 
     /**
@@ -71,8 +74,11 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     protected static array $openAPIFormats = [
         'posted_date' => 'date-time',
-        'tds_order_id' => null,
-        'reimbursed_amount' => null,
+        'adjustment_event_id' => null,
+        'merchant_order_id' => null,
+        'order_id' => null,
+        'transaction_type' => null,
+        'removal_shipment_item_adjustment_list' => null,
     ];
 
     /**
@@ -83,8 +89,11 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     protected static array $attributeMap = [
         'posted_date' => 'PostedDate',
-        'tds_order_id' => 'TdsOrderId',
-        'reimbursed_amount' => 'ReimbursedAmount',
+        'adjustment_event_id' => 'AdjustmentEventId',
+        'merchant_order_id' => 'MerchantOrderId',
+        'order_id' => 'OrderId',
+        'transaction_type' => 'TransactionType',
+        'removal_shipment_item_adjustment_list' => 'RemovalShipmentItemAdjustmentList',
     ];
 
     /**
@@ -94,8 +103,11 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     protected static array $setters = [
         'posted_date' => 'setPostedDate',
-        'tds_order_id' => 'setTdsOrderId',
-        'reimbursed_amount' => 'setReimbursedAmount',
+        'adjustment_event_id' => 'setAdjustmentEventId',
+        'merchant_order_id' => 'setMerchantOrderId',
+        'order_id' => 'setOrderId',
+        'transaction_type' => 'setTransactionType',
+        'removal_shipment_item_adjustment_list' => 'setRemovalShipmentItemAdjustmentList',
     ];
 
     /**
@@ -105,8 +117,11 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     protected static array $getters = [
         'posted_date' => 'getPostedDate',
-        'tds_order_id' => 'getTdsOrderId',
-        'reimbursed_amount' => 'getReimbursedAmount',
+        'adjustment_event_id' => 'getAdjustmentEventId',
+        'merchant_order_id' => 'getMerchantOrderId',
+        'order_id' => 'getOrderId',
+        'transaction_type' => 'getTransactionType',
+        'removal_shipment_item_adjustment_list' => 'getRemovalShipmentItemAdjustmentList',
     ];
 
     /**
@@ -125,8 +140,11 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
     public function __construct(array $data = null)
     {
         $this->container['posted_date'] = $data['posted_date'] ?? null;
-        $this->container['tds_order_id'] = $data['tds_order_id'] ?? null;
-        $this->container['reimbursed_amount'] = $data['reimbursed_amount'] ?? null;
+        $this->container['adjustment_event_id'] = $data['adjustment_event_id'] ?? null;
+        $this->container['merchant_order_id'] = $data['merchant_order_id'] ?? null;
+        $this->container['order_id'] = $data['order_id'] ?? null;
+        $this->container['transaction_type'] = $data['transaction_type'] ?? null;
+        $this->container['removal_shipment_item_adjustment_list'] = $data['removal_shipment_item_adjustment_list'] ?? null;
     }
 
     /**
@@ -241,41 +259,103 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Gets tds_order_id.
+     * Gets adjustment_event_id.
      */
-    public function getTdsOrderId() : ?string
+    public function getAdjustmentEventId() : ?string
     {
-        return $this->container['tds_order_id'];
+        return $this->container['adjustment_event_id'];
     }
 
     /**
-     * Sets tds_order_id.
+     * Sets adjustment_event_id.
      *
-     * @param null|string $tds_order_id a tax deduction at source (TDS) claim identifier
+     * @param null|string $adjustment_event_id the unique identifier for the adjustment event
      */
-    public function setTdsOrderId(?string $tds_order_id) : self
+    public function setAdjustmentEventId(?string $adjustment_event_id) : self
     {
-        $this->container['tds_order_id'] = $tds_order_id;
+        $this->container['adjustment_event_id'] = $adjustment_event_id;
 
         return $this;
     }
 
     /**
-     * Gets reimbursed_amount.
+     * Gets merchant_order_id.
      */
-    public function getReimbursedAmount() : ?Currency
+    public function getMerchantOrderId() : ?string
     {
-        return $this->container['reimbursed_amount'];
+        return $this->container['merchant_order_id'];
     }
 
     /**
-     * Sets reimbursed_amount.
+     * Sets merchant_order_id.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $reimbursed_amount reimbursed_amount
+     * @param null|string $merchant_order_id the merchant removal orderId
      */
-    public function setReimbursedAmount(?Currency $reimbursed_amount) : self
+    public function setMerchantOrderId(?string $merchant_order_id) : self
     {
-        $this->container['reimbursed_amount'] = $reimbursed_amount;
+        $this->container['merchant_order_id'] = $merchant_order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_id.
+     */
+    public function getOrderId() : ?string
+    {
+        return $this->container['order_id'];
+    }
+
+    /**
+     * Sets order_id.
+     *
+     * @param null|string $order_id the orderId for shipping inventory
+     */
+    public function setOrderId(?string $order_id) : self
+    {
+        $this->container['order_id'] = $order_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_type.
+     */
+    public function getTransactionType() : ?string
+    {
+        return $this->container['transaction_type'];
+    }
+
+    /**
+     * Sets transaction_type.
+     *
+     * @param null|string $transaction_type The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION.
+     */
+    public function setTransactionType(?string $transaction_type) : self
+    {
+        $this->container['transaction_type'] = $transaction_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets removal_shipment_item_adjustment_list.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItemAdjustment[]
+     */
+    public function getRemovalShipmentItemAdjustmentList() : ?array
+    {
+        return $this->container['removal_shipment_item_adjustment_list'];
+    }
+
+    /**
+     * Sets removal_shipment_item_adjustment_list.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItemAdjustment[] $removal_shipment_item_adjustment_list a comma-delimited list of Removal shipmentItemAdjustment details for FBA inventory
+     */
+    public function setRemovalShipmentItemAdjustmentList(?array $removal_shipment_item_adjustment_list) : self
+    {
+        $this->container['removal_shipment_item_adjustment_list'] = $removal_shipment_item_adjustment_list;
 
         return $this;
     }
