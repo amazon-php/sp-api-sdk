@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * RemovalShipmentEvent.
+ * TaxWithholdingEvent.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
+class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'RemovalShipmentEvent';
+    protected static string $openAPIModelName = 'TaxWithholdingEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -58,10 +58,9 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $openAPITypes = [
         'posted_date' => '\DateTime',
-        'merchant_order_id' => 'string',
-        'order_id' => 'string',
-        'transaction_type' => 'string',
-        'removal_shipment_item_list' => '\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[]',
+        'base_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'withheld_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'tax_withholding_period' => '\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingPeriod',
     ];
 
     /**
@@ -73,10 +72,9 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $openAPIFormats = [
         'posted_date' => 'date-time',
-        'merchant_order_id' => null,
-        'order_id' => null,
-        'transaction_type' => null,
-        'removal_shipment_item_list' => null,
+        'base_amount' => null,
+        'withheld_amount' => null,
+        'tax_withholding_period' => null,
     ];
 
     /**
@@ -87,10 +85,9 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $attributeMap = [
         'posted_date' => 'PostedDate',
-        'merchant_order_id' => 'MerchantOrderId',
-        'order_id' => 'OrderId',
-        'transaction_type' => 'TransactionType',
-        'removal_shipment_item_list' => 'RemovalShipmentItemList',
+        'base_amount' => 'BaseAmount',
+        'withheld_amount' => 'WithheldAmount',
+        'tax_withholding_period' => 'TaxWithholdingPeriod',
     ];
 
     /**
@@ -100,10 +97,9 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $setters = [
         'posted_date' => 'setPostedDate',
-        'merchant_order_id' => 'setMerchantOrderId',
-        'order_id' => 'setOrderId',
-        'transaction_type' => 'setTransactionType',
-        'removal_shipment_item_list' => 'setRemovalShipmentItemList',
+        'base_amount' => 'setBaseAmount',
+        'withheld_amount' => 'setWithheldAmount',
+        'tax_withholding_period' => 'setTaxWithholdingPeriod',
     ];
 
     /**
@@ -113,10 +109,9 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     protected static array $getters = [
         'posted_date' => 'getPostedDate',
-        'merchant_order_id' => 'getMerchantOrderId',
-        'order_id' => 'getOrderId',
-        'transaction_type' => 'getTransactionType',
-        'removal_shipment_item_list' => 'getRemovalShipmentItemList',
+        'base_amount' => 'getBaseAmount',
+        'withheld_amount' => 'getWithheldAmount',
+        'tax_withholding_period' => 'getTaxWithholdingPeriod',
     ];
 
     /**
@@ -135,10 +130,9 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
     public function __construct(array $data = null)
     {
         $this->container['posted_date'] = $data['posted_date'] ?? null;
-        $this->container['merchant_order_id'] = $data['merchant_order_id'] ?? null;
-        $this->container['order_id'] = $data['order_id'] ?? null;
-        $this->container['transaction_type'] = $data['transaction_type'] ?? null;
-        $this->container['removal_shipment_item_list'] = $data['removal_shipment_item_list'] ?? null;
+        $this->container['base_amount'] = $data['base_amount'] ?? null;
+        $this->container['withheld_amount'] = $data['withheld_amount'] ?? null;
+        $this->container['tax_withholding_period'] = $data['tax_withholding_period'] ?? null;
     }
 
     /**
@@ -253,83 +247,61 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets merchant_order_id.
+     * Gets base_amount.
      */
-    public function getMerchantOrderId() : ?string
+    public function getBaseAmount() : ?Currency
     {
-        return $this->container['merchant_order_id'];
+        return $this->container['base_amount'];
     }
 
     /**
-     * Sets merchant_order_id.
+     * Sets base_amount.
      *
-     * @param null|string $merchant_order_id the merchant removal orderId
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $base_amount base_amount
      */
-    public function setMerchantOrderId(?string $merchant_order_id) : self
+    public function setBaseAmount(?Currency $base_amount) : self
     {
-        $this->container['merchant_order_id'] = $merchant_order_id;
+        $this->container['base_amount'] = $base_amount;
 
         return $this;
     }
 
     /**
-     * Gets order_id.
+     * Gets withheld_amount.
      */
-    public function getOrderId() : ?string
+    public function getWithheldAmount() : ?Currency
     {
-        return $this->container['order_id'];
+        return $this->container['withheld_amount'];
     }
 
     /**
-     * Sets order_id.
+     * Sets withheld_amount.
      *
-     * @param null|string $order_id the identifier for the removal shipment order
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $withheld_amount withheld_amount
      */
-    public function setOrderId(?string $order_id) : self
+    public function setWithheldAmount(?Currency $withheld_amount) : self
     {
-        $this->container['order_id'] = $order_id;
+        $this->container['withheld_amount'] = $withheld_amount;
 
         return $this;
     }
 
     /**
-     * Gets transaction_type.
+     * Gets tax_withholding_period.
      */
-    public function getTransactionType() : ?string
+    public function getTaxWithholdingPeriod() : ?TaxWithholdingPeriod
     {
-        return $this->container['transaction_type'];
+        return $this->container['tax_withholding_period'];
     }
 
     /**
-     * Sets transaction_type.
+     * Sets tax_withholding_period.
      *
-     * @param null|string $transaction_type The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingPeriod $tax_withholding_period tax_withholding_period
      */
-    public function setTransactionType(?string $transaction_type) : self
+    public function setTaxWithholdingPeriod(?TaxWithholdingPeriod $tax_withholding_period) : self
     {
-        $this->container['transaction_type'] = $transaction_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets removal_shipment_item_list.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[]
-     */
-    public function getRemovalShipmentItemList() : ?array
-    {
-        return $this->container['removal_shipment_item_list'];
-    }
-
-    /**
-     * Sets removal_shipment_item_list.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[] $removal_shipment_item_list a list of information about removal shipment items
-     */
-    public function setRemovalShipmentItemList(?array $removal_shipment_item_list) : self
-    {
-        $this->container['removal_shipment_item_list'] = $removal_shipment_item_list;
+        $this->container['tax_withholding_period'] = $tax_withholding_period;
 
         return $this;
     }

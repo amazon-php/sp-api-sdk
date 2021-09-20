@@ -189,7 +189,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function __construct(array $data = null)
     {
-        $this->container['seller_id'] = $data['seller_id'] ?? null;
         $this->container['my_offer'] = $data['my_offer'] ?? null;
         $this->container['offer_type'] = $data['offer_type'] ?? null;
         $this->container['sub_condition'] = $data['sub_condition'] ?? null;
@@ -319,26 +318,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function valid() : bool
     {
         return \count($this->listInvalidProperties()) === 0;
-    }
-
-    /**
-     * Gets seller_id.
-     */
-    public function getSellerId() : ?string
-    {
-        return $this->container['seller_id'];
-    }
-
-    /**
-     * Sets seller_id.
-     *
-     * @param null|string $seller_id the seller identifier for the offer
-     */
-    public function setSellerId(?string $seller_id) : self
-    {
-        $this->container['seller_id'] = $seller_id;
-
-        return $this;
     }
 
     /**

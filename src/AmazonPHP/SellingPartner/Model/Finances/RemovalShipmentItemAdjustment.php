@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * RemovalShipmentEvent.
+ * RemovalShipmentItemAdjustment.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
+class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'RemovalShipmentEvent';
+    protected static string $openAPIModelName = 'RemovalShipmentItemAdjustment';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -57,11 +57,13 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'posted_date' => '\DateTime',
-        'merchant_order_id' => 'string',
-        'order_id' => 'string',
-        'transaction_type' => 'string',
-        'removal_shipment_item_list' => '\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[]',
+        'removal_shipment_item_id' => 'string',
+        'tax_collection_model' => 'string',
+        'fulfillment_network_sku' => 'string',
+        'adjusted_quantity' => 'int',
+        'revenue_adjustment' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'tax_amount_adjustment' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'tax_withheld_adjustment' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
     ];
 
     /**
@@ -72,11 +74,13 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'posted_date' => 'date-time',
-        'merchant_order_id' => null,
-        'order_id' => null,
-        'transaction_type' => null,
-        'removal_shipment_item_list' => null,
+        'removal_shipment_item_id' => null,
+        'tax_collection_model' => null,
+        'fulfillment_network_sku' => null,
+        'adjusted_quantity' => 'int32',
+        'revenue_adjustment' => null,
+        'tax_amount_adjustment' => null,
+        'tax_withheld_adjustment' => null,
     ];
 
     /**
@@ -86,11 +90,13 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * @var string[]
      */
     protected static array $attributeMap = [
-        'posted_date' => 'PostedDate',
-        'merchant_order_id' => 'MerchantOrderId',
-        'order_id' => 'OrderId',
-        'transaction_type' => 'TransactionType',
-        'removal_shipment_item_list' => 'RemovalShipmentItemList',
+        'removal_shipment_item_id' => 'RemovalShipmentItemId',
+        'tax_collection_model' => 'TaxCollectionModel',
+        'fulfillment_network_sku' => 'FulfillmentNetworkSKU',
+        'adjusted_quantity' => 'AdjustedQuantity',
+        'revenue_adjustment' => 'RevenueAdjustment',
+        'tax_amount_adjustment' => 'TaxAmountAdjustment',
+        'tax_withheld_adjustment' => 'TaxWithheldAdjustment',
     ];
 
     /**
@@ -99,11 +105,13 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * @var string[]
      */
     protected static array $setters = [
-        'posted_date' => 'setPostedDate',
-        'merchant_order_id' => 'setMerchantOrderId',
-        'order_id' => 'setOrderId',
-        'transaction_type' => 'setTransactionType',
-        'removal_shipment_item_list' => 'setRemovalShipmentItemList',
+        'removal_shipment_item_id' => 'setRemovalShipmentItemId',
+        'tax_collection_model' => 'setTaxCollectionModel',
+        'fulfillment_network_sku' => 'setFulfillmentNetworkSku',
+        'adjusted_quantity' => 'setAdjustedQuantity',
+        'revenue_adjustment' => 'setRevenueAdjustment',
+        'tax_amount_adjustment' => 'setTaxAmountAdjustment',
+        'tax_withheld_adjustment' => 'setTaxWithheldAdjustment',
     ];
 
     /**
@@ -112,11 +120,13 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * @var string[]
      */
     protected static array $getters = [
-        'posted_date' => 'getPostedDate',
-        'merchant_order_id' => 'getMerchantOrderId',
-        'order_id' => 'getOrderId',
-        'transaction_type' => 'getTransactionType',
-        'removal_shipment_item_list' => 'getRemovalShipmentItemList',
+        'removal_shipment_item_id' => 'getRemovalShipmentItemId',
+        'tax_collection_model' => 'getTaxCollectionModel',
+        'fulfillment_network_sku' => 'getFulfillmentNetworkSku',
+        'adjusted_quantity' => 'getAdjustedQuantity',
+        'revenue_adjustment' => 'getRevenueAdjustment',
+        'tax_amount_adjustment' => 'getTaxAmountAdjustment',
+        'tax_withheld_adjustment' => 'getTaxWithheldAdjustment',
     ];
 
     /**
@@ -134,11 +144,13 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->container['posted_date'] = $data['posted_date'] ?? null;
-        $this->container['merchant_order_id'] = $data['merchant_order_id'] ?? null;
-        $this->container['order_id'] = $data['order_id'] ?? null;
-        $this->container['transaction_type'] = $data['transaction_type'] ?? null;
-        $this->container['removal_shipment_item_list'] = $data['removal_shipment_item_list'] ?? null;
+        $this->container['removal_shipment_item_id'] = $data['removal_shipment_item_id'] ?? null;
+        $this->container['tax_collection_model'] = $data['tax_collection_model'] ?? null;
+        $this->container['fulfillment_network_sku'] = $data['fulfillment_network_sku'] ?? null;
+        $this->container['adjusted_quantity'] = $data['adjusted_quantity'] ?? null;
+        $this->container['revenue_adjustment'] = $data['revenue_adjustment'] ?? null;
+        $this->container['tax_amount_adjustment'] = $data['tax_amount_adjustment'] ?? null;
+        $this->container['tax_withheld_adjustment'] = $data['tax_withheld_adjustment'] ?? null;
     }
 
     /**
@@ -233,103 +245,141 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Gets posted_date.
+     * Gets removal_shipment_item_id.
      */
-    public function getPostedDate() : ?\DateTime
+    public function getRemovalShipmentItemId() : ?string
     {
-        return $this->container['posted_date'];
+        return $this->container['removal_shipment_item_id'];
     }
 
     /**
-     * Sets posted_date.
+     * Sets removal_shipment_item_id.
      *
-     * @param null|\DateTime $posted_date posted_date
+     * @param null|string $removal_shipment_item_id an identifier for an item in a removal shipment
      */
-    public function setPostedDate(?\DateTime $posted_date) : self
+    public function setRemovalShipmentItemId(?string $removal_shipment_item_id) : self
     {
-        $this->container['posted_date'] = $posted_date;
+        $this->container['removal_shipment_item_id'] = $removal_shipment_item_id;
 
         return $this;
     }
 
     /**
-     * Gets merchant_order_id.
+     * Gets tax_collection_model.
      */
-    public function getMerchantOrderId() : ?string
+    public function getTaxCollectionModel() : ?string
     {
-        return $this->container['merchant_order_id'];
+        return $this->container['tax_collection_model'];
     }
 
     /**
-     * Sets merchant_order_id.
+     * Sets tax_collection_model.
      *
-     * @param null|string $merchant_order_id the merchant removal orderId
+     * @param null|string $tax_collection_model The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
      */
-    public function setMerchantOrderId(?string $merchant_order_id) : self
+    public function setTaxCollectionModel(?string $tax_collection_model) : self
     {
-        $this->container['merchant_order_id'] = $merchant_order_id;
+        $this->container['tax_collection_model'] = $tax_collection_model;
 
         return $this;
     }
 
     /**
-     * Gets order_id.
+     * Gets fulfillment_network_sku.
      */
-    public function getOrderId() : ?string
+    public function getFulfillmentNetworkSku() : ?string
     {
-        return $this->container['order_id'];
+        return $this->container['fulfillment_network_sku'];
     }
 
     /**
-     * Sets order_id.
+     * Sets fulfillment_network_sku.
      *
-     * @param null|string $order_id the identifier for the removal shipment order
+     * @param null|string $fulfillment_network_sku the Amazon fulfillment network SKU for the item
      */
-    public function setOrderId(?string $order_id) : self
+    public function setFulfillmentNetworkSku(?string $fulfillment_network_sku) : self
     {
-        $this->container['order_id'] = $order_id;
+        $this->container['fulfillment_network_sku'] = $fulfillment_network_sku;
 
         return $this;
     }
 
     /**
-     * Gets transaction_type.
+     * Gets adjusted_quantity.
      */
-    public function getTransactionType() : ?string
+    public function getAdjustedQuantity() : ?int
     {
-        return $this->container['transaction_type'];
+        return $this->container['adjusted_quantity'];
     }
 
     /**
-     * Sets transaction_type.
+     * Sets adjusted_quantity.
      *
-     * @param null|string $transaction_type The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
+     * @param null|int $adjusted_quantity adjusted quantity of removal shipmentItemAdjustment items
      */
-    public function setTransactionType(?string $transaction_type) : self
+    public function setAdjustedQuantity(?int $adjusted_quantity) : self
     {
-        $this->container['transaction_type'] = $transaction_type;
+        $this->container['adjusted_quantity'] = $adjusted_quantity;
 
         return $this;
     }
 
     /**
-     * Gets removal_shipment_item_list.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[]
+     * Gets revenue_adjustment.
      */
-    public function getRemovalShipmentItemList() : ?array
+    public function getRevenueAdjustment() : ?Currency
     {
-        return $this->container['removal_shipment_item_list'];
+        return $this->container['revenue_adjustment'];
     }
 
     /**
-     * Sets removal_shipment_item_list.
+     * Sets revenue_adjustment.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[] $removal_shipment_item_list a list of information about removal shipment items
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $revenue_adjustment revenue_adjustment
      */
-    public function setRemovalShipmentItemList(?array $removal_shipment_item_list) : self
+    public function setRevenueAdjustment(?Currency $revenue_adjustment) : self
     {
-        $this->container['removal_shipment_item_list'] = $removal_shipment_item_list;
+        $this->container['revenue_adjustment'] = $revenue_adjustment;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_amount_adjustment.
+     */
+    public function getTaxAmountAdjustment() : ?Currency
+    {
+        return $this->container['tax_amount_adjustment'];
+    }
+
+    /**
+     * Sets tax_amount_adjustment.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_amount_adjustment tax_amount_adjustment
+     */
+    public function setTaxAmountAdjustment(?Currency $tax_amount_adjustment) : self
+    {
+        $this->container['tax_amount_adjustment'] = $tax_amount_adjustment;
+
+        return $this;
+    }
+
+    /**
+     * Gets tax_withheld_adjustment.
+     */
+    public function getTaxWithheldAdjustment() : ?Currency
+    {
+        return $this->container['tax_withheld_adjustment'];
+    }
+
+    /**
+     * Sets tax_withheld_adjustment.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_withheld_adjustment tax_withheld_adjustment
+     */
+    public function setTaxWithheldAdjustment(?Currency $tax_withheld_adjustment) : self
+    {
+        $this->container['tax_withheld_adjustment'] = $tax_withheld_adjustment;
 
         return $this;
     }
