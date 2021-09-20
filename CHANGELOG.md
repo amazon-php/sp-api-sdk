@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-09-20
+## [1.0.3] - 2021-09-20
 
 ### Changed
 - [#70](https://github.com/amazon-php/sp-api-sdk/pull/70) - **Updated models 2021-09-20** - [@norberttech](https://github.com/norberttech)
