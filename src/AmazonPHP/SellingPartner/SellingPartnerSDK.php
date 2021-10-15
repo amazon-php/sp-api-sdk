@@ -29,6 +29,8 @@ final class SellingPartnerSDK
 
     private Api\FinancesSDK $finances;
 
+    private Api\FulfillmentInboundSDK $fulfillmentInbound;
+
     private Api\FulfillmentOutboundSDK $fulfillmentOutbound;
 
     private Api\ListingsItemsSDK $listingsItems;
@@ -73,6 +75,7 @@ final class SellingPartnerSDK
         Api\FBASmallAndLightSDK $fbaSmallAndLight,
         Api\FeedsSDK $feeds,
         Api\FinancesSDK $finances,
+        Api\FulfillmentInboundSDK $fulfillmentInbound,
         Api\FulfillmentOutboundSDK $fulfillmentOutbound,
         Api\ListingsItemsSDK $listingsItems,
         Api\MessagingSDK $messaging,
@@ -100,6 +103,7 @@ final class SellingPartnerSDK
         $this->fbaSmallAndLight = $fbaSmallAndLight;
         $this->feeds = $feeds;
         $this->finances = $finances;
+        $this->fulfillmentInbound = $fulfillmentInbound;
         $this->fulfillmentOutbound = $fulfillmentOutbound;
         $this->listingsItems = $listingsItems;
         $this->messaging = $messaging;
@@ -138,6 +142,7 @@ final class SellingPartnerSDK
             new Api\FBASmallAndLightSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\FeedsSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\FinancesSDK($httpClient, $httpFactory, $configuration, $logger),
+            new Api\FulfillmentInboundSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\FulfillmentOutboundSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\ListingsItemsSDK($httpClient, $httpFactory, $configuration, $logger),
             new Api\MessagingSDK($httpClient, $httpFactory, $configuration, $logger),
@@ -201,6 +206,11 @@ final class SellingPartnerSDK
     public function finances() : Api\FinancesSDK
     {
         return $this->finances;
+    }
+
+    public function fulfillmentInbound() : Api\FulfillmentInboundSDK
+    {
+        return $this->fulfillmentInbound;
     }
 
     public function fulfillmentOutbound() : Api\FulfillmentOutboundSDK

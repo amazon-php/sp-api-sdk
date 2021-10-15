@@ -64,7 +64,7 @@ final class TokensSDK
                 $sanitizedRequest = $request;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $request->withoutHeader($sensitiveHeader);
+                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
                 }
 
                 $this->logger->log(
@@ -89,7 +89,7 @@ final class TokensSDK
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedResponse = $response->withoutHeader($sensitiveHeader);
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
                 }
 
                 $this->logger->log(

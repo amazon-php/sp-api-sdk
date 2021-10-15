@@ -94,7 +94,7 @@ final {{#operations}}class {{packageName}}SDK
                 $sanitizedRequest = $request;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $request->withoutHeader($sensitiveHeader);
+                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
                 }
 
                 $this->logger->log(
@@ -120,7 +120,7 @@ final {{#operations}}class {{packageName}}SDK
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedResponse = $response->withoutHeader($sensitiveHeader);
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
                 }
 
                 $this->logger->log(
