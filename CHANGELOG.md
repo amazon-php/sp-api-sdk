@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-10-15
+## [1.0.4] - 2021-10-15
 
 ### Added
 - [#82](https://github.com/amazon-php/sp-api-sdk/pull/82) - **FulfillmentInboundSDK to SellingPartnerSDK** - [@owsiakl](https://github.com/owsiakl)
