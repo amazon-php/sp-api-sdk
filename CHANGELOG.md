@@ -1,3 +1,8 @@
+## [Unreleased] - 2021-10-19
+
+### Updated
+- [3a9f7f](https://github.com/amazon-php/sp-api-sdk/commit/3a9f7fe2d7bfa876b23a0bd66e1c64bfd35072e6) - **cs fxer to the latest version** - [@norberttech](https://github.com/norberttech)
+
 ## [1.0.4] - 2021-10-15
 
 ### Added
