@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4d5a7558f9d73d39f206b947fb6c07e6",
+    "content-hash": "8083fa4b6245ce604e120f5b5de37ec3",
     "packages": [],
     "packages-dev": [
         {
@@ -968,16 +968,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.96",
+            "version": "0.12.99",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "a98bdc51318f20fcae8c953d266f81a70254917f"
+                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/a98bdc51318f20fcae8c953d266f81a70254917f",
-                "reference": "a98bdc51318f20fcae8c953d266f81a70254917f",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b4d40f1d759942f523be267a1bab6884f46ca3f7",
+                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7",
                 "shasum": ""
             },
             "require": {
@@ -1008,7 +1008,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.96"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.99"
             },
             "funding": [
                 {
@@ -1028,7 +1028,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-08-21T11:55:13+00:00"
+            "time": "2021-09-12T20:09:55+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -1650,28 +1650,30 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.11.52",
+            "version": "0.11.59",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "0a4e8e9f91100c55ae01a6ef706cd8a8f67f17ae"
+                "reference": "5ae5c75ec54697ff19de987f249e68513e899b8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/0a4e8e9f91100c55ae01a6ef706cd8a8f67f17ae",
-                "reference": "0a4e8e9f91100c55ae01a6ef706cd8a8f67f17ae",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/5ae5c75ec54697ff19de987f249e68513e899b8a",
+                "reference": "5ae5c75ec54697ff19de987f249e68513e899b8a",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.1|^8.0",
-                "phpstan/phpstan": "0.12.96"
+                "phpstan/phpstan": "0.12.99"
             },
             "conflict": {
                 "phpstan/phpdoc-parser": "<=0.5.3",
                 "phpstan/phpstan": "<=0.12.82",
                 "rector/rector-cakephp": "*",
                 "rector/rector-doctrine": "*",
+                "rector/rector-laravel": "*",
                 "rector/rector-nette": "*",
+                "rector/rector-phpoffice": "*",
                 "rector/rector-phpunit": "*",
                 "rector/rector-prefixed": "*",
                 "rector/rector-symfony": "*"
@@ -1697,7 +1699,7 @@
             "description": "Prefixed and PHP 7.1 downgraded version of rector/rector",
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.11.52"
+                "source": "https://github.com/rectorphp/rector/tree/0.11.59"
             },
             "funding": [
                 {
@@ -1705,7 +1707,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-08-27T13:02:41+00:00"
+            "time": "2021-10-19T10:08:27+00:00"
         },
         {
             "name": "sebastian/cli-parser",
