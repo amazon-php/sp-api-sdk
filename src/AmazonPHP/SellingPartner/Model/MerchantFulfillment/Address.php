@@ -501,7 +501,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets state_or_province_code.
      *
-     * @param null|string $state_or_province_code the state or province code
+     * @param null|string $state_or_province_code The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
      */
     public function setStateOrProvinceCode(?string $state_or_province_code) : self
     {

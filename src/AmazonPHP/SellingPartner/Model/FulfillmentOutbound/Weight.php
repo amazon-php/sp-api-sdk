@@ -46,7 +46,11 @@ class Weight implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     public const UNIT_KG = 'KG';
 
+    public const UNIT_KILOGRAMS = 'KILOGRAMS';
+
     public const UNIT_LB = 'LB';
+
+    public const UNIT_POUNDS = 'POUNDS';
 
     /**
      * The original name of the model.
@@ -206,7 +210,9 @@ class Weight implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         return [
             self::UNIT_KG,
+            self::UNIT_KILOGRAMS,
             self::UNIT_LB,
+            self::UNIT_POUNDS,
         ];
     }
 
