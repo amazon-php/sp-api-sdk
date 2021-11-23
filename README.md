@@ -94,8 +94,8 @@ $oauth = new OAuth(
     $client,
     $httpFactory = new HttpFactory($factory, $factory),
     $config = Configuration::forIAMUser(
-        'lwaClientID',
-        'lwaClientID',
+        'lwaClientId',
+        'lwaClientIdSecret',
         'awsAccessKey',
         'awsSecretKey'
     )
@@ -148,8 +148,8 @@ $factory = new Psr17Factory();
 $client = new Curl($factory);
 
 $configuration = Configuration::forIAMUser(
-    'lwaClientID',
-    'lwaClientID',
+    'lwaClientId',
+    'lwaClientIdSecret',
     'awsAccessKey',
     'awsSecretKey'
 );
