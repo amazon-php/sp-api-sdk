@@ -1,4 +1,7 @@
-## [Unreleased] - 2021-10-19
+## [Unreleased] - 2021-11-23
+
+### Changed
+- [#92](https://github.com/amazon-php/sp-api-sdk/pull/92) - **Updated SDK Models, mostly code docs but also additional units of measurement** - [@norberttech](https://github.com/norberttech)
 
 ### Updated
 - [3a9f7f](https://github.com/amazon-php/sp-api-sdk/commit/3a9f7fe2d7bfa876b23a0bd66e1c64bfd35072e6) - **cs fxer to the latest version** - [@norberttech](https://github.com/norberttech)
