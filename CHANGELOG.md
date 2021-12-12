@@ -1,3 +1,11 @@
+## [Unreleased] - 2021-12-12
+
+### Changed
+- [53306d](https://github.com/amazon-php/sp-api-sdk/commit/53306d59ec8deae7ff54c3d15973a50e30e0028d) - **Do not rename auto generated SDK's** - [@norberttech](https://github.com/norberttech)
+
+### Updated
+- [c9b107](https://github.com/amazon-php/sp-api-sdk/commit/c9b10751ab2fac214a74a6e6fd5781ee35047f89) - **README.md** - [@norberttech](https://github.com/norberttech)
+
 ## [1.0.5] - 2021-12-09
 
 ### Changed
