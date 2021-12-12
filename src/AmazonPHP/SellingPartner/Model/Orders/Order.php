@@ -80,6 +80,10 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     public const ORDER_TYPE_SOURCING_ON_DEMAND_ORDER = 'SourcingOnDemandOrder';
 
+    public const BUYER_INVOICE_PREFERENCE_INDIVIDUAL = 'INDIVIDUAL';
+
+    public const BUYER_INVOICE_PREFERENCE_BUSINESS = 'BUSINESS';
+
     /**
      * The original name of the model.
      *
@@ -127,12 +131,15 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_estimated_ship_date_set' => 'bool',
         'is_sold_by_ab' => 'bool',
         'default_ship_from_location_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
+        'buyer_invoice_preference' => 'string',
+        'buyer_tax_information' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInformation',
         'fulfillment_instruction' => '\AmazonPHP\SellingPartner\Model\Orders\FulfillmentInstruction',
         'is_ispu' => 'bool',
         'marketplace_tax_info' => '\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo',
         'seller_display_name' => 'string',
         'shipping_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
         'buyer_info' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo',
+        'automated_shipping_settings' => '\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings',
     ];
 
     /**
@@ -177,12 +184,15 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_estimated_ship_date_set' => null,
         'is_sold_by_ab' => null,
         'default_ship_from_location_address' => null,
+        'buyer_invoice_preference' => null,
+        'buyer_tax_information' => null,
         'fulfillment_instruction' => null,
         'is_ispu' => null,
         'marketplace_tax_info' => null,
         'seller_display_name' => null,
         'shipping_address' => null,
         'buyer_info' => null,
+        'automated_shipping_settings' => null,
     ];
 
     /**
@@ -226,12 +236,15 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_estimated_ship_date_set' => 'IsEstimatedShipDateSet',
         'is_sold_by_ab' => 'IsSoldByAB',
         'default_ship_from_location_address' => 'DefaultShipFromLocationAddress',
+        'buyer_invoice_preference' => 'BuyerInvoicePreference',
+        'buyer_tax_information' => 'BuyerTaxInformation',
         'fulfillment_instruction' => 'FulfillmentInstruction',
         'is_ispu' => 'IsISPU',
         'marketplace_tax_info' => 'MarketplaceTaxInfo',
         'seller_display_name' => 'SellerDisplayName',
         'shipping_address' => 'ShippingAddress',
         'buyer_info' => 'BuyerInfo',
+        'automated_shipping_settings' => 'AutomatedShippingSettings',
     ];
 
     /**
@@ -274,12 +287,15 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_estimated_ship_date_set' => 'setIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'setIsSoldByAb',
         'default_ship_from_location_address' => 'setDefaultShipFromLocationAddress',
+        'buyer_invoice_preference' => 'setBuyerInvoicePreference',
+        'buyer_tax_information' => 'setBuyerTaxInformation',
         'fulfillment_instruction' => 'setFulfillmentInstruction',
         'is_ispu' => 'setIsIspu',
         'marketplace_tax_info' => 'setMarketplaceTaxInfo',
         'seller_display_name' => 'setSellerDisplayName',
         'shipping_address' => 'setShippingAddress',
         'buyer_info' => 'setBuyerInfo',
+        'automated_shipping_settings' => 'setAutomatedShippingSettings',
     ];
 
     /**
@@ -322,12 +338,15 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'is_estimated_ship_date_set' => 'getIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'getIsSoldByAb',
         'default_ship_from_location_address' => 'getDefaultShipFromLocationAddress',
+        'buyer_invoice_preference' => 'getBuyerInvoicePreference',
+        'buyer_tax_information' => 'getBuyerTaxInformation',
         'fulfillment_instruction' => 'getFulfillmentInstruction',
         'is_ispu' => 'getIsIspu',
         'marketplace_tax_info' => 'getMarketplaceTaxInfo',
         'seller_display_name' => 'getSellerDisplayName',
         'shipping_address' => 'getShippingAddress',
         'buyer_info' => 'getBuyerInfo',
+        'automated_shipping_settings' => 'getAutomatedShippingSettings',
     ];
 
     /**
@@ -379,12 +398,15 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['is_estimated_ship_date_set'] = $data['is_estimated_ship_date_set'] ?? null;
         $this->container['is_sold_by_ab'] = $data['is_sold_by_ab'] ?? null;
         $this->container['default_ship_from_location_address'] = $data['default_ship_from_location_address'] ?? null;
+        $this->container['buyer_invoice_preference'] = $data['buyer_invoice_preference'] ?? null;
+        $this->container['buyer_tax_information'] = $data['buyer_tax_information'] ?? null;
         $this->container['fulfillment_instruction'] = $data['fulfillment_instruction'] ?? null;
         $this->container['is_ispu'] = $data['is_ispu'] ?? null;
         $this->container['marketplace_tax_info'] = $data['marketplace_tax_info'] ?? null;
         $this->container['seller_display_name'] = $data['seller_display_name'] ?? null;
         $this->container['shipping_address'] = $data['shipping_address'] ?? null;
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
+        $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
     }
 
     /**
@@ -520,6 +542,19 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getBuyerInvoicePreferenceAllowableValues() : array
+    {
+        return [
+            self::BUYER_INVOICE_PREFERENCE_INDIVIDUAL,
+            self::BUYER_INVOICE_PREFERENCE_BUSINESS,
+        ];
+    }
+
+    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -579,6 +614,16 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = \sprintf(
                 "invalid value '%s' for 'order_type', must be one of '%s'",
                 $this->container['order_type'],
+                \implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
+
+        if (null !== $this->container['buyer_invoice_preference'] && !\in_array($this->container['buyer_invoice_preference'], $allowedValues, true)) {
+            $invalidProperties[] = \sprintf(
+                "invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
+                $this->container['buyer_invoice_preference'],
                 \implode("', '", $allowedValues)
             );
         }
@@ -1326,6 +1371,57 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
+     * Gets buyer_invoice_preference.
+     */
+    public function getBuyerInvoicePreference() : ?string
+    {
+        return $this->container['buyer_invoice_preference'];
+    }
+
+    /**
+     * Sets buyer_invoice_preference.
+     *
+     * @param null|string $buyer_invoice_preference the buyer’s invoicing preference
+     */
+    public function setBuyerInvoicePreference(?string $buyer_invoice_preference) : self
+    {
+        $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
+
+        if (null !== $buyer_invoice_preference && !\in_array($buyer_invoice_preference, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                \sprintf(
+                    "Invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
+                    $buyer_invoice_preference,
+                    \implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['buyer_invoice_preference'] = $buyer_invoice_preference;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_tax_information.
+     */
+    public function getBuyerTaxInformation() : ?BuyerTaxInformation
+    {
+        return $this->container['buyer_tax_information'];
+    }
+
+    /**
+     * Sets buyer_tax_information.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInformation $buyer_tax_information buyer_tax_information
+     */
+    public function setBuyerTaxInformation(?BuyerTaxInformation $buyer_tax_information) : self
+    {
+        $this->container['buyer_tax_information'] = $buyer_tax_information;
+
+        return $this;
+    }
+
+    /**
      * Gets fulfillment_instruction.
      */
     public function getFulfillmentInstruction() : ?FulfillmentInstruction
@@ -1441,6 +1537,26 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setBuyerInfo(?BuyerInfo $buyer_info) : self
     {
         $this->container['buyer_info'] = $buyer_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets automated_shipping_settings.
+     */
+    public function getAutomatedShippingSettings() : ?AutomatedShippingSettings
+    {
+        return $this->container['automated_shipping_settings'];
+    }
+
+    /**
+     * Sets automated_shipping_settings.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings $automated_shipping_settings automated_shipping_settings
+     */
+    public function setAutomatedShippingSettings(?AutomatedShippingSettings $automated_shipping_settings) : self
+    {
+        $this->container['automated_shipping_settings'] = $automated_shipping_settings;
 
         return $this;
     }

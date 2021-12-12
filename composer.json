@@ -47,7 +47,6 @@
             "bin/generate.sh",
             "@rector:process:force",
             "@rector:process:force",
-            "@cs:php:fix:namespaces",
             "@cs:php:fix"
         ],
         "build": [
@@ -71,9 +70,6 @@
         ],
         "post-update-cmd": [
             "@tools:install"
-        ],
-        "cs:php:fix:namespaces": [
-            "bin/rename.php"
         ]
     }
 }

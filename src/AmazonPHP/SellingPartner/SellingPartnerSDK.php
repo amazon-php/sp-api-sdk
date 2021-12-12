@@ -4,6 +4,33 @@ declare(strict_types=1);
 
 namespace AmazonPHP\SellingPartner;
 
+use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDK;
+use AmazonPHP\SellingPartner\Api\AuthorizationApi\AuthorizationSDK;
+use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDK;
+use AmazonPHP\SellingPartner\Api\DefinitionsApi\ProductTypesDefinitionsSDK;
+use AmazonPHP\SellingPartner\Api\FbaInboundApi\FBAInboundSDK;
+use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundSDK;
+use AmazonPHP\SellingPartner\Api\FbaInventoryApi\FBAInventorySDK;
+use AmazonPHP\SellingPartner\Api\FbaOutboundApi\FulfillmentOutboundSDK;
+use AmazonPHP\SellingPartner\Api\FeedsApi\FeedsSDK;
+use AmazonPHP\SellingPartner\Api\FeesApi\ProductFeesSDK;
+use AmazonPHP\SellingPartner\Api\ListingsApi\ListingsItemsSDK;
+use AmazonPHP\SellingPartner\Api\MessagingApi\MessagingSDK;
+use AmazonPHP\SellingPartner\Api\NotificationsApi\NotificationsSDK;
+use AmazonPHP\SellingPartner\Api\OrdersV0Api;
+use AmazonPHP\SellingPartner\Api\ProductPricingApi\ProductPricingSDK;
+use AmazonPHP\SellingPartner\Api\ReportsApi\ReportsSDK;
+use AmazonPHP\SellingPartner\Api\SalesApi\SalesSDK;
+use AmazonPHP\SellingPartner\Api\SellersApi\SellersSDK;
+use AmazonPHP\SellingPartner\Api\ServiceApi\ServicesSDK;
+use AmazonPHP\SellingPartner\Api\ShipmentApi;
+use AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi\ShipmentInvoicingSDK;
+use AmazonPHP\SellingPartner\Api\ShippingApi\ShippingSDK;
+use AmazonPHP\SellingPartner\Api\SmallAndLightApi\FBASmallAndLightSDK;
+use AmazonPHP\SellingPartner\Api\SolicitationsApi\SolicitationsSDK;
+use AmazonPHP\SellingPartner\Api\TokensApi\TokensSDK;
+use AmazonPHP\SellingPartner\Api\UploadsApi\UploadsSDK;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -13,86 +40,89 @@ final class SellingPartnerSDK
 {
     private OAuth $oAuth;
 
-    private Api\APlusSDK $aPlus;
+    private APlusSDK $aPlus;
 
-    private Api\AuthorizationSDK $authorization;
+    private AuthorizationSDK $authorization;
 
-    private Api\CatalogItemSDK $catalogItem;
+    private CatalogItemSDK $catalogItem;
 
-    private Api\FBAInboundSDK $fbaInbound;
+    private FBAInboundSDK $fbaInbound;
 
-    private Api\FBAInventorySDK $fbaInventory;
+    private FBAInventorySDK $fbaInventory;
 
-    private Api\FBASmallAndLightSDK $fbaSmallAndLight;
+    private FBASmallAndLightSDK $fbaSmallAndLight;
 
-    private Api\FeedsSDK $feeds;
+    private FeedsSDK $feeds;
 
-    private Api\FinancesSDK $finances;
+    private FinancesSDK $finances;
 
-    private Api\FulfillmentInboundSDK $fulfillmentInbound;
+    private FulfillmentInboundSDK $fulfillmentInbound;
 
-    private Api\FulfillmentOutboundSDK $fulfillmentOutbound;
+    private FulfillmentOutboundSDK $fulfillmentOutbound;
 
-    private Api\ListingsItemsSDK $listingsItems;
+    private ListingsItemsSDK $listingsItems;
 
-    private Api\MessagingSDK $messaging;
+    private MessagingSDK $messaging;
 
-    private Api\NotificationsSDK $notifications;
+    private NotificationsSDK $notifications;
 
-    private Api\OrdersSDK $orders;
+    private OrdersV0Api\OrdersSDK $orders;
 
-    private Api\ProductFeesSDK $productFees;
+    private ShipmentApi\OrdersSDK $ordersShipment;
 
-    private Api\ProductPricingSDK $productPricing;
+    private ProductFeesSDK $productFees;
 
-    private Api\ProductTypesDefinitionsSDK $productTypesDefinitions;
+    private ProductPricingSDK $productPricing;
 
-    private Api\ReportsSDK $reports;
+    private ProductTypesDefinitionsSDK $productTypesDefinitions;
 
-    private Api\SalesSDK $sales;
+    private ReportsSDK $reports;
 
-    private Api\SellersSDK $sellers;
+    private SalesSDK $sales;
 
-    private Api\ServicesSDK $services;
+    private SellersSDK $sellers;
 
-    private Api\ShipmentInvoicingSDK $shipmentInvoicing;
+    private ServicesSDK $services;
 
-    private Api\ShippingSDK $shipping;
+    private ShipmentInvoicingSDK $shipmentInvoicing;
 
-    private Api\SolicitationsSDK $solicitations;
+    private ShippingSDK $shipping;
 
-    private Api\TokensSDK $tokens;
+    private SolicitationsSDK $solicitations;
 
-    private Api\UploadsSDK $uploads;
+    private TokensSDK $tokens;
+
+    private UploadsSDK $uploads;
 
     public function __construct(
         OAuth $oAuth,
-        Api\APlusSDK $aPlus,
-        Api\AuthorizationSDK $authorization,
-        Api\CatalogItemSDK $catalogItem,
-        Api\FBAInboundSDK $fbaInbound,
-        Api\FBAInventorySDK $fbaInventory,
-        Api\FBASmallAndLightSDK $fbaSmallAndLight,
-        Api\FeedsSDK $feeds,
-        Api\FinancesSDK $finances,
-        Api\FulfillmentInboundSDK $fulfillmentInbound,
-        Api\FulfillmentOutboundSDK $fulfillmentOutbound,
-        Api\ListingsItemsSDK $listingsItems,
-        Api\MessagingSDK $messaging,
-        Api\NotificationsSDK $notifications,
-        Api\OrdersSDK $orders,
-        Api\ProductFeesSDK $productFees,
-        Api\ProductPricingSDK $productPricing,
-        Api\ProductTypesDefinitionsSDK $productTypesDefinitions,
-        Api\ReportsSDK $reports,
-        Api\SalesSDK $sales,
-        Api\SellersSDK $sellers,
-        Api\ServicesSDK $services,
-        Api\ShipmentInvoicingSDK $shipmentInvoicing,
-        Api\ShippingSDK $shipping,
-        Api\SolicitationsSDK $solicitations,
-        Api\TokensSDK $tokens,
-        Api\UploadsSDK $uploads
+        APlusSDK $aPlus,
+        AuthorizationSDK $authorization,
+        CatalogItemSDK $catalogItem,
+        FBAInboundSDK $fbaInbound,
+        FBAInventorySDK $fbaInventory,
+        FBASmallAndLightSDK $fbaSmallAndLight,
+        FeedsSDK $feeds,
+        FinancesSDK $finances,
+        FulfillmentInboundSDK $fulfillmentInbound,
+        FulfillmentOutboundSDK $fulfillmentOutbound,
+        ListingsItemsSDK $listingsItems,
+        MessagingSDK $messaging,
+        NotificationsSDK $notifications,
+        OrdersV0Api\OrdersSDK $orders,
+        ShipmentApi\OrdersSDK $ordersShipment,
+        ProductFeesSDK $productFees,
+        ProductPricingSDK $productPricing,
+        ProductTypesDefinitionsSDK $productTypesDefinitions,
+        ReportsSDK $reports,
+        SalesSDK $sales,
+        SellersSDK $sellers,
+        ServicesSDK $services,
+        ShipmentInvoicingSDK $shipmentInvoicing,
+        ShippingSDK $shipping,
+        SolicitationsSDK $solicitations,
+        TokensSDK $tokens,
+        UploadsSDK $uploads
     ) {
         $this->oAuth = $oAuth;
         $this->aPlus = $aPlus;
@@ -109,6 +139,7 @@ final class SellingPartnerSDK
         $this->messaging = $messaging;
         $this->notifications = $notifications;
         $this->orders = $orders;
+        $this->ordersShipment = $ordersShipment;
         $this->productFees = $productFees;
         $this->productPricing = $productPricing;
         $this->productTypesDefinitions = $productTypesDefinitions;
@@ -134,32 +165,33 @@ final class SellingPartnerSDK
 
         return new self(
             new OAuth($httpClient, $httpFactory, $configuration, $logger),
-            new Api\APlusSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\AuthorizationSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\CatalogItemSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\FBAInboundSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\FBAInventorySDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\FBASmallAndLightSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\FeedsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\FinancesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\FulfillmentInboundSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\FulfillmentOutboundSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ListingsItemsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\MessagingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\NotificationsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\OrdersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ProductFeesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ProductPricingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ProductTypesDefinitionsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ReportsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\SalesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\SellersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ServicesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ShipmentInvoicingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\ShippingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\SolicitationsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\TokensSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\UploadsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new APlusSDK($httpClient, $httpFactory, $configuration, $logger),
+            new AuthorizationSDK($httpClient, $httpFactory, $configuration, $logger),
+            new CatalogItemSDK($httpClient, $httpFactory, $configuration, $logger),
+            new FBAInboundSDK($httpClient, $httpFactory, $configuration, $logger),
+            new FBAInventorySDK($httpClient, $httpFactory, $configuration, $logger),
+            new FBASmallAndLightSDK($httpClient, $httpFactory, $configuration, $logger),
+            new FeedsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new FinancesSDK($httpClient, $httpFactory, $configuration, $logger),
+            new FulfillmentInboundSDK($httpClient, $httpFactory, $configuration, $logger),
+            new FulfillmentOutboundSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ListingsItemsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new MessagingSDK($httpClient, $httpFactory, $configuration, $logger),
+            new NotificationsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new OrdersV0Api\OrdersSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ShipmentApi\OrdersSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ProductFeesSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ProductPricingSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ProductTypesDefinitionsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ReportsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new SalesSDK($httpClient, $httpFactory, $configuration, $logger),
+            new SellersSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ServicesSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ShipmentInvoicingSDK($httpClient, $httpFactory, $configuration, $logger),
+            new ShippingSDK($httpClient, $httpFactory, $configuration, $logger),
+            new SolicitationsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new TokensSDK($httpClient, $httpFactory, $configuration, $logger),
+            new UploadsSDK($httpClient, $httpFactory, $configuration, $logger),
         );
     }
 
@@ -168,132 +200,137 @@ final class SellingPartnerSDK
         return $this->oAuth;
     }
 
-    public function aPlus() : Api\APlusSDK
+    public function aPlus() : APlusSDK
     {
         return $this->aPlus;
     }
 
-    public function authorization() : Api\AuthorizationSDK
+    public function authorization() : AuthorizationSDK
     {
         return $this->authorization;
     }
 
-    public function catalogItem() : Api\CatalogItemSDK
+    public function catalogItem() : CatalogItemSDK
     {
         return $this->catalogItem;
     }
 
-    public function fbaInbound() : Api\FBAInboundSDK
+    public function fbaInbound() : FBAInboundSDK
     {
         return $this->fbaInbound;
     }
 
-    public function fbaInventory() : Api\FBAInventorySDK
+    public function fbaInventory() : FBAInventorySDK
     {
         return $this->fbaInventory;
     }
 
-    public function fbaSmallAndLight() : Api\FBASmallAndLightSDK
+    public function fbaSmallAndLight() : FBASmallAndLightSDK
     {
         return $this->fbaSmallAndLight;
     }
 
-    public function feeds() : Api\FeedsSDK
+    public function feeds() : FeedsSDK
     {
         return $this->feeds;
     }
 
-    public function finances() : Api\FinancesSDK
+    public function finances() : FinancesSDK
     {
         return $this->finances;
     }
 
-    public function fulfillmentInbound() : Api\FulfillmentInboundSDK
+    public function fulfillmentInbound() : FulfillmentInboundSDK
     {
         return $this->fulfillmentInbound;
     }
 
-    public function fulfillmentOutbound() : Api\FulfillmentOutboundSDK
+    public function fulfillmentOutbound() : FulfillmentOutboundSDK
     {
         return $this->fulfillmentOutbound;
     }
 
-    public function listingsItems() : Api\ListingsItemsSDK
+    public function listingsItems() : ListingsItemsSDK
     {
         return $this->listingsItems;
     }
 
-    public function messaging() : Api\MessagingSDK
+    public function messaging() : MessagingSDK
     {
         return $this->messaging;
     }
 
-    public function notifications() : Api\NotificationsSDK
+    public function notifications() : NotificationsSDK
     {
         return $this->notifications;
     }
 
-    public function orders() : Api\OrdersSDK
+    public function orders() : OrdersV0Api\OrdersSDK
     {
         return $this->orders;
     }
 
-    public function productFees() : Api\ProductFeesSDK
+    public function orderShipment() : ShipmentApi\OrdersSDK
+    {
+        return $this->ordersShipment;
+    }
+
+    public function productFees() : ProductFeesSDK
     {
         return $this->productFees;
     }
 
-    public function productPricing() : Api\ProductPricingSDK
+    public function productPricing() : ProductPricingSDK
     {
         return $this->productPricing;
     }
 
-    public function productTypesDefinitions() : Api\ProductTypesDefinitionsSDK
+    public function productTypesDefinitions() : ProductTypesDefinitionsSDK
     {
         return $this->productTypesDefinitions;
     }
 
-    public function reports() : Api\ReportsSDK
+    public function reports() : ReportsSDK
     {
         return $this->reports;
     }
 
-    public function sales() : Api\SalesSDK
+    public function sales() : SalesSDK
     {
         return $this->sales;
     }
 
-    public function sellers() : Api\SellersSDK
+    public function sellers() : SellersSDK
     {
         return $this->sellers;
     }
 
-    public function services() : Api\ServicesSDK
+    public function services() : ServicesSDK
     {
         return $this->services;
     }
 
-    public function shipmentInvoicing() : Api\ShipmentInvoicingSDK
+    public function shipmentInvoicing() : ShipmentInvoicingSDK
     {
         return $this->shipmentInvoicing;
     }
 
-    public function shipping() : Api\ShippingSDK
+    public function shipping() : ShippingSDK
     {
         return $this->shipping;
     }
 
-    public function solicitations() : Api\SolicitationsSDK
+    public function solicitations() : SolicitationsSDK
     {
         return $this->solicitations;
     }
 
-    public function tokens() : Api\TokensSDK
+    public function tokens() : TokensSDK
     {
         return $this->tokens;
     }
 
-    public function uploads() : Api\UploadsSDK
+    public function uploads() : UploadsSDK
     {
         return $this->uploads;
     }
