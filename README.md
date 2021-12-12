@@ -23,10 +23,18 @@ This library goal is to resolve all above mentioned issues.
 ### Installations
 
 ```
-composer install amazon-php/sp-api-sdk^1.0
+composer install amazon-php/sp-api-sdk^2.0
 ```
 
 This library is not in a stable stage yet, please use with caution.
+
+### Releases 
+
+Version <s>[1.0](https://github.com/amazon-php/sp-api-sdk/tree/1.x)</s> is deprecated becuase of the attempt to 
+make a little more sense of what Amazon is doing with using "tags" in their Open API specification. 
+This attempt failed and in order to keep Backgward Compatibility promise, changes in the class names had to be 
+introduced in [2.0](https://github.com/amazon-php/sp-api-sdk/tree/2.x). 
+Version 1.0 is not going to be updated anymore, please migrate to version 2.0 that will stay consistent with [Amazon Models](https://github.com/amzn/selling-partner-api-models)
 
 ### Available SDKs
 
