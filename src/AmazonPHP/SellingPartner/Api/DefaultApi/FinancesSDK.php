@@ -163,8 +163,6 @@ final class FinancesSDK
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $financial_event_group_started_before = null, \DateTime $financial_event_group_started_after = null, string $next_token = null) : RequestInterface
     {
@@ -384,8 +382,6 @@ final class FinancesSDK
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function listFinancialEventsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $posted_after = null, \DateTime $posted_before = null, string $next_token = null) : RequestInterface
     {
@@ -603,8 +599,6 @@ final class FinancesSDK
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function listFinancialEventsByGroupIdRequest(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, string $next_token = null) : RequestInterface
     {
@@ -822,8 +816,6 @@ final class FinancesSDK
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function listFinancialEventsByOrderIdRequest(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, string $next_token = null) : RequestInterface
     {

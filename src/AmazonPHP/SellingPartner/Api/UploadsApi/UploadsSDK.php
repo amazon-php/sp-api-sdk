@@ -151,8 +151,6 @@ final class UploadsSDK
      * @param string $content_type The content type of the file to be uploaded. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function createUploadDestinationForResourceRequest(AccessToken $accessToken, string $region, array $marketplace_ids, string $content_md5, string $resource, string $content_type = null) : RequestInterface
     {

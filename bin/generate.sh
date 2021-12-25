@@ -161,3 +161,62 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     -c /sp-api/config/generator-uploads.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-inventory-api-model/vendorDirectFulfillmentInventoryV1.json \
+    -c /sp-api/config/generator-vendor-direct-fulfillment-inventory.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-orders-api-model/vendorDirectFulfillmentOrdersV1.json \
+    -c /sp-api/config/generator-vendor-direct-fulfillment-orders.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-payments-api-model/vendorDirectFulfillmentPaymentsV1.json \
+    --skip-validate-spec \
+    -c /sp-api/config/generator-vendor-direct-fulfillment-payments.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-shipping-api-model/vendorDirectFulfillmentShippingV1.json \
+    -c /sp-api/config/generator-vendor-direct-fulfillment-shipping.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-transactions-api-model/vendorDirectFulfillmentTransactionsV1.json \
+    -c /sp-api/config/generator-vendor-direct-fulfillment-transactions.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-invoices-api-model/vendorInvoices.json \
+    --skip-validate-spec \
+    -c /sp-api/config/generator-vendor-invoices.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-orders-api-model/vendorOrders.json \
+    --skip-validate-spec \
+    -c /sp-api/config/generator-vendor-orders.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-shipments-api-model/vendorShipments.json \
+    --skip-validate-spec \
+    -c /sp-api/config/generator-vendor-shipments.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+
+docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-transaction-status-api-model/vendorTransactionStatus.json \
+    -c /sp-api/config/generator-vendor-transaction-status.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api
+

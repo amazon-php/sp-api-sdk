@@ -30,7 +30,7 @@ This library is not in a stable stage yet, please use with caution.
 
 ### Releases 
 
-Version <s>[1.0](https://github.com/amazon-php/sp-api-sdk/tree/1.x)</s> is deprecated becuase of the attempt to 
+Version <s> [1.0](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to 
 make a little more sense of what Amazon is doing with using "tags" in their Open API specification. 
 This attempt failed and in order to keep Backgward Compatibility promise, changes in the class names had to be 
 introduced in [2.0](https://github.com/amazon-php/sp-api-sdk/tree/2.x). 
@@ -66,7 +66,17 @@ Version 1.0 is not going to be updated anymore, please migrate to version 2.0 th
 * [SolicitationsSDK](/src/AmazonPHP/SellingPartner/Api/SolicitationsApi/SolicitationsSDK.php)
 * [TokensSDK](/src/AmazonPHP/SellingPartner/Api/TokensApi/TokensSDK.php)
 * [UploadsSDK](/src/AmazonPHP/SellingPartner/Api/UploadsApi/UploadsSDK.php)
-
+* VendorSDK
+  * [VendorInvoicesSDK](/src/AmazonPHP/SellingPartner/Api/VendorPaymentsApi/VendorInvoicesSDK.php)
+  * [VendorOrdersSDK](/src/AmazonPHP/SellingPartner/Api/VendorOrdersApi/VendorOrdersSDK.php)
+  * [VendorShipmentsSDK](/src/AmazonPHP/SellingPartner/Api/VendorShippingApi/VendorShipmentsSDK.php)
+  * [VendorTransactionStatusSDK](/src/AmazonPHP/SellingPartner/Api/VendorTransactionApi/VendorTransactionStatusSDK.php)
+  * [VendorDirectFulfillmentTransactionsSDK](/src/AmazonPHP/SellingPartner/Api/VendorTransactionApi/VendorDirectFulfillmentTransactionsSDK.php)
+  * [VendorDirectFulfillmentShippingSDK](/src/AmazonPHP/SellingPartner/Api/VendorShippingApi/VendorDirectFulfillmentShippingSDK.php)
+  * [VendorDirectFulfillmentShippingSDK - Labels](/src/AmazonPHP/SellingPartner/Api/VendorShippingLabelsApi/VendorDirectFulfillmentShippingSDK.php)
+  * [VendorDirectFulfillmentOrdersSDK](/src/AmazonPHP/SellingPartner/Api/VendorOrdersApi/VendorDirectFulfillmentOrdersSDK.php)
+  * [VendorDirectFulfillmentPaymentsSDK](/src/AmazonPHP/SellingPartner/Api/VendorInvoiceApi/VendorDirectFulfillmentPaymentsSDK.php)
+    
 ### Authorization
 
 In order to start using SP API you need to first register as a Developer and create application.

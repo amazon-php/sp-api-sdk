@@ -158,8 +158,6 @@ final class FBASmallAndLightSDK
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function deleteSmallAndLightEnrollmentBySellerSKURequest(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : RequestInterface
     {
@@ -369,8 +367,6 @@ final class FBASmallAndLightSDK
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getSmallAndLightEligibilityBySellerSKURequest(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : RequestInterface
     {
@@ -580,8 +576,6 @@ final class FBASmallAndLightSDK
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getSmallAndLightEnrollmentBySellerSKURequest(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : RequestInterface
     {
@@ -789,8 +783,6 @@ final class FBASmallAndLightSDK
      * @param \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getSmallAndLightFeePreviewRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body) : RequestInterface
     {
@@ -980,8 +972,6 @@ final class FBASmallAndLightSDK
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function putSmallAndLightEnrollmentBySellerSKURequest(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : RequestInterface
     {

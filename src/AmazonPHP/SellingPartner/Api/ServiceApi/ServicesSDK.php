@@ -167,8 +167,6 @@ final class ServicesSDK
      * @param \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function addAppointmentForServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id, \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body) : RequestInterface
     {
@@ -382,8 +380,6 @@ final class ServicesSDK
      * @param string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function cancelServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id, string $cancellation_reason_code) : RequestInterface
     {
@@ -608,8 +604,6 @@ final class ServicesSDK
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function completeServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id) : RequestInterface
     {
@@ -806,8 +800,6 @@ final class ServicesSDK
      * @param string $service_job_id A service job identifier. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id) : RequestInterface
     {
@@ -1028,8 +1020,6 @@ final class ServicesSDK
      * @param string $schedule_end_date A date used for filtering jobs schedule before (or at) a specified time must be in ISO 8601 format. schedule end date should not be earlier than schedule start date. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getServiceJobsRequest(AccessToken $accessToken, string $region, array $marketplace_ids, array $service_order_ids = null, array $service_job_status = null, string $page_token = null, int $page_size = 20, string $sort_field = null, string $sort_order = null, string $created_after = null, string $created_before = null, string $last_updated_after = null, string $last_updated_before = null, string $schedule_start_date = null, string $schedule_end_date = null) : RequestInterface
     {
@@ -1338,8 +1328,6 @@ final class ServicesSDK
      * @param \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body) : RequestInterface
     {

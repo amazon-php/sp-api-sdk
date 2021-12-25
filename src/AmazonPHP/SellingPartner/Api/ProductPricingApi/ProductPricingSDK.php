@@ -165,8 +165,6 @@ final class ProductPricingSDK
      * @param string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getCompetitivePricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $customer_type = null) : RequestInterface
     {
@@ -407,8 +405,6 @@ final class ProductPricingSDK
      * @param string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getItemOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, string $customer_type = null) : RequestInterface
     {
@@ -640,8 +636,6 @@ final class ProductPricingSDK
      * @param string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getListingOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, string $customer_type = null) : RequestInterface
     {
@@ -877,8 +871,6 @@ final class ProductPricingSDK
      * @param string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getPricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $item_condition = null, string $offer_type = null) : RequestInterface
     {

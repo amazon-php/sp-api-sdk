@@ -177,8 +177,6 @@ final class ReportsSDK
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function cancelReportRequest(AccessToken $accessToken, string $region, string $report_id) : RequestInterface
     {
@@ -367,8 +365,6 @@ final class ReportsSDK
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function cancelReportScheduleRequest(AccessToken $accessToken, string $region, string $report_schedule_id) : RequestInterface
     {
@@ -557,8 +553,6 @@ final class ReportsSDK
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function createReportRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : RequestInterface
     {
@@ -746,8 +740,6 @@ final class ReportsSDK
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function createReportScheduleRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : RequestInterface
     {
@@ -935,8 +927,6 @@ final class ReportsSDK
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getReportRequest(AccessToken $accessToken, string $region, string $report_id) : RequestInterface
     {
@@ -1125,8 +1115,6 @@ final class ReportsSDK
      * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getReportDocumentRequest(AccessToken $accessToken, string $region, string $report_document_id) : RequestInterface
     {
@@ -1315,8 +1303,6 @@ final class ReportsSDK
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getReportScheduleRequest(AccessToken $accessToken, string $region, string $report_schedule_id) : RequestInterface
     {
@@ -1505,8 +1491,6 @@ final class ReportsSDK
      * @param string[] $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getReportSchedulesRequest(AccessToken $accessToken, string $region, array $report_types) : RequestInterface
     {
@@ -1715,8 +1699,6 @@ final class ReportsSDK
      * @param string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getReportsRequest(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : RequestInterface
     {

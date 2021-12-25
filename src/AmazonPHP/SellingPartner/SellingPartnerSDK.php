@@ -94,6 +94,8 @@ final class SellingPartnerSDK
 
     private UploadsSDK $uploads;
 
+    private VendorSDK $vendorSDK;
+
     public function __construct(
         OAuth $oAuth,
         APlusSDK $aPlus,
@@ -122,7 +124,8 @@ final class SellingPartnerSDK
         ShippingSDK $shipping,
         SolicitationsSDK $solicitations,
         TokensSDK $tokens,
-        UploadsSDK $uploads
+        UploadsSDK $uploads,
+        VendorSDK $vendorSDK
     ) {
         $this->oAuth = $oAuth;
         $this->aPlus = $aPlus;
@@ -152,6 +155,7 @@ final class SellingPartnerSDK
         $this->solicitations = $solicitations;
         $this->tokens = $tokens;
         $this->uploads = $uploads;
+        $this->vendorSDK = $vendorSDK;
     }
 
     public static function create(
@@ -192,6 +196,7 @@ final class SellingPartnerSDK
             new SolicitationsSDK($httpClient, $httpFactory, $configuration, $logger),
             new TokensSDK($httpClient, $httpFactory, $configuration, $logger),
             new UploadsSDK($httpClient, $httpFactory, $configuration, $logger),
+            VendorSDK::create($httpClient, $requestFactory, $streamFactory, $configuration, $logger)
         );
     }
 
@@ -333,5 +338,10 @@ final class SellingPartnerSDK
     public function uploads() : UploadsSDK
     {
         return $this->uploads;
+    }
+
+    public function vendor() : VendorSDK
+    {
+        return $this->vendorSDK;
     }
 }
