@@ -1,3 +1,8 @@
+## [Unreleased] - 2021-12-25
+
+### Added
+- [#103](https://github.com/amazon-php/sp-api-sdk/pull/103) - **vendor api sdks** - [@norberttech](https://github.com/norberttech)
+
 ## [2.0.0] - 2021-12-12
 
 ### Changed
