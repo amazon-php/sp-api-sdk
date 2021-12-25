@@ -213,8 +213,6 @@ final class FulfillmentInboundSDK
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function confirmPreorderRequest(AccessToken $accessToken, string $region, string $shipment_id, \DateTime $need_by_date, string $marketplace_id) : RequestInterface
     {
@@ -432,8 +430,6 @@ final class FulfillmentInboundSDK
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function confirmTransportRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {
@@ -624,8 +620,6 @@ final class FulfillmentInboundSDK
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function createInboundShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : RequestInterface
     {
@@ -828,8 +822,6 @@ final class FulfillmentInboundSDK
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function createInboundShipmentPlanRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body) : RequestInterface
     {
@@ -1017,8 +1009,6 @@ final class FulfillmentInboundSDK
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function estimateTransportRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {
@@ -1207,8 +1197,6 @@ final class FulfillmentInboundSDK
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getBillOfLadingRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {
@@ -1401,8 +1389,6 @@ final class FulfillmentInboundSDK
      * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getInboundGuidanceRequest(AccessToken $accessToken, string $region, string $marketplace_id, array $seller_sku_list = null, array $asin_list = null) : RequestInterface
     {
@@ -1629,8 +1615,6 @@ final class FulfillmentInboundSDK
      * @param int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getLabelsRequest(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, int $number_of_packages = null, array $package_labels_to_print = null, int $number_of_pallets = null, int $page_size = null, int $page_start_index = null) : RequestInterface
     {
@@ -1894,8 +1878,6 @@ final class FulfillmentInboundSDK
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getPreorderInfoRequest(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : RequestInterface
     {
@@ -2103,8 +2085,6 @@ final class FulfillmentInboundSDK
      * @param string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getPrepInstructionsRequest(AccessToken $accessToken, string $region, string $ship_to_country_code, array $seller_sku_list = null, array $asin_list = null) : RequestInterface
     {
@@ -2325,8 +2305,6 @@ final class FulfillmentInboundSDK
      * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getShipmentItemsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, \DateTime $last_updated_after = null, \DateTime $last_updated_before = null, string $next_token = null) : RequestInterface
     {
@@ -2555,8 +2533,6 @@ final class FulfillmentInboundSDK
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getShipmentItemsByShipmentIdRequest(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : RequestInterface
     {
@@ -2772,8 +2748,6 @@ final class FulfillmentInboundSDK
      * @param string $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getShipmentsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, array $shipment_status_list = null, array $shipment_id_list = null, \DateTime $last_updated_after = null, \DateTime $last_updated_before = null, string $next_token = null) : RequestInterface
     {
@@ -3016,8 +2990,6 @@ final class FulfillmentInboundSDK
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getTransportDetailsRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {
@@ -3208,8 +3180,6 @@ final class FulfillmentInboundSDK
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function putTransportDetailsRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body) : RequestInterface
     {
@@ -3414,8 +3384,6 @@ final class FulfillmentInboundSDK
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function updateInboundShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : RequestInterface
     {
@@ -3618,8 +3586,6 @@ final class FulfillmentInboundSDK
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function voidTransportRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {

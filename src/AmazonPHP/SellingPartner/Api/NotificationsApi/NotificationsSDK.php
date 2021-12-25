@@ -173,8 +173,6 @@ final class NotificationsSDK
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function createDestinationRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body) : RequestInterface
     {
@@ -364,8 +362,6 @@ final class NotificationsSDK
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function createSubscriptionRequest(AccessToken $accessToken, string $region, string $notification_type, \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body) : RequestInterface
     {
@@ -568,8 +564,6 @@ final class NotificationsSDK
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function deleteDestinationRequest(AccessToken $accessToken, string $region, string $destination_id) : RequestInterface
     {
@@ -760,8 +754,6 @@ final class NotificationsSDK
      * @param string $notification_type The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function deleteSubscriptionByIdRequest(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : RequestInterface
     {
@@ -964,8 +956,6 @@ final class NotificationsSDK
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getDestinationRequest(AccessToken $accessToken, string $region, string $destination_id) : RequestInterface
     {
@@ -1152,8 +1142,6 @@ final class NotificationsSDK
      * @param AccessToken $accessToken
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getDestinationsRequest(AccessToken $accessToken, string $region) : RequestInterface
     {
@@ -1326,8 +1314,6 @@ final class NotificationsSDK
      * @param string $notification_type The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getSubscriptionRequest(AccessToken $accessToken, string $region, string $notification_type) : RequestInterface
     {
@@ -1518,8 +1504,6 @@ final class NotificationsSDK
      * @param string $notification_type The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/use-case-guides/notifications-api-use-case-guide/notifications-use-case-guide-v1.md). (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getSubscriptionByIdRequest(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : RequestInterface
     {

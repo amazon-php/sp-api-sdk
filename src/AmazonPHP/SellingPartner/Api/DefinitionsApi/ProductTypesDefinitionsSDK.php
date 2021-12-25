@@ -161,8 +161,6 @@ final class ProductTypesDefinitionsSDK
      * @param string $locale Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to 'DEFAULT')
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getDefinitionsProductTypeRequest(AccessToken $accessToken, string $region, string $product_type, array $marketplace_ids, string $seller_id = null, string $product_type_version = 'LATEST', string $requirements = 'LISTING', string $requirements_enforced = 'ENFORCED', string $locale = 'DEFAULT') : RequestInterface
     {
@@ -408,8 +406,6 @@ final class ProductTypesDefinitionsSDK
      * @param string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null) : RequestInterface
     {

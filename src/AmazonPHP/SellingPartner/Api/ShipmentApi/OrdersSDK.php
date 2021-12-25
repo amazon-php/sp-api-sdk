@@ -142,8 +142,6 @@ final class OrdersSDK
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function updateShipmentStatusRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload) : RequestInterface
     {

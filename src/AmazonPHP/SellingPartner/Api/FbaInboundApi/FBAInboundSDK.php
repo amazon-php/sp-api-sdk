@@ -149,8 +149,6 @@ final class FBAInboundSDK
      * @param string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getItemEligibilityPreviewRequest(AccessToken $accessToken, string $region, string $asin, string $program, array $marketplace_ids = null) : RequestInterface
     {

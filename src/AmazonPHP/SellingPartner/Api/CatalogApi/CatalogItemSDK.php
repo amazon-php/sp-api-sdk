@@ -155,8 +155,6 @@ final class CatalogItemSDK
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getCatalogItemRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $asin) : RequestInterface
     {
@@ -364,8 +362,6 @@ final class CatalogItemSDK
      * @param string $seller_sku Used to identify items in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function listCatalogCategoriesRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $asin = null, string $seller_sku = null) : RequestInterface
     {
@@ -584,8 +580,6 @@ final class CatalogItemSDK
      * @param string $jan A Japanese article number that uniquely identifies the product, manufacturer, and its attributes. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function listCatalogItemsRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $query = null, string $query_context_id = null, string $seller_sku = null, string $upc = null, string $ean = null, string $isbn = null, string $jan = null) : RequestInterface
     {

@@ -151,8 +151,6 @@ final class ProductFeesSDK
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getMyFeesEstimateForASINRequest(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {
@@ -357,8 +355,6 @@ final class ProductFeesSDK
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getMyFeesEstimateForSKURequest(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {

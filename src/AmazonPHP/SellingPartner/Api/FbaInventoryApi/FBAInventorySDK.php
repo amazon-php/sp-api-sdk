@@ -157,8 +157,6 @@ final class FBAInventorySDK
      * @param string $next_token String token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function getInventorySummariesRequest(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null) : RequestInterface
     {

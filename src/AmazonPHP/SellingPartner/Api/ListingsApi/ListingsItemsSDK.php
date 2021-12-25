@@ -159,8 +159,6 @@ final class ListingsItemsSDK
      * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function deleteListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null) : RequestInterface
     {
@@ -394,8 +392,6 @@ final class ListingsItemsSDK
      * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function patchListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, string $issue_locale = null) : RequestInterface
     {
@@ -643,8 +639,6 @@ final class ListingsItemsSDK
      * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return RequestInterface
      */
     public function putListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, string $issue_locale = null) : RequestInterface
     {

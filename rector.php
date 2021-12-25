@@ -12,6 +12,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
     $services = $containerConfigurator->services();
 
+    $parameters->set(Option::AUTOLOAD_PATHS, [
+        __DIR__ ,
+    ]);
+
     // paths to refactor; solid alternative to CLI arguments
     $parameters->set(Option::PATHS, [
         __DIR__ . '/src',
