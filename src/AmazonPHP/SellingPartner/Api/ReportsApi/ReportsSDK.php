@@ -254,7 +254,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -442,7 +442,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -629,7 +629,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -816,7 +816,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1004,7 +1004,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1192,7 +1192,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1380,7 +1380,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1576,7 +1576,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1845,7 +1845,7 @@ final class ReportsSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,

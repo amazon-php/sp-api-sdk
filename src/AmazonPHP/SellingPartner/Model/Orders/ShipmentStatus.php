@@ -44,6 +44,13 @@ class ShipmentStatus
 
     public const REFUSED_PICKUP = 'RefusedPickup';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class ShipmentStatus
             self::PICKED_UP,
             self::REFUSED_PICKUP,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

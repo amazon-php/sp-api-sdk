@@ -44,6 +44,13 @@ class IntendedBoxContentsSource
 
     public const _2_D_BARCODE = '2D_BARCODE';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class IntendedBoxContentsSource
             self::FEED,
             self::_2_D_BARCODE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

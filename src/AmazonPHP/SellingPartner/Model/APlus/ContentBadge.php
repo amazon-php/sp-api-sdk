@@ -48,6 +48,13 @@ class ContentBadge
 
     public const STANDARD = 'STANDARD';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -62,5 +69,10 @@ class ContentBadge
             self::PREMIUM,
             self::STANDARD,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

@@ -60,6 +60,13 @@ class TransportStatus
 
     public const ERROR = 'ERROR';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -80,5 +87,10 @@ class TransportStatus
             self::ERROR_IN_VOIDING,
             self::ERROR,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

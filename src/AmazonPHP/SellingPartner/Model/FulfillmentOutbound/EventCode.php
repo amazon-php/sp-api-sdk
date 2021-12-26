@@ -104,6 +104,13 @@ class EventCode
 
     public const _419 = 'EVENT_419';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -146,5 +153,10 @@ class EventCode
             self::_418,
             self::_419,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

@@ -44,6 +44,13 @@ class FileType
 
     public const IMAGE_PNG = 'image/png';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class FileType
             self::APPLICATION_ZPL,
             self::IMAGE_PNG,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

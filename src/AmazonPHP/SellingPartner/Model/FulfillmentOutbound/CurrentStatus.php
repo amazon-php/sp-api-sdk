@@ -54,6 +54,13 @@ class CurrentStatus
 
     public const CUSTOMER_ACTION = 'CUSTOMER_ACTION';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -71,5 +78,10 @@ class CurrentStatus
             self::AVAILABLE_FOR_PICKUP,
             self::CUSTOMER_ACTION,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

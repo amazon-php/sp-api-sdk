@@ -42,6 +42,13 @@ class ColorType
 
     public const LIGHT = 'LIGHT';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class ColorType
             self::DARK,
             self::LIGHT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

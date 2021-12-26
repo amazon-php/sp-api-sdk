@@ -68,6 +68,13 @@ class ContentModuleType
 
     public const THREE_IMAGE_TEXT = 'STANDARD_THREE_IMAGE_TEXT';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -92,5 +99,10 @@ class ContentModuleType
             self::TEXT,
             self::THREE_IMAGE_TEXT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

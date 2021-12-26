@@ -42,6 +42,13 @@ class AddressTypeEnum
 
     public const COMMERCIAL = 'Commercial';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class AddressTypeEnum
             self::RESIDENTIAL,
             self::COMMERCIAL,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

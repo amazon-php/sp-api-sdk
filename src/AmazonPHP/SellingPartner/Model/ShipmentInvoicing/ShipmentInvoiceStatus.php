@@ -46,6 +46,13 @@ class ShipmentInvoiceStatus
 
     public const NOT_FOUND = 'NotFound';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class ShipmentInvoiceStatus
             self::ERRORED,
             self::NOT_FOUND,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

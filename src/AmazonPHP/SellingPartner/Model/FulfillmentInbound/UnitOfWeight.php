@@ -42,6 +42,13 @@ class UnitOfWeight
 
     public const KILOGRAMS = 'kilograms';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class UnitOfWeight
             self::POUNDS,
             self::KILOGRAMS,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

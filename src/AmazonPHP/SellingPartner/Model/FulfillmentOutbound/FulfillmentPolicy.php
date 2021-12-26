@@ -44,6 +44,13 @@ class FulfillmentPolicy
 
     public const FILL_ALL_AVAILABLE = 'FillAllAvailable';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class FulfillmentPolicy
             self::FILL_ALL,
             self::FILL_ALL_AVAILABLE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

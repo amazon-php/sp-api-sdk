@@ -42,6 +42,13 @@ class FulfillmentChannelType
 
     public const MERCHANT = 'Merchant';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class FulfillmentChannelType
             self::AMAZON,
             self::MERCHANT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

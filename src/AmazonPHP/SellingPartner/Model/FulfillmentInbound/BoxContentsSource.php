@@ -46,6 +46,13 @@ class BoxContentsSource
 
     public const INTERACTIVE = 'INTERACTIVE';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class BoxContentsSource
             self::_2_D_BARCODE,
             self::INTERACTIVE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

@@ -44,6 +44,13 @@ class BarcodeInstruction
 
     public const MUST_PROVIDE_SELLER_SKU = 'MustProvideSellerSKU';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class BarcodeInstruction
             self::CAN_USE_ORIGINAL_BARCODE,
             self::MUST_PROVIDE_SELLER_SKU,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

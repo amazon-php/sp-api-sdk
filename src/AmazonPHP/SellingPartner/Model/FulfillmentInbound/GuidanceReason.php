@@ -42,6 +42,13 @@ class GuidanceReason
 
     public const NO_APPLICABLE_GUIDANCE = 'NoApplicableGuidance';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class GuidanceReason
             self::SLOW_MOVING_ASIN,
             self::NO_APPLICABLE_GUIDANCE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

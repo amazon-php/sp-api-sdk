@@ -50,6 +50,13 @@ class PrepInstruction
 
     public const HANG_GARMENT = 'HangGarment';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -65,5 +72,10 @@ class PrepInstruction
             self::LABELING,
             self::HANG_GARMENT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

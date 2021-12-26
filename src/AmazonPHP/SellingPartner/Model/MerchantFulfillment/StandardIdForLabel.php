@@ -40,6 +40,13 @@ class StandardIdForLabel
      */
     public const AMAZON_ORDER_ID = 'AmazonOrderId';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -50,5 +57,10 @@ class StandardIdForLabel
         return [
             self::AMAZON_ORDER_ID,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

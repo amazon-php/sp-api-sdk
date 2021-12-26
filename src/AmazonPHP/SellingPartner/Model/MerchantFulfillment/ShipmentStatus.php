@@ -46,6 +46,13 @@ class ShipmentStatus
 
     public const REFUND_APPLIED = 'RefundApplied';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class ShipmentStatus
             self::REFUND_REJECTED,
             self::REFUND_APPLIED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

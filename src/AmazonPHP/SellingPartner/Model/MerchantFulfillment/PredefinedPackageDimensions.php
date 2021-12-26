@@ -138,6 +138,13 @@ class PredefinedPackageDimensions
 
     public const USPS_SMALL_FLAT_RATE_ENVELOPE = 'USPS_SmallFlatRateEnvelope';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -197,5 +204,10 @@ class PredefinedPackageDimensions
             self::USPS_SMALL_FLAT_RATE_BOX,
             self::USPS_SMALL_FLAT_RATE_ENVELOPE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

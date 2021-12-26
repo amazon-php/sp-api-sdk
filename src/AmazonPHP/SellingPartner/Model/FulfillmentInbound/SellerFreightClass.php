@@ -74,6 +74,13 @@ class SellerFreightClass
 
     public const _500 = '500';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -101,5 +108,10 @@ class SellerFreightClass
             self::_400,
             self::_500,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

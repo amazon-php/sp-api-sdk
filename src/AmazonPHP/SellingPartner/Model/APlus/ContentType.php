@@ -42,6 +42,13 @@ class ContentType
 
     public const EMC = 'EMC';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class ContentType
             self::EBC,
             self::EMC,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

@@ -42,6 +42,13 @@ class ShipmentType
 
     public const LTL = 'LTL';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class ShipmentType
             self::SP,
             self::LTL,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

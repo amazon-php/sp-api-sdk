@@ -42,6 +42,13 @@ class HazmatType
 
     public const LQ_HAZMAT = 'LQHazmat';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class HazmatType
             self::NONE,
             self::LQ_HAZMAT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

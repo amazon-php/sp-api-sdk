@@ -44,6 +44,13 @@ class LabelPrepType
 
     public const AMAZON_LABEL = 'AMAZON_LABEL';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class LabelPrepType
             self::SELLER_LABEL,
             self::AMAZON_LABEL,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

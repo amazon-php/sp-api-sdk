@@ -90,6 +90,13 @@ class AdditionalLocationInfo
 
     public const SIDE_DOOR = 'SIDE_DOOR';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -125,5 +132,10 @@ class AdditionalLocationInfo
             self::SECURE_LOCATION,
             self::SIDE_DOOR,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

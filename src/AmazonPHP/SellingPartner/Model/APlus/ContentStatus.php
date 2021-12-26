@@ -46,6 +46,13 @@ class ContentStatus
 
     public const SUBMITTED = 'SUBMITTED';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class ContentStatus
             self::REJECTED,
             self::SUBMITTED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

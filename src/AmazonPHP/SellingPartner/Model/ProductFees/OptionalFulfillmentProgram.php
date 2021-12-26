@@ -44,6 +44,13 @@ class OptionalFulfillmentProgram
 
     public const EFN = 'FBA_EFN';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class OptionalFulfillmentProgram
             self::SNL,
             self::EFN,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

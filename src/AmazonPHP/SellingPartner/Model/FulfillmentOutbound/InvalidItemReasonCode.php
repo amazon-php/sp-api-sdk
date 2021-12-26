@@ -46,6 +46,13 @@ class InvalidItemReasonCode
 
     public const NO_RETURNABLE_QUANTITY = 'NoReturnableQuantity';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class InvalidItemReasonCode
             self::NO_COMPLETED_SHIP_ITEMS,
             self::NO_RETURNABLE_QUANTITY,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

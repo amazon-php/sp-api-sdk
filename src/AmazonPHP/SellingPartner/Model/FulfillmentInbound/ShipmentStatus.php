@@ -58,6 +58,13 @@ class ShipmentStatus
 
     public const CHECKED_IN = 'CHECKED_IN';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -77,5 +84,10 @@ class ShipmentStatus
             self::DELIVERED,
             self::CHECKED_IN,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

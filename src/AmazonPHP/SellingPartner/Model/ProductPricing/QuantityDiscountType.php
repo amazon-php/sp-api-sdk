@@ -40,6 +40,13 @@ class QuantityDiscountType
      */
     public const QUANTITY_DISCOUNT = 'QUANTITY_DISCOUNT';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -50,5 +57,10 @@ class QuantityDiscountType
         return [
             self::QUANTITY_DISCOUNT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

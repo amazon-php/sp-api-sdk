@@ -56,6 +56,13 @@ class FulfillmentOrderStatus
 
     public const INVALID = 'Invalid';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -74,5 +81,10 @@ class FulfillmentOrderStatus
             self::UNFULFILLABLE,
             self::INVALID,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

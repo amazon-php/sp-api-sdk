@@ -44,6 +44,13 @@ class LabelPrepPreference
 
     public const AMAZON_LABEL_PREFERRED = 'AMAZON_LABEL_PREFERRED';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class LabelPrepPreference
             self::AMAZON_LABEL_ONLY,
             self::AMAZON_LABEL_PREFERRED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }
