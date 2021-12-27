@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-12-27
+## [2.1.0] - 2021-12-27
 
 ### Added
 - [#104](https://github.com/amazon-php/sp-api-sdk/pull/104) - **IAM Role authorization** - [@norberttech](https://github.com/norberttech)
