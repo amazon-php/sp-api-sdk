@@ -48,6 +48,13 @@ class ConditionType
 
     public const CLUB = 'Club';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -62,5 +69,10 @@ class ConditionType
             self::REFURBISHED,
             self::CLUB,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

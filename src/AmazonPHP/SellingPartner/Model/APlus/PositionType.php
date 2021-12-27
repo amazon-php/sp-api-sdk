@@ -42,6 +42,13 @@ class PositionType
 
     public const RIGHT = 'RIGHT';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class PositionType
             self::LEFT,
             self::RIGHT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

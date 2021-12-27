@@ -82,8 +82,8 @@ Version 1.0 is not going to be updated anymore, please migrate to version 2.0 th
 In order to start using SP API you need to first register as a Developer and create application.
 Whole process is described in [Amazon Official Guides](https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md).
 
-Normally amazon recommends to use Role IAM when creating application however this requires and additional
-API call when obtaining refresh token. It's easier to use User IAM and just make sure that the user 
+Amazon recommends to use Role IAM when creating application however this requires and additional
+API request in order to obtain access token. It's easier to use User IAM and just make sure that the user 
 has following Inline Policy 
 
 ```
@@ -109,6 +109,11 @@ Example of changing refresh token into access token.
 use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\HttpFactory;
+use Buzz\Client\Curl;
+use Nyholm\Psr7\Factory\Psr17Factory;
+
+$factory = new Psr17Factory();
+$client = new Curl($factory);
 
 $oauth = new OAuth(
     $client,
@@ -126,7 +131,41 @@ $accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
 
 #### IAM Role 
 
-@TODO 
+```
+<?php
+
+use AmazonPHP\SellingPartner\OAuth;
+use AmazonPHP\SellingPartner\Configuration;
+use AmazonPHP\SellingPartner\HttpFactory;
+use Buzz\Client\Curl;
+use Nyholm\Psr7\Factory\Psr17Factory;
+
+$factory = new Psr17Factory();
+$client = new Curl($factory);
+
+$sts = new STSClient(
+    $client,
+    $requestFactory = $factory,
+    $streamFactory = $factory
+);
+
+$oauth = new OAuth(
+    $client,
+    $httpFactory = new HttpFactory($requestFactory, $streamFactory),
+    $config = Configuration::forIAMRole(
+        'lwaClientID',
+        'lwaClientID',
+        $sts->assumeRole(
+            'awsAccessKey',
+            'awsSecretKey',
+            'arn:aws:iam::.........'
+        )
+    )
+);
+
+$accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
+```
+
 
 ### Development
 

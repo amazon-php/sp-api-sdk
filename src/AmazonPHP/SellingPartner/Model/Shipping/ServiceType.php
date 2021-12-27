@@ -44,6 +44,13 @@ class ServiceType
 
     public const PREMIUM = 'Amazon Shipping Premium';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class ServiceType
             self::STANDARD,
             self::PREMIUM,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

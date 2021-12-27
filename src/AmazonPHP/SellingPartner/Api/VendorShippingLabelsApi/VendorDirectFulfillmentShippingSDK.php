@@ -234,7 +234,7 @@ final class VendorDirectFulfillmentShippingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -486,7 +486,7 @@ final class VendorDirectFulfillmentShippingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -673,7 +673,7 @@ final class VendorDirectFulfillmentShippingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,

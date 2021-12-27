@@ -304,7 +304,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -530,7 +530,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -756,7 +756,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -982,7 +982,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1208,7 +1208,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1434,7 +1434,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1660,7 +1660,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -1869,7 +1869,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -2095,7 +2095,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -2321,7 +2321,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -2530,7 +2530,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,
@@ -2739,7 +2739,7 @@ final class MessagingSDK
             $request = $request->withHeader($name, $header);
         }
 
-        return HttpSignatureHeaders::forIAMUser(
+        return HttpSignatureHeaders::forConfig(
             $this->configuration,
             $accessToken,
             $region,

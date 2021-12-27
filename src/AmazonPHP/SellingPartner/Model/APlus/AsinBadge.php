@@ -46,6 +46,13 @@ class AsinBadge
 
     public const CONTENT_PUBLISHED = 'CONTENT_PUBLISHED';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class AsinBadge
             self::CONTENT_NOT_PUBLISHED,
             self::CONTENT_PUBLISHED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

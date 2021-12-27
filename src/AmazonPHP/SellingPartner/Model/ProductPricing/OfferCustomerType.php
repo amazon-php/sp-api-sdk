@@ -42,6 +42,13 @@ class OfferCustomerType
 
     public const B2_B = 'B2B';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class OfferCustomerType
             self::B2_C,
             self::B2_B,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

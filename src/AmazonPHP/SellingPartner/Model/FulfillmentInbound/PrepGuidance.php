@@ -44,6 +44,13 @@ class PrepGuidance
 
     public const SEE_PREP_INSTRUCTIONS_LIST = 'SeePrepInstructionsList';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class PrepGuidance
             self::NO_ADDITIONAL_PREP_REQUIRED,
             self::SEE_PREP_INSTRUCTIONS_LIST,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

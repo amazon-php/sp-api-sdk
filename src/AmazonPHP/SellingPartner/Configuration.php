@@ -6,6 +6,7 @@ namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Configuration\LoggerConfiguration;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
+use AmazonPHP\SellingPartner\STSClient\Credentials;
 
 final class Configuration
 {
@@ -19,6 +20,8 @@ final class Configuration
 
     private string $userAgent;
 
+    private ?string $securityToken;
+
     private string $tmpFolderPath;
 
     private LoggerConfiguration $loggerConfiguration;
@@ -30,6 +33,7 @@ final class Configuration
         string $lwaClientSecret,
         string $accessKey,
         string $secretKey,
+        string $securityToken = null,
         Extensions $extensions = null,
         LoggerConfiguration $loggerConfiguration = null
     ) {
@@ -42,16 +46,17 @@ final class Configuration
         $this->tmpFolderPath = \sys_get_temp_dir();
         $this->loggerConfiguration = $loggerConfiguration ? $loggerConfiguration : new LoggerConfiguration();
         $this->extensions = $extensions ? $extensions : new Extensions();
+        $this->securityToken = $securityToken;
     }
 
     public static function forIAMUser(string $clientId, string $clientSecret, string $accessKey, string $secretKey) : self
     {
-        return new self($clientId, $clientSecret, $accessKey, $secretKey);
+        return new self($clientId, $clientSecret, $accessKey, $secretKey, null);
     }
 
-    public static function forIAMRole(string $clientId, string $clientSecret, string $accessKey, string $secretKey, string $roleARN) : void
+    public static function forIAMRole(string $clientId, string $clientSecret, Credentials $credentials) : self
     {
-        throw new \RuntimeException('IAM Role authentication is not supported yet');
+        return new self($clientId, $clientSecret, $credentials->accessKeyId(), $credentials->secretAccessKey(), $credentials->sessionToken());
     }
 
     public function lwaClientID() : string
@@ -62,6 +67,11 @@ final class Configuration
     public function lwaClientSecret() : string
     {
         return $this->lwaClientSecret;
+    }
+
+    public function securityToken() : ?string
+    {
+        return $this->securityToken;
     }
 
     public function apiURL(string $awsRegion) : string

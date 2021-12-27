@@ -48,6 +48,13 @@ class DeliveryExperienceOption
 
     public const NO_PREFERENCE = 'NoPreference';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -62,5 +69,10 @@ class DeliveryExperienceOption
             self::NO_TRACKING,
             self::NO_PREFERENCE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

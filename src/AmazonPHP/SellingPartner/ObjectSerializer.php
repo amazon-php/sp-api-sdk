@@ -343,7 +343,7 @@ final class ObjectSerializer
                 throw new \InvalidArgumentException("Invalid value for enum '{$class}', must be one of: '{$imploded}'");
             }
 
-            return $data;
+            return new $class($data);
         }
 
         try {

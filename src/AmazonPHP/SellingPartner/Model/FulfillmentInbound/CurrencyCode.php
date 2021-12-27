@@ -42,6 +42,13 @@ class CurrencyCode
 
     public const GBP = 'GBP';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class CurrencyCode
             self::USD,
             self::GBP,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

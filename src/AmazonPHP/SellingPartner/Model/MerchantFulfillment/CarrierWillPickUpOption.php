@@ -44,6 +44,13 @@ class CarrierWillPickUpOption
 
     public const NO_PREFERENCE = 'NoPreference';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -56,5 +63,10 @@ class CarrierWillPickUpOption
             self::SHIPPER_WILL_DROP_OFF,
             self::NO_PREFERENCE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

@@ -42,6 +42,13 @@ class InboundGuidance
 
     public const INBOUND_OK = 'InboundOK';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class InboundGuidance
             self::INBOUND_NOT_RECOMMENDED,
             self::INBOUND_OK,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

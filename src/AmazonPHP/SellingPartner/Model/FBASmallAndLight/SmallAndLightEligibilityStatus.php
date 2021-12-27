@@ -42,6 +42,13 @@ class SmallAndLightEligibilityStatus
 
     public const NOT_ELIGIBLE = 'NOT_ELIGIBLE';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class SmallAndLightEligibilityStatus
             self::ELIGIBLE,
             self::NOT_ELIGIBLE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

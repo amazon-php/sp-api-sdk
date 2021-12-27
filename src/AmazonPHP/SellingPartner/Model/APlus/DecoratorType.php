@@ -54,6 +54,13 @@ class DecoratorType
 
     public const STYLE_UNDERLINE = 'STYLE_UNDERLINE';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -71,5 +78,10 @@ class DecoratorType
             self::STYLE_PARAGRAPH,
             self::STYLE_UNDERLINE,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

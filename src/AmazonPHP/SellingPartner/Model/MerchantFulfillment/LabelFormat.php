@@ -48,6 +48,13 @@ class LabelFormat
 
     public const SHIPPING_SERVICE_DEFAULT = 'ShippingServiceDefault';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -62,5 +69,10 @@ class LabelFormat
             self::ZPL300,
             self::SHIPPING_SERVICE_DEFAULT,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

@@ -42,6 +42,13 @@ class InputTargetType
 
     public const ITEM_LEVEL = 'ITEM_LEVEL';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class InputTargetType
             self::SHIPMENT_LEVEL,
             self::ITEM_LEVEL,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

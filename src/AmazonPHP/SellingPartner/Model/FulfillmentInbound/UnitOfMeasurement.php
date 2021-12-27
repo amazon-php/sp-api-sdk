@@ -42,6 +42,13 @@ class UnitOfMeasurement
 
     public const CENTIMETERS = 'centimeters';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class UnitOfMeasurement
             self::INCHES,
             self::CENTIMETERS,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

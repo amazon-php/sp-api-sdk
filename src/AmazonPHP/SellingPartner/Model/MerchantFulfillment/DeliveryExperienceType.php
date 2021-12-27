@@ -46,6 +46,13 @@ class DeliveryExperienceType
 
     public const NO_TRACKING = 'NoTracking';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class DeliveryExperienceType
             self::DELIVERY_CONFIRMATION_WITHOUT_SIGNATURE,
             self::NO_TRACKING,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

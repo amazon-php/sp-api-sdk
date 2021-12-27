@@ -42,6 +42,13 @@ class FulfillmentAction
 
     public const HOLD = 'Hold';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class FulfillmentAction
             self::SHIP,
             self::HOLD,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

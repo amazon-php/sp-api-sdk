@@ -1,0 +1,40 @@
+class {{classname}}
+{
+    /**
+     * Possible values of this enum
+     */
+    {{#allowableValues}}
+    {{#enumVars}}
+    const {{{name}}} = {{{value}}};
+
+    {{/enumVars}}
+    {{/allowableValues}}
+    private string $value;
+
+    /**
+     * Gets allowable values of the enum
+     * @return string[]
+     */
+    public static function getAllowableEnumValues()
+    {
+        return [
+            {{#allowableValues}}
+            {{#enumVars}}
+            self::{{{name}}}{{^-last}},
+            {{/-last}}
+            {{/enumVars}}
+            {{/allowableValues}}
+
+        ];
+    }
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
+    public function toString(): string
+    {
+        return $this->value;
+    }
+}

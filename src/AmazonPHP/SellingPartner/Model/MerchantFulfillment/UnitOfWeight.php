@@ -42,6 +42,13 @@ class UnitOfWeight
 
     public const G = 'g';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class UnitOfWeight
             self::OZ,
             self::G,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

@@ -48,6 +48,13 @@ class ReturnItemDisposition
 
     public const FULFILLER_DAMAGED = 'FulfillerDamaged';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -62,5 +69,10 @@ class ReturnItemDisposition
             self::CARRIER_DAMAGED,
             self::FULFILLER_DAMAGED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

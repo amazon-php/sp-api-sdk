@@ -42,6 +42,13 @@ class PrepOwner
 
     public const SELLER = 'SELLER';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class PrepOwner
             self::AMAZON,
             self::SELLER,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

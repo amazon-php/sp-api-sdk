@@ -42,6 +42,13 @@ class SmallAndLightEnrollmentStatus
 
     public const NOT_ENROLLED = 'NOT_ENROLLED';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class SmallAndLightEnrollmentStatus
             self::ENROLLED,
             self::NOT_ENROLLED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

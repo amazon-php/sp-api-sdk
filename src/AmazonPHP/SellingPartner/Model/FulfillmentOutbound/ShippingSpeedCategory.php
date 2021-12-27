@@ -46,6 +46,13 @@ class ShippingSpeedCategory
 
     public const SCHEDULED_DELIVERY = 'ScheduledDelivery';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -59,5 +66,10 @@ class ShippingSpeedCategory
             self::PRIORITY,
             self::SCHEDULED_DELIVERY,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

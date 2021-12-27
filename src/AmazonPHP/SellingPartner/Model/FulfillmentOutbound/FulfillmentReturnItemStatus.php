@@ -42,6 +42,13 @@ class FulfillmentReturnItemStatus
 
     public const PROCESSED = 'Processed';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -53,5 +60,10 @@ class FulfillmentReturnItemStatus
             self::_NEW,
             self::PROCESSED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }

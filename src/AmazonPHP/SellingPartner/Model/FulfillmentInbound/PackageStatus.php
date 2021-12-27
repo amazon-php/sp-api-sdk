@@ -52,6 +52,13 @@ class PackageStatus
 
     public const DELETED = 'DELETED';
 
+    private string $value;
+
+    public function __construct(string $value)
+    {
+        $this->value = $value;
+    }
+
     /**
      * Gets allowable values of the enum.
      *
@@ -68,5 +75,10 @@ class PackageStatus
             self::CLOSED,
             self::DELETED,
         ];
+    }
+
+    public function toString() : string
+    {
+        return $this->value;
     }
 }
