@@ -1,7 +1,12 @@
-## [Unreleased] - 2021-12-25
+## [Unreleased] - 2021-12-27
 
 ### Added
+- [#104](https://github.com/amazon-php/sp-api-sdk/pull/104) - **IAM Role authorization** - [@norberttech](https://github.com/norberttech)
 - [#103](https://github.com/amazon-php/sp-api-sdk/pull/103) - **vendor api sdks** - [@norberttech](https://github.com/norberttech)
+
+### Fixed
+- [#104](https://github.com/amazon-php/sp-api-sdk/pull/104) - **Enums deserialization** - [@norberttech](https://github.com/norberttech)
+- [#104](https://github.com/amazon-php/sp-api-sdk/pull/104) - **vendors API default values of parameters** - [@norberttech](https://github.com/norberttech)
 
 ## [2.0.0] - 2021-12-12
 
