@@ -273,7 +273,7 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
      *
      * @param null|object $headers the headers to include in the upload request
      */
-    public function setHeaders(?object $headers) : self
+    public function setHeaders(?array $headers) : self
     {
         $this->container['headers'] = $headers;
 

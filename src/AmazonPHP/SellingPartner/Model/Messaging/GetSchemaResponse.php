@@ -242,8 +242,10 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets payload.
+     *
+     * @return null|object
      */
-    public function getPayload() : ?object
+    public function getPayload() : ?array
     {
         return $this->container['payload'];
     }
@@ -253,7 +255,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
      *
      * @param null|object $payload A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>.
      */
-    public function setPayload(?object $payload) : self
+    public function setPayload(?array $payload) : self
     {
         $this->container['payload'] = $payload;
 

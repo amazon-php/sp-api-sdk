@@ -284,8 +284,10 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets attributes.
+     *
+     * @return null|object
      */
-    public function getAttributes() : ?object
+    public function getAttributes() : ?array
     {
         return $this->container['attributes'];
     }
@@ -295,7 +297,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param null|object $attributes A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes are available only to brand owners and conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
      */
-    public function setAttributes(?object $attributes) : self
+    public function setAttributes(?array $attributes) : self
     {
         $this->container['attributes'] = $attributes;
 
