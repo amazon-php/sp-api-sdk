@@ -262,8 +262,10 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets parent.
+     *
+     * @return null|object
      */
-    public function getParent() : ?object
+    public function getParent() : ?array
     {
         return $this->container['parent'];
     }
@@ -273,7 +275,7 @@ class Categories implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param null|object $parent the parent product category
      */
-    public function setParent(?object $parent) : self
+    public function setParent(?array $parent) : self
     {
         $this->container['parent'] = $parent;
 
