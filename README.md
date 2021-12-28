@@ -7,6 +7,11 @@ This repository is not an official Amazon PHP library for their SP API.
 
 ### Why next library? 
 
+The main goal of this SDK is to provide SDK's for the Amazon SP API in a way that would let 
+the application to pass Amazon audit.  
+
+Amazon audit might happen to systems that must access API endpoints with PII. 
+
 There are already few php sp api SDKs available for [PHP](https://packagist.org/?query=sp%20api%20)
 however most of them comes with many issues of auto generated code. 
 
@@ -23,18 +28,27 @@ This library goal is to resolve all above mentioned issues.
 ### Installations
 
 ```
-composer install amazon-php/sp-api-sdk^2.0
+composer install amazon-php/sp-api-sdk^3.0
 ```
 
 This library is not in a stable stage yet, please use with caution.
 
-### Releases 
+### Releases
 
-Version <s> [1.0](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to 
+| branch | maintained |
+|--------|-----------|
+| [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x)    | 🚫        |
+| [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x)    | ✅        |
+| [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x)    | ✅        |
+
+Version <s> [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to 
 make a little more sense of what Amazon is doing with using "tags" in their Open API specification. 
-This attempt failed and in order to keep Backgward Compatibility promise, changes in the class names had to be 
-introduced in [2.0](https://github.com/amazon-php/sp-api-sdk/tree/2.x). 
+This attempt failed and in order to keep Backward Compatibility promise, changes in the class names had to be 
+introduced in [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x). 
 Version 1.0 is not going to be updated anymore, please migrate to version 2.0 that will stay consistent with [Amazon Models](https://github.com/amzn/selling-partner-api-models)
+Branch [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) comes with BC breaks introduced by Amazon in 
+[Catalog Item](https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2020-12-01.json) models. 
+Until old model won't go away, branches 2.x and 3.x should be maintained in parallel. 
 
 ### Available SDKs
 
