@@ -1,10 +1,26 @@
-## [2.1.1] - 2021-12-28
+## [3.0.1] - 2021-12-28
 
 ### Fixed
 - [#106](https://github.com/amazon-php/sp-api-sdk/pull/106) - **?object to ?array types in parameters and method returns** - [@norberttech](https://github.com/norberttech)
 
 ### Updated
 - [46b399](https://github.com/amazon-php/sp-api-sdk/commit/46b399efec70a1dbe6acd93bcce86b09f49285c8) - **github workflows after base branch switch** - [@norberttech](https://github.com/norberttech)
+
+## [3.0.0] - 2021-12-28
+
+### Updated
+- [f68ba3](https://github.com/amazon-php/sp-api-sdk/commit/f68ba3a8a059e5d34936c5150b700dbe8bc6aa0d) - **catalog-item api models** - [@norberttech](https://github.com/norberttech)
+
+## [2.1.1] - 2021-12-28
+
+### Added
+- [#105](https://github.com/amazon-php/sp-api-sdk/pull/105) - **added missing sensitive header** - [@norberttech](https://github.com/norberttech)
+
+### Fixed
+- [#107](https://github.com/amazon-php/sp-api-sdk/pull/107) - **?object to ?array param and return type** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [#105](https://github.com/amazon-php/sp-api-sdk/pull/105) - **Removed redundant json file** - [@norberttech](https://github.com/norberttech)
 
 ## [2.1.0] - 2021-12-27
 
@@ -26,7 +42,11 @@
 
 ## [1.0.5] - 2021-12-09
 
+### Added
+- [#95](https://github.com/amazon-php/sp-api-sdk/pull/95) - **php 8.1 to composer.json** - [@norberttech](https://github.com/norberttech)
+
 ### Changed
+- [#85](https://github.com/amazon-php/sp-api-sdk/pull/85) - **Update readme for clarity** - [@georanma](https://github.com/georanma)
 - [#92](https://github.com/amazon-php/sp-api-sdk/pull/92) - **Updated SDK Models, mostly code docs but also additional units of measurement** - [@norberttech](https://github.com/norberttech)
 
 ### Updated
@@ -45,7 +65,9 @@
 ### Changed
 - [#70](https://github.com/amazon-php/sp-api-sdk/pull/70) - **Updated models 2021-09-20** - [@norberttech](https://github.com/norberttech)
 - [#69](https://github.com/amazon-php/sp-api-sdk/pull/69) - **Updated models 2021-09-16** - [@norberttech](https://github.com/norberttech)
-- [a2caf2](https://github.com/amazon-php/sp-api-sdk/commit/a2caf27dfacff29699ffc647b897bee7b0c09b42) - **Update README.md** - [@norberttech](https://github.com/norberttech)
+
+### Updated
+- [a2caf2](https://github.com/amazon-php/sp-api-sdk/commit/a2caf27dfacff29699ffc647b897bee7b0c09b42) - **README.md** - [@norberttech](https://github.com/norberttech)
 
 ## [1.0.2] - 2021-09-10
 
@@ -59,7 +81,9 @@
 
 ### Changed
 - [#60](https://github.com/amazon-php/sp-api-sdk/pull/60) - **Updated models** - [@norberttech](https://github.com/norberttech)
-- [f9c829](https://github.com/amazon-php/sp-api-sdk/commit/f9c8294244f03906535e16ef9beb5d452d2d6244) - **Update README.md** - [@norberttech](https://github.com/norberttech)
+
+### Updated
+- [f9c829](https://github.com/amazon-php/sp-api-sdk/commit/f9c8294244f03906535e16ef9beb5d452d2d6244) - **README.md** - [@norberttech](https://github.com/norberttech)
 
 ## [1.0.0] - 2021-08-17
 
@@ -87,11 +111,8 @@
 - [#53](https://github.com/amazon-php/sp-api-sdk/pull/53) - **regenerated API models from specs** - [@norberttech](https://github.com/norberttech)
 - [3067aa](https://github.com/amazon-php/sp-api-sdk/commit/3067aa4582d4b504494d5d22902bbf0ab63f5141) - **Improved SDKs generation by removing psalm-refactor** - [@norberttech](https://github.com/norberttech)
 - [f6aa70](https://github.com/amazon-php/sp-api-sdk/commit/f6aa7027d0353f19b43aa0dc82e42a2694e83a18) - **Disabled rector diffs and progress bar** - [@norberttech](https://github.com/norberttech)
-- [60faad](https://github.com/amazon-php/sp-api-sdk/commit/60faad8e9a37f4269359aea24a0b4245a831ef6b) - **github workflow name and disabled schedule** - [@norberttech](https://github.com/norberttech)
 - [#35](https://github.com/amazon-php/sp-api-sdk/pull/35) - **Updated Order Model** - [@norberttech](https://github.com/norberttech)
 - [1c0add](https://github.com/amazon-php/sp-api-sdk/commit/1c0add601e7d61c7ad7b41e767203a31cdcbb4f1) - **Use sudo to generate models** - [@norberttech](https://github.com/norberttech)
-- [26aba3](https://github.com/amazon-php/sp-api-sdk/commit/26aba3017bcfca3ca6be9bed06165fbeb191998d) - **SDK to latest open api schema** - [@norberttech](https://github.com/norberttech)
-- [c51271](https://github.com/amazon-php/sp-api-sdk/commit/c51271af3c5e6be6b8de759ac4a6abb02d8b0bc0) - **README** - [@norberttech](https://github.com/norberttech)
 - [e2cb48](https://github.com/amazon-php/sp-api-sdk/commit/e2cb48a26bc7dc2e8301e6db9efdf075490ff902) - **Initial commit** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
@@ -105,6 +126,11 @@
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **signing HTTP requests** - [@norberttech](https://github.com/norberttech)
 - [#3](https://github.com/amazon-php/sp-api-sdk/pull/3) - **deserialization of error messages** - [@norberttech](https://github.com/norberttech)
 - [ce2f6f](https://github.com/amazon-php/sp-api-sdk/commit/ce2f6f86400e29c6e3b27e03f621cb43dfc95db5) - **SDK namespaces** - [@norberttech](https://github.com/norberttech)
+
+### Updated
+- [60faad](https://github.com/amazon-php/sp-api-sdk/commit/60faad8e9a37f4269359aea24a0b4245a831ef6b) - **github workflow name and disabled schedule** - [@norberttech](https://github.com/norberttech)
+- [26aba3](https://github.com/amazon-php/sp-api-sdk/commit/26aba3017bcfca3ca6be9bed06165fbeb191998d) - **SDK to latest open api schema** - [@norberttech](https://github.com/norberttech)
+- [c51271](https://github.com/amazon-php/sp-api-sdk/commit/c51271af3c5e6be6b8de759ac4a6abb02d8b0bc0) - **README** - [@norberttech](https://github.com/norberttech)
 
 ### Removed
 - [21a1ed](https://github.com/amazon-php/sp-api-sdk/commit/21a1ed4ee692213a7b85bdd9ce0fa1fcdb3b3246) - **sudo from composer generate** - [@norberttech](https://github.com/norberttech)
