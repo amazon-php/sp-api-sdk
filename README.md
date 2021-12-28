@@ -256,6 +256,7 @@ By default, configuration is set to ignore following sensitive authorization hea
 ```
 'authorization',
 'x-amz-access-token',
+'x-amz-security-token',
 'proxy-authorization',
 'www-authenticate',
 'proxy-authenticate',

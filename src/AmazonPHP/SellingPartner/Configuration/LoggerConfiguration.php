@@ -39,6 +39,7 @@ final class LoggerConfiguration
         $this->skipHttpHeaders = [
             'authorization',
             'x-amz-access-token',
+            'x-amz-security-token',
             'proxy-authorization',
             'www-authenticate',
             'proxy-authenticate',
