@@ -1,4 +1,4 @@
-## [Unreleased] - 2021-12-28
+## [2.1.1] - 2021-12-28
 
 ### Fixed
 - [#106](https://github.com/amazon-php/sp-api-sdk/pull/106) - **?object to ?array types in parameters and method returns** - [@norberttech](https://github.com/norberttech)
