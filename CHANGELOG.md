@@ -1,3 +1,11 @@
+## [Unreleased] - 2021-12-28
+
+### Added
+- [#105](https://github.com/amazon-php/sp-api-sdk/pull/105) - **added missing sensitive header** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [#105](https://github.com/amazon-php/sp-api-sdk/pull/105) - **Removed redundant json file** - [@norberttech](https://github.com/norberttech)
+
 ## [2.1.0] - 2021-12-27
 
 ### Added
