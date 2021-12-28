@@ -1,5 +1,8 @@
 ## [Unreleased] - 2021-12-28
 
+### Fixed
+- [#106](https://github.com/amazon-php/sp-api-sdk/pull/106) - **?object to ?array types in parameters and method returns** - [@norberttech](https://github.com/norberttech)
+
 ### Updated
 - [46b399](https://github.com/amazon-php/sp-api-sdk/commit/46b399efec70a1dbe6acd93bcce86b09f49285c8) - **github workflows after base branch switch** - [@norberttech](https://github.com/norberttech)
 
