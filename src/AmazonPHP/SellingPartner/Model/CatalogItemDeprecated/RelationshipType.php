@@ -39,6 +39,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @implements \ArrayAccess<TKey, TValue>
  * @template TKey int|null
  * @template TValue mixed|null
+ *
  * @deprecated
  */
 class RelationshipType implements \ArrayAccess, \JsonSerializable, ModelInterface
