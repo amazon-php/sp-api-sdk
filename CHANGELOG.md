@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-01-04
+
+### Added
+- [#110](https://github.com/amazon-php/sp-api-sdk/pull/110) - **Added SDK that covers deprecated CatalogItem API endpoints** - [@norberttech](https://github.com/norberttech)
+
 ## [3.0.1] - 2021-12-28
 
 ### Fixed
