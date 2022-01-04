@@ -10,6 +10,13 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api
 
+# This is deprecated version of catalog items, it should not change until Amazon will disable it
+#docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+#    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItemsV0.json \
+#    -c /sp-api/config/generator-catalog-item-deprecated.yaml \
+#    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+#    -o /sp-api
+
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2020-12-01.json \
     --skip-validate-spec \
