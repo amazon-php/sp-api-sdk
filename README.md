@@ -56,6 +56,7 @@ Until old model won't go away, branches 2.x and 3.x should be maintained in para
 * [APlusSDK](/src/AmazonPHP/SellingPartner/Api/AplusContentApi/APlusSDK.php)
 * [AuthorizationSDK](/src/AmazonPHP/SellingPartner/Api/AuthorizationApi/AuthorizationSDK.php)
 * [CatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogApi/CatalogItemSDK.php)
+* <s>[DeprecatedCatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogApi/CatalogItemDeprecatedSDK.php)</s>
 * [FBAInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FBAInboundSDK.php)
 * [FBAInventorySDK](/src/AmazonPHP/SellingPartner/Api/FbaInventoryApi/FBAInventorySDK.php)
 * [FulfillmentInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FulfillmentInboundSDK.php)
