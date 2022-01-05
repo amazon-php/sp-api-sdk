@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-01-05
+
+### Fixed
+- [#112](https://github.com/amazon-php/sp-api-sdk/pull/112) - **typo in rector rule** - [@staabm](https://github.com/staabm)
+
 ## [3.0.2] - 2022-01-04
 
 ### Added
