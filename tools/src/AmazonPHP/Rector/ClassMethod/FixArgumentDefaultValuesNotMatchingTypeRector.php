@@ -49,7 +49,6 @@ class FixArgumentDefaultValuesNotMatchingTypeRector extends AbstractRector
                     case 'false':
                     default:
                         $param->default = $this->nodeFactory->createFalse();
-                        $param->default = $this->nodeFactory->createFalse();
 
                         break;
                 }
