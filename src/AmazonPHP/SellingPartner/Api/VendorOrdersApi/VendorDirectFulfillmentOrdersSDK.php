@@ -254,7 +254,7 @@ final class VendorDirectFulfillmentOrdersSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrders(AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = 'true') : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrdersResponse
+    public function getOrders(AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrdersResponse
     {
         $request = $this->getOrdersRequest($accessToken, $region, $created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
 
@@ -356,7 +356,7 @@ final class VendorDirectFulfillmentOrdersSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrdersRequest(AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = 'true') : RequestInterface
+    public function getOrdersRequest(AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : RequestInterface
     {
         // verify the required parameter 'created_after' is set
         if ($created_after === null || (\is_array($created_after) && \count($created_after) === 0)) {

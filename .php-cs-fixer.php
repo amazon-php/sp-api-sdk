@@ -4,6 +4,7 @@ $finder = PhpCsFixer\Finder::create()
     ->files()
     ->in([
         __DIR__ . '/src',
+        __DIR__ . '/tools/src',
     ]);
 
 if (!\file_exists(__DIR__ . '/var')) {
