@@ -1,6 +1,10 @@
-## [Unreleased] - 2022-01-05
+## [Unreleased] - 2022-01-06
+
+### Changed
+- [92cbb7](https://github.com/amazon-php/sp-api-sdk/commit/92cbb76dc822680e0d03cbd1c58a5b8cbf36a2b5) - **custom workflows into aeon-php reusable workflows** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [d24fec](https://github.com/amazon-php/sp-api-sdk/commit/d24fecc87507478142cc6b8434d46048290e46ac) - **changelog update branch** - [@norberttech](https://github.com/norberttech)
 - [#112](https://github.com/amazon-php/sp-api-sdk/pull/112) - **typo in rector rule** - [@staabm](https://github.com/staabm)
 
 ## [3.0.2] - 2022-01-04
