@@ -367,8 +367,10 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets created_time.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getCreatedTime() : \DateTime
+    public function getCreatedTime() : \DateTimeInterface
     {
         return $this->container['created_time'];
     }
@@ -378,7 +380,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $created_time the date and time when the feed was created, in ISO 8601 date time format
      */
-    public function setCreatedTime(\DateTime $created_time) : self
+    public function setCreatedTime(\DateTimeInterface $created_time) : self
     {
         $this->container['created_time'] = $created_time;
 
@@ -418,8 +420,10 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_start_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getProcessingStartTime() : ?\DateTime
+    public function getProcessingStartTime() : ?\DateTimeInterface
     {
         return $this->container['processing_start_time'];
     }
@@ -427,9 +431,9 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets processing_start_time.
      *
-     * @param null|\DateTime $processing_start_time the date and time when feed processing started, in ISO 8601 date time format
+     * @param \DateTime|\DateTimeImmutable $processing_start_time the date and time when feed processing started, in ISO 8601 date time format
      */
-    public function setProcessingStartTime(?\DateTime $processing_start_time) : self
+    public function setProcessingStartTime(\DateTimeInterface $processing_start_time) : self
     {
         $this->container['processing_start_time'] = $processing_start_time;
 
@@ -438,8 +442,10 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_end_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getProcessingEndTime() : ?\DateTime
+    public function getProcessingEndTime() : ?\DateTimeInterface
     {
         return $this->container['processing_end_time'];
     }
@@ -447,9 +453,9 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets processing_end_time.
      *
-     * @param null|\DateTime $processing_end_time the date and time when feed processing completed, in ISO 8601 date time format
+     * @param \DateTime|\DateTimeImmutable $processing_end_time the date and time when feed processing completed, in ISO 8601 date time format
      */
-    public function setProcessingEndTime(?\DateTime $processing_end_time) : self
+    public function setProcessingEndTime(\DateTimeInterface $processing_end_time) : self
     {
         $this->container['processing_end_time'] = $processing_end_time;
 

@@ -242,8 +242,10 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets earliest_nominated_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEarliestNominatedDeliveryDate() : ?\DateTime
+    public function getEarliestNominatedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['earliest_nominated_delivery_date'];
     }
@@ -251,9 +253,9 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Sets earliest_nominated_delivery_date.
      *
-     * @param null|\DateTime $earliest_nominated_delivery_date earliest nominated delivery date for the scheduled delivery
+     * @param \DateTime|\DateTimeImmutable $earliest_nominated_delivery_date earliest nominated delivery date for the scheduled delivery
      */
-    public function setEarliestNominatedDeliveryDate(?\DateTime $earliest_nominated_delivery_date) : self
+    public function setEarliestNominatedDeliveryDate(\DateTimeInterface $earliest_nominated_delivery_date) : self
     {
         $this->container['earliest_nominated_delivery_date'] = $earliest_nominated_delivery_date;
 
@@ -262,8 +264,10 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets latest_nominated_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getLatestNominatedDeliveryDate() : ?\DateTime
+    public function getLatestNominatedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['latest_nominated_delivery_date'];
     }
@@ -271,9 +275,9 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Sets latest_nominated_delivery_date.
      *
-     * @param null|\DateTime $latest_nominated_delivery_date latest nominated delivery date for the scheduled delivery
+     * @param \DateTime|\DateTimeImmutable $latest_nominated_delivery_date latest nominated delivery date for the scheduled delivery
      */
-    public function setLatestNominatedDeliveryDate(?\DateTime $latest_nominated_delivery_date) : self
+    public function setLatestNominatedDeliveryDate(\DateTimeInterface $latest_nominated_delivery_date) : self
     {
         $this->container['latest_nominated_delivery_date'] = $latest_nominated_delivery_date;
 

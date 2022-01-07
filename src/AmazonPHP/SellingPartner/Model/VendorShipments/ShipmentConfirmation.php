@@ -587,8 +587,10 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets shipment_confirmation_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getShipmentConfirmationDate() : \DateTime
+    public function getShipmentConfirmationDate() : \DateTimeInterface
     {
         return $this->container['shipment_confirmation_date'];
     }
@@ -598,7 +600,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
      *
      * @param \DateTime $shipment_confirmation_date date on which the shipment confirmation was submitted
      */
-    public function setShipmentConfirmationDate(\DateTime $shipment_confirmation_date) : self
+    public function setShipmentConfirmationDate(\DateTimeInterface $shipment_confirmation_date) : self
     {
         $this->container['shipment_confirmation_date'] = $shipment_confirmation_date;
 
@@ -607,8 +609,10 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets shipped_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getShippedDate() : ?\DateTime
+    public function getShippedDate() : ?\DateTimeInterface
     {
         return $this->container['shipped_date'];
     }
@@ -616,9 +620,9 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets shipped_date.
      *
-     * @param null|\DateTime $shipped_date The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
+     * @param \DateTime|\DateTimeImmutable $shipped_date The date and time of the departure of the shipment from the vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the shipment confirmation should not be in the future.
      */
-    public function setShippedDate(?\DateTime $shipped_date) : self
+    public function setShippedDate(\DateTimeInterface $shipped_date) : self
     {
         $this->container['shipped_date'] = $shipped_date;
 
@@ -627,8 +631,10 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets estimated_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEstimatedDeliveryDate() : ?\DateTime
+    public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['estimated_delivery_date'];
     }
@@ -636,9 +642,9 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets estimated_delivery_date.
      *
-     * @param null|\DateTime $estimated_delivery_date The date and time on which the shipment is expected to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
+     * @param \DateTime|\DateTimeImmutable $estimated_delivery_date The date and time on which the shipment is expected to reach buyer's warehouse. It needs to be an estimate based on the average transit time between ship from location and the destination. The exact appointment time will be provided by the buyer and is potentially not known when creating the shipment confirmation.
      */
-    public function setEstimatedDeliveryDate(?\DateTime $estimated_delivery_date) : self
+    public function setEstimatedDeliveryDate(\DateTimeInterface $estimated_delivery_date) : self
     {
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 

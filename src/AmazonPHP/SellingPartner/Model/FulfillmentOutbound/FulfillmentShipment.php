@@ -373,8 +373,10 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets shipping_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getShippingDate() : ?\DateTime
+    public function getShippingDate() : ?\DateTimeInterface
     {
         return $this->container['shipping_date'];
     }
@@ -382,9 +384,9 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets shipping_date.
      *
-     * @param null|\DateTime $shipping_date shipping_date
+     * @param \DateTime|\DateTimeImmutable $shipping_date shipping_date
      */
-    public function setShippingDate(?\DateTime $shipping_date) : self
+    public function setShippingDate(\DateTimeInterface $shipping_date) : self
     {
         $this->container['shipping_date'] = $shipping_date;
 
@@ -393,8 +395,10 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets estimated_arrival_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEstimatedArrivalDate() : ?\DateTime
+    public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {
         return $this->container['estimated_arrival_date'];
     }
@@ -402,9 +406,9 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets estimated_arrival_date.
      *
-     * @param null|\DateTime $estimated_arrival_date estimated_arrival_date
+     * @param \DateTime|\DateTimeImmutable $estimated_arrival_date estimated_arrival_date
      */
-    public function setEstimatedArrivalDate(?\DateTime $estimated_arrival_date) : self
+    public function setEstimatedArrivalDate(\DateTimeInterface $estimated_arrival_date) : self
     {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 

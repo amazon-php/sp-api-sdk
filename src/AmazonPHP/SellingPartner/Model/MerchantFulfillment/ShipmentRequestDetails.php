@@ -420,8 +420,10 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets must_arrive_by_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getMustArriveByDate() : ?\DateTime
+    public function getMustArriveByDate() : ?\DateTimeInterface
     {
         return $this->container['must_arrive_by_date'];
     }
@@ -429,9 +431,9 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets must_arrive_by_date.
      *
-     * @param null|\DateTime $must_arrive_by_date must_arrive_by_date
+     * @param \DateTime|\DateTimeImmutable $must_arrive_by_date must_arrive_by_date
      */
-    public function setMustArriveByDate(?\DateTime $must_arrive_by_date) : self
+    public function setMustArriveByDate(\DateTimeInterface $must_arrive_by_date) : self
     {
         $this->container['must_arrive_by_date'] = $must_arrive_by_date;
 
@@ -440,8 +442,10 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets ship_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getShipDate() : ?\DateTime
+    public function getShipDate() : ?\DateTimeInterface
     {
         return $this->container['ship_date'];
     }
@@ -449,9 +453,9 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets ship_date.
      *
-     * @param null|\DateTime $ship_date ship_date
+     * @param \DateTime|\DateTimeImmutable $ship_date ship_date
      */
-    public function setShipDate(?\DateTime $ship_date) : self
+    public function setShipDate(\DateTimeInterface $ship_date) : self
     {
         $this->container['ship_date'] = $ship_date;
 

@@ -222,8 +222,10 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets acknowledgement_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getAcknowledgementDate() : ?\DateTime
+    public function getAcknowledgementDate() : ?\DateTimeInterface
     {
         return $this->container['acknowledgement_date'];
     }
@@ -231,9 +233,9 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, M
     /**
      * Sets acknowledgement_date.
      *
-     * @param null|\DateTime $acknowledgement_date The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
+     * @param \DateTime|\DateTimeImmutable $acknowledgement_date The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
      */
-    public function setAcknowledgementDate(?\DateTime $acknowledgement_date) : self
+    public function setAcknowledgementDate(\DateTimeInterface $acknowledgement_date) : self
     {
         $this->container['acknowledgement_date'] = $acknowledgement_date;
 

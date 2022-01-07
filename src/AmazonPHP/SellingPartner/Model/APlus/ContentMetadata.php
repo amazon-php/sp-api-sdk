@@ -362,8 +362,10 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets update_time.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getUpdateTime() : \DateTime
+    public function getUpdateTime() : \DateTimeInterface
     {
         return $this->container['update_time'];
     }
@@ -373,7 +375,7 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $update_time the approximate age of the A+ Content document and metadata
      */
-    public function setUpdateTime(\DateTime $update_time) : self
+    public function setUpdateTime(\DateTimeInterface $update_time) : self
     {
         $this->container['update_time'] = $update_time;
 

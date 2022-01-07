@@ -614,8 +614,10 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets created_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getCreatedDate() : \DateTime
+    public function getCreatedDate() : \DateTimeInterface
     {
         return $this->container['created_date'];
     }
@@ -625,7 +627,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $created_date created_date
      */
-    public function setCreatedDate(\DateTime $created_date) : self
+    public function setCreatedDate(\DateTimeInterface $created_date) : self
     {
         $this->container['created_date'] = $created_date;
 
@@ -634,8 +636,10 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets last_updated_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getLastUpdatedDate() : ?\DateTime
+    public function getLastUpdatedDate() : ?\DateTimeInterface
     {
         return $this->container['last_updated_date'];
     }
@@ -643,9 +647,9 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets last_updated_date.
      *
-     * @param null|\DateTime $last_updated_date last_updated_date
+     * @param \DateTime|\DateTimeImmutable $last_updated_date last_updated_date
      */
-    public function setLastUpdatedDate(?\DateTime $last_updated_date) : self
+    public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
     {
         $this->container['last_updated_date'] = $last_updated_date;
 

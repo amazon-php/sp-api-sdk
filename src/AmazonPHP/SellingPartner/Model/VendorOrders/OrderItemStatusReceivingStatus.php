@@ -305,8 +305,10 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets last_receive_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getLastReceiveDate() : ?\DateTime
+    public function getLastReceiveDate() : ?\DateTimeInterface
     {
         return $this->container['last_receive_date'];
     }
@@ -314,9 +316,9 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets last_receive_date.
      *
-     * @param null|\DateTime $last_receive_date The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
+     * @param \DateTime|\DateTimeImmutable $last_receive_date The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
      */
-    public function setLastReceiveDate(?\DateTime $last_receive_date) : self
+    public function setLastReceiveDate(\DateTimeInterface $last_receive_date) : self
     {
         $this->container['last_receive_date'] = $last_receive_date;
 

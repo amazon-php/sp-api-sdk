@@ -314,8 +314,10 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets arrival_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getArrivalTime() : ?\DateTime
+    public function getArrivalTime() : ?\DateTimeInterface
     {
         return $this->container['arrival_time'];
     }
@@ -323,9 +325,9 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets arrival_time.
      *
-     * @param null|\DateTime $arrival_time date and time of the arrival of the cargo
+     * @param \DateTime|\DateTimeImmutable $arrival_time date and time of the arrival of the cargo
      */
-    public function setArrivalTime(?\DateTime $arrival_time) : self
+    public function setArrivalTime(\DateTimeInterface $arrival_time) : self
     {
         $this->container['arrival_time'] = $arrival_time;
 
@@ -334,8 +336,10 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets departure_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getDepartureTime() : ?\DateTime
+    public function getDepartureTime() : ?\DateTimeInterface
     {
         return $this->container['departure_time'];
     }
@@ -343,9 +347,9 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets departure_time.
      *
-     * @param null|\DateTime $departure_time date and time of the departure of the cargo
+     * @param \DateTime|\DateTimeImmutable $departure_time date and time of the departure of the cargo
      */
-    public function setDepartureTime(?\DateTime $departure_time) : self
+    public function setDepartureTime(\DateTimeInterface $departure_time) : self
     {
         $this->container['departure_time'] = $departure_time;
 

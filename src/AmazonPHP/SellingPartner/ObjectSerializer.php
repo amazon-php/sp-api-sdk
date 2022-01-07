@@ -31,7 +31,7 @@ final class ObjectSerializer
             return $data;
         }
 
-        if ($data instanceof \DateTime) {
+        if ($data instanceof \DateTimeInterface) {
             return ($format === 'date') ? $data->format('Y-m-d') : $data->format(self::$dateTimeFormat);
         }
 
@@ -177,13 +177,13 @@ final class ObjectSerializer
      * If it's a datetime object, format it in ISO8601
      * If it's a boolean, convert it to "true" or "false".
      *
-     * @param bool|\DateTime|string $value the value of the parameter
+     * @param bool|\DateTimeInterface|string $value the value of the parameter
      *
      * @return string the header string
      */
     public static function toString($value) : string
     {
-        if ($value instanceof \DateTime) { // datetime in ISO8601 format
+        if ($value instanceof \DateTimeInterface) { // datetime in ISO8601 format
             return $value->format(self::$dateTimeFormat);
         }
 
@@ -288,7 +288,7 @@ final class ObjectSerializer
             return $data;
         }
 
-        if ($class === '\DateTime') {
+        if ($class === '\DateTime' || $class === '\DateTimeImmutable') {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return
             // the current time for empty input which is probably not
@@ -297,13 +297,13 @@ final class ObjectSerializer
             // this graceful.
             if (!empty($data)) {
                 try {
-                    return new \DateTime($data);
+                    return new \DateTimeImmutable($data);
                 } catch (\Exception $exception) {
                     // Some API's return a date-time with too high nanosecond
                     // precision for php's DateTime to handle. This conversion
                     // (string -> unix timestamp -> DateTime) is a workaround
                     // for the problem.
-                    return (new \DateTime())->setTimestamp(\strtotime($data));
+                    return (new \DateTimeImmutable())->setTimestamp(\strtotime($data));
                 }
             } else {
                 return null;
@@ -311,7 +311,7 @@ final class ObjectSerializer
         }
 
         /** @psalm-suppress ParadoxicalCondition */
-        if (\in_array($class, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+        if (\in_array($class, ['DateTime', 'DateTimeImmutable', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
             \settype($data, $class);
 
             return $data;

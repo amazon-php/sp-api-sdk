@@ -222,8 +222,10 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets required_ship_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getRequiredShipDate() : \DateTime
+    public function getRequiredShipDate() : \DateTimeInterface
     {
         return $this->container['required_ship_date'];
     }
@@ -233,7 +235,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $required_ship_date time by which the vendor is required to ship the order
      */
-    public function setRequiredShipDate(\DateTime $required_ship_date) : self
+    public function setRequiredShipDate(\DateTimeInterface $required_ship_date) : self
     {
         $this->container['required_ship_date'] = $required_ship_date;
 
@@ -242,8 +244,10 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets promised_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getPromisedDeliveryDate() : ?\DateTime
+    public function getPromisedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['promised_delivery_date'];
     }
@@ -251,9 +255,9 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets promised_delivery_date.
      *
-     * @param null|\DateTime $promised_delivery_date delivery date promised to the Amazon customer
+     * @param \DateTime|\DateTimeImmutable $promised_delivery_date delivery date promised to the Amazon customer
      */
-    public function setPromisedDeliveryDate(?\DateTime $promised_delivery_date) : self
+    public function setPromisedDeliveryDate(\DateTimeInterface $promised_delivery_date) : self
     {
         $this->container['promised_delivery_date'] = $promised_delivery_date;
 

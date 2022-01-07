@@ -179,6 +179,10 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -187,6 +191,10 @@ final class CatalogItemSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($included_data instanceof \DateTimeInterface) {
+            $included_data = ObjectSerializer::toString($included_data);
+        }
+
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
         }
@@ -195,6 +203,10 @@ final class CatalogItemSDK
             $queryParams['includedData'] = $included_data;
         }
         // query params
+        if ($locale instanceof \DateTimeInterface) {
+            $locale = ObjectSerializer::toString($locale);
+        }
+
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
         }
@@ -422,6 +434,10 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
+        if ($keywords instanceof \DateTimeInterface) {
+            $keywords = ObjectSerializer::toString($keywords);
+        }
+
         if (\is_array($keywords)) {
             $keywords = ObjectSerializer::serializeCollection($keywords, 'form', true);
         }
@@ -430,6 +446,10 @@ final class CatalogItemSDK
             $queryParams['keywords'] = $keywords;
         }
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -438,6 +458,10 @@ final class CatalogItemSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($included_data instanceof \DateTimeInterface) {
+            $included_data = ObjectSerializer::toString($included_data);
+        }
+
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
         }
@@ -446,6 +470,10 @@ final class CatalogItemSDK
             $queryParams['includedData'] = $included_data;
         }
         // query params
+        if ($brand_names instanceof \DateTimeInterface) {
+            $brand_names = ObjectSerializer::toString($brand_names);
+        }
+
         if (\is_array($brand_names)) {
             $brand_names = ObjectSerializer::serializeCollection($brand_names, 'form', true);
         }
@@ -454,6 +482,10 @@ final class CatalogItemSDK
             $queryParams['brandNames'] = $brand_names;
         }
         // query params
+        if ($classification_ids instanceof \DateTimeInterface) {
+            $classification_ids = ObjectSerializer::toString($classification_ids);
+        }
+
         if (\is_array($classification_ids)) {
             $classification_ids = ObjectSerializer::serializeCollection($classification_ids, 'form', true);
         }
@@ -462,6 +494,10 @@ final class CatalogItemSDK
             $queryParams['classificationIds'] = $classification_ids;
         }
         // query params
+        if ($page_size instanceof \DateTimeInterface) {
+            $page_size = ObjectSerializer::toString($page_size);
+        }
+
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
@@ -470,6 +506,10 @@ final class CatalogItemSDK
             $queryParams['pageSize'] = $page_size;
         }
         // query params
+        if ($page_token instanceof \DateTimeInterface) {
+            $page_token = ObjectSerializer::toString($page_token);
+        }
+
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
@@ -478,6 +518,10 @@ final class CatalogItemSDK
             $queryParams['pageToken'] = $page_token;
         }
         // query params
+        if ($keywords_locale instanceof \DateTimeInterface) {
+            $keywords_locale = ObjectSerializer::toString($keywords_locale);
+        }
+
         if (\is_array($keywords_locale)) {
             $keywords_locale = ObjectSerializer::serializeCollection($keywords_locale, '', true);
         }
@@ -486,6 +530,10 @@ final class CatalogItemSDK
             $queryParams['keywordsLocale'] = $keywords_locale;
         }
         // query params
+        if ($locale instanceof \DateTimeInterface) {
+            $locale = ObjectSerializer::toString($locale);
+        }
+
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
         }

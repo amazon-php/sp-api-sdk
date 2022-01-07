@@ -294,8 +294,10 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets data_start_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getDataStartTime() : ?\DateTime
+    public function getDataStartTime() : ?\DateTimeInterface
     {
         return $this->container['data_start_time'];
     }
@@ -303,9 +305,9 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Sets data_start_time.
      *
-     * @param null|\DateTime $data_start_time The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param \DateTime|\DateTimeImmutable $data_start_time The start of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      */
-    public function setDataStartTime(?\DateTime $data_start_time) : self
+    public function setDataStartTime(\DateTimeInterface $data_start_time) : self
     {
         $this->container['data_start_time'] = $data_start_time;
 
@@ -314,8 +316,10 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets data_end_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getDataEndTime() : ?\DateTime
+    public function getDataEndTime() : ?\DateTimeInterface
     {
         return $this->container['data_end_time'];
     }
@@ -323,9 +327,9 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Sets data_end_time.
      *
-     * @param null|\DateTime $data_end_time The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
+     * @param \DateTime|\DateTimeImmutable $data_end_time The end of a date and time range, in ISO 8601 date time format, used for selecting the data to report. The default is now. The value must be prior to or equal to the current date and time. Not all report types make use of this.
      */
-    public function setDataEndTime(?\DateTime $data_end_time) : self
+    public function setDataEndTime(\DateTimeInterface $data_end_time) : self
     {
         $this->container['data_end_time'] = $data_end_time;
 

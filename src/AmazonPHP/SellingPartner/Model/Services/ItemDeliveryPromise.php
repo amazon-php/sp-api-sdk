@@ -216,8 +216,10 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets start_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getStartTime() : ?\DateTime
+    public function getStartTime() : ?\DateTimeInterface
     {
         return $this->container['start_time'];
     }
@@ -225,9 +227,9 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets start_time.
      *
-     * @param null|\DateTime $start_time the date and time of the start of the promised delivery window, in ISO 8601 format
+     * @param \DateTime|\DateTimeImmutable $start_time the date and time of the start of the promised delivery window, in ISO 8601 format
      */
-    public function setStartTime(?\DateTime $start_time) : self
+    public function setStartTime(\DateTimeInterface $start_time) : self
     {
         $this->container['start_time'] = $start_time;
 
@@ -236,8 +238,10 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets end_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEndTime() : ?\DateTime
+    public function getEndTime() : ?\DateTimeInterface
     {
         return $this->container['end_time'];
     }
@@ -245,9 +249,9 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets end_time.
      *
-     * @param null|\DateTime $end_time the date and time of the end of the promised delivery window, in ISO 8601 format
+     * @param \DateTime|\DateTimeImmutable $end_time the date and time of the end of the promised delivery window, in ISO 8601 format
      */
-    public function setEndTime(?\DateTime $end_time) : self
+    public function setEndTime(\DateTimeInterface $end_time) : self
     {
         $this->container['end_time'] = $end_time;
 
