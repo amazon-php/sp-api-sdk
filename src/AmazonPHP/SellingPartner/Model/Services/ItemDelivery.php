@@ -216,8 +216,10 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets estimated_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEstimatedDeliveryDate() : ?\DateTime
+    public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['estimated_delivery_date'];
     }
@@ -225,9 +227,9 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets estimated_delivery_date.
      *
-     * @param null|\DateTime $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
+     * @param \DateTime|\DateTimeImmutable $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
      */
-    public function setEstimatedDeliveryDate(?\DateTime $estimated_delivery_date) : self
+    public function setEstimatedDeliveryDate(\DateTimeInterface $estimated_delivery_date) : self
     {
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 

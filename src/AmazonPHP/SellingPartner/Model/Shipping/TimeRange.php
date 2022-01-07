@@ -216,8 +216,10 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets start.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getStart() : ?\DateTime
+    public function getStart() : ?\DateTimeInterface
     {
         return $this->container['start'];
     }
@@ -225,9 +227,9 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets start.
      *
-     * @param null|\DateTime $start The start date and time. This defaults to the current date and time.
+     * @param \DateTime|\DateTimeImmutable $start The start date and time. This defaults to the current date and time.
      */
-    public function setStart(?\DateTime $start) : self
+    public function setStart(\DateTimeInterface $start) : self
     {
         $this->container['start'] = $start;
 
@@ -236,8 +238,10 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets end.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEnd() : ?\DateTime
+    public function getEnd() : ?\DateTimeInterface
     {
         return $this->container['end'];
     }
@@ -245,9 +249,9 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets end.
      *
-     * @param null|\DateTime $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
+     * @param \DateTime|\DateTimeImmutable $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
      */
-    public function setEnd(?\DateTime $end) : self
+    public function setEnd(\DateTimeInterface $end) : self
     {
         $this->container['end'] = $end;
 

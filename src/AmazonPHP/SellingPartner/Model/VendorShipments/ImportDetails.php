@@ -400,8 +400,10 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets estimated_ship_by_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEstimatedShipByDate() : ?\DateTime
+    public function getEstimatedShipByDate() : ?\DateTimeInterface
     {
         return $this->container['estimated_ship_by_date'];
     }
@@ -409,9 +411,9 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets estimated_ship_by_date.
      *
-     * @param null|\DateTime $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
+     * @param \DateTime|\DateTimeImmutable $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
      */
-    public function setEstimatedShipByDate(?\DateTime $estimated_ship_by_date) : self
+    public function setEstimatedShipByDate(\DateTimeInterface $estimated_ship_by_date) : self
     {
         $this->container['estimated_ship_by_date'] = $estimated_ship_by_date;
 

@@ -228,8 +228,10 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets time_of_fees_estimation.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getTimeOfFeesEstimation() : \DateTime
+    public function getTimeOfFeesEstimation() : \DateTimeInterface
     {
         return $this->container['time_of_fees_estimation'];
     }
@@ -239,7 +241,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $time_of_fees_estimation The time at which the fees were estimated. This defaults to the time the request is made.
      */
-    public function setTimeOfFeesEstimation(\DateTime $time_of_fees_estimation) : self
+    public function setTimeOfFeesEstimation(\DateTimeInterface $time_of_fees_estimation) : self
     {
         $this->container['time_of_fees_estimation'] = $time_of_fees_estimation;
 

@@ -338,8 +338,10 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_timestamp.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getValueAsTimestamp() : ?\DateTime
+    public function getValueAsTimestamp() : ?\DateTimeInterface
     {
         return $this->container['value_as_timestamp'];
     }
@@ -347,9 +349,9 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets value_as_timestamp.
      *
-     * @param null|\DateTime $value_as_timestamp value_as_timestamp
+     * @param \DateTime|\DateTimeImmutable $value_as_timestamp value_as_timestamp
      */
-    public function setValueAsTimestamp(?\DateTime $value_as_timestamp) : self
+    public function setValueAsTimestamp(\DateTimeInterface $value_as_timestamp) : self
     {
         $this->container['value_as_timestamp'] = $value_as_timestamp;
 

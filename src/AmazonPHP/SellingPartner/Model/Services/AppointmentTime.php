@@ -230,8 +230,10 @@ class AppointmentTime implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets start_time.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getStartTime() : \DateTime
+    public function getStartTime() : \DateTimeInterface
     {
         return $this->container['start_time'];
     }
@@ -241,7 +243,7 @@ class AppointmentTime implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $start_time the date and time of the start of the appointment window, in ISO 8601 format
      */
-    public function setStartTime(\DateTime $start_time) : self
+    public function setStartTime(\DateTimeInterface $start_time) : self
     {
         $this->container['start_time'] = $start_time;
 

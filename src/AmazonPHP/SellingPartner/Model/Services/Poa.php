@@ -346,8 +346,10 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets upload_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getUploadTime() : ?\DateTime
+    public function getUploadTime() : ?\DateTimeInterface
     {
         return $this->container['upload_time'];
     }
@@ -355,9 +357,9 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets upload_time.
      *
-     * @param null|\DateTime $upload_time the date and time when the POA was uploaded, in ISO 8601 format
+     * @param \DateTime|\DateTimeImmutable $upload_time the date and time when the POA was uploaded, in ISO 8601 format
      */
-    public function setUploadTime(?\DateTime $upload_time) : self
+    public function setUploadTime(\DateTimeInterface $upload_time) : self
     {
         $this->container['upload_time'] = $upload_time;
 

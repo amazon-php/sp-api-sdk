@@ -177,6 +177,10 @@ final class FBAInboundSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -185,6 +189,10 @@ final class FBAInboundSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($asin instanceof \DateTimeInterface) {
+            $asin = ObjectSerializer::toString($asin);
+        }
+
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
         }
@@ -193,6 +201,10 @@ final class FBAInboundSDK
             $queryParams['asin'] = $asin;
         }
         // query params
+        if ($program instanceof \DateTimeInterface) {
+            $program = ObjectSerializer::toString($program);
+        }
+
         if (\is_array($program)) {
             $program = ObjectSerializer::serializeCollection($program, '', true);
         }

@@ -39,6 +39,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         __DIR__ . '/src/AmazonPHP/SellingPartner/AccessToken.php',
     ]);
 
+    $services->set(\AmazonPHP\Rector\ClassMethod\FixArgumentDefaultValuesNotMatchingTypeRector::class);
+    $services->set(\Rector\CodeQuality\Rector\ClassMethod\DateTimeToDateTimeInterfaceRector::class);
+
     // Define what rule sets will be applied
     $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(SetList::PHP_73);

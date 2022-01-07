@@ -186,6 +186,10 @@ final class UploadsSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -194,6 +198,10 @@ final class UploadsSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($content_md5 instanceof \DateTimeInterface) {
+            $content_md5 = ObjectSerializer::toString($content_md5);
+        }
+
         if (\is_array($content_md5)) {
             $content_md5 = ObjectSerializer::serializeCollection($content_md5, '', true);
         }
@@ -202,6 +210,10 @@ final class UploadsSDK
             $queryParams['contentMD5'] = $content_md5;
         }
         // query params
+        if ($content_type instanceof \DateTimeInterface) {
+            $content_type = ObjectSerializer::toString($content_type);
+        }
+
         if (\is_array($content_type)) {
             $content_type = ObjectSerializer::serializeCollection($content_type, '', true);
         }

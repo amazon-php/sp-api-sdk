@@ -179,6 +179,10 @@ final class SolicitationsSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -388,6 +392,10 @@ final class SolicitationsSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }

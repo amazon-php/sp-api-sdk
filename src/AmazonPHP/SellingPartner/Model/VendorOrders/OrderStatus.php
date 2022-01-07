@@ -349,8 +349,10 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPurchaseOrderDate() : \DateTime
+    public function getPurchaseOrderDate() : \DateTimeInterface
     {
         return $this->container['purchase_order_date'];
     }
@@ -360,7 +362,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
      */
-    public function setPurchaseOrderDate(\DateTime $purchase_order_date) : self
+    public function setPurchaseOrderDate(\DateTimeInterface $purchase_order_date) : self
     {
         $this->container['purchase_order_date'] = $purchase_order_date;
 
@@ -369,8 +371,10 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets last_updated_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getLastUpdatedDate() : ?\DateTime
+    public function getLastUpdatedDate() : ?\DateTimeInterface
     {
         return $this->container['last_updated_date'];
     }
@@ -378,9 +382,9 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets last_updated_date.
      *
-     * @param null|\DateTime $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
+     * @param \DateTime|\DateTimeImmutable $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      */
-    public function setLastUpdatedDate(?\DateTime $last_updated_date) : self
+    public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
     {
         $this->container['last_updated_date'] = $last_updated_date;
 

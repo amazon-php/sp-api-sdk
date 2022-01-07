@@ -322,8 +322,10 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets status_date_time.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getStatusDateTime() : \DateTime
+    public function getStatusDateTime() : \DateTimeInterface
     {
         return $this->container['status_date_time'];
     }
@@ -333,7 +335,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, ModelInter
      *
      * @param \DateTime $status_date_time The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setStatusDateTime(\DateTime $status_date_time) : self
+    public function setStatusDateTime(\DateTimeInterface $status_date_time) : self
     {
         $this->container['status_date_time'] = $status_date_time;
 

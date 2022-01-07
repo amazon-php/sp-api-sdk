@@ -179,6 +179,10 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -380,6 +384,10 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -388,6 +396,10 @@ final class CatalogItemSDK
             $queryParams['MarketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($asin instanceof \DateTimeInterface) {
+            $asin = ObjectSerializer::toString($asin);
+        }
+
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
         }
@@ -396,6 +408,10 @@ final class CatalogItemSDK
             $queryParams['ASIN'] = $asin;
         }
         // query params
+        if ($seller_sku instanceof \DateTimeInterface) {
+            $seller_sku = ObjectSerializer::toString($seller_sku);
+        }
+
         if (\is_array($seller_sku)) {
             $seller_sku = ObjectSerializer::serializeCollection($seller_sku, '', true);
         }
@@ -598,6 +614,10 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -606,6 +626,10 @@ final class CatalogItemSDK
             $queryParams['MarketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($query instanceof \DateTimeInterface) {
+            $query = ObjectSerializer::toString($query);
+        }
+
         if (\is_array($query)) {
             $query = ObjectSerializer::serializeCollection($query, '', true);
         }
@@ -614,6 +638,10 @@ final class CatalogItemSDK
             $queryParams['Query'] = $query;
         }
         // query params
+        if ($query_context_id instanceof \DateTimeInterface) {
+            $query_context_id = ObjectSerializer::toString($query_context_id);
+        }
+
         if (\is_array($query_context_id)) {
             $query_context_id = ObjectSerializer::serializeCollection($query_context_id, '', true);
         }
@@ -622,6 +650,10 @@ final class CatalogItemSDK
             $queryParams['QueryContextId'] = $query_context_id;
         }
         // query params
+        if ($seller_sku instanceof \DateTimeInterface) {
+            $seller_sku = ObjectSerializer::toString($seller_sku);
+        }
+
         if (\is_array($seller_sku)) {
             $seller_sku = ObjectSerializer::serializeCollection($seller_sku, '', true);
         }
@@ -630,6 +662,10 @@ final class CatalogItemSDK
             $queryParams['SellerSKU'] = $seller_sku;
         }
         // query params
+        if ($upc instanceof \DateTimeInterface) {
+            $upc = ObjectSerializer::toString($upc);
+        }
+
         if (\is_array($upc)) {
             $upc = ObjectSerializer::serializeCollection($upc, '', true);
         }
@@ -638,6 +674,10 @@ final class CatalogItemSDK
             $queryParams['UPC'] = $upc;
         }
         // query params
+        if ($ean instanceof \DateTimeInterface) {
+            $ean = ObjectSerializer::toString($ean);
+        }
+
         if (\is_array($ean)) {
             $ean = ObjectSerializer::serializeCollection($ean, '', true);
         }
@@ -646,6 +686,10 @@ final class CatalogItemSDK
             $queryParams['EAN'] = $ean;
         }
         // query params
+        if ($isbn instanceof \DateTimeInterface) {
+            $isbn = ObjectSerializer::toString($isbn);
+        }
+
         if (\is_array($isbn)) {
             $isbn = ObjectSerializer::serializeCollection($isbn, '', true);
         }
@@ -654,6 +698,10 @@ final class CatalogItemSDK
             $queryParams['ISBN'] = $isbn;
         }
         // query params
+        if ($jan instanceof \DateTimeInterface) {
+            $jan = ObjectSerializer::toString($jan);
+        }
+
         if (\is_array($jan)) {
             $jan = ObjectSerializer::serializeCollection($jan, '', true);
         }

@@ -328,8 +328,10 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets invoice_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getInvoiceDate() : \DateTime
+    public function getInvoiceDate() : \DateTimeInterface
     {
         return $this->container['invoice_date'];
     }
@@ -339,7 +341,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $invoice_date invoice date
      */
-    public function setInvoiceDate(\DateTime $invoice_date) : self
+    public function setInvoiceDate(\DateTimeInterface $invoice_date) : self
     {
         $this->container['invoice_date'] = $invoice_date;
 

@@ -330,8 +330,10 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getDisplayableOrderDate() : ?\DateTime
+    public function getDisplayableOrderDate() : ?\DateTimeInterface
     {
         return $this->container['displayable_order_date'];
     }
@@ -339,9 +341,9 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets displayable_order_date.
      *
-     * @param null|\DateTime $displayable_order_date displayable_order_date
+     * @param \DateTime|\DateTimeImmutable $displayable_order_date displayable_order_date
      */
-    public function setDisplayableOrderDate(?\DateTime $displayable_order_date) : self
+    public function setDisplayableOrderDate(\DateTimeInterface $displayable_order_date) : self
     {
         $this->container['displayable_order_date'] = $displayable_order_date;
 
