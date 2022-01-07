@@ -252,8 +252,10 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getPostedDate() : ?\DateTime
+    public function getPostedDate() : ?\DateTimeInterface
     {
         return $this->container['posted_date'];
     }
@@ -261,9 +263,9 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets posted_date.
      *
-     * @param null|\DateTime $posted_date posted_date
+     * @param \DateTime|\DateTimeImmutable $posted_date posted_date
      */
-    public function setPostedDate(?\DateTime $posted_date) : self
+    public function setPostedDate(\DateTimeInterface $posted_date) : self
     {
         $this->container['posted_date'] = $posted_date;
 

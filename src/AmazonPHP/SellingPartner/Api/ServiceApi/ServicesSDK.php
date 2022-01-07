@@ -425,6 +425,10 @@ final class ServicesSDK
         $query = '';
 
         // query params
+        if ($cancellation_reason_code instanceof \DateTimeInterface) {
+            $cancellation_reason_code = ObjectSerializer::toString($cancellation_reason_code);
+        }
+
         if (\is_array($cancellation_reason_code)) {
             $cancellation_reason_code = ObjectSerializer::serializeCollection($cancellation_reason_code, '', true);
         }
@@ -1058,6 +1062,10 @@ final class ServicesSDK
         $query = '';
 
         // query params
+        if ($service_order_ids instanceof \DateTimeInterface) {
+            $service_order_ids = ObjectSerializer::toString($service_order_ids);
+        }
+
         if (\is_array($service_order_ids)) {
             $service_order_ids = ObjectSerializer::serializeCollection($service_order_ids, 'form', true);
         }
@@ -1066,6 +1074,10 @@ final class ServicesSDK
             $queryParams['serviceOrderIds'] = $service_order_ids;
         }
         // query params
+        if ($service_job_status instanceof \DateTimeInterface) {
+            $service_job_status = ObjectSerializer::toString($service_job_status);
+        }
+
         if (\is_array($service_job_status)) {
             $service_job_status = ObjectSerializer::serializeCollection($service_job_status, 'form', true);
         }
@@ -1074,6 +1086,10 @@ final class ServicesSDK
             $queryParams['serviceJobStatus'] = $service_job_status;
         }
         // query params
+        if ($page_token instanceof \DateTimeInterface) {
+            $page_token = ObjectSerializer::toString($page_token);
+        }
+
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
@@ -1082,6 +1098,10 @@ final class ServicesSDK
             $queryParams['pageToken'] = $page_token;
         }
         // query params
+        if ($page_size instanceof \DateTimeInterface) {
+            $page_size = ObjectSerializer::toString($page_size);
+        }
+
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
@@ -1090,6 +1110,10 @@ final class ServicesSDK
             $queryParams['pageSize'] = $page_size;
         }
         // query params
+        if ($sort_field instanceof \DateTimeInterface) {
+            $sort_field = ObjectSerializer::toString($sort_field);
+        }
+
         if (\is_array($sort_field)) {
             $sort_field = ObjectSerializer::serializeCollection($sort_field, '', true);
         }
@@ -1098,6 +1122,10 @@ final class ServicesSDK
             $queryParams['sortField'] = $sort_field;
         }
         // query params
+        if ($sort_order instanceof \DateTimeInterface) {
+            $sort_order = ObjectSerializer::toString($sort_order);
+        }
+
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
@@ -1106,6 +1134,10 @@ final class ServicesSDK
             $queryParams['sortOrder'] = $sort_order;
         }
         // query params
+        if ($created_after instanceof \DateTimeInterface) {
+            $created_after = ObjectSerializer::toString($created_after);
+        }
+
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
@@ -1114,6 +1146,10 @@ final class ServicesSDK
             $queryParams['createdAfter'] = $created_after;
         }
         // query params
+        if ($created_before instanceof \DateTimeInterface) {
+            $created_before = ObjectSerializer::toString($created_before);
+        }
+
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
@@ -1122,6 +1158,10 @@ final class ServicesSDK
             $queryParams['createdBefore'] = $created_before;
         }
         // query params
+        if ($last_updated_after instanceof \DateTimeInterface) {
+            $last_updated_after = ObjectSerializer::toString($last_updated_after);
+        }
+
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
         }
@@ -1130,6 +1170,10 @@ final class ServicesSDK
             $queryParams['lastUpdatedAfter'] = $last_updated_after;
         }
         // query params
+        if ($last_updated_before instanceof \DateTimeInterface) {
+            $last_updated_before = ObjectSerializer::toString($last_updated_before);
+        }
+
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
         }
@@ -1138,6 +1182,10 @@ final class ServicesSDK
             $queryParams['lastUpdatedBefore'] = $last_updated_before;
         }
         // query params
+        if ($schedule_start_date instanceof \DateTimeInterface) {
+            $schedule_start_date = ObjectSerializer::toString($schedule_start_date);
+        }
+
         if (\is_array($schedule_start_date)) {
             $schedule_start_date = ObjectSerializer::serializeCollection($schedule_start_date, '', true);
         }
@@ -1146,6 +1194,10 @@ final class ServicesSDK
             $queryParams['scheduleStartDate'] = $schedule_start_date;
         }
         // query params
+        if ($schedule_end_date instanceof \DateTimeInterface) {
+            $schedule_end_date = ObjectSerializer::toString($schedule_end_date);
+        }
+
         if (\is_array($schedule_end_date)) {
             $schedule_end_date = ObjectSerializer::serializeCollection($schedule_end_date, '', true);
         }
@@ -1154,6 +1206,10 @@ final class ServicesSDK
             $queryParams['scheduleEndDate'] = $schedule_end_date;
         }
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }

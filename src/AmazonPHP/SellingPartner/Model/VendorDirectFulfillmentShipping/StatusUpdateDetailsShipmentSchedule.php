@@ -222,8 +222,10 @@ class StatusUpdateDetailsShipmentSchedule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets estimated_delivery_date_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEstimatedDeliveryDateTime() : ?\DateTime
+    public function getEstimatedDeliveryDateTime() : ?\DateTimeInterface
     {
         return $this->container['estimated_delivery_date_time'];
     }
@@ -231,9 +233,9 @@ class StatusUpdateDetailsShipmentSchedule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets estimated_delivery_date_time.
      *
-     * @param null|\DateTime $estimated_delivery_date_time Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param \DateTime|\DateTimeImmutable $estimated_delivery_date_time Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setEstimatedDeliveryDateTime(?\DateTime $estimated_delivery_date_time) : self
+    public function setEstimatedDeliveryDateTime(\DateTimeInterface $estimated_delivery_date_time) : self
     {
         $this->container['estimated_delivery_date_time'] = $estimated_delivery_date_time;
 
@@ -242,8 +244,10 @@ class StatusUpdateDetailsShipmentSchedule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets appt_window_start_date_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getApptWindowStartDateTime() : ?\DateTime
+    public function getApptWindowStartDateTime() : ?\DateTimeInterface
     {
         return $this->container['appt_window_start_date_time'];
     }
@@ -251,9 +255,9 @@ class StatusUpdateDetailsShipmentSchedule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets appt_window_start_date_time.
      *
-     * @param null|\DateTime $appt_window_start_date_time This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param \DateTime|\DateTimeImmutable $appt_window_start_date_time This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setApptWindowStartDateTime(?\DateTime $appt_window_start_date_time) : self
+    public function setApptWindowStartDateTime(\DateTimeInterface $appt_window_start_date_time) : self
     {
         $this->container['appt_window_start_date_time'] = $appt_window_start_date_time;
 
@@ -262,8 +266,10 @@ class StatusUpdateDetailsShipmentSchedule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets appt_window_end_date_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getApptWindowEndDateTime() : ?\DateTime
+    public function getApptWindowEndDateTime() : ?\DateTimeInterface
     {
         return $this->container['appt_window_end_date_time'];
     }
@@ -271,9 +277,9 @@ class StatusUpdateDetailsShipmentSchedule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets appt_window_end_date_time.
      *
-     * @param null|\DateTime $appt_window_end_date_time This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param \DateTime|\DateTimeImmutable $appt_window_end_date_time This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setApptWindowEndDateTime(?\DateTime $appt_window_end_date_time) : self
+    public function setApptWindowEndDateTime(\DateTimeInterface $appt_window_end_date_time) : self
     {
         $this->container['appt_window_end_date_time'] = $appt_window_end_date_time;
 

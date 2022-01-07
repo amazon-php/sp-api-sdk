@@ -185,6 +185,10 @@ final class ProductTypesDefinitionsSDK
         $query = '';
 
         // query params
+        if ($seller_id instanceof \DateTimeInterface) {
+            $seller_id = ObjectSerializer::toString($seller_id);
+        }
+
         if (\is_array($seller_id)) {
             $seller_id = ObjectSerializer::serializeCollection($seller_id, '', true);
         }
@@ -193,6 +197,10 @@ final class ProductTypesDefinitionsSDK
             $queryParams['sellerId'] = $seller_id;
         }
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -201,6 +209,10 @@ final class ProductTypesDefinitionsSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($product_type_version instanceof \DateTimeInterface) {
+            $product_type_version = ObjectSerializer::toString($product_type_version);
+        }
+
         if (\is_array($product_type_version)) {
             $product_type_version = ObjectSerializer::serializeCollection($product_type_version, '', true);
         }
@@ -209,6 +221,10 @@ final class ProductTypesDefinitionsSDK
             $queryParams['productTypeVersion'] = $product_type_version;
         }
         // query params
+        if ($requirements instanceof \DateTimeInterface) {
+            $requirements = ObjectSerializer::toString($requirements);
+        }
+
         if (\is_array($requirements)) {
             $requirements = ObjectSerializer::serializeCollection($requirements, '', true);
         }
@@ -217,6 +233,10 @@ final class ProductTypesDefinitionsSDK
             $queryParams['requirements'] = $requirements;
         }
         // query params
+        if ($requirements_enforced instanceof \DateTimeInterface) {
+            $requirements_enforced = ObjectSerializer::toString($requirements_enforced);
+        }
+
         if (\is_array($requirements_enforced)) {
             $requirements_enforced = ObjectSerializer::serializeCollection($requirements_enforced, '', true);
         }
@@ -225,6 +245,10 @@ final class ProductTypesDefinitionsSDK
             $queryParams['requirementsEnforced'] = $requirements_enforced;
         }
         // query params
+        if ($locale instanceof \DateTimeInterface) {
+            $locale = ObjectSerializer::toString($locale);
+        }
+
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
         }
@@ -424,6 +448,10 @@ final class ProductTypesDefinitionsSDK
         $query = '';
 
         // query params
+        if ($keywords instanceof \DateTimeInterface) {
+            $keywords = ObjectSerializer::toString($keywords);
+        }
+
         if (\is_array($keywords)) {
             $keywords = ObjectSerializer::serializeCollection($keywords, 'form', true);
         }
@@ -432,6 +460,10 @@ final class ProductTypesDefinitionsSDK
             $queryParams['keywords'] = $keywords;
         }
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }

@@ -396,8 +396,10 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets ship_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getShipDate() : \DateTime
+    public function getShipDate() : \DateTimeInterface
     {
         return $this->container['ship_date'];
     }
@@ -407,7 +409,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $ship_date ship_date
      */
-    public function setShipDate(\DateTime $ship_date) : self
+    public function setShipDate(\DateTimeInterface $ship_date) : self
     {
         $this->container['ship_date'] = $ship_date;
 
@@ -416,8 +418,10 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets earliest_estimated_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEarliestEstimatedDeliveryDate() : ?\DateTime
+    public function getEarliestEstimatedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['earliest_estimated_delivery_date'];
     }
@@ -425,9 +429,9 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets earliest_estimated_delivery_date.
      *
-     * @param null|\DateTime $earliest_estimated_delivery_date earliest_estimated_delivery_date
+     * @param \DateTime|\DateTimeImmutable $earliest_estimated_delivery_date earliest_estimated_delivery_date
      */
-    public function setEarliestEstimatedDeliveryDate(?\DateTime $earliest_estimated_delivery_date) : self
+    public function setEarliestEstimatedDeliveryDate(\DateTimeInterface $earliest_estimated_delivery_date) : self
     {
         $this->container['earliest_estimated_delivery_date'] = $earliest_estimated_delivery_date;
 
@@ -436,8 +440,10 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets latest_estimated_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getLatestEstimatedDeliveryDate() : ?\DateTime
+    public function getLatestEstimatedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['latest_estimated_delivery_date'];
     }
@@ -445,9 +451,9 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets latest_estimated_delivery_date.
      *
-     * @param null|\DateTime $latest_estimated_delivery_date latest_estimated_delivery_date
+     * @param \DateTime|\DateTimeImmutable $latest_estimated_delivery_date latest_estimated_delivery_date
      */
-    public function setLatestEstimatedDeliveryDate(?\DateTime $latest_estimated_delivery_date) : self
+    public function setLatestEstimatedDeliveryDate(\DateTimeInterface $latest_estimated_delivery_date) : self
     {
         $this->container['latest_estimated_delivery_date'] = $latest_estimated_delivery_date;
 

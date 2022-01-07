@@ -306,8 +306,10 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets goods_return_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getGoodsReturnDate() : ?\DateTime
+    public function getGoodsReturnDate() : ?\DateTimeInterface
     {
         return $this->container['goods_return_date'];
     }
@@ -315,9 +317,9 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Sets goods_return_date.
      *
-     * @param null|\DateTime $goods_return_date defines a date and time according to ISO8601
+     * @param \DateTime|\DateTimeImmutable $goods_return_date defines a date and time according to ISO8601
      */
-    public function setGoodsReturnDate(?\DateTime $goods_return_date) : self
+    public function setGoodsReturnDate(\DateTimeInterface $goods_return_date) : self
     {
         $this->container['goods_return_date'] = $goods_return_date;
 

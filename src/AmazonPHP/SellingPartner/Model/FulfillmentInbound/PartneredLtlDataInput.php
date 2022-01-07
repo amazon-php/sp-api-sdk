@@ -306,8 +306,10 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets freight_ready_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getFreightReadyDate() : ?\DateTime
+    public function getFreightReadyDate() : ?\DateTimeInterface
     {
         return $this->container['freight_ready_date'];
     }
@@ -315,9 +317,9 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets freight_ready_date.
      *
-     * @param null|\DateTime $freight_ready_date freight_ready_date
+     * @param \DateTime|\DateTimeImmutable $freight_ready_date freight_ready_date
      */
-    public function setFreightReadyDate(?\DateTime $freight_ready_date) : self
+    public function setFreightReadyDate(\DateTimeInterface $freight_ready_date) : self
     {
         $this->container['freight_ready_date'] = $freight_ready_date;
 

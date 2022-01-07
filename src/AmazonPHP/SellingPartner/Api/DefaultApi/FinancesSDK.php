@@ -66,7 +66,7 @@ final class FinancesSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventGroups(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $financial_event_group_started_before = null, \DateTime $financial_event_group_started_after = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
+    public function listFinancialEventGroups(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $financial_event_group_started_before = null, \DateTimeInterface $financial_event_group_started_after = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
     {
         $request = $this->listFinancialEventGroupsRequest($accessToken, $region, $max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
 
@@ -164,7 +164,7 @@ final class FinancesSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $financial_event_group_started_before = null, \DateTime $financial_event_group_started_after = null, string $next_token = null) : RequestInterface
+    public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $financial_event_group_started_before = null, \DateTimeInterface $financial_event_group_started_after = null, string $next_token = null) : RequestInterface
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
             throw new InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventGroups, must be smaller than or equal to 100.');
@@ -182,6 +182,10 @@ final class FinancesSDK
         $query = '';
 
         // query params
+        if ($max_results_per_page instanceof \DateTimeInterface) {
+            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
+        }
+
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
@@ -190,6 +194,10 @@ final class FinancesSDK
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
         // query params
+        if ($financial_event_group_started_before instanceof \DateTimeInterface) {
+            $financial_event_group_started_before = ObjectSerializer::toString($financial_event_group_started_before);
+        }
+
         if (\is_array($financial_event_group_started_before)) {
             $financial_event_group_started_before = ObjectSerializer::serializeCollection($financial_event_group_started_before, '', true);
         }
@@ -198,6 +206,10 @@ final class FinancesSDK
             $queryParams['FinancialEventGroupStartedBefore'] = $financial_event_group_started_before;
         }
         // query params
+        if ($financial_event_group_started_after instanceof \DateTimeInterface) {
+            $financial_event_group_started_after = ObjectSerializer::toString($financial_event_group_started_after);
+        }
+
         if (\is_array($financial_event_group_started_after)) {
             $financial_event_group_started_after = ObjectSerializer::serializeCollection($financial_event_group_started_after, '', true);
         }
@@ -206,6 +218,10 @@ final class FinancesSDK
             $queryParams['FinancialEventGroupStartedAfter'] = $financial_event_group_started_after;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -285,7 +301,7 @@ final class FinancesSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEvents(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $posted_after = null, \DateTime $posted_before = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
+    public function listFinancialEvents(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $posted_after = null, \DateTimeInterface $posted_before = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
         $request = $this->listFinancialEventsRequest($accessToken, $region, $max_results_per_page, $posted_after, $posted_before, $next_token);
 
@@ -383,7 +399,7 @@ final class FinancesSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTime $posted_after = null, \DateTime $posted_before = null, string $next_token = null) : RequestInterface
+    public function listFinancialEventsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $posted_after = null, \DateTimeInterface $posted_before = null, string $next_token = null) : RequestInterface
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
             throw new InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEvents, must be smaller than or equal to 100.');
@@ -401,6 +417,10 @@ final class FinancesSDK
         $query = '';
 
         // query params
+        if ($max_results_per_page instanceof \DateTimeInterface) {
+            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
+        }
+
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
@@ -409,6 +429,10 @@ final class FinancesSDK
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
         // query params
+        if ($posted_after instanceof \DateTimeInterface) {
+            $posted_after = ObjectSerializer::toString($posted_after);
+        }
+
         if (\is_array($posted_after)) {
             $posted_after = ObjectSerializer::serializeCollection($posted_after, '', true);
         }
@@ -417,6 +441,10 @@ final class FinancesSDK
             $queryParams['PostedAfter'] = $posted_after;
         }
         // query params
+        if ($posted_before instanceof \DateTimeInterface) {
+            $posted_before = ObjectSerializer::toString($posted_before);
+        }
+
         if (\is_array($posted_before)) {
             $posted_before = ObjectSerializer::serializeCollection($posted_before, '', true);
         }
@@ -425,6 +453,10 @@ final class FinancesSDK
             $queryParams['PostedBefore'] = $posted_before;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -625,6 +657,10 @@ final class FinancesSDK
         $query = '';
 
         // query params
+        if ($max_results_per_page instanceof \DateTimeInterface) {
+            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
+        }
+
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
@@ -633,6 +669,10 @@ final class FinancesSDK
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -842,6 +882,10 @@ final class FinancesSDK
         $query = '';
 
         // query params
+        if ($max_results_per_page instanceof \DateTimeInterface) {
+            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
+        }
+
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
@@ -850,6 +894,10 @@ final class FinancesSDK
             $queryParams['MaxResultsPerPage'] = $max_results_per_page;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }

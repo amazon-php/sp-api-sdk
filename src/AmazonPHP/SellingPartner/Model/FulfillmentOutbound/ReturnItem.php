@@ -436,8 +436,10 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets status_changed_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getStatusChangedDate() : \DateTime
+    public function getStatusChangedDate() : \DateTimeInterface
     {
         return $this->container['status_changed_date'];
     }
@@ -447,7 +449,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $status_changed_date status_changed_date
      */
-    public function setStatusChangedDate(\DateTime $status_changed_date) : self
+    public function setStatusChangedDate(\DateTimeInterface $status_changed_date) : self
     {
         $this->container['status_changed_date'] = $status_changed_date;
 

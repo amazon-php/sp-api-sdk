@@ -358,8 +358,10 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets next_report_creation_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getNextReportCreationTime() : ?\DateTime
+    public function getNextReportCreationTime() : ?\DateTimeInterface
     {
         return $this->container['next_report_creation_time'];
     }
@@ -367,9 +369,9 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets next_report_creation_time.
      *
-     * @param null|\DateTime $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
+     * @param \DateTime|\DateTimeImmutable $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
      */
-    public function setNextReportCreationTime(?\DateTime $next_report_creation_time) : self
+    public function setNextReportCreationTime(\DateTimeInterface $next_report_creation_time) : self
     {
         $this->container['next_report_creation_time'] = $next_report_creation_time;
 

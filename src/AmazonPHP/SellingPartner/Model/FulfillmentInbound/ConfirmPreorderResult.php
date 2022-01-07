@@ -216,8 +216,10 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets confirmed_need_by_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getConfirmedNeedByDate() : ?\DateTime
+    public function getConfirmedNeedByDate() : ?\DateTimeInterface
     {
         return $this->container['confirmed_need_by_date'];
     }
@@ -225,9 +227,9 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets confirmed_need_by_date.
      *
-     * @param null|\DateTime $confirmed_need_by_date confirmed_need_by_date
+     * @param \DateTime|\DateTimeImmutable $confirmed_need_by_date confirmed_need_by_date
      */
-    public function setConfirmedNeedByDate(?\DateTime $confirmed_need_by_date) : self
+    public function setConfirmedNeedByDate(\DateTimeInterface $confirmed_need_by_date) : self
     {
         $this->container['confirmed_need_by_date'] = $confirmed_need_by_date;
 
@@ -236,8 +238,10 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets confirmed_fulfillable_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getConfirmedFulfillableDate() : ?\DateTime
+    public function getConfirmedFulfillableDate() : ?\DateTimeInterface
     {
         return $this->container['confirmed_fulfillable_date'];
     }
@@ -245,9 +249,9 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets confirmed_fulfillable_date.
      *
-     * @param null|\DateTime $confirmed_fulfillable_date confirmed_fulfillable_date
+     * @param \DateTime|\DateTimeImmutable $confirmed_fulfillable_date confirmed_fulfillable_date
      */
-    public function setConfirmedFulfillableDate(?\DateTime $confirmed_fulfillable_date) : self
+    public function setConfirmedFulfillableDate(\DateTimeInterface $confirmed_fulfillable_date) : self
     {
         $this->container['confirmed_fulfillable_date'] = $confirmed_fulfillable_date;
 

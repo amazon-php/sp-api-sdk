@@ -212,6 +212,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -438,6 +442,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -446,6 +454,10 @@ final class APlusSDK
             $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($included_data_set instanceof \DateTimeInterface) {
+            $included_data_set = ObjectSerializer::toString($included_data_set);
+        }
+
         if (\is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
         }
@@ -674,6 +686,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -682,6 +698,10 @@ final class APlusSDK
             $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($included_data_set instanceof \DateTimeInterface) {
+            $included_data_set = ObjectSerializer::toString($included_data_set);
+        }
+
         if (\is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
         }
@@ -690,6 +710,10 @@ final class APlusSDK
             $queryParams['includedDataSet'] = $included_data_set;
         }
         // query params
+        if ($asin_set instanceof \DateTimeInterface) {
+            $asin_set = ObjectSerializer::toString($asin_set);
+        }
+
         if (\is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
         }
@@ -698,6 +722,10 @@ final class APlusSDK
             $queryParams['asinSet'] = $asin_set;
         }
         // query params
+        if ($page_token instanceof \DateTimeInterface) {
+            $page_token = ObjectSerializer::toString($page_token);
+        }
+
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
@@ -912,6 +940,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -1135,6 +1167,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -1357,6 +1393,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -1564,6 +1604,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -1572,6 +1616,10 @@ final class APlusSDK
             $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($page_token instanceof \DateTimeInterface) {
+            $page_token = ObjectSerializer::toString($page_token);
+        }
+
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
@@ -1783,6 +1831,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -1791,6 +1843,10 @@ final class APlusSDK
             $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($asin instanceof \DateTimeInterface) {
+            $asin = ObjectSerializer::toString($asin);
+        }
+
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
         }
@@ -1799,6 +1855,10 @@ final class APlusSDK
             $queryParams['asin'] = $asin;
         }
         // query params
+        if ($page_token instanceof \DateTimeInterface) {
+            $page_token = ObjectSerializer::toString($page_token);
+        }
+
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
@@ -2013,6 +2073,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -2233,6 +2297,10 @@ final class APlusSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -2241,6 +2309,10 @@ final class APlusSDK
             $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($asin_set instanceof \DateTimeInterface) {
+            $asin_set = ObjectSerializer::toString($asin_set);
+        }
+
         if (\is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
         }

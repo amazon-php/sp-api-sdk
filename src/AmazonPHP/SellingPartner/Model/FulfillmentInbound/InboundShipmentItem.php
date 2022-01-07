@@ -382,8 +382,10 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets release_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getReleaseDate() : ?\DateTime
+    public function getReleaseDate() : ?\DateTimeInterface
     {
         return $this->container['release_date'];
     }
@@ -391,9 +393,9 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets release_date.
      *
-     * @param null|\DateTime $release_date release_date
+     * @param \DateTime|\DateTimeImmutable $release_date release_date
      */
-    public function setReleaseDate(?\DateTime $release_date) : self
+    public function setReleaseDate(\DateTimeInterface $release_date) : self
     {
         $this->container['release_date'] = $release_date;
 

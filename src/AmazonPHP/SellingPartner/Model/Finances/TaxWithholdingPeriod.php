@@ -216,8 +216,10 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets start_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getStartDate() : ?\DateTime
+    public function getStartDate() : ?\DateTimeInterface
     {
         return $this->container['start_date'];
     }
@@ -225,9 +227,9 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets start_date.
      *
-     * @param null|\DateTime $start_date start_date
+     * @param \DateTime|\DateTimeImmutable $start_date start_date
      */
-    public function setStartDate(?\DateTime $start_date) : self
+    public function setStartDate(\DateTimeInterface $start_date) : self
     {
         $this->container['start_date'] = $start_date;
 
@@ -236,8 +238,10 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets end_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEndDate() : ?\DateTime
+    public function getEndDate() : ?\DateTimeInterface
     {
         return $this->container['end_date'];
     }
@@ -245,9 +249,9 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets end_date.
      *
-     * @param null|\DateTime $end_date end_date
+     * @param \DateTime|\DateTimeImmutable $end_date end_date
      */
-    public function setEndDate(?\DateTime $end_date) : self
+    public function setEndDate(\DateTimeInterface $end_date) : self
     {
         $this->container['end_date'] = $end_date;
 

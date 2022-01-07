@@ -254,7 +254,7 @@ final class VendorDirectFulfillmentOrdersSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrders(AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrdersResponse
+    public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrdersResponse
     {
         $request = $this->getOrdersRequest($accessToken, $region, $created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
 
@@ -356,7 +356,7 @@ final class VendorDirectFulfillmentOrdersSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrdersRequest(AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : RequestInterface
+    public function getOrdersRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : RequestInterface
     {
         // verify the required parameter 'created_after' is set
         if ($created_after === null || (\is_array($created_after) && \count($created_after) === 0)) {
@@ -387,6 +387,10 @@ final class VendorDirectFulfillmentOrdersSDK
         $query = '';
 
         // query params
+        if ($ship_from_party_id instanceof \DateTimeInterface) {
+            $ship_from_party_id = ObjectSerializer::toString($ship_from_party_id);
+        }
+
         if (\is_array($ship_from_party_id)) {
             $ship_from_party_id = ObjectSerializer::serializeCollection($ship_from_party_id, '', true);
         }
@@ -395,6 +399,10 @@ final class VendorDirectFulfillmentOrdersSDK
             $queryParams['shipFromPartyId'] = $ship_from_party_id;
         }
         // query params
+        if ($status instanceof \DateTimeInterface) {
+            $status = ObjectSerializer::toString($status);
+        }
+
         if (\is_array($status)) {
             $status = ObjectSerializer::serializeCollection($status, '', true);
         }
@@ -403,6 +411,10 @@ final class VendorDirectFulfillmentOrdersSDK
             $queryParams['status'] = $status;
         }
         // query params
+        if ($limit instanceof \DateTimeInterface) {
+            $limit = ObjectSerializer::toString($limit);
+        }
+
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
         }
@@ -410,7 +422,8 @@ final class VendorDirectFulfillmentOrdersSDK
         if ($limit !== null) {
             $queryParams['limit'] = $limit;
         }
-        // query params
+        $created_after = ObjectSerializer::toString($created_after);
+
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
@@ -418,7 +431,8 @@ final class VendorDirectFulfillmentOrdersSDK
         if ($created_after !== null) {
             $queryParams['createdAfter'] = $created_after;
         }
-        // query params
+        $created_before = ObjectSerializer::toString($created_before);
+
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
@@ -427,6 +441,10 @@ final class VendorDirectFulfillmentOrdersSDK
             $queryParams['createdBefore'] = $created_before;
         }
         // query params
+        if ($sort_order instanceof \DateTimeInterface) {
+            $sort_order = ObjectSerializer::toString($sort_order);
+        }
+
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
@@ -435,6 +453,10 @@ final class VendorDirectFulfillmentOrdersSDK
             $queryParams['sortOrder'] = $sort_order;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -443,6 +465,10 @@ final class VendorDirectFulfillmentOrdersSDK
             $queryParams['nextToken'] = $next_token;
         }
         // query params
+        if ($include_details instanceof \DateTimeInterface) {
+            $include_details = ObjectSerializer::toString($include_details);
+        }
+
         if (\is_array($include_details)) {
             $include_details = ObjectSerializer::serializeCollection($include_details, '', true);
         }
