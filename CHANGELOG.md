@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-01-06
+## [3.0.4] - 2022-01-07
 
 ### Changed
 - [92cbb7](https://github.com/amazon-php/sp-api-sdk/commit/92cbb76dc822680e0d03cbd1c58a5b8cbf36a2b5) - **custom workflows into aeon-php reusable workflows** - [@norberttech](https://github.com/norberttech)
