@@ -800,6 +800,10 @@ final class FulfillmentOutboundSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -808,6 +812,10 @@ final class FulfillmentOutboundSDK
             $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -1021,6 +1029,10 @@ final class FulfillmentOutboundSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -1226,6 +1238,10 @@ final class FulfillmentOutboundSDK
         $query = '';
 
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -1793,6 +1809,10 @@ final class FulfillmentOutboundSDK
         $query = '';
 
         // query params
+        if ($package_number instanceof \DateTimeInterface) {
+            $package_number = ObjectSerializer::toString($package_number);
+        }
+
         if (\is_array($package_number)) {
             $package_number = ObjectSerializer::serializeCollection($package_number, '', true);
         }
@@ -1870,7 +1890,7 @@ final class FulfillmentOutboundSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listAllFulfillmentOrders(AccessToken $accessToken, string $region, \DateTime $query_start_date = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResponse
+    public function listAllFulfillmentOrders(AccessToken $accessToken, string $region, \DateTimeInterface $query_start_date = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResponse
     {
         $request = $this->listAllFulfillmentOrdersRequest($accessToken, $region, $query_start_date, $next_token);
 
@@ -1966,7 +1986,7 @@ final class FulfillmentOutboundSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listAllFulfillmentOrdersRequest(AccessToken $accessToken, string $region, \DateTime $query_start_date = null, string $next_token = null) : RequestInterface
+    public function listAllFulfillmentOrdersRequest(AccessToken $accessToken, string $region, \DateTimeInterface $query_start_date = null, string $next_token = null) : RequestInterface
     {
         $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders';
         $formParams = [];
@@ -1976,6 +1996,10 @@ final class FulfillmentOutboundSDK
         $query = '';
 
         // query params
+        if ($query_start_date instanceof \DateTimeInterface) {
+            $query_start_date = ObjectSerializer::toString($query_start_date);
+        }
+
         if (\is_array($query_start_date)) {
             $query_start_date = ObjectSerializer::serializeCollection($query_start_date, '', true);
         }
@@ -1984,6 +2008,10 @@ final class FulfillmentOutboundSDK
             $queryParams['queryStartDate'] = $query_start_date;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -2184,6 +2212,10 @@ final class FulfillmentOutboundSDK
         $query = '';
 
         // query params
+        if ($seller_sku instanceof \DateTimeInterface) {
+            $seller_sku = ObjectSerializer::toString($seller_sku);
+        }
+
         if (\is_array($seller_sku)) {
             $seller_sku = ObjectSerializer::serializeCollection($seller_sku, '', true);
         }
@@ -2192,6 +2224,10 @@ final class FulfillmentOutboundSDK
             $queryParams['sellerSku'] = $seller_sku;
         }
         // query params
+        if ($marketplace_id instanceof \DateTimeInterface) {
+            $marketplace_id = ObjectSerializer::toString($marketplace_id);
+        }
+
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
@@ -2200,6 +2236,10 @@ final class FulfillmentOutboundSDK
             $queryParams['marketplaceId'] = $marketplace_id;
         }
         // query params
+        if ($seller_fulfillment_order_id instanceof \DateTimeInterface) {
+            $seller_fulfillment_order_id = ObjectSerializer::toString($seller_fulfillment_order_id);
+        }
+
         if (\is_array($seller_fulfillment_order_id)) {
             $seller_fulfillment_order_id = ObjectSerializer::serializeCollection($seller_fulfillment_order_id, '', true);
         }
@@ -2208,6 +2248,10 @@ final class FulfillmentOutboundSDK
             $queryParams['sellerFulfillmentOrderId'] = $seller_fulfillment_order_id;
         }
         // query params
+        if ($language instanceof \DateTimeInterface) {
+            $language = ObjectSerializer::toString($language);
+        }
+
         if (\is_array($language)) {
             $language = ObjectSerializer::serializeCollection($language, '', true);
         }

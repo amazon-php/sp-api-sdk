@@ -248,8 +248,10 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets confirm_deadline.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getConfirmDeadline() : ?\DateTime
+    public function getConfirmDeadline() : ?\DateTimeInterface
     {
         return $this->container['confirm_deadline'];
     }
@@ -257,9 +259,9 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Sets confirm_deadline.
      *
-     * @param null|\DateTime $confirm_deadline confirm_deadline
+     * @param \DateTime|\DateTimeImmutable $confirm_deadline confirm_deadline
      */
-    public function setConfirmDeadline(?\DateTime $confirm_deadline) : self
+    public function setConfirmDeadline(\DateTimeInterface $confirm_deadline) : self
     {
         $this->container['confirm_deadline'] = $confirm_deadline;
 
@@ -268,8 +270,10 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets void_deadline.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getVoidDeadline() : ?\DateTime
+    public function getVoidDeadline() : ?\DateTimeInterface
     {
         return $this->container['void_deadline'];
     }
@@ -277,9 +281,9 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Sets void_deadline.
      *
-     * @param null|\DateTime $void_deadline void_deadline
+     * @param \DateTime|\DateTimeImmutable $void_deadline void_deadline
      */
-    public function setVoidDeadline(?\DateTime $void_deadline) : self
+    public function setVoidDeadline(\DateTimeInterface $void_deadline) : self
     {
         $this->container['void_deadline'] = $void_deadline;
 

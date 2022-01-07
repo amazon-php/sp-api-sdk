@@ -268,8 +268,10 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets group_begin_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getGroupBeginDate() : ?\DateTime
+    public function getGroupBeginDate() : ?\DateTimeInterface
     {
         return $this->container['group_begin_date'];
     }
@@ -277,9 +279,9 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Sets group_begin_date.
      *
-     * @param null|\DateTime $group_begin_date group_begin_date
+     * @param \DateTime|\DateTimeImmutable $group_begin_date group_begin_date
      */
-    public function setGroupBeginDate(?\DateTime $group_begin_date) : self
+    public function setGroupBeginDate(\DateTimeInterface $group_begin_date) : self
     {
         $this->container['group_begin_date'] = $group_begin_date;
 
@@ -288,8 +290,10 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets group_end_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getGroupEndDate() : ?\DateTime
+    public function getGroupEndDate() : ?\DateTimeInterface
     {
         return $this->container['group_end_date'];
     }
@@ -297,9 +301,9 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Sets group_end_date.
      *
-     * @param null|\DateTime $group_end_date group_end_date
+     * @param \DateTime|\DateTimeImmutable $group_end_date group_end_date
      */
-    public function setGroupEndDate(?\DateTime $group_end_date) : self
+    public function setGroupEndDate(\DateTimeInterface $group_end_date) : self
     {
         $this->container['group_end_date'] = $group_end_date;
 

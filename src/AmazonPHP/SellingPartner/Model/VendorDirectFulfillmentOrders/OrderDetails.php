@@ -350,8 +350,10 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getOrderDate() : \DateTime
+    public function getOrderDate() : \DateTimeInterface
     {
         return $this->container['order_date'];
     }
@@ -361,7 +363,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $order_date The date the order was placed. This field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
      */
-    public function setOrderDate(\DateTime $order_date) : self
+    public function setOrderDate(\DateTimeInterface $order_date) : self
     {
         $this->container['order_date'] = $order_date;
 

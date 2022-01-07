@@ -314,8 +314,10 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets ship_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getShipDate() : ?\DateTime
+    public function getShipDate() : ?\DateTimeInterface
     {
         return $this->container['ship_date'];
     }
@@ -323,9 +325,9 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets ship_date.
      *
-     * @param null|\DateTime $ship_date The start date and time. This defaults to the current date and time.
+     * @param \DateTime|\DateTimeImmutable $ship_date The start date and time. This defaults to the current date and time.
      */
-    public function setShipDate(?\DateTime $ship_date) : self
+    public function setShipDate(\DateTimeInterface $ship_date) : self
     {
         $this->container['ship_date'] = $ship_date;
 

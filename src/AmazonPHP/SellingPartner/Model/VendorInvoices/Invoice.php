@@ -413,8 +413,10 @@ class Invoice implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getDate() : \DateTime
+    public function getDate() : \DateTimeInterface
     {
         return $this->container['date'];
     }
@@ -424,7 +426,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $date defines a date and time according to ISO8601
      */
-    public function setDate(\DateTime $date) : self
+    public function setDate(\DateTimeInterface $date) : self
     {
         $this->container['date'] = $date;
 

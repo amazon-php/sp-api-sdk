@@ -1517,6 +1517,10 @@ final class ReportsSDK
         $query = '';
 
         // query params
+        if ($report_types instanceof \DateTimeInterface) {
+            $report_types = ObjectSerializer::toString($report_types);
+        }
+
         if (\is_array($report_types)) {
             $report_types = ObjectSerializer::serializeCollection($report_types, 'form', true);
         }
@@ -1599,7 +1603,7 @@ final class ReportsSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReports(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
+    public function getReports(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
         $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 
@@ -1700,7 +1704,7 @@ final class ReportsSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReportsRequest(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : RequestInterface
+    public function getReportsRequest(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, string $next_token = null) : RequestInterface
     {
         if ($report_types !== null && \count($report_types) > 10) {
             throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');
@@ -1738,6 +1742,10 @@ final class ReportsSDK
         $query = '';
 
         // query params
+        if ($report_types instanceof \DateTimeInterface) {
+            $report_types = ObjectSerializer::toString($report_types);
+        }
+
         if (\is_array($report_types)) {
             $report_types = ObjectSerializer::serializeCollection($report_types, 'form', true);
         }
@@ -1746,6 +1754,10 @@ final class ReportsSDK
             $queryParams['reportTypes'] = $report_types;
         }
         // query params
+        if ($processing_statuses instanceof \DateTimeInterface) {
+            $processing_statuses = ObjectSerializer::toString($processing_statuses);
+        }
+
         if (\is_array($processing_statuses)) {
             $processing_statuses = ObjectSerializer::serializeCollection($processing_statuses, 'form', true);
         }
@@ -1754,6 +1766,10 @@ final class ReportsSDK
             $queryParams['processingStatuses'] = $processing_statuses;
         }
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -1762,6 +1778,10 @@ final class ReportsSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($page_size instanceof \DateTimeInterface) {
+            $page_size = ObjectSerializer::toString($page_size);
+        }
+
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
@@ -1770,6 +1790,10 @@ final class ReportsSDK
             $queryParams['pageSize'] = $page_size;
         }
         // query params
+        if ($created_since instanceof \DateTimeInterface) {
+            $created_since = ObjectSerializer::toString($created_since);
+        }
+
         if (\is_array($created_since)) {
             $created_since = ObjectSerializer::serializeCollection($created_since, '', true);
         }
@@ -1778,6 +1802,10 @@ final class ReportsSDK
             $queryParams['createdSince'] = $created_since;
         }
         // query params
+        if ($created_until instanceof \DateTimeInterface) {
+            $created_until = ObjectSerializer::toString($created_until);
+        }
+
         if (\is_array($created_until)) {
             $created_until = ObjectSerializer::serializeCollection($created_until, '', true);
         }
@@ -1786,6 +1814,10 @@ final class ReportsSDK
             $queryParams['createdUntil'] = $created_until;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }

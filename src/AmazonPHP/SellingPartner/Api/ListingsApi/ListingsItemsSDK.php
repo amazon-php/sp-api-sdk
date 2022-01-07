@@ -189,6 +189,10 @@ final class ListingsItemsSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -197,6 +201,10 @@ final class ListingsItemsSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($issue_locale instanceof \DateTimeInterface) {
+            $issue_locale = ObjectSerializer::toString($issue_locale);
+        }
+
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
         }
@@ -428,6 +436,10 @@ final class ListingsItemsSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -436,6 +448,10 @@ final class ListingsItemsSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($issue_locale instanceof \DateTimeInterface) {
+            $issue_locale = ObjectSerializer::toString($issue_locale);
+        }
+
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
         }
@@ -675,6 +691,10 @@ final class ListingsItemsSDK
         $query = '';
 
         // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
@@ -683,6 +703,10 @@ final class ListingsItemsSDK
             $queryParams['marketplaceIds'] = $marketplace_ids;
         }
         // query params
+        if ($issue_locale instanceof \DateTimeInterface) {
+            $issue_locale = ObjectSerializer::toString($issue_locale);
+        }
+
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
         }

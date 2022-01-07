@@ -262,7 +262,7 @@ final class VendorOrdersSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getPurchaseOrders(AccessToken $accessToken, string $region, int $limit = null, \DateTime $created_after = null, \DateTime $created_before = null, string $sort_order = null, string $next_token = null, bool $include_details = null, \DateTime $changed_after = null, \DateTime $changed_before = null, string $po_item_state = null, bool $is_po_changed = null, string $purchase_order_state = null, string $ordering_vendor_code = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse
+    public function getPurchaseOrders(AccessToken $accessToken, string $region, int $limit = null, \DateTimeInterface $created_after = null, \DateTimeInterface $created_before = null, string $sort_order = null, string $next_token = null, bool $include_details = null, \DateTimeInterface $changed_after = null, \DateTimeInterface $changed_before = null, string $po_item_state = null, bool $is_po_changed = null, string $purchase_order_state = null, string $ordering_vendor_code = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse
     {
         $request = $this->getPurchaseOrdersRequest($accessToken, $region, $limit, $created_after, $created_before, $sort_order, $next_token, $include_details, $changed_after, $changed_before, $po_item_state, $is_po_changed, $purchase_order_state, $ordering_vendor_code);
 
@@ -368,7 +368,7 @@ final class VendorOrdersSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getPurchaseOrdersRequest(AccessToken $accessToken, string $region, int $limit = null, \DateTime $created_after = null, \DateTime $created_before = null, string $sort_order = null, string $next_token = null, bool $include_details = null, \DateTime $changed_after = null, \DateTime $changed_before = null, string $po_item_state = null, bool $is_po_changed = null, string $purchase_order_state = null, string $ordering_vendor_code = null) : RequestInterface
+    public function getPurchaseOrdersRequest(AccessToken $accessToken, string $region, int $limit = null, \DateTimeInterface $created_after = null, \DateTimeInterface $created_before = null, string $sort_order = null, string $next_token = null, bool $include_details = null, \DateTimeInterface $changed_after = null, \DateTimeInterface $changed_before = null, string $po_item_state = null, bool $is_po_changed = null, string $purchase_order_state = null, string $ordering_vendor_code = null) : RequestInterface
     {
         if ($limit !== null && $limit > 100) {
             throw new InvalidArgumentException('invalid value for "$limit" when calling VendorOrdersApi.getPurchaseOrders, must be smaller than or equal to 100.');
@@ -386,6 +386,10 @@ final class VendorOrdersSDK
         $query = '';
 
         // query params
+        if ($limit instanceof \DateTimeInterface) {
+            $limit = ObjectSerializer::toString($limit);
+        }
+
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
         }
@@ -394,6 +398,10 @@ final class VendorOrdersSDK
             $queryParams['limit'] = $limit;
         }
         // query params
+        if ($created_after instanceof \DateTimeInterface) {
+            $created_after = ObjectSerializer::toString($created_after);
+        }
+
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
@@ -402,6 +410,10 @@ final class VendorOrdersSDK
             $queryParams['createdAfter'] = $created_after;
         }
         // query params
+        if ($created_before instanceof \DateTimeInterface) {
+            $created_before = ObjectSerializer::toString($created_before);
+        }
+
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
@@ -410,6 +422,10 @@ final class VendorOrdersSDK
             $queryParams['createdBefore'] = $created_before;
         }
         // query params
+        if ($sort_order instanceof \DateTimeInterface) {
+            $sort_order = ObjectSerializer::toString($sort_order);
+        }
+
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
@@ -418,6 +434,10 @@ final class VendorOrdersSDK
             $queryParams['sortOrder'] = $sort_order;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -426,6 +446,10 @@ final class VendorOrdersSDK
             $queryParams['nextToken'] = $next_token;
         }
         // query params
+        if ($include_details instanceof \DateTimeInterface) {
+            $include_details = ObjectSerializer::toString($include_details);
+        }
+
         if (\is_array($include_details)) {
             $include_details = ObjectSerializer::serializeCollection($include_details, '', true);
         }
@@ -434,6 +458,10 @@ final class VendorOrdersSDK
             $queryParams['includeDetails'] = $include_details;
         }
         // query params
+        if ($changed_after instanceof \DateTimeInterface) {
+            $changed_after = ObjectSerializer::toString($changed_after);
+        }
+
         if (\is_array($changed_after)) {
             $changed_after = ObjectSerializer::serializeCollection($changed_after, '', true);
         }
@@ -442,6 +470,10 @@ final class VendorOrdersSDK
             $queryParams['changedAfter'] = $changed_after;
         }
         // query params
+        if ($changed_before instanceof \DateTimeInterface) {
+            $changed_before = ObjectSerializer::toString($changed_before);
+        }
+
         if (\is_array($changed_before)) {
             $changed_before = ObjectSerializer::serializeCollection($changed_before, '', true);
         }
@@ -450,6 +482,10 @@ final class VendorOrdersSDK
             $queryParams['changedBefore'] = $changed_before;
         }
         // query params
+        if ($po_item_state instanceof \DateTimeInterface) {
+            $po_item_state = ObjectSerializer::toString($po_item_state);
+        }
+
         if (\is_array($po_item_state)) {
             $po_item_state = ObjectSerializer::serializeCollection($po_item_state, '', true);
         }
@@ -458,6 +494,10 @@ final class VendorOrdersSDK
             $queryParams['poItemState'] = $po_item_state;
         }
         // query params
+        if ($is_po_changed instanceof \DateTimeInterface) {
+            $is_po_changed = ObjectSerializer::toString($is_po_changed);
+        }
+
         if (\is_array($is_po_changed)) {
             $is_po_changed = ObjectSerializer::serializeCollection($is_po_changed, '', true);
         }
@@ -466,6 +506,10 @@ final class VendorOrdersSDK
             $queryParams['isPOChanged'] = $is_po_changed;
         }
         // query params
+        if ($purchase_order_state instanceof \DateTimeInterface) {
+            $purchase_order_state = ObjectSerializer::toString($purchase_order_state);
+        }
+
         if (\is_array($purchase_order_state)) {
             $purchase_order_state = ObjectSerializer::serializeCollection($purchase_order_state, '', true);
         }
@@ -474,6 +518,10 @@ final class VendorOrdersSDK
             $queryParams['purchaseOrderState'] = $purchase_order_state;
         }
         // query params
+        if ($ordering_vendor_code instanceof \DateTimeInterface) {
+            $ordering_vendor_code = ObjectSerializer::toString($ordering_vendor_code);
+        }
+
         if (\is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
         }
@@ -562,7 +610,7 @@ final class VendorOrdersSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getPurchaseOrdersStatus(AccessToken $accessToken, string $region, int $limit = null, string $sort_order = null, string $next_token = null, \DateTime $created_after = null, \DateTime $created_before = null, \DateTime $updated_after = null, \DateTime $updated_before = null, string $purchase_order_number = null, string $purchase_order_status = null, string $item_confirmation_status = null, string $item_receive_status = null, string $ordering_vendor_code = null, string $ship_to_party_id = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse
+    public function getPurchaseOrdersStatus(AccessToken $accessToken, string $region, int $limit = null, string $sort_order = null, string $next_token = null, \DateTimeInterface $created_after = null, \DateTimeInterface $created_before = null, \DateTimeInterface $updated_after = null, \DateTimeInterface $updated_before = null, string $purchase_order_number = null, string $purchase_order_status = null, string $item_confirmation_status = null, string $item_receive_status = null, string $ordering_vendor_code = null, string $ship_to_party_id = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse
     {
         $request = $this->getPurchaseOrdersStatusRequest($accessToken, $region, $limit, $sort_order, $next_token, $created_after, $created_before, $updated_after, $updated_before, $purchase_order_number, $purchase_order_status, $item_confirmation_status, $item_receive_status, $ordering_vendor_code, $ship_to_party_id);
 
@@ -669,7 +717,7 @@ final class VendorOrdersSDK
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getPurchaseOrdersStatusRequest(AccessToken $accessToken, string $region, int $limit = null, string $sort_order = null, string $next_token = null, \DateTime $created_after = null, \DateTime $created_before = null, \DateTime $updated_after = null, \DateTime $updated_before = null, string $purchase_order_number = null, string $purchase_order_status = null, string $item_confirmation_status = null, string $item_receive_status = null, string $ordering_vendor_code = null, string $ship_to_party_id = null) : RequestInterface
+    public function getPurchaseOrdersStatusRequest(AccessToken $accessToken, string $region, int $limit = null, string $sort_order = null, string $next_token = null, \DateTimeInterface $created_after = null, \DateTimeInterface $created_before = null, \DateTimeInterface $updated_after = null, \DateTimeInterface $updated_before = null, string $purchase_order_number = null, string $purchase_order_status = null, string $item_confirmation_status = null, string $item_receive_status = null, string $ordering_vendor_code = null, string $ship_to_party_id = null) : RequestInterface
     {
         if ($limit !== null && $limit > 100) {
             throw new InvalidArgumentException('invalid value for "$limit" when calling VendorOrdersApi.getPurchaseOrdersStatus, must be smaller than or equal to 100.');
@@ -687,6 +735,10 @@ final class VendorOrdersSDK
         $query = '';
 
         // query params
+        if ($limit instanceof \DateTimeInterface) {
+            $limit = ObjectSerializer::toString($limit);
+        }
+
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
         }
@@ -695,6 +747,10 @@ final class VendorOrdersSDK
             $queryParams['limit'] = $limit;
         }
         // query params
+        if ($sort_order instanceof \DateTimeInterface) {
+            $sort_order = ObjectSerializer::toString($sort_order);
+        }
+
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
@@ -703,6 +759,10 @@ final class VendorOrdersSDK
             $queryParams['sortOrder'] = $sort_order;
         }
         // query params
+        if ($next_token instanceof \DateTimeInterface) {
+            $next_token = ObjectSerializer::toString($next_token);
+        }
+
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
@@ -711,6 +771,10 @@ final class VendorOrdersSDK
             $queryParams['nextToken'] = $next_token;
         }
         // query params
+        if ($created_after instanceof \DateTimeInterface) {
+            $created_after = ObjectSerializer::toString($created_after);
+        }
+
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
@@ -719,6 +783,10 @@ final class VendorOrdersSDK
             $queryParams['createdAfter'] = $created_after;
         }
         // query params
+        if ($created_before instanceof \DateTimeInterface) {
+            $created_before = ObjectSerializer::toString($created_before);
+        }
+
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
@@ -727,6 +795,10 @@ final class VendorOrdersSDK
             $queryParams['createdBefore'] = $created_before;
         }
         // query params
+        if ($updated_after instanceof \DateTimeInterface) {
+            $updated_after = ObjectSerializer::toString($updated_after);
+        }
+
         if (\is_array($updated_after)) {
             $updated_after = ObjectSerializer::serializeCollection($updated_after, '', true);
         }
@@ -735,6 +807,10 @@ final class VendorOrdersSDK
             $queryParams['updatedAfter'] = $updated_after;
         }
         // query params
+        if ($updated_before instanceof \DateTimeInterface) {
+            $updated_before = ObjectSerializer::toString($updated_before);
+        }
+
         if (\is_array($updated_before)) {
             $updated_before = ObjectSerializer::serializeCollection($updated_before, '', true);
         }
@@ -743,6 +819,10 @@ final class VendorOrdersSDK
             $queryParams['updatedBefore'] = $updated_before;
         }
         // query params
+        if ($purchase_order_number instanceof \DateTimeInterface) {
+            $purchase_order_number = ObjectSerializer::toString($purchase_order_number);
+        }
+
         if (\is_array($purchase_order_number)) {
             $purchase_order_number = ObjectSerializer::serializeCollection($purchase_order_number, '', true);
         }
@@ -751,6 +831,10 @@ final class VendorOrdersSDK
             $queryParams['purchaseOrderNumber'] = $purchase_order_number;
         }
         // query params
+        if ($purchase_order_status instanceof \DateTimeInterface) {
+            $purchase_order_status = ObjectSerializer::toString($purchase_order_status);
+        }
+
         if (\is_array($purchase_order_status)) {
             $purchase_order_status = ObjectSerializer::serializeCollection($purchase_order_status, '', true);
         }
@@ -759,6 +843,10 @@ final class VendorOrdersSDK
             $queryParams['purchaseOrderStatus'] = $purchase_order_status;
         }
         // query params
+        if ($item_confirmation_status instanceof \DateTimeInterface) {
+            $item_confirmation_status = ObjectSerializer::toString($item_confirmation_status);
+        }
+
         if (\is_array($item_confirmation_status)) {
             $item_confirmation_status = ObjectSerializer::serializeCollection($item_confirmation_status, '', true);
         }
@@ -767,6 +855,10 @@ final class VendorOrdersSDK
             $queryParams['itemConfirmationStatus'] = $item_confirmation_status;
         }
         // query params
+        if ($item_receive_status instanceof \DateTimeInterface) {
+            $item_receive_status = ObjectSerializer::toString($item_receive_status);
+        }
+
         if (\is_array($item_receive_status)) {
             $item_receive_status = ObjectSerializer::serializeCollection($item_receive_status, '', true);
         }
@@ -775,6 +867,10 @@ final class VendorOrdersSDK
             $queryParams['itemReceiveStatus'] = $item_receive_status;
         }
         // query params
+        if ($ordering_vendor_code instanceof \DateTimeInterface) {
+            $ordering_vendor_code = ObjectSerializer::toString($ordering_vendor_code);
+        }
+
         if (\is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
         }
@@ -783,6 +879,10 @@ final class VendorOrdersSDK
             $queryParams['orderingVendorCode'] = $ordering_vendor_code;
         }
         // query params
+        if ($ship_to_party_id instanceof \DateTimeInterface) {
+            $ship_to_party_id = ObjectSerializer::toString($ship_to_party_id);
+        }
+
         if (\is_array($ship_to_party_id)) {
             $ship_to_party_id = ObjectSerializer::serializeCollection($ship_to_party_id, '', true);
         }

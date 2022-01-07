@@ -348,8 +348,10 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getPurchaseDate() : ?\DateTime
+    public function getPurchaseDate() : ?\DateTimeInterface
     {
         return $this->container['purchase_date'];
     }
@@ -357,9 +359,9 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets purchase_date.
      *
-     * @param null|\DateTime $purchase_date the date and time when the order was created
+     * @param \DateTime|\DateTimeImmutable $purchase_date the date and time when the order was created
      */
-    public function setPurchaseDate(?\DateTime $purchase_date) : self
+    public function setPurchaseDate(\DateTimeInterface $purchase_date) : self
     {
         $this->container['purchase_date'] = $purchase_date;
 

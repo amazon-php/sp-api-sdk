@@ -367,8 +367,10 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPurchaseOrderDate() : \DateTime
+    public function getPurchaseOrderDate() : \DateTimeInterface
     {
         return $this->container['purchase_order_date'];
     }
@@ -378,7 +380,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
      */
-    public function setPurchaseOrderDate(\DateTime $purchase_order_date) : self
+    public function setPurchaseOrderDate(\DateTimeInterface $purchase_order_date) : self
     {
         $this->container['purchase_order_date'] = $purchase_order_date;
 
@@ -387,8 +389,10 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_changed_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getPurchaseOrderChangedDate() : ?\DateTime
+    public function getPurchaseOrderChangedDate() : ?\DateTimeInterface
     {
         return $this->container['purchase_order_changed_date'];
     }
@@ -396,9 +400,9 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets purchase_order_changed_date.
      *
-     * @param null|\DateTime $purchase_order_changed_date The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
+     * @param \DateTime|\DateTimeImmutable $purchase_order_changed_date The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
      */
-    public function setPurchaseOrderChangedDate(?\DateTime $purchase_order_changed_date) : self
+    public function setPurchaseOrderChangedDate(\DateTimeInterface $purchase_order_changed_date) : self
     {
         $this->container['purchase_order_changed_date'] = $purchase_order_changed_date;
 
@@ -407,8 +411,10 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_state_changed_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPurchaseOrderStateChangedDate() : \DateTime
+    public function getPurchaseOrderStateChangedDate() : \DateTimeInterface
     {
         return $this->container['purchase_order_state_changed_date'];
     }
@@ -418,7 +424,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $purchase_order_state_changed_date The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.
      */
-    public function setPurchaseOrderStateChangedDate(\DateTime $purchase_order_state_changed_date) : self
+    public function setPurchaseOrderStateChangedDate(\DateTimeInterface $purchase_order_state_changed_date) : self
     {
         $this->container['purchase_order_state_changed_date'] = $purchase_order_state_changed_date;
 

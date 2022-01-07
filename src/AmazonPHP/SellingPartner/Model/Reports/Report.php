@@ -385,8 +385,10 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets data_start_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getDataStartTime() : ?\DateTime
+    public function getDataStartTime() : ?\DateTimeInterface
     {
         return $this->container['data_start_time'];
     }
@@ -394,9 +396,9 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets data_start_time.
      *
-     * @param null|\DateTime $data_start_time the start of a date and time range used for selecting the data to report
+     * @param \DateTime|\DateTimeImmutable $data_start_time the start of a date and time range used for selecting the data to report
      */
-    public function setDataStartTime(?\DateTime $data_start_time) : self
+    public function setDataStartTime(\DateTimeInterface $data_start_time) : self
     {
         $this->container['data_start_time'] = $data_start_time;
 
@@ -405,8 +407,10 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets data_end_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getDataEndTime() : ?\DateTime
+    public function getDataEndTime() : ?\DateTimeInterface
     {
         return $this->container['data_end_time'];
     }
@@ -414,9 +418,9 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets data_end_time.
      *
-     * @param null|\DateTime $data_end_time the end of a date and time range used for selecting the data to report
+     * @param \DateTime|\DateTimeImmutable $data_end_time the end of a date and time range used for selecting the data to report
      */
-    public function setDataEndTime(?\DateTime $data_end_time) : self
+    public function setDataEndTime(\DateTimeInterface $data_end_time) : self
     {
         $this->container['data_end_time'] = $data_end_time;
 
@@ -445,8 +449,10 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets created_time.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getCreatedTime() : \DateTime
+    public function getCreatedTime() : \DateTimeInterface
     {
         return $this->container['created_time'];
     }
@@ -456,7 +462,7 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $created_time the date and time when the report was created
      */
-    public function setCreatedTime(\DateTime $created_time) : self
+    public function setCreatedTime(\DateTimeInterface $created_time) : self
     {
         $this->container['created_time'] = $created_time;
 
@@ -496,8 +502,10 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_start_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getProcessingStartTime() : ?\DateTime
+    public function getProcessingStartTime() : ?\DateTimeInterface
     {
         return $this->container['processing_start_time'];
     }
@@ -505,9 +513,9 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets processing_start_time.
      *
-     * @param null|\DateTime $processing_start_time the date and time when the report processing started, in ISO 8601 date time format
+     * @param \DateTime|\DateTimeImmutable $processing_start_time the date and time when the report processing started, in ISO 8601 date time format
      */
-    public function setProcessingStartTime(?\DateTime $processing_start_time) : self
+    public function setProcessingStartTime(\DateTimeInterface $processing_start_time) : self
     {
         $this->container['processing_start_time'] = $processing_start_time;
 
@@ -516,8 +524,10 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_end_time.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getProcessingEndTime() : ?\DateTime
+    public function getProcessingEndTime() : ?\DateTimeInterface
     {
         return $this->container['processing_end_time'];
     }
@@ -525,9 +535,9 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets processing_end_time.
      *
-     * @param null|\DateTime $processing_end_time the date and time when the report processing completed, in ISO 8601 date time format
+     * @param \DateTime|\DateTimeImmutable $processing_end_time the date and time when the report processing completed, in ISO 8601 date time format
      */
-    public function setProcessingEndTime(?\DateTime $processing_end_time) : self
+    public function setProcessingEndTime(\DateTimeInterface $processing_end_time) : self
     {
         $this->container['processing_end_time'] = $processing_end_time;
 

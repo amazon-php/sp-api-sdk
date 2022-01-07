@@ -270,8 +270,10 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipped_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getShippedDate() : \DateTime
+    public function getShippedDate() : \DateTimeInterface
     {
         return $this->container['shipped_date'];
     }
@@ -281,7 +283,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @param \DateTime $shipped_date This field indicates the date of the departure of the shipment from vendor's location. Vendors are requested to send ASNs within 30 minutes of departure from their warehouse/distribution center or at least 6 hours prior to the appointment time at the Amazon destination warehouse, whichever is sooner. Shipped date mentioned in the Shipment Confirmation should not be in the future.
      */
-    public function setShippedDate(\DateTime $shipped_date) : self
+    public function setShippedDate(\DateTimeInterface $shipped_date) : self
     {
         $this->container['shipped_date'] = $shipped_date;
 
@@ -361,8 +363,10 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets estimated_delivery_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getEstimatedDeliveryDate() : ?\DateTime
+    public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['estimated_delivery_date'];
     }
@@ -370,9 +374,9 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets estimated_delivery_date.
      *
-     * @param null|\DateTime $estimated_delivery_date Date on which the shipment is expected to reach the buyer's warehouse. It needs to be an estimate based on the average transit time between the ship-from location and the destination. The exact appointment time will be provided by buyer and is potentially not known when creating the shipment confirmation.
+     * @param \DateTime|\DateTimeImmutable $estimated_delivery_date Date on which the shipment is expected to reach the buyer's warehouse. It needs to be an estimate based on the average transit time between the ship-from location and the destination. The exact appointment time will be provided by buyer and is potentially not known when creating the shipment confirmation.
      */
-    public function setEstimatedDeliveryDate(?\DateTime $estimated_delivery_date) : self
+    public function setEstimatedDeliveryDate(\DateTimeInterface $estimated_delivery_date) : self
     {
         $this->container['estimated_delivery_date'] = $estimated_delivery_date;
 

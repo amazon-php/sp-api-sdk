@@ -444,8 +444,10 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets transaction_creation_date.
+     *
+     * @return null|\DateTime|\DateTimeImmutable
      */
-    public function getTransactionCreationDate() : ?\DateTime
+    public function getTransactionCreationDate() : ?\DateTimeInterface
     {
         return $this->container['transaction_creation_date'];
     }
@@ -453,9 +455,9 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Sets transaction_creation_date.
      *
-     * @param null|\DateTime $transaction_creation_date transaction_creation_date
+     * @param \DateTime|\DateTimeImmutable $transaction_creation_date transaction_creation_date
      */
-    public function setTransactionCreationDate(?\DateTime $transaction_creation_date) : self
+    public function setTransactionCreationDate(\DateTimeInterface $transaction_creation_date) : self
     {
         $this->container['transaction_creation_date'] = $transaction_creation_date;
 

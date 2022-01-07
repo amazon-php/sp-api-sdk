@@ -302,8 +302,10 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets promised_delivery_date.
+     *
+     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPromisedDeliveryDate() : \DateTime
+    public function getPromisedDeliveryDate() : \DateTimeInterface
     {
         return $this->container['promised_delivery_date'];
     }
@@ -313,7 +315,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      *
      * @param \DateTime $promised_delivery_date the promised delivery date and time of a shipment
      */
-    public function setPromisedDeliveryDate(\DateTime $promised_delivery_date) : self
+    public function setPromisedDeliveryDate(\DateTimeInterface $promised_delivery_date) : self
     {
         $this->container['promised_delivery_date'] = $promised_delivery_date;
 
