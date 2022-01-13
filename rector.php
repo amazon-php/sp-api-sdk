@@ -6,11 +6,13 @@ use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSD
 use AmazonPHP\SellingPartner\Model\CatalogItem\Item;
 use AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest;
 use AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponse;
+use AmazonPHP\SellingPartner\Model\Orders\Address;
 use AmazonPHP\SellingPartner\Model\Uploads\UploadDestination;
 use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
 use PHPStan\Type\MixedType;
 use PHPStan\Type\NullType;
+use PHPStan\Type\StringType;
 use PHPStan\Type\UnionType;
 use Rector\Core\Configuration\Option;
 use Rector\Set\ValueObject\SetList;
@@ -111,6 +113,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                     GetSchemaResponse::class,
                     'getHeaders',
                     new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
+                ),
+                // https://github.com/amazon-php/sp-api-sdk/pull/118
+                new AddReturnTypeDeclaration(
+                    Address::class,
+                    'getName',
+                    new UnionType([new NullType(), new StringType()]),
                 ),
             ])
         ]]);
