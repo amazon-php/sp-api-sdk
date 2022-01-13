@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-01-13
+## [3.0.5] - 2022-01-13
 
 ### Fixed
 - [#119](https://github.com/amazon-php/sp-api-sdk/pull/119) - **Address::name model return type through rector** - [@norberttech](https://github.com/norberttech)
