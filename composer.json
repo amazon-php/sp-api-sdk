@@ -34,7 +34,7 @@
         "psr-4": { "AmazonPHP\\" : "src/AmazonPHP/" }
     },
     "autoload-dev": {
-        "psr-4": { "AmazonPHP\\Test\\" : "test/" }
+        "psr-4": { "AmazonPHP\\Test\\" : "tests/" }
     },
     "scripts": {
         "clean": [
@@ -54,6 +54,9 @@
         ],
         "static:analyze": [
             "tools/vendor/bin/php-cs-fixer fix --dry-run"
+        ],
+        "test": [
+            "tools/vendor/bin/phpunit"
         ],
         "rector:process": [
             "Composer\\Config::disableProcessTimeout",
