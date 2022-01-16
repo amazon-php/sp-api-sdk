@@ -1,4 +1,4 @@
-name: "Static Analyze"
+name: "Test Suite"
 
 on:
   pull_request:
@@ -13,6 +13,44 @@ jobs:
   static-analyze:
     name: "Static Analyze"
 
+    runs-on: "ubuntu-latest"
+
+    steps:
+      - name: "Checkout"
+        uses: "actions/checkout@v2"
+
+      - name: "Install PHP"
+        uses: "shivammathur/setup-php@v2"
+        with:
+          coverage: pcov
+          tools: composer:v2
+          php-version: "${{ matrix.php-version }}"
+          ini-values: memory_limit=-1
+
+      - name: "Get Composer Cache Directory"
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - name: "Cache Composer dependencies"
+        uses: "actions/cache@v2"
+        with:
+          path: |
+            ${{ steps.composer-cache.outputs.dir }}
+          key: "php-7.4-locked-composer-${{ hashFiles('**/composer.lock') }}"
+          restore-keys: |
+            php-7.4-locked-composer-
+
+      - name: "Install locked dependencies"
+        if: ${{ matrix.dependencies == 'locked' }}
+        run: "composer install --no-interaction --no-progress --no-suggest"
+
+      - name: "Static Analyze"
+        run: "composer static:analyze"
+
+  tests:
+    name: "Tests"
+
     runs-on: ${{ matrix.operating-system }}
 
     strategy:
@@ -21,6 +59,8 @@ jobs:
           - "locked"
         php-version:
           - "7.4"
+          - "8.0"
+          - "8.1"
         operating-system:
           - "ubuntu-latest"
 
@@ -62,5 +102,5 @@ jobs:
         if: ${{ matrix.dependencies == 'locked' }}
         run: "composer install --no-interaction --no-progress --no-suggest"
 
-      - name: "Static Analyze"
-        run: "composer static:analyze"
+      - name: "Tests"
+        run: "composer test"

@@ -53,19 +53,21 @@ final class ObjectSerializer
                     $getter = $data::getters()[$property];
                     $value = $data->{$getter}();
 
-                    if ($value !== null && !\in_array($openAPIType, ['DateTime', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+                    if ($value !== null && \is_object($value) && \method_exists($value, 'getAllowableEnumValues')) {
                         $callable = [$openAPIType, 'getAllowableEnumValues'];
 
                         if (\is_callable($callable)) {
                             /** array $callable */
                             $allowedEnumTypes = $callable();
 
-                            if (!\in_array($value, $allowedEnumTypes, true)) {
+                            if (!\in_array($value->toString(), $allowedEnumTypes, true)) {
                                 $imploded = \implode("', '", $allowedEnumTypes);
 
                                 throw new \InvalidArgumentException("Invalid value for enum '{$openAPIType}', must be one of: '{$imploded}'");
                             }
                         }
+
+                        $value = $value->toString();
                     }
 
                     if ($value !== null) {
@@ -355,7 +357,7 @@ final class ObjectSerializer
         $discriminator = $class::DISCRIMINATOR;
 
         if (!empty($discriminator) && isset($data->{$discriminator}) && \is_string($data->{$discriminator})) {
-            $subclass = '\NorbertTech\Amazon\SellingPartnerAPI\Model\\' . $data->{$discriminator};
+            $subclass = '\AmazonPHP\SellingPartner\Model\\' . $data->{$discriminator};
 
             if (\is_subclass_of($subclass, $class)) {
                 $class = $subclass;
