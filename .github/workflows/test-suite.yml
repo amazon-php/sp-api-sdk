@@ -42,7 +42,6 @@ jobs:
             php-7.4-locked-composer-
 
       - name: "Install locked dependencies"
-        if: ${{ matrix.dependencies == 'locked' }}
         run: "composer install --no-interaction --no-progress --no-suggest"
 
       - name: "Static Analyze"
