@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-01-16
+
+### Fixed
+- [#122](https://github.com/amazon-php/sp-api-sdk/pull/122) - **enum parameters serialization** - [@norberttech](https://github.com/norberttech)
+
 ## [3.0.5] - 2022-01-13
 
 ### Fixed
