@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-01-17
+
+### Fixed
+- [fb10f5](https://github.com/amazon-php/sp-api-sdk/commit/fb10f57ad9b87bc34c394ab99090f3c582a04c24) - **PHP versions scope** - [@norberttech](https://github.com/norberttech)
+
 ## [3.0.6] - 2022-01-16
 
 ### Fixed
