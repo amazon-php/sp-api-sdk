@@ -5,9 +5,6 @@ declare(strict_types=1);
 namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use BadMethodCallException;
-use function array_key_exists;
-use function strtoupper;
 
 /**
  * @method static CA()
@@ -32,16 +29,6 @@ use function strtoupper;
  */
 final class Marketplace
 {
-    private string $name;
-
-    private string $id;
-
-    private string $countryCode;
-
-    private string $region;
-
-    private string $sellerCentralUrl;
-
     private static array $countryMap = [
         'CA' => [
             'name'   => 'Canada',
@@ -159,6 +146,16 @@ final class Marketplace
         ],
     ];
 
+    private string $name;
+
+    private string $id;
+
+    private string $countryCode;
+
+    private string $region;
+
+    private string $sellerCentralUrl;
+
     private function __construct(string $name, string $id, string $countryCode, string $region, string $sellerCentralUrl)
     {
         $this->name = $name;
@@ -168,28 +165,17 @@ final class Marketplace
         $this->sellerCentralUrl = $sellerCentralUrl;
     }
 
-    public static function __callStatic(string $country, array $parameters)
-    {
-        if ( ! array_key_exists($country, self::$countryMap)) {
-            throw new BadMethodCallException('Call to undefined method ' . self::class . '::' . $country . '()');
-        }
-
-        $map = self::$countryMap[$country];
-
-        return new self($map['name'], $map['id'], $country, $map['region'], $map['url']);
-    }
-
     /**
      * @throws InvalidArgumentException
      */
     public static function fromCountry(string $countryCode) : self
     {
-        $countryCode = strtoupper($countryCode);
+        $countryCode = \strtoupper($countryCode);
 
         try {
             return self::$countryCode();
-        } catch (BadMethodCallException $e) {
-            throw new InvalidArgumentException("Unexpected country code $countryCode");
+        } catch (\BadMethodCallException $e) {
+            throw new InvalidArgumentException("Unexpected country code {$countryCode}");
         }
     }
 
@@ -205,6 +191,17 @@ final class Marketplace
         }
 
         return $marketplaces;
+    }
+
+    public static function __callStatic(string $country, array $parameters)
+    {
+        if (!\array_key_exists($country, self::$countryMap)) {
+            throw new \BadMethodCallException('Call to undefined method ' . self::class . '::' . $country . '()');
+        }
+
+        $map = self::$countryMap[$country];
+
+        return new self($map['name'], $map['id'], $country, $map['region'], $map['url']);
     }
 
     public function name() : string
