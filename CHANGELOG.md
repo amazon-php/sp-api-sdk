@@ -1,6 +1,11 @@
-## [Unreleased] - 2022-01-21
+## [Unreleased] - 2022-01-22
+
+### Changed
+- [#128](https://github.com/amazon-php/sp-api-sdk/pull/128) - **Refactor Marketplace class to remove redundancies and simplify update process.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Fixed
+- [#128](https://github.com/amazon-php/sp-api-sdk/pull/128) - **Corrected namespace on ObjectSerializerTest class.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#128](https://github.com/amazon-php/sp-api-sdk/pull/128) - **Added the missing properties for the Egypt country data and marketplace to the Marketplace class.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#125](https://github.com/amazon-php/sp-api-sdk/pull/125) - **Fixed "The lock file is not up to date with the latest changes in composer.json" warning.** - [@jasonhebert](https://github.com/jasonhebert)
 - [fb10f5](https://github.com/amazon-php/sp-api-sdk/commit/fb10f57ad9b87bc34c394ab99090f3c582a04c24) - **PHP versions scope** - [@norberttech](https://github.com/norberttech)
 
