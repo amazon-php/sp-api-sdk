@@ -64,6 +64,8 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     public const VARIANT_SWCH = 'SWCH';
 
+    public const VARIANT_BKLB = 'BKLB';
+
     /**
      * The original name of the model.
      *
@@ -243,6 +245,7 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
             self::VARIANT_PT07,
             self::VARIANT_PT08,
             self::VARIANT_SWCH,
+            self::VARIANT_BKLB,
         ];
     }
 
