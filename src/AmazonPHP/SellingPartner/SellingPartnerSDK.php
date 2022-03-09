@@ -16,6 +16,7 @@ use AmazonPHP\SellingPartner\Api\FbaOutboundApi\FulfillmentOutboundSDK;
 use AmazonPHP\SellingPartner\Api\FeedsApi\FeedsSDK;
 use AmazonPHP\SellingPartner\Api\FeesApi\ProductFeesSDK;
 use AmazonPHP\SellingPartner\Api\ListingsApi\ListingsItemsSDK;
+use AmazonPHP\SellingPartner\Api\MerchantFulfillmentApi\MerchantFulfillmentSDK;
 use AmazonPHP\SellingPartner\Api\MessagingApi\MessagingSDK;
 use AmazonPHP\SellingPartner\Api\NotificationsApi\NotificationsSDK;
 use AmazonPHP\SellingPartner\Api\OrdersV0Api;
@@ -61,6 +62,8 @@ final class SellingPartnerSDK
     private FulfillmentOutboundSDK $fulfillmentOutbound;
 
     private ListingsItemsSDK $listingsItems;
+
+    private MerchantFulfillmentSDK $merchantFulfillment;
 
     private MessagingSDK $messaging;
 
@@ -109,6 +112,7 @@ final class SellingPartnerSDK
         FulfillmentInboundSDK $fulfillmentInbound,
         FulfillmentOutboundSDK $fulfillmentOutbound,
         ListingsItemsSDK $listingsItems,
+        MerchantFulfillmentSDK $merchantFulfillment,
         MessagingSDK $messaging,
         NotificationsSDK $notifications,
         OrdersV0Api\OrdersSDK $orders,
@@ -139,6 +143,7 @@ final class SellingPartnerSDK
         $this->fulfillmentInbound = $fulfillmentInbound;
         $this->fulfillmentOutbound = $fulfillmentOutbound;
         $this->listingsItems = $listingsItems;
+        $this->merchantFulfillment = $merchantFulfillment;
         $this->messaging = $messaging;
         $this->notifications = $notifications;
         $this->orders = $orders;
@@ -180,6 +185,7 @@ final class SellingPartnerSDK
             new FulfillmentInboundSDK($httpClient, $httpFactory, $configuration, $logger),
             new FulfillmentOutboundSDK($httpClient, $httpFactory, $configuration, $logger),
             new ListingsItemsSDK($httpClient, $httpFactory, $configuration, $logger),
+            new MerchantFulfillmentSDK($httpClient, $httpFactory, $configuration, $logger),
             new MessagingSDK($httpClient, $httpFactory, $configuration, $logger),
             new NotificationsSDK($httpClient, $httpFactory, $configuration, $logger),
             new OrdersV0Api\OrdersSDK($httpClient, $httpFactory, $configuration, $logger),
@@ -258,6 +264,11 @@ final class SellingPartnerSDK
     public function listingsItems() : ListingsItemsSDK
     {
         return $this->listingsItems;
+    }
+
+    public function merchantFulfillment() : MerchantFulfillmentSDK
+    {
+        return $this->merchantFulfillment;
     }
 
     public function messaging() : MessagingSDK
