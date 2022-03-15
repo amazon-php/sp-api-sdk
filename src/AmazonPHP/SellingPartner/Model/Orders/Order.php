@@ -130,6 +130,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'promise_response_due_date' => 'string',
         'is_estimated_ship_date_set' => 'bool',
         'is_sold_by_ab' => 'bool',
+        'is_iba' => 'bool',
         'default_ship_from_location_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
         'buyer_invoice_preference' => 'string',
         'buyer_tax_information' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInformation',
@@ -183,6 +184,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'promise_response_due_date' => null,
         'is_estimated_ship_date_set' => null,
         'is_sold_by_ab' => null,
+        'is_iba' => null,
         'default_ship_from_location_address' => null,
         'buyer_invoice_preference' => null,
         'buyer_tax_information' => null,
@@ -235,6 +237,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'promise_response_due_date' => 'PromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'IsEstimatedShipDateSet',
         'is_sold_by_ab' => 'IsSoldByAB',
+        'is_iba' => 'IsIBA',
         'default_ship_from_location_address' => 'DefaultShipFromLocationAddress',
         'buyer_invoice_preference' => 'BuyerInvoicePreference',
         'buyer_tax_information' => 'BuyerTaxInformation',
@@ -286,6 +289,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'promise_response_due_date' => 'setPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'setIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'setIsSoldByAb',
+        'is_iba' => 'setIsIba',
         'default_ship_from_location_address' => 'setDefaultShipFromLocationAddress',
         'buyer_invoice_preference' => 'setBuyerInvoicePreference',
         'buyer_tax_information' => 'setBuyerTaxInformation',
@@ -337,6 +341,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'promise_response_due_date' => 'getPromiseResponseDueDate',
         'is_estimated_ship_date_set' => 'getIsEstimatedShipDateSet',
         'is_sold_by_ab' => 'getIsSoldByAb',
+        'is_iba' => 'getIsIba',
         'default_ship_from_location_address' => 'getDefaultShipFromLocationAddress',
         'buyer_invoice_preference' => 'getBuyerInvoicePreference',
         'buyer_tax_information' => 'getBuyerTaxInformation',
@@ -397,6 +402,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['promise_response_due_date'] = $data['promise_response_due_date'] ?? null;
         $this->container['is_estimated_ship_date_set'] = $data['is_estimated_ship_date_set'] ?? null;
         $this->container['is_sold_by_ab'] = $data['is_sold_by_ab'] ?? null;
+        $this->container['is_iba'] = $data['is_iba'] ?? null;
         $this->container['default_ship_from_location_address'] = $data['default_ship_from_location_address'] ?? null;
         $this->container['buyer_invoice_preference'] = $data['buyer_invoice_preference'] ?? null;
         $this->container['buyer_tax_information'] = $data['buyer_tax_information'] ?? null;
@@ -1351,6 +1357,26 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
+     * Gets is_iba.
+     */
+    public function getIsIba() : ?bool
+    {
+        return $this->container['is_iba'];
+    }
+
+    /**
+     * Sets is_iba.
+     *
+     * @param null|bool $is_iba When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
+     */
+    public function setIsIba(?bool $is_iba) : self
+    {
+        $this->container['is_iba'] = $is_iba;
+
+        return $this;
+    }
+
+    /**
      * Gets default_ship_from_location_address.
      */
     public function getDefaultShipFromLocationAddress() : ?Address
@@ -1381,7 +1407,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets buyer_invoice_preference.
      *
-     * @param null|string $buyer_invoice_preference the buyer’s invoicing preference
+     * @param null|string $buyer_invoice_preference The buyer's invoicing preference. Available only in the TR marketplace.
      */
     public function setBuyerInvoicePreference(?string $buyer_invoice_preference) : self
     {

@@ -54,6 +54,26 @@ class CurrentStatus
 
     public const CUSTOMER_ACTION = 'CUSTOMER_ACTION';
 
+    public const UNKNOWN = 'UNKNOWN';
+
+    public const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
+
+    public const DELIVERY_ATTEMPTED = 'DELIVERY_ATTEMPTED';
+
+    public const PICKUP_SUCCESSFUL = 'PICKUP_SUCCESSFUL';
+
+    public const PICKUP_CANCELLED = 'PICKUP_CANCELLED';
+
+    public const PICKUP_ATTEMPTED = 'PICKUP_ATTEMPTED';
+
+    public const PICKUP_SCHEDULED = 'PICKUP_SCHEDULED';
+
+    public const RETURN_REQUEST_ACCEPTED = 'RETURN_REQUEST_ACCEPTED';
+
+    public const REFUND_ISSUED = 'REFUND_ISSUED';
+
+    public const RETURN_RECEIVED_IN_FC = 'RETURN_RECEIVED_IN_FC';
+
     private string $value;
 
     public function __construct(string $value)
@@ -77,6 +97,16 @@ class CurrentStatus
             self::DELAYED,
             self::AVAILABLE_FOR_PICKUP,
             self::CUSTOMER_ACTION,
+            self::UNKNOWN,
+            self::OUT_FOR_DELIVERY,
+            self::DELIVERY_ATTEMPTED,
+            self::PICKUP_SUCCESSFUL,
+            self::PICKUP_CANCELLED,
+            self::PICKUP_ATTEMPTED,
+            self::PICKUP_SCHEDULED,
+            self::RETURN_REQUEST_ACCEPTED,
+            self::REFUND_ISSUED,
+            self::RETURN_RECEIVED_IN_FC,
         ];
     }
 
