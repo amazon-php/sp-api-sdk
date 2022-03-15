@@ -18,48 +18,30 @@ use Psr\Log\LoggerInterface;
 
 final class VendorSDK
 {
-    private VendorDirectFulfillmentOrdersSDK $ordersSDK;
+    private array $sdkCache;
 
-    private VendorInvoicesSDK $invoicesSDK;
+    private ClientInterface $httpClient;
 
-    private VendorShipmentsSDK $shipmentsSDK;
+    private Configuration $configuration;
 
-    private VendorTransactionStatusSDK $transactionStatusSDK;
+    private LoggerInterface $logger;
 
-    private VendorDirectFulfillmentPaymentsSDK $directFulfillmentPaymentsSDK;
-
-    private VendorDirectFulfillmentOrdersSDK $vendorDirectFulfillmentOrdersSDK;
-
-    private VendorDirectFulfillmentOrdersSDK $directFulfillmentOrdersSDK;
-
-    private VendorDirectFulfillmentShippingSDK $directFulfillmentShippingSDK;
-
-    private Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK $directFulfillmentShippingLabelsSDK;
-
-    private VendorDirectFulfillmentTransactionsSDK $directFulfillmentTransactionsSDK;
+    private HttpFactory $httpFactory;
 
     public function __construct(
-        VendorDirectFulfillmentOrdersSDK $ordersSDK,
-        VendorInvoicesSDK $invoicesSDK,
-        VendorShipmentsSDK $shipmentsSDK,
-        VendorTransactionStatusSDK $transactionStatusSDK,
-        VendorDirectFulfillmentPaymentsSDK $directFulfillmentPaymentsSDK,
-        VendorDirectFulfillmentOrdersSDK $vendorDirectFulfillmentOrdersSDK,
-        VendorDirectFulfillmentOrdersSDK $directFulfillmentOrdersSDK,
-        VendorDirectFulfillmentShippingSDK $directFulfillmentShippingSDK,
-        Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK $directFulfillmentShippingLabelsSDK,
-        VendorDirectFulfillmentTransactionsSDK $directFulfillmentTransactionsSDK
+        ClientInterface $httpClient,
+        RequestFactoryInterface $requestFactory,
+        StreamFactoryInterface $streamFactory,
+        Configuration $configuration,
+        LoggerInterface $logger
     ) {
-        $this->ordersSDK = $ordersSDK;
-        $this->invoicesSDK = $invoicesSDK;
-        $this->shipmentsSDK = $shipmentsSDK;
-        $this->transactionStatusSDK = $transactionStatusSDK;
-        $this->directFulfillmentPaymentsSDK = $directFulfillmentPaymentsSDK;
-        $this->vendorDirectFulfillmentOrdersSDK = $vendorDirectFulfillmentOrdersSDK;
-        $this->directFulfillmentOrdersSDK = $directFulfillmentOrdersSDK;
-        $this->directFulfillmentShippingSDK = $directFulfillmentShippingSDK;
-        $this->directFulfillmentShippingLabelsSDK = $directFulfillmentShippingLabelsSDK;
-        $this->directFulfillmentTransactionsSDK = $directFulfillmentTransactionsSDK;
+        $this->sdkCache = [];
+
+        $this->httpClient     = $httpClient;
+        $this->configuration  = $configuration;
+        $this->logger         = $logger;
+
+        $this->httpFactory = new HttpFactory($requestFactory, $streamFactory);
     }
 
     public static function create(
@@ -69,69 +51,72 @@ final class VendorSDK
         Configuration $configuration,
         LoggerInterface $logger
     ) : self {
-        $httpFactory = new HttpFactory($requestFactory, $streamFactory);
-
-        return new self(
-            new VendorDirectFulfillmentOrdersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorInvoicesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorShipmentsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorTransactionStatusSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorDirectFulfillmentPaymentsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorDirectFulfillmentOrdersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorDirectFulfillmentOrdersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorDirectFulfillmentShippingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new VendorDirectFulfillmentTransactionsSDK($httpClient, $httpFactory, $configuration, $logger),
-        );
+        return new self($httpClient, $requestFactory, $streamFactory, $configuration, $logger);
     }
 
     public function ordersSDK() : VendorDirectFulfillmentOrdersSDK
     {
-        return $this->ordersSDK;
+        return $this->getVendorSDKFromCache(VendorDirectFulfillmentOrdersSDK::class);
     }
 
     public function invoicesSDK() : VendorInvoicesSDK
     {
-        return $this->invoicesSDK;
+        return $this->getVendorSDKFromCache(VendorInvoicesSDK::class);
     }
 
     public function shipmentsSDK() : VendorShipmentsSDK
     {
-        return $this->shipmentsSDK;
+        return $this->getVendorSDKFromCache(VendorShipmentsSDK::class);
     }
 
     public function transactionStatusSDK() : VendorTransactionStatusSDK
     {
-        return $this->transactionStatusSDK;
+        return $this->getVendorSDKFromCache(VendorTransactionStatusSDK::class);
     }
 
     public function directFulfillmentPaymentsSDK() : VendorDirectFulfillmentPaymentsSDK
     {
-        return $this->directFulfillmentPaymentsSDK;
+        return $this->getVendorSDKFromCache(VendorDirectFulfillmentPaymentsSDK::class);
     }
 
     public function vendorDirectFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDK
     {
-        return $this->vendorDirectFulfillmentOrdersSDK;
+        return $this->getVendorSDKFromCache(VendorDirectFulfillmentOrdersSDK::class);
     }
 
     public function directFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDK
     {
-        return $this->directFulfillmentOrdersSDK;
+        return $this->getVendorSDKFromCache(VendorDirectFulfillmentOrdersSDK::class);
     }
 
     public function directFulfillmentShippingSDK() : VendorDirectFulfillmentShippingSDK
     {
-        return $this->directFulfillmentShippingSDK;
+        return $this->getVendorSDKFromCache(VendorDirectFulfillmentShippingSDK::class);
     }
 
     public function directFulfillmentShippingLabelsSDK() : Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK
     {
-        return $this->directFulfillmentShippingLabelsSDK;
+        return $this->getVendorSDKFromCache(Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK::class);
     }
 
     public function directFulfillmentTransactionsSDK() : VendorDirectFulfillmentTransactionsSDK
     {
-        return $this->directFulfillmentTransactionsSDK;
+        return $this->getVendorSDKFromCache(VendorDirectFulfillmentTransactionsSDK::class);
+    }
+
+    private function getVendorSDKFromCache(string $sdkClass)
+    {
+        if (isset($this->sdkCache[$sdkClass])) {
+            return $this->sdkCache[$sdkClass];
+        }
+
+        $this->sdkCache[$sdkClass] = new $sdkClass(
+            $this->httpClient,
+            $this->httpFactory,
+            $this->configuration,
+            $this->logger
+        );
+
+        return $this->sdkCache[$sdkClass];
     }
 }
