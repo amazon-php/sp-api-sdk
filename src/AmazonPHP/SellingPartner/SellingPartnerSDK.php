@@ -39,7 +39,10 @@ use Psr\Log\LoggerInterface;
 
 final class SellingPartnerSDK
 {
-    private array $sdkCache;
+    /**
+     * @var array<class-string>
+     */
+    private array $instances;
 
     private ClientInterface $httpClient;
 
@@ -60,7 +63,7 @@ final class SellingPartnerSDK
         Configuration $configuration,
         LoggerInterface $logger
     ) {
-        $this->sdkCache = [];
+        $this->instances = [];
 
         $this->httpClient     = $httpClient;
         $this->requestFactory = $requestFactory;
@@ -83,161 +86,161 @@ final class SellingPartnerSDK
 
     public function oAuth() : OAuth
     {
-        return $this->getSellingPartnerSDKFromCache(OAuth::class);
+        return $this->instantiateSDK(OAuth::class);
     }
 
     public function aPlus() : APlusSDK
     {
-        return $this->getSellingPartnerSDKFromCache(APlusSDK::class);
+        return $this->instantiateSDK(APlusSDK::class);
     }
 
     public function authorization() : AuthorizationSDK
     {
-        return $this->getSellingPartnerSDKFromCache(AuthorizationSDK::class);
+        return $this->instantiateSDK(AuthorizationSDK::class);
     }
 
     public function catalogItem() : CatalogItemSDK
     {
-        return $this->getSellingPartnerSDKFromCache(CatalogItemSDK::class);
+        return $this->instantiateSDK(CatalogItemSDK::class);
     }
 
     public function fbaInbound() : FBAInboundSDK
     {
-        return $this->getSellingPartnerSDKFromCache(FBAInboundSDK::class);
+        return $this->instantiateSDK(FBAInboundSDK::class);
     }
 
     public function fbaInventory() : FBAInventorySDK
     {
-        return $this->getSellingPartnerSDKFromCache(FBAInventorySDK::class);
+        return $this->instantiateSDK(FBAInventorySDK::class);
     }
 
     public function fbaSmallAndLight() : FBASmallAndLightSDK
     {
-        return $this->getSellingPartnerSDKFromCache(FBASmallAndLightSDK::class);
+        return $this->instantiateSDK(FBASmallAndLightSDK::class);
     }
 
     public function feeds() : FeedsSDK
     {
-        return $this->getSellingPartnerSDKFromCache(FeedsSDK::class);
+        return $this->instantiateSDK(FeedsSDK::class);
     }
 
     public function finances() : FinancesSDK
     {
-        return $this->getSellingPartnerSDKFromCache(FinancesSDK::class);
+        return $this->instantiateSDK(FinancesSDK::class);
     }
 
     public function fulfillmentInbound() : FulfillmentInboundSDK
     {
-        return $this->getSellingPartnerSDKFromCache(FulfillmentInboundSDK::class);
+        return $this->instantiateSDK(FulfillmentInboundSDK::class);
     }
 
     public function fulfillmentOutbound() : FulfillmentOutboundSDK
     {
-        return $this->getSellingPartnerSDKFromCache(FulfillmentOutboundSDK::class);
+        return $this->instantiateSDK(FulfillmentOutboundSDK::class);
     }
 
     public function listingsItems() : ListingsItemsSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ListingsItemsSDK::class);
+        return $this->instantiateSDK(ListingsItemsSDK::class);
     }
 
     public function merchantFulfillment() : MerchantFulfillmentSDK
     {
-        return $this->getSellingPartnerSDKFromCache(MerchantFulfillmentSDK::class);
+        return $this->instantiateSDK(MerchantFulfillmentSDK::class);
     }
 
     public function messaging() : MessagingSDK
     {
-        return $this->getSellingPartnerSDKFromCache(MessagingSDK::class);
+        return $this->instantiateSDK(MessagingSDK::class);
     }
 
     public function notifications() : NotificationsSDK
     {
-        return $this->getSellingPartnerSDKFromCache(NotificationsSDK::class);
+        return $this->instantiateSDK(NotificationsSDK::class);
     }
 
     public function orders() : OrdersV0Api\OrdersSDK
     {
-        return $this->getSellingPartnerSDKFromCache(OrdersV0Api\OrdersSDK::class);
+        return $this->instantiateSDK(OrdersV0Api\OrdersSDK::class);
     }
 
     public function orderShipment() : ShipmentApi\OrdersSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ShipmentApi\OrdersSDK::class);
+        return $this->instantiateSDK(ShipmentApi\OrdersSDK::class);
     }
 
     public function productFees() : ProductFeesSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ProductFeesSDK::class);
+        return $this->instantiateSDK(ProductFeesSDK::class);
     }
 
     public function productPricing() : ProductPricingSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ProductPricingSDK::class);
+        return $this->instantiateSDK(ProductPricingSDK::class);
     }
 
     public function productTypesDefinitions() : ProductTypesDefinitionsSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ProductTypesDefinitionsSDK::class);
+        return $this->instantiateSDK(ProductTypesDefinitionsSDK::class);
     }
 
     public function reports() : ReportsSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ReportsSDK::class);
+        return $this->instantiateSDK(ReportsSDK::class);
     }
 
     public function sales() : SalesSDK
     {
-        return $this->getSellingPartnerSDKFromCache(SalesSDK::class);
+        return $this->instantiateSDK(SalesSDK::class);
     }
 
     public function sellers() : SellersSDK
     {
-        return $this->getSellingPartnerSDKFromCache(SellersSDK::class);
+        return $this->instantiateSDK(SellersSDK::class);
     }
 
     public function services() : ServicesSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ServicesSDK::class);
+        return $this->instantiateSDK(ServicesSDK::class);
     }
 
     public function shipmentInvoicing() : ShipmentInvoicingSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ShipmentInvoicingSDK::class);
+        return $this->instantiateSDK(ShipmentInvoicingSDK::class);
     }
 
     public function shipping() : ShippingSDK
     {
-        return $this->getSellingPartnerSDKFromCache(ShippingSDK::class);
+        return $this->instantiateSDK(ShippingSDK::class);
     }
 
     public function solicitations() : SolicitationsSDK
     {
-        return $this->getSellingPartnerSDKFromCache(SolicitationsSDK::class);
+        return $this->instantiateSDK(SolicitationsSDK::class);
     }
 
     public function tokens() : TokensSDK
     {
-        return $this->getSellingPartnerSDKFromCache(TokensSDK::class);
+        return $this->instantiateSDK(TokensSDK::class);
     }
 
     public function uploads() : UploadsSDK
     {
-        return $this->getSellingPartnerSDKFromCache(UploadsSDK::class);
+        return $this->instantiateSDK(UploadsSDK::class);
     }
 
     public function vendor() : VendorSDK
     {
-        return $this->getSellingPartnerSDKFromCache(VendorSDK::class);
+        return $this->instantiateSDK(VendorSDK::class);
     }
 
-    private function getSellingPartnerSDKFromCache(string $sdkClass)
+    private function instantiateSDK(string $sdkClass)
     {
-        if (isset($this->sdkCache[$sdkClass])) {
-            return $this->sdkCache[$sdkClass];
+        if (isset($this->instances[$sdkClass])) {
+            return $this->instances[$sdkClass];
         }
 
-        $this->sdkCache[$sdkClass] = ($sdkClass === VendorSDK::class)
+        $this->instances[$sdkClass] = ($sdkClass === VendorSDK::class)
             ? VendorSDK::create(
                 $this->httpClient,
                 $this->requestFactory,
@@ -252,6 +255,6 @@ final class SellingPartnerSDK
                 $this->logger
             );
 
-        return $this->sdkCache[$sdkClass];
+        return $this->instances[$sdkClass];
     }
 }
