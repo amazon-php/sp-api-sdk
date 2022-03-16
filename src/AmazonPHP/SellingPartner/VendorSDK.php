@@ -18,7 +18,10 @@ use Psr\Log\LoggerInterface;
 
 final class VendorSDK
 {
-    private array $sdkCache;
+    /**
+     * @var array<class-string>
+     */
+    private array $instances;
 
     private ClientInterface $httpClient;
 
@@ -35,7 +38,7 @@ final class VendorSDK
         Configuration $configuration,
         LoggerInterface $logger
     ) {
-        $this->sdkCache = [];
+        $this->instances = [];
 
         $this->httpClient     = $httpClient;
         $this->configuration  = $configuration;
@@ -56,67 +59,67 @@ final class VendorSDK
 
     public function ordersSDK() : VendorDirectFulfillmentOrdersSDK
     {
-        return $this->getVendorSDKFromCache(VendorDirectFulfillmentOrdersSDK::class);
+        return $this->instantiateSDK(VendorDirectFulfillmentOrdersSDK::class);
     }
 
     public function invoicesSDK() : VendorInvoicesSDK
     {
-        return $this->getVendorSDKFromCache(VendorInvoicesSDK::class);
+        return $this->instantiateSDK(VendorInvoicesSDK::class);
     }
 
     public function shipmentsSDK() : VendorShipmentsSDK
     {
-        return $this->getVendorSDKFromCache(VendorShipmentsSDK::class);
+        return $this->instantiateSDK(VendorShipmentsSDK::class);
     }
 
     public function transactionStatusSDK() : VendorTransactionStatusSDK
     {
-        return $this->getVendorSDKFromCache(VendorTransactionStatusSDK::class);
+        return $this->instantiateSDK(VendorTransactionStatusSDK::class);
     }
 
     public function directFulfillmentPaymentsSDK() : VendorDirectFulfillmentPaymentsSDK
     {
-        return $this->getVendorSDKFromCache(VendorDirectFulfillmentPaymentsSDK::class);
+        return $this->instantiateSDK(VendorDirectFulfillmentPaymentsSDK::class);
     }
 
     public function vendorDirectFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDK
     {
-        return $this->getVendorSDKFromCache(VendorDirectFulfillmentOrdersSDK::class);
+        return $this->instantiateSDK(VendorDirectFulfillmentOrdersSDK::class);
     }
 
     public function directFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDK
     {
-        return $this->getVendorSDKFromCache(VendorDirectFulfillmentOrdersSDK::class);
+        return $this->instantiateSDK(VendorDirectFulfillmentOrdersSDK::class);
     }
 
     public function directFulfillmentShippingSDK() : VendorDirectFulfillmentShippingSDK
     {
-        return $this->getVendorSDKFromCache(VendorDirectFulfillmentShippingSDK::class);
+        return $this->instantiateSDK(VendorDirectFulfillmentShippingSDK::class);
     }
 
     public function directFulfillmentShippingLabelsSDK() : Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK
     {
-        return $this->getVendorSDKFromCache(Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK::class);
+        return $this->instantiateSDK(Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK::class);
     }
 
     public function directFulfillmentTransactionsSDK() : VendorDirectFulfillmentTransactionsSDK
     {
-        return $this->getVendorSDKFromCache(VendorDirectFulfillmentTransactionsSDK::class);
+        return $this->instantiateSDK(VendorDirectFulfillmentTransactionsSDK::class);
     }
 
-    private function getVendorSDKFromCache(string $sdkClass)
+    private function instantiateSDK(string $sdkClass)
     {
-        if (isset($this->sdkCache[$sdkClass])) {
-            return $this->sdkCache[$sdkClass];
+        if (isset($this->instances[$sdkClass])) {
+            return $this->instances[$sdkClass];
         }
 
-        $this->sdkCache[$sdkClass] = new $sdkClass(
+        $this->instances[$sdkClass] = new $sdkClass(
             $this->httpClient,
             $this->httpFactory,
             $this->configuration,
             $this->logger
         );
 
-        return $this->sdkCache[$sdkClass];
+        return $this->instances[$sdkClass];
     }
 }
