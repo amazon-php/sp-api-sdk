@@ -39,128 +39,39 @@ use Psr\Log\LoggerInterface;
 
 final class SellingPartnerSDK
 {
-    private OAuth $oAuth;
+    /**
+     * @var array<class-string>
+     */
+    private array $instances;
 
-    private APlusSDK $aPlus;
+    private ClientInterface $httpClient;
 
-    private AuthorizationSDK $authorization;
+    private RequestFactoryInterface $requestFactory;
 
-    private CatalogItemSDK $catalogItem;
+    private StreamFactoryInterface $streamFactory;
 
-    private FBAInboundSDK $fbaInbound;
+    private Configuration $configuration;
 
-    private FBAInventorySDK $fbaInventory;
+    private LoggerInterface $logger;
 
-    private FBASmallAndLightSDK $fbaSmallAndLight;
-
-    private FeedsSDK $feeds;
-
-    private FinancesSDK $finances;
-
-    private FulfillmentInboundSDK $fulfillmentInbound;
-
-    private FulfillmentOutboundSDK $fulfillmentOutbound;
-
-    private ListingsItemsSDK $listingsItems;
-
-    private MerchantFulfillmentSDK $merchantFulfillment;
-
-    private MessagingSDK $messaging;
-
-    private NotificationsSDK $notifications;
-
-    private OrdersV0Api\OrdersSDK $orders;
-
-    private ShipmentApi\OrdersSDK $ordersShipment;
-
-    private ProductFeesSDK $productFees;
-
-    private ProductPricingSDK $productPricing;
-
-    private ProductTypesDefinitionsSDK $productTypesDefinitions;
-
-    private ReportsSDK $reports;
-
-    private SalesSDK $sales;
-
-    private SellersSDK $sellers;
-
-    private ServicesSDK $services;
-
-    private ShipmentInvoicingSDK $shipmentInvoicing;
-
-    private ShippingSDK $shipping;
-
-    private SolicitationsSDK $solicitations;
-
-    private TokensSDK $tokens;
-
-    private UploadsSDK $uploads;
-
-    private VendorSDK $vendorSDK;
+    private HttpFactory $httpFactory;
 
     public function __construct(
-        OAuth $oAuth,
-        APlusSDK $aPlus,
-        AuthorizationSDK $authorization,
-        CatalogItemSDK $catalogItem,
-        FBAInboundSDK $fbaInbound,
-        FBAInventorySDK $fbaInventory,
-        FBASmallAndLightSDK $fbaSmallAndLight,
-        FeedsSDK $feeds,
-        FinancesSDK $finances,
-        FulfillmentInboundSDK $fulfillmentInbound,
-        FulfillmentOutboundSDK $fulfillmentOutbound,
-        ListingsItemsSDK $listingsItems,
-        MerchantFulfillmentSDK $merchantFulfillment,
-        MessagingSDK $messaging,
-        NotificationsSDK $notifications,
-        OrdersV0Api\OrdersSDK $orders,
-        ShipmentApi\OrdersSDK $ordersShipment,
-        ProductFeesSDK $productFees,
-        ProductPricingSDK $productPricing,
-        ProductTypesDefinitionsSDK $productTypesDefinitions,
-        ReportsSDK $reports,
-        SalesSDK $sales,
-        SellersSDK $sellers,
-        ServicesSDK $services,
-        ShipmentInvoicingSDK $shipmentInvoicing,
-        ShippingSDK $shipping,
-        SolicitationsSDK $solicitations,
-        TokensSDK $tokens,
-        UploadsSDK $uploads,
-        VendorSDK $vendorSDK
+        ClientInterface $httpClient,
+        RequestFactoryInterface $requestFactory,
+        StreamFactoryInterface $streamFactory,
+        Configuration $configuration,
+        LoggerInterface $logger
     ) {
-        $this->oAuth = $oAuth;
-        $this->aPlus = $aPlus;
-        $this->authorization = $authorization;
-        $this->catalogItem = $catalogItem;
-        $this->fbaInbound = $fbaInbound;
-        $this->fbaInventory = $fbaInventory;
-        $this->fbaSmallAndLight = $fbaSmallAndLight;
-        $this->feeds = $feeds;
-        $this->finances = $finances;
-        $this->fulfillmentInbound = $fulfillmentInbound;
-        $this->fulfillmentOutbound = $fulfillmentOutbound;
-        $this->listingsItems = $listingsItems;
-        $this->merchantFulfillment = $merchantFulfillment;
-        $this->messaging = $messaging;
-        $this->notifications = $notifications;
-        $this->orders = $orders;
-        $this->ordersShipment = $ordersShipment;
-        $this->productFees = $productFees;
-        $this->productPricing = $productPricing;
-        $this->productTypesDefinitions = $productTypesDefinitions;
-        $this->reports = $reports;
-        $this->sales = $sales;
-        $this->sellers = $sellers;
-        $this->services = $services;
-        $this->shipmentInvoicing = $shipmentInvoicing;
-        $this->shipping = $shipping;
-        $this->solicitations = $solicitations;
-        $this->tokens = $tokens;
-        $this->uploads = $uploads;
-        $this->vendorSDK = $vendorSDK;
+        $this->instances = [];
+
+        $this->httpClient     = $httpClient;
+        $this->requestFactory = $requestFactory;
+        $this->streamFactory  = $streamFactory;
+        $this->configuration  = $configuration;
+        $this->logger         = $logger;
+
+        $this->httpFactory = new HttpFactory($requestFactory, $streamFactory);
     }
 
     public static function create(
@@ -170,189 +81,180 @@ final class SellingPartnerSDK
         Configuration $configuration,
         LoggerInterface $logger
     ) : self {
-        $httpFactory = new HttpFactory($requestFactory, $streamFactory);
-
-        return new self(
-            new OAuth($httpClient, $httpFactory, $configuration, $logger),
-            new APlusSDK($httpClient, $httpFactory, $configuration, $logger),
-            new AuthorizationSDK($httpClient, $httpFactory, $configuration, $logger),
-            new CatalogItemSDK($httpClient, $httpFactory, $configuration, $logger),
-            new FBAInboundSDK($httpClient, $httpFactory, $configuration, $logger),
-            new FBAInventorySDK($httpClient, $httpFactory, $configuration, $logger),
-            new FBASmallAndLightSDK($httpClient, $httpFactory, $configuration, $logger),
-            new FeedsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new FinancesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new FulfillmentInboundSDK($httpClient, $httpFactory, $configuration, $logger),
-            new FulfillmentOutboundSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ListingsItemsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new MerchantFulfillmentSDK($httpClient, $httpFactory, $configuration, $logger),
-            new MessagingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new NotificationsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new OrdersV0Api\OrdersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ShipmentApi\OrdersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ProductFeesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ProductPricingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ProductTypesDefinitionsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ReportsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new SalesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new SellersSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ServicesSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ShipmentInvoicingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new ShippingSDK($httpClient, $httpFactory, $configuration, $logger),
-            new SolicitationsSDK($httpClient, $httpFactory, $configuration, $logger),
-            new TokensSDK($httpClient, $httpFactory, $configuration, $logger),
-            new UploadsSDK($httpClient, $httpFactory, $configuration, $logger),
-            VendorSDK::create($httpClient, $requestFactory, $streamFactory, $configuration, $logger)
-        );
+        return new self($httpClient, $requestFactory, $streamFactory, $configuration, $logger);
     }
 
     public function oAuth() : OAuth
     {
-        return $this->oAuth;
+        return $this->instantiateSDK(OAuth::class);
     }
 
     public function aPlus() : APlusSDK
     {
-        return $this->aPlus;
+        return $this->instantiateSDK(APlusSDK::class);
     }
 
     public function authorization() : AuthorizationSDK
     {
-        return $this->authorization;
+        return $this->instantiateSDK(AuthorizationSDK::class);
     }
 
     public function catalogItem() : CatalogItemSDK
     {
-        return $this->catalogItem;
+        return $this->instantiateSDK(CatalogItemSDK::class);
     }
 
     public function fbaInbound() : FBAInboundSDK
     {
-        return $this->fbaInbound;
+        return $this->instantiateSDK(FBAInboundSDK::class);
     }
 
     public function fbaInventory() : FBAInventorySDK
     {
-        return $this->fbaInventory;
+        return $this->instantiateSDK(FBAInventorySDK::class);
     }
 
     public function fbaSmallAndLight() : FBASmallAndLightSDK
     {
-        return $this->fbaSmallAndLight;
+        return $this->instantiateSDK(FBASmallAndLightSDK::class);
     }
 
     public function feeds() : FeedsSDK
     {
-        return $this->feeds;
+        return $this->instantiateSDK(FeedsSDK::class);
     }
 
     public function finances() : FinancesSDK
     {
-        return $this->finances;
+        return $this->instantiateSDK(FinancesSDK::class);
     }
 
     public function fulfillmentInbound() : FulfillmentInboundSDK
     {
-        return $this->fulfillmentInbound;
+        return $this->instantiateSDK(FulfillmentInboundSDK::class);
     }
 
     public function fulfillmentOutbound() : FulfillmentOutboundSDK
     {
-        return $this->fulfillmentOutbound;
+        return $this->instantiateSDK(FulfillmentOutboundSDK::class);
     }
 
     public function listingsItems() : ListingsItemsSDK
     {
-        return $this->listingsItems;
+        return $this->instantiateSDK(ListingsItemsSDK::class);
     }
 
     public function merchantFulfillment() : MerchantFulfillmentSDK
     {
-        return $this->merchantFulfillment;
+        return $this->instantiateSDK(MerchantFulfillmentSDK::class);
     }
 
     public function messaging() : MessagingSDK
     {
-        return $this->messaging;
+        return $this->instantiateSDK(MessagingSDK::class);
     }
 
     public function notifications() : NotificationsSDK
     {
-        return $this->notifications;
+        return $this->instantiateSDK(NotificationsSDK::class);
     }
 
     public function orders() : OrdersV0Api\OrdersSDK
     {
-        return $this->orders;
+        return $this->instantiateSDK(OrdersV0Api\OrdersSDK::class);
     }
 
     public function orderShipment() : ShipmentApi\OrdersSDK
     {
-        return $this->ordersShipment;
+        return $this->instantiateSDK(ShipmentApi\OrdersSDK::class);
     }
 
     public function productFees() : ProductFeesSDK
     {
-        return $this->productFees;
+        return $this->instantiateSDK(ProductFeesSDK::class);
     }
 
     public function productPricing() : ProductPricingSDK
     {
-        return $this->productPricing;
+        return $this->instantiateSDK(ProductPricingSDK::class);
     }
 
     public function productTypesDefinitions() : ProductTypesDefinitionsSDK
     {
-        return $this->productTypesDefinitions;
+        return $this->instantiateSDK(ProductTypesDefinitionsSDK::class);
     }
 
     public function reports() : ReportsSDK
     {
-        return $this->reports;
+        return $this->instantiateSDK(ReportsSDK::class);
     }
 
     public function sales() : SalesSDK
     {
-        return $this->sales;
+        return $this->instantiateSDK(SalesSDK::class);
     }
 
     public function sellers() : SellersSDK
     {
-        return $this->sellers;
+        return $this->instantiateSDK(SellersSDK::class);
     }
 
     public function services() : ServicesSDK
     {
-        return $this->services;
+        return $this->instantiateSDK(ServicesSDK::class);
     }
 
     public function shipmentInvoicing() : ShipmentInvoicingSDK
     {
-        return $this->shipmentInvoicing;
+        return $this->instantiateSDK(ShipmentInvoicingSDK::class);
     }
 
     public function shipping() : ShippingSDK
     {
-        return $this->shipping;
+        return $this->instantiateSDK(ShippingSDK::class);
     }
 
     public function solicitations() : SolicitationsSDK
     {
-        return $this->solicitations;
+        return $this->instantiateSDK(SolicitationsSDK::class);
     }
 
     public function tokens() : TokensSDK
     {
-        return $this->tokens;
+        return $this->instantiateSDK(TokensSDK::class);
     }
 
     public function uploads() : UploadsSDK
     {
-        return $this->uploads;
+        return $this->instantiateSDK(UploadsSDK::class);
     }
 
     public function vendor() : VendorSDK
     {
-        return $this->vendorSDK;
+        return $this->instantiateSDK(VendorSDK::class);
+    }
+
+    private function instantiateSDK(string $sdkClass)
+    {
+        if (isset($this->instances[$sdkClass])) {
+            return $this->instances[$sdkClass];
+        }
+
+        $this->instances[$sdkClass] = ($sdkClass === VendorSDK::class)
+            ? VendorSDK::create(
+                $this->httpClient,
+                $this->requestFactory,
+                $this->streamFactory,
+                $this->configuration,
+                $this->logger
+            )
+            : new $sdkClass(
+                $this->httpClient,
+                $this->httpFactory,
+                $this->configuration,
+                $this->logger
+            );
+
+        return $this->instances[$sdkClass];
     }
 }
