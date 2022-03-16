@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-03-16
+## [3.0.9] - 2022-03-16
 
 ### Changed
 - [#151](https://github.com/amazon-php/sp-api-sdk/pull/151) - **`SellingPartnerSDK` and `VendorSDK` facade classes now cache child SDK instances** - [@jasonhebert](https://github.com/jasonhebert)
