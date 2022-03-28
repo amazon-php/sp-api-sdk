@@ -376,7 +376,7 @@ final class ObjectSerializer
             }
 
             if (isset($data->{$instance::attributeMap()[$property]})) {
-                $propertyValue = self::propertyValue($data->{$instance::attributeMap()[$property]}, $type);
+                $propertyValue = self::castEmptyStringToNull($data->{$instance::attributeMap()[$property]}, $type);
 
                 $instance->{$propertySetter}(self::deserialize($configuration, $propertyValue, $type, null));
             }
@@ -386,15 +386,16 @@ final class ObjectSerializer
     }
 
     /**
+     * @note amazon returns empty string here, which is not a valid enum value
+     * https://github.com/amzn/selling-partner-api-models/issues/226#issuecomment-1075640380
+     *
      * @param null|array|string $value value that needs to be parsed
      *
      * @return null|array|string parsed object property
      */
-    private static function propertyValue($value, string $type)
+    private static function castEmptyStringToNull($value, string $type)
     {
-        // amazon returns empty string here, which is not a valid enum value
-        // https://github.com/amzn/selling-partner-api-models/issues/226
-        if ('' === $value && '\\' . LabelFormat::class === $type) {
+        if ('' === $value && \is_a(LabelFormat::class, $type, true)) {
             $value = null;
         }
 
