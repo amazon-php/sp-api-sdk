@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-03-28
+## [3.0.10] - 2022-03-28
 
 ### Fixed
 - [#158](https://github.com/amazon-php/sp-api-sdk/pull/158) - **Fixed empty string value for LabelFormat enum property** - [@owsiakl](https://github.com/owsiakl)
