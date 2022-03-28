@@ -14,6 +14,7 @@ use AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportDetailInput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfMeasurement;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfWeight;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight;
+use AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
 
@@ -87,5 +88,25 @@ JSON
             $object,
             ObjectSerializer::deserialize($config, $jsonObject, PutTransportDetailsRequest::class)
         );
+    }
+
+    public function test_deserialize_label_format_enum_with_an_empty_string(): void
+    {
+        $response = <<<JSON
+{
+    "DeliveryExperience": "DeliveryConfirmationWithoutSignature",
+    "CarrierWillPickUp": false,
+    "LabelFormat": ""
+}
+JSON;
+
+        $object = ObjectSerializer::deserialize(
+            Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
+            $response,
+            ShippingServiceOptions::class
+        );
+
+        $this->assertInstanceOf(ShippingServiceOptions::class, $object);
+        $this->assertNull($object->getLabelFormat());
     }
 }

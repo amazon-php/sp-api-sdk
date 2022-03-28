@@ -2,6 +2,8 @@
 
 namespace AmazonPHP\SellingPartner;
 
+use AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat;
+
 final class ObjectSerializer
 {
     private static string $dateTimeFormat = \DateTimeInterface::ATOM;
@@ -374,11 +376,28 @@ final class ObjectSerializer
             }
 
             if (isset($data->{$instance::attributeMap()[$property]})) {
-                $propertyValue = $data->{$instance::attributeMap()[$property]};
+                $propertyValue = self::propertyValue($data->{$instance::attributeMap()[$property]}, $type);
+
                 $instance->{$propertySetter}(self::deserialize($configuration, $propertyValue, $type, null));
             }
         }
 
         return $instance;
+    }
+
+    /**
+     * @param null|array|string $value value that needs to be parsed
+     *
+     * @return null|array|string parsed object property
+     */
+    private static function propertyValue($value, string $type)
+    {
+        // amazon returns empty string here, which is not a valid enum value
+        // https://github.com/amzn/selling-partner-api-models/issues/226
+        if ('' === $value && '\\' . LabelFormat::class === $type) {
+            $value = null;
+        }
+
+        return $value;
     }
 }
