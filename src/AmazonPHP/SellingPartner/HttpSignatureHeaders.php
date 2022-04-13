@@ -97,7 +97,7 @@ final class HttpSignatureHeaders
         //prepare canonical request
         $canonicalString = $request->getMethod()
             . "\n" . $request->getUri()->getPath()
-            . "\n" . \http_build_query($queryElements)
+            . "\n" . \http_build_query($queryElements, "", "&", PHP_QUERY_RFC3986)
             . "\n" . $canonicalHeadersStr
             . "\n" . $signedHeadersStr
             . "\n" . $hashedPayload;
@@ -228,7 +228,7 @@ final class HttpSignatureHeaders
         //prepare canonical request
         $canonicalString = $request->getMethod()
             . "\n" . $request->getUri()->getPath()
-            . "\n" . \http_build_query($queryElements)
+            . "\n" . \http_build_query($queryElements, "", "&", PHP_QUERY_RFC3986)
             . "\n" . $canonicalHeadersStr
             . "\n" . $signedHeadersStr
             . "\n" . $hashedPayload;
