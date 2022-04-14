@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-04-14
+## [3.0.11] - 2022-04-14
 
 ### Changed
 - [#162](https://github.com/amazon-php/sp-api-sdk/pull/162) - **In function what calculate signature for request default encoding type PHP_QUERY_RFC1738 changed to PHP_QUERY_RFC3986** - [@sergoslav](https://github.com/sergoslav)
