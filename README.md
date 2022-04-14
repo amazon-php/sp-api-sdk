@@ -95,9 +95,9 @@ Until old model won't go away, branches 2.x and 3.x should be maintained in para
   * [VendorOrdersSDK](/src/AmazonPHP/SellingPartner/Api/VendorOrdersApi/VendorOrdersSDK.php)
   * [VendorShipmentsSDK](/src/AmazonPHP/SellingPartner/Api/VendorShippingApi/VendorShipmentsSDK.php)
   * [VendorTransactionStatusSDK](/src/AmazonPHP/SellingPartner/Api/VendorTransactionApi/VendorTransactionStatusSDK.php)
+  * [VendorDirectFulfillmentInventorySDK](/src/AmazonPHP/SellingPartner/Api/UpdateInventoryApi/VendorDirectFulfillmentInventorySDK.php)
   * [VendorDirectFulfillmentTransactionsSDK](/src/AmazonPHP/SellingPartner/Api/VendorTransactionApi/VendorDirectFulfillmentTransactionsSDK.php)
-  * [VendorDirectFulfillmentShippingSDK](/src/AmazonPHP/SellingPartner/Api/VendorShippingApi/VendorDirectFulfillmentShippingSDK.php)
-  * [VendorDirectFulfillmentShippingSDK - Labels](/src/AmazonPHP/SellingPartner/Api/VendorShippingLabelsApi/VendorDirectFulfillmentShippingSDK.php)
+  * [VendorDirectFulfillmentShippingSDK](/src/AmazonPHP/SellingPartner/Api/VendorShippingLabelsApi/VendorDirectFulfillmentShippingSDK.php)
   * [VendorDirectFulfillmentOrdersSDK](/src/AmazonPHP/SellingPartner/Api/VendorOrdersApi/VendorDirectFulfillmentOrdersSDK.php)
   * [VendorDirectFulfillmentPaymentsSDK](/src/AmazonPHP/SellingPartner/Api/VendorInvoiceApi/VendorDirectFulfillmentPaymentsSDK.php)
     
