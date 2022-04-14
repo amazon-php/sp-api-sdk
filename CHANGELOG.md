@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-04-14
+
+### Updated
+- [839636](https://github.com/amazon-php/sp-api-sdk/commit/83963643cac4b017eeb14f6f46287f81b49ee78c) - **dependencies** - [@norberttech](https://github.com/norberttech)
+
 ## [3.0.10] - 2022-03-28
 
 ### Fixed
