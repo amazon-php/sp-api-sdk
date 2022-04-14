@@ -11,6 +11,9 @@
 - [37def2](https://github.com/amazon-php/sp-api-sdk/commit/37def2df2c853b70c59e78934f4883fc0cdacdd2) - **models** - [@norberttech](https://github.com/norberttech)
 - [839636](https://github.com/amazon-php/sp-api-sdk/commit/83963643cac4b017eeb14f6f46287f81b49ee78c) - **dependencies** - [@norberttech](https://github.com/norberttech)
 
+### Removed
+- [d11a90](https://github.com/amazon-php/sp-api-sdk/commit/d11a9032f0779f0dc9d8f3563fc74bd354e7baba) - **2.x branch support** - [@norberttech](https://github.com/norberttech)
+
 ## [3.0.10] - 2022-03-28
 
 ### Fixed
