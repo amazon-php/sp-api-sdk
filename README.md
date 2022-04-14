@@ -35,11 +35,12 @@ This library is not in a stable stage yet, please use with caution.
 
 ### Releases
 
-| branch | maintained |
-|--------|-----------|
-| [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x)    | 🚫        |
-| [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x)    | ✅        |
-| [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x)    | ✅        |
+| branch                                                   | maintained |
+|----------------------------------------------------------|-----------|
+| [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) | 🚫        |
+| [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x) | 🚫        |
+| [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) | ✅        |
+| [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | ✅        |
 
 Version <s> [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to 
 make a little more sense of what Amazon is doing with using "tags" in their Open API specification. 
