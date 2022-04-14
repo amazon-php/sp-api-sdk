@@ -1,18 +1,10 @@
 ## [Unreleased] - 2022-04-14
 
 ### Changed
-- [#162](https://github.com/amazon-php/sp-api-sdk/pull/162) - **In function what calculate signature for request default encoding type PHP_QUERY_RFC1738 changed to PHP_QUERY_RFC3986** - [@sergoslav](https://github.com/sergoslav)
-
-### Fixed
-- [171265](https://github.com/amazon-php/sp-api-sdk/commit/1712650df4ed8bcc77c29bbe91040bae9be404b3) - **coding standards** - [@norberttech](https://github.com/norberttech)
-- [#162](https://github.com/amazon-php/sp-api-sdk/pull/162) - **Fixed InvalidSignature error in case query contains space.** - [@sergoslav](https://github.com/sergoslav)
+- [950977](https://github.com/amazon-php/sp-api-sdk/commit/950977064f0d6f777ac7d21109b2e08add2b93cc) - **Switch github actions to branch 4.x** - [@norberttech](https://github.com/norberttech)
 
 ### Updated
-- [37def2](https://github.com/amazon-php/sp-api-sdk/commit/37def2df2c853b70c59e78934f4883fc0cdacdd2) - **models** - [@norberttech](https://github.com/norberttech)
-- [839636](https://github.com/amazon-php/sp-api-sdk/commit/83963643cac4b017eeb14f6f46287f81b49ee78c) - **dependencies** - [@norberttech](https://github.com/norberttech)
-
-### Removed
-- [d11a90](https://github.com/amazon-php/sp-api-sdk/commit/d11a9032f0779f0dc9d8f3563fc74bd354e7baba) - **2.x branch support** - [@norberttech](https://github.com/norberttech)
+- [7df7a2](https://github.com/amazon-php/sp-api-sdk/commit/7df7a20e85d14270d609ef9dacbc4ef68ef43548) - **amazon models references, replaced deprecated SDK versions with recent ones** - [@norberttech](https://github.com/norberttech)
 
 ## [3.0.10] - 2022-03-28
 
