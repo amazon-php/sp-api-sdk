@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-04-14
+## [4.0.0] - 2022-04-14
 
 ### Changed
 - [950977](https://github.com/amazon-php/sp-api-sdk/commit/950977064f0d6f777ac7d21109b2e08add2b93cc) - **Switch github actions to branch 4.x** - [@norberttech](https://github.com/norberttech)
