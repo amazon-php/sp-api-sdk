@@ -6,6 +6,9 @@
 ### Updated
 - [7df7a2](https://github.com/amazon-php/sp-api-sdk/commit/7df7a20e85d14270d609ef9dacbc4ef68ef43548) - **amazon models references, replaced deprecated SDK versions with recent ones** - [@norberttech](https://github.com/norberttech)
 
+### Removed
+- [812091](https://github.com/amazon-php/sp-api-sdk/commit/81209133b463f98d3116860c479fde9f0247b3ca) - **deprecated config** - [@norberttech](https://github.com/norberttech)
+
 ## [3.0.10] - 2022-03-28
 
 ### Fixed
