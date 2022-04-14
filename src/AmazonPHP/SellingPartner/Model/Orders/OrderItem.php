@@ -94,6 +94,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'store_chain_store_id' => 'string',
         'deemed_reseller_category' => 'string',
         'buyer_info' => '\AmazonPHP\SellingPartner\Model\Orders\ItemBuyerInfo',
+        'buyer_requested_cancel' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerRequestedCancel',
     ];
 
     /**
@@ -137,6 +138,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'store_chain_store_id' => null,
         'deemed_reseller_category' => null,
         'buyer_info' => null,
+        'buyer_requested_cancel' => null,
     ];
 
     /**
@@ -179,6 +181,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'store_chain_store_id' => 'StoreChainStoreId',
         'deemed_reseller_category' => 'DeemedResellerCategory',
         'buyer_info' => 'BuyerInfo',
+        'buyer_requested_cancel' => 'BuyerRequestedCancel',
     ];
 
     /**
@@ -220,6 +223,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'store_chain_store_id' => 'setStoreChainStoreId',
         'deemed_reseller_category' => 'setDeemedResellerCategory',
         'buyer_info' => 'setBuyerInfo',
+        'buyer_requested_cancel' => 'setBuyerRequestedCancel',
     ];
 
     /**
@@ -261,6 +265,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         'store_chain_store_id' => 'getStoreChainStoreId',
         'deemed_reseller_category' => 'getDeemedResellerCategory',
         'buyer_info' => 'getBuyerInfo',
+        'buyer_requested_cancel' => 'getBuyerRequestedCancel',
     ];
 
     /**
@@ -311,6 +316,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['store_chain_store_id'] = $data['store_chain_store_id'] ?? null;
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
+        $this->container['buyer_requested_cancel'] = $data['buyer_requested_cancel'] ?? null;
     }
 
     /**
@@ -1109,6 +1115,26 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setBuyerInfo(?ItemBuyerInfo $buyer_info) : self
     {
         $this->container['buyer_info'] = $buyer_info;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_requested_cancel.
+     */
+    public function getBuyerRequestedCancel() : ?BuyerRequestedCancel
+    {
+        return $this->container['buyer_requested_cancel'];
+    }
+
+    /**
+     * Sets buyer_requested_cancel.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerRequestedCancel $buyer_requested_cancel buyer_requested_cancel
+     */
+    public function setBuyerRequestedCancel(?BuyerRequestedCancel $buyer_requested_cancel) : self
+    {
+        $this->container['buyer_requested_cancel'] = $buyer_requested_cancel;
 
         return $this;
     }

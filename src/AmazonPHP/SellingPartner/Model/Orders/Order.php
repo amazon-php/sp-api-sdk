@@ -141,6 +141,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
         'buyer_info' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo',
         'automated_shipping_settings' => '\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings',
+        'has_regulated_items' => 'bool',
     ];
 
     /**
@@ -195,6 +196,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping_address' => null,
         'buyer_info' => null,
         'automated_shipping_settings' => null,
+        'has_regulated_items' => null,
     ];
 
     /**
@@ -248,6 +250,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping_address' => 'ShippingAddress',
         'buyer_info' => 'BuyerInfo',
         'automated_shipping_settings' => 'AutomatedShippingSettings',
+        'has_regulated_items' => 'HasRegulatedItems',
     ];
 
     /**
@@ -300,6 +303,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping_address' => 'setShippingAddress',
         'buyer_info' => 'setBuyerInfo',
         'automated_shipping_settings' => 'setAutomatedShippingSettings',
+        'has_regulated_items' => 'setHasRegulatedItems',
     ];
 
     /**
@@ -352,6 +356,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'shipping_address' => 'getShippingAddress',
         'buyer_info' => 'getBuyerInfo',
         'automated_shipping_settings' => 'getAutomatedShippingSettings',
+        'has_regulated_items' => 'getHasRegulatedItems',
     ];
 
     /**
@@ -413,6 +418,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['shipping_address'] = $data['shipping_address'] ?? null;
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
+        $this->container['has_regulated_items'] = $data['has_regulated_items'] ?? null;
     }
 
     /**
@@ -1583,6 +1589,26 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setAutomatedShippingSettings(?AutomatedShippingSettings $automated_shipping_settings) : self
     {
         $this->container['automated_shipping_settings'] = $automated_shipping_settings;
+
+        return $this;
+    }
+
+    /**
+     * Gets has_regulated_items.
+     */
+    public function getHasRegulatedItems() : ?bool
+    {
+        return $this->container['has_regulated_items'];
+    }
+
+    /**
+     * Sets has_regulated_items.
+     *
+     * @param null|bool $has_regulated_items whether the order contains regulated items which may require additional approval steps before being fulfilled
+     */
+    public function setHasRegulatedItems(?bool $has_regulated_items) : self
+    {
+        $this->container['has_regulated_items'] = $has_regulated_items;
 
         return $this;
     }

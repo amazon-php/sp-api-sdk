@@ -42,9 +42,17 @@ final class OrdersSDK
 
     public const OPERATION_GETORDERITEMSBUYERINFO_PATH = '/orders/v0/orders/{orderId}/orderItems/buyerInfo';
 
+    public const OPERATION_GETORDERREGULATEDINFO = 'getOrderRegulatedInfo';
+
+    public const OPERATION_GETORDERREGULATEDINFO_PATH = '/orders/v0/orders/{orderId}/regulatedInfo';
+
     public const OPERATION_GETORDERS = 'getOrders';
 
     public const OPERATION_GETORDERS_PATH = '/orders/v0/orders';
+
+    public const OPERATION_UPDATEVERIFICATIONSTATUS = 'updateVerificationStatus';
+
+    public const OPERATION_UPDATEVERIFICATIONSTATUS_PATH = '/orders/v0/orders/{orderId}/regulatedInfo';
 
     private ClientInterface $client;
 
@@ -1033,6 +1041,194 @@ final class OrdersSDK
     }
 
     /**
+     * Operation getOrderRegulatedInfo.
+     *
+     * @param AccessToken $accessToken
+     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function getOrderRegulatedInfo(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse
+    {
+        $request = $this->getOrderRegulatedInfoRequest($accessToken, $region, $order_id);
+
+        $this->configuration->extensions()->preRequest('Orders', 'getOrderRegulatedInfo', $request);
+
+        try {
+            $correlationId = \uuid_create(UUID_TYPE_RANDOM);
+
+            if ($this->configuration->loggingEnabled('Orders', 'getOrderRegulatedInfo')) {
+                $sanitizedRequest = $request;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('Orders', 'getOrderRegulatedInfo'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'Orders',
+                        'operation' => 'getOrderRegulatedInfo',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'getOrderRegulatedInfo', $request, $response);
+
+            if ($this->configuration->loggingEnabled('Orders', 'getOrderRegulatedInfo')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('Orders', 'getOrderRegulatedInfo'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'Orders',
+                        'operation' => 'getOrderRegulatedInfo',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse::class,
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'getOrderRegulatedInfo'.
+     *
+     * @param AccessToken $accessToken
+     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function getOrderRegulatedInfoRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface
+    {
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null || (\is_array($order_id) && \count($order_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $order_id when calling getOrderRegulatedInfo'
+            );
+        }
+
+        $resourcePath = '/orders/v0/orders/{orderId}/regulatedInfo';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
      * Operation getOrders.
      *
      * @param AccessToken $accessToken
@@ -1042,7 +1238,7 @@ final class OrdersSDK
      * @param string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
      * @param string $last_updated_before A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
      * @param string[] $order_statuses A list of OrderStatus values used to filter the results. Possible values: PendingAvailability (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.); Pending (The order has been placed but payment has not been authorized); Unshipped (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped); PartiallyShipped (One or more, but not all, items in the order have been shipped); Shipped (All items in the order have been shipped); InvoiceUnconfirmed (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.); Canceled (The order has been canceled); and Unfulfillable (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.). (optional)
-     * @param string[] $fulfillment_channels A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: FBA (Fulfillment by Amazon); SellerFulfilled (Fulfilled by the seller). (optional)
+     * @param string[] $fulfillment_channels A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller). (optional)
      * @param string[] $payment_methods A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS). (optional)
      * @param string $buyer_email The email address of a buyer. Used to select orders that contain the specified email address. (optional)
      * @param string $seller_order_id An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified. (optional)
@@ -1154,7 +1350,7 @@ final class OrdersSDK
      * @param string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
      * @param string $last_updated_before A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
      * @param string[] $order_statuses A list of OrderStatus values used to filter the results. Possible values: PendingAvailability (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.); Pending (The order has been placed but payment has not been authorized); Unshipped (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped); PartiallyShipped (One or more, but not all, items in the order have been shipped); Shipped (All items in the order have been shipped); InvoiceUnconfirmed (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.); Canceled (The order has been canceled); and Unfulfillable (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.). (optional)
-     * @param string[] $fulfillment_channels A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: FBA (Fulfillment by Amazon); SellerFulfilled (Fulfilled by the seller). (optional)
+     * @param string[] $fulfillment_channels A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller). (optional)
      * @param string[] $payment_methods A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS). (optional)
      * @param string $buyer_email The email address of a buyer. Used to select orders that contain the specified email address. (optional)
      * @param string $seller_order_id An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified. (optional)
@@ -1423,6 +1619,205 @@ final class OrdersSDK
 
         // for model (json/xml)
         if (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation updateVerificationStatus.
+     *
+     * @param AccessToken $accessToken
+     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload Request to update the verification status of an order containing regulated products. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function updateVerificationStatus(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload)
+    {
+        $request = $this->updateVerificationStatusRequest($accessToken, $region, $order_id, $payload);
+
+        $this->configuration->extensions()->preRequest('Orders', 'updateVerificationStatus', $request);
+
+        try {
+            $correlationId = \uuid_create(UUID_TYPE_RANDOM);
+
+            if ($this->configuration->loggingEnabled('Orders', 'updateVerificationStatus')) {
+                $sanitizedRequest = $request;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('Orders', 'updateVerificationStatus'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'Orders',
+                        'operation' => 'updateVerificationStatus',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'updateVerificationStatus', $request, $response);
+
+            if ($this->configuration->loggingEnabled('Orders', 'updateVerificationStatus')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('Orders', 'updateVerificationStatus'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'Orders',
+                        'operation' => 'updateVerificationStatus',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return null;
+    }
+
+    /**
+     * Create request for operation 'updateVerificationStatus'.
+     *
+     * @param AccessToken $accessToken
+     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload Request to update the verification status of an order containing regulated products. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function updateVerificationStatusRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload) : RequestInterface
+    {
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null || (\is_array($order_id) && \count($order_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $order_id when calling updateVerificationStatus'
+            );
+        }
+        // verify the required parameter 'payload' is set
+        if ($payload === null || (\is_array($payload) && \count($payload) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $payload when calling updateVerificationStatus'
+            );
+        }
+
+        $resourcePath = '/orders/v0/orders/{orderId}/regulatedInfo';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'PATCH',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($payload)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($payload), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $payload;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
 

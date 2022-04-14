@@ -234,7 +234,10 @@ final class SellingPartnerSDK
         return $this->instantiateSDK(VendorSDK::class);
     }
 
-    private function instantiateSDK(string $sdkClass)
+    /**
+     * @param class-string $sdkClass
+     */
+    private function instantiateSDK(string $sdkClass) : object
     {
         if (isset($this->instances[$sdkClass])) {
             return $this->instances[$sdkClass];
