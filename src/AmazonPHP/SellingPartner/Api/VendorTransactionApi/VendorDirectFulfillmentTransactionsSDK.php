@@ -24,7 +24,7 @@ final class VendorDirectFulfillmentTransactionsSDK
 
     public const OPERATION_GETTRANSACTIONSTATUS = 'getTransactionStatus';
 
-    public const OPERATION_GETTRANSACTIONSTATUS_PATH = '/vendor/directFulfillment/transactions/v1/transactions/{transactionId}';
+    public const OPERATION_GETTRANSACTIONSTATUS_PATH = '/vendor/directFulfillment/transactions/2021-12-28/transactions/{transactionId}';
 
     private ClientInterface $client;
 
@@ -51,7 +51,7 @@ final class VendorDirectFulfillmentTransactionsSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getTransactionStatus(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\GetTransactionResponse
+    public function getTransactionStatus(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus
     {
         $request = $this->getTransactionStatusRequest($accessToken, $region, $transaction_id);
 
@@ -133,7 +133,7 @@ final class VendorDirectFulfillmentTransactionsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\GetTransactionResponse::class,
+            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus::class,
             []
         );
     }
@@ -155,7 +155,7 @@ final class VendorDirectFulfillmentTransactionsSDK
             );
         }
 
-        $resourcePath = '/vendor/directFulfillment/transactions/v1/transactions/{transactionId}';
+        $resourcePath = '/vendor/directFulfillment/transactions/2021-12-28/transactions/{transactionId}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

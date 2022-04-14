@@ -24,15 +24,19 @@ final class ListingsItemsSDK
 
     public const OPERATION_DELETELISTINGSITEM = 'deleteListingsItem';
 
-    public const OPERATION_DELETELISTINGSITEM_PATH = '/listings/2020-09-01/items/{sellerId}/{sku}';
+    public const OPERATION_DELETELISTINGSITEM_PATH = '/listings/2021-08-01/items/{sellerId}/{sku}';
+
+    public const OPERATION_GETLISTINGSITEM = 'getListingsItem';
+
+    public const OPERATION_GETLISTINGSITEM_PATH = '/listings/2021-08-01/items/{sellerId}/{sku}';
 
     public const OPERATION_PATCHLISTINGSITEM = 'patchListingsItem';
 
-    public const OPERATION_PATCHLISTINGSITEM_PATH = '/listings/2020-09-01/items/{sellerId}/{sku}';
+    public const OPERATION_PATCHLISTINGSITEM_PATH = '/listings/2021-08-01/items/{sellerId}/{sku}';
 
     public const OPERATION_PUTLISTINGSITEM = 'putListingsItem';
 
-    public const OPERATION_PUTLISTINGSITEM_PATH = '/listings/2020-09-01/items/{sellerId}/{sku}';
+    public const OPERATION_PUTLISTINGSITEM_PATH = '/listings/2021-08-01/items/{sellerId}/{sku}';
 
     private ClientInterface $client;
 
@@ -181,7 +185,7 @@ final class ListingsItemsSDK
             );
         }
 
-        $resourcePath = '/listings/2020-09-01/items/{sellerId}/{sku}';
+        $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -251,6 +255,259 @@ final class ListingsItemsSDK
 
         $request = $this->httpFactory->createRequest(
             'DELETE',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation getListingsItem.
+     *
+     * @param AccessToken $accessToken
+     * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
+     * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function getListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null, array $included_data = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\Item
+    {
+        $request = $this->getListingsItemRequest($accessToken, $region, $seller_id, $sku, $marketplace_ids, $issue_locale, $included_data);
+
+        $this->configuration->extensions()->preRequest('ListingsItems', 'getListingsItem', $request);
+
+        try {
+            $correlationId = \uuid_create(UUID_TYPE_RANDOM);
+
+            if ($this->configuration->loggingEnabled('ListingsItems', 'getListingsItem')) {
+                $sanitizedRequest = $request;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('ListingsItems', 'getListingsItem'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'ListingsItems',
+                        'operation' => 'getListingsItem',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('ListingsItems', 'getListingsItem', $request, $response);
+
+            if ($this->configuration->loggingEnabled('ListingsItems', 'getListingsItem')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('ListingsItems', 'getListingsItem'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'ListingsItems',
+                        'operation' => 'getListingsItem',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            \AmazonPHP\SellingPartner\Model\ListingsItems\Item::class,
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'getListingsItem'.
+     *
+     * @param AccessToken $accessToken
+     * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
+     * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     * @param string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function getListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null, array $included_data = null) : RequestInterface
+    {
+        // verify the required parameter 'seller_id' is set
+        if ($seller_id === null || (\is_array($seller_id) && \count($seller_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $seller_id when calling getListingsItem'
+            );
+        }
+        // verify the required parameter 'sku' is set
+        if ($sku === null || (\is_array($sku) && \count($sku) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $sku when calling getListingsItem'
+            );
+        }
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling getListingsItem'
+            );
+        }
+
+        $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        // query params
+        if ($marketplace_ids instanceof \DateTimeInterface) {
+            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
+        }
+
+        if (\is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = $marketplace_ids;
+        }
+        // query params
+        if ($issue_locale instanceof \DateTimeInterface) {
+            $issue_locale = ObjectSerializer::toString($issue_locale);
+        }
+
+        if (\is_array($issue_locale)) {
+            $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
+        }
+
+        if ($issue_locale !== null) {
+            $queryParams['issueLocale'] = $issue_locale;
+        }
+        // query params
+        if ($included_data instanceof \DateTimeInterface) {
+            $included_data = ObjectSerializer::toString($included_data);
+        }
+
+        if (\is_array($included_data)) {
+            $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
+        }
+
+        if ($included_data !== null) {
+            $queryParams['includedData'] = $included_data;
+        }
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // path params
+        if ($seller_id !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'sellerId' . '}',
+                ObjectSerializer::toPathValue($seller_id),
+                $resourcePath
+            );
+        }
+        // path params
+        if ($sku !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'sku' . '}',
+                ObjectSerializer::toPathValue($sku),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'GET',
             $this->configuration->apiURL($region) . $resourcePath . '?' . $query
         );
 
@@ -428,7 +685,7 @@ final class ListingsItemsSDK
             );
         }
 
-        $resourcePath = '/listings/2020-09-01/items/{sellerId}/{sku}';
+        $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -683,7 +940,7 @@ final class ListingsItemsSDK
             );
         }
 
-        $resourcePath = '/listings/2020-09-01/items/{sellerId}/{sku}';
+        $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

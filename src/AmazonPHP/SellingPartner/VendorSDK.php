@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace AmazonPHP\SellingPartner;
 
+use AmazonPHP\SellingPartner\Api\UpdateInventoryApi\VendorDirectFulfillmentInventorySDK;
 use AmazonPHP\SellingPartner\Api\VendorInvoiceApi\VendorDirectFulfillmentPaymentsSDK;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
 use AmazonPHP\SellingPartner\Api\VendorPaymentsApi\VendorInvoicesSDK;
-use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorDirectFulfillmentShippingSDK;
 use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorShipmentsSDK;
+use AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK;
 use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorDirectFulfillmentTransactionsSDK;
 use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorTransactionStatusSDK;
 use Psr\Http\Client\ClientInterface;
@@ -82,11 +83,6 @@ final class VendorSDK
         return $this->instantiateSDK(VendorDirectFulfillmentPaymentsSDK::class);
     }
 
-    public function vendorDirectFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDK
-    {
-        return $this->instantiateSDK(VendorDirectFulfillmentOrdersSDK::class);
-    }
-
     public function directFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDK
     {
         return $this->instantiateSDK(VendorDirectFulfillmentOrdersSDK::class);
@@ -97,14 +93,14 @@ final class VendorSDK
         return $this->instantiateSDK(VendorDirectFulfillmentShippingSDK::class);
     }
 
-    public function directFulfillmentShippingLabelsSDK() : Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK
-    {
-        return $this->instantiateSDK(Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK::class);
-    }
-
     public function directFulfillmentTransactionsSDK() : VendorDirectFulfillmentTransactionsSDK
     {
         return $this->instantiateSDK(VendorDirectFulfillmentTransactionsSDK::class);
+    }
+
+    public function directFulfillmentInventorySDK() : VendorDirectFulfillmentInventorySDK
+    {
+        return $this->instantiateSDK(VendorDirectFulfillmentInventorySDK::class);
     }
 
     /**

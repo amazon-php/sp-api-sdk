@@ -28,7 +28,7 @@ This library goal is to resolve all above mentioned issues.
 ### Installations
 
 ```
-composer install amazon-php/sp-api-sdk^3.0
+composer install amazon-php/sp-api-sdk^4.0
 ```
 
 This library is not in a stable stage yet, please use with caution.
@@ -51,13 +51,21 @@ Branch [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) comes with BC br
 [Catalog Item](https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2020-12-01.json) models. 
 Until old model won't go away, branches 2.x and 3.x should be maintained in parallel. 
 
+[4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) comes with BC breaks in following Amazon api models: 
+
+- Listings
+- Reports
+- Vendor 
+  - Direct Fulfillment Shipping
+  - Direct Fulfillment Orders
+  - Direct Fulfillment Transactions
+
 ### Available SDKs
 
 [SellingPartnerSDK](/src/AmazonPHP/SellingPartner/SellingPartnerSDK.php) - Facade for all SDK's
 * [APlusSDK](/src/AmazonPHP/SellingPartner/Api/AplusContentApi/APlusSDK.php)
 * [AuthorizationSDK](/src/AmazonPHP/SellingPartner/Api/AuthorizationApi/AuthorizationSDK.php)
 * [CatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogApi/CatalogItemSDK.php)
-* <s>[DeprecatedCatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogApi/CatalogItemDeprecatedSDK.php)</s>
 * [FBAInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FBAInboundSDK.php)
 * [FBAInventorySDK](/src/AmazonPHP/SellingPartner/Api/FbaInventoryApi/FBAInventorySDK.php)
 * [FulfillmentInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FulfillmentInboundSDK.php)

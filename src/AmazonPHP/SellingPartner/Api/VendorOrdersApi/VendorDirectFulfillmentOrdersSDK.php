@@ -24,15 +24,15 @@ final class VendorDirectFulfillmentOrdersSDK
 
     public const OPERATION_GETORDER = 'getOrder';
 
-    public const OPERATION_GETORDER_PATH = '/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}';
+    public const OPERATION_GETORDER_PATH = '/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/{purchaseOrderNumber}';
 
     public const OPERATION_GETORDERS = 'getOrders';
 
-    public const OPERATION_GETORDERS_PATH = '/vendor/directFulfillment/orders/v1/purchaseOrders';
+    public const OPERATION_GETORDERS_PATH = '/vendor/directFulfillment/orders/2021-12-28/purchaseOrders';
 
     public const OPERATION_SUBMITACKNOWLEDGEMENT = 'submitAcknowledgement';
 
-    public const OPERATION_SUBMITACKNOWLEDGEMENT_PATH = '/vendor/directFulfillment/orders/v1/acknowledgements';
+    public const OPERATION_SUBMITACKNOWLEDGEMENT_PATH = '/vendor/directFulfillment/orders/2021-12-28/acknowledgements';
 
     private ClientInterface $client;
 
@@ -59,7 +59,7 @@ final class VendorDirectFulfillmentOrdersSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrder(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrderResponse
+    public function getOrder(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Order
     {
         $request = $this->getOrderRequest($accessToken, $region, $purchase_order_number);
 
@@ -141,7 +141,7 @@ final class VendorDirectFulfillmentOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrderResponse::class,
+            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Order::class,
             []
         );
     }
@@ -163,7 +163,7 @@ final class VendorDirectFulfillmentOrdersSDK
             );
         }
 
-        $resourcePath = '/vendor/directFulfillment/orders/v1/purchaseOrders/{purchaseOrderNumber}';
+        $resourcePath = '/vendor/directFulfillment/orders/2021-12-28/purchaseOrders/{purchaseOrderNumber}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -254,7 +254,7 @@ final class VendorDirectFulfillmentOrdersSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrdersResponse
+    public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList
     {
         $request = $this->getOrdersRequest($accessToken, $region, $created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
 
@@ -336,7 +336,7 @@ final class VendorDirectFulfillmentOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GetOrdersResponse::class,
+            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList::class,
             []
         );
     }
@@ -379,7 +379,7 @@ final class VendorDirectFulfillmentOrdersSDK
             throw new InvalidArgumentException('invalid value for "$limit" when calling VendorOrdersApi.getOrders, must be bigger than or equal to 1.');
         }
 
-        $resourcePath = '/vendor/directFulfillment/orders/v1/purchaseOrders';
+        $resourcePath = '/vendor/directFulfillment/orders/2021-12-28/purchaseOrders';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -545,7 +545,7 @@ final class VendorDirectFulfillmentOrdersSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function submitAcknowledgement(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementResponse
+    public function submitAcknowledgement(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TransactionId
     {
         $request = $this->submitAcknowledgementRequest($accessToken, $region, $body);
 
@@ -627,7 +627,7 @@ final class VendorDirectFulfillmentOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementResponse::class,
+            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TransactionId::class,
             []
         );
     }
@@ -649,7 +649,7 @@ final class VendorDirectFulfillmentOrdersSDK
             );
         }
 
-        $resourcePath = '/vendor/directFulfillment/orders/v1/acknowledgements';
+        $resourcePath = '/vendor/directFulfillment/orders/2021-12-28/acknowledgements';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

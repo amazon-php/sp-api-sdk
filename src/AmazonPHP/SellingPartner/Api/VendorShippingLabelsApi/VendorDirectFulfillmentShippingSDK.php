@@ -24,15 +24,15 @@ final class VendorDirectFulfillmentShippingSDK
 
     public const OPERATION_GETSHIPPINGLABEL = 'getShippingLabel';
 
-    public const OPERATION_GETSHIPPINGLABEL_PATH = '/vendor/directFulfillment/shipping/v1/shippingLabels/{purchaseOrderNumber}';
+    public const OPERATION_GETSHIPPINGLABEL_PATH = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}';
 
     public const OPERATION_GETSHIPPINGLABELS = 'getShippingLabels';
 
-    public const OPERATION_GETSHIPPINGLABELS_PATH = '/vendor/directFulfillment/shipping/v1/shippingLabels';
+    public const OPERATION_GETSHIPPINGLABELS_PATH = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels';
 
     public const OPERATION_SUBMITSHIPPINGLABELREQUEST = 'submitShippingLabelRequest';
 
-    public const OPERATION_SUBMITSHIPPINGLABELREQUEST_PATH = '/vendor/directFulfillment/shipping/v1/shippingLabels';
+    public const OPERATION_SUBMITSHIPPINGLABELREQUEST_PATH = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels';
 
     private ClientInterface $client;
 
@@ -59,7 +59,7 @@ final class VendorDirectFulfillmentShippingSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getShippingLabel(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse
+    public function getShippingLabel(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
     {
         $request = $this->getShippingLabelRequest($accessToken, $region, $purchase_order_number);
 
@@ -141,7 +141,7 @@ final class VendorDirectFulfillmentShippingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\GetShippingLabelResponse::class,
+            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel::class,
             []
         );
     }
@@ -167,7 +167,7 @@ final class VendorDirectFulfillmentShippingSDK
             throw new InvalidArgumentException('invalid value for "purchase_order_number" when calling VendorShippingLabelsApi.getShippingLabel, must conform to the pattern /^[a-zA-Z0-9]+$/.');
         }
 
-        $resourcePath = '/vendor/directFulfillment/shipping/v1/shippingLabels/{purchaseOrderNumber}';
+        $resourcePath = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -256,7 +256,7 @@ final class VendorDirectFulfillmentShippingSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getShippingLabels(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, int $limit = null, string $sort_order = 'ASC', string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse
+    public function getShippingLabels(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, int $limit = null, string $sort_order = 'ASC', string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList
     {
         $request = $this->getShippingLabelsRequest($accessToken, $region, $created_after, $created_before, $ship_from_party_id, $limit, $sort_order, $next_token);
 
@@ -338,7 +338,7 @@ final class VendorDirectFulfillmentShippingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\GetShippingLabelListResponse::class,
+            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList::class,
             []
         );
     }
@@ -379,7 +379,7 @@ final class VendorDirectFulfillmentShippingSDK
             throw new InvalidArgumentException('invalid value for "$limit" when calling VendorShippingLabelsApi.getShippingLabels, must be bigger than or equal to 1.');
         }
 
-        $resourcePath = '/vendor/directFulfillment/shipping/v1/shippingLabels';
+        $resourcePath = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -521,7 +521,7 @@ final class VendorDirectFulfillmentShippingSDK
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function submitShippingLabelRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse
+    public function submitShippingLabelRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference
     {
         $request = $this->submitShippingLabelRequestRequest($accessToken, $region, $body);
 
@@ -603,7 +603,7 @@ final class VendorDirectFulfillmentShippingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsResponse::class,
+            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference::class,
             []
         );
     }
@@ -625,7 +625,7 @@ final class VendorDirectFulfillmentShippingSDK
             );
         }
 
-        $resourcePath = '/vendor/directFulfillment/shipping/v1/shippingLabels';
+        $resourcePath = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

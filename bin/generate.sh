@@ -10,13 +10,6 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api
 
-# This is deprecated version of catalog items, it should not change until Amazon will disable it
-#docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-#    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItemsV0.json \
-#    -c /sp-api/config/generator-catalog-item-deprecated.yaml \
-#    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
-#    -o /sp-api
-
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2020-12-01.json \
     --skip-validate-spec \
@@ -67,10 +60,11 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     -o /sp-api
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/listings-items-api-model/listingsItems_2020-09-01.json \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/listings-items-api-model/listingsItems_2021-08-01.json \
     -c /sp-api/config/generator-listings-items.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
-    -o /sp-api
+    -o /sp-api \
+    --skip-validate-spec
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/merchant-fulfillment-api-model/merchantFulfillmentV0.json \
@@ -116,7 +110,7 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     -o /sp-api
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/reports-api-model/reports_2020-09-04.json \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/reports-api-model/reports_2021-06-30.json \
     -c /sp-api/config/generator-reports.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api
@@ -177,7 +171,7 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     -o /sp-api
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-orders-api-model/vendorDirectFulfillmentOrdersV1.json \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-orders-api-model/vendorDirectFulfillmentOrders_2021-12-28.json \
     -c /sp-api/config/generator-vendor-direct-fulfillment-orders.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api
@@ -190,13 +184,13 @@ docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate 
     -o /sp-api
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-shipping-api-model/vendorDirectFulfillmentShippingV1.json \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-shipping-api-model/vendorDirectFulfillmentShipping_2021-12-28.json \
     -c /sp-api/config/generator-vendor-direct-fulfillment-shipping.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api
 
 docker run --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-transactions-api-model/vendorDirectFulfillmentTransactionsV1.json \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-direct-fulfillment-transactions-api-model/vendorDirectFulfillmentTransactions_2021-12-28.json \
     -c /sp-api/config/generator-vendor-direct-fulfillment-transactions.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api

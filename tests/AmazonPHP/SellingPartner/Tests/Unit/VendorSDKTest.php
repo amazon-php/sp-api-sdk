@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace AmazonPHP\Test\AmazonPHP\SellingPartner\Tests\Unit;
 
+use AmazonPHP\SellingPartner\Api\UpdateInventoryApi\VendorDirectFulfillmentInventorySDK;
 use AmazonPHP\SellingPartner\Api\VendorInvoiceApi\VendorDirectFulfillmentPaymentsSDK;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
 use AmazonPHP\SellingPartner\Api\VendorPaymentsApi\VendorInvoicesSDK;
-use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorDirectFulfillmentShippingSDK;
 use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorShipmentsSDK;
-use AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK as VendorDirectFulfillmentShippingLabelsSDK;
+use AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK;
 use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorDirectFulfillmentTransactionsSDK;
 use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorTransactionStatusSDK;
 use AmazonPHP\SellingPartner\Configuration;
@@ -41,11 +41,10 @@ final class VendorSDKTest extends TestCase
         'shipmentsSDK'                       => VendorShipmentsSDK::class,
         'transactionStatusSDK'               => VendorTransactionStatusSDK::class,
         'directFulfillmentPaymentsSDK'       => VendorDirectFulfillmentPaymentsSDK::class,
-        'vendorDirectFulfillmentOrdersSDK'   => VendorDirectFulfillmentOrdersSDK::class,
         'directFulfillmentOrdersSDK'         => VendorDirectFulfillmentOrdersSDK::class,
         'directFulfillmentShippingSDK'       => VendorDirectFulfillmentShippingSDK::class,
-        'directFulfillmentShippingLabelsSDK' => VendorDirectFulfillmentShippingLabelsSDK::class,
         'directFulfillmentTransactionsSDK'   => VendorDirectFulfillmentTransactionsSDK::class,
+        'directFulfillmentInventorySDK'      => VendorDirectFulfillmentInventorySDK::class
     ];
 
     protected function setUp() : void
