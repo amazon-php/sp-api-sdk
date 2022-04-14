@@ -8,6 +8,7 @@
 - [#162](https://github.com/amazon-php/sp-api-sdk/pull/162) - **Fixed InvalidSignature error in case query contains space.** - [@sergoslav](https://github.com/sergoslav)
 
 ### Updated
+- [37def2](https://github.com/amazon-php/sp-api-sdk/commit/37def2df2c853b70c59e78934f4883fc0cdacdd2) - **models** - [@norberttech](https://github.com/norberttech)
 - [839636](https://github.com/amazon-php/sp-api-sdk/commit/83963643cac4b017eeb14f6f46287f81b49ee78c) - **dependencies** - [@norberttech](https://github.com/norberttech)
 
 ## [3.0.10] - 2022-03-28
