@@ -1,5 +1,11 @@
 ## [Unreleased] - 2022-04-14
 
+### Changed
+- [#162](https://github.com/amazon-php/sp-api-sdk/pull/162) - **In function what calculate signature for request default encoding type PHP_QUERY_RFC1738 changed to PHP_QUERY_RFC3986** - [@sergoslav](https://github.com/sergoslav)
+
+### Fixed
+- [#162](https://github.com/amazon-php/sp-api-sdk/pull/162) - **Fixed InvalidSignature error in case query contains space.** - [@sergoslav](https://github.com/sergoslav)
+
 ### Updated
 - [839636](https://github.com/amazon-php/sp-api-sdk/commit/83963643cac4b017eeb14f6f46287f81b49ee78c) - **dependencies** - [@norberttech](https://github.com/norberttech)
 
