@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-05-16
+
+### Added
+- [#169](https://github.com/amazon-php/sp-api-sdk/pull/169) - **Throw an ApiException if the AssumeRole action response returns other than a 200 level response.** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [4.0.0] - 2022-04-14
 
 ### Changed
