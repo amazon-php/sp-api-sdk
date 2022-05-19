@@ -248,8 +248,8 @@ try {
     $item = $sdk->catalogItem()->getCatalogItem(
         $accessToken,
         Regions::NORTH_AMERICA,
-        $marketplaceId = Marketplace::US()->id(),
-        $asin = 'B07W13KJZC'
+        $asin = 'B07W13KJZC',
+        $marketplaceId = [Marketplace::US()->id()]
     );
     dump($item);
 } catch (ApiException $exception) {
