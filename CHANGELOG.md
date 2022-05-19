@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-05-19
+
+### Fixed
+- [#171](https://github.com/amazon-php/sp-api-sdk/pull/171) - **The code example calling getCatalogItems in the README file passed incorrect parameters to the method.** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [4.0.1] - 2022-05-16
 
 ### Added
