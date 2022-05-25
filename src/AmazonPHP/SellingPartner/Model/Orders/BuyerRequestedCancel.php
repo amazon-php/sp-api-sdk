@@ -245,7 +245,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets buyer_cancel_reason.
      *
-     * @param null|string $buyer_cancel_reason Reason for buyer requesting cancel
+     * @param null|string $buyer_cancel_reason the reason that the buyer requested cancellation
      */
     public function setBuyerCancelReason(?string $buyer_cancel_reason) : self
     {

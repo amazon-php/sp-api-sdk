@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * GetDestinationResponse.
+ * ProcessingDirective.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ProcessingDirective implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetDestinationResponse';
+    protected static string $openAPIModelName = 'ProcessingDirective';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -57,8 +57,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\Notifications\Destination',
-        'errors' => '\AmazonPHP\SellingPartner\Model\Notifications\Error[]',
+        'event_filter' => '\AmazonPHP\SellingPartner\Model\Notifications\EventFilter',
     ];
 
     /**
@@ -69,8 +68,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'event_filter' => null,
     ];
 
     /**
@@ -80,8 +78,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'event_filter' => 'eventFilter',
     ];
 
     /**
@@ -90,8 +87,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'event_filter' => 'setEventFilter',
     ];
 
     /**
@@ -100,8 +96,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'event_filter' => 'getEventFilter',
     ];
 
     /**
@@ -119,8 +114,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['event_filter'] = $data['event_filter'] ?? null;
     }
 
     /**
@@ -215,43 +209,21 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets payload.
+     * Gets event_filter.
      */
-    public function getPayload() : ?Destination
+    public function getEventFilter() : ?EventFilter
     {
-        return $this->container['payload'];
+        return $this->container['event_filter'];
     }
 
     /**
-     * Sets payload.
+     * Sets event_filter.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Destination $payload payload
+     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\EventFilter $event_filter event_filter
      */
-    public function setPayload(?Destination $payload) : self
+    public function setEventFilter(?EventFilter $event_filter) : self
     {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Error[]
-     */
-    public function getErrors() : ?array
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
-     */
-    public function setErrors(?array $errors) : self
-    {
-        $this->container['errors'] = $errors;
+        $this->container['event_filter'] = $event_filter;
 
         return $this;
     }

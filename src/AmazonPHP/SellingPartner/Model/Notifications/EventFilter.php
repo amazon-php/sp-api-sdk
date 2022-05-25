@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * GetDestinationResponse.
+ * EventFilter.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetDestinationResponse';
+    protected static string $openAPIModelName = 'EventFilter';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -57,8 +57,9 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\Notifications\Destination',
-        'errors' => '\AmazonPHP\SellingPartner\Model\Notifications\Error[]',
+        'aggregation_settings' => '\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings',
+        'marketplace_ids' => 'string[]',
+        'event_filter_type' => 'string',
     ];
 
     /**
@@ -69,8 +70,9 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'aggregation_settings' => null,
+        'marketplace_ids' => null,
+        'event_filter_type' => null,
     ];
 
     /**
@@ -80,8 +82,9 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'aggregation_settings' => 'aggregationSettings',
+        'marketplace_ids' => 'marketplaceIds',
+        'event_filter_type' => 'eventFilterType',
     ];
 
     /**
@@ -90,8 +93,9 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'aggregation_settings' => 'setAggregationSettings',
+        'marketplace_ids' => 'setMarketplaceIds',
+        'event_filter_type' => 'setEventFilterType',
     ];
 
     /**
@@ -100,8 +104,9 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'aggregation_settings' => 'getAggregationSettings',
+        'marketplace_ids' => 'getMarketplaceIds',
+        'event_filter_type' => 'getEventFilterType',
     ];
 
     /**
@@ -119,8 +124,9 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['aggregation_settings'] = $data['aggregation_settings'] ?? null;
+        $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
+        $this->container['event_filter_type'] = $data['event_filter_type'] ?? null;
     }
 
     /**
@@ -200,7 +206,13 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function listInvalidProperties() : array
     {
-        return [];
+        $invalidProperties = [];
+
+        if ($this->container['event_filter_type'] === null) {
+            $invalidProperties[] = "'event_filter_type' can't be null";
+        }
+
+        return $invalidProperties;
     }
 
     /**
@@ -215,43 +227,63 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets payload.
+     * Gets aggregation_settings.
      */
-    public function getPayload() : ?Destination
+    public function getAggregationSettings() : ?AggregationSettings
     {
-        return $this->container['payload'];
+        return $this->container['aggregation_settings'];
     }
 
     /**
-     * Sets payload.
+     * Sets aggregation_settings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Destination $payload payload
+     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings $aggregation_settings aggregation_settings
      */
-    public function setPayload(?Destination $payload) : self
+    public function setAggregationSettings(?AggregationSettings $aggregation_settings) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['aggregation_settings'] = $aggregation_settings;
 
         return $this;
     }
 
     /**
-     * Gets errors.
+     * Gets marketplace_ids.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Error[]
+     * @return null|string[]
      */
-    public function getErrors() : ?array
+    public function getMarketplaceIds() : ?array
     {
-        return $this->container['errors'];
+        return $this->container['marketplace_ids'];
     }
 
     /**
-     * Sets errors.
+     * Sets marketplace_ids.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|string[] $marketplace_ids A list of marketplace identifiers to subscribe to (e.g. ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
      */
-    public function setErrors(?array $errors) : self
+    public function setMarketplaceIds(?array $marketplace_ids) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['marketplace_ids'] = $marketplace_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets event_filter_type.
+     */
+    public function getEventFilterType() : string
+    {
+        return $this->container['event_filter_type'];
+    }
+
+    /**
+     * Sets event_filter_type.
+     *
+     * @param string $event_filter_type An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
+     */
+    public function setEventFilterType(string $event_filter_type) : self
+    {
+        $this->container['event_filter_type'] = $event_filter_type;
 
         return $this;
     }

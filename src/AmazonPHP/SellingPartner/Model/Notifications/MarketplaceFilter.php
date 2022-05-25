@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * GetDestinationResponse.
+ * MarketplaceFilter.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class MarketplaceFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetDestinationResponse';
+    protected static string $openAPIModelName = 'MarketplaceFilter';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -57,8 +57,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\Notifications\Destination',
-        'errors' => '\AmazonPHP\SellingPartner\Model\Notifications\Error[]',
+        'marketplace_ids' => 'string[]',
     ];
 
     /**
@@ -69,8 +68,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'marketplace_ids' => null,
     ];
 
     /**
@@ -80,8 +78,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'marketplace_ids' => 'marketplaceIds',
     ];
 
     /**
@@ -90,8 +87,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'marketplace_ids' => 'setMarketplaceIds',
     ];
 
     /**
@@ -100,8 +96,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'marketplace_ids' => 'getMarketplaceIds',
     ];
 
     /**
@@ -119,8 +114,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
     }
 
     /**
@@ -215,43 +209,23 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets payload.
+     * Gets marketplace_ids.
+     *
+     * @return null|string[]
      */
-    public function getPayload() : ?Destination
+    public function getMarketplaceIds() : ?array
     {
-        return $this->container['payload'];
+        return $this->container['marketplace_ids'];
     }
 
     /**
-     * Sets payload.
+     * Sets marketplace_ids.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Destination $payload payload
+     * @param null|string[] $marketplace_ids A list of marketplace identifiers to subscribe to (e.g. ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
      */
-    public function setPayload(?Destination $payload) : self
+    public function setMarketplaceIds(?array $marketplace_ids) : self
     {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Error[]
-     */
-    public function getErrors() : ?array
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
-     */
-    public function setErrors(?array $errors) : self
-    {
-        $this->container['errors'] = $errors;
+        $this->container['marketplace_ids'] = $marketplace_ids;
 
         return $this;
     }

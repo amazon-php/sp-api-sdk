@@ -44,10 +44,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 {
     public const DISCRIMINATOR = null;
 
-    public const STATUS_APPROVED = 'Approved';
-
-    public const STATUS_REJECTED = 'Rejected';
-
     /**
      * The original name of the model.
      *
@@ -61,7 +57,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'status' => 'string',
+        'status' => '\AmazonPHP\SellingPartner\Model\Orders\VerificationStatus',
         'external_reviewer_id' => 'string',
         'rejection_reason_id' => 'string',
     ];
@@ -204,19 +200,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets allowable values of the enum.
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues() : array
-    {
-        return [
-            self::STATUS_APPROVED,
-            self::STATUS_REJECTED,
-        ];
-    }
-
-    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -227,15 +210,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
-        }
-        $allowedValues = $this->getStatusAllowableValues();
-
-        if (null !== $this->container['status'] && !\in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                \implode("', '", $allowedValues)
-            );
         }
 
         if ($this->container['external_reviewer_id'] === null) {
@@ -259,7 +233,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Gets status.
      */
-    public function getStatus() : string
+    public function getStatus() : VerificationStatus
     {
         return $this->container['status'];
     }
@@ -267,21 +241,10 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Sets status.
      *
-     * @param string $status the new verification status of the order
+     * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
      */
-    public function setStatus(string $status) : self
+    public function setStatus(VerificationStatus $status) : self
     {
-        $allowedValues = $this->getStatusAllowableValues();
-
-        if (!\in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;
