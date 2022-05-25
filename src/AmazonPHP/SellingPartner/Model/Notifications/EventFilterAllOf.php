@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * GetDestinationResponse.
+ * EventFilterAllOf.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetDestinationResponse';
+    protected static string $openAPIModelName = 'EventFilter_allOf';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -57,8 +57,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\Notifications\Destination',
-        'errors' => '\AmazonPHP\SellingPartner\Model\Notifications\Error[]',
+        'event_filter_type' => 'string',
     ];
 
     /**
@@ -69,8 +68,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'event_filter_type' => null,
     ];
 
     /**
@@ -80,8 +78,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'event_filter_type' => 'eventFilterType',
     ];
 
     /**
@@ -90,8 +87,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'event_filter_type' => 'setEventFilterType',
     ];
 
     /**
@@ -100,8 +96,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'event_filter_type' => 'getEventFilterType',
     ];
 
     /**
@@ -119,8 +114,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['event_filter_type'] = $data['event_filter_type'] ?? null;
     }
 
     /**
@@ -200,7 +194,13 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function listInvalidProperties() : array
     {
-        return [];
+        $invalidProperties = [];
+
+        if ($this->container['event_filter_type'] === null) {
+            $invalidProperties[] = "'event_filter_type' can't be null";
+        }
+
+        return $invalidProperties;
     }
 
     /**
@@ -215,43 +215,21 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets payload.
+     * Gets event_filter_type.
      */
-    public function getPayload() : ?Destination
+    public function getEventFilterType() : string
     {
-        return $this->container['payload'];
+        return $this->container['event_filter_type'];
     }
 
     /**
-     * Sets payload.
+     * Sets event_filter_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Destination $payload payload
+     * @param string $event_filter_type An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
      */
-    public function setPayload(?Destination $payload) : self
+    public function setEventFilterType(string $event_filter_type) : self
     {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Error[]
-     */
-    public function getErrors() : ?array
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
-     */
-    public function setErrors(?array $errors) : self
-    {
-        $this->container['errors'] = $errors;
+        $this->container['event_filter_type'] = $event_filter_type;
 
         return $this;
     }

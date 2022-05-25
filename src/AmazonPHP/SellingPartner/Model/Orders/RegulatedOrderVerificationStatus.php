@@ -44,16 +44,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 {
     public const DISCRIMINATOR = null;
 
-    public const STATUS_PENDING = 'Pending';
-
-    public const STATUS_APPROVED = 'Approved';
-
-    public const STATUS_REJECTED = 'Rejected';
-
-    public const STATUS_EXPIRED = 'Expired';
-
-    public const STATUS_CANCELLED = 'Cancelled';
-
     /**
      * The original name of the model.
      *
@@ -67,7 +57,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'status' => 'string',
+        'status' => '\AmazonPHP\SellingPartner\Model\Orders\VerificationStatus',
         'requires_merchant_action' => 'bool',
         'valid_rejection_reasons' => '\AmazonPHP\SellingPartner\Model\Orders\RejectionReason[]',
         'rejection_reason' => '\AmazonPHP\SellingPartner\Model\Orders\RejectionReason',
@@ -228,22 +218,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Gets allowable values of the enum.
-     *
-     * @return string[]
-     */
-    public function getStatusAllowableValues() : array
-    {
-        return [
-            self::STATUS_PENDING,
-            self::STATUS_APPROVED,
-            self::STATUS_REJECTED,
-            self::STATUS_EXPIRED,
-            self::STATUS_CANCELLED,
-        ];
-    }
-
-    /**
      * Show all the invalid properties with reasons.
      *
      * @return array invalid properties with reasons
@@ -254,15 +228,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
         if ($this->container['status'] === null) {
             $invalidProperties[] = "'status' can't be null";
-        }
-        $allowedValues = $this->getStatusAllowableValues();
-
-        if (null !== $this->container['status'] && !\in_array($this->container['status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'status', must be one of '%s'",
-                $this->container['status'],
-                \implode("', '", $allowedValues)
-            );
         }
 
         if ($this->container['requires_merchant_action'] === null) {
@@ -290,7 +255,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Gets status.
      */
-    public function getStatus() : string
+    public function getStatus() : VerificationStatus
     {
         return $this->container['status'];
     }
@@ -298,21 +263,10 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets status.
      *
-     * @param string $status the verification status of the order
+     * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
      */
-    public function setStatus(string $status) : self
+    public function setStatus(VerificationStatus $status) : self
     {
-        $allowedValues = $this->getStatusAllowableValues();
-
-        if (!\in_array($status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'status', must be one of '%s'",
-                    $status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

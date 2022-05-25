@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 /**
- * GetDestinationResponse.
+ * AggregationSettings.
  *
  * PHP version 7.4
  *
@@ -40,7 +40,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class AggregationSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetDestinationResponse';
+    protected static string $openAPIModelName = 'AggregationSettings';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -57,8 +57,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\Notifications\Destination',
-        'errors' => '\AmazonPHP\SellingPartner\Model\Notifications\Error[]',
+        'aggregation_time_period' => '\AmazonPHP\SellingPartner\Model\Notifications\AggregationTimePeriod',
     ];
 
     /**
@@ -69,8 +68,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'aggregation_time_period' => null,
     ];
 
     /**
@@ -80,8 +78,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'aggregation_time_period' => 'aggregationTimePeriod',
     ];
 
     /**
@@ -90,8 +87,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'aggregation_time_period' => 'setAggregationTimePeriod',
     ];
 
     /**
@@ -100,8 +96,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'aggregation_time_period' => 'getAggregationTimePeriod',
     ];
 
     /**
@@ -119,8 +114,7 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['aggregation_time_period'] = $data['aggregation_time_period'] ?? null;
     }
 
     /**
@@ -200,7 +194,13 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function listInvalidProperties() : array
     {
-        return [];
+        $invalidProperties = [];
+
+        if ($this->container['aggregation_time_period'] === null) {
+            $invalidProperties[] = "'aggregation_time_period' can't be null";
+        }
+
+        return $invalidProperties;
     }
 
     /**
@@ -215,43 +215,21 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Gets payload.
+     * Gets aggregation_time_period.
      */
-    public function getPayload() : ?Destination
+    public function getAggregationTimePeriod() : AggregationTimePeriod
     {
-        return $this->container['payload'];
+        return $this->container['aggregation_time_period'];
     }
 
     /**
-     * Sets payload.
+     * Sets aggregation_time_period.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Destination $payload payload
+     * @param \AmazonPHP\SellingPartner\Model\Notifications\AggregationTimePeriod $aggregation_time_period aggregation_time_period
      */
-    public function setPayload(?Destination $payload) : self
+    public function setAggregationTimePeriod(AggregationTimePeriod $aggregation_time_period) : self
     {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Error[]
-     */
-    public function getErrors() : ?array
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
-     */
-    public function setErrors(?array $errors) : self
-    {
-        $this->container['errors'] = $errors;
+        $this->container['aggregation_time_period'] = $aggregation_time_period;
 
         return $this;
     }
