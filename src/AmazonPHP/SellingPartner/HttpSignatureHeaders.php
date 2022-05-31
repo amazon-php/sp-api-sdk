@@ -73,7 +73,9 @@ final class HttpSignatureHeaders
         $canonicalHeaders = [];
 
         foreach ($allHeaders as $headerName => $headerValue) {
-            if (\in_array(\strtolower($headerName), $blacklistHeaders, true)) {
+            $headerName = \strtolower($headerName);
+
+            if (\in_array($headerName, $blacklistHeaders, true)) {
                 continue;
             }
 
@@ -204,17 +206,19 @@ final class HttpSignatureHeaders
         $canonicalHeaders = [];
 
         foreach ($allHeaders as $headerName => $headerValue) {
-            if (\in_array(\strtolower($headerName), $blacklistHeaders, true)) {
+            $headerName = \strtolower($headerName);
+
+            if (\in_array($headerName, $blacklistHeaders, true)) {
                 continue;
             }
 
-            $canonicalHeaders[\strtolower($headerName)] = $headerValue;
+            $canonicalHeaders[$headerName] = $headerValue;
 
             if (\count($headerValue) > 0) {
                 \sort($headerValue);
             }
 
-            $canonicalHeadersStr .= \strtolower($headerName) . ':' . \implode(',', $headerValue) . "\n";
+            $canonicalHeadersStr .= $headerName . ':' . \implode(',', $headerValue) . "\n";
         }
 
         $signedHeadersStr = \implode(';', \array_keys($canonicalHeaders));
