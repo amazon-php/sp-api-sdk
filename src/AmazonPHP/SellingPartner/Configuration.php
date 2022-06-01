@@ -59,6 +59,15 @@ final class Configuration
         return new self($clientId, $clientSecret, $credentials->accessKeyId(), $credentials->secretAccessKey(), $credentials->sessionToken());
     }
 
+    public function updateIAMRoleCredentials(Credentials $credentials) : self
+    {
+        $this->accessKey = $credentials->accessKeyId();
+        $this->secretKey = $credentials->secretAccessKey();
+        $this->securityToken = $credentials->sessionToken();
+
+        return $this;
+    }
+
     public function lwaClientID() : string
     {
         return $this->lwaClientID;
