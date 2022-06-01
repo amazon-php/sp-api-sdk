@@ -1,3 +1,9 @@
+## [Unreleased] - 2022-06-01
+
+### Added
+- [#176](https://github.com/amazon-php/sp-api-sdk/pull/176) - **Added Configuration getter to SellingPartnerSDK.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#176](https://github.com/amazon-php/sp-api-sdk/pull/176) - **Added method to update IAM Role Credentials on Configuration class.** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [4.0.2] - 2022-05-25
 
 ### Fixed
