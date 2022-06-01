@@ -84,7 +84,7 @@ final class SellingPartnerSDK
         return new self($httpClient, $requestFactory, $streamFactory, $configuration, $logger);
     }
 
-    public function getConfiguration() : Configuration
+    public function configuration() : Configuration
     {
         return $this->configuration;
     }
