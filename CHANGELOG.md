@@ -1,8 +1,11 @@
-## [Unreleased] - 2022-06-01
+## [Unreleased] - 2022-06-03
 
 ### Added
 - [#176](https://github.com/amazon-php/sp-api-sdk/pull/176) - **Added Configuration getter to SellingPartnerSDK.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#176](https://github.com/amazon-php/sp-api-sdk/pull/176) - **Added method to update IAM Role Credentials on Configuration class.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Fixed
+- [#179](https://github.com/amazon-php/sp-api-sdk/pull/179) - **HttpSignatureHeaders::forConfig will convert header names to lowercase when calculating the signature to avoid mismatched signatures when sending to Amazon and match behaviour of HttpSignatureHeaders::raw.** - [@raing3](https://github.com/raing3)
 
 ## [4.0.2] - 2022-05-25
 
