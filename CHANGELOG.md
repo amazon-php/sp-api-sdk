@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-06-03
+## [4.0.3] - 2022-06-03
 
 ### Added
 - [#176](https://github.com/amazon-php/sp-api-sdk/pull/176) - **Added Configuration getter to SellingPartnerSDK.** - [@jasonhebert](https://github.com/jasonhebert)
