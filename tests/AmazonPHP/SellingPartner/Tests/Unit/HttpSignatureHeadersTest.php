@@ -29,6 +29,7 @@ class HttpSignatureHeadersTest extends TestCase
 
     public function test_converts_header_names_to_lowercase(): void
     {
+        $shortDate = gmdate('Ymd');
         $request = new Request(
             'GET',
             'https://sellingpartnerapi-fe.amazon.com/sellers/v1/marketplaceParticipations',
@@ -44,9 +45,9 @@ class HttpSignatureHeadersTest extends TestCase
         );
 
         $this->assertMatchesRegularExpression(
-            '#^AWS4-HMAC-SHA256 Credential=testAccessKey/20220531/us-west-2/execute-api/aws4_request, ' .
-            'SignedHeaders=host;x-amz-access-token;x-amz-date, ' .
-            'Signature=[0-9a-f]{64}$#',
+            "#^AWS4-HMAC-SHA256 Credential=testAccessKey/$shortDate/us-west-2/execute-api/aws4_request, " .
+            "SignedHeaders=host;x-amz-access-token;x-amz-date, " .
+            "Signature=[0-9a-f]{64}$#",
             $signedRequest->getHeader('Authorization')[0]
         );
     }
