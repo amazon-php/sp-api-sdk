@@ -1,3 +1,11 @@
+## [Unreleased] - 2022-06-09
+
+### Added
+- [#183](https://github.com/amazon-php/sp-api-sdk/pull/183) - **Add new methods and operations to the Configuration and LoggerConfiguration classes to re-enable logging of API's and/or operations that were previously skipped.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Fixed
+- [#183](https://github.com/amazon-php/sp-api-sdk/pull/183) - **Fixed logic errors in existing LoggerConfiguration methods preventing proper handling of skip logging functionality.** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [4.0.3] - 2022-06-03
 
 ### Added
