@@ -181,14 +181,29 @@ final class Configuration
     {
         if ($operation !== null) {
             $this->loggerConfiguration->skipAPIOperation($api, $operation);
-        } else {
-            $this->loggerConfiguration->skipAPI($api);
+
+            return $this;
         }
+
+        $this->loggerConfiguration->skipAPI($api);
 
         return $this;
     }
 
-    public function loggingEnabled(string $api, string $operation) : bool
+    public function setEnableLogging(string $api, string $operation = null) : self
+    {
+        if ($operation !== null) {
+            $this->loggerConfiguration->enableAPIOperation($api, $operation);
+
+            return $this;
+        }
+
+        $this->loggerConfiguration->enableAPI($api);
+
+        return $this;
+    }
+
+    public function loggingEnabled(string $api, string $operation = null) : bool
     {
         return !$this->loggerConfiguration->isSkipped($api, $operation);
     }
@@ -196,6 +211,13 @@ final class Configuration
     public function loggingAddSkippedHeader(string $headerName) : self
     {
         $this->loggerConfiguration->addSkippedHeader($headerName);
+
+        return $this;
+    }
+
+    public function loggingRemoveSkippedHeader(string $headerName) : self
+    {
+        $this->loggerConfiguration->removeSkippedHeader($headerName);
 
         return $this;
     }
