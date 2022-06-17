@@ -135,7 +135,7 @@ final class FBAInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse',
             []
         );
     }
@@ -177,40 +177,28 @@ final class FBAInboundSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
         // query params
-        if ($asin instanceof \DateTimeInterface) {
-            $asin = ObjectSerializer::toString($asin);
-        }
-
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
         }
 
         if ($asin !== null) {
-            $queryParams['asin'] = $asin;
+            $queryParams['asin'] = ObjectSerializer::toString($asin);
         }
         // query params
-        if ($program instanceof \DateTimeInterface) {
-            $program = ObjectSerializer::toString($program);
-        }
-
         if (\is_array($program)) {
             $program = ObjectSerializer::serializeCollection($program, '', true);
         }
 
         if ($program !== null) {
-            $queryParams['program'] = $program;
+            $queryParams['program'] = ObjectSerializer::toString($program);
         }
 
         if (\count($queryParams)) {

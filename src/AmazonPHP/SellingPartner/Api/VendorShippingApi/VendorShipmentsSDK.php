@@ -133,7 +133,7 @@ final class VendorShipmentsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse',
             []
         );
     }

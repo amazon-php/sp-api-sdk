@@ -179,7 +179,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsResponse',
             []
         );
     }
@@ -228,16 +228,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -409,7 +405,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsResponse',
             []
         );
     }
@@ -458,16 +454,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -639,7 +631,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsResponse',
             []
         );
     }
@@ -688,16 +680,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -869,7 +857,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsResponse',
             []
         );
     }
@@ -918,16 +906,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -1099,7 +1083,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsResponse',
             []
         );
     }
@@ -1148,16 +1132,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -1329,7 +1309,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyResponse',
             []
         );
     }
@@ -1378,16 +1358,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -1559,7 +1535,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureResponse',
             []
         );
     }
@@ -1608,16 +1584,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -1788,7 +1760,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateNegativeFeedbackRemovalResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateNegativeFeedbackRemovalResponse',
             []
         );
     }
@@ -1829,16 +1801,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -2002,7 +1970,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemResponse',
             []
         );
     }
@@ -2051,16 +2019,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -2232,7 +2196,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyResponse',
             []
         );
     }
@@ -2281,16 +2245,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -2461,7 +2421,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponse',
             []
         );
     }
@@ -2502,16 +2462,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -2674,7 +2630,7 @@ final class MessagingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponse',
             []
         );
     }
@@ -2715,16 +2671,12 @@ final class MessagingSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {

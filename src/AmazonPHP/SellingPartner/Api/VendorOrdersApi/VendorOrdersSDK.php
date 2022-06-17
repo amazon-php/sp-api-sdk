@@ -145,7 +145,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse',
             []
         );
     }
@@ -344,7 +344,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse',
             []
         );
     }
@@ -386,148 +386,100 @@ final class VendorOrdersSDK
         $query = '';
 
         // query params
-        if ($limit instanceof \DateTimeInterface) {
-            $limit = ObjectSerializer::toString($limit);
-        }
-
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
         }
 
         if ($limit !== null) {
-            $queryParams['limit'] = $limit;
+            $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
         // query params
-        if ($created_after instanceof \DateTimeInterface) {
-            $created_after = ObjectSerializer::toString($created_after);
-        }
-
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
 
         if ($created_after !== null) {
-            $queryParams['createdAfter'] = $created_after;
+            $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
         // query params
-        if ($created_before instanceof \DateTimeInterface) {
-            $created_before = ObjectSerializer::toString($created_before);
-        }
-
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
 
         if ($created_before !== null) {
-            $queryParams['createdBefore'] = $created_before;
+            $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
         // query params
-        if ($sort_order instanceof \DateTimeInterface) {
-            $sort_order = ObjectSerializer::toString($sort_order);
-        }
-
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
 
         if ($sort_order !== null) {
-            $queryParams['sortOrder'] = $sort_order;
+            $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['nextToken'] = $next_token;
+            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
         // query params
-        if ($include_details instanceof \DateTimeInterface) {
-            $include_details = ObjectSerializer::toString($include_details);
-        }
-
         if (\is_array($include_details)) {
             $include_details = ObjectSerializer::serializeCollection($include_details, '', true);
         }
 
         if ($include_details !== null) {
-            $queryParams['includeDetails'] = $include_details;
+            $queryParams['includeDetails'] = ObjectSerializer::toString($include_details);
         }
         // query params
-        if ($changed_after instanceof \DateTimeInterface) {
-            $changed_after = ObjectSerializer::toString($changed_after);
-        }
-
         if (\is_array($changed_after)) {
             $changed_after = ObjectSerializer::serializeCollection($changed_after, '', true);
         }
 
         if ($changed_after !== null) {
-            $queryParams['changedAfter'] = $changed_after;
+            $queryParams['changedAfter'] = ObjectSerializer::toString($changed_after);
         }
         // query params
-        if ($changed_before instanceof \DateTimeInterface) {
-            $changed_before = ObjectSerializer::toString($changed_before);
-        }
-
         if (\is_array($changed_before)) {
             $changed_before = ObjectSerializer::serializeCollection($changed_before, '', true);
         }
 
         if ($changed_before !== null) {
-            $queryParams['changedBefore'] = $changed_before;
+            $queryParams['changedBefore'] = ObjectSerializer::toString($changed_before);
         }
         // query params
-        if ($po_item_state instanceof \DateTimeInterface) {
-            $po_item_state = ObjectSerializer::toString($po_item_state);
-        }
-
         if (\is_array($po_item_state)) {
             $po_item_state = ObjectSerializer::serializeCollection($po_item_state, '', true);
         }
 
         if ($po_item_state !== null) {
-            $queryParams['poItemState'] = $po_item_state;
+            $queryParams['poItemState'] = ObjectSerializer::toString($po_item_state);
         }
         // query params
-        if ($is_po_changed instanceof \DateTimeInterface) {
-            $is_po_changed = ObjectSerializer::toString($is_po_changed);
-        }
-
         if (\is_array($is_po_changed)) {
             $is_po_changed = ObjectSerializer::serializeCollection($is_po_changed, '', true);
         }
 
         if ($is_po_changed !== null) {
-            $queryParams['isPOChanged'] = $is_po_changed;
+            $queryParams['isPOChanged'] = ObjectSerializer::toString($is_po_changed);
         }
         // query params
-        if ($purchase_order_state instanceof \DateTimeInterface) {
-            $purchase_order_state = ObjectSerializer::toString($purchase_order_state);
-        }
-
         if (\is_array($purchase_order_state)) {
             $purchase_order_state = ObjectSerializer::serializeCollection($purchase_order_state, '', true);
         }
 
         if ($purchase_order_state !== null) {
-            $queryParams['purchaseOrderState'] = $purchase_order_state;
+            $queryParams['purchaseOrderState'] = ObjectSerializer::toString($purchase_order_state);
         }
         // query params
-        if ($ordering_vendor_code instanceof \DateTimeInterface) {
-            $ordering_vendor_code = ObjectSerializer::toString($ordering_vendor_code);
-        }
-
         if (\is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
         }
 
         if ($ordering_vendor_code !== null) {
-            $queryParams['orderingVendorCode'] = $ordering_vendor_code;
+            $queryParams['orderingVendorCode'] = ObjectSerializer::toString($ordering_vendor_code);
         }
 
         if (\count($queryParams)) {
@@ -692,7 +644,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse',
             []
         );
     }
@@ -735,160 +687,108 @@ final class VendorOrdersSDK
         $query = '';
 
         // query params
-        if ($limit instanceof \DateTimeInterface) {
-            $limit = ObjectSerializer::toString($limit);
-        }
-
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
         }
 
         if ($limit !== null) {
-            $queryParams['limit'] = $limit;
+            $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
         // query params
-        if ($sort_order instanceof \DateTimeInterface) {
-            $sort_order = ObjectSerializer::toString($sort_order);
-        }
-
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
 
         if ($sort_order !== null) {
-            $queryParams['sortOrder'] = $sort_order;
+            $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['nextToken'] = $next_token;
+            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
         // query params
-        if ($created_after instanceof \DateTimeInterface) {
-            $created_after = ObjectSerializer::toString($created_after);
-        }
-
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
 
         if ($created_after !== null) {
-            $queryParams['createdAfter'] = $created_after;
+            $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
         // query params
-        if ($created_before instanceof \DateTimeInterface) {
-            $created_before = ObjectSerializer::toString($created_before);
-        }
-
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
 
         if ($created_before !== null) {
-            $queryParams['createdBefore'] = $created_before;
+            $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
         // query params
-        if ($updated_after instanceof \DateTimeInterface) {
-            $updated_after = ObjectSerializer::toString($updated_after);
-        }
-
         if (\is_array($updated_after)) {
             $updated_after = ObjectSerializer::serializeCollection($updated_after, '', true);
         }
 
         if ($updated_after !== null) {
-            $queryParams['updatedAfter'] = $updated_after;
+            $queryParams['updatedAfter'] = ObjectSerializer::toString($updated_after);
         }
         // query params
-        if ($updated_before instanceof \DateTimeInterface) {
-            $updated_before = ObjectSerializer::toString($updated_before);
-        }
-
         if (\is_array($updated_before)) {
             $updated_before = ObjectSerializer::serializeCollection($updated_before, '', true);
         }
 
         if ($updated_before !== null) {
-            $queryParams['updatedBefore'] = $updated_before;
+            $queryParams['updatedBefore'] = ObjectSerializer::toString($updated_before);
         }
         // query params
-        if ($purchase_order_number instanceof \DateTimeInterface) {
-            $purchase_order_number = ObjectSerializer::toString($purchase_order_number);
-        }
-
         if (\is_array($purchase_order_number)) {
             $purchase_order_number = ObjectSerializer::serializeCollection($purchase_order_number, '', true);
         }
 
         if ($purchase_order_number !== null) {
-            $queryParams['purchaseOrderNumber'] = $purchase_order_number;
+            $queryParams['purchaseOrderNumber'] = ObjectSerializer::toString($purchase_order_number);
         }
         // query params
-        if ($purchase_order_status instanceof \DateTimeInterface) {
-            $purchase_order_status = ObjectSerializer::toString($purchase_order_status);
-        }
-
         if (\is_array($purchase_order_status)) {
             $purchase_order_status = ObjectSerializer::serializeCollection($purchase_order_status, '', true);
         }
 
         if ($purchase_order_status !== null) {
-            $queryParams['purchaseOrderStatus'] = $purchase_order_status;
+            $queryParams['purchaseOrderStatus'] = ObjectSerializer::toString($purchase_order_status);
         }
         // query params
-        if ($item_confirmation_status instanceof \DateTimeInterface) {
-            $item_confirmation_status = ObjectSerializer::toString($item_confirmation_status);
-        }
-
         if (\is_array($item_confirmation_status)) {
             $item_confirmation_status = ObjectSerializer::serializeCollection($item_confirmation_status, '', true);
         }
 
         if ($item_confirmation_status !== null) {
-            $queryParams['itemConfirmationStatus'] = $item_confirmation_status;
+            $queryParams['itemConfirmationStatus'] = ObjectSerializer::toString($item_confirmation_status);
         }
         // query params
-        if ($item_receive_status instanceof \DateTimeInterface) {
-            $item_receive_status = ObjectSerializer::toString($item_receive_status);
-        }
-
         if (\is_array($item_receive_status)) {
             $item_receive_status = ObjectSerializer::serializeCollection($item_receive_status, '', true);
         }
 
         if ($item_receive_status !== null) {
-            $queryParams['itemReceiveStatus'] = $item_receive_status;
+            $queryParams['itemReceiveStatus'] = ObjectSerializer::toString($item_receive_status);
         }
         // query params
-        if ($ordering_vendor_code instanceof \DateTimeInterface) {
-            $ordering_vendor_code = ObjectSerializer::toString($ordering_vendor_code);
-        }
-
         if (\is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
         }
 
         if ($ordering_vendor_code !== null) {
-            $queryParams['orderingVendorCode'] = $ordering_vendor_code;
+            $queryParams['orderingVendorCode'] = ObjectSerializer::toString($ordering_vendor_code);
         }
         // query params
-        if ($ship_to_party_id instanceof \DateTimeInterface) {
-            $ship_to_party_id = ObjectSerializer::toString($ship_to_party_id);
-        }
-
         if (\is_array($ship_to_party_id)) {
             $ship_to_party_id = ObjectSerializer::serializeCollection($ship_to_party_id, '', true);
         }
 
         if ($ship_to_party_id !== null) {
-            $queryParams['shipToPartyId'] = $ship_to_party_id;
+            $queryParams['shipToPartyId'] = ObjectSerializer::toString($ship_to_party_id);
         }
 
         if (\count($queryParams)) {
@@ -1041,7 +941,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse',
             []
         );
     }

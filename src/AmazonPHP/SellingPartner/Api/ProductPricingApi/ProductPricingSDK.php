@@ -157,7 +157,7 @@ final class ProductPricingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse',
             []
         );
     }
@@ -205,64 +205,44 @@ final class ProductPricingSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($asins instanceof \DateTimeInterface) {
-            $asins = ObjectSerializer::toString($asins);
-        }
-
         if (\is_array($asins)) {
             $asins = ObjectSerializer::serializeCollection($asins, 'form', true);
         }
 
         if ($asins !== null) {
-            $queryParams['Asins'] = $asins;
+            $queryParams['Asins'] = ObjectSerializer::toString($asins);
         }
         // query params
-        if ($skus instanceof \DateTimeInterface) {
-            $skus = ObjectSerializer::toString($skus);
-        }
-
         if (\is_array($skus)) {
             $skus = ObjectSerializer::serializeCollection($skus, 'form', true);
         }
 
         if ($skus !== null) {
-            $queryParams['Skus'] = $skus;
+            $queryParams['Skus'] = ObjectSerializer::toString($skus);
         }
         // query params
-        if ($item_type instanceof \DateTimeInterface) {
-            $item_type = ObjectSerializer::toString($item_type);
-        }
-
         if (\is_array($item_type)) {
             $item_type = ObjectSerializer::serializeCollection($item_type, '', true);
         }
 
         if ($item_type !== null) {
-            $queryParams['ItemType'] = $item_type;
+            $queryParams['ItemType'] = ObjectSerializer::toString($item_type);
         }
         // query params
-        if ($customer_type instanceof \DateTimeInterface) {
-            $customer_type = ObjectSerializer::toString($customer_type);
-        }
-
         if (\is_array($customer_type)) {
             $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
         }
 
         if ($customer_type !== null) {
-            $queryParams['CustomerType'] = $customer_type;
+            $queryParams['CustomerType'] = ObjectSerializer::toString($customer_type);
         }
 
         if (\count($queryParams)) {
@@ -418,7 +398,7 @@ final class ProductPricingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse',
             []
         );
     }
@@ -463,40 +443,28 @@ final class ProductPricingSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($item_condition instanceof \DateTimeInterface) {
-            $item_condition = ObjectSerializer::toString($item_condition);
-        }
-
         if (\is_array($item_condition)) {
             $item_condition = ObjectSerializer::serializeCollection($item_condition, '', true);
         }
 
         if ($item_condition !== null) {
-            $queryParams['ItemCondition'] = $item_condition;
+            $queryParams['ItemCondition'] = ObjectSerializer::toString($item_condition);
         }
         // query params
-        if ($customer_type instanceof \DateTimeInterface) {
-            $customer_type = ObjectSerializer::toString($customer_type);
-        }
-
         if (\is_array($customer_type)) {
             $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
         }
 
         if ($customer_type !== null) {
-            $queryParams['CustomerType'] = $customer_type;
+            $queryParams['CustomerType'] = ObjectSerializer::toString($customer_type);
         }
 
         if (\count($queryParams)) {
@@ -658,7 +626,7 @@ final class ProductPricingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchResponse',
             []
         );
     }
@@ -848,7 +816,7 @@ final class ProductPricingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse',
             []
         );
     }
@@ -893,40 +861,28 @@ final class ProductPricingSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($item_condition instanceof \DateTimeInterface) {
-            $item_condition = ObjectSerializer::toString($item_condition);
-        }
-
         if (\is_array($item_condition)) {
             $item_condition = ObjectSerializer::serializeCollection($item_condition, '', true);
         }
 
         if ($item_condition !== null) {
-            $queryParams['ItemCondition'] = $item_condition;
+            $queryParams['ItemCondition'] = ObjectSerializer::toString($item_condition);
         }
         // query params
-        if ($customer_type instanceof \DateTimeInterface) {
-            $customer_type = ObjectSerializer::toString($customer_type);
-        }
-
         if (\is_array($customer_type)) {
             $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
         }
 
         if ($customer_type !== null) {
-            $queryParams['CustomerType'] = $customer_type;
+            $queryParams['CustomerType'] = ObjectSerializer::toString($customer_type);
         }
 
         if (\count($queryParams)) {
@@ -1088,7 +1044,7 @@ final class ProductPricingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchResponse',
             []
         );
     }
@@ -1280,7 +1236,7 @@ final class ProductPricingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse',
             []
         );
     }
@@ -1329,76 +1285,52 @@ final class ProductPricingSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($asins instanceof \DateTimeInterface) {
-            $asins = ObjectSerializer::toString($asins);
-        }
-
         if (\is_array($asins)) {
             $asins = ObjectSerializer::serializeCollection($asins, 'form', true);
         }
 
         if ($asins !== null) {
-            $queryParams['Asins'] = $asins;
+            $queryParams['Asins'] = ObjectSerializer::toString($asins);
         }
         // query params
-        if ($skus instanceof \DateTimeInterface) {
-            $skus = ObjectSerializer::toString($skus);
-        }
-
         if (\is_array($skus)) {
             $skus = ObjectSerializer::serializeCollection($skus, 'form', true);
         }
 
         if ($skus !== null) {
-            $queryParams['Skus'] = $skus;
+            $queryParams['Skus'] = ObjectSerializer::toString($skus);
         }
         // query params
-        if ($item_type instanceof \DateTimeInterface) {
-            $item_type = ObjectSerializer::toString($item_type);
-        }
-
         if (\is_array($item_type)) {
             $item_type = ObjectSerializer::serializeCollection($item_type, '', true);
         }
 
         if ($item_type !== null) {
-            $queryParams['ItemType'] = $item_type;
+            $queryParams['ItemType'] = ObjectSerializer::toString($item_type);
         }
         // query params
-        if ($item_condition instanceof \DateTimeInterface) {
-            $item_condition = ObjectSerializer::toString($item_condition);
-        }
-
         if (\is_array($item_condition)) {
             $item_condition = ObjectSerializer::serializeCollection($item_condition, '', true);
         }
 
         if ($item_condition !== null) {
-            $queryParams['ItemCondition'] = $item_condition;
+            $queryParams['ItemCondition'] = ObjectSerializer::toString($item_condition);
         }
         // query params
-        if ($offer_type instanceof \DateTimeInterface) {
-            $offer_type = ObjectSerializer::toString($offer_type);
-        }
-
         if (\is_array($offer_type)) {
             $offer_type = ObjectSerializer::serializeCollection($offer_type, '', true);
         }
 
         if ($offer_type !== null) {
-            $queryParams['OfferType'] = $offer_type;
+            $queryParams['OfferType'] = ObjectSerializer::toString($offer_type);
         }
 
         if (\count($queryParams)) {

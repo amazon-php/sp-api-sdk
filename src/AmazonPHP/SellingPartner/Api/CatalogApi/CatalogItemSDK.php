@@ -140,7 +140,7 @@ final class CatalogItemSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\CatalogItem\Item::class,
+            '\AmazonPHP\SellingPartner\Model\CatalogItem\Item',
             []
         );
     }
@@ -179,40 +179,28 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
         // query params
-        if ($included_data instanceof \DateTimeInterface) {
-            $included_data = ObjectSerializer::toString($included_data);
-        }
-
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
         }
 
         if ($included_data !== null) {
-            $queryParams['includedData'] = $included_data;
+            $queryParams['includedData'] = ObjectSerializer::toString($included_data);
         }
         // query params
-        if ($locale instanceof \DateTimeInterface) {
-            $locale = ObjectSerializer::toString($locale);
-        }
-
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
         }
 
         if ($locale !== null) {
-            $queryParams['locale'] = $locale;
+            $queryParams['locale'] = ObjectSerializer::toString($locale);
         }
 
         if (\count($queryParams)) {
@@ -382,7 +370,7 @@ final class CatalogItemSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults::class,
+            '\AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults',
             []
         );
     }
@@ -434,112 +422,76 @@ final class CatalogItemSDK
         $query = '';
 
         // query params
-        if ($keywords instanceof \DateTimeInterface) {
-            $keywords = ObjectSerializer::toString($keywords);
-        }
-
         if (\is_array($keywords)) {
             $keywords = ObjectSerializer::serializeCollection($keywords, 'form', true);
         }
 
         if ($keywords !== null) {
-            $queryParams['keywords'] = $keywords;
+            $queryParams['keywords'] = ObjectSerializer::toString($keywords);
         }
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
         // query params
-        if ($included_data instanceof \DateTimeInterface) {
-            $included_data = ObjectSerializer::toString($included_data);
-        }
-
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
         }
 
         if ($included_data !== null) {
-            $queryParams['includedData'] = $included_data;
+            $queryParams['includedData'] = ObjectSerializer::toString($included_data);
         }
         // query params
-        if ($brand_names instanceof \DateTimeInterface) {
-            $brand_names = ObjectSerializer::toString($brand_names);
-        }
-
         if (\is_array($brand_names)) {
             $brand_names = ObjectSerializer::serializeCollection($brand_names, 'form', true);
         }
 
         if ($brand_names !== null) {
-            $queryParams['brandNames'] = $brand_names;
+            $queryParams['brandNames'] = ObjectSerializer::toString($brand_names);
         }
         // query params
-        if ($classification_ids instanceof \DateTimeInterface) {
-            $classification_ids = ObjectSerializer::toString($classification_ids);
-        }
-
         if (\is_array($classification_ids)) {
             $classification_ids = ObjectSerializer::serializeCollection($classification_ids, 'form', true);
         }
 
         if ($classification_ids !== null) {
-            $queryParams['classificationIds'] = $classification_ids;
+            $queryParams['classificationIds'] = ObjectSerializer::toString($classification_ids);
         }
         // query params
-        if ($page_size instanceof \DateTimeInterface) {
-            $page_size = ObjectSerializer::toString($page_size);
-        }
-
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
 
         if ($page_size !== null) {
-            $queryParams['pageSize'] = $page_size;
+            $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
         // query params
-        if ($page_token instanceof \DateTimeInterface) {
-            $page_token = ObjectSerializer::toString($page_token);
-        }
-
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
         if ($page_token !== null) {
-            $queryParams['pageToken'] = $page_token;
+            $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
         }
         // query params
-        if ($keywords_locale instanceof \DateTimeInterface) {
-            $keywords_locale = ObjectSerializer::toString($keywords_locale);
-        }
-
         if (\is_array($keywords_locale)) {
             $keywords_locale = ObjectSerializer::serializeCollection($keywords_locale, '', true);
         }
 
         if ($keywords_locale !== null) {
-            $queryParams['keywordsLocale'] = $keywords_locale;
+            $queryParams['keywordsLocale'] = ObjectSerializer::toString($keywords_locale);
         }
         // query params
-        if ($locale instanceof \DateTimeInterface) {
-            $locale = ObjectSerializer::toString($locale);
-        }
-
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
         }
 
         if ($locale !== null) {
-            $queryParams['locale'] = $locale;
+            $queryParams['locale'] = ObjectSerializer::toString($locale);
         }
 
         if (\count($queryParams)) {

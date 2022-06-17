@@ -136,7 +136,7 @@ final class UploadsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse',
             []
         );
     }
@@ -186,40 +186,28 @@ final class UploadsSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
         // query params
-        if ($content_md5 instanceof \DateTimeInterface) {
-            $content_md5 = ObjectSerializer::toString($content_md5);
-        }
-
         if (\is_array($content_md5)) {
             $content_md5 = ObjectSerializer::serializeCollection($content_md5, '', true);
         }
 
         if ($content_md5 !== null) {
-            $queryParams['contentMD5'] = $content_md5;
+            $queryParams['contentMD5'] = ObjectSerializer::toString($content_md5);
         }
         // query params
-        if ($content_type instanceof \DateTimeInterface) {
-            $content_type = ObjectSerializer::toString($content_type);
-        }
-
         if (\is_array($content_type)) {
             $content_type = ObjectSerializer::serializeCollection($content_type, '', true);
         }
 
         if ($content_type !== null) {
-            $queryParams['contentType'] = $content_type;
+            $queryParams['contentType'] = ObjectSerializer::toString($content_type);
         }
 
         if (\count($queryParams)) {

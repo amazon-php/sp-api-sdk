@@ -336,7 +336,7 @@ final class FeedsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Feeds\CreateFeedResponse',
             []
         );
     }
@@ -523,7 +523,7 @@ final class FeedsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentResponse',
             []
         );
     }
@@ -710,7 +710,7 @@ final class FeedsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Feeds\Feed::class,
+            '\AmazonPHP\SellingPartner\Model\Feeds\Feed',
             []
         );
     }
@@ -898,7 +898,7 @@ final class FeedsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Feeds\FeedDocument::class,
+            '\AmazonPHP\SellingPartner\Model\Feeds\FeedDocument',
             []
         );
     }
@@ -1092,7 +1092,7 @@ final class FeedsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse',
             []
         );
     }
@@ -1149,88 +1149,60 @@ final class FeedsSDK
         $query = '';
 
         // query params
-        if ($feed_types instanceof \DateTimeInterface) {
-            $feed_types = ObjectSerializer::toString($feed_types);
-        }
-
         if (\is_array($feed_types)) {
             $feed_types = ObjectSerializer::serializeCollection($feed_types, 'form', true);
         }
 
         if ($feed_types !== null) {
-            $queryParams['feedTypes'] = $feed_types;
+            $queryParams['feedTypes'] = ObjectSerializer::toString($feed_types);
         }
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
         // query params
-        if ($page_size instanceof \DateTimeInterface) {
-            $page_size = ObjectSerializer::toString($page_size);
-        }
-
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
 
         if ($page_size !== null) {
-            $queryParams['pageSize'] = $page_size;
+            $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
         // query params
-        if ($processing_statuses instanceof \DateTimeInterface) {
-            $processing_statuses = ObjectSerializer::toString($processing_statuses);
-        }
-
         if (\is_array($processing_statuses)) {
             $processing_statuses = ObjectSerializer::serializeCollection($processing_statuses, 'form', true);
         }
 
         if ($processing_statuses !== null) {
-            $queryParams['processingStatuses'] = $processing_statuses;
+            $queryParams['processingStatuses'] = ObjectSerializer::toString($processing_statuses);
         }
         // query params
-        if ($created_since instanceof \DateTimeInterface) {
-            $created_since = ObjectSerializer::toString($created_since);
-        }
-
         if (\is_array($created_since)) {
             $created_since = ObjectSerializer::serializeCollection($created_since, '', true);
         }
 
         if ($created_since !== null) {
-            $queryParams['createdSince'] = $created_since;
+            $queryParams['createdSince'] = ObjectSerializer::toString($created_since);
         }
         // query params
-        if ($created_until instanceof \DateTimeInterface) {
-            $created_until = ObjectSerializer::toString($created_until);
-        }
-
         if (\is_array($created_until)) {
             $created_until = ObjectSerializer::serializeCollection($created_until, '', true);
         }
 
         if ($created_until !== null) {
-            $queryParams['createdUntil'] = $created_until;
+            $queryParams['createdUntil'] = ObjectSerializer::toString($created_until);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['nextToken'] = $next_token;
+            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
 
         if (\count($queryParams)) {

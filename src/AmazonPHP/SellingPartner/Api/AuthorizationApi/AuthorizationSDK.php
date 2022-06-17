@@ -137,7 +137,7 @@ final class AuthorizationSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse',
             []
         );
     }
@@ -181,40 +181,28 @@ final class AuthorizationSDK
         $query = '';
 
         // query params
-        if ($selling_partner_id instanceof \DateTimeInterface) {
-            $selling_partner_id = ObjectSerializer::toString($selling_partner_id);
-        }
-
         if (\is_array($selling_partner_id)) {
             $selling_partner_id = ObjectSerializer::serializeCollection($selling_partner_id, '', true);
         }
 
         if ($selling_partner_id !== null) {
-            $queryParams['sellingPartnerId'] = $selling_partner_id;
+            $queryParams['sellingPartnerId'] = ObjectSerializer::toString($selling_partner_id);
         }
         // query params
-        if ($developer_id instanceof \DateTimeInterface) {
-            $developer_id = ObjectSerializer::toString($developer_id);
-        }
-
         if (\is_array($developer_id)) {
             $developer_id = ObjectSerializer::serializeCollection($developer_id, '', true);
         }
 
         if ($developer_id !== null) {
-            $queryParams['developerId'] = $developer_id;
+            $queryParams['developerId'] = ObjectSerializer::toString($developer_id);
         }
         // query params
-        if ($mws_auth_token instanceof \DateTimeInterface) {
-            $mws_auth_token = ObjectSerializer::toString($mws_auth_token);
-        }
-
         if (\is_array($mws_auth_token)) {
             $mws_auth_token = ObjectSerializer::serializeCollection($mws_auth_token, '', true);
         }
 
         if ($mws_auth_token !== null) {
-            $queryParams['mwsAuthToken'] = $mws_auth_token;
+            $queryParams['mwsAuthToken'] = ObjectSerializer::toString($mws_auth_token);
         }
 
         if (\count($queryParams)) {

@@ -199,7 +199,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmPreorderResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmPreorderResponse',
             []
         );
     }
@@ -242,26 +242,21 @@ final class FulfillmentInboundSDK
         $multipart = false;
         $query = '';
 
-        $need_by_date = ObjectSerializer::toString($need_by_date);
-
+        // query params
         if (\is_array($need_by_date)) {
             $need_by_date = ObjectSerializer::serializeCollection($need_by_date, '', true);
         }
 
         if ($need_by_date !== null) {
-            $queryParams['NeedByDate'] = $need_by_date;
+            $queryParams['NeedByDate'] = ObjectSerializer::toString($need_by_date);
         }
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -423,7 +418,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportResponse',
             []
         );
     }
@@ -612,7 +607,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse',
             []
         );
     }
@@ -815,7 +810,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanResponse',
             []
         );
     }
@@ -1002,7 +997,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\EstimateTransportResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\EstimateTransportResponse',
             []
         );
     }
@@ -1190,7 +1185,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetBillOfLadingResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetBillOfLadingResponse',
             []
         );
     }
@@ -1380,7 +1375,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse',
             []
         );
     }
@@ -1420,40 +1415,28 @@ final class FulfillmentInboundSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($seller_sku_list instanceof \DateTimeInterface) {
-            $seller_sku_list = ObjectSerializer::toString($seller_sku_list);
-        }
-
         if (\is_array($seller_sku_list)) {
             $seller_sku_list = ObjectSerializer::serializeCollection($seller_sku_list, 'form', true);
         }
 
         if ($seller_sku_list !== null) {
-            $queryParams['SellerSKUList'] = $seller_sku_list;
+            $queryParams['SellerSKUList'] = ObjectSerializer::toString($seller_sku_list);
         }
         // query params
-        if ($asin_list instanceof \DateTimeInterface) {
-            $asin_list = ObjectSerializer::toString($asin_list);
-        }
-
         if (\is_array($asin_list)) {
             $asin_list = ObjectSerializer::serializeCollection($asin_list, 'form', true);
         }
 
         if ($asin_list !== null) {
-            $queryParams['ASINList'] = $asin_list;
+            $queryParams['ASINList'] = ObjectSerializer::toString($asin_list);
         }
 
         if (\count($queryParams)) {
@@ -1613,7 +1596,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse',
             []
         );
     }
@@ -1666,88 +1649,60 @@ final class FulfillmentInboundSDK
         $query = '';
 
         // query params
-        if ($page_type instanceof \DateTimeInterface) {
-            $page_type = ObjectSerializer::toString($page_type);
-        }
-
         if (\is_array($page_type)) {
             $page_type = ObjectSerializer::serializeCollection($page_type, '', true);
         }
 
         if ($page_type !== null) {
-            $queryParams['PageType'] = $page_type;
+            $queryParams['PageType'] = ObjectSerializer::toString($page_type);
         }
         // query params
-        if ($label_type instanceof \DateTimeInterface) {
-            $label_type = ObjectSerializer::toString($label_type);
-        }
-
         if (\is_array($label_type)) {
             $label_type = ObjectSerializer::serializeCollection($label_type, '', true);
         }
 
         if ($label_type !== null) {
-            $queryParams['LabelType'] = $label_type;
+            $queryParams['LabelType'] = ObjectSerializer::toString($label_type);
         }
         // query params
-        if ($number_of_packages instanceof \DateTimeInterface) {
-            $number_of_packages = ObjectSerializer::toString($number_of_packages);
-        }
-
         if (\is_array($number_of_packages)) {
             $number_of_packages = ObjectSerializer::serializeCollection($number_of_packages, '', true);
         }
 
         if ($number_of_packages !== null) {
-            $queryParams['NumberOfPackages'] = $number_of_packages;
+            $queryParams['NumberOfPackages'] = ObjectSerializer::toString($number_of_packages);
         }
         // query params
-        if ($package_labels_to_print instanceof \DateTimeInterface) {
-            $package_labels_to_print = ObjectSerializer::toString($package_labels_to_print);
-        }
-
         if (\is_array($package_labels_to_print)) {
             $package_labels_to_print = ObjectSerializer::serializeCollection($package_labels_to_print, 'form', true);
         }
 
         if ($package_labels_to_print !== null) {
-            $queryParams['PackageLabelsToPrint'] = $package_labels_to_print;
+            $queryParams['PackageLabelsToPrint'] = ObjectSerializer::toString($package_labels_to_print);
         }
         // query params
-        if ($number_of_pallets instanceof \DateTimeInterface) {
-            $number_of_pallets = ObjectSerializer::toString($number_of_pallets);
-        }
-
         if (\is_array($number_of_pallets)) {
             $number_of_pallets = ObjectSerializer::serializeCollection($number_of_pallets, '', true);
         }
 
         if ($number_of_pallets !== null) {
-            $queryParams['NumberOfPallets'] = $number_of_pallets;
+            $queryParams['NumberOfPallets'] = ObjectSerializer::toString($number_of_pallets);
         }
         // query params
-        if ($page_size instanceof \DateTimeInterface) {
-            $page_size = ObjectSerializer::toString($page_size);
-        }
-
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
 
         if ($page_size !== null) {
-            $queryParams['PageSize'] = $page_size;
+            $queryParams['PageSize'] = ObjectSerializer::toString($page_size);
         }
         // query params
-        if ($page_start_index instanceof \DateTimeInterface) {
-            $page_start_index = ObjectSerializer::toString($page_start_index);
-        }
-
         if (\is_array($page_start_index)) {
             $page_start_index = ObjectSerializer::serializeCollection($page_start_index, '', true);
         }
 
         if ($page_start_index !== null) {
-            $queryParams['PageStartIndex'] = $page_start_index;
+            $queryParams['PageStartIndex'] = ObjectSerializer::toString($page_start_index);
         }
 
         if (\count($queryParams)) {
@@ -1910,7 +1865,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPreorderInfoResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPreorderInfoResponse',
             []
         );
     }
@@ -1947,16 +1902,12 @@ final class FulfillmentInboundSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -2120,7 +2071,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse',
             []
         );
     }
@@ -2160,40 +2111,28 @@ final class FulfillmentInboundSDK
         $query = '';
 
         // query params
-        if ($ship_to_country_code instanceof \DateTimeInterface) {
-            $ship_to_country_code = ObjectSerializer::toString($ship_to_country_code);
-        }
-
         if (\is_array($ship_to_country_code)) {
             $ship_to_country_code = ObjectSerializer::serializeCollection($ship_to_country_code, '', true);
         }
 
         if ($ship_to_country_code !== null) {
-            $queryParams['ShipToCountryCode'] = $ship_to_country_code;
+            $queryParams['ShipToCountryCode'] = ObjectSerializer::toString($ship_to_country_code);
         }
         // query params
-        if ($seller_sku_list instanceof \DateTimeInterface) {
-            $seller_sku_list = ObjectSerializer::toString($seller_sku_list);
-        }
-
         if (\is_array($seller_sku_list)) {
             $seller_sku_list = ObjectSerializer::serializeCollection($seller_sku_list, 'form', true);
         }
 
         if ($seller_sku_list !== null) {
-            $queryParams['SellerSKUList'] = $seller_sku_list;
+            $queryParams['SellerSKUList'] = ObjectSerializer::toString($seller_sku_list);
         }
         // query params
-        if ($asin_list instanceof \DateTimeInterface) {
-            $asin_list = ObjectSerializer::toString($asin_list);
-        }
-
         if (\is_array($asin_list)) {
             $asin_list = ObjectSerializer::serializeCollection($asin_list, 'form', true);
         }
 
         if ($asin_list !== null) {
-            $queryParams['ASINList'] = $asin_list;
+            $queryParams['ASINList'] = ObjectSerializer::toString($asin_list);
         }
 
         if (\count($queryParams)) {
@@ -2350,7 +2289,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse',
             []
         );
     }
@@ -2390,64 +2329,44 @@ final class FulfillmentInboundSDK
         $query = '';
 
         // query params
-        if ($last_updated_after instanceof \DateTimeInterface) {
-            $last_updated_after = ObjectSerializer::toString($last_updated_after);
-        }
-
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
         }
 
         if ($last_updated_after !== null) {
-            $queryParams['LastUpdatedAfter'] = $last_updated_after;
+            $queryParams['LastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
         // query params
-        if ($last_updated_before instanceof \DateTimeInterface) {
-            $last_updated_before = ObjectSerializer::toString($last_updated_before);
-        }
-
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
         }
 
         if ($last_updated_before !== null) {
-            $queryParams['LastUpdatedBefore'] = $last_updated_before;
+            $queryParams['LastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
         // query params
-        if ($query_type instanceof \DateTimeInterface) {
-            $query_type = ObjectSerializer::toString($query_type);
-        }
-
         if (\is_array($query_type)) {
             $query_type = ObjectSerializer::serializeCollection($query_type, '', true);
         }
 
         if ($query_type !== null) {
-            $queryParams['QueryType'] = $query_type;
+            $queryParams['QueryType'] = ObjectSerializer::toString($query_type);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['NextToken'] = $next_token;
+            $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -2601,7 +2520,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse',
             []
         );
     }
@@ -2638,16 +2557,12 @@ final class FulfillmentInboundSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -2815,7 +2730,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse',
             []
         );
     }
@@ -2857,88 +2772,60 @@ final class FulfillmentInboundSDK
         $query = '';
 
         // query params
-        if ($shipment_status_list instanceof \DateTimeInterface) {
-            $shipment_status_list = ObjectSerializer::toString($shipment_status_list);
-        }
-
         if (\is_array($shipment_status_list)) {
             $shipment_status_list = ObjectSerializer::serializeCollection($shipment_status_list, 'form', true);
         }
 
         if ($shipment_status_list !== null) {
-            $queryParams['ShipmentStatusList'] = $shipment_status_list;
+            $queryParams['ShipmentStatusList'] = ObjectSerializer::toString($shipment_status_list);
         }
         // query params
-        if ($shipment_id_list instanceof \DateTimeInterface) {
-            $shipment_id_list = ObjectSerializer::toString($shipment_id_list);
-        }
-
         if (\is_array($shipment_id_list)) {
             $shipment_id_list = ObjectSerializer::serializeCollection($shipment_id_list, 'form', true);
         }
 
         if ($shipment_id_list !== null) {
-            $queryParams['ShipmentIdList'] = $shipment_id_list;
+            $queryParams['ShipmentIdList'] = ObjectSerializer::toString($shipment_id_list);
         }
         // query params
-        if ($last_updated_after instanceof \DateTimeInterface) {
-            $last_updated_after = ObjectSerializer::toString($last_updated_after);
-        }
-
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
         }
 
         if ($last_updated_after !== null) {
-            $queryParams['LastUpdatedAfter'] = $last_updated_after;
+            $queryParams['LastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
         // query params
-        if ($last_updated_before instanceof \DateTimeInterface) {
-            $last_updated_before = ObjectSerializer::toString($last_updated_before);
-        }
-
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
         }
 
         if ($last_updated_before !== null) {
-            $queryParams['LastUpdatedBefore'] = $last_updated_before;
+            $queryParams['LastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
         // query params
-        if ($query_type instanceof \DateTimeInterface) {
-            $query_type = ObjectSerializer::toString($query_type);
-        }
-
         if (\is_array($query_type)) {
             $query_type = ObjectSerializer::serializeCollection($query_type, '', true);
         }
 
         if ($query_type !== null) {
-            $queryParams['QueryType'] = $query_type;
+            $queryParams['QueryType'] = ObjectSerializer::toString($query_type);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['NextToken'] = $next_token;
+            $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = $marketplace_id;
+            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -3091,7 +2978,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetTransportDetailsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetTransportDetailsResponse',
             []
         );
     }
@@ -3280,7 +3167,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsResponse',
             []
         );
     }
@@ -3484,7 +3371,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse',
             []
         );
     }
@@ -3687,7 +3574,7 @@ final class FulfillmentInboundSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FulfillmentInbound\VoidTransportResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\VoidTransportResponse',
             []
         );
     }

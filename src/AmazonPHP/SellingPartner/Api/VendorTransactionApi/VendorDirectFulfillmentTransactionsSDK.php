@@ -133,7 +133,7 @@ final class VendorDirectFulfillmentTransactionsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus::class,
+            '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus',
             []
         );
     }

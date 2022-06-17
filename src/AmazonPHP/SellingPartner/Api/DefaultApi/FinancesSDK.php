@@ -148,7 +148,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse',
             []
         );
     }
@@ -182,52 +182,36 @@ final class FinancesSDK
         $query = '';
 
         // query params
-        if ($max_results_per_page instanceof \DateTimeInterface) {
-            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
-        }
-
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
 
         if ($max_results_per_page !== null) {
-            $queryParams['MaxResultsPerPage'] = $max_results_per_page;
+            $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
         // query params
-        if ($financial_event_group_started_before instanceof \DateTimeInterface) {
-            $financial_event_group_started_before = ObjectSerializer::toString($financial_event_group_started_before);
-        }
-
         if (\is_array($financial_event_group_started_before)) {
             $financial_event_group_started_before = ObjectSerializer::serializeCollection($financial_event_group_started_before, '', true);
         }
 
         if ($financial_event_group_started_before !== null) {
-            $queryParams['FinancialEventGroupStartedBefore'] = $financial_event_group_started_before;
+            $queryParams['FinancialEventGroupStartedBefore'] = ObjectSerializer::toString($financial_event_group_started_before);
         }
         // query params
-        if ($financial_event_group_started_after instanceof \DateTimeInterface) {
-            $financial_event_group_started_after = ObjectSerializer::toString($financial_event_group_started_after);
-        }
-
         if (\is_array($financial_event_group_started_after)) {
             $financial_event_group_started_after = ObjectSerializer::serializeCollection($financial_event_group_started_after, '', true);
         }
 
         if ($financial_event_group_started_after !== null) {
-            $queryParams['FinancialEventGroupStartedAfter'] = $financial_event_group_started_after;
+            $queryParams['FinancialEventGroupStartedAfter'] = ObjectSerializer::toString($financial_event_group_started_after);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['NextToken'] = $next_token;
+            $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
 
         if (\count($queryParams)) {
@@ -383,7 +367,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse',
             []
         );
     }
@@ -417,52 +401,36 @@ final class FinancesSDK
         $query = '';
 
         // query params
-        if ($max_results_per_page instanceof \DateTimeInterface) {
-            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
-        }
-
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
 
         if ($max_results_per_page !== null) {
-            $queryParams['MaxResultsPerPage'] = $max_results_per_page;
+            $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
         // query params
-        if ($posted_after instanceof \DateTimeInterface) {
-            $posted_after = ObjectSerializer::toString($posted_after);
-        }
-
         if (\is_array($posted_after)) {
             $posted_after = ObjectSerializer::serializeCollection($posted_after, '', true);
         }
 
         if ($posted_after !== null) {
-            $queryParams['PostedAfter'] = $posted_after;
+            $queryParams['PostedAfter'] = ObjectSerializer::toString($posted_after);
         }
         // query params
-        if ($posted_before instanceof \DateTimeInterface) {
-            $posted_before = ObjectSerializer::toString($posted_before);
-        }
-
         if (\is_array($posted_before)) {
             $posted_before = ObjectSerializer::serializeCollection($posted_before, '', true);
         }
 
         if ($posted_before !== null) {
-            $queryParams['PostedBefore'] = $posted_before;
+            $queryParams['PostedBefore'] = ObjectSerializer::toString($posted_before);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['NextToken'] = $next_token;
+            $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
 
         if (\count($queryParams)) {
@@ -617,7 +585,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse',
             []
         );
     }
@@ -657,28 +625,20 @@ final class FinancesSDK
         $query = '';
 
         // query params
-        if ($max_results_per_page instanceof \DateTimeInterface) {
-            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
-        }
-
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
 
         if ($max_results_per_page !== null) {
-            $queryParams['MaxResultsPerPage'] = $max_results_per_page;
+            $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['NextToken'] = $next_token;
+            $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
 
         if (\count($queryParams)) {
@@ -842,7 +802,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse',
             []
         );
     }
@@ -882,28 +842,20 @@ final class FinancesSDK
         $query = '';
 
         // query params
-        if ($max_results_per_page instanceof \DateTimeInterface) {
-            $max_results_per_page = ObjectSerializer::toString($max_results_per_page);
-        }
-
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
         }
 
         if ($max_results_per_page !== null) {
-            $queryParams['MaxResultsPerPage'] = $max_results_per_page;
+            $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['NextToken'] = $next_token;
+            $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
 
         if (\count($queryParams)) {

@@ -195,7 +195,7 @@ final class ObjectSerializer
             return $value ? 'true' : 'false';
         }
 
-        return $value;
+        return (string) $value;
     }
 
     /**
@@ -237,13 +237,14 @@ final class ObjectSerializer
     }
 
     /**
+     * @template T
      * Deserialize a JSON string into an object.
      *
      * @param mixed $data object or primitive to be deserialized
-     * @param string $class class name is passed as a string
+     * @param T $class class name is passed as a string
      * @param string[] $httpHeaders HTTP headers
      *
-     * @return null|array|object a single or an array of $class instances
+     * @return T
      */
     public static function deserialize(Configuration $configuration, $data, string $class, array $httpHeaders = null)
     {

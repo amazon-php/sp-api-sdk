@@ -139,7 +139,7 @@ final class FBAInventorySDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse::class,
+            '\AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse',
             []
         );
     }
@@ -195,88 +195,60 @@ final class FBAInventorySDK
         $query = '';
 
         // query params
-        if ($details instanceof \DateTimeInterface) {
-            $details = ObjectSerializer::toString($details);
-        }
-
         if (\is_array($details)) {
             $details = ObjectSerializer::serializeCollection($details, '', true);
         }
 
         if ($details !== null) {
-            $queryParams['details'] = $details;
+            $queryParams['details'] = ObjectSerializer::toString($details);
         }
         // query params
-        if ($granularity_type instanceof \DateTimeInterface) {
-            $granularity_type = ObjectSerializer::toString($granularity_type);
-        }
-
         if (\is_array($granularity_type)) {
             $granularity_type = ObjectSerializer::serializeCollection($granularity_type, '', true);
         }
 
         if ($granularity_type !== null) {
-            $queryParams['granularityType'] = $granularity_type;
+            $queryParams['granularityType'] = ObjectSerializer::toString($granularity_type);
         }
         // query params
-        if ($granularity_id instanceof \DateTimeInterface) {
-            $granularity_id = ObjectSerializer::toString($granularity_id);
-        }
-
         if (\is_array($granularity_id)) {
             $granularity_id = ObjectSerializer::serializeCollection($granularity_id, '', true);
         }
 
         if ($granularity_id !== null) {
-            $queryParams['granularityId'] = $granularity_id;
+            $queryParams['granularityId'] = ObjectSerializer::toString($granularity_id);
         }
         // query params
-        if ($start_date_time instanceof \DateTimeInterface) {
-            $start_date_time = ObjectSerializer::toString($start_date_time);
-        }
-
         if (\is_array($start_date_time)) {
             $start_date_time = ObjectSerializer::serializeCollection($start_date_time, '', true);
         }
 
         if ($start_date_time !== null) {
-            $queryParams['startDateTime'] = $start_date_time;
+            $queryParams['startDateTime'] = ObjectSerializer::toString($start_date_time);
         }
         // query params
-        if ($seller_skus instanceof \DateTimeInterface) {
-            $seller_skus = ObjectSerializer::toString($seller_skus);
-        }
-
         if (\is_array($seller_skus)) {
             $seller_skus = ObjectSerializer::serializeCollection($seller_skus, 'form', true);
         }
 
         if ($seller_skus !== null) {
-            $queryParams['sellerSkus'] = $seller_skus;
+            $queryParams['sellerSkus'] = ObjectSerializer::toString($seller_skus);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['nextToken'] = $next_token;
+            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {

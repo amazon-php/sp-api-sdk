@@ -30,6 +30,10 @@ final class ProductFeesSDK
 
     public const OPERATION_GETMYFEESESTIMATEFORSKU_PATH = '/products/fees/v0/listings/{SellerSKU}/feesEstimate';
 
+    public const OPERATION_GETMYFEESESTIMATES = 'getMyFeesEstimates';
+
+    public const OPERATION_GETMYFEESESTIMATES_PATH = '/products/fees/v0/feesEstimate';
+
     private ClientInterface $client;
 
     private HttpFactory $httpFactory;
@@ -138,7 +142,7 @@ final class ProductFeesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse',
             []
         );
     }
@@ -342,7 +346,7 @@ final class ProductFeesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse',
             []
         );
     }
@@ -389,6 +393,195 @@ final class ProductFeesSDK
                 ObjectSerializer::toPathValue($seller_sku),
                 $resourcePath
             );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'POST',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $body;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation getMyFeesEstimates.
+     *
+     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body body (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateResult[]
+     */
+    public function getMyFeesEstimates(AccessToken $accessToken, string $region, array $body) : array
+    {
+        $request = $this->getMyFeesEstimatesRequest($accessToken, $region, $body);
+
+        $this->configuration->extensions()->preRequest('ProductFees', 'getMyFeesEstimates', $request);
+
+        try {
+            $correlationId = \uuid_create(UUID_TYPE_RANDOM);
+
+            if ($this->configuration->loggingEnabled('ProductFees', 'getMyFeesEstimates')) {
+                $sanitizedRequest = $request;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('ProductFees', 'getMyFeesEstimates'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'ProductFees',
+                        'operation' => 'getMyFeesEstimates',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('ProductFees', 'getMyFeesEstimates', $request, $response);
+
+            if ($this->configuration->loggingEnabled('ProductFees', 'getMyFeesEstimates')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('ProductFees', 'getMyFeesEstimates'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'ProductFees',
+                        'operation' => 'getMyFeesEstimates',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateResult[]',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'getMyFeesEstimates'.
+     *
+     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function getMyFeesEstimatesRequest(AccessToken $accessToken, string $region, array $body) : RequestInterface
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $body when calling getMyFeesEstimates'
+            );
+        }
+
+        $resourcePath = '/products/fees/v0/feesEstimate';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
         }
 
         if ($multipart) {

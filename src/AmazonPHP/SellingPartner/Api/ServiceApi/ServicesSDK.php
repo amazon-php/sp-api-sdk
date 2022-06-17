@@ -154,7 +154,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse',
             []
         );
     }
@@ -367,7 +367,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse',
             []
         );
     }
@@ -425,16 +425,12 @@ final class ServicesSDK
         $query = '';
 
         // query params
-        if ($cancellation_reason_code instanceof \DateTimeInterface) {
-            $cancellation_reason_code = ObjectSerializer::toString($cancellation_reason_code);
-        }
-
         if (\is_array($cancellation_reason_code)) {
             $cancellation_reason_code = ObjectSerializer::serializeCollection($cancellation_reason_code, '', true);
         }
 
         if ($cancellation_reason_code !== null) {
-            $queryParams['cancellationReasonCode'] = $cancellation_reason_code;
+            $queryParams['cancellationReasonCode'] = ObjectSerializer::toString($cancellation_reason_code);
         }
 
         if (\count($queryParams)) {
@@ -596,7 +592,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse',
             []
         );
     }
@@ -792,7 +788,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse',
             []
         );
     }
@@ -1000,7 +996,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse',
             []
         );
     }
@@ -1062,160 +1058,108 @@ final class ServicesSDK
         $query = '';
 
         // query params
-        if ($service_order_ids instanceof \DateTimeInterface) {
-            $service_order_ids = ObjectSerializer::toString($service_order_ids);
-        }
-
         if (\is_array($service_order_ids)) {
             $service_order_ids = ObjectSerializer::serializeCollection($service_order_ids, 'form', true);
         }
 
         if ($service_order_ids !== null) {
-            $queryParams['serviceOrderIds'] = $service_order_ids;
+            $queryParams['serviceOrderIds'] = ObjectSerializer::toString($service_order_ids);
         }
         // query params
-        if ($service_job_status instanceof \DateTimeInterface) {
-            $service_job_status = ObjectSerializer::toString($service_job_status);
-        }
-
         if (\is_array($service_job_status)) {
             $service_job_status = ObjectSerializer::serializeCollection($service_job_status, 'form', true);
         }
 
         if ($service_job_status !== null) {
-            $queryParams['serviceJobStatus'] = $service_job_status;
+            $queryParams['serviceJobStatus'] = ObjectSerializer::toString($service_job_status);
         }
         // query params
-        if ($page_token instanceof \DateTimeInterface) {
-            $page_token = ObjectSerializer::toString($page_token);
-        }
-
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
         if ($page_token !== null) {
-            $queryParams['pageToken'] = $page_token;
+            $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
         }
         // query params
-        if ($page_size instanceof \DateTimeInterface) {
-            $page_size = ObjectSerializer::toString($page_size);
-        }
-
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
 
         if ($page_size !== null) {
-            $queryParams['pageSize'] = $page_size;
+            $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
         // query params
-        if ($sort_field instanceof \DateTimeInterface) {
-            $sort_field = ObjectSerializer::toString($sort_field);
-        }
-
         if (\is_array($sort_field)) {
             $sort_field = ObjectSerializer::serializeCollection($sort_field, '', true);
         }
 
         if ($sort_field !== null) {
-            $queryParams['sortField'] = $sort_field;
+            $queryParams['sortField'] = ObjectSerializer::toString($sort_field);
         }
         // query params
-        if ($sort_order instanceof \DateTimeInterface) {
-            $sort_order = ObjectSerializer::toString($sort_order);
-        }
-
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
 
         if ($sort_order !== null) {
-            $queryParams['sortOrder'] = $sort_order;
+            $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
         // query params
-        if ($created_after instanceof \DateTimeInterface) {
-            $created_after = ObjectSerializer::toString($created_after);
-        }
-
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
 
         if ($created_after !== null) {
-            $queryParams['createdAfter'] = $created_after;
+            $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
         // query params
-        if ($created_before instanceof \DateTimeInterface) {
-            $created_before = ObjectSerializer::toString($created_before);
-        }
-
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
 
         if ($created_before !== null) {
-            $queryParams['createdBefore'] = $created_before;
+            $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
         // query params
-        if ($last_updated_after instanceof \DateTimeInterface) {
-            $last_updated_after = ObjectSerializer::toString($last_updated_after);
-        }
-
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
         }
 
         if ($last_updated_after !== null) {
-            $queryParams['lastUpdatedAfter'] = $last_updated_after;
+            $queryParams['lastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
         // query params
-        if ($last_updated_before instanceof \DateTimeInterface) {
-            $last_updated_before = ObjectSerializer::toString($last_updated_before);
-        }
-
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
         }
 
         if ($last_updated_before !== null) {
-            $queryParams['lastUpdatedBefore'] = $last_updated_before;
+            $queryParams['lastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
         // query params
-        if ($schedule_start_date instanceof \DateTimeInterface) {
-            $schedule_start_date = ObjectSerializer::toString($schedule_start_date);
-        }
-
         if (\is_array($schedule_start_date)) {
             $schedule_start_date = ObjectSerializer::serializeCollection($schedule_start_date, '', true);
         }
 
         if ($schedule_start_date !== null) {
-            $queryParams['scheduleStartDate'] = $schedule_start_date;
+            $queryParams['scheduleStartDate'] = ObjectSerializer::toString($schedule_start_date);
         }
         // query params
-        if ($schedule_end_date instanceof \DateTimeInterface) {
-            $schedule_end_date = ObjectSerializer::toString($schedule_end_date);
-        }
-
         if (\is_array($schedule_end_date)) {
             $schedule_end_date = ObjectSerializer::serializeCollection($schedule_end_date, '', true);
         }
 
         if ($schedule_end_date !== null) {
-            $queryParams['scheduleEndDate'] = $schedule_end_date;
+            $queryParams['scheduleEndDate'] = ObjectSerializer::toString($schedule_end_date);
         }
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
 
         if (\count($queryParams)) {
@@ -1370,7 +1314,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse',
             []
         );
     }

@@ -134,7 +134,7 @@ final class VendorDirectFulfillmentInventorySDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse',
             []
         );
     }
