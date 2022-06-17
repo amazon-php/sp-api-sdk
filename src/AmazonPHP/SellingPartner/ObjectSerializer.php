@@ -195,7 +195,7 @@ final class ObjectSerializer
             return $value ? 'true' : 'false';
         }
 
-        return $value;
+        return (string) $value;
     }
 
     /**
