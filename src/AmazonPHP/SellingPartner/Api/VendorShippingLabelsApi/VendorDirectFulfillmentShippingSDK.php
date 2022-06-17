@@ -141,7 +141,7 @@ final class VendorDirectFulfillmentShippingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel::class,
+            '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel',
             []
         );
     }
@@ -338,7 +338,7 @@ final class VendorDirectFulfillmentShippingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList::class,
+            '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList',
             []
         );
     }
@@ -585,7 +585,7 @@ final class VendorDirectFulfillmentShippingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference::class,
+            '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference',
             []
         );
     }

@@ -133,7 +133,7 @@ final class VendorDirectFulfillmentPaymentsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceResponse',
             []
         );
     }

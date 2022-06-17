@@ -531,7 +531,7 @@ final class ReportsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse',
             []
         );
     }
@@ -718,7 +718,7 @@ final class ReportsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse',
             []
         );
     }
@@ -905,7 +905,7 @@ final class ReportsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Reports\Report::class,
+            '\AmazonPHP\SellingPartner\Model\Reports\Report',
             []
         );
     }
@@ -1093,7 +1093,7 @@ final class ReportsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Reports\ReportDocument::class,
+            '\AmazonPHP\SellingPartner\Model\Reports\ReportDocument',
             []
         );
     }
@@ -1281,7 +1281,7 @@ final class ReportsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule::class,
+            '\AmazonPHP\SellingPartner\Model\Reports\ReportSchedule',
             []
         );
     }
@@ -1469,7 +1469,7 @@ final class ReportsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Reports\ReportScheduleList::class,
+            '\AmazonPHP\SellingPartner\Model\Reports\ReportScheduleList',
             []
         );
     }
@@ -1671,7 +1671,7 @@ final class ReportsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse',
             []
         );
     }

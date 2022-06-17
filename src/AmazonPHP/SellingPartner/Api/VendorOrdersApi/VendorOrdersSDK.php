@@ -145,7 +145,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse',
             []
         );
     }
@@ -344,7 +344,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse',
             []
         );
     }
@@ -644,7 +644,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse',
             []
         );
     }
@@ -941,7 +941,7 @@ final class VendorOrdersSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse::class,
+            '\AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse',
             []
         );
     }

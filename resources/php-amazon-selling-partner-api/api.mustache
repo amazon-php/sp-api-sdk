@@ -76,11 +76,9 @@ final {{#operations}}class {{packageName}}SDK
      *
      * @throws \{{invokerPackage}}\Exception\ApiException on non-2xx response
      * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
-{{#returnType}}
-     * @return {{returnType}}
-{{/returnType}}
+     * @return {{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}null{{/returnType}}
      */
-    public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}){{#returnType}}: {{returnType}}{{/returnType}}
+    public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}})
     {
         $request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
 
@@ -165,7 +163,7 @@ final {{#operations}}class {{packageName}}SDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            {{{returnType}}}::class,
+            '{{returnType}}',
             []
         );
         {{/returnType}}

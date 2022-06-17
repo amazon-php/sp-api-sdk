@@ -154,7 +154,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse',
             []
         );
     }
@@ -367,7 +367,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse',
             []
         );
     }
@@ -592,7 +592,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse',
             []
         );
     }
@@ -788,7 +788,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse',
             []
         );
     }
@@ -996,7 +996,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse',
             []
         );
     }
@@ -1314,7 +1314,7 @@ final class ServicesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse',
             []
         );
     }

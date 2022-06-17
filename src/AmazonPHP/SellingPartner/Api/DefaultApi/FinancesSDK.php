@@ -148,7 +148,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse',
             []
         );
     }
@@ -367,7 +367,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse',
             []
         );
     }
@@ -585,7 +585,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse',
             []
         );
     }
@@ -802,7 +802,7 @@ final class FinancesSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse',
             []
         );
     }

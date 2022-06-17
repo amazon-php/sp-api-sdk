@@ -141,7 +141,7 @@ final class ShipmentInvoicingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse',
             []
         );
     }
@@ -329,7 +329,7 @@ final class ShipmentInvoicingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse',
             []
         );
     }
@@ -518,7 +518,7 @@ final class ShipmentInvoicingSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse::class,
+            '\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse',
             []
         );
     }

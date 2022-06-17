@@ -136,7 +136,7 @@ final class UploadsSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse',
             []
         );
     }

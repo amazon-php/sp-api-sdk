@@ -133,7 +133,7 @@ final class TokensSDK
         return ObjectSerializer::deserialize(
             $this->configuration,
             (string) $response->getBody(),
-            \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse::class,
+            '\AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse',
             []
         );
     }
