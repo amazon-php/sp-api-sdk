@@ -387,70 +387,52 @@ final class VendorDirectFulfillmentShippingSDK
         $query = '';
 
         // query params
-        if ($ship_from_party_id instanceof \DateTimeInterface) {
-            $ship_from_party_id = ObjectSerializer::toString($ship_from_party_id);
-        }
-
         if (\is_array($ship_from_party_id)) {
             $ship_from_party_id = ObjectSerializer::serializeCollection($ship_from_party_id, '', true);
         }
 
         if ($ship_from_party_id !== null) {
-            $queryParams['shipFromPartyId'] = $ship_from_party_id;
+            $queryParams['shipFromPartyId'] = ObjectSerializer::toString($ship_from_party_id);
         }
         // query params
-        if ($limit instanceof \DateTimeInterface) {
-            $limit = ObjectSerializer::toString($limit);
-        }
-
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
         }
 
         if ($limit !== null) {
-            $queryParams['limit'] = $limit;
+            $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
-        $created_after = ObjectSerializer::toString($created_after);
-
+        // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
         }
 
         if ($created_after !== null) {
-            $queryParams['createdAfter'] = $created_after;
+            $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
-        $created_before = ObjectSerializer::toString($created_before);
-
+        // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
         }
 
         if ($created_before !== null) {
-            $queryParams['createdBefore'] = $created_before;
+            $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
         // query params
-        if ($sort_order instanceof \DateTimeInterface) {
-            $sort_order = ObjectSerializer::toString($sort_order);
-        }
-
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
         }
 
         if ($sort_order !== null) {
-            $queryParams['sortOrder'] = $sort_order;
+            $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
         // query params
-        if ($next_token instanceof \DateTimeInterface) {
-            $next_token = ObjectSerializer::toString($next_token);
-        }
-
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
 
         if ($next_token !== null) {
-            $queryParams['nextToken'] = $next_token;
+            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
 
         if (\count($queryParams)) {

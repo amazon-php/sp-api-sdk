@@ -191,112 +191,76 @@ final class SalesSDK
         $query = '';
 
         // query params
-        if ($marketplace_ids instanceof \DateTimeInterface) {
-            $marketplace_ids = ObjectSerializer::toString($marketplace_ids);
-        }
-
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
         }
 
         if ($marketplace_ids !== null) {
-            $queryParams['marketplaceIds'] = $marketplace_ids;
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
         // query params
-        if ($interval instanceof \DateTimeInterface) {
-            $interval = ObjectSerializer::toString($interval);
-        }
-
         if (\is_array($interval)) {
             $interval = ObjectSerializer::serializeCollection($interval, '', true);
         }
 
         if ($interval !== null) {
-            $queryParams['interval'] = $interval;
+            $queryParams['interval'] = ObjectSerializer::toString($interval);
         }
         // query params
-        if ($granularity_time_zone instanceof \DateTimeInterface) {
-            $granularity_time_zone = ObjectSerializer::toString($granularity_time_zone);
-        }
-
         if (\is_array($granularity_time_zone)) {
             $granularity_time_zone = ObjectSerializer::serializeCollection($granularity_time_zone, '', true);
         }
 
         if ($granularity_time_zone !== null) {
-            $queryParams['granularityTimeZone'] = $granularity_time_zone;
+            $queryParams['granularityTimeZone'] = ObjectSerializer::toString($granularity_time_zone);
         }
         // query params
-        if ($granularity instanceof \DateTimeInterface) {
-            $granularity = ObjectSerializer::toString($granularity);
-        }
-
         if (\is_array($granularity)) {
             $granularity = ObjectSerializer::serializeCollection($granularity, '', true);
         }
 
         if ($granularity !== null) {
-            $queryParams['granularity'] = $granularity;
+            $queryParams['granularity'] = ObjectSerializer::toString($granularity);
         }
         // query params
-        if ($buyer_type instanceof \DateTimeInterface) {
-            $buyer_type = ObjectSerializer::toString($buyer_type);
-        }
-
         if (\is_array($buyer_type)) {
             $buyer_type = ObjectSerializer::serializeCollection($buyer_type, '', true);
         }
 
         if ($buyer_type !== null) {
-            $queryParams['buyerType'] = $buyer_type;
+            $queryParams['buyerType'] = ObjectSerializer::toString($buyer_type);
         }
         // query params
-        if ($fulfillment_network instanceof \DateTimeInterface) {
-            $fulfillment_network = ObjectSerializer::toString($fulfillment_network);
-        }
-
         if (\is_array($fulfillment_network)) {
             $fulfillment_network = ObjectSerializer::serializeCollection($fulfillment_network, '', true);
         }
 
         if ($fulfillment_network !== null) {
-            $queryParams['fulfillmentNetwork'] = $fulfillment_network;
+            $queryParams['fulfillmentNetwork'] = ObjectSerializer::toString($fulfillment_network);
         }
         // query params
-        if ($first_day_of_week instanceof \DateTimeInterface) {
-            $first_day_of_week = ObjectSerializer::toString($first_day_of_week);
-        }
-
         if (\is_array($first_day_of_week)) {
             $first_day_of_week = ObjectSerializer::serializeCollection($first_day_of_week, '', true);
         }
 
         if ($first_day_of_week !== null) {
-            $queryParams['firstDayOfWeek'] = $first_day_of_week;
+            $queryParams['firstDayOfWeek'] = ObjectSerializer::toString($first_day_of_week);
         }
         // query params
-        if ($asin instanceof \DateTimeInterface) {
-            $asin = ObjectSerializer::toString($asin);
-        }
-
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
         }
 
         if ($asin !== null) {
-            $queryParams['asin'] = $asin;
+            $queryParams['asin'] = ObjectSerializer::toString($asin);
         }
         // query params
-        if ($sku instanceof \DateTimeInterface) {
-            $sku = ObjectSerializer::toString($sku);
-        }
-
         if (\is_array($sku)) {
             $sku = ObjectSerializer::serializeCollection($sku, '', true);
         }
 
         if ($sku !== null) {
-            $queryParams['sku'] = $sku;
+            $queryParams['sku'] = ObjectSerializer::toString($sku);
         }
 
         if (\count($queryParams)) {

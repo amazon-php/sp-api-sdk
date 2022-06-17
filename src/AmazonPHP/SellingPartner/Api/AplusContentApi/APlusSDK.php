@@ -212,16 +212,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -442,28 +438,20 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($included_data_set instanceof \DateTimeInterface) {
-            $included_data_set = ObjectSerializer::toString($included_data_set);
-        }
-
         if (\is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
         }
 
         if ($included_data_set !== null) {
-            $queryParams['includedDataSet'] = $included_data_set;
+            $queryParams['includedDataSet'] = ObjectSerializer::toString($included_data_set);
         }
 
         if (\count($queryParams)) {
@@ -686,52 +674,36 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($included_data_set instanceof \DateTimeInterface) {
-            $included_data_set = ObjectSerializer::toString($included_data_set);
-        }
-
         if (\is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
         }
 
         if ($included_data_set !== null) {
-            $queryParams['includedDataSet'] = $included_data_set;
+            $queryParams['includedDataSet'] = ObjectSerializer::toString($included_data_set);
         }
         // query params
-        if ($asin_set instanceof \DateTimeInterface) {
-            $asin_set = ObjectSerializer::toString($asin_set);
-        }
-
         if (\is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
         }
 
         if ($asin_set !== null) {
-            $queryParams['asinSet'] = $asin_set;
+            $queryParams['asinSet'] = ObjectSerializer::toString($asin_set);
         }
         // query params
-        if ($page_token instanceof \DateTimeInterface) {
-            $page_token = ObjectSerializer::toString($page_token);
-        }
-
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
         if ($page_token !== null) {
-            $queryParams['pageToken'] = $page_token;
+            $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
         }
 
         if (\count($queryParams)) {
@@ -940,16 +912,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -1167,16 +1135,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -1393,16 +1357,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -1604,28 +1564,20 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($page_token instanceof \DateTimeInterface) {
-            $page_token = ObjectSerializer::toString($page_token);
-        }
-
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
         if ($page_token !== null) {
-            $queryParams['pageToken'] = $page_token;
+            $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
         }
 
         if (\count($queryParams)) {
@@ -1831,40 +1783,28 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($asin instanceof \DateTimeInterface) {
-            $asin = ObjectSerializer::toString($asin);
-        }
-
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
         }
 
         if ($asin !== null) {
-            $queryParams['asin'] = $asin;
+            $queryParams['asin'] = ObjectSerializer::toString($asin);
         }
         // query params
-        if ($page_token instanceof \DateTimeInterface) {
-            $page_token = ObjectSerializer::toString($page_token);
-        }
-
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
         }
 
         if ($page_token !== null) {
-            $queryParams['pageToken'] = $page_token;
+            $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
         }
 
         if (\count($queryParams)) {
@@ -2073,16 +2013,12 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
@@ -2297,28 +2233,20 @@ final class APlusSDK
         $query = '';
 
         // query params
-        if ($marketplace_id instanceof \DateTimeInterface) {
-            $marketplace_id = ObjectSerializer::toString($marketplace_id);
-        }
-
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
 
         if ($marketplace_id !== null) {
-            $queryParams['marketplaceId'] = $marketplace_id;
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
         // query params
-        if ($asin_set instanceof \DateTimeInterface) {
-            $asin_set = ObjectSerializer::toString($asin_set);
-        }
-
         if (\is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
         }
 
         if ($asin_set !== null) {
-            $queryParams['asinSet'] = $asin_set;
+            $queryParams['asinSet'] = ObjectSerializer::toString($asin_set);
         }
 
         if (\count($queryParams)) {

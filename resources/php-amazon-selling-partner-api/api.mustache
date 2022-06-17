@@ -285,14 +285,11 @@ final {{#operations}}class {{packageName}}SDK
         }
         {{/isExplode}}
         {{^isExplode}}
-        if (${{paramName}} instanceof \DateTimeInterface) {
-            ${{paramName}} = ObjectSerializer::toString(${{paramName}});
-        }
         if (is_array(${{paramName}})) {
             ${{paramName}} = ObjectSerializer::serializeCollection(${{paramName}}, '{{#style}}{{style}}{{/style}}{{^style}}{{#collectionFormat}}{{collectionFormat}}{{/collectionFormat}}{{/style}}', true);
         }
         if (${{paramName}} !== null) {
-            $queryParams['{{baseName}}'] = ${{paramName}};
+            $queryParams['{{baseName}}'] = ObjectSerializer::toString(${{paramName}});
         }
         {{/isExplode}}
         {{/queryParams}}
