@@ -84,6 +84,11 @@ final class SellingPartnerSDK
         return new self($httpClient, $requestFactory, $streamFactory, $configuration, $logger);
     }
 
+    public function configuration() : Configuration
+    {
+        return $this->configuration;
+    }
+
     public function oAuth() : OAuth
     {
         return $this->instantiateSDK(OAuth::class);

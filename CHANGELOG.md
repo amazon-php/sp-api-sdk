@@ -1,4 +1,21 @@
-## [Unreleased] - 2022-05-19
+## [4.0.4] - 2022-06-09
+
+### Added
+- [#183](https://github.com/amazon-php/sp-api-sdk/pull/183) - **Add new methods and operations to the Configuration and LoggerConfiguration classes to re-enable logging of API's and/or operations that were previously skipped.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Fixed
+- [#183](https://github.com/amazon-php/sp-api-sdk/pull/183) - **Fixed logic errors in existing LoggerConfiguration methods preventing proper handling of skip logging functionality.** - [@jasonhebert](https://github.com/jasonhebert)
+
+## [4.0.3] - 2022-06-03
+
+### Added
+- [#176](https://github.com/amazon-php/sp-api-sdk/pull/176) - **Added Configuration getter to SellingPartnerSDK.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#176](https://github.com/amazon-php/sp-api-sdk/pull/176) - **Added method to update IAM Role Credentials on Configuration class.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Fixed
+- [#179](https://github.com/amazon-php/sp-api-sdk/pull/179) - **HttpSignatureHeaders::forConfig will convert header names to lowercase when calculating the signature to avoid mismatched signatures when sending to Amazon and match behaviour of HttpSignatureHeaders::raw.** - [@raing3](https://github.com/raing3)
+
+## [4.0.2] - 2022-05-25
 
 ### Fixed
 - [#171](https://github.com/amazon-php/sp-api-sdk/pull/171) - **The code example calling getCatalogItems in the README file passed incorrect parameters to the method.** - [@jasonhebert](https://github.com/jasonhebert)

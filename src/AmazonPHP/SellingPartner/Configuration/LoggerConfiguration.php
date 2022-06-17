@@ -84,11 +84,22 @@ final class LoggerConfiguration
         return $this;
     }
 
+    public function enableAPI(string $api) : self
+    {
+        $apiKey = \array_search($api, $this->skippedAPIs, true);
+
+        if ($apiKey !== false) {
+            unset($this->skippedAPIs[$apiKey]);
+        }
+
+        unset($this->skippedAPIOperations[$api]);
+
+        return $this;
+    }
+
     public function skipAPIOperation(string $api, string $operation) : self
     {
-        if (!\in_array($api, $this->skippedAPIOperations, true)) {
-            $this->skippedAPIOperations[$api] = [];
-        }
+        $this->skippedAPIOperations[$api] ??= [];
 
         if (!\in_array($operation, $this->skippedAPIOperations[$api], true)) {
             $this->skippedAPIOperations[$api][] = $operation;
@@ -97,23 +108,49 @@ final class LoggerConfiguration
         return $this;
     }
 
-    public function isSkipped(string $api, string $operation) : bool
+    public function enableAPIOperation(string $api, string $operation) : self
+    {
+        if (!isset($this->skippedAPIOperations[$api])) {
+            return $this;
+        }
+
+        $operationKey = \array_search($operation, $this->skippedAPIOperations[$api], true);
+
+        if ($operationKey !== false) {
+            unset($this->skippedAPIOperations[$api][$operationKey]);
+        }
+
+        if ($this->skippedAPIOperations[$api] === []) {
+            unset($this->skippedAPIOperations[$api]);
+        }
+
+        return $this;
+    }
+
+    public function isSkipped(string $api, string $operation = null) : bool
     {
         if (\in_array($api, $this->skippedAPIs, true)) {
             return true;
         }
 
-        if (isset($this->skippedAPIOperations[$api][$operation])) {
-            return true;
-        }
-
-        return false;
+        return \in_array($operation, $this->skippedAPIOperations[$api] ?? [], true);
     }
 
     public function addSkippedHeader(string $headerName) : self
     {
         if (!\in_array(\strtolower($headerName), $this->skipHttpHeaders, true)) {
             $this->skipHttpHeaders[] = \strtolower($headerName);
+        }
+
+        return $this;
+    }
+
+    public function removeSkippedHeader(string $headerName) : self
+    {
+        $headerKey = \array_search(\strtolower($headerName), $this->skipHttpHeaders, true);
+
+        if ($headerKey !== false) {
+            unset($this->skipHttpHeaders[$headerKey]);
         }
 
         return $this;
