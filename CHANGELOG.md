@@ -1,3 +1,12 @@
+## [Unreleased] - 2022-06-17
+
+### Changed
+- [#188](https://github.com/amazon-php/sp-api-sdk/pull/188) - **SDK return type deserialization** - [@norberttech](https://github.com/norberttech)
+
+### Fixed
+- [#188](https://github.com/amazon-php/sp-api-sdk/pull/188) - **request parameters serialization** - [@norberttech](https://github.com/norberttech)
+- [#188](https://github.com/amazon-php/sp-api-sdk/pull/188) - **Product Fees generation** - [@norberttech](https://github.com/norberttech)
+
 ## [4.0.4] - 2022-06-09
 
 ### Added
