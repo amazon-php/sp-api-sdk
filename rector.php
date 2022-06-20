@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
 use AmazonPHP\SellingPartner\Model\CatalogItem\Item;
+use AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest;
 use AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponse;
 use AmazonPHP\SellingPartner\Model\Orders\Address;
 use AmazonPHP\SellingPartner\Model\Uploads\UploadDestination;
@@ -59,6 +60,18 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             AddParamTypeDeclarationRector::PARAMETER_TYPEHINTS => ValueObjectInliner::inline([
                 new AddParamTypeDeclaration(
                     Item::class,
+                    'setAttributes',
+                    0,
+                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
+                ),
+                new AddParamTypeDeclaration(
+                    ListingsItemPutRequest::class,
+                    'setAttributes',
+                    0,
+                    new ArrayType(new MixedType(), new MixedType())
+                ),
+                new AddParamTypeDeclaration(
+                    \AmazonPHP\SellingPartner\Model\ListingsItems\Item::class,
                     'setAttributes',
                     0,
                     new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
