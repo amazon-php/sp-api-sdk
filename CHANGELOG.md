@@ -1,9 +1,10 @@
-## [Unreleased] - 2022-06-17
+## [Unreleased] - 2022-06-20
 
 ### Changed
 - [#188](https://github.com/amazon-php/sp-api-sdk/pull/188) - **SDK return type deserialization** - [@norberttech](https://github.com/norberttech)
 
 ### Fixed
+- [#190](https://github.com/amazon-php/sp-api-sdk/pull/190) - **attributes type in listing item endpoint** - [@norberttech](https://github.com/norberttech)
 - [#188](https://github.com/amazon-php/sp-api-sdk/pull/188) - **request parameters serialization** - [@norberttech](https://github.com/norberttech)
 - [#188](https://github.com/amazon-php/sp-api-sdk/pull/188) - **Product Fees generation** - [@norberttech](https://github.com/norberttech)
 
