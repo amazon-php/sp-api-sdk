@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-06-21
+
+### Fixed
+- [#192](https://github.com/amazon-php/sp-api-sdk/pull/192) - **Disable validation of enum values for incomplete model definitions** - [@norberttech](https://github.com/norberttech)
+
 ## [4.0.5] - 2022-06-21
 
 ### Changed
