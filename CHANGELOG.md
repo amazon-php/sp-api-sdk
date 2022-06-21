@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-06-20
+## [4.0.5] - 2022-06-21
 
 ### Changed
 - [#188](https://github.com/amazon-php/sp-api-sdk/pull/188) - **SDK return type deserialization** - [@norberttech](https://github.com/norberttech)
