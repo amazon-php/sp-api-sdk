@@ -2,6 +2,8 @@
 
 namespace AmazonPHP\SellingPartner;
 
+use AmazonPHP\SellingPartner\Model\CatalogItem\ItemImage;
+use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\EventCode;
 use AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat;
 
 final class ObjectSerializer
@@ -342,6 +344,16 @@ final class ObjectSerializer
         }
 
         if (\method_exists($class, 'getAllowableEnumValues')) {
+            $brokenModelDefinitions = [
+                EventCode::class, // https://github.com/amazon-php/sp-api-sdk/issues/191
+                ItemImage::class, // https://github.com/amazon-php/sp-api-sdk/issues/156
+            ];
+
+            // Do not validate if class is one of amazon broken model definitions.
+            if (\in_array($class, $brokenModelDefinitions, true)) {
+                return new $class($data);
+            }
+
             if (!\in_array($data, $class::getAllowableEnumValues(), true)) {
                 $imploded = \implode("', '", $class::getAllowableEnumValues());
 
