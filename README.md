@@ -127,7 +127,7 @@ has following Inline Policy
 
 Example of changing refresh token into access token. 
 
-```
+```php
 <?php
 
 use AmazonPHP\SellingPartner\OAuth;
@@ -135,6 +135,7 @@ use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\HttpFactory;
 use Buzz\Client\Curl;
 use Nyholm\Psr7\Factory\Psr17Factory;
+use Psr\Log\NullLogger;
 
 $factory = new Psr17Factory();
 $client = new Curl($factory);
@@ -147,7 +148,8 @@ $oauth = new OAuth(
         'lwaClientIdSecret',
         'awsAccessKey',
         'awsSecretKey'
-    )
+    ),
+    new NullLogger()
 );
 
 $accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
@@ -155,14 +157,16 @@ $accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
 
 #### IAM Role 
 
-```
+```php
 <?php
 
 use AmazonPHP\SellingPartner\OAuth;
 use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\HttpFactory;
+use AmazonPHP\SellingPartner\STSClient;
 use Buzz\Client\Curl;
 use Nyholm\Psr7\Factory\Psr17Factory;
+use Psr\Log\NullLogger;
 
 $factory = new Psr17Factory();
 $client = new Curl($factory);
@@ -184,7 +188,8 @@ $oauth = new OAuth(
             'awsSecretKey',
             'arn:aws:iam::.........'
         )
-    )
+    ),
+    new NullLogger()
 );
 
 $accessToken = $oauth->exchangeRefreshToken('seller_oauth_refresh_token');
