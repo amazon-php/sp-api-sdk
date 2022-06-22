@@ -64,7 +64,13 @@ final class ObjectSerializer
                             /** array $callable */
                             $allowedEnumTypes = $callable();
 
-                            if (!\in_array($value->toString(), $allowedEnumTypes, true)) {
+                            $brokenModelDefinitions = [
+                                \ltrim(EventCode::class, '\\'), // https://github.com/amazon-php/sp-api-sdk/issues/191
+                                \ltrim(ItemImage::class, '\\'), // https://github.com/amazon-php/sp-api-sdk/issues/156
+                            ];
+
+                            if (!\in_array($value->toString(), $allowedEnumTypes, true) &&
+                                !\in_array(\ltrim($openAPIType, '\\'), $brokenModelDefinitions, true)) {
                                 $imploded = \implode("', '", $allowedEnumTypes);
 
                                 throw new \InvalidArgumentException("Invalid value for enum '{$openAPIType}', must be one of: '{$imploded}'");
@@ -345,12 +351,12 @@ final class ObjectSerializer
 
         if (\method_exists($class, 'getAllowableEnumValues')) {
             $brokenModelDefinitions = [
-                \ltrim(EventCode::class, '/'), // https://github.com/amazon-php/sp-api-sdk/issues/191
-                \ltrim(ItemImage::class, '/'), // https://github.com/amazon-php/sp-api-sdk/issues/156
+                \ltrim(EventCode::class, '\\'), // https://github.com/amazon-php/sp-api-sdk/issues/191
+                \ltrim(ItemImage::class, '\\'), // https://github.com/amazon-php/sp-api-sdk/issues/156
             ];
 
             // Do not validate if class is one of amazon broken model definitions.
-            if (\in_array(\ltrim($class, '/'), $brokenModelDefinitions, true)) {
+            if (\in_array(\ltrim($class, '\\'), $brokenModelDefinitions, true)) {
                 return new $class($data);
             }
 
