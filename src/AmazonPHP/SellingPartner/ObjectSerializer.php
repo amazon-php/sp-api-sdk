@@ -345,12 +345,12 @@ final class ObjectSerializer
 
         if (\method_exists($class, 'getAllowableEnumValues')) {
             $brokenModelDefinitions = [
-                EventCode::class, // https://github.com/amazon-php/sp-api-sdk/issues/191
-                ItemImage::class, // https://github.com/amazon-php/sp-api-sdk/issues/156
+                \ltrim(EventCode::class, "/"), // https://github.com/amazon-php/sp-api-sdk/issues/191
+                \ltrim(ItemImage::class, "/"), // https://github.com/amazon-php/sp-api-sdk/issues/156
             ];
 
             // Do not validate if class is one of amazon broken model definitions.
-            if (\in_array($class, $brokenModelDefinitions, true)) {
+            if (\in_array(\ltrim($class, "/"), $brokenModelDefinitions, true)) {
                 return new $class($data);
             }
 
