@@ -14,6 +14,7 @@ use AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportDetailInput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfMeasurement;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfWeight;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight;
+use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\EventCode;
 use AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 use PHPUnit\Framework\TestCase;
@@ -108,5 +109,20 @@ JSON;
 
         $this->assertInstanceOf(ShippingServiceOptions::class, $object);
         $this->assertNull($object->getLabelFormat());
+    }
+
+    public function test_serialization_of_enum_with_not_defined_value()
+    {
+        $object = ObjectSerializer::deserialize(
+            Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
+            "EVENT_444",
+            \ltrim(EventCode::class, "/")
+        );
+
+        $this->assertInstanceOf(EventCode::class, $object);
+        $this->assertEquals(
+            new EventCode("EVENT_444"),
+            $object
+        );
     }
 }
