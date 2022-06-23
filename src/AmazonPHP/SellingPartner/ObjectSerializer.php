@@ -402,9 +402,9 @@ final class ObjectSerializer
      * https://github.com/amazon-php/sp-api-sdk/issues/191
      * https://github.com/amazon-php/sp-api-sdk/issues/156
      *
-     * @return array enum value class name
+     * @return array<class-string<ModelInterface>> enum value class name
      */
-    private function getBrokenModelDefinitions() : array
+    private static function getBrokenModelDefinitions() : array
     {
         return [
             \ltrim(EventCode::class, '\\'),
