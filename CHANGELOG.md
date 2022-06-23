@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-06-23
+## [4.0.6] - 2022-06-23
 
 ### Fixed
 - [2f04b7](https://github.com/amazon-php/sp-api-sdk/commit/2f04b75ab1f1833f8d2d995c4cad20a4851f3438) - **static method definition** - [@norberttech](https://github.com/norberttech)
