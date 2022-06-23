@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-06-22
+## [Unreleased] - 2022-06-23
 
 ### Fixed
 - [#194](https://github.com/amazon-php/sp-api-sdk/pull/194) - **Fixed comparison of broken model enum classes** - [@norberttech](https://github.com/norberttech)
