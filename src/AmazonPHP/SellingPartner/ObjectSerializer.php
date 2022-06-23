@@ -64,7 +64,8 @@ final class ObjectSerializer
                             /** array $callable */
                             $allowedEnumTypes = $callable();
 
-                            if (!\in_array($value->toString(), $allowedEnumTypes, true)) {
+                            if (!\in_array($value->toString(), $allowedEnumTypes, true) &&
+                                !\in_array(\ltrim($openAPIType, '\\'), self::getBrokenModelDefinitions(), true)) {
                                 $imploded = \implode("', '", $allowedEnumTypes);
 
                                 throw new \InvalidArgumentException("Invalid value for enum '{$openAPIType}', must be one of: '{$imploded}'");
@@ -344,13 +345,8 @@ final class ObjectSerializer
         }
 
         if (\method_exists($class, 'getAllowableEnumValues')) {
-            $brokenModelDefinitions = [
-                \ltrim(EventCode::class, '/'), // https://github.com/amazon-php/sp-api-sdk/issues/191
-                \ltrim(ItemImage::class, '/'), // https://github.com/amazon-php/sp-api-sdk/issues/156
-            ];
-
             // Do not validate if class is one of amazon broken model definitions.
-            if (\in_array(\ltrim($class, '/'), $brokenModelDefinitions, true)) {
+            if (\in_array(\ltrim($class, '\\'), self::getBrokenModelDefinitions(), true)) {
                 return new $class($data);
             }
 
@@ -396,6 +392,24 @@ final class ObjectSerializer
         }
 
         return $instance;
+    }
+
+    /**
+     * Define a class name to disable enum value validation for incomplete model definitions.
+     *
+     * Due to an incomplete Amazon model definition, an unknown enum value in the API response would result in an exception and error during validation.
+     * This array defines in advance the class name of the enum value that will invalidate the validation, and returns it to the caller.
+     * https://github.com/amazon-php/sp-api-sdk/issues/191
+     * https://github.com/amazon-php/sp-api-sdk/issues/156
+     *
+     * @return array enum value class name
+     */
+    private function getBrokenModelDefinitions() : array
+    {
+        return [
+            \ltrim(EventCode::class, '\\'),
+            \ltrim(ItemImage::class, '\\'),
+        ];
     }
 
     /**
