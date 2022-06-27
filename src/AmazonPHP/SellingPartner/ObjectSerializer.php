@@ -320,6 +320,18 @@ final class ObjectSerializer
 
         /** @psalm-suppress ParadoxicalCondition */
         if (\in_array($class, ['DateTime', 'DateTimeImmutable', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
+            // If the model requires a Boolean type but the API returns a string.
+            if (($class === 'bool') || ($class === 'boolean')) {
+                $data = self::castToBoolean($data);
+            }
+
+            // If the model requires a string type but the API returns NULL.
+            if (($class === 'string')) {
+                if (null === $data) {
+                    $data = '';
+                }
+            }
+
             \settype($data, $class);
 
             return $data;
@@ -410,6 +422,25 @@ final class ObjectSerializer
             \ltrim(EventCode::class, '\\'),
             \ltrim(ItemImage::class, '\\'),
         ];
+    }
+
+    /**
+     * castToBoolean.
+     *
+     * Converts the given value to a boolean value
+     *
+     * @link https://www.php.net/manual/ja/function.boolval.php
+     *
+     * @param mixed $val Value to be converted
+     * @param bool $returnNull Default false, or false if null is not returned
+     *
+     * @return mixed boolean | NULL Value after conversion
+     */
+    private static function castToBoolean($val, $returnNull = false)
+    {
+        $boolval = (\is_string($val) ? \filter_var($val, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE) : (bool) $val);
+
+        return  $boolval===null && !$returnNull ? false : $boolval;
     }
 
     /**
