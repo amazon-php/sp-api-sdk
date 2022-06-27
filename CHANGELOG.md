@@ -1,6 +1,9 @@
-## [Unreleased] - 2022-06-22
+## [4.0.6] - 2022-06-23
 
 ### Fixed
+- [2f04b7](https://github.com/amazon-php/sp-api-sdk/commit/2f04b75ab1f1833f8d2d995c4cad20a4851f3438) - **static method definition** - [@norberttech](https://github.com/norberttech)
+- [#196](https://github.com/amazon-php/sp-api-sdk/pull/196) - **Disable validation of enum values for incomplete model definitions in the sanitizeForSerialization function.** - [@Tetsuya-Takiguchi](https://github.com/Tetsuya-Takiguchi)
+- [#196](https://github.com/amazon-php/sp-api-sdk/pull/196) - **Disable enum value validation for incomplete model definitions in the deserialize function.** - [@Tetsuya-Takiguchi](https://github.com/Tetsuya-Takiguchi)
 - [#194](https://github.com/amazon-php/sp-api-sdk/pull/194) - **Fixed comparison of broken model enum classes** - [@norberttech](https://github.com/norberttech)
 - [bd30ce](https://github.com/amazon-php/sp-api-sdk/commit/bd30ce940adab6fd1e3c7bdbd857ade2338c8326) - **readme code examples** - [@norberttech](https://github.com/norberttech)
 - [#192](https://github.com/amazon-php/sp-api-sdk/pull/192) - **Disable validation of enum values for incomplete model definitions** - [@norberttech](https://github.com/norberttech)
