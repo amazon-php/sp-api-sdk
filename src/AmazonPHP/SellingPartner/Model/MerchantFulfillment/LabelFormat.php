@@ -46,6 +46,8 @@ class LabelFormat
 
     public const ZPL300 = 'ZPL300';
 
+    public const ZPL = 'ZPL';
+
     public const SHIPPING_SERVICE_DEFAULT = 'ShippingServiceDefault';
 
     private string $value;
@@ -67,6 +69,7 @@ class LabelFormat
             self::PNG,
             self::ZPL203,
             self::ZPL300,
+            self::ZPL,
             self::SHIPPING_SERVICE_DEFAULT,
         ];
     }

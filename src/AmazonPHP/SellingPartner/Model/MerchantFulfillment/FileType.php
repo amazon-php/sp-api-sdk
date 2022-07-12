@@ -62,6 +62,7 @@ class FileType
             self::APPLICATION_PDF,
             self::APPLICATION_ZPL,
             self::IMAGE_PNG,
+            ''
         ];
     }
 
