@@ -285,7 +285,7 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets carrier_will_pick_up.
      */
-    public function getCarrierWillPickUp() : bool
+    public function getCarrierWillPickUp() : ?bool
     {
         return $this->container['carrier_will_pick_up'];
     }

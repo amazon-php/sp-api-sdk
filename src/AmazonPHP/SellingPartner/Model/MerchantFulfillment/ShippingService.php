@@ -567,7 +567,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets requires_additional_seller_inputs.
      */
-    public function getRequiresAdditionalSellerInputs() : bool
+    public function getRequiresAdditionalSellerInputs() : ?bool
     {
         return $this->container['requires_additional_seller_inputs'];
     }
