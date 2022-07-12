@@ -200,10 +200,6 @@ class Account implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'account_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['account_id']) > 10)) {
-            $invalidProperties[] = "invalid value for 'account_id', the character length must be smaller than or equal to 10.";
-        }
-
         return $invalidProperties;
     }
 
@@ -233,10 +229,6 @@ class Account implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAccountId(string $account_id) : self
     {
-        if ((\mb_strlen($account_id) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $account_id when calling Account., must be smaller than or equal to 10.');
-        }
-
         $this->container['account_id'] = $account_id;
 
         return $this;

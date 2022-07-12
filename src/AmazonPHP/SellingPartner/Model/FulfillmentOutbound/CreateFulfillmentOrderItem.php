@@ -248,28 +248,12 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
             $invalidProperties[] = "'seller_sku' can't be null";
         }
 
-        if ((\mb_strlen($this->container['seller_sku']) > 50)) {
-            $invalidProperties[] = "invalid value for 'seller_sku', the character length must be smaller than or equal to 50.";
-        }
-
         if ($this->container['seller_fulfillment_order_item_id'] === null) {
             $invalidProperties[] = "'seller_fulfillment_order_item_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['seller_fulfillment_order_item_id']) > 50)) {
-            $invalidProperties[] = "invalid value for 'seller_fulfillment_order_item_id', the character length must be smaller than or equal to 50.";
-        }
-
         if ($this->container['quantity'] === null) {
             $invalidProperties[] = "'quantity' can't be null";
-        }
-
-        if (null !== $this->container['gift_message'] && (\mb_strlen($this->container['gift_message']) > 512)) {
-            $invalidProperties[] = "invalid value for 'gift_message', the character length must be smaller than or equal to 512.";
-        }
-
-        if (null !== $this->container['displayable_comment'] && (\mb_strlen($this->container['displayable_comment']) > 250)) {
-            $invalidProperties[] = "invalid value for 'displayable_comment', the character length must be smaller than or equal to 250.";
         }
 
         return $invalidProperties;
@@ -301,10 +285,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function setSellerSku(string $seller_sku) : self
     {
-        if ((\mb_strlen($seller_sku) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $seller_sku when calling CreateFulfillmentOrderItem., must be smaller than or equal to 50.');
-        }
-
         $this->container['seller_sku'] = $seller_sku;
 
         return $this;
@@ -325,10 +305,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
-        if ((\mb_strlen($seller_fulfillment_order_item_id) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $seller_fulfillment_order_item_id when calling CreateFulfillmentOrderItem., must be smaller than or equal to 50.');
-        }
-
         $this->container['seller_fulfillment_order_item_id'] = $seller_fulfillment_order_item_id;
 
         return $this;
@@ -369,10 +345,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function setGiftMessage(?string $gift_message) : self
     {
-        if (null !== $gift_message && (\mb_strlen($gift_message) > 512)) {
-            throw new \InvalidArgumentException('invalid length for $gift_message when calling CreateFulfillmentOrderItem., must be smaller than or equal to 512.');
-        }
-
         $this->container['gift_message'] = $gift_message;
 
         return $this;
@@ -393,10 +365,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function setDisplayableComment(?string $displayable_comment) : self
     {
-        if (null !== $displayable_comment && (\mb_strlen($displayable_comment) > 250)) {
-            throw new \InvalidArgumentException('invalid length for $displayable_comment when calling CreateFulfillmentOrderItem., must be smaller than or equal to 250.');
-        }
-
         $this->container['displayable_comment'] = $displayable_comment;
 
         return $this;

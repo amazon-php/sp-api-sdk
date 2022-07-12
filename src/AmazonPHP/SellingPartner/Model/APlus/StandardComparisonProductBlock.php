@@ -238,18 +238,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
             $invalidProperties[] = "invalid value for 'position', must be bigger than or equal to 1.";
         }
 
-        if (null !== $this->container['title'] && (\mb_strlen($this->container['title']) > 80)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be smaller than or equal to 80.";
-        }
-
-        if (null !== $this->container['title'] && (\mb_strlen($this->container['title']) < 1)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be bigger than or equal to 1.";
-        }
-
-        if (null !== $this->container['asin'] && (\mb_strlen($this->container['asin']) < 10)) {
-            $invalidProperties[] = "invalid value for 'asin', the character length must be bigger than or equal to 10.";
-        }
-
         if (null !== $this->container['metrics'] && (\count($this->container['metrics']) > 10)) {
             $invalidProperties[] = "invalid value for 'metrics', number of items must be less than or equal to 10.";
         }
@@ -335,14 +323,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
      */
     public function setTitle(?string $title) : self
     {
-        if (null !== $title && (\mb_strlen($title) > 80)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling StandardComparisonProductBlock., must be smaller than or equal to 80.');
-        }
-
-        if (null !== $title && (\mb_strlen($title) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling StandardComparisonProductBlock., must be bigger than or equal to 1.');
-        }
-
         $this->container['title'] = $title;
 
         return $this;
@@ -363,10 +343,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
      */
     public function setAsin(?string $asin) : self
     {
-        if (null !== $asin && (\mb_strlen($asin) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $asin when calling StandardComparisonProductBlock., must be bigger than or equal to 10.');
-        }
-
         $this->container['asin'] = $asin;
 
         return $this;

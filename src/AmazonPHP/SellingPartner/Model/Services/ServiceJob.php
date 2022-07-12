@@ -300,14 +300,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['service_job_id'] && (\mb_strlen($this->container['service_job_id']) > 100)) {
-            $invalidProperties[] = "invalid value for 'service_job_id', the character length must be smaller than or equal to 100.";
-        }
-
-        if (null !== $this->container['service_job_id'] && (\mb_strlen($this->container['service_job_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'service_job_id', the character length must be bigger than or equal to 1.";
-        }
-
         $allowedValues = $this->getServiceJobStatusAllowableValues();
 
         if (null !== $this->container['service_job_status'] && !\in_array($this->container['service_job_status'], $allowedValues, true)) {
@@ -316,14 +308,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
                 $this->container['service_job_status'],
                 \implode("', '", $allowedValues)
             );
-        }
-
-        if (null !== $this->container['service_order_id'] && (\mb_strlen($this->container['service_order_id']) > 20)) {
-            $invalidProperties[] = "invalid value for 'service_order_id', the character length must be smaller than or equal to 20.";
-        }
-
-        if (null !== $this->container['service_order_id'] && (\mb_strlen($this->container['service_order_id']) < 5)) {
-            $invalidProperties[] = "invalid value for 'service_order_id', the character length must be bigger than or equal to 5.";
         }
 
         if (null !== $this->container['marketplace_id'] && !\preg_match('/^[A-Z0-9]*$/', $this->container['marketplace_id'])) {
@@ -381,14 +365,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setServiceJobId(?string $service_job_id) : self
     {
-        if (null !== $service_job_id && (\mb_strlen($service_job_id) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $service_job_id when calling ServiceJob., must be smaller than or equal to 100.');
-        }
-
-        if (null !== $service_job_id && (\mb_strlen($service_job_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $service_job_id when calling ServiceJob., must be bigger than or equal to 1.');
-        }
-
         $this->container['service_job_id'] = $service_job_id;
 
         return $this;
@@ -544,14 +520,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setServiceOrderId(?string $service_order_id) : self
     {
-        if (null !== $service_order_id && (\mb_strlen($service_order_id) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $service_order_id when calling ServiceJob., must be smaller than or equal to 20.');
-        }
-
-        if (null !== $service_order_id && (\mb_strlen($service_order_id) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $service_order_id when calling ServiceJob., must be bigger than or equal to 5.');
-        }
-
         $this->container['service_order_id'] = $service_order_id;
 
         return $this;

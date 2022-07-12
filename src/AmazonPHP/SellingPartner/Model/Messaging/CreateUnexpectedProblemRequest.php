@@ -194,17 +194,7 @@ class CreateUnexpectedProblemRequest implements \ArrayAccess, \JsonSerializable,
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) > 2000)) {
-            $invalidProperties[] = "invalid value for 'text', the character length must be smaller than or equal to 2000.";
-        }
-
-        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) < 1)) {
-            $invalidProperties[] = "invalid value for 'text', the character length must be bigger than or equal to 1.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -233,14 +223,6 @@ class CreateUnexpectedProblemRequest implements \ArrayAccess, \JsonSerializable,
      */
     public function setText(?string $text) : self
     {
-        if (null !== $text && (\mb_strlen($text) > 2000)) {
-            throw new \InvalidArgumentException('invalid length for $text when calling CreateUnexpectedProblemRequest., must be smaller than or equal to 2000.');
-        }
-
-        if (null !== $text && (\mb_strlen($text) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $text when calling CreateUnexpectedProblemRequest., must be bigger than or equal to 1.');
-        }
-
         $this->container['text'] = $text;
 
         return $this;

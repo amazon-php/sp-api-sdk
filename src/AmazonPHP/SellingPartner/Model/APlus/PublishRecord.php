@@ -230,40 +230,20 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'marketplace_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['marketplace_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['locale'] === null) {
             $invalidProperties[] = "'locale' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['locale']) < 5)) {
-            $invalidProperties[] = "invalid value for 'locale', the character length must be bigger than or equal to 5.";
         }
 
         if ($this->container['asin'] === null) {
             $invalidProperties[] = "'asin' can't be null";
         }
 
-        if ((\mb_strlen($this->container['asin']) < 10)) {
-            $invalidProperties[] = "invalid value for 'asin', the character length must be bigger than or equal to 10.";
-        }
-
         if ($this->container['content_type'] === null) {
             $invalidProperties[] = "'content_type' can't be null";
         }
 
-        if (null !== $this->container['content_sub_type'] && (\mb_strlen($this->container['content_sub_type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_sub_type', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['content_reference_key'] === null) {
             $invalidProperties[] = "'content_reference_key' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -295,10 +275,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
-        if ((\mb_strlen($marketplace_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling PublishRecord., must be bigger than or equal to 1.');
-        }
-
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;
@@ -319,10 +295,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setLocale(string $locale) : self
     {
-        if ((\mb_strlen($locale) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $locale when calling PublishRecord., must be bigger than or equal to 5.');
-        }
-
         $this->container['locale'] = $locale;
 
         return $this;
@@ -343,10 +315,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAsin(string $asin) : self
     {
-        if ((\mb_strlen($asin) < 10)) {
-            throw new \InvalidArgumentException('invalid length for $asin when calling PublishRecord., must be bigger than or equal to 10.');
-        }
-
         $this->container['asin'] = $asin;
 
         return $this;
@@ -387,10 +355,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setContentSubType(?string $content_sub_type) : self
     {
-        if (null !== $content_sub_type && (\mb_strlen($content_sub_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_sub_type when calling PublishRecord., must be bigger than or equal to 1.');
-        }
-
         $this->container['content_sub_type'] = $content_sub_type;
 
         return $this;
@@ -411,10 +375,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setContentReferenceKey(string $content_reference_key) : self
     {
-        if ((\mb_strlen($content_reference_key) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_reference_key when calling PublishRecord., must be bigger than or equal to 1.');
-        }
-
         $this->container['content_reference_key'] = $content_reference_key;
 
         return $this;

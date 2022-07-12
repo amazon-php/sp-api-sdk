@@ -246,14 +246,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['appointment_id'] && (\mb_strlen($this->container['appointment_id']) > 100)) {
-            $invalidProperties[] = "invalid value for 'appointment_id', the character length must be smaller than or equal to 100.";
-        }
-
-        if (null !== $this->container['appointment_id'] && (\mb_strlen($this->container['appointment_id']) < 5)) {
-            $invalidProperties[] = "invalid value for 'appointment_id', the character length must be bigger than or equal to 5.";
-        }
-
         $allowedValues = $this->getAppointmentStatusAllowableValues();
 
         if (null !== $this->container['appointment_status'] && !\in_array($this->container['appointment_status'], $allowedValues, true)) {
@@ -266,14 +258,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
         if (null !== $this->container['assigned_technicians'] && (\count($this->container['assigned_technicians']) < 1)) {
             $invalidProperties[] = "invalid value for 'assigned_technicians', number of items must be greater than or equal to 1.";
-        }
-
-        if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen($this->container['rescheduled_appointment_id']) > 100)) {
-            $invalidProperties[] = "invalid value for 'rescheduled_appointment_id', the character length must be smaller than or equal to 100.";
-        }
-
-        if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen($this->container['rescheduled_appointment_id']) < 5)) {
-            $invalidProperties[] = "invalid value for 'rescheduled_appointment_id', the character length must be bigger than or equal to 5.";
         }
 
         return $invalidProperties;
@@ -305,14 +289,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAppointmentId(?string $appointment_id) : self
     {
-        if (null !== $appointment_id && (\mb_strlen($appointment_id) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $appointment_id when calling Appointment., must be smaller than or equal to 100.');
-        }
-
-        if (null !== $appointment_id && (\mb_strlen($appointment_id) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $appointment_id when calling Appointment., must be bigger than or equal to 5.');
-        }
-
         $this->container['appointment_id'] = $appointment_id;
 
         return $this;
@@ -409,14 +385,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setRescheduledAppointmentId(?string $rescheduled_appointment_id) : self
     {
-        if (null !== $rescheduled_appointment_id && (\mb_strlen($rescheduled_appointment_id) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $rescheduled_appointment_id when calling Appointment., must be smaller than or equal to 100.');
-        }
-
-        if (null !== $rescheduled_appointment_id && (\mb_strlen($rescheduled_appointment_id) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $rescheduled_appointment_id when calling Appointment., must be bigger than or equal to 5.');
-        }
-
         $this->container['rescheduled_appointment_id'] = $rescheduled_appointment_id;
 
         return $this;

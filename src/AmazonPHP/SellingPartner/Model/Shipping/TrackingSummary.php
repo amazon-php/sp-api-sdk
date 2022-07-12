@@ -194,17 +194,7 @@ class TrackingSummary implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['status'] && (\mb_strlen($this->container['status']) > 60)) {
-            $invalidProperties[] = "invalid value for 'status', the character length must be smaller than or equal to 60.";
-        }
-
-        if (null !== $this->container['status'] && (\mb_strlen($this->container['status']) < 1)) {
-            $invalidProperties[] = "invalid value for 'status', the character length must be bigger than or equal to 1.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -233,14 +223,6 @@ class TrackingSummary implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setStatus(?string $status) : self
     {
-        if (null !== $status && (\mb_strlen($status) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $status when calling TrackingSummary., must be smaller than or equal to 60.');
-        }
-
-        if (null !== $status && (\mb_strlen($status) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $status when calling TrackingSummary., must be bigger than or equal to 1.');
-        }
-
         $this->container['status'] = $status;
 
         return $this;

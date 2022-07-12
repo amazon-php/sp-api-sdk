@@ -212,10 +212,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'name' can't be null";
         }
 
-        if ((\mb_strlen($this->container['name']) > 256)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 256.";
-        }
-
         if ($this->container['destination_id'] === null) {
             $invalidProperties[] = "'destination_id' can't be null";
         }
@@ -253,10 +249,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 256)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Destination., must be smaller than or equal to 256.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;

@@ -268,10 +268,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'country_code' can't be null";
         }
 
-        if ((\mb_strlen($this->container['country_code']) > 2)) {
-            $invalidProperties[] = "invalid value for 'country_code', the character length must be smaller than or equal to 2.";
-        }
-
         return $invalidProperties;
     }
 
@@ -481,10 +477,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCountryCode(string $country_code) : self
     {
-        if ((\mb_strlen($country_code) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country_code when calling Address., must be smaller than or equal to 2.');
-        }
-
         $this->container['country_code'] = $country_code;
 
         return $this;

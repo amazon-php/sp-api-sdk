@@ -224,20 +224,8 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'name' can't be null";
         }
 
-        if ((\mb_strlen($this->container['name']) > 100)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
-        }
-
-        if ((\mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['marketplace_id'] === null) {
             $invalidProperties[] = "'marketplace_id' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['marketplace_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.";
         }
 
         if ($this->container['status'] === null) {
@@ -281,14 +269,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentMetadata., must be smaller than or equal to 100.');
-        }
-
-        if ((\mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentMetadata., must be bigger than or equal to 1.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -309,10 +289,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
-        if ((\mb_strlen($marketplace_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling ContentMetadata., must be bigger than or equal to 1.');
-        }
-
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;

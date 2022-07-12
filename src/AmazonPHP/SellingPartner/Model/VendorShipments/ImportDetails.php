@@ -265,10 +265,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
             );
         }
 
-        if (null !== $this->container['import_containers'] && (\mb_strlen($this->container['import_containers']) > 64)) {
-            $invalidProperties[] = "invalid value for 'import_containers', the character length must be smaller than or equal to 64.";
-        }
-
         return $invalidProperties;
     }
 
@@ -369,10 +365,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setImportContainers(?string $import_containers) : self
     {
-        if (null !== $import_containers && (\mb_strlen($import_containers) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $import_containers when calling ImportDetails., must be smaller than or equal to 64.');
-        }
-
         $this->container['import_containers'] = $import_containers;
 
         return $this;

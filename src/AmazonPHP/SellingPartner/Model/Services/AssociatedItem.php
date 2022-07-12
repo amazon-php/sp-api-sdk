@@ -255,14 +255,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     {
         $invalidProperties = [];
 
-        if (null !== $this->container['order_id'] && (\mb_strlen($this->container['order_id']) > 20)) {
-            $invalidProperties[] = "invalid value for 'order_id', the character length must be smaller than or equal to 20.";
-        }
-
-        if (null !== $this->container['order_id'] && (\mb_strlen($this->container['order_id']) < 5)) {
-            $invalidProperties[] = "invalid value for 'order_id', the character length must be bigger than or equal to 5.";
-        }
-
         $allowedValues = $this->getItemStatusAllowableValues();
 
         if (null !== $this->container['item_status'] && !\in_array($this->container['item_status'], $allowedValues, true)) {
@@ -362,14 +354,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setOrderId(?string $order_id) : self
     {
-        if (null !== $order_id && (\mb_strlen($order_id) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $order_id when calling AssociatedItem., must be smaller than or equal to 20.');
-        }
-
-        if (null !== $order_id && (\mb_strlen($order_id) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $order_id when calling AssociatedItem., must be bigger than or equal to 5.');
-        }
-
         $this->container['order_id'] = $order_id;
 
         return $this;

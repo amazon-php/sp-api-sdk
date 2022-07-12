@@ -242,32 +242,12 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'name' can't be null";
         }
 
-        if ((\mb_strlen($this->container['name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 50.";
-        }
-
         if ($this->container['address_line1'] === null) {
             $invalidProperties[] = "'address_line1' can't be null";
         }
 
-        if ((\mb_strlen($this->container['address_line1']) > 180)) {
-            $invalidProperties[] = "invalid value for 'address_line1', the character length must be smaller than or equal to 180.";
-        }
-
-        if (null !== $this->container['address_line2'] && (\mb_strlen($this->container['address_line2']) > 60)) {
-            $invalidProperties[] = "invalid value for 'address_line2', the character length must be smaller than or equal to 60.";
-        }
-
-        if (null !== $this->container['district_or_county'] && (\mb_strlen($this->container['district_or_county']) > 25)) {
-            $invalidProperties[] = "invalid value for 'district_or_county', the character length must be smaller than or equal to 25.";
-        }
-
         if ($this->container['city'] === null) {
             $invalidProperties[] = "'city' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['city']) > 30)) {
-            $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 30.";
         }
 
         if ($this->container['state_or_province_code'] === null) {
@@ -280,10 +260,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
         if ($this->container['postal_code'] === null) {
             $invalidProperties[] = "'postal_code' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['postal_code']) > 30)) {
-            $invalidProperties[] = "invalid value for 'postal_code', the character length must be smaller than or equal to 30.";
         }
 
         return $invalidProperties;
@@ -315,10 +291,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Address., must be smaller than or equal to 50.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -339,10 +311,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAddressLine1(string $address_line1) : self
     {
-        if ((\mb_strlen($address_line1) > 180)) {
-            throw new \InvalidArgumentException('invalid length for $address_line1 when calling Address., must be smaller than or equal to 180.');
-        }
-
         $this->container['address_line1'] = $address_line1;
 
         return $this;
@@ -363,10 +331,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAddressLine2(?string $address_line2) : self
     {
-        if (null !== $address_line2 && (\mb_strlen($address_line2) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $address_line2 when calling Address., must be smaller than or equal to 60.');
-        }
-
         $this->container['address_line2'] = $address_line2;
 
         return $this;
@@ -387,10 +351,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setDistrictOrCounty(?string $district_or_county) : self
     {
-        if (null !== $district_or_county && (\mb_strlen($district_or_county) > 25)) {
-            throw new \InvalidArgumentException('invalid length for $district_or_county when calling Address., must be smaller than or equal to 25.');
-        }
-
         $this->container['district_or_county'] = $district_or_county;
 
         return $this;
@@ -411,10 +371,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCity(string $city) : self
     {
-        if ((\mb_strlen($city) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling Address., must be smaller than or equal to 30.');
-        }
-
         $this->container['city'] = $city;
 
         return $this;
@@ -475,10 +431,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPostalCode(string $postal_code) : self
     {
-        if ((\mb_strlen($postal_code) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $postal_code when calling Address., must be smaller than or equal to 30.');
-        }
-
         $this->container['postal_code'] = $postal_code;
 
         return $this;

@@ -212,14 +212,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'event_code' can't be null";
         }
 
-        if ((\mb_strlen($this->container['event_code']) > 60)) {
-            $invalidProperties[] = "invalid value for 'event_code', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((\mb_strlen($this->container['event_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'event_code', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['event_time'] === null) {
             $invalidProperties[] = "'event_time' can't be null";
         }
@@ -253,14 +245,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setEventCode(string $event_code) : self
     {
-        if ((\mb_strlen($event_code) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $event_code when calling Event., must be smaller than or equal to 60.');
-        }
-
-        if ((\mb_strlen($event_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $event_code when calling Event., must be bigger than or equal to 1.');
-        }
-
         $this->container['event_code'] = $event_code;
 
         return $this;

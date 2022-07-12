@@ -212,10 +212,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
             $invalidProperties[] = "'name' can't be null";
         }
 
-        if ((\mb_strlen($this->container['name']) > 256)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 256.";
-        }
-
         if ($this->container['region'] === null) {
             $invalidProperties[] = "'region' can't be null";
         }
@@ -253,10 +249,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 256)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling EventBridgeResource., must be smaller than or equal to 256.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;

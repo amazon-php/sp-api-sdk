@@ -240,10 +240,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'client_reference_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['client_reference_id']) > 40)) {
-            $invalidProperties[] = "invalid value for 'client_reference_id', the character length must be smaller than or equal to 40.";
-        }
-
         if ($this->container['ship_from'] === null) {
             $invalidProperties[] = "'ship_from' can't be null";
         }
@@ -305,10 +301,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setClientReferenceId(string $client_reference_id) : self
     {
-        if ((\mb_strlen($client_reference_id) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $client_reference_id when calling Shipment., must be smaller than or equal to 40.');
-        }
-
         $this->container['client_reference_id'] = $client_reference_id;
 
         return $this;

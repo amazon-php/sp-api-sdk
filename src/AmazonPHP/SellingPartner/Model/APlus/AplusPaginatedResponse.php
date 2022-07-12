@@ -200,13 +200,7 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['next_page_token'] && (\mb_strlen($this->container['next_page_token']) < 1)) {
-            $invalidProperties[] = "invalid value for 'next_page_token', the character length must be bigger than or equal to 1.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -257,10 +251,6 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function setNextPageToken(?string $next_page_token) : self
     {
-        if (null !== $next_page_token && (\mb_strlen($next_page_token) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $next_page_token when calling AplusPaginatedResponse., must be bigger than or equal to 1.');
-        }
-
         $this->container['next_page_token'] = $next_page_token;
 
         return $this;

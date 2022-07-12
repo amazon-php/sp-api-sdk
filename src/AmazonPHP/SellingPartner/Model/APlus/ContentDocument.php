@@ -224,28 +224,12 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'name' can't be null";
         }
 
-        if ((\mb_strlen($this->container['name']) > 100)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
-        }
-
-        if ((\mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['content_type'] === null) {
             $invalidProperties[] = "'content_type' can't be null";
         }
 
-        if (null !== $this->container['content_sub_type'] && (\mb_strlen($this->container['content_sub_type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_sub_type', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['locale'] === null) {
             $invalidProperties[] = "'locale' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['locale']) < 5)) {
-            $invalidProperties[] = "invalid value for 'locale', the character length must be bigger than or equal to 5.";
         }
 
         if ($this->container['content_module_list'] === null) {
@@ -289,14 +273,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentDocument., must be smaller than or equal to 100.');
-        }
-
-        if ((\mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentDocument., must be bigger than or equal to 1.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -337,10 +313,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setContentSubType(?string $content_sub_type) : self
     {
-        if (null !== $content_sub_type && (\mb_strlen($content_sub_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_sub_type when calling ContentDocument., must be bigger than or equal to 1.');
-        }
-
         $this->container['content_sub_type'] = $content_sub_type;
 
         return $this;
@@ -361,10 +333,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setLocale(string $locale) : self
     {
-        if ((\mb_strlen($locale) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $locale when calling ContentDocument., must be bigger than or equal to 5.');
-        }
-
         $this->container['locale'] = $locale;
 
         return $this;

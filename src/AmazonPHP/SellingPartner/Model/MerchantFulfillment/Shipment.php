@@ -288,10 +288,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'amazon_order_id' can't be null";
         }
 
-        if (null !== $this->container['seller_order_id'] && (\mb_strlen($this->container['seller_order_id']) > 64)) {
-            $invalidProperties[] = "invalid value for 'seller_order_id', the character length must be smaller than or equal to 64.";
-        }
-
         if ($this->container['item_list'] === null) {
             $invalidProperties[] = "'item_list' can't be null";
         }
@@ -401,10 +397,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setSellerOrderId(?string $seller_order_id) : self
     {
-        if (null !== $seller_order_id && (\mb_strlen($seller_order_id) > 64)) {
-            throw new \InvalidArgumentException('invalid length for $seller_order_id when calling Shipment., must be smaller than or equal to 64.');
-        }
-
         $this->container['seller_order_id'] = $seller_order_id;
 
         return $this;

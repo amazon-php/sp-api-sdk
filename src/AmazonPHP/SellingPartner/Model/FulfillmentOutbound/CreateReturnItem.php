@@ -224,10 +224,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
             $invalidProperties[] = "'seller_return_item_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['seller_return_item_id']) > 80)) {
-            $invalidProperties[] = "invalid value for 'seller_return_item_id', the character length must be smaller than or equal to 80.";
-        }
-
         if ($this->container['seller_fulfillment_order_item_id'] === null) {
             $invalidProperties[] = "'seller_fulfillment_order_item_id' can't be null";
         }
@@ -238,10 +234,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
         if ($this->container['return_reason_code'] === null) {
             $invalidProperties[] = "'return_reason_code' can't be null";
-        }
-
-        if (null !== $this->container['return_comment'] && (\mb_strlen($this->container['return_comment']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'return_comment', the character length must be smaller than or equal to 1000.";
         }
 
         return $invalidProperties;
@@ -273,10 +265,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function setSellerReturnItemId(string $seller_return_item_id) : self
     {
-        if ((\mb_strlen($seller_return_item_id) > 80)) {
-            throw new \InvalidArgumentException('invalid length for $seller_return_item_id when calling CreateReturnItem., must be smaller than or equal to 80.');
-        }
-
         $this->container['seller_return_item_id'] = $seller_return_item_id;
 
         return $this;
@@ -357,10 +345,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function setReturnComment(?string $return_comment) : self
     {
-        if (null !== $return_comment && (\mb_strlen($return_comment) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $return_comment when calling CreateReturnItem., must be smaller than or equal to 1000.');
-        }
-
         $this->container['return_comment'] = $return_comment;
 
         return $this;

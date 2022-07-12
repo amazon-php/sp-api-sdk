@@ -210,14 +210,6 @@ class Currency implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'unit' can't be null";
         }
 
-        if ((\mb_strlen($this->container['unit']) > 3)) {
-            $invalidProperties[] = "invalid value for 'unit', the character length must be smaller than or equal to 3.";
-        }
-
-        if ((\mb_strlen($this->container['unit']) < 3)) {
-            $invalidProperties[] = "invalid value for 'unit', the character length must be bigger than or equal to 3.";
-        }
-
         return $invalidProperties;
     }
 
@@ -267,14 +259,6 @@ class Currency implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setUnit(string $unit) : self
     {
-        if ((\mb_strlen($unit) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $unit when calling Currency., must be smaller than or equal to 3.');
-        }
-
-        if ((\mb_strlen($unit) < 3)) {
-            throw new \InvalidArgumentException('invalid length for $unit when calling Currency., must be bigger than or equal to 3.');
-        }
-
         $this->container['unit'] = $unit;
 
         return $this;

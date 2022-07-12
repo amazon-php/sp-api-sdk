@@ -212,24 +212,12 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'upload_destination_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['upload_destination_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'upload_destination_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['image_crop_specification'] === null) {
             $invalidProperties[] = "'image_crop_specification' can't be null";
         }
 
         if ($this->container['alt_text'] === null) {
             $invalidProperties[] = "'alt_text' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['alt_text']) > 100)) {
-            $invalidProperties[] = "invalid value for 'alt_text', the character length must be smaller than or equal to 100.";
-        }
-
-        if ((\mb_strlen($this->container['alt_text']) < 1)) {
-            $invalidProperties[] = "invalid value for 'alt_text', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -261,10 +249,6 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setUploadDestinationId(string $upload_destination_id) : self
     {
-        if ((\mb_strlen($upload_destination_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $upload_destination_id when calling ImageComponent., must be bigger than or equal to 1.');
-        }
-
         $this->container['upload_destination_id'] = $upload_destination_id;
 
         return $this;
@@ -305,14 +289,6 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAltText(string $alt_text) : self
     {
-        if ((\mb_strlen($alt_text) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $alt_text when calling ImageComponent., must be smaller than or equal to 100.');
-        }
-
-        if ((\mb_strlen($alt_text) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $alt_text when calling ImageComponent., must be bigger than or equal to 1.');
-        }
-
         $this->container['alt_text'] = $alt_text;
 
         return $this;

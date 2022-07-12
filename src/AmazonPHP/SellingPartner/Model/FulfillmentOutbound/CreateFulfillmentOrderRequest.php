@@ -284,16 +284,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
             $invalidProperties[] = "'seller_fulfillment_order_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['seller_fulfillment_order_id']) > 40)) {
-            $invalidProperties[] = "invalid value for 'seller_fulfillment_order_id', the character length must be smaller than or equal to 40.";
-        }
-
         if ($this->container['displayable_order_id'] === null) {
             $invalidProperties[] = "'displayable_order_id' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['displayable_order_id']) > 40)) {
-            $invalidProperties[] = "invalid value for 'displayable_order_id', the character length must be smaller than or equal to 40.";
         }
 
         if ($this->container['displayable_order_date'] === null) {
@@ -302,10 +294,6 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
         if ($this->container['displayable_order_comment'] === null) {
             $invalidProperties[] = "'displayable_order_comment' can't be null";
-        }
-
-        if ((\mb_strlen($this->container['displayable_order_comment']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 1000.";
         }
 
         if ($this->container['shipping_speed_category'] === null) {
@@ -369,10 +357,6 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function setSellerFulfillmentOrderId(string $seller_fulfillment_order_id) : self
     {
-        if ((\mb_strlen($seller_fulfillment_order_id) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $seller_fulfillment_order_id when calling CreateFulfillmentOrderRequest., must be smaller than or equal to 40.');
-        }
-
         $this->container['seller_fulfillment_order_id'] = $seller_fulfillment_order_id;
 
         return $this;
@@ -393,10 +377,6 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function setDisplayableOrderId(string $displayable_order_id) : self
     {
-        if ((\mb_strlen($displayable_order_id) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $displayable_order_id when calling CreateFulfillmentOrderRequest., must be smaller than or equal to 40.');
-        }
-
         $this->container['displayable_order_id'] = $displayable_order_id;
 
         return $this;
@@ -439,10 +419,6 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function setDisplayableOrderComment(string $displayable_order_comment) : self
     {
-        if ((\mb_strlen($displayable_order_comment) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $displayable_order_comment when calling CreateFulfillmentOrderRequest., must be smaller than or equal to 1000.');
-        }
-
         $this->container['displayable_order_comment'] = $displayable_order_comment;
 
         return $this;

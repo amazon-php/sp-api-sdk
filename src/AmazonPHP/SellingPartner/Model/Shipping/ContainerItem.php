@@ -230,10 +230,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
             $invalidProperties[] = "'title' can't be null";
         }
 
-        if ((\mb_strlen($this->container['title']) > 30)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be smaller than or equal to 30.";
-        }
-
         return $invalidProperties;
     }
 
@@ -323,10 +319,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setTitle(string $title) : self
     {
-        if ((\mb_strlen($title) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling ContainerItem., must be smaller than or equal to 30.');
-        }
-
         $this->container['title'] = $title;
 
         return $this;

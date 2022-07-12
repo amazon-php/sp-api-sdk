@@ -200,17 +200,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) > 400)) {
-            $invalidProperties[] = "invalid value for 'text', the character length must be smaller than or equal to 400.";
-        }
-
-        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) < 1)) {
-            $invalidProperties[] = "invalid value for 'text', the character length must be bigger than or equal to 1.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -239,14 +229,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function setText(?string $text) : self
     {
-        if (null !== $text && (\mb_strlen($text) > 400)) {
-            throw new \InvalidArgumentException('invalid length for $text when calling CreateDigitalAccessKeyRequest., must be smaller than or equal to 400.');
-        }
-
-        if (null !== $text && (\mb_strlen($text) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $text when calling CreateDigitalAccessKeyRequest., must be bigger than or equal to 1.');
-        }
-
         $this->container['text'] = $text;
 
         return $this;

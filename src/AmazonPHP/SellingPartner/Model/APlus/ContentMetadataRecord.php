@@ -206,10 +206,6 @@ class ContentMetadataRecord implements \ArrayAccess, \JsonSerializable, ModelInt
             $invalidProperties[] = "'content_reference_key' can't be null";
         }
 
-        if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['content_metadata'] === null) {
             $invalidProperties[] = "'content_metadata' can't be null";
         }
@@ -243,10 +239,6 @@ class ContentMetadataRecord implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function setContentReferenceKey(string $content_reference_key) : self
     {
-        if ((\mb_strlen($content_reference_key) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_reference_key when calling ContentMetadataRecord., must be bigger than or equal to 1.');
-        }
-
         $this->container['content_reference_key'] = $content_reference_key;
 
         return $this;

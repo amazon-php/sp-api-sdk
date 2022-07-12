@@ -194,13 +194,7 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['account_id'] && (\mb_strlen($this->container['account_id']) > 10)) {
-            $invalidProperties[] = "invalid value for 'account_id', the character length must be smaller than or equal to 10.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -229,10 +223,6 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAccountId(?string $account_id) : self
     {
-        if (null !== $account_id && (\mb_strlen($account_id) > 10)) {
-            throw new \InvalidArgumentException('invalid length for $account_id when calling Party., must be smaller than or equal to 10.');
-        }
-
         $this->container['account_id'] = $account_id;
 
         return $this;

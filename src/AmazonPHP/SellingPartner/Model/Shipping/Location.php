@@ -212,33 +212,7 @@ class Location implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['city'] && (\mb_strlen($this->container['city']) > 50)) {
-            $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 50.";
-        }
-
-        if (null !== $this->container['city'] && (\mb_strlen($this->container['city']) < 1)) {
-            $invalidProperties[] = "invalid value for 'city', the character length must be bigger than or equal to 1.";
-        }
-
-        if (null !== $this->container['country_code'] && (\mb_strlen($this->container['country_code']) > 2)) {
-            $invalidProperties[] = "invalid value for 'country_code', the character length must be smaller than or equal to 2.";
-        }
-
-        if (null !== $this->container['country_code'] && (\mb_strlen($this->container['country_code']) < 2)) {
-            $invalidProperties[] = "invalid value for 'country_code', the character length must be bigger than or equal to 2.";
-        }
-
-        if (null !== $this->container['postal_code'] && (\mb_strlen($this->container['postal_code']) > 20)) {
-            $invalidProperties[] = "invalid value for 'postal_code', the character length must be smaller than or equal to 20.";
-        }
-
-        if (null !== $this->container['postal_code'] && (\mb_strlen($this->container['postal_code']) < 1)) {
-            $invalidProperties[] = "invalid value for 'postal_code', the character length must be bigger than or equal to 1.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -287,14 +261,6 @@ class Location implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCity(?string $city) : self
     {
-        if (null !== $city && (\mb_strlen($city) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling Location., must be smaller than or equal to 50.');
-        }
-
-        if (null !== $city && (\mb_strlen($city) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling Location., must be bigger than or equal to 1.');
-        }
-
         $this->container['city'] = $city;
 
         return $this;
@@ -315,14 +281,6 @@ class Location implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCountryCode(?string $country_code) : self
     {
-        if (null !== $country_code && (\mb_strlen($country_code) > 2)) {
-            throw new \InvalidArgumentException('invalid length for $country_code when calling Location., must be smaller than or equal to 2.');
-        }
-
-        if (null !== $country_code && (\mb_strlen($country_code) < 2)) {
-            throw new \InvalidArgumentException('invalid length for $country_code when calling Location., must be bigger than or equal to 2.');
-        }
-
         $this->container['country_code'] = $country_code;
 
         return $this;
@@ -343,14 +301,6 @@ class Location implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPostalCode(?string $postal_code) : self
     {
-        if (null !== $postal_code && (\mb_strlen($postal_code) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $postal_code when calling Location., must be smaller than or equal to 20.');
-        }
-
-        if (null !== $postal_code && (\mb_strlen($postal_code) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $postal_code when calling Location., must be bigger than or equal to 1.');
-        }
-
         $this->container['postal_code'] = $postal_code;
 
         return $this;

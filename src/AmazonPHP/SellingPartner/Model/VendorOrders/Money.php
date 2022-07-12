@@ -200,13 +200,7 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['currency_code'] && (\mb_strlen($this->container['currency_code']) > 3)) {
-            $invalidProperties[] = "invalid value for 'currency_code', the character length must be smaller than or equal to 3.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -235,10 +229,6 @@ class Money implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCurrencyCode(?string $currency_code) : self
     {
-        if (null !== $currency_code && (\mb_strlen($currency_code) > 3)) {
-            throw new \InvalidArgumentException('invalid length for $currency_code when calling Money., must be smaller than or equal to 3.');
-        }
-
         $this->container['currency_code'] = $currency_code;
 
         return $this;

@@ -218,14 +218,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
             $invalidProperties[] = "'tracking_id' can't be null";
         }
 
-        if ((\mb_strlen($this->container['tracking_id']) > 60)) {
-            $invalidProperties[] = "invalid value for 'tracking_id', the character length must be smaller than or equal to 60.";
-        }
-
-        if ((\mb_strlen($this->container['tracking_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'tracking_id', the character length must be bigger than or equal to 1.";
-        }
-
         if ($this->container['summary'] === null) {
             $invalidProperties[] = "'summary' can't be null";
         }
@@ -267,14 +259,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function setTrackingId(string $tracking_id) : self
     {
-        if ((\mb_strlen($tracking_id) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $tracking_id when calling TrackingInformation., must be smaller than or equal to 60.');
-        }
-
-        if ((\mb_strlen($tracking_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $tracking_id when calling TrackingInformation., must be bigger than or equal to 1.');
-        }
-
         $this->container['tracking_id'] = $tracking_id;
 
         return $this;

@@ -200,17 +200,7 @@ class Technician implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function listInvalidProperties() : array
     {
-        $invalidProperties = [];
-
-        if (null !== $this->container['technician_id'] && (\mb_strlen($this->container['technician_id']) > 50)) {
-            $invalidProperties[] = "invalid value for 'technician_id', the character length must be smaller than or equal to 50.";
-        }
-
-        if (null !== $this->container['technician_id'] && (\mb_strlen($this->container['technician_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'technician_id', the character length must be bigger than or equal to 1.";
-        }
-
-        return $invalidProperties;
+        return [];
     }
 
     /**
@@ -239,14 +229,6 @@ class Technician implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setTechnicianId(?string $technician_id) : self
     {
-        if (null !== $technician_id && (\mb_strlen($technician_id) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $technician_id when calling Technician., must be smaller than or equal to 50.');
-        }
-
-        if (null !== $technician_id && (\mb_strlen($technician_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $technician_id when calling Technician., must be bigger than or equal to 1.');
-        }
-
         $this->container['technician_id'] = $technician_id;
 
         return $this;
