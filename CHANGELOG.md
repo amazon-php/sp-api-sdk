@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-07-13
+
+### Changed
+- [#209](https://github.com/amazon-php/sp-api-sdk/pull/209) - **Disabled validation for enums in fulfillment outbound api** - [@owsiakl](https://github.com/owsiakl)
+
 ## [4.0.6] - 2022-06-23
 
 ### Fixed
