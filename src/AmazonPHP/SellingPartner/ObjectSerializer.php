@@ -3,6 +3,8 @@
 namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Model\CatalogItem\ItemImage;
+use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo;
+use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus;
 use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\EventCode;
 use AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat;
 
@@ -399,8 +401,10 @@ final class ObjectSerializer
      *
      * Due to an incomplete Amazon model definition, an unknown enum value in the API response would result in an exception and error during validation.
      * This array defines in advance the class name of the enum value that will invalidate the validation, and returns it to the caller.
-     * https://github.com/amazon-php/sp-api-sdk/issues/191
-     * https://github.com/amazon-php/sp-api-sdk/issues/156
+     *
+     * EventCode - https://github.com/amazon-php/sp-api-sdk/issues/191
+     * ItemImage - https://github.com/amazon-php/sp-api-sdk/issues/156
+     * AdditionalLocationInfo & CurrentStatus - https://github.com/amzn/selling-partner-api-models/issues/257
      *
      * @return array<class-string<ModelInterface>> enum value class name
      */
@@ -409,6 +413,8 @@ final class ObjectSerializer
         return [
             \ltrim(EventCode::class, '\\'),
             \ltrim(ItemImage::class, '\\'),
+            \ltrim(AdditionalLocationInfo::class, '\\'),
+            \ltrim(CurrentStatus::class, '\\'),
         ];
     }
 
