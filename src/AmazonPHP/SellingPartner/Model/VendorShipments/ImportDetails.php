@@ -266,8 +266,16 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
             );
         }
 
+        if ($this->container['route'] !== null) {
+            $this->container['route']->validate();
+        }
+
         if (null !== $this->container['import_containers'] && (\mb_strlen($this->container['import_containers']) > 64)) {
             throw new AssertionException("invalid value for 'import_containers', the character length must be smaller than or equal to 64.");
+        }
+
+        if ($this->container['billable_weight'] !== null) {
+            $this->container['billable_weight']->validate();
         }
     }
 

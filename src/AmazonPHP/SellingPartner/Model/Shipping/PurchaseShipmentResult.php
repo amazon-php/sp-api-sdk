@@ -215,6 +215,8 @@ class PurchaseShipmentResult implements \ArrayAccess, \JsonSerializable, ModelIn
             throw new AssertionException("'service_rate' can't be null");
         }
 
+        $this->container['service_rate']->validate();
+
         if ($this->container['label_results'] === null) {
             throw new AssertionException("'label_results' can't be null");
         }

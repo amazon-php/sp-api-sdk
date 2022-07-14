@@ -207,6 +207,10 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['aggregation_settings'] !== null) {
+            $this->container['aggregation_settings']->validate();
+        }
+
         if ($this->container['event_filter_type'] === null) {
             throw new AssertionException("'event_filter_type' can't be null");
         }

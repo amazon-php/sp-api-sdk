@@ -236,6 +236,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['function_code'] === null) {
             throw new AssertionException("'function_code' can't be null");
         }
+
         $allowedValues = $this->getFunctionCodeAllowableValues();
 
         if (null !== $this->container['function_code'] && !\in_array($this->container['function_code'], $allowedValues, true)) {
@@ -246,6 +247,10 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
                     \implode("', '", $allowedValues)
                 )
             );
+        }
+
+        if ($this->container['location_identification'] !== null) {
+            $this->container['location_identification']->validate();
         }
     }
 

@@ -237,6 +237,9 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function validate() : void
     {
+        if ($this->container['price_to_estimate_fees'] !== null) {
+            $this->container['price_to_estimate_fees']->validate();
+        }
     }
 
     /**

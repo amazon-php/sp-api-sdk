@@ -251,12 +251,22 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'landed_price' can't be null");
         }
 
+        $this->container['landed_price']->validate();
+
         if ($this->container['listing_price'] === null) {
             throw new AssertionException("'listing_price' can't be null");
         }
 
+        $this->container['listing_price']->validate();
+
         if ($this->container['shipping'] === null) {
             throw new AssertionException("'shipping' can't be null");
+        }
+
+        $this->container['shipping']->validate();
+
+        if ($this->container['points'] !== null) {
+            $this->container['points']->validate();
         }
     }
 

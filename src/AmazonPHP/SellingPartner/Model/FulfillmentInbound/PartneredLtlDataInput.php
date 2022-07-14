@@ -231,6 +231,17 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function validate() : void
     {
+        if ($this->container['contact'] !== null) {
+            $this->container['contact']->validate();
+        }
+
+        if ($this->container['total_weight'] !== null) {
+            $this->container['total_weight']->validate();
+        }
+
+        if ($this->container['seller_declared_value'] !== null) {
+            $this->container['seller_declared_value']->validate();
+        }
     }
 
     /**

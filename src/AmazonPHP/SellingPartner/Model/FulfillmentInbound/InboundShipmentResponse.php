@@ -201,6 +201,9 @@ class InboundShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function validate() : void
     {
+        if ($this->container['payload'] !== null) {
+            $this->container['payload']->validate();
+        }
     }
 
     /**

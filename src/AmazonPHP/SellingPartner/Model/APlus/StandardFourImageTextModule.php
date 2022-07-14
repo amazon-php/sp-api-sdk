@@ -219,6 +219,25 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
+        if ($this->container['block1'] !== null) {
+            $this->container['block1']->validate();
+        }
+
+        if ($this->container['block2'] !== null) {
+            $this->container['block2']->validate();
+        }
+
+        if ($this->container['block3'] !== null) {
+            $this->container['block3']->validate();
+        }
+
+        if ($this->container['block4'] !== null) {
+            $this->container['block4']->validate();
+        }
     }
 
     /**

@@ -271,6 +271,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
         if ($this->container['fulfillment_shipment_status'] === null) {
             throw new AssertionException("'fulfillment_shipment_status' can't be null");
         }
+
         $allowedValues = $this->getFulfillmentShipmentStatusAllowableValues();
 
         if (null !== $this->container['fulfillment_shipment_status'] && !\in_array($this->container['fulfillment_shipment_status'], $allowedValues, true)) {

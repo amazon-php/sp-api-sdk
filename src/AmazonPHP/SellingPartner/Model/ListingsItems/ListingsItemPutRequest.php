@@ -230,6 +230,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['product_type'] === null) {
             throw new AssertionException("'product_type' can't be null");
         }
+
         $allowedValues = $this->getRequirementsAllowableValues();
 
         if (null !== $this->container['requirements'] && !\in_array($this->container['requirements'], $allowedValues, true)) {

@@ -225,6 +225,17 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
      */
     public function validate() : void
     {
+        if ($this->container['fee_component'] !== null) {
+            $this->container['fee_component']->validate();
+        }
+
+        if ($this->container['charge_component'] !== null) {
+            $this->container['charge_component']->validate();
+        }
+
+        if ($this->container['total_amount'] !== null) {
+            $this->container['total_amount']->validate();
+        }
     }
 
     /**

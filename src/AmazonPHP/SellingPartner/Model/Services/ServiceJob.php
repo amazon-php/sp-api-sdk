@@ -319,6 +319,18 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
             );
         }
 
+        if ($this->container['scope_of_work'] !== null) {
+            $this->container['scope_of_work']->validate();
+        }
+
+        if ($this->container['seller'] !== null) {
+            $this->container['seller']->validate();
+        }
+
+        if ($this->container['service_job_provider'] !== null) {
+            $this->container['service_job_provider']->validate();
+        }
+
         if (null !== $this->container['service_order_id'] && (\mb_strlen($this->container['service_order_id']) > 20)) {
             throw new AssertionException("invalid value for 'service_order_id', the character length must be smaller than or equal to 20.");
         }
@@ -329,6 +341,14 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
 
         if (null !== $this->container['marketplace_id'] && !\preg_match('/^[A-Z0-9]*$/', $this->container['marketplace_id'])) {
             throw new AssertionException("invalid value for 'marketplace_id', must be conform to the pattern /^[A-Z0-9]*$/.");
+        }
+
+        if ($this->container['buyer'] !== null) {
+            $this->container['buyer']->validate();
+        }
+
+        if ($this->container['service_location'] !== null) {
+            $this->container['service_location']->validate();
         }
     }
 

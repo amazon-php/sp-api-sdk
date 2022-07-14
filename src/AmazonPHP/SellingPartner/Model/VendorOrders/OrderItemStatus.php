@@ -240,6 +240,26 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['item_sequence_number'] === null) {
             throw new AssertionException("'item_sequence_number' can't be null");
         }
+
+        if ($this->container['net_cost'] !== null) {
+            $this->container['net_cost']->validate();
+        }
+
+        if ($this->container['list_price'] !== null) {
+            $this->container['list_price']->validate();
+        }
+
+        if ($this->container['ordered_quantity'] !== null) {
+            $this->container['ordered_quantity']->validate();
+        }
+
+        if ($this->container['acknowledgement_status'] !== null) {
+            $this->container['acknowledgement_status']->validate();
+        }
+
+        if ($this->container['receiving_status'] !== null) {
+            $this->container['receiving_status']->validate();
+        }
     }
 
     /**

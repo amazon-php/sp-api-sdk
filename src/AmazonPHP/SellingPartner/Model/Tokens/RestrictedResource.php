@@ -233,6 +233,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
         if ($this->container['method'] === null) {
             throw new AssertionException("'method' can't be null");
         }
+
         $allowedValues = $this->getMethodAllowableValues();
 
         if (null !== $this->container['method'] && !\in_array($this->container['method'], $allowedValues, true)) {

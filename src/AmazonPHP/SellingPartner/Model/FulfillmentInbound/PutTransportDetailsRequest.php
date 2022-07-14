@@ -218,6 +218,8 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
         if ($this->container['transport_details'] === null) {
             throw new AssertionException("'transport_details' can't be null");
         }
+
+        $this->container['transport_details']->validate();
     }
 
     /**

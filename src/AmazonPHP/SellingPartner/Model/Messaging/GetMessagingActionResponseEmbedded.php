@@ -195,6 +195,9 @@ class GetMessagingActionResponseEmbedded implements \ArrayAccess, \JsonSerializa
      */
     public function validate() : void
     {
+        if ($this->container['schema'] !== null) {
+            $this->container['schema']->validate();
+        }
     }
 
     /**

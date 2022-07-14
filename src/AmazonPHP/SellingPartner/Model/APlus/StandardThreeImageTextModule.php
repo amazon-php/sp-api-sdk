@@ -213,6 +213,21 @@ class StandardThreeImageTextModule implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
+        if ($this->container['block1'] !== null) {
+            $this->container['block1']->validate();
+        }
+
+        if ($this->container['block2'] !== null) {
+            $this->container['block2']->validate();
+        }
+
+        if ($this->container['block3'] !== null) {
+            $this->container['block3']->validate();
+        }
     }
 
     /**

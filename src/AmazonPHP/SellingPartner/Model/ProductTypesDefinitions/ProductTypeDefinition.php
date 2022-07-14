@@ -280,13 +280,20 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function validate() : void
     {
+        if ($this->container['meta_schema'] !== null) {
+            $this->container['meta_schema']->validate();
+        }
+
         if ($this->container['schema'] === null) {
             throw new AssertionException("'schema' can't be null");
         }
 
+        $this->container['schema']->validate();
+
         if ($this->container['requirements'] === null) {
             throw new AssertionException("'requirements' can't be null");
         }
+
         $allowedValues = $this->getRequirementsAllowableValues();
 
         if (null !== $this->container['requirements'] && !\in_array($this->container['requirements'], $allowedValues, true)) {
@@ -302,6 +309,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
         if ($this->container['requirements_enforced'] === null) {
             throw new AssertionException("'requirements_enforced' can't be null");
         }
+
         $allowedValues = $this->getRequirementsEnforcedAllowableValues();
 
         if (null !== $this->container['requirements_enforced'] && !\in_array($this->container['requirements_enforced'], $allowedValues, true)) {
@@ -333,6 +341,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
         if ($this->container['product_type_version'] === null) {
             throw new AssertionException("'product_type_version' can't be null");
         }
+
+        $this->container['product_type_version']->validate();
     }
 
     /**

@@ -239,8 +239,18 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'ordered_quantity' can't be null");
         }
 
+        $this->container['ordered_quantity']->validate();
+
         if ($this->container['is_back_order_allowed'] === null) {
             throw new AssertionException("'is_back_order_allowed' can't be null");
+        }
+
+        if ($this->container['net_cost'] !== null) {
+            $this->container['net_cost']->validate();
+        }
+
+        if ($this->container['list_price'] !== null) {
+            $this->container['list_price']->validate();
         }
     }
 

@@ -279,13 +279,23 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'remit_to_party' can't be null");
         }
 
+        $this->container['remit_to_party']->validate();
+
         if ($this->container['ship_from_party'] === null) {
             throw new AssertionException("'ship_from_party' can't be null");
+        }
+
+        $this->container['ship_from_party']->validate();
+
+        if ($this->container['bill_to_party'] !== null) {
+            $this->container['bill_to_party']->validate();
         }
 
         if ($this->container['invoice_total'] === null) {
             throw new AssertionException("'invoice_total' can't be null");
         }
+
+        $this->container['invoice_total']->validate();
 
         if ($this->container['items'] === null) {
             throw new AssertionException("'items' can't be null");

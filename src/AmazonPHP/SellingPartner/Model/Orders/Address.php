@@ -287,6 +287,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['name'] === null) {
             throw new AssertionException("'name' can't be null");
         }
+
         $allowedValues = $this->getAddressTypeAllowableValues();
 
         if (null !== $this->container['address_type'] && !\in_array($this->container['address_type'], $allowedValues, true)) {

@@ -245,6 +245,10 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['tax_registration_number'] === null) {
             throw new AssertionException("'tax_registration_number' can't be null");
         }
+
+        if ($this->container['tax_registration_address'] !== null) {
+            $this->container['tax_registration_address']->validate();
+        }
     }
 
     /**

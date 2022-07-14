@@ -195,6 +195,9 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function validate() : void
     {
+        if ($this->container['transport_content'] !== null) {
+            $this->container['transport_content']->validate();
+        }
     }
 
     /**

@@ -267,6 +267,13 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['cost_of_points_granted'] !== null) {
+            $this->container['cost_of_points_granted']->validate();
+        }
+
+        if ($this->container['cost_of_points_returned'] !== null) {
+            $this->container['cost_of_points_returned']->validate();
+        }
     }
 
     /**

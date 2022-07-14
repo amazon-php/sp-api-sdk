@@ -195,6 +195,9 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function validate() : void
     {
+        if ($this->container['request'] !== null) {
+            $this->container['request']->validate();
+        }
     }
 
     /**

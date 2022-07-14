@@ -207,6 +207,9 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function validate() : void
     {
+        if ($this->container['_links'] !== null) {
+            $this->container['_links']->validate();
+        }
     }
 
     /**

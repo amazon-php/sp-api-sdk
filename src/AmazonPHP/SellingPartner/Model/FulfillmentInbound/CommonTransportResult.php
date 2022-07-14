@@ -195,6 +195,9 @@ class CommonTransportResult implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function validate() : void
     {
+        if ($this->container['transport_result'] !== null) {
+            $this->container['transport_result']->validate();
+        }
     }
 
     /**

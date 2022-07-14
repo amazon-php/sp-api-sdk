@@ -205,9 +205,13 @@ class ImageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'width' can't be null");
         }
 
+        $this->container['width']->validate();
+
         if ($this->container['height'] === null) {
             throw new AssertionException("'height' can't be null");
         }
+
+        $this->container['height']->validate();
     }
 
     /**

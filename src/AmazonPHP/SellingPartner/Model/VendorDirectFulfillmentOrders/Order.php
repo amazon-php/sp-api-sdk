@@ -204,6 +204,10 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['purchase_order_number'] === null) {
             throw new AssertionException("'purchase_order_number' can't be null");
         }
+
+        if ($this->container['order_details'] !== null) {
+            $this->container['order_details']->validate();
+        }
     }
 
     /**

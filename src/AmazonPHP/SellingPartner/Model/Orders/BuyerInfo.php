@@ -219,6 +219,9 @@ class BuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['buyer_tax_info'] !== null) {
+            $this->container['buyer_tax_info']->validate();
+        }
     }
 
     /**

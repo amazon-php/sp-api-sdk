@@ -228,6 +228,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['url'] === null) {
             throw new AssertionException("'url' can't be null");
         }
+
         $allowedValues = $this->getCompressionAlgorithmAllowableValues();
 
         if (null !== $this->container['compression_algorithm'] && !\in_array($this->container['compression_algorithm'], $allowedValues, true)) {

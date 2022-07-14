@@ -247,6 +247,11 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['seller_fulfillment_order_item_id'] === null) {
             throw new AssertionException("'seller_fulfillment_order_item_id' can't be null");
         }
+
+        if ($this->container['estimated_shipping_weight'] !== null) {
+            $this->container['estimated_shipping_weight']->validate();
+        }
+
         $allowedValues = $this->getShippingWeightCalculationMethodAllowableValues();
 
         if (null !== $this->container['shipping_weight_calculation_method'] && !\in_array($this->container['shipping_weight_calculation_method'], $allowedValues, true)) {

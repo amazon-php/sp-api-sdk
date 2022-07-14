@@ -201,6 +201,9 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function validate() : void
     {
+        if ($this->container['loan_amount'] !== null) {
+            $this->container['loan_amount']->validate();
+        }
     }
 
     /**

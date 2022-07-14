@@ -198,6 +198,8 @@ class AddAppointmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
         if ($this->container['appointment_time'] === null) {
             throw new AssertionException("'appointment_time' can't be null");
         }
+
+        $this->container['appointment_time']->validate();
     }
 
     /**

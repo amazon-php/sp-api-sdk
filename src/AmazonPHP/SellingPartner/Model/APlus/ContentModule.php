@@ -288,6 +288,66 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['content_module_type'] === null) {
             throw new AssertionException("'content_module_type' can't be null");
         }
+
+        if ($this->container['standard_company_logo'] !== null) {
+            $this->container['standard_company_logo']->validate();
+        }
+
+        if ($this->container['standard_comparison_table'] !== null) {
+            $this->container['standard_comparison_table']->validate();
+        }
+
+        if ($this->container['standard_four_image_text'] !== null) {
+            $this->container['standard_four_image_text']->validate();
+        }
+
+        if ($this->container['standard_four_image_text_quadrant'] !== null) {
+            $this->container['standard_four_image_text_quadrant']->validate();
+        }
+
+        if ($this->container['standard_header_image_text'] !== null) {
+            $this->container['standard_header_image_text']->validate();
+        }
+
+        if ($this->container['standard_image_sidebar'] !== null) {
+            $this->container['standard_image_sidebar']->validate();
+        }
+
+        if ($this->container['standard_image_text_overlay'] !== null) {
+            $this->container['standard_image_text_overlay']->validate();
+        }
+
+        if ($this->container['standard_multiple_image_text'] !== null) {
+            $this->container['standard_multiple_image_text']->validate();
+        }
+
+        if ($this->container['standard_product_description'] !== null) {
+            $this->container['standard_product_description']->validate();
+        }
+
+        if ($this->container['standard_single_image_highlights'] !== null) {
+            $this->container['standard_single_image_highlights']->validate();
+        }
+
+        if ($this->container['standard_single_image_specs_detail'] !== null) {
+            $this->container['standard_single_image_specs_detail']->validate();
+        }
+
+        if ($this->container['standard_single_side_image'] !== null) {
+            $this->container['standard_single_side_image']->validate();
+        }
+
+        if ($this->container['standard_tech_specs'] !== null) {
+            $this->container['standard_tech_specs']->validate();
+        }
+
+        if ($this->container['standard_text'] !== null) {
+            $this->container['standard_text']->validate();
+        }
+
+        if ($this->container['standard_three_image_text'] !== null) {
+            $this->container['standard_three_image_text']->validate();
+        }
     }
 
     /**

@@ -201,6 +201,9 @@ class CreateInboundShipmentPlanResponse implements \ArrayAccess, \JsonSerializab
      */
     public function validate() : void
     {
+        if ($this->container['payload'] !== null) {
+            $this->container['payload']->validate();
+        }
     }
 
     /**

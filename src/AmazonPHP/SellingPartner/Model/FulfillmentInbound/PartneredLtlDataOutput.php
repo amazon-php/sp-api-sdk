@@ -283,6 +283,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
             throw new AssertionException("'contact' can't be null");
         }
 
+        $this->container['contact']->validate();
+
         if ($this->container['box_count'] === null) {
             throw new AssertionException("'box_count' can't be null");
         }
@@ -297,6 +299,16 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
         if ($this->container['total_weight'] === null) {
             throw new AssertionException("'total_weight' can't be null");
+        }
+
+        $this->container['total_weight']->validate();
+
+        if ($this->container['seller_declared_value'] !== null) {
+            $this->container['seller_declared_value']->validate();
+        }
+
+        if ($this->container['amazon_calculated_value'] !== null) {
+            $this->container['amazon_calculated_value']->validate();
         }
 
         if ($this->container['preview_pickup_date'] === null) {
@@ -317,6 +329,10 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
         if ($this->container['is_bill_of_lading_available'] === null) {
             throw new AssertionException("'is_bill_of_lading_available' can't be null");
+        }
+
+        if ($this->container['partnered_estimate'] !== null) {
+            $this->container['partnered_estimate']->validate();
         }
 
         if ($this->container['carrier_name'] === null) {

@@ -208,6 +208,8 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['price'] === null) {
             throw new AssertionException("'price' can't be null");
         }
+
+        $this->container['price']->validate();
     }
 
     /**

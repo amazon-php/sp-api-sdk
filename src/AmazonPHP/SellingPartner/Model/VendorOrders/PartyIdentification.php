@@ -210,6 +210,14 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
         if ($this->container['party_id'] === null) {
             throw new AssertionException("'party_id' can't be null");
         }
+
+        if ($this->container['address'] !== null) {
+            $this->container['address']->validate();
+        }
+
+        if ($this->container['tax_info'] !== null) {
+            $this->container['tax_info']->validate();
+        }
     }
 
     /**

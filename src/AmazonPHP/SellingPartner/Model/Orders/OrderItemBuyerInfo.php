@@ -228,6 +228,18 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
         if ($this->container['order_item_id'] === null) {
             throw new AssertionException("'order_item_id' can't be null");
         }
+
+        if ($this->container['buyer_customized_info'] !== null) {
+            $this->container['buyer_customized_info']->validate();
+        }
+
+        if ($this->container['gift_wrap_price'] !== null) {
+            $this->container['gift_wrap_price']->validate();
+        }
+
+        if ($this->container['gift_wrap_tax'] !== null) {
+            $this->container['gift_wrap_tax']->validate();
+        }
     }
 
     /**

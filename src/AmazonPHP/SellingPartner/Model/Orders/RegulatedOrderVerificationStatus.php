@@ -236,6 +236,10 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
         if ($this->container['valid_rejection_reasons'] === null) {
             throw new AssertionException("'valid_rejection_reasons' can't be null");
         }
+
+        if ($this->container['rejection_reason'] !== null) {
+            $this->container['rejection_reason']->validate();
+        }
     }
 
     /**

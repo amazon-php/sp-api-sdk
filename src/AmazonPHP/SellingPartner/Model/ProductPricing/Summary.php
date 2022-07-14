@@ -252,6 +252,18 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['total_offer_count'] === null) {
             throw new AssertionException("'total_offer_count' can't be null");
         }
+
+        if ($this->container['list_price'] !== null) {
+            $this->container['list_price']->validate();
+        }
+
+        if ($this->container['competitive_price_threshold'] !== null) {
+            $this->container['competitive_price_threshold']->validate();
+        }
+
+        if ($this->container['suggested_lower_price_plus_shipping'] !== null) {
+            $this->container['suggested_lower_price_plus_shipping']->validate();
+        }
     }
 
     /**

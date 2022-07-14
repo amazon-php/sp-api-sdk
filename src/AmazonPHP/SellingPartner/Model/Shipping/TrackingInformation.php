@@ -229,6 +229,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
             throw new AssertionException("'summary' can't be null");
         }
 
+        $this->container['summary']->validate();
+
         if ($this->container['promised_delivery_date'] === null) {
             throw new AssertionException("'promised_delivery_date' can't be null");
         }

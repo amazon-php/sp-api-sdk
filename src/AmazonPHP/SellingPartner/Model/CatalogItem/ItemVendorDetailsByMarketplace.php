@@ -281,6 +281,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
         if ($this->container['marketplace_id'] === null) {
             throw new AssertionException("'marketplace_id' can't be null");
         }
+
         $allowedValues = $this->getReplenishmentCategoryAllowableValues();
 
         if (null !== $this->container['replenishment_category'] && !\in_array($this->container['replenishment_category'], $allowedValues, true)) {

@@ -257,9 +257,13 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'invoiced_quantity' can't be null");
         }
 
+        $this->container['invoiced_quantity']->validate();
+
         if ($this->container['net_cost'] === null) {
             throw new AssertionException("'net_cost' can't be null");
         }
+
+        $this->container['net_cost']->validate();
 
         if ($this->container['purchase_order_number'] === null) {
             throw new AssertionException("'purchase_order_number' can't be null");

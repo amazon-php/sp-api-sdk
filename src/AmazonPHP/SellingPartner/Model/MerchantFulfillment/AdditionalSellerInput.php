@@ -243,6 +243,21 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function validate() : void
     {
+        if ($this->container['value_as_address'] !== null) {
+            $this->container['value_as_address']->validate();
+        }
+
+        if ($this->container['value_as_weight'] !== null) {
+            $this->container['value_as_weight']->validate();
+        }
+
+        if ($this->container['value_as_dimension'] !== null) {
+            $this->container['value_as_dimension']->validate();
+        }
+
+        if ($this->container['value_as_currency'] !== null) {
+            $this->container['value_as_currency']->validate();
+        }
     }
 
     /**

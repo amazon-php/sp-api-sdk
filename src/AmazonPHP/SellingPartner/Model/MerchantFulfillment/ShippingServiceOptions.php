@@ -223,6 +223,10 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, ModelIn
             throw new AssertionException("'delivery_experience' can't be null");
         }
 
+        if ($this->container['declared_value'] !== null) {
+            $this->container['declared_value']->validate();
+        }
+
         if ($this->container['carrier_will_pick_up'] === null) {
             throw new AssertionException("'carrier_will_pick_up' can't be null");
         }

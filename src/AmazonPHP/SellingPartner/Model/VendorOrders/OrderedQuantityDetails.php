@@ -207,6 +207,13 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function validate() : void
     {
+        if ($this->container['ordered_quantity'] !== null) {
+            $this->container['ordered_quantity']->validate();
+        }
+
+        if ($this->container['cancelled_quantity'] !== null) {
+            $this->container['cancelled_quantity']->validate();
+        }
     }
 
     /**

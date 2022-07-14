@@ -201,6 +201,9 @@ class GetShipmentsResponse implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function validate() : void
     {
+        if ($this->container['payload'] !== null) {
+            $this->container['payload']->validate();
+        }
     }
 
     /**

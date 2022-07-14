@@ -247,8 +247,20 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'ship_from' can't be null");
         }
 
+        $this->container['ship_from']->validate();
+
         if ($this->container['ship_to'] === null) {
             throw new AssertionException("'ship_to' can't be null");
+        }
+
+        $this->container['ship_to']->validate();
+
+        if ($this->container['accepted_rate'] !== null) {
+            $this->container['accepted_rate']->validate();
+        }
+
+        if ($this->container['shipper'] !== null) {
+            $this->container['shipper']->validate();
         }
 
         if ($this->container['containers'] === null) {

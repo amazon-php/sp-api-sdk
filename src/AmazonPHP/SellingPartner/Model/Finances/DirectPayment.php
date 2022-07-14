@@ -201,6 +201,9 @@ class DirectPayment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['direct_payment_amount'] !== null) {
+            $this->container['direct_payment_amount']->validate();
+        }
     }
 
     /**

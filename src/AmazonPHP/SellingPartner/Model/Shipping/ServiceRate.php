@@ -217,9 +217,13 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'total_charge' can't be null");
         }
 
+        $this->container['total_charge']->validate();
+
         if ($this->container['billable_weight'] === null) {
             throw new AssertionException("'billable_weight' can't be null");
         }
+
+        $this->container['billable_weight']->validate();
 
         if ($this->container['service_type'] === null) {
             throw new AssertionException("'service_type' can't be null");
@@ -228,6 +232,8 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['promise'] === null) {
             throw new AssertionException("'promise' can't be null");
         }
+
+        $this->container['promise']->validate();
     }
 
     /**

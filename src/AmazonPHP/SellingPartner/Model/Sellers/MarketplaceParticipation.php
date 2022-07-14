@@ -205,9 +205,13 @@ class MarketplaceParticipation implements \ArrayAccess, \JsonSerializable, Model
             throw new AssertionException("'marketplace' can't be null");
         }
 
+        $this->container['marketplace']->validate();
+
         if ($this->container['participation'] === null) {
             throw new AssertionException("'participation' can't be null");
         }
+
+        $this->container['participation']->validate();
     }
 
     /**

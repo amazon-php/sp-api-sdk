@@ -237,6 +237,17 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function validate() : void
     {
+        if ($this->container['fee_amount'] !== null) {
+            $this->container['fee_amount']->validate();
+        }
+
+        if ($this->container['tax_amount'] !== null) {
+            $this->container['tax_amount']->validate();
+        }
+
+        if ($this->container['total_amount'] !== null) {
+            $this->container['total_amount']->validate();
+        }
     }
 
     /**

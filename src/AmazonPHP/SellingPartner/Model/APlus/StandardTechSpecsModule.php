@@ -207,6 +207,10 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
         if ($this->container['specification_list'] === null) {
             throw new AssertionException("'specification_list' can't be null");
         }

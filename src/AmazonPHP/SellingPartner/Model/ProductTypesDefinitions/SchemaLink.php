@@ -205,6 +205,8 @@ class SchemaLink implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'link' can't be null");
         }
 
+        $this->container['link']->validate();
+
         if ($this->container['checksum'] === null) {
             throw new AssertionException("'checksum' can't be null");
         }

@@ -367,6 +367,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
         if ($this->container['shipment_confirmation_type'] === null) {
             throw new AssertionException("'shipment_confirmation_type' can't be null");
         }
+
         $allowedValues = $this->getShipmentConfirmationTypeAllowableValues();
 
         if (null !== $this->container['shipment_confirmation_type'] && !\in_array($this->container['shipment_confirmation_type'], $allowedValues, true)) {
@@ -403,6 +404,10 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
             );
         }
 
+        if ($this->container['transportation_details'] !== null) {
+            $this->container['transportation_details']->validate();
+        }
+
         if ($this->container['shipment_confirmation_date'] === null) {
             throw new AssertionException("'shipment_confirmation_date' can't be null");
         }
@@ -411,12 +416,26 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
             throw new AssertionException("'selling_party' can't be null");
         }
 
+        $this->container['selling_party']->validate();
+
         if ($this->container['ship_from_party'] === null) {
             throw new AssertionException("'ship_from_party' can't be null");
         }
 
+        $this->container['ship_from_party']->validate();
+
         if ($this->container['ship_to_party'] === null) {
             throw new AssertionException("'ship_to_party' can't be null");
+        }
+
+        $this->container['ship_to_party']->validate();
+
+        if ($this->container['shipment_measurements'] !== null) {
+            $this->container['shipment_measurements']->validate();
+        }
+
+        if ($this->container['import_details'] !== null) {
+            $this->container['import_details']->validate();
         }
 
         if ($this->container['shipped_items'] === null) {

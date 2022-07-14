@@ -195,6 +195,9 @@ class GetMyFeesEstimateResult implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function validate() : void
     {
+        if ($this->container['fees_estimate_result'] !== null) {
+            $this->container['fees_estimate_result']->validate();
+        }
     }
 
     /**

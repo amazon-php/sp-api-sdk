@@ -237,6 +237,37 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
+        if ($this->container['image'] !== null) {
+            $this->container['image']->validate();
+        }
+
+        if ($this->container['description_headline'] !== null) {
+            $this->container['description_headline']->validate();
+        }
+
+        if ($this->container['description_block1'] !== null) {
+            $this->container['description_block1']->validate();
+        }
+
+        if ($this->container['description_block2'] !== null) {
+            $this->container['description_block2']->validate();
+        }
+
+        if ($this->container['specification_headline'] !== null) {
+            $this->container['specification_headline']->validate();
+        }
+
+        if ($this->container['specification_list_block'] !== null) {
+            $this->container['specification_list_block']->validate();
+        }
+
+        if ($this->container['specification_text_block'] !== null) {
+            $this->container['specification_text_block']->validate();
+        }
     }
 
     /**

@@ -263,9 +263,13 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'value' can't be null");
         }
 
+        $this->container['value']->validate();
+
         if ($this->container['dimensions'] === null) {
             throw new AssertionException("'dimensions' can't be null");
         }
+
+        $this->container['dimensions']->validate();
 
         if ($this->container['items'] === null) {
             throw new AssertionException("'items' can't be null");
@@ -274,6 +278,8 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['weight'] === null) {
             throw new AssertionException("'weight' can't be null");
         }
+
+        $this->container['weight']->validate();
     }
 
     /**

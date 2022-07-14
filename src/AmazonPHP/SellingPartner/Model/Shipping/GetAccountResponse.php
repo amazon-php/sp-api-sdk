@@ -201,6 +201,9 @@ class GetAccountResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function validate() : void
     {
+        if ($this->container['payload'] !== null) {
+            $this->container['payload']->validate();
+        }
     }
 
     /**

@@ -269,6 +269,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['tax_type'] === null) {
             throw new AssertionException("'tax_type' can't be null");
         }
+
         $allowedValues = $this->getTaxTypeAllowableValues();
 
         if (null !== $this->container['tax_type'] && !\in_array($this->container['tax_type'], $allowedValues, true)) {
@@ -283,6 +284,12 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
         if ($this->container['tax_amount'] === null) {
             throw new AssertionException("'tax_amount' can't be null");
+        }
+
+        $this->container['tax_amount']->validate();
+
+        if ($this->container['taxable_amount'] !== null) {
+            $this->container['taxable_amount']->validate();
         }
     }
 

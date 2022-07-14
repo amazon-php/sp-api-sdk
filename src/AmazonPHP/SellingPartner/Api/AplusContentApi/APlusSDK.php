@@ -204,8 +204,6 @@ final class APlusSDK
             );
         }
 
-        $post_content_document_request->validate();
-
         $resourcePath = '/aplus/2020-11-01/contentDocuments';
         $formParams = [];
         $queryParams = [];
@@ -1129,8 +1127,6 @@ final class APlusSDK
             );
         }
 
-        $post_content_document_asin_relations_request->validate();
-
         $resourcePath = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}/asins';
         $formParams = [];
         $queryParams = [];
@@ -2009,8 +2005,6 @@ final class APlusSDK
             );
         }
 
-        $post_content_document_request->validate();
-
         $resourcePath = '/aplus/2020-11-01/contentDocuments/{contentReferenceKey}';
         $formParams = [];
         $queryParams = [];
@@ -2230,8 +2224,6 @@ final class APlusSDK
                 'Missing the required parameter $post_content_document_request when calling validateContentDocumentAsinRelations'
             );
         }
-
-        $post_content_document_request->validate();
 
         $resourcePath = '/aplus/2020-11-01/contentAsinValidations';
         $formParams = [];

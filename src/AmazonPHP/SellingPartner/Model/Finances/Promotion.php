@@ -207,6 +207,9 @@ class Promotion implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['promotion_amount'] !== null) {
+            $this->container['promotion_amount']->validate();
+        }
     }
 
     /**

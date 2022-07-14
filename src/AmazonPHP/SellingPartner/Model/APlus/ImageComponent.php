@@ -219,6 +219,8 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'image_crop_specification' can't be null");
         }
 
+        $this->container['image_crop_specification']->validate();
+
         if ($this->container['alt_text'] === null) {
             throw new AssertionException("'alt_text' can't be null");
         }

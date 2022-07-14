@@ -223,6 +223,8 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
             throw new AssertionException("'ship_from_address' can't be null");
         }
 
+        $this->container['ship_from_address']->validate();
+
         if ($this->container['label_prep_preference'] === null) {
             throw new AssertionException("'label_prep_preference' can't be null");
         }

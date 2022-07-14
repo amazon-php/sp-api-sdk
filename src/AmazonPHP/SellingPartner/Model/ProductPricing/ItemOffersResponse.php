@@ -213,13 +213,21 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function validate() : void
     {
+        if ($this->container['status'] !== null) {
+            $this->container['status']->validate();
+        }
+
         if ($this->container['body'] === null) {
             throw new AssertionException("'body' can't be null");
         }
 
+        $this->container['body']->validate();
+
         if ($this->container['request'] === null) {
             throw new AssertionException("'request' can't be null");
         }
+
+        $this->container['request']->validate();
     }
 
     /**

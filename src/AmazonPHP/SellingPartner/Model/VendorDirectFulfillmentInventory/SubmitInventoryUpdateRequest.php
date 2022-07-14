@@ -195,6 +195,9 @@ class SubmitInventoryUpdateRequest implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
+        if ($this->container['inventory'] !== null) {
+            $this->container['inventory']->validate();
+        }
     }
 
     /**

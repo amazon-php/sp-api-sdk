@@ -553,8 +553,6 @@ final class ReportsSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/reports/2021-06-30/reports';
         $formParams = [];
         $queryParams = [];
@@ -741,8 +739,6 @@ final class ReportsSDK
                 'Missing the required parameter $body when calling createReportSchedule'
             );
         }
-
-        $body->validate();
 
         $resourcePath = '/reports/2021-06-30/schedules';
         $formParams = [];

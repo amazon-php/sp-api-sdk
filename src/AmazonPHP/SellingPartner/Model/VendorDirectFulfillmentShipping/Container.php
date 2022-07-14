@@ -281,6 +281,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['container_type'] === null) {
             throw new AssertionException("'container_type' can't be null");
         }
+
         $allowedValues = $this->getContainerTypeAllowableValues();
 
         if (null !== $this->container['container_type'] && !\in_array($this->container['container_type'], $allowedValues, true)) {
@@ -295,6 +296,14 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
         if ($this->container['container_identifier'] === null) {
             throw new AssertionException("'container_identifier' can't be null");
+        }
+
+        if ($this->container['dimensions'] !== null) {
+            $this->container['dimensions']->validate();
+        }
+
+        if ($this->container['weight'] !== null) {
+            $this->container['weight']->validate();
         }
 
         if ($this->container['packed_items'] === null) {

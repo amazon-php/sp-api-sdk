@@ -216,6 +216,8 @@ class TextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['text'] === null) {
             throw new AssertionException("'text' can't be null");
         }
+
+        $this->container['text']->validate();
     }
 
     /**

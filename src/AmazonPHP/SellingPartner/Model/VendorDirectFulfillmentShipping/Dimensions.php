@@ -245,6 +245,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['unit_of_measure'] === null) {
             throw new AssertionException("'unit_of_measure' can't be null");
         }
+
         $allowedValues = $this->getUnitOfMeasureAllowableValues();
 
         if (null !== $this->container['unit_of_measure'] && !\in_array($this->container['unit_of_measure'], $allowedValues, true)) {

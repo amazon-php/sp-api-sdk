@@ -229,8 +229,14 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
             throw new AssertionException("'shipment_request_details' can't be null");
         }
 
+        $this->container['shipment_request_details']->validate();
+
         if ($this->container['shipping_service_id'] === null) {
             throw new AssertionException("'shipping_service_id' can't be null");
+        }
+
+        if ($this->container['label_format_option'] !== null) {
+            $this->container['label_format_option']->validate();
         }
     }
 

@@ -225,6 +225,17 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function validate() : void
     {
+        if ($this->container['base_value'] !== null) {
+            $this->container['base_value']->validate();
+        }
+
+        if ($this->container['tax_value'] !== null) {
+            $this->container['tax_value']->validate();
+        }
+
+        if ($this->container['transaction_value'] !== null) {
+            $this->container['transaction_value']->validate();
+        }
     }
 
     /**

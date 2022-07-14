@@ -228,6 +228,12 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['identifiers'] === null) {
             throw new AssertionException("'identifiers' can't be null");
         }
+
+        $this->container['identifiers']->validate();
+
+        if ($this->container['competitive_pricing'] !== null) {
+            $this->container['competitive_pricing']->validate();
+        }
     }
 
     /**

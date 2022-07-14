@@ -244,6 +244,7 @@ class Issue implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['severity'] === null) {
             throw new AssertionException("'severity' can't be null");
         }
+
         $allowedValues = $this->getSeverityAllowableValues();
 
         if (null !== $this->container['severity'] && !\in_array($this->container['severity'], $allowedValues, true)) {

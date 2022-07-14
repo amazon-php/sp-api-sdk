@@ -237,6 +237,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['message'] === null) {
             throw new AssertionException("'message' can't be null");
         }
+
         $allowedValues = $this->getErrorLevelAllowableValues();
 
         if (null !== $this->container['error_level'] && !\in_array($this->container['error_level'], $allowedValues, true)) {

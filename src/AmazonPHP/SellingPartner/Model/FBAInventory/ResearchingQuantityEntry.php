@@ -224,6 +224,7 @@ class ResearchingQuantityEntry implements \ArrayAccess, \JsonSerializable, Model
         if ($this->container['name'] === null) {
             throw new AssertionException("'name' can't be null");
         }
+
         $allowedValues = $this->getNameAllowableValues();
 
         if (null !== $this->container['name'] && !\in_array($this->container['name'], $allowedValues, true)) {

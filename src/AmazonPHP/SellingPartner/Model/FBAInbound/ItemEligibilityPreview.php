@@ -371,6 +371,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['program'] === null) {
             throw new AssertionException("'program' can't be null");
         }
+
         $allowedValues = $this->getProgramAllowableValues();
 
         if (null !== $this->container['program'] && !\in_array($this->container['program'], $allowedValues, true)) {

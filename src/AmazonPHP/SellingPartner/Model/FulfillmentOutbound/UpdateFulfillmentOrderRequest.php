@@ -268,6 +268,10 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         if (null !== $this->container['displayable_order_comment'] && (\mb_strlen($this->container['displayable_order_comment']) > 1000)) {
             throw new AssertionException("invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 1000.");
         }
+
+        if ($this->container['destination_address'] !== null) {
+            $this->container['destination_address']->validate();
+        }
     }
 
     /**

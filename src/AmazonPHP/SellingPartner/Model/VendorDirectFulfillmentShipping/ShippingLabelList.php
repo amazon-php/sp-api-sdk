@@ -201,6 +201,9 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function validate() : void
     {
+        if ($this->container['pagination'] !== null) {
+            $this->container['pagination']->validate();
+        }
     }
 
     /**

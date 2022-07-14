@@ -213,6 +213,21 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function validate() : void
     {
+        if ($this->container['partnered_small_parcel_data'] !== null) {
+            $this->container['partnered_small_parcel_data']->validate();
+        }
+
+        if ($this->container['non_partnered_small_parcel_data'] !== null) {
+            $this->container['non_partnered_small_parcel_data']->validate();
+        }
+
+        if ($this->container['partnered_ltl_data'] !== null) {
+            $this->container['partnered_ltl_data']->validate();
+        }
+
+        if ($this->container['non_partnered_ltl_data'] !== null) {
+            $this->container['non_partnered_ltl_data']->validate();
+        }
     }
 
     /**

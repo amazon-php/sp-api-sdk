@@ -201,6 +201,9 @@ class GetAuthorizationCodeResponse implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
+        if ($this->container['payload'] !== null) {
+            $this->container['payload']->validate();
+        }
     }
 
     /**

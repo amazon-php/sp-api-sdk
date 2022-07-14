@@ -230,6 +230,7 @@ class ContainerIdentification implements \ArrayAccess, \JsonSerializable, ModelI
         if ($this->container['container_identification_type'] === null) {
             throw new AssertionException("'container_identification_type' can't be null");
         }
+
         $allowedValues = $this->getContainerIdentificationTypeAllowableValues();
 
         if (null !== $this->container['container_identification_type'] && !\in_array($this->container['container_identification_type'], $allowedValues, true)) {

@@ -241,6 +241,7 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, Mode
         if ($this->container['field_type'] === null) {
             throw new AssertionException("'field_type' can't be null");
         }
+
         $allowedValues = $this->getFieldTypeAllowableValues();
 
         if (null !== $this->container['field_type'] && !\in_array($this->container['field_type'], $allowedValues, true)) {

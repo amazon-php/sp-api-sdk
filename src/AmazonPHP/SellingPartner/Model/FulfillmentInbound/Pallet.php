@@ -211,6 +211,12 @@ class Pallet implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'dimensions' can't be null");
         }
 
+        $this->container['dimensions']->validate();
+
+        if ($this->container['weight'] !== null) {
+            $this->container['weight']->validate();
+        }
+
         if ($this->container['is_stacked'] === null) {
             throw new AssertionException("'is_stacked' can't be null");
         }

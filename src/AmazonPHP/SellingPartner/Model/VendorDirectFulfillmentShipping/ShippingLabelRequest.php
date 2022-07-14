@@ -225,9 +225,13 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
             throw new AssertionException("'selling_party' can't be null");
         }
 
+        $this->container['selling_party']->validate();
+
         if ($this->container['ship_from_party'] === null) {
             throw new AssertionException("'ship_from_party' can't be null");
         }
+
+        $this->container['ship_from_party']->validate();
     }
 
     /**

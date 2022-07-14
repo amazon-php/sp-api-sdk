@@ -221,6 +221,7 @@ class Duration implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['duration_unit'] === null) {
             throw new AssertionException("'duration_unit' can't be null");
         }
+
         $allowedValues = $this->getDurationUnitAllowableValues();
 
         if (null !== $this->container['duration_unit'] && !\in_array($this->container['duration_unit'], $allowedValues, true)) {

@@ -210,6 +210,16 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
         if ($this->container['listing_price'] === null) {
             throw new AssertionException("'listing_price' can't be null");
         }
+
+        $this->container['listing_price']->validate();
+
+        if ($this->container['shipping'] !== null) {
+            $this->container['shipping']->validate();
+        }
+
+        if ($this->container['points'] !== null) {
+            $this->container['points']->validate();
+        }
     }
 
     /**

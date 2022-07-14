@@ -299,29 +299,43 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'ship_from_address' can't be null");
         }
 
+        $this->container['ship_from_address']->validate();
+
         if ($this->container['ship_to_address'] === null) {
             throw new AssertionException("'ship_to_address' can't be null");
         }
+
+        $this->container['ship_to_address']->validate();
 
         if ($this->container['package_dimensions'] === null) {
             throw new AssertionException("'package_dimensions' can't be null");
         }
 
+        $this->container['package_dimensions']->validate();
+
         if ($this->container['weight'] === null) {
             throw new AssertionException("'weight' can't be null");
         }
+
+        $this->container['weight']->validate();
 
         if ($this->container['insurance'] === null) {
             throw new AssertionException("'insurance' can't be null");
         }
 
+        $this->container['insurance']->validate();
+
         if ($this->container['shipping_service'] === null) {
             throw new AssertionException("'shipping_service' can't be null");
         }
 
+        $this->container['shipping_service']->validate();
+
         if ($this->container['label'] === null) {
             throw new AssertionException("'label' can't be null");
         }
+
+        $this->container['label']->validate();
 
         if ($this->container['status'] === null) {
             throw new AssertionException("'status' can't be null");

@@ -213,6 +213,17 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function validate() : void
     {
+        if ($this->container['base_amount'] !== null) {
+            $this->container['base_amount']->validate();
+        }
+
+        if ($this->container['withheld_amount'] !== null) {
+            $this->container['withheld_amount']->validate();
+        }
+
+        if ($this->container['tax_withholding_period'] !== null) {
+            $this->container['tax_withholding_period']->validate();
+        }
     }
 
     /**

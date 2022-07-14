@@ -221,6 +221,8 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, ModelInte
             throw new AssertionException("'selling_party' can't be null");
         }
 
+        $this->container['selling_party']->validate();
+
         if ($this->container['acknowledgement_date'] === null) {
             throw new AssertionException("'acknowledgement_date' can't be null");
         }

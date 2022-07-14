@@ -237,6 +237,13 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      */
     public function validate() : void
     {
+        if ($this->container['tax_exclusive_amount'] !== null) {
+            $this->container['tax_exclusive_amount']->validate();
+        }
+
+        if ($this->container['tax_amount'] !== null) {
+            $this->container['tax_amount']->validate();
+        }
     }
 
     /**

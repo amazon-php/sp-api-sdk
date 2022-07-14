@@ -391,8 +391,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders';
         $formParams = [];
         $queryParams = [];
@@ -587,8 +585,6 @@ final class FulfillmentOutboundSDK
                 'Missing the required parameter $body when calling createFulfillmentReturn'
             );
         }
-
-        $body->validate();
 
         $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/return';
         $formParams = [];
@@ -1602,8 +1598,6 @@ final class FulfillmentOutboundSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders/preview';
         $formParams = [];
         $queryParams = [];
@@ -2406,8 +2400,6 @@ final class FulfillmentOutboundSDK
                 'Missing the required parameter $body when calling updateFulfillmentOrder'
             );
         }
-
-        $body->validate();
 
         $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}';
         $formParams = [];

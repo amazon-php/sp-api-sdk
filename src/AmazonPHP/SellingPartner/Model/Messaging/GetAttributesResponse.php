@@ -201,6 +201,9 @@ class GetAttributesResponse implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function validate() : void
     {
+        if ($this->container['buyer'] !== null) {
+            $this->container['buyer']->validate();
+        }
     }
 
     /**

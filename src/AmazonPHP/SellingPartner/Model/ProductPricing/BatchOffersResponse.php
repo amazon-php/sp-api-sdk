@@ -207,9 +207,15 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function validate() : void
     {
+        if ($this->container['status'] !== null) {
+            $this->container['status']->validate();
+        }
+
         if ($this->container['body'] === null) {
             throw new AssertionException("'body' can't be null");
         }
+
+        $this->container['body']->validate();
     }
 
     /**

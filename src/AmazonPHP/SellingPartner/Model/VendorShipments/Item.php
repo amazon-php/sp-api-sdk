@@ -226,6 +226,12 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['shipped_quantity'] === null) {
             throw new AssertionException("'shipped_quantity' can't be null");
         }
+
+        $this->container['shipped_quantity']->validate();
+
+        if ($this->container['item_details'] !== null) {
+            $this->container['item_details']->validate();
+        }
     }
 
     /**

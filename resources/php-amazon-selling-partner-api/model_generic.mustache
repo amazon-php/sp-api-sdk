@@ -193,6 +193,7 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
         if ($this->container['{{name}}'] === null) {
             throw new AssertionException("'{{name}}' can't be null");
         }
+
         {{/required}}
         {{#isEnum}}
         {{^isContainer}}
@@ -211,15 +212,15 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
         {{/isEnum}}
         {{#hasValidation}}
         {{#maxLength}}
-            if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}(mb_strlen($this->container['{{name}}']) > {{maxLength}})) {
-                throw new AssertionException("invalid value for '{{name}}', the character length must be smaller than or equal to {{{maxLength}}}.");
-            }
+        if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}(mb_strlen($this->container['{{name}}']) > {{maxLength}})) {
+            throw new AssertionException("invalid value for '{{name}}', the character length must be smaller than or equal to {{{maxLength}}}.");
+        }
 
         {{/maxLength}}
         {{#minLength}}
-            if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}(mb_strlen($this->container['{{name}}']) < {{minLength}})) {
-                throw new AssertionException("invalid value for '{{name}}', the character length must be bigger than or equal to {{{minLength}}}.");
-            }
+        if ({{^required}}!is_null($this->container['{{name}}']) && {{/required}}(mb_strlen($this->container['{{name}}']) < {{minLength}})) {
+            throw new AssertionException("invalid value for '{{name}}', the character length must be bigger than or equal to {{{minLength}}}.");
+        }
 
         {{/minLength}}
         {{#maximum}}
@@ -253,6 +254,16 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
 
         {{/minItems}}
         {{/hasValidation}}
+        {{#isModel}}
+        {{^required}}
+            if ($this->container['{{name}}'] !== null) {
+        {{/required}}
+            $this->container['{{name}}']->validate();
+        {{^required}}
+            }
+        {{/required}}
+
+        {{/isModel}}
         {{/vars}}
     }
 

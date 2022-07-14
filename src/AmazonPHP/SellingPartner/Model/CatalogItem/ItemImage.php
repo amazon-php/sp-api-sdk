@@ -257,6 +257,7 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['variant'] === null) {
             throw new AssertionException("'variant' can't be null");
         }
+
         $allowedValues = $this->getVariantAllowableValues();
 
         if (null !== $this->container['variant'] && !\in_array($this->container['variant'], $allowedValues, true)) {

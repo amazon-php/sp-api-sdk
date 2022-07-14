@@ -201,6 +201,9 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function validate() : void
     {
+        if ($this->container['seller_input_definition'] !== null) {
+            $this->container['seller_input_definition']->validate();
+        }
     }
 
     /**

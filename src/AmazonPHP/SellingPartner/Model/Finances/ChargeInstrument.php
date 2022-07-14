@@ -207,6 +207,9 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function validate() : void
     {
+        if ($this->container['amount'] !== null) {
+            $this->container['amount']->validate();
+        }
     }
 
     /**

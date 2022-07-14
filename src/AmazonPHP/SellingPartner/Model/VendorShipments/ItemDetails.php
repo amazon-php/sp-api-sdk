@@ -242,6 +242,14 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['expiry'] !== null) {
+            $this->container['expiry']->validate();
+        }
+
+        if ($this->container['maximum_retail_price'] !== null) {
+            $this->container['maximum_retail_price']->validate();
+        }
+
         $allowedValues = $this->getHandlingCodeAllowableValues();
 
         if (null !== $this->container['handling_code'] && !\in_array($this->container['handling_code'], $allowedValues, true)) {

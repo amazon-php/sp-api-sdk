@@ -195,6 +195,9 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
      */
     public function validate() : void
     {
+        if ($this->container['shipments'] !== null) {
+            $this->container['shipments']->validate();
+        }
     }
 
     /**

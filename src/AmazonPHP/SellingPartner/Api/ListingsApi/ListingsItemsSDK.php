@@ -665,8 +665,6 @@ final class ListingsItemsSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];
         $queryParams = [];
@@ -913,8 +911,6 @@ final class ListingsItemsSDK
                 'Missing the required parameter $body when calling putListingsItem'
             );
         }
-
-        $body->validate();
 
         $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];

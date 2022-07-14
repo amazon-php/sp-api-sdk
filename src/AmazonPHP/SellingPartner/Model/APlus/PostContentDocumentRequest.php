@@ -198,6 +198,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
         if ($this->container['content_document'] === null) {
             throw new AssertionException("'content_document' can't be null");
         }
+
+        $this->container['content_document']->validate();
     }
 
     /**

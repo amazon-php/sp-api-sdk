@@ -218,6 +218,8 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
         if ($this->container['listing_price'] === null) {
             throw new AssertionException("'listing_price' can't be null");
         }
+
+        $this->container['listing_price']->validate();
     }
 
     /**

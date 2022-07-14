@@ -247,6 +247,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'shipment_dates' can't be null");
         }
 
+        $this->container['shipment_dates']->validate();
+
         if ($this->container['message_to_customer'] === null) {
             throw new AssertionException("'message_to_customer' can't be null");
         }

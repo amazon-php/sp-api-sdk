@@ -205,6 +205,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
             throw new AssertionException("'self' can't be null");
         }
 
+        $this->container['self']->validate();
+
         if ($this->container['actions'] === null) {
             throw new AssertionException("'actions' can't be null");
         }

@@ -205,6 +205,8 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
             throw new AssertionException("'payment' can't be null");
         }
 
+        $this->container['payment']->validate();
+
         if ($this->container['payment_method'] === null) {
             throw new AssertionException("'payment_method' can't be null");
         }

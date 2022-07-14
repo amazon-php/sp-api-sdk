@@ -219,6 +219,9 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function validate() : void
     {
+        if ($this->container['reimbursed_amount'] !== null) {
+            $this->container['reimbursed_amount']->validate();
+        }
     }
 
     /**

@@ -237,6 +237,10 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
             throw new AssertionException("invalid value for 'position', must be bigger than or equal to 1.");
         }
 
+        if ($this->container['image'] !== null) {
+            $this->container['image']->validate();
+        }
+
         if (null !== $this->container['title'] && (\mb_strlen($this->container['title']) > 80)) {
             throw new AssertionException("invalid value for 'title', the character length must be smaller than or equal to 80.");
         }

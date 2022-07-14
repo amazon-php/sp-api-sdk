@@ -213,6 +213,13 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function validate() : void
     {
+        if ($this->container['recovery_amount'] !== null) {
+            $this->container['recovery_amount']->validate();
+        }
+
+        if ($this->container['original_amount'] !== null) {
+            $this->container['original_amount']->validate();
+        }
     }
 
     /**

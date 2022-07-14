@@ -205,6 +205,8 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, Mo
             throw new AssertionException("'granularity' can't be null");
         }
 
+        $this->container['granularity']->validate();
+
         if ($this->container['inventory_summaries'] === null) {
             throw new AssertionException("'inventory_summaries' can't be null");
         }

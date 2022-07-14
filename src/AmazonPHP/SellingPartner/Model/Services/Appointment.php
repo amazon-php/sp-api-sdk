@@ -265,6 +265,10 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
             );
         }
 
+        if ($this->container['appointment_time'] !== null) {
+            $this->container['appointment_time']->validate();
+        }
+
         if (null !== $this->container['assigned_technicians'] && (\count($this->container['assigned_technicians']) < 1)) {
             throw new AssertionException("invalid value for 'assigned_technicians', number of items must be greater than or equal to 1.");
         }
@@ -275,6 +279,10 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
         if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen($this->container['rescheduled_appointment_id']) < 5)) {
             throw new AssertionException("invalid value for 'rescheduled_appointment_id', the character length must be bigger than or equal to 5.");
+        }
+
+        if ($this->container['poa'] !== null) {
+            $this->container['poa']->validate();
         }
     }
 

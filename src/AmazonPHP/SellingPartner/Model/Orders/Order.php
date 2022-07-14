@@ -595,6 +595,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['order_status'] === null) {
             throw new AssertionException("'order_status' can't be null");
         }
+
         $allowedValues = $this->getOrderStatusAllowableValues();
 
         if (null !== $this->container['order_status'] && !\in_array($this->container['order_status'], $allowedValues, true)) {
@@ -617,6 +618,10 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
                     \implode("', '", $allowedValues)
                 )
             );
+        }
+
+        if ($this->container['order_total'] !== null) {
+            $this->container['order_total']->validate();
         }
 
         $allowedValues = $this->getPaymentMethodAllowableValues();
@@ -643,6 +648,10 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
             );
         }
 
+        if ($this->container['default_ship_from_location_address'] !== null) {
+            $this->container['default_ship_from_location_address']->validate();
+        }
+
         $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
 
         if (null !== $this->container['buyer_invoice_preference'] && !\in_array($this->container['buyer_invoice_preference'], $allowedValues, true)) {
@@ -653,6 +662,30 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
                     \implode("', '", $allowedValues)
                 )
             );
+        }
+
+        if ($this->container['buyer_tax_information'] !== null) {
+            $this->container['buyer_tax_information']->validate();
+        }
+
+        if ($this->container['fulfillment_instruction'] !== null) {
+            $this->container['fulfillment_instruction']->validate();
+        }
+
+        if ($this->container['marketplace_tax_info'] !== null) {
+            $this->container['marketplace_tax_info']->validate();
+        }
+
+        if ($this->container['shipping_address'] !== null) {
+            $this->container['shipping_address']->validate();
+        }
+
+        if ($this->container['buyer_info'] !== null) {
+            $this->container['buyer_info']->validate();
+        }
+
+        if ($this->container['automated_shipping_settings'] !== null) {
+            $this->container['automated_shipping_settings']->validate();
         }
     }
 

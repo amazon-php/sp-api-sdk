@@ -242,6 +242,10 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['appointment_time'] !== null) {
+            $this->container['appointment_time']->validate();
+        }
+
         if (null !== $this->container['technicians'] && (\count($this->container['technicians']) < 1)) {
             throw new AssertionException("invalid value for 'technicians', number of items must be greater than or equal to 1.");
         }

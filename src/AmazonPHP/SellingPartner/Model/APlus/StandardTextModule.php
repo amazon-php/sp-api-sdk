@@ -201,9 +201,15 @@ class StandardTextModule implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
         if ($this->container['body'] === null) {
             throw new AssertionException("'body' can't be null");
         }
+
+        $this->container['body']->validate();
     }
 
     /**

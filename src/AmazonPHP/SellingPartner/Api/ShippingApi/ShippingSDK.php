@@ -375,8 +375,6 @@ final class ShippingSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/shipping/v1/shipments';
         $formParams = [];
         $queryParams = [];
@@ -733,8 +731,6 @@ final class ShippingSDK
                 'Missing the required parameter $body when calling getRates'
             );
         }
-
-        $body->validate();
 
         $resourcePath = '/shipping/v1/rates';
         $formParams = [];
@@ -1307,8 +1303,6 @@ final class ShippingSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/shipping/v1/shipments/{shipmentId}/purchaseLabels';
         $formParams = [];
         $queryParams = [];
@@ -1504,8 +1498,6 @@ final class ShippingSDK
                 'Missing the required parameter $body when calling purchaseShipment'
             );
         }
-
-        $body->validate();
 
         $resourcePath = '/shipping/v1/purchaseShipment';
         $formParams = [];
@@ -1709,8 +1701,6 @@ final class ShippingSDK
                 'Missing the required parameter $body when calling retrieveShippingLabel'
             );
         }
-
-        $body->validate();
 
         $resourcePath = '/shipping/v1/shipments/{shipmentId}/containers/{trackingId}/label';
         $formParams = [];

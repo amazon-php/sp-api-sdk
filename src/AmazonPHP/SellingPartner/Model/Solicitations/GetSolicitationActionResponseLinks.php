@@ -205,9 +205,13 @@ class GetSolicitationActionResponseLinks implements \ArrayAccess, \JsonSerializa
             throw new AssertionException("'self' can't be null");
         }
 
+        $this->container['self']->validate();
+
         if ($this->container['schema'] === null) {
             throw new AssertionException("'schema' can't be null");
         }
+
+        $this->container['schema']->validate();
     }
 
     /**

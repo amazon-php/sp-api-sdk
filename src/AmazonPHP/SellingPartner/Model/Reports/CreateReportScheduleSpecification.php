@@ -303,6 +303,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
         if ($this->container['period'] === null) {
             throw new AssertionException("'period' can't be null");
         }
+
         $allowedValues = $this->getPeriodAllowableValues();
 
         if (null !== $this->container['period'] && !\in_array($this->container['period'], $allowedValues, true)) {

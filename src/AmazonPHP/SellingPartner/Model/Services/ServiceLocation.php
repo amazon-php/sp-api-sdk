@@ -232,6 +232,10 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
                 )
             );
         }
+
+        if ($this->container['address'] !== null) {
+            $this->container['address']->validate();
+        }
     }
 
     /**

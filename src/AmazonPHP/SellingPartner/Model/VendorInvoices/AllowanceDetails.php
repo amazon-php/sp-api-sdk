@@ -245,6 +245,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
         if ($this->container['type'] === null) {
             throw new AssertionException("'type' can't be null");
         }
+
         $allowedValues = $this->getTypeAllowableValues();
 
         if (null !== $this->container['type'] && !\in_array($this->container['type'], $allowedValues, true)) {
@@ -260,6 +261,8 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
         if ($this->container['allowance_amount'] === null) {
             throw new AssertionException("'allowance_amount' can't be null");
         }
+
+        $this->container['allowance_amount']->validate();
     }
 
     /**

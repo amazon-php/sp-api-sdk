@@ -227,6 +227,7 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['name'] === null) {
             throw new AssertionException("'name' can't be null");
         }
+
         $allowedValues = $this->getNameAllowableValues();
 
         if (null !== $this->container['name'] && !\in_array($this->container['name'], $allowedValues, true)) {
@@ -242,6 +243,8 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['amount'] === null) {
             throw new AssertionException("'amount' can't be null");
         }
+
+        $this->container['amount']->validate();
     }
 
     /**

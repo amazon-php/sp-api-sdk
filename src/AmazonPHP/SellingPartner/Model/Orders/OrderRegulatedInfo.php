@@ -221,6 +221,8 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
             throw new AssertionException("'regulated_information' can't be null");
         }
 
+        $this->container['regulated_information']->validate();
+
         if ($this->container['requires_dosage_label'] === null) {
             throw new AssertionException("'requires_dosage_label' can't be null");
         }
@@ -228,6 +230,8 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
         if ($this->container['regulated_order_verification_status'] === null) {
             throw new AssertionException("'regulated_order_verification_status' can't be null");
         }
+
+        $this->container['regulated_order_verification_status']->validate();
     }
 
     /**

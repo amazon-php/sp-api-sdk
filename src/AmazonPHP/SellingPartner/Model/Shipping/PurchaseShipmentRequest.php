@@ -243,9 +243,13 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
             throw new AssertionException("'ship_to' can't be null");
         }
 
+        $this->container['ship_to']->validate();
+
         if ($this->container['ship_from'] === null) {
             throw new AssertionException("'ship_from' can't be null");
         }
+
+        $this->container['ship_from']->validate();
 
         if ($this->container['service_type'] === null) {
             throw new AssertionException("'service_type' can't be null");
@@ -258,6 +262,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
         if ($this->container['label_specification'] === null) {
             throw new AssertionException("'label_specification' can't be null");
         }
+
+        $this->container['label_specification']->validate();
     }
 
     /**

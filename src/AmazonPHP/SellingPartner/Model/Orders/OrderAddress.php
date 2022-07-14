@@ -204,6 +204,10 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['amazon_order_id'] === null) {
             throw new AssertionException("'amazon_order_id' can't be null");
         }
+
+        if ($this->container['shipping_address'] !== null) {
+            $this->container['shipping_address']->validate();
+        }
     }
 
     /**

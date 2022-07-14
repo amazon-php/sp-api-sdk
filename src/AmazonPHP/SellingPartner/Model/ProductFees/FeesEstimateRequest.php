@@ -227,6 +227,8 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
             throw new AssertionException("'price_to_estimate_fees' can't be null");
         }
 
+        $this->container['price_to_estimate_fees']->validate();
+
         if ($this->container['identifier'] === null) {
             throw new AssertionException("'identifier' can't be null");
         }

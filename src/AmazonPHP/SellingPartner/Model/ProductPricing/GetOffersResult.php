@@ -253,9 +253,13 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'identifier' can't be null");
         }
 
+        $this->container['identifier']->validate();
+
         if ($this->container['summary'] === null) {
             throw new AssertionException("'summary' can't be null");
         }
+
+        $this->container['summary']->validate();
 
         if ($this->container['offers'] === null) {
             throw new AssertionException("'offers' can't be null");

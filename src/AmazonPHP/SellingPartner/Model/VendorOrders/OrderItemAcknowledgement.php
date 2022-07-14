@@ -262,6 +262,7 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
         if ($this->container['acknowledgement_code'] === null) {
             throw new AssertionException("'acknowledgement_code' can't be null");
         }
+
         $allowedValues = $this->getAcknowledgementCodeAllowableValues();
 
         if (null !== $this->container['acknowledgement_code'] && !\in_array($this->container['acknowledgement_code'], $allowedValues, true)) {
@@ -277,6 +278,9 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
         if ($this->container['acknowledged_quantity'] === null) {
             throw new AssertionException("'acknowledged_quantity' can't be null");
         }
+
+        $this->container['acknowledged_quantity']->validate();
+
         $allowedValues = $this->getRejectionReasonAllowableValues();
 
         if (null !== $this->container['rejection_reason'] && !\in_array($this->container['rejection_reason'], $allowedValues, true)) {

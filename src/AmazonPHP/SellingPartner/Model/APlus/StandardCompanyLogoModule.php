@@ -198,6 +198,8 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
         if ($this->container['company_logo'] === null) {
             throw new AssertionException("'company_logo' can't be null");
         }
+
+        $this->container['company_logo']->validate();
     }
 
     /**

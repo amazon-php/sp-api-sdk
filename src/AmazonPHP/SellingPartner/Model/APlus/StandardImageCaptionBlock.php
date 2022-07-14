@@ -201,6 +201,13 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function validate() : void
     {
+        if ($this->container['image'] !== null) {
+            $this->container['image']->validate();
+        }
+
+        if ($this->container['caption'] !== null) {
+            $this->container['caption']->validate();
+        }
     }
 
     /**

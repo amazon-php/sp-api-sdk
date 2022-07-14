@@ -234,6 +234,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['status'] === null) {
             throw new AssertionException("'status' can't be null");
         }
+
         $allowedValues = $this->getStatusAllowableValues();
 
         if (null !== $this->container['status'] && !\in_array($this->container['status'], $allowedValues, true)) {
@@ -244,6 +245,10 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
                     \implode("', '", $allowedValues)
                 )
             );
+        }
+
+        if ($this->container['errors'] !== null) {
+            $this->container['errors']->validate();
         }
     }
 

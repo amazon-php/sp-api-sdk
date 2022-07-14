@@ -201,6 +201,9 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function validate() : void
     {
+        if ($this->container['pagination'] !== null) {
+            $this->container['pagination']->validate();
+        }
     }
 
     /**

@@ -255,6 +255,25 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['item_price'] !== null) {
+            $this->container['item_price']->validate();
+        }
+
+        if ($this->container['shipping_price'] !== null) {
+            $this->container['shipping_price']->validate();
+        }
+
+        if ($this->container['gift_wrap_price'] !== null) {
+            $this->container['gift_wrap_price']->validate();
+        }
+
+        if ($this->container['shipping_discount'] !== null) {
+            $this->container['shipping_discount']->validate();
+        }
+
+        if ($this->container['promotion_discount'] !== null) {
+            $this->container['promotion_discount']->validate();
+        }
     }
 
     /**

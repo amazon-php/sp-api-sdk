@@ -211,6 +211,8 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'selling_party' can't be null");
         }
 
+        $this->container['selling_party']->validate();
+
         if ($this->container['is_full_update'] === null) {
             throw new AssertionException("'is_full_update' can't be null");
         }

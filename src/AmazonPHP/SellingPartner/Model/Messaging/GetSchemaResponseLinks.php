@@ -198,6 +198,8 @@ class GetSchemaResponseLinks implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['self'] === null) {
             throw new AssertionException("'self' can't be null");
         }
+
+        $this->container['self']->validate();
     }
 
     /**

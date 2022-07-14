@@ -231,6 +231,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
             throw new AssertionException("'return_to_address' can't be null");
         }
 
+        $this->container['return_to_address']->validate();
+
         if ($this->container['amazon_rma_id'] === null) {
             throw new AssertionException("'amazon_rma_id' can't be null");
         }

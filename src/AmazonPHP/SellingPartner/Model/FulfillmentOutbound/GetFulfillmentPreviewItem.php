@@ -225,6 +225,10 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, Mode
             throw new AssertionException("'quantity' can't be null");
         }
 
+        if ($this->container['per_unit_declared_value'] !== null) {
+            $this->container['per_unit_declared_value']->validate();
+        }
+
         if ($this->container['seller_fulfillment_order_item_id'] === null) {
             throw new AssertionException("'seller_fulfillment_order_item_id' can't be null");
         }

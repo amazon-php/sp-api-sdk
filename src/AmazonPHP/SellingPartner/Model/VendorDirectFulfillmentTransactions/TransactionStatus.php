@@ -195,6 +195,9 @@ class TransactionStatus implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function validate() : void
     {
+        if ($this->container['transaction_status'] !== null) {
+            $this->container['transaction_status']->validate();
+        }
     }
 
     /**

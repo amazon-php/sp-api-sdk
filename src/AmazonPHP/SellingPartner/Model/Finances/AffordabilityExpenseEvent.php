@@ -243,16 +243,30 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function validate() : void
     {
+        if ($this->container['base_expense'] !== null) {
+            $this->container['base_expense']->validate();
+        }
+
         if ($this->container['tax_type_cgst'] === null) {
             throw new AssertionException("'tax_type_cgst' can't be null");
         }
+
+        $this->container['tax_type_cgst']->validate();
 
         if ($this->container['tax_type_sgst'] === null) {
             throw new AssertionException("'tax_type_sgst' can't be null");
         }
 
+        $this->container['tax_type_sgst']->validate();
+
         if ($this->container['tax_type_igst'] === null) {
             throw new AssertionException("'tax_type_igst' can't be null");
+        }
+
+        $this->container['tax_type_igst']->validate();
+
+        if ($this->container['total_expense'] !== null) {
+            $this->container['total_expense']->validate();
         }
     }
 

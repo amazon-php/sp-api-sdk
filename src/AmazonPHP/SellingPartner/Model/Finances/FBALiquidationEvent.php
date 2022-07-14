@@ -213,6 +213,13 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function validate() : void
     {
+        if ($this->container['liquidation_proceeds_amount'] !== null) {
+            $this->container['liquidation_proceeds_amount']->validate();
+        }
+
+        if ($this->container['liquidation_fee_amount'] !== null) {
+            $this->container['liquidation_fee_amount']->validate();
+        }
     }
 
     /**

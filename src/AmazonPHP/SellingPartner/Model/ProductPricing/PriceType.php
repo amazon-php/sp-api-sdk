@@ -213,8 +213,22 @@ class PriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['landed_price'] !== null) {
+            $this->container['landed_price']->validate();
+        }
+
         if ($this->container['listing_price'] === null) {
             throw new AssertionException("'listing_price' can't be null");
+        }
+
+        $this->container['listing_price']->validate();
+
+        if ($this->container['shipping'] !== null) {
+            $this->container['shipping']->validate();
+        }
+
+        if ($this->container['points'] !== null) {
+            $this->container['points']->validate();
         }
     }
 

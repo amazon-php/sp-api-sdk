@@ -210,6 +210,10 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
         if (null !== $this->container['container_reference_id'] && (\mb_strlen($this->container['container_reference_id']) > 40)) {
             throw new AssertionException("invalid value for 'container_reference_id', the character length must be smaller than or equal to 40.");
         }
+
+        if ($this->container['label'] !== null) {
+            $this->container['label']->validate();
+        }
     }
 
     /**

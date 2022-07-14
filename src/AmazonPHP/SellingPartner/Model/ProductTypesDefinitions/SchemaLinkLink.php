@@ -222,6 +222,7 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['verb'] === null) {
             throw new AssertionException("'verb' can't be null");
         }
+
         $allowedValues = $this->getVerbAllowableValues();
 
         if (null !== $this->container['verb'] && !\in_array($this->container['verb'], $allowedValues, true)) {

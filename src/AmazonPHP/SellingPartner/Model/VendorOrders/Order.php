@@ -234,6 +234,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['purchase_order_state'] === null) {
             throw new AssertionException("'purchase_order_state' can't be null");
         }
+
         $allowedValues = $this->getPurchaseOrderStateAllowableValues();
 
         if (null !== $this->container['purchase_order_state'] && !\in_array($this->container['purchase_order_state'], $allowedValues, true)) {
@@ -244,6 +245,10 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
                     \implode("', '", $allowedValues)
                 )
             );
+        }
+
+        if ($this->container['order_details'] !== null) {
+            $this->container['order_details']->validate();
         }
     }
 

@@ -227,6 +227,7 @@ class Weight implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['unit'] === null) {
             throw new AssertionException("'unit' can't be null");
         }
+
         $allowedValues = $this->getUnitAllowableValues();
 
         if (null !== $this->container['unit'] && !\in_array($this->container['unit'], $allowedValues, true)) {

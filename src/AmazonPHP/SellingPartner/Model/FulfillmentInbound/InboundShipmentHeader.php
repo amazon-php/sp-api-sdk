@@ -239,6 +239,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
             throw new AssertionException("'ship_from_address' can't be null");
         }
 
+        $this->container['ship_from_address']->validate();
+
         if ($this->container['destination_fulfillment_center_id'] === null) {
             throw new AssertionException("'destination_fulfillment_center_id' can't be null");
         }

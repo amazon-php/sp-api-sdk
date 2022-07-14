@@ -225,6 +225,8 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
             throw new AssertionException("'accepted_rate' can't be null");
         }
 
+        $this->container['accepted_rate']->validate();
+
         if ($this->container['label_results'] === null) {
             throw new AssertionException("'label_results' can't be null");
         }

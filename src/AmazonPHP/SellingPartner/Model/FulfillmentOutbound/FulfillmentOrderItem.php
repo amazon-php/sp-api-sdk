@@ -292,6 +292,18 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
         if ($this->container['unfulfillable_quantity'] === null) {
             throw new AssertionException("'unfulfillable_quantity' can't be null");
         }
+
+        if ($this->container['per_unit_price'] !== null) {
+            $this->container['per_unit_price']->validate();
+        }
+
+        if ($this->container['per_unit_tax'] !== null) {
+            $this->container['per_unit_tax']->validate();
+        }
+
+        if ($this->container['per_unit_declared_value'] !== null) {
+            $this->container['per_unit_declared_value']->validate();
+        }
     }
 
     /**

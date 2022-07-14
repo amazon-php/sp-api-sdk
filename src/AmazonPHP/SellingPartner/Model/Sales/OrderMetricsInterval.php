@@ -245,9 +245,13 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, ModelInte
             throw new AssertionException("'average_unit_price' can't be null");
         }
 
+        $this->container['average_unit_price']->validate();
+
         if ($this->container['total_sales'] === null) {
             throw new AssertionException("'total_sales' can't be null");
         }
+
+        $this->container['total_sales']->validate();
     }
 
     /**

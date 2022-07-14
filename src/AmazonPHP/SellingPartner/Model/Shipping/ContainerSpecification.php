@@ -205,9 +205,13 @@ class ContainerSpecification implements \ArrayAccess, \JsonSerializable, ModelIn
             throw new AssertionException("'dimensions' can't be null");
         }
 
+        $this->container['dimensions']->validate();
+
         if ($this->container['weight'] === null) {
             throw new AssertionException("'weight' can't be null");
         }
+
+        $this->container['weight']->validate();
     }
 
     /**

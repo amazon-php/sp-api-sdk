@@ -221,6 +221,8 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'event_address' can't be null");
         }
 
+        $this->container['event_address']->validate();
+
         if ($this->container['event_code'] === null) {
             throw new AssertionException("'event_code' can't be null");
         }

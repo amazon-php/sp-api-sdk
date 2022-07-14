@@ -201,6 +201,9 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['item_delivery_promise'] !== null) {
+            $this->container['item_delivery_promise']->validate();
+        }
     }
 
     /**

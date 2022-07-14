@@ -222,6 +222,10 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['event_time'] === null) {
             throw new AssertionException("'event_time' can't be null");
         }
+
+        if ($this->container['location'] !== null) {
+            $this->container['location']->validate();
+        }
     }
 
     /**

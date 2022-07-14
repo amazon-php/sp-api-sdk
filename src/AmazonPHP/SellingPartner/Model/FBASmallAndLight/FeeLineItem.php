@@ -227,6 +227,7 @@ class FeeLineItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['fee_type'] === null) {
             throw new AssertionException("'fee_type' can't be null");
         }
+
         $allowedValues = $this->getFeeTypeAllowableValues();
 
         if (null !== $this->container['fee_type'] && !\in_array($this->container['fee_type'], $allowedValues, true)) {
@@ -242,6 +243,8 @@ class FeeLineItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['fee_charge'] === null) {
             throw new AssertionException("'fee_charge' can't be null");
         }
+
+        $this->container['fee_charge']->validate();
     }
 
     /**

@@ -227,9 +227,13 @@ class Label implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'dimensions' can't be null");
         }
 
+        $this->container['dimensions']->validate();
+
         if ($this->container['file_contents'] === null) {
             throw new AssertionException("'file_contents' can't be null");
         }
+
+        $this->container['file_contents']->validate();
     }
 
     /**

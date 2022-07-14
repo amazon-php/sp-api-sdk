@@ -232,6 +232,7 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
         if ($this->container['label_format'] === null) {
             throw new AssertionException("'label_format' can't be null");
         }
+
         $allowedValues = $this->getLabelFormatAllowableValues();
 
         if (null !== $this->container['label_format'] && !\in_array($this->container['label_format'], $allowedValues, true)) {
@@ -247,6 +248,7 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
         if ($this->container['label_stock_size'] === null) {
             throw new AssertionException("'label_stock_size' can't be null");
         }
+
         $allowedValues = $this->getLabelStockSizeAllowableValues();
 
         if (null !== $this->container['label_stock_size'] && !\in_array($this->container['label_stock_size'], $allowedValues, true)) {

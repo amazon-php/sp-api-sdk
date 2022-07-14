@@ -198,6 +198,8 @@ class ItemOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, ModelI
         if ($this->container['request'] === null) {
             throw new AssertionException("'request' can't be null");
         }
+
+        $this->container['request']->validate();
     }
 
     /**

@@ -201,6 +201,9 @@ class FeeComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['fee_amount'] !== null) {
+            $this->container['fee_amount']->validate();
+        }
     }
 
     /**

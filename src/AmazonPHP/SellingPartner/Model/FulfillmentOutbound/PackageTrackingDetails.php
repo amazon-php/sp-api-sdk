@@ -276,6 +276,10 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['package_number'] === null) {
             throw new AssertionException("'package_number' can't be null");
         }
+
+        if ($this->container['ship_to_address'] !== null) {
+            $this->container['ship_to_address']->validate();
+        }
     }
 
     /**

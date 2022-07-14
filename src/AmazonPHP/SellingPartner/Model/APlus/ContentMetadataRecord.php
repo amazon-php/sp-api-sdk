@@ -212,6 +212,8 @@ class ContentMetadataRecord implements \ArrayAccess, \JsonSerializable, ModelInt
         if ($this->container['content_metadata'] === null) {
             throw new AssertionException("'content_metadata' can't be null");
         }
+
+        $this->container['content_metadata']->validate();
     }
 
     /**

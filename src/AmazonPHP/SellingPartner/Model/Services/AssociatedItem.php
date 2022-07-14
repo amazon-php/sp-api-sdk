@@ -273,6 +273,10 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
                 )
             );
         }
+
+        if ($this->container['item_delivery'] !== null) {
+            $this->container['item_delivery']->validate();
+        }
     }
 
     /**

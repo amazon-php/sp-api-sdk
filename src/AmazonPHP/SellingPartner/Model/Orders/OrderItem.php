@@ -421,6 +421,59 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['quantity_ordered'] === null) {
             throw new AssertionException("'quantity_ordered' can't be null");
         }
+
+        if ($this->container['product_info'] !== null) {
+            $this->container['product_info']->validate();
+        }
+
+        if ($this->container['points_granted'] !== null) {
+            $this->container['points_granted']->validate();
+        }
+
+        if ($this->container['item_price'] !== null) {
+            $this->container['item_price']->validate();
+        }
+
+        if ($this->container['shipping_price'] !== null) {
+            $this->container['shipping_price']->validate();
+        }
+
+        if ($this->container['item_tax'] !== null) {
+            $this->container['item_tax']->validate();
+        }
+
+        if ($this->container['shipping_tax'] !== null) {
+            $this->container['shipping_tax']->validate();
+        }
+
+        if ($this->container['shipping_discount'] !== null) {
+            $this->container['shipping_discount']->validate();
+        }
+
+        if ($this->container['shipping_discount_tax'] !== null) {
+            $this->container['shipping_discount_tax']->validate();
+        }
+
+        if ($this->container['promotion_discount'] !== null) {
+            $this->container['promotion_discount']->validate();
+        }
+
+        if ($this->container['promotion_discount_tax'] !== null) {
+            $this->container['promotion_discount_tax']->validate();
+        }
+
+        if ($this->container['cod_fee'] !== null) {
+            $this->container['cod_fee']->validate();
+        }
+
+        if ($this->container['cod_fee_discount'] !== null) {
+            $this->container['cod_fee_discount']->validate();
+        }
+
+        if ($this->container['tax_collection'] !== null) {
+            $this->container['tax_collection']->validate();
+        }
+
         $allowedValues = $this->getDeemedResellerCategoryAllowableValues();
 
         if (null !== $this->container['deemed_reseller_category'] && !\in_array($this->container['deemed_reseller_category'], $allowedValues, true)) {
@@ -431,6 +484,14 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, ModelInterface
                     \implode("', '", $allowedValues)
                 )
             );
+        }
+
+        if ($this->container['buyer_info'] !== null) {
+            $this->container['buyer_info']->validate();
+        }
+
+        if ($this->container['buyer_requested_cancel'] !== null) {
+            $this->container['buyer_requested_cancel']->validate();
         }
     }
 

@@ -289,20 +289,42 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'sub_condition' can't be null");
         }
 
+        if ($this->container['seller_feedback_rating'] !== null) {
+            $this->container['seller_feedback_rating']->validate();
+        }
+
         if ($this->container['shipping_time'] === null) {
             throw new AssertionException("'shipping_time' can't be null");
         }
 
+        $this->container['shipping_time']->validate();
+
         if ($this->container['listing_price'] === null) {
             throw new AssertionException("'listing_price' can't be null");
+        }
+
+        $this->container['listing_price']->validate();
+
+        if ($this->container['points'] !== null) {
+            $this->container['points']->validate();
         }
 
         if ($this->container['shipping'] === null) {
             throw new AssertionException("'shipping' can't be null");
         }
 
+        $this->container['shipping']->validate();
+
+        if ($this->container['ships_from'] !== null) {
+            $this->container['ships_from']->validate();
+        }
+
         if ($this->container['is_fulfilled_by_amazon'] === null) {
             throw new AssertionException("'is_fulfilled_by_amazon' can't be null");
+        }
+
+        if ($this->container['prime_information'] !== null) {
+            $this->container['prime_information']->validate();
         }
     }
 

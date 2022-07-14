@@ -195,6 +195,9 @@ class ProcessingDirective implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function validate() : void
     {
+        if ($this->container['event_filter'] !== null) {
+            $this->container['event_filter']->validate();
+        }
     }
 
     /**

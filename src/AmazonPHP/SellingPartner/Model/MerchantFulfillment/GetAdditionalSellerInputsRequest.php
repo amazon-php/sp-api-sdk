@@ -215,6 +215,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
             throw new AssertionException("'ship_from_address' can't be null");
         }
 
+        $this->container['ship_from_address']->validate();
+
         if ($this->container['order_id'] === null) {
             throw new AssertionException("'order_id' can't be null");
         }

@@ -201,6 +201,13 @@ class StandardTextBlock implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
+        if ($this->container['body'] !== null) {
+            $this->container['body']->validate();
+        }
     }
 
     /**

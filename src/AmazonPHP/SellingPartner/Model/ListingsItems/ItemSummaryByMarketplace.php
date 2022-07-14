@@ -327,6 +327,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
         if ($this->container['product_type'] === null) {
             throw new AssertionException("'product_type' can't be null");
         }
+
         $allowedValues = $this->getConditionTypeAllowableValues();
 
         if (null !== $this->container['condition_type'] && !\in_array($this->container['condition_type'], $allowedValues, true)) {
@@ -353,6 +354,10 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
         if ($this->container['last_updated_date'] === null) {
             throw new AssertionException("'last_updated_date' can't be null");
+        }
+
+        if ($this->container['main_image'] !== null) {
+            $this->container['main_image']->validate();
         }
     }
 

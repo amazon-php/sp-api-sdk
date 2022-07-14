@@ -223,9 +223,13 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
             throw new AssertionException("'dimensions' can't be null");
         }
 
+        $this->container['dimensions']->validate();
+
         if ($this->container['weight'] === null) {
             throw new AssertionException("'weight' can't be null");
         }
+
+        $this->container['weight']->validate();
 
         if ($this->container['carrier_name'] === null) {
             throw new AssertionException("'carrier_name' can't be null");

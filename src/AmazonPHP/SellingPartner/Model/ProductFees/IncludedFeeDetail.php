@@ -227,9 +227,21 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterfa
             throw new AssertionException("'fee_amount' can't be null");
         }
 
+        $this->container['fee_amount']->validate();
+
+        if ($this->container['fee_promotion'] !== null) {
+            $this->container['fee_promotion']->validate();
+        }
+
+        if ($this->container['tax_amount'] !== null) {
+            $this->container['tax_amount']->validate();
+        }
+
         if ($this->container['final_fee'] === null) {
             throw new AssertionException("'final_fee' can't be null");
         }
+
+        $this->container['final_fee']->validate();
     }
 
     /**

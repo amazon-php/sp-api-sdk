@@ -204,6 +204,8 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
         if ($this->container['content_record'] === null) {
             throw new AssertionException("'content_record' can't be null");
         }
+
+        $this->container['content_record']->validate();
     }
 
     /**

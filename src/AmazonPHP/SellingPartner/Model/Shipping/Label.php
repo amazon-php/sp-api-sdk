@@ -201,6 +201,9 @@ class Label implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['label_specification'] !== null) {
+            $this->container['label_specification']->validate();
+        }
     }
 
     /**

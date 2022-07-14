@@ -248,6 +248,13 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['tax_amount'] === null) {
             throw new AssertionException("'tax_amount' can't be null");
         }
+
+        $this->container['tax_amount']->validate();
+
+        if ($this->container['taxable_amount'] !== null) {
+            $this->container['taxable_amount']->validate();
+        }
+
         $allowedValues = $this->getTypeAllowableValues();
 
         if (null !== $this->container['type'] && !\in_array($this->container['type'], $allowedValues, true)) {

@@ -210,6 +210,8 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
         if ($this->container['amount'] === null) {
             throw new AssertionException("'amount' can't be null");
         }
+
+        $this->container['amount']->validate();
     }
 
     /**

@@ -218,6 +218,8 @@ class InvalidReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfa
         if ($this->container['invalid_item_reason'] === null) {
             throw new AssertionException("'invalid_item_reason' can't be null");
         }
+
+        $this->container['invalid_item_reason']->validate();
     }
 
     /**

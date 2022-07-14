@@ -204,6 +204,12 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['marketplace_asin'] === null) {
             throw new AssertionException("'marketplace_asin' can't be null");
         }
+
+        $this->container['marketplace_asin']->validate();
+
+        if ($this->container['sku_identifier'] !== null) {
+            $this->container['sku_identifier']->validate();
+        }
     }
 
     /**

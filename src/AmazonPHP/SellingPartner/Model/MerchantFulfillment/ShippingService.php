@@ -291,8 +291,16 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'rate' can't be null");
         }
 
+        $this->container['rate']->validate();
+
         if ($this->container['shipping_service_options'] === null) {
             throw new AssertionException("'shipping_service_options' can't be null");
+        }
+
+        $this->container['shipping_service_options']->validate();
+
+        if ($this->container['available_shipping_service_options'] !== null) {
+            $this->container['available_shipping_service_options']->validate();
         }
 
         if ($this->container['requires_additional_seller_inputs'] === null) {

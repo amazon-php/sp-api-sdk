@@ -219,6 +219,13 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function validate() : void
     {
+        if ($this->container['recovery_amount'] !== null) {
+            $this->container['recovery_amount']->validate();
+        }
+
+        if ($this->container['over_payment_credit'] !== null) {
+            $this->container['over_payment_credit']->validate();
+        }
     }
 
     /**

@@ -221,9 +221,13 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, ModelInterfa
             throw new AssertionException("'pagination' can't be null");
         }
 
+        $this->container['pagination']->validate();
+
         if ($this->container['refinements'] === null) {
             throw new AssertionException("'refinements' can't be null");
         }
+
+        $this->container['refinements']->validate();
 
         if ($this->container['items'] === null) {
             throw new AssertionException("'items' can't be null");

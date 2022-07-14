@@ -237,6 +237,7 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
         if ($this->container['status'] === null) {
             throw new AssertionException("'status' can't be null");
         }
+
         $allowedValues = $this->getStatusAllowableValues();
 
         if (null !== $this->container['status'] && !\in_array($this->container['status'], $allowedValues, true)) {

@@ -230,6 +230,10 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
         if ($this->container['is_eligible'] === null) {
             throw new AssertionException("'is_eligible' can't be null");
         }
+
+        if ($this->container['sku_info'] !== null) {
+            $this->container['sku_info']->validate();
+        }
     }
 
     /**

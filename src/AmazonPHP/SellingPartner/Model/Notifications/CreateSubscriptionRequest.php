@@ -207,6 +207,9 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function validate() : void
     {
+        if ($this->container['processing_directive'] !== null) {
+            $this->container['processing_directive']->validate();
+        }
     }
 
     /**

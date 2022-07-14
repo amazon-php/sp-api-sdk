@@ -237,12 +237,18 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, ModelInter
             throw new AssertionException("'ship_to_address' can't be null");
         }
 
+        $this->container['ship_to_address']->validate();
+
         if ($this->container['label_prep_type'] === null) {
             throw new AssertionException("'label_prep_type' can't be null");
         }
 
         if ($this->container['items'] === null) {
             throw new AssertionException("'items' can't be null");
+        }
+
+        if ($this->container['estimated_box_contents_fee'] !== null) {
+            $this->container['estimated_box_contents_fee']->validate();
         }
     }
 

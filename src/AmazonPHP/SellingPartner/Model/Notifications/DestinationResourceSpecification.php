@@ -201,6 +201,13 @@ class DestinationResourceSpecification implements \ArrayAccess, \JsonSerializabl
      */
     public function validate() : void
     {
+        if ($this->container['sqs'] !== null) {
+            $this->container['sqs']->validate();
+        }
+
+        if ($this->container['event_bridge'] !== null) {
+            $this->container['event_bridge']->validate();
+        }
     }
 
     /**

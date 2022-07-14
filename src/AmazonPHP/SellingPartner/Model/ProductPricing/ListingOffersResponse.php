@@ -213,8 +213,18 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function validate() : void
     {
+        if ($this->container['status'] !== null) {
+            $this->container['status']->validate();
+        }
+
         if ($this->container['body'] === null) {
             throw new AssertionException("'body' can't be null");
+        }
+
+        $this->container['body']->validate();
+
+        if ($this->container['request'] !== null) {
+            $this->container['request']->validate();
         }
     }
 

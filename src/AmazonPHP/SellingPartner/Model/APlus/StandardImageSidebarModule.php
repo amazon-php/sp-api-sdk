@@ -225,6 +225,29 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
+        if ($this->container['image_caption_block'] !== null) {
+            $this->container['image_caption_block']->validate();
+        }
+
+        if ($this->container['description_text_block'] !== null) {
+            $this->container['description_text_block']->validate();
+        }
+
+        if ($this->container['description_list_block'] !== null) {
+            $this->container['description_list_block']->validate();
+        }
+
+        if ($this->container['sidebar_image_text_block'] !== null) {
+            $this->container['sidebar_image_text_block']->validate();
+        }
+
+        if ($this->container['sidebar_list_block'] !== null) {
+            $this->container['sidebar_list_block']->validate();
+        }
     }
 
     /**

@@ -219,6 +219,13 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['price'] !== null) {
+            $this->container['price']->validate();
+        }
+
+        if ($this->container['total_fees'] !== null) {
+            $this->container['total_fees']->validate();
+        }
     }
 
     /**

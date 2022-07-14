@@ -234,6 +234,18 @@ class Pallet implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['pallet_identifiers'] === null) {
             throw new AssertionException("'pallet_identifiers' can't be null");
         }
+
+        if ($this->container['dimensions'] !== null) {
+            $this->container['dimensions']->validate();
+        }
+
+        if ($this->container['weight'] !== null) {
+            $this->container['weight']->validate();
+        }
+
+        if ($this->container['carton_reference_details'] !== null) {
+            $this->container['carton_reference_details']->validate();
+        }
     }
 
     /**

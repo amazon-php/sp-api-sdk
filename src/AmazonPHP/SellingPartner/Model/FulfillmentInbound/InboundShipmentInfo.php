@@ -253,8 +253,14 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, ModelInter
             throw new AssertionException("'ship_from_address' can't be null");
         }
 
+        $this->container['ship_from_address']->validate();
+
         if ($this->container['are_cases_required'] === null) {
             throw new AssertionException("'are_cases_required' can't be null");
+        }
+
+        if ($this->container['estimated_box_contents_fee'] !== null) {
+            $this->container['estimated_box_contents_fee']->validate();
         }
     }
 

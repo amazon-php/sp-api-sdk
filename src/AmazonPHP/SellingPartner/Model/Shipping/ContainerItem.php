@@ -221,9 +221,13 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'unit_price' can't be null");
         }
 
+        $this->container['unit_price']->validate();
+
         if ($this->container['unit_weight'] === null) {
             throw new AssertionException("'unit_weight' can't be null");
         }
+
+        $this->container['unit_weight']->validate();
 
         if ($this->container['title'] === null) {
             throw new AssertionException("'title' can't be null");

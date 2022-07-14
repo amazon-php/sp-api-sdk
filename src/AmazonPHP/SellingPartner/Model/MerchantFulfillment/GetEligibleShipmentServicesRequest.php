@@ -204,6 +204,12 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
         if ($this->container['shipment_request_details'] === null) {
             throw new AssertionException("'shipment_request_details' can't be null");
         }
+
+        $this->container['shipment_request_details']->validate();
+
+        if ($this->container['shipping_offering_filter'] !== null) {
+            $this->container['shipping_offering_filter']->validate();
+        }
     }
 
     /**

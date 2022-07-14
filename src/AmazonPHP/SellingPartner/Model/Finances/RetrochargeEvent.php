@@ -231,6 +231,13 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function validate() : void
     {
+        if ($this->container['base_tax'] !== null) {
+            $this->container['base_tax']->validate();
+        }
+
+        if ($this->container['shipping_tax'] !== null) {
+            $this->container['shipping_tax']->validate();
+        }
     }
 
     /**

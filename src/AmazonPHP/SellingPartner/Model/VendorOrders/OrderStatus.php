@@ -255,6 +255,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['purchase_order_status'] === null) {
             throw new AssertionException("'purchase_order_status' can't be null");
         }
+
         $allowedValues = $this->getPurchaseOrderStatusAllowableValues();
 
         if (null !== $this->container['purchase_order_status'] && !\in_array($this->container['purchase_order_status'], $allowedValues, true)) {
@@ -275,9 +276,13 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'selling_party' can't be null");
         }
 
+        $this->container['selling_party']->validate();
+
         if ($this->container['ship_to_party'] === null) {
             throw new AssertionException("'ship_to_party' can't be null");
         }
+
+        $this->container['ship_to_party']->validate();
 
         if ($this->container['item_status'] === null) {
             throw new AssertionException("'item_status' can't be null");

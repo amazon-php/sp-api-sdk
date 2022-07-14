@@ -207,6 +207,13 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
+        if ($this->container['accepted_quantity'] !== null) {
+            $this->container['accepted_quantity']->validate();
+        }
+
+        if ($this->container['rejected_quantity'] !== null) {
+            $this->container['rejected_quantity']->validate();
+        }
     }
 
     /**

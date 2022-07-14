@@ -231,6 +231,13 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['per_unit_amount'] !== null) {
+            $this->container['per_unit_amount']->validate();
+        }
+
+        if ($this->container['total_amount'] !== null) {
+            $this->container['total_amount']->validate();
+        }
     }
 
     /**

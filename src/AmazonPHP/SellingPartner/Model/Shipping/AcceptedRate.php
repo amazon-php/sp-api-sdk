@@ -213,6 +213,17 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['total_charge'] !== null) {
+            $this->container['total_charge']->validate();
+        }
+
+        if ($this->container['billed_weight'] !== null) {
+            $this->container['billed_weight']->validate();
+        }
+
+        if ($this->container['promise'] !== null) {
+            $this->container['promise']->validate();
+        }
     }
 
     /**

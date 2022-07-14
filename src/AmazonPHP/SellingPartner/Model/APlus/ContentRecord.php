@@ -214,6 +214,14 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
             throw new AssertionException("invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.");
         }
+
+        if ($this->container['content_metadata'] !== null) {
+            $this->container['content_metadata']->validate();
+        }
+
+        if ($this->container['content_document'] !== null) {
+            $this->container['content_document']->validate();
+        }
     }
 
     /**

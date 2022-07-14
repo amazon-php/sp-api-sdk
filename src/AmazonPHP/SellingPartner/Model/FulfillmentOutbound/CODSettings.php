@@ -222,6 +222,22 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['is_cod_required'] === null) {
             throw new AssertionException("'is_cod_required' can't be null");
         }
+
+        if ($this->container['cod_charge'] !== null) {
+            $this->container['cod_charge']->validate();
+        }
+
+        if ($this->container['cod_charge_tax'] !== null) {
+            $this->container['cod_charge_tax']->validate();
+        }
+
+        if ($this->container['shipping_charge'] !== null) {
+            $this->container['shipping_charge']->validate();
+        }
+
+        if ($this->container['shipping_charge_tax'] !== null) {
+            $this->container['shipping_charge_tax']->validate();
+        }
     }
 
     /**

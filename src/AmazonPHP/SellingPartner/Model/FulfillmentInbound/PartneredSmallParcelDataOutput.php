@@ -204,6 +204,10 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
         if ($this->container['package_list'] === null) {
             throw new AssertionException("'package_list' can't be null");
         }
+
+        if ($this->container['partnered_estimate'] !== null) {
+            $this->container['partnered_estimate']->validate();
+        }
     }
 
     /**

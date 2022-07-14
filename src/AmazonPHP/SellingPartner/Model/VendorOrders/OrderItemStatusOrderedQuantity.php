@@ -201,6 +201,9 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
      */
     public function validate() : void
     {
+        if ($this->container['ordered_quantity'] !== null) {
+            $this->container['ordered_quantity']->validate();
+        }
     }
 
     /**

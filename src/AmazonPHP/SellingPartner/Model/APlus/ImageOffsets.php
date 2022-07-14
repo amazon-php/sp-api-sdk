@@ -205,9 +205,13 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'x' can't be null");
         }
 
+        $this->container['x']->validate();
+
         if ($this->container['y'] === null) {
             throw new AssertionException("'y' can't be null");
         }
+
+        $this->container['y']->validate();
     }
 
     /**

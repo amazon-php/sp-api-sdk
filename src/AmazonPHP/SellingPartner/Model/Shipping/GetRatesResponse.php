@@ -201,6 +201,9 @@ class GetRatesResponse implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function validate() : void
     {
+        if ($this->container['payload'] !== null) {
+            $this->container['payload']->validate();
+        }
     }
 
     /**

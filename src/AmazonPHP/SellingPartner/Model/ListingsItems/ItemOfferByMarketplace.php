@@ -237,6 +237,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['offer_type'] === null) {
             throw new AssertionException("'offer_type' can't be null");
         }
+
         $allowedValues = $this->getOfferTypeAllowableValues();
 
         if (null !== $this->container['offer_type'] && !\in_array($this->container['offer_type'], $allowedValues, true)) {
@@ -251,6 +252,12 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
         if ($this->container['price'] === null) {
             throw new AssertionException("'price' can't be null");
+        }
+
+        $this->container['price']->validate();
+
+        if ($this->container['points'] !== null) {
+            $this->container['points']->validate();
         }
     }
 

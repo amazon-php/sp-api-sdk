@@ -238,6 +238,10 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
                 )
             );
         }
+
+        if ($this->container['received_quantity'] !== null) {
+            $this->container['received_quantity']->validate();
+        }
     }
 
     /**

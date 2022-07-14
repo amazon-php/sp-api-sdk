@@ -155,8 +155,6 @@ final class TokensSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/tokens/2021-03-01/restrictedDataToken';
         $formParams = [];
         $queryParams = [];

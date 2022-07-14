@@ -211,6 +211,8 @@ class InboundShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelIn
             throw new AssertionException("'inbound_shipment_header' can't be null");
         }
 
+        $this->container['inbound_shipment_header']->validate();
+
         if ($this->container['inbound_shipment_items'] === null) {
             throw new AssertionException("'inbound_shipment_items' can't be null");
         }

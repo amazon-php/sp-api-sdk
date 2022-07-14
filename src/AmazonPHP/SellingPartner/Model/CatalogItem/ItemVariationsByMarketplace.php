@@ -235,6 +235,7 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
         if ($this->container['variation_type'] === null) {
             throw new AssertionException("'variation_type' can't be null");
         }
+
         $allowedValues = $this->getVariationTypeAllowableValues();
 
         if (null !== $this->container['variation_type'] && !\in_array($this->container['variation_type'], $allowedValues, true)) {

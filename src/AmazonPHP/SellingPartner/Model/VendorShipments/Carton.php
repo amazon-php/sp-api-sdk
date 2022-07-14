@@ -229,6 +229,14 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'carton_sequence_number' can't be null");
         }
 
+        if ($this->container['dimensions'] !== null) {
+            $this->container['dimensions']->validate();
+        }
+
+        if ($this->container['weight'] !== null) {
+            $this->container['weight']->validate();
+        }
+
         if ($this->container['items'] === null) {
             throw new AssertionException("'items' can't be null");
         }

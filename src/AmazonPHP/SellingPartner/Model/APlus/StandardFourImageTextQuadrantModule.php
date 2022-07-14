@@ -217,17 +217,25 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
             throw new AssertionException("'block1' can't be null");
         }
 
+        $this->container['block1']->validate();
+
         if ($this->container['block2'] === null) {
             throw new AssertionException("'block2' can't be null");
         }
+
+        $this->container['block2']->validate();
 
         if ($this->container['block3'] === null) {
             throw new AssertionException("'block3' can't be null");
         }
 
+        $this->container['block3']->validate();
+
         if ($this->container['block4'] === null) {
             throw new AssertionException("'block4' can't be null");
         }
+
+        $this->container['block4']->validate();
     }
 
     /**

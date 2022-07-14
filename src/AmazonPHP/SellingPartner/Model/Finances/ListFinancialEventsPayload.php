@@ -201,6 +201,9 @@ class ListFinancialEventsPayload implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function validate() : void
     {
+        if ($this->container['financial_events'] !== null) {
+            $this->container['financial_events']->validate();
+        }
     }
 
     /**

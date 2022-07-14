@@ -250,6 +250,8 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
         if ($this->container['stored_value'] === null) {
             throw new AssertionException("'stored_value' can't be null");
         }
+
+        $this->container['stored_value']->validate();
     }
 
     /**

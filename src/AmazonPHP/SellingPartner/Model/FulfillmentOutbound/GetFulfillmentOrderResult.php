@@ -223,6 +223,8 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, Mode
             throw new AssertionException("'fulfillment_order' can't be null");
         }
 
+        $this->container['fulfillment_order']->validate();
+
         if ($this->container['fulfillment_order_items'] === null) {
             throw new AssertionException("'fulfillment_order_items' can't be null");
         }

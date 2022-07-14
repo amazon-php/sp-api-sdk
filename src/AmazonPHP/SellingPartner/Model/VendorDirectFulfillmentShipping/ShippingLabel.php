@@ -248,13 +248,18 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'selling_party' can't be null");
         }
 
+        $this->container['selling_party']->validate();
+
         if ($this->container['ship_from_party'] === null) {
             throw new AssertionException("'ship_from_party' can't be null");
         }
 
+        $this->container['ship_from_party']->validate();
+
         if ($this->container['label_format'] === null) {
             throw new AssertionException("'label_format' can't be null");
         }
+
         $allowedValues = $this->getLabelFormatAllowableValues();
 
         if (null !== $this->container['label_format'] && !\in_array($this->container['label_format'], $allowedValues, true)) {

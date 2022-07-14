@@ -259,12 +259,20 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
             throw new AssertionException("'shipping_speed_category' can't be null");
         }
 
+        if ($this->container['scheduled_delivery_info'] !== null) {
+            $this->container['scheduled_delivery_info']->validate();
+        }
+
         if ($this->container['is_fulfillable'] === null) {
             throw new AssertionException("'is_fulfillable' can't be null");
         }
 
         if ($this->container['is_cod_capable'] === null) {
             throw new AssertionException("'is_cod_capable' can't be null");
+        }
+
+        if ($this->container['estimated_shipping_weight'] !== null) {
+            $this->container['estimated_shipping_weight']->validate();
         }
 
         if ($this->container['marketplace_id'] === null) {

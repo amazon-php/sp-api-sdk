@@ -201,6 +201,13 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function validate() : void
     {
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
+        if ($this->container['block'] !== null) {
+            $this->container['block']->validate();
+        }
     }
 
     /**

@@ -201,6 +201,9 @@ class Points implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['points_monetary_value'] !== null) {
+            $this->container['points_monetary_value']->validate();
+        }
     }
 
     /**

@@ -547,8 +547,6 @@ final class ShipmentInvoicingSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/fba/outbound/brazil/v0/shipments/{shipmentId}/invoice';
         $formParams = [];
         $queryParams = [];

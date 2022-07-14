@@ -326,6 +326,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['purchase_order_state_changed_date'] === null) {
             throw new AssertionException("'purchase_order_state_changed_date' can't be null");
         }
+
         $allowedValues = $this->getPurchaseOrderTypeAllowableValues();
 
         if (null !== $this->container['purchase_order_type'] && !\in_array($this->container['purchase_order_type'], $allowedValues, true)) {
@@ -338,6 +339,10 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
             );
         }
 
+        if ($this->container['import_details'] !== null) {
+            $this->container['import_details']->validate();
+        }
+
         $allowedValues = $this->getPaymentMethodAllowableValues();
 
         if (null !== $this->container['payment_method'] && !\in_array($this->container['payment_method'], $allowedValues, true)) {
@@ -348,6 +353,22 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
                     \implode("', '", $allowedValues)
                 )
             );
+        }
+
+        if ($this->container['buying_party'] !== null) {
+            $this->container['buying_party']->validate();
+        }
+
+        if ($this->container['selling_party'] !== null) {
+            $this->container['selling_party']->validate();
+        }
+
+        if ($this->container['ship_to_party'] !== null) {
+            $this->container['ship_to_party']->validate();
+        }
+
+        if ($this->container['bill_to_party'] !== null) {
+            $this->container['bill_to_party']->validate();
         }
 
         if ($this->container['items'] === null) {

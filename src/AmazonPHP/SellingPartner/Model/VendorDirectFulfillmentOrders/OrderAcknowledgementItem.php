@@ -247,13 +247,19 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
             throw new AssertionException("'acknowledgement_status' can't be null");
         }
 
+        $this->container['acknowledgement_status']->validate();
+
         if ($this->container['selling_party'] === null) {
             throw new AssertionException("'selling_party' can't be null");
         }
 
+        $this->container['selling_party']->validate();
+
         if ($this->container['ship_from_party'] === null) {
             throw new AssertionException("'ship_from_party' can't be null");
         }
+
+        $this->container['ship_from_party']->validate();
 
         if ($this->container['item_acknowledgements'] === null) {
             throw new AssertionException("'item_acknowledgements' can't be null");

@@ -230,6 +230,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['op'] === null) {
             throw new AssertionException("'op' can't be null");
         }
+
         $allowedValues = $this->getOpAllowableValues();
 
         if (null !== $this->container['op'] && !\in_array($this->container['op'], $allowedValues, true)) {

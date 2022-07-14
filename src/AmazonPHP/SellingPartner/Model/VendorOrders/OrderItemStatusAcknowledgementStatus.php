@@ -247,6 +247,14 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
                 )
             );
         }
+
+        if ($this->container['accepted_quantity'] !== null) {
+            $this->container['accepted_quantity']->validate();
+        }
+
+        if ($this->container['rejected_quantity'] !== null) {
+            $this->container['rejected_quantity']->validate();
+        }
     }
 
     /**

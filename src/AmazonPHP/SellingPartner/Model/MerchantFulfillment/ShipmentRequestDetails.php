@@ -265,16 +265,28 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, ModelIn
             throw new AssertionException("'ship_from_address' can't be null");
         }
 
+        $this->container['ship_from_address']->validate();
+
         if ($this->container['package_dimensions'] === null) {
             throw new AssertionException("'package_dimensions' can't be null");
         }
+
+        $this->container['package_dimensions']->validate();
 
         if ($this->container['weight'] === null) {
             throw new AssertionException("'weight' can't be null");
         }
 
+        $this->container['weight']->validate();
+
         if ($this->container['shipping_service_options'] === null) {
             throw new AssertionException("'shipping_service_options' can't be null");
+        }
+
+        $this->container['shipping_service_options']->validate();
+
+        if ($this->container['label_customization'] !== null) {
+            $this->container['label_customization']->validate();
         }
     }
 

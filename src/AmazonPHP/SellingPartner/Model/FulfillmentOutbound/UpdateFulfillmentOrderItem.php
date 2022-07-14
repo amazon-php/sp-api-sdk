@@ -268,6 +268,18 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
         if (null !== $this->container['displayable_comment'] && (\mb_strlen($this->container['displayable_comment']) > 250)) {
             throw new AssertionException("invalid value for 'displayable_comment', the character length must be smaller than or equal to 250.");
         }
+
+        if ($this->container['per_unit_declared_value'] !== null) {
+            $this->container['per_unit_declared_value']->validate();
+        }
+
+        if ($this->container['per_unit_price'] !== null) {
+            $this->container['per_unit_price']->validate();
+        }
+
+        if ($this->container['per_unit_tax'] !== null) {
+            $this->container['per_unit_tax']->validate();
+        }
     }
 
     /**

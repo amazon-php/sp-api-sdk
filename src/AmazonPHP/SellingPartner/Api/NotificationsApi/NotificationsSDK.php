@@ -183,8 +183,6 @@ final class NotificationsSDK
             );
         }
 
-        $body->validate();
-
         $resourcePath = '/notifications/v1/destinations';
         $formParams = [];
         $queryParams = [];

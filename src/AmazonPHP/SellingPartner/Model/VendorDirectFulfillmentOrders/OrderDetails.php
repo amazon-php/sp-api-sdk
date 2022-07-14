@@ -279,6 +279,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['order_date'] === null) {
             throw new AssertionException("'order_date' can't be null");
         }
+
         $allowedValues = $this->getOrderStatusAllowableValues();
 
         if (null !== $this->container['order_status'] && !\in_array($this->container['order_status'], $allowedValues, true)) {
@@ -295,21 +296,35 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'shipment_details' can't be null");
         }
 
+        $this->container['shipment_details']->validate();
+
+        if ($this->container['tax_total'] !== null) {
+            $this->container['tax_total']->validate();
+        }
+
         if ($this->container['selling_party'] === null) {
             throw new AssertionException("'selling_party' can't be null");
         }
+
+        $this->container['selling_party']->validate();
 
         if ($this->container['ship_from_party'] === null) {
             throw new AssertionException("'ship_from_party' can't be null");
         }
 
+        $this->container['ship_from_party']->validate();
+
         if ($this->container['ship_to_party'] === null) {
             throw new AssertionException("'ship_to_party' can't be null");
         }
 
+        $this->container['ship_to_party']->validate();
+
         if ($this->container['bill_to_party'] === null) {
             throw new AssertionException("'bill_to_party' can't be null");
         }
+
+        $this->container['bill_to_party']->validate();
 
         if ($this->container['items'] === null) {
             throw new AssertionException("'items' can't be null");

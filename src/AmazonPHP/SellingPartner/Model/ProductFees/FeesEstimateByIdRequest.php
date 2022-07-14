@@ -207,6 +207,10 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function validate() : void
     {
+        if ($this->container['fees_estimate_request'] !== null) {
+            $this->container['fees_estimate_request']->validate();
+        }
+
         if ($this->container['id_type'] === null) {
             throw new AssertionException("'id_type' can't be null");
         }

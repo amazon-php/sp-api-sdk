@@ -208,6 +208,8 @@ class AdditionalSellerInputs implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['additional_seller_input'] === null) {
             throw new AssertionException("'additional_seller_input' can't be null");
         }
+
+        $this->container['additional_seller_input']->validate();
     }
 
     /**

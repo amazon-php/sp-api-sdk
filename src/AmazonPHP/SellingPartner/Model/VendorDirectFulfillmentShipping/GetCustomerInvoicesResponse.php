@@ -201,6 +201,13 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function validate() : void
     {
+        if ($this->container['payload'] !== null) {
+            $this->container['payload']->validate();
+        }
+
+        if ($this->container['errors'] !== null) {
+            $this->container['errors']->validate();
+        }
     }
 
     /**

@@ -309,8 +309,18 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
             throw new AssertionException("'shipping_speed_category' can't be null");
         }
 
+        if ($this->container['delivery_window'] !== null) {
+            $this->container['delivery_window']->validate();
+        }
+
         if ($this->container['destination_address'] === null) {
             throw new AssertionException("'destination_address' can't be null");
+        }
+
+        $this->container['destination_address']->validate();
+
+        if ($this->container['cod_settings'] !== null) {
+            $this->container['cod_settings']->validate();
         }
 
         if ($this->container['received_date'] === null) {

@@ -198,6 +198,8 @@ class ItemProcurement implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['cost_price'] === null) {
             throw new AssertionException("'cost_price' can't be null");
         }
+
+        $this->container['cost_price']->validate();
     }
 
     /**

@@ -278,6 +278,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['processing_status'] === null) {
             throw new AssertionException("'processing_status' can't be null");
         }
+
         $allowedValues = $this->getProcessingStatusAllowableValues();
 
         if (null !== $this->container['processing_status'] && !\in_array($this->container['processing_status'], $allowedValues, true)) {

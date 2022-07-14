@@ -205,6 +205,8 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
             throw new AssertionException("'appointment_time' can't be null");
         }
 
+        $this->container['appointment_time']->validate();
+
         if ($this->container['reschedule_reason_code'] === null) {
             throw new AssertionException("'reschedule_reason_code' can't be null");
         }

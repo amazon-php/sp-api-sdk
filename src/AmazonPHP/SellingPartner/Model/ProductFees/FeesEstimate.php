@@ -210,6 +210,10 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['time_of_fees_estimation'] === null) {
             throw new AssertionException("'time_of_fees_estimation' can't be null");
         }
+
+        if ($this->container['total_fees_estimate'] !== null) {
+            $this->container['total_fees_estimate']->validate();
+        }
     }
 
     /**

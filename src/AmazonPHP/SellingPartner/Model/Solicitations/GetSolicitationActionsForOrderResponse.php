@@ -207,6 +207,13 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
      */
     public function validate() : void
     {
+        if ($this->container['_links'] !== null) {
+            $this->container['_links']->validate();
+        }
+
+        if ($this->container['_embedded'] !== null) {
+            $this->container['_embedded']->validate();
+        }
     }
 
     /**

@@ -255,6 +255,17 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function validate() : void
     {
+        if ($this->container['original_total'] !== null) {
+            $this->container['original_total']->validate();
+        }
+
+        if ($this->container['converted_total'] !== null) {
+            $this->container['converted_total']->validate();
+        }
+
+        if ($this->container['beginning_balance'] !== null) {
+            $this->container['beginning_balance']->validate();
+        }
     }
 
     /**

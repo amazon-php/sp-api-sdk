@@ -230,6 +230,7 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
         if ($this->container['type'] === null) {
             throw new AssertionException("'type' can't be null");
         }
+
         $allowedValues = $this->getTypeAllowableValues();
 
         if (null !== $this->container['type'] && !\in_array($this->container['type'], $allowedValues, true)) {

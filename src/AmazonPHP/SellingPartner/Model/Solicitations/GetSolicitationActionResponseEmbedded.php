@@ -195,6 +195,9 @@ class GetSolicitationActionResponseEmbedded implements \ArrayAccess, \JsonSerial
      */
     public function validate() : void
     {
+        if ($this->container['schema'] !== null) {
+            $this->container['schema']->validate();
+        }
     }
 
     /**

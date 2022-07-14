@@ -273,6 +273,17 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
+        if ($this->container['shipping_address'] !== null) {
+            $this->container['shipping_address']->validate();
+        }
+
+        if ($this->container['buyer_tax_info'] !== null) {
+            $this->container['buyer_tax_info']->validate();
+        }
+
+        if ($this->container['marketplace_tax_info'] !== null) {
+            $this->container['marketplace_tax_info']->validate();
+        }
     }
 
     /**

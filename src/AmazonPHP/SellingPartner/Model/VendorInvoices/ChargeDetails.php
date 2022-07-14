@@ -260,6 +260,7 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['type'] === null) {
             throw new AssertionException("'type' can't be null");
         }
+
         $allowedValues = $this->getTypeAllowableValues();
 
         if (null !== $this->container['type'] && !\in_array($this->container['type'], $allowedValues, true)) {
@@ -275,6 +276,8 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['charge_amount'] === null) {
             throw new AssertionException("'charge_amount' can't be null");
         }
+
+        $this->container['charge_amount']->validate();
     }
 
     /**

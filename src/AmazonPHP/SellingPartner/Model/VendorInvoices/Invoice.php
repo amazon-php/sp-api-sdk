@@ -299,6 +299,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['invoice_type'] === null) {
             throw new AssertionException("'invoice_type' can't be null");
         }
+
         $allowedValues = $this->getInvoiceTypeAllowableValues();
 
         if (null !== $this->container['invoice_type'] && !\in_array($this->container['invoice_type'], $allowedValues, true)) {
@@ -323,9 +324,29 @@ class Invoice implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'remit_to_party' can't be null");
         }
 
+        $this->container['remit_to_party']->validate();
+
+        if ($this->container['ship_to_party'] !== null) {
+            $this->container['ship_to_party']->validate();
+        }
+
+        if ($this->container['ship_from_party'] !== null) {
+            $this->container['ship_from_party']->validate();
+        }
+
+        if ($this->container['bill_to_party'] !== null) {
+            $this->container['bill_to_party']->validate();
+        }
+
+        if ($this->container['payment_terms'] !== null) {
+            $this->container['payment_terms']->validate();
+        }
+
         if ($this->container['invoice_total'] === null) {
             throw new AssertionException("'invoice_total' can't be null");
         }
+
+        $this->container['invoice_total']->validate();
     }
 
     /**

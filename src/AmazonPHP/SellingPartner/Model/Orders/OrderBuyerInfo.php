@@ -228,6 +228,10 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['amazon_order_id'] === null) {
             throw new AssertionException("'amazon_order_id' can't be null");
         }
+
+        if ($this->container['buyer_tax_info'] !== null) {
+            $this->container['buyer_tax_info']->validate();
+        }
     }
 
     /**

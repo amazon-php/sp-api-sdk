@@ -208,6 +208,8 @@ class RetrieveShippingLabelResult implements \ArrayAccess, \JsonSerializable, Mo
         if ($this->container['label_specification'] === null) {
             throw new AssertionException("'label_specification' can't be null");
         }
+
+        $this->container['label_specification']->validate();
     }
 
     /**

@@ -222,6 +222,8 @@ class Destination implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['resource'] === null) {
             throw new AssertionException("'resource' can't be null");
         }
+
+        $this->container['resource']->validate();
     }
 
     /**

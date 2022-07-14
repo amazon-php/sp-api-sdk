@@ -247,8 +247,16 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'buying_price' can't be null");
         }
 
+        $this->container['buying_price']->validate();
+
         if ($this->container['regular_price'] === null) {
             throw new AssertionException("'regular_price' can't be null");
+        }
+
+        $this->container['regular_price']->validate();
+
+        if ($this->container['business_price'] !== null) {
+            $this->container['business_price']->validate();
         }
 
         if ($this->container['fulfillment_channel'] === null) {

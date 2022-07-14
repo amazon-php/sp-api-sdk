@@ -220,6 +220,8 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['packed_quantity'] === null) {
             throw new AssertionException("'packed_quantity' can't be null");
         }
+
+        $this->container['packed_quantity']->validate();
     }
 
     /**

@@ -224,6 +224,10 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
         if ($this->container['destination_id'] === null) {
             throw new AssertionException("'destination_id' can't be null");
         }
+
+        if ($this->container['processing_directive'] !== null) {
+            $this->container['processing_directive']->validate();
+        }
     }
 
     /**

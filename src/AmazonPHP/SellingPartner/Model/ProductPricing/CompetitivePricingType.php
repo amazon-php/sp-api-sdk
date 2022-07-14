@@ -214,6 +214,10 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
         if ($this->container['number_of_offer_listings'] === null) {
             throw new AssertionException("'number_of_offer_listings' can't be null");
         }
+
+        if ($this->container['trade_in_value'] !== null) {
+            $this->container['trade_in_value']->validate();
+        }
     }
 
     /**

@@ -225,6 +225,29 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      */
     public function validate() : void
     {
+        if ($this->container['image'] !== null) {
+            $this->container['image']->validate();
+        }
+
+        if ($this->container['headline'] !== null) {
+            $this->container['headline']->validate();
+        }
+
+        if ($this->container['text_block1'] !== null) {
+            $this->container['text_block1']->validate();
+        }
+
+        if ($this->container['text_block2'] !== null) {
+            $this->container['text_block2']->validate();
+        }
+
+        if ($this->container['text_block3'] !== null) {
+            $this->container['text_block3']->validate();
+        }
+
+        if ($this->container['bulleted_list_block'] !== null) {
+            $this->container['bulleted_list_block']->validate();
+        }
     }
 
     /**

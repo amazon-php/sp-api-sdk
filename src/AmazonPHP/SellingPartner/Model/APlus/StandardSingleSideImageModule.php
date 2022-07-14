@@ -204,6 +204,10 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
         if ($this->container['image_position_type'] === null) {
             throw new AssertionException("'image_position_type' can't be null");
         }
+
+        if ($this->container['block'] !== null) {
+            $this->container['block']->validate();
+        }
     }
 
     /**

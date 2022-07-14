@@ -201,6 +201,13 @@ class ShippingPromiseSet implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function validate() : void
     {
+        if ($this->container['delivery_window'] !== null) {
+            $this->container['delivery_window']->validate();
+        }
+
+        if ($this->container['receive_window'] !== null) {
+            $this->container['receive_window']->validate();
+        }
     }
 
     /**
