@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Orders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -222,46 +223,35 @@ class TaxCollection implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getModelAllowableValues();
 
         if (null !== $this->container['model'] && !\in_array($this->container['model'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'model', must be one of '%s'",
-                $this->container['model'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'model', must be one of '%s'",
+                    $this->container['model'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getResponsiblePartyAllowableValues();
 
         if (null !== $this->container['responsible_party'] && !\in_array($this->container['responsible_party'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'responsible_party', must be one of '%s'",
-                $this->container['responsible_party'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'responsible_party', must be one of '%s'",
+                    $this->container['responsible_party'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -279,17 +269,6 @@ class TaxCollection implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setModel(?string $model) : self
     {
-        $allowedValues = $this->getModelAllowableValues();
-
-        if (null !== $model && !\in_array($model, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'model', must be one of '%s'",
-                    $model,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['model'] = $model;
 
         return $this;
@@ -310,17 +289,6 @@ class TaxCollection implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setResponsibleParty(?string $responsible_party) : self
     {
-        $allowedValues = $this->getResponsiblePartyAllowableValues();
-
-        if (null !== $responsible_party && !\in_array($responsible_party, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'responsible_party', must be one of '%s'",
-                    $responsible_party,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['responsible_party'] = $responsible_party;
 
         return $this;

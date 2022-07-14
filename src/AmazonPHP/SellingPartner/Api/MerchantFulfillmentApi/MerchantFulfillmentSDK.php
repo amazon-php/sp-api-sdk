@@ -567,6 +567,8 @@ final class MerchantFulfillmentSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/mfn/v0/shipments';
         $formParams = [];
         $queryParams = [];
@@ -753,6 +755,8 @@ final class MerchantFulfillmentSDK
                 'Missing the required parameter $body when calling getAdditionalSellerInputs'
             );
         }
+
+        $body->validate();
 
         $resourcePath = '/mfn/v0/additionalSellerInputs';
         $formParams = [];
@@ -941,6 +945,8 @@ final class MerchantFulfillmentSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/mfn/v0/sellerInputs';
         $formParams = [];
         $queryParams = [];
@@ -1128,6 +1134,8 @@ final class MerchantFulfillmentSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/mfn/v0/eligibleShippingServices';
         $formParams = [];
         $queryParams = [];
@@ -1314,6 +1322,8 @@ final class MerchantFulfillmentSDK
                 'Missing the required parameter $body when calling getEligibleShipmentServicesOld'
             );
         }
+
+        $body->validate();
 
         $resourcePath = '/mfn/v0/eligibleServices';
         $formParams = [];

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,46 +213,31 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['dimensions'] === null) {
-            $invalidProperties[] = "'dimensions' can't be null";
+            throw new AssertionException("'dimensions' can't be null");
         }
 
         if ($this->container['weight'] === null) {
-            $invalidProperties[] = "'weight' can't be null";
+            throw new AssertionException("'weight' can't be null");
         }
 
         if ($this->container['carrier_name'] === null) {
-            $invalidProperties[] = "'carrier_name' can't be null";
+            throw new AssertionException("'carrier_name' can't be null");
         }
 
         if ($this->container['tracking_id'] === null) {
-            $invalidProperties[] = "'tracking_id' can't be null";
+            throw new AssertionException("'tracking_id' can't be null");
         }
 
         if ($this->container['package_status'] === null) {
-            $invalidProperties[] = "'package_status' can't be null";
+            throw new AssertionException("'package_status' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

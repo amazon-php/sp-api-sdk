@@ -793,6 +793,8 @@ final class FBASmallAndLightSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/fba/smallAndLight/v1/feePreviews';
         $formParams = [];
         $queryParams = [];

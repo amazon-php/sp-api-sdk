@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -218,46 +219,51 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['marketplace_id']) < 1)) {
+            throw new AssertionException("invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['locale'] === null) {
-            $invalidProperties[] = "'locale' can't be null";
+            throw new AssertionException("'locale' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['locale']) < 5)) {
+            throw new AssertionException("invalid value for 'locale', the character length must be bigger than or equal to 5.");
         }
 
         if ($this->container['asin'] === null) {
-            $invalidProperties[] = "'asin' can't be null";
+            throw new AssertionException("'asin' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['asin']) < 10)) {
+            throw new AssertionException("invalid value for 'asin', the character length must be bigger than or equal to 10.");
         }
 
         if ($this->container['content_type'] === null) {
-            $invalidProperties[] = "'content_type' can't be null";
+            throw new AssertionException("'content_type' can't be null");
+        }
+
+        if (null !== $this->container['content_sub_type'] && (\mb_strlen($this->container['content_sub_type']) < 1)) {
+            throw new AssertionException("invalid value for 'content_sub_type', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['content_reference_key'] === null) {
-            $invalidProperties[] = "'content_reference_key' can't be null";
+            throw new AssertionException("'content_reference_key' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
+            throw new AssertionException("invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.");
+        }
     }
 
     /**

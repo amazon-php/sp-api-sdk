@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,46 +213,31 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['return_authorization_id'] === null) {
-            $invalidProperties[] = "'return_authorization_id' can't be null";
+            throw new AssertionException("'return_authorization_id' can't be null");
         }
 
         if ($this->container['fulfillment_center_id'] === null) {
-            $invalidProperties[] = "'fulfillment_center_id' can't be null";
+            throw new AssertionException("'fulfillment_center_id' can't be null");
         }
 
         if ($this->container['return_to_address'] === null) {
-            $invalidProperties[] = "'return_to_address' can't be null";
+            throw new AssertionException("'return_to_address' can't be null");
         }
 
         if ($this->container['amazon_rma_id'] === null) {
-            $invalidProperties[] = "'amazon_rma_id' can't be null";
+            throw new AssertionException("'amazon_rma_id' can't be null");
         }
 
         if ($this->container['rma_page_url'] === null) {
-            $invalidProperties[] = "'rma_page_url' can't be null";
+            throw new AssertionException("'rma_page_url' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

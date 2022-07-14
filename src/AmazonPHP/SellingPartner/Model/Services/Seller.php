@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Services;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -188,30 +189,15 @@ class Seller implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['seller_id'] && !\preg_match('/^[A-Z0-9]*$/', $this->container['seller_id'])) {
-            $invalidProperties[] = "invalid value for 'seller_id', must be conform to the pattern /^[A-Z0-9]*$/.";
+            throw new AssertionException("invalid value for 'seller_id', must be conform to the pattern /^[A-Z0-9]*$/.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -229,10 +215,6 @@ class Seller implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setSellerId(?string $seller_id) : self
     {
-        if (null !== $seller_id && (!\preg_match('/^[A-Z0-9]*$/', $seller_id))) {
-            throw new \InvalidArgumentException("invalid value for {$seller_id} when calling Seller., must conform to the pattern /^[A-Z0-9]*$/.");
-        }
-
         $this->container['seller_id'] = $seller_id;
 
         return $this;

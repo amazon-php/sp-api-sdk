@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ListingsItems;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -223,47 +224,34 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ($this->container['offer_type'] === null) {
-            $invalidProperties[] = "'offer_type' can't be null";
+            throw new AssertionException("'offer_type' can't be null");
         }
         $allowedValues = $this->getOfferTypeAllowableValues();
 
         if (null !== $this->container['offer_type'] && !\in_array($this->container['offer_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'offer_type', must be one of '%s'",
-                $this->container['offer_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'offer_type', must be one of '%s'",
+                    $this->container['offer_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['price'] === null) {
-            $invalidProperties[] = "'price' can't be null";
+            throw new AssertionException("'price' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -301,17 +289,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function setOfferType(string $offer_type) : self
     {
-        $allowedValues = $this->getOfferTypeAllowableValues();
-
-        if (!\in_array($offer_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'offer_type', must be one of '%s'",
-                    $offer_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['offer_type'] = $offer_type;
 
         return $this;

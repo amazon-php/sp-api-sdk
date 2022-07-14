@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,30 +201,19 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
-        if ($this->container['content_metadata_records'] === null) {
-            $invalidProperties[] = "'content_metadata_records' can't be null";
+        if (null !== $this->container['next_page_token'] && (\mb_strlen($this->container['next_page_token']) < 1)) {
+            throw new AssertionException("invalid value for 'next_page_token', the character length must be bigger than or equal to 1.");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['content_metadata_records'] === null) {
+            throw new AssertionException("'content_metadata_records' can't be null");
+        }
     }
 
     /**

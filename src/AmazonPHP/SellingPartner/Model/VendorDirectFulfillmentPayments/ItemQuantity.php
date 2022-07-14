@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,34 +195,19 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['amount'] === null) {
-            $invalidProperties[] = "'amount' can't be null";
+            throw new AssertionException("'amount' can't be null");
         }
 
         if ($this->container['unit_of_measure'] === null) {
-            $invalidProperties[] = "'unit_of_measure' can't be null";
+            throw new AssertionException("'unit_of_measure' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

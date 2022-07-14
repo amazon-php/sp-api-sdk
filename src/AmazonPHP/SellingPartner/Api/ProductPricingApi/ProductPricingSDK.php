@@ -648,6 +648,8 @@ final class ProductPricingSDK
             );
         }
 
+        $get_item_offers_batch_request_body->validate();
+
         $resourcePath = '/batches/products/pricing/v0/itemOffers';
         $formParams = [];
         $queryParams = [];
@@ -1065,6 +1067,8 @@ final class ProductPricingSDK
                 'Missing the required parameter $get_listing_offers_batch_request_body when calling getListingOffersBatch'
             );
         }
+
+        $get_listing_offers_batch_request_body->validate();
 
         $resourcePath = '/batches/products/pricing/v0/listingOffers';
         $formParams = [];

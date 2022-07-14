@@ -216,6 +216,10 @@ final {{#operations}}class {{packageName}}SDK
             );
         }
         {{/required}}
+        {{#isModel}}
+
+            ${{paramName}}->validate();
+        {{/isModel}}
         {{#hasValidation}}
         {{#maxLength}}
         if ({{^required}}${{paramName}} !== null && {{/required}}strlen(${{paramName}}) > {{maxLength}}) {

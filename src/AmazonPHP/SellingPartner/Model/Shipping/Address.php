@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -248,54 +249,107 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['name']) > 50)) {
+            throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 50.");
+        }
+
+        if ((\mb_strlen($this->container['name']) < 1)) {
+            throw new AssertionException("invalid value for 'name', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['address_line1'] === null) {
-            $invalidProperties[] = "'address_line1' can't be null";
+            throw new AssertionException("'address_line1' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['address_line1']) > 60)) {
+            throw new AssertionException("invalid value for 'address_line1', the character length must be smaller than or equal to 60.");
+        }
+
+        if ((\mb_strlen($this->container['address_line1']) < 1)) {
+            throw new AssertionException("invalid value for 'address_line1', the character length must be bigger than or equal to 1.");
+        }
+
+        if (null !== $this->container['address_line2'] && (\mb_strlen($this->container['address_line2']) > 60)) {
+            throw new AssertionException("invalid value for 'address_line2', the character length must be smaller than or equal to 60.");
+        }
+
+        if (null !== $this->container['address_line2'] && (\mb_strlen($this->container['address_line2']) < 1)) {
+            throw new AssertionException("invalid value for 'address_line2', the character length must be bigger than or equal to 1.");
+        }
+
+        if (null !== $this->container['address_line3'] && (\mb_strlen($this->container['address_line3']) > 60)) {
+            throw new AssertionException("invalid value for 'address_line3', the character length must be smaller than or equal to 60.");
+        }
+
+        if (null !== $this->container['address_line3'] && (\mb_strlen($this->container['address_line3']) < 1)) {
+            throw new AssertionException("invalid value for 'address_line3', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['state_or_region'] === null) {
-            $invalidProperties[] = "'state_or_region' can't be null";
+            throw new AssertionException("'state_or_region' can't be null");
         }
 
         if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
+            throw new AssertionException("'city' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['city']) > 50)) {
+            throw new AssertionException("invalid value for 'city', the character length must be smaller than or equal to 50.");
+        }
+
+        if ((\mb_strlen($this->container['city']) < 1)) {
+            throw new AssertionException("invalid value for 'city', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['country_code'] === null) {
-            $invalidProperties[] = "'country_code' can't be null";
+            throw new AssertionException("'country_code' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['country_code']) > 2)) {
+            throw new AssertionException("invalid value for 'country_code', the character length must be smaller than or equal to 2.");
+        }
+
+        if ((\mb_strlen($this->container['country_code']) < 2)) {
+            throw new AssertionException("invalid value for 'country_code', the character length must be bigger than or equal to 2.");
         }
 
         if ($this->container['postal_code'] === null) {
-            $invalidProperties[] = "'postal_code' can't be null";
+            throw new AssertionException("'postal_code' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['postal_code']) > 20)) {
+            throw new AssertionException("invalid value for 'postal_code', the character length must be smaller than or equal to 20.");
+        }
+
+        if ((\mb_strlen($this->container['postal_code']) < 1)) {
+            throw new AssertionException("invalid value for 'postal_code', the character length must be bigger than or equal to 1.");
+        }
+
+        if (null !== $this->container['email'] && (\mb_strlen($this->container['email']) > 64)) {
+            throw new AssertionException("invalid value for 'email', the character length must be smaller than or equal to 64.");
         }
 
         if (null !== $this->container['copy_emails'] && (\count($this->container['copy_emails']) > 2)) {
-            $invalidProperties[] = "invalid value for 'copy_emails', number of items must be less than or equal to 2.";
+            throw new AssertionException("invalid value for 'copy_emails', number of items must be less than or equal to 2.");
         }
 
-        return $invalidProperties;
-    }
+        if (null !== $this->container['phone_number'] && (\mb_strlen($this->container['phone_number']) > 20)) {
+            throw new AssertionException("invalid value for 'phone_number', the character length must be smaller than or equal to 20.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['phone_number'] && (\mb_strlen($this->container['phone_number']) < 1)) {
+            throw new AssertionException("invalid value for 'phone_number', the character length must be bigger than or equal to 1.");
+        }
     }
 
     /**
@@ -495,9 +549,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCopyEmails(?array $copy_emails) : self
     {
-        if (null !== $copy_emails && (\count($copy_emails) > 2)) {
-            throw new \InvalidArgumentException('invalid value for $copy_emails when calling Address., number of items must be less than or equal to 2.');
-        }
         $this->container['copy_emails'] = $copy_emails;
 
         return $this;

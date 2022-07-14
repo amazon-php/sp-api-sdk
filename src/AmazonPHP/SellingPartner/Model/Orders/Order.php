@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Orders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -573,91 +574,86 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['amazon_order_id'] === null) {
-            $invalidProperties[] = "'amazon_order_id' can't be null";
+            throw new AssertionException("'amazon_order_id' can't be null");
         }
 
         if ($this->container['purchase_date'] === null) {
-            $invalidProperties[] = "'purchase_date' can't be null";
+            throw new AssertionException("'purchase_date' can't be null");
         }
 
         if ($this->container['last_update_date'] === null) {
-            $invalidProperties[] = "'last_update_date' can't be null";
+            throw new AssertionException("'last_update_date' can't be null");
         }
 
         if ($this->container['order_status'] === null) {
-            $invalidProperties[] = "'order_status' can't be null";
+            throw new AssertionException("'order_status' can't be null");
         }
         $allowedValues = $this->getOrderStatusAllowableValues();
 
         if (null !== $this->container['order_status'] && !\in_array($this->container['order_status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'order_status', must be one of '%s'",
-                $this->container['order_status'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'order_status', must be one of '%s'",
+                    $this->container['order_status'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getFulfillmentChannelAllowableValues();
 
         if (null !== $this->container['fulfillment_channel'] && !\in_array($this->container['fulfillment_channel'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
-                $this->container['fulfillment_channel'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
+                    $this->container['fulfillment_channel'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getPaymentMethodAllowableValues();
 
         if (null !== $this->container['payment_method'] && !\in_array($this->container['payment_method'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'payment_method', must be one of '%s'",
-                $this->container['payment_method'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'payment_method', must be one of '%s'",
+                    $this->container['payment_method'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getOrderTypeAllowableValues();
 
         if (null !== $this->container['order_type'] && !\in_array($this->container['order_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'order_type', must be one of '%s'",
-                $this->container['order_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'order_type', must be one of '%s'",
+                    $this->container['order_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
 
         if (null !== $this->container['buyer_invoice_preference'] && !\in_array($this->container['buyer_invoice_preference'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
-                $this->container['buyer_invoice_preference'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
+                    $this->container['buyer_invoice_preference'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -755,17 +751,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setOrderStatus(string $order_status) : self
     {
-        $allowedValues = $this->getOrderStatusAllowableValues();
-
-        if (!\in_array($order_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'order_status', must be one of '%s'",
-                    $order_status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['order_status'] = $order_status;
 
         return $this;
@@ -786,17 +771,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setFulfillmentChannel(?string $fulfillment_channel) : self
     {
-        $allowedValues = $this->getFulfillmentChannelAllowableValues();
-
-        if (null !== $fulfillment_channel && !\in_array($fulfillment_channel, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'fulfillment_channel', must be one of '%s'",
-                    $fulfillment_channel,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['fulfillment_channel'] = $fulfillment_channel;
 
         return $this;
@@ -959,17 +933,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPaymentMethod(?string $payment_method) : self
     {
-        $allowedValues = $this->getPaymentMethodAllowableValues();
-
-        if (null !== $payment_method && !\in_array($payment_method, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'payment_method', must be one of '%s'",
-                    $payment_method,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['payment_method'] = $payment_method;
 
         return $this;
@@ -1092,17 +1055,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setOrderType(?string $order_type) : self
     {
-        $allowedValues = $this->getOrderTypeAllowableValues();
-
-        if (null !== $order_type && !\in_array($order_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'order_type', must be one of '%s'",
-                    $order_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['order_type'] = $order_type;
 
         return $this;
@@ -1423,17 +1375,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setBuyerInvoicePreference(?string $buyer_invoice_preference) : self
     {
-        $allowedValues = $this->getBuyerInvoicePreferenceAllowableValues();
-
-        if (null !== $buyer_invoice_preference && !\in_array($buyer_invoice_preference, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'buyer_invoice_preference', must be one of '%s'",
-                    $buyer_invoice_preference,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['buyer_invoice_preference'] = $buyer_invoice_preference;
 
         return $this;

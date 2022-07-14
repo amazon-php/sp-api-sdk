@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -285,46 +286,43 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getMethodOfPaymentAllowableValues();
 
         if (null !== $this->container['method_of_payment'] && !\in_array($this->container['method_of_payment'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'method_of_payment', must be one of '%s'",
-                $this->container['method_of_payment'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'method_of_payment', must be one of '%s'",
+                    $this->container['method_of_payment'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getInternationalCommercialTermsAllowableValues();
 
         if (null !== $this->container['international_commercial_terms'] && !\in_array($this->container['international_commercial_terms'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'international_commercial_terms', must be one of '%s'",
-                $this->container['international_commercial_terms'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'international_commercial_terms', must be one of '%s'",
+                    $this->container['international_commercial_terms'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
-        return $invalidProperties;
-    }
+        if (null !== $this->container['port_of_delivery'] && (\mb_strlen($this->container['port_of_delivery']) > 64)) {
+            throw new AssertionException("invalid value for 'port_of_delivery', the character length must be smaller than or equal to 64.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['import_containers'] && (\mb_strlen($this->container['import_containers']) > 64)) {
+            throw new AssertionException("invalid value for 'import_containers', the character length must be smaller than or equal to 64.");
+        }
     }
 
     /**
@@ -342,17 +340,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setMethodOfPayment(?string $method_of_payment) : self
     {
-        $allowedValues = $this->getMethodOfPaymentAllowableValues();
-
-        if (null !== $method_of_payment && !\in_array($method_of_payment, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'method_of_payment', must be one of '%s'",
-                    $method_of_payment,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['method_of_payment'] = $method_of_payment;
 
         return $this;
@@ -373,17 +360,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setInternationalCommercialTerms(?string $international_commercial_terms) : self
     {
-        $allowedValues = $this->getInternationalCommercialTermsAllowableValues();
-
-        if (null !== $international_commercial_terms && !\in_array($international_commercial_terms, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'international_commercial_terms', must be one of '%s'",
-                    $international_commercial_terms,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['international_commercial_terms'] = $international_commercial_terms;
 
         return $this;

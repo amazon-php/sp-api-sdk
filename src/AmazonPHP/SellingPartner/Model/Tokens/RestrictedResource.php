@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Tokens;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -223,43 +224,30 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['method'] === null) {
-            $invalidProperties[] = "'method' can't be null";
+            throw new AssertionException("'method' can't be null");
         }
         $allowedValues = $this->getMethodAllowableValues();
 
         if (null !== $this->container['method'] && !\in_array($this->container['method'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'method', must be one of '%s'",
-                $this->container['method'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'method', must be one of '%s'",
+                    $this->container['method'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['path'] === null) {
-            $invalidProperties[] = "'path' can't be null";
+            throw new AssertionException("'path' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -277,17 +265,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function setMethod(string $method) : self
     {
-        $allowedValues = $this->getMethodAllowableValues();
-
-        if (!\in_array($method, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'method', must be one of '%s'",
-                    $method,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['method'] = $method;
 
         return $this;

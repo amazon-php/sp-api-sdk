@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorShipments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -235,36 +236,23 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getHandlingCodeAllowableValues();
 
         if (null !== $this->container['handling_code'] && !\in_array($this->container['handling_code'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'handling_code', must be one of '%s'",
-                $this->container['handling_code'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'handling_code', must be one of '%s'",
+                    $this->container['handling_code'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -362,17 +350,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setHandlingCode(?string $handling_code) : self
     {
-        $allowedValues = $this->getHandlingCodeAllowableValues();
-
-        if (null !== $handling_code && !\in_array($handling_code, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'handling_code', must be one of '%s'",
-                    $handling_code,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['handling_code'] = $handling_code;
 
         return $this;

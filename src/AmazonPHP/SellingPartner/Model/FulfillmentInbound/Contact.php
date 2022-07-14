@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,38 +207,39 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['name']) > 50)) {
+            throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 50.");
         }
 
         if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
+            throw new AssertionException("'phone' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['phone']) > 20)) {
+            throw new AssertionException("invalid value for 'phone', the character length must be smaller than or equal to 20.");
         }
 
         if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
+            throw new AssertionException("'email' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        if ((\mb_strlen($this->container['email']) > 50)) {
+            throw new AssertionException("invalid value for 'email', the character length must be smaller than or equal to 50.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['fax'] && (\mb_strlen($this->container['fax']) > 20)) {
+            throw new AssertionException("invalid value for 'fax', the character length must be smaller than or equal to 20.");
+        }
     }
 
     /**

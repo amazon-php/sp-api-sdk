@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,46 +201,31 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['specification_list'] === null) {
-            $invalidProperties[] = "'specification_list' can't be null";
+            throw new AssertionException("'specification_list' can't be null");
         }
 
         if ((\count($this->container['specification_list']) > 16)) {
-            $invalidProperties[] = "invalid value for 'specification_list', number of items must be less than or equal to 16.";
+            throw new AssertionException("invalid value for 'specification_list', number of items must be less than or equal to 16.");
         }
 
         if ((\count($this->container['specification_list']) < 4)) {
-            $invalidProperties[] = "invalid value for 'specification_list', number of items must be greater than or equal to 4.";
+            throw new AssertionException("invalid value for 'specification_list', number of items must be greater than or equal to 4.");
         }
 
         if (null !== $this->container['table_count'] && ($this->container['table_count'] > 2)) {
-            $invalidProperties[] = "invalid value for 'table_count', must be smaller than or equal to 2.";
+            throw new AssertionException("invalid value for 'table_count', must be smaller than or equal to 2.");
         }
 
         if (null !== $this->container['table_count'] && ($this->container['table_count'] < 1)) {
-            $invalidProperties[] = "invalid value for 'table_count', must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'table_count', must be bigger than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -279,13 +265,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function setSpecificationList(array $specification_list) : self
     {
-        if ((\count($specification_list) > 16)) {
-            throw new \InvalidArgumentException('invalid value for $specification_list when calling StandardTechSpecsModule., number of items must be less than or equal to 16.');
-        }
-
-        if ((\count($specification_list) < 4)) {
-            throw new \InvalidArgumentException('invalid length for $specification_list when calling StandardTechSpecsModule., number of items must be greater than or equal to 4.');
-        }
         $this->container['specification_list'] = $specification_list;
 
         return $this;
@@ -306,14 +285,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function setTableCount(?int $table_count) : self
     {
-        if (null !== $table_count && ($table_count > 2)) {
-            throw new \InvalidArgumentException('invalid value for $table_count when calling StandardTechSpecsModule., must be smaller than or equal to 2.');
-        }
-
-        if (null !== $table_count && ($table_count < 1)) {
-            throw new \InvalidArgumentException('invalid value for $table_count when calling StandardTechSpecsModule., must be bigger than or equal to 1.');
-        }
-
         $this->container['table_count'] = $table_count;
 
         return $this;

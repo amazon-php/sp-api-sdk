@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,34 +201,19 @@ class Feature implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['feature_name'] === null) {
-            $invalidProperties[] = "'feature_name' can't be null";
+            throw new AssertionException("'feature_name' can't be null");
         }
 
         if ($this->container['feature_description'] === null) {
-            $invalidProperties[] = "'feature_description' can't be null";
+            throw new AssertionException("'feature_description' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

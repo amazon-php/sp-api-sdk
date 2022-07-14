@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,38 +213,23 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['ship_from_address'] === null) {
-            $invalidProperties[] = "'ship_from_address' can't be null";
+            throw new AssertionException("'ship_from_address' can't be null");
         }
 
         if ($this->container['label_prep_preference'] === null) {
-            $invalidProperties[] = "'label_prep_preference' can't be null";
+            throw new AssertionException("'label_prep_preference' can't be null");
         }
 
         if ($this->container['inbound_shipment_plan_request_items'] === null) {
-            $invalidProperties[] = "'inbound_shipment_plan_request_items' can't be null";
+            throw new AssertionException("'inbound_shipment_plan_request_items' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

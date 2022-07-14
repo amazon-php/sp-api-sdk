@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Services;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,24 +195,19 @@ class Technician implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        return [];
-    }
+        if (null !== $this->container['technician_id'] && (\mb_strlen($this->container['technician_id']) > 50)) {
+            throw new AssertionException("invalid value for 'technician_id', the character length must be smaller than or equal to 50.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['technician_id'] && (\mb_strlen($this->container['technician_id']) < 1)) {
+            throw new AssertionException("invalid value for 'technician_id', the character length must be bigger than or equal to 1.");
+        }
     }
 
     /**

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -278,46 +279,31 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['sub_condition'] === null) {
-            $invalidProperties[] = "'sub_condition' can't be null";
+            throw new AssertionException("'sub_condition' can't be null");
         }
 
         if ($this->container['shipping_time'] === null) {
-            $invalidProperties[] = "'shipping_time' can't be null";
+            throw new AssertionException("'shipping_time' can't be null");
         }
 
         if ($this->container['listing_price'] === null) {
-            $invalidProperties[] = "'listing_price' can't be null";
+            throw new AssertionException("'listing_price' can't be null");
         }
 
         if ($this->container['shipping'] === null) {
-            $invalidProperties[] = "'shipping' can't be null";
+            throw new AssertionException("'shipping' can't be null");
         }
 
         if ($this->container['is_fulfilled_by_amazon'] === null) {
-            $invalidProperties[] = "'is_fulfilled_by_amazon' can't be null";
+            throw new AssertionException("'is_fulfilled_by_amazon' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

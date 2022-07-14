@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -278,66 +279,51 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['seller_fulfillment_order_id'] === null) {
-            $invalidProperties[] = "'seller_fulfillment_order_id' can't be null";
+            throw new AssertionException("'seller_fulfillment_order_id' can't be null");
         }
 
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ($this->container['displayable_order_id'] === null) {
-            $invalidProperties[] = "'displayable_order_id' can't be null";
+            throw new AssertionException("'displayable_order_id' can't be null");
         }
 
         if ($this->container['displayable_order_date'] === null) {
-            $invalidProperties[] = "'displayable_order_date' can't be null";
+            throw new AssertionException("'displayable_order_date' can't be null");
         }
 
         if ($this->container['displayable_order_comment'] === null) {
-            $invalidProperties[] = "'displayable_order_comment' can't be null";
+            throw new AssertionException("'displayable_order_comment' can't be null");
         }
 
         if ($this->container['shipping_speed_category'] === null) {
-            $invalidProperties[] = "'shipping_speed_category' can't be null";
+            throw new AssertionException("'shipping_speed_category' can't be null");
         }
 
         if ($this->container['destination_address'] === null) {
-            $invalidProperties[] = "'destination_address' can't be null";
+            throw new AssertionException("'destination_address' can't be null");
         }
 
         if ($this->container['received_date'] === null) {
-            $invalidProperties[] = "'received_date' can't be null";
+            throw new AssertionException("'received_date' can't be null");
         }
 
         if ($this->container['fulfillment_order_status'] === null) {
-            $invalidProperties[] = "'fulfillment_order_status' can't be null";
+            throw new AssertionException("'fulfillment_order_status' can't be null");
         }
 
         if ($this->container['status_updated_date'] === null) {
-            $invalidProperties[] = "'status_updated_date' can't be null";
+            throw new AssertionException("'status_updated_date' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

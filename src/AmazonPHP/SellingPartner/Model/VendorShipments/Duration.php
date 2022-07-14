@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorShipments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -211,43 +212,30 @@ class Duration implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['duration_unit'] === null) {
-            $invalidProperties[] = "'duration_unit' can't be null";
+            throw new AssertionException("'duration_unit' can't be null");
         }
         $allowedValues = $this->getDurationUnitAllowableValues();
 
         if (null !== $this->container['duration_unit'] && !\in_array($this->container['duration_unit'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'duration_unit', must be one of '%s'",
-                $this->container['duration_unit'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'duration_unit', must be one of '%s'",
+                    $this->container['duration_unit'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['duration_value'] === null) {
-            $invalidProperties[] = "'duration_value' can't be null";
+            throw new AssertionException("'duration_value' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -265,17 +253,6 @@ class Duration implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setDurationUnit(string $duration_unit) : self
     {
-        $allowedValues = $this->getDurationUnitAllowableValues();
-
-        if (!\in_array($duration_unit, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'duration_unit', must be one of '%s'",
-                    $duration_unit,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['duration_unit'] = $duration_unit;
 
         return $this;

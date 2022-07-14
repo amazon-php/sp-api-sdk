@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -254,24 +255,19 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        return [];
-    }
+        if (null !== $this->container['displayable_order_id'] && (\mb_strlen($this->container['displayable_order_id']) > 40)) {
+            throw new AssertionException("invalid value for 'displayable_order_id', the character length must be smaller than or equal to 40.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['displayable_order_comment'] && (\mb_strlen($this->container['displayable_order_comment']) > 1000)) {
+            throw new AssertionException("invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 1000.");
+        }
     }
 
     /**

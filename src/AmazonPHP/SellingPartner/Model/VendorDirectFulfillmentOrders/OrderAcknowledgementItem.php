@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -224,54 +225,39 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['purchase_order_number'] === null) {
-            $invalidProperties[] = "'purchase_order_number' can't be null";
+            throw new AssertionException("'purchase_order_number' can't be null");
         }
 
         if ($this->container['vendor_order_number'] === null) {
-            $invalidProperties[] = "'vendor_order_number' can't be null";
+            throw new AssertionException("'vendor_order_number' can't be null");
         }
 
         if ($this->container['acknowledgement_date'] === null) {
-            $invalidProperties[] = "'acknowledgement_date' can't be null";
+            throw new AssertionException("'acknowledgement_date' can't be null");
         }
 
         if ($this->container['acknowledgement_status'] === null) {
-            $invalidProperties[] = "'acknowledgement_status' can't be null";
+            throw new AssertionException("'acknowledgement_status' can't be null");
         }
 
         if ($this->container['selling_party'] === null) {
-            $invalidProperties[] = "'selling_party' can't be null";
+            throw new AssertionException("'selling_party' can't be null");
         }
 
         if ($this->container['ship_from_party'] === null) {
-            $invalidProperties[] = "'ship_from_party' can't be null";
+            throw new AssertionException("'ship_from_party' can't be null");
         }
 
         if ($this->container['item_acknowledgements'] === null) {
-            $invalidProperties[] = "'item_acknowledgements' can't be null";
+            throw new AssertionException("'item_acknowledgements' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,34 +195,19 @@ class GetOffersHttpStatusLine implements \ArrayAccess, \JsonSerializable, ModelI
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['status_code'] && ($this->container['status_code'] > 599)) {
-            $invalidProperties[] = "invalid value for 'status_code', must be smaller than or equal to 599.";
+            throw new AssertionException("invalid value for 'status_code', must be smaller than or equal to 599.");
         }
 
         if (null !== $this->container['status_code'] && ($this->container['status_code'] < 100)) {
-            $invalidProperties[] = "invalid value for 'status_code', must be bigger than or equal to 100.";
+            throw new AssertionException("invalid value for 'status_code', must be bigger than or equal to 100.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -239,14 +225,6 @@ class GetOffersHttpStatusLine implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function setStatusCode(?int $status_code) : self
     {
-        if (null !== $status_code && ($status_code > 599)) {
-            throw new \InvalidArgumentException('invalid value for $status_code when calling GetOffersHttpStatusLine., must be smaller than or equal to 599.');
-        }
-
-        if (null !== $status_code && ($status_code < 100)) {
-            throw new \InvalidArgumentException('invalid value for $status_code when calling GetOffersHttpStatusLine., must be bigger than or equal to 100.');
-        }
-
         $this->container['status_code'] = $status_code;
 
         return $this;

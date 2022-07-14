@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Feeds;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -256,51 +257,38 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['feed_id'] === null) {
-            $invalidProperties[] = "'feed_id' can't be null";
+            throw new AssertionException("'feed_id' can't be null");
         }
 
         if ($this->container['feed_type'] === null) {
-            $invalidProperties[] = "'feed_type' can't be null";
+            throw new AssertionException("'feed_type' can't be null");
         }
 
         if ($this->container['created_time'] === null) {
-            $invalidProperties[] = "'created_time' can't be null";
+            throw new AssertionException("'created_time' can't be null");
         }
 
         if ($this->container['processing_status'] === null) {
-            $invalidProperties[] = "'processing_status' can't be null";
+            throw new AssertionException("'processing_status' can't be null");
         }
         $allowedValues = $this->getProcessingStatusAllowableValues();
 
         if (null !== $this->container['processing_status'] && !\in_array($this->container['processing_status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'processing_status', must be one of '%s'",
-                $this->container['processing_status'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'processing_status', must be one of '%s'",
+                    $this->container['processing_status'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -402,17 +390,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setProcessingStatus(string $processing_status) : self
     {
-        $allowedValues = $this->getProcessingStatusAllowableValues();
-
-        if (!\in_array($processing_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'processing_status', must be one of '%s'",
-                    $processing_status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['processing_status'] = $processing_status;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,30 +195,19 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['content_reference_key'] === null) {
-            $invalidProperties[] = "'content_reference_key' can't be null";
+            throw new AssertionException("'content_reference_key' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ((\mb_strlen($this->container['content_reference_key']) < 1)) {
+            throw new AssertionException("invalid value for 'content_reference_key', the character length must be bigger than or equal to 1.");
+        }
     }
 
     /**

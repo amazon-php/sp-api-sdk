@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Messaging;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,24 +195,19 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        return [];
-    }
+        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) > 400)) {
+            throw new AssertionException("invalid value for 'text', the character length must be smaller than or equal to 400.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) < 1)) {
+            throw new AssertionException("invalid value for 'text', the character length must be bigger than or equal to 1.");
+        }
     }
 
     /**

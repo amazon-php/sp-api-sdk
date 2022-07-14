@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ListingsItems;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -309,63 +310,50 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ($this->container['asin'] === null) {
-            $invalidProperties[] = "'asin' can't be null";
+            throw new AssertionException("'asin' can't be null");
         }
 
         if ($this->container['product_type'] === null) {
-            $invalidProperties[] = "'product_type' can't be null";
+            throw new AssertionException("'product_type' can't be null");
         }
         $allowedValues = $this->getConditionTypeAllowableValues();
 
         if (null !== $this->container['condition_type'] && !\in_array($this->container['condition_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'condition_type', must be one of '%s'",
-                $this->container['condition_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'condition_type', must be one of '%s'",
+                    $this->container['condition_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+            throw new AssertionException("'status' can't be null");
         }
 
         if ($this->container['item_name'] === null) {
-            $invalidProperties[] = "'item_name' can't be null";
+            throw new AssertionException("'item_name' can't be null");
         }
 
         if ($this->container['created_date'] === null) {
-            $invalidProperties[] = "'created_date' can't be null";
+            throw new AssertionException("'created_date' can't be null");
         }
 
         if ($this->container['last_updated_date'] === null) {
-            $invalidProperties[] = "'last_updated_date' can't be null";
+            throw new AssertionException("'last_updated_date' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -443,17 +431,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      */
     public function setConditionType(?string $condition_type) : self
     {
-        $allowedValues = $this->getConditionTypeAllowableValues();
-
-        if (null !== $condition_type && !\in_array($condition_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'condition_type', must be one of '%s'",
-                    $condition_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['condition_type'] = $condition_type;
 
         return $this;
@@ -476,16 +453,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      */
     public function setStatus(array $status) : self
     {
-        $allowedValues = $this->getStatusAllowableValues();
-
-        if (\array_diff($status, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value for 'status', must be one of '%s'",
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['status'] = $status;
 
         return $this;

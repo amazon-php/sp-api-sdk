@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Orders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -277,39 +278,26 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
         }
         $allowedValues = $this->getAddressTypeAllowableValues();
 
         if (null !== $this->container['address_type'] && !\in_array($this->container['address_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'address_type', must be one of '%s'",
-                $this->container['address_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'address_type', must be one of '%s'",
+                    $this->container['address_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -567,17 +555,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAddressType(?string $address_type) : self
     {
-        $allowedValues = $this->getAddressTypeAllowableValues();
-
-        if (null !== $address_type && !\in_array($address_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'address_type', must be one of '%s'",
-                    $address_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['address_type'] = $address_type;
 
         return $this;

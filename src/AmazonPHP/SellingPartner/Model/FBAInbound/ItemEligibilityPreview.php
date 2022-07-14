@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FBAInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -357,47 +358,34 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['asin'] === null) {
-            $invalidProperties[] = "'asin' can't be null";
+            throw new AssertionException("'asin' can't be null");
         }
 
         if ($this->container['program'] === null) {
-            $invalidProperties[] = "'program' can't be null";
+            throw new AssertionException("'program' can't be null");
         }
         $allowedValues = $this->getProgramAllowableValues();
 
         if (null !== $this->container['program'] && !\in_array($this->container['program'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'program', must be one of '%s'",
-                $this->container['program'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'program', must be one of '%s'",
+                    $this->container['program'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['is_eligible_for_program'] === null) {
-            $invalidProperties[] = "'is_eligible_for_program' can't be null";
+            throw new AssertionException("'is_eligible_for_program' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -455,17 +443,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function setProgram(string $program) : self
     {
-        $allowedValues = $this->getProgramAllowableValues();
-
-        if (!\in_array($program, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'program', must be one of '%s'",
-                    $program,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['program'] = $program;
 
         return $this;
@@ -508,16 +485,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function setIneligibilityReasonList(?array $ineligibility_reason_list) : self
     {
-        $allowedValues = $this->getIneligibilityReasonListAllowableValues();
-
-        if (null !== $ineligibility_reason_list && \array_diff($ineligibility_reason_list, $allowedValues)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value for 'ineligibility_reason_list', must be one of '%s'",
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['ineligibility_reason_list'] = $ineligibility_reason_list;
 
         return $this;

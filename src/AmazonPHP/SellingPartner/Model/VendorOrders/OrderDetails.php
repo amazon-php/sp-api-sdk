@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -312,57 +313,46 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['purchase_order_date'] === null) {
-            $invalidProperties[] = "'purchase_order_date' can't be null";
+            throw new AssertionException("'purchase_order_date' can't be null");
         }
 
         if ($this->container['purchase_order_state_changed_date'] === null) {
-            $invalidProperties[] = "'purchase_order_state_changed_date' can't be null";
+            throw new AssertionException("'purchase_order_state_changed_date' can't be null");
         }
         $allowedValues = $this->getPurchaseOrderTypeAllowableValues();
 
         if (null !== $this->container['purchase_order_type'] && !\in_array($this->container['purchase_order_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'purchase_order_type', must be one of '%s'",
-                $this->container['purchase_order_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'purchase_order_type', must be one of '%s'",
+                    $this->container['purchase_order_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getPaymentMethodAllowableValues();
 
         if (null !== $this->container['payment_method'] && !\in_array($this->container['payment_method'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'payment_method', must be one of '%s'",
-                $this->container['payment_method'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'payment_method', must be one of '%s'",
+                    $this->container['payment_method'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
+            throw new AssertionException("'items' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -446,17 +436,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPurchaseOrderType(?string $purchase_order_type) : self
     {
-        $allowedValues = $this->getPurchaseOrderTypeAllowableValues();
-
-        if (null !== $purchase_order_type && !\in_array($purchase_order_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'purchase_order_type', must be one of '%s'",
-                    $purchase_order_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['purchase_order_type'] = $purchase_order_type;
 
         return $this;
@@ -517,17 +496,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPaymentMethod(?string $payment_method) : self
     {
-        $allowedValues = $this->getPaymentMethodAllowableValues();
-
-        if (null !== $payment_method && !\in_array($payment_method, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'payment_method', must be one of '%s'",
-                    $payment_method,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['payment_method'] = $payment_method;
 
         return $this;

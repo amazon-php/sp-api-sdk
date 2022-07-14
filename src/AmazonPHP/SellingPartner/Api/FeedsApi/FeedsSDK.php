@@ -358,6 +358,8 @@ final class FeedsSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/feeds/2021-06-30/feeds';
         $formParams = [];
         $queryParams = [];
@@ -544,6 +546,8 @@ final class FeedsSDK
                 'Missing the required parameter $body when calling createFeedDocument'
             );
         }
+
+        $body->validate();
 
         $resourcePath = '/feeds/2021-06-30/documents';
         $formParams = [];

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Services;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,38 +195,23 @@ class AppointmentTime implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['start_time'] === null) {
-            $invalidProperties[] = "'start_time' can't be null";
+            throw new AssertionException("'start_time' can't be null");
         }
 
         if ($this->container['duration_in_minutes'] === null) {
-            $invalidProperties[] = "'duration_in_minutes' can't be null";
+            throw new AssertionException("'duration_in_minutes' can't be null");
         }
 
         if (($this->container['duration_in_minutes'] < 1)) {
-            $invalidProperties[] = "invalid value for 'duration_in_minutes', must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'duration_in_minutes', must be bigger than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -265,10 +251,6 @@ class AppointmentTime implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setDurationInMinutes(int $duration_in_minutes) : self
     {
-        if (($duration_in_minutes < 1)) {
-            throw new \InvalidArgumentException('invalid value for $duration_in_minutes when calling AppointmentTime., must be bigger than or equal to 1.');
-        }
-
         $this->container['duration_in_minutes'] = $duration_in_minutes;
 
         return $this;

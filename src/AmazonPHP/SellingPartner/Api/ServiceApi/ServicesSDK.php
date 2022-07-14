@@ -192,6 +192,8 @@ final class ServicesSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointments';
         $formParams = [];
         $queryParams = [];
@@ -1367,6 +1369,8 @@ final class ServicesSDK
                 'Missing the required parameter $body when calling rescheduleAppointmentForServiceJobByServiceJobId'
             );
         }
+
+        $body->validate();
 
         $resourcePath = '/service/v1/serviceJobs/{serviceJobId}/appointments/{appointmentId}';
         $formParams = [];

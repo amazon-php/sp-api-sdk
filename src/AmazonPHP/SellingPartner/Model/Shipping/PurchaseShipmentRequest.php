@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -224,50 +225,39 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['client_reference_id'] === null) {
-            $invalidProperties[] = "'client_reference_id' can't be null";
+            throw new AssertionException("'client_reference_id' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['client_reference_id']) > 40)) {
+            throw new AssertionException("invalid value for 'client_reference_id', the character length must be smaller than or equal to 40.");
         }
 
         if ($this->container['ship_to'] === null) {
-            $invalidProperties[] = "'ship_to' can't be null";
+            throw new AssertionException("'ship_to' can't be null");
         }
 
         if ($this->container['ship_from'] === null) {
-            $invalidProperties[] = "'ship_from' can't be null";
+            throw new AssertionException("'ship_from' can't be null");
         }
 
         if ($this->container['service_type'] === null) {
-            $invalidProperties[] = "'service_type' can't be null";
+            throw new AssertionException("'service_type' can't be null");
         }
 
         if ($this->container['containers'] === null) {
-            $invalidProperties[] = "'containers' can't be null";
+            throw new AssertionException("'containers' can't be null");
         }
 
         if ($this->container['label_specification'] === null) {
-            $invalidProperties[] = "'label_specification' can't be null";
+            throw new AssertionException("'label_specification' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

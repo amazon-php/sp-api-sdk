@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,38 +201,35 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['upload_destination_id'] === null) {
-            $invalidProperties[] = "'upload_destination_id' can't be null";
+            throw new AssertionException("'upload_destination_id' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['upload_destination_id']) < 1)) {
+            throw new AssertionException("invalid value for 'upload_destination_id', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['image_crop_specification'] === null) {
-            $invalidProperties[] = "'image_crop_specification' can't be null";
+            throw new AssertionException("'image_crop_specification' can't be null");
         }
 
         if ($this->container['alt_text'] === null) {
-            $invalidProperties[] = "'alt_text' can't be null";
+            throw new AssertionException("'alt_text' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        if ((\mb_strlen($this->container['alt_text']) > 100)) {
+            throw new AssertionException("invalid value for 'alt_text', the character length must be smaller than or equal to 100.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ((\mb_strlen($this->container['alt_text']) < 1)) {
+            throw new AssertionException("invalid value for 'alt_text', the character length must be bigger than or equal to 1.");
+        }
     }
 
     /**

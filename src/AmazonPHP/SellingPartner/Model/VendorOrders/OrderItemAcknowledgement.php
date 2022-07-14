@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -252,52 +253,41 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['acknowledgement_code'] === null) {
-            $invalidProperties[] = "'acknowledgement_code' can't be null";
+            throw new AssertionException("'acknowledgement_code' can't be null");
         }
         $allowedValues = $this->getAcknowledgementCodeAllowableValues();
 
         if (null !== $this->container['acknowledgement_code'] && !\in_array($this->container['acknowledgement_code'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'acknowledgement_code', must be one of '%s'",
-                $this->container['acknowledgement_code'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'acknowledgement_code', must be one of '%s'",
+                    $this->container['acknowledgement_code'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['acknowledged_quantity'] === null) {
-            $invalidProperties[] = "'acknowledged_quantity' can't be null";
+            throw new AssertionException("'acknowledged_quantity' can't be null");
         }
         $allowedValues = $this->getRejectionReasonAllowableValues();
 
         if (null !== $this->container['rejection_reason'] && !\in_array($this->container['rejection_reason'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'rejection_reason', must be one of '%s'",
-                $this->container['rejection_reason'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'rejection_reason', must be one of '%s'",
+                    $this->container['rejection_reason'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -315,17 +305,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
      */
     public function setAcknowledgementCode(string $acknowledgement_code) : self
     {
-        $allowedValues = $this->getAcknowledgementCodeAllowableValues();
-
-        if (!\in_array($acknowledgement_code, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'acknowledgement_code', must be one of '%s'",
-                    $acknowledgement_code,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['acknowledgement_code'] = $acknowledgement_code;
 
         return $this;
@@ -410,17 +389,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
      */
     public function setRejectionReason(?string $rejection_reason) : self
     {
-        $allowedValues = $this->getRejectionReasonAllowableValues();
-
-        if (null !== $rejection_reason && !\in_array($rejection_reason, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'rejection_reason', must be one of '%s'",
-                    $rejection_reason,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['rejection_reason'] = $rejection_reason;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -222,52 +223,41 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['label_format'] === null) {
-            $invalidProperties[] = "'label_format' can't be null";
+            throw new AssertionException("'label_format' can't be null");
         }
         $allowedValues = $this->getLabelFormatAllowableValues();
 
         if (null !== $this->container['label_format'] && !\in_array($this->container['label_format'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'label_format', must be one of '%s'",
-                $this->container['label_format'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'label_format', must be one of '%s'",
+                    $this->container['label_format'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['label_stock_size'] === null) {
-            $invalidProperties[] = "'label_stock_size' can't be null";
+            throw new AssertionException("'label_stock_size' can't be null");
         }
         $allowedValues = $this->getLabelStockSizeAllowableValues();
 
         if (null !== $this->container['label_stock_size'] && !\in_array($this->container['label_stock_size'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'label_stock_size', must be one of '%s'",
-                $this->container['label_stock_size'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'label_stock_size', must be one of '%s'",
+                    $this->container['label_stock_size'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -285,17 +275,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function setLabelFormat(string $label_format) : self
     {
-        $allowedValues = $this->getLabelFormatAllowableValues();
-
-        if (!\in_array($label_format, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'label_format', must be one of '%s'",
-                    $label_format,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['label_format'] = $label_format;
 
         return $this;
@@ -316,17 +295,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function setLabelStockSize(string $label_stock_size) : self
     {
-        $allowedValues = $this->getLabelStockSizeAllowableValues();
-
-        if (!\in_array($label_stock_size, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'label_stock_size', must be one of '%s'",
-                    $label_stock_size,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['label_stock_size'] = $label_stock_size;
 
         return $this;

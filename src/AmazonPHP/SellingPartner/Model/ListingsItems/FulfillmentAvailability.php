@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ListingsItems;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,34 +195,19 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['fulfillment_channel_code'] === null) {
-            $invalidProperties[] = "'fulfillment_channel_code' can't be null";
+            throw new AssertionException("'fulfillment_channel_code' can't be null");
         }
 
         if (null !== $this->container['quantity'] && ($this->container['quantity'] < 0)) {
-            $invalidProperties[] = "invalid value for 'quantity', must be bigger than or equal to 0.";
+            throw new AssertionException("invalid value for 'quantity', must be bigger than or equal to 0.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -259,10 +245,6 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
      */
     public function setQuantity(?int $quantity) : self
     {
-        if (null !== $quantity && ($quantity < 0)) {
-            throw new \InvalidArgumentException('invalid value for $quantity when calling FulfillmentAvailability., must be bigger than or equal to 0.');
-        }
-
         $this->container['quantity'] = $quantity;
 
         return $this;

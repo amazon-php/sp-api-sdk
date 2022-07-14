@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,42 +213,35 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['seller_return_item_id'] === null) {
-            $invalidProperties[] = "'seller_return_item_id' can't be null";
+            throw new AssertionException("'seller_return_item_id' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['seller_return_item_id']) > 80)) {
+            throw new AssertionException("invalid value for 'seller_return_item_id', the character length must be smaller than or equal to 80.");
         }
 
         if ($this->container['seller_fulfillment_order_item_id'] === null) {
-            $invalidProperties[] = "'seller_fulfillment_order_item_id' can't be null";
+            throw new AssertionException("'seller_fulfillment_order_item_id' can't be null");
         }
 
         if ($this->container['amazon_shipment_id'] === null) {
-            $invalidProperties[] = "'amazon_shipment_id' can't be null";
+            throw new AssertionException("'amazon_shipment_id' can't be null");
         }
 
         if ($this->container['return_reason_code'] === null) {
-            $invalidProperties[] = "'return_reason_code' can't be null";
+            throw new AssertionException("'return_reason_code' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['return_comment'] && (\mb_strlen($this->container['return_comment']) > 1000)) {
+            throw new AssertionException("invalid value for 'return_comment', the character length must be smaller than or equal to 1000.");
+        }
     }
 
     /**

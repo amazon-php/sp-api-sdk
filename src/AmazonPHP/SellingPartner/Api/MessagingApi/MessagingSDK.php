@@ -220,6 +220,8 @@ final class MessagingSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/confirmCustomizationDetails';
         $formParams = [];
         $queryParams = [];
@@ -672,6 +674,8 @@ final class MessagingSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/confirmDeliveryDetails';
         $formParams = [];
         $queryParams = [];
@@ -897,6 +901,8 @@ final class MessagingSDK
                 'Missing the required parameter $body when calling createConfirmOrderDetails'
             );
         }
+
+        $body->validate();
 
         $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/confirmOrderDetails';
         $formParams = [];
@@ -1124,6 +1130,8 @@ final class MessagingSDK
             );
         }
 
+        $body->validate();
+
         $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/confirmServiceDetails';
         $formParams = [];
         $queryParams = [];
@@ -1349,6 +1357,8 @@ final class MessagingSDK
                 'Missing the required parameter $body when calling createDigitalAccessKey'
             );
         }
+
+        $body->validate();
 
         $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/digitalAccessKey';
         $formParams = [];
@@ -2010,6 +2020,8 @@ final class MessagingSDK
                 'Missing the required parameter $body when calling createUnexpectedProblem'
             );
         }
+
+        $body->validate();
 
         $resourcePath = '/messaging/v1/orders/{amazonOrderId}/messages/unexpectedProblem';
         $formParams = [];

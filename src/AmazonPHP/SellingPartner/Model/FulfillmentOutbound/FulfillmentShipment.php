@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -253,51 +254,38 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['amazon_shipment_id'] === null) {
-            $invalidProperties[] = "'amazon_shipment_id' can't be null";
+            throw new AssertionException("'amazon_shipment_id' can't be null");
         }
 
         if ($this->container['fulfillment_center_id'] === null) {
-            $invalidProperties[] = "'fulfillment_center_id' can't be null";
+            throw new AssertionException("'fulfillment_center_id' can't be null");
         }
 
         if ($this->container['fulfillment_shipment_status'] === null) {
-            $invalidProperties[] = "'fulfillment_shipment_status' can't be null";
+            throw new AssertionException("'fulfillment_shipment_status' can't be null");
         }
         $allowedValues = $this->getFulfillmentShipmentStatusAllowableValues();
 
         if (null !== $this->container['fulfillment_shipment_status'] && !\in_array($this->container['fulfillment_shipment_status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'fulfillment_shipment_status', must be one of '%s'",
-                $this->container['fulfillment_shipment_status'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'fulfillment_shipment_status', must be one of '%s'",
+                    $this->container['fulfillment_shipment_status'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['fulfillment_shipment_item'] === null) {
-            $invalidProperties[] = "'fulfillment_shipment_item' can't be null";
+            throw new AssertionException("'fulfillment_shipment_item' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -355,17 +343,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function setFulfillmentShipmentStatus(string $fulfillment_shipment_status) : self
     {
-        $allowedValues = $this->getFulfillmentShipmentStatusAllowableValues();
-
-        if (!\in_array($fulfillment_shipment_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'fulfillment_shipment_status', must be one of '%s'",
-                    $fulfillment_shipment_status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['fulfillment_shipment_status'] = $fulfillment_shipment_status;
 
         return $this;

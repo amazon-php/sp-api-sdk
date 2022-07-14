@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,34 +201,31 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+            throw new AssertionException("'code' can't be null");
+        }
+
+        if ((\mb_strlen($this->container['code']) < 1)) {
+            throw new AssertionException("invalid value for 'code', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+            throw new AssertionException("'message' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        if ((\mb_strlen($this->container['message']) < 1)) {
+            throw new AssertionException("invalid value for 'message', the character length must be bigger than or equal to 1.");
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if (null !== $this->container['details'] && (\mb_strlen($this->container['details']) < 1)) {
+            throw new AssertionException("invalid value for 'details', the character length must be bigger than or equal to 1.");
+        }
     }
 
     /**

@@ -1692,6 +1692,8 @@ final class OrdersSDK
             );
         }
 
+        $payload->validate();
+
         $resourcePath = '/orders/v0/orders/{orderId}/regulatedInfo';
         $formParams = [];
         $queryParams = [];

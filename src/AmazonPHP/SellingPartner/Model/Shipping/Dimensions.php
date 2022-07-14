@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -223,51 +224,38 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['length'] === null) {
-            $invalidProperties[] = "'length' can't be null";
+            throw new AssertionException("'length' can't be null");
         }
 
         if ($this->container['width'] === null) {
-            $invalidProperties[] = "'width' can't be null";
+            throw new AssertionException("'width' can't be null");
         }
 
         if ($this->container['height'] === null) {
-            $invalidProperties[] = "'height' can't be null";
+            throw new AssertionException("'height' can't be null");
         }
 
         if ($this->container['unit'] === null) {
-            $invalidProperties[] = "'unit' can't be null";
+            throw new AssertionException("'unit' can't be null");
         }
         $allowedValues = $this->getUnitAllowableValues();
 
         if (null !== $this->container['unit'] && !\in_array($this->container['unit'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'unit', must be one of '%s'",
-                $this->container['unit'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'unit', must be one of '%s'",
+                    $this->container['unit'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -345,17 +333,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setUnit(string $unit) : self
     {
-        $allowedValues = $this->getUnitAllowableValues();
-
-        if (!\in_array($unit, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'unit', must be one of '%s'",
-                    $unit,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['unit'] = $unit;
 
         return $this;

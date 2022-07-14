@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Orders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,34 +201,19 @@ class OrderItemsBuyerInfoList implements \ArrayAccess, \JsonSerializable, ModelI
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['order_items'] === null) {
-            $invalidProperties[] = "'order_items' can't be null";
+            throw new AssertionException("'order_items' can't be null");
         }
 
         if ($this->container['amazon_order_id'] === null) {
-            $invalidProperties[] = "'amazon_order_id' can't be null";
+            throw new AssertionException("'amazon_order_id' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

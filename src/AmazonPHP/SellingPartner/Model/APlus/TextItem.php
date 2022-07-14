@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,42 +195,27 @@ class TextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['position'] === null) {
-            $invalidProperties[] = "'position' can't be null";
+            throw new AssertionException("'position' can't be null");
         }
 
         if (($this->container['position'] > 100)) {
-            $invalidProperties[] = "invalid value for 'position', must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'position', must be smaller than or equal to 100.");
         }
 
         if (($this->container['position'] < 1)) {
-            $invalidProperties[] = "invalid value for 'position', must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'position', must be bigger than or equal to 1.");
         }
 
         if ($this->container['text'] === null) {
-            $invalidProperties[] = "'text' can't be null";
+            throw new AssertionException("'text' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -247,14 +233,6 @@ class TextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPosition(int $position) : self
     {
-        if (($position > 100)) {
-            throw new \InvalidArgumentException('invalid value for $position when calling TextItem., must be smaller than or equal to 100.');
-        }
-
-        if (($position < 1)) {
-            throw new \InvalidArgumentException('invalid value for $position when calling TextItem., must be bigger than or equal to 1.');
-        }
-
         $this->container['position'] = $position;
 
         return $this;

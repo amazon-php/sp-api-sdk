@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -218,46 +219,43 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['position'] === null) {
-            $invalidProperties[] = "'position' can't be null";
+            throw new AssertionException("'position' can't be null");
         }
 
         if (($this->container['position'] > 6)) {
-            $invalidProperties[] = "invalid value for 'position', must be smaller than or equal to 6.";
+            throw new AssertionException("invalid value for 'position', must be smaller than or equal to 6.");
         }
 
         if (($this->container['position'] < 1)) {
-            $invalidProperties[] = "invalid value for 'position', must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'position', must be bigger than or equal to 1.");
+        }
+
+        if (null !== $this->container['title'] && (\mb_strlen($this->container['title']) > 80)) {
+            throw new AssertionException("invalid value for 'title', the character length must be smaller than or equal to 80.");
+        }
+
+        if (null !== $this->container['title'] && (\mb_strlen($this->container['title']) < 1)) {
+            throw new AssertionException("invalid value for 'title', the character length must be bigger than or equal to 1.");
+        }
+
+        if (null !== $this->container['asin'] && (\mb_strlen($this->container['asin']) < 10)) {
+            throw new AssertionException("invalid value for 'asin', the character length must be bigger than or equal to 10.");
         }
 
         if (null !== $this->container['metrics'] && (\count($this->container['metrics']) > 10)) {
-            $invalidProperties[] = "invalid value for 'metrics', number of items must be less than or equal to 10.";
+            throw new AssertionException("invalid value for 'metrics', number of items must be less than or equal to 10.");
         }
 
         if (null !== $this->container['metrics'] && (\count($this->container['metrics']) < 0)) {
-            $invalidProperties[] = "invalid value for 'metrics', number of items must be greater than or equal to 0.";
+            throw new AssertionException("invalid value for 'metrics', number of items must be greater than or equal to 0.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -275,14 +273,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
      */
     public function setPosition(int $position) : self
     {
-        if (($position > 6)) {
-            throw new \InvalidArgumentException('invalid value for $position when calling StandardComparisonProductBlock., must be smaller than or equal to 6.');
-        }
-
-        if (($position < 1)) {
-            throw new \InvalidArgumentException('invalid value for $position when calling StandardComparisonProductBlock., must be bigger than or equal to 1.');
-        }
-
         $this->container['position'] = $position;
 
         return $this;
@@ -385,13 +375,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
      */
     public function setMetrics(?array $metrics) : self
     {
-        if (null !== $metrics && (\count($metrics) > 10)) {
-            throw new \InvalidArgumentException('invalid value for $metrics when calling StandardComparisonProductBlock., number of items must be less than or equal to 10.');
-        }
-
-        if (null !== $metrics && (\count($metrics) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $metrics when calling StandardComparisonProductBlock., number of items must be greater than or equal to 0.');
-        }
         $this->container['metrics'] = $metrics;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\MerchantFulfillment;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,34 +195,19 @@ class AvailableCarrierWillPickUpOption implements \ArrayAccess, \JsonSerializabl
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['carrier_will_pick_up_option'] === null) {
-            $invalidProperties[] = "'carrier_will_pick_up_option' can't be null";
+            throw new AssertionException("'carrier_will_pick_up_option' can't be null");
         }
 
         if ($this->container['charge'] === null) {
-            $invalidProperties[] = "'charge' can't be null";
+            throw new AssertionException("'charge' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\MerchantFulfillment;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,34 +213,23 @@ class Label implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
+        if (null !== $this->container['custom_text_for_label'] && (\mb_strlen($this->container['custom_text_for_label']) > 14)) {
+            throw new AssertionException("invalid value for 'custom_text_for_label', the character length must be smaller than or equal to 14.");
+        }
 
         if ($this->container['dimensions'] === null) {
-            $invalidProperties[] = "'dimensions' can't be null";
+            throw new AssertionException("'dimensions' can't be null");
         }
 
         if ($this->container['file_contents'] === null) {
-            $invalidProperties[] = "'file_contents' can't be null";
+            throw new AssertionException("'file_contents' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
