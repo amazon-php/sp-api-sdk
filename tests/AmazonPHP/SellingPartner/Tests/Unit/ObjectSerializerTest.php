@@ -186,5 +186,15 @@ JSON;
 
         yield [new \stdClass(), "object", []];
         yield [(object) ["value" => "test"], "object", ["value" => "test"]];
+
+        yield ['test', "mixed", 'test'];
+        yield [5, "mixed", 5];
+        yield [new \stdClass(), "mixed", new \stdClass()];
+        yield [true, "mixed", true];
+        yield [["value" => "test"], "mixed", ["value" => "test"]];
+
+        yield [null, "void", null];
+        yield ["test", "void", null];
+        yield [20, "void", null];
     }
 }
