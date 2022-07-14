@@ -28,6 +28,8 @@ final class Configuration
 
     private Extensions $extensions;
 
+    private bool $sandbox = false;
+
     public function __construct(
         string $lwaClientID,
         string $lwaClientSecret,
@@ -91,11 +93,11 @@ final class Configuration
 
         switch ($awsRegion) {
             case Regions::EUROPE:
-                return Regions::EUROPE_URL;
+                return $this->sandbox ? Regions::EUROPE_SANDBOX_URL : Regions::EUROPE_URL;
             case Regions::FAR_EAST:
-                return Regions::FAR_EAST_URL;
+                return $this->sandbox ? Regions::FAR_EAST_SANDBOX_URL : Regions::FAR_EAST_URL;
             case Regions::NORTH_AMERICA:
-                return Regions::NORTH_AMERICA_URL;
+                return $this->sandbox ? Regions::NORTH_AMERICA_SANDBOX_URL : Regions::NORTH_AMERICA_URL;
 
             default:
                 throw new \RuntimeException('unknown region');
@@ -110,14 +112,14 @@ final class Configuration
 
         switch ($awsRegion) {
             case Regions::EUROPE:
-                return Regions::EUROPE_HOST;
+                return $this->sandbox ? Regions::EUROPE_SANDBOX_HOST : Regions::EUROPE_HOST;
             case Regions::FAR_EAST:
-                return Regions::FAR_EAST_HOST;
+                return $this->sandbox ? Regions::FAR_EAST_SANDBOX_HOST : Regions::FAR_EAST_HOST;
             case Regions::NORTH_AMERICA:
-                return Regions::NORTH_AMERICA_HOST;
+                return $this->sandbox ? Regions::NORTH_AMERICA_SANDBOX_HOST : Regions::NORTH_AMERICA_HOST;
 
             default:
-                throw new \RuntimeException('unknown region');
+                throw new \RuntimeException('Unknown region: ' . $awsRegion);
         }
     }
 
@@ -238,5 +240,24 @@ final class Configuration
     public function extensions() : Extensions
     {
         return $this->extensions;
+    }
+
+    public function isSandbox() : bool
+    {
+        return $this->sandbox;
+    }
+
+    public function setSandbox() : self
+    {
+        $this->sandbox = true;
+
+        return $this;
+    }
+
+    public function setProduction() : self
+    {
+        $this->sandbox = false;
+
+        return $this;
     }
 }
