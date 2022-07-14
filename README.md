@@ -317,3 +317,18 @@ $configuration->registerExtension(new class implements \AmazonPHP\SellingPartner
     }
 });
 ```
+
+### Sandbox
+
+Sandbox mode can be turned on using configuration:
+```php
+$configuration->setSandbox();
+```
+
+Some APIs endpoints are covered in functional tests. 
+To run tests that are using sandbox mode, you need to create `.env` file and populate it with your credentials:
+```
+cp .env.dist .env
+```
+
+Then you can enter `composer test:functional` te execute sandbox test suite.
