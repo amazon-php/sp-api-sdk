@@ -1,4 +1,7 @@
-## [Unreleased] - 2022-07-13
+## [Unreleased] - 2022-07-14
+
+### Added
+- [#212](https://github.com/amazon-php/sp-api-sdk/pull/212) - **Possibility to send request against sandbox - dynamic/static** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
 - [#209](https://github.com/amazon-php/sp-api-sdk/pull/209) - **Disabled validation for enums in fulfillment outbound api** - [@owsiakl](https://github.com/owsiakl)
