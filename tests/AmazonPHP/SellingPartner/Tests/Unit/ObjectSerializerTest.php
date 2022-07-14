@@ -125,4 +125,66 @@ JSON;
             $object
         );
     }
+
+    /**
+     * @dataProvider data
+     *
+     * @param mixed $data
+     * @param mixed $expectedValue
+     */
+    public function test_deserialize_various_types($data, string $class, $expectedValue)
+    {
+        $result = ObjectSerializer::deserialize(
+            Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
+            $data,
+            $class
+        );
+
+        $this->assertEquals($expectedValue, $result);
+    }
+
+    public function data() : \Generator
+    {
+        yield ["2022-07-14", "\DateTime", new \DateTime("2022-07-14")];
+        yield ["2022-07-02T16:28:10", "\DateTimeImmutable", new \DateTimeImmutable("2022-07-02T16:28:10")];
+
+        yield [false, "bool", false];
+        yield [true, "boolean", true];
+        yield ["false", "boolean", false];
+        yield ["true", "boolean", true];
+        yield ["0", "boolean", false];
+        yield ["1", "boolean", true];
+        yield [0, "bool", false];
+        yield [1, "bool", true];
+        yield ["", "bool", false];
+
+        yield ["8.99", "double", 8.99];
+        yield [21.84, "double", 21.84];
+        yield [5, "double", 5.0];
+
+        yield ["8.99", "float", 8.99];
+        yield [21.84, "float", 21.84];
+        yield [5, "float", 5.0];
+
+        yield [1, "int", 1];
+        yield ["2", "int", 2];
+        yield ["5.55", "int", 5];
+
+        yield [1, "integer", 1];
+        yield ["2", "integer", 2];
+        yield ["5.55", "integer", 5];
+
+        yield ["10", "number", 10];
+        yield ["10.99", "number", 10.99];
+        yield [18, "number", 18];
+        yield [356.88, "number", 356.88];
+
+        yield ["test", "string", "test"];
+        yield [123, "string", "123"];
+        yield [56.56, "string", "56.56"];
+        yield [true, "string", "1"];
+
+        yield [new \stdClass(), "object", []];
+        yield [(object) ["value" => "test"], "object", ["value" => "test"]];
+    }
 }

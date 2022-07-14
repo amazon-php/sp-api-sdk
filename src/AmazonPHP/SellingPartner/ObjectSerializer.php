@@ -292,12 +292,6 @@ final class ObjectSerializer
             return $deserialized;
         }
 
-        if ($class === 'object') {
-            \settype($data, 'array');
-
-            return $data;
-        }
-
         if ($class === '\DateTime' || $class === '\DateTimeImmutable') {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return
@@ -320,11 +314,27 @@ final class ObjectSerializer
             }
         }
 
-        /** @psalm-suppress ParadoxicalCondition */
-        if (\in_array($class, ['DateTime', 'DateTimeImmutable', 'bool', 'boolean', 'byte', 'double', 'float', 'int', 'integer', 'mixed', 'number', 'object', 'string', 'void'], true)) {
-            \settype($data, $class);
-
-            return $data;
+        switch ($class) {
+            case 'bool':
+            case 'boolean':
+                return \filter_var($data, FILTER_VALIDATE_BOOLEAN, FILTER_NULL_ON_FAILURE);
+            case 'double':
+            case 'float':
+                return (float) $data;
+            case 'int':
+            case 'integer':
+                return (int) $data;
+            case 'number':
+                return +$data;
+            case 'byte':
+            case 'string':
+                return (string) $data;
+            case 'object':
+                return (array) $data;
+            case 'mixed':
+                return $data;
+            case 'void':
+                return;
         }
 
         if ($class === '\SplFileObject') {
