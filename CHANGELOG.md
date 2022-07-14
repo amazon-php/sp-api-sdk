@@ -1,6 +1,7 @@
 ## [Unreleased] - 2022-07-14
 
 ### Added
+- [#214](https://github.com/amazon-php/sp-api-sdk/pull/214) - **Added new `validate` method to the models** - [@owsiakl](https://github.com/owsiakl)
 - [#213](https://github.com/amazon-php/sp-api-sdk/pull/213) - **Added sandboxed functional tests & readme** - [@owsiakl](https://github.com/owsiakl)
 - [#212](https://github.com/amazon-php/sp-api-sdk/pull/212) - **Possibility to send request against sandbox - dynamic/static** - [@norberttech](https://github.com/norberttech)
 
@@ -9,6 +10,11 @@
 
 ### Fixed
 - [#211](https://github.com/amazon-php/sp-api-sdk/pull/211) - **Fixed casting simple value types** - [@owsiakl](https://github.com/owsiakl)
+
+### Removed
+- [#214](https://github.com/amazon-php/sp-api-sdk/pull/214) - **Removed constraints from all models setters methods** - [@owsiakl](https://github.com/owsiakl)
+- [#214](https://github.com/amazon-php/sp-api-sdk/pull/214) - **Removed model `listInvalidProperties` method** - [@owsiakl](https://github.com/owsiakl)
+- [#214](https://github.com/amazon-php/sp-api-sdk/pull/214) - **Removed model `valid` method** - [@owsiakl](https://github.com/owsiakl)
 
 ## [4.0.6] - 2022-06-23
 
