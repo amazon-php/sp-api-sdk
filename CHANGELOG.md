@@ -1,6 +1,7 @@
 ## [Unreleased] - 2022-07-14
 
 ### Added
+- [#213](https://github.com/amazon-php/sp-api-sdk/pull/213) - **Added sandboxed functional tests & readme** - [@owsiakl](https://github.com/owsiakl)
 - [#212](https://github.com/amazon-php/sp-api-sdk/pull/212) - **Possibility to send request against sandbox - dynamic/static** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
