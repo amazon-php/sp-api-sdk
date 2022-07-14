@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\Model\Reports\Report;
 
 final class ReportsApiTest extends SandboxTestCase
 {
-    public function test_sandbox_get_marketplace_participations() : void
+    public function test_sandbox_get_reports() : void
     {
         $marketplace = Marketplace::US();
 
