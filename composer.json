@@ -28,7 +28,8 @@
         "nyholm/psr7": "^1.4",
         "kriswallsmith/buzz": "^1.2",
         "symfony/var-dumper": "^5.2",
-        "monolog/monolog": "^2.2"
+        "monolog/monolog": "^2.2",
+        "symfony/dotenv": "^5.4"
     },
     "autoload": {
         "psr-4": { "AmazonPHP\\" : "src/AmazonPHP/" }
@@ -56,7 +57,13 @@
             "tools/vendor/bin/php-cs-fixer fix --dry-run"
         ],
         "test": [
-            "tools/vendor/bin/phpunit"
+            "@test:unit"
+        ],
+        "test:unit": [
+            "tools/vendor/bin/phpunit --testsuite unit"
+        ],
+        "test:functional": [
+            "tools/vendor/bin/phpunit --testsuite functional"
         ],
         "rector:process": [
             "Composer\\Config::disableProcessTimeout",

@@ -2,7 +2,7 @@
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
          colors="true"
-         bootstrap="vendor/autoload.php"
+         bootstrap="tests/bootstrap.php"
          cacheResultFile="var/phpunit/.result.cache"
 >
   <coverage>
@@ -14,6 +14,9 @@
   <testsuites>
     <testsuite name="unit">
       <directory suffix="">tests/AmazonPHP/SellingPartner/Tests/Unit</directory>
+    </testsuite>
+    <testsuite name="functional">
+      <directory suffix="">tests/AmazonPHP/SellingPartner/Tests/Functional</directory>
     </testsuite>
   </testsuites>
 </phpunit>
