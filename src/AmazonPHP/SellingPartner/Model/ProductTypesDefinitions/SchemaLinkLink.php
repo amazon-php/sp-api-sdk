@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductTypesDefinitions;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -208,43 +209,31 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['resource'] === null) {
-            $invalidProperties[] = "'resource' can't be null";
+            throw new AssertionException("'resource' can't be null");
         }
 
         if ($this->container['verb'] === null) {
-            $invalidProperties[] = "'verb' can't be null";
+            throw new AssertionException("'verb' can't be null");
         }
+
         $allowedValues = $this->getVerbAllowableValues();
 
         if (null !== $this->container['verb'] && !\in_array($this->container['verb'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'verb', must be one of '%s'",
-                $this->container['verb'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'verb', must be one of '%s'",
+                    $this->container['verb'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -282,17 +271,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setVerb(string $verb) : self
     {
-        $allowedValues = $this->getVerbAllowableValues();
-
-        if (!\in_array($verb, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'verb', must be one of '%s'",
-                    $verb,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['verb'] = $verb;
 
         return $this;

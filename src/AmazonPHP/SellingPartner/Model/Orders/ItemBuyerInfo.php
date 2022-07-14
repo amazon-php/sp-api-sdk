@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Orders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,24 +213,23 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        return [];
-    }
+        if ($this->container['buyer_customized_info'] !== null) {
+            $this->container['buyer_customized_info']->validate();
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['gift_wrap_price'] !== null) {
+            $this->container['gift_wrap_price']->validate();
+        }
+
+        if ($this->container['gift_wrap_tax'] !== null) {
+            $this->container['gift_wrap_tax']->validate();
+        }
     }
 
     /**

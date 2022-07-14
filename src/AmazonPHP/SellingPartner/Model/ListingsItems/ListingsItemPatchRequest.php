@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ListingsItems;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,38 +195,23 @@ class ListingsItemPatchRequest implements \ArrayAccess, \JsonSerializable, Model
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['product_type'] === null) {
-            $invalidProperties[] = "'product_type' can't be null";
+            throw new AssertionException("'product_type' can't be null");
         }
 
         if ($this->container['patches'] === null) {
-            $invalidProperties[] = "'patches' can't be null";
+            throw new AssertionException("'patches' can't be null");
         }
 
         if ((\count($this->container['patches']) < 1)) {
-            $invalidProperties[] = "invalid value for 'patches', number of items must be greater than or equal to 1.";
+            throw new AssertionException("invalid value for 'patches', number of items must be greater than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -265,9 +251,6 @@ class ListingsItemPatchRequest implements \ArrayAccess, \JsonSerializable, Model
      */
     public function setPatches(array $patches) : self
     {
-        if ((\count($patches) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $patches when calling ListingsItemPatchRequest., number of items must be greater than or equal to 1.');
-        }
         $this->container['patches'] = $patches;
 
         return $this;

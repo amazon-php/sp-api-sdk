@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -224,46 +225,33 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['shipment_name'] === null) {
-            $invalidProperties[] = "'shipment_name' can't be null";
+            throw new AssertionException("'shipment_name' can't be null");
         }
 
         if ($this->container['ship_from_address'] === null) {
-            $invalidProperties[] = "'ship_from_address' can't be null";
+            throw new AssertionException("'ship_from_address' can't be null");
         }
 
+        $this->container['ship_from_address']->validate();
+
         if ($this->container['destination_fulfillment_center_id'] === null) {
-            $invalidProperties[] = "'destination_fulfillment_center_id' can't be null";
+            throw new AssertionException("'destination_fulfillment_center_id' can't be null");
         }
 
         if ($this->container['shipment_status'] === null) {
-            $invalidProperties[] = "'shipment_status' can't be null";
+            throw new AssertionException("'shipment_status' can't be null");
         }
 
         if ($this->container['label_prep_preference'] === null) {
-            $invalidProperties[] = "'label_prep_preference' can't be null";
+            throw new AssertionException("'label_prep_preference' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

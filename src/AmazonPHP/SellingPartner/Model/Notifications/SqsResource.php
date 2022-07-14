@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Notifications;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -188,38 +189,23 @@ class SqsResource implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['arn'] === null) {
-            $invalidProperties[] = "'arn' can't be null";
+            throw new AssertionException("'arn' can't be null");
         }
 
         if ((\mb_strlen($this->container['arn']) > 1000)) {
-            $invalidProperties[] = "invalid value for 'arn', the character length must be smaller than or equal to 1000.";
+            throw new AssertionException("invalid value for 'arn', the character length must be smaller than or equal to 1000.");
         }
 
         if (!\preg_match('/^arn:aws:sqs:\\S+:\\S+:\\S+/', $this->container['arn'])) {
-            $invalidProperties[] = "invalid value for 'arn', must be conform to the pattern /^arn:aws:sqs:\\S+:\\S+:\\S+/.";
+            throw new AssertionException("invalid value for 'arn', must be conform to the pattern /^arn:aws:sqs:\\S+:\\S+:\\S+/.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -237,14 +223,6 @@ class SqsResource implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setArn(string $arn) : self
     {
-        if ((\mb_strlen($arn) > 1000)) {
-            throw new \InvalidArgumentException('invalid length for $arn when calling SqsResource., must be smaller than or equal to 1000.');
-        }
-
-        if ((!\preg_match('/^arn:aws:sqs:\\S+:\\S+:\\S+/', $arn))) {
-            throw new \InvalidArgumentException("invalid value for {$arn} when calling SqsResource., must conform to the pattern /^arn:aws:sqs:\\S+:\\S+:\\S+/.");
-        }
-
         $this->container['arn'] = $arn;
 
         return $this;

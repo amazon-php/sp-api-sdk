@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Services;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -235,44 +236,35 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
+        if ($this->container['appointment_time'] !== null) {
+            $this->container['appointment_time']->validate();
+        }
 
         if (null !== $this->container['technicians'] && (\count($this->container['technicians']) < 1)) {
-            $invalidProperties[] = "invalid value for 'technicians', number of items must be greater than or equal to 1.";
+            throw new AssertionException("invalid value for 'technicians', number of items must be greater than or equal to 1.");
         }
 
         if (null !== $this->container['uploading_technician'] && !\preg_match('/^[A-Z0-9]*$/', $this->container['uploading_technician'])) {
-            $invalidProperties[] = "invalid value for 'uploading_technician', must be conform to the pattern /^[A-Z0-9]*$/.";
+            throw new AssertionException("invalid value for 'uploading_technician', must be conform to the pattern /^[A-Z0-9]*$/.");
         }
 
         $allowedValues = $this->getPoaTypeAllowableValues();
 
         if (null !== $this->container['poa_type'] && !\in_array($this->container['poa_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'poa_type', must be one of '%s'",
-                $this->container['poa_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'poa_type', must be one of '%s'",
+                    $this->container['poa_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -312,9 +304,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setTechnicians(?array $technicians) : self
     {
-        if (null !== $technicians && (\count($technicians) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $technicians when calling Poa., number of items must be greater than or equal to 1.');
-        }
         $this->container['technicians'] = $technicians;
 
         return $this;
@@ -335,10 +324,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setUploadingTechnician(?string $uploading_technician) : self
     {
-        if (null !== $uploading_technician && (!\preg_match('/^[A-Z0-9]*$/', $uploading_technician))) {
-            throw new \InvalidArgumentException("invalid value for {$uploading_technician} when calling Poa., must conform to the pattern /^[A-Z0-9]*$/.");
-        }
-
         $this->container['uploading_technician'] = $uploading_technician;
 
         return $this;
@@ -381,17 +366,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPoaType(?string $poa_type) : self
     {
-        $allowedValues = $this->getPoaTypeAllowableValues();
-
-        if (null !== $poa_type && !\in_array($poa_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'poa_type', must be one of '%s'",
-                    $poa_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['poa_type'] = $poa_type;
 
         return $this;

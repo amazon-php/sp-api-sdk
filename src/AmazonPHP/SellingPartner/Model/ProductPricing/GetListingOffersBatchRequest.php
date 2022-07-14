@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -188,34 +189,19 @@ class GetListingOffersBatchRequest implements \ArrayAccess, \JsonSerializable, M
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['requests'] && (\count($this->container['requests']) > 20)) {
-            $invalidProperties[] = "invalid value for 'requests', number of items must be less than or equal to 20.";
+            throw new AssertionException("invalid value for 'requests', number of items must be less than or equal to 20.");
         }
 
         if (null !== $this->container['requests'] && (\count($this->container['requests']) < 1)) {
-            $invalidProperties[] = "invalid value for 'requests', number of items must be greater than or equal to 1.";
+            throw new AssertionException("invalid value for 'requests', number of items must be greater than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -235,13 +221,6 @@ class GetListingOffersBatchRequest implements \ArrayAccess, \JsonSerializable, M
      */
     public function setRequests(?array $requests) : self
     {
-        if (null !== $requests && (\count($requests) > 20)) {
-            throw new \InvalidArgumentException('invalid value for $requests when calling GetListingOffersBatchRequest., number of items must be less than or equal to 20.');
-        }
-
-        if (null !== $requests && (\count($requests) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $requests when calling GetListingOffersBatchRequest., number of items must be greater than or equal to 1.');
-        }
         $this->container['requests'] = $requests;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -266,46 +267,43 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['seller_sku'] === null) {
-            $invalidProperties[] = "'seller_sku' can't be null";
+            throw new AssertionException("'seller_sku' can't be null");
         }
 
         if ($this->container['seller_fulfillment_order_item_id'] === null) {
-            $invalidProperties[] = "'seller_fulfillment_order_item_id' can't be null";
+            throw new AssertionException("'seller_fulfillment_order_item_id' can't be null");
         }
 
         if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
+            throw new AssertionException("'quantity' can't be null");
         }
 
         if ($this->container['cancelled_quantity'] === null) {
-            $invalidProperties[] = "'cancelled_quantity' can't be null";
+            throw new AssertionException("'cancelled_quantity' can't be null");
         }
 
         if ($this->container['unfulfillable_quantity'] === null) {
-            $invalidProperties[] = "'unfulfillable_quantity' can't be null";
+            throw new AssertionException("'unfulfillable_quantity' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        if ($this->container['per_unit_price'] !== null) {
+            $this->container['per_unit_price']->validate();
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['per_unit_tax'] !== null) {
+            $this->container['per_unit_tax']->validate();
+        }
+
+        if ($this->container['per_unit_declared_value'] !== null) {
+            $this->container['per_unit_declared_value']->validate();
+        }
     }
 
     /**

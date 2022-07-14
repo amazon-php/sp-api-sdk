@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -248,50 +249,35 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['seller_return_item_id'] === null) {
-            $invalidProperties[] = "'seller_return_item_id' can't be null";
+            throw new AssertionException("'seller_return_item_id' can't be null");
         }
 
         if ($this->container['seller_fulfillment_order_item_id'] === null) {
-            $invalidProperties[] = "'seller_fulfillment_order_item_id' can't be null";
+            throw new AssertionException("'seller_fulfillment_order_item_id' can't be null");
         }
 
         if ($this->container['amazon_shipment_id'] === null) {
-            $invalidProperties[] = "'amazon_shipment_id' can't be null";
+            throw new AssertionException("'amazon_shipment_id' can't be null");
         }
 
         if ($this->container['seller_return_reason_code'] === null) {
-            $invalidProperties[] = "'seller_return_reason_code' can't be null";
+            throw new AssertionException("'seller_return_reason_code' can't be null");
         }
 
         if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+            throw new AssertionException("'status' can't be null");
         }
 
         if ($this->container['status_changed_date'] === null) {
-            $invalidProperties[] = "'status_changed_date' can't be null";
+            throw new AssertionException("'status_changed_date' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

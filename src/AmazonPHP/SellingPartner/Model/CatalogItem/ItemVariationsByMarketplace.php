@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\CatalogItem;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -217,47 +218,35 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ($this->container['asins'] === null) {
-            $invalidProperties[] = "'asins' can't be null";
+            throw new AssertionException("'asins' can't be null");
         }
 
         if ($this->container['variation_type'] === null) {
-            $invalidProperties[] = "'variation_type' can't be null";
+            throw new AssertionException("'variation_type' can't be null");
         }
+
         $allowedValues = $this->getVariationTypeAllowableValues();
 
         if (null !== $this->container['variation_type'] && !\in_array($this->container['variation_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'variation_type', must be one of '%s'",
-                $this->container['variation_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'variation_type', must be one of '%s'",
+                    $this->container['variation_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -317,17 +306,6 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function setVariationType(string $variation_type) : self
     {
-        $allowedValues = $this->getVariationTypeAllowableValues();
-
-        if (!\in_array($variation_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'variation_type', must be one of '%s'",
-                    $variation_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['variation_type'] = $variation_type;
 
         return $this;

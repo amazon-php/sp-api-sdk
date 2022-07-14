@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -265,67 +266,69 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['customer_order_number'] === null) {
-            $invalidProperties[] = "'customer_order_number' can't be null";
+            throw new AssertionException("'customer_order_number' can't be null");
         }
 
         if ($this->container['order_date'] === null) {
-            $invalidProperties[] = "'order_date' can't be null";
+            throw new AssertionException("'order_date' can't be null");
         }
+
         $allowedValues = $this->getOrderStatusAllowableValues();
 
         if (null !== $this->container['order_status'] && !\in_array($this->container['order_status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'order_status', must be one of '%s'",
-                $this->container['order_status'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'order_status', must be one of '%s'",
+                    $this->container['order_status'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['shipment_details'] === null) {
-            $invalidProperties[] = "'shipment_details' can't be null";
+            throw new AssertionException("'shipment_details' can't be null");
+        }
+
+        $this->container['shipment_details']->validate();
+
+        if ($this->container['tax_total'] !== null) {
+            $this->container['tax_total']->validate();
         }
 
         if ($this->container['selling_party'] === null) {
-            $invalidProperties[] = "'selling_party' can't be null";
+            throw new AssertionException("'selling_party' can't be null");
         }
+
+        $this->container['selling_party']->validate();
 
         if ($this->container['ship_from_party'] === null) {
-            $invalidProperties[] = "'ship_from_party' can't be null";
+            throw new AssertionException("'ship_from_party' can't be null");
         }
+
+        $this->container['ship_from_party']->validate();
 
         if ($this->container['ship_to_party'] === null) {
-            $invalidProperties[] = "'ship_to_party' can't be null";
+            throw new AssertionException("'ship_to_party' can't be null");
         }
+
+        $this->container['ship_to_party']->validate();
 
         if ($this->container['bill_to_party'] === null) {
-            $invalidProperties[] = "'bill_to_party' can't be null";
+            throw new AssertionException("'bill_to_party' can't be null");
         }
+
+        $this->container['bill_to_party']->validate();
 
         if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
+            throw new AssertionException("'items' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -385,17 +388,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setOrderStatus(?string $order_status) : self
     {
-        $allowedValues = $this->getOrderStatusAllowableValues();
-
-        if (null !== $order_status && !\in_array($order_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'order_status', must be one of '%s'",
-                    $order_status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['order_status'] = $order_status;
 
         return $this;

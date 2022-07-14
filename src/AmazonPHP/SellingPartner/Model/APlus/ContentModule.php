@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -278,30 +279,75 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['content_module_type'] === null) {
-            $invalidProperties[] = "'content_module_type' can't be null";
+            throw new AssertionException("'content_module_type' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        if ($this->container['standard_company_logo'] !== null) {
+            $this->container['standard_company_logo']->validate();
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['standard_comparison_table'] !== null) {
+            $this->container['standard_comparison_table']->validate();
+        }
+
+        if ($this->container['standard_four_image_text'] !== null) {
+            $this->container['standard_four_image_text']->validate();
+        }
+
+        if ($this->container['standard_four_image_text_quadrant'] !== null) {
+            $this->container['standard_four_image_text_quadrant']->validate();
+        }
+
+        if ($this->container['standard_header_image_text'] !== null) {
+            $this->container['standard_header_image_text']->validate();
+        }
+
+        if ($this->container['standard_image_sidebar'] !== null) {
+            $this->container['standard_image_sidebar']->validate();
+        }
+
+        if ($this->container['standard_image_text_overlay'] !== null) {
+            $this->container['standard_image_text_overlay']->validate();
+        }
+
+        if ($this->container['standard_multiple_image_text'] !== null) {
+            $this->container['standard_multiple_image_text']->validate();
+        }
+
+        if ($this->container['standard_product_description'] !== null) {
+            $this->container['standard_product_description']->validate();
+        }
+
+        if ($this->container['standard_single_image_highlights'] !== null) {
+            $this->container['standard_single_image_highlights']->validate();
+        }
+
+        if ($this->container['standard_single_image_specs_detail'] !== null) {
+            $this->container['standard_single_image_specs_detail']->validate();
+        }
+
+        if ($this->container['standard_single_side_image'] !== null) {
+            $this->container['standard_single_side_image']->validate();
+        }
+
+        if ($this->container['standard_tech_specs'] !== null) {
+            $this->container['standard_tech_specs']->validate();
+        }
+
+        if ($this->container['standard_text'] !== null) {
+            $this->container['standard_text']->validate();
+        }
+
+        if ($this->container['standard_three_image_text'] !== null) {
+            $this->container['standard_three_image_text']->validate();
+        }
     }
 
     /**

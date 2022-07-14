@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,42 +207,29 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['shipment_id'] === null) {
-            $invalidProperties[] = "'shipment_id' can't be null";
+            throw new AssertionException("'shipment_id' can't be null");
         }
 
         if (null !== $this->container['client_reference_id'] && (\mb_strlen($this->container['client_reference_id']) > 40)) {
-            $invalidProperties[] = "invalid value for 'client_reference_id', the character length must be smaller than or equal to 40.";
+            throw new AssertionException("invalid value for 'client_reference_id', the character length must be smaller than or equal to 40.");
         }
 
         if ($this->container['accepted_rate'] === null) {
-            $invalidProperties[] = "'accepted_rate' can't be null";
+            throw new AssertionException("'accepted_rate' can't be null");
         }
+
+        $this->container['accepted_rate']->validate();
 
         if ($this->container['label_results'] === null) {
-            $invalidProperties[] = "'label_results' can't be null";
+            throw new AssertionException("'label_results' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -279,10 +267,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function setClientReferenceId(?string $client_reference_id) : self
     {
-        if (null !== $client_reference_id && (\mb_strlen($client_reference_id) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $client_reference_id when calling PurchaseLabelsResult., must be smaller than or equal to 40.');
-        }
-
         $this->container['client_reference_id'] = $client_reference_id;
 
         return $this;

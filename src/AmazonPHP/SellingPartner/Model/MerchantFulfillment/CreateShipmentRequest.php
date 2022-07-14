@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\MerchantFulfillment;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -218,34 +219,25 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['shipment_request_details'] === null) {
-            $invalidProperties[] = "'shipment_request_details' can't be null";
+            throw new AssertionException("'shipment_request_details' can't be null");
         }
+
+        $this->container['shipment_request_details']->validate();
 
         if ($this->container['shipping_service_id'] === null) {
-            $invalidProperties[] = "'shipping_service_id' can't be null";
+            throw new AssertionException("'shipping_service_id' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['label_format_option'] !== null) {
+            $this->container['label_format_option']->validate();
+        }
     }
 
     /**

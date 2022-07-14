@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Finances;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -236,38 +237,37 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
+        if ($this->container['base_expense'] !== null) {
+            $this->container['base_expense']->validate();
+        }
 
         if ($this->container['tax_type_cgst'] === null) {
-            $invalidProperties[] = "'tax_type_cgst' can't be null";
+            throw new AssertionException("'tax_type_cgst' can't be null");
         }
+
+        $this->container['tax_type_cgst']->validate();
 
         if ($this->container['tax_type_sgst'] === null) {
-            $invalidProperties[] = "'tax_type_sgst' can't be null";
+            throw new AssertionException("'tax_type_sgst' can't be null");
         }
+
+        $this->container['tax_type_sgst']->validate();
 
         if ($this->container['tax_type_igst'] === null) {
-            $invalidProperties[] = "'tax_type_igst' can't be null";
+            throw new AssertionException("'tax_type_igst' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        $this->container['tax_type_igst']->validate();
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['total_expense'] !== null) {
+            $this->container['total_expense']->validate();
+        }
     }
 
     /**

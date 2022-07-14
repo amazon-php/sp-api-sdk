@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,50 +207,35 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['offset'] && ($this->container['offset'] > 10000)) {
-            $invalidProperties[] = "invalid value for 'offset', must be smaller than or equal to 10000.";
+            throw new AssertionException("invalid value for 'offset', must be smaller than or equal to 10000.");
         }
 
         if (null !== $this->container['offset'] && ($this->container['offset'] < 0)) {
-            $invalidProperties[] = "invalid value for 'offset', must be bigger than or equal to 0.";
+            throw new AssertionException("invalid value for 'offset', must be bigger than or equal to 0.");
         }
 
         if (null !== $this->container['length'] && ($this->container['length'] > 10000)) {
-            $invalidProperties[] = "invalid value for 'length', must be smaller than or equal to 10000.";
+            throw new AssertionException("invalid value for 'length', must be smaller than or equal to 10000.");
         }
 
         if (null !== $this->container['length'] && ($this->container['length'] < 0)) {
-            $invalidProperties[] = "invalid value for 'length', must be bigger than or equal to 0.";
+            throw new AssertionException("invalid value for 'length', must be bigger than or equal to 0.");
         }
 
         if (null !== $this->container['depth'] && ($this->container['depth'] > 100)) {
-            $invalidProperties[] = "invalid value for 'depth', must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'depth', must be smaller than or equal to 100.");
         }
 
         if (null !== $this->container['depth'] && ($this->container['depth'] < 0)) {
-            $invalidProperties[] = "invalid value for 'depth', must be bigger than or equal to 0.";
+            throw new AssertionException("invalid value for 'depth', must be bigger than or equal to 0.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -287,14 +273,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setOffset(?int $offset) : self
     {
-        if (null !== $offset && ($offset > 10000)) {
-            throw new \InvalidArgumentException('invalid value for $offset when calling Decorator., must be smaller than or equal to 10000.');
-        }
-
-        if (null !== $offset && ($offset < 0)) {
-            throw new \InvalidArgumentException('invalid value for $offset when calling Decorator., must be bigger than or equal to 0.');
-        }
-
         $this->container['offset'] = $offset;
 
         return $this;
@@ -315,14 +293,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setLength(?int $length) : self
     {
-        if (null !== $length && ($length > 10000)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling Decorator., must be smaller than or equal to 10000.');
-        }
-
-        if (null !== $length && ($length < 0)) {
-            throw new \InvalidArgumentException('invalid value for $length when calling Decorator., must be bigger than or equal to 0.');
-        }
-
         $this->container['length'] = $length;
 
         return $this;
@@ -343,14 +313,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setDepth(?int $depth) : self
     {
-        if (null !== $depth && ($depth > 100)) {
-            throw new \InvalidArgumentException('invalid value for $depth when calling Decorator., must be smaller than or equal to 100.');
-        }
-
-        if (null !== $depth && ($depth < 0)) {
-            throw new \InvalidArgumentException('invalid value for $depth when calling Decorator., must be bigger than or equal to 0.');
-        }
-
         $this->container['depth'] = $depth;
 
         return $this;

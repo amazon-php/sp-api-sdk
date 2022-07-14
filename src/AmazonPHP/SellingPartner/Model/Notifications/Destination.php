@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Notifications;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,42 +201,29 @@ class Destination implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
         }
 
         if ((\mb_strlen($this->container['name']) > 256)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 256.";
+            throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 256.");
         }
 
         if ($this->container['destination_id'] === null) {
-            $invalidProperties[] = "'destination_id' can't be null";
+            throw new AssertionException("'destination_id' can't be null");
         }
 
         if ($this->container['resource'] === null) {
-            $invalidProperties[] = "'resource' can't be null";
+            throw new AssertionException("'resource' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['resource']->validate();
     }
 
     /**
@@ -253,10 +241,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 256)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Destination., must be smaller than or equal to 256.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;

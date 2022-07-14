@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\MerchantFulfillment;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,34 +195,21 @@ class AdditionalSellerInputs implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['additional_input_field_name'] === null) {
-            $invalidProperties[] = "'additional_input_field_name' can't be null";
+            throw new AssertionException("'additional_input_field_name' can't be null");
         }
 
         if ($this->container['additional_seller_input'] === null) {
-            $invalidProperties[] = "'additional_seller_input' can't be null";
+            throw new AssertionException("'additional_seller_input' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['additional_seller_input']->validate();
     }
 
     /**

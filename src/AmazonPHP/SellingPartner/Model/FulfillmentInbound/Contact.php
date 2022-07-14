@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,54 +207,39 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
         }
 
         if ((\mb_strlen($this->container['name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 50.";
+            throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 50.");
         }
 
         if ($this->container['phone'] === null) {
-            $invalidProperties[] = "'phone' can't be null";
+            throw new AssertionException("'phone' can't be null");
         }
 
         if ((\mb_strlen($this->container['phone']) > 20)) {
-            $invalidProperties[] = "invalid value for 'phone', the character length must be smaller than or equal to 20.";
+            throw new AssertionException("invalid value for 'phone', the character length must be smaller than or equal to 20.");
         }
 
         if ($this->container['email'] === null) {
-            $invalidProperties[] = "'email' can't be null";
+            throw new AssertionException("'email' can't be null");
         }
 
         if ((\mb_strlen($this->container['email']) > 50)) {
-            $invalidProperties[] = "invalid value for 'email', the character length must be smaller than or equal to 50.";
+            throw new AssertionException("invalid value for 'email', the character length must be smaller than or equal to 50.");
         }
 
         if (null !== $this->container['fax'] && (\mb_strlen($this->container['fax']) > 20)) {
-            $invalidProperties[] = "invalid value for 'fax', the character length must be smaller than or equal to 20.";
+            throw new AssertionException("invalid value for 'fax', the character length must be smaller than or equal to 20.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -271,10 +257,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling Contact., must be smaller than or equal to 50.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -295,10 +277,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPhone(string $phone) : self
     {
-        if ((\mb_strlen($phone) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $phone when calling Contact., must be smaller than or equal to 20.');
-        }
-
         $this->container['phone'] = $phone;
 
         return $this;
@@ -319,10 +297,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setEmail(string $email) : self
     {
-        if ((\mb_strlen($email) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $email when calling Contact., must be smaller than or equal to 50.');
-        }
-
         $this->container['email'] = $email;
 
         return $this;
@@ -343,10 +317,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setFax(?string $fax) : self
     {
-        if (null !== $fax && (\mb_strlen($fax) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $fax when calling Contact., must be smaller than or equal to 20.');
-        }
-
         $this->container['fax'] = $fax;
 
         return $this;

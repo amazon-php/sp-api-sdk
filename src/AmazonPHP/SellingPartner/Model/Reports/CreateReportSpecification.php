@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Reports;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,42 +213,27 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['report_type'] === null) {
-            $invalidProperties[] = "'report_type' can't be null";
+            throw new AssertionException("'report_type' can't be null");
         }
 
         if ($this->container['marketplace_ids'] === null) {
-            $invalidProperties[] = "'marketplace_ids' can't be null";
+            throw new AssertionException("'marketplace_ids' can't be null");
         }
 
         if ((\count($this->container['marketplace_ids']) > 25)) {
-            $invalidProperties[] = "invalid value for 'marketplace_ids', number of items must be less than or equal to 25.";
+            throw new AssertionException("invalid value for 'marketplace_ids', number of items must be less than or equal to 25.");
         }
 
         if ((\count($this->container['marketplace_ids']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplace_ids', number of items must be greater than or equal to 1.";
+            throw new AssertionException("invalid value for 'marketplace_ids', number of items must be greater than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -353,13 +339,6 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function setMarketplaceIds(array $marketplace_ids) : self
     {
-        if ((\count($marketplace_ids) > 25)) {
-            throw new \InvalidArgumentException('invalid value for $marketplace_ids when calling CreateReportSpecification., number of items must be less than or equal to 25.');
-        }
-
-        if ((\count($marketplace_ids) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_ids when calling CreateReportSpecification., number of items must be greater than or equal to 1.');
-        }
         $this->container['marketplace_ids'] = $marketplace_ids;
 
         return $this;

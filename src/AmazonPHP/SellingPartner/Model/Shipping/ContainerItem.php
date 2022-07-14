@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,46 +207,35 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['quantity'] === null) {
-            $invalidProperties[] = "'quantity' can't be null";
+            throw new AssertionException("'quantity' can't be null");
         }
 
         if ($this->container['unit_price'] === null) {
-            $invalidProperties[] = "'unit_price' can't be null";
+            throw new AssertionException("'unit_price' can't be null");
         }
+
+        $this->container['unit_price']->validate();
 
         if ($this->container['unit_weight'] === null) {
-            $invalidProperties[] = "'unit_weight' can't be null";
+            throw new AssertionException("'unit_weight' can't be null");
         }
 
+        $this->container['unit_weight']->validate();
+
         if ($this->container['title'] === null) {
-            $invalidProperties[] = "'title' can't be null";
+            throw new AssertionException("'title' can't be null");
         }
 
         if ((\mb_strlen($this->container['title']) > 30)) {
-            $invalidProperties[] = "invalid value for 'title', the character length must be smaller than or equal to 30.";
+            throw new AssertionException("invalid value for 'title', the character length must be smaller than or equal to 30.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -323,10 +313,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setTitle(string $title) : self
     {
-        if ((\mb_strlen($title) > 30)) {
-            throw new \InvalidArgumentException('invalid length for $title when calling ContainerItem., must be smaller than or equal to 30.');
-        }
-
         $this->container['title'] = $title;
 
         return $this;

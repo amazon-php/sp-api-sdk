@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FBASmallAndLight;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -217,43 +218,33 @@ class FeeLineItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['fee_type'] === null) {
-            $invalidProperties[] = "'fee_type' can't be null";
+            throw new AssertionException("'fee_type' can't be null");
         }
+
         $allowedValues = $this->getFeeTypeAllowableValues();
 
         if (null !== $this->container['fee_type'] && !\in_array($this->container['fee_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'fee_type', must be one of '%s'",
-                $this->container['fee_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'fee_type', must be one of '%s'",
+                    $this->container['fee_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['fee_charge'] === null) {
-            $invalidProperties[] = "'fee_charge' can't be null";
+            throw new AssertionException("'fee_charge' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['fee_charge']->validate();
     }
 
     /**
@@ -271,17 +262,6 @@ class FeeLineItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setFeeType(string $fee_type) : self
     {
-        $allowedValues = $this->getFeeTypeAllowableValues();
-
-        if (!\in_array($fee_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'fee_type', must be one of '%s'",
-                    $fee_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['fee_type'] = $fee_type;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,42 +207,29 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['event_date'] === null) {
-            $invalidProperties[] = "'event_date' can't be null";
+            throw new AssertionException("'event_date' can't be null");
         }
 
         if ($this->container['event_address'] === null) {
-            $invalidProperties[] = "'event_address' can't be null";
+            throw new AssertionException("'event_address' can't be null");
         }
 
+        $this->container['event_address']->validate();
+
         if ($this->container['event_code'] === null) {
-            $invalidProperties[] = "'event_code' can't be null";
+            throw new AssertionException("'event_code' can't be null");
         }
 
         if ($this->container['event_description'] === null) {
-            $invalidProperties[] = "'event_description' can't be null";
+            throw new AssertionException("'event_description' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductFees;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,38 +213,25 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ($this->container['price_to_estimate_fees'] === null) {
-            $invalidProperties[] = "'price_to_estimate_fees' can't be null";
+            throw new AssertionException("'price_to_estimate_fees' can't be null");
         }
+
+        $this->container['price_to_estimate_fees']->validate();
 
         if ($this->container['identifier'] === null) {
-            $invalidProperties[] = "'identifier' can't be null";
+            throw new AssertionException("'identifier' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -238,39 +239,33 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['tax_amount'] === null) {
-            $invalidProperties[] = "'tax_amount' can't be null";
+            throw new AssertionException("'tax_amount' can't be null");
         }
+
+        $this->container['tax_amount']->validate();
+
+        if ($this->container['taxable_amount'] !== null) {
+            $this->container['taxable_amount']->validate();
+        }
+
         $allowedValues = $this->getTypeAllowableValues();
 
         if (null !== $this->container['type'] && !\in_array($this->container['type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'type', must be one of '%s'",
-                $this->container['type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'type', must be one of '%s'",
+                    $this->container['type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -348,17 +343,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setType(?string $type) : self
     {
-        $allowedValues = $this->getTypeAllowableValues();
-
-        if (null !== $type && !\in_array($type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'type', must be one of '%s'",
-                    $type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['type'] = $type;
 
         return $this;

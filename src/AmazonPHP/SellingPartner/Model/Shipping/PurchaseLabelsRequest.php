@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,34 +195,21 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['rate_id'] === null) {
-            $invalidProperties[] = "'rate_id' can't be null";
+            throw new AssertionException("'rate_id' can't be null");
         }
 
         if ($this->container['label_specification'] === null) {
-            $invalidProperties[] = "'label_specification' can't be null";
+            throw new AssertionException("'label_specification' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['label_specification']->validate();
     }
 
     /**

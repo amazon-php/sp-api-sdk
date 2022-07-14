@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FBASmallAndLight;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,38 +195,23 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
+            throw new AssertionException("'items' can't be null");
         }
 
         if ((\count($this->container['items']) > 25)) {
-            $invalidProperties[] = "invalid value for 'items', number of items must be less than or equal to 25.";
+            throw new AssertionException("invalid value for 'items', number of items must be less than or equal to 25.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -265,9 +251,6 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
      */
     public function setItems(array $items) : self
     {
-        if ((\count($items) > 25)) {
-            throw new \InvalidArgumentException('invalid value for $items when calling SmallAndLightFeePreviewRequest., number of items must be less than or equal to 25.');
-        }
         $this->container['items'] = $items;
 
         return $this;

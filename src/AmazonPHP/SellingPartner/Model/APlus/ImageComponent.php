@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,50 +201,37 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['upload_destination_id'] === null) {
-            $invalidProperties[] = "'upload_destination_id' can't be null";
+            throw new AssertionException("'upload_destination_id' can't be null");
         }
 
         if ((\mb_strlen($this->container['upload_destination_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'upload_destination_id', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'upload_destination_id', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['image_crop_specification'] === null) {
-            $invalidProperties[] = "'image_crop_specification' can't be null";
+            throw new AssertionException("'image_crop_specification' can't be null");
         }
 
+        $this->container['image_crop_specification']->validate();
+
         if ($this->container['alt_text'] === null) {
-            $invalidProperties[] = "'alt_text' can't be null";
+            throw new AssertionException("'alt_text' can't be null");
         }
 
         if ((\mb_strlen($this->container['alt_text']) > 100)) {
-            $invalidProperties[] = "invalid value for 'alt_text', the character length must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'alt_text', the character length must be smaller than or equal to 100.");
         }
 
         if ((\mb_strlen($this->container['alt_text']) < 1)) {
-            $invalidProperties[] = "invalid value for 'alt_text', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'alt_text', the character length must be bigger than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -261,10 +249,6 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setUploadDestinationId(string $upload_destination_id) : self
     {
-        if ((\mb_strlen($upload_destination_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $upload_destination_id when calling ImageComponent., must be bigger than or equal to 1.');
-        }
-
         $this->container['upload_destination_id'] = $upload_destination_id;
 
         return $this;
@@ -305,14 +289,6 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAltText(string $alt_text) : self
     {
-        if ((\mb_strlen($alt_text) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $alt_text when calling ImageComponent., must be smaller than or equal to 100.');
-        }
-
-        if ((\mb_strlen($alt_text) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $alt_text when calling ImageComponent., must be bigger than or equal to 1.');
-        }
-
         $this->container['alt_text'] = $alt_text;
 
         return $this;

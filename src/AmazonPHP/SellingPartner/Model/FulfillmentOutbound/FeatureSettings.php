@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -211,36 +212,23 @@ class FeatureSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
 
         if (null !== $this->container['feature_fulfillment_policy'] && !\in_array($this->container['feature_fulfillment_policy'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
-                $this->container['feature_fulfillment_policy'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
+                    $this->container['feature_fulfillment_policy'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -278,17 +266,6 @@ class FeatureSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setFeatureFulfillmentPolicy(?string $feature_fulfillment_policy) : self
     {
-        $allowedValues = $this->getFeatureFulfillmentPolicyAllowableValues();
-
-        if (null !== $feature_fulfillment_policy && !\in_array($feature_fulfillment_policy, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'feature_fulfillment_policy', must be one of '%s'",
-                    $feature_fulfillment_policy,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['feature_fulfillment_policy'] = $feature_fulfillment_policy;
 
         return $this;

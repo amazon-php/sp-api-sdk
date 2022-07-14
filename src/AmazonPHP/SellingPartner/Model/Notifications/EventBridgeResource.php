@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Notifications;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,42 +201,27 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
         }
 
         if ((\mb_strlen($this->container['name']) > 256)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 256.";
+            throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 256.");
         }
 
         if ($this->container['region'] === null) {
-            $invalidProperties[] = "'region' can't be null";
+            throw new AssertionException("'region' can't be null");
         }
 
         if ($this->container['account_id'] === null) {
-            $invalidProperties[] = "'account_id' can't be null";
+            throw new AssertionException("'account_id' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -253,10 +239,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 256)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling EventBridgeResource., must be smaller than or equal to 256.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;

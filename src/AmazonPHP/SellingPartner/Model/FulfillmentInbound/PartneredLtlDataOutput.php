@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -272,70 +273,71 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['contact'] === null) {
-            $invalidProperties[] = "'contact' can't be null";
+            throw new AssertionException("'contact' can't be null");
         }
 
+        $this->container['contact']->validate();
+
         if ($this->container['box_count'] === null) {
-            $invalidProperties[] = "'box_count' can't be null";
+            throw new AssertionException("'box_count' can't be null");
         }
 
         if ($this->container['freight_ready_date'] === null) {
-            $invalidProperties[] = "'freight_ready_date' can't be null";
+            throw new AssertionException("'freight_ready_date' can't be null");
         }
 
         if ($this->container['pallet_list'] === null) {
-            $invalidProperties[] = "'pallet_list' can't be null";
+            throw new AssertionException("'pallet_list' can't be null");
         }
 
         if ($this->container['total_weight'] === null) {
-            $invalidProperties[] = "'total_weight' can't be null";
+            throw new AssertionException("'total_weight' can't be null");
+        }
+
+        $this->container['total_weight']->validate();
+
+        if ($this->container['seller_declared_value'] !== null) {
+            $this->container['seller_declared_value']->validate();
+        }
+
+        if ($this->container['amazon_calculated_value'] !== null) {
+            $this->container['amazon_calculated_value']->validate();
         }
 
         if ($this->container['preview_pickup_date'] === null) {
-            $invalidProperties[] = "'preview_pickup_date' can't be null";
+            throw new AssertionException("'preview_pickup_date' can't be null");
         }
 
         if ($this->container['preview_delivery_date'] === null) {
-            $invalidProperties[] = "'preview_delivery_date' can't be null";
+            throw new AssertionException("'preview_delivery_date' can't be null");
         }
 
         if ($this->container['preview_freight_class'] === null) {
-            $invalidProperties[] = "'preview_freight_class' can't be null";
+            throw new AssertionException("'preview_freight_class' can't be null");
         }
 
         if ($this->container['amazon_reference_id'] === null) {
-            $invalidProperties[] = "'amazon_reference_id' can't be null";
+            throw new AssertionException("'amazon_reference_id' can't be null");
         }
 
         if ($this->container['is_bill_of_lading_available'] === null) {
-            $invalidProperties[] = "'is_bill_of_lading_available' can't be null";
+            throw new AssertionException("'is_bill_of_lading_available' can't be null");
+        }
+
+        if ($this->container['partnered_estimate'] !== null) {
+            $this->container['partnered_estimate']->validate();
         }
 
         if ($this->container['carrier_name'] === null) {
-            $invalidProperties[] = "'carrier_name' can't be null";
+            throw new AssertionException("'carrier_name' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

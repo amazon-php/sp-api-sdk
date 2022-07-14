@@ -2,6 +2,8 @@
 
 namespace AmazonPHP\SellingPartner;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
+
 interface ModelInterface
 {
     /**
@@ -32,9 +34,7 @@ interface ModelInterface
     public function getModelName() : string;
 
     /**
-     * @return mixed[]
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array;
-
-    public function valid() : bool;
+    public function validate() : void;
 }

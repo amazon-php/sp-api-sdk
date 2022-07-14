@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentOutbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,50 +201,35 @@ class TrackingAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['city'] === null) {
-            $invalidProperties[] = "'city' can't be null";
+            throw new AssertionException("'city' can't be null");
         }
 
         if ((\mb_strlen($this->container['city']) > 150)) {
-            $invalidProperties[] = "invalid value for 'city', the character length must be smaller than or equal to 150.";
+            throw new AssertionException("invalid value for 'city', the character length must be smaller than or equal to 150.");
         }
 
         if ($this->container['state'] === null) {
-            $invalidProperties[] = "'state' can't be null";
+            throw new AssertionException("'state' can't be null");
         }
 
         if ((\mb_strlen($this->container['state']) > 150)) {
-            $invalidProperties[] = "invalid value for 'state', the character length must be smaller than or equal to 150.";
+            throw new AssertionException("invalid value for 'state', the character length must be smaller than or equal to 150.");
         }
 
         if ($this->container['country'] === null) {
-            $invalidProperties[] = "'country' can't be null";
+            throw new AssertionException("'country' can't be null");
         }
 
         if ((\mb_strlen($this->container['country']) > 6)) {
-            $invalidProperties[] = "invalid value for 'country', the character length must be smaller than or equal to 6.";
+            throw new AssertionException("invalid value for 'country', the character length must be smaller than or equal to 6.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -261,10 +247,6 @@ class TrackingAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCity(string $city) : self
     {
-        if ((\mb_strlen($city) > 150)) {
-            throw new \InvalidArgumentException('invalid length for $city when calling TrackingAddress., must be smaller than or equal to 150.');
-        }
-
         $this->container['city'] = $city;
 
         return $this;
@@ -285,10 +267,6 @@ class TrackingAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setState(string $state) : self
     {
-        if ((\mb_strlen($state) > 150)) {
-            throw new \InvalidArgumentException('invalid length for $state when calling TrackingAddress., must be smaller than or equal to 150.');
-        }
-
         $this->container['state'] = $state;
 
         return $this;
@@ -309,10 +287,6 @@ class TrackingAddress implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCountry(string $country) : self
     {
-        if ((\mb_strlen($country) > 6)) {
-            throw new \InvalidArgumentException('invalid length for $country when calling TrackingAddress., must be smaller than or equal to 6.');
-        }
-
         $this->container['country'] = $country;
 
         return $this;

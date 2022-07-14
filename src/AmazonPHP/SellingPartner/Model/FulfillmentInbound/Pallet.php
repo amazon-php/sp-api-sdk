@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\FulfillmentInbound;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,34 +201,25 @@ class Pallet implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['dimensions'] === null) {
-            $invalidProperties[] = "'dimensions' can't be null";
+            throw new AssertionException("'dimensions' can't be null");
+        }
+
+        $this->container['dimensions']->validate();
+
+        if ($this->container['weight'] !== null) {
+            $this->container['weight']->validate();
         }
 
         if ($this->container['is_stacked'] === null) {
-            $invalidProperties[] = "'is_stacked' can't be null";
+            throw new AssertionException("'is_stacked' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

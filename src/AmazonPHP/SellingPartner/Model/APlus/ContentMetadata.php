@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,58 +213,43 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
         }
 
         if ((\mb_strlen($this->container['name']) > 100)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 100.");
         }
 
         if ((\mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'name', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ((\mb_strlen($this->container['marketplace_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'marketplace_id', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+            throw new AssertionException("'status' can't be null");
         }
 
         if ($this->container['badge_set'] === null) {
-            $invalidProperties[] = "'badge_set' can't be null";
+            throw new AssertionException("'badge_set' can't be null");
         }
 
         if ($this->container['update_time'] === null) {
-            $invalidProperties[] = "'update_time' can't be null";
+            throw new AssertionException("'update_time' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -281,14 +267,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentMetadata., must be smaller than or equal to 100.');
-        }
-
-        if ((\mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentMetadata., must be bigger than or equal to 1.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -309,10 +287,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
-        if ((\mb_strlen($marketplace_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $marketplace_id when calling ContentMetadata., must be bigger than or equal to 1.');
-        }
-
         $this->container['marketplace_id'] = $marketplace_id;
 
         return $this;

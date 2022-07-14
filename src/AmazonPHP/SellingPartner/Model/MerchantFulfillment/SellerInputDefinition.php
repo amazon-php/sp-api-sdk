@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\MerchantFulfillment;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -224,46 +225,33 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['is_required'] === null) {
-            $invalidProperties[] = "'is_required' can't be null";
+            throw new AssertionException("'is_required' can't be null");
         }
 
         if ($this->container['data_type'] === null) {
-            $invalidProperties[] = "'data_type' can't be null";
+            throw new AssertionException("'data_type' can't be null");
         }
 
         if ($this->container['constraints'] === null) {
-            $invalidProperties[] = "'constraints' can't be null";
+            throw new AssertionException("'constraints' can't be null");
         }
 
         if ($this->container['input_display_text'] === null) {
-            $invalidProperties[] = "'input_display_text' can't be null";
+            throw new AssertionException("'input_display_text' can't be null");
         }
 
         if ($this->container['stored_value'] === null) {
-            $invalidProperties[] = "'stored_value' can't be null";
+            throw new AssertionException("'stored_value' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['stored_value']->validate();
     }
 
     /**

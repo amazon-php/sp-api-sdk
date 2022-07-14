@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,50 +207,37 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['tracking_id'] === null) {
-            $invalidProperties[] = "'tracking_id' can't be null";
+            throw new AssertionException("'tracking_id' can't be null");
         }
 
         if ((\mb_strlen($this->container['tracking_id']) > 60)) {
-            $invalidProperties[] = "invalid value for 'tracking_id', the character length must be smaller than or equal to 60.";
+            throw new AssertionException("invalid value for 'tracking_id', the character length must be smaller than or equal to 60.");
         }
 
         if ((\mb_strlen($this->container['tracking_id']) < 1)) {
-            $invalidProperties[] = "invalid value for 'tracking_id', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'tracking_id', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['summary'] === null) {
-            $invalidProperties[] = "'summary' can't be null";
+            throw new AssertionException("'summary' can't be null");
         }
 
+        $this->container['summary']->validate();
+
         if ($this->container['promised_delivery_date'] === null) {
-            $invalidProperties[] = "'promised_delivery_date' can't be null";
+            throw new AssertionException("'promised_delivery_date' can't be null");
         }
 
         if ($this->container['event_history'] === null) {
-            $invalidProperties[] = "'event_history' can't be null";
+            throw new AssertionException("'event_history' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -267,14 +255,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function setTrackingId(string $tracking_id) : self
     {
-        if ((\mb_strlen($tracking_id) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $tracking_id when calling TrackingInformation., must be smaller than or equal to 60.');
-        }
-
-        if ((\mb_strlen($tracking_id) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $tracking_id when calling TrackingInformation., must be bigger than or equal to 1.');
-        }
-
         $this->container['tracking_id'] = $tracking_id;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -236,46 +237,41 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['condition'] === null) {
-            $invalidProperties[] = "'condition' can't be null";
+            throw new AssertionException("'condition' can't be null");
         }
 
         if ($this->container['fulfillment_channel'] === null) {
-            $invalidProperties[] = "'fulfillment_channel' can't be null";
+            throw new AssertionException("'fulfillment_channel' can't be null");
         }
 
         if ($this->container['landed_price'] === null) {
-            $invalidProperties[] = "'landed_price' can't be null";
+            throw new AssertionException("'landed_price' can't be null");
         }
+
+        $this->container['landed_price']->validate();
 
         if ($this->container['listing_price'] === null) {
-            $invalidProperties[] = "'listing_price' can't be null";
+            throw new AssertionException("'listing_price' can't be null");
         }
+
+        $this->container['listing_price']->validate();
 
         if ($this->container['shipping'] === null) {
-            $invalidProperties[] = "'shipping' can't be null";
+            throw new AssertionException("'shipping' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        $this->container['shipping']->validate();
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['points'] !== null) {
+            $this->container['points']->validate();
+        }
     }
 
     /**

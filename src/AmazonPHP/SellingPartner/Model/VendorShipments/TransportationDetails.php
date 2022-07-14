@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorShipments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -226,36 +227,23 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getTransportationModeAllowableValues();
 
         if (null !== $this->container['transportation_mode'] && !\in_array($this->container['transportation_mode'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'transportation_mode', must be one of '%s'",
-                $this->container['transportation_mode'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'transportation_mode', must be one of '%s'",
+                    $this->container['transportation_mode'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -313,17 +301,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function setTransportationMode(?string $transportation_mode) : self
     {
-        $allowedValues = $this->getTransportationModeAllowableValues();
-
-        if (null !== $transportation_mode && !\in_array($transportation_mode, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'transportation_mode', must be one of '%s'",
-                    $transportation_mode,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['transportation_mode'] = $transportation_mode;
 
         return $this;

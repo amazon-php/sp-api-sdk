@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -242,30 +243,27 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['total_offer_count'] === null) {
-            $invalidProperties[] = "'total_offer_count' can't be null";
+            throw new AssertionException("'total_offer_count' can't be null");
         }
 
-        return $invalidProperties;
-    }
+        if ($this->container['list_price'] !== null) {
+            $this->container['list_price']->validate();
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['competitive_price_threshold'] !== null) {
+            $this->container['competitive_price_threshold']->validate();
+        }
+
+        if ($this->container['suggested_lower_price_plus_shipping'] !== null) {
+            $this->container['suggested_lower_price_plus_shipping']->validate();
+        }
     }
 
     /**

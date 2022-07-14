@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Services;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -247,44 +248,35 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['order_id'] && (\mb_strlen($this->container['order_id']) > 20)) {
-            $invalidProperties[] = "invalid value for 'order_id', the character length must be smaller than or equal to 20.";
+            throw new AssertionException("invalid value for 'order_id', the character length must be smaller than or equal to 20.");
         }
 
         if (null !== $this->container['order_id'] && (\mb_strlen($this->container['order_id']) < 5)) {
-            $invalidProperties[] = "invalid value for 'order_id', the character length must be bigger than or equal to 5.";
+            throw new AssertionException("invalid value for 'order_id', the character length must be bigger than or equal to 5.");
         }
 
         $allowedValues = $this->getItemStatusAllowableValues();
 
         if (null !== $this->container['item_status'] && !\in_array($this->container['item_status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'item_status', must be one of '%s'",
-                $this->container['item_status'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'item_status', must be one of '%s'",
+                    $this->container['item_status'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['item_delivery'] !== null) {
+            $this->container['item_delivery']->validate();
+        }
     }
 
     /**
@@ -362,14 +354,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setOrderId(?string $order_id) : self
     {
-        if (null !== $order_id && (\mb_strlen($order_id) > 20)) {
-            throw new \InvalidArgumentException('invalid length for $order_id when calling AssociatedItem., must be smaller than or equal to 20.');
-        }
-
-        if (null !== $order_id && (\mb_strlen($order_id) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $order_id when calling AssociatedItem., must be bigger than or equal to 5.');
-        }
-
         $this->container['order_id'] = $order_id;
 
         return $this;
@@ -390,17 +374,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setItemStatus(?string $item_status) : self
     {
-        $allowedValues = $this->getItemStatusAllowableValues();
-
-        if (null !== $item_status && !\in_array($item_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'item_status', must be one of '%s'",
-                    $item_status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['item_status'] = $item_status;
 
         return $this;

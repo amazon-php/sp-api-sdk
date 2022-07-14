@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Notifications;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,30 +201,19 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
-        if ($this->container['event_filter_type'] === null) {
-            $invalidProperties[] = "'event_filter_type' can't be null";
+        if ($this->container['aggregation_settings'] !== null) {
+            $this->container['aggregation_settings']->validate();
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['event_filter_type'] === null) {
+            throw new AssertionException("'event_filter_type' can't be null");
+        }
     }
 
     /**

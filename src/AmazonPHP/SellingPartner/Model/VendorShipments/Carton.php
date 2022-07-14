@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorShipments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -218,34 +219,27 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['carton_sequence_number'] === null) {
-            $invalidProperties[] = "'carton_sequence_number' can't be null";
+            throw new AssertionException("'carton_sequence_number' can't be null");
+        }
+
+        if ($this->container['dimensions'] !== null) {
+            $this->container['dimensions']->validate();
+        }
+
+        if ($this->container['weight'] !== null) {
+            $this->container['weight']->validate();
         }
 
         if ($this->container['items'] === null) {
-            $invalidProperties[] = "'items' can't be null";
+            throw new AssertionException("'items' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -188,34 +189,19 @@ class TrackingSummary implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['status'] && (\mb_strlen($this->container['status']) > 60)) {
-            $invalidProperties[] = "invalid value for 'status', the character length must be smaller than or equal to 60.";
+            throw new AssertionException("invalid value for 'status', the character length must be smaller than or equal to 60.");
         }
 
         if (null !== $this->container['status'] && (\mb_strlen($this->container['status']) < 1)) {
-            $invalidProperties[] = "invalid value for 'status', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'status', the character length must be bigger than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -233,14 +219,6 @@ class TrackingSummary implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setStatus(?string $status) : self
     {
-        if (null !== $status && (\mb_strlen($status) > 60)) {
-            throw new \InvalidArgumentException('invalid length for $status when calling TrackingSummary., must be smaller than or equal to 60.');
-        }
-
-        if (null !== $status && (\mb_strlen($status) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $status when calling TrackingSummary., must be bigger than or equal to 1.');
-        }
-
         $this->container['status'] = $status;
 
         return $this;

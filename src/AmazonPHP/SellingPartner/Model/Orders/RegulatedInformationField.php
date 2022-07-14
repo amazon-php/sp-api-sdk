@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Orders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -223,51 +224,39 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, Mode
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['field_id'] === null) {
-            $invalidProperties[] = "'field_id' can't be null";
+            throw new AssertionException("'field_id' can't be null");
         }
 
         if ($this->container['field_label'] === null) {
-            $invalidProperties[] = "'field_label' can't be null";
+            throw new AssertionException("'field_label' can't be null");
         }
 
         if ($this->container['field_type'] === null) {
-            $invalidProperties[] = "'field_type' can't be null";
+            throw new AssertionException("'field_type' can't be null");
         }
+
         $allowedValues = $this->getFieldTypeAllowableValues();
 
         if (null !== $this->container['field_type'] && !\in_array($this->container['field_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'field_type', must be one of '%s'",
-                $this->container['field_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'field_type', must be one of '%s'",
+                    $this->container['field_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['field_value'] === null) {
-            $invalidProperties[] = "'field_value' can't be null";
+            throw new AssertionException("'field_value' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -325,17 +314,6 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, Mode
      */
     public function setFieldType(string $field_type) : self
     {
-        $allowedValues = $this->getFieldTypeAllowableValues();
-
-        if (!\in_array($field_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'field_type', must be one of '%s'",
-                    $field_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['field_type'] = $field_type;
 
         return $this;

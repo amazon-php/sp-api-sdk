@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,42 +207,31 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['purchase_order_number'] === null) {
-            $invalidProperties[] = "'purchase_order_number' can't be null";
+            throw new AssertionException("'purchase_order_number' can't be null");
         }
 
         if (!\preg_match('/^[a-zA-Z0-9]+$/', $this->container['purchase_order_number'])) {
-            $invalidProperties[] = "invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.";
+            throw new AssertionException("invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
 
         if ($this->container['selling_party'] === null) {
-            $invalidProperties[] = "'selling_party' can't be null";
+            throw new AssertionException("'selling_party' can't be null");
         }
+
+        $this->container['selling_party']->validate();
 
         if ($this->container['ship_from_party'] === null) {
-            $invalidProperties[] = "'ship_from_party' can't be null";
+            throw new AssertionException("'ship_from_party' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['ship_from_party']->validate();
     }
 
     /**
@@ -259,10 +249,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
-        if ((!\preg_match('/^[a-zA-Z0-9]+$/', $purchase_order_number))) {
-            throw new \InvalidArgumentException("invalid value for {$purchase_order_number} when calling ShippingLabelRequest., must conform to the pattern /^[a-zA-Z0-9]+$/.");
-        }
-
         $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;

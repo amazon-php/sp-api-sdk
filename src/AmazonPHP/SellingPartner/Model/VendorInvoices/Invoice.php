@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorInvoices;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -289,55 +290,63 @@ class Invoice implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['invoice_type'] === null) {
-            $invalidProperties[] = "'invoice_type' can't be null";
+            throw new AssertionException("'invoice_type' can't be null");
         }
+
         $allowedValues = $this->getInvoiceTypeAllowableValues();
 
         if (null !== $this->container['invoice_type'] && !\in_array($this->container['invoice_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'invoice_type', must be one of '%s'",
-                $this->container['invoice_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'invoice_type', must be one of '%s'",
+                    $this->container['invoice_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+            throw new AssertionException("'id' can't be null");
         }
 
         if ($this->container['date'] === null) {
-            $invalidProperties[] = "'date' can't be null";
+            throw new AssertionException("'date' can't be null");
         }
 
         if ($this->container['remit_to_party'] === null) {
-            $invalidProperties[] = "'remit_to_party' can't be null";
+            throw new AssertionException("'remit_to_party' can't be null");
+        }
+
+        $this->container['remit_to_party']->validate();
+
+        if ($this->container['ship_to_party'] !== null) {
+            $this->container['ship_to_party']->validate();
+        }
+
+        if ($this->container['ship_from_party'] !== null) {
+            $this->container['ship_from_party']->validate();
+        }
+
+        if ($this->container['bill_to_party'] !== null) {
+            $this->container['bill_to_party']->validate();
+        }
+
+        if ($this->container['payment_terms'] !== null) {
+            $this->container['payment_terms']->validate();
         }
 
         if ($this->container['invoice_total'] === null) {
-            $invalidProperties[] = "'invoice_total' can't be null";
+            throw new AssertionException("'invoice_total' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['invoice_total']->validate();
     }
 
     /**
@@ -355,17 +364,6 @@ class Invoice implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setInvoiceType(string $invoice_type) : self
     {
-        $allowedValues = $this->getInvoiceTypeAllowableValues();
-
-        if (!\in_array($invoice_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'invoice_type', must be one of '%s'",
-                    $invoice_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['invoice_type'] = $invoice_type;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,30 +195,15 @@ class GetPricingResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['payload'] && (\count($this->container['payload']) > 20)) {
-            $invalidProperties[] = "invalid value for 'payload', number of items must be less than or equal to 20.";
+            throw new AssertionException("invalid value for 'payload', number of items must be less than or equal to 20.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -237,9 +223,6 @@ class GetPricingResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function setPayload(?array $payload) : self
     {
-        if (null !== $payload && (\count($payload) > 20)) {
-            throw new \InvalidArgumentException('invalid value for $payload when calling GetPricingResponse., number of items must be less than or equal to 20.');
-        }
         $this->container['payload'] = $payload;
 
         return $this;

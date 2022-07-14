@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -220,43 +221,35 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['purchase_order_number'] === null) {
-            $invalidProperties[] = "'purchase_order_number' can't be null";
+            throw new AssertionException("'purchase_order_number' can't be null");
         }
 
         if ($this->container['purchase_order_state'] === null) {
-            $invalidProperties[] = "'purchase_order_state' can't be null";
+            throw new AssertionException("'purchase_order_state' can't be null");
         }
+
         $allowedValues = $this->getPurchaseOrderStateAllowableValues();
 
         if (null !== $this->container['purchase_order_state'] && !\in_array($this->container['purchase_order_state'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'purchase_order_state', must be one of '%s'",
-                $this->container['purchase_order_state'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'purchase_order_state', must be one of '%s'",
+                    $this->container['purchase_order_state'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['order_details'] !== null) {
+            $this->container['order_details']->validate();
+        }
     }
 
     /**
@@ -294,17 +287,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPurchaseOrderState(string $purchase_order_state) : self
     {
-        $allowedValues = $this->getPurchaseOrderStateAllowableValues();
-
-        if (!\in_array($purchase_order_state, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'purchase_order_state', must be one of '%s'",
-                    $purchase_order_state,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['purchase_order_state'] = $purchase_order_state;
 
         return $this;

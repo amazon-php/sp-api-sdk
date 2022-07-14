@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -188,38 +189,23 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['text_list'] === null) {
-            $invalidProperties[] = "'text_list' can't be null";
+            throw new AssertionException("'text_list' can't be null");
         }
 
         if ((\count($this->container['text_list']) > 8)) {
-            $invalidProperties[] = "invalid value for 'text_list', number of items must be less than or equal to 8.";
+            throw new AssertionException("invalid value for 'text_list', number of items must be less than or equal to 8.");
         }
 
         if ((\count($this->container['text_list']) < 0)) {
-            $invalidProperties[] = "invalid value for 'text_list', number of items must be greater than or equal to 0.";
+            throw new AssertionException("invalid value for 'text_list', number of items must be greater than or equal to 0.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -239,13 +225,6 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function setTextList(array $text_list) : self
     {
-        if ((\count($text_list) > 8)) {
-            throw new \InvalidArgumentException('invalid value for $text_list when calling StandardTextListBlock., number of items must be less than or equal to 8.');
-        }
-
-        if ((\count($text_list) < 0)) {
-            throw new \InvalidArgumentException('invalid length for $text_list when calling StandardTextListBlock., number of items must be greater than or equal to 0.');
-        }
         $this->container['text_list'] = $text_list;
 
         return $this;

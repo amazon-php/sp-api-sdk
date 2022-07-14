@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Finances;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -224,24 +225,23 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        return [];
-    }
+        if ($this->container['revenue_adjustment'] !== null) {
+            $this->container['revenue_adjustment']->validate();
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['tax_amount_adjustment'] !== null) {
+            $this->container['tax_amount_adjustment']->validate();
+        }
+
+        if ($this->container['tax_withheld_adjustment'] !== null) {
+            $this->container['tax_withheld_adjustment']->validate();
+        }
     }
 
     /**

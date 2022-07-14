@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Services;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -238,56 +239,51 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['appointment_id'] && (\mb_strlen($this->container['appointment_id']) > 100)) {
-            $invalidProperties[] = "invalid value for 'appointment_id', the character length must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'appointment_id', the character length must be smaller than or equal to 100.");
         }
 
         if (null !== $this->container['appointment_id'] && (\mb_strlen($this->container['appointment_id']) < 5)) {
-            $invalidProperties[] = "invalid value for 'appointment_id', the character length must be bigger than or equal to 5.";
+            throw new AssertionException("invalid value for 'appointment_id', the character length must be bigger than or equal to 5.");
         }
 
         $allowedValues = $this->getAppointmentStatusAllowableValues();
 
         if (null !== $this->container['appointment_status'] && !\in_array($this->container['appointment_status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'appointment_status', must be one of '%s'",
-                $this->container['appointment_status'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'appointment_status', must be one of '%s'",
+                    $this->container['appointment_status'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
+        if ($this->container['appointment_time'] !== null) {
+            $this->container['appointment_time']->validate();
+        }
+
         if (null !== $this->container['assigned_technicians'] && (\count($this->container['assigned_technicians']) < 1)) {
-            $invalidProperties[] = "invalid value for 'assigned_technicians', number of items must be greater than or equal to 1.";
+            throw new AssertionException("invalid value for 'assigned_technicians', number of items must be greater than or equal to 1.");
         }
 
         if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen($this->container['rescheduled_appointment_id']) > 100)) {
-            $invalidProperties[] = "invalid value for 'rescheduled_appointment_id', the character length must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'rescheduled_appointment_id', the character length must be smaller than or equal to 100.");
         }
 
         if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen($this->container['rescheduled_appointment_id']) < 5)) {
-            $invalidProperties[] = "invalid value for 'rescheduled_appointment_id', the character length must be bigger than or equal to 5.";
+            throw new AssertionException("invalid value for 'rescheduled_appointment_id', the character length must be bigger than or equal to 5.");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['poa'] !== null) {
+            $this->container['poa']->validate();
+        }
     }
 
     /**
@@ -305,14 +301,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAppointmentId(?string $appointment_id) : self
     {
-        if (null !== $appointment_id && (\mb_strlen($appointment_id) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $appointment_id when calling Appointment., must be smaller than or equal to 100.');
-        }
-
-        if (null !== $appointment_id && (\mb_strlen($appointment_id) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $appointment_id when calling Appointment., must be bigger than or equal to 5.');
-        }
-
         $this->container['appointment_id'] = $appointment_id;
 
         return $this;
@@ -333,17 +321,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAppointmentStatus(?string $appointment_status) : self
     {
-        $allowedValues = $this->getAppointmentStatusAllowableValues();
-
-        if (null !== $appointment_status && !\in_array($appointment_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'appointment_status', must be one of '%s'",
-                    $appointment_status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['appointment_status'] = $appointment_status;
 
         return $this;
@@ -386,9 +363,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setAssignedTechnicians(?array $assigned_technicians) : self
     {
-        if (null !== $assigned_technicians && (\count($assigned_technicians) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $assigned_technicians when calling Appointment., number of items must be greater than or equal to 1.');
-        }
         $this->container['assigned_technicians'] = $assigned_technicians;
 
         return $this;
@@ -409,14 +383,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setRescheduledAppointmentId(?string $rescheduled_appointment_id) : self
     {
-        if (null !== $rescheduled_appointment_id && (\mb_strlen($rescheduled_appointment_id) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $rescheduled_appointment_id when calling Appointment., must be smaller than or equal to 100.');
-        }
-
-        if (null !== $rescheduled_appointment_id && (\mb_strlen($rescheduled_appointment_id) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $rescheduled_appointment_id when calling Appointment., must be bigger than or equal to 5.');
-        }
-
         $this->container['rescheduled_appointment_id'] = $rescheduled_appointment_id;
 
         return $this;

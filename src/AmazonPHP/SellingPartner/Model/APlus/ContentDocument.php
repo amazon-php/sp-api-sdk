@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -212,66 +213,51 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
         }
 
         if ((\mb_strlen($this->container['name']) > 100)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 100.");
         }
 
         if ((\mb_strlen($this->container['name']) < 1)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'name', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['content_type'] === null) {
-            $invalidProperties[] = "'content_type' can't be null";
+            throw new AssertionException("'content_type' can't be null");
         }
 
         if (null !== $this->container['content_sub_type'] && (\mb_strlen($this->container['content_sub_type']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_sub_type', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'content_sub_type', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['locale'] === null) {
-            $invalidProperties[] = "'locale' can't be null";
+            throw new AssertionException("'locale' can't be null");
         }
 
         if ((\mb_strlen($this->container['locale']) < 5)) {
-            $invalidProperties[] = "invalid value for 'locale', the character length must be bigger than or equal to 5.";
+            throw new AssertionException("invalid value for 'locale', the character length must be bigger than or equal to 5.");
         }
 
         if ($this->container['content_module_list'] === null) {
-            $invalidProperties[] = "'content_module_list' can't be null";
+            throw new AssertionException("'content_module_list' can't be null");
         }
 
         if ((\count($this->container['content_module_list']) > 100)) {
-            $invalidProperties[] = "invalid value for 'content_module_list', number of items must be less than or equal to 100.";
+            throw new AssertionException("invalid value for 'content_module_list', number of items must be less than or equal to 100.");
         }
 
         if ((\count($this->container['content_module_list']) < 1)) {
-            $invalidProperties[] = "invalid value for 'content_module_list', number of items must be greater than or equal to 1.";
+            throw new AssertionException("invalid value for 'content_module_list', number of items must be greater than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -289,14 +275,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setName(string $name) : self
     {
-        if ((\mb_strlen($name) > 100)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentDocument., must be smaller than or equal to 100.');
-        }
-
-        if ((\mb_strlen($name) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling ContentDocument., must be bigger than or equal to 1.');
-        }
-
         $this->container['name'] = $name;
 
         return $this;
@@ -337,10 +315,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setContentSubType(?string $content_sub_type) : self
     {
-        if (null !== $content_sub_type && (\mb_strlen($content_sub_type) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_sub_type when calling ContentDocument., must be bigger than or equal to 1.');
-        }
-
         $this->container['content_sub_type'] = $content_sub_type;
 
         return $this;
@@ -361,10 +335,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setLocale(string $locale) : self
     {
-        if ((\mb_strlen($locale) < 5)) {
-            throw new \InvalidArgumentException('invalid length for $locale when calling ContentDocument., must be bigger than or equal to 5.');
-        }
-
         $this->container['locale'] = $locale;
 
         return $this;
@@ -387,13 +357,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setContentModuleList(array $content_module_list) : self
     {
-        if ((\count($content_module_list) > 100)) {
-            throw new \InvalidArgumentException('invalid value for $content_module_list when calling ContentDocument., number of items must be less than or equal to 100.');
-        }
-
-        if ((\count($content_module_list) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $content_module_list when calling ContentDocument., number of items must be greater than or equal to 1.');
-        }
         $this->container['content_module_list'] = $content_module_list;
 
         return $this;

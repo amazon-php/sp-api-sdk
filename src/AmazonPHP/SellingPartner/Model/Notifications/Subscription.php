@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Notifications;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -206,38 +207,27 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['subscription_id'] === null) {
-            $invalidProperties[] = "'subscription_id' can't be null";
+            throw new AssertionException("'subscription_id' can't be null");
         }
 
         if ($this->container['payload_version'] === null) {
-            $invalidProperties[] = "'payload_version' can't be null";
+            throw new AssertionException("'payload_version' can't be null");
         }
 
         if ($this->container['destination_id'] === null) {
-            $invalidProperties[] = "'destination_id' can't be null";
+            throw new AssertionException("'destination_id' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['processing_directive'] !== null) {
+            $this->container['processing_directive']->validate();
+        }
     }
 
     /**

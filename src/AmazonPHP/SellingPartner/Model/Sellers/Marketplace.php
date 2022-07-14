@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Sellers;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -218,54 +219,39 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
+            throw new AssertionException("'id' can't be null");
         }
 
         if ($this->container['name'] === null) {
-            $invalidProperties[] = "'name' can't be null";
+            throw new AssertionException("'name' can't be null");
         }
 
         if ($this->container['country_code'] === null) {
-            $invalidProperties[] = "'country_code' can't be null";
+            throw new AssertionException("'country_code' can't be null");
         }
 
         if (!\preg_match('/^([A-Z]{2})$/', $this->container['country_code'])) {
-            $invalidProperties[] = "invalid value for 'country_code', must be conform to the pattern /^([A-Z]{2})$/.";
+            throw new AssertionException("invalid value for 'country_code', must be conform to the pattern /^([A-Z]{2})$/.");
         }
 
         if ($this->container['default_currency_code'] === null) {
-            $invalidProperties[] = "'default_currency_code' can't be null";
+            throw new AssertionException("'default_currency_code' can't be null");
         }
 
         if ($this->container['default_language_code'] === null) {
-            $invalidProperties[] = "'default_language_code' can't be null";
+            throw new AssertionException("'default_language_code' can't be null");
         }
 
         if ($this->container['domain_name'] === null) {
-            $invalidProperties[] = "'domain_name' can't be null";
+            throw new AssertionException("'domain_name' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -323,10 +309,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCountryCode(string $country_code) : self
     {
-        if ((!\preg_match('/^([A-Z]{2})$/', $country_code))) {
-            throw new \InvalidArgumentException("invalid value for {$country_code} when calling Marketplace., must conform to the pattern /^([A-Z]{2})$/.");
-        }
-
         $this->container['country_code'] = $country_code;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -223,40 +224,31 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getTaxRegistrationTypeAllowableValues();
 
         if (null !== $this->container['tax_registration_type'] && !\in_array($this->container['tax_registration_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'tax_registration_type', must be one of '%s'",
-                $this->container['tax_registration_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'tax_registration_type', must be one of '%s'",
+                    $this->container['tax_registration_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['tax_registration_number'] === null) {
-            $invalidProperties[] = "'tax_registration_number' can't be null";
+            throw new AssertionException("'tax_registration_number' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['tax_registration_address'] !== null) {
+            $this->container['tax_registration_address']->validate();
+        }
     }
 
     /**
@@ -274,17 +266,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function setTaxRegistrationType(?string $tax_registration_type) : self
     {
-        $allowedValues = $this->getTaxRegistrationTypeAllowableValues();
-
-        if (null !== $tax_registration_type && !\in_array($tax_registration_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'tax_registration_type', must be one of '%s'",
-                    $tax_registration_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['tax_registration_type'] = $tax_registration_type;
 
         return $this;

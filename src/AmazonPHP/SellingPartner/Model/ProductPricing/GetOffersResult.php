@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -230,54 +231,43 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
 
         if ($this->container['item_condition'] === null) {
-            $invalidProperties[] = "'item_condition' can't be null";
+            throw new AssertionException("'item_condition' can't be null");
         }
 
         if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
+            throw new AssertionException("'status' can't be null");
         }
 
         if ($this->container['identifier'] === null) {
-            $invalidProperties[] = "'identifier' can't be null";
+            throw new AssertionException("'identifier' can't be null");
         }
+
+        $this->container['identifier']->validate();
 
         if ($this->container['summary'] === null) {
-            $invalidProperties[] = "'summary' can't be null";
+            throw new AssertionException("'summary' can't be null");
         }
 
+        $this->container['summary']->validate();
+
         if ($this->container['offers'] === null) {
-            $invalidProperties[] = "'offers' can't be null";
+            throw new AssertionException("'offers' can't be null");
         }
 
         if ((\count($this->container['offers']) > 20)) {
-            $invalidProperties[] = "invalid value for 'offers', number of items must be less than or equal to 20.";
+            throw new AssertionException("invalid value for 'offers', number of items must be less than or equal to 20.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -437,9 +427,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setOffers(array $offers) : self
     {
-        if ((\count($offers) > 20)) {
-            throw new \InvalidArgumentException('invalid value for $offers when calling GetOffersResult., number of items must be less than or equal to 20.');
-        }
         $this->container['offers'] = $offers;
 
         return $this;

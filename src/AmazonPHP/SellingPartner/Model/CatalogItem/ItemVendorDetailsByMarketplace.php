@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\CatalogItem;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -271,39 +272,27 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['marketplace_id'] === null) {
-            $invalidProperties[] = "'marketplace_id' can't be null";
+            throw new AssertionException("'marketplace_id' can't be null");
         }
+
         $allowedValues = $this->getReplenishmentCategoryAllowableValues();
 
         if (null !== $this->container['replenishment_category'] && !\in_array($this->container['replenishment_category'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'replenishment_category', must be one of '%s'",
-                $this->container['replenishment_category'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'replenishment_category', must be one of '%s'",
+                    $this->container['replenishment_category'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -441,17 +430,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      */
     public function setReplenishmentCategory(?string $replenishment_category) : self
     {
-        $allowedValues = $this->getReplenishmentCategoryAllowableValues();
-
-        if (null !== $replenishment_category && !\in_array($replenishment_category, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'replenishment_category', must be one of '%s'",
-                    $replenishment_category,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['replenishment_category'] = $replenishment_category;
 
         return $this;

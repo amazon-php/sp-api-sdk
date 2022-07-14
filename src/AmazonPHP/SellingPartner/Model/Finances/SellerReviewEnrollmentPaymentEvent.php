@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Finances;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -218,24 +219,23 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        return [];
-    }
+        if ($this->container['fee_component'] !== null) {
+            $this->container['fee_component']->validate();
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['charge_component'] !== null) {
+            $this->container['charge_component']->validate();
+        }
+
+        if ($this->container['total_amount'] !== null) {
+            $this->container['total_amount']->validate();
+        }
     }
 
     /**

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Shipping;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -200,30 +201,19 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if (null !== $this->container['container_reference_id'] && (\mb_strlen($this->container['container_reference_id']) > 40)) {
-            $invalidProperties[] = "invalid value for 'container_reference_id', the character length must be smaller than or equal to 40.";
+            throw new AssertionException("invalid value for 'container_reference_id', the character length must be smaller than or equal to 40.");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['label'] !== null) {
+            $this->container['label']->validate();
+        }
     }
 
     /**
@@ -241,10 +231,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setContainerReferenceId(?string $container_reference_id) : self
     {
-        if (null !== $container_reference_id && (\mb_strlen($container_reference_id) > 40)) {
-            throw new \InvalidArgumentException('invalid length for $container_reference_id when calling LabelResult., must be smaller than or equal to 40.');
-        }
-
         $this->container['container_reference_id'] = $container_reference_id;
 
         return $this;

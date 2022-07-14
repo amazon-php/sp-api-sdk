@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Reports;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -214,43 +215,31 @@ class ReportDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['report_document_id'] === null) {
-            $invalidProperties[] = "'report_document_id' can't be null";
+            throw new AssertionException("'report_document_id' can't be null");
         }
 
         if ($this->container['url'] === null) {
-            $invalidProperties[] = "'url' can't be null";
+            throw new AssertionException("'url' can't be null");
         }
+
         $allowedValues = $this->getCompressionAlgorithmAllowableValues();
 
         if (null !== $this->container['compression_algorithm'] && !\in_array($this->container['compression_algorithm'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'compression_algorithm', must be one of '%s'",
-                $this->container['compression_algorithm'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'compression_algorithm', must be one of '%s'",
+                    $this->container['compression_algorithm'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -308,17 +297,6 @@ class ReportDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setCompressionAlgorithm(?string $compression_algorithm) : self
     {
-        $allowedValues = $this->getCompressionAlgorithmAllowableValues();
-
-        if (null !== $compression_algorithm && !\in_array($compression_algorithm, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'compression_algorithm', must be one of '%s'",
-                    $compression_algorithm,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['compression_algorithm'] = $compression_algorithm;
 
         return $this;

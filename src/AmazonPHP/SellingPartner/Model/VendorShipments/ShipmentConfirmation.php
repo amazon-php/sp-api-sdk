@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorShipments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -353,83 +354,93 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['shipment_identifier'] === null) {
-            $invalidProperties[] = "'shipment_identifier' can't be null";
+            throw new AssertionException("'shipment_identifier' can't be null");
         }
 
         if ($this->container['shipment_confirmation_type'] === null) {
-            $invalidProperties[] = "'shipment_confirmation_type' can't be null";
+            throw new AssertionException("'shipment_confirmation_type' can't be null");
         }
+
         $allowedValues = $this->getShipmentConfirmationTypeAllowableValues();
 
         if (null !== $this->container['shipment_confirmation_type'] && !\in_array($this->container['shipment_confirmation_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'shipment_confirmation_type', must be one of '%s'",
-                $this->container['shipment_confirmation_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'shipment_confirmation_type', must be one of '%s'",
+                    $this->container['shipment_confirmation_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getShipmentTypeAllowableValues();
 
         if (null !== $this->container['shipment_type'] && !\in_array($this->container['shipment_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'shipment_type', must be one of '%s'",
-                $this->container['shipment_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'shipment_type', must be one of '%s'",
+                    $this->container['shipment_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         $allowedValues = $this->getShipmentStructureAllowableValues();
 
         if (null !== $this->container['shipment_structure'] && !\in_array($this->container['shipment_structure'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'shipment_structure', must be one of '%s'",
-                $this->container['shipment_structure'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'shipment_structure', must be one of '%s'",
+                    $this->container['shipment_structure'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
+        if ($this->container['transportation_details'] !== null) {
+            $this->container['transportation_details']->validate();
+        }
+
         if ($this->container['shipment_confirmation_date'] === null) {
-            $invalidProperties[] = "'shipment_confirmation_date' can't be null";
+            throw new AssertionException("'shipment_confirmation_date' can't be null");
         }
 
         if ($this->container['selling_party'] === null) {
-            $invalidProperties[] = "'selling_party' can't be null";
+            throw new AssertionException("'selling_party' can't be null");
         }
+
+        $this->container['selling_party']->validate();
 
         if ($this->container['ship_from_party'] === null) {
-            $invalidProperties[] = "'ship_from_party' can't be null";
+            throw new AssertionException("'ship_from_party' can't be null");
         }
 
+        $this->container['ship_from_party']->validate();
+
         if ($this->container['ship_to_party'] === null) {
-            $invalidProperties[] = "'ship_to_party' can't be null";
+            throw new AssertionException("'ship_to_party' can't be null");
+        }
+
+        $this->container['ship_to_party']->validate();
+
+        if ($this->container['shipment_measurements'] !== null) {
+            $this->container['shipment_measurements']->validate();
+        }
+
+        if ($this->container['import_details'] !== null) {
+            $this->container['import_details']->validate();
         }
 
         if ($this->container['shipped_items'] === null) {
-            $invalidProperties[] = "'shipped_items' can't be null";
+            throw new AssertionException("'shipped_items' can't be null");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -467,17 +478,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function setShipmentConfirmationType(string $shipment_confirmation_type) : self
     {
-        $allowedValues = $this->getShipmentConfirmationTypeAllowableValues();
-
-        if (!\in_array($shipment_confirmation_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'shipment_confirmation_type', must be one of '%s'",
-                    $shipment_confirmation_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['shipment_confirmation_type'] = $shipment_confirmation_type;
 
         return $this;
@@ -498,17 +498,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function setShipmentType(?string $shipment_type) : self
     {
-        $allowedValues = $this->getShipmentTypeAllowableValues();
-
-        if (null !== $shipment_type && !\in_array($shipment_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'shipment_type', must be one of '%s'",
-                    $shipment_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['shipment_type'] = $shipment_type;
 
         return $this;
@@ -529,17 +518,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function setShipmentStructure(?string $shipment_structure) : self
     {
-        $allowedValues = $this->getShipmentStructureAllowableValues();
-
-        if (null !== $shipment_structure && !\in_array($shipment_structure, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'shipment_structure', must be one of '%s'",
-                    $shipment_structure,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['shipment_structure'] = $shipment_structure;
 
         return $this;

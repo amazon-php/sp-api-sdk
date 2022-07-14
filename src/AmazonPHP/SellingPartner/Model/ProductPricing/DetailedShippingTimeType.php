@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductPricing;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -226,36 +227,23 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getAvailabilityTypeAllowableValues();
 
         if (null !== $this->container['availability_type'] && !\in_array($this->container['availability_type'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'availability_type', must be one of '%s'",
-                $this->container['availability_type'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'availability_type', must be one of '%s'",
+                    $this->container['availability_type'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -333,17 +321,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
      */
     public function setAvailabilityType(?string $availability_type) : self
     {
-        $allowedValues = $this->getAvailabilityTypeAllowableValues();
-
-        if (null !== $availability_type && !\in_array($availability_type, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'availability_type', must be one of '%s'",
-                    $availability_type,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['availability_type'] = $availability_type;
 
         return $this;

@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorOrders;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -229,36 +230,31 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         $allowedValues = $this->getConfirmationStatusAllowableValues();
 
         if (null !== $this->container['confirmation_status'] && !\in_array($this->container['confirmation_status'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'confirmation_status', must be one of '%s'",
-                $this->container['confirmation_status'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'confirmation_status', must be one of '%s'",
+                    $this->container['confirmation_status'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
-        return $invalidProperties;
-    }
+        if ($this->container['accepted_quantity'] !== null) {
+            $this->container['accepted_quantity']->validate();
+        }
 
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['rejected_quantity'] !== null) {
+            $this->container['rejected_quantity']->validate();
+        }
     }
 
     /**
@@ -276,17 +272,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
      */
     public function setConfirmationStatus(?string $confirmation_status) : self
     {
-        $allowedValues = $this->getConfirmationStatusAllowableValues();
-
-        if (null !== $confirmation_status && !\in_array($confirmation_status, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'confirmation_status', must be one of '%s'",
-                    $confirmation_status,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['confirmation_status'] = $confirmation_status;
 
         return $this;

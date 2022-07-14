@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\ProductTypesDefinitions;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -273,76 +274,75 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
+        if ($this->container['meta_schema'] !== null) {
+            $this->container['meta_schema']->validate();
+        }
 
         if ($this->container['schema'] === null) {
-            $invalidProperties[] = "'schema' can't be null";
+            throw new AssertionException("'schema' can't be null");
         }
 
+        $this->container['schema']->validate();
+
         if ($this->container['requirements'] === null) {
-            $invalidProperties[] = "'requirements' can't be null";
+            throw new AssertionException("'requirements' can't be null");
         }
+
         $allowedValues = $this->getRequirementsAllowableValues();
 
         if (null !== $this->container['requirements'] && !\in_array($this->container['requirements'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'requirements', must be one of '%s'",
-                $this->container['requirements'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'requirements', must be one of '%s'",
+                    $this->container['requirements'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['requirements_enforced'] === null) {
-            $invalidProperties[] = "'requirements_enforced' can't be null";
+            throw new AssertionException("'requirements_enforced' can't be null");
         }
+
         $allowedValues = $this->getRequirementsEnforcedAllowableValues();
 
         if (null !== $this->container['requirements_enforced'] && !\in_array($this->container['requirements_enforced'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'requirements_enforced', must be one of '%s'",
-                $this->container['requirements_enforced'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'requirements_enforced', must be one of '%s'",
+                    $this->container['requirements_enforced'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
         if ($this->container['property_groups'] === null) {
-            $invalidProperties[] = "'property_groups' can't be null";
+            throw new AssertionException("'property_groups' can't be null");
         }
 
         if ($this->container['locale'] === null) {
-            $invalidProperties[] = "'locale' can't be null";
+            throw new AssertionException("'locale' can't be null");
         }
 
         if ($this->container['marketplace_ids'] === null) {
-            $invalidProperties[] = "'marketplace_ids' can't be null";
+            throw new AssertionException("'marketplace_ids' can't be null");
         }
 
         if ($this->container['product_type'] === null) {
-            $invalidProperties[] = "'product_type' can't be null";
+            throw new AssertionException("'product_type' can't be null");
         }
 
         if ($this->container['product_type_version'] === null) {
-            $invalidProperties[] = "'product_type_version' can't be null";
+            throw new AssertionException("'product_type_version' can't be null");
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        $this->container['product_type_version']->validate();
     }
 
     /**
@@ -400,17 +400,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function setRequirements(string $requirements) : self
     {
-        $allowedValues = $this->getRequirementsAllowableValues();
-
-        if (!\in_array($requirements, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'requirements', must be one of '%s'",
-                    $requirements,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['requirements'] = $requirements;
 
         return $this;
@@ -431,17 +420,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function setRequirementsEnforced(string $requirements_enforced) : self
     {
-        $allowedValues = $this->getRequirementsEnforcedAllowableValues();
-
-        if (!\in_array($requirements_enforced, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'requirements_enforced', must be one of '%s'",
-                    $requirements_enforced,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['requirements_enforced'] = $requirements_enforced;
 
         return $this;

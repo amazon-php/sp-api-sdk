@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\Services;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -223,43 +224,31 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+            throw new AssertionException("'code' can't be null");
         }
 
         if ($this->container['message'] === null) {
-            $invalidProperties[] = "'message' can't be null";
+            throw new AssertionException("'message' can't be null");
         }
+
         $allowedValues = $this->getErrorLevelAllowableValues();
 
         if (null !== $this->container['error_level'] && !\in_array($this->container['error_level'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'error_level', must be one of '%s'",
-                $this->container['error_level'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'error_level', must be one of '%s'",
+                    $this->container['error_level'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -337,17 +326,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setErrorLevel(?string $error_level) : self
     {
-        $allowedValues = $this->getErrorLevelAllowableValues();
-
-        if (null !== $error_level && !\in_array($error_level, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'error_level', must be one of '%s'",
-                    $error_level,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['error_level'] = $error_level;
 
         return $this;

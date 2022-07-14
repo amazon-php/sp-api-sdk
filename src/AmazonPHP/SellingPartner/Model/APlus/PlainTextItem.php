@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\APlus;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -194,50 +195,35 @@ class PlainTextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['position'] === null) {
-            $invalidProperties[] = "'position' can't be null";
+            throw new AssertionException("'position' can't be null");
         }
 
         if (($this->container['position'] > 100)) {
-            $invalidProperties[] = "invalid value for 'position', must be smaller than or equal to 100.";
+            throw new AssertionException("invalid value for 'position', must be smaller than or equal to 100.");
         }
 
         if (($this->container['position'] < 1)) {
-            $invalidProperties[] = "invalid value for 'position', must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'position', must be bigger than or equal to 1.");
         }
 
         if ($this->container['value'] === null) {
-            $invalidProperties[] = "'value' can't be null";
+            throw new AssertionException("'value' can't be null");
         }
 
         if ((\mb_strlen($this->container['value']) > 250)) {
-            $invalidProperties[] = "invalid value for 'value', the character length must be smaller than or equal to 250.";
+            throw new AssertionException("invalid value for 'value', the character length must be smaller than or equal to 250.");
         }
 
         if ((\mb_strlen($this->container['value']) < 1)) {
-            $invalidProperties[] = "invalid value for 'value', the character length must be bigger than or equal to 1.";
+            throw new AssertionException("invalid value for 'value', the character length must be bigger than or equal to 1.");
         }
-
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
     }
 
     /**
@@ -255,14 +241,6 @@ class PlainTextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setPosition(int $position) : self
     {
-        if (($position > 100)) {
-            throw new \InvalidArgumentException('invalid value for $position when calling PlainTextItem., must be smaller than or equal to 100.');
-        }
-
-        if (($position < 1)) {
-            throw new \InvalidArgumentException('invalid value for $position when calling PlainTextItem., must be bigger than or equal to 1.');
-        }
-
         $this->container['position'] = $position;
 
         return $this;
@@ -283,14 +261,6 @@ class PlainTextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setValue(string $value) : self
     {
-        if ((\mb_strlen($value) > 250)) {
-            throw new \InvalidArgumentException('invalid length for $value when calling PlainTextItem., must be smaller than or equal to 250.');
-        }
-
-        if ((\mb_strlen($value) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $value when calling PlainTextItem., must be bigger than or equal to 1.');
-        }
-
         $this->container['value'] = $value;
 
         return $this;

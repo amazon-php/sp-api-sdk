@@ -29,6 +29,7 @@
 
 namespace AmazonPHP\SellingPartner\Model\VendorShipments;
 
+use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
@@ -226,39 +227,31 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Show all the invalid properties with reasons.
+     * Validate all properties.
      *
-     * @return array invalid properties with reasons
+     * @throws AssertionException
      */
-    public function listInvalidProperties() : array
+    public function validate() : void
     {
-        $invalidProperties = [];
-
         if ($this->container['function_code'] === null) {
-            $invalidProperties[] = "'function_code' can't be null";
+            throw new AssertionException("'function_code' can't be null");
         }
+
         $allowedValues = $this->getFunctionCodeAllowableValues();
 
         if (null !== $this->container['function_code'] && !\in_array($this->container['function_code'], $allowedValues, true)) {
-            $invalidProperties[] = \sprintf(
-                "invalid value '%s' for 'function_code', must be one of '%s'",
-                $this->container['function_code'],
-                \implode("', '", $allowedValues)
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'function_code', must be one of '%s'",
+                    $this->container['function_code'],
+                    \implode("', '", $allowedValues)
+                )
             );
         }
 
-        return $invalidProperties;
-    }
-
-    /**
-     * Validate all the properties in the model
-     * return true if all passed.
-     *
-     * @return bool True if all properties are valid
-     */
-    public function valid() : bool
-    {
-        return \count($this->listInvalidProperties()) === 0;
+        if ($this->container['location_identification'] !== null) {
+            $this->container['location_identification']->validate();
+        }
     }
 
     /**
@@ -276,17 +269,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function setFunctionCode(string $function_code) : self
     {
-        $allowedValues = $this->getFunctionCodeAllowableValues();
-
-        if (!\in_array($function_code, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                \sprintf(
-                    "Invalid value '%s' for 'function_code', must be one of '%s'",
-                    $function_code,
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
         $this->container['function_code'] = $function_code;
 
         return $this;
