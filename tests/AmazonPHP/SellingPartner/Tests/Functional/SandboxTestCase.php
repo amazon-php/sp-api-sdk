@@ -19,15 +19,15 @@ abstract class SandboxTestCase extends TestCase
 
     protected function setUp() : void
     {
-        if (!\getenv('SP_ACCESS_KEY')) {
+        if (!\getenv('AWS_ACCESS_KEY')) {
             $this->markTestSkipped(".env file doesn't exists or env vars are not populated.");
         }
 
         $configuration = Configuration::forIAMUser(
-            \getenv('SP_LWA_CLIENT_ID'),
-            \getenv('SP_LWA_CLIENT_SECRET'),
-            \getenv('SP_ACCESS_KEY'),
-            \getenv('SP_SECRET_KEY'),
+            \getenv('LWA_CLIENT_ID'),
+            \getenv('LWA_CLIENT_SECRET'),
+            \getenv('AWS_ACCESS_KEY'),
+            \getenv('AWS_SECRET_KEY'),
         );
 
         $configuration->setSandbox();
@@ -40,7 +40,7 @@ abstract class SandboxTestCase extends TestCase
             new TestLogger()
         );
 
-        $this->sellerRefreshToken = \getenv('SP_SELLER_REFRESH_TOKEN');
+        $this->sellerRefreshToken = \getenv('SELLER_REFRESH_TOKEN');
     }
 
     protected function tearDown() : void
