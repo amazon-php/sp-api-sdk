@@ -10,6 +10,7 @@
 - [#209](https://github.com/amazon-php/sp-api-sdk/pull/209) - **Disabled validation for enums in fulfillment outbound api** - [@owsiakl](https://github.com/owsiakl)
 
 ### Fixed
+- [#216](https://github.com/amazon-php/sp-api-sdk/pull/216) - **Fixed env vars name to match parameter names described in documentation** - [@owsiakl](https://github.com/owsiakl)
 - [#211](https://github.com/amazon-php/sp-api-sdk/pull/211) - **Fixed casting simple value types** - [@owsiakl](https://github.com/owsiakl)
 
 ### Removed
