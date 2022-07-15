@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-07-14
+## [Unreleased] - 2022-07-15
 
 ### Added
 - [#214](https://github.com/amazon-php/sp-api-sdk/pull/214) - **Added new `validate` method to the models** - [@owsiakl](https://github.com/owsiakl)
@@ -6,6 +6,7 @@
 - [#212](https://github.com/amazon-php/sp-api-sdk/pull/212) - **Possibility to send request against sandbox - dynamic/static** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [#215](https://github.com/amazon-php/sp-api-sdk/pull/215) - **Disabled validation for FileType enum from Merchant Fulfillment API** - [@owsiakl](https://github.com/owsiakl)
 - [#209](https://github.com/amazon-php/sp-api-sdk/pull/209) - **Disabled validation for enums in fulfillment outbound api** - [@owsiakl](https://github.com/owsiakl)
 
 ### Fixed
