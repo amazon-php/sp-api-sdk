@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-07-15
+## [4.0.7] - 2022-07-18
 
 ### Added
 - [#214](https://github.com/amazon-php/sp-api-sdk/pull/214) - **Added new `validate` method to the models** - [@owsiakl](https://github.com/owsiakl)
