@@ -91,6 +91,34 @@ JSON
         );
     }
 
+    public function test_serialization_of_date_time_objects(): void
+    {
+        $this->assertEquals(
+            '2022-07-19',
+            ObjectSerializer::sanitizeForSerialization(new \DateTime('2022-07-19 10:15:35'), null, 'date')
+        );
+
+        $this->assertEquals(
+            '2022-07-19T10:15:35.000Z',
+            ObjectSerializer::sanitizeForSerialization(new \DateTime('2022-07-19 10:15:35'))
+        );
+
+        $this->assertEquals(
+            '2022-07-19T17:15:35.000Z',
+            ObjectSerializer::sanitizeForSerialization(new \DateTime('2022-07-19 10:15:35', new \DateTimeZone('America/Los_Angeles')))
+        );
+
+        $this->assertEquals(
+            '2022-07-19T17:15:35.000Z',
+            ObjectSerializer::toString(new \DateTime('2022-07-19 10:15:35', new \DateTimeZone('America/Los_Angeles')))
+        );
+
+        $this->assertEquals(
+            '2022-07-19T10:15:35.351Z',
+            ObjectSerializer::toString(new \DateTime('2022-07-19 10:15:35.351', new \DateTimeZone('UTC')))
+        );
+    }
+
     public function test_deserialize_label_format_enum_with_an_empty_string(): void
     {
         $response = <<<JSON

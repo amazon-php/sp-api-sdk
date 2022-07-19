@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat;
 
 final class ObjectSerializer
 {
-    private static string $dateTimeFormat = \DateTimeInterface::ATOM;
+    private static string $dateTimeFormat = 'Y-m-d\TH:i:s.v\Z';
 
     /**
      * Change the date format.
@@ -39,7 +39,7 @@ final class ObjectSerializer
         }
 
         if ($data instanceof \DateTimeInterface) {
-            return ($format === 'date') ? $data->format('Y-m-d') : $data->format(self::$dateTimeFormat);
+            return ($format === 'date') ? $data->format('Y-m-d') : $data->setTimezone(new \DateTimeZone('UTC'))->format(self::$dateTimeFormat);
         }
 
         if (\is_array($data)) {
@@ -193,8 +193,8 @@ final class ObjectSerializer
      */
     public static function toString($value) : string
     {
-        if ($value instanceof \DateTimeInterface) { // datetime in ISO8601 format
-            return $value->format(self::$dateTimeFormat);
+        if ($value instanceof \DateTimeInterface) { // datetime in ISO8601 zulu format
+            return $value->setTimezone(new \DateTimeZone('UTC'))->format(self::$dateTimeFormat);
         }
 
         if (\is_bool($value)) {
