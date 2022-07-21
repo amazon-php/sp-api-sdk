@@ -180,6 +180,20 @@ final class Marketplace
     }
 
     /**
+     * @throws InvalidArgumentException
+     */
+    public static function fromId(string $marketplaceId) : self
+    {
+        foreach (self::$countryMap as $countryCode => $item) {
+            if (\strtoupper($marketplaceId) === $item['id']) {
+                return new self($item['name'], $item['id'], $countryCode, $item['region'], $item['url']);
+            }
+        }
+
+        throw new InvalidArgumentException("Unexpected marketplace id {$marketplaceId}");
+    }
+
+    /**
      * @return array<self>
      */
     public static function all() : array
