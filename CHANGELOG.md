@@ -1,4 +1,7 @@
-## [Unreleased] - 2022-07-19
+## [Unreleased] - 2022-07-21
+
+### Added
+- [#219](https://github.com/amazon-php/sp-api-sdk/pull/219) - **Added possibility to create marketplace object by marketplace id** - [@owsiakl](https://github.com/owsiakl)
 
 ### Changed
 - [#218](https://github.com/amazon-php/sp-api-sdk/pull/218) - **Changed date time format during deserialization to zulu** - [@owsiakl](https://github.com/owsiakl)
