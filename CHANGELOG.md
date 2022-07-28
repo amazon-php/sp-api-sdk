@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-07-28
+## [4.0.8] - 2022-07-28
 
 ### Added
 - [#219](https://github.com/amazon-php/sp-api-sdk/pull/219) - **Added possibility to create marketplace object by marketplace id** - [@owsiakl](https://github.com/owsiakl)
