@@ -47,7 +47,7 @@ final class OrdersSDK
      *
      * @param AccessToken $accessToken
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -139,7 +139,7 @@ final class OrdersSDK
      *
      * @param AccessToken $accessToken
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload Request to update the shipment status. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
