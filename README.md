@@ -28,7 +28,7 @@ This library goal is to resolve all above mentioned issues.
 ### Installations
 
 ```
-composer install amazon-php/sp-api-sdk^4.0
+composer require amazon-php/sp-api-sdk "^4.0"
 ```
 
 This library is not in a stable stage yet, please use with caution.
