@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-08-04
+
+### Changed
+- [#226](https://github.com/amazon-php/sp-api-sdk/pull/226) - **Doc fix** - [@belguinan](https://github.com/belguinan)
+
 ## [4.0.8] - 2022-07-28
 
 ### Added
