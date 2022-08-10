@@ -45,6 +45,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->set(\AmazonPHP\Rector\ClassMethod\FixArgumentDefaultValuesNotMatchingTypeRector::class);
     $services->set(\Rector\CodeQuality\Rector\ClassMethod\DateTimeToDateTimeInterfaceRector::class);
+    $services->set(\Rector\PSR4\Rector\Namespace_\MultipleClassFileToPsr4ClassesRector::class);
 
     // Define what rule sets will be applied
     $containerConfigurator->import(SetList::DEAD_CODE);
