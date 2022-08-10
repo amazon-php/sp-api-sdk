@@ -88,7 +88,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'payment_method_details' => 'string[]',
         'marketplace_id' => 'string',
         'shipment_service_level_category' => 'string',
-        'easy_ship_shipment_status' => 'string',
+        'easy_ship_shipment_status' => '\AmazonPHP\SellingPartner\Model\Orders\EasyShipShipmentStatus',
         'cba_displayable_shipping_label' => 'string',
         'order_type' => 'string',
         'earliest_ship_date' => 'string',
@@ -117,6 +117,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_info' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo',
         'automated_shipping_settings' => '\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings',
         'has_regulated_items' => 'bool',
+        'electronic_invoice_status' => '\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus',
     ];
 
     /**
@@ -173,6 +174,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_info' => null,
         'automated_shipping_settings' => null,
         'has_regulated_items' => null,
+        'electronic_invoice_status' => null,
     ];
 
     /**
@@ -228,6 +230,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_info' => 'BuyerInfo',
         'automated_shipping_settings' => 'AutomatedShippingSettings',
         'has_regulated_items' => 'HasRegulatedItems',
+        'electronic_invoice_status' => 'ElectronicInvoiceStatus',
     ];
 
     /**
@@ -282,6 +285,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_info' => 'setBuyerInfo',
         'automated_shipping_settings' => 'setAutomatedShippingSettings',
         'has_regulated_items' => 'setHasRegulatedItems',
+        'electronic_invoice_status' => 'setElectronicInvoiceStatus',
     ];
 
     /**
@@ -336,6 +340,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         'buyer_info' => 'getBuyerInfo',
         'automated_shipping_settings' => 'getAutomatedShippingSettings',
         'has_regulated_items' => 'getHasRegulatedItems',
+        'electronic_invoice_status' => 'getElectronicInvoiceStatus',
     ];
 
     /**
@@ -399,6 +404,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
         $this->container['has_regulated_items'] = $data['has_regulated_items'] ?? null;
+        $this->container['electronic_invoice_status'] = $data['electronic_invoice_status'] ?? null;
     }
 
     /**
@@ -1009,7 +1015,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets easy_ship_shipment_status.
      */
-    public function getEasyShipShipmentStatus() : ?string
+    public function getEasyShipShipmentStatus() : ?EasyShipShipmentStatus
     {
         return $this->container['easy_ship_shipment_status'];
     }
@@ -1017,9 +1023,9 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets easy_ship_shipment_status.
      *
-     * @param null|string $easy_ship_shipment_status The status of the Amazon Easy Ship order. This property is included only for Amazon Easy Ship orders.  Possible values: PendingPickUp, LabelCanceled, PickedUp, OutForDelivery, Damaged, Delivered, RejectedByBuyer, Undeliverable, ReturnedToSeller, ReturningToSeller.
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\EasyShipShipmentStatus $easy_ship_shipment_status easy_ship_shipment_status
      */
-    public function setEasyShipShipmentStatus(?string $easy_ship_shipment_status) : self
+    public function setEasyShipShipmentStatus(?EasyShipShipmentStatus $easy_ship_shipment_status) : self
     {
         $this->container['easy_ship_shipment_status'] = $easy_ship_shipment_status;
 
@@ -1582,6 +1588,26 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     public function setHasRegulatedItems(?bool $has_regulated_items) : self
     {
         $this->container['has_regulated_items'] = $has_regulated_items;
+
+        return $this;
+    }
+
+    /**
+     * Gets electronic_invoice_status.
+     */
+    public function getElectronicInvoiceStatus() : ?ElectronicInvoiceStatus
+    {
+        return $this->container['electronic_invoice_status'];
+    }
+
+    /**
+     * Sets electronic_invoice_status.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus $electronic_invoice_status electronic_invoice_status
+     */
+    public function setElectronicInvoiceStatus(?ElectronicInvoiceStatus $electronic_invoice_status) : self
+    {
+        $this->container['electronic_invoice_status'] = $electronic_invoice_status;
 
         return $this;
     }

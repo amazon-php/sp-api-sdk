@@ -5,13 +5,21 @@ declare(strict_types=1);
 namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Api\UpdateInventoryApi\VendorDirectFulfillmentInventorySDK;
+use AmazonPHP\SellingPartner\Api\UpdateInventoryApi\VendorDirectFulfillmentInventorySDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorInvoiceApi\VendorDirectFulfillmentPaymentsSDK;
+use AmazonPHP\SellingPartner\Api\VendorInvoiceApi\VendorDirectFulfillmentPaymentsSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
+use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorPaymentsApi\VendorInvoicesSDK;
+use AmazonPHP\SellingPartner\Api\VendorPaymentsApi\VendorInvoicesSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorShipmentsSDK;
+use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorShipmentsSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK;
+use AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorDirectFulfillmentTransactionsSDK;
+use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorDirectFulfillmentTransactionsSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorTransactionStatusSDK;
+use AmazonPHP\SellingPartner\Api\VendorTransactionApi\VendorTransactionStatusSDKInterface;
 use Psr\Http\Client\ClientInterface;
 use Psr\Http\Message\RequestFactoryInterface;
 use Psr\Http\Message\StreamFactoryInterface;
@@ -58,53 +66,57 @@ final class VendorSDK
         return new self($httpClient, $requestFactory, $streamFactory, $configuration, $logger);
     }
 
-    public function ordersSDK() : VendorDirectFulfillmentOrdersSDK
+    public function ordersSDK() : VendorDirectFulfillmentOrdersSDKInterface
     {
         return $this->instantiateSDK(VendorDirectFulfillmentOrdersSDK::class);
     }
 
-    public function invoicesSDK() : VendorInvoicesSDK
+    public function invoicesSDK() : VendorInvoicesSDKInterface
     {
         return $this->instantiateSDK(VendorInvoicesSDK::class);
     }
 
-    public function shipmentsSDK() : VendorShipmentsSDK
+    public function shipmentsSDK() : VendorShipmentsSDKInterface
     {
         return $this->instantiateSDK(VendorShipmentsSDK::class);
     }
 
-    public function transactionStatusSDK() : VendorTransactionStatusSDK
+    public function transactionStatusSDK() : VendorTransactionStatusSDKInterface
     {
         return $this->instantiateSDK(VendorTransactionStatusSDK::class);
     }
 
-    public function directFulfillmentPaymentsSDK() : VendorDirectFulfillmentPaymentsSDK
+    public function directFulfillmentPaymentsSDK() : VendorDirectFulfillmentPaymentsSDKInterface
     {
         return $this->instantiateSDK(VendorDirectFulfillmentPaymentsSDK::class);
     }
 
-    public function directFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDK
+    public function directFulfillmentOrdersSDK() : VendorDirectFulfillmentOrdersSDKInterface
     {
         return $this->instantiateSDK(VendorDirectFulfillmentOrdersSDK::class);
     }
 
-    public function directFulfillmentShippingSDK() : VendorDirectFulfillmentShippingSDK
+    public function directFulfillmentShippingSDK() : VendorDirectFulfillmentShippingSDKInterface
     {
         return $this->instantiateSDK(VendorDirectFulfillmentShippingSDK::class);
     }
 
-    public function directFulfillmentTransactionsSDK() : VendorDirectFulfillmentTransactionsSDK
+    public function directFulfillmentTransactionsSDK() : VendorDirectFulfillmentTransactionsSDKInterface
     {
         return $this->instantiateSDK(VendorDirectFulfillmentTransactionsSDK::class);
     }
 
-    public function directFulfillmentInventorySDK() : VendorDirectFulfillmentInventorySDK
+    public function directFulfillmentInventorySDK() : VendorDirectFulfillmentInventorySDKInterface
     {
         return $this->instantiateSDK(VendorDirectFulfillmentInventorySDK::class);
     }
 
     /**
-     * @param class-string $sdkClass
+     * @template T
+     *
+     * @param T $sdkClass
+     *
+     * @return T
      */
     private function instantiateSDK(string $sdkClass) : object
     {
