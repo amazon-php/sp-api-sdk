@@ -40,12 +40,13 @@ final class TokensSDK implements TokensSDKInterface
      * Operation createRestrictedDataToken.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body The restricted data token request details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function createRestrictedDataToken(AccessToken $accessToken, string $region, $body) : \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse
+    public function createRestrictedDataToken(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse
     {
         $request = $this->createRestrictedDataTokenRequest($accessToken, $region, $body);
 
@@ -136,11 +137,14 @@ final class TokensSDK implements TokensSDKInterface
      * Create request for operation 'createRestrictedDataToken'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body The restricted data token request details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function createRestrictedDataTokenRequest(AccessToken $accessToken, string $region, $body) : RequestInterface
+    public function createRestrictedDataTokenRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {

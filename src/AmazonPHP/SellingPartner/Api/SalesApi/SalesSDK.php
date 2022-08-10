@@ -40,6 +40,7 @@ final class SalesSDK implements SalesSDKInterface
      * Operation getOrderMetrics.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $marketplace_ids A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace. (required)
      * @param string $interval A time interval used for selecting order metrics. This takes the form of two dates separated by two hyphens (first date is inclusive; second date is exclusive). Dates are in ISO8601 format and must represent absolute time (either Z notation or offset notation). Example: 2018-09-01T00:00:00-07:00--2018-09-04T00:00:00-07:00 requests order metrics for Sept 1st, 2nd and 3rd in the -07:00 zone. (required)
      * @param string $granularity The granularity of the grouping of order metrics, based on a unit of time. Specifying granularity&#x3D;Hour results in a successful request only if the interval specified is less than or equal to 30 days from now. For all other granularities, the interval specified must be less or equal to 2 years from now. Specifying granularity&#x3D;Total results in order metrics that are aggregated over the entire interval that you specify. If the interval start and end date don’t align with the specified granularity, the head and tail end of the response interval will contain partial data. Example: Day to get a daily breakdown of the request interval, where the day boundary is defined by the granularityTimeZone. (required)
@@ -53,7 +54,7 @@ final class SalesSDK implements SalesSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrderMetrics(AccessToken $accessToken, string $region, $marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = 'All', $fulfillment_network = null, $first_day_of_week = 'Monday', $asin = null, $sku = null) : \AmazonPHP\SellingPartner\Model\Sales\GetOrderMetricsResponse
+    public function getOrderMetrics(AccessToken $accessToken, string $region, array $marketplace_ids, string $interval, string $granularity, string $granularity_time_zone = null, string $buyer_type = 'All', string $fulfillment_network = null, string $first_day_of_week = 'Monday', string $asin = null, string $sku = null) : \AmazonPHP\SellingPartner\Model\Sales\GetOrderMetricsResponse
     {
         $request = $this->getOrderMetricsRequest($accessToken, $region, $marketplace_ids, $interval, $granularity, $granularity_time_zone, $buyer_type, $fulfillment_network, $first_day_of_week, $asin, $sku);
 
@@ -144,6 +145,7 @@ final class SalesSDK implements SalesSDKInterface
      * Create request for operation 'getOrderMetrics'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $marketplace_ids A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace. (required)
      * @param string $interval A time interval used for selecting order metrics. This takes the form of two dates separated by two hyphens (first date is inclusive; second date is exclusive). Dates are in ISO8601 format and must represent absolute time (either Z notation or offset notation). Example: 2018-09-01T00:00:00-07:00--2018-09-04T00:00:00-07:00 requests order metrics for Sept 1st, 2nd and 3rd in the -07:00 zone. (required)
      * @param string $granularity The granularity of the grouping of order metrics, based on a unit of time. Specifying granularity&#x3D;Hour results in a successful request only if the interval specified is less than or equal to 30 days from now. For all other granularities, the interval specified must be less or equal to 2 years from now. Specifying granularity&#x3D;Total results in order metrics that are aggregated over the entire interval that you specify. If the interval start and end date don’t align with the specified granularity, the head and tail end of the response interval will contain partial data. Example: Day to get a daily breakdown of the request interval, where the day boundary is defined by the granularityTimeZone. (required)
@@ -155,8 +157,10 @@ final class SalesSDK implements SalesSDKInterface
      * @param string $sku Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getOrderMetricsRequest(AccessToken $accessToken, string $region, $marketplace_ids, $interval, $granularity, $granularity_time_zone = null, $buyer_type = 'All', $fulfillment_network = null, $first_day_of_week = 'Monday', $asin = null, $sku = null) : RequestInterface
+    public function getOrderMetricsRequest(AccessToken $accessToken, string $region, array $marketplace_ids, string $interval, string $granularity, string $granularity_time_zone = null, string $buyer_type = 'All', string $fulfillment_network = null, string $first_day_of_week = 'Monday', string $asin = null, string $sku = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {

@@ -106,7 +106,7 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -205,6 +209,8 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets marketplace_id.
      *
      * @param string $marketplace_id a marketplace identifier
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -225,6 +231,8 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets seller_id.
      *
      * @param string $seller_id the seller identifier submitted for the operation
+     *
+     * @return self
      */
     public function setSellerId(string $seller_id) : self
     {
@@ -245,6 +253,8 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller stock keeping unit (SKU) of the item
+     *
+     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -256,7 +266,7 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -265,8 +275,6 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -277,9 +285,6 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -292,8 +297,6 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -315,6 +318,8 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

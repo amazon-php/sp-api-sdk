@@ -106,7 +106,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -213,6 +217,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets service_location_type.
+     *
+     * @return null|string
      */
     public function getServiceLocationType() : ?string
     {
@@ -223,6 +229,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets service_location_type.
      *
      * @param null|string $service_location_type the location of the service job
+     *
+     * @return self
      */
     public function setServiceLocationType(?string $service_location_type) : self
     {
@@ -233,6 +241,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\Address
      */
     public function getAddress() : ?Address
     {
@@ -243,6 +253,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Address $address address
+     *
+     * @return self
      */
     public function setAddress(?Address $address) : self
     {
@@ -254,7 +266,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -263,8 +275,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -275,9 +285,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -290,8 +297,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -313,6 +318,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

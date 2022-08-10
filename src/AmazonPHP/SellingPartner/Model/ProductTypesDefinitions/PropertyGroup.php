@@ -106,7 +106,7 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -184,6 +188,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -194,6 +200,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets title.
      *
      * @param null|string $title the display label of the property group
+     *
+     * @return self
      */
     public function setTitle(?string $title) : self
     {
@@ -204,6 +212,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets description.
+     *
+     * @return null|string
      */
     public function getDescription() : ?string
     {
@@ -214,6 +224,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets description.
      *
      * @param null|string $description the description of the property group
+     *
+     * @return self
      */
     public function setDescription(?string $description) : self
     {
@@ -236,6 +248,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets property_names.
      *
      * @param null|string[] $property_names the names of the schema properties for the property group
+     *
+     * @return self
      */
     public function setPropertyNames(?array $property_names) : self
     {
@@ -247,7 +261,7 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -256,8 +270,6 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -268,9 +280,6 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -283,8 +292,6 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -306,6 +313,8 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

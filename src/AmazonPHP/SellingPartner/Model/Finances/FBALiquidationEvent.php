@@ -112,7 +112,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -209,6 +213,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets posted_date.
      *
      * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     *
+     * @return self
      */
     public function setPostedDate(\DateTimeInterface $posted_date) : self
     {
@@ -219,6 +225,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets original_removal_order_id.
+     *
+     * @return null|string
      */
     public function getOriginalRemovalOrderId() : ?string
     {
@@ -229,6 +237,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets original_removal_order_id.
      *
      * @param null|string $original_removal_order_id the identifier for the original removal order
+     *
+     * @return self
      */
     public function setOriginalRemovalOrderId(?string $original_removal_order_id) : self
     {
@@ -239,6 +249,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets liquidation_proceeds_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLiquidationProceedsAmount() : ?Currency
     {
@@ -249,6 +261,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets liquidation_proceeds_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $liquidation_proceeds_amount liquidation_proceeds_amount
+     *
+     * @return self
      */
     public function setLiquidationProceedsAmount(?Currency $liquidation_proceeds_amount) : self
     {
@@ -259,6 +273,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets liquidation_fee_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLiquidationFeeAmount() : ?Currency
     {
@@ -269,6 +285,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets liquidation_fee_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $liquidation_fee_amount liquidation_fee_amount
+     *
+     * @return self
      */
     public function setLiquidationFeeAmount(?Currency $liquidation_fee_amount) : self
     {
@@ -280,7 +298,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -289,8 +307,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -301,9 +317,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -316,8 +329,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -339,6 +350,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

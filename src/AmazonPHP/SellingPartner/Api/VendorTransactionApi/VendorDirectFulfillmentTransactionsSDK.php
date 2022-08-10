@@ -40,12 +40,13 @@ final class VendorDirectFulfillmentTransactionsSDK implements VendorDirectFulfil
      * Operation getTransactionStatus.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $transaction_id Previously returned in the response to the POST request of a specific transaction. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getTransactionStatus(AccessToken $accessToken, string $region, $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus
+    public function getTransactionStatus(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus
     {
         $request = $this->getTransactionStatusRequest($accessToken, $region, $transaction_id);
 
@@ -136,11 +137,14 @@ final class VendorDirectFulfillmentTransactionsSDK implements VendorDirectFulfil
      * Create request for operation 'getTransactionStatus'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $transaction_id Previously returned in the response to the POST request of a specific transaction. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getTransactionStatusRequest(AccessToken $accessToken, string $region, $transaction_id) : RequestInterface
+    public function getTransactionStatusRequest(AccessToken $accessToken, string $region, string $transaction_id) : RequestInterface
     {
         // verify the required parameter 'transaction_id' is set
         if ($transaction_id === null || (\is_array($transaction_id) && \count($transaction_id) === 0)) {

@@ -27,8 +27,8 @@ final class ObjectSerializer
      * Serialize data.
      *
      * @param mixed $data the data to serialize
-     * @param string $type the OpenAPIToolsType of the data
-     * @param string $format the format of the OpenAPITools type of the data
+     * @param null|string $type the OpenAPIToolsType of the data
+     * @param null|string $format the format of the OpenAPITools type of the data
      *
      * @return null|array|object|scalar serialized form of $data
      */
@@ -248,7 +248,7 @@ final class ObjectSerializer
      *
      * @param mixed $data object or primitive to be deserialized
      * @param T $class class name is passed as a string
-     * @param string[] $httpHeaders HTTP headers
+     * @param null|string[] $httpHeaders HTTP headers
      *
      * @return T
      */

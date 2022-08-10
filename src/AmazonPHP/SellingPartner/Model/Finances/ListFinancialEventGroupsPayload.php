@@ -100,7 +100,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -178,6 +182,8 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -188,6 +194,8 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
+     *
+     * @return self
      */
     public function setNextToken(?string $next_token) : self
     {
@@ -210,6 +218,8 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
      * Sets financial_event_group_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEventGroup[] $financial_event_group_list a list of financial event group information
+     *
+     * @return self
      */
     public function setFinancialEventGroupList(?array $financial_event_group_list) : self
     {
@@ -221,7 +231,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -230,8 +240,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -242,9 +250,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -257,8 +262,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -280,6 +283,8 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

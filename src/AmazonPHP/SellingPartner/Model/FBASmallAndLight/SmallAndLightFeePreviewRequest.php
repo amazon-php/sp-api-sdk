@@ -100,7 +100,7 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -199,6 +203,8 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
      * Sets marketplace_id.
      *
      * @param string $marketplace_id a marketplace identifier
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -221,6 +227,8 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
      * Sets items.
      *
      * @param \AmazonPHP\SellingPartner\Model\FBASmallAndLight\Item[] $items a list of items for which to retrieve fee estimates (limit: 25)
+     *
+     * @return self
      */
     public function setItems(array $items) : self
     {
@@ -232,7 +240,7 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -241,8 +249,6 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -253,9 +259,6 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -268,8 +271,6 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -291,6 +292,8 @@ class SmallAndLightFeePreviewRequest implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -100,7 +100,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -185,6 +189,8 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -195,6 +201,8 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
      * Sets image.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent $image image
+     *
+     * @return self
      */
     public function setImage(?ImageComponent $image) : self
     {
@@ -205,6 +213,8 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets caption.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getCaption() : ?TextComponent
     {
@@ -215,6 +225,8 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
      * Sets caption.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $caption caption
+     *
+     * @return self
      */
     public function setCaption(?TextComponent $caption) : self
     {
@@ -226,7 +238,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -235,8 +247,6 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -247,9 +257,6 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -262,8 +269,6 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -285,6 +290,8 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

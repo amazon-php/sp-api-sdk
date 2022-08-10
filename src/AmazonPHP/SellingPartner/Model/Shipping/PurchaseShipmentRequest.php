@@ -130,7 +130,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -180,6 +180,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -191,6 +193,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -251,6 +255,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets client_reference_id.
      *
      * @param string $client_reference_id client reference id
+     *
+     * @return self
      */
     public function setClientReferenceId(string $client_reference_id) : self
     {
@@ -271,6 +277,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets ship_to.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_to ship_to
+     *
+     * @return self
      */
     public function setShipTo(Address $ship_to) : self
     {
@@ -291,6 +299,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets ship_from.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_from ship_from
+     *
+     * @return self
      */
     public function setShipFrom(Address $ship_from) : self
     {
@@ -313,6 +323,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets ship_date.
      *
      * @param \DateTime|\DateTimeImmutable $ship_date The start date and time. This defaults to the current date and time.
+     *
+     * @return self
      */
     public function setShipDate(\DateTimeInterface $ship_date) : self
     {
@@ -333,6 +345,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets service_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\ServiceType $service_type service_type
+     *
+     * @return self
      */
     public function setServiceType(ServiceType $service_type) : self
     {
@@ -355,6 +369,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets containers.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Container[] $containers a list of container
+     *
+     * @return self
      */
     public function setContainers(array $containers) : self
     {
@@ -375,6 +391,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets label_specification.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification $label_specification label_specification
+     *
+     * @return self
      */
     public function setLabelSpecification(LabelSpecification $label_specification) : self
     {
@@ -386,7 +404,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -395,8 +413,6 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -407,9 +423,6 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -422,8 +435,6 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -445,6 +456,8 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -142,7 +142,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -152,7 +152,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -163,7 +163,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -173,7 +173,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -183,7 +183,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -192,6 +192,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -203,6 +205,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -251,6 +255,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -261,6 +267,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offer_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType $offer_type offer_type
+     *
+     * @return self
      */
     public function setOfferType(?OfferCustomerType $offer_type) : self
     {
@@ -281,6 +289,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buying_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType $buying_price buying_price
+     *
+     * @return self
      */
     public function setBuyingPrice(PriceType $buying_price) : self
     {
@@ -301,6 +311,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets regular_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $regular_price regular_price
+     *
+     * @return self
      */
     public function setRegularPrice(MoneyType $regular_price) : self
     {
@@ -311,6 +323,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets business_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getBusinessPrice() : ?MoneyType
     {
@@ -321,6 +335,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets business_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $business_price business_price
+     *
+     * @return self
      */
     public function setBusinessPrice(?MoneyType $business_price) : self
     {
@@ -343,6 +359,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity_discount_prices.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountPriceType[] $quantity_discount_prices quantity_discount_prices
+     *
+     * @return self
      */
     public function setQuantityDiscountPrices(?array $quantity_discount_prices) : self
     {
@@ -363,6 +381,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fulfillment_channel.
      *
      * @param string $fulfillment_channel The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
+     *
+     * @return self
      */
     public function setFulfillmentChannel(string $fulfillment_channel) : self
     {
@@ -383,6 +403,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_condition.
      *
      * @param string $item_condition The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
+     *
+     * @return self
      */
     public function setItemCondition(string $item_condition) : self
     {
@@ -403,6 +425,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_sub_condition.
      *
      * @param string $item_sub_condition The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
+     *
+     * @return self
      */
     public function setItemSubCondition(string $item_sub_condition) : self
     {
@@ -423,6 +447,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller stock keeping unit (SKU) of the item
+     *
+     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -434,7 +460,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -443,8 +469,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -455,9 +479,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -470,8 +491,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -493,6 +512,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

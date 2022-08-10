@@ -124,7 +124,7 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -227,6 +231,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller SKU of the item
+     *
+     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -247,6 +253,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
      * Sets asin.
      *
      * @param string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -267,6 +275,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
      * Sets condition.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Condition $condition condition
+     *
+     * @return self
      */
     public function setCondition(Condition $condition) : self
     {
@@ -287,6 +297,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
      * Sets quantity.
      *
      * @param int $quantity the item quantity
+     *
+     * @return self
      */
     public function setQuantity(int $quantity) : self
     {
@@ -297,6 +309,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets quantity_in_case.
+     *
+     * @return null|int
      */
     public function getQuantityInCase() : ?int
     {
@@ -307,6 +321,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
      * Sets quantity_in_case.
      *
      * @param null|int $quantity_in_case the item quantity
+     *
+     * @return self
      */
     public function setQuantityInCase(?int $quantity_in_case) : self
     {
@@ -329,6 +345,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
      * Sets prep_details_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepDetails[] $prep_details_list a list of preparation instructions and who is responsible for that preparation
+     *
+     * @return self
      */
     public function setPrepDetailsList(?array $prep_details_list) : self
     {
@@ -340,7 +358,7 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -349,8 +367,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -361,9 +377,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -376,8 +389,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -399,6 +410,8 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -106,7 +106,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -205,6 +209,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Sets carrier_name.
      *
      * @param string $carrier_name the carrier that you are using for the inbound shipment
+     *
+     * @return self
      */
     public function setCarrierName(string $carrier_name) : self
     {
@@ -225,6 +231,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Sets tracking_id.
      *
      * @param string $tracking_id the tracking number of the package, provided by the carrier
+     *
+     * @return self
      */
     public function setTrackingId(string $tracking_id) : self
     {
@@ -245,6 +253,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Sets package_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageStatus $package_status package_status
+     *
+     * @return self
      */
     public function setPackageStatus(PackageStatus $package_status) : self
     {
@@ -256,7 +266,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -265,8 +275,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -277,9 +285,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -292,8 +297,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -315,6 +318,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

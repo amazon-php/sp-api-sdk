@@ -124,7 +124,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -225,6 +229,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets posted_date.
      *
      * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     *
+     * @return self
      */
     public function setPostedDate(\DateTimeInterface $posted_date) : self
     {
@@ -235,6 +241,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -245,6 +253,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets transaction_type.
      *
      * @param null|string $transaction_type Indicates if the transaction is for a charge or a refund.  Possible values:  * charge - Charge  * refund - Refund
+     *
+     * @return self
      */
     public function setTransactionType(?string $transaction_type) : self
     {
@@ -255,6 +265,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets invoice_id.
+     *
+     * @return null|string
      */
     public function getInvoiceId() : ?string
     {
@@ -265,6 +277,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets invoice_id.
      *
      * @param null|string $invoice_id identifier for the invoice that the transaction appears in
+     *
+     * @return self
      */
     public function setInvoiceId(?string $invoice_id) : self
     {
@@ -275,6 +289,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets base_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseValue() : ?Currency
     {
@@ -285,6 +301,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets base_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $base_value base_value
+     *
+     * @return self
      */
     public function setBaseValue(?Currency $base_value) : self
     {
@@ -295,6 +313,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets tax_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxValue() : ?Currency
     {
@@ -305,6 +325,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets tax_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_value tax_value
+     *
+     * @return self
      */
     public function setTaxValue(?Currency $tax_value) : self
     {
@@ -315,6 +337,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets transaction_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionValue() : ?Currency
     {
@@ -325,6 +349,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets transaction_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $transaction_value transaction_value
+     *
+     * @return self
      */
     public function setTransactionValue(?Currency $transaction_value) : self
     {
@@ -336,7 +362,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -345,8 +371,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -357,9 +381,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -372,8 +393,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -395,6 +414,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

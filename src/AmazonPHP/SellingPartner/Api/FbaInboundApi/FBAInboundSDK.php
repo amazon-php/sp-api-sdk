@@ -40,6 +40,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
      * Operation getItemEligibilityPreview.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
      * @param string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
@@ -47,7 +48,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getItemEligibilityPreview(AccessToken $accessToken, string $region, $asin, $program, $marketplace_ids = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
+    public function getItemEligibilityPreview(AccessToken $accessToken, string $region, string $asin, string $program, array $marketplace_ids = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
     {
         $request = $this->getItemEligibilityPreviewRequest($accessToken, $region, $asin, $program, $marketplace_ids);
 
@@ -138,13 +139,16 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
      * Create request for operation 'getItemEligibilityPreview'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
      * @param string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getItemEligibilityPreviewRequest(AccessToken $accessToken, string $region, $asin, $program, $marketplace_ids = null) : RequestInterface
+    public function getItemEligibilityPreviewRequest(AccessToken $accessToken, string $region, string $asin, string $program, array $marketplace_ids = null) : RequestInterface
     {
         // verify the required parameter 'asin' is set
         if ($asin === null || (\is_array($asin) && \count($asin) === 0)) {

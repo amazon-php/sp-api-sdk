@@ -94,7 +94,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -144,6 +144,8 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -155,6 +157,8 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -175,6 +179,8 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets transport_content.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportContent
      */
     public function getTransportContent() : ?TransportContent
     {
@@ -185,6 +191,8 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
      * Sets transport_content.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportContent $transport_content transport_content
+     *
+     * @return self
      */
     public function setTransportContent(?TransportContent $transport_content) : self
     {
@@ -196,7 +204,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -205,8 +213,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -217,9 +223,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -232,8 +235,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -255,6 +256,8 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

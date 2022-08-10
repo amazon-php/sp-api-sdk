@@ -112,7 +112,7 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -213,6 +217,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets posted_date.
      *
      * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     *
+     * @return self
      */
     public function setPostedDate(\DateTimeInterface $posted_date) : self
     {
@@ -223,6 +229,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets base_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseAmount() : ?Currency
     {
@@ -233,6 +241,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets base_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $base_amount base_amount
+     *
+     * @return self
      */
     public function setBaseAmount(?Currency $base_amount) : self
     {
@@ -243,6 +253,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets withheld_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getWithheldAmount() : ?Currency
     {
@@ -253,6 +265,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets withheld_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $withheld_amount withheld_amount
+     *
+     * @return self
      */
     public function setWithheldAmount(?Currency $withheld_amount) : self
     {
@@ -263,6 +277,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets tax_withholding_period.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingPeriod
      */
     public function getTaxWithholdingPeriod() : ?TaxWithholdingPeriod
     {
@@ -273,6 +289,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets tax_withholding_period.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingPeriod $tax_withholding_period tax_withholding_period
+     *
+     * @return self
      */
     public function setTaxWithholdingPeriod(?TaxWithholdingPeriod $tax_withholding_period) : self
     {
@@ -284,7 +302,7 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -293,8 +311,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -305,9 +321,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -320,8 +333,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -343,6 +354,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

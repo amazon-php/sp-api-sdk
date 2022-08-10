@@ -40,13 +40,14 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * Operation getMyFeesEstimateForASIN.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getMyFeesEstimateForASIN(AccessToken $accessToken, string $region, $asin, $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
+    public function getMyFeesEstimateForASIN(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
     {
         $request = $this->getMyFeesEstimateForASINRequest($accessToken, $region, $asin, $body);
 
@@ -137,12 +138,15 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * Create request for operation 'getMyFeesEstimateForASIN'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getMyFeesEstimateForASINRequest(AccessToken $accessToken, string $region, $asin, $body) : RequestInterface
+    public function getMyFeesEstimateForASINRequest(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {
         // verify the required parameter 'asin' is set
         if ($asin === null || (\is_array($asin) && \count($asin) === 0)) {
@@ -244,13 +248,14 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * Operation getMyFeesEstimateForSKU.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getMyFeesEstimateForSKU(AccessToken $accessToken, string $region, $seller_sku, $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
+    public function getMyFeesEstimateForSKU(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
     {
         $request = $this->getMyFeesEstimateForSKURequest($accessToken, $region, $seller_sku, $body);
 
@@ -341,12 +346,15 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * Create request for operation 'getMyFeesEstimateForSKU'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getMyFeesEstimateForSKURequest(AccessToken $accessToken, string $region, $seller_sku, $body) : RequestInterface
+    public function getMyFeesEstimateForSKURequest(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {
         // verify the required parameter 'seller_sku' is set
         if ($seller_sku === null || (\is_array($seller_sku) && \count($seller_sku) === 0)) {
@@ -448,6 +456,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * Operation getMyFeesEstimates.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
@@ -455,7 +464,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateResult[]
      */
-    public function getMyFeesEstimates(AccessToken $accessToken, string $region, $body) : array
+    public function getMyFeesEstimates(AccessToken $accessToken, string $region, array $body) : array
     {
         $request = $this->getMyFeesEstimatesRequest($accessToken, $region, $body);
 
@@ -546,11 +555,14 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * Create request for operation 'getMyFeesEstimates'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getMyFeesEstimatesRequest(AccessToken $accessToken, string $region, $body) : RequestInterface
+    public function getMyFeesEstimatesRequest(AccessToken $accessToken, string $region, array $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {

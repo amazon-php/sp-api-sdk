@@ -106,7 +106,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -191,6 +195,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets _links.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks
      */
     public function getLinks() : ?GetSolicitationActionsForOrderResponseLinks
     {
@@ -201,6 +207,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
      * Sets _links.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks $_links _links
+     *
+     * @return self
      */
     public function setLinks(?GetSolicitationActionsForOrderResponseLinks $_links) : self
     {
@@ -211,6 +219,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets _embedded.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded
      */
     public function getEmbedded() : ?GetSolicitationActionsForOrderResponseEmbedded
     {
@@ -221,6 +231,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
      * Sets _embedded.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded $_embedded _embedded
+     *
+     * @return self
      */
     public function setEmbedded(?GetSolicitationActionsForOrderResponseEmbedded $_embedded) : self
     {
@@ -243,6 +255,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\Error[] $errors a list of error responses returned when a request is unsuccessful
+     *
+     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -254,7 +268,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -263,8 +277,6 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -275,9 +287,6 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -290,8 +299,6 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -313,6 +320,8 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

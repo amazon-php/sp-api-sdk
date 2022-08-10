@@ -36,9 +36,9 @@ class FixArgumentDefaultValuesNotMatchingTypeRector extends AbstractRector
                 continue;
             }
 
-            $paramType = $this->nodeTypeResolver->resolve($param->type);
+            $paramType = $this->nodeTypeResolver->getType($param->type);
 
-            $defaultType = $this->nodeTypeResolver->resolve($param->default);
+            $defaultType = $this->nodeTypeResolver->getType($param->default);
 
             if ($paramType instanceof BooleanType && $defaultType instanceof StringType) {
                 switch (\strtolower($param->default->value)) {

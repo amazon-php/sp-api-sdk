@@ -94,7 +94,7 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -144,6 +144,8 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -155,6 +157,8 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -175,6 +179,8 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipments.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatusInfo
      */
     public function getShipments() : ?ShipmentInvoiceStatusInfo
     {
@@ -185,6 +191,8 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
      * Sets shipments.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatusInfo $shipments shipments
+     *
+     * @return self
      */
     public function setShipments(?ShipmentInvoiceStatusInfo $shipments) : self
     {
@@ -196,7 +204,7 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -205,8 +213,6 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -217,9 +223,6 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -232,8 +235,6 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -255,6 +256,8 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

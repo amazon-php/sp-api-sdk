@@ -40,6 +40,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * Operation getDefinitionsProductType.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $product_type The Amazon product type name. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
@@ -51,7 +52,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getDefinitionsProductType(AccessToken $accessToken, string $region, $product_type, $marketplace_ids, $seller_id = null, $product_type_version = 'LATEST', $requirements = 'LISTING', $requirements_enforced = 'ENFORCED', $locale = 'DEFAULT') : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeDefinition
+    public function getDefinitionsProductType(AccessToken $accessToken, string $region, string $product_type, array $marketplace_ids, string $seller_id = null, string $product_type_version = 'LATEST', string $requirements = 'LISTING', string $requirements_enforced = 'ENFORCED', string $locale = 'DEFAULT') : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeDefinition
     {
         $request = $this->getDefinitionsProductTypeRequest($accessToken, $region, $product_type, $marketplace_ids, $seller_id, $product_type_version, $requirements, $requirements_enforced, $locale);
 
@@ -142,6 +143,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * Create request for operation 'getDefinitionsProductType'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $product_type The Amazon product type name. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
@@ -151,8 +153,10 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * @param string $locale Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to 'DEFAULT')
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getDefinitionsProductTypeRequest(AccessToken $accessToken, string $region, $product_type, $marketplace_ids, $seller_id = null, $product_type_version = 'LATEST', $requirements = 'LISTING', $requirements_enforced = 'ENFORCED', $locale = 'DEFAULT') : RequestInterface
+    public function getDefinitionsProductTypeRequest(AccessToken $accessToken, string $region, string $product_type, array $marketplace_ids, string $seller_id = null, string $product_type_version = 'LATEST', string $requirements = 'LISTING', string $requirements_enforced = 'ENFORCED', string $locale = 'DEFAULT') : RequestInterface
     {
         // verify the required parameter 'product_type' is set
         if ($product_type === null || (\is_array($product_type) && \count($product_type) === 0)) {
@@ -295,13 +299,14 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * Operation searchDefinitionsProductTypes.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, $marketplace_ids, $keywords = null) : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
+    public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null) : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
     {
         $request = $this->searchDefinitionsProductTypesRequest($accessToken, $region, $marketplace_ids, $keywords);
 
@@ -392,12 +397,15 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * Create request for operation 'searchDefinitionsProductTypes'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, $marketplace_ids, $keywords = null) : RequestInterface
+    public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {

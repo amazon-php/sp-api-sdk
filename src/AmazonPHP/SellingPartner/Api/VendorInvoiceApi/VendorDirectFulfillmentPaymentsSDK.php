@@ -40,12 +40,13 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
      * Operation submitInvoice.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function submitInvoice(AccessToken $accessToken, string $region, $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceResponse
+    public function submitInvoice(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceResponse
     {
         $request = $this->submitInvoiceRequest($accessToken, $region, $body);
 
@@ -136,11 +137,14 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
      * Create request for operation 'submitInvoice'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function submitInvoiceRequest(AccessToken $accessToken, string $region, $body) : RequestInterface
+    public function submitInvoiceRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {

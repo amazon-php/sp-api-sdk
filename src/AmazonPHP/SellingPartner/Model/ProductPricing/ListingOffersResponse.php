@@ -112,7 +112,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -203,6 +207,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets headers.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders
      */
     public function getHeaders() : ?HttpResponseHeaders
     {
@@ -213,6 +219,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets headers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders $headers headers
+     *
+     * @return self
      */
     public function setHeaders(?HttpResponseHeaders $headers) : self
     {
@@ -223,6 +231,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine
      */
     public function getStatus() : ?GetOffersHttpStatusLine
     {
@@ -233,6 +243,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine $status status
+     *
+     * @return self
      */
     public function setStatus(?GetOffersHttpStatusLine $status) : self
     {
@@ -253,6 +265,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets body.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse $body body
+     *
+     * @return self
      */
     public function setBody(GetOffersResponse $body) : self
     {
@@ -263,6 +277,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets request.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequestParams
      */
     public function getRequest() : ?ListingOffersRequestParams
     {
@@ -273,6 +289,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets request.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequestParams $request request
+     *
+     * @return self
      */
     public function setRequest(?ListingOffersRequestParams $request) : self
     {
@@ -284,7 +302,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -293,8 +311,6 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -305,9 +321,6 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -320,8 +333,6 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -343,6 +354,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

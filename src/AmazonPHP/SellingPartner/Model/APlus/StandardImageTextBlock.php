@@ -106,7 +106,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -195,6 +199,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -205,6 +211,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets image.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent $image image
+     *
+     * @return self
      */
     public function setImage(?ImageComponent $image) : self
     {
@@ -215,6 +223,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -225,6 +235,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets headline.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     *
+     * @return self
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -235,6 +247,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets body.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent
      */
     public function getBody() : ?ParagraphComponent
     {
@@ -245,6 +259,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets body.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent $body body
+     *
+     * @return self
      */
     public function setBody(?ParagraphComponent $body) : self
     {
@@ -256,7 +272,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -265,8 +281,6 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -277,9 +291,6 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -292,8 +303,6 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -315,6 +324,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -134,7 +134,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -144,7 +144,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -155,7 +155,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -165,7 +165,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -175,7 +175,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -184,6 +184,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -195,6 +197,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -274,6 +278,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_number.
      *
      * @param string $purchase_order_number The buyer's purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
+     *
+     * @return self
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
@@ -294,6 +300,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_status.
      *
      * @param string $purchase_order_status the status of the buyer's purchase order for this order
+     *
+     * @return self
      */
     public function setPurchaseOrderStatus(string $purchase_order_status) : self
     {
@@ -316,6 +324,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_date.
      *
      * @param \DateTime $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
+     *
+     * @return self
      */
     public function setPurchaseOrderDate(\DateTimeInterface $purchase_order_date) : self
     {
@@ -338,6 +348,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets last_updated_date.
      *
      * @param \DateTime|\DateTimeImmutable $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
+     *
+     * @return self
      */
     public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
     {
@@ -358,6 +370,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets selling_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $selling_party selling_party
+     *
+     * @return self
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -378,6 +392,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_to_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $ship_to_party ship_to_party
+     *
+     * @return self
      */
     public function setShipToParty(PartyIdentification $ship_to_party) : self
     {
@@ -400,6 +416,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatus[] $item_status detailed description of items order status
+     *
+     * @return self
      */
     public function setItemStatus(array $item_status) : self
     {
@@ -411,7 +429,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -420,8 +438,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -432,9 +448,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -447,8 +460,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -470,6 +481,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

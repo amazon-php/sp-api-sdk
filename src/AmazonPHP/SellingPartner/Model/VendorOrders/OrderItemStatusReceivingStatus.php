@@ -112,7 +112,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -219,6 +223,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets receive_status.
+     *
+     * @return null|string
      */
     public function getReceiveStatus() : ?string
     {
@@ -229,6 +235,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
      * Sets receive_status.
      *
      * @param null|string $receive_status receive status of the line item
+     *
+     * @return self
      */
     public function setReceiveStatus(?string $receive_status) : self
     {
@@ -239,6 +247,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets received_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getReceivedQuantity() : ?ItemQuantity
     {
@@ -249,6 +259,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
      * Sets received_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $received_quantity received_quantity
+     *
+     * @return self
      */
     public function setReceivedQuantity(?ItemQuantity $received_quantity) : self
     {
@@ -271,6 +283,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
      * Sets last_receive_date.
      *
      * @param \DateTime|\DateTimeImmutable $last_receive_date The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
+     *
+     * @return self
      */
     public function setLastReceiveDate(\DateTimeInterface $last_receive_date) : self
     {
@@ -282,7 +296,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -291,8 +305,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -303,9 +315,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -318,8 +327,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -341,6 +348,8 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -40,12 +40,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation cancelReport.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function cancelReport(AccessToken $accessToken, string $region, $report_id)
+    public function cancelReport(AccessToken $accessToken, string $region, string $report_id)
     {
         $request = $this->cancelReportRequest($accessToken, $region, $report_id);
 
@@ -131,11 +132,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'cancelReport'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function cancelReportRequest(AccessToken $accessToken, string $region, $report_id) : RequestInterface
+    public function cancelReportRequest(AccessToken $accessToken, string $region, string $report_id) : RequestInterface
     {
         // verify the required parameter 'report_id' is set
         if ($report_id === null || (\is_array($report_id) && \count($report_id) === 0)) {
@@ -223,12 +227,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation cancelReportSchedule.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function cancelReportSchedule(AccessToken $accessToken, string $region, $report_schedule_id)
+    public function cancelReportSchedule(AccessToken $accessToken, string $region, string $report_schedule_id)
     {
         $request = $this->cancelReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
@@ -314,11 +319,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'cancelReportSchedule'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function cancelReportScheduleRequest(AccessToken $accessToken, string $region, $report_schedule_id) : RequestInterface
+    public function cancelReportScheduleRequest(AccessToken $accessToken, string $region, string $report_schedule_id) : RequestInterface
     {
         // verify the required parameter 'report_schedule_id' is set
         if ($report_schedule_id === null || (\is_array($report_schedule_id) && \count($report_schedule_id) === 0)) {
@@ -406,12 +414,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation createReport.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function createReport(AccessToken $accessToken, string $region, $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
+    public function createReport(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
     {
         $request = $this->createReportRequest($accessToken, $region, $body);
 
@@ -502,11 +511,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'createReport'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function createReportRequest(AccessToken $accessToken, string $region, $body) : RequestInterface
+    public function createReportRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
@@ -593,12 +605,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation createReportSchedule.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function createReportSchedule(AccessToken $accessToken, string $region, $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
+    public function createReportSchedule(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
     {
         $request = $this->createReportScheduleRequest($accessToken, $region, $body);
 
@@ -689,11 +702,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'createReportSchedule'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function createReportScheduleRequest(AccessToken $accessToken, string $region, $body) : RequestInterface
+    public function createReportScheduleRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
@@ -780,12 +796,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation getReport.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReport(AccessToken $accessToken, string $region, $report_id) : \AmazonPHP\SellingPartner\Model\Reports\Report
+    public function getReport(AccessToken $accessToken, string $region, string $report_id) : \AmazonPHP\SellingPartner\Model\Reports\Report
     {
         $request = $this->getReportRequest($accessToken, $region, $report_id);
 
@@ -876,11 +893,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'getReport'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getReportRequest(AccessToken $accessToken, string $region, $report_id) : RequestInterface
+    public function getReportRequest(AccessToken $accessToken, string $region, string $report_id) : RequestInterface
     {
         // verify the required parameter 'report_id' is set
         if ($report_id === null || (\is_array($report_id) && \count($report_id) === 0)) {
@@ -968,12 +988,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation getReportDocument.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReportDocument(AccessToken $accessToken, string $region, $report_document_id) : \AmazonPHP\SellingPartner\Model\Reports\ReportDocument
+    public function getReportDocument(AccessToken $accessToken, string $region, string $report_document_id) : \AmazonPHP\SellingPartner\Model\Reports\ReportDocument
     {
         $request = $this->getReportDocumentRequest($accessToken, $region, $report_document_id);
 
@@ -1064,11 +1085,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'getReportDocument'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getReportDocumentRequest(AccessToken $accessToken, string $region, $report_document_id) : RequestInterface
+    public function getReportDocumentRequest(AccessToken $accessToken, string $region, string $report_document_id) : RequestInterface
     {
         // verify the required parameter 'report_document_id' is set
         if ($report_document_id === null || (\is_array($report_document_id) && \count($report_document_id) === 0)) {
@@ -1156,12 +1180,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation getReportSchedule.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReportSchedule(AccessToken $accessToken, string $region, $report_schedule_id) : \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule
+    public function getReportSchedule(AccessToken $accessToken, string $region, string $report_schedule_id) : \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule
     {
         $request = $this->getReportScheduleRequest($accessToken, $region, $report_schedule_id);
 
@@ -1252,11 +1277,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'getReportSchedule'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getReportScheduleRequest(AccessToken $accessToken, string $region, $report_schedule_id) : RequestInterface
+    public function getReportScheduleRequest(AccessToken $accessToken, string $region, string $report_schedule_id) : RequestInterface
     {
         // verify the required parameter 'report_schedule_id' is set
         if ($report_schedule_id === null || (\is_array($report_schedule_id) && \count($report_schedule_id) === 0)) {
@@ -1344,12 +1372,13 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation getReportSchedules.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReportSchedules(AccessToken $accessToken, string $region, $report_types) : \AmazonPHP\SellingPartner\Model\Reports\ReportScheduleList
+    public function getReportSchedules(AccessToken $accessToken, string $region, array $report_types) : \AmazonPHP\SellingPartner\Model\Reports\ReportScheduleList
     {
         $request = $this->getReportSchedulesRequest($accessToken, $region, $report_types);
 
@@ -1440,11 +1469,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'getReportSchedules'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getReportSchedulesRequest(AccessToken $accessToken, string $region, $report_types) : RequestInterface
+    public function getReportSchedulesRequest(AccessToken $accessToken, string $region, array $report_types) : RequestInterface
     {
         // verify the required parameter 'report_types' is set
         if ($report_types === null || (\is_array($report_types) && \count($report_types) === 0)) {
@@ -1540,6 +1572,7 @@ final class ReportsSDK implements ReportsSDKInterface
      * Operation getReports.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
@@ -1551,7 +1584,7 @@ final class ReportsSDK implements ReportsSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReports(AccessToken $accessToken, string $region, $report_types = null, $processing_statuses = null, $marketplace_ids = null, $page_size = 10, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
+    public function getReports(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
         $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 
@@ -1642,6 +1675,7 @@ final class ReportsSDK implements ReportsSDKInterface
      * Create request for operation 'getReports'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
@@ -1651,8 +1685,10 @@ final class ReportsSDK implements ReportsSDKInterface
      * @param string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getReportsRequest(AccessToken $accessToken, string $region, $report_types = null, $processing_statuses = null, $marketplace_ids = null, $page_size = 10, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, $next_token = null) : RequestInterface
+    public function getReportsRequest(AccessToken $accessToken, string $region, array $report_types = null, array $processing_statuses = null, array $marketplace_ids = null, int $page_size = 10, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, string $next_token = null) : RequestInterface
     {
         if ($report_types !== null && \count($report_types) > 10) {
             throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');

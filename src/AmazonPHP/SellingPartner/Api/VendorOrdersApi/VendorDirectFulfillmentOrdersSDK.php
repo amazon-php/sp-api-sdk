@@ -40,12 +40,13 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * Operation getOrder.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $purchase_order_number The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrder(AccessToken $accessToken, string $region, $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Order
+    public function getOrder(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Order
     {
         $request = $this->getOrderRequest($accessToken, $region, $purchase_order_number);
 
@@ -136,11 +137,14 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * Create request for operation 'getOrder'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $purchase_order_number The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getOrderRequest(AccessToken $accessToken, string $region, $purchase_order_number) : RequestInterface
+    public function getOrderRequest(AccessToken $accessToken, string $region, string $purchase_order_number) : RequestInterface
     {
         // verify the required parameter 'purchase_order_number' is set
         if ($purchase_order_number === null || (\is_array($purchase_order_number) && \count($purchase_order_number) === 0)) {
@@ -228,6 +232,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * Operation getOrders.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \DateTime $created_after Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param \DateTime $created_before Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param string $ship_from_party_id The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses. (optional)
@@ -240,7 +245,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, $ship_from_party_id = null, $status = null, $limit = null, $sort_order = null, $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList
+    public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = 'true') : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList
     {
         $request = $this->getOrdersRequest($accessToken, $region, $created_after, $created_before, $ship_from_party_id, $status, $limit, $sort_order, $next_token, $include_details);
 
@@ -331,6 +336,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * Create request for operation 'getOrders'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \DateTime $created_after Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param \DateTime $created_before Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param string $ship_from_party_id The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses. (optional)
@@ -341,8 +347,10 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * @param bool $include_details When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned. (optional, default to 'true')
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getOrdersRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, $ship_from_party_id = null, $status = null, $limit = null, $sort_order = null, $next_token = null, $include_details = 'true') : RequestInterface
+    public function getOrdersRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = 'true') : RequestInterface
     {
         // verify the required parameter 'created_after' is set
         if ($created_after === null || (\is_array($created_after) && \count($created_after) === 0)) {
@@ -500,12 +508,13 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * Operation submitAcknowledgement.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function submitAcknowledgement(AccessToken $accessToken, string $region, $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TransactionId
+    public function submitAcknowledgement(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TransactionId
     {
         $request = $this->submitAcknowledgementRequest($accessToken, $region, $body);
 
@@ -596,11 +605,14 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * Create request for operation 'submitAcknowledgement'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function submitAcknowledgementRequest(AccessToken $accessToken, string $region, $body) : RequestInterface
+    public function submitAcknowledgementRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {

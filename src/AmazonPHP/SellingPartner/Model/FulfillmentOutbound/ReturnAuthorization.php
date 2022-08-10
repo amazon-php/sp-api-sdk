@@ -118,7 +118,7 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -227,6 +231,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets return_authorization_id.
      *
      * @param string $return_authorization_id An identifier for the return authorization. This identifier associates return items with the return authorization used to return them.
+     *
+     * @return self
      */
     public function setReturnAuthorizationId(string $return_authorization_id) : self
     {
@@ -247,6 +253,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fulfillment_center_id.
      *
      * @param string $fulfillment_center_id an identifier for the Amazon fulfillment center that the return items should be sent to
+     *
+     * @return self
      */
     public function setFulfillmentCenterId(string $fulfillment_center_id) : self
     {
@@ -267,6 +275,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets return_to_address.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address $return_to_address return_to_address
+     *
+     * @return self
      */
     public function setReturnToAddress(Address $return_to_address) : self
     {
@@ -287,6 +297,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets amazon_rma_id.
      *
      * @param string $amazon_rma_id the return merchandise authorization (RMA) that Amazon needs to process the return
+     *
+     * @return self
      */
     public function setAmazonRmaId(string $amazon_rma_id) : self
     {
@@ -307,6 +319,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets rma_page_url.
      *
      * @param string $rma_page_url A URL for a web page that contains the return authorization barcode and the mailing label. This does not include pre-paid shipping.
+     *
+     * @return self
      */
     public function setRmaPageUrl(string $rma_page_url) : self
     {
@@ -318,7 +332,7 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -327,8 +341,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -339,9 +351,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -354,8 +363,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -377,6 +384,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

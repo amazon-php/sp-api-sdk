@@ -112,7 +112,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -225,6 +229,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets tracking_id.
      *
      * @param string $tracking_id The tracking id generated to each shipment. It contains a series of letters or digits or both.
+     *
+     * @return self
      */
     public function setTrackingId(string $tracking_id) : self
     {
@@ -245,6 +251,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets summary.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\TrackingSummary $summary summary
+     *
+     * @return self
      */
     public function setSummary(TrackingSummary $summary) : self
     {
@@ -267,6 +275,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets promised_delivery_date.
      *
      * @param \DateTime $promised_delivery_date the promised delivery date and time of a shipment
+     *
+     * @return self
      */
     public function setPromisedDeliveryDate(\DateTimeInterface $promised_delivery_date) : self
     {
@@ -289,6 +299,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets event_history.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Event[] $event_history a list of events of a shipment
+     *
+     * @return self
      */
     public function setEventHistory(array $event_history) : self
     {
@@ -300,7 +312,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -309,8 +321,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -321,9 +331,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -336,8 +343,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -359,6 +364,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

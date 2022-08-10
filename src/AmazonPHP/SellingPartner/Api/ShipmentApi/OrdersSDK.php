@@ -40,13 +40,14 @@ final class OrdersSDK implements OrdersSDKInterface
      * Operation updateShipmentStatus.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function updateShipmentStatus(AccessToken $accessToken, string $region, $order_id, $payload)
+    public function updateShipmentStatus(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload)
     {
         $request = $this->updateShipmentStatusRequest($accessToken, $region, $order_id, $payload);
 
@@ -132,12 +133,15 @@ final class OrdersSDK implements OrdersSDKInterface
      * Create request for operation 'updateShipmentStatus'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function updateShipmentStatusRequest(AccessToken $accessToken, string $region, $order_id, $payload) : RequestInterface
+    public function updateShipmentStatusRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload) : RequestInterface
     {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (\is_array($order_id) && \count($order_id) === 0)) {

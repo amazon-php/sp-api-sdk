@@ -100,7 +100,7 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -181,6 +185,8 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Shipment
      */
     public function getPayload() : ?Shipment
     {
@@ -191,6 +197,8 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets payload.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Shipment $payload payload
+     *
+     * @return self
      */
     public function setPayload(?Shipment $payload) : self
     {
@@ -213,6 +221,8 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Error[] $errors a list of error responses returned when a request is unsuccessful
+     *
+     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -224,7 +234,7 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -233,8 +243,6 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -245,9 +253,6 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -260,8 +265,6 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -283,6 +286,8 @@ class GetShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

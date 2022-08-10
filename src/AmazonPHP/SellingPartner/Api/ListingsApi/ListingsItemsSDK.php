@@ -40,6 +40,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Operation deleteListingsItem.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -48,7 +49,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function deleteListingsItem(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
+    public function deleteListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
         $request = $this->deleteListingsItemRequest($accessToken, $region, $seller_id, $sku, $marketplace_ids, $issue_locale);
 
@@ -139,14 +140,17 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Create request for operation 'deleteListingsItem'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function deleteListingsItemRequest(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $issue_locale = null) : RequestInterface
+    public function deleteListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null) : RequestInterface
     {
         // verify the required parameter 'seller_id' is set
         if ($seller_id === null || (\is_array($seller_id) && \count($seller_id) === 0)) {
@@ -271,6 +275,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Operation getListingsItem.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -280,7 +285,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getListingsItem(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $issue_locale = null, $included_data = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\Item
+    public function getListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null, array $included_data = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\Item
     {
         $request = $this->getListingsItemRequest($accessToken, $region, $seller_id, $sku, $marketplace_ids, $issue_locale, $included_data);
 
@@ -371,6 +376,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Create request for operation 'getListingsItem'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -378,8 +384,10 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getListingsItemRequest(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $issue_locale = null, $included_data = null) : RequestInterface
+    public function getListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null, array $included_data = null) : RequestInterface
     {
         // verify the required parameter 'seller_id' is set
         if ($seller_id === null || (\is_array($seller_id) && \count($seller_id) === 0)) {
@@ -512,6 +520,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Operation patchListingsItem.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -521,7 +530,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function patchListingsItem(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $body, $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
+    public function patchListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
         $request = $this->patchListingsItemRequest($accessToken, $region, $seller_id, $sku, $marketplace_ids, $body, $issue_locale);
 
@@ -612,6 +621,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Create request for operation 'patchListingsItem'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -619,8 +629,10 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function patchListingsItemRequest(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $body, $issue_locale = null) : RequestInterface
+    public function patchListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, string $issue_locale = null) : RequestInterface
     {
         // verify the required parameter 'seller_id' is set
         if ($seller_id === null || (\is_array($seller_id) && \count($seller_id) === 0)) {
@@ -759,6 +771,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Operation putListingsItem.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -768,7 +781,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function putListingsItem(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $body, $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
+    public function putListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
         $request = $this->putListingsItemRequest($accessToken, $region, $seller_id, $sku, $marketplace_ids, $body, $issue_locale);
 
@@ -859,6 +872,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * Create request for operation 'putListingsItem'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -866,8 +880,10 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function putListingsItemRequest(AccessToken $accessToken, string $region, $seller_id, $sku, $marketplace_ids, $body, $issue_locale = null) : RequestInterface
+    public function putListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, string $issue_locale = null) : RequestInterface
     {
         // verify the required parameter 'seller_id' is set
         if ($seller_id === null || (\is_array($seller_id) && \count($seller_id) === 0)) {

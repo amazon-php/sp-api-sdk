@@ -106,7 +106,7 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -207,6 +211,8 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
      * Sets is_partnered.
      *
      * @param bool $is_partnered indicates whether a putTransportDetails request is for an Amazon-partnered carrier
+     *
+     * @return self
      */
     public function setIsPartnered(bool $is_partnered) : self
     {
@@ -227,6 +233,8 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
      * Sets shipment_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentType $shipment_type shipment_type
+     *
+     * @return self
      */
     public function setShipmentType(ShipmentType $shipment_type) : self
     {
@@ -247,6 +255,8 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
      * Sets transport_details.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportDetailInput $transport_details transport_details
+     *
+     * @return self
      */
     public function setTransportDetails(TransportDetailInput $transport_details) : self
     {
@@ -258,7 +268,7 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -267,8 +277,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -279,9 +287,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -294,8 +299,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -317,6 +320,8 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

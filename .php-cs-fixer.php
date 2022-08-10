@@ -7,10 +7,6 @@ $finder = PhpCsFixer\Finder::create()
         __DIR__ . '/tools/src',
     ]);
 
-if (!\file_exists(__DIR__ . '/var')) {
-    \mkdir(__DIR__ . '/var');
-}
-
 /**
  * This configuration was taken from https://github.com/sebastianbergmann/phpunit/blob/master/.php_cs.dist
  * and slightly adjusted.
@@ -19,7 +15,7 @@ $config = new PhpCsFixer\Config();
 
 return $config
     ->setRiskyAllowed(true)
-    ->setCacheFile(__DIR__.'/var/.php_cs.cache')
+    ->setUsingCache(false)
     ->setRules([
         'align_multiline_comment' => true,
         'array_indentation' => true,
@@ -211,6 +207,7 @@ return $config
         'trailing_comma_in_multiline' => true,
         'trim_array_spaces' => true,
         'unary_operator_spaces' => true,
+        'phpdoc_to_param_type' => true,
         'visibility_required' => [
             'elements' => [
                 'const',

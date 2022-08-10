@@ -106,7 +106,7 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -184,6 +188,8 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets scheduled_delivery_service_type.
+     *
+     * @return null|string
      */
     public function getScheduledDeliveryServiceType() : ?string
     {
@@ -194,6 +200,8 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
      * Sets scheduled_delivery_service_type.
      *
      * @param null|string $scheduled_delivery_service_type scheduled delivery service type
+     *
+     * @return self
      */
     public function setScheduledDeliveryServiceType(?string $scheduled_delivery_service_type) : self
     {
@@ -216,6 +224,8 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
      * Sets earliest_nominated_delivery_date.
      *
      * @param \DateTime|\DateTimeImmutable $earliest_nominated_delivery_date earliest nominated delivery date for the scheduled delivery
+     *
+     * @return self
      */
     public function setEarliestNominatedDeliveryDate(\DateTimeInterface $earliest_nominated_delivery_date) : self
     {
@@ -238,6 +248,8 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
      * Sets latest_nominated_delivery_date.
      *
      * @param \DateTime|\DateTimeImmutable $latest_nominated_delivery_date latest nominated delivery date for the scheduled delivery
+     *
+     * @return self
      */
     public function setLatestNominatedDeliveryDate(\DateTimeInterface $latest_nominated_delivery_date) : self
     {
@@ -249,7 +261,7 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -258,8 +270,6 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -270,9 +280,6 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -285,8 +292,6 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -308,6 +313,8 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

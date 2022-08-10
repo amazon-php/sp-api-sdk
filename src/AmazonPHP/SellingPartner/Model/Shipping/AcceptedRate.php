@@ -112,7 +112,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -201,6 +205,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets total_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getTotalCharge() : ?Currency
     {
@@ -211,6 +217,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_charge.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Currency $total_charge total_charge
+     *
+     * @return self
      */
     public function setTotalCharge(?Currency $total_charge) : self
     {
@@ -221,6 +229,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets billed_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getBilledWeight() : ?Weight
     {
@@ -231,6 +241,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets billed_weight.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Weight $billed_weight billed_weight
+     *
+     * @return self
      */
     public function setBilledWeight(?Weight $billed_weight) : self
     {
@@ -241,6 +253,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets service_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\ServiceType
      */
     public function getServiceType() : ?ServiceType
     {
@@ -251,6 +265,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets service_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\ServiceType $service_type service_type
+     *
+     * @return self
      */
     public function setServiceType(?ServiceType $service_type) : self
     {
@@ -261,6 +277,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets promise.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet
      */
     public function getPromise() : ?ShippingPromiseSet
     {
@@ -271,6 +289,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets promise.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet $promise promise
+     *
+     * @return self
      */
     public function setPromise(?ShippingPromiseSet $promise) : self
     {
@@ -282,7 +302,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -291,8 +311,6 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -303,9 +321,6 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -318,8 +333,6 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -341,6 +354,8 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

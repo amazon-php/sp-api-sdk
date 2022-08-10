@@ -100,7 +100,7 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -195,6 +199,8 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets fulfillment_channel_code.
      *
      * @param string $fulfillment_channel_code designates which fulfillment network will be used
+     *
+     * @return self
      */
     public function setFulfillmentChannelCode(string $fulfillment_channel_code) : self
     {
@@ -205,6 +211,8 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets quantity.
+     *
+     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -215,6 +223,8 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets quantity.
      *
      * @param null|int $quantity the quantity of the item you are making available for sale
+     *
+     * @return self
      */
     public function setQuantity(?int $quantity) : self
     {
@@ -226,7 +236,7 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -235,8 +245,6 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -247,9 +255,6 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -262,8 +267,6 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -285,6 +288,8 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

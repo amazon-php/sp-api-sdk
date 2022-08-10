@@ -106,7 +106,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -203,6 +207,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets time_of_fees_estimation.
      *
      * @param \DateTime $time_of_fees_estimation The time at which the fees were estimated. This defaults to the time the request is made.
+     *
+     * @return self
      */
     public function setTimeOfFeesEstimation(\DateTimeInterface $time_of_fees_estimation) : self
     {
@@ -213,6 +219,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets total_fees_estimate.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getTotalFeesEstimate() : ?MoneyType
     {
@@ -223,6 +231,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_fees_estimate.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $total_fees_estimate total_fees_estimate
+     *
+     * @return self
      */
     public function setTotalFeesEstimate(?MoneyType $total_fees_estimate) : self
     {
@@ -245,6 +255,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fee_detail_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeeDetail[] $fee_detail_list a list of other fees that contribute to a given fee
+     *
+     * @return self
      */
     public function setFeeDetailList(?array $fee_detail_list) : self
     {
@@ -256,7 +268,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -265,8 +277,6 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -277,9 +287,6 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -292,8 +299,6 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -315,6 +320,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

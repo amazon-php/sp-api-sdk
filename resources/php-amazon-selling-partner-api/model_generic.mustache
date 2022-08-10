@@ -296,8 +296,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param integer $offset Offset
-     *
      * @return boolean
      */
     public function offsetExists($offset) : bool
@@ -308,8 +306,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
     /**
      * Gets offset.
      *
-     * @param integer $offset Offset
-     *
      * @return mixed|null
      */
     public function offsetGet($offset)
@@ -319,9 +315,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
 
     /**
      * Sets value based on offset.
-     *
-     * @param int|null $offset Offset
-     * @param mixed    $value  Value to be set
      *
      * @return void
      */
@@ -336,8 +329,6 @@ class {{classname}} {{#parentSchema}}extends {{{parent}}}{{/parentSchema}}{{^par
 
     /**
      * Unsets offset.
-     *
-     * @param integer $offset Offset
      *
      * @return void
      */

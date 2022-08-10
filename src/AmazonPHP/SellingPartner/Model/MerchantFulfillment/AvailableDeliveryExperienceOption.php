@@ -100,7 +100,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -197,6 +201,8 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      * Sets delivery_experience_option.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption $delivery_experience_option delivery_experience_option
+     *
+     * @return self
      */
     public function setDeliveryExperienceOption(DeliveryExperienceOption $delivery_experience_option) : self
     {
@@ -217,6 +223,8 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      * Sets charge.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount $charge charge
+     *
+     * @return self
      */
     public function setCharge(CurrencyAmount $charge) : self
     {
@@ -228,7 +236,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -237,8 +245,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -249,9 +255,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -264,8 +267,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -287,6 +288,8 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

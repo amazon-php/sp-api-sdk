@@ -130,7 +130,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -180,6 +180,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -191,6 +193,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -239,6 +243,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_priority_shipment.
      *
      * @param bool $is_priority_shipment when true, this is a priority shipment
+     *
+     * @return self
      */
     public function setIsPriorityShipment(bool $is_priority_shipment) : self
     {
@@ -249,6 +255,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_scheduled_delivery_shipment.
+     *
+     * @return null|bool
      */
     public function getIsScheduledDeliveryShipment() : ?bool
     {
@@ -259,6 +267,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_scheduled_delivery_shipment.
      *
      * @param null|bool $is_scheduled_delivery_shipment when true, this order is part of a scheduled delivery program
+     *
+     * @return self
      */
     public function setIsScheduledDeliveryShipment(?bool $is_scheduled_delivery_shipment) : self
     {
@@ -279,6 +289,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_pslip_required.
      *
      * @param bool $is_pslip_required when true, a packing slip is required to be sent to the customer
+     *
+     * @return self
      */
     public function setIsPslipRequired(bool $is_pslip_required) : self
     {
@@ -289,6 +301,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_gift.
+     *
+     * @return null|bool
      */
     public function getIsGift() : ?bool
     {
@@ -299,6 +313,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_gift.
      *
      * @param null|bool $is_gift When true, the order contain a gift. Include the gift message and gift wrap information.
+     *
+     * @return self
      */
     public function setIsGift(?bool $is_gift) : self
     {
@@ -319,6 +335,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_method.
      *
      * @param string $ship_method Ship method to be used for shipping the order. Amazon defines ship method codes indicating the shipping carrier and shipment service level. To see the full list of ship methods in use, including both the code and the friendly name, search the 'Help' section on Vendor Central for 'ship methods'.
+     *
+     * @return self
      */
     public function setShipMethod(string $ship_method) : self
     {
@@ -339,6 +357,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_dates.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDates $shipment_dates shipment_dates
+     *
+     * @return self
      */
     public function setShipmentDates(ShipmentDates $shipment_dates) : self
     {
@@ -359,6 +379,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets message_to_customer.
      *
      * @param string $message_to_customer message to customer for order status
+     *
+     * @return self
      */
     public function setMessageToCustomer(string $message_to_customer) : self
     {
@@ -370,7 +392,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -379,8 +401,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -391,9 +411,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -406,8 +423,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -429,6 +444,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

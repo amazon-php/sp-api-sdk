@@ -100,7 +100,7 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -197,6 +201,8 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets appointment_time.
      *
      * @param \AmazonPHP\SellingPartner\Model\Services\AppointmentTimeInput $appointment_time appointment_time
+     *
+     * @return self
      */
     public function setAppointmentTime(AppointmentTimeInput $appointment_time) : self
     {
@@ -216,7 +222,9 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Sets reschedule_reason_code.
      *
-     * @param string $reschedule_reason_code appointment reschedule reason code
+     * @param string $reschedule_reason_code the appointment reschedule reason code
+     *
+     * @return self
      */
     public function setRescheduleReasonCode(string $reschedule_reason_code) : self
     {
@@ -228,7 +236,7 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -237,8 +245,6 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -249,9 +255,6 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -264,8 +267,6 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -287,6 +288,8 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

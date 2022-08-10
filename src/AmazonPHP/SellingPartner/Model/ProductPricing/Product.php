@@ -124,7 +124,7 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -221,6 +225,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets identifiers.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\IdentifierType $identifiers identifiers
+     *
+     * @return self
      */
     public function setIdentifiers(IdentifierType $identifiers) : self
     {
@@ -243,6 +249,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets attribute_sets.
      *
      * @param null|object[] $attribute_sets a list of product attributes if they are applicable to the product that is returned
+     *
+     * @return self
      */
     public function setAttributeSets(?array $attribute_sets) : self
     {
@@ -265,6 +273,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets relationships.
      *
      * @param null|object[] $relationships a list that contains product variation information, if applicable
+     *
+     * @return self
      */
     public function setRelationships(?array $relationships) : self
     {
@@ -275,6 +285,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets competitive_pricing.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePricingType
      */
     public function getCompetitivePricing() : ?CompetitivePricingType
     {
@@ -285,6 +297,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets competitive_pricing.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePricingType $competitive_pricing competitive_pricing
+     *
+     * @return self
      */
     public function setCompetitivePricing(?CompetitivePricingType $competitive_pricing) : self
     {
@@ -307,6 +321,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets sales_rankings.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\SalesRankType[] $sales_rankings a list of sales rank information for the item, by category
+     *
+     * @return self
      */
     public function setSalesRankings(?array $sales_rankings) : self
     {
@@ -329,6 +345,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferType[] $offers a list of offers
+     *
+     * @return self
      */
     public function setOffers(?array $offers) : self
     {
@@ -340,7 +358,7 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -349,8 +367,6 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -361,9 +377,6 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -376,8 +389,6 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -399,6 +410,8 @@ class Product implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -112,7 +112,7 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -207,6 +211,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace from which prices are returned.
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -217,6 +223,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -227,6 +235,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -237,6 +247,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -247,6 +259,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_sku.
      *
      * @param null|string $seller_sku the seller stock keeping unit (SKU) of the item
+     *
+     * @return self
      */
     public function setSellerSku(?string $seller_sku) : self
     {
@@ -267,6 +281,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_condition.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ConditionType $item_condition item_condition
+     *
+     * @return self
      */
     public function setItemCondition(ConditionType $item_condition) : self
     {
@@ -278,7 +294,7 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -287,8 +303,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -299,9 +313,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -314,8 +325,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -337,6 +346,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

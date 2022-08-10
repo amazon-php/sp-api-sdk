@@ -94,7 +94,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -144,6 +144,8 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -155,6 +157,8 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -184,6 +188,8 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
      * Sets shipment_confirmations.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentConfirmation[] $shipment_confirmations shipment_confirmations
+     *
+     * @return self
      */
     public function setShipmentConfirmations(?array $shipment_confirmations) : self
     {
@@ -195,7 +201,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -204,8 +210,6 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -216,9 +220,6 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -231,8 +232,6 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -254,6 +253,8 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

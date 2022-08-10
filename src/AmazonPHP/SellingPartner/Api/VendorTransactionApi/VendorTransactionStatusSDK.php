@@ -40,12 +40,13 @@ final class VendorTransactionStatusSDK implements VendorTransactionStatusSDKInte
      * Operation getTransaction.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getTransaction(AccessToken $accessToken, string $region, $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorTransactionStatus\GetTransactionResponse
+    public function getTransaction(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorTransactionStatus\GetTransactionResponse
     {
         $request = $this->getTransactionRequest($accessToken, $region, $transaction_id);
 
@@ -136,11 +137,14 @@ final class VendorTransactionStatusSDK implements VendorTransactionStatusSDKInte
      * Create request for operation 'getTransaction'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function getTransactionRequest(AccessToken $accessToken, string $region, $transaction_id) : RequestInterface
+    public function getTransactionRequest(AccessToken $accessToken, string $region, string $transaction_id) : RequestInterface
     {
         // verify the required parameter 'transaction_id' is set
         if ($transaction_id === null || (\is_array($transaction_id) && \count($transaction_id) === 0)) {

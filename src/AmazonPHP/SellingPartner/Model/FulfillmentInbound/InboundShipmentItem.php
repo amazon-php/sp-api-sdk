@@ -136,7 +136,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -146,7 +146,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -157,7 +157,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -167,7 +167,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -177,7 +177,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -186,6 +186,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -197,6 +199,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -221,6 +225,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets shipment_id.
+     *
+     * @return null|string
      */
     public function getShipmentId() : ?string
     {
@@ -231,6 +237,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets shipment_id.
      *
      * @param null|string $shipment_id a shipment identifier originally returned by the createInboundShipmentPlan operation
+     *
+     * @return self
      */
     public function setShipmentId(?string $shipment_id) : self
     {
@@ -251,6 +259,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller SKU of the item
+     *
+     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -261,6 +271,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets fulfillment_network_sku.
+     *
+     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -271,6 +283,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fulfillment_network_sku.
      *
      * @param null|string $fulfillment_network_sku amazon's fulfillment network SKU of the item
+     *
+     * @return self
      */
     public function setFulfillmentNetworkSku(?string $fulfillment_network_sku) : self
     {
@@ -291,6 +305,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets quantity_shipped.
      *
      * @param int $quantity_shipped the item quantity
+     *
+     * @return self
      */
     public function setQuantityShipped(int $quantity_shipped) : self
     {
@@ -301,6 +317,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets quantity_received.
+     *
+     * @return null|int
      */
     public function getQuantityReceived() : ?int
     {
@@ -311,6 +329,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets quantity_received.
      *
      * @param null|int $quantity_received the item quantity
+     *
+     * @return self
      */
     public function setQuantityReceived(?int $quantity_received) : self
     {
@@ -321,6 +341,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets quantity_in_case.
+     *
+     * @return null|int
      */
     public function getQuantityInCase() : ?int
     {
@@ -331,6 +353,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets quantity_in_case.
      *
      * @param null|int $quantity_in_case the item quantity
+     *
+     * @return self
      */
     public function setQuantityInCase(?int $quantity_in_case) : self
     {
@@ -353,6 +377,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets release_date.
      *
      * @param \DateTime|\DateTimeImmutable $release_date release_date
+     *
+     * @return self
      */
     public function setReleaseDate(\DateTimeInterface $release_date) : self
     {
@@ -375,6 +401,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets prep_details_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepDetails[] $prep_details_list a list of preparation instructions and who is responsible for that preparation
+     *
+     * @return self
      */
     public function setPrepDetailsList(?array $prep_details_list) : self
     {
@@ -386,7 +414,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -395,8 +423,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -407,9 +433,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -422,8 +445,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -445,6 +466,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

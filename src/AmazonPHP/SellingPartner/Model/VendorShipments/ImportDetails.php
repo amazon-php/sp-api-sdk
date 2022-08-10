@@ -136,7 +136,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -146,7 +146,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -157,7 +157,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -167,7 +167,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -177,7 +177,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -186,6 +186,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -197,6 +199,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -254,6 +258,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets method_of_payment.
+     *
+     * @return null|string
      */
     public function getMethodOfPayment() : ?string
     {
@@ -264,6 +270,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets method_of_payment.
      *
      * @param null|string $method_of_payment This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment.
+     *
+     * @return self
      */
     public function setMethodOfPayment(?string $method_of_payment) : self
     {
@@ -274,6 +282,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seal_number.
+     *
+     * @return null|string
      */
     public function getSealNumber() : ?string
     {
@@ -284,6 +294,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seal_number.
      *
      * @param null|string $seal_number the container's seal number
+     *
+     * @return self
      */
     public function setSealNumber(?string $seal_number) : self
     {
@@ -294,6 +306,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets route.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route
      */
     public function getRoute() : ?Route
     {
@@ -304,6 +318,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets route.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route $route route
+     *
+     * @return self
      */
     public function setRoute(?Route $route) : self
     {
@@ -314,6 +330,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets import_containers.
+     *
+     * @return null|string
      */
     public function getImportContainers() : ?string
     {
@@ -324,6 +342,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets import_containers.
      *
      * @param null|string $import_containers Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers.
+     *
+     * @return self
      */
     public function setImportContainers(?string $import_containers) : self
     {
@@ -334,6 +354,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets billable_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getBillableWeight() : ?Weight
     {
@@ -344,6 +366,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets billable_weight.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $billable_weight billable_weight
+     *
+     * @return self
      */
     public function setBillableWeight(?Weight $billable_weight) : self
     {
@@ -366,6 +390,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets estimated_ship_by_date.
      *
      * @param \DateTime|\DateTimeImmutable $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
+     *
+     * @return self
      */
     public function setEstimatedShipByDate(\DateTimeInterface $estimated_ship_by_date) : self
     {
@@ -377,7 +403,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -386,8 +412,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -398,9 +422,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -413,8 +434,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -436,6 +455,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

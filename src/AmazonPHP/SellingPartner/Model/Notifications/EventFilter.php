@@ -106,7 +106,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -191,6 +195,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets aggregation_settings.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings
      */
     public function getAggregationSettings() : ?AggregationSettings
     {
@@ -201,6 +207,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets aggregation_settings.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings $aggregation_settings aggregation_settings
+     *
+     * @return self
      */
     public function setAggregationSettings(?AggregationSettings $aggregation_settings) : self
     {
@@ -223,6 +231,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_ids.
      *
      * @param null|string[] $marketplace_ids A list of marketplace identifiers to subscribe to (e.g. ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
+     *
+     * @return self
      */
     public function setMarketplaceIds(?array $marketplace_ids) : self
     {
@@ -243,6 +253,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets event_filter_type.
      *
      * @param string $event_filter_type An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
+     *
+     * @return self
      */
     public function setEventFilterType(string $event_filter_type) : self
     {
@@ -254,7 +266,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -263,8 +275,6 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -275,9 +285,6 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -290,8 +297,6 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -313,6 +318,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

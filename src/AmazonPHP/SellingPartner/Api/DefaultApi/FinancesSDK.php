@@ -40,6 +40,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * Operation listFinancialEventGroups.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
      * @param \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
@@ -48,7 +49,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventGroups(AccessToken $accessToken, string $region, $max_results_per_page = 100, \DateTimeInterface $financial_event_group_started_before = null, \DateTimeInterface $financial_event_group_started_after = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
+    public function listFinancialEventGroups(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $financial_event_group_started_before = null, \DateTimeInterface $financial_event_group_started_after = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
     {
         $request = $this->listFinancialEventGroupsRequest($accessToken, $region, $max_results_per_page, $financial_event_group_started_before, $financial_event_group_started_after, $next_token);
 
@@ -139,14 +140,17 @@ final class FinancesSDK implements FinancesSDKInterface
      * Create request for operation 'listFinancialEventGroups'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param \DateTime $financial_event_group_started_before A date used for selecting financial event groups that opened before (but not at) a specified date and time, in ISO 8601 format. The date-time  must be later than FinancialEventGroupStartedAfter and no later than two minutes before the request was submitted. If FinancialEventGroupStartedAfter and FinancialEventGroupStartedBefore are more than 180 days apart, no financial event groups are returned. (optional)
      * @param \DateTime $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in ISO 8601 format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, $max_results_per_page = 100, \DateTimeInterface $financial_event_group_started_before = null, \DateTimeInterface $financial_event_group_started_after = null, $next_token = null) : RequestInterface
+    public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $financial_event_group_started_before = null, \DateTimeInterface $financial_event_group_started_after = null, string $next_token = null) : RequestInterface
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
             throw new InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEventGroups, must be smaller than or equal to 100.');
@@ -259,6 +263,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * Operation listFinancialEvents.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
@@ -267,7 +272,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEvents(AccessToken $accessToken, string $region, $max_results_per_page = 100, \DateTimeInterface $posted_after = null, \DateTimeInterface $posted_before = null, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
+    public function listFinancialEvents(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $posted_after = null, \DateTimeInterface $posted_before = null, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
         $request = $this->listFinancialEventsRequest($accessToken, $region, $max_results_per_page, $posted_after, $posted_before, $next_token);
 
@@ -358,14 +363,17 @@ final class FinancesSDK implements FinancesSDKInterface
      * Create request for operation 'listFinancialEvents'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param \DateTime $posted_after A date used for selecting financial events posted after (or at) a specified time. The date-time must be no later than two minutes before the request was submitted, in ISO 8601 date time format. (optional)
      * @param \DateTime $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in ISO 8601 date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function listFinancialEventsRequest(AccessToken $accessToken, string $region, $max_results_per_page = 100, \DateTimeInterface $posted_after = null, \DateTimeInterface $posted_before = null, $next_token = null) : RequestInterface
+    public function listFinancialEventsRequest(AccessToken $accessToken, string $region, int $max_results_per_page = 100, \DateTimeInterface $posted_after = null, \DateTimeInterface $posted_before = null, string $next_token = null) : RequestInterface
     {
         if ($max_results_per_page !== null && $max_results_per_page > 100) {
             throw new InvalidArgumentException('invalid value for "$max_results_per_page" when calling DefaultApi.listFinancialEvents, must be smaller than or equal to 100.');
@@ -478,6 +486,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * Operation listFinancialEventsByGroupId.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $event_group_id The identifier of the financial event group to which the events belong. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -485,7 +494,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventsByGroupId(AccessToken $accessToken, string $region, $event_group_id, $max_results_per_page = 100, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
+    public function listFinancialEventsByGroupId(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
         $request = $this->listFinancialEventsByGroupIdRequest($accessToken, $region, $event_group_id, $max_results_per_page, $next_token);
 
@@ -576,13 +585,16 @@ final class FinancesSDK implements FinancesSDKInterface
      * Create request for operation 'listFinancialEventsByGroupId'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $event_group_id The identifier of the financial event group to which the events belong. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function listFinancialEventsByGroupIdRequest(AccessToken $accessToken, string $region, $event_group_id, $max_results_per_page = 100, $next_token = null) : RequestInterface
+    public function listFinancialEventsByGroupIdRequest(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, string $next_token = null) : RequestInterface
     {
         // verify the required parameter 'event_group_id' is set
         if ($event_group_id === null || (\is_array($event_group_id) && \count($event_group_id) === 0)) {
@@ -695,6 +707,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * Operation listFinancialEventsByOrderId.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -702,7 +715,7 @@ final class FinancesSDK implements FinancesSDKInterface
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listFinancialEventsByOrderId(AccessToken $accessToken, string $region, $order_id, $max_results_per_page = 100, $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
+    public function listFinancialEventsByOrderId(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
         $request = $this->listFinancialEventsByOrderIdRequest($accessToken, $region, $order_id, $max_results_per_page, $next_token);
 
@@ -793,13 +806,16 @@ final class FinancesSDK implements FinancesSDKInterface
      * Create request for operation 'listFinancialEventsByOrderId'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param int $max_results_per_page The maximum number of results to return per page. (optional, default to 100)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function listFinancialEventsByOrderIdRequest(AccessToken $accessToken, string $region, $order_id, $max_results_per_page = 100, $next_token = null) : RequestInterface
+    public function listFinancialEventsByOrderIdRequest(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, string $next_token = null) : RequestInterface
     {
         // verify the required parameter 'order_id' is set
         if ($order_id === null || (\is_array($order_id) && \count($order_id) === 0)) {

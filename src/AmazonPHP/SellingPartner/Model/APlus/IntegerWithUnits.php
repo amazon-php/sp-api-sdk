@@ -100,7 +100,7 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -195,6 +199,8 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets value.
      *
      * @param int $value the dimension value
+     *
+     * @return self
      */
     public function setValue(int $value) : self
     {
@@ -215,6 +221,8 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets units.
      *
      * @param string $units the unit of measurement
+     *
+     * @return self
      */
     public function setUnits(string $units) : self
     {
@@ -226,7 +234,7 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -235,8 +243,6 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -247,9 +253,6 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -262,8 +265,6 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -285,6 +286,8 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -40,13 +40,14 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
      * Operation submitInventoryUpdate.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function submitInventoryUpdate(AccessToken $accessToken, string $region, $warehouse_id, $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse
+    public function submitInventoryUpdate(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse
     {
         $request = $this->submitInventoryUpdateRequest($accessToken, $region, $warehouse_id, $body);
 
@@ -137,12 +138,15 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
      * Create request for operation 'submitInventoryUpdate'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function submitInventoryUpdateRequest(AccessToken $accessToken, string $region, $warehouse_id, $body) : RequestInterface
+    public function submitInventoryUpdateRequest(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body) : RequestInterface
     {
         // verify the required parameter 'warehouse_id' is set
         if ($warehouse_id === null || (\is_array($warehouse_id) && \count($warehouse_id) === 0)) {

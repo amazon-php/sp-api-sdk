@@ -106,7 +106,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -201,6 +205,8 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets uri.
      *
      * @param string $uri the full URI corresponding to the API intended for request, including path parameter substitutions
+     *
+     * @return self
      */
     public function setUri(string $uri) : self
     {
@@ -221,6 +227,8 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets method.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod $method method
+     *
+     * @return self
      */
     public function setMethod(HttpMethod $method) : self
     {
@@ -243,6 +251,8 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets headers.
      *
      * @param null|array<string,string> $headers a mapping of additional HTTP headers to send/receive for the individual batch request
+     *
+     * @return self
      */
     public function setHeaders(?array $headers) : self
     {
@@ -254,7 +264,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -263,8 +273,6 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -275,9 +283,6 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -290,8 +295,6 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -313,6 +316,8 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

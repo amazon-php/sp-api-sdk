@@ -136,7 +136,7 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -146,7 +146,7 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -157,7 +157,7 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -167,7 +167,7 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -177,7 +177,7 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -186,6 +186,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -197,6 +199,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -221,6 +225,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -231,6 +237,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets transaction_type.
      *
      * @param null|string $transaction_type The type of network item swap.  Possible values:  * NetCo - A Fulfillment by Amazon inventory pooling transaction. Available only in the India marketplace.  * ComminglingVAT - A commingling VAT transaction. Available only in the UK, Spain, France, Germany, and Italy marketplaces.
+     *
+     * @return self
      */
     public function setTransactionType(?string $transaction_type) : self
     {
@@ -253,6 +261,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets posted_date.
      *
      * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     *
+     * @return self
      */
     public function setPostedDate(\DateTimeInterface $posted_date) : self
     {
@@ -263,6 +273,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets net_co_transaction_id.
+     *
+     * @return null|string
      */
     public function getNetCoTransactionId() : ?string
     {
@@ -273,6 +285,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets net_co_transaction_id.
      *
      * @param null|string $net_co_transaction_id the identifier for the network item swap
+     *
+     * @return self
      */
     public function setNetCoTransactionId(?string $net_co_transaction_id) : self
     {
@@ -283,6 +297,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets swap_reason.
+     *
+     * @return null|string
      */
     public function getSwapReason() : ?string
     {
@@ -293,6 +309,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets swap_reason.
      *
      * @param null|string $swap_reason the reason for the network item swap
+     *
+     * @return self
      */
     public function setSwapReason(?string $swap_reason) : self
     {
@@ -303,6 +321,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -313,6 +333,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the swapped item
+     *
+     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -323,6 +345,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -333,6 +357,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace in which the event took place
+     *
+     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -343,6 +369,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets tax_exclusive_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxExclusiveAmount() : ?Currency
     {
@@ -353,6 +381,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets tax_exclusive_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_exclusive_amount tax_exclusive_amount
+     *
+     * @return self
      */
     public function setTaxExclusiveAmount(?Currency $tax_exclusive_amount) : self
     {
@@ -363,6 +393,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {
@@ -373,6 +405,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
      * Sets tax_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_amount tax_amount
+     *
+     * @return self
      */
     public function setTaxAmount(?Currency $tax_amount) : self
     {
@@ -384,7 +418,7 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -393,8 +427,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -405,9 +437,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -420,8 +449,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -443,6 +470,8 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -100,7 +100,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -178,6 +182,8 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets is_buyer_requested_cancel.
+     *
+     * @return null|bool
      */
     public function getIsBuyerRequestedCancel() : ?bool
     {
@@ -188,6 +194,8 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets is_buyer_requested_cancel.
      *
      * @param null|bool $is_buyer_requested_cancel when true, the buyer has requested cancellation
+     *
+     * @return self
      */
     public function setIsBuyerRequestedCancel(?bool $is_buyer_requested_cancel) : self
     {
@@ -198,6 +206,8 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets buyer_cancel_reason.
+     *
+     * @return null|string
      */
     public function getBuyerCancelReason() : ?string
     {
@@ -208,6 +218,8 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets buyer_cancel_reason.
      *
      * @param null|string $buyer_cancel_reason the reason that the buyer requested cancellation
+     *
+     * @return self
      */
     public function setBuyerCancelReason(?string $buyer_cancel_reason) : self
     {
@@ -219,7 +231,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -228,8 +240,6 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -240,9 +250,6 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -255,8 +262,6 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -278,6 +283,8 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

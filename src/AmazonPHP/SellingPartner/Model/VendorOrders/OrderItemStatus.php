@@ -136,7 +136,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -146,7 +146,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -157,7 +157,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -167,7 +167,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -177,7 +177,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -186,6 +186,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -197,6 +199,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -247,6 +251,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_sequence_number.
      *
      * @param string $item_sequence_number Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
+     *
+     * @return self
      */
     public function setItemSequenceNumber(string $item_sequence_number) : self
     {
@@ -257,6 +263,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_product_identifier.
+     *
+     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -267,6 +275,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_product_identifier.
      *
      * @param null|string $buyer_product_identifier buyer's Standard Identification Number (ASIN) of an item
+     *
+     * @return self
      */
     public function setBuyerProductIdentifier(?string $buyer_product_identifier) : self
     {
@@ -277,6 +287,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -287,6 +299,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets vendor_product_identifier.
      *
      * @param null|string $vendor_product_identifier the vendor selected product identification of the item
+     *
+     * @return self
      */
     public function setVendorProductIdentifier(?string $vendor_product_identifier) : self
     {
@@ -297,6 +311,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets net_cost.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -307,6 +323,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets net_cost.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $net_cost net_cost
+     *
+     * @return self
      */
     public function setNetCost(?Money $net_cost) : self
     {
@@ -317,6 +335,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {
@@ -327,6 +347,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets list_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $list_price list_price
+     *
+     * @return self
      */
     public function setListPrice(?Money $list_price) : self
     {
@@ -337,6 +359,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusOrderedQuantity
      */
     public function getOrderedQuantity() : ?OrderItemStatusOrderedQuantity
     {
@@ -347,6 +371,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ordered_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusOrderedQuantity $ordered_quantity ordered_quantity
+     *
+     * @return self
      */
     public function setOrderedQuantity(?OrderItemStatusOrderedQuantity $ordered_quantity) : self
     {
@@ -357,6 +383,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets acknowledgement_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusAcknowledgementStatus
      */
     public function getAcknowledgementStatus() : ?OrderItemStatusAcknowledgementStatus
     {
@@ -367,6 +395,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets acknowledgement_status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusAcknowledgementStatus $acknowledgement_status acknowledgement_status
+     *
+     * @return self
      */
     public function setAcknowledgementStatus(?OrderItemStatusAcknowledgementStatus $acknowledgement_status) : self
     {
@@ -377,6 +407,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets receiving_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusReceivingStatus
      */
     public function getReceivingStatus() : ?OrderItemStatusReceivingStatus
     {
@@ -387,6 +419,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets receiving_status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusReceivingStatus $receiving_status receiving_status
+     *
+     * @return self
      */
     public function setReceivingStatus(?OrderItemStatusReceivingStatus $receiving_status) : self
     {
@@ -398,7 +432,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -407,8 +441,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -419,9 +451,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -434,8 +463,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -457,6 +484,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

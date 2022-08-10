@@ -142,7 +142,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -152,7 +152,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -163,7 +163,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -173,7 +173,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -183,7 +183,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -192,6 +192,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -203,6 +205,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -245,6 +249,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -255,6 +261,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
+     *
+     * @return self
      */
     public function setAmazonOrderId(?string $amazon_order_id) : self
     {
@@ -277,6 +285,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets posted_date.
      *
      * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     *
+     * @return self
      */
     public function setPostedDate(\DateTimeInterface $posted_date) : self
     {
@@ -287,6 +297,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -297,6 +309,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id an encrypted, Amazon-defined marketplace identifier
+     *
+     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -307,6 +321,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -317,6 +333,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets transaction_type.
      *
      * @param null|string $transaction_type Indicates the type of transaction.   Possible values:  * Charge - For an affordability promotion expense.  * Refund - For an affordability promotion expense reversal.
+     *
+     * @return self
      */
     public function setTransactionType(?string $transaction_type) : self
     {
@@ -327,6 +345,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets base_expense.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseExpense() : ?Currency
     {
@@ -337,6 +357,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets base_expense.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $base_expense base_expense
+     *
+     * @return self
      */
     public function setBaseExpense(?Currency $base_expense) : self
     {
@@ -357,6 +379,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets tax_type_cgst.
      *
      * @param \AmazonPHP\SellingPartner\Model\Finances\Currency $tax_type_cgst tax_type_cgst
+     *
+     * @return self
      */
     public function setTaxTypeCgst(Currency $tax_type_cgst) : self
     {
@@ -377,6 +401,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets tax_type_sgst.
      *
      * @param \AmazonPHP\SellingPartner\Model\Finances\Currency $tax_type_sgst tax_type_sgst
+     *
+     * @return self
      */
     public function setTaxTypeSgst(Currency $tax_type_sgst) : self
     {
@@ -397,6 +423,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets tax_type_igst.
      *
      * @param \AmazonPHP\SellingPartner\Model\Finances\Currency $tax_type_igst tax_type_igst
+     *
+     * @return self
      */
     public function setTaxTypeIgst(Currency $tax_type_igst) : self
     {
@@ -407,6 +435,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets total_expense.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalExpense() : ?Currency
     {
@@ -417,6 +447,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
      * Sets total_expense.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $total_expense total_expense
+     *
+     * @return self
      */
     public function setTotalExpense(?Currency $total_expense) : self
     {
@@ -428,7 +460,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -437,8 +469,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -449,9 +479,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -464,8 +491,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -487,6 +512,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

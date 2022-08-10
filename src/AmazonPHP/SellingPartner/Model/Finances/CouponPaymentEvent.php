@@ -136,7 +136,7 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -146,7 +146,7 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -157,7 +157,7 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -167,7 +167,7 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -177,7 +177,7 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -186,6 +186,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -197,6 +199,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -237,6 +241,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets posted_date.
      *
      * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     *
+     * @return self
      */
     public function setPostedDate(\DateTimeInterface $posted_date) : self
     {
@@ -247,6 +253,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets coupon_id.
+     *
+     * @return null|string
      */
     public function getCouponId() : ?string
     {
@@ -257,6 +265,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets coupon_id.
      *
      * @param null|string $coupon_id a coupon identifier
+     *
+     * @return self
      */
     public function setCouponId(?string $coupon_id) : self
     {
@@ -267,6 +277,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets seller_coupon_description.
+     *
+     * @return null|string
      */
     public function getSellerCouponDescription() : ?string
     {
@@ -277,6 +289,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets seller_coupon_description.
      *
      * @param null|string $seller_coupon_description the description provided by the seller when they created the coupon
+     *
+     * @return self
      */
     public function setSellerCouponDescription(?string $seller_coupon_description) : self
     {
@@ -287,6 +301,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets clip_or_redemption_count.
+     *
+     * @return null|int
      */
     public function getClipOrRedemptionCount() : ?int
     {
@@ -297,6 +313,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets clip_or_redemption_count.
      *
      * @param null|int $clip_or_redemption_count the number of coupon clips or redemptions
+     *
+     * @return self
      */
     public function setClipOrRedemptionCount(?int $clip_or_redemption_count) : self
     {
@@ -307,6 +325,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets payment_event_id.
+     *
+     * @return null|string
      */
     public function getPaymentEventId() : ?string
     {
@@ -317,6 +337,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets payment_event_id.
      *
      * @param null|string $payment_event_id a payment event identifier
+     *
+     * @return self
      */
     public function setPaymentEventId(?string $payment_event_id) : self
     {
@@ -327,6 +349,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets fee_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent
      */
     public function getFeeComponent() : ?FeeComponent
     {
@@ -337,6 +361,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets fee_component.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent $fee_component fee_component
+     *
+     * @return self
      */
     public function setFeeComponent(?FeeComponent $fee_component) : self
     {
@@ -347,6 +373,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets charge_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getChargeComponent() : ?ChargeComponent
     {
@@ -357,6 +385,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets charge_component.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent $charge_component charge_component
+     *
+     * @return self
      */
     public function setChargeComponent(?ChargeComponent $charge_component) : self
     {
@@ -367,6 +397,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets total_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {
@@ -377,6 +409,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets total_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $total_amount total_amount
+     *
+     * @return self
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {
@@ -388,7 +422,7 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -397,8 +431,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -409,9 +441,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -424,8 +453,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -447,6 +474,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

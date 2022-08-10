@@ -118,7 +118,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -203,6 +207,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -213,6 +219,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) value used to identify the item
+     *
+     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -223,6 +231,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType
      */
     public function getPrice() : ?MoneyType
     {
@@ -233,6 +243,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType $price price
+     *
+     * @return self
      */
     public function setPrice(?MoneyType $price) : self
     {
@@ -255,6 +267,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fee_breakdown.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\FeeLineItem[] $fee_breakdown a list of the Small and Light fees for the item
+     *
+     * @return self
      */
     public function setFeeBreakdown(?array $fee_breakdown) : self
     {
@@ -265,6 +279,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets total_fees.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType
      */
     public function getTotalFees() : ?MoneyType
     {
@@ -275,6 +291,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_fees.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType $total_fees total_fees
+     *
+     * @return self
      */
     public function setTotalFees(?MoneyType $total_fees) : self
     {
@@ -297,6 +315,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\Error[] $errors one or more unexpected errors occurred during the getSmallAndLightFeePreview operation
+     *
+     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -308,7 +328,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -317,8 +337,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -329,9 +347,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -344,8 +359,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -367,6 +380,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

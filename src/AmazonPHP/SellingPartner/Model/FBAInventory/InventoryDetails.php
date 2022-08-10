@@ -130,7 +130,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -180,6 +180,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -191,6 +193,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -219,6 +223,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets fulfillable_quantity.
+     *
+     * @return null|int
      */
     public function getFulfillableQuantity() : ?int
     {
@@ -229,6 +235,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets fulfillable_quantity.
      *
      * @param null|int $fulfillable_quantity the item quantity that can be picked, packed, and shipped
+     *
+     * @return self
      */
     public function setFulfillableQuantity(?int $fulfillable_quantity) : self
     {
@@ -239,6 +247,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets inbound_working_quantity.
+     *
+     * @return null|int
      */
     public function getInboundWorkingQuantity() : ?int
     {
@@ -249,6 +259,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets inbound_working_quantity.
      *
      * @param null|int $inbound_working_quantity the number of units in an inbound shipment for which you have notified Amazon
+     *
+     * @return self
      */
     public function setInboundWorkingQuantity(?int $inbound_working_quantity) : self
     {
@@ -259,6 +271,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets inbound_shipped_quantity.
+     *
+     * @return null|int
      */
     public function getInboundShippedQuantity() : ?int
     {
@@ -269,6 +283,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets inbound_shipped_quantity.
      *
      * @param null|int $inbound_shipped_quantity the number of units in an inbound shipment that you have notified Amazon about and have provided a tracking number
+     *
+     * @return self
      */
     public function setInboundShippedQuantity(?int $inbound_shipped_quantity) : self
     {
@@ -279,6 +295,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets inbound_receiving_quantity.
+     *
+     * @return null|int
      */
     public function getInboundReceivingQuantity() : ?int
     {
@@ -289,6 +307,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets inbound_receiving_quantity.
      *
      * @param null|int $inbound_receiving_quantity the number of units that have not yet been received at an Amazon fulfillment center for processing, but are part of an inbound shipment with some units that have already been received and processed
+     *
+     * @return self
      */
     public function setInboundReceivingQuantity(?int $inbound_receiving_quantity) : self
     {
@@ -299,6 +319,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets reserved_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity
      */
     public function getReservedQuantity() : ?ReservedQuantity
     {
@@ -309,6 +331,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets reserved_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity $reserved_quantity reserved_quantity
+     *
+     * @return self
      */
     public function setReservedQuantity(?ReservedQuantity $reserved_quantity) : self
     {
@@ -319,6 +343,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets researching_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity
      */
     public function getResearchingQuantity() : ?ResearchingQuantity
     {
@@ -329,6 +355,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets researching_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity $researching_quantity researching_quantity
+     *
+     * @return self
      */
     public function setResearchingQuantity(?ResearchingQuantity $researching_quantity) : self
     {
@@ -339,6 +367,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets unfulfillable_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity
      */
     public function getUnfulfillableQuantity() : ?UnfulfillableQuantity
     {
@@ -349,6 +379,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets unfulfillable_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity $unfulfillable_quantity unfulfillable_quantity
+     *
+     * @return self
      */
     public function setUnfulfillableQuantity(?UnfulfillableQuantity $unfulfillable_quantity) : self
     {
@@ -360,7 +392,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -369,8 +401,6 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -381,9 +411,6 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -396,8 +423,6 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -419,6 +444,8 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

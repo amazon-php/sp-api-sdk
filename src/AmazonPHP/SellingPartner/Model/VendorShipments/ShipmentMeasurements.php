@@ -112,7 +112,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -197,6 +201,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets gross_shipment_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getGrossShipmentWeight() : ?Weight
     {
@@ -207,6 +213,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets gross_shipment_weight.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $gross_shipment_weight gross_shipment_weight
+     *
+     * @return self
      */
     public function setGrossShipmentWeight(?Weight $gross_shipment_weight) : self
     {
@@ -217,6 +225,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets shipment_volume.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Volume
      */
     public function getShipmentVolume() : ?Volume
     {
@@ -227,6 +237,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets shipment_volume.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Volume $shipment_volume shipment_volume
+     *
+     * @return self
      */
     public function setShipmentVolume(?Volume $shipment_volume) : self
     {
@@ -237,6 +249,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets carton_count.
+     *
+     * @return null|int
      */
     public function getCartonCount() : ?int
     {
@@ -247,6 +261,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets carton_count.
      *
      * @param null|int $carton_count Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
+     *
+     * @return self
      */
     public function setCartonCount(?int $carton_count) : self
     {
@@ -257,6 +273,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets pallet_count.
+     *
+     * @return null|int
      */
     public function getPalletCount() : ?int
     {
@@ -267,6 +285,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets pallet_count.
      *
      * @param null|int $pallet_count Number of pallets present in the shipment. Provide the palletCount only for palletized shipments.
+     *
+     * @return self
      */
     public function setPalletCount(?int $pallet_count) : self
     {
@@ -278,7 +298,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -287,8 +307,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -299,9 +317,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -314,8 +329,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -337,6 +350,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

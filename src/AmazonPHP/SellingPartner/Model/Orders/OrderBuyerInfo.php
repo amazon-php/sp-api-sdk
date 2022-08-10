@@ -124,7 +124,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -219,6 +223,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amazon_order_id.
      *
      * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
+     *
+     * @return self
      */
     public function setAmazonOrderId(string $amazon_order_id) : self
     {
@@ -229,6 +235,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_email.
+     *
+     * @return null|string
      */
     public function getBuyerEmail() : ?string
     {
@@ -239,6 +247,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_email.
      *
      * @param null|string $buyer_email the anonymized email address of the buyer
+     *
+     * @return self
      */
     public function setBuyerEmail(?string $buyer_email) : self
     {
@@ -249,6 +259,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_name.
+     *
+     * @return null|string
      */
     public function getBuyerName() : ?string
     {
@@ -259,6 +271,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_name.
      *
      * @param null|string $buyer_name the name of the buyer
+     *
+     * @return self
      */
     public function setBuyerName(?string $buyer_name) : self
     {
@@ -269,6 +283,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_county.
+     *
+     * @return null|string
      */
     public function getBuyerCounty() : ?string
     {
@@ -279,6 +295,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_county.
      *
      * @param null|string $buyer_county the county of the buyer
+     *
+     * @return self
      */
     public function setBuyerCounty(?string $buyer_county) : self
     {
@@ -289,6 +307,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_tax_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo
      */
     public function getBuyerTaxInfo() : ?BuyerTaxInfo
     {
@@ -299,6 +319,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_tax_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo $buyer_tax_info buyer_tax_info
+     *
+     * @return self
      */
     public function setBuyerTaxInfo(?BuyerTaxInfo $buyer_tax_info) : self
     {
@@ -309,6 +331,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_number.
+     *
+     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {
@@ -319,6 +343,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_number.
      *
      * @param null|string $purchase_order_number The purchase order (PO) number entered by the buyer at checkout. Returned only for orders where the buyer entered a PO number at checkout.
+     *
+     * @return self
      */
     public function setPurchaseOrderNumber(?string $purchase_order_number) : self
     {
@@ -330,7 +356,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -339,8 +365,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -351,9 +375,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -366,8 +387,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -389,6 +408,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

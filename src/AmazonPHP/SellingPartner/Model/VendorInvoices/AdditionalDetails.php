@@ -112,7 +112,7 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -233,6 +237,8 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets type.
      *
      * @param string $type the type of the additional information provided by the selling party
+     *
+     * @return self
      */
     public function setType(string $type) : self
     {
@@ -253,6 +259,8 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets detail.
      *
      * @param string $detail the detail of the additional information provided by the selling party
+     *
+     * @return self
      */
     public function setDetail(string $detail) : self
     {
@@ -263,6 +271,8 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets language_code.
+     *
+     * @return null|string
      */
     public function getLanguageCode() : ?string
     {
@@ -273,6 +283,8 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets language_code.
      *
      * @param null|string $language_code the language code of the additional information detail
+     *
+     * @return self
      */
     public function setLanguageCode(?string $language_code) : self
     {
@@ -284,7 +296,7 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -293,8 +305,6 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -305,9 +315,6 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -320,8 +327,6 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -343,6 +348,8 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

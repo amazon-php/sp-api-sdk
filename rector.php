@@ -48,7 +48,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\Rector\PSR4\Rector\Namespace_\MultipleClassFileToPsr4ClassesRector::class);
 
     // Define what rule sets will be applied
-    $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(SetList::PHP_73);
     $containerConfigurator->import(SetList::PHP_74);
     $containerConfigurator->import(SetList::TYPE_DECLARATION);
@@ -56,77 +55,73 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     /**
      * Explanation here: https://github.com/amazon-php/sp-api-sdk/issues/101#issuecomment-1002159988
      */
-    $services->set(AddParamTypeDeclarationRector::class)
-        ->call('configure', [[
-            AddParamTypeDeclarationRector::PARAMETER_TYPEHINTS => ValueObjectInliner::inline([
-                new AddParamTypeDeclaration(
-                    Item::class,
-                    'setAttributes',
-                    0,
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
-                ),
-                new AddParamTypeDeclaration(
-                    ListingsItemPutRequest::class,
-                    'setAttributes',
-                    0,
-                    new ArrayType(new MixedType(), new MixedType())
-                ),
-                new AddParamTypeDeclaration(
-                    \AmazonPHP\SellingPartner\Model\ListingsItems\Item::class,
-                    'setAttributes',
-                    0,
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
-                ),
-                new AddParamTypeDeclaration(
-                    GetSchemaResponse::class,
-                    'setPayload',
-                    0,
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
-                ),
-                new AddParamTypeDeclaration(
-                    UploadDestination::class,
-                    'setHeaders',
-                    0,
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
-                ),
-                new AddParamTypeDeclaration(
-                    VendorDirectFulfillmentOrdersSDK::class,
-                    'getOrders',
-                    9,
-                    new BooleanType()
-                ),
-            ])
-        ]]);
+    $services->set(AddParamTypeDeclarationRector::class)->configure([
+            new AddParamTypeDeclaration(
+                Item::class,
+                'setAttributes',
+                0,
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
+            ),
+            new AddParamTypeDeclaration(
+                ListingsItemPutRequest::class,
+                'setAttributes',
+                0,
+                new ArrayType(new MixedType(), new MixedType())
+            ),
+            new AddParamTypeDeclaration(
+                \AmazonPHP\SellingPartner\Model\ListingsItems\Item::class,
+                'setAttributes',
+                0,
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
+            ),
+            new AddParamTypeDeclaration(
+                GetSchemaResponse::class,
+                'setPayload',
+                0,
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
+            ),
+            new AddParamTypeDeclaration(
+                UploadDestination::class,
+                'setHeaders',
+                0,
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
+            ),
+            new AddParamTypeDeclaration(
+                VendorDirectFulfillmentOrdersSDK::class,
+                'getOrders',
+                9,
+                new BooleanType()
+            ),
+        ]
+    );
 
-    $services->set(AddReturnTypeDeclarationRector::class)
-        ->call('configure', [[
-            AddReturnTypeDeclarationRector::METHOD_RETURN_TYPES => ValueObjectInliner::inline([
-                new AddReturnTypeDeclaration(
-                    Item::class,
-                    'getAttributes',
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
-                ),
-                new AddReturnTypeDeclaration(
-                    ListingsItemPutRequest::class,
-                    'getAttributes',
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
-                ),
-                new AddReturnTypeDeclaration(
-                    GetSchemaResponse::class,
-                    'getPayload',
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
-                ),
-                new AddReturnTypeDeclaration(
-                    GetSchemaResponse::class,
-                    'getHeaders',
-                    new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
-                ),
-                // https://github.com/amazon-php/sp-api-sdk/pull/118
-                new AddReturnTypeDeclaration(
-                    Address::class,
-                    'getName',
-                    new UnionType([new NullType(), new StringType()]),
-                ),
-            ])
-        ]]);
+    $services->set(AddReturnTypeDeclarationRector::class)->configure([
+            new AddReturnTypeDeclaration(
+                Item::class,
+                'getAttributes',
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
+            ),
+            new AddReturnTypeDeclaration(
+                ListingsItemPutRequest::class,
+                'getAttributes',
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
+            ),
+            new AddReturnTypeDeclaration(
+                GetSchemaResponse::class,
+                'getPayload',
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
+            ),
+            new AddReturnTypeDeclaration(
+                GetSchemaResponse::class,
+                'getHeaders',
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
+            ),
+            // https://github.com/amazon-php/sp-api-sdk/pull/118
+            new AddReturnTypeDeclaration(
+                Address::class,
+                'getName',
+                new UnionType([new NullType(), new StringType()]),
+            ),
+        ]
+    );
 };

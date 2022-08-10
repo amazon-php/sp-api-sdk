@@ -106,7 +106,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -205,6 +209,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets party_id.
      *
      * @param string $party_id Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
+     *
+     * @return self
      */
     public function setPartyId(string $party_id) : self
     {
@@ -215,6 +221,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Address
      */
     public function getAddress() : ?Address
     {
@@ -225,6 +233,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Address $address address
+     *
+     * @return self
      */
     public function setAddress(?Address $address) : self
     {
@@ -235,6 +245,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets tax_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\TaxRegistrationDetails
      */
     public function getTaxInfo() : ?TaxRegistrationDetails
     {
@@ -245,6 +257,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets tax_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\TaxRegistrationDetails $tax_info tax_info
+     *
+     * @return self
      */
     public function setTaxInfo(?TaxRegistrationDetails $tax_info) : self
     {
@@ -256,7 +270,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -265,8 +279,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -277,9 +289,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -292,8 +301,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -315,6 +322,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

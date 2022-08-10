@@ -55,7 +55,7 @@ use Psr\Log\LoggerInterface;
     * @param AccessToken $accessToken
     * @param string $region
     {{#allParams}}
-        * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}}{{^description}} {{paramName}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
+    * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}}{{^description}} {{paramName}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
     {{/allParams}}
     *
     * @throws \{{invokerPackage}}\Exception\ApiException on non-2xx response
@@ -84,7 +84,7 @@ use Psr\Log\LoggerInterface;
     * @param AccessToken $accessToken
     * @param string $region
     {{#allParams}}
-        * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
+    * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
     {{/allParams}}
     *
     * @throws \{{invokerPackage}}\Exception\InvalidArgumentException

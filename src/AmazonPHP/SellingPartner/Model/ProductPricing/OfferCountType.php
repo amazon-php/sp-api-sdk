@@ -106,7 +106,7 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -184,6 +188,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets condition.
+     *
+     * @return null|string
      */
     public function getCondition() : ?string
     {
@@ -194,6 +200,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets condition.
      *
      * @param null|string $condition Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
+     *
+     * @return self
      */
     public function setCondition(?string $condition) : self
     {
@@ -204,6 +212,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\FulfillmentChannelType
      */
     public function getFulfillmentChannel() : ?FulfillmentChannelType
     {
@@ -214,6 +224,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fulfillment_channel.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\FulfillmentChannelType $fulfillment_channel fulfillment_channel
+     *
+     * @return self
      */
     public function setFulfillmentChannel(?FulfillmentChannelType $fulfillment_channel) : self
     {
@@ -224,6 +236,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offer_count.
+     *
+     * @return null|int
      */
     public function getOfferCount() : ?int
     {
@@ -234,6 +248,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offer_count.
      *
      * @param null|int $offer_count the number of offers in a fulfillment channel that meet a specific condition
+     *
+     * @return self
      */
     public function setOfferCount(?int $offer_count) : self
     {
@@ -245,7 +261,7 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -254,8 +270,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -266,9 +280,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -281,8 +292,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -304,6 +313,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

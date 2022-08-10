@@ -40,12 +40,13 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      * Operation submitShipmentConfirmations.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function submitShipmentConfirmations(AccessToken $accessToken, string $region, $body) : \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
+    public function submitShipmentConfirmations(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
     {
         $request = $this->submitShipmentConfirmationsRequest($accessToken, $region, $body);
 
@@ -136,11 +137,14 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      * Create request for operation 'submitShipmentConfirmations'.
      *
      * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     *
+     * @return RequestInterface
      */
-    public function submitShipmentConfirmationsRequest(AccessToken $accessToken, string $region, $body) : RequestInterface
+    public function submitShipmentConfirmationsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : RequestInterface
     {
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
