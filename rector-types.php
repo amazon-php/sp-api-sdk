@@ -2,31 +2,22 @@
 
 declare(strict_types=1);
 
-use Rector\Core\Configuration\Option;
+use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    // get parameters
-    $parameters = $containerConfigurator->parameters();
-    $services = $containerConfigurator->services();
+return static function (RectorConfig $config): void {
 
-    $parameters->set(Option::PARALLEL, false);
-    $parameters->set(Option::AUTOLOAD_PATHS, [
+    $config->autoloadPaths([
         __DIR__ ,
     ]);
-
-    // paths to refactor; solid alternative to CLI arguments
-    $parameters->set(Option::PATHS, [
+    $config->paths([
         __DIR__ . '/src',
     ]);
-
-    $parameters->set(Option::SKIP, [
-        // single file
+    $config->skip([
         __DIR__ . '/src/AmazonPHP/SellingPartner/Marketplace.php',
         __DIR__ . '/src/AmazonPHP/SellingPartner/AccessToken.php',
     ]);
 
-    $containerConfigurator->import(SetList::TYPE_DECLARATION);
-    $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
+    $config->import(SetList::TYPE_DECLARATION);
+    $config->import(SetList::TYPE_DECLARATION_STRICT);
 };

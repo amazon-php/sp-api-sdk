@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use AmazonPHP\Rector\ClassMethod\FixArgumentDefaultValuesNotMatchingTypeRector;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
 use AmazonPHP\SellingPartner\Model\CatalogItem\Item;
 use AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest;
@@ -14,44 +15,43 @@ use PHPStan\Type\MixedType;
 use PHPStan\Type\NullType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\UnionType;
-use Rector\Core\Configuration\Option;
+use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeDeclarationRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddReturnTypeDeclarationRector;
 use Rector\TypeDeclaration\ValueObject\AddParamTypeDeclaration;
 use Rector\TypeDeclaration\ValueObject\AddReturnTypeDeclaration;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    // get parameters
-    $parameters = $containerConfigurator->parameters();
-    $services = $containerConfigurator->services();
+return static function (RectorConfig $config): void {
 
-    $parameters->set(Option::PARALLEL, false);
-    $parameters->set(Option::AUTOLOAD_PATHS, [
+    $config->autoloadPaths([
         __DIR__ ,
     ]);
-
-    // paths to refactor; solid alternative to CLI arguments
-    $parameters->set(Option::PATHS, [
+    $config->paths([
         __DIR__ . '/src',
     ]);
-
-    $parameters->set(Option::SKIP, [
-        // single file
+    $config->skip([
         __DIR__ . '/src/AmazonPHP/SellingPartner/Marketplace.php',
         __DIR__ . '/src/AmazonPHP/SellingPartner/AccessToken.php',
     ]);
 
-    $services->set(\AmazonPHP\Rector\ClassMethod\FixArgumentDefaultValuesNotMatchingTypeRector::class);
+    $config->rules([
+        FixArgumentDefaultValuesNotMatchingTypeRector::class
+    ]);
+    $config->sets([
+        SetList::PHP_73,
+        SetList::PHP_74
+    ]);
 
-    $containerConfigurator->import(SetList::PHP_73);
-    $containerConfigurator->import(SetList::PHP_74);
+    $config->import(SetList::PHP_73);
+    $config->import(SetList::PHP_74);
 
     /**
      * Explanation here: https://github.com/amazon-php/sp-api-sdk/issues/101#issuecomment-1002159988
      */
-    $services->set(AddParamTypeDeclarationRector::class)->configure([
+    $config->ruleWithConfiguration(
+        AddParamTypeDeclarationRector::class,
+        [
             new AddParamTypeDeclaration(
                 Item::class,
                 'setAttributes',
@@ -91,7 +91,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ]
     );
 
-    $services->set(AddReturnTypeDeclarationRector::class)->configure([
+    $config->ruleWithConfiguration(
+        AddReturnTypeDeclarationRector::class,
+        [
             new AddReturnTypeDeclaration(
                 Item::class,
                 'getAttributes',
