@@ -2,6 +2,9 @@
 
 $finder = PhpCsFixer\Finder::create()
     ->files()
+    ->notPath([
+        __DIR__ . '/src/AmazonPHP/SellingPartner/ObjectSerializer.php'
+    ])
     ->in([
         __DIR__ . '/src',
         __DIR__ . '/tools/src',
@@ -186,6 +189,8 @@ return $config
         'phpdoc_types' => ['groups' => ['simple', 'meta']],
         'phpdoc_types_order' => true,
         'phpdoc_var_without_name' => true,
+        'phpdoc_to_param_type' => true,
+        'phpdoc_to_return_type' => true,
         'pow_to_exponentiation' => true,
         'protected_to_private' => true,
         'return_assignment' => true,
@@ -207,7 +212,6 @@ return $config
         'trailing_comma_in_multiline' => true,
         'trim_array_spaces' => true,
         'unary_operator_spaces' => true,
-        'phpdoc_to_param_type' => true,
         'visibility_required' => [
             'elements' => [
                 'const',

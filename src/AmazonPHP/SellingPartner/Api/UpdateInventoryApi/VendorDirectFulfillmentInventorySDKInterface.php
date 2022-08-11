@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\UpdateInventoryApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Direct Fulfillment Inventory Updates.
@@ -28,8 +27,6 @@ interface VendorDirectFulfillmentInventorySDKInterface
     /**
      * Operation submitInventoryUpdate.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body body (required)
      *
@@ -38,19 +35,5 @@ interface VendorDirectFulfillmentInventorySDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse
      */
-    public function submitInventoryUpdate(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body);
-
-    /**
-     * Create request for operation 'submitInventoryUpdate'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function submitInventoryUpdateRequest(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body) : RequestInterface;
+    public function submitInventoryUpdate(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse;
 }

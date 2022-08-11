@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\MerchantFulfillmentApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Merchant Fulfillment.
@@ -56,8 +55,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation cancelShipment.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
      *
      * @throws ApiException on non-2xx response
@@ -65,26 +62,11 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse
      */
-    public function cancelShipment(AccessToken $accessToken, string $region, string $shipment_id);
-
-    /**
-     * Create request for operation 'cancelShipment'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function cancelShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface;
+    public function cancelShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse;
 
     /**
      * Operation cancelShipmentOld.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
      *
      * @throws ApiException on non-2xx response
@@ -92,26 +74,11 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse
      */
-    public function cancelShipmentOld(AccessToken $accessToken, string $region, string $shipment_id);
-
-    /**
-     * Create request for operation 'cancelShipmentOld'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function cancelShipmentOldRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface;
+    public function cancelShipmentOld(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse;
 
     /**
      * Operation createShipment.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -119,26 +86,11 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentResponse
      */
-    public function createShipment(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body);
-
-    /**
-     * Create request for operation 'createShipment'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function createShipmentRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body) : RequestInterface;
+    public function createShipment(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentResponse;
 
     /**
      * Operation getAdditionalSellerInputs.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -146,26 +98,11 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
      */
-    public function getAdditionalSellerInputs(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body);
-
-    /**
-     * Create request for operation 'getAdditionalSellerInputs'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getAdditionalSellerInputsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : RequestInterface;
+    public function getAdditionalSellerInputs(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse;
 
     /**
      * Operation getAdditionalSellerInputsOld.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -173,26 +110,11 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
      */
-    public function getAdditionalSellerInputsOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body);
-
-    /**
-     * Create request for operation 'getAdditionalSellerInputsOld'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getAdditionalSellerInputsOldRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : RequestInterface;
+    public function getAdditionalSellerInputsOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse;
 
     /**
      * Operation getEligibleShipmentServices.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -200,26 +122,11 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
      */
-    public function getEligibleShipmentServices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body);
-
-    /**
-     * Create request for operation 'getEligibleShipmentServices'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getEligibleShipmentServicesRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : RequestInterface;
+    public function getEligibleShipmentServices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse;
 
     /**
      * Operation getEligibleShipmentServicesOld.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -227,26 +134,11 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
      */
-    public function getEligibleShipmentServicesOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body);
-
-    /**
-     * Create request for operation 'getEligibleShipmentServicesOld'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getEligibleShipmentServicesOldRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : RequestInterface;
+    public function getEligibleShipmentServicesOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse;
 
     /**
      * Operation getShipment.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The Amazon-defined shipment identifier for the shipment. (required)
      *
      * @throws ApiException on non-2xx response
@@ -254,18 +146,5 @@ interface MerchantFulfillmentSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetShipmentResponse
      */
-    public function getShipment(AccessToken $accessToken, string $region, string $shipment_id);
-
-    /**
-     * Create request for operation 'getShipment'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $shipment_id The Amazon-defined shipment identifier for the shipment. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface;
+    public function getShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetShipmentResponse;
 }

@@ -137,8 +137,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'cancelReport'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -324,8 +322,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'cancelReportSchedule'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -516,8 +512,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'createReport'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -707,8 +701,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'createReportSchedule'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -898,8 +890,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'getReport'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -1090,8 +1080,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'getReportDocument'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -1282,8 +1270,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'getReportSchedule'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -1377,6 +1363,8 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation getReportSchedules.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws ApiException on non-2xx response
@@ -1472,8 +1460,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'getReportSchedules'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string[] $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -1678,8 +1664,6 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'getReports'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param null|string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)

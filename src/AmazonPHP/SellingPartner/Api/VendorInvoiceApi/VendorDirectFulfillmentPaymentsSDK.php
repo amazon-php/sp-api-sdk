@@ -142,8 +142,6 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'submitInvoice'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

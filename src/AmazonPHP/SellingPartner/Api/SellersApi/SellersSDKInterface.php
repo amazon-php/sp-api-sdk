@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\SellersApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Sellers.
@@ -36,17 +35,5 @@ interface SellersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Sellers\GetMarketplaceParticipationsResponse
      */
-    public function getMarketplaceParticipations(AccessToken $accessToken, string $region);
-
-    /**
-     * Create request for operation 'getMarketplaceParticipations'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getMarketplaceParticipationsRequest(AccessToken $accessToken, string $region) : RequestInterface;
+    public function getMarketplaceParticipations(AccessToken $accessToken, string $region) : \AmazonPHP\SellingPartner\Model\Sellers\GetMarketplaceParticipationsResponse;
 }

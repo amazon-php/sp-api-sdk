@@ -142,8 +142,6 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
     /**
      * Create request for operation 'submitInvoices'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

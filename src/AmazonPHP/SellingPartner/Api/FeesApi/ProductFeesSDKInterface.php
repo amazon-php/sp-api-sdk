@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\FeesApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Product Fees.
@@ -36,8 +35,6 @@ interface ProductFeesSDKInterface
     /**
      * Operation getMyFeesEstimateForASIN.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
      *
@@ -46,27 +43,11 @@ interface ProductFeesSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
      */
-    public function getMyFeesEstimateForASIN(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body);
-
-    /**
-     * Create request for operation 'getMyFeesEstimateForASIN'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getMyFeesEstimateForASINRequest(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface;
+    public function getMyFeesEstimateForASIN(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse;
 
     /**
      * Operation getMyFeesEstimateForSKU.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
      *
@@ -75,27 +56,11 @@ interface ProductFeesSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
      */
-    public function getMyFeesEstimateForSKU(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body);
-
-    /**
-     * Create request for operation 'getMyFeesEstimateForSKU'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getMyFeesEstimateForSKURequest(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface;
+    public function getMyFeesEstimateForSKU(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse;
 
     /**
      * Operation getMyFeesEstimates.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -103,18 +68,5 @@ interface ProductFeesSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateResult[]
      */
-    public function getMyFeesEstimates(AccessToken $accessToken, string $region, array $body);
-
-    /**
-     * Create request for operation 'getMyFeesEstimates'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getMyFeesEstimatesRequest(AccessToken $accessToken, string $region, array $body) : RequestInterface;
+    public function getMyFeesEstimates(AccessToken $accessToken, string $region, array $body) : array;
 }

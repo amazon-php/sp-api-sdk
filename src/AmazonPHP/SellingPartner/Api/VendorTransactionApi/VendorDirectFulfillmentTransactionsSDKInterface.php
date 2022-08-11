@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\VendorTransactionApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Direct Fulfillment Transaction Status.
@@ -28,8 +27,6 @@ interface VendorDirectFulfillmentTransactionsSDKInterface
     /**
      * Operation getTransactionStatus.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $transaction_id Previously returned in the response to the POST request of a specific transaction. (required)
      *
      * @throws ApiException on non-2xx response
@@ -37,18 +34,5 @@ interface VendorDirectFulfillmentTransactionsSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus
      */
-    public function getTransactionStatus(AccessToken $accessToken, string $region, string $transaction_id);
-
-    /**
-     * Create request for operation 'getTransactionStatus'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $transaction_id Previously returned in the response to the POST request of a specific transaction. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getTransactionStatusRequest(AccessToken $accessToken, string $region, string $transaction_id) : RequestInterface;
+    public function getTransactionStatus(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus;
 }

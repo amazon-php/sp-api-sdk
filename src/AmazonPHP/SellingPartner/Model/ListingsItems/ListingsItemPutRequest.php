@@ -274,7 +274,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets attributes.
      */
-    public function getAttributes() : object
+    public function getAttributes() : ?array
     {
         return $this->container['attributes'];
     }
@@ -282,7 +282,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets attributes.
      *
-     * @param object $attributes JSON object containing structured listings item attribute data keyed by attribute name
+     * @param mixed[] $attributes
      *
      * @return self
      */

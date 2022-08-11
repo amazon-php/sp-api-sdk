@@ -40,11 +40,10 @@ return static function (RectorConfig $config): void {
     ]);
     $config->sets([
         SetList::PHP_73,
-        SetList::PHP_74
+        SetList::PHP_74,
+        SetList::TYPE_DECLARATION,
+        SetList::TYPE_DECLARATION_STRICT
     ]);
-
-    $config->import(SetList::PHP_73);
-    $config->import(SetList::PHP_74);
 
     /**
      * Explanation here: https://github.com/amazon-php/sp-api-sdk/issues/101#issuecomment-1002159988

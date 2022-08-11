@@ -142,8 +142,6 @@ final class TokensSDK implements TokensSDKInterface
     /**
      * Create request for operation 'createRestrictedDataToken'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body The restricted data token request details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

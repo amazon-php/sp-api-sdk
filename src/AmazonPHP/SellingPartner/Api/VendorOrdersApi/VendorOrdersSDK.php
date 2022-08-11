@@ -142,8 +142,6 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Create request for operation 'getPurchaseOrder'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $purchase_order_number The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -950,8 +948,6 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Create request for operation 'submitAcknowledgement'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

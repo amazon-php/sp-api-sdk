@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
@@ -36,8 +35,6 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation getShippingLabel.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $purchase_order_number The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
      *
      * @throws ApiException on non-2xx response
@@ -45,26 +42,11 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
      */
-    public function getShippingLabel(AccessToken $accessToken, string $region, string $purchase_order_number);
-
-    /**
-     * Create request for operation 'getShippingLabel'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $purchase_order_number The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getShippingLabelRequest(AccessToken $accessToken, string $region, string $purchase_order_number) : RequestInterface;
+    public function getShippingLabel(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel;
 
     /**
      * Operation getShippingLabels.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \DateTimeInterface $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param \DateTimeInterface $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param null|string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
@@ -77,31 +59,11 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList
      */
-    public function getShippingLabels(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, string $sort_order = 'ASC', ?string $next_token = null);
-
-    /**
-     * Create request for operation 'getShippingLabels'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \DateTimeInterface $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param \DateTimeInterface $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param null|string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
-     * @param null|int $limit The limit to the number of records returned. (optional)
-     * @param string $sort_order Sort ASC or DESC by order creation date. (optional, default to 'ASC')
-     * @param null|string $next_token Used for pagination when there are more ship labels than the specified result size limit. The token value is returned in the previous API call. (optional)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getShippingLabelsRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, string $sort_order = 'ASC', ?string $next_token = null) : RequestInterface;
+    public function getShippingLabels(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, string $sort_order = 'ASC', ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList;
 
     /**
      * Operation submitShippingLabelRequest.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -109,18 +71,5 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference
      */
-    public function submitShippingLabelRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body);
-
-    /**
-     * Create request for operation 'submitShippingLabelRequest'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function submitShippingLabelRequestRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body) : RequestInterface;
+    public function submitShippingLabelRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference;
 }

@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\OrdersV0Api;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Orders.
@@ -56,8 +55,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrder.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -65,26 +62,11 @@ interface OrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderResponse
      */
-    public function getOrder(AccessToken $accessToken, string $region, string $order_id);
-
-    /**
-     * Create request for operation 'getOrder'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getOrderRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface;
+    public function getOrder(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderResponse;
 
     /**
      * Operation getOrderAddress.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -92,26 +74,11 @@ interface OrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderAddressResponse
      */
-    public function getOrderAddress(AccessToken $accessToken, string $region, string $order_id);
-
-    /**
-     * Create request for operation 'getOrderAddress'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getOrderAddressRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface;
+    public function getOrderAddress(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderAddressResponse;
 
     /**
      * Operation getOrderBuyerInfo.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -119,26 +86,11 @@ interface OrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderBuyerInfoResponse
      */
-    public function getOrderBuyerInfo(AccessToken $accessToken, string $region, string $order_id);
-
-    /**
-     * Create request for operation 'getOrderBuyerInfo'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getOrderBuyerInfoRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface;
+    public function getOrderBuyerInfo(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderBuyerInfoResponse;
 
     /**
      * Operation getOrderItems.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
@@ -147,27 +99,11 @@ interface OrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsResponse
      */
-    public function getOrderItems(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null);
-
-    /**
-     * Create request for operation 'getOrderItems'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getOrderItemsRequest(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : RequestInterface;
+    public function getOrderItems(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsResponse;
 
     /**
      * Operation getOrderItemsBuyerInfo.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
@@ -176,27 +112,11 @@ interface OrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsBuyerInfoResponse
      */
-    public function getOrderItemsBuyerInfo(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null);
-
-    /**
-     * Create request for operation 'getOrderItemsBuyerInfo'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getOrderItemsBuyerInfoRequest(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : RequestInterface;
+    public function getOrderItemsBuyerInfo(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsBuyerInfoResponse;
 
     /**
      * Operation getOrderRegulatedInfo.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -204,26 +124,11 @@ interface OrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse
      */
-    public function getOrderRegulatedInfo(AccessToken $accessToken, string $region, string $order_id);
-
-    /**
-     * Create request for operation 'getOrderRegulatedInfo'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getOrderRegulatedInfoRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface;
+    public function getOrderRegulatedInfo(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse;
 
     /**
      * Operation getOrders.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param null|string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
@@ -248,43 +153,11 @@ interface OrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
      */
-    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null);
-
-    /**
-     * Create request for operation 'getOrders'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
-     * @param null|string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
-     * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
-     * @param null|string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
-     * @param null|string $last_updated_before A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
-     * @param null|string[] $order_statuses A list of OrderStatus values used to filter the results. Possible values: PendingAvailability (This status is available for pre-orders only. The order has been placed, payment has not been authorized, and the release date of the item is in the future.); Pending (The order has been placed but payment has not been authorized); Unshipped (Payment has been authorized and the order is ready for shipment, but no items in the order have been shipped); PartiallyShipped (One or more, but not all, items in the order have been shipped); Shipped (All items in the order have been shipped); InvoiceUnconfirmed (All items in the order have been shipped. The seller has not yet given confirmation to Amazon that the invoice has been shipped to the buyer.); Canceled (The order has been canceled); and Unfulfillable (The order cannot be fulfilled. This state applies only to Multi-Channel Fulfillment orders.). (optional)
-     * @param null|string[] $fulfillment_channels A list that indicates how an order was fulfilled. Filters the results by fulfillment channel. Possible values: AFN (Fulfillment by Amazon); MFN (Fulfilled by the seller). (optional)
-     * @param null|string[] $payment_methods A list of payment method values. Used to select orders paid using the specified payment methods. Possible values: COD (Cash on delivery); CVS (Convenience store payment); Other (Any payment method other than COD or CVS). (optional)
-     * @param null|string $buyer_email The email address of a buyer. Used to select orders that contain the specified email address. (optional)
-     * @param null|string $seller_order_id An order identifier that is specified by the seller. Used to select only the orders that match the order identifier. If SellerOrderId is specified, then FulfillmentChannels, OrderStatuses, PaymentMethod, LastUpdatedAfter, LastUpdatedBefore, and BuyerEmail cannot be specified. (optional)
-     * @param null|int $max_results_per_page A number that indicates the maximum number of orders that can be returned per page. Value must be 1 - 100. Default 100. (optional)
-     * @param null|string[] $easy_ship_shipment_statuses A list of EasyShipShipmentStatus values. Used to select Easy-Ship orders with statuses that match the specified values. If EasyShipShipmentStatus is specified, only Amazon Easy-Ship orders are returned. Possible values: PendingSchedule (The package is awaiting schedule for pick-up). PendingPickUp (Amazon has not yet picked up the package from the seller). PendingDropOff (The seller will deliver the package to the carrier). LabelCanceled (The seller canceled the pickup). PickedUp (Amazon has picked up the package from the seller). DroppedOff (The package is delivered to the carrier by the seller). AtOriginFC (The packaged is at the origin fulfillment center). AtDestinationFC (The package is at the destination fulfillment center). Delivered (The package has been delivered). RejectedByBuyer (The package has been rejected by the buyer). Undeliverable (The package cannot be delivered). ReturningToSeller (The package was not delivered and is being returned to the seller). ReturnedToSeller (The package was not delivered and was returned to the seller). Lost (The package is lost). OutForDelivery (The package is out for delivery). Damaged (The package was damaged by the carrier). (optional)
-     * @param null|string[] $electronic_invoice_statuses A list of ElectronicInvoiceStatus values. Used to select orders with electronic invoice statuses that match the specified  values. Possible values: NotRequired (electronic invoice submission is not required for this order), NotFound (electronic invoice was not submitted for this order), Processing (electronic invoice is being processed for this order), Errored (last submitted electronic invoice was rejected for this order), Accepted (last submitted electronic invoice was submitted and accepted) (optional)
-     * @param null|string $next_token A string token returned in the response of your previous request. (optional)
-     * @param null|string[] $amazon_order_ids A list of AmazonOrderId values. An AmazonOrderId is an Amazon-defined order identifier, in 3-7-7 format. (optional)
-     * @param null|string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
-     * @param null|bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
-     * @param null|string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getOrdersRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null) : RequestInterface;
+    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse;
 
     /**
      * Operation updateVerificationStatus.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload The request body for the updateVerificationStatus operation. (required)
      *
@@ -292,18 +165,4 @@ interface OrdersSDKInterface
      * @throws InvalidArgumentException
      */
     public function updateVerificationStatus(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload);
-
-    /**
-     * Create request for operation 'updateVerificationStatus'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload The request body for the updateVerificationStatus operation. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function updateVerificationStatusRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload) : RequestInterface;
 }
