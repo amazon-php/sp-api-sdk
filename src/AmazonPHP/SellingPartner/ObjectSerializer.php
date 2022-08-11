@@ -293,7 +293,7 @@ final class ObjectSerializer
             return $deserialized;
         }
 
-        if ($class === '\DateTime' || $class === '\DateTimeImmutable') {
+        if ($class === '\DateTime' || $class === '\DateTimeImmutable' || $class === '\DateTimeInterface') {
             // Some API's return an invalid, empty string as a
             // date-time property. DateTime::__construct() will return
             // the current time for empty input which is probably not
