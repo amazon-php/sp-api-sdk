@@ -98,8 +98,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -205,6 +209,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets orders.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\Order[] $orders a list of orders
+     *
+     * @return self
      */
     public function setOrders(array $orders) : self
     {
@@ -215,6 +221,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -225,6 +233,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
+     *
+     * @return self
      */
     public function setNextToken(?string $next_token) : self
     {
@@ -235,6 +245,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets last_updated_before.
+     *
+     * @return null|string
      */
     public function getLastUpdatedBefore() : ?string
     {
@@ -245,6 +257,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets last_updated_before.
      *
      * @param null|string $last_updated_before A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in ISO 8601 format.
+     *
+     * @return self
      */
     public function setLastUpdatedBefore(?string $last_updated_before) : self
     {
@@ -255,6 +269,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets created_before.
+     *
+     * @return null|string
      */
     public function getCreatedBefore() : ?string
     {
@@ -265,6 +281,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets created_before.
      *
      * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
+     *
+     * @return self
      */
     public function setCreatedBefore(?string $created_before) : self
     {
@@ -276,7 +294,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,8 +303,6 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -297,9 +313,6 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -312,8 +325,6 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -335,6 +346,8 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

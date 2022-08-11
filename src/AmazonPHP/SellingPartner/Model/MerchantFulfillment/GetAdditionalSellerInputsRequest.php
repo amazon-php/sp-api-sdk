@@ -93,8 +93,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -207,6 +211,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
      * Sets shipping_service_id.
      *
      * @param string $shipping_service_id an Amazon-defined shipping service identifier
+     *
+     * @return self
      */
     public function setShippingServiceId(string $shipping_service_id) : self
     {
@@ -227,6 +233,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
      * Sets ship_from_address.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
+     *
+     * @return self
      */
     public function setShipFromAddress(Address $ship_from_address) : self
     {
@@ -247,6 +255,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
      * Sets order_id.
      *
      * @param string $order_id an Amazon-defined order identifier, in 3-7-7 format
+     *
+     * @return self
      */
     public function setOrderId(string $order_id) : self
     {
@@ -258,7 +268,7 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -267,8 +277,6 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -279,9 +287,6 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -294,8 +299,6 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -317,6 +320,8 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

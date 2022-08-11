@@ -93,8 +93,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -207,6 +211,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets listing_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $listing_price listing_price
+     *
+     * @return self
      */
     public function setListingPrice(MoneyType $listing_price) : self
     {
@@ -217,6 +223,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets shipping.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getShipping() : ?MoneyType
     {
@@ -227,6 +235,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets shipping.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $shipping shipping
+     *
+     * @return self
      */
     public function setShipping(?MoneyType $shipping) : self
     {
@@ -237,6 +247,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets points.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\Points
      */
     public function getPoints() : ?Points
     {
@@ -247,6 +259,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets points.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\Points $points points
+     *
+     * @return self
      */
     public function setPoints(?Points $points) : self
     {
@@ -258,7 +272,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -267,8 +281,6 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -279,9 +291,6 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -294,8 +303,6 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -317,6 +324,8 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

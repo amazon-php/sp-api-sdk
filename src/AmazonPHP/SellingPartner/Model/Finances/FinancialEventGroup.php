@@ -36,12 +36,12 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
         'fund_transfer_status' => 'string',
         'original_total' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
         'converted_total' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
-        'fund_transfer_date' => '\DateTime',
+        'fund_transfer_date' => '\DateTimeInterface',
         'trace_id' => 'string',
         'account_tail' => 'string',
         'beginning_balance' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
-        'financial_event_group_start' => '\DateTime',
-        'financial_event_group_end' => '\DateTime',
+        'financial_event_group_start' => '\DateTimeInterface',
+        'financial_event_group_end' => '\DateTimeInterface',
     ];
 
     /**
@@ -133,8 +133,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -154,7 +154,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -164,7 +164,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -175,7 +175,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -185,7 +185,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -195,7 +195,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -204,6 +204,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -215,6 +217,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -243,6 +247,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets financial_event_group_id.
+     *
+     * @return null|string
      */
     public function getFinancialEventGroupId() : ?string
     {
@@ -253,6 +259,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets financial_event_group_id.
      *
      * @param null|string $financial_event_group_id a unique identifier for the financial event group
+     *
+     * @return self
      */
     public function setFinancialEventGroupId(?string $financial_event_group_id) : self
     {
@@ -263,6 +271,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets processing_status.
+     *
+     * @return null|string
      */
     public function getProcessingStatus() : ?string
     {
@@ -273,6 +283,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets processing_status.
      *
      * @param null|string $processing_status The processing status of the financial event group indicates whether the balance of the financial event group is settled.  Possible values:  * Open  * Closed
+     *
+     * @return self
      */
     public function setProcessingStatus(?string $processing_status) : self
     {
@@ -283,6 +295,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets fund_transfer_status.
+     *
+     * @return null|string
      */
     public function getFundTransferStatus() : ?string
     {
@@ -293,6 +307,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fund_transfer_status.
      *
      * @param null|string $fund_transfer_status the status of the fund transfer
+     *
+     * @return self
      */
     public function setFundTransferStatus(?string $fund_transfer_status) : self
     {
@@ -303,6 +319,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets original_total.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getOriginalTotal() : ?Currency
     {
@@ -313,6 +331,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets original_total.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $original_total original_total
+     *
+     * @return self
      */
     public function setOriginalTotal(?Currency $original_total) : self
     {
@@ -323,6 +343,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets converted_total.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getConvertedTotal() : ?Currency
     {
@@ -333,6 +355,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets converted_total.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $converted_total converted_total
+     *
+     * @return self
      */
     public function setConvertedTotal(?Currency $converted_total) : self
     {
@@ -344,7 +368,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets fund_transfer_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getFundTransferDate() : ?\DateTimeInterface
     {
@@ -354,9 +378,11 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets fund_transfer_date.
      *
-     * @param \DateTime|\DateTimeImmutable $fund_transfer_date fund_transfer_date
+     * @param null|\DateTimeInterface $fund_transfer_date fund_transfer_date
+     *
+     * @return self
      */
-    public function setFundTransferDate(\DateTimeInterface $fund_transfer_date) : self
+    public function setFundTransferDate(?\DateTimeInterface $fund_transfer_date) : self
     {
         $this->container['fund_transfer_date'] = $fund_transfer_date;
 
@@ -365,6 +391,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets trace_id.
+     *
+     * @return null|string
      */
     public function getTraceId() : ?string
     {
@@ -375,6 +403,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets trace_id.
      *
      * @param null|string $trace_id the trace identifier used by sellers to look up transactions externally
+     *
+     * @return self
      */
     public function setTraceId(?string $trace_id) : self
     {
@@ -385,6 +415,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets account_tail.
+     *
+     * @return null|string
      */
     public function getAccountTail() : ?string
     {
@@ -395,6 +427,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets account_tail.
      *
      * @param null|string $account_tail the account tail of the payment instrument
+     *
+     * @return self
      */
     public function setAccountTail(?string $account_tail) : self
     {
@@ -405,6 +439,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets beginning_balance.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBeginningBalance() : ?Currency
     {
@@ -415,6 +451,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets beginning_balance.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $beginning_balance beginning_balance
+     *
+     * @return self
      */
     public function setBeginningBalance(?Currency $beginning_balance) : self
     {
@@ -426,7 +464,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets financial_event_group_start.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getFinancialEventGroupStart() : ?\DateTimeInterface
     {
@@ -436,9 +474,11 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets financial_event_group_start.
      *
-     * @param \DateTime|\DateTimeImmutable $financial_event_group_start financial_event_group_start
+     * @param null|\DateTimeInterface $financial_event_group_start financial_event_group_start
+     *
+     * @return self
      */
-    public function setFinancialEventGroupStart(\DateTimeInterface $financial_event_group_start) : self
+    public function setFinancialEventGroupStart(?\DateTimeInterface $financial_event_group_start) : self
     {
         $this->container['financial_event_group_start'] = $financial_event_group_start;
 
@@ -448,7 +488,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets financial_event_group_end.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getFinancialEventGroupEnd() : ?\DateTimeInterface
     {
@@ -458,9 +498,11 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets financial_event_group_end.
      *
-     * @param \DateTime|\DateTimeImmutable $financial_event_group_end financial_event_group_end
+     * @param null|\DateTimeInterface $financial_event_group_end financial_event_group_end
+     *
+     * @return self
      */
-    public function setFinancialEventGroupEnd(\DateTimeInterface $financial_event_group_end) : self
+    public function setFinancialEventGroupEnd(?\DateTimeInterface $financial_event_group_end) : self
     {
         $this->container['financial_event_group_end'] = $financial_event_group_end;
 
@@ -470,7 +512,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -479,8 +521,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -491,9 +531,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -506,8 +543,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -529,6 +564,8 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

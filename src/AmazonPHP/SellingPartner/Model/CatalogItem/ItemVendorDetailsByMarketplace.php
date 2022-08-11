@@ -138,8 +138,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -156,7 +156,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -166,7 +166,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -177,7 +177,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -187,7 +187,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -197,7 +197,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -206,6 +206,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -217,6 +219,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -280,6 +284,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets marketplace_id.
      *
      * @param string $marketplace_id amazon marketplace identifier
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -290,6 +296,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets brand_code.
+     *
+     * @return null|string
      */
     public function getBrandCode() : ?string
     {
@@ -300,6 +308,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets brand_code.
      *
      * @param null|string $brand_code brand code associated with an Amazon catalog item
+     *
+     * @return self
      */
     public function setBrandCode(?string $brand_code) : self
     {
@@ -310,6 +320,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets category_code.
+     *
+     * @return null|string
      */
     public function getCategoryCode() : ?string
     {
@@ -320,6 +332,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets category_code.
      *
      * @param null|string $category_code product category associated with an Amazon catalog item
+     *
+     * @return self
      */
     public function setCategoryCode(?string $category_code) : self
     {
@@ -330,6 +344,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets manufacturer_code.
+     *
+     * @return null|string
      */
     public function getManufacturerCode() : ?string
     {
@@ -340,6 +356,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets manufacturer_code.
      *
      * @param null|string $manufacturer_code manufacturer code associated with an Amazon catalog item
+     *
+     * @return self
      */
     public function setManufacturerCode(?string $manufacturer_code) : self
     {
@@ -350,6 +368,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets manufacturer_code_parent.
+     *
+     * @return null|string
      */
     public function getManufacturerCodeParent() : ?string
     {
@@ -360,6 +380,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets manufacturer_code_parent.
      *
      * @param null|string $manufacturer_code_parent parent vendor code of the manufacturer code
+     *
+     * @return self
      */
     public function setManufacturerCodeParent(?string $manufacturer_code_parent) : self
     {
@@ -370,6 +392,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets product_group.
+     *
+     * @return null|string
      */
     public function getProductGroup() : ?string
     {
@@ -380,6 +404,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets product_group.
      *
      * @param null|string $product_group product group associated with an Amazon catalog item
+     *
+     * @return self
      */
     public function setProductGroup(?string $product_group) : self
     {
@@ -390,6 +416,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets replenishment_category.
+     *
+     * @return null|string
      */
     public function getReplenishmentCategory() : ?string
     {
@@ -400,6 +428,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets replenishment_category.
      *
      * @param null|string $replenishment_category replenishment category associated with an Amazon catalog item
+     *
+     * @return self
      */
     public function setReplenishmentCategory(?string $replenishment_category) : self
     {
@@ -410,6 +440,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets subcategory_code.
+     *
+     * @return null|string
      */
     public function getSubcategoryCode() : ?string
     {
@@ -420,6 +452,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
      * Sets subcategory_code.
      *
      * @param null|string $subcategory_code product subcategory associated with an Amazon catalog item
+     *
+     * @return self
      */
     public function setSubcategoryCode(?string $subcategory_code) : self
     {
@@ -431,7 +465,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -440,8 +474,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -452,9 +484,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -467,8 +496,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -490,6 +517,8 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

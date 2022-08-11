@@ -88,8 +88,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -178,6 +182,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets code.
+     *
+     * @return null|string
      */
     public function getCode() : ?string
     {
@@ -188,6 +194,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets code.
      *
      * @param null|string $code Acknowledgement code is a unique two digit value which indicates the status of the acknowledgement. For a list of acknowledgement codes that Amazon supports, see the Vendor Direct Fulfillment APIs Use Case Guide.
+     *
+     * @return self
      */
     public function setCode(?string $code) : self
     {
@@ -198,6 +206,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets description.
+     *
+     * @return null|string
      */
     public function getDescription() : ?string
     {
@@ -208,6 +218,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets description.
      *
      * @param null|string $description reason for the acknowledgement code
+     *
+     * @return self
      */
     public function setDescription(?string $description) : self
     {
@@ -219,7 +231,7 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -228,8 +240,6 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -240,9 +250,6 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -255,8 +262,6 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -278,6 +283,8 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

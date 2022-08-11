@@ -103,8 +103,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -118,7 +118,7 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -245,6 +249,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets name.
      *
      * @param string $name the A+ Content document name
+     *
+     * @return self
      */
     public function setName(string $name) : self
     {
@@ -265,6 +271,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets content_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\ContentType $content_type content_type
+     *
+     * @return self
      */
     public function setContentType(ContentType $content_type) : self
     {
@@ -275,6 +283,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets content_sub_type.
+     *
+     * @return null|string
      */
     public function getContentSubType() : ?string
     {
@@ -285,6 +295,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets content_sub_type.
      *
      * @param null|string $content_sub_type The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
+     *
+     * @return self
      */
     public function setContentSubType(?string $content_sub_type) : self
     {
@@ -305,6 +317,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets locale.
      *
      * @param string $locale The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
+     *
+     * @return self
      */
     public function setLocale(string $locale) : self
     {
@@ -327,6 +341,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets content_module_list.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\ContentModule[] $content_module_list a list of A+ Content modules
+     *
+     * @return self
      */
     public function setContentModuleList(array $content_module_list) : self
     {
@@ -338,7 +354,7 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -347,8 +363,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -359,9 +373,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -374,8 +385,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -397,6 +406,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

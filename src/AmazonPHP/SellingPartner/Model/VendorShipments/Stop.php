@@ -39,8 +39,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $openAPITypes = [
         'function_code' => 'string',
         'location_identification' => '\AmazonPHP\SellingPartner\Model\VendorShipments\Location',
-        'arrival_time' => '\DateTime',
-        'departure_time' => '\DateTime',
+        'arrival_time' => '\DateTimeInterface',
+        'departure_time' => '\DateTimeInterface',
     ];
 
     /**
@@ -104,8 +104,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -118,7 +118,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -239,6 +243,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets function_code.
      *
      * @param string $function_code provide the function code
+     *
+     * @return self
      */
     public function setFunctionCode(string $function_code) : self
     {
@@ -249,6 +255,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets location_identification.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Location
      */
     public function getLocationIdentification() : ?Location
     {
@@ -259,6 +267,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets location_identification.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Location $location_identification location_identification
+     *
+     * @return self
      */
     public function setLocationIdentification(?Location $location_identification) : self
     {
@@ -270,7 +280,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets arrival_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getArrivalTime() : ?\DateTimeInterface
     {
@@ -280,9 +290,11 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets arrival_time.
      *
-     * @param \DateTime|\DateTimeImmutable $arrival_time date and time of the arrival of the cargo
+     * @param null|\DateTimeInterface $arrival_time date and time of the arrival of the cargo
+     *
+     * @return self
      */
-    public function setArrivalTime(\DateTimeInterface $arrival_time) : self
+    public function setArrivalTime(?\DateTimeInterface $arrival_time) : self
     {
         $this->container['arrival_time'] = $arrival_time;
 
@@ -292,7 +304,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets departure_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getDepartureTime() : ?\DateTimeInterface
     {
@@ -302,9 +314,11 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets departure_time.
      *
-     * @param \DateTime|\DateTimeImmutable $departure_time date and time of the departure of the cargo
+     * @param null|\DateTimeInterface $departure_time date and time of the departure of the cargo
+     *
+     * @return self
      */
-    public function setDepartureTime(\DateTimeInterface $departure_time) : self
+    public function setDepartureTime(?\DateTimeInterface $departure_time) : self
     {
         $this->container['departure_time'] = $departure_time;
 
@@ -314,7 +328,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -323,8 +337,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -335,9 +347,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -350,8 +359,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -373,6 +380,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

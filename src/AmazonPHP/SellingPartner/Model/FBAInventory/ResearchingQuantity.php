@@ -88,8 +88,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -178,6 +182,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets total_researching_quantity.
+     *
+     * @return null|int
      */
     public function getTotalResearchingQuantity() : ?int
     {
@@ -188,6 +194,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets total_researching_quantity.
      *
      * @param null|int $total_researching_quantity the total number of units currently being researched in Amazon's fulfillment network
+     *
+     * @return self
      */
     public function setTotalResearchingQuantity(?int $total_researching_quantity) : self
     {
@@ -210,6 +218,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets researching_quantity_breakdown.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[] $researching_quantity_breakdown a list of quantity details for items currently being researched
+     *
+     * @return self
      */
     public function setResearchingQuantityBreakdown(?array $researching_quantity_breakdown) : self
     {
@@ -221,7 +231,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -230,8 +240,6 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -242,9 +250,6 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -257,8 +262,6 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -280,6 +283,8 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -88,8 +88,8 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -197,6 +201,8 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
      * Sets warnings.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     *
+     * @return self
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -217,6 +223,8 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
      * Sets content_reference_key.
      *
      * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
+     *
+     * @return self
      */
     public function setContentReferenceKey(string $content_reference_key) : self
     {
@@ -228,7 +236,7 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -237,8 +245,6 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -249,9 +255,6 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -264,8 +267,6 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -287,6 +288,8 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

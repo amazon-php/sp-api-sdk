@@ -31,7 +31,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'updated_date' => '\DateTime',
+        'updated_date' => '\DateTimeInterface',
         'ordered_quantity' => '\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity',
         'cancelled_quantity' => '\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity',
     ];
@@ -93,8 +93,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -192,7 +196,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets updated_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getUpdatedDate() : ?\DateTimeInterface
     {
@@ -202,9 +206,11 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets updated_date.
      *
-     * @param \DateTime|\DateTimeImmutable $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
+     * @param null|\DateTimeInterface $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
+     *
+     * @return self
      */
-    public function setUpdatedDate(\DateTimeInterface $updated_date) : self
+    public function setUpdatedDate(?\DateTimeInterface $updated_date) : self
     {
         $this->container['updated_date'] = $updated_date;
 
@@ -213,6 +219,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ?ItemQuantity
     {
@@ -223,6 +231,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets ordered_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $ordered_quantity ordered_quantity
+     *
+     * @return self
      */
     public function setOrderedQuantity(?ItemQuantity $ordered_quantity) : self
     {
@@ -233,6 +243,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets cancelled_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getCancelledQuantity() : ?ItemQuantity
     {
@@ -243,6 +255,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets cancelled_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $cancelled_quantity cancelled_quantity
+     *
+     * @return self
      */
     public function setCancelledQuantity(?ItemQuantity $cancelled_quantity) : self
     {
@@ -254,7 +268,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -263,8 +277,6 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -275,9 +287,6 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -290,8 +299,6 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -313,6 +320,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

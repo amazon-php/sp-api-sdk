@@ -97,8 +97,8 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -110,7 +110,7 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -120,7 +120,7 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -131,7 +131,7 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -141,7 +141,7 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -151,7 +151,7 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -160,6 +160,8 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -171,6 +173,8 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -234,6 +238,8 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Sets marketplace_id.
      *
      * @param string $marketplace_id amazon marketplace identifier
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -256,6 +262,8 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Sets asins.
      *
      * @param string[] $asins identifiers (ASINs) of the related items
+     *
+     * @return self
      */
     public function setAsins(array $asins) : self
     {
@@ -276,6 +284,8 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Sets variation_type.
      *
      * @param string $variation_type type of variation relationship of the Amazon catalog item in the request to the related item(s): \"PARENT\" or \"CHILD\"
+     *
+     * @return self
      */
     public function setVariationType(string $variation_type) : self
     {
@@ -287,7 +297,7 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -296,8 +306,6 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -308,9 +316,6 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -323,8 +328,6 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -346,6 +349,8 @@ class ItemVariationsByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

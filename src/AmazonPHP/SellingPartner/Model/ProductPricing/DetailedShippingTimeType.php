@@ -104,8 +104,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -118,7 +118,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -221,6 +225,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets minimum_hours.
+     *
+     * @return null|int
      */
     public function getMinimumHours() : ?int
     {
@@ -231,6 +237,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
      * Sets minimum_hours.
      *
      * @param null|int $minimum_hours the minimum time, in hours, that the item will likely be shipped after the order has been placed
+     *
+     * @return self
      */
     public function setMinimumHours(?int $minimum_hours) : self
     {
@@ -241,6 +249,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets maximum_hours.
+     *
+     * @return null|int
      */
     public function getMaximumHours() : ?int
     {
@@ -251,6 +261,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
      * Sets maximum_hours.
      *
      * @param null|int $maximum_hours the maximum time, in hours, that the item will likely be shipped after the order has been placed
+     *
+     * @return self
      */
     public function setMaximumHours(?int $maximum_hours) : self
     {
@@ -261,6 +273,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets available_date.
+     *
+     * @return null|string
      */
     public function getAvailableDate() : ?string
     {
@@ -271,6 +285,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
      * Sets available_date.
      *
      * @param null|string $available_date The date when the item will be available for shipping. Only displayed for items that are not currently available for shipping.
+     *
+     * @return self
      */
     public function setAvailableDate(?string $available_date) : self
     {
@@ -281,6 +297,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets availability_type.
+     *
+     * @return null|string
      */
     public function getAvailabilityType() : ?string
     {
@@ -291,6 +309,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
      * Sets availability_type.
      *
      * @param null|string $availability_type Indicates whether the item is available for shipping now, or on a known or an unknown date in the future. If known, the availableDate property indicates the date that the item will be available for shipping. Possible values: NOW, FUTURE_WITHOUT_DATE, FUTURE_WITH_DATE.
+     *
+     * @return self
      */
     public function setAvailabilityType(?string $availability_type) : self
     {
@@ -302,7 +322,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -311,8 +331,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -323,9 +341,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -338,8 +353,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -361,6 +374,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -98,8 +98,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -219,6 +223,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets feed_type.
      *
      * @param string $feed_type the feed type
+     *
+     * @return self
      */
     public function setFeedType(string $feed_type) : self
     {
@@ -241,6 +247,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets marketplace_ids.
      *
      * @param string[] $marketplace_ids a list of identifiers for marketplaces that you want the feed to be applied to
+     *
+     * @return self
      */
     public function setMarketplaceIds(array $marketplace_ids) : self
     {
@@ -261,6 +269,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets input_feed_document_id.
      *
      * @param string $input_feed_document_id The document identifier returned by the createFeedDocument operation. Upload the feed document contents before calling the createFeed operation.
+     *
+     * @return self
      */
     public function setInputFeedDocumentId(string $input_feed_document_id) : self
     {
@@ -283,6 +293,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets feed_options.
      *
      * @param null|array<string,string> $feed_options Additional options to control the feed. These vary by feed type.
+     *
+     * @return self
      */
     public function setFeedOptions(?array $feed_options) : self
     {
@@ -294,7 +306,7 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -303,8 +315,6 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -315,9 +325,6 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -330,8 +337,6 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -353,6 +358,8 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -88,8 +88,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -178,6 +182,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets amazon_shipment_id.
+     *
+     * @return null|string
      */
     public function getAmazonShipmentId() : ?string
     {
@@ -188,6 +194,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
      * Sets amazon_shipment_id.
      *
      * @param null|string $amazon_shipment_id the Amazon-defined shipment identifier
+     *
+     * @return self
      */
     public function setAmazonShipmentId(?string $amazon_shipment_id) : self
     {
@@ -198,6 +206,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets invoice_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatus
      */
     public function getInvoiceStatus() : ?ShipmentInvoiceStatus
     {
@@ -208,6 +218,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
      * Sets invoice_status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatus $invoice_status invoice_status
+     *
+     * @return self
      */
     public function setInvoiceStatus(?ShipmentInvoiceStatus $invoice_status) : self
     {
@@ -219,7 +231,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -228,8 +240,6 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -240,9 +250,6 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -255,8 +262,6 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -278,6 +283,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

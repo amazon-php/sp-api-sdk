@@ -93,8 +93,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -201,6 +205,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets invoice_content.
      *
      * @param string $invoice_content shipment invoice document content
+     *
+     * @return self
      */
     public function setInvoiceContent(string $invoice_content) : self
     {
@@ -211,6 +217,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -221,6 +229,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id an Amazon marketplace identifier
+     *
+     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -241,6 +251,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets content_md5_value.
      *
      * @param string $content_md5_value MD5 sum for validating the invoice data. For more information about calculating this value, see [Working with Content-MD5 Checksums](https://docs.developer.amazonservices.com/en_US/dev_guide/DG_MD5.html).
+     *
+     * @return self
      */
     public function setContentMd5Value(string $content_md5_value) : self
     {
@@ -252,7 +264,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -261,8 +273,6 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -273,9 +283,6 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -288,8 +295,6 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -311,6 +316,8 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

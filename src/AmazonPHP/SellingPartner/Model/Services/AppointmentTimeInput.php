@@ -31,7 +31,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'start_time' => '\DateTime',
+        'start_time' => '\DateTimeInterface',
         'duration_in_minutes' => 'int',
     ];
 
@@ -88,8 +88,8 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -181,8 +185,6 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets start_time.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
     public function getStartTime() : \DateTimeInterface
     {
@@ -192,7 +194,9 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets start_time.
      *
-     * @param \DateTime $start_time the date, time in UTC for the start time of an appointment in ISO 8601 format
+     * @param \DateTimeInterface $start_time the date, time in UTC for the start time of an appointment in ISO 8601 format
+     *
+     * @return self
      */
     public function setStartTime(\DateTimeInterface $start_time) : self
     {
@@ -203,6 +207,8 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets duration_in_minutes.
+     *
+     * @return null|int
      */
     public function getDurationInMinutes() : ?int
     {
@@ -213,6 +219,8 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets duration_in_minutes.
      *
      * @param null|int $duration_in_minutes the duration of an appointment in minutes
+     *
+     * @return self
      */
     public function setDurationInMinutes(?int $duration_in_minutes) : self
     {
@@ -224,7 +232,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -233,8 +241,6 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -245,9 +251,6 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -260,8 +263,6 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -283,6 +284,8 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

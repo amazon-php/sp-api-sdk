@@ -133,8 +133,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -154,7 +154,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -164,7 +164,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -175,7 +175,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -185,7 +185,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -195,7 +195,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -204,6 +204,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -215,6 +217,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -249,6 +253,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets name.
      *
      * @param string $name the name of the person, business, or institution
+     *
+     * @return self
      */
     public function setName(string $name) : self
     {
@@ -269,6 +275,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets address_line1.
      *
      * @param string $address_line1 the first line of the address
+     *
+     * @return self
      */
     public function setAddressLine1(string $address_line1) : self
     {
@@ -279,6 +287,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets address_line2.
+     *
+     * @return null|string
      */
     public function getAddressLine2() : ?string
     {
@@ -289,6 +299,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets address_line2.
      *
      * @param null|string $address_line2 additional address information, if required
+     *
+     * @return self
      */
     public function setAddressLine2(?string $address_line2) : self
     {
@@ -299,6 +311,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets address_line3.
+     *
+     * @return null|string
      */
     public function getAddressLine3() : ?string
     {
@@ -309,6 +323,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets address_line3.
      *
      * @param null|string $address_line3 additional address information, if required
+     *
+     * @return self
      */
     public function setAddressLine3(?string $address_line3) : self
     {
@@ -319,6 +335,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets city.
+     *
+     * @return null|string
      */
     public function getCity() : ?string
     {
@@ -329,6 +347,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets city.
      *
      * @param null|string $city the city
+     *
+     * @return self
      */
     public function setCity(?string $city) : self
     {
@@ -339,6 +359,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets county.
+     *
+     * @return null|string
      */
     public function getCounty() : ?string
     {
@@ -349,6 +371,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets county.
      *
      * @param null|string $county the county
+     *
+     * @return self
      */
     public function setCounty(?string $county) : self
     {
@@ -359,6 +383,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets district.
+     *
+     * @return null|string
      */
     public function getDistrict() : ?string
     {
@@ -369,6 +395,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets district.
      *
      * @param null|string $district the district
+     *
+     * @return self
      */
     public function setDistrict(?string $district) : self
     {
@@ -379,6 +407,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets state_or_region.
+     *
+     * @return null|string
      */
     public function getStateOrRegion() : ?string
     {
@@ -389,6 +419,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets state_or_region.
      *
      * @param null|string $state_or_region the state or region
+     *
+     * @return self
      */
     public function setStateOrRegion(?string $state_or_region) : self
     {
@@ -399,6 +431,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets postal_code.
+     *
+     * @return null|string
      */
     public function getPostalCode() : ?string
     {
@@ -409,6 +443,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets postal_code.
      *
      * @param null|string $postal_code The postal code. This can contain letters, digits, spaces, and/or punctuation.
+     *
+     * @return self
      */
     public function setPostalCode(?string $postal_code) : self
     {
@@ -419,6 +455,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets country_code.
+     *
+     * @return null|string
      */
     public function getCountryCode() : ?string
     {
@@ -429,6 +467,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets country_code.
      *
      * @param null|string $country_code the two digit country code, in ISO 3166-1 alpha-2 format
+     *
+     * @return self
      */
     public function setCountryCode(?string $country_code) : self
     {
@@ -439,6 +479,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets phone.
+     *
+     * @return null|string
      */
     public function getPhone() : ?string
     {
@@ -449,6 +491,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets phone.
      *
      * @param null|string $phone the phone number
+     *
+     * @return self
      */
     public function setPhone(?string $phone) : self
     {
@@ -460,7 +504,7 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -469,8 +513,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -481,9 +523,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -496,8 +535,6 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -519,6 +556,8 @@ class Address implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -33,7 +33,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     protected static array $openAPITypes = [
         'imaging_request_billing_item_id' => 'string',
         'asin' => 'string',
-        'posted_date' => '\DateTime',
+        'posted_date' => '\DateTimeInterface',
         'fee_list' => '\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[]',
     ];
 
@@ -98,8 +98,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -190,6 +194,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets imaging_request_billing_item_id.
+     *
+     * @return null|string
      */
     public function getImagingRequestBillingItemId() : ?string
     {
@@ -200,6 +206,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets imaging_request_billing_item_id.
      *
      * @param null|string $imaging_request_billing_item_id the identifier for the imaging services request
+     *
+     * @return self
      */
     public function setImagingRequestBillingItemId(?string $imaging_request_billing_item_id) : self
     {
@@ -210,6 +218,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -220,6 +230,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested
+     *
+     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -231,7 +243,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Gets posted_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -241,9 +253,11 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Sets posted_date.
      *
-     * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     * @param null|\DateTimeInterface $posted_date posted_date
+     *
+     * @return self
      */
-    public function setPostedDate(\DateTimeInterface $posted_date) : self
+    public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
         $this->container['posted_date'] = $posted_date;
 
@@ -264,6 +278,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets fee_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $fee_list a list of fee component information
+     *
+     * @return self
      */
     public function setFeeList(?array $fee_list) : self
     {
@@ -275,7 +291,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -284,8 +300,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -296,9 +310,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -311,8 +322,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -334,6 +343,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -88,8 +88,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -197,6 +201,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
      * Sets shipment_request_details.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
+     *
+     * @return self
      */
     public function setShipmentRequestDetails(ShipmentRequestDetails $shipment_request_details) : self
     {
@@ -207,6 +213,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets shipping_offering_filter.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingOfferingFilter
      */
     public function getShippingOfferingFilter() : ?ShippingOfferingFilter
     {
@@ -217,6 +225,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
      * Sets shipping_offering_filter.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingOfferingFilter $shipping_offering_filter shipping_offering_filter
+     *
+     * @return self
      */
     public function setShippingOfferingFilter(?ShippingOfferingFilter $shipping_offering_filter) : self
     {
@@ -228,7 +238,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -237,8 +247,6 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -249,9 +257,6 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -264,8 +269,6 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -287,6 +290,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

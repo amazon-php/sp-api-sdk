@@ -104,8 +104,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -118,7 +118,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -221,6 +225,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets carrier_scac.
+     *
+     * @return null|string
      */
     public function getCarrierScac() : ?string
     {
@@ -231,6 +237,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets carrier_scac.
      *
      * @param null|string $carrier_scac Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
+     *
+     * @return self
      */
     public function setCarrierScac(?string $carrier_scac) : self
     {
@@ -241,6 +249,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets carrier_shipment_reference_number.
+     *
+     * @return null|string
      */
     public function getCarrierShipmentReferenceNumber() : ?string
     {
@@ -251,6 +261,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets carrier_shipment_reference_number.
      *
      * @param null|string $carrier_shipment_reference_number The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
+     *
+     * @return self
      */
     public function setCarrierShipmentReferenceNumber(?string $carrier_shipment_reference_number) : self
     {
@@ -261,6 +273,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets transportation_mode.
+     *
+     * @return null|string
      */
     public function getTransportationMode() : ?string
     {
@@ -271,6 +285,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets transportation_mode.
      *
      * @param null|string $transportation_mode the mode of transportation for this shipment
+     *
+     * @return self
      */
     public function setTransportationMode(?string $transportation_mode) : self
     {
@@ -281,6 +297,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets bill_of_lading_number.
+     *
+     * @return null|string
      */
     public function getBillOfLadingNumber() : ?string
     {
@@ -291,6 +309,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets bill_of_lading_number.
      *
      * @param null|string $bill_of_lading_number Bill Of Lading (BOL) number is the unique number assigned by the vendor. The BOL present in the Shipment Confirmation message ideally matches the paper BOL provided with the shipment, but that is no must. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
+     *
+     * @return self
      */
     public function setBillOfLadingNumber(?string $bill_of_lading_number) : self
     {
@@ -302,7 +322,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -311,8 +331,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -323,9 +341,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -338,8 +353,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -361,6 +374,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

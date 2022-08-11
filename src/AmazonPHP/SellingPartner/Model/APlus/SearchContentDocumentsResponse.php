@@ -93,8 +93,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -203,6 +207,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      * Sets warnings.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     *
+     * @return self
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -213,6 +219,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets next_page_token.
+     *
+     * @return null|string
      */
     public function getNextPageToken() : ?string
     {
@@ -223,6 +231,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      * Sets next_page_token.
      *
      * @param null|string $next_page_token A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
+     *
+     * @return self
      */
     public function setNextPageToken(?string $next_page_token) : self
     {
@@ -245,6 +255,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      * Sets content_metadata_records.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[] $content_metadata_records a list of A+ Content metadata records
+     *
+     * @return self
      */
     public function setContentMetadataRecords(array $content_metadata_records) : self
     {
@@ -256,7 +268,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -265,8 +277,6 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -277,9 +287,6 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -292,8 +299,6 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -315,6 +320,8 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

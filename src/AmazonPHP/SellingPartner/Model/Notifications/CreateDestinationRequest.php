@@ -88,8 +88,8 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -197,6 +201,8 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
      * Sets resource_specification.
      *
      * @param \AmazonPHP\SellingPartner\Model\Notifications\DestinationResourceSpecification $resource_specification resource_specification
+     *
+     * @return self
      */
     public function setResourceSpecification(DestinationResourceSpecification $resource_specification) : self
     {
@@ -217,6 +223,8 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
      * Sets name.
      *
      * @param string $name a developer-defined name to help identify this destination
+     *
+     * @return self
      */
     public function setName(string $name) : self
     {
@@ -228,7 +236,7 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -237,8 +245,6 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -249,9 +255,6 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -264,8 +267,6 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -287,6 +288,8 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

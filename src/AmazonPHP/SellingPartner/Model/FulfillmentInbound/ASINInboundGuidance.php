@@ -93,8 +93,8 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -201,6 +205,8 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets asin.
      *
      * @param string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -221,6 +227,8 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets inbound_guidance.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundGuidance $inbound_guidance inbound_guidance
+     *
+     * @return self
      */
     public function setInboundGuidance(InboundGuidance $inbound_guidance) : self
     {
@@ -243,6 +251,8 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets guidance_reason_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GuidanceReason[] $guidance_reason_list a list of inbound guidance reason information
+     *
+     * @return self
      */
     public function setGuidanceReasonList(?array $guidance_reason_list) : self
     {
@@ -254,7 +264,7 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -263,8 +273,6 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -275,9 +283,6 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -290,8 +295,6 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -313,6 +316,8 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

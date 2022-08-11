@@ -98,8 +98,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -207,6 +211,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned.
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -227,6 +233,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets item_condition.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition $item_condition item_condition
+     *
+     * @return self
      */
     public function setItemCondition(ItemCondition $item_condition) : self
     {
@@ -237,6 +245,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets customer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {
@@ -247,6 +257,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets customer_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType $customer_type customer_type
+     *
+     * @return self
      */
     public function setCustomerType(?CustomerType $customer_type) : self
     {
@@ -257,6 +269,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -267,6 +281,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets asin.
      *
      * @param null|string $asin The Amazon Standard Identification Number (ASIN) of the item. This is the same Asin passed as a request parameter.
+     *
+     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -278,7 +294,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -287,8 +303,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -299,9 +313,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -314,8 +325,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -337,6 +346,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

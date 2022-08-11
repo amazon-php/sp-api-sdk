@@ -88,8 +88,8 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -190,6 +194,8 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
      * Sets payload.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Sellers\MarketplaceParticipation[] $payload list of marketplace participations
+     *
+     * @return self
      */
     public function setPayload(?array $payload) : self
     {
@@ -212,6 +218,8 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Sellers\Error[] $errors a list of error responses returned when a request is unsuccessful
+     *
+     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -223,7 +231,7 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -232,8 +240,6 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -244,9 +250,6 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -259,8 +262,6 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -282,6 +283,8 @@ class GetMarketplaceParticipationsResponse implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

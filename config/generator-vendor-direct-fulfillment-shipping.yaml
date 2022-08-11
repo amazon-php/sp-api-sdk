@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /VendorDirectFulfillmentShippingSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /VendorDirectFulfillmentShippingSDKInterface.php

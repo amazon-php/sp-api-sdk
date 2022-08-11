@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /FeedsSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /FeedsSDKInterface.php

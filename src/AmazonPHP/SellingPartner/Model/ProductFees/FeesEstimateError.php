@@ -98,8 +98,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -215,6 +219,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets type.
      *
      * @param string $type an error type, identifying either the receiver or the sender as the originator of the error
+     *
+     * @return self
      */
     public function setType(string $type) : self
     {
@@ -235,6 +241,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets code.
      *
      * @param string $code an error code that identifies the type of error that occurred
+     *
+     * @return self
      */
     public function setCode(string $code) : self
     {
@@ -255,6 +263,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets message.
      *
      * @param string $message a message that describes the error condition
+     *
+     * @return self
      */
     public function setMessage(string $message) : self
     {
@@ -277,6 +287,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets detail.
      *
      * @param object[] $detail additional information that can help the caller understand or fix the issue
+     *
+     * @return self
      */
     public function setDetail(array $detail) : self
     {
@@ -288,7 +300,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -297,8 +309,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -309,9 +319,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -324,8 +331,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -347,6 +352,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

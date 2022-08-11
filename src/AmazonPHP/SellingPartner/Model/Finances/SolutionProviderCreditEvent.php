@@ -40,7 +40,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
         'provider_id' => 'string',
         'provider_store_name' => 'string',
         'transaction_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
-        'transaction_creation_date' => '\DateTime',
+        'transaction_creation_date' => '\DateTimeInterface',
     ];
 
     /**
@@ -128,8 +128,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -148,7 +148,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -158,7 +158,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -169,7 +169,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -179,7 +179,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -189,7 +189,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -198,6 +198,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -209,6 +211,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -229,6 +233,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets provider_transaction_type.
+     *
+     * @return null|string
      */
     public function getProviderTransactionType() : ?string
     {
@@ -239,6 +245,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets provider_transaction_type.
      *
      * @param null|string $provider_transaction_type the transaction type
+     *
+     * @return self
      */
     public function setProviderTransactionType(?string $provider_transaction_type) : self
     {
@@ -249,6 +257,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -259,6 +269,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id a seller-defined identifier for an order
+     *
+     * @return self
      */
     public function setSellerOrderId(?string $seller_order_id) : self
     {
@@ -269,6 +281,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -279,6 +293,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the identifier of the marketplace where the order was placed
+     *
+     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -289,6 +305,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets marketplace_country_code.
+     *
+     * @return null|string
      */
     public function getMarketplaceCountryCode() : ?string
     {
@@ -299,6 +317,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets marketplace_country_code.
      *
      * @param null|string $marketplace_country_code the two-letter country code of the country associated with the marketplace where the order was placed
+     *
+     * @return self
      */
     public function setMarketplaceCountryCode(?string $marketplace_country_code) : self
     {
@@ -309,6 +329,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -319,6 +341,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets seller_id.
      *
      * @param null|string $seller_id the Amazon-defined identifier of the seller
+     *
+     * @return self
      */
     public function setSellerId(?string $seller_id) : self
     {
@@ -329,6 +353,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets seller_store_name.
+     *
+     * @return null|string
      */
     public function getSellerStoreName() : ?string
     {
@@ -339,6 +365,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets seller_store_name.
      *
      * @param null|string $seller_store_name the store name where the payment event occurred
+     *
+     * @return self
      */
     public function setSellerStoreName(?string $seller_store_name) : self
     {
@@ -349,6 +377,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets provider_id.
+     *
+     * @return null|string
      */
     public function getProviderId() : ?string
     {
@@ -359,6 +389,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets provider_id.
      *
      * @param null|string $provider_id the Amazon-defined identifier of the solution provider
+     *
+     * @return self
      */
     public function setProviderId(?string $provider_id) : self
     {
@@ -369,6 +401,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets provider_store_name.
+     *
+     * @return null|string
      */
     public function getProviderStoreName() : ?string
     {
@@ -379,6 +413,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets provider_store_name.
      *
      * @param null|string $provider_store_name the store name where the payment event occurred
+     *
+     * @return self
      */
     public function setProviderStoreName(?string $provider_store_name) : self
     {
@@ -389,6 +425,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {
@@ -399,6 +437,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      * Sets transaction_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $transaction_amount transaction_amount
+     *
+     * @return self
      */
     public function setTransactionAmount(?Currency $transaction_amount) : self
     {
@@ -410,7 +450,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Gets transaction_creation_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getTransactionCreationDate() : ?\DateTimeInterface
     {
@@ -420,9 +460,11 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Sets transaction_creation_date.
      *
-     * @param \DateTime|\DateTimeImmutable $transaction_creation_date transaction_creation_date
+     * @param null|\DateTimeInterface $transaction_creation_date transaction_creation_date
+     *
+     * @return self
      */
-    public function setTransactionCreationDate(\DateTimeInterface $transaction_creation_date) : self
+    public function setTransactionCreationDate(?\DateTimeInterface $transaction_creation_date) : self
     {
         $this->container['transaction_creation_date'] = $transaction_creation_date;
 
@@ -432,7 +474,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -441,8 +483,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -453,9 +493,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -468,8 +505,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -491,6 +526,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

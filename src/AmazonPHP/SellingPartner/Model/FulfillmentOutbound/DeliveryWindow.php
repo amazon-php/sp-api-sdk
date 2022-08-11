@@ -31,8 +31,8 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'start_date' => '\DateTime',
-        'end_date' => '\DateTime',
+        'start_date' => '\DateTimeInterface',
+        'end_date' => '\DateTimeInterface',
     ];
 
     /**
@@ -88,8 +88,8 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +189,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets start_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
     public function getStartDate() : \DateTimeInterface
     {
@@ -196,7 +198,9 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets start_date.
      *
-     * @param \DateTime $start_date start_date
+     * @param \DateTimeInterface $start_date start_date
+     *
+     * @return self
      */
     public function setStartDate(\DateTimeInterface $start_date) : self
     {
@@ -207,8 +211,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets end_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
     public function getEndDate() : \DateTimeInterface
     {
@@ -218,7 +220,9 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets end_date.
      *
-     * @param \DateTime $end_date end_date
+     * @param \DateTimeInterface $end_date end_date
+     *
+     * @return self
      */
     public function setEndDate(\DateTimeInterface $end_date) : self
     {
@@ -230,7 +234,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -239,8 +243,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -251,9 +253,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -266,8 +265,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -289,6 +286,8 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -113,8 +113,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -130,7 +130,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -180,6 +180,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -191,6 +193,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -253,6 +257,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_id.
      *
      * @param string $shipment_id the unique shipment identifier
+     *
+     * @return self
      */
     public function setShipmentId(string $shipment_id) : self
     {
@@ -273,6 +279,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets client_reference_id.
      *
      * @param string $client_reference_id client reference id
+     *
+     * @return self
      */
     public function setClientReferenceId(string $client_reference_id) : self
     {
@@ -293,6 +301,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_from.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_from ship_from
+     *
+     * @return self
      */
     public function setShipFrom(Address $ship_from) : self
     {
@@ -313,6 +323,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_to.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_to ship_to
+     *
+     * @return self
      */
     public function setShipTo(Address $ship_to) : self
     {
@@ -323,6 +335,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets accepted_rate.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate() : ?AcceptedRate
     {
@@ -333,6 +347,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets accepted_rate.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate $accepted_rate accepted_rate
+     *
+     * @return self
      */
     public function setAcceptedRate(?AcceptedRate $accepted_rate) : self
     {
@@ -343,6 +359,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipper.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Party
      */
     public function getShipper() : ?Party
     {
@@ -353,6 +371,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipper.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Party $shipper shipper
+     *
+     * @return self
      */
     public function setShipper(?Party $shipper) : self
     {
@@ -375,6 +395,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets containers.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Container[] $containers a list of container
+     *
+     * @return self
      */
     public function setContainers(array $containers) : self
     {
@@ -386,7 +408,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -395,8 +417,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -407,9 +427,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -422,8 +439,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -445,6 +460,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

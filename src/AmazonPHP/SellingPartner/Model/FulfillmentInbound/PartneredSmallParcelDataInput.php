@@ -88,8 +88,8 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -190,6 +194,8 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
      * Sets package_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelPackageInput[] $package_list a list of dimensions and weight information for packages
+     *
+     * @return self
      */
     public function setPackageList(?array $package_list) : self
     {
@@ -200,6 +206,8 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets carrier_name.
+     *
+     * @return null|string
      */
     public function getCarrierName() : ?string
     {
@@ -210,6 +218,8 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
      * Sets carrier_name.
      *
      * @param null|string $carrier_name the Amazon-partnered carrier to use for the inbound shipment
+     *
+     * @return self
      */
     public function setCarrierName(?string $carrier_name) : self
     {
@@ -221,7 +231,7 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -230,8 +240,6 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -242,9 +250,6 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -257,8 +262,6 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -280,6 +283,8 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

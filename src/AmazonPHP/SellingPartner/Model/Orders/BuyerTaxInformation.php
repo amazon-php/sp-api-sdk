@@ -98,8 +98,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -190,6 +194,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets buyer_legal_company_name.
+     *
+     * @return null|string
      */
     public function getBuyerLegalCompanyName() : ?string
     {
@@ -200,6 +206,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets buyer_legal_company_name.
      *
      * @param null|string $buyer_legal_company_name business buyer's company legal name
+     *
+     * @return self
      */
     public function setBuyerLegalCompanyName(?string $buyer_legal_company_name) : self
     {
@@ -210,6 +218,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets buyer_business_address.
+     *
+     * @return null|string
      */
     public function getBuyerBusinessAddress() : ?string
     {
@@ -220,6 +230,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets buyer_business_address.
      *
      * @param null|string $buyer_business_address business buyer's address
+     *
+     * @return self
      */
     public function setBuyerBusinessAddress(?string $buyer_business_address) : self
     {
@@ -230,6 +242,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets buyer_tax_registration_id.
+     *
+     * @return null|string
      */
     public function getBuyerTaxRegistrationId() : ?string
     {
@@ -240,6 +254,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets buyer_tax_registration_id.
      *
      * @param null|string $buyer_tax_registration_id business buyer's tax registration ID
+     *
+     * @return self
      */
     public function setBuyerTaxRegistrationId(?string $buyer_tax_registration_id) : self
     {
@@ -250,6 +266,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets buyer_tax_office.
+     *
+     * @return null|string
      */
     public function getBuyerTaxOffice() : ?string
     {
@@ -260,6 +278,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets buyer_tax_office.
      *
      * @param null|string $buyer_tax_office business buyer's tax office
+     *
+     * @return self
      */
     public function setBuyerTaxOffice(?string $buyer_tax_office) : self
     {
@@ -271,7 +291,7 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -280,8 +300,6 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -292,9 +310,6 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -307,8 +322,6 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -330,6 +343,8 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

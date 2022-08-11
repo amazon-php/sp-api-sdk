@@ -103,8 +103,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -118,7 +118,7 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -215,6 +219,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -225,6 +231,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
      * Sets headline.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     *
+     * @return self
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -235,6 +243,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets block1.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock1() : ?StandardImageTextBlock
     {
@@ -245,6 +255,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
      * Sets block1.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block1 block1
+     *
+     * @return self
      */
     public function setBlock1(?StandardImageTextBlock $block1) : self
     {
@@ -255,6 +267,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets block2.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock2() : ?StandardImageTextBlock
     {
@@ -265,6 +279,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
      * Sets block2.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block2 block2
+     *
+     * @return self
      */
     public function setBlock2(?StandardImageTextBlock $block2) : self
     {
@@ -275,6 +291,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets block3.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock3() : ?StandardImageTextBlock
     {
@@ -285,6 +303,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
      * Sets block3.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block3 block3
+     *
+     * @return self
      */
     public function setBlock3(?StandardImageTextBlock $block3) : self
     {
@@ -295,6 +315,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets block4.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock4() : ?StandardImageTextBlock
     {
@@ -305,6 +327,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
      * Sets block4.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block4 block4
+     *
+     * @return self
      */
     public function setBlock4(?StandardImageTextBlock $block4) : self
     {
@@ -316,7 +340,7 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -325,8 +349,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -337,9 +359,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -352,8 +371,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -375,6 +392,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

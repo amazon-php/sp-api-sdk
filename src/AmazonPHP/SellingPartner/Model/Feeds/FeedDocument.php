@@ -95,8 +95,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -108,7 +108,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -118,7 +118,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -129,7 +129,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -139,7 +139,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -149,7 +149,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -158,6 +158,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -169,6 +171,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -227,6 +231,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets feed_document_id.
      *
      * @param string $feed_document_id The identifier for the feed document. This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
     public function setFeedDocumentId(string $feed_document_id) : self
     {
@@ -247,6 +253,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets url.
      *
      * @param string $url A presigned URL for the feed document. This URL expires after 5 minutes.
+     *
+     * @return self
      */
     public function setUrl(string $url) : self
     {
@@ -257,6 +265,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets compression_algorithm.
+     *
+     * @return null|string
      */
     public function getCompressionAlgorithm() : ?string
     {
@@ -267,6 +277,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets compression_algorithm.
      *
      * @param null|string $compression_algorithm if present, the feed document contents are compressed using the indicated algorithm
+     *
+     * @return self
      */
     public function setCompressionAlgorithm(?string $compression_algorithm) : self
     {
@@ -278,7 +290,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -287,8 +299,6 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -299,9 +309,6 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -314,8 +321,6 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -337,6 +342,8 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

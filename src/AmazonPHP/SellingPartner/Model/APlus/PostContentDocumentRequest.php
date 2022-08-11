@@ -83,8 +83,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -94,7 +94,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -144,6 +144,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -155,6 +157,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -187,6 +191,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
      * Sets content_document.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\ContentDocument $content_document content_document
+     *
+     * @return self
      */
     public function setContentDocument(ContentDocument $content_document) : self
     {
@@ -198,7 +204,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -207,8 +213,6 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -219,9 +223,6 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -234,8 +235,6 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -257,6 +256,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

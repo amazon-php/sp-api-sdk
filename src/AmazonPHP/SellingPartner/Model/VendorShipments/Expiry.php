@@ -31,8 +31,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'manufacturer_date' => '\DateTime',
-        'expiry_date' => '\DateTime',
+        'manufacturer_date' => '\DateTimeInterface',
+        'expiry_date' => '\DateTimeInterface',
         'expiry_after_duration' => '\AmazonPHP\SellingPartner\Model\VendorShipments\Duration',
     ];
 
@@ -93,8 +93,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -188,7 +192,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets manufacturer_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getManufacturerDate() : ?\DateTimeInterface
     {
@@ -198,9 +202,11 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets manufacturer_date.
      *
-     * @param \DateTime|\DateTimeImmutable $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
+     * @param null|\DateTimeInterface $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
+     *
+     * @return self
      */
-    public function setManufacturerDate(\DateTimeInterface $manufacturer_date) : self
+    public function setManufacturerDate(?\DateTimeInterface $manufacturer_date) : self
     {
         $this->container['manufacturer_date'] = $manufacturer_date;
 
@@ -210,7 +216,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets expiry_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getExpiryDate() : ?\DateTimeInterface
     {
@@ -220,9 +226,11 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets expiry_date.
      *
-     * @param \DateTime|\DateTimeImmutable $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
+     * @param null|\DateTimeInterface $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
+     *
+     * @return self
      */
-    public function setExpiryDate(\DateTimeInterface $expiry_date) : self
+    public function setExpiryDate(?\DateTimeInterface $expiry_date) : self
     {
         $this->container['expiry_date'] = $expiry_date;
 
@@ -231,6 +239,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets expiry_after_duration.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Duration
      */
     public function getExpiryAfterDuration() : ?Duration
     {
@@ -241,6 +251,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets expiry_after_duration.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Duration $expiry_after_duration expiry_after_duration
+     *
+     * @return self
      */
     public function setExpiryAfterDuration(?Duration $expiry_after_duration) : self
     {
@@ -252,7 +264,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -261,8 +273,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -273,9 +283,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -288,8 +295,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -311,6 +316,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

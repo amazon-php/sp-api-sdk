@@ -88,8 +88,8 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -190,6 +194,8 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets item_data.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentItem[] $item_data a list of inbound shipment item information
+     *
+     * @return self
      */
     public function setItemData(?array $item_data) : self
     {
@@ -200,6 +206,8 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -210,6 +218,8 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
+     *
+     * @return self
      */
     public function setNextToken(?string $next_token) : self
     {
@@ -221,7 +231,7 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -230,8 +240,6 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -242,9 +250,6 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -257,8 +262,6 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -280,6 +283,8 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

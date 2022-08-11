@@ -34,7 +34,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
         'package_number' => 'int',
         'carrier_code' => 'string',
         'tracking_number' => 'string',
-        'estimated_arrival_date' => '\DateTime',
+        'estimated_arrival_date' => '\DateTimeInterface',
     ];
 
     /**
@@ -98,8 +98,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -207,6 +211,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
      * Sets package_number.
      *
      * @param int $package_number identifies a package in a shipment
+     *
+     * @return self
      */
     public function setPackageNumber(int $package_number) : self
     {
@@ -227,6 +233,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
      * Sets carrier_code.
      *
      * @param string $carrier_code identifies the carrier who will deliver the shipment to the recipient
+     *
+     * @return self
      */
     public function setCarrierCode(string $carrier_code) : self
     {
@@ -237,6 +245,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets tracking_number.
+     *
+     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -247,6 +257,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
      * Sets tracking_number.
      *
      * @param null|string $tracking_number the tracking number, if provided, can be used to obtain tracking and delivery information
+     *
+     * @return self
      */
     public function setTrackingNumber(?string $tracking_number) : self
     {
@@ -258,7 +270,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Gets estimated_arrival_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {
@@ -268,9 +280,11 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Sets estimated_arrival_date.
      *
-     * @param \DateTime|\DateTimeImmutable $estimated_arrival_date estimated_arrival_date
+     * @param null|\DateTimeInterface $estimated_arrival_date estimated_arrival_date
+     *
+     * @return self
      */
-    public function setEstimatedArrivalDate(\DateTimeInterface $estimated_arrival_date) : self
+    public function setEstimatedArrivalDate(?\DateTimeInterface $estimated_arrival_date) : self
     {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 
@@ -280,7 +294,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -289,8 +303,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -301,9 +313,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -316,8 +325,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -339,6 +346,8 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

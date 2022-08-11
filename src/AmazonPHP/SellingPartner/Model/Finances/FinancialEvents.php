@@ -213,8 +213,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -250,7 +250,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -260,7 +260,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -271,7 +271,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -281,7 +281,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -291,7 +291,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -300,6 +300,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -311,6 +313,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -340,6 +344,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ShipmentEvent[] $shipment_event_list a list of shipment event information
+     *
+     * @return self
      */
     public function setShipmentEventList(?array $shipment_event_list) : self
     {
@@ -362,6 +368,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets refund_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ShipmentEvent[] $refund_event_list a list of shipment event information
+     *
+     * @return self
      */
     public function setRefundEventList(?array $refund_event_list) : self
     {
@@ -384,6 +392,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets guarantee_claim_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ShipmentEvent[] $guarantee_claim_event_list a list of shipment event information
+     *
+     * @return self
      */
     public function setGuaranteeClaimEventList(?array $guarantee_claim_event_list) : self
     {
@@ -406,6 +416,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets chargeback_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ShipmentEvent[] $chargeback_event_list a list of shipment event information
+     *
+     * @return self
      */
     public function setChargebackEventList(?array $chargeback_event_list) : self
     {
@@ -428,6 +440,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets pay_with_amazon_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\PayWithAmazonEvent[] $pay_with_amazon_event_list a list of events related to the seller's Pay with Amazon account
+     *
+     * @return self
      */
     public function setPayWithAmazonEventList(?array $pay_with_amazon_event_list) : self
     {
@@ -450,6 +464,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets service_provider_credit_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\SolutionProviderCreditEvent[] $service_provider_credit_event_list a list of information about solution provider credits
+     *
+     * @return self
      */
     public function setServiceProviderCreditEventList(?array $service_provider_credit_event_list) : self
     {
@@ -472,6 +488,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets retrocharge_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\RetrochargeEvent[] $retrocharge_event_list a list of information about Retrocharge or RetrochargeReversal events
+     *
+     * @return self
      */
     public function setRetrochargeEventList(?array $retrocharge_event_list) : self
     {
@@ -494,6 +512,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets rental_transaction_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\RentalTransactionEvent[] $rental_transaction_event_list a list of rental transaction event information
+     *
+     * @return self
      */
     public function setRentalTransactionEventList(?array $rental_transaction_event_list) : self
     {
@@ -516,6 +536,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets product_ads_payment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ProductAdsPaymentEvent[] $product_ads_payment_event_list a list of sponsored products payment events
+     *
+     * @return self
      */
     public function setProductAdsPaymentEventList(?array $product_ads_payment_event_list) : self
     {
@@ -538,6 +560,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets service_fee_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ServiceFeeEvent[] $service_fee_event_list a list of information about service fee events
+     *
+     * @return self
      */
     public function setServiceFeeEventList(?array $service_fee_event_list) : self
     {
@@ -560,6 +584,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_deal_payment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\SellerDealPaymentEvent[] $seller_deal_payment_event_list a list of payment events for deal-related fees
+     *
+     * @return self
      */
     public function setSellerDealPaymentEventList(?array $seller_deal_payment_event_list) : self
     {
@@ -582,6 +608,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets debt_recovery_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\DebtRecoveryEvent[] $debt_recovery_event_list a list of debt recovery event information
+     *
+     * @return self
      */
     public function setDebtRecoveryEventList(?array $debt_recovery_event_list) : self
     {
@@ -604,6 +632,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets loan_servicing_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\LoanServicingEvent[] $loan_servicing_event_list a list of loan servicing events
+     *
+     * @return self
      */
     public function setLoanServicingEventList(?array $loan_servicing_event_list) : self
     {
@@ -626,6 +656,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets adjustment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\AdjustmentEvent[] $adjustment_event_list a list of adjustment event information for the seller's account
+     *
+     * @return self
      */
     public function setAdjustmentEventList(?array $adjustment_event_list) : self
     {
@@ -648,6 +680,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets safet_reimbursement_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\SAFETReimbursementEvent[] $safet_reimbursement_event_list a list of SAFETReimbursementEvents
+     *
+     * @return self
      */
     public function setSafetReimbursementEventList(?array $safet_reimbursement_event_list) : self
     {
@@ -670,6 +704,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_review_enrollment_payment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\SellerReviewEnrollmentPaymentEvent[] $seller_review_enrollment_payment_event_list a list of information about fee events for the Early Reviewer Program
+     *
+     * @return self
      */
     public function setSellerReviewEnrollmentPaymentEventList(?array $seller_review_enrollment_payment_event_list) : self
     {
@@ -692,6 +728,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fba_liquidation_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FBALiquidationEvent[] $fba_liquidation_event_list a list of FBA inventory liquidation payment events
+     *
+     * @return self
      */
     public function setFbaLiquidationEventList(?array $fba_liquidation_event_list) : self
     {
@@ -714,6 +752,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets coupon_payment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\CouponPaymentEvent[] $coupon_payment_event_list a list of coupon payment event information
+     *
+     * @return self
      */
     public function setCouponPaymentEventList(?array $coupon_payment_event_list) : self
     {
@@ -736,6 +776,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets imaging_services_fee_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ImagingServicesFeeEvent[] $imaging_services_fee_event_list a list of fee events related to Amazon Imaging services
+     *
+     * @return self
      */
     public function setImagingServicesFeeEventList(?array $imaging_services_fee_event_list) : self
     {
@@ -758,6 +800,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets network_commingling_transaction_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\NetworkComminglingTransactionEvent[] $network_commingling_transaction_event_list a list of network commingling transaction events
+     *
+     * @return self
      */
     public function setNetworkComminglingTransactionEventList(?array $network_commingling_transaction_event_list) : self
     {
@@ -780,6 +824,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets affordability_expense_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\AffordabilityExpenseEvent[] $affordability_expense_event_list a list of expense information related to an affordability promotion
+     *
+     * @return self
      */
     public function setAffordabilityExpenseEventList(?array $affordability_expense_event_list) : self
     {
@@ -802,6 +848,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets affordability_expense_reversal_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\AffordabilityExpenseEvent[] $affordability_expense_reversal_event_list a list of expense information related to an affordability promotion
+     *
+     * @return self
      */
     public function setAffordabilityExpenseReversalEventList(?array $affordability_expense_reversal_event_list) : self
     {
@@ -824,6 +872,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets trial_shipment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\TrialShipmentEvent[] $trial_shipment_event_list a list of information about trial shipment financial events
+     *
+     * @return self
      */
     public function setTrialShipmentEventList(?array $trial_shipment_event_list) : self
     {
@@ -846,6 +896,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_settle_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ShipmentEvent[] $shipment_settle_event_list a list of information about shipment settle financial events
+     *
+     * @return self
      */
     public function setShipmentSettleEventList(?array $shipment_settle_event_list) : self
     {
@@ -868,6 +920,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tax_withholding_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingEvent[] $tax_withholding_event_list list of TaxWithholding events
+     *
+     * @return self
      */
     public function setTaxWithholdingEventList(?array $tax_withholding_event_list) : self
     {
@@ -890,6 +944,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets removal_shipment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentEvent[] $removal_shipment_event_list a list of removal shipment event information
+     *
+     * @return self
      */
     public function setRemovalShipmentEventList(?array $removal_shipment_event_list) : self
     {
@@ -912,6 +968,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets removal_shipment_adjustment_event_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentAdjustmentEvent[] $removal_shipment_adjustment_event_list a comma-delimited list of Removal shipmentAdjustment details for FBA inventory
+     *
+     * @return self
      */
     public function setRemovalShipmentAdjustmentEventList(?array $removal_shipment_adjustment_event_list) : self
     {
@@ -923,7 +981,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -932,8 +990,6 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -944,9 +1000,6 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -959,8 +1012,6 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -982,6 +1033,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

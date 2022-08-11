@@ -36,7 +36,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
         'marketplace_ids' => 'string[]',
         'report_options' => 'array<string,string>',
         'period' => 'string',
-        'next_report_creation_time' => '\DateTime',
+        'next_report_creation_time' => '\DateTimeInterface',
     ];
 
     /**
@@ -108,8 +108,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -124,7 +124,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -223,6 +227,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets report_schedule_id.
      *
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID.
+     *
+     * @return self
      */
     public function setReportScheduleId(string $report_schedule_id) : self
     {
@@ -243,6 +249,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets report_type.
      *
      * @param string $report_type the report type
+     *
+     * @return self
      */
     public function setReportType(string $report_type) : self
     {
@@ -265,6 +273,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_ids.
      *
      * @param null|string[] $marketplace_ids A list of marketplace identifiers. The report document's contents will contain data for all of the specified marketplaces, unless the report type indicates otherwise.
+     *
+     * @return self
      */
     public function setMarketplaceIds(?array $marketplace_ids) : self
     {
@@ -287,6 +297,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets report_options.
      *
      * @param null|array<string,string> $report_options Additional information passed to reports. This varies by report type.
+     *
+     * @return self
      */
     public function setReportOptions(?array $report_options) : self
     {
@@ -307,6 +319,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets period.
      *
      * @param string $period an ISO 8601 period value that indicates how often a report should be created
+     *
+     * @return self
      */
     public function setPeriod(string $period) : self
     {
@@ -318,7 +332,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets next_report_creation_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getNextReportCreationTime() : ?\DateTimeInterface
     {
@@ -328,9 +342,11 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets next_report_creation_time.
      *
-     * @param \DateTime|\DateTimeImmutable $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
+     * @param null|\DateTimeInterface $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
+     *
+     * @return self
      */
-    public function setNextReportCreationTime(\DateTimeInterface $next_report_creation_time) : self
+    public function setNextReportCreationTime(?\DateTimeInterface $next_report_creation_time) : self
     {
         $this->container['next_report_creation_time'] = $next_report_creation_time;
 
@@ -340,7 +356,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -349,8 +365,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -361,9 +375,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -376,8 +387,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -399,6 +408,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

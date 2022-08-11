@@ -30,4 +30,4 @@
 
 <h2>Description</h2>
 
-<!-- Please provide a shore description of changes in this section, feel free to use markdown syntax -->
+<!-- Please provide a short description of changes in this section, feel free to use markdown syntax -->

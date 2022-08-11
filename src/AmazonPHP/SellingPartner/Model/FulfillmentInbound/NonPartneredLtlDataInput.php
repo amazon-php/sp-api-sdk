@@ -88,8 +88,8 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -195,6 +199,8 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
      * Sets carrier_name.
      *
      * @param string $carrier_name the carrier that you are using for the inbound shipment
+     *
+     * @return self
      */
     public function setCarrierName(string $carrier_name) : self
     {
@@ -215,6 +221,8 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
      * Sets pro_number.
      *
      * @param string $pro_number the PRO number (\"progressive number\" or \"progressive ID\") assigned to the shipment by the carrier
+     *
+     * @return self
      */
     public function setProNumber(string $pro_number) : self
     {
@@ -226,7 +234,7 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -235,8 +243,6 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -247,9 +253,6 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -262,8 +265,6 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -285,6 +286,8 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

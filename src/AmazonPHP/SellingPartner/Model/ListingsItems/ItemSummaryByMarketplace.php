@@ -68,8 +68,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
         'status' => 'string[]',
         'fn_sku' => 'string',
         'item_name' => 'string',
-        'created_date' => '\DateTime',
-        'last_updated_date' => '\DateTime',
+        'created_date' => '\DateTimeInterface',
+        'last_updated_date' => '\DateTimeInterface',
         'main_image' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage',
     ];
 
@@ -158,8 +158,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -178,7 +178,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -188,7 +188,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -199,7 +199,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -209,7 +209,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -219,7 +219,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -228,6 +228,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -239,6 +241,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -346,6 +350,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Identifies the Amazon marketplace for the listings item.
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -366,6 +372,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets asin.
      *
      * @param string $asin amazon Standard Identification Number (ASIN) of the listings item
+     *
+     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -386,6 +394,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets product_type.
      *
      * @param string $product_type the Amazon product type of the listings item
+     *
+     * @return self
      */
     public function setProductType(string $product_type) : self
     {
@@ -396,6 +406,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets condition_type.
+     *
+     * @return null|string
      */
     public function getConditionType() : ?string
     {
@@ -406,6 +418,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets condition_type.
      *
      * @param null|string $condition_type identifies the condition of the listings item
+     *
+     * @return self
      */
     public function setConditionType(?string $condition_type) : self
     {
@@ -428,6 +442,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets status.
      *
      * @param string[] $status statuses that apply to the listings item
+     *
+     * @return self
      */
     public function setStatus(array $status) : self
     {
@@ -438,6 +454,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -448,6 +466,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets fn_sku.
      *
      * @param null|string $fn_sku fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item
+     *
+     * @return self
      */
     public function setFnSku(?string $fn_sku) : self
     {
@@ -468,6 +488,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets item_name.
      *
      * @param string $item_name name, or title, associated with an Amazon catalog item
+     *
+     * @return self
      */
     public function setItemName(string $item_name) : self
     {
@@ -478,8 +500,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets created_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
     public function getCreatedDate() : \DateTimeInterface
     {
@@ -489,7 +509,9 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Sets created_date.
      *
-     * @param \DateTime $created_date date the listings item was created, in ISO 8601 format
+     * @param \DateTimeInterface $created_date date the listings item was created, in ISO 8601 format
+     *
+     * @return self
      */
     public function setCreatedDate(\DateTimeInterface $created_date) : self
     {
@@ -500,8 +522,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets last_updated_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
     public function getLastUpdatedDate() : \DateTimeInterface
     {
@@ -511,7 +531,9 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Sets last_updated_date.
      *
-     * @param \DateTime $last_updated_date date the listings item was last updated, in ISO 8601 format
+     * @param \DateTimeInterface $last_updated_date date the listings item was last updated, in ISO 8601 format
+     *
+     * @return self
      */
     public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
     {
@@ -522,6 +544,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets main_image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage
      */
     public function getMainImage() : ?ItemImage
     {
@@ -532,6 +556,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets main_image.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage $main_image main_image
+     *
+     * @return self
      */
     public function setMainImage(?ItemImage $main_image) : self
     {
@@ -543,7 +569,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -552,8 +578,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -564,9 +588,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -579,8 +600,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -602,6 +621,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

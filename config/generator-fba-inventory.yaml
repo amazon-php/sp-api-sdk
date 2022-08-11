@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /FBAInventorySDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /FBAInventorySDKInterface.php

@@ -40,7 +40,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     protected static array $openAPITypes = [
         'customer_order_number' => 'string',
-        'order_date' => '\DateTime',
+        'order_date' => '\DateTimeInterface',
         'order_status' => 'string',
         'shipment_details' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDetails',
         'tax_total' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails',
@@ -136,8 +136,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -156,7 +156,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -166,7 +166,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -177,7 +177,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -187,7 +187,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -197,7 +197,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -206,6 +206,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -217,6 +219,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -316,6 +320,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets customer_order_number.
      *
      * @param string $customer_order_number the customer order number
+     *
+     * @return self
      */
     public function setCustomerOrderNumber(string $customer_order_number) : self
     {
@@ -326,8 +332,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
     public function getOrderDate() : \DateTimeInterface
     {
@@ -337,7 +341,9 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets order_date.
      *
-     * @param \DateTime $order_date The date the order was placed. This  field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
+     * @param \DateTimeInterface $order_date The date the order was placed. This  field is expected to be in ISO-8601 date/time format, for example:2018-07-16T23:00:00Z/ 2018-07-16T23:00:00-05:00 /2018-07-16T23:00:00-08:00. If no time zone is specified, UTC should be assumed.
+     *
+     * @return self
      */
     public function setOrderDate(\DateTimeInterface $order_date) : self
     {
@@ -348,6 +354,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_status.
+     *
+     * @return null|string
      */
     public function getOrderStatus() : ?string
     {
@@ -358,6 +366,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_status.
      *
      * @param null|string $order_status current status of the order
+     *
+     * @return self
      */
     public function setOrderStatus(?string $order_status) : self
     {
@@ -378,6 +388,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_details.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDetails $shipment_details shipment_details
+     *
+     * @return self
      */
     public function setShipmentDetails(ShipmentDetails $shipment_details) : self
     {
@@ -388,6 +400,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets tax_total.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails
      */
     public function getTaxTotal() : ?TaxItemDetails
     {
@@ -398,6 +412,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tax_total.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails $tax_total tax_total
+     *
+     * @return self
      */
     public function setTaxTotal(?TaxItemDetails $tax_total) : self
     {
@@ -418,6 +434,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets selling_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification $selling_party selling_party
+     *
+     * @return self
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -438,6 +456,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_from_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification $ship_from_party ship_from_party
+     *
+     * @return self
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -458,6 +478,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_to_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Address $ship_to_party ship_to_party
+     *
+     * @return self
      */
     public function setShipToParty(Address $ship_to_party) : self
     {
@@ -478,6 +500,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets bill_to_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification $bill_to_party bill_to_party
+     *
+     * @return self
      */
     public function setBillToParty(PartyIdentification $bill_to_party) : self
     {
@@ -500,6 +524,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets items.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderItem[] $items a list of items in this purchase order
+     *
+     * @return self
      */
     public function setItems(array $items) : self
     {
@@ -511,7 +537,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -520,8 +546,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -532,9 +556,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -547,8 +568,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -570,6 +589,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

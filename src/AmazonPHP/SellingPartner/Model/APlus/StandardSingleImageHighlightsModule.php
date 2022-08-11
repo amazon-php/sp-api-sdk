@@ -108,8 +108,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -124,7 +124,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -225,6 +229,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -235,6 +241,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      * Sets image.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent $image image
+     *
+     * @return self
      */
     public function setImage(?ImageComponent $image) : self
     {
@@ -245,6 +253,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -255,6 +265,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      * Sets headline.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     *
+     * @return self
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -265,6 +277,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block1.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock1() : ?StandardTextBlock
     {
@@ -275,6 +289,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      * Sets text_block1.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block1 text_block1
+     *
+     * @return self
      */
     public function setTextBlock1(?StandardTextBlock $text_block1) : self
     {
@@ -285,6 +301,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block2.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock2() : ?StandardTextBlock
     {
@@ -295,6 +313,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      * Sets text_block2.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block2 text_block2
+     *
+     * @return self
      */
     public function setTextBlock2(?StandardTextBlock $text_block2) : self
     {
@@ -305,6 +325,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block3.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock3() : ?StandardTextBlock
     {
@@ -315,6 +337,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      * Sets text_block3.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block3 text_block3
+     *
+     * @return self
      */
     public function setTextBlock3(?StandardTextBlock $text_block3) : self
     {
@@ -325,6 +349,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets bulleted_list_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock
      */
     public function getBulletedListBlock() : ?StandardHeaderTextListBlock
     {
@@ -335,6 +361,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      * Sets bulleted_list_block.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock $bulleted_list_block bulleted_list_block
+     *
+     * @return self
      */
     public function setBulletedListBlock(?StandardHeaderTextListBlock $bulleted_list_block) : self
     {
@@ -346,7 +374,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -355,8 +383,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -367,9 +393,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -382,8 +405,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -405,6 +426,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

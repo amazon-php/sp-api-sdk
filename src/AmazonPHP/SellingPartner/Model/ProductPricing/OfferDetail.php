@@ -158,8 +158,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -184,7 +184,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -194,7 +194,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -205,7 +205,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -215,7 +215,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -225,7 +225,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -234,6 +234,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -245,6 +247,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -303,6 +307,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets my_offer.
+     *
+     * @return null|bool
      */
     public function getMyOffer() : ?bool
     {
@@ -313,6 +319,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets my_offer.
      *
      * @param null|bool $my_offer when true, this is the seller's offer
+     *
+     * @return self
      */
     public function setMyOffer(?bool $my_offer) : self
     {
@@ -323,6 +331,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -333,6 +343,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offer_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType $offer_type offer_type
+     *
+     * @return self
      */
     public function setOfferType(?OfferCustomerType $offer_type) : self
     {
@@ -353,6 +365,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets sub_condition.
      *
      * @param string $sub_condition The subcondition of the item. Subcondition values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
+     *
+     * @return self
      */
     public function setSubCondition(string $sub_condition) : self
     {
@@ -363,6 +377,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -373,6 +389,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_id.
      *
      * @param null|string $seller_id the seller identifier for the offer
+     *
+     * @return self
      */
     public function setSellerId(?string $seller_id) : self
     {
@@ -383,6 +401,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets condition_notes.
+     *
+     * @return null|string
      */
     public function getConditionNotes() : ?string
     {
@@ -393,6 +413,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets condition_notes.
      *
      * @param null|string $condition_notes information about the condition of the item
+     *
+     * @return self
      */
     public function setConditionNotes(?string $condition_notes) : self
     {
@@ -403,6 +425,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_feedback_rating.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerFeedbackType
      */
     public function getSellerFeedbackRating() : ?SellerFeedbackType
     {
@@ -413,6 +437,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_feedback_rating.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerFeedbackType $seller_feedback_rating seller_feedback_rating
+     *
+     * @return self
      */
     public function setSellerFeedbackRating(?SellerFeedbackType $seller_feedback_rating) : self
     {
@@ -433,6 +459,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping_time.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\DetailedShippingTimeType $shipping_time shipping_time
+     *
+     * @return self
      */
     public function setShippingTime(DetailedShippingTimeType $shipping_time) : self
     {
@@ -453,6 +481,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets listing_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $listing_price listing_price
+     *
+     * @return self
      */
     public function setListingPrice(MoneyType $listing_price) : self
     {
@@ -475,6 +505,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity_discount_prices.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountPriceType[] $quantity_discount_prices quantity_discount_prices
+     *
+     * @return self
      */
     public function setQuantityDiscountPrices(?array $quantity_discount_prices) : self
     {
@@ -485,6 +517,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets points.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points
      */
     public function getPoints() : ?Points
     {
@@ -495,6 +529,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets points.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points $points points
+     *
+     * @return self
      */
     public function setPoints(?Points $points) : self
     {
@@ -515,6 +551,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $shipping shipping
+     *
+     * @return self
      */
     public function setShipping(MoneyType $shipping) : self
     {
@@ -525,6 +563,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets ships_from.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ShipsFromType
      */
     public function getShipsFrom() : ?ShipsFromType
     {
@@ -535,6 +575,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ships_from.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ShipsFromType $ships_from ships_from
+     *
+     * @return self
      */
     public function setShipsFrom(?ShipsFromType $ships_from) : self
     {
@@ -555,6 +597,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_fulfilled_by_amazon.
      *
      * @param bool $is_fulfilled_by_amazon when true, the offer is fulfilled by Amazon
+     *
+     * @return self
      */
     public function setIsFulfilledByAmazon(bool $is_fulfilled_by_amazon) : self
     {
@@ -565,6 +609,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets prime_information.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\PrimeInformationType
      */
     public function getPrimeInformation() : ?PrimeInformationType
     {
@@ -575,6 +621,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets prime_information.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\PrimeInformationType $prime_information prime_information
+     *
+     * @return self
      */
     public function setPrimeInformation(?PrimeInformationType $prime_information) : self
     {
@@ -585,6 +633,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_buy_box_winner.
+     *
+     * @return null|bool
      */
     public function getIsBuyBoxWinner() : ?bool
     {
@@ -595,6 +645,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_buy_box_winner.
      *
      * @param null|bool $is_buy_box_winner When true, the offer is currently in the Buy Box. There can be up to two Buy Box winners at any time per ASIN, one that is eligible for Prime and one that is not eligible for Prime.
+     *
+     * @return self
      */
     public function setIsBuyBoxWinner(?bool $is_buy_box_winner) : self
     {
@@ -605,6 +657,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_featured_merchant.
+     *
+     * @return null|bool
      */
     public function getIsFeaturedMerchant() : ?bool
     {
@@ -615,6 +669,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_featured_merchant.
      *
      * @param null|bool $is_featured_merchant when true, the seller of the item is eligible to win the Buy Box
+     *
+     * @return self
      */
     public function setIsFeaturedMerchant(?bool $is_featured_merchant) : self
     {
@@ -626,7 +682,7 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -635,8 +691,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -647,9 +701,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -662,8 +713,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -685,6 +734,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /FBAInboundSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /FBAInboundSDKInterface.php

@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /VendorTransactionStatusSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /VendorTransactionStatusSDKInterface.php

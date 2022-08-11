@@ -101,8 +101,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -114,7 +114,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -124,7 +124,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -135,7 +135,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -145,7 +145,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -155,7 +155,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -164,6 +164,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -175,6 +177,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -236,6 +240,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets method.
      *
      * @param string $method the HTTP method in the restricted resource
+     *
+     * @return self
      */
     public function setMethod(string $method) : self
     {
@@ -256,6 +262,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets path.
      *
      * @param string $path The path in the restricted resource. Here are some path examples: - ```/orders/v0/orders```. For getting an RDT for the getOrders operation of the Orders API. For bulk orders. - ```/orders/v0/orders/123-1234567-1234567```. For getting an RDT for the getOrder operation of the Orders API. For a specific order. - ```/orders/v0/orders/123-1234567-1234567/orderItems```. For getting an RDT for the getOrderItems operation of the Orders API. For the order items in a specific order. - ```/mfn/v0/shipments/FBA1234ABC5D```. For getting an RDT for the getShipment operation of the Shipping API. For a specific shipment. - ```/mfn/v0/shipments/{shipmentId}```. For getting an RDT for the getShipment operation of the Shipping API. For any of a selling partner's shipments that you specify when you call the getShipment operation.
+     *
+     * @return self
      */
     public function setPath(string $path) : self
     {
@@ -278,6 +286,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets data_elements.
      *
      * @param null|string[] $data_elements Indicates the type of Personally Identifiable Information requested. This parameter is required only when getting an RDT for use with the getOrder, getOrders, or getOrderItems operation of the Orders API. For more information, see the [Tokens API Use Case Guide](doc:tokens-api-use-case-guide). Possible values include: - **buyerInfo**. On the order level this includes general identifying information about the buyer and tax-related information. On the order item level this includes gift wrap information and custom order information, if available. - **shippingAddress**. This includes information for fulfilling orders. - **buyerTaxInformation**. This includes information for issuing tax invoices.
+     *
+     * @return self
      */
     public function setDataElements(?array $data_elements) : self
     {
@@ -289,7 +299,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -298,8 +308,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -310,9 +318,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -325,8 +330,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -348,6 +351,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

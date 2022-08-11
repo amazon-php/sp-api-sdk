@@ -98,8 +98,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -190,6 +194,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -200,6 +206,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
+     *
+     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -210,6 +218,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets barcode_instruction.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BarcodeInstruction
      */
     public function getBarcodeInstruction() : ?BarcodeInstruction
     {
@@ -220,6 +230,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets barcode_instruction.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BarcodeInstruction $barcode_instruction barcode_instruction
+     *
+     * @return self
      */
     public function setBarcodeInstruction(?BarcodeInstruction $barcode_instruction) : self
     {
@@ -230,6 +242,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets prep_guidance.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepGuidance
      */
     public function getPrepGuidance() : ?PrepGuidance
     {
@@ -240,6 +254,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets prep_guidance.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepGuidance $prep_guidance prep_guidance
+     *
+     * @return self
      */
     public function setPrepGuidance(?PrepGuidance $prep_guidance) : self
     {
@@ -262,6 +278,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets prep_instruction_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepInstruction[] $prep_instruction_list a list of preparation instructions to help with item sourcing decisions
+     *
+     * @return self
      */
     public function setPrepInstructionList(?array $prep_instruction_list) : self
     {
@@ -273,7 +291,7 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -282,8 +300,6 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -294,9 +310,6 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -309,8 +322,6 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -332,6 +343,8 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

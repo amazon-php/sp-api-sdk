@@ -110,8 +110,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -124,7 +124,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -230,6 +234,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets type.
+     *
+     * @return null|string
      */
     public function getType() : ?string
     {
@@ -240,6 +246,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets type.
      *
      * @param null|string $type the payment term type for the invoice
+     *
+     * @return self
      */
     public function setType(?string $type) : self
     {
@@ -250,6 +258,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets discount_percent.
+     *
+     * @return null|string
      */
     public function getDiscountPercent() : ?string
     {
@@ -260,6 +270,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets discount_percent.
      *
      * @param null|string $discount_percent A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
+     *
+     * @return self
      */
     public function setDiscountPercent(?string $discount_percent) : self
     {
@@ -270,6 +282,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets discount_due_days.
+     *
+     * @return null|float
      */
     public function getDiscountDueDays() : ?float
     {
@@ -280,6 +294,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets discount_due_days.
      *
      * @param null|float $discount_due_days the number of calendar days from the Base date (Invoice date) until the discount is no longer valid
+     *
+     * @return self
      */
     public function setDiscountDueDays(?float $discount_due_days) : self
     {
@@ -290,6 +306,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets net_due_days.
+     *
+     * @return null|float
      */
     public function getNetDueDays() : ?float
     {
@@ -300,6 +318,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets net_due_days.
      *
      * @param null|float $net_due_days the number of calendar days from the base date (invoice date) until the total amount on the invoice is due
+     *
+     * @return self
      */
     public function setNetDueDays(?float $net_due_days) : self
     {
@@ -311,7 +331,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -320,8 +340,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -332,9 +350,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -347,8 +362,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -370,6 +383,8 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

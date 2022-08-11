@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /APlusSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /APlusSDKInterface.php

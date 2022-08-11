@@ -103,8 +103,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -118,7 +118,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -225,6 +229,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_cod_required.
      *
      * @param bool $is_cod_required when true, this fulfillment order requires a COD (Cash On Delivery) payment
+     *
+     * @return self
      */
     public function setIsCodRequired(bool $is_cod_required) : self
     {
@@ -235,6 +241,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets cod_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getCodCharge() : ?Money
     {
@@ -245,6 +253,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets cod_charge.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $cod_charge cod_charge
+     *
+     * @return self
      */
     public function setCodCharge(?Money $cod_charge) : self
     {
@@ -255,6 +265,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets cod_charge_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getCodChargeTax() : ?Money
     {
@@ -265,6 +277,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets cod_charge_tax.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $cod_charge_tax cod_charge_tax
+     *
+     * @return self
      */
     public function setCodChargeTax(?Money $cod_charge_tax) : self
     {
@@ -275,6 +289,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipping_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getShippingCharge() : ?Money
     {
@@ -285,6 +301,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping_charge.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $shipping_charge shipping_charge
+     *
+     * @return self
      */
     public function setShippingCharge(?Money $shipping_charge) : self
     {
@@ -295,6 +313,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipping_charge_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getShippingChargeTax() : ?Money
     {
@@ -305,6 +325,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping_charge_tax.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $shipping_charge_tax shipping_charge_tax
+     *
+     * @return self
      */
     public function setShippingChargeTax(?Money $shipping_charge_tax) : self
     {
@@ -316,7 +338,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -325,8 +347,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -337,9 +357,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -352,8 +369,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -375,6 +390,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

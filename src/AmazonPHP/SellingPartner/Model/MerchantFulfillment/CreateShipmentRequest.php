@@ -108,8 +108,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -124,7 +124,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -185,6 +187,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -225,6 +229,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipment_request_details.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
+     *
+     * @return self
      */
     public function setShipmentRequestDetails(ShipmentRequestDetails $shipment_request_details) : self
     {
@@ -245,6 +251,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipping_service_id.
      *
      * @param string $shipping_service_id an Amazon-defined shipping service identifier
+     *
+     * @return self
      */
     public function setShippingServiceId(string $shipping_service_id) : self
     {
@@ -255,6 +263,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets shipping_service_offer_id.
+     *
+     * @return null|string
      */
     public function getShippingServiceOfferId() : ?string
     {
@@ -265,6 +275,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipping_service_offer_id.
      *
      * @param null|string $shipping_service_offer_id identifies a shipping service order made by a carrier
+     *
+     * @return self
      */
     public function setShippingServiceOfferId(?string $shipping_service_offer_id) : self
     {
@@ -275,6 +287,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets hazmat_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\HazmatType
      */
     public function getHazmatType() : ?HazmatType
     {
@@ -285,6 +299,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets hazmat_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\HazmatType $hazmat_type hazmat_type
+     *
+     * @return self
      */
     public function setHazmatType(?HazmatType $hazmat_type) : self
     {
@@ -295,6 +311,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets label_format_option.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormatOptionRequest
      */
     public function getLabelFormatOption() : ?LabelFormatOptionRequest
     {
@@ -305,6 +323,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets label_format_option.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormatOptionRequest $label_format_option label_format_option
+     *
+     * @return self
      */
     public function setLabelFormatOption(?LabelFormatOptionRequest $label_format_option) : self
     {
@@ -327,6 +347,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipment_level_seller_inputs_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInputs[] $shipment_level_seller_inputs_list a list of additional seller input pairs required to purchase shipping
+     *
+     * @return self
      */
     public function setShipmentLevelSellerInputsList(?array $shipment_level_seller_inputs_list) : self
     {
@@ -338,7 +360,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -347,8 +369,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -359,9 +379,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -374,8 +391,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -397,6 +412,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

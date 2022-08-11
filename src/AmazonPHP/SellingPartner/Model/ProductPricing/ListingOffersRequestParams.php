@@ -98,8 +98,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -211,6 +215,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned.
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -231,6 +237,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets item_condition.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition $item_condition item_condition
+     *
+     * @return self
      */
     public function setItemCondition(ItemCondition $item_condition) : self
     {
@@ -241,6 +249,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets customer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {
@@ -251,6 +261,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets customer_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType $customer_type customer_type
+     *
+     * @return self
      */
     public function setCustomerType(?CustomerType $customer_type) : self
     {
@@ -271,6 +283,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets seller_sku.
      *
      * @param string $seller_sku The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
+     *
+     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -282,7 +296,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -291,8 +305,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -303,9 +315,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -318,8 +327,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -341,6 +348,8 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

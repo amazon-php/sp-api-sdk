@@ -93,8 +93,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -184,6 +188,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets upload_destination_id.
+     *
+     * @return null|string
      */
     public function getUploadDestinationId() : ?string
     {
@@ -194,6 +200,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets upload_destination_id.
      *
      * @param null|string $upload_destination_id the unique identifier for the upload destination
+     *
+     * @return self
      */
     public function setUploadDestinationId(?string $upload_destination_id) : self
     {
@@ -204,6 +212,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets url.
+     *
+     * @return null|string
      */
     public function getUrl() : ?string
     {
@@ -214,6 +224,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets url.
      *
      * @param null|string $url the URL for the upload destination
+     *
+     * @return self
      */
     public function setUrl(?string $url) : self
     {
@@ -224,6 +236,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets headers.
+     *
+     * @return null|object
      */
     public function getHeaders() : ?object
     {
@@ -234,6 +248,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets headers.
      *
      * @param null|object $headers the headers to include in the upload request
+     *
+     * @return self
      */
     public function setHeaders(?array $headers) : self
     {
@@ -245,7 +261,7 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -254,8 +270,6 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -266,9 +280,6 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -281,8 +292,6 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -304,6 +313,8 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

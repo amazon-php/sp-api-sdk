@@ -41,7 +41,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
         'order_fee_list' => '\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[]',
         'order_fee_adjustment_list' => '\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[]',
         'direct_payment_list' => '\AmazonPHP\SellingPartner\Model\Finances\DirectPayment[]',
-        'posted_date' => '\DateTime',
+        'posted_date' => '\DateTimeInterface',
         'shipment_item_list' => '\AmazonPHP\SellingPartner\Model\Finances\ShipmentItem[]',
         'shipment_item_adjustment_list' => '\AmazonPHP\SellingPartner\Model\Finances\ShipmentItem[]',
     ];
@@ -143,8 +143,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -166,7 +166,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -176,7 +176,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -187,7 +187,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -197,7 +197,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -207,7 +207,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -216,6 +216,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -227,6 +229,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -244,6 +248,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -254,6 +260,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
+     *
+     * @return self
      */
     public function setAmazonOrderId(?string $amazon_order_id) : self
     {
@@ -264,6 +272,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -274,6 +284,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id a seller-defined identifier for an order
+     *
+     * @return self
      */
     public function setSellerOrderId(?string $seller_order_id) : self
     {
@@ -284,6 +296,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets marketplace_name.
+     *
+     * @return null|string
      */
     public function getMarketplaceName() : ?string
     {
@@ -294,6 +308,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_name.
      *
      * @param null|string $marketplace_name the name of the marketplace where the event occurred
+     *
+     * @return self
      */
     public function setMarketplaceName(?string $marketplace_name) : self
     {
@@ -316,6 +332,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_charge_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent[] $order_charge_list a list of charge information on the seller's account
+     *
+     * @return self
      */
     public function setOrderChargeList(?array $order_charge_list) : self
     {
@@ -338,6 +356,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_charge_adjustment_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent[] $order_charge_adjustment_list a list of charge information on the seller's account
+     *
+     * @return self
      */
     public function setOrderChargeAdjustmentList(?array $order_charge_adjustment_list) : self
     {
@@ -360,6 +380,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_fee_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $shipment_fee_list a list of fee component information
+     *
+     * @return self
      */
     public function setShipmentFeeList(?array $shipment_fee_list) : self
     {
@@ -382,6 +404,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_fee_adjustment_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $shipment_fee_adjustment_list a list of fee component information
+     *
+     * @return self
      */
     public function setShipmentFeeAdjustmentList(?array $shipment_fee_adjustment_list) : self
     {
@@ -404,6 +428,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_fee_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $order_fee_list a list of fee component information
+     *
+     * @return self
      */
     public function setOrderFeeList(?array $order_fee_list) : self
     {
@@ -426,6 +452,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_fee_adjustment_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $order_fee_adjustment_list a list of fee component information
+     *
+     * @return self
      */
     public function setOrderFeeAdjustmentList(?array $order_fee_adjustment_list) : self
     {
@@ -448,6 +476,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets direct_payment_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\DirectPayment[] $direct_payment_list a list of direct payment information
+     *
+     * @return self
      */
     public function setDirectPaymentList(?array $direct_payment_list) : self
     {
@@ -459,7 +489,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets posted_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -469,9 +499,11 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets posted_date.
      *
-     * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     * @param null|\DateTimeInterface $posted_date posted_date
+     *
+     * @return self
      */
-    public function setPostedDate(\DateTimeInterface $posted_date) : self
+    public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
         $this->container['posted_date'] = $posted_date;
 
@@ -492,6 +524,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_item_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ShipmentItem[] $shipment_item_list a list of shipment items
+     *
+     * @return self
      */
     public function setShipmentItemList(?array $shipment_item_list) : self
     {
@@ -514,6 +548,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_item_adjustment_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ShipmentItem[] $shipment_item_adjustment_list a list of shipment items
+     *
+     * @return self
      */
     public function setShipmentItemAdjustmentList(?array $shipment_item_adjustment_list) : self
     {
@@ -525,7 +561,7 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -534,8 +570,6 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -546,9 +580,6 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -561,8 +592,6 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -584,6 +613,8 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

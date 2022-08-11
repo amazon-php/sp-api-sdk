@@ -6,7 +6,6 @@ namespace AmazonPHP\Rector\ClassMethod;
 
 use PhpParser\Node;
 use PhpParser\Node\Stmt\ClassMethod;
-use PHPStan\Type\BooleanType;
 use PHPStan\Type\StringType;
 use Rector\Core\Rector\AbstractRector;
 use Symplify\RuleDocGenerator\ValueObject\CodeSample\CodeSample;
@@ -28,26 +27,19 @@ class FixArgumentDefaultValuesNotMatchingTypeRector extends AbstractRector
     public function refactor(Node $node) : ?Node
     {
         foreach ($node->params as $index => $param) {
-            if (!$param->type instanceof Node) {
-                continue;
-            }
-
             if ($param->default === null) {
                 continue;
             }
 
-            $paramType = $this->nodeTypeResolver->resolve($param->type);
+            $defaultType = $this->nodeTypeResolver->getType($param->default);
 
-            $defaultType = $this->nodeTypeResolver->resolve($param->default);
-
-            if ($paramType instanceof BooleanType && $defaultType instanceof StringType) {
+            if ($defaultType instanceof StringType && $param->default instanceof Node\Scalar\String_) {
                 switch (\strtolower($param->default->value)) {
                     case 'true':
-                        $param->default = $this->nodeFactory->createtrue();
+                        $param->default = $this->nodeFactory->createTrue();
 
                         break;
                     case 'false':
-                    default:
                         $param->default = $this->nodeFactory->createFalse();
 
                         break;

@@ -88,8 +88,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -197,6 +201,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      * Sets self.
      *
      * @param \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject $self self
+     *
+     * @return self
      */
     public function setSelf(LinkObject $self) : self
     {
@@ -219,6 +225,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      * Sets actions.
      *
      * @param \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject[] $actions eligible actions for the specified amazonOrderId
+     *
+     * @return self
      */
     public function setActions(array $actions) : self
     {
@@ -230,7 +238,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -239,8 +247,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -251,9 +257,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -266,8 +269,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -289,6 +290,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

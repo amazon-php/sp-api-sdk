@@ -93,8 +93,8 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -201,6 +205,8 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the unobfuscated marketplace identifier
+     *
+     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -221,6 +227,8 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
      * Sets shipment_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\ShipmentStatus $shipment_status shipment_status
+     *
+     * @return self
      */
     public function setShipmentStatus(ShipmentStatus $shipment_status) : self
     {
@@ -243,6 +251,8 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
      * Sets order_items.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\OrderItemsInner[] $order_items for partial shipment status updates, the list of order items and quantities to be updated
+     *
+     * @return self
      */
     public function setOrderItems(?array $order_items) : self
     {
@@ -254,7 +264,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -263,8 +273,6 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -275,9 +283,6 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -290,8 +295,6 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -313,6 +316,8 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -103,8 +103,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -118,7 +118,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -179,6 +181,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -203,6 +207,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets debt_recovery_type.
+     *
+     * @return null|string
      */
     public function getDebtRecoveryType() : ?string
     {
@@ -213,6 +219,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets debt_recovery_type.
      *
      * @param null|string $debt_recovery_type The debt recovery type.  Possible values:  * DebtPayment  * DebtPaymentFailure  *DebtAdjustment
+     *
+     * @return self
      */
     public function setDebtRecoveryType(?string $debt_recovery_type) : self
     {
@@ -223,6 +231,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets recovery_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRecoveryAmount() : ?Currency
     {
@@ -233,6 +243,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets recovery_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $recovery_amount recovery_amount
+     *
+     * @return self
      */
     public function setRecoveryAmount(?Currency $recovery_amount) : self
     {
@@ -243,6 +255,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets over_payment_credit.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getOverPaymentCredit() : ?Currency
     {
@@ -253,6 +267,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets over_payment_credit.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $over_payment_credit over_payment_credit
+     *
+     * @return self
      */
     public function setOverPaymentCredit(?Currency $over_payment_credit) : self
     {
@@ -275,6 +291,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets debt_recovery_item_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\DebtRecoveryItem[] $debt_recovery_item_list a list of debt recovery item information
+     *
+     * @return self
      */
     public function setDebtRecoveryItemList(?array $debt_recovery_item_list) : self
     {
@@ -297,6 +315,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets charge_instrument_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeInstrument[] $charge_instrument_list a list of payment instruments
+     *
+     * @return self
      */
     public function setChargeInstrumentList(?array $charge_instrument_list) : self
     {
@@ -308,7 +328,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -317,8 +337,6 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -329,9 +347,6 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -344,8 +359,6 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -367,6 +380,8 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

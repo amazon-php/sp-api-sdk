@@ -93,8 +93,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -106,7 +106,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -156,6 +156,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -167,6 +169,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -195,6 +199,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets fees_estimate_request.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest
      */
     public function getFeesEstimateRequest() : ?FeesEstimateRequest
     {
@@ -205,6 +211,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets fees_estimate_request.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest $fees_estimate_request fees_estimate_request
+     *
+     * @return self
      */
     public function setFeesEstimateRequest(?FeesEstimateRequest $fees_estimate_request) : self
     {
@@ -225,6 +233,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets id_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\IdType $id_type id_type
+     *
+     * @return self
      */
     public function setIdType(IdType $id_type) : self
     {
@@ -245,6 +255,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets id_value.
      *
      * @param string $id_value the item identifier
+     *
+     * @return self
      */
     public function setIdValue(string $id_value) : self
     {
@@ -256,7 +268,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -265,8 +277,6 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -277,9 +287,6 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -292,8 +299,6 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -315,6 +320,8 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

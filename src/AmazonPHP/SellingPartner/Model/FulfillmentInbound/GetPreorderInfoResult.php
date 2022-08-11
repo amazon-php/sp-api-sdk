@@ -33,8 +33,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     protected static array $openAPITypes = [
         'shipment_contains_preorderable_items' => 'bool',
         'shipment_confirmed_for_preorder' => 'bool',
-        'need_by_date' => '\DateTime',
-        'confirmed_fulfillable_date' => '\DateTime',
+        'need_by_date' => '\DateTimeInterface',
+        'confirmed_fulfillable_date' => '\DateTimeInterface',
     ];
 
     /**
@@ -98,8 +98,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -112,7 +112,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -162,6 +162,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -173,6 +175,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -190,6 +194,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets shipment_contains_preorderable_items.
+     *
+     * @return null|bool
      */
     public function getShipmentContainsPreorderableItems() : ?bool
     {
@@ -200,6 +206,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipment_contains_preorderable_items.
      *
      * @param null|bool $shipment_contains_preorderable_items Indicates whether the shipment contains items that have been enabled for pre-order. For more information about enabling items for pre-order, see the Seller Central Help.
+     *
+     * @return self
      */
     public function setShipmentContainsPreorderableItems(?bool $shipment_contains_preorderable_items) : self
     {
@@ -210,6 +218,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets shipment_confirmed_for_preorder.
+     *
+     * @return null|bool
      */
     public function getShipmentConfirmedForPreorder() : ?bool
     {
@@ -220,6 +230,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipment_confirmed_for_preorder.
      *
      * @param null|bool $shipment_confirmed_for_preorder indicates whether this shipment has been confirmed for pre-order
+     *
+     * @return self
      */
     public function setShipmentConfirmedForPreorder(?bool $shipment_confirmed_for_preorder) : self
     {
@@ -231,7 +243,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets need_by_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getNeedByDate() : ?\DateTimeInterface
     {
@@ -241,9 +253,11 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets need_by_date.
      *
-     * @param \DateTime|\DateTimeImmutable $need_by_date need_by_date
+     * @param null|\DateTimeInterface $need_by_date need_by_date
+     *
+     * @return self
      */
-    public function setNeedByDate(\DateTimeInterface $need_by_date) : self
+    public function setNeedByDate(?\DateTimeInterface $need_by_date) : self
     {
         $this->container['need_by_date'] = $need_by_date;
 
@@ -253,7 +267,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets confirmed_fulfillable_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getConfirmedFulfillableDate() : ?\DateTimeInterface
     {
@@ -263,9 +277,11 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets confirmed_fulfillable_date.
      *
-     * @param \DateTime|\DateTimeImmutable $confirmed_fulfillable_date confirmed_fulfillable_date
+     * @param null|\DateTimeInterface $confirmed_fulfillable_date confirmed_fulfillable_date
+     *
+     * @return self
      */
-    public function setConfirmedFulfillableDate(\DateTimeInterface $confirmed_fulfillable_date) : self
+    public function setConfirmedFulfillableDate(?\DateTimeInterface $confirmed_fulfillable_date) : self
     {
         $this->container['confirmed_fulfillable_date'] = $confirmed_fulfillable_date;
 
@@ -275,7 +291,7 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -284,8 +300,6 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -296,9 +310,6 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -311,8 +322,6 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -334,6 +343,8 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {

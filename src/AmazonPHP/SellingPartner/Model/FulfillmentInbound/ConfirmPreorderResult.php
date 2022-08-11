@@ -31,8 +31,8 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'confirmed_need_by_date' => '\DateTime',
-        'confirmed_fulfillable_date' => '\DateTime',
+        'confirmed_need_by_date' => '\DateTimeInterface',
+        'confirmed_fulfillable_date' => '\DateTimeInterface',
     ];
 
     /**
@@ -88,8 +88,8 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -100,7 +100,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -150,6 +150,8 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
+     *
+     * @return string
      */
     public function __toString() : string
     {
@@ -161,6 +163,8 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -179,7 +183,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets confirmed_need_by_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getConfirmedNeedByDate() : ?\DateTimeInterface
     {
@@ -189,9 +193,11 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets confirmed_need_by_date.
      *
-     * @param \DateTime|\DateTimeImmutable $confirmed_need_by_date confirmed_need_by_date
+     * @param null|\DateTimeInterface $confirmed_need_by_date confirmed_need_by_date
+     *
+     * @return self
      */
-    public function setConfirmedNeedByDate(\DateTimeInterface $confirmed_need_by_date) : self
+    public function setConfirmedNeedByDate(?\DateTimeInterface $confirmed_need_by_date) : self
     {
         $this->container['confirmed_need_by_date'] = $confirmed_need_by_date;
 
@@ -201,7 +207,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets confirmed_fulfillable_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTimeInterface
      */
     public function getConfirmedFulfillableDate() : ?\DateTimeInterface
     {
@@ -211,9 +217,11 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets confirmed_fulfillable_date.
      *
-     * @param \DateTime|\DateTimeImmutable $confirmed_fulfillable_date confirmed_fulfillable_date
+     * @param null|\DateTimeInterface $confirmed_fulfillable_date confirmed_fulfillable_date
+     *
+     * @return self
      */
-    public function setConfirmedFulfillableDate(\DateTimeInterface $confirmed_fulfillable_date) : self
+    public function setConfirmedFulfillableDate(?\DateTimeInterface $confirmed_fulfillable_date) : self
     {
         $this->container['confirmed_fulfillable_date'] = $confirmed_fulfillable_date;
 
@@ -223,7 +231,7 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Returns true if offset exists. False otherwise.
      *
-     * @param int $offset Offset
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -232,8 +240,6 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets offset.
-     *
-     * @param int $offset Offset
      *
      * @return null|mixed
      */
@@ -244,9 +250,6 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Sets value based on offset.
-     *
-     * @param null|int $offset Offset
-     * @param mixed $value Value to be set
      */
     public function offsetSet($offset, $value) : void
     {
@@ -259,8 +262,6 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Unsets offset.
-     *
-     * @param int $offset Offset
      */
     public function offsetUnset($offset) : void
     {
@@ -282,6 +283,8 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
     public function toHeaderValue() : string
     {
