@@ -1,7 +1,16 @@
-## [Unreleased] - 2022-08-04
+## [Unreleased] - 2022-08-11
+
+### Added
+- [#228](https://github.com/amazon-php/sp-api-sdk/pull/228) - **Added auto generated SDK interfaces** - [@norberttech](https://github.com/norberttech)
+- [#228](https://github.com/amazon-php/sp-api-sdk/pull/228) - **More descriptive SDK class/interface comment** - [@norberttech](https://github.com/norberttech)
+- [#228](https://github.com/amazon-php/sp-api-sdk/pull/228) - **\DateTimeInterface primitve to code generator** - [@norberttech](https://github.com/norberttech)
 
 ### Changed
+- [#228](https://github.com/amazon-php/sp-api-sdk/pull/228) - **date,Date,DateTime generator types mapping from \DateTime into \DateTimeInterface** - [@norberttech](https://github.com/norberttech)
 - [#226](https://github.com/amazon-php/sp-api-sdk/pull/226) - **Doc fix** - [@belguinan](https://github.com/belguinan)
+
+### Fixed
+- [#228](https://github.com/amazon-php/sp-api-sdk/pull/228) - **property type hints when null is default value** - [@norberttech](https://github.com/norberttech)
 
 ## [4.0.8] - 2022-07-28
 
