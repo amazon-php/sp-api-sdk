@@ -243,14 +243,14 @@ final class ObjectSerializer
     }
 
     /**
-     * @template T
+     * @psalm-template T
      * Deserialize a JSON string into an object.
      *
-     * @param mixed $data object or primitive to be deserialized
-     * @param T $class class name is passed as a string
-     * @param null|string[] $httpHeaders HTTP headers
+     * @psalm-param mixed $data object or primitive to be deserialized
+     * @psalm-param T $class class name is passed as a string
+     * @psalm-param null|string[] $httpHeaders HTTP headers
      *
-     * @return T
+     * @psalm-return T
      */
     public static function deserialize(Configuration $configuration, $data, string $class, array $httpHeaders = null)
     {

@@ -142,8 +142,6 @@ final class VendorTransactionStatusSDK implements VendorTransactionStatusSDKInte
     /**
      * Create request for operation 'getTransaction'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

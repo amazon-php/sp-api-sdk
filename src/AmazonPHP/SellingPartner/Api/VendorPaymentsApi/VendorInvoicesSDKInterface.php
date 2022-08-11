@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\VendorPaymentsApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Retail Procurement Payments.
@@ -28,8 +27,6 @@ interface VendorInvoicesSDKInterface
     /**
      * Operation submitInvoices.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -37,18 +34,5 @@ interface VendorInvoicesSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesResponse
      */
-    public function submitInvoices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body);
-
-    /**
-     * Create request for operation 'submitInvoices'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function submitInvoicesRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body) : RequestInterface;
+    public function submitInvoices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body) : \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesResponse;
 }

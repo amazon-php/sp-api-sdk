@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\VendorShippingApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Retail Procurement Shipments.
@@ -28,8 +27,6 @@ interface VendorShipmentsSDKInterface
     /**
      * Operation submitShipmentConfirmations.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -37,18 +34,5 @@ interface VendorShipmentsSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
      */
-    public function submitShipmentConfirmations(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body);
-
-    /**
-     * Create request for operation 'submitShipmentConfirmations'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function submitShipmentConfirmationsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : RequestInterface;
+    public function submitShipmentConfirmations(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse;
 }

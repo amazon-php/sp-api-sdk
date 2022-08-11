@@ -252,7 +252,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return null|object
      */
-    public function getAttributes() : ?object
+    public function getAttributes() : ?array
     {
         return $this->container['attributes'];
     }

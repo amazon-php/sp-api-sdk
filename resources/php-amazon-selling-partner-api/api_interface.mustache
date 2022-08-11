@@ -68,35 +68,6 @@ use Psr\Http\Message\RequestInterface;
     * @return {{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}null{{/returnType}}
     */
     public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
-
-
-    /**
-    * Create request for operation '{{{operationId}}}'
-    *
-    {{#vendorExtensions.x-group-parameters}}
-        * Note: the input parameter is an associative array with the keys listed as the parameter name below
-        *
-    {{/vendorExtensions.x-group-parameters}}
-    {{#servers}}
-        {{#-first}}
-            * This oepration contains host(s) defined in the OpenAP spec. Use 'hostIndex' to select the host.
-        {{/-first}}
-        * URL: {{{url}}}
-        {{#-last}}
-            *
-        {{/-last}}
-    {{/servers}}
-    * @param AccessToken $accessToken
-    * @param string $region
-    {{#allParams}}
-    * @param {{{dataType}}}{{^required}}{{#defaultValue}}{{/defaultValue}}{{^defaultValue}}|null{{/defaultValue}}{{/required}} ${{paramName}} {{#description}}{{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
-    {{/allParams}}
-    *
-    * @throws InvalidArgumentException
-    * @return RequestInterface
-    */
-    public function {{operationId}}Request(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}) : RequestInterface;
-
 {{/operation}}
 }
 {{/operations}}

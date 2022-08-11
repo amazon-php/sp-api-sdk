@@ -45,6 +45,8 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
     /**
      * Operation getInventorySummaries.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
@@ -146,8 +148,6 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
     /**
      * Create request for operation 'getInventorySummaries'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)

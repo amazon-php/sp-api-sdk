@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\FbaInboundApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for FBA Inbound Eligibilty.
@@ -28,8 +27,6 @@ interface FBAInboundSDKInterface
     /**
      * Operation getItemEligibilityPreview.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
      * @param null|string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
@@ -39,20 +36,5 @@ interface FBAInboundSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
      */
-    public function getItemEligibilityPreview(AccessToken $accessToken, string $region, string $asin, string $program, ?array $marketplace_ids = null);
-
-    /**
-     * Create request for operation 'getItemEligibilityPreview'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
-     * @param string $program The program that you want to check eligibility against. (required)
-     * @param null|string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getItemEligibilityPreviewRequest(AccessToken $accessToken, string $region, string $asin, string $program, ?array $marketplace_ids = null) : RequestInterface;
+    public function getItemEligibilityPreview(AccessToken $accessToken, string $region, string $asin, string $program, ?array $marketplace_ids = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse;
 }

@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\VendorTransactionApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Retail Procurement Transaction Status.
@@ -28,8 +27,6 @@ interface VendorTransactionStatusSDKInterface
     /**
      * Operation getTransaction.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
      *
      * @throws ApiException on non-2xx response
@@ -37,18 +34,5 @@ interface VendorTransactionStatusSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorTransactionStatus\GetTransactionResponse
      */
-    public function getTransaction(AccessToken $accessToken, string $region, string $transaction_id);
-
-    /**
-     * Create request for operation 'getTransaction'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getTransactionRequest(AccessToken $accessToken, string $region, string $transaction_id) : RequestInterface;
+    public function getTransaction(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorTransactionStatus\GetTransactionResponse;
 }

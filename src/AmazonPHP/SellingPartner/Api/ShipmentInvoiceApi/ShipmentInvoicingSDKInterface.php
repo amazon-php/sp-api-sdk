@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for Shipment Invoicing.
@@ -36,8 +35,6 @@ interface ShipmentInvoicingSDKInterface
     /**
      * Operation getInvoiceStatus.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The shipment identifier for the shipment. (required)
      *
      * @throws ApiException on non-2xx response
@@ -45,26 +42,11 @@ interface ShipmentInvoicingSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse
      */
-    public function getInvoiceStatus(AccessToken $accessToken, string $region, string $shipment_id);
-
-    /**
-     * Create request for operation 'getInvoiceStatus'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $shipment_id The shipment identifier for the shipment. (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getInvoiceStatusRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface;
+    public function getInvoiceStatus(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse;
 
     /**
      * Operation getShipmentDetails.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      *
      * @throws ApiException on non-2xx response
@@ -72,26 +54,11 @@ interface ShipmentInvoicingSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse
      */
-    public function getShipmentDetails(AccessToken $accessToken, string $region, string $shipment_id);
-
-    /**
-     * Create request for operation 'getShipmentDetails'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $shipment_id The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getShipmentDetailsRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface;
+    public function getShipmentDetails(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse;
 
     /**
      * Operation submitInvoice.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The identifier for the shipment. (required)
      * @param \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body body (required)
      *
@@ -100,19 +67,5 @@ interface ShipmentInvoicingSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse
      */
-    public function submitInvoice(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body);
-
-    /**
-     * Create request for operation 'submitInvoice'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $shipment_id The identifier for the shipment. (required)
-     * @param \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body (required)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function submitInvoiceRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body) : RequestInterface;
+    public function submitInvoice(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse;
 }

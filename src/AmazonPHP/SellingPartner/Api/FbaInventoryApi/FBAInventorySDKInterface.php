@@ -5,7 +5,6 @@ namespace AmazonPHP\SellingPartner\Api\FbaInventoryApi;
 use AmazonPHP\SellingPartner\AccessToken;
 use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
-use Psr\Http\Message\RequestInterface;
 
 /**
  * Selling Partner API for FBA Inventory.
@@ -28,8 +27,6 @@ interface FBAInventorySDKInterface
     /**
      * Operation getInventorySummaries.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
@@ -43,24 +40,5 @@ interface FBAInventorySDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse
      */
-    public function getInventorySummaries(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, ?\DateTimeInterface $start_date_time = null, ?array $seller_skus = null, ?string $next_token = null);
-
-    /**
-     * Create request for operation 'getInventorySummaries'.
-     *
-     * @param AccessToken $accessToken
-     * @param string $region
-     * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
-     * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
-     * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
-     * @param null|\DateTimeInterface $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
-     * @param null|string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
-     * @param null|string $next_token String token returned in the response of your previous request. (optional)
-     *
-     * @throws InvalidArgumentException
-     *
-     * @return RequestInterface
-     */
-    public function getInventorySummariesRequest(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, ?\DateTimeInterface $start_date_time = null, ?array $seller_skus = null, ?string $next_token = null) : RequestInterface;
+    public function getInventorySummaries(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, ?\DateTimeInterface $start_date_time = null, ?array $seller_skus = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse;
 }

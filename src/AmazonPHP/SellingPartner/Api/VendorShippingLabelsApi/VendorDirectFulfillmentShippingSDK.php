@@ -142,8 +142,6 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'getShippingLabel'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $purchase_order_number The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -343,8 +341,6 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'getShippingLabels'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \DateTimeInterface $created_after Shipping labels that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param \DateTimeInterface $created_before Shipping labels that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param null|string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
@@ -594,8 +590,6 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'submitShippingLabelRequest'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

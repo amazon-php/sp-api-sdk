@@ -8,5 +8,8 @@
     "friendsofphp/php-cs-fixer": "^3.1",
     "phpunit/phpunit": "^9.4",
     "rector/rector": "0.13.10"
+  },
+  "require": {
+    "vimeo/psalm": "^4.26"
   }
 }

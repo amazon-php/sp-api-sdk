@@ -142,8 +142,6 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
     /**
      * Create request for operation 'submitShipmentConfirmations'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

@@ -45,6 +45,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Operation deleteListingsItem.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -143,8 +145,6 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'deleteListingsItem'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -278,6 +278,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Operation getListingsItem.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -377,8 +379,6 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'getListingsItem'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -521,6 +521,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Operation patchListingsItem.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -620,8 +622,6 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'patchListingsItem'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -770,6 +770,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Operation putListingsItem.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -869,8 +871,6 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'putListingsItem'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
