@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /FinancesSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /FinancesSDKInterface.php

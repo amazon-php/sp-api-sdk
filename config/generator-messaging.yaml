@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /MessagingSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /MessagingSDKInterface.php

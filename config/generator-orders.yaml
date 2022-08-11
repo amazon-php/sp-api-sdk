@@ -11,3 +11,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /OrdersSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /OrdersSDKInterface.php

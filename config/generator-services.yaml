@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /ServicesSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /ServicesSDKInterface.php

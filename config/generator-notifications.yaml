@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /NotificationsSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /NotificationsSDKInterface.php

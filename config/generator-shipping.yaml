@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /ShippingSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /ShippingSDKInterface.php

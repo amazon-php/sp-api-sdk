@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /ProductPricingSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /ProductPricingSDKInterface.php

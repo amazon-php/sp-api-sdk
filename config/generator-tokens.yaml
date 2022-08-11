@@ -10,3 +10,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /TokensSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /TokensSDKInterface.php

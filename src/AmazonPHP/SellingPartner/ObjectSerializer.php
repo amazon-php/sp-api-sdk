@@ -277,7 +277,7 @@ final class ObjectSerializer
 
         if (\preg_match('/^(array<|map\[)/', $class)) { // for associative array e.g. array<string,int>
             $data = \is_string($data) ? \json_decode($data, null, 512, JSON_THROW_ON_ERROR) : $data;
-            \settype($data, 'array');
+            $data = (array) $data;
             $inner = \substr($class, 4, -1);
             $deserialized = [];
 

@@ -9,3 +9,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /SellersSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /SellersSDKInterface.php

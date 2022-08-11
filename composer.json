@@ -46,7 +46,6 @@
             "Composer\\Config::disableProcessTimeout",
             "@clean",
             "bin/generate.sh",
-            "@rector:process:force:psr4",
             "@rector:process:force:php",
             "@cs:php:fix",
             "@rector:process:force:types",

@@ -10,3 +10,6 @@ files:
   api.mustache:
     templateType: API
     destinationFilename: /ReportsSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /ReportsSDKInterface.php
