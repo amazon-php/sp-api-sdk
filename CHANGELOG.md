@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-08-11
+## [4.0.9] - 2022-08-11
 
 ### Added
 - [#228](https://github.com/amazon-php/sp-api-sdk/pull/228) - **Added auto generated SDK interfaces** - [@norberttech](https://github.com/norberttech)
