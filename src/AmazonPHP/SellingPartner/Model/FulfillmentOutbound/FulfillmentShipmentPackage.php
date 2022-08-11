@@ -270,9 +270,9 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Gets estimated_arrival_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getEstimatedArrivalDate() : ?\DateTimeInterface
+    public function getEstimatedArrivalDate() : ?\DateTime
     {
         return $this->container['estimated_arrival_date'];
     }
@@ -280,11 +280,11 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Sets estimated_arrival_date.
      *
-     * @param \DateTime|\DateTimeImmutable $estimated_arrival_date estimated_arrival_date
+     * @param null|\DateTime $estimated_arrival_date estimated_arrival_date
      *
      * @return self
      */
-    public function setEstimatedArrivalDate(\DateTimeInterface $estimated_arrival_date) : self
+    public function setEstimatedArrivalDate(?\DateTime $estimated_arrival_date) : self
     {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 
@@ -341,7 +341,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -351,6 +351,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

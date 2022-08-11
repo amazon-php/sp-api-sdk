@@ -366,9 +366,9 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets release_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getReleaseDate() : ?\DateTimeInterface
+    public function getReleaseDate() : ?\DateTime
     {
         return $this->container['release_date'];
     }
@@ -376,11 +376,11 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets release_date.
      *
-     * @param \DateTime|\DateTimeImmutable $release_date release_date
+     * @param null|\DateTime $release_date release_date
      *
      * @return self
      */
-    public function setReleaseDate(\DateTimeInterface $release_date) : self
+    public function setReleaseDate(?\DateTime $release_date) : self
     {
         $this->container['release_date'] = $release_date;
 
@@ -461,7 +461,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -471,6 +471,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

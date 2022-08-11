@@ -17,7 +17,7 @@ interface UploadsSDKInterface
     /**
      * Operation createUploadDestinationForResource.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified. (required)
      * @param string $content_md5 An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit. (required)
@@ -34,7 +34,7 @@ interface UploadsSDKInterface
     /**
      * Create request for operation 'createUploadDestinationForResource'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A list of marketplace identifiers. This specifies the marketplaces where the upload will be available. Only one marketplace can be specified. (required)
      * @param string $content_md5 An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit. (required)
@@ -43,7 +43,7 @@ interface UploadsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createUploadDestinationForResourceRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $marketplace_ids, string $content_md5, string $resource, string $content_type = null) : \Psr\Http\Message\RequestInterface;
 }

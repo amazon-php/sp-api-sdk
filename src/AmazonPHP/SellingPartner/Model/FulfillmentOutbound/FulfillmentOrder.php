@@ -381,10 +381,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets displayable_order_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getDisplayableOrderDate() : \DateTimeInterface
+    public function getDisplayableOrderDate() : \DateTime
     {
         return $this->container['displayable_order_date'];
     }
@@ -396,7 +394,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *
      * @return self
      */
-    public function setDisplayableOrderDate(\DateTimeInterface $displayable_order_date) : self
+    public function setDisplayableOrderDate(\DateTime $displayable_order_date) : self
     {
         $this->container['displayable_order_date'] = $displayable_order_date;
 
@@ -567,10 +565,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets received_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getReceivedDate() : \DateTimeInterface
+    public function getReceivedDate() : \DateTime
     {
         return $this->container['received_date'];
     }
@@ -582,7 +578,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *
      * @return self
      */
-    public function setReceivedDate(\DateTimeInterface $received_date) : self
+    public function setReceivedDate(\DateTime $received_date) : self
     {
         $this->container['received_date'] = $received_date;
 
@@ -613,10 +609,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets status_updated_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getStatusUpdatedDate() : \DateTimeInterface
+    public function getStatusUpdatedDate() : \DateTime
     {
         return $this->container['status_updated_date'];
     }
@@ -628,7 +622,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *
      * @return self
      */
-    public function setStatusUpdatedDate(\DateTimeInterface $status_updated_date) : self
+    public function setStatusUpdatedDate(\DateTime $status_updated_date) : self
     {
         $this->container['status_updated_date'] = $status_updated_date;
 
@@ -733,7 +727,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -743,6 +737,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

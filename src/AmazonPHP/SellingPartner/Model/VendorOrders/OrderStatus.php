@@ -312,10 +312,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPurchaseOrderDate() : \DateTimeInterface
+    public function getPurchaseOrderDate() : \DateTime
     {
         return $this->container['purchase_order_date'];
     }
@@ -327,7 +325,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setPurchaseOrderDate(\DateTimeInterface $purchase_order_date) : self
+    public function setPurchaseOrderDate(\DateTime $purchase_order_date) : self
     {
         $this->container['purchase_order_date'] = $purchase_order_date;
 
@@ -337,9 +335,9 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets last_updated_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getLastUpdatedDate() : ?\DateTimeInterface
+    public function getLastUpdatedDate() : ?\DateTime
     {
         return $this->container['last_updated_date'];
     }
@@ -347,11 +345,11 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets last_updated_date.
      *
-     * @param \DateTime|\DateTimeImmutable $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
+     * @param null|\DateTime $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
-    public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
+    public function setLastUpdatedDate(?\DateTime $last_updated_date) : self
     {
         $this->container['last_updated_date'] = $last_updated_date;
 
@@ -476,7 +474,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -486,6 +484,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

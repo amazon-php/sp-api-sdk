@@ -346,9 +346,9 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets create_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getCreateTime() : ?\DateTimeInterface
+    public function getCreateTime() : ?\DateTime
     {
         return $this->container['create_time'];
     }
@@ -356,11 +356,11 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets create_time.
      *
-     * @param \DateTime|\DateTimeImmutable $create_time the date and time of the creation of the job in ISO 8601 format
+     * @param null|\DateTime $create_time the date and time of the creation of the job in ISO 8601 format
      *
      * @return self
      */
-    public function setCreateTime(\DateTimeInterface $create_time) : self
+    public function setCreateTime(?\DateTime $create_time) : self
     {
         $this->container['create_time'] = $create_time;
 
@@ -729,7 +729,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -739,6 +739,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

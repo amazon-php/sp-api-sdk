@@ -39,7 +39,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation cancelFeed.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
@@ -131,13 +131,13 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'cancelFeed'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function cancelFeedRequest(AccessToken $accessToken, string $region, string $feed_id) : RequestInterface
     {
@@ -226,7 +226,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation createFeed.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body body (required)
      *
@@ -323,13 +323,13 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'createFeed'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createFeedRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body) : RequestInterface
     {
@@ -417,7 +417,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation createFeedDocument.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body body (required)
      *
@@ -514,13 +514,13 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'createFeedDocument'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createFeedDocumentRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body) : RequestInterface
     {
@@ -608,7 +608,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation getFeed.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
@@ -705,13 +705,13 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'getFeed'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedRequest(AccessToken $accessToken, string $region, string $feed_id) : RequestInterface
     {
@@ -800,7 +800,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation getFeedDocument.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
@@ -897,13 +897,13 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'getFeedDocument'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedDocumentRequest(AccessToken $accessToken, string $region, string $feed_document_id) : RequestInterface
     {
@@ -992,7 +992,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation getFeeds.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
      * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
@@ -1095,7 +1095,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'getFeeds'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
      * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
@@ -1107,7 +1107,7 @@ final class FeedsSDK implements FeedsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedsRequest(AccessToken $accessToken, string $region, array $feed_types = null, array $marketplace_ids = null, int $page_size = 10, array $processing_statuses = null, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, string $next_token = null) : RequestInterface
     {

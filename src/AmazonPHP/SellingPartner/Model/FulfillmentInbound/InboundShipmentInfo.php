@@ -408,9 +408,9 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets confirmed_need_by_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getConfirmedNeedByDate() : ?\DateTimeInterface
+    public function getConfirmedNeedByDate() : ?\DateTime
     {
         return $this->container['confirmed_need_by_date'];
     }
@@ -418,11 +418,11 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets confirmed_need_by_date.
      *
-     * @param \DateTime|\DateTimeImmutable $confirmed_need_by_date confirmed_need_by_date
+     * @param null|\DateTime $confirmed_need_by_date confirmed_need_by_date
      *
      * @return self
      */
-    public function setConfirmedNeedByDate(\DateTimeInterface $confirmed_need_by_date) : self
+    public function setConfirmedNeedByDate(?\DateTime $confirmed_need_by_date) : self
     {
         $this->container['confirmed_need_by_date'] = $confirmed_need_by_date;
 
@@ -527,7 +527,7 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -537,6 +537,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

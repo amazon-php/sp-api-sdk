@@ -17,7 +17,7 @@ interface VendorDirectFulfillmentPaymentsSDKInterface
     /**
      * Operation submitInvoice.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body body (required)
      *
@@ -31,13 +31,13 @@ interface VendorDirectFulfillmentPaymentsSDKInterface
     /**
      * Create request for operation 'submitInvoice'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function submitInvoiceRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body) : \Psr\Http\Message\RequestInterface;
 }

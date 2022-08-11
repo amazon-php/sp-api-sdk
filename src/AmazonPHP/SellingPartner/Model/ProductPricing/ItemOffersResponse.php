@@ -349,7 +349,7 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -359,6 +359,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

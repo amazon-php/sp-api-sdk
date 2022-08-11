@@ -37,7 +37,7 @@ interface FeedsSDKInterface
     /**
      * Operation cancelFeed.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
@@ -49,20 +49,20 @@ interface FeedsSDKInterface
     /**
      * Create request for operation 'cancelFeed'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function cancelFeedRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $feed_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation createFeed.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body body (required)
      *
@@ -76,20 +76,20 @@ interface FeedsSDKInterface
     /**
      * Create request for operation 'createFeed'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createFeedRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation createFeedDocument.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body body (required)
      *
@@ -103,20 +103,20 @@ interface FeedsSDKInterface
     /**
      * Create request for operation 'createFeedDocument'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createFeedDocumentRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getFeed.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
@@ -130,20 +130,20 @@ interface FeedsSDKInterface
     /**
      * Create request for operation 'getFeed'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $feed_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getFeedDocument.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
@@ -157,20 +157,20 @@ interface FeedsSDKInterface
     /**
      * Create request for operation 'getFeedDocument'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedDocumentRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $feed_document_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getFeeds.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
      * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
@@ -185,12 +185,12 @@ interface FeedsSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse
      */
-    public function getFeeds(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $feed_types = null, array $marketplace_ids = null, int $page_size = 10, array $processing_statuses = null, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null);
+    public function getFeeds(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $feed_types = null, array $marketplace_ids = null, int $page_size = 10, array $processing_statuses = null, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, string $next_token = null);
 
     /**
      * Create request for operation 'getFeeds'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
      * @param string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
@@ -202,7 +202,7 @@ interface FeedsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getFeedsRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $feed_types = null, array $marketplace_ids = null, int $page_size = 10, array $processing_statuses = null, \DateTime $created_since = null, \DateTime $created_until = null, string $next_token = null) : \Psr\Http\Message\RequestInterface;
+    public function getFeedsRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $feed_types = null, array $marketplace_ids = null, int $page_size = 10, array $processing_statuses = null, \DateTimeInterface $created_since = null, \DateTimeInterface $created_until = null, string $next_token = null) : \Psr\Http\Message\RequestInterface;
 }

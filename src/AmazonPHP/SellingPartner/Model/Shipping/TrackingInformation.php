@@ -263,10 +263,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets promised_delivery_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPromisedDeliveryDate() : \DateTimeInterface
+    public function getPromisedDeliveryDate() : \DateTime
     {
         return $this->container['promised_delivery_date'];
     }
@@ -278,7 +276,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      *
      * @return self
      */
-    public function setPromisedDeliveryDate(\DateTimeInterface $promised_delivery_date) : self
+    public function setPromisedDeliveryDate(\DateTime $promised_delivery_date) : self
     {
         $this->container['promised_delivery_date'] = $promised_delivery_date;
 
@@ -359,7 +357,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -369,6 +367,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

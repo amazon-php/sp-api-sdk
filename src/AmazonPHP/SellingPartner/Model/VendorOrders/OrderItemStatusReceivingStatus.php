@@ -272,9 +272,9 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets last_receive_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getLastReceiveDate() : ?\DateTimeInterface
+    public function getLastReceiveDate() : ?\DateTime
     {
         return $this->container['last_receive_date'];
     }
@@ -282,11 +282,11 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets last_receive_date.
      *
-     * @param \DateTime|\DateTimeImmutable $last_receive_date The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
+     * @param null|\DateTime $last_receive_date The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
-    public function setLastReceiveDate(\DateTimeInterface $last_receive_date) : self
+    public function setLastReceiveDate(?\DateTime $last_receive_date) : self
     {
         $this->container['last_receive_date'] = $last_receive_date;
 
@@ -343,7 +343,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -353,6 +353,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

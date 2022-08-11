@@ -218,9 +218,9 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets posted_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getPostedDate() : ?\DateTimeInterface
+    public function getPostedDate() : ?\DateTime
     {
         return $this->container['posted_date'];
     }
@@ -228,11 +228,11 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets posted_date.
      *
-     * @param \DateTime|\DateTimeImmutable $posted_date posted_date
+     * @param null|\DateTime $posted_date posted_date
      *
      * @return self
      */
-    public function setPostedDate(\DateTimeInterface $posted_date) : self
+    public function setPostedDate(?\DateTime $posted_date) : self
     {
         $this->container['posted_date'] = $posted_date;
 
@@ -409,7 +409,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -419,6 +419,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

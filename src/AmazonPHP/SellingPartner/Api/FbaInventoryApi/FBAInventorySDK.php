@@ -39,8 +39,6 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
     /**
      * Operation getInventorySummaries.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
@@ -142,7 +140,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
     /**
      * Create request for operation 'getInventorySummaries'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
@@ -154,7 +152,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getInventorySummariesRequest(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTimeInterface $start_date_time = null, array $seller_skus = null, string $next_token = null) : RequestInterface
     {

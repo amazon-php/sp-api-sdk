@@ -37,7 +37,7 @@ interface ProductPricingSDKInterface
     /**
      * Operation getCompetitivePricing.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
@@ -55,7 +55,7 @@ interface ProductPricingSDKInterface
     /**
      * Create request for operation 'getCompetitivePricing'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
@@ -65,14 +65,14 @@ interface ProductPricingSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getCompetitivePricingRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $customer_type = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getItemOffers.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
@@ -89,7 +89,7 @@ interface ProductPricingSDKInterface
     /**
      * Create request for operation 'getItemOffers'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
@@ -98,14 +98,14 @@ interface ProductPricingSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getItemOffersRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, string $customer_type = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getItemOffersBatch.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body get_item_offers_batch_request_body (required)
      *
@@ -119,20 +119,20 @@ interface ProductPricingSDKInterface
     /**
      * Create request for operation 'getItemOffersBatch'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getItemOffersBatchRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getListingOffers.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
@@ -149,7 +149,7 @@ interface ProductPricingSDKInterface
     /**
      * Create request for operation 'getListingOffers'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
@@ -158,14 +158,14 @@ interface ProductPricingSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getListingOffersRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, string $customer_type = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getListingOffersBatch.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body get_listing_offers_batch_request_body (required)
      *
@@ -179,20 +179,20 @@ interface ProductPricingSDKInterface
     /**
      * Create request for operation 'getListingOffersBatch'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getListingOffersBatchRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getPricing.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. (required)
@@ -211,7 +211,7 @@ interface ProductPricingSDKInterface
     /**
      * Create request for operation 'getPricing'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. (required)
@@ -222,7 +222,7 @@ interface ProductPricingSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getPricingRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, array $asins = null, array $skus = null, string $item_condition = null, string $offer_type = null) : \Psr\Http\Message\RequestInterface;
 }

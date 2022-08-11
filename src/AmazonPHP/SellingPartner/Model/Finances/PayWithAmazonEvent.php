@@ -258,9 +258,9 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Gets transaction_posted_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getTransactionPostedDate() : ?\DateTimeInterface
+    public function getTransactionPostedDate() : ?\DateTime
     {
         return $this->container['transaction_posted_date'];
     }
@@ -268,11 +268,11 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Sets transaction_posted_date.
      *
-     * @param \DateTime|\DateTimeImmutable $transaction_posted_date transaction_posted_date
+     * @param null|\DateTime $transaction_posted_date transaction_posted_date
      *
      * @return self
      */
-    public function setTransactionPostedDate(\DateTimeInterface $transaction_posted_date) : self
+    public function setTransactionPostedDate(?\DateTime $transaction_posted_date) : self
     {
         $this->container['transaction_posted_date'] = $transaction_posted_date;
 
@@ -521,7 +521,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -531,6 +531,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

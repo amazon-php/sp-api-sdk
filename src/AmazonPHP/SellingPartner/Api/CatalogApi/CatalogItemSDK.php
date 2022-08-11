@@ -39,8 +39,6 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
     /**
      * Operation getCatalogItem.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
      * @param string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
@@ -139,7 +137,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
     /**
      * Create request for operation 'getCatalogItem'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
@@ -148,7 +146,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getCatalogItemRequest(AccessToken $accessToken, string $region, string $asin, array $marketplace_ids, array $included_data = null, string $locale = null) : RequestInterface
     {
@@ -268,8 +266,6 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
     /**
      * Operation searchCatalogItems.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string[] $keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
@@ -373,7 +369,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
     /**
      * Create request for operation 'searchCatalogItems'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $keywords A comma-delimited list of words or item identifiers to search the Amazon catalog for. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -387,7 +383,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function searchCatalogItemsRequest(AccessToken $accessToken, string $region, array $keywords, array $marketplace_ids, array $included_data = null, array $brand_names = null, array $classification_ids = null, int $page_size = 10, string $page_token = null, string $keywords_locale = null, string $locale = null) : RequestInterface
     {

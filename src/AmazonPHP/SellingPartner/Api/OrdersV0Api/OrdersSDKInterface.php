@@ -45,7 +45,7 @@ interface OrdersSDKInterface
     /**
      * Operation getOrder.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -59,20 +59,20 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'getOrder'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getOrderAddress.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -86,20 +86,20 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'getOrderAddress'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderAddressRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getOrderBuyerInfo.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -113,20 +113,20 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'getOrderBuyerInfo'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderBuyerInfoRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getOrderItems.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -141,21 +141,21 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'getOrderItems'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderItemsRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id, string $next_token = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getOrderItemsBuyerInfo.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
@@ -170,21 +170,21 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'getOrderItemsBuyerInfo'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param string $next_token A string token returned in the response of your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderItemsBuyerInfoRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id, string $next_token = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getOrderRegulatedInfo.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
@@ -198,20 +198,20 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'getOrderRegulatedInfo'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderRegulatedInfoRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getOrders.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
@@ -242,7 +242,7 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'getOrders'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
@@ -265,14 +265,14 @@ interface OrdersSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrdersRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $marketplace_ids, string $created_after = null, string $created_before = null, string $last_updated_after = null, string $last_updated_before = null, array $order_statuses = null, array $fulfillment_channels = null, array $payment_methods = null, string $buyer_email = null, string $seller_order_id = null, int $max_results_per_page = null, array $easy_ship_shipment_statuses = null, array $electronic_invoice_statuses = null, string $next_token = null, array $amazon_order_ids = null, string $actual_fulfillment_supply_source_id = null, bool $is_ispu = null, string $store_chain_store_id = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation updateVerificationStatus.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload The request body for the updateVerificationStatus operation. (required)
@@ -285,14 +285,14 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'updateVerificationStatus'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload The request body for the updateVerificationStatus operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function updateVerificationStatusRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload) : \Psr\Http\Message\RequestInterface;
 }

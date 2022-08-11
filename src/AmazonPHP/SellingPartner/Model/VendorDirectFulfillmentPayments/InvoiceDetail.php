@@ -303,10 +303,8 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets invoice_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getInvoiceDate() : \DateTimeInterface
+    public function getInvoiceDate() : \DateTime
     {
         return $this->container['invoice_date'];
     }
@@ -318,7 +316,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setInvoiceDate(\DateTimeInterface $invoice_date) : self
+    public function setInvoiceDate(\DateTime $invoice_date) : self
     {
         $this->container['invoice_date'] = $invoice_date;
 
@@ -633,7 +631,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -643,6 +641,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

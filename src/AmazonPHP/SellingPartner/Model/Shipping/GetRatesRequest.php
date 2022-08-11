@@ -288,9 +288,9 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets ship_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getShipDate() : ?\DateTimeInterface
+    public function getShipDate() : ?\DateTime
     {
         return $this->container['ship_date'];
     }
@@ -298,11 +298,11 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets ship_date.
      *
-     * @param \DateTime|\DateTimeImmutable $ship_date The start date and time. This defaults to the current date and time.
+     * @param null|\DateTime $ship_date The start date and time. This defaults to the current date and time.
      *
      * @return self
      */
-    public function setShipDate(\DateTimeInterface $ship_date) : self
+    public function setShipDate(?\DateTime $ship_date) : self
     {
         $this->container['ship_date'] = $ship_date;
 
@@ -383,7 +383,7 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -393,6 +393,6 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

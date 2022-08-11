@@ -450,9 +450,9 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Gets transaction_creation_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getTransactionCreationDate() : ?\DateTimeInterface
+    public function getTransactionCreationDate() : ?\DateTime
     {
         return $this->container['transaction_creation_date'];
     }
@@ -460,11 +460,11 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Sets transaction_creation_date.
      *
-     * @param \DateTime|\DateTimeImmutable $transaction_creation_date transaction_creation_date
+     * @param null|\DateTime $transaction_creation_date transaction_creation_date
      *
      * @return self
      */
-    public function setTransactionCreationDate(\DateTimeInterface $transaction_creation_date) : self
+    public function setTransactionCreationDate(?\DateTime $transaction_creation_date) : self
     {
         $this->container['transaction_creation_date'] = $transaction_creation_date;
 
@@ -521,7 +521,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -531,6 +531,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

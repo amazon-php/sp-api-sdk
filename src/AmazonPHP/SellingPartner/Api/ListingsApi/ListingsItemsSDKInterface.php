@@ -29,7 +29,7 @@ interface ListingsItemsSDKInterface
     /**
      * Operation deleteListingsItem.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -46,7 +46,7 @@ interface ListingsItemsSDKInterface
     /**
      * Create request for operation 'deleteListingsItem'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -55,14 +55,14 @@ interface ListingsItemsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function deleteListingsItemRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getListingsItem.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -80,7 +80,7 @@ interface ListingsItemsSDKInterface
     /**
      * Create request for operation 'getListingsItem'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -90,14 +90,14 @@ interface ListingsItemsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getListingsItemRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, string $issue_locale = null, array $included_data = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation patchListingsItem.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -115,7 +115,7 @@ interface ListingsItemsSDKInterface
     /**
      * Create request for operation 'patchListingsItem'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -125,14 +125,14 @@ interface ListingsItemsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function patchListingsItemRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, string $issue_locale = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation putListingsItem.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -150,7 +150,7 @@ interface ListingsItemsSDKInterface
     /**
      * Create request for operation 'putListingsItem'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
@@ -160,7 +160,7 @@ interface ListingsItemsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function putListingsItemRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, string $issue_locale = null) : \Psr\Http\Message\RequestInterface;
 }

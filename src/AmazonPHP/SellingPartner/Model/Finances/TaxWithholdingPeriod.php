@@ -183,9 +183,9 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Gets start_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getStartDate() : ?\DateTimeInterface
+    public function getStartDate() : ?\DateTime
     {
         return $this->container['start_date'];
     }
@@ -193,11 +193,11 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets start_date.
      *
-     * @param \DateTime|\DateTimeImmutable $start_date start_date
+     * @param null|\DateTime $start_date start_date
      *
      * @return self
      */
-    public function setStartDate(\DateTimeInterface $start_date) : self
+    public function setStartDate(?\DateTime $start_date) : self
     {
         $this->container['start_date'] = $start_date;
 
@@ -207,9 +207,9 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Gets end_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getEndDate() : ?\DateTimeInterface
+    public function getEndDate() : ?\DateTime
     {
         return $this->container['end_date'];
     }
@@ -217,11 +217,11 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Sets end_date.
      *
-     * @param \DateTime|\DateTimeImmutable $end_date end_date
+     * @param null|\DateTime $end_date end_date
      *
      * @return self
      */
-    public function setEndDate(\DateTimeInterface $end_date) : self
+    public function setEndDate(?\DateTime $end_date) : self
     {
         $this->container['end_date'] = $end_date;
 
@@ -278,7 +278,7 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -288,6 +288,6 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

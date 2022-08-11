@@ -285,7 +285,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -295,6 +295,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

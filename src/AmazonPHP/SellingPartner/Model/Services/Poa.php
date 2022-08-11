@@ -319,9 +319,9 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets upload_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getUploadTime() : ?\DateTimeInterface
+    public function getUploadTime() : ?\DateTime
     {
         return $this->container['upload_time'];
     }
@@ -329,11 +329,11 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets upload_time.
      *
-     * @param \DateTime|\DateTimeImmutable $upload_time the date and time when the POA was uploaded in ISO 8601 format
+     * @param null|\DateTime $upload_time the date and time when the POA was uploaded in ISO 8601 format
      *
      * @return self
      */
-    public function setUploadTime(\DateTimeInterface $upload_time) : self
+    public function setUploadTime(?\DateTime $upload_time) : self
     {
         $this->container['upload_time'] = $upload_time;
 
@@ -414,7 +414,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -424,6 +424,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

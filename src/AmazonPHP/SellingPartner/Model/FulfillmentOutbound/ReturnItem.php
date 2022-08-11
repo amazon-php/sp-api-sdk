@@ -417,10 +417,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets status_changed_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getStatusChangedDate() : \DateTimeInterface
+    public function getStatusChangedDate() : \DateTime
     {
         return $this->container['status_changed_date'];
     }
@@ -432,7 +430,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setStatusChangedDate(\DateTimeInterface $status_changed_date) : self
+    public function setStatusChangedDate(\DateTime $status_changed_date) : self
     {
         $this->container['status_changed_date'] = $status_changed_date;
 
@@ -561,7 +559,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -571,6 +569,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

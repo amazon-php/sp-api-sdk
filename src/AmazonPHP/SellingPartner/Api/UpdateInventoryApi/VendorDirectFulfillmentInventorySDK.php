@@ -39,7 +39,7 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
     /**
      * Operation submitInventoryUpdate.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body body (required)
@@ -137,14 +137,14 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
     /**
      * Create request for operation 'submitInventoryUpdate'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function submitInventoryUpdateRequest(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body) : RequestInterface
     {

@@ -38,7 +38,7 @@ final class SellersSDK implements SellersSDKInterface
     /**
      * Operation getMarketplaceParticipations.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
@@ -134,12 +134,12 @@ final class SellersSDK implements SellersSDKInterface
     /**
      * Create request for operation 'getMarketplaceParticipations'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getMarketplaceParticipationsRequest(AccessToken $accessToken, string $region) : RequestInterface
     {

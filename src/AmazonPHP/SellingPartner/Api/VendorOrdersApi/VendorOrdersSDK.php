@@ -39,7 +39,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrder.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $purchase_order_number The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code. (required)
      *
@@ -136,13 +136,13 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Create request for operation 'getPurchaseOrder'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $purchase_order_number The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getPurchaseOrderRequest(AccessToken $accessToken, string $region, string $purchase_order_number) : RequestInterface
     {
@@ -231,7 +231,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrders.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param \DateTime $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
@@ -339,7 +339,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Create request for operation 'getPurchaseOrders'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param \DateTime $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
@@ -356,7 +356,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getPurchaseOrdersRequest(AccessToken $accessToken, string $region, int $limit = null, \DateTimeInterface $created_after = null, \DateTimeInterface $created_before = null, string $sort_order = null, string $next_token = null, bool $include_details = null, \DateTimeInterface $changed_after = null, \DateTimeInterface $changed_before = null, string $po_item_state = null, bool $is_po_changed = null, string $purchase_order_state = null, string $ordering_vendor_code = null) : RequestInterface
     {
@@ -534,7 +534,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrdersStatus.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
@@ -643,7 +643,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Create request for operation 'getPurchaseOrdersStatus'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
@@ -661,7 +661,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getPurchaseOrdersStatusRequest(AccessToken $accessToken, string $region, int $limit = null, string $sort_order = null, string $next_token = null, \DateTimeInterface $created_after = null, \DateTimeInterface $created_before = null, \DateTimeInterface $updated_after = null, \DateTimeInterface $updated_before = null, string $purchase_order_number = null, string $purchase_order_status = null, string $item_confirmation_status = null, string $item_receive_status = null, string $ordering_vendor_code = null, string $ship_to_party_id = null) : RequestInterface
     {
@@ -847,7 +847,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Operation submitAcknowledgement.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body body (required)
      *
@@ -944,13 +944,13 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Create request for operation 'submitAcknowledgement'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function submitAcknowledgementRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body) : RequestInterface
     {

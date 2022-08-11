@@ -25,7 +25,7 @@ interface ProductFeesSDKInterface
     /**
      * Operation getMyFeesEstimateForASIN.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
@@ -40,21 +40,21 @@ interface ProductFeesSDKInterface
     /**
      * Create request for operation 'getMyFeesEstimateForASIN'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getMyFeesEstimateForASINRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getMyFeesEstimateForSKU.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
@@ -69,21 +69,21 @@ interface ProductFeesSDKInterface
     /**
      * Create request for operation 'getMyFeesEstimateForSKU'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getMyFeesEstimateForSKURequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getMyFeesEstimates.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body body (required)
      *
@@ -97,13 +97,13 @@ interface ProductFeesSDKInterface
     /**
      * Create request for operation 'getMyFeesEstimates'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getMyFeesEstimatesRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $body) : \Psr\Http\Message\RequestInterface;
 }

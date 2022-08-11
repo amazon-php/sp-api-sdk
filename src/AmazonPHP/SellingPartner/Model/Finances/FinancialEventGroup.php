@@ -368,9 +368,9 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets fund_transfer_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getFundTransferDate() : ?\DateTimeInterface
+    public function getFundTransferDate() : ?\DateTime
     {
         return $this->container['fund_transfer_date'];
     }
@@ -378,11 +378,11 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets fund_transfer_date.
      *
-     * @param \DateTime|\DateTimeImmutable $fund_transfer_date fund_transfer_date
+     * @param null|\DateTime $fund_transfer_date fund_transfer_date
      *
      * @return self
      */
-    public function setFundTransferDate(\DateTimeInterface $fund_transfer_date) : self
+    public function setFundTransferDate(?\DateTime $fund_transfer_date) : self
     {
         $this->container['fund_transfer_date'] = $fund_transfer_date;
 
@@ -464,9 +464,9 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets financial_event_group_start.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getFinancialEventGroupStart() : ?\DateTimeInterface
+    public function getFinancialEventGroupStart() : ?\DateTime
     {
         return $this->container['financial_event_group_start'];
     }
@@ -474,11 +474,11 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets financial_event_group_start.
      *
-     * @param \DateTime|\DateTimeImmutable $financial_event_group_start financial_event_group_start
+     * @param null|\DateTime $financial_event_group_start financial_event_group_start
      *
      * @return self
      */
-    public function setFinancialEventGroupStart(\DateTimeInterface $financial_event_group_start) : self
+    public function setFinancialEventGroupStart(?\DateTime $financial_event_group_start) : self
     {
         $this->container['financial_event_group_start'] = $financial_event_group_start;
 
@@ -488,9 +488,9 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets financial_event_group_end.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getFinancialEventGroupEnd() : ?\DateTimeInterface
+    public function getFinancialEventGroupEnd() : ?\DateTime
     {
         return $this->container['financial_event_group_end'];
     }
@@ -498,11 +498,11 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets financial_event_group_end.
      *
-     * @param \DateTime|\DateTimeImmutable $financial_event_group_end financial_event_group_end
+     * @param null|\DateTime $financial_event_group_end financial_event_group_end
      *
      * @return self
      */
-    public function setFinancialEventGroupEnd(\DateTimeInterface $financial_event_group_end) : self
+    public function setFinancialEventGroupEnd(?\DateTime $financial_event_group_end) : self
     {
         $this->container['financial_event_group_end'] = $financial_event_group_end;
 
@@ -559,7 +559,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -569,6 +569,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -285,9 +285,9 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Gets goods_return_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getGoodsReturnDate() : ?\DateTimeInterface
+    public function getGoodsReturnDate() : ?\DateTime
     {
         return $this->container['goods_return_date'];
     }
@@ -295,11 +295,11 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Sets goods_return_date.
      *
-     * @param \DateTime|\DateTimeImmutable $goods_return_date defines a date and time according to ISO8601
+     * @param null|\DateTime $goods_return_date defines a date and time according to ISO8601
      *
      * @return self
      */
-    public function setGoodsReturnDate(\DateTimeInterface $goods_return_date) : self
+    public function setGoodsReturnDate(?\DateTime $goods_return_date) : self
     {
         $this->container['goods_return_date'] = $goods_return_date;
 
@@ -428,7 +428,7 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -438,6 +438,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

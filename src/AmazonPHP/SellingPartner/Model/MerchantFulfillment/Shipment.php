@@ -617,10 +617,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets created_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getCreatedDate() : \DateTimeInterface
+    public function getCreatedDate() : \DateTime
     {
         return $this->container['created_date'];
     }
@@ -632,7 +630,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setCreatedDate(\DateTimeInterface $created_date) : self
+    public function setCreatedDate(\DateTime $created_date) : self
     {
         $this->container['created_date'] = $created_date;
 
@@ -642,9 +640,9 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets last_updated_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getLastUpdatedDate() : ?\DateTimeInterface
+    public function getLastUpdatedDate() : ?\DateTime
     {
         return $this->container['last_updated_date'];
     }
@@ -652,11 +650,11 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets last_updated_date.
      *
-     * @param \DateTime|\DateTimeImmutable $last_updated_date last_updated_date
+     * @param null|\DateTime $last_updated_date last_updated_date
      *
      * @return self
      */
-    public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
+    public function setLastUpdatedDate(?\DateTime $last_updated_date) : self
     {
         $this->container['last_updated_date'] = $last_updated_date;
 
@@ -713,7 +711,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -723,6 +721,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -33,7 +33,7 @@ interface FBASmallAndLightSDKInterface
     /**
      * Operation deleteSmallAndLightEnrollmentBySellerSKU.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
@@ -46,21 +46,21 @@ interface FBASmallAndLightSDKInterface
     /**
      * Create request for operation 'deleteSmallAndLightEnrollmentBySellerSKU'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function deleteSmallAndLightEnrollmentBySellerSKURequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getSmallAndLightEligibilityBySellerSKU.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
@@ -75,21 +75,21 @@ interface FBASmallAndLightSDKInterface
     /**
      * Create request for operation 'getSmallAndLightEligibilityBySellerSKU'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getSmallAndLightEligibilityBySellerSKURequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getSmallAndLightEnrollmentBySellerSKU.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
@@ -104,21 +104,21 @@ interface FBASmallAndLightSDKInterface
     /**
      * Create request for operation 'getSmallAndLightEnrollmentBySellerSKU'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getSmallAndLightEnrollmentBySellerSKURequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getSmallAndLightFeePreview.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body body (required)
      *
@@ -132,20 +132,20 @@ interface FBASmallAndLightSDKInterface
     /**
      * Create request for operation 'getSmallAndLightFeePreview'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getSmallAndLightFeePreviewRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation putSmallAndLightEnrollmentBySellerSKU.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
@@ -160,14 +160,14 @@ interface FBASmallAndLightSDKInterface
     /**
      * Create request for operation 'putSmallAndLightEnrollmentBySellerSKU'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function putSmallAndLightEnrollmentBySellerSKURequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \Psr\Http\Message\RequestInterface;
 }

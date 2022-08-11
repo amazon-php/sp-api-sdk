@@ -211,10 +211,8 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets event_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getEventDate() : \DateTimeInterface
+    public function getEventDate() : \DateTime
     {
         return $this->container['event_date'];
     }
@@ -226,7 +224,7 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setEventDate(\DateTimeInterface $event_date) : self
+    public function setEventDate(\DateTime $event_date) : self
     {
         $this->container['event_date'] = $event_date;
 
@@ -349,7 +347,7 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -359,6 +357,6 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

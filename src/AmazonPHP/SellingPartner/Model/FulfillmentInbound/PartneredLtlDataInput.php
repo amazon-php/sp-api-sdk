@@ -296,9 +296,9 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets freight_ready_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getFreightReadyDate() : ?\DateTimeInterface
+    public function getFreightReadyDate() : ?\DateTime
     {
         return $this->container['freight_ready_date'];
     }
@@ -306,11 +306,11 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets freight_ready_date.
      *
-     * @param \DateTime|\DateTimeImmutable $freight_ready_date freight_ready_date
+     * @param null|\DateTime $freight_ready_date freight_ready_date
      *
      * @return self
      */
-    public function setFreightReadyDate(\DateTimeInterface $freight_ready_date) : self
+    public function setFreightReadyDate(?\DateTime $freight_ready_date) : self
     {
         $this->container['freight_ready_date'] = $freight_ready_date;
 
@@ -439,7 +439,7 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -449,6 +449,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

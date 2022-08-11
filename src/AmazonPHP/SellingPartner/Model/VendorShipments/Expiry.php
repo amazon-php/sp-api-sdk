@@ -192,9 +192,9 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets manufacturer_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getManufacturerDate() : ?\DateTimeInterface
+    public function getManufacturerDate() : ?\DateTime
     {
         return $this->container['manufacturer_date'];
     }
@@ -202,11 +202,11 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets manufacturer_date.
      *
-     * @param \DateTime|\DateTimeImmutable $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
+     * @param null|\DateTime $manufacturer_date Production, packaging or assembly date determined by the manufacturer. Its meaning is determined based on the trade item context.
      *
      * @return self
      */
-    public function setManufacturerDate(\DateTimeInterface $manufacturer_date) : self
+    public function setManufacturerDate(?\DateTime $manufacturer_date) : self
     {
         $this->container['manufacturer_date'] = $manufacturer_date;
 
@@ -216,9 +216,9 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets expiry_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getExpiryDate() : ?\DateTimeInterface
+    public function getExpiryDate() : ?\DateTime
     {
         return $this->container['expiry_date'];
     }
@@ -226,11 +226,11 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets expiry_date.
      *
-     * @param \DateTime|\DateTimeImmutable $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
+     * @param null|\DateTime $expiry_date The date that determines the limit of consumption or use of a product. Its meaning is determined based on the trade item context.
      *
      * @return self
      */
-    public function setExpiryDate(\DateTimeInterface $expiry_date) : self
+    public function setExpiryDate(?\DateTime $expiry_date) : self
     {
         $this->container['expiry_date'] = $expiry_date;
 
@@ -311,7 +311,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -321,6 +321,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

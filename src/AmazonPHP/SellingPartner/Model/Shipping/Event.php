@@ -229,10 +229,8 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets event_time.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getEventTime() : \DateTimeInterface
+    public function getEventTime() : \DateTime
     {
         return $this->container['event_time'];
     }
@@ -244,7 +242,7 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setEventTime(\DateTimeInterface $event_time) : self
+    public function setEventTime(\DateTime $event_time) : self
     {
         $this->container['event_time'] = $event_time;
 
@@ -325,7 +323,7 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -335,6 +333,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

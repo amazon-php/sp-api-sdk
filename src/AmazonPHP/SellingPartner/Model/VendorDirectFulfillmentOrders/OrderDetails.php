@@ -332,10 +332,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getOrderDate() : \DateTimeInterface
+    public function getOrderDate() : \DateTime
     {
         return $this->container['order_date'];
     }
@@ -347,7 +345,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setOrderDate(\DateTimeInterface $order_date) : self
+    public function setOrderDate(\DateTime $order_date) : self
     {
         $this->container['order_date'] = $order_date;
 
@@ -586,7 +584,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -596,6 +594,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

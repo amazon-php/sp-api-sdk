@@ -318,9 +318,9 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Gets scheduled_ship_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getScheduledShipDate() : ?\DateTimeInterface
+    public function getScheduledShipDate() : ?\DateTime
     {
         return $this->container['scheduled_ship_date'];
     }
@@ -328,11 +328,11 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Sets scheduled_ship_date.
      *
-     * @param \DateTime|\DateTimeImmutable $scheduled_ship_date Estimated ship date per line item. Must be in ISO-8601 date/time format.
+     * @param null|\DateTime $scheduled_ship_date Estimated ship date per line item. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
-    public function setScheduledShipDate(\DateTimeInterface $scheduled_ship_date) : self
+    public function setScheduledShipDate(?\DateTime $scheduled_ship_date) : self
     {
         $this->container['scheduled_ship_date'] = $scheduled_ship_date;
 
@@ -342,9 +342,9 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Gets scheduled_delivery_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getScheduledDeliveryDate() : ?\DateTimeInterface
+    public function getScheduledDeliveryDate() : ?\DateTime
     {
         return $this->container['scheduled_delivery_date'];
     }
@@ -352,11 +352,11 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Sets scheduled_delivery_date.
      *
-     * @param \DateTime|\DateTimeImmutable $scheduled_delivery_date Estimated delivery date per line item. Must be in ISO-8601 date/time format.
+     * @param null|\DateTime $scheduled_delivery_date Estimated delivery date per line item. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
-    public function setScheduledDeliveryDate(\DateTimeInterface $scheduled_delivery_date) : self
+    public function setScheduledDeliveryDate(?\DateTime $scheduled_delivery_date) : self
     {
         $this->container['scheduled_delivery_date'] = $scheduled_delivery_date;
 
@@ -437,7 +437,7 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -447,6 +447,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, Model
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

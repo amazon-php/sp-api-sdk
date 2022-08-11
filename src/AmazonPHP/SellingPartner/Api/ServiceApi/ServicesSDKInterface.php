@@ -81,7 +81,7 @@ interface ServicesSDKInterface
     /**
      * Operation addAppointmentForServiceJobByServiceJobId.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body Add appointment operation input details. (required)
@@ -96,21 +96,21 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'addAppointmentForServiceJobByServiceJobId'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function addAppointmentForServiceJobByServiceJobIdRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id, \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation assignAppointmentResources.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
@@ -126,7 +126,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'assignAppointmentResources'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
@@ -134,14 +134,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function assignAppointmentResourcesRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation cancelReservation.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $reservation_id Reservation Identifier (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -156,21 +156,21 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'cancelReservation'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $reservation_id Reservation Identifier (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function cancelReservationRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $reservation_id, array $marketplace_ids) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation cancelServiceJobByServiceJobId.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
@@ -185,21 +185,21 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'cancelServiceJobByServiceJobId'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function cancelServiceJobByServiceJobIdRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id, string $cancellation_reason_code) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation completeServiceJobByServiceJobId.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      *
@@ -213,20 +213,20 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'completeServiceJobByServiceJobId'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function completeServiceJobByServiceJobIdRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation createReservation.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\CreateReservationRequest $body Reservation details (required)
@@ -241,21 +241,21 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'createReservation'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\CreateReservationRequest $body Reservation details (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createReservationRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\CreateReservationRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation createServiceDocumentUploadDestination.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Services\ServiceUploadDocument $body Upload document operation input details. (required)
      *
@@ -269,20 +269,20 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'createServiceDocumentUploadDestination'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Services\ServiceUploadDocument $body Upload document operation input details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createServiceDocumentUploadDestinationRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Services\ServiceUploadDocument $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getAppointmentSlots.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $asin ASIN associated with the service. (required)
      * @param string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
@@ -300,7 +300,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'getAppointmentSlots'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $asin ASIN associated with the service. (required)
      * @param string $store_id Store identifier defining the region scope to retrive appointment slots. (required)
@@ -310,14 +310,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getAppointmentSlotsRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $asin, string $store_id, array $marketplace_ids, string $start_time = null, string $end_time = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getAppointmmentSlotsByJobId.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -334,7 +334,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'getAppointmmentSlotsByJobId'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id A service job identifier to retrive appointment slots for associated service. (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -343,14 +343,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getAppointmmentSlotsByJobIdRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id, array $marketplace_ids, string $start_time = null, string $end_time = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getFixedSlotCapacity.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $resource_id Resource Identifier. (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -367,7 +367,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'getFixedSlotCapacity'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $resource_id Resource Identifier. (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -376,14 +376,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFixedSlotCapacityRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\FixedSlotCapacityQuery $body, string $next_page_token = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getRangeSlotCapacity.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $resource_id Resource Identifier. (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -400,7 +400,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'getRangeSlotCapacity'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $resource_id Resource Identifier. (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -409,14 +409,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getRangeSlotCapacityRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\RangeSlotCapacityQuery $body, string $next_page_token = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getServiceJobByServiceJobId.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id A service job identifier. (required)
      *
@@ -430,20 +430,20 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'getServiceJobByServiceJobId'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id A service job identifier. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getServiceJobByServiceJobIdRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getServiceJobs.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
      * @param string[] $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
@@ -472,7 +472,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'getServiceJobs'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids Used to select jobs that were placed in the specified marketplaces. (required)
      * @param string[] $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
@@ -493,14 +493,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getServiceJobsRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $marketplace_ids, array $service_order_ids = null, array $service_job_status = null, string $page_token = null, int $page_size = 20, string $sort_field = null, string $sort_order = null, string $created_after = null, string $created_before = null, string $last_updated_after = null, string $last_updated_before = null, string $schedule_start_date = null, string $schedule_end_date = null, array $asins = null, array $required_skills = null, array $store_ids = null) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation rescheduleAppointmentForServiceJobByServiceJobId.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $appointment_id An existing appointment identifier for the Service Job. (required)
@@ -516,7 +516,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'rescheduleAppointmentForServiceJobByServiceJobId'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $appointment_id An existing appointment identifier for the Service Job. (required)
@@ -524,14 +524,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation setAppointmentFulfillmentData.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
@@ -547,7 +547,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'setAppointmentFulfillmentData'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $service_job_id An Amazon-defined service job identifier. Get this value by calling the &#x60;getServiceJobs&#x60; operation of the Services API. (required)
      * @param string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
@@ -555,14 +555,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function setAppointmentFulfillmentDataRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\SetAppointmentFulfillmentDataRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation updateReservation.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $reservation_id Reservation Identifier (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -578,7 +578,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'updateReservation'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $reservation_id Reservation Identifier (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -586,14 +586,14 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function updateReservationRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $reservation_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\UpdateReservationRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation updateSchedule.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $resource_id Resource (store) Identifier (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -609,7 +609,7 @@ interface ServicesSDKInterface
     /**
      * Create request for operation 'updateSchedule'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $resource_id Resource (store) Identifier (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
@@ -617,7 +617,7 @@ interface ServicesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function updateScheduleRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\UpdateScheduleRequest $body) : \Psr\Http\Message\RequestInterface;
 }

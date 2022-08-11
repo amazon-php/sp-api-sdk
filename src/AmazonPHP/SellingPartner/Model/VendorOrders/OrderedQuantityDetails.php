@@ -196,9 +196,9 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets updated_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getUpdatedDate() : ?\DateTimeInterface
+    public function getUpdatedDate() : ?\DateTime
     {
         return $this->container['updated_date'];
     }
@@ -206,11 +206,11 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets updated_date.
      *
-     * @param \DateTime|\DateTimeImmutable $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
+     * @param null|\DateTime $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
      *
      * @return self
      */
-    public function setUpdatedDate(\DateTimeInterface $updated_date) : self
+    public function setUpdatedDate(?\DateTime $updated_date) : self
     {
         $this->container['updated_date'] = $updated_date;
 
@@ -315,7 +315,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -325,6 +325,6 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

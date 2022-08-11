@@ -17,7 +17,7 @@ interface SalesSDKInterface
     /**
      * Operation getOrderMetrics.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace. (required)
      * @param string $interval A time interval used for selecting order metrics. This takes the form of two dates separated by two hyphens (first date is inclusive; second date is exclusive). Dates are in ISO8601 format and must represent absolute time (either Z notation or offset notation). Example: 2018-09-01T00:00:00-07:00--2018-09-04T00:00:00-07:00 requests order metrics for Sept 1st, 2nd and 3rd in the -07:00 zone. (required)
@@ -39,7 +39,7 @@ interface SalesSDKInterface
     /**
      * Create request for operation 'getOrderMetrics'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A list of marketplace identifiers. Example: ATVPDKIKX0DER indicates the US marketplace. (required)
      * @param string $interval A time interval used for selecting order metrics. This takes the form of two dates separated by two hyphens (first date is inclusive; second date is exclusive). Dates are in ISO8601 format and must represent absolute time (either Z notation or offset notation). Example: 2018-09-01T00:00:00-07:00--2018-09-04T00:00:00-07:00 requests order metrics for Sept 1st, 2nd and 3rd in the -07:00 zone. (required)
@@ -53,7 +53,7 @@ interface SalesSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderMetricsRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $marketplace_ids, string $interval, string $granularity, string $granularity_time_zone = null, string $buyer_type = 'All', string $fulfillment_network = null, string $first_day_of_week = 'Monday', string $asin = null, string $sku = null) : \Psr\Http\Message\RequestInterface;
 }

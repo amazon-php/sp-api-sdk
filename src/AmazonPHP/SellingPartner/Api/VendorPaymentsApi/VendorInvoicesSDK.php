@@ -39,7 +39,7 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
     /**
      * Operation submitInvoices.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body body (required)
      *
@@ -136,13 +136,13 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
     /**
      * Create request for operation 'submitInvoices'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function submitInvoicesRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body) : RequestInterface
     {

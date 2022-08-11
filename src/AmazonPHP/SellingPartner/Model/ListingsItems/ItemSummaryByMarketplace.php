@@ -500,10 +500,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets created_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getCreatedDate() : \DateTimeInterface
+    public function getCreatedDate() : \DateTime
     {
         return $this->container['created_date'];
     }
@@ -515,7 +513,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      *
      * @return self
      */
-    public function setCreatedDate(\DateTimeInterface $created_date) : self
+    public function setCreatedDate(\DateTime $created_date) : self
     {
         $this->container['created_date'] = $created_date;
 
@@ -524,10 +522,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets last_updated_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getLastUpdatedDate() : \DateTimeInterface
+    public function getLastUpdatedDate() : \DateTime
     {
         return $this->container['last_updated_date'];
     }
@@ -539,7 +535,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      *
      * @return self
      */
-    public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
+    public function setLastUpdatedDate(\DateTime $last_updated_date) : self
     {
         $this->container['last_updated_date'] = $last_updated_date;
 
@@ -620,7 +616,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -630,6 +626,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

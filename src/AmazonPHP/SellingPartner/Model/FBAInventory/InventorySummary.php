@@ -342,9 +342,9 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Gets last_updated_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getLastUpdatedTime() : ?\DateTimeInterface
+    public function getLastUpdatedTime() : ?\DateTime
     {
         return $this->container['last_updated_time'];
     }
@@ -352,11 +352,11 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Sets last_updated_time.
      *
-     * @param \DateTime|\DateTimeImmutable $last_updated_time the date and time that any quantity was last updated
+     * @param null|\DateTime $last_updated_time the date and time that any quantity was last updated
      *
      * @return self
      */
-    public function setLastUpdatedTime(\DateTimeInterface $last_updated_time) : self
+    public function setLastUpdatedTime(?\DateTime $last_updated_time) : self
     {
         $this->container['last_updated_time'] = $last_updated_time;
 
@@ -461,7 +461,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -471,6 +471,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

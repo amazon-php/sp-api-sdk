@@ -321,10 +321,8 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets update_time.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getUpdateTime() : \DateTimeInterface
+    public function getUpdateTime() : \DateTime
     {
         return $this->container['update_time'];
     }
@@ -336,7 +334,7 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setUpdateTime(\DateTimeInterface $update_time) : self
+    public function setUpdateTime(\DateTime $update_time) : self
     {
         $this->container['update_time'] = $update_time;
 
@@ -393,7 +391,7 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -403,6 +401,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

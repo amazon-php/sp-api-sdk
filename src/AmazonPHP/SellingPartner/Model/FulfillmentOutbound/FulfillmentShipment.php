@@ -335,9 +335,9 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets shipping_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getShippingDate() : ?\DateTimeInterface
+    public function getShippingDate() : ?\DateTime
     {
         return $this->container['shipping_date'];
     }
@@ -345,11 +345,11 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets shipping_date.
      *
-     * @param \DateTime|\DateTimeImmutable $shipping_date shipping_date
+     * @param null|\DateTime $shipping_date shipping_date
      *
      * @return self
      */
-    public function setShippingDate(\DateTimeInterface $shipping_date) : self
+    public function setShippingDate(?\DateTime $shipping_date) : self
     {
         $this->container['shipping_date'] = $shipping_date;
 
@@ -359,9 +359,9 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets estimated_arrival_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getEstimatedArrivalDate() : ?\DateTimeInterface
+    public function getEstimatedArrivalDate() : ?\DateTime
     {
         return $this->container['estimated_arrival_date'];
     }
@@ -369,11 +369,11 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Sets estimated_arrival_date.
      *
-     * @param \DateTime|\DateTimeImmutable $estimated_arrival_date estimated_arrival_date
+     * @param null|\DateTime $estimated_arrival_date estimated_arrival_date
      *
      * @return self
      */
-    public function setEstimatedArrivalDate(\DateTimeInterface $estimated_arrival_date) : self
+    public function setEstimatedArrivalDate(?\DateTime $estimated_arrival_date) : self
     {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
 
@@ -502,7 +502,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -512,6 +512,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

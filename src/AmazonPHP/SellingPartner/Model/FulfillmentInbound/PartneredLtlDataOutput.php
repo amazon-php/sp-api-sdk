@@ -387,10 +387,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets freight_ready_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getFreightReadyDate() : \DateTimeInterface
+    public function getFreightReadyDate() : \DateTime
     {
         return $this->container['freight_ready_date'];
     }
@@ -402,7 +400,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @return self
      */
-    public function setFreightReadyDate(\DateTimeInterface $freight_ready_date) : self
+    public function setFreightReadyDate(\DateTime $freight_ready_date) : self
     {
         $this->container['freight_ready_date'] = $freight_ready_date;
 
@@ -505,10 +503,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets preview_pickup_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPreviewPickupDate() : \DateTimeInterface
+    public function getPreviewPickupDate() : \DateTime
     {
         return $this->container['preview_pickup_date'];
     }
@@ -520,7 +516,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @return self
      */
-    public function setPreviewPickupDate(\DateTimeInterface $preview_pickup_date) : self
+    public function setPreviewPickupDate(\DateTime $preview_pickup_date) : self
     {
         $this->container['preview_pickup_date'] = $preview_pickup_date;
 
@@ -529,10 +525,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets preview_delivery_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getPreviewDeliveryDate() : \DateTimeInterface
+    public function getPreviewDeliveryDate() : \DateTime
     {
         return $this->container['preview_delivery_date'];
     }
@@ -544,7 +538,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      *
      * @return self
      */
-    public function setPreviewDeliveryDate(\DateTimeInterface $preview_delivery_date) : self
+    public function setPreviewDeliveryDate(\DateTime $preview_delivery_date) : self
     {
         $this->container['preview_delivery_date'] = $preview_delivery_date;
 
@@ -713,7 +707,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -723,6 +717,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

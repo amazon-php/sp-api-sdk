@@ -185,10 +185,8 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets start_time.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getStartTime() : \DateTimeInterface
+    public function getStartTime() : \DateTime
     {
         return $this->container['start_time'];
     }
@@ -200,7 +198,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
      *
      * @return self
      */
-    public function setStartTime(\DateTimeInterface $start_time) : self
+    public function setStartTime(\DateTime $start_time) : self
     {
         $this->container['start_time'] = $start_time;
 
@@ -281,7 +279,7 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -291,6 +289,6 @@ class AppointmentTimeInput implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

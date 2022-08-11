@@ -336,9 +336,9 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets value_as_timestamp.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getValueAsTimestamp() : ?\DateTimeInterface
+    public function getValueAsTimestamp() : ?\DateTime
     {
         return $this->container['value_as_timestamp'];
     }
@@ -346,11 +346,11 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets value_as_timestamp.
      *
-     * @param \DateTime|\DateTimeImmutable $value_as_timestamp value_as_timestamp
+     * @param null|\DateTime $value_as_timestamp value_as_timestamp
      *
      * @return self
      */
-    public function setValueAsTimestamp(\DateTimeInterface $value_as_timestamp) : self
+    public function setValueAsTimestamp(?\DateTime $value_as_timestamp) : self
     {
         $this->container['value_as_timestamp'] = $value_as_timestamp;
 
@@ -503,7 +503,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -513,6 +513,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

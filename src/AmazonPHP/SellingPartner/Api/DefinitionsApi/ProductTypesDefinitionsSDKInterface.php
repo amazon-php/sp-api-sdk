@@ -21,7 +21,7 @@ interface ProductTypesDefinitionsSDKInterface
     /**
      * Operation getDefinitionsProductType.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $product_type The Amazon product type name. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
@@ -41,7 +41,7 @@ interface ProductTypesDefinitionsSDKInterface
     /**
      * Create request for operation 'getDefinitionsProductType'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $product_type The Amazon product type name. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
@@ -53,14 +53,14 @@ interface ProductTypesDefinitionsSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getDefinitionsProductTypeRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $product_type, array $marketplace_ids, string $seller_id = null, string $product_type_version = 'LATEST', string $requirements = 'LISTING', string $requirements_enforced = 'ENFORCED', string $locale = 'DEFAULT') : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation searchDefinitionsProductTypes.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
@@ -75,14 +75,14 @@ interface ProductTypesDefinitionsSDKInterface
     /**
      * Create request for operation 'searchDefinitionsProductTypes'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function searchDefinitionsProductTypesRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null) : \Psr\Http\Message\RequestInterface;
 }

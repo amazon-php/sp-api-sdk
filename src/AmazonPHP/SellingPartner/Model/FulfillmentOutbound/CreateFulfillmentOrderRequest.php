@@ -377,10 +377,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getDisplayableOrderDate() : \DateTimeInterface
+    public function getDisplayableOrderDate() : \DateTime
     {
         return $this->container['displayable_order_date'];
     }
@@ -392,7 +390,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      *
      * @return self
      */
-    public function setDisplayableOrderDate(\DateTimeInterface $displayable_order_date) : self
+    public function setDisplayableOrderDate(\DateTime $displayable_order_date) : self
     {
         $this->container['displayable_order_date'] = $displayable_order_date;
 
@@ -707,7 +705,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -717,6 +715,6 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

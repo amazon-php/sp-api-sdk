@@ -49,7 +49,7 @@ interface ShippingSDKInterface
     /**
      * Operation cancelShipment.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id shipment_id (required)
      *
@@ -63,20 +63,20 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'cancelShipment'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function cancelShipmentRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $shipment_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation createShipment.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentRequest $body body (required)
      *
@@ -90,20 +90,20 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'createShipment'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function createShipmentRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getAccount.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      *
      * @throws \AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
@@ -116,19 +116,19 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'getAccount'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getAccountRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getRates.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\GetRatesRequest $body body (required)
      *
@@ -142,20 +142,20 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'getRates'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\GetRatesRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getRatesRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Shipping\GetRatesRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getShipment.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id shipment_id (required)
      *
@@ -169,20 +169,20 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'getShipment'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getShipmentRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $shipment_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getTrackingInformation.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $tracking_id tracking_id (required)
      *
@@ -196,20 +196,20 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'getTrackingInformation'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $tracking_id (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getTrackingInformationRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $tracking_id) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation purchaseLabels.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id shipment_id (required)
      * @param \AmazonPHP\SellingPartner\Model\Shipping\PurchaseLabelsRequest $body body (required)
@@ -224,21 +224,21 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'purchaseLabels'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id (required)
      * @param \AmazonPHP\SellingPartner\Model\Shipping\PurchaseLabelsRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function purchaseLabelsRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\Shipping\PurchaseLabelsRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation purchaseShipment.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentRequest $body body (required)
      *
@@ -252,20 +252,20 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'purchaseShipment'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function purchaseShipmentRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentRequest $body) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation retrieveShippingLabel.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id shipment_id (required)
      * @param string $tracking_id tracking_id (required)
@@ -281,7 +281,7 @@ interface ShippingSDKInterface
     /**
      * Create request for operation 'retrieveShippingLabel'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $shipment_id (required)
      * @param string $tracking_id (required)
@@ -289,7 +289,7 @@ interface ShippingSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function retrieveShippingLabelRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $shipment_id, string $tracking_id, \AmazonPHP\SellingPartner\Model\Shipping\RetrieveShippingLabelRequest $body) : \Psr\Http\Message\RequestInterface;
 }

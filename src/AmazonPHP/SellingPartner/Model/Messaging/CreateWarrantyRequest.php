@@ -213,9 +213,9 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets coverage_start_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getCoverageStartDate() : ?\DateTimeInterface
+    public function getCoverageStartDate() : ?\DateTime
     {
         return $this->container['coverage_start_date'];
     }
@@ -223,11 +223,11 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets coverage_start_date.
      *
-     * @param \DateTime|\DateTimeImmutable $coverage_start_date the start date of the warranty coverage to include in the message to the buyer
+     * @param null|\DateTime $coverage_start_date the start date of the warranty coverage to include in the message to the buyer
      *
      * @return self
      */
-    public function setCoverageStartDate(\DateTimeInterface $coverage_start_date) : self
+    public function setCoverageStartDate(?\DateTime $coverage_start_date) : self
     {
         $this->container['coverage_start_date'] = $coverage_start_date;
 
@@ -237,9 +237,9 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets coverage_end_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getCoverageEndDate() : ?\DateTimeInterface
+    public function getCoverageEndDate() : ?\DateTime
     {
         return $this->container['coverage_end_date'];
     }
@@ -247,11 +247,11 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Sets coverage_end_date.
      *
-     * @param \DateTime|\DateTimeImmutable $coverage_end_date the end date of the warranty coverage to include in the message to the buyer
+     * @param null|\DateTime $coverage_end_date the end date of the warranty coverage to include in the message to the buyer
      *
      * @return self
      */
-    public function setCoverageEndDate(\DateTimeInterface $coverage_end_date) : self
+    public function setCoverageEndDate(?\DateTime $coverage_end_date) : self
     {
         $this->container['coverage_end_date'] = $coverage_end_date;
 
@@ -308,7 +308,7 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -318,6 +318,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

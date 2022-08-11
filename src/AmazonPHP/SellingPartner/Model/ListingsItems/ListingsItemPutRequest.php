@@ -274,7 +274,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets attributes.
      */
-    public function getAttributes() : ?array
+    public function getAttributes() : object
     {
         return $this->container['attributes'];
     }
@@ -282,11 +282,11 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Sets attributes.
      *
-     * @param mixed[] $attributes
+     * @param object $attributes JSON object containing structured listings item attribute data keyed by attribute name
      *
      * @return self
      */
-    public function setAttributes(array $attributes) : self
+    public function setAttributes(object $attributes) : self
     {
         $this->container['attributes'] = $attributes;
 
@@ -343,7 +343,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -353,6 +353,6 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, ModelIn
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

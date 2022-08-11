@@ -185,10 +185,8 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets required_ship_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getRequiredShipDate() : \DateTimeInterface
+    public function getRequiredShipDate() : \DateTime
     {
         return $this->container['required_ship_date'];
     }
@@ -200,7 +198,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setRequiredShipDate(\DateTimeInterface $required_ship_date) : self
+    public function setRequiredShipDate(\DateTime $required_ship_date) : self
     {
         $this->container['required_ship_date'] = $required_ship_date;
 
@@ -210,9 +208,9 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets promised_delivery_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getPromisedDeliveryDate() : ?\DateTimeInterface
+    public function getPromisedDeliveryDate() : ?\DateTime
     {
         return $this->container['promised_delivery_date'];
     }
@@ -220,11 +218,11 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets promised_delivery_date.
      *
-     * @param \DateTime|\DateTimeImmutable $promised_delivery_date delivery date promised to the Amazon customer
+     * @param null|\DateTime $promised_delivery_date delivery date promised to the Amazon customer
      *
      * @return self
      */
-    public function setPromisedDeliveryDate(\DateTimeInterface $promised_delivery_date) : self
+    public function setPromisedDeliveryDate(?\DateTime $promised_delivery_date) : self
     {
         $this->container['promised_delivery_date'] = $promised_delivery_date;
 
@@ -281,7 +279,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -291,6 +289,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

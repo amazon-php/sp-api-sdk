@@ -52,7 +52,7 @@ use Psr\Log\LoggerInterface;
         {{#-last}}
         {{/-last}}
     {{/servers}}
-    * @param AccessToken $accessToken
+    * @param \{{invokerPackage}}\AccessToken $accessToken
     * @param string $region
     {{#allParams}}
     * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}}{{^description}} {{paramName}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
@@ -62,7 +62,7 @@ use Psr\Log\LoggerInterface;
     * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
     * @return {{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}null{{/returnType}}
     */
-    public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
+    public function {{operationId}}(\{{invokerPackage}}\AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
 
 
     /**
@@ -81,16 +81,16 @@ use Psr\Log\LoggerInterface;
             *
         {{/-last}}
     {{/servers}}
-    * @param AccessToken $accessToken
+    * @param \{{invokerPackage}}\AccessToken $accessToken
     * @param string $region
     {{#allParams}}
     * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
     {{/allParams}}
     *
     * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
-    * @return RequestInterface
+    * @return \Psr\Http\Message\RequestInterface
     */
-    public function {{operationId}}Request(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}) : RequestInterface;
+    public function {{operationId}}Request(\{{invokerPackage}}\AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}) : \Psr\Http\Message\RequestInterface;
 
 {{/operation}}
 }
@@ -142,7 +142,7 @@ final {{#operations}}class {{packageName}}SDK implements {{packageName}}SDKInter
 {{#-last}}
 {{/-last}}
 {{/servers}}
-     * @param AccessToken $accessToken
+     * @param \{{invokerPackage}}\AccessToken $accessToken
      * @param string $region
 {{#allParams}}
      * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}}{{^description}} {{paramName}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
@@ -152,7 +152,7 @@ final {{#operations}}class {{packageName}}SDK implements {{packageName}}SDKInter
      * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
      * @return {{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}null{{/returnType}}
      */
-    public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}})
+    public function {{operationId}}(\{{invokerPackage}}\AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}})
     {
         $request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
 
@@ -263,16 +263,16 @@ final {{#operations}}class {{packageName}}SDK implements {{packageName}}SDKInter
      *
 {{/-last}}
 {{/servers}}
-     * @param AccessToken $accessToken
+     * @param \{{invokerPackage}}\AccessToken $accessToken
      * @param string $region
 {{#allParams}}
      * @param {{{dataType}}} ${{paramName}}{{#description}} {{description}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
 {{/allParams}}
      *
      * @throws \{{invokerPackage}}\Exception\InvalidArgumentException
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function {{operationId}}Request(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}) : RequestInterface
+    public function {{operationId}}Request(\{{invokerPackage}}\AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}}) : \Psr\Http\Message\RequestInterface
     {
         {{#vendorExtensions.x-group-parameters}}
         // unbox the parameters from the associative array

@@ -17,7 +17,7 @@ interface VendorTransactionStatusSDKInterface
     /**
      * Operation getTransaction.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
      *
@@ -31,13 +31,13 @@ interface VendorTransactionStatusSDKInterface
     /**
      * Create request for operation 'getTransaction'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getTransactionRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $transaction_id) : \Psr\Http\Message\RequestInterface;
 }

@@ -210,9 +210,9 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Gets earliest_ship_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getEarliestShipDate() : ?\DateTimeInterface
+    public function getEarliestShipDate() : ?\DateTime
     {
         return $this->container['earliest_ship_date'];
     }
@@ -220,11 +220,11 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Sets earliest_ship_date.
      *
-     * @param \DateTime|\DateTimeImmutable $earliest_ship_date earliest_ship_date
+     * @param null|\DateTime $earliest_ship_date earliest_ship_date
      *
      * @return self
      */
-    public function setEarliestShipDate(\DateTimeInterface $earliest_ship_date) : self
+    public function setEarliestShipDate(?\DateTime $earliest_ship_date) : self
     {
         $this->container['earliest_ship_date'] = $earliest_ship_date;
 
@@ -234,9 +234,9 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Gets latest_ship_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getLatestShipDate() : ?\DateTimeInterface
+    public function getLatestShipDate() : ?\DateTime
     {
         return $this->container['latest_ship_date'];
     }
@@ -244,11 +244,11 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Sets latest_ship_date.
      *
-     * @param \DateTime|\DateTimeImmutable $latest_ship_date latest_ship_date
+     * @param null|\DateTime $latest_ship_date latest_ship_date
      *
      * @return self
      */
-    public function setLatestShipDate(\DateTimeInterface $latest_ship_date) : self
+    public function setLatestShipDate(?\DateTime $latest_ship_date) : self
     {
         $this->container['latest_ship_date'] = $latest_ship_date;
 
@@ -258,9 +258,9 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Gets earliest_arrival_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getEarliestArrivalDate() : ?\DateTimeInterface
+    public function getEarliestArrivalDate() : ?\DateTime
     {
         return $this->container['earliest_arrival_date'];
     }
@@ -268,11 +268,11 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Sets earliest_arrival_date.
      *
-     * @param \DateTime|\DateTimeImmutable $earliest_arrival_date earliest_arrival_date
+     * @param null|\DateTime $earliest_arrival_date earliest_arrival_date
      *
      * @return self
      */
-    public function setEarliestArrivalDate(\DateTimeInterface $earliest_arrival_date) : self
+    public function setEarliestArrivalDate(?\DateTime $earliest_arrival_date) : self
     {
         $this->container['earliest_arrival_date'] = $earliest_arrival_date;
 
@@ -282,9 +282,9 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Gets latest_arrival_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getLatestArrivalDate() : ?\DateTimeInterface
+    public function getLatestArrivalDate() : ?\DateTime
     {
         return $this->container['latest_arrival_date'];
     }
@@ -292,11 +292,11 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Sets latest_arrival_date.
      *
-     * @param \DateTime|\DateTimeImmutable $latest_arrival_date latest_arrival_date
+     * @param null|\DateTime $latest_arrival_date latest_arrival_date
      *
      * @return self
      */
-    public function setLatestArrivalDate(\DateTimeInterface $latest_arrival_date) : self
+    public function setLatestArrivalDate(?\DateTime $latest_arrival_date) : self
     {
         $this->container['latest_arrival_date'] = $latest_arrival_date;
 
@@ -401,7 +401,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -411,6 +411,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

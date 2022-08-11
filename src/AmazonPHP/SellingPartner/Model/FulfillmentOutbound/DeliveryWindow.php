@@ -189,10 +189,8 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets start_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getStartDate() : \DateTimeInterface
+    public function getStartDate() : \DateTime
     {
         return $this->container['start_date'];
     }
@@ -204,7 +202,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setStartDate(\DateTimeInterface $start_date) : self
+    public function setStartDate(\DateTime $start_date) : self
     {
         $this->container['start_date'] = $start_date;
 
@@ -213,10 +211,8 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets end_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getEndDate() : \DateTimeInterface
+    public function getEndDate() : \DateTime
     {
         return $this->container['end_date'];
     }
@@ -228,7 +224,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setEndDate(\DateTimeInterface $end_date) : self
+    public function setEndDate(\DateTime $end_date) : self
     {
         $this->container['end_date'] = $end_date;
 
@@ -285,7 +281,7 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -295,6 +291,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

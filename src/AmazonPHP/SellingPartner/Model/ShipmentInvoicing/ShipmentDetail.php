@@ -338,9 +338,9 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets purchase_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getPurchaseDate() : ?\DateTimeInterface
+    public function getPurchaseDate() : ?\DateTime
     {
         return $this->container['purchase_date'];
     }
@@ -348,11 +348,11 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets purchase_date.
      *
-     * @param \DateTime|\DateTimeImmutable $purchase_date the date and time when the order was created
+     * @param null|\DateTime $purchase_date the date and time when the order was created
      *
      * @return self
      */
-    public function setPurchaseDate(\DateTimeInterface $purchase_date) : self
+    public function setPurchaseDate(?\DateTime $purchase_date) : self
     {
         $this->container['purchase_date'] = $purchase_date;
 
@@ -649,7 +649,7 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -659,6 +659,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

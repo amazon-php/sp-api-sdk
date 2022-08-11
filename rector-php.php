@@ -21,13 +21,13 @@ use Rector\TypeDeclaration\Rector\ClassMethod\AddReturnTypeDeclarationRector;
 use Rector\TypeDeclaration\ValueObject\AddParamTypeDeclaration;
 use Rector\TypeDeclaration\ValueObject\AddReturnTypeDeclaration;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\SymfonyPhpConfig\ValueObjectInliner;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     // get parameters
     $parameters = $containerConfigurator->parameters();
     $services = $containerConfigurator->services();
 
+    $parameters->set(Option::PARALLEL, false);
     $parameters->set(Option::AUTOLOAD_PATHS, [
         __DIR__ ,
     ]);
@@ -45,12 +45,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->set(\AmazonPHP\Rector\ClassMethod\FixArgumentDefaultValuesNotMatchingTypeRector::class);
     $services->set(\Rector\CodeQuality\Rector\ClassMethod\DateTimeToDateTimeInterfaceRector::class);
-    $services->set(\Rector\PSR4\Rector\Namespace_\MultipleClassFileToPsr4ClassesRector::class);
 
-    // Define what rule sets will be applied
     $containerConfigurator->import(SetList::PHP_73);
     $containerConfigurator->import(SetList::PHP_74);
-    $containerConfigurator->import(SetList::TYPE_DECLARATION);
 
     /**
      * Explanation here: https://github.com/amazon-php/sp-api-sdk/issues/101#issuecomment-1002159988

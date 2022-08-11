@@ -183,9 +183,9 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets start.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getStart() : ?\DateTimeInterface
+    public function getStart() : ?\DateTime
     {
         return $this->container['start'];
     }
@@ -193,11 +193,11 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets start.
      *
-     * @param \DateTime|\DateTimeImmutable $start The start date and time. This defaults to the current date and time.
+     * @param null|\DateTime $start The start date and time. This defaults to the current date and time.
      *
      * @return self
      */
-    public function setStart(\DateTimeInterface $start) : self
+    public function setStart(?\DateTime $start) : self
     {
         $this->container['start'] = $start;
 
@@ -207,9 +207,9 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets end.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getEnd() : ?\DateTimeInterface
+    public function getEnd() : ?\DateTime
     {
         return $this->container['end'];
     }
@@ -217,11 +217,11 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets end.
      *
-     * @param \DateTime|\DateTimeImmutable $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
+     * @param null|\DateTime $end The end date and time. This must come after the value of start. This defaults to the next business day from the start.
      *
      * @return self
      */
-    public function setEnd(\DateTimeInterface $end) : self
+    public function setEnd(?\DateTime $end) : self
     {
         $this->container['end'] = $end;
 
@@ -278,7 +278,7 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -288,6 +288,6 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

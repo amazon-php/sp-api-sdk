@@ -389,9 +389,9 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Gets next_report_creation_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getNextReportCreationTime() : ?\DateTimeInterface
+    public function getNextReportCreationTime() : ?\DateTime
     {
         return $this->container['next_report_creation_time'];
     }
@@ -399,11 +399,11 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Sets next_report_creation_time.
      *
-     * @param \DateTime|\DateTimeImmutable $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
+     * @param null|\DateTime $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
      *
      * @return self
      */
-    public function setNextReportCreationTime(\DateTimeInterface $next_report_creation_time) : self
+    public function setNextReportCreationTime(?\DateTime $next_report_creation_time) : self
     {
         $this->container['next_report_creation_time'] = $next_report_creation_time;
 
@@ -460,7 +460,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -470,6 +470,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

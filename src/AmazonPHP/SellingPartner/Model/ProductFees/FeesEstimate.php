@@ -195,10 +195,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets time_of_fees_estimation.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getTimeOfFeesEstimation() : \DateTimeInterface
+    public function getTimeOfFeesEstimation() : \DateTime
     {
         return $this->container['time_of_fees_estimation'];
     }
@@ -210,7 +208,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return self
      */
-    public function setTimeOfFeesEstimation(\DateTimeInterface $time_of_fees_estimation) : self
+    public function setTimeOfFeesEstimation(\DateTime $time_of_fees_estimation) : self
     {
         $this->container['time_of_fees_estimation'] = $time_of_fees_estimation;
 
@@ -315,7 +313,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -325,6 +323,6 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

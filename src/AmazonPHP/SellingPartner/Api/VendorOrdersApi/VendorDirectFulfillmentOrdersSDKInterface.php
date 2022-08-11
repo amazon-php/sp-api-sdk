@@ -25,7 +25,7 @@ interface VendorDirectFulfillmentOrdersSDKInterface
     /**
      * Operation getOrder.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $purchase_order_number The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code. (required)
      *
@@ -39,20 +39,20 @@ interface VendorDirectFulfillmentOrdersSDKInterface
     /**
      * Create request for operation 'getOrder'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $purchase_order_number The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getOrderRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $purchase_order_number) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation getOrders.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \DateTime $created_after Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param \DateTime $created_before Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
@@ -68,12 +68,12 @@ interface VendorDirectFulfillmentOrdersSDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList
      */
-    public function getOrders(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = 'true');
+    public function getOrders(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true);
 
     /**
      * Create request for operation 'getOrders'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \DateTime $created_after Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param \DateTime $created_before Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
@@ -86,14 +86,14 @@ interface VendorDirectFulfillmentOrdersSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getOrdersRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \DateTime $created_after, \DateTime $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = 'true') : \Psr\Http\Message\RequestInterface;
+    public function getOrdersRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, string $ship_from_party_id = null, string $status = null, int $limit = null, string $sort_order = null, string $next_token = null, bool $include_details = true) : \Psr\Http\Message\RequestInterface;
 
     /**
      * Operation submitAcknowledgement.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body body (required)
      *
@@ -107,13 +107,13 @@ interface VendorDirectFulfillmentOrdersSDKInterface
     /**
      * Create request for operation 'submitAcknowledgement'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function submitAcknowledgementRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body) : \Psr\Http\Message\RequestInterface;
 }

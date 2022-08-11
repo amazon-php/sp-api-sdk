@@ -280,9 +280,9 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets arrival_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getArrivalTime() : ?\DateTimeInterface
+    public function getArrivalTime() : ?\DateTime
     {
         return $this->container['arrival_time'];
     }
@@ -290,11 +290,11 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets arrival_time.
      *
-     * @param \DateTime|\DateTimeImmutable $arrival_time date and time of the arrival of the cargo
+     * @param null|\DateTime $arrival_time date and time of the arrival of the cargo
      *
      * @return self
      */
-    public function setArrivalTime(\DateTimeInterface $arrival_time) : self
+    public function setArrivalTime(?\DateTime $arrival_time) : self
     {
         $this->container['arrival_time'] = $arrival_time;
 
@@ -304,9 +304,9 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets departure_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getDepartureTime() : ?\DateTimeInterface
+    public function getDepartureTime() : ?\DateTime
     {
         return $this->container['departure_time'];
     }
@@ -314,11 +314,11 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets departure_time.
      *
-     * @param \DateTime|\DateTimeImmutable $departure_time date and time of the departure of the cargo
+     * @param null|\DateTime $departure_time date and time of the departure of the cargo
      *
      * @return self
      */
-    public function setDepartureTime(\DateTimeInterface $departure_time) : self
+    public function setDepartureTime(?\DateTime $departure_time) : self
     {
         $this->container['departure_time'] = $departure_time;
 
@@ -375,7 +375,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -385,6 +385,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -255,10 +255,8 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets acknowledgement_date.
-     *
-     * @return \DateTime|\DateTimeImmutable
      */
-    public function getAcknowledgementDate() : \DateTimeInterface
+    public function getAcknowledgementDate() : \DateTime
     {
         return $this->container['acknowledgement_date'];
     }
@@ -270,7 +268,7 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, ModelInte
      *
      * @return self
      */
-    public function setAcknowledgementDate(\DateTimeInterface $acknowledgement_date) : self
+    public function setAcknowledgementDate(\DateTime $acknowledgement_date) : self
     {
         $this->container['acknowledgement_date'] = $acknowledgement_date;
 
@@ -351,7 +349,7 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -361,6 +359,6 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, ModelInte
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

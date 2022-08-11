@@ -39,7 +39,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
     /**
      * Operation getItemEligibilityPreview.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
@@ -138,7 +138,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
     /**
      * Create request for operation 'getItemEligibilityPreview'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
@@ -146,7 +146,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function getItemEligibilityPreviewRequest(AccessToken $accessToken, string $region, string $asin, string $program, array $marketplace_ids = null) : RequestInterface
     {

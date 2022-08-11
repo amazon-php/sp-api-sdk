@@ -290,9 +290,9 @@ class Rate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets expiration_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getExpirationTime() : ?\DateTimeInterface
+    public function getExpirationTime() : ?\DateTime
     {
         return $this->container['expiration_time'];
     }
@@ -300,11 +300,11 @@ class Rate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets expiration_time.
      *
-     * @param \DateTime|\DateTimeImmutable $expiration_time the time after which the offering will expire
+     * @param null|\DateTime $expiration_time the time after which the offering will expire
      *
      * @return self
      */
-    public function setExpirationTime(\DateTimeInterface $expiration_time) : self
+    public function setExpirationTime(?\DateTime $expiration_time) : self
     {
         $this->container['expiration_time'] = $expiration_time;
 
@@ -409,7 +409,7 @@ class Rate implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -419,6 +419,6 @@ class Rate implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

@@ -17,7 +17,7 @@ interface FBAInventorySDKInterface
     /**
      * Operation getInventorySummaries.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
@@ -32,12 +32,12 @@ interface FBAInventorySDKInterface
      *
      * @return \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse
      */
-    public function getInventorySummaries(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null);
+    public function getInventorySummaries(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTimeInterface $start_date_time = null, array $seller_skus = null, string $next_token = null);
 
     /**
      * Create request for operation 'getInventorySummaries'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
@@ -49,7 +49,7 @@ interface FBAInventorySDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getInventorySummariesRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTime $start_date_time = null, array $seller_skus = null, string $next_token = null) : \Psr\Http\Message\RequestInterface;
+    public function getInventorySummariesRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, \DateTimeInterface $start_date_time = null, array $seller_skus = null, string $next_token = null) : \Psr\Http\Message\RequestInterface;
 }

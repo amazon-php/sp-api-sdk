@@ -460,9 +460,9 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets offers_available_time.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getOffersAvailableTime() : ?\DateTimeInterface
+    public function getOffersAvailableTime() : ?\DateTime
     {
         return $this->container['offers_available_time'];
     }
@@ -470,11 +470,11 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets offers_available_time.
      *
-     * @param \DateTime|\DateTimeImmutable $offers_available_time when the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing
+     * @param null|\DateTime $offers_available_time when the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing
      *
      * @return self
      */
-    public function setOffersAvailableTime(\DateTimeInterface $offers_available_time) : self
+    public function setOffersAvailableTime(?\DateTime $offers_available_time) : self
     {
         $this->container['offers_available_time'] = $offers_available_time;
 
@@ -531,7 +531,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -541,6 +541,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

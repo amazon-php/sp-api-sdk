@@ -250,9 +250,9 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Gets group_begin_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getGroupBeginDate() : ?\DateTimeInterface
+    public function getGroupBeginDate() : ?\DateTime
     {
         return $this->container['group_begin_date'];
     }
@@ -260,11 +260,11 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Sets group_begin_date.
      *
-     * @param \DateTime|\DateTimeImmutable $group_begin_date group_begin_date
+     * @param null|\DateTime $group_begin_date group_begin_date
      *
      * @return self
      */
-    public function setGroupBeginDate(\DateTimeInterface $group_begin_date) : self
+    public function setGroupBeginDate(?\DateTime $group_begin_date) : self
     {
         $this->container['group_begin_date'] = $group_begin_date;
 
@@ -274,9 +274,9 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Gets group_end_date.
      *
-     * @return null|\DateTime|\DateTimeImmutable
+     * @return null|\DateTime
      */
-    public function getGroupEndDate() : ?\DateTimeInterface
+    public function getGroupEndDate() : ?\DateTime
     {
         return $this->container['group_end_date'];
     }
@@ -284,11 +284,11 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Sets group_end_date.
      *
-     * @param \DateTime|\DateTimeImmutable $group_end_date group_end_date
+     * @param null|\DateTime $group_end_date group_end_date
      *
      * @return self
      */
-    public function setGroupEndDate(\DateTimeInterface $group_end_date) : self
+    public function setGroupEndDate(?\DateTime $group_end_date) : self
     {
         $this->container['group_end_date'] = $group_end_date;
 
@@ -345,7 +345,7 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
@@ -355,6 +355,6 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      */
     public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

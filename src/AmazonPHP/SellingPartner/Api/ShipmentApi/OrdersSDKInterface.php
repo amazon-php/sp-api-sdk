@@ -17,7 +17,7 @@ interface OrdersSDKInterface
     /**
      * Operation updateShipmentStatus.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
@@ -30,14 +30,14 @@ interface OrdersSDKInterface
     /**
      * Create request for operation 'updateShipmentStatus'.
      *
-     * @param AccessToken $accessToken
+     * @param \AmazonPHP\SellingPartner\AccessToken $accessToken
      * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      *
-     * @return RequestInterface
+     * @return \Psr\Http\Message\RequestInterface
      */
     public function updateShipmentStatusRequest(\AmazonPHP\SellingPartner\AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload) : \Psr\Http\Message\RequestInterface;
 }
