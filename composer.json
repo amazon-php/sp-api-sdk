@@ -74,10 +74,6 @@
             "Composer\\Config::disableProcessTimeout",
             "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-php.php"
         ],
-        "rector:process:force:psr4": [
-            "Composer\\Config::disableProcessTimeout",
-            "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-psr4.php"
-        ],
         "rector:process:force:types": [
             "Composer\\Config::disableProcessTimeout",
             "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-types.php"
