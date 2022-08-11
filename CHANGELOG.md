@@ -1,3 +1,11 @@
+## [Unreleased] - 2022-08-11
+
+### Fixed
+- [#229](https://github.com/amazon-php/sp-api-sdk/pull/229) - **Fixed missing return types in interfaces** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [#229](https://github.com/amazon-php/sp-api-sdk/pull/229) - **request methods from SDK interfaces** - [@norberttech](https://github.com/norberttech)
+
 ## [4.0.9] - 2022-08-11
 
 ### Added
