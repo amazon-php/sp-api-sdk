@@ -18,6 +18,7 @@ use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
 
 /**
  * AddReturnTypeDeclarationRector rector can't detect a change from return type to nullable return type, so changing `string` to `?string` will not work.
+ *
  * @see https://github.com/rectorphp/rector/issues/7395 - maintainer of the library will not fix that, so we need to create the rule ourselves.
  */
 class SetNullableFunctionReturnTypeRector extends AbstractRector implements ConfigurableRectorInterface
