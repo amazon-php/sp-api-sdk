@@ -270,7 +270,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Sets buyer_name.
      *
-     * @param null|string $buyer_name the name of the buyer
+     * @param null|string $buyer_name the buyer name or the recipient name
      *
      * @return self
      */

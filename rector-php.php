@@ -3,8 +3,17 @@
 declare(strict_types=1);
 
 use AmazonPHP\Rector\ClassMethod\FixArgumentDefaultValuesNotMatchingTypeRector;
+use AmazonPHP\Rector\ClassMethod\SetNullableFunctionReturnTypeRector;
+use AmazonPHP\Rector\ValueObject\NullableReturnTypeDeclaration;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
-use AmazonPHP\SellingPartner\Model\CatalogItem\Item;
+use AmazonPHP\SellingPartner\Model\CatalogItem\Item as CatalogItem;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentInfo;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredLtlDataOutput;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredSmallParcelPackageOutput;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelPackageOutput;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportHeader;
+use AmazonPHP\SellingPartner\Model\ListingsItems\Item as ListingsItem;
+use AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement;
 use AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest;
 use AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponse;
 use AmazonPHP\SellingPartner\Model\Orders\Address;
@@ -52,7 +61,7 @@ return static function (RectorConfig $config): void {
         AddParamTypeDeclarationRector::class,
         [
             new AddParamTypeDeclaration(
-                Item::class,
+                CatalogItem::class,
                 'setAttributes',
                 0,
                 new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
@@ -94,7 +103,7 @@ return static function (RectorConfig $config): void {
         AddReturnTypeDeclarationRector::class,
         [
             new AddReturnTypeDeclaration(
-                Item::class,
+                CatalogItem::class,
                 'getAttributes',
                 new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
             ),
@@ -119,6 +128,34 @@ return static function (RectorConfig $config): void {
                 'getName',
                 new UnionType([new NullType(), new StringType()]),
             ),
+            new AddReturnTypeDeclaration(
+                ListingsItem::class,
+                'getAttributes',
+                new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())]),
+            ),
+        ]
+    );
+
+    /**
+     * Contrary to Amazon's schema, some of the properties are in fact nullable - this rule will fix that.
+     */
+    $config->ruleWithConfiguration(
+        SetNullableFunctionReturnTypeRector::class,
+        [
+            /**
+             * Fulfillment Inbound API
+             */
+            new NullableReturnTypeDeclaration(InboundShipmentInfo::class, 'getAreCasesRequired'),
+            new NullableReturnTypeDeclaration(TransportHeader::class, 'getIsPartnered'),
+            new NullableReturnTypeDeclaration(PartneredSmallParcelPackageOutput::class, 'getTrackingId'),
+            new NullableReturnTypeDeclaration(NonPartneredSmallParcelPackageOutput::class, 'getCarrierName'),
+            new NullableReturnTypeDeclaration(NonPartneredSmallParcelPackageOutput::class, 'getTrackingId'),
+            new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getCarrierName'),
+            new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getProNumber'),
+            /**
+             * Listings API
+             */
+            new NullableReturnTypeDeclaration(ItemProcurement::class, 'getCostPrice'),
         ]
     );
 };

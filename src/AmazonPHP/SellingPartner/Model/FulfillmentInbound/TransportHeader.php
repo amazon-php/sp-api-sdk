@@ -254,7 +254,7 @@ class TransportHeader implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets is_partnered.
      */
-    public function getIsPartnered() : bool
+    public function getIsPartnered() : ?bool
     {
         return $this->container['is_partnered'];
     }
