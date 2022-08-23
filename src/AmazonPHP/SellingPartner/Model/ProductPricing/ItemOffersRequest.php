@@ -230,7 +230,7 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Sets uri.
      *
-     * @param string $uri the full URI corresponding to the API intended for request, including path parameter substitutions
+     * @param string $uri The `getItemOffers` resource path without any query parameters.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`
      *
      * @return self
      */
@@ -370,6 +370,7 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, ModelInterfa
      *
      * @return null|mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -403,6 +404,7 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -411,7 +413,7 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {

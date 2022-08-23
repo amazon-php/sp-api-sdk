@@ -189,6 +189,8 @@ class ItemImagesByMarketplace implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -248,7 +250,8 @@ class ItemImagesByMarketplace implements \ArrayAccess, \JsonSerializable, ModelI
      *
      * @return null|mixed
      */
-    public function offsetGet($offset)
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -281,6 +284,7 @@ class ItemImagesByMarketplace implements \ArrayAccess, \JsonSerializable, ModelI
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -289,7 +293,7 @@ class ItemImagesByMarketplace implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {

@@ -46,8 +46,8 @@ final class Configuration
         // https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#include-a-user-agent-header-in-all-requests
         $this->userAgent = 'Library amazon-php/sp-api-php (language=PHP ' . \phpversion() . '; Platform=' . \php_uname('s') . ' ' . \php_uname('r') . ' ' . \php_uname('m') . ')';
         $this->tmpFolderPath = \sys_get_temp_dir();
-        $this->loggerConfiguration = $loggerConfiguration ? $loggerConfiguration : new LoggerConfiguration();
-        $this->extensions = $extensions ? $extensions : new Extensions();
+        $this->loggerConfiguration = $loggerConfiguration ?: new LoggerConfiguration();
+        $this->extensions = $extensions ?: new Extensions();
         $this->securityToken = $securityToken;
     }
 

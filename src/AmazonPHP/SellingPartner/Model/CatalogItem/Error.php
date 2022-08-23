@@ -195,6 +195,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets code.
+     *
+     * @return string
      */
     public function getCode() : string
     {
@@ -217,6 +219,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets message.
+     *
+     * @return string
      */
     public function getMessage() : string
     {
@@ -276,7 +280,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return null|mixed
      */
-    public function offsetGet($offset)
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -309,6 +314,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -317,7 +323,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {

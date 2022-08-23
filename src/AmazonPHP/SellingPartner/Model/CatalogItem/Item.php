@@ -227,6 +227,8 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
     public function getAsin() : string
     {
@@ -252,7 +254,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return null|object
      */
-    public function getAttributes() : ?array
+    public function getAttributes() : ?object
     {
         return $this->container['attributes'];
     }
@@ -454,7 +456,8 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return null|mixed
      */
-    public function offsetGet($offset)
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -487,6 +490,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -495,7 +499,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {

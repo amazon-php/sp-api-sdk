@@ -217,6 +217,8 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets block1.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock1() : StandardImageTextBlock
     {
@@ -239,6 +241,8 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets block2.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock2() : StandardImageTextBlock
     {
@@ -261,6 +265,8 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets block3.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock3() : StandardImageTextBlock
     {
@@ -283,6 +289,8 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets block4.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock4() : StandardImageTextBlock
     {
@@ -318,7 +326,8 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
      *
      * @return null|mixed
      */
-    public function offsetGet($offset)
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -351,6 +360,7 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -359,7 +369,7 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {

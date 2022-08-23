@@ -27,6 +27,8 @@ interface VendorDirectFulfillmentPaymentsSDKInterface
     /**
      * Operation submitInvoice.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body body (required)
      *
      * @throws ApiException on non-2xx response

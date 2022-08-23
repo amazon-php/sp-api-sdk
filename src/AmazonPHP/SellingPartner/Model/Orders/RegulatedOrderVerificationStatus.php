@@ -374,6 +374,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      *
      * @return null|mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -407,6 +408,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -415,7 +417,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {

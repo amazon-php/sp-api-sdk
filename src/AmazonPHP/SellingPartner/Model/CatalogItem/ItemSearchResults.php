@@ -213,6 +213,8 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets number_of_results.
+     *
+     * @return int
      */
     public function getNumberOfResults() : int
     {
@@ -235,6 +237,8 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets pagination.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Pagination
      */
     public function getPagination() : Pagination
     {
@@ -257,6 +261,8 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets refinements.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Refinements
      */
     public function getRefinements() : Refinements
     {
@@ -316,7 +322,8 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, ModelInterfa
      *
      * @return null|mixed
      */
-    public function offsetGet($offset)
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -349,6 +356,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -357,7 +365,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {

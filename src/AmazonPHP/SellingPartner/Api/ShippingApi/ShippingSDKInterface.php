@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
 /**
  * Selling Partner API for Shipping.
  *
- * Provides programmatic access to Amazon Shipping APIs.
+ * Provides programmatic access to Amazon Shipping APIs.   **Note:** If you are new to the Amazon Shipping API, refer to the latest version of <a href=\"https://developer-docs.amazon.com/amazon-shipping/docs/shipping-api-v2-reference\">Amazon Shipping API (v2)</a> on the <a href=\"https://developer-docs.amazon.com/amazon-shipping/\">Amazon Shipping Developer Documentation</a> site.
  *
  * The version of the OpenAPI document: v1
  *
@@ -59,6 +59,8 @@ interface ShippingSDKInterface
     /**
      * Operation cancelShipment.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id shipment_id (required)
      *
      * @throws ApiException on non-2xx response
@@ -71,6 +73,8 @@ interface ShippingSDKInterface
     /**
      * Operation createShipment.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -96,6 +100,8 @@ interface ShippingSDKInterface
     /**
      * Operation getRates.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\GetRatesRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -108,6 +114,8 @@ interface ShippingSDKInterface
     /**
      * Operation getShipment.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id shipment_id (required)
      *
      * @throws ApiException on non-2xx response
@@ -120,6 +128,8 @@ interface ShippingSDKInterface
     /**
      * Operation getTrackingInformation.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $tracking_id tracking_id (required)
      *
      * @throws ApiException on non-2xx response
@@ -132,6 +142,8 @@ interface ShippingSDKInterface
     /**
      * Operation purchaseLabels.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id shipment_id (required)
      * @param \AmazonPHP\SellingPartner\Model\Shipping\PurchaseLabelsRequest $body body (required)
      *
@@ -145,6 +157,8 @@ interface ShippingSDKInterface
     /**
      * Operation purchaseShipment.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -157,6 +171,8 @@ interface ShippingSDKInterface
     /**
      * Operation retrieveShippingLabel.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id shipment_id (required)
      * @param string $tracking_id tracking_id (required)
      * @param \AmazonPHP\SellingPartner\Model\Shipping\RetrieveShippingLabelRequest $body body (required)

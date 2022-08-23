@@ -54,6 +54,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function deleteListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
@@ -145,6 +147,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'deleteListingsItem'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -288,6 +292,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\Item
      */
     public function getListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null, ?array $included_data = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\Item
     {
@@ -379,6 +385,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'getListingsItem'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -531,6 +539,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function patchListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
@@ -622,6 +632,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'patchListingsItem'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
@@ -780,6 +792,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function putListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
@@ -871,6 +885,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
     /**
      * Create request for operation 'putListingsItem'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)

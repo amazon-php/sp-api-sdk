@@ -16,7 +16,10 @@ use PHPStan\Type\NullType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\UnionType;
 use Rector\Config\RectorConfig;
+use Rector\Core\ValueObject\PhpVersion;
+use Rector\Set\ValueObject\DowngradeLevelSetList;
 use Rector\Set\ValueObject\SetList;
+use Rector\Transform\Rector\ClassMethod\ReturnTypeWillChangeRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeDeclarationRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddReturnTypeDeclarationRector;
 use Rector\TypeDeclaration\ValueObject\AddParamTypeDeclaration;
@@ -42,8 +45,12 @@ return static function (RectorConfig $config): void {
         SetList::PHP_73,
         SetList::PHP_74,
         SetList::TYPE_DECLARATION,
-        SetList::TYPE_DECLARATION_STRICT
+        SetList::TYPE_DECLARATION_STRICT,
+        // Downgrade features to allow code execution on PHP starting from 7.4
+        DowngradeLevelSetList::DOWN_TO_PHP_74,
     ]);
+    // This is the maximum supported PHP version for the library. Required for ReturnTypeWillChangeRector
+    $config->phpVersion(PhpVersion::PHP_81);
 
     /**
      * Explanation here: https://github.com/amazon-php/sp-api-sdk/issues/101#issuecomment-1002159988
@@ -119,6 +126,17 @@ return static function (RectorConfig $config): void {
                 'getName',
                 new UnionType([new NullType(), new StringType()]),
             ),
+        ]
+    );
+
+    /**
+     * Explanation here: https://github.com/amazon-php/sp-api-sdk/issues/231
+     */
+    $config->ruleWithConfiguration(
+        ReturnTypeWillChangeRector::class,
+        [
+            ArrayAccess::class => ['offsetGet'],
+            JsonSerializable::class => ['jsonSerialize'],
         ]
     );
 };

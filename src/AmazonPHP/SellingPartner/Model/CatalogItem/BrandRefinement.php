@@ -189,6 +189,8 @@ class BrandRefinement implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets number_of_results.
+     *
+     * @return int
      */
     public function getNumberOfResults() : int
     {
@@ -211,6 +213,8 @@ class BrandRefinement implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets brand_name.
+     *
+     * @return string
      */
     public function getBrandName() : string
     {
@@ -246,7 +250,8 @@ class BrandRefinement implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return null|mixed
      */
-    public function offsetGet($offset)
+    #[\ReturnTypeWillChange]
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -279,6 +284,7 @@ class BrandRefinement implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
@@ -287,7 +293,7 @@ class BrandRefinement implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return string
+     * @return bool|string
      */
     public function toHeaderValue() : string
     {
