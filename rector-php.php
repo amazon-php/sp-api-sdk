@@ -11,6 +11,7 @@ use AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentInfo;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredLtlDataOutput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredSmallParcelPackageOutput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pallet;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredLtlDataOutput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelPackageOutput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportHeader;
 use AmazonPHP\SellingPartner\Model\ListingsItems\Item as ListingsItem;
@@ -151,6 +152,7 @@ return static function (RectorConfig $config): void {
             new NullableReturnTypeDeclaration(PartneredSmallParcelPackageOutput::class, 'getTrackingId'),
             new NullableReturnTypeDeclaration(NonPartneredSmallParcelPackageOutput::class, 'getCarrierName'),
             new NullableReturnTypeDeclaration(NonPartneredSmallParcelPackageOutput::class, 'getTrackingId'),
+            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getCarrierName'),
             new NullableReturnTypeDeclaration(Pallet::class, 'getIsStacked'),
             new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getCarrierName'),
             new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getProNumber'),
