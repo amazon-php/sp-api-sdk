@@ -321,7 +321,7 @@ class ResearchingQuantityEntry implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

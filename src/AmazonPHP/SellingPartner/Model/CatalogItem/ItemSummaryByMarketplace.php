@@ -227,8 +227,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -457,7 +455,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -499,7 +497,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

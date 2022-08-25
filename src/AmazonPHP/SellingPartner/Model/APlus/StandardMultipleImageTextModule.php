@@ -214,7 +214,7 @@ class StandardMultipleImageTextModule implements \ArrayAccess, \JsonSerializable
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -256,7 +256,7 @@ class StandardMultipleImageTextModule implements \ArrayAccess, \JsonSerializable
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -285,7 +285,7 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, Model
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -327,7 +327,7 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

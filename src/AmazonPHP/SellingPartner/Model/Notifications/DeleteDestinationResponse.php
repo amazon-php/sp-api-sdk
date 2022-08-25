@@ -256,7 +256,7 @@ class DeleteDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

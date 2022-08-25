@@ -455,7 +455,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -497,7 +497,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

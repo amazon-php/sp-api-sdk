@@ -51,8 +51,6 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse
      */
     public function getInvoiceStatus(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse
     {
@@ -144,8 +142,6 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
     /**
      * Create request for operation 'getInvoiceStatus'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The shipment identifier for the shipment. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -245,8 +241,6 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse
      */
     public function getShipmentDetails(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse
     {
@@ -338,8 +332,6 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
     /**
      * Create request for operation 'getShipmentDetails'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -440,8 +432,6 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse
      */
     public function submitInvoice(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse
     {
@@ -533,8 +523,6 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
     /**
      * Create request for operation 'submitInvoice'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The identifier for the shipment. (required)
      * @param \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body (required)
      *

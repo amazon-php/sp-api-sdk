@@ -189,8 +189,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -251,7 +249,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -293,7 +291,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

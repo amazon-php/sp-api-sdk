@@ -195,8 +195,6 @@ class ItemSalesRank implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets title.
-     *
-     * @return string
      */
     public function getTitle() : string
     {
@@ -243,8 +241,6 @@ class ItemSalesRank implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets rank.
-     *
-     * @return int
      */
     public function getRank() : int
     {
@@ -281,7 +277,7 @@ class ItemSalesRank implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -323,7 +319,7 @@ class ItemSalesRank implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -247,7 +247,7 @@ class ValidateContentDocumentAsinRelationsResponse implements \ArrayAccess, \Jso
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -289,7 +289,7 @@ class ValidateContentDocumentAsinRelationsResponse implements \ArrayAccess, \Jso
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

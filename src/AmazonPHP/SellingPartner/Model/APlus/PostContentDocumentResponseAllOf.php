@@ -183,6 +183,8 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets content_reference_key.
+     *
+     * @return string
      */
     public function getContentReferenceKey() : string
     {
@@ -261,7 +263,7 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -241,6 +241,8 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets position.
+     *
+     * @return int
      */
     public function getPosition() : int
     {
@@ -439,7 +441,7 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

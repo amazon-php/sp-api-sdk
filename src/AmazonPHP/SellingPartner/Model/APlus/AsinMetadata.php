@@ -423,7 +423,7 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

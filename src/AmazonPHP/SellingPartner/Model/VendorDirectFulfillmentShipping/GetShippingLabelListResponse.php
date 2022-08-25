@@ -293,7 +293,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

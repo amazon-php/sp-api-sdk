@@ -262,8 +262,6 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets variant.
-     *
-     * @return string
      */
     public function getVariant() : string
     {
@@ -286,8 +284,6 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets link.
-     *
-     * @return string
      */
     public function getLink() : string
     {
@@ -310,8 +306,6 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets height.
-     *
-     * @return int
      */
     public function getHeight() : int
     {
@@ -334,8 +328,6 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets width.
-     *
-     * @return int
      */
     public function getWidth() : int
     {
@@ -372,7 +364,7 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -414,7 +406,7 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

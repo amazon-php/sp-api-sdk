@@ -316,7 +316,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

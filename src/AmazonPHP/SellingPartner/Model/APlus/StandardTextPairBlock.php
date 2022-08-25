@@ -251,7 +251,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -293,7 +293,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

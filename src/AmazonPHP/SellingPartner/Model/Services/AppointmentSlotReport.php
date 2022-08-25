@@ -374,7 +374,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

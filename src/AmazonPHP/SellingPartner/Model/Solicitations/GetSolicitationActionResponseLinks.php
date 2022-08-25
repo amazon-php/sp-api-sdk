@@ -293,7 +293,7 @@ class GetSolicitationActionResponseLinks implements \ArrayAccess, \JsonSerializa
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

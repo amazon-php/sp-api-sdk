@@ -35,8 +35,6 @@ interface ShipmentInvoicingSDKInterface
     /**
      * Operation getInvoiceStatus.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The shipment identifier for the shipment. (required)
      *
      * @throws ApiException on non-2xx response
@@ -49,8 +47,6 @@ interface ShipmentInvoicingSDKInterface
     /**
      * Operation getShipmentDetails.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      *
      * @throws ApiException on non-2xx response
@@ -63,8 +59,6 @@ interface ShipmentInvoicingSDKInterface
     /**
      * Operation submitInvoice.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The identifier for the shipment. (required)
      * @param \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body body (required)
      *

@@ -51,8 +51,6 @@ final class TokensSDK implements TokensSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse
      */
     public function createRestrictedDataToken(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body) : \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenResponse
     {
@@ -144,8 +142,6 @@ final class TokensSDK implements TokensSDKInterface
     /**
      * Create request for operation 'createRestrictedDataToken'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body The restricted data token request details. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException

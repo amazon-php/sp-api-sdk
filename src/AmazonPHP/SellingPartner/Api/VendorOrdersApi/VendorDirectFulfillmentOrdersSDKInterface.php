@@ -35,8 +35,6 @@ interface VendorDirectFulfillmentOrdersSDKInterface
     /**
      * Operation getOrder.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $purchase_order_number The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code. (required)
      *
      * @throws ApiException on non-2xx response
@@ -49,8 +47,6 @@ interface VendorDirectFulfillmentOrdersSDKInterface
     /**
      * Operation getOrders.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \DateTimeInterface $created_after Purchase orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param \DateTimeInterface $created_before Purchase orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param null|string $ship_from_party_id The vendor warehouse identifier for the fulfillment warehouse. If not specified, the result will contain orders for all warehouses. (optional)
@@ -70,8 +66,6 @@ interface VendorDirectFulfillmentOrdersSDKInterface
     /**
      * Operation submitAcknowledgement.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body body (required)
      *
      * @throws ApiException on non-2xx response

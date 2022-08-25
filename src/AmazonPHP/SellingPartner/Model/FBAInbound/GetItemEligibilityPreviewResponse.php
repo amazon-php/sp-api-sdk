@@ -289,7 +289,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

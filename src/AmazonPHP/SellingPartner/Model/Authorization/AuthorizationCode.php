@@ -214,7 +214,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -256,7 +256,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {

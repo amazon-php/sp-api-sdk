@@ -281,7 +281,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -323,7 +323,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets a header-safe presentation of the object.
      *
-     * @return bool|string
+     * @return string
      */
     public function toHeaderValue() : string
     {
