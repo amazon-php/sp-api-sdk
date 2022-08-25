@@ -1,3 +1,8 @@
+## [Unreleased] - 2022-08-25
+
+### Added
+- [#241](https://github.com/amazon-php/sp-api-sdk/pull/241) - **Add Fulfillment Inbound `ShipmentStatus` to broken model definitions.** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [4.0.10] - 2022-08-11
 
 ### Fixed

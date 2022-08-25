@@ -3,6 +3,7 @@
 namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Model\CatalogItem\ItemImage;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentStatus;
 use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo;
 use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus;
 use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\EventCode;
@@ -417,6 +418,7 @@ final class ObjectSerializer
      * ItemImage - https://github.com/amazon-php/sp-api-sdk/issues/156
      * AdditionalLocationInfo & CurrentStatus - https://github.com/amzn/selling-partner-api-models/issues/257
      * FileType - https://github.com/amzn/selling-partner-api-models/issues/258
+     * ShipmentStatus - https://github.com/amzn/selling-partner-api-models/issues/270
      *
      * @return array<class-string<ModelInterface>> enum value class name
      */
@@ -428,6 +430,7 @@ final class ObjectSerializer
             \ltrim(AdditionalLocationInfo::class, '\\'),
             \ltrim(CurrentStatus::class, '\\'),
             \ltrim(FileType::class, '\\'),
+            \ltrim(ShipmentStatus::class, '\\'),
         ];
     }
 
