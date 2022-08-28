@@ -6,6 +6,7 @@ namespace AmazonPHP\Test\AmazonPHP\SellingPartner\Tests\Unit;
 
 use AmazonPHP\SellingPartner\Configuration;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentItem;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelDataInput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelPackageInput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest;
@@ -139,7 +140,7 @@ JSON;
         $this->assertNull($object->getLabelFormat());
     }
 
-    public function test_serialization_of_enum_with_not_defined_value()
+    public function test_serialization_of_enum_with_not_defined_value(): void
     {
         $object = ObjectSerializer::deserialize(
             Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
@@ -160,7 +161,7 @@ JSON;
      * @param mixed $data
      * @param mixed $expectedValue
      */
-    public function test_deserialize_various_types($data, string $class, $expectedValue)
+    public function test_deserialize_various_types($data, string $class, $expectedValue): void
     {
         $result = ObjectSerializer::deserialize(
             Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
@@ -224,5 +225,41 @@ JSON;
         yield [null, "void", null];
         yield ["test", "void", null];
         yield [20, "void", null];
+    }
+
+    public function test_deserialize_empty_collection_as_null(): void
+    {
+        $object = ObjectSerializer::deserialize(
+            Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
+            '{"PrepDetailsList": [[]]}',
+            InboundShipmentItem::class
+        );
+
+        $this->assertInstanceOf(InboundShipmentItem::class, $object);
+        $this->assertNull($object->getPrepDetailsList());
+    }
+
+    public function test_deserialize_collection_with_an_empty_elements(): void
+    {
+        $object = ObjectSerializer::deserialize(
+            Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
+            '{"PrepDetailsList": [[],{"PrepInstruction": "Polybagging","PrepOwner": "SELLER"},{}]}',
+            InboundShipmentItem::class
+        );
+
+        $this->assertInstanceOf(InboundShipmentItem::class, $object);
+        $this->assertCount(1, $object->getPrepDetailsList());
+    }
+
+    public function test_deserialize_valid_collection(): void
+    {
+        $object = ObjectSerializer::deserialize(
+            Configuration::forIAMUser('clientId', 'clientSecret', 'accessKey', 'secretKey'),
+            '{"PrepDetailsList": [{"PrepInstruction": "Polybagging","PrepOwner": "SELLER"}]}',
+            InboundShipmentItem::class
+        );
+
+        $this->assertInstanceOf(InboundShipmentItem::class, $object);
+        $this->assertCount(1, $object->getPrepDetailsList());
     }
 }
