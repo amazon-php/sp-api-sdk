@@ -1,7 +1,15 @@
-## [Unreleased] - 2022-08-25
+## [Unreleased] - 2022-08-28
 
 ### Added
+- [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Rector rule for changing return type tu nullable** - [@owsiakl](https://github.com/owsiakl)
+- [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Ignoring `UnitOfMeasurement`, `PrepInstruction` and `SellerFreightClass` response enum validation** - [@owsiakl](https://github.com/owsiakl)
 - [#241](https://github.com/amazon-php/sp-api-sdk/pull/241) - **Add Fulfillment Inbound `ShipmentStatus` to broken model definitions.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Changed
+- [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Regenerated models** - [@owsiakl](https://github.com/owsiakl)
+- [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Changed return type of some methods in Fulfillment Inbound API to nullable** - [@owsiakl](https://github.com/owsiakl)
+- [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Changed return type of `getCostPrice` method in Listings API to nullable** - [@owsiakl](https://github.com/owsiakl)
+- [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Changed return type of `getAttributes` method in Listings API from object to array** - [@owsiakl](https://github.com/owsiakl)
 
 ## [4.0.10] - 2022-08-11
 
