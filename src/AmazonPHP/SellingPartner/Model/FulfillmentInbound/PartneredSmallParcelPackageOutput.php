@@ -290,7 +290,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     /**
      * Gets tracking_id.
      */
-    public function getTrackingId() : string
+    public function getTrackingId() : ?string
     {
         return $this->container['tracking_id'];
     }

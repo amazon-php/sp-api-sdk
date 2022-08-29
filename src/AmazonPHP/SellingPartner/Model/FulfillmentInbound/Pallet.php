@@ -248,7 +248,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets is_stacked.
      */
-    public function getIsStacked() : bool
+    public function getIsStacked() : ?bool
     {
         return $this->container['is_stacked'];
     }

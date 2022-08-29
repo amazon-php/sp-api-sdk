@@ -638,7 +638,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets carrier_name.
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }

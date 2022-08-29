@@ -386,7 +386,7 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Gets are_cases_required.
      */
-    public function getAreCasesRequired() : bool
+    public function getAreCasesRequired() : ?bool
     {
         return $this->container['are_cases_required'];
     }

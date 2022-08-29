@@ -182,7 +182,7 @@ class ItemProcurement implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Gets cost_price.
      */
-    public function getCostPrice() : Money
+    public function getCostPrice() : ?Money
     {
         return $this->container['cost_price'];
     }

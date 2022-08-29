@@ -200,7 +200,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Gets carrier_name.
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }
@@ -222,7 +222,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Gets tracking_id.
      */
-    public function getTrackingId() : string
+    public function getTrackingId() : ?string
     {
         return $this->container['tracking_id'];
     }
