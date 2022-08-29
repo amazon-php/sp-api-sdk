@@ -2,3 +2,4 @@ vendor/
 .openapi-generator
 var/
 .env
+.idea/
