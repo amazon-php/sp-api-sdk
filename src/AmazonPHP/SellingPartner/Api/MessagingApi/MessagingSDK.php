@@ -53,6 +53,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsResponse
      */
     public function confirmCustomizationDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsResponse
     {
@@ -144,6 +146,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'confirmCustomizationDetails'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsRequest $body (required)
@@ -281,6 +285,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsResponse
      */
     public function createAmazonMotors(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsResponse
     {
@@ -372,6 +378,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createAmazonMotors'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsRequest $body (required)
@@ -509,6 +517,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsResponse
      */
     public function createConfirmDeliveryDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsResponse
     {
@@ -600,6 +610,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createConfirmDeliveryDetails'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsRequest $body (required)
@@ -737,6 +749,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsResponse
      */
     public function createConfirmOrderDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsResponse
     {
@@ -828,6 +842,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createConfirmOrderDetails'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsRequest $body (required)
@@ -965,6 +981,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsResponse
      */
     public function createConfirmServiceDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsResponse
     {
@@ -1056,6 +1074,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createConfirmServiceDetails'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsRequest $body (required)
@@ -1193,6 +1213,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyResponse
      */
     public function createDigitalAccessKey(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyResponse
     {
@@ -1284,6 +1306,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createDigitalAccessKey'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyRequest $body (required)
@@ -1421,6 +1445,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureResponse
      */
     public function createLegalDisclosure(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureResponse
     {
@@ -1512,6 +1538,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createLegalDisclosure'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureRequest $body (required)
@@ -1648,6 +1676,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateNegativeFeedbackRemovalResponse
      */
     public function createNegativeFeedbackRemoval(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Messaging\CreateNegativeFeedbackRemovalResponse
     {
@@ -1739,6 +1769,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createNegativeFeedbackRemoval'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
@@ -1860,6 +1892,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemResponse
      */
     public function createUnexpectedProblem(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemResponse
     {
@@ -1951,6 +1985,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createUnexpectedProblem'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemRequest $body (required)
@@ -2088,6 +2124,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyResponse
      */
     public function createWarranty(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyResponse
     {
@@ -2179,6 +2217,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'createWarranty'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyRequest $body (required)
@@ -2315,6 +2355,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponse
      */
     public function getAttributes(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponse
     {
@@ -2406,6 +2448,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'getAttributes'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
@@ -2526,6 +2570,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponse
      */
     public function getMessagingActionsForOrder(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponse
     {
@@ -2617,6 +2663,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'getMessagingActionsForOrder'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      *
@@ -2738,6 +2786,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\InvoiceResponse
      */
     public function sendInvoice(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\InvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\InvoiceResponse
     {
@@ -2829,6 +2879,8 @@ final class MessagingSDK implements MessagingSDKInterface
     /**
      * Create request for operation 'sendInvoice'.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This specifies the marketplace in which the order was placed. Only one marketplace can be specified. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\InvoiceRequest $body (required)

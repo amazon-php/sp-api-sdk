@@ -199,6 +199,8 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets number_of_results.
+     *
+     * @return int
      */
     public function getNumberOfResults() : int
     {
@@ -221,6 +223,8 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets display_name.
+     *
+     * @return string
      */
     public function getDisplayName() : string
     {
@@ -243,6 +247,8 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets classification_id.
+     *
+     * @return string
      */
     public function getClassificationId() : string
     {
@@ -278,6 +284,7 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, Model
      *
      * @return null|mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -311,6 +318,7 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, Model
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);

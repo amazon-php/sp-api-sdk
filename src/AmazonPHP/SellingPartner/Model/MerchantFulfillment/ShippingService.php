@@ -596,6 +596,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return null|mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -629,6 +630,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);

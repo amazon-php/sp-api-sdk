@@ -245,6 +245,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -267,6 +269,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets locale.
+     *
+     * @return string
      */
     public function getLocale() : string
     {
@@ -289,6 +293,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
     public function getAsin() : string
     {
@@ -311,6 +317,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets content_type.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {
@@ -357,6 +365,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets content_reference_key.
+     *
+     * @return string
      */
     public function getContentReferenceKey() : string
     {
@@ -392,6 +402,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      *
      * @return null|mixed
      */
+    #[\ReturnTypeWillChange]
     public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
@@ -425,6 +436,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return mixed returns data which can be serialized by json_encode(), which is a value
      *               of any type other than a resource
      */
+    #[\ReturnTypeWillChange]
     public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
