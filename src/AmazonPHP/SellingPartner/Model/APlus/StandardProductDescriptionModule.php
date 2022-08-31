@@ -181,8 +181,6 @@ class StandardProductDescriptionModule implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets body.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent
      */
     public function getBody() : ParagraphComponent
     {

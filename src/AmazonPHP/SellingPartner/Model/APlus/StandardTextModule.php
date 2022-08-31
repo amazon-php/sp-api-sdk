@@ -215,8 +215,6 @@ class StandardTextModule implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets body.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent
      */
     public function getBody() : ParagraphComponent
     {

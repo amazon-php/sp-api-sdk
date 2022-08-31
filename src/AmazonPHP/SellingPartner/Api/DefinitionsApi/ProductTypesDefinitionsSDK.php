@@ -57,8 +57,6 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeDefinition
      */
     public function getDefinitionsProductType(AccessToken $accessToken, string $region, string $product_type, array $marketplace_ids, ?string $seller_id = null, string $product_type_version = 'LATEST', string $requirements = 'LISTING', string $requirements_enforced = 'ENFORCED', string $locale = 'DEFAULT') : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeDefinition
     {
@@ -150,8 +148,6 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
     /**
      * Create request for operation 'getDefinitionsProductType'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $product_type The Amazon product type name. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param null|string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
@@ -313,8 +309,6 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
      */
     public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $keywords = null) : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
     {
@@ -406,8 +400,6 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
     /**
      * Create request for operation 'searchDefinitionsProductTypes'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param null|string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
      *

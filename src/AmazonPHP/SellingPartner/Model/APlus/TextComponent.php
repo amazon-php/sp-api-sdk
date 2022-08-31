@@ -193,8 +193,6 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets value.
-     *
-     * @return string
      */
     public function getValue() : string
     {

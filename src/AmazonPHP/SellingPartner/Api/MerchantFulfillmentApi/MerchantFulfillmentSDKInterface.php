@@ -55,8 +55,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation cancelShipment.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
      *
      * @throws ApiException on non-2xx response
@@ -69,8 +67,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation cancelShipmentOld.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
      *
      * @throws ApiException on non-2xx response
@@ -83,8 +79,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation createShipment.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -97,8 +91,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation getAdditionalSellerInputs.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -111,8 +103,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation getAdditionalSellerInputsOld.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -125,8 +115,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation getEligibleShipmentServices.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -139,8 +127,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation getEligibleShipmentServicesOld.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -153,8 +139,6 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation getShipment.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $shipment_id The Amazon-defined shipment identifier for the shipment. (required)
      *
      * @throws ApiException on non-2xx response

@@ -434,7 +434,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets total_weight.
      */
-    public function getTotalWeight() : Weight
+    public function getTotalWeight() : ?Weight
     {
         return $this->container['total_weight'];
     }
@@ -504,7 +504,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets preview_pickup_date.
      */
-    public function getPreviewPickupDate() : \DateTimeInterface
+    public function getPreviewPickupDate() : ?\DateTimeInterface
     {
         return $this->container['preview_pickup_date'];
     }
@@ -526,7 +526,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets preview_delivery_date.
      */
-    public function getPreviewDeliveryDate() : \DateTimeInterface
+    public function getPreviewDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['preview_delivery_date'];
     }
@@ -548,7 +548,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets preview_freight_class.
      */
-    public function getPreviewFreightClass() : SellerFreightClass
+    public function getPreviewFreightClass() : ?SellerFreightClass
     {
         return $this->container['preview_freight_class'];
     }
@@ -570,7 +570,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets amazon_reference_id.
      */
-    public function getAmazonReferenceId() : string
+    public function getAmazonReferenceId() : ?string
     {
         return $this->container['amazon_reference_id'];
     }
@@ -592,7 +592,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Gets is_bill_of_lading_available.
      */
-    public function getIsBillOfLadingAvailable() : bool
+    public function getIsBillOfLadingAvailable() : ?bool
     {
         return $this->container['is_bill_of_lading_available'];
     }

@@ -53,8 +53,6 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
      */
     public function getItemEligibilityPreview(AccessToken $accessToken, string $region, string $asin, string $program, ?array $marketplace_ids = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
     {
@@ -146,8 +144,6 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
     /**
      * Create request for operation 'getItemEligibilityPreview'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $asin The ASIN of the item for which you want an eligibility preview. (required)
      * @param string $program The program that you want to check eligibility against. (required)
      * @param null|string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)

@@ -195,8 +195,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -219,8 +217,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets message.
-     *
-     * @return string
      */
     public function getMessage() : string
     {
