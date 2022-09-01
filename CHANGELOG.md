@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-08-29
+## [Unreleased] - 2022-09-01
 
 ### Added
 - [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Rector rule for changing return type tu nullable** - [@owsiakl](https://github.com/owsiakl)
@@ -6,11 +6,15 @@
 - [#241](https://github.com/amazon-php/sp-api-sdk/pull/241) - **Add Fulfillment Inbound `ShipmentStatus` to broken model definitions.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Changed
+- [#244](https://github.com/amazon-php/sp-api-sdk/pull/244) - **Regenerated models** - [@owsiakl](https://github.com/owsiakl)
 - [#240](https://github.com/amazon-php/sp-api-sdk/pull/240) - **Update mustache template for model classes - added ReturnTypeWillChange attribute to prevent deprecation errors on PHP 8.1** - [@Stevad](https://github.com/Stevad)
 - [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Regenerated models** - [@owsiakl](https://github.com/owsiakl)
 - [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Changed return type of some methods in Fulfillment Inbound API to nullable** - [@owsiakl](https://github.com/owsiakl)
 - [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Changed return type of `getCostPrice` method in Listings API to nullable** - [@owsiakl](https://github.com/owsiakl)
 - [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Changed return type of `getAttributes` method in Listings API from object to array** - [@owsiakl](https://github.com/owsiakl)
+
+### Fixed
+- [#244](https://github.com/amazon-php/sp-api-sdk/pull/244) - **Fixed nullable return types in fulfillment inbound models** - [@owsiakl](https://github.com/owsiakl)
 
 ## [4.0.10] - 2022-08-11
 
