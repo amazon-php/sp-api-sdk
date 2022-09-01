@@ -199,8 +199,6 @@ class TextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets position.
-     *
-     * @return int
      */
     public function getPosition() : int
     {
@@ -223,8 +221,6 @@ class TextItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets text.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getText() : TextComponent
     {

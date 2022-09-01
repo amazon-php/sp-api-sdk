@@ -181,8 +181,6 @@ class StandardCompanyLogoModule implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets company_logo.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getCompanyLogo() : ImageComponent
     {

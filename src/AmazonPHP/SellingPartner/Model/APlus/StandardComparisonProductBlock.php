@@ -241,8 +241,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets position.
-     *
-     * @return int
      */
     public function getPosition() : int
     {

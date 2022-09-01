@@ -31,8 +31,6 @@ interface ProductTypesDefinitionsSDKInterface
     /**
      * Operation getDefinitionsProductType.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $product_type The Amazon product type name. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. Note: This parameter is limited to one marketplaceId at this time. (required)
      * @param null|string $seller_id A selling partner identifier. When provided, seller-specific requirements and values are populated within the product type definition schema, such as brand names associated with the selling partner. (optional)
@@ -51,8 +49,6 @@ interface ProductTypesDefinitionsSDKInterface
     /**
      * Operation searchDefinitionsProductTypes.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param null|string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
      *
