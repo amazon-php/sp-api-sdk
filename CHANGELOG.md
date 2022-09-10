@@ -1,4 +1,4 @@
-## [Unreleased] - 2022-09-01
+## [4.0.11] - 2022-09-10
 
 ### Added
 - [#238](https://github.com/amazon-php/sp-api-sdk/pull/238) - **Rector rule for changing return type tu nullable** - [@owsiakl](https://github.com/owsiakl)
