@@ -28,7 +28,7 @@ This library goal is to resolve all above mentioned issues.
 ### Installations
 
 ```
-composer require amazon-php/sp-api-sdk "^4.0"
+composer require amazon-php/sp-api-sdk
 ```
 
 This library is not in a stable stage yet, please use with caution.
@@ -36,11 +36,12 @@ This library is not in a stable stage yet, please use with caution.
 ### Releases
 
 | branch                                                   | maintained |
-|----------------------------------------------------------|-----------|
-| [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) | 🚫        |
-| [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x) | 🚫        |
+|----------------------------------------------------------|----------|
+| [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) | 🚫       |
+| [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x) | 🚫       |
 | [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) | ✅        |
-| [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | ✅        |
+| [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | ✅       |
+| [5.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | ✅       |
 
 Version <s> [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to 
 make a little more sense of what Amazon is doing with using "tags" in their Open API specification. 
@@ -49,7 +50,7 @@ introduced in [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x).
 Version 1.0 is not going to be updated anymore, please migrate to version 2.0 that will stay consistent with [Amazon Models](https://github.com/amzn/selling-partner-api-models)
 Branch [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) comes with BC breaks introduced by Amazon in 
 [Catalog Item](https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2020-12-01.json) models. 
-Until old model won't go away, branches 2.x and 3.x should be maintained in parallel. 
+Until old model won't go away, branches 2.x and 3.x should be maintained in parallel.
 
 [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) comes with BC breaks in following Amazon api models: 
 
@@ -59,6 +60,12 @@ Until old model won't go away, branches 2.x and 3.x should be maintained in para
   - Direct Fulfillment Shipping
   - Direct Fulfillment Orders
   - Direct Fulfillment Transactions
+
+[5.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) moves to Catalog Item API version 2022-04-01 which is replacing
+version 2020-12-01.
+Additionally, uuid used to generate correlation identifiers was replaced with IdGenerator interface that by 
+default is using php internal uniqid(). This change allowed us to drop one additional dependency.
+Some minor adjustments were made in the template files for models/api.
 
 ### Available SDKs
 

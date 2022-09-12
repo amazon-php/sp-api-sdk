@@ -52,6 +52,8 @@ return static function (RectorConfig $config): void {
     $config->sets([
         SetList::PHP_73,
         SetList::PHP_74,
+        SetList::PHP_80,
+        SetList::PHP_81,
         SetList::TYPE_DECLARATION,
         SetList::TYPE_DECLARATION_STRICT
     ]);

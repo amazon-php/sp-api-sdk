@@ -8,8 +8,6 @@ use Psr\Log\LogLevel;
 
 final class LoggerConfiguration
 {
-    private string $defaultLogLevel;
-
     /**
      * @var array<string, array<string, string>>
      */
@@ -30,9 +28,8 @@ final class LoggerConfiguration
      */
     private array $skipHttpHeaders;
 
-    public function __construct(string $defaultLogLevel = LogLevel::DEBUG)
+    public function __construct(private string $defaultLogLevel = LogLevel::DEBUG)
     {
-        $this->defaultLogLevel = $defaultLogLevel;
         $this->customLogLevels = [];
         $this->skippedAPIs = [];
         $this->skippedAPIOperations = [];
