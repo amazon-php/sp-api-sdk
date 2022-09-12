@@ -4,8 +4,7 @@ on:
   pull_request:
   push:
     branches:
-      - "3.x"
-      - "4.x"
+      - "5.x"
   schedule:
     - cron:  '0 8 * * *'
 
@@ -24,7 +23,7 @@ jobs:
         with:
           coverage: pcov
           tools: composer:v2
-          php-version: "7.4"
+          php-version: "8.1"
           ini-values: memory_limit=-1
 
       - name: "Get Composer Cache Directory"
@@ -37,9 +36,9 @@ jobs:
         with:
           path: |
             ${{ steps.composer-cache.outputs.dir }}
-          key: "php-7.4-locked-composer-${{ hashFiles('**/composer.lock') }}"
+          key: "php-locked-composer-${{ hashFiles('**/composer.lock') }}"
           restore-keys: |
-            php-7.4-locked-composer-
+            php-locked-composer-
 
       - name: "Install locked dependencies"
         run: "composer install --no-interaction --no-progress --no-suggest"
@@ -57,8 +56,6 @@ jobs:
         dependencies:
           - "locked"
         php-version:
-          - "7.4"
-          - "8.0"
           - "8.1"
         operating-system:
           - "ubuntu-latest"

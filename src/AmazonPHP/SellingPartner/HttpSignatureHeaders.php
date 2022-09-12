@@ -121,7 +121,7 @@ final class HttpSignatureHeaders
             $dateKey = \hash_hmac(
                 'sha256',
                 $shortDate,
-                "AWS4{$config->secretKey()}",
+                (string) "AWS4{$config->secretKey()}",
                 true
             );
             $regionKey = \hash_hmac('sha256', $region, $dateKey, true);
@@ -135,7 +135,7 @@ final class HttpSignatureHeaders
         }
 
         //Compute the signature
-        $signature = \hash_hmac('sha256', $stringToSign, self::$cache[$k]);
+        $signature = \hash_hmac('sha256', $stringToSign, (string) self::$cache[$k]);
 
         //Finalize the authorization structure
         $authorizationHeader = $algorithm . " Credential={$config->accessKey()}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";
@@ -251,14 +251,14 @@ final class HttpSignatureHeaders
                 self::$cache = [];
             }
 
-            $dateKey = \hash_hmac('sha256', $shortDate, "AWS4{$secret}", true);
+            $dateKey = \hash_hmac('sha256', $shortDate, (string) "AWS4{$secret}", true);
             $regionKey = \hash_hmac('sha256', $region, $dateKey, true);
             $serviceKey = \hash_hmac('sha256', $service, $regionKey, true);
             self::$cache[$k] = \hash_hmac('sha256', 'aws4_request', $serviceKey, true);
         }
 
         //Compute the signature
-        $signature = \hash_hmac('sha256', $stringToSign, self::$cache[$k]);
+        $signature = \hash_hmac('sha256', $stringToSign, (string) self::$cache[$k]);
 
         //Finalize the authorization structure
         $authorizationHeader = $algorithm . " Credential={$accessKey}/{$credentialScope}, SignedHeaders={$signedHeadersStr}, Signature={$signature}";

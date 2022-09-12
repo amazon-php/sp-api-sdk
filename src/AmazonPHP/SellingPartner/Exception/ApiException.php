@@ -5,48 +5,33 @@ namespace AmazonPHP\SellingPartner\Exception;
 final class ApiException extends Exception
 {
     /**
-     * The HTTP body of the server response either as Json or string.
-     *
-     * @var null|\stdClass|string
-     */
-    protected $responseBody;
-
-    /**
-     * The HTTP header of the server response.
-     *
-     * @var null|string[]
-     */
-    protected ?array $responseHeaders;
-
-    /**
      * The deserialized response object.
-     *
-     * @var null|\stdClass|string
      */
-    protected $responseObject;
+    protected null|\stdClass|string $responseObject = null;
 
     /**
      * Constructor.
      *
      * @param string $message Error message
      * @param int $code HTTP status code
-     * @param null|string[][] $responseHeaders HTTP response header
+     * @param null|string[] $responseHeaders HTTP response header
      * @param null|\stdClass|string $responseBody HTTP decoded body of the server response either as \stdClass or string
      * @param null|\Throwable $previousException
      */
-    public function __construct(string $message = '', int $code = 0, array $responseHeaders = null, $responseBody = null, \Throwable $previousException = null)
+    public function __construct(string $message = '', int $code = 0, /**
+     * The HTTP header of the server response.
+     */
+    protected array $responseHeaders = null, protected $responseBody = null, \Throwable $previousException = null)
     {
         parent::__construct($message, $code, $previousException);
-        $this->responseHeaders = $responseHeaders;
-        $this->responseBody = $responseBody;
     }
 
     /**
      * Gets the HTTP response header.
      *
-     * @return null|string[] HTTP response header
+     * @return string[] HTTP response header
      */
-    public function getResponseHeaders() : ?array
+    public function getResponseHeaders() : array
     {
         return $this->responseHeaders;
     }
@@ -64,9 +49,9 @@ final class ApiException extends Exception
     /**
      * Sets the deseralized response object (during deserialization).
      *
-     * @param mixed $obj Deserialized response object
+     * @param \stdClass|string $obj Deserialized response object
      */
-    public function setResponseObject($obj) : void
+    public function setResponseObject(\stdClass|string $obj) : void
     {
         $this->responseObject = $obj;
     }
