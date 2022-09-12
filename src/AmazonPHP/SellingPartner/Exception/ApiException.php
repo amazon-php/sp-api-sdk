@@ -29,9 +29,9 @@ final class ApiException extends Exception
     /**
      * Gets the HTTP response header.
      *
-     * @return null|string[] HTTP response header
+     * @return string[] HTTP response header
      */
-    public function getResponseHeaders() : ?array
+    public function getResponseHeaders() : array
     {
         return $this->responseHeaders;
     }

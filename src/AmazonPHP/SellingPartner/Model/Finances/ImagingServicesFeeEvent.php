@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -186,8 +186,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,8 +203,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets imaging_request_billing_item_id.
-     *
-     * @return null|string
      */
     public function getImagingRequestBillingItemId() : ?string
     {
@@ -217,8 +213,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets imaging_request_billing_item_id.
      *
      * @param null|string $imaging_request_billing_item_id the identifier for the imaging services request
-     *
-     * @return self
      */
     public function setImagingRequestBillingItemId(?string $imaging_request_billing_item_id) : self
     {
@@ -229,8 +223,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -241,8 +233,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item for which the imaging service was requested
-     *
-     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -253,8 +243,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -265,8 +253,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets posted_date.
      *
      * @param null|\DateTimeInterface $posted_date posted_date
-     *
-     * @return self
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -289,8 +275,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets fee_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $fee_list a list of fee component information
-     *
-     * @return self
      */
     public function setFeeList(?array $fee_list) : self
     {
@@ -301,8 +285,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -315,7 +297,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -349,18 +331,16 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, ModelI
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
-    final public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -94,8 +94,8 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
     /**
      * Constructor.
      *
-     * @param null|mixed[] $data Associated array of property values
-     *                           initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -105,7 +105,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -115,7 +115,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -126,7 +126,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -136,7 +136,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -146,7 +146,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -168,6 +168,8 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -200,6 +202,8 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * Sets content_metadata_records.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[] $content_metadata_records a list of A+ Content metadata records
+     *
+     * @return self
      */
     public function setContentMetadataRecords(array $content_metadata_records) : self
     {
@@ -210,6 +214,8 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
 
     /**
      * Returns true if offset exists. False otherwise.
+     *
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -222,7 +228,7 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -256,16 +262,18 @@ class SearchContentDocumentsResponseAllOf implements \ArrayAccess, \JsonSerializ
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

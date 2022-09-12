@@ -39,6 +39,8 @@ interface VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrder.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $purchase_order_number The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code. (required)
      *
      * @throws ApiException on non-2xx response
@@ -51,6 +53,8 @@ interface VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrders.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param null|\DateTimeInterface $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param null|\DateTimeInterface $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
@@ -74,6 +78,8 @@ interface VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrdersStatus.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
@@ -98,6 +104,8 @@ interface VendorOrdersSDKInterface
     /**
      * Operation submitAcknowledgement.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body body (required)
      *
      * @throws ApiException on non-2xx response

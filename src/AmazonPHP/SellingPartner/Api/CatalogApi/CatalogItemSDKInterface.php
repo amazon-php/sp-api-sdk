@@ -31,6 +31,8 @@ interface CatalogItemSDKInterface
     /**
      * Operation getCatalogItem.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers. Data sets in the response contain data only for the specified marketplaces. (required)
      * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
@@ -46,6 +48,8 @@ interface CatalogItemSDKInterface
     /**
      * Operation searchCatalogItems.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param null|string[] $identifiers A comma-delimited list of product identifiers to search the Amazon catalog for. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
      * @param null|string $identifiers_type Type of product identifiers to search the Amazon catalog for. **Note:** Required when &#x60;identifiers&#x60; are provided. (optional)

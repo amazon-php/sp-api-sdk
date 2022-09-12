@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class Pagination implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
-    final public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Constructor.
      *
-     * @param null|mixed[] $data Associated array of property values
-     *                           initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -191,6 +193,8 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -201,6 +205,8 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      * Sets next_token.
      *
      * @param null|string $next_token a token that can be used to fetch the next page
+     *
+     * @return self
      */
     public function setNextToken(?string $next_token) : self
     {
@@ -211,6 +217,8 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets previous_token.
+     *
+     * @return null|string
      */
     public function getPreviousToken() : ?string
     {
@@ -221,6 +229,8 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      * Sets previous_token.
      *
      * @param null|string $previous_token a token that can be used to fetch the previous page
+     *
+     * @return self
      */
     public function setPreviousToken(?string $previous_token) : self
     {
@@ -231,6 +241,8 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Returns true if offset exists. False otherwise.
+     *
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -243,7 +255,7 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -277,16 +289,18 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

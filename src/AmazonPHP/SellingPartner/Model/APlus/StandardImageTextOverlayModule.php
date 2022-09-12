@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
-    final public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     /**
      * Constructor.
      *
-     * @param null|mixed[] $data Associated array of property values
-     *                           initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -198,6 +200,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets overlay_color_type.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ColorType
      */
     public function getOverlayColorType() : ColorType
     {
@@ -208,6 +212,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * Sets overlay_color_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\ColorType $overlay_color_type overlay_color_type
+     *
+     * @return self
      */
     public function setOverlayColorType(ColorType $overlay_color_type) : self
     {
@@ -218,6 +224,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock() : ?StandardImageTextBlock
     {
@@ -228,6 +236,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * Sets block.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block block
+     *
+     * @return self
      */
     public function setBlock(?StandardImageTextBlock $block) : self
     {
@@ -238,6 +248,8 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Returns true if offset exists. False otherwise.
+     *
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -250,7 +262,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -284,16 +296,18 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

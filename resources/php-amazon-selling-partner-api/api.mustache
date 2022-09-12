@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
 {{>partial_header}}
 */
-final {{#operations}}class {{packageName}}SDK
+final {{#operations}}class {{packageName}}SDK implements {{packageName}}SDKInterface
 {
     private ClientInterface $client;
 

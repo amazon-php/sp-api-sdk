@@ -43,6 +43,8 @@ interface FBASmallAndLightSDKInterface
     /**
      * Operation deleteSmallAndLightEnrollmentBySellerSKU.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to remove the item from the Small and Light program. Note: Accepts a single marketplace only. (required)
      *
@@ -54,6 +56,8 @@ interface FBASmallAndLightSDKInterface
     /**
      * Operation getSmallAndLightEligibilityBySellerSKU.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the eligibility status is retrieved. NOTE: Accepts a single marketplace only. (required)
      *
@@ -67,6 +71,8 @@ interface FBASmallAndLightSDKInterface
     /**
      * Operation getSmallAndLightEnrollmentBySellerSKU.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace for which the enrollment status is retrieved. Note: Accepts a single marketplace only. (required)
      *
@@ -80,6 +86,8 @@ interface FBASmallAndLightSDKInterface
     /**
      * Operation getSmallAndLightFeePreview.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -92,6 +100,8 @@ interface FBASmallAndLightSDKInterface
     /**
      * Operation putSmallAndLightEnrollmentBySellerSKU.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $seller_sku The seller SKU that identifies the item. (required)
      * @param string[] $marketplace_ids The marketplace in which to enroll the item. Note: Accepts a single marketplace only. (required)
      *

@@ -23,19 +23,19 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
+    final public const PROCESSING_STATUS_CANCELLED = 'CANCELLED';
 
-    public const PROCESSING_STATUS_DONE = 'DONE';
+    final public const PROCESSING_STATUS_DONE = 'DONE';
 
-    public const PROCESSING_STATUS_FATAL = 'FATAL';
+    final public const PROCESSING_STATUS_FATAL = 'FATAL';
 
-    public const PROCESSING_STATUS_IN_PROGRESS = 'IN_PROGRESS';
+    final public const PROCESSING_STATUS_IN_PROGRESS = 'IN_PROGRESS';
 
-    public const PROCESSING_STATUS_IN_QUEUE = 'IN_QUEUE';
+    final public const PROCESSING_STATUS_IN_QUEUE = 'IN_QUEUE';
 
     /**
      * The original name of the model.
@@ -139,8 +139,8 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -157,7 +157,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -167,7 +167,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -178,7 +178,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -188,7 +188,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -198,7 +198,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -220,8 +220,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -282,8 +280,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets feed_id.
-     *
-     * @return string
      */
     public function getFeedId() : string
     {
@@ -294,8 +290,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets feed_id.
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID.
-     *
-     * @return self
      */
     public function setFeedId(string $feed_id) : self
     {
@@ -306,8 +300,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets feed_type.
-     *
-     * @return string
      */
     public function getFeedType() : string
     {
@@ -318,8 +310,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets feed_type.
      *
      * @param string $feed_type the feed type
-     *
-     * @return self
      */
     public function setFeedType(string $feed_type) : self
     {
@@ -342,8 +332,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_ids.
      *
      * @param null|string[] $marketplace_ids a list of identifiers for the marketplaces that the feed is applied to
-     *
-     * @return self
      */
     public function setMarketplaceIds(?array $marketplace_ids) : self
     {
@@ -354,8 +342,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets created_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getCreatedTime() : \DateTimeInterface
     {
@@ -366,8 +352,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets created_time.
      *
      * @param \DateTimeInterface $created_time the date and time when the feed was created, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setCreatedTime(\DateTimeInterface $created_time) : self
     {
@@ -378,8 +362,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_status.
-     *
-     * @return string
      */
     public function getProcessingStatus() : string
     {
@@ -390,8 +372,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_status.
      *
      * @param string $processing_status the processing status of the feed
-     *
-     * @return self
      */
     public function setProcessingStatus(string $processing_status) : self
     {
@@ -402,8 +382,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingStartTime() : ?\DateTimeInterface
     {
@@ -414,8 +392,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_start_time.
      *
      * @param null|\DateTimeInterface $processing_start_time the date and time when feed processing started, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setProcessingStartTime(?\DateTimeInterface $processing_start_time) : self
     {
@@ -426,8 +402,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingEndTime() : ?\DateTimeInterface
     {
@@ -438,8 +412,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_end_time.
      *
      * @param null|\DateTimeInterface $processing_end_time the date and time when feed processing completed, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setProcessingEndTime(?\DateTimeInterface $processing_end_time) : self
     {
@@ -450,8 +422,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets result_feed_document_id.
-     *
-     * @return null|string
      */
     public function getResultFeedDocumentId() : ?string
     {
@@ -462,8 +432,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets result_feed_document_id.
      *
      * @param null|string $result_feed_document_id The identifier for the feed document. This identifier is unique only in combination with a seller ID.
-     *
-     * @return self
      */
     public function setResultFeedDocumentId(?string $result_feed_document_id) : self
     {
@@ -474,8 +442,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -488,7 +454,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -522,18 +488,16 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
-    final public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Constructor.
      *
-     * @param null|mixed[] $data Associated array of property values
-     *                           initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -191,6 +193,8 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets display_name.
+     *
+     * @return null|string
      */
     public function getDisplayName() : ?string
     {
@@ -201,6 +205,8 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
      * Sets display_name.
      *
      * @param null|string $display_name Display name of the product category or subcategory
+     *
+     * @return self
      */
     public function setDisplayName(?string $display_name) : self
     {
@@ -211,6 +217,8 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets value.
+     *
+     * @return null|string
      */
     public function getValue() : ?string
     {
@@ -221,6 +229,8 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
      * Sets value.
      *
      * @param null|string $value value (code) of the product category or subcategory
+     *
+     * @return self
      */
     public function setValue(?string $value) : self
     {
@@ -231,6 +241,8 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Returns true if offset exists. False otherwise.
+     *
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -243,7 +255,7 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -277,16 +289,18 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

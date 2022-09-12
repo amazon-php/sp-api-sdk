@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ChargeInstrument implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -202,8 +200,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets description.
-     *
-     * @return null|string
      */
     public function getDescription() : ?string
     {
@@ -214,8 +210,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets description.
      *
      * @param null|string $description a short description of the charge instrument
-     *
-     * @return self
      */
     public function setDescription(?string $description) : self
     {
@@ -226,8 +220,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets tail.
-     *
-     * @return null|string
      */
     public function getTail() : ?string
     {
@@ -238,8 +230,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets tail.
      *
      * @param null|string $tail the account tail (trailing digits) of the charge instrument
-     *
-     * @return self
      */
     public function setTail(?string $tail) : self
     {
@@ -250,8 +240,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getAmount() : ?Currency
     {
@@ -262,8 +250,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $amount amount
-     *
-     * @return self
      */
     public function setAmount(?Currency $amount) : self
     {
@@ -274,8 +260,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,7 +272,7 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -322,18 +306,16 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

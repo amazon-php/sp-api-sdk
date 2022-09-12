@@ -27,6 +27,8 @@ interface OrdersSDKInterface
     /**
      * Operation updateShipmentStatus.
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
      *

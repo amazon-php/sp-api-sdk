@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -206,8 +204,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -218,8 +214,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets code.
      *
      * @param string $code an error code that identifies the type of error that occurred
-     *
-     * @return self
      */
     public function setCode(string $code) : self
     {
@@ -230,8 +224,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets message.
-     *
-     * @return string
      */
     public function getMessage() : string
     {
@@ -242,8 +234,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets message.
      *
      * @param string $message a message that describes the error condition in a human-readable form
-     *
-     * @return self
      */
     public function setMessage(string $message) : self
     {
@@ -254,8 +244,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets details.
-     *
-     * @return null|string
      */
     public function getDetails() : ?string
     {
@@ -266,8 +254,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets details.
      *
      * @param null|string $details additional details that can help the caller understand or fix the issue
-     *
-     * @return self
      */
     public function setDetails(?string $details) : self
     {
@@ -278,8 +264,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,7 +276,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -326,18 +310,16 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

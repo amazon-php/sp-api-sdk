@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
-    final public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Constructor.
      *
-     * @param null|mixed[] $data Associated array of property values
-     *                           initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -194,6 +196,8 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInbound\ItemEligibilityPreview
      */
     public function getPayload() : ?ItemEligibilityPreview
     {
@@ -204,6 +208,8 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * Sets payload.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBAInbound\ItemEligibilityPreview $payload payload
+     *
+     * @return self
      */
     public function setPayload(?ItemEligibilityPreview $payload) : self
     {
@@ -226,6 +232,8 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBAInbound\Error[] $errors a list of error responses returned when a request is unsuccessful
+     *
+     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -236,6 +244,8 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Returns true if offset exists. False otherwise.
+     *
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -248,7 +258,7 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -282,16 +292,18 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

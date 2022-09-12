@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
-    final public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -139,8 +139,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Constructor.
      *
-     * @param null|mixed[] $data Associated array of property values
-     *                           initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -159,7 +159,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -169,7 +169,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -180,7 +180,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -190,7 +190,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -200,7 +200,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -222,6 +222,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -242,6 +244,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
     public function getAsin() : string
     {
@@ -252,6 +256,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets asin.
      *
      * @param string $asin amazon Standard Identification Number (ASIN) is the unique identifier for an item in the Amazon catalog
+     *
+     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -265,7 +271,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      *
      * @return null|object
      */
-    public function getAttributes() : ?array
+    public function getAttributes() : ?object
     {
         return $this->container['attributes'];
     }
@@ -274,8 +280,10 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets attributes.
      *
      * @param null|object $attributes A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
+     *
+     * @return self
      */
-    public function setAttributes(?array $attributes) : self
+    public function setAttributes(?object $attributes) : self
     {
         $this->container['attributes'] = $attributes;
 
@@ -296,6 +304,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets dimensions.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemDimensionsByMarketplace[] $dimensions array of dimensions associated with the item in the Amazon catalog by Amazon marketplace
+     *
+     * @return self
      */
     public function setDimensions(?array $dimensions) : self
     {
@@ -318,6 +328,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets identifiers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemIdentifiersByMarketplace[] $identifiers identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers
+     *
+     * @return self
      */
     public function setIdentifiers(?array $identifiers) : self
     {
@@ -340,6 +352,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets images.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemImagesByMarketplace[] $images images for an item in the Amazon catalog
+     *
+     * @return self
      */
     public function setImages(?array $images) : self
     {
@@ -362,6 +376,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets product_types.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemProductTypeByMarketplace[] $product_types product types associated with the Amazon catalog item
+     *
+     * @return self
      */
     public function setProductTypes(?array $product_types) : self
     {
@@ -384,6 +400,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets relationships.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemRelationshipsByMarketplace[] $relationships relationships by marketplace for an Amazon catalog item (for example, variations)
+     *
+     * @return self
      */
     public function setRelationships(?array $relationships) : self
     {
@@ -406,6 +424,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets sales_ranks.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemSalesRanksByMarketplace[] $sales_ranks sales ranks of an Amazon catalog item
+     *
+     * @return self
      */
     public function setSalesRanks(?array $sales_ranks) : self
     {
@@ -428,6 +448,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets summaries.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemSummaryByMarketplace[] $summaries summary details of an Amazon catalog item
+     *
+     * @return self
      */
     public function setSummaries(?array $summaries) : self
     {
@@ -450,6 +472,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * Sets vendor_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsByMarketplace[] $vendor_details Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
+     *
+     * @return self
      */
     public function setVendorDetails(?array $vendor_details) : self
     {
@@ -460,6 +484,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
+     *
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -472,7 +498,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -506,16 +532,18 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }

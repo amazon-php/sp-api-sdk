@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -202,8 +200,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -214,8 +210,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Sets marketplace_id.
      *
      * @param string $marketplace_id amazon marketplace identifier
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -238,8 +232,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Sets classification_ranks.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemClassificationSalesRank[] $classification_ranks sales ranks of an Amazon catalog item for an Amazon marketplace by classification
-     *
-     * @return self
      */
     public function setClassificationRanks(?array $classification_ranks) : self
     {
@@ -262,8 +254,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * Sets display_group_ranks.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemDisplayGroupSalesRank[] $display_group_ranks sales ranks of an Amazon catalog item for an Amazon marketplace by website display group
-     *
-     * @return self
      */
     public function setDisplayGroupRanks(?array $display_group_ranks) : self
     {
@@ -274,8 +264,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,7 +276,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -322,18 +310,16 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, Mo
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

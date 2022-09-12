@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -174,8 +174,6 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,8 +203,6 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets attributes.
      *
      * @param null|string[] $attributes names of the Amazon catalog item attributes associated with the variation theme
-     *
-     * @return self
      */
     public function setAttributes(?array $attributes) : self
     {
@@ -217,8 +213,6 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets theme.
-     *
-     * @return null|string
      */
     public function getTheme() : ?string
     {
@@ -229,8 +223,6 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets theme.
      *
      * @param null|string $theme variation theme indicating the combination of Amazon item catalog attributes that define the variation family
-     *
-     * @return self
      */
     public function setTheme(?string $theme) : self
     {
@@ -241,8 +233,6 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -255,7 +245,7 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -289,18 +279,16 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, ModelInterf
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
-    final public const DISCRIMINATOR = null;
+    public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Constructor.
      *
-     * @param null|mixed[] $data Associated array of property values
-     *                           initializing the model
+     * @param mixed[] $data Associated array of property values
+     *                      initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return string[]
+     * @return array
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return null[]|string[]
+     * @return array
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return string[]
+     * @return array
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return string[]
+     * @return array
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return string[]
+     * @return array
      */
     public static function getters() : array
     {
@@ -174,6 +174,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
+     *
+     * @return string
      */
     public function getModelName() : string
     {
@@ -218,6 +220,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * Sets product_columns.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[] $product_columns product_columns
+     *
+     * @return self
      */
     public function setProductColumns(?array $product_columns) : self
     {
@@ -240,6 +244,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * Sets metric_row_labels.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[] $metric_row_labels metric_row_labels
+     *
+     * @return self
      */
     public function setMetricRowLabels(?array $metric_row_labels) : self
     {
@@ -250,6 +256,8 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Returns true if offset exists. False otherwise.
+     *
+     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,7 +270,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset) : mixed
+    public function offsetGet($offset)
     {
         return $this->container[$offset] ?? null;
     }
@@ -296,16 +304,18 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 
     /**
      * Gets a header-safe presentation of the object.
+     *
+     * @return string
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
     }
 }
