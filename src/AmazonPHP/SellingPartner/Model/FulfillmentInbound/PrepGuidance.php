@@ -19,17 +19,14 @@ class PrepGuidance
     /**
      * Possible values of this enum.
      */
-    public const CONSULT_HELP_DOCUMENTS = 'ConsultHelpDocuments';
+    final public const CONSULT_HELP_DOCUMENTS = 'ConsultHelpDocuments';
 
-    public const NO_ADDITIONAL_PREP_REQUIRED = 'NoAdditionalPrepRequired';
+    final public const NO_ADDITIONAL_PREP_REQUIRED = 'NoAdditionalPrepRequired';
 
-    public const SEE_PREP_INSTRUCTIONS_LIST = 'SeePrepInstructionsList';
+    final public const SEE_PREP_INSTRUCTIONS_LIST = 'SeePrepInstructionsList';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

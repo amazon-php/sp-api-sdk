@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
+class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -202,8 +198,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets fulfillment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentTime
      */
     public function getFulfillmentTime() : ?FulfillmentTime
     {
@@ -214,8 +208,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Sets fulfillment_time.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentTime $fulfillment_time fulfillment_time
-     *
-     * @return self
      */
     public function setFulfillmentTime(?FulfillmentTime $fulfillment_time) : self
     {
@@ -238,8 +230,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Sets appointment_resources.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentResource[] $appointment_resources list of resources that performs or performed job appointment fulfillment
-     *
-     * @return self
      */
     public function setAppointmentResources(?array $appointment_resources) : self
     {
@@ -262,8 +252,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Sets fulfillment_documents.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentDocument[] $fulfillment_documents list of documents captured during service appointment fulfillment
-     *
-     * @return self
      */
     public function setFulfillmentDocuments(?array $fulfillment_documents) : self
     {
@@ -274,8 +262,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,7 +274,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -322,18 +308,16 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

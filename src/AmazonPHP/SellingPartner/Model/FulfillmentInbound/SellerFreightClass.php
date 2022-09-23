@@ -19,47 +19,44 @@ class SellerFreightClass
     /**
      * Possible values of this enum.
      */
-    public const _50 = '50';
+    final public const _50 = '50';
 
-    public const _55 = '55';
+    final public const _55 = '55';
 
-    public const _60 = '60';
+    final public const _60 = '60';
 
-    public const _65 = '65';
+    final public const _65 = '65';
 
-    public const _70 = '70';
+    final public const _70 = '70';
 
-    public const _77_5 = '77.5';
+    final public const _77_5 = '77.5';
 
-    public const _85 = '85';
+    final public const _85 = '85';
 
-    public const _92_5 = '92.5';
+    final public const _92_5 = '92.5';
 
-    public const _100 = '100';
+    final public const _100 = '100';
 
-    public const _110 = '110';
+    final public const _110 = '110';
 
-    public const _125 = '125';
+    final public const _125 = '125';
 
-    public const _150 = '150';
+    final public const _150 = '150';
 
-    public const _175 = '175';
+    final public const _175 = '175';
 
-    public const _200 = '200';
+    final public const _200 = '200';
 
-    public const _250 = '250';
+    final public const _250 = '250';
 
-    public const _300 = '300';
+    final public const _300 = '300';
 
-    public const _400 = '400';
+    final public const _400 = '400';
 
-    public const _500 = '500';
+    final public const _500 = '500';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
+class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -202,8 +198,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets payload_version.
-     *
-     * @return null|string
      */
     public function getPayloadVersion() : ?string
     {
@@ -214,8 +208,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
      * Sets payload_version.
      *
      * @param null|string $payload_version the version of the payload object to be used in the notification
-     *
-     * @return self
      */
     public function setPayloadVersion(?string $payload_version) : self
     {
@@ -226,8 +218,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets destination_id.
-     *
-     * @return null|string
      */
     public function getDestinationId() : ?string
     {
@@ -238,8 +228,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
      * Sets destination_id.
      *
      * @param null|string $destination_id the identifier for the destination where notifications will be delivered
-     *
-     * @return self
      */
     public function setDestinationId(?string $destination_id) : self
     {
@@ -250,8 +238,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets processing_directive.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective
      */
     public function getProcessingDirective() : ?ProcessingDirective
     {
@@ -262,8 +248,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
      * Sets processing_directive.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective $processing_directive processing_directive
-     *
-     * @return self
      */
     public function setProcessingDirective(?ProcessingDirective $processing_directive) : self
     {
@@ -274,8 +258,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,7 +270,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -322,18 +304,16 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, Mode
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

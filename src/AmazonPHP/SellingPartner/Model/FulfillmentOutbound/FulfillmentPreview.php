@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterface
+class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -144,8 +144,8 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -165,7 +165,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -175,7 +175,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -186,7 +186,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -196,7 +196,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -206,7 +206,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -215,8 +215,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -228,8 +226,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -270,8 +266,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets shipping_speed_category.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ShippingSpeedCategory
     {
@@ -282,8 +276,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets shipping_speed_category.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
-     *
-     * @return self
      */
     public function setShippingSpeedCategory(ShippingSpeedCategory $shipping_speed_category) : self
     {
@@ -294,8 +286,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets scheduled_delivery_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ScheduledDeliveryInfo
      */
     public function getScheduledDeliveryInfo() : ?ScheduledDeliveryInfo
     {
@@ -306,8 +296,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets scheduled_delivery_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ScheduledDeliveryInfo $scheduled_delivery_info scheduled_delivery_info
-     *
-     * @return self
      */
     public function setScheduledDeliveryInfo(?ScheduledDeliveryInfo $scheduled_delivery_info) : self
     {
@@ -318,8 +306,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets is_fulfillable.
-     *
-     * @return bool
      */
     public function getIsFulfillable() : bool
     {
@@ -330,8 +316,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets is_fulfillable.
      *
      * @param bool $is_fulfillable when true, this fulfillment order preview is fulfillable
-     *
-     * @return self
      */
     public function setIsFulfillable(bool $is_fulfillable) : self
     {
@@ -342,8 +326,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets is_cod_capable.
-     *
-     * @return bool
      */
     public function getIsCodCapable() : bool
     {
@@ -354,8 +336,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets is_cod_capable.
      *
      * @param bool $is_cod_capable when true, this fulfillment order preview is for COD (Cash On Delivery)
-     *
-     * @return self
      */
     public function setIsCodCapable(bool $is_cod_capable) : self
     {
@@ -366,8 +346,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets estimated_shipping_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight
      */
     public function getEstimatedShippingWeight() : ?Weight
     {
@@ -378,8 +356,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets estimated_shipping_weight.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight $estimated_shipping_weight estimated_shipping_weight
-     *
-     * @return self
      */
     public function setEstimatedShippingWeight(?Weight $estimated_shipping_weight) : self
     {
@@ -402,8 +378,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets estimated_fees.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Fee[] $estimated_fees an array of fee type and cost pairs
-     *
-     * @return self
      */
     public function setEstimatedFees(?array $estimated_fees) : self
     {
@@ -426,8 +400,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets fulfillment_preview_shipments.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPreviewShipment[] $fulfillment_preview_shipments an array of fulfillment preview shipment information
-     *
-     * @return self
      */
     public function setFulfillmentPreviewShipments(?array $fulfillment_preview_shipments) : self
     {
@@ -450,8 +422,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets unfulfillable_preview_items.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UnfulfillablePreviewItem[] $unfulfillable_preview_items an array of unfulfillable preview item information
-     *
-     * @return self
      */
     public function setUnfulfillablePreviewItems(?array $unfulfillable_preview_items) : self
     {
@@ -474,8 +444,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets order_unfulfillable_reasons.
      *
      * @param null|string[] $order_unfulfillable_reasons order_unfulfillable_reasons
-     *
-     * @return self
      */
     public function setOrderUnfulfillableReasons(?array $order_unfulfillable_reasons) : self
     {
@@ -486,8 +454,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -498,8 +464,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the marketplace the fulfillment order is placed against
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -522,8 +486,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets feature_constraints.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
-     *
-     * @return self
      */
     public function setFeatureConstraints(?array $feature_constraints) : self
     {
@@ -534,8 +496,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -548,7 +508,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -582,18 +542,16 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, ModelInterf
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

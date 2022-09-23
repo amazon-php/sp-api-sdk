@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializable, ModelInterface
+class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -210,10 +206,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }
@@ -222,8 +216,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Sets carrier_name.
      *
      * @param string $carrier_name the carrier that you are using for the inbound shipment
-     *
-     * @return self
      */
     public function setCarrierName(string $carrier_name) : self
     {
@@ -234,10 +226,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets tracking_id.
-     *
-     * @return string
      */
-    public function getTrackingId() : string
+    public function getTrackingId() : ?string
     {
         return $this->container['tracking_id'];
     }
@@ -246,8 +236,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Sets tracking_id.
      *
      * @param string $tracking_id the tracking number of the package, provided by the carrier
-     *
-     * @return self
      */
     public function setTrackingId(string $tracking_id) : self
     {
@@ -258,8 +246,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets package_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageStatus
      */
     public function getPackageStatus() : PackageStatus
     {
@@ -270,8 +256,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * Sets package_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageStatus $package_status package_status
-     *
-     * @return self
      */
     public function setPackageStatus(PackageStatus $package_status) : self
     {
@@ -282,8 +266,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -296,7 +278,7 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,18 +312,16 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

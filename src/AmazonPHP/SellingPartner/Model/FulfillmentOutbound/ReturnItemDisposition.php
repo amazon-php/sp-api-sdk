@@ -19,21 +19,18 @@ class ReturnItemDisposition
     /**
      * Possible values of this enum.
      */
-    public const SELLABLE = 'Sellable';
+    final public const SELLABLE = 'Sellable';
 
-    public const DEFECTIVE = 'Defective';
+    final public const DEFECTIVE = 'Defective';
 
-    public const CUSTOMER_DAMAGED = 'CustomerDamaged';
+    final public const CUSTOMER_DAMAGED = 'CustomerDamaged';
 
-    public const CARRIER_DAMAGED = 'CarrierDamaged';
+    final public const CARRIER_DAMAGED = 'CarrierDamaged';
 
-    public const FULFILLER_DAMAGED = 'FulfillerDamaged';
+    final public const FULFILLER_DAMAGED = 'FulfillerDamaged';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

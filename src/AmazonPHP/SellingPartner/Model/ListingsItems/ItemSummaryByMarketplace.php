@@ -23,39 +23,39 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const CONDITION_TYPE_NEW_NEW = 'new_new';
+    final public const CONDITION_TYPE_NEW_NEW = 'new_new';
 
-    public const CONDITION_TYPE_NEW_OPEN_BOX = 'new_open_box';
+    final public const CONDITION_TYPE_NEW_OPEN_BOX = 'new_open_box';
 
-    public const CONDITION_TYPE_NEW_OEM = 'new_oem';
+    final public const CONDITION_TYPE_NEW_OEM = 'new_oem';
 
-    public const CONDITION_TYPE_REFURBISHED_REFURBISHED = 'refurbished_refurbished';
+    final public const CONDITION_TYPE_REFURBISHED_REFURBISHED = 'refurbished_refurbished';
 
-    public const CONDITION_TYPE_USED_LIKE_NEW = 'used_like_new';
+    final public const CONDITION_TYPE_USED_LIKE_NEW = 'used_like_new';
 
-    public const CONDITION_TYPE_USED_VERY_GOOD = 'used_very_good';
+    final public const CONDITION_TYPE_USED_VERY_GOOD = 'used_very_good';
 
-    public const CONDITION_TYPE_USED_GOOD = 'used_good';
+    final public const CONDITION_TYPE_USED_GOOD = 'used_good';
 
-    public const CONDITION_TYPE_USED_ACCEPTABLE = 'used_acceptable';
+    final public const CONDITION_TYPE_USED_ACCEPTABLE = 'used_acceptable';
 
-    public const CONDITION_TYPE_COLLECTIBLE_LIKE_NEW = 'collectible_like_new';
+    final public const CONDITION_TYPE_COLLECTIBLE_LIKE_NEW = 'collectible_like_new';
 
-    public const CONDITION_TYPE_COLLECTIBLE_VERY_GOOD = 'collectible_very_good';
+    final public const CONDITION_TYPE_COLLECTIBLE_VERY_GOOD = 'collectible_very_good';
 
-    public const CONDITION_TYPE_COLLECTIBLE_GOOD = 'collectible_good';
+    final public const CONDITION_TYPE_COLLECTIBLE_GOOD = 'collectible_good';
 
-    public const CONDITION_TYPE_COLLECTIBLE_ACCEPTABLE = 'collectible_acceptable';
+    final public const CONDITION_TYPE_COLLECTIBLE_ACCEPTABLE = 'collectible_acceptable';
 
-    public const CONDITION_TYPE_CLUB_CLUB = 'club_club';
+    final public const CONDITION_TYPE_CLUB_CLUB = 'club_club';
 
-    public const STATUS_BUYABLE = 'BUYABLE';
+    final public const STATUS_BUYABLE = 'BUYABLE';
 
-    public const STATUS_DISCOVERABLE = 'DISCOVERABLE';
+    final public const STATUS_DISCOVERABLE = 'DISCOVERABLE';
 
     /**
      * The original name of the model.
@@ -169,8 +169,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -189,7 +189,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -199,7 +199,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -210,7 +210,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -220,7 +220,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -230,7 +230,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -239,8 +239,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -252,8 +250,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -351,8 +347,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -363,8 +357,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Identifies the Amazon marketplace for the listings item.
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -375,8 +367,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -387,8 +377,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets asin.
      *
      * @param string $asin amazon Standard Identification Number (ASIN) of the listings item
-     *
-     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -399,8 +387,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets product_type.
-     *
-     * @return string
      */
     public function getProductType() : string
     {
@@ -411,8 +397,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets product_type.
      *
      * @param string $product_type the Amazon product type of the listings item
-     *
-     * @return self
      */
     public function setProductType(string $product_type) : self
     {
@@ -423,8 +407,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets condition_type.
-     *
-     * @return null|string
      */
     public function getConditionType() : ?string
     {
@@ -435,8 +417,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets condition_type.
      *
      * @param null|string $condition_type identifies the condition of the listings item
-     *
-     * @return self
      */
     public function setConditionType(?string $condition_type) : self
     {
@@ -459,8 +439,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets status.
      *
      * @param string[] $status statuses that apply to the listings item
-     *
-     * @return self
      */
     public function setStatus(array $status) : self
     {
@@ -471,8 +449,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets fn_sku.
-     *
-     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -483,8 +459,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets fn_sku.
      *
      * @param null|string $fn_sku fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item
-     *
-     * @return self
      */
     public function setFnSku(?string $fn_sku) : self
     {
@@ -495,8 +469,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets item_name.
-     *
-     * @return string
      */
     public function getItemName() : string
     {
@@ -507,8 +479,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets item_name.
      *
      * @param string $item_name name, or title, associated with an Amazon catalog item
-     *
-     * @return self
      */
     public function setItemName(string $item_name) : self
     {
@@ -519,8 +489,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets created_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getCreatedDate() : \DateTimeInterface
     {
@@ -531,8 +499,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets created_date.
      *
      * @param \DateTimeInterface $created_date date the listings item was created, in ISO 8601 format
-     *
-     * @return self
      */
     public function setCreatedDate(\DateTimeInterface $created_date) : self
     {
@@ -543,8 +509,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets last_updated_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getLastUpdatedDate() : \DateTimeInterface
     {
@@ -555,8 +519,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets last_updated_date.
      *
      * @param \DateTimeInterface $last_updated_date date the listings item was last updated, in ISO 8601 format
-     *
-     * @return self
      */
     public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
     {
@@ -567,8 +529,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets main_image.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage
      */
     public function getMainImage() : ?ItemImage
     {
@@ -579,8 +539,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * Sets main_image.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage $main_image main_image
-     *
-     * @return self
      */
     public function setMainImage(?ItemImage $main_image) : self
     {
@@ -591,8 +549,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -605,7 +561,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -639,18 +595,16 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, Model
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

@@ -23,15 +23,15 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ServiceLocation implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const SERVICE_LOCATION_TYPE_IN_HOME = 'IN_HOME';
+    final public const SERVICE_LOCATION_TYPE_IN_HOME = 'IN_HOME';
 
-    public const SERVICE_LOCATION_TYPE_IN_STORE = 'IN_STORE';
+    final public const SERVICE_LOCATION_TYPE_IN_STORE = 'IN_STORE';
 
-    public const SERVICE_LOCATION_TYPE_ONLINE = 'ONLINE';
+    final public const SERVICE_LOCATION_TYPE_ONLINE = 'ONLINE';
 
     /**
      * The original name of the model.
@@ -105,8 +105,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -228,8 +224,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets service_location_type.
-     *
-     * @return null|string
      */
     public function getServiceLocationType() : ?string
     {
@@ -240,8 +234,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets service_location_type.
      *
      * @param null|string $service_location_type the location of the service job
-     *
-     * @return self
      */
     public function setServiceLocationType(?string $service_location_type) : self
     {
@@ -252,8 +244,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Address
      */
     public function getAddress() : ?Address
     {
@@ -264,8 +254,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Address $address address
-     *
-     * @return self
      */
     public function setAddress(?Address $address) : self
     {
@@ -276,8 +264,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -290,7 +276,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -324,18 +310,16 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

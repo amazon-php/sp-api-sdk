@@ -23,16 +23,16 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetShippingLabelListResponse';
+    protected static string $openAPIModelName = 'PackingSlipList';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,8 +40,8 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'pagination' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination',
+        'packing_slips' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlip[]',
     ];
 
     /**
@@ -54,8 +54,8 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'pagination' => null,
+        'packing_slips' => null,
     ];
 
     /**
@@ -65,8 +65,8 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'pagination' => 'pagination',
+        'packing_slips' => 'packingSlips',
     ];
 
     /**
@@ -75,8 +75,8 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'pagination' => 'setPagination',
+        'packing_slips' => 'setPackingSlips',
     ];
 
     /**
@@ -85,8 +85,8 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'pagination' => 'getPagination',
+        'packing_slips' => 'getPackingSlips',
     ];
 
     /**
@@ -99,19 +99,19 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['pagination'] = $data['pagination'] ?? null;
+        $this->container['packing_slips'] = $data['packing_slips'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +161,6 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +172,6 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,67 +185,55 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
-        }
-
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
+        if ($this->container['pagination'] !== null) {
+            $this->container['pagination']->validate();
         }
     }
 
     /**
-     * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList
+     * Gets pagination.
      */
-    public function getPayload() : ?ShippingLabelList
+    public function getPagination() : ?Pagination
     {
-        return $this->container['payload'];
+        return $this->container['pagination'];
     }
 
     /**
-     * Sets payload.
+     * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList $payload payload
-     *
-     * @return self
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination $pagination pagination
      */
-    public function setPayload(?ShippingLabelList $payload) : self
+    public function setPagination(?Pagination $pagination) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['pagination'] = $pagination;
 
         return $this;
     }
 
     /**
-     * Gets errors.
+     * Gets packing_slips.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlip[]
      */
-    public function getErrors() : ?ErrorList
+    public function getPackingSlips() : ?array
     {
-        return $this->container['errors'];
+        return $this->container['packing_slips'];
     }
 
     /**
-     * Sets errors.
+     * Sets packing_slips.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlip[] $packing_slips packing_slips
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setPackingSlips(?array $packing_slips) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['packing_slips'] = $packing_slips;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,7 +246,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -296,18 +280,16 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

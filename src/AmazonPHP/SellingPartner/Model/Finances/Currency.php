@@ -161,8 +161,6 @@ class Currency implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

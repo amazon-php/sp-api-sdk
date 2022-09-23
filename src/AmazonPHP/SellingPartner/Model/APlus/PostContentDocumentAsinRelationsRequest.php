@@ -155,8 +155,6 @@ class PostContentDocumentAsinRelationsRequest implements \ArrayAccess, \JsonSeri
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

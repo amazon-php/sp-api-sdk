@@ -19,13 +19,10 @@ class StandardIdForLabel
     /**
      * Possible values of this enum.
      */
-    public const AMAZON_ORDER_ID = 'AmazonOrderId';
+    final public const AMAZON_ORDER_ID = 'AmazonOrderId';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

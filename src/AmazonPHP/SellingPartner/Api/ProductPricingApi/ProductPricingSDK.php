@@ -28,27 +28,13 @@ use Psr\Log\LoggerInterface;
  */
 final class ProductPricingSDK implements ProductPricingSDKInterface
 {
-    private ClientInterface $client;
-
-    private HttpFactory $httpFactory;
-
-    private Configuration $configuration;
-
-    private LoggerInterface $logger;
-
-    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration, LoggerInterface $logger)
+    public function __construct(private readonly ClientInterface $client, private readonly HttpFactory $httpFactory, private readonly Configuration $configuration, private readonly LoggerInterface $logger)
     {
-        $this->client = $client;
-        $this->httpFactory = $requestFactory;
-        $this->configuration = $configuration;
-        $this->logger = $logger;
     }
 
     /**
      * Operation getCompetitivePricing.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param null|string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
@@ -57,8 +43,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
      */
     public function getCompetitivePricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
     {
@@ -150,8 +134,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Create request for operation 'getCompetitivePricing'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param null|string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
@@ -159,8 +141,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      * @param null|string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getCompetitivePricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $customer_type = null) : RequestInterface
     {
@@ -274,7 +254,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -295,8 +275,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Operation getItemOffers.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
@@ -304,8 +282,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getItemOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, ?string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
     {
@@ -397,16 +373,12 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Create request for operation 'getItemOffers'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param null|string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getItemOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, ?string $customer_type = null) : RequestInterface
     {
@@ -511,7 +483,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -532,14 +504,10 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Operation getItemOffersBatch.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body get_item_offers_batch_request_body (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchResponse
      */
     public function getItemOffersBatch(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchResponse
     {
@@ -631,13 +599,9 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Create request for operation 'getItemOffersBatch'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getItemOffersBatchRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body) : RequestInterface
     {
@@ -682,7 +646,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         // for model (json/xml)
         if (isset($get_item_offers_batch_request_body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($get_item_offers_batch_request_body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($get_item_offers_batch_request_body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $get_item_offers_batch_request_body;
             }
@@ -704,7 +668,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -725,8 +689,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Operation getListingOffers.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
@@ -734,8 +696,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getListingOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, ?string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
     {
@@ -827,16 +787,12 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Create request for operation 'getListingOffers'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param null|string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getListingOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, ?string $customer_type = null) : RequestInterface
     {
@@ -941,7 +897,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -962,14 +918,10 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Operation getListingOffersBatch.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body get_listing_offers_batch_request_body (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchResponse
      */
     public function getListingOffersBatch(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchResponse
     {
@@ -1061,13 +1013,9 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Create request for operation 'getListingOffersBatch'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getListingOffersBatchRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body) : RequestInterface
     {
@@ -1112,7 +1060,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         // for model (json/xml)
         if (isset($get_listing_offers_batch_request_body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($get_listing_offers_batch_request_body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($get_listing_offers_batch_request_body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $get_listing_offers_batch_request_body;
             }
@@ -1134,7 +1082,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -1155,8 +1103,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Operation getPricing.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. (required)
      * @param null|string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
@@ -1166,8 +1112,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
      */
     public function getPricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $item_condition = null, ?string $offer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
     {
@@ -1259,8 +1203,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
     /**
      * Create request for operation 'getPricing'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. (required)
      * @param null|string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
@@ -1269,8 +1211,6 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      * @param null|string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getPricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $item_condition = null, ?string $offer_type = null) : RequestInterface
     {
@@ -1392,7 +1332,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }

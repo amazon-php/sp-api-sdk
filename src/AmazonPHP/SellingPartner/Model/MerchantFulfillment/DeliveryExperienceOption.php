@@ -19,21 +19,18 @@ class DeliveryExperienceOption
     /**
      * Possible values of this enum.
      */
-    public const DELIVERY_CONFIRMATION_WITH_ADULT_SIGNATURE = 'DeliveryConfirmationWithAdultSignature';
+    final public const DELIVERY_CONFIRMATION_WITH_ADULT_SIGNATURE = 'DeliveryConfirmationWithAdultSignature';
 
-    public const DELIVERY_CONFIRMATION_WITH_SIGNATURE = 'DeliveryConfirmationWithSignature';
+    final public const DELIVERY_CONFIRMATION_WITH_SIGNATURE = 'DeliveryConfirmationWithSignature';
 
-    public const DELIVERY_CONFIRMATION_WITHOUT_SIGNATURE = 'DeliveryConfirmationWithoutSignature';
+    final public const DELIVERY_CONFIRMATION_WITHOUT_SIGNATURE = 'DeliveryConfirmationWithoutSignature';
 
-    public const NO_TRACKING = 'NoTracking';
+    final public const NO_TRACKING = 'NoTracking';
 
-    public const NO_PREFERENCE = 'NoPreference';
+    final public const NO_PREFERENCE = 'NoPreference';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

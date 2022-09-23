@@ -19,17 +19,14 @@ class FulfillmentPolicy
     /**
      * Possible values of this enum.
      */
-    public const FILL_OR_KILL = 'FillOrKill';
+    final public const FILL_OR_KILL = 'FillOrKill';
 
-    public const FILL_ALL = 'FillAll';
+    final public const FILL_ALL = 'FillAll';
 
-    public const FILL_ALL_AVAILABLE = 'FillAllAvailable';
+    final public const FILL_ALL_AVAILABLE = 'FillAllAvailable';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

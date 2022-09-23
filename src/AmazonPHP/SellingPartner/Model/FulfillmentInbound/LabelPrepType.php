@@ -19,17 +19,14 @@ class LabelPrepType
     /**
      * Possible values of this enum.
      */
-    public const NO_LABEL = 'NO_LABEL';
+    final public const NO_LABEL = 'NO_LABEL';
 
-    public const SELLER_LABEL = 'SELLER_LABEL';
+    final public const SELLER_LABEL = 'SELLER_LABEL';
 
-    public const AMAZON_LABEL = 'AMAZON_LABEL';
+    final public const AMAZON_LABEL = 'AMAZON_LABEL';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

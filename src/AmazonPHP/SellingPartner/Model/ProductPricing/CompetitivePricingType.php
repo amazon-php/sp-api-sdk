@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelInterface
+class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -222,8 +218,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets competitive_prices.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePriceType[] $competitive_prices a list of competitive pricing information
-     *
-     * @return self
      */
     public function setCompetitivePrices(array $competitive_prices) : self
     {
@@ -246,8 +240,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets number_of_offer_listings.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\OfferListingCountType[] $number_of_offer_listings The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
-     *
-     * @return self
      */
     public function setNumberOfOfferListings(array $number_of_offer_listings) : self
     {
@@ -258,8 +250,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets trade_in_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getTradeInValue() : ?MoneyType
     {
@@ -270,8 +260,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets trade_in_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $trade_in_value trade_in_value
-     *
-     * @return self
      */
     public function setTradeInValue(?MoneyType $trade_in_value) : self
     {
@@ -282,8 +270,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -296,7 +282,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,18 +316,16 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, ModelIn
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

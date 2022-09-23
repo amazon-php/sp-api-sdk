@@ -47,8 +47,6 @@ interface ProductPricingSDKInterface
     /**
      * Operation getCompetitivePricing.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. Possible values: Asin, Sku. (required)
      * @param null|string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)
@@ -65,8 +63,6 @@ interface ProductPricingSDKInterface
     /**
      * Operation getItemOffers.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings to be considered based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
@@ -82,8 +78,6 @@ interface ProductPricingSDKInterface
     /**
      * Operation getItemOffersBatch.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body get_item_offers_batch_request_body (required)
      *
      * @throws ApiException on non-2xx response
@@ -96,8 +90,6 @@ interface ProductPricingSDKInterface
     /**
      * Operation getListingOffers.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (required)
      * @param string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
@@ -113,8 +105,6 @@ interface ProductPricingSDKInterface
     /**
      * Operation getListingOffersBatch.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body get_listing_offers_batch_request_body (required)
      *
      * @throws ApiException on non-2xx response
@@ -127,8 +117,6 @@ interface ProductPricingSDKInterface
     /**
      * Operation getPricing.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned. (required)
      * @param string $item_type Indicates whether ASIN values or seller SKU values are used to identify items. If you specify Asin, the information in the response will be dependent on the list of Asins you provide in the Asins parameter. If you specify Sku, the information in the response will be dependent on the list of Skus you provide in the Skus parameter. (required)
      * @param null|string[] $asins A list of up to twenty Amazon Standard Identification Number (ASIN) values used to identify items in the given marketplace. (optional)

@@ -19,15 +19,12 @@ class FulfillmentAction
     /**
      * Possible values of this enum.
      */
-    public const SHIP = 'Ship';
+    final public const SHIP = 'Ship';
 
-    public const HOLD = 'Hold';
+    final public const HOLD = 'Hold';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

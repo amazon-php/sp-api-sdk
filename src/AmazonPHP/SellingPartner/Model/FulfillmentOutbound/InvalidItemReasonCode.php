@@ -19,19 +19,16 @@ class InvalidItemReasonCode
     /**
      * Possible values of this enum.
      */
-    public const INVALID_VALUES = 'InvalidValues';
+    final public const INVALID_VALUES = 'InvalidValues';
 
-    public const DUPLICATE_REQUEST = 'DuplicateRequest';
+    final public const DUPLICATE_REQUEST = 'DuplicateRequest';
 
-    public const NO_COMPLETED_SHIP_ITEMS = 'NoCompletedShipItems';
+    final public const NO_COMPLETED_SHIP_ITEMS = 'NoCompletedShipItems';
 
-    public const NO_RETURNABLE_QUANTITY = 'NoReturnableQuantity';
+    final public const NO_RETURNABLE_QUANTITY = 'NoReturnableQuantity';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

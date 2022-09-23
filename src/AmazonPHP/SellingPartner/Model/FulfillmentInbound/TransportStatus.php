@@ -19,33 +19,30 @@ class TransportStatus
     /**
      * Possible values of this enum.
      */
-    public const WORKING = 'WORKING';
+    final public const WORKING = 'WORKING';
 
-    public const ESTIMATING = 'ESTIMATING';
+    final public const ESTIMATING = 'ESTIMATING';
 
-    public const ESTIMATED = 'ESTIMATED';
+    final public const ESTIMATED = 'ESTIMATED';
 
-    public const ERROR_ON_ESTIMATING = 'ERROR_ON_ESTIMATING';
+    final public const ERROR_ON_ESTIMATING = 'ERROR_ON_ESTIMATING';
 
-    public const CONFIRMING = 'CONFIRMING';
+    final public const CONFIRMING = 'CONFIRMING';
 
-    public const CONFIRMED = 'CONFIRMED';
+    final public const CONFIRMED = 'CONFIRMED';
 
-    public const ERROR_ON_CONFIRMING = 'ERROR_ON_CONFIRMING';
+    final public const ERROR_ON_CONFIRMING = 'ERROR_ON_CONFIRMING';
 
-    public const VOIDING = 'VOIDING';
+    final public const VOIDING = 'VOIDING';
 
-    public const VOIDED = 'VOIDED';
+    final public const VOIDED = 'VOIDED';
 
-    public const ERROR_IN_VOIDING = 'ERROR_IN_VOIDING';
+    final public const ERROR_IN_VOIDING = 'ERROR_IN_VOIDING';
 
-    public const ERROR = 'ERROR';
+    final public const ERROR = 'ERROR';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

@@ -23,16 +23,16 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'SubmitShippingLabelsResponse';
+    protected static string $openAPIModelName = 'SubmitShipmentConfirmationsRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,8 +40,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'shipment_confirmations' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[]',
     ];
 
     /**
@@ -54,8 +53,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'shipment_confirmations' => null,
     ];
 
     /**
@@ -65,8 +63,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'shipment_confirmations' => 'shipmentConfirmations',
     ];
 
     /**
@@ -75,8 +72,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'shipment_confirmations' => 'setShipmentConfirmations',
     ];
 
     /**
@@ -85,8 +81,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'shipment_confirmations' => 'getShipmentConfirmations',
     ];
 
     /**
@@ -99,19 +94,18 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['shipment_confirmations'] = $data['shipment_confirmations'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +115,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +126,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +136,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +146,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +155,6 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +166,6 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,67 +179,32 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
-        }
-
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
-        }
     }
 
     /**
-     * Gets payload.
+     * Gets shipment_confirmations.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[]
      */
-    public function getPayload() : ?TransactionReference
+    public function getShipmentConfirmations() : ?array
     {
-        return $this->container['payload'];
+        return $this->container['shipment_confirmations'];
     }
 
     /**
-     * Sets payload.
+     * Sets shipment_confirmations.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference $payload payload
-     *
-     * @return self
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[] $shipment_confirmations shipment_confirmations
      */
-    public function setPayload(?TransactionReference $payload) : self
+    public function setShipmentConfirmations(?array $shipment_confirmations) : self
     {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
-     */
-    public function getErrors() : ?ErrorList
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
-     */
-    public function setErrors(?ErrorList $errors) : self
-    {
-        $this->container['errors'] = $errors;
+        $this->container['shipment_confirmations'] = $shipment_confirmations;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,7 +217,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -296,18 +251,16 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

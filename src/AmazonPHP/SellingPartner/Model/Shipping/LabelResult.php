@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
+class LabelResult implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -195,7 +191,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
-        if (null !== $this->container['container_reference_id'] && (\mb_strlen($this->container['container_reference_id']) > 40)) {
+        if (null !== $this->container['container_reference_id'] && (\mb_strlen((string) $this->container['container_reference_id']) > 40)) {
             throw new AssertionException("invalid value for 'container_reference_id', the character length must be smaller than or equal to 40.");
         }
 
@@ -206,8 +202,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets container_reference_id.
-     *
-     * @return null|string
      */
     public function getContainerReferenceId() : ?string
     {
@@ -218,8 +212,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets container_reference_id.
      *
      * @param null|string $container_reference_id An identifier for the container. This must be unique within all the containers in the same shipment.
-     *
-     * @return self
      */
     public function setContainerReferenceId(?string $container_reference_id) : self
     {
@@ -230,8 +222,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets tracking_id.
-     *
-     * @return null|string
      */
     public function getTrackingId() : ?string
     {
@@ -242,8 +232,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tracking_id.
      *
      * @param null|string $tracking_id the tracking identifier assigned to the container
-     *
-     * @return self
      */
     public function setTrackingId(?string $tracking_id) : self
     {
@@ -254,8 +242,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Label
      */
     public function getLabel() : ?Label
     {
@@ -266,8 +252,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets label.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Label $label label
-     *
-     * @return self
      */
     public function setLabel(?Label $label) : self
     {
@@ -278,8 +262,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,7 +274,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -326,18 +308,16 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

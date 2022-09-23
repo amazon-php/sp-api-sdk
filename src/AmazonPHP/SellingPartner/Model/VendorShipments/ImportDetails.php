@@ -23,21 +23,21 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const METHOD_OF_PAYMENT_PAID_BY_BUYER = 'PaidByBuyer';
+    final public const METHOD_OF_PAYMENT_PAID_BY_BUYER = 'PaidByBuyer';
 
-    public const METHOD_OF_PAYMENT_COLLECT_ON_DELIVERY = 'CollectOnDelivery';
+    final public const METHOD_OF_PAYMENT_COLLECT_ON_DELIVERY = 'CollectOnDelivery';
 
-    public const METHOD_OF_PAYMENT_DEFINED_BY_BUYER_AND_SELLER = 'DefinedByBuyerAndSeller';
+    final public const METHOD_OF_PAYMENT_DEFINED_BY_BUYER_AND_SELLER = 'DefinedByBuyerAndSeller';
 
-    public const METHOD_OF_PAYMENT_FOB_PORT_OF_CALL = 'FOBPortOfCall';
+    final public const METHOD_OF_PAYMENT_FOB_PORT_OF_CALL = 'FOBPortOfCall';
 
-    public const METHOD_OF_PAYMENT_PREPAID_BY_SELLER = 'PrepaidBySeller';
+    final public const METHOD_OF_PAYMENT_PREPAID_BY_SELLER = 'PrepaidBySeller';
 
-    public const METHOD_OF_PAYMENT_PAID_BY_SELLER = 'PaidBySeller';
+    final public const METHOD_OF_PAYMENT_PAID_BY_SELLER = 'PaidBySeller';
 
     /**
      * The original name of the model.
@@ -131,8 +131,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -147,7 +147,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -157,7 +157,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -168,7 +168,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -178,7 +178,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -188,7 +188,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -197,8 +197,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -210,8 +208,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -258,7 +254,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
             $this->container['route']->validate();
         }
 
-        if (null !== $this->container['import_containers'] && (\mb_strlen($this->container['import_containers']) > 64)) {
+        if (null !== $this->container['import_containers'] && (\mb_strlen((string) $this->container['import_containers']) > 64)) {
             throw new AssertionException("invalid value for 'import_containers', the character length must be smaller than or equal to 64.");
         }
 
@@ -269,8 +265,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets method_of_payment.
-     *
-     * @return null|string
      */
     public function getMethodOfPayment() : ?string
     {
@@ -281,8 +275,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets method_of_payment.
      *
      * @param null|string $method_of_payment This is used for import purchase orders only. If the recipient requests, this field will contain the shipment method of payment.
-     *
-     * @return self
      */
     public function setMethodOfPayment(?string $method_of_payment) : self
     {
@@ -293,8 +285,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seal_number.
-     *
-     * @return null|string
      */
     public function getSealNumber() : ?string
     {
@@ -305,8 +295,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seal_number.
      *
      * @param null|string $seal_number the container's seal number
-     *
-     * @return self
      */
     public function setSealNumber(?string $seal_number) : self
     {
@@ -317,8 +305,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets route.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route
      */
     public function getRoute() : ?Route
     {
@@ -329,8 +315,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets route.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route $route route
-     *
-     * @return self
      */
     public function setRoute(?Route $route) : self
     {
@@ -341,8 +325,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets import_containers.
-     *
-     * @return null|string
      */
     public function getImportContainers() : ?string
     {
@@ -353,8 +335,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets import_containers.
      *
      * @param null|string $import_containers Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if shipment has multiple containers.
-     *
-     * @return self
      */
     public function setImportContainers(?string $import_containers) : self
     {
@@ -365,8 +345,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets billable_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getBillableWeight() : ?Weight
     {
@@ -377,8 +355,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets billable_weight.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $billable_weight billable_weight
-     *
-     * @return self
      */
     public function setBillableWeight(?Weight $billable_weight) : self
     {
@@ -389,8 +365,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets estimated_ship_by_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedShipByDate() : ?\DateTimeInterface
     {
@@ -401,8 +375,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets estimated_ship_by_date.
      *
      * @param null|\DateTimeInterface $estimated_ship_by_date Date on which the shipment is expected to be shipped. This value should not be in the past and not more than 60 days out in the future.
-     *
-     * @return self
      */
     public function setEstimatedShipByDate(?\DateTimeInterface $estimated_ship_by_date) : self
     {
@@ -413,8 +385,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -427,7 +397,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -461,18 +431,16 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

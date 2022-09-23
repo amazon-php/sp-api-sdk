@@ -19,15 +19,12 @@ class UnitOfWeight
     /**
      * Possible values of this enum.
      */
-    public const POUNDS = 'pounds';
+    final public const POUNDS = 'pounds';
 
-    public const KILOGRAMS = 'kilograms';
+    final public const KILOGRAMS = 'kilograms';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

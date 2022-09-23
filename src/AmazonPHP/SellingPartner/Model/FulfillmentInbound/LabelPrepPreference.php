@@ -19,17 +19,14 @@ class LabelPrepPreference
     /**
      * Possible values of this enum.
      */
-    public const SELLER_LABEL = 'SELLER_LABEL';
+    final public const SELLER_LABEL = 'SELLER_LABEL';
 
-    public const AMAZON_LABEL_ONLY = 'AMAZON_LABEL_ONLY';
+    final public const AMAZON_LABEL_ONLY = 'AMAZON_LABEL_ONLY';
 
-    public const AMAZON_LABEL_PREFERRED = 'AMAZON_LABEL_PREFERRED';
+    final public const AMAZON_LABEL_PREFERRED = 'AMAZON_LABEL_PREFERRED';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

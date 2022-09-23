@@ -19,15 +19,12 @@ class CurrencyCode
     /**
      * Possible values of this enum.
      */
-    public const USD = 'USD';
+    final public const USD = 'USD';
 
-    public const GBP = 'GBP';
+    final public const GBP = 'GBP';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

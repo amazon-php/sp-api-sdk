@@ -19,15 +19,12 @@ class UnitOfWeight
     /**
      * Possible values of this enum.
      */
-    public const OZ = 'oz';
+    final public const OZ = 'oz';
 
-    public const G = 'g';
+    final public const G = 'g';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

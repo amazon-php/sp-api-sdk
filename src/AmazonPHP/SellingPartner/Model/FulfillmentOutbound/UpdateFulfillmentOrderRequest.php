@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
+class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -149,8 +149,8 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -171,7 +171,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -181,7 +181,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -192,7 +192,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -202,7 +202,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -212,7 +212,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -221,8 +221,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -234,8 +232,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -249,11 +245,11 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      */
     public function validate() : void
     {
-        if (null !== $this->container['displayable_order_id'] && (\mb_strlen($this->container['displayable_order_id']) > 40)) {
+        if (null !== $this->container['displayable_order_id'] && (\mb_strlen((string) $this->container['displayable_order_id']) > 40)) {
             throw new AssertionException("invalid value for 'displayable_order_id', the character length must be smaller than or equal to 40.");
         }
 
-        if (null !== $this->container['displayable_order_comment'] && (\mb_strlen($this->container['displayable_order_comment']) > 1000)) {
+        if (null !== $this->container['displayable_order_comment'] && (\mb_strlen((string) $this->container['displayable_order_comment']) > 1000)) {
             throw new AssertionException("invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 1000.");
         }
 
@@ -264,8 +260,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -276,8 +270,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace the fulfillment order is placed against
-     *
-     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -288,8 +280,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_id.
-     *
-     * @return null|string
      */
     public function getDisplayableOrderId() : ?string
     {
@@ -300,8 +290,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets displayable_order_id.
      *
      * @param null|string $displayable_order_id A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
-     *
-     * @return self
      */
     public function setDisplayableOrderId(?string $displayable_order_id) : self
     {
@@ -312,8 +300,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDisplayableOrderDate() : ?\DateTimeInterface
     {
@@ -324,8 +310,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets displayable_order_date.
      *
      * @param null|\DateTimeInterface $displayable_order_date displayable_order_date
-     *
-     * @return self
      */
     public function setDisplayableOrderDate(?\DateTimeInterface $displayable_order_date) : self
     {
@@ -336,8 +320,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_comment.
-     *
-     * @return null|string
      */
     public function getDisplayableOrderComment() : ?string
     {
@@ -348,8 +330,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets displayable_order_comment.
      *
      * @param null|string $displayable_order_comment order-specific text that appears in recipient-facing materials such as the outbound shipment packing slip
-     *
-     * @return self
      */
     public function setDisplayableOrderComment(?string $displayable_order_comment) : self
     {
@@ -360,8 +340,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipping_speed_category.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ?ShippingSpeedCategory
     {
@@ -372,8 +350,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets shipping_speed_category.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
-     *
-     * @return self
      */
     public function setShippingSpeedCategory(?ShippingSpeedCategory $shipping_speed_category) : self
     {
@@ -384,8 +360,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets destination_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getDestinationAddress() : ?Address
     {
@@ -396,8 +370,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets destination_address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address $destination_address destination_address
-     *
-     * @return self
      */
     public function setDestinationAddress(?Address $destination_address) : self
     {
@@ -408,8 +380,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_action.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction
      */
     public function getFulfillmentAction() : ?FulfillmentAction
     {
@@ -420,8 +390,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets fulfillment_action.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction $fulfillment_action fulfillment_action
-     *
-     * @return self
      */
     public function setFulfillmentAction(?FulfillmentAction $fulfillment_action) : self
     {
@@ -432,8 +400,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_policy.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy
      */
     public function getFulfillmentPolicy() : ?FulfillmentPolicy
     {
@@ -444,8 +410,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets fulfillment_policy.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy $fulfillment_policy fulfillment_policy
-     *
-     * @return self
      */
     public function setFulfillmentPolicy(?FulfillmentPolicy $fulfillment_policy) : self
     {
@@ -456,8 +420,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets ship_from_country_code.
-     *
-     * @return null|string
      */
     public function getShipFromCountryCode() : ?string
     {
@@ -468,8 +430,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets ship_from_country_code.
      *
      * @param null|string $ship_from_country_code The two-character country code for the country from which the fulfillment order ships. Must be in ISO 3166-1 alpha-2 format.
-     *
-     * @return self
      */
     public function setShipFromCountryCode(?string $ship_from_country_code) : self
     {
@@ -492,8 +452,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets notification_emails.
      *
      * @param null|string[] $notification_emails a list of email addresses that the seller provides that are used by Amazon to send ship-complete notifications to recipients on behalf of the seller
-     *
-     * @return self
      */
     public function setNotificationEmails(?array $notification_emails) : self
     {
@@ -516,8 +474,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets feature_constraints.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
-     *
-     * @return self
      */
     public function setFeatureConstraints(?array $feature_constraints) : self
     {
@@ -540,8 +496,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets items.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderItem[] $items an array of fulfillment order item information for updating a fulfillment order
-     *
-     * @return self
      */
     public function setItems(?array $items) : self
     {
@@ -552,8 +506,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -566,7 +518,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -600,18 +552,16 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

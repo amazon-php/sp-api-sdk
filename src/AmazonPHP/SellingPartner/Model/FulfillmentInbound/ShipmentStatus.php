@@ -19,31 +19,28 @@ class ShipmentStatus
     /**
      * Possible values of this enum.
      */
-    public const WORKING = 'WORKING';
+    final public const WORKING = 'WORKING';
 
-    public const SHIPPED = 'SHIPPED';
+    final public const SHIPPED = 'SHIPPED';
 
-    public const RECEIVING = 'RECEIVING';
+    final public const RECEIVING = 'RECEIVING';
 
-    public const CANCELLED = 'CANCELLED';
+    final public const CANCELLED = 'CANCELLED';
 
-    public const DELETED = 'DELETED';
+    final public const DELETED = 'DELETED';
 
-    public const CLOSED = 'CLOSED';
+    final public const CLOSED = 'CLOSED';
 
-    public const ERROR = 'ERROR';
+    final public const ERROR = 'ERROR';
 
-    public const IN_TRANSIT = 'IN_TRANSIT';
+    final public const IN_TRANSIT = 'IN_TRANSIT';
 
-    public const DELIVERED = 'DELIVERED';
+    final public const DELIVERED = 'DELIVERED';
 
-    public const CHECKED_IN = 'CHECKED_IN';
+    final public const CHECKED_IN = 'CHECKED_IN';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

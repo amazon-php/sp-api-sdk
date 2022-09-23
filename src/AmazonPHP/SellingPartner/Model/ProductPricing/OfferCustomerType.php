@@ -19,15 +19,12 @@ class OfferCustomerType
     /**
      * Possible values of this enum.
      */
-    public const B2_C = 'B2C';
+    final public const B2_C = 'B2C';
 
-    public const B2_B = 'B2B';
+    final public const B2_B = 'B2B';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

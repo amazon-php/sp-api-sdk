@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
+class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -220,8 +216,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets start_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getStartTime() : \DateTimeInterface
     {
@@ -232,8 +226,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets start_time.
      *
      * @param \DateTimeInterface $start_time denotes the time from when the resource is available in a day in ISO-8601 format
-     *
-     * @return self
      */
     public function setStartTime(\DateTimeInterface $start_time) : self
     {
@@ -244,8 +236,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets end_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getEndTime() : \DateTimeInterface
     {
@@ -256,8 +246,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets end_time.
      *
      * @param \DateTimeInterface $end_time denotes the time till when the resource is available in a day in ISO-8601 format
-     *
-     * @return self
      */
     public function setEndTime(\DateTimeInterface $end_time) : self
     {
@@ -268,8 +256,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets recurrence.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Recurrence
      */
     public function getRecurrence() : ?Recurrence
     {
@@ -280,8 +266,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets recurrence.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Recurrence $recurrence recurrence
-     *
-     * @return self
      */
     public function setRecurrence(?Recurrence $recurrence) : self
     {
@@ -292,8 +276,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets capacity.
-     *
-     * @return null|int
      */
     public function getCapacity() : ?int
     {
@@ -304,8 +286,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets capacity.
      *
      * @param null|int $capacity signifies the capacity of a resource which is available
-     *
-     * @return self
      */
     public function setCapacity(?int $capacity) : self
     {
@@ -316,8 +296,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -330,7 +308,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -364,18 +342,16 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

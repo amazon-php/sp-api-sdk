@@ -19,25 +19,22 @@ class PackageStatus
     /**
      * Possible values of this enum.
      */
-    public const SHIPPED = 'SHIPPED';
+    final public const SHIPPED = 'SHIPPED';
 
-    public const IN_TRANSIT = 'IN_TRANSIT';
+    final public const IN_TRANSIT = 'IN_TRANSIT';
 
-    public const DELIVERED = 'DELIVERED';
+    final public const DELIVERED = 'DELIVERED';
 
-    public const CHECKED_IN = 'CHECKED_IN';
+    final public const CHECKED_IN = 'CHECKED_IN';
 
-    public const RECEIVING = 'RECEIVING';
+    final public const RECEIVING = 'RECEIVING';
 
-    public const CLOSED = 'CLOSED';
+    final public const CLOSED = 'CLOSED';
 
-    public const DELETED = 'DELETED';
+    final public const DELETED = 'DELETED';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

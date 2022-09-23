@@ -19,15 +19,12 @@ class UnitOfMeasurement
     /**
      * Possible values of this enum.
      */
-    public const INCHES = 'inches';
+    final public const INCHES = 'inches';
 
-    public const CENTIMETERS = 'centimeters';
+    final public const CENTIMETERS = 'centimeters';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

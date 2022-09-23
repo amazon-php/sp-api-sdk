@@ -10,24 +10,8 @@ use Psr\Log\LoggerInterface;
 
 final class OAuth
 {
-    private ClientInterface $client;
-
-    private HttpFactory $requestFactory;
-
-    private Configuration $configuration;
-
-    private LoggerInterface $logger;
-
-    public function __construct(
-        ClientInterface $client,
-        HttpFactory $requestFactory,
-        Configuration $configuration,
-        LoggerInterface $logger
-    ) {
-        $this->client = $client;
-        $this->requestFactory = $requestFactory;
-        $this->configuration = $configuration;
-        $this->logger = $logger;
+    public function __construct(private readonly ClientInterface $client, private readonly HttpFactory $requestFactory, private readonly Configuration $configuration, private readonly LoggerInterface $logger)
+    {
     }
 
     /**

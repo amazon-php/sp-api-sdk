@@ -19,19 +19,16 @@ class ShipmentStatus
     /**
      * Possible values of this enum.
      */
-    public const PURCHASED = 'Purchased';
+    final public const PURCHASED = 'Purchased';
 
-    public const REFUND_PENDING = 'RefundPending';
+    final public const REFUND_PENDING = 'RefundPending';
 
-    public const REFUND_REJECTED = 'RefundRejected';
+    final public const REFUND_REJECTED = 'RefundRejected';
 
-    public const REFUND_APPLIED = 'RefundApplied';
+    final public const REFUND_APPLIED = 'RefundApplied';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

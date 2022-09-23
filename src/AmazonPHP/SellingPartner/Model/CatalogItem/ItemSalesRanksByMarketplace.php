@@ -167,8 +167,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

@@ -155,8 +155,6 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

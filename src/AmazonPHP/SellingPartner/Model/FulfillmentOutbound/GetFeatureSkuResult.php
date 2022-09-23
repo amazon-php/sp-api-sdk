@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInterface
+class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -226,8 +222,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -238,8 +232,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the requested marketplace
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -250,8 +242,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets feature_name.
-     *
-     * @return string
      */
     public function getFeatureName() : string
     {
@@ -262,8 +252,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets feature_name.
      *
      * @param string $feature_name the name of the feature
-     *
-     * @return self
      */
     public function setFeatureName(string $feature_name) : self
     {
@@ -274,8 +262,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets is_eligible.
-     *
-     * @return bool
      */
     public function getIsEligible() : bool
     {
@@ -286,8 +272,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets is_eligible.
      *
      * @param bool $is_eligible when true, the seller SKU is eligible for the requested feature
-     *
-     * @return self
      */
     public function setIsEligible(bool $is_eligible) : self
     {
@@ -310,8 +294,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets ineligible_reasons.
      *
      * @param null|string[] $ineligible_reasons A list of one or more reasons that the seller SKU is ineligibile for the feature.  Possible values: * MERCHANT_NOT_ENROLLED - The merchant isn't enrolled for the feature. * SKU_NOT_ELIGIBLE - The SKU doesn't reside in a warehouse that supports the feature. * INVALID_SKU - There is an issue with the SKU provided.
-     *
-     * @return self
      */
     public function setIneligibleReasons(?array $ineligible_reasons) : self
     {
@@ -322,8 +304,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets sku_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSku
      */
     public function getSkuInfo() : ?FeatureSku
     {
@@ -334,8 +314,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets sku_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSku $sku_info sku_info
-     *
-     * @return self
      */
     public function setSkuInfo(?FeatureSku $sku_info) : self
     {
@@ -346,8 +324,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -360,7 +336,7 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -394,18 +370,16 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, ModelInter
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

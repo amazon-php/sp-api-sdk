@@ -19,19 +19,16 @@ class ShipmentInvoiceStatus
     /**
      * Possible values of this enum.
      */
-    public const PROCESSING = 'Processing';
+    final public const PROCESSING = 'Processing';
 
-    public const ACCEPTED = 'Accepted';
+    final public const ACCEPTED = 'Accepted';
 
-    public const ERRORED = 'Errored';
+    final public const ERRORED = 'Errored';
 
-    public const NOT_FOUND = 'NotFound';
+    final public const NOT_FOUND = 'NotFound';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

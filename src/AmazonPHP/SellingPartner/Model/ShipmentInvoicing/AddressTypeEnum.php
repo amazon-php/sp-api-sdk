@@ -19,15 +19,12 @@ class AddressTypeEnum
     /**
      * Possible values of this enum.
      */
-    public const RESIDENTIAL = 'Residential';
+    final public const RESIDENTIAL = 'Residential';
 
-    public const COMMERCIAL = 'Commercial';
+    final public const COMMERCIAL = 'Commercial';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
+class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -124,8 +124,8 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -141,7 +141,7 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -151,7 +151,7 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -162,7 +162,7 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -172,7 +172,7 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -182,7 +182,7 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -191,8 +191,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -204,8 +202,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -230,8 +226,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets retrocharge_event_type.
-     *
-     * @return null|string
      */
     public function getRetrochargeEventType() : ?string
     {
@@ -242,8 +236,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets retrocharge_event_type.
      *
      * @param null|string $retrocharge_event_type The type of event.  Possible values:  * Retrocharge  * RetrochargeReversal
-     *
-     * @return self
      */
     public function setRetrochargeEventType(?string $retrocharge_event_type) : self
     {
@@ -254,8 +246,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -266,8 +256,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
-     *
-     * @return self
      */
     public function setAmazonOrderId(?string $amazon_order_id) : self
     {
@@ -278,8 +266,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -290,8 +276,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets posted_date.
      *
      * @param null|\DateTimeInterface $posted_date posted_date
-     *
-     * @return self
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -302,8 +286,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets base_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseTax() : ?Currency
     {
@@ -314,8 +296,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets base_tax.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $base_tax base_tax
-     *
-     * @return self
      */
     public function setBaseTax(?Currency $base_tax) : self
     {
@@ -326,8 +306,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets shipping_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getShippingTax() : ?Currency
     {
@@ -338,8 +316,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets shipping_tax.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $shipping_tax shipping_tax
-     *
-     * @return self
      */
     public function setShippingTax(?Currency $shipping_tax) : self
     {
@@ -350,8 +326,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets marketplace_name.
-     *
-     * @return null|string
      */
     public function getMarketplaceName() : ?string
     {
@@ -362,8 +336,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets marketplace_name.
      *
      * @param null|string $marketplace_name the name of the marketplace where the retrocharge event occurred
-     *
-     * @return self
      */
     public function setMarketplaceName(?string $marketplace_name) : self
     {
@@ -386,8 +358,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets retrocharge_tax_withheld_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithheldComponent[] $retrocharge_tax_withheld_list a list of information about taxes withheld
-     *
-     * @return self
      */
     public function setRetrochargeTaxWithheldList(?array $retrocharge_tax_withheld_list) : self
     {
@@ -398,8 +368,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -412,7 +380,7 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -446,18 +414,16 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

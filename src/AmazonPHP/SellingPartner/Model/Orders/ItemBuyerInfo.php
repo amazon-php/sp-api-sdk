@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -222,8 +218,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_customized_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail
      */
     public function getBuyerCustomizedInfo() : ?BuyerCustomizedInfoDetail
     {
@@ -234,8 +228,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_customized_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
-     *
-     * @return self
      */
     public function setBuyerCustomizedInfo(?BuyerCustomizedInfoDetail $buyer_customized_info) : self
     {
@@ -246,8 +238,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets gift_wrap_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getGiftWrapPrice() : ?Money
     {
@@ -258,8 +248,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets gift_wrap_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $gift_wrap_price gift_wrap_price
-     *
-     * @return self
      */
     public function setGiftWrapPrice(?Money $gift_wrap_price) : self
     {
@@ -270,8 +258,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets gift_wrap_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getGiftWrapTax() : ?Money
     {
@@ -282,8 +268,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets gift_wrap_tax.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $gift_wrap_tax gift_wrap_tax
-     *
-     * @return self
      */
     public function setGiftWrapTax(?Money $gift_wrap_tax) : self
     {
@@ -294,8 +278,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets gift_message_text.
-     *
-     * @return null|string
      */
     public function getGiftMessageText() : ?string
     {
@@ -306,8 +288,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets gift_message_text.
      *
      * @param null|string $gift_message_text a gift message provided by the buyer
-     *
-     * @return self
      */
     public function setGiftMessageText(?string $gift_message_text) : self
     {
@@ -318,8 +298,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets gift_wrap_level.
-     *
-     * @return null|string
      */
     public function getGiftWrapLevel() : ?string
     {
@@ -330,8 +308,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets gift_wrap_level.
      *
      * @param null|string $gift_wrap_level the gift wrap level specified by the buyer
-     *
-     * @return self
      */
     public function setGiftWrapLevel(?string $gift_wrap_level) : self
     {
@@ -342,8 +318,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -356,7 +330,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -390,18 +364,16 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

@@ -20,6 +20,10 @@ interface VendorDirectFulfillmentShippingSDKInterface
 {
     public const API_NAME = 'VendorDirectFulfillmentShipping';
 
+    public const OPERATION_CREATESHIPPINGLABELS = 'createShippingLabels';
+
+    public const OPERATION_CREATESHIPPINGLABELS_PATH = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}';
+
     public const OPERATION_GETSHIPPINGLABEL = 'getShippingLabel';
 
     public const OPERATION_GETSHIPPINGLABEL_PATH = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels/{purchaseOrderNumber}';
@@ -31,6 +35,19 @@ interface VendorDirectFulfillmentShippingSDKInterface
     public const OPERATION_SUBMITSHIPPINGLABELREQUEST = 'submitShippingLabelRequest';
 
     public const OPERATION_SUBMITSHIPPINGLABELREQUEST_PATH = '/vendor/directFulfillment/shipping/2021-12-28/shippingLabels';
+
+    /**
+     * Operation createShippingLabels.
+     *
+     * @param string $purchase_order_number The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body body (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
+     */
+    public function createShippingLabels(AccessToken $accessToken, string $region, string $purchase_order_number, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel;
 
     /**
      * Operation getShippingLabel.

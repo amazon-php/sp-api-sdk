@@ -19,15 +19,12 @@ class CustomerType
     /**
      * Possible values of this enum.
      */
-    public const CONSUMER = 'Consumer';
+    final public const CONSUMER = 'Consumer';
 
-    public const BUSINESS = 'Business';
+    final public const BUSINESS = 'Business';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

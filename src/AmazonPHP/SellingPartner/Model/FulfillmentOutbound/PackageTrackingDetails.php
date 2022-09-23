@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -159,8 +159,8 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -183,7 +183,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -193,7 +193,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -204,7 +204,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -214,7 +214,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -224,7 +224,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -233,8 +233,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -246,8 +244,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -272,8 +268,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets package_number.
-     *
-     * @return int
      */
     public function getPackageNumber() : int
     {
@@ -284,8 +278,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets package_number.
      *
      * @param int $package_number the package identifier
-     *
-     * @return self
      */
     public function setPackageNumber(int $package_number) : self
     {
@@ -296,8 +288,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets tracking_number.
-     *
-     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -308,8 +298,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets tracking_number.
      *
      * @param null|string $tracking_number the tracking number for the package
-     *
-     * @return self
      */
     public function setTrackingNumber(?string $tracking_number) : self
     {
@@ -320,8 +308,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets customer_tracking_link.
-     *
-     * @return null|string
      */
     public function getCustomerTrackingLink() : ?string
     {
@@ -332,8 +318,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets customer_tracking_link.
      *
      * @param null|string $customer_tracking_link Link on swiship.com that allows customers to track the package.
-     *
-     * @return self
      */
     public function setCustomerTrackingLink(?string $customer_tracking_link) : self
     {
@@ -344,8 +328,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets carrier_code.
-     *
-     * @return null|string
      */
     public function getCarrierCode() : ?string
     {
@@ -356,8 +338,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets carrier_code.
      *
      * @param null|string $carrier_code the name of the carrier
-     *
-     * @return self
      */
     public function setCarrierCode(?string $carrier_code) : self
     {
@@ -368,8 +348,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets carrier_phone_number.
-     *
-     * @return null|string
      */
     public function getCarrierPhoneNumber() : ?string
     {
@@ -380,8 +358,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets carrier_phone_number.
      *
      * @param null|string $carrier_phone_number the phone number of the carrier
-     *
-     * @return self
      */
     public function setCarrierPhoneNumber(?string $carrier_phone_number) : self
     {
@@ -392,8 +368,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets carrier_url.
-     *
-     * @return null|string
      */
     public function getCarrierUrl() : ?string
     {
@@ -404,8 +378,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets carrier_url.
      *
      * @param null|string $carrier_url the URL of the carrier’s website
-     *
-     * @return self
      */
     public function setCarrierUrl(?string $carrier_url) : self
     {
@@ -416,8 +388,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShipDate() : ?\DateTimeInterface
     {
@@ -428,8 +398,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets ship_date.
      *
      * @param null|\DateTimeInterface $ship_date ship_date
-     *
-     * @return self
      */
     public function setShipDate(?\DateTimeInterface $ship_date) : self
     {
@@ -440,8 +408,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets estimated_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {
@@ -452,8 +418,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets estimated_arrival_date.
      *
      * @param null|\DateTimeInterface $estimated_arrival_date estimated_arrival_date
-     *
-     * @return self
      */
     public function setEstimatedArrivalDate(?\DateTimeInterface $estimated_arrival_date) : self
     {
@@ -464,8 +428,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets ship_to_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingAddress
      */
     public function getShipToAddress() : ?TrackingAddress
     {
@@ -476,8 +438,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets ship_to_address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingAddress $ship_to_address ship_to_address
-     *
-     * @return self
      */
     public function setShipToAddress(?TrackingAddress $ship_to_address) : self
     {
@@ -488,8 +448,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets current_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus
      */
     public function getCurrentStatus() : ?CurrentStatus
     {
@@ -500,8 +458,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets current_status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus $current_status current_status
-     *
-     * @return self
      */
     public function setCurrentStatus(?CurrentStatus $current_status) : self
     {
@@ -512,8 +468,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets current_status_description.
-     *
-     * @return null|string
      */
     public function getCurrentStatusDescription() : ?string
     {
@@ -524,8 +478,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets current_status_description.
      *
      * @param null|string $current_status_description description corresponding to the CurrentStatus value
-     *
-     * @return self
      */
     public function setCurrentStatusDescription(?string $current_status_description) : self
     {
@@ -536,8 +488,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets signed_for_by.
-     *
-     * @return null|string
      */
     public function getSignedForBy() : ?string
     {
@@ -548,8 +498,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets signed_for_by.
      *
      * @param null|string $signed_for_by the name of the person who signed for the package
-     *
-     * @return self
      */
     public function setSignedForBy(?string $signed_for_by) : self
     {
@@ -560,8 +508,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets additional_location_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo
      */
     public function getAdditionalLocationInfo() : ?AdditionalLocationInfo
     {
@@ -572,8 +518,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets additional_location_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo $additional_location_info additional_location_info
-     *
-     * @return self
      */
     public function setAdditionalLocationInfo(?AdditionalLocationInfo $additional_location_info) : self
     {
@@ -596,8 +540,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets tracking_events.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingEvent[] $tracking_events an array of tracking event information
-     *
-     * @return self
      */
     public function setTrackingEvents(?array $tracking_events) : self
     {
@@ -608,8 +550,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -622,7 +562,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -656,18 +596,16 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, ModelIn
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

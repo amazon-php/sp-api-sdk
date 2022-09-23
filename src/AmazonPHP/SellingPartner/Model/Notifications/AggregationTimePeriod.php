@@ -19,15 +19,12 @@ class AggregationTimePeriod
     /**
      * Possible values of this enum.
      */
-    public const FIVE_MINUTES = 'FiveMinutes';
+    final public const FIVE_MINUTES = 'FiveMinutes';
 
-    public const TEN_MINUTES = 'TenMinutes';
+    final public const TEN_MINUTES = 'TenMinutes';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

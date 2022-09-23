@@ -19,21 +19,18 @@ class VerificationStatus
     /**
      * Possible values of this enum.
      */
-    public const PENDING = 'Pending';
+    final public const PENDING = 'Pending';
 
-    public const APPROVED = 'Approved';
+    final public const APPROVED = 'Approved';
 
-    public const REJECTED = 'Rejected';
+    final public const REJECTED = 'Rejected';
 
-    public const EXPIRED = 'Expired';
+    final public const EXPIRED = 'Expired';
 
-    public const CANCELLED = 'Cancelled';
+    final public const CANCELLED = 'Cancelled';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

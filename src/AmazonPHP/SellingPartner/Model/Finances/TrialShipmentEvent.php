@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
+class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -211,8 +207,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -223,8 +217,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
-     *
-     * @return self
      */
     public function setAmazonOrderId(?string $amazon_order_id) : self
     {
@@ -235,8 +227,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets financial_event_group_id.
-     *
-     * @return null|string
      */
     public function getFinancialEventGroupId() : ?string
     {
@@ -247,8 +237,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets financial_event_group_id.
      *
      * @param null|string $financial_event_group_id the identifier of the financial event group
-     *
-     * @return self
      */
     public function setFinancialEventGroupId(?string $financial_event_group_id) : self
     {
@@ -259,8 +247,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -271,8 +257,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets posted_date.
      *
      * @param null|\DateTimeInterface $posted_date posted_date
-     *
-     * @return self
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -283,8 +267,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets sku.
-     *
-     * @return null|string
      */
     public function getSku() : ?string
     {
@@ -295,8 +277,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets sku.
      *
      * @param null|string $sku The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
-     *
-     * @return self
      */
     public function setSku(?string $sku) : self
     {
@@ -319,8 +299,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets fee_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $fee_list a list of fee component information
-     *
-     * @return self
      */
     public function setFeeList(?array $fee_list) : self
     {
@@ -331,8 +309,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -345,7 +321,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -379,18 +355,16 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

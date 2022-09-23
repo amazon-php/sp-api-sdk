@@ -167,8 +167,6 @@ class GetInventorySummariesResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

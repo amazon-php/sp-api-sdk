@@ -169,8 +169,6 @@ class FeeLineItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

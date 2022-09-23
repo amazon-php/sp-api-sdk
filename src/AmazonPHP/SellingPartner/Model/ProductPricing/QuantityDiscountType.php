@@ -19,13 +19,10 @@ class QuantityDiscountType
     /**
      * Possible values of this enum.
      */
-    public const QUANTITY_DISCOUNT = 'QUANTITY_DISCOUNT';
+    final public const QUANTITY_DISCOUNT = 'QUANTITY_DISCOUNT';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

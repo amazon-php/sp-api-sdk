@@ -23,15 +23,15 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const APPOINTMENT_STATUS_ACTIVE = 'ACTIVE';
+    final public const APPOINTMENT_STATUS_ACTIVE = 'ACTIVE';
 
-    public const APPOINTMENT_STATUS_CANCELLED = 'CANCELLED';
+    final public const APPOINTMENT_STATUS_CANCELLED = 'CANCELLED';
 
-    public const APPOINTMENT_STATUS_COMPLETED = 'COMPLETED';
+    final public const APPOINTMENT_STATUS_COMPLETED = 'COMPLETED';
 
     /**
      * The original name of the model.
@@ -125,8 +125,8 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -141,7 +141,7 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -151,7 +151,7 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -162,7 +162,7 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -172,7 +172,7 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -182,7 +182,7 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -191,8 +191,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -204,8 +202,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -233,11 +229,11 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      */
     public function validate() : void
     {
-        if (null !== $this->container['appointment_id'] && (\mb_strlen($this->container['appointment_id']) > 100)) {
+        if (null !== $this->container['appointment_id'] && (\mb_strlen((string) $this->container['appointment_id']) > 100)) {
             throw new AssertionException("invalid value for 'appointment_id', the character length must be smaller than or equal to 100.");
         }
 
-        if (null !== $this->container['appointment_id'] && (\mb_strlen($this->container['appointment_id']) < 5)) {
+        if (null !== $this->container['appointment_id'] && (\mb_strlen((string) $this->container['appointment_id']) < 5)) {
             throw new AssertionException("invalid value for 'appointment_id', the character length must be bigger than or equal to 5.");
         }
 
@@ -261,11 +257,11 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("invalid value for 'assigned_technicians', number of items must be greater than or equal to 1.");
         }
 
-        if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen($this->container['rescheduled_appointment_id']) > 100)) {
+        if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen((string) $this->container['rescheduled_appointment_id']) > 100)) {
             throw new AssertionException("invalid value for 'rescheduled_appointment_id', the character length must be smaller than or equal to 100.");
         }
 
-        if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen($this->container['rescheduled_appointment_id']) < 5)) {
+        if (null !== $this->container['rescheduled_appointment_id'] && (\mb_strlen((string) $this->container['rescheduled_appointment_id']) < 5)) {
             throw new AssertionException("invalid value for 'rescheduled_appointment_id', the character length must be bigger than or equal to 5.");
         }
 
@@ -276,8 +272,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets appointment_id.
-     *
-     * @return null|string
      */
     public function getAppointmentId() : ?string
     {
@@ -288,8 +282,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets appointment_id.
      *
      * @param null|string $appointment_id the appointment identifier
-     *
-     * @return self
      */
     public function setAppointmentId(?string $appointment_id) : self
     {
@@ -300,8 +292,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets appointment_status.
-     *
-     * @return null|string
      */
     public function getAppointmentStatus() : ?string
     {
@@ -312,8 +302,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets appointment_status.
      *
      * @param null|string $appointment_status the status of the appointment
-     *
-     * @return self
      */
     public function setAppointmentStatus(?string $appointment_status) : self
     {
@@ -324,8 +312,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets appointment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime
      */
     public function getAppointmentTime() : ?AppointmentTime
     {
@@ -336,8 +322,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets appointment_time.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime $appointment_time appointment_time
-     *
-     * @return self
      */
     public function setAppointmentTime(?AppointmentTime $appointment_time) : self
     {
@@ -360,8 +344,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets assigned_technicians.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Technician[] $assigned_technicians a list of technicians assigned to the service job
-     *
-     * @return self
      */
     public function setAssignedTechnicians(?array $assigned_technicians) : self
     {
@@ -372,8 +354,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets rescheduled_appointment_id.
-     *
-     * @return null|string
      */
     public function getRescheduledAppointmentId() : ?string
     {
@@ -384,8 +364,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets rescheduled_appointment_id.
      *
      * @param null|string $rescheduled_appointment_id the appointment identifier
-     *
-     * @return self
      */
     public function setRescheduledAppointmentId(?string $rescheduled_appointment_id) : self
     {
@@ -396,8 +374,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets poa.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Poa
      */
     public function getPoa() : ?Poa
     {
@@ -408,8 +384,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets poa.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Poa $poa poa
-     *
-     * @return self
      */
     public function setPoa(?Poa $poa) : self
     {
@@ -420,8 +394,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -434,7 +406,7 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -468,18 +440,16 @@ class Appointment implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

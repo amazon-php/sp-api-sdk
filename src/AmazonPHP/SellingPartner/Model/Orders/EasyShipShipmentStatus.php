@@ -19,43 +19,40 @@ class EasyShipShipmentStatus
     /**
      * Possible values of this enum.
      */
-    public const PENDING_SCHEDULE = 'PendingSchedule';
+    final public const PENDING_SCHEDULE = 'PendingSchedule';
 
-    public const PENDING_PICK_UP = 'PendingPickUp';
+    final public const PENDING_PICK_UP = 'PendingPickUp';
 
-    public const PENDING_DROP_OFF = 'PendingDropOff';
+    final public const PENDING_DROP_OFF = 'PendingDropOff';
 
-    public const LABEL_CANCELED = 'LabelCanceled';
+    final public const LABEL_CANCELED = 'LabelCanceled';
 
-    public const PICKED_UP = 'PickedUp';
+    final public const PICKED_UP = 'PickedUp';
 
-    public const DROPPED_OFF = 'DroppedOff';
+    final public const DROPPED_OFF = 'DroppedOff';
 
-    public const AT_ORIGIN_FC = 'AtOriginFC';
+    final public const AT_ORIGIN_FC = 'AtOriginFC';
 
-    public const AT_DESTINATION_FC = 'AtDestinationFC';
+    final public const AT_DESTINATION_FC = 'AtDestinationFC';
 
-    public const DELIVERED = 'Delivered';
+    final public const DELIVERED = 'Delivered';
 
-    public const REJECTED_BY_BUYER = 'RejectedByBuyer';
+    final public const REJECTED_BY_BUYER = 'RejectedByBuyer';
 
-    public const UNDELIVERABLE = 'Undeliverable';
+    final public const UNDELIVERABLE = 'Undeliverable';
 
-    public const RETURNING_TO_SELLER = 'ReturningToSeller';
+    final public const RETURNING_TO_SELLER = 'ReturningToSeller';
 
-    public const RETURNED_TO_SELLER = 'ReturnedToSeller';
+    final public const RETURNED_TO_SELLER = 'ReturnedToSeller';
 
-    public const LOST = 'Lost';
+    final public const LOST = 'Lost';
 
-    public const OUT_FOR_DELIVERY = 'OutForDelivery';
+    final public const OUT_FOR_DELIVERY = 'OutForDelivery';
 
-    public const DAMAGED = 'Damaged';
+    final public const DAMAGED = 'Damaged';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

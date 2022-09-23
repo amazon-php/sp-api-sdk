@@ -161,8 +161,6 @@ class ImageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

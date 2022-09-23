@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -206,8 +202,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets return_reason_code.
-     *
-     * @return string
      */
     public function getReturnReasonCode() : string
     {
@@ -218,8 +212,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets return_reason_code.
      *
      * @param string $return_reason_code a code that indicates a valid return reason
-     *
-     * @return self
      */
     public function setReturnReasonCode(string $return_reason_code) : self
     {
@@ -230,8 +222,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets description.
-     *
-     * @return string
      */
     public function getDescription() : string
     {
@@ -242,8 +232,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets description.
      *
      * @param string $description a human readable description of the return reason code
-     *
-     * @return self
      */
     public function setDescription(string $description) : self
     {
@@ -254,8 +242,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets translated_description.
-     *
-     * @return null|string
      */
     public function getTranslatedDescription() : ?string
     {
@@ -266,8 +252,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets translated_description.
      *
      * @param null|string $translated_description A translation of the description. The translation is in the language specified in the Language request parameter.
-     *
-     * @return self
      */
     public function setTranslatedDescription(?string $translated_description) : self
     {
@@ -278,8 +262,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,7 +274,7 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -326,18 +308,16 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, ModelInterfa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

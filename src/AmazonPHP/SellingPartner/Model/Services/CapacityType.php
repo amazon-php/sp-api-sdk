@@ -19,19 +19,16 @@ class CapacityType
     /**
      * Possible values of this enum.
      */
-    public const SCHEDULED_CAPACITY = 'SCHEDULED_CAPACITY';
+    final public const SCHEDULED_CAPACITY = 'SCHEDULED_CAPACITY';
 
-    public const AVAILABLE_CAPACITY = 'AVAILABLE_CAPACITY';
+    final public const AVAILABLE_CAPACITY = 'AVAILABLE_CAPACITY';
 
-    public const ENCUMBERED_CAPACITY = 'ENCUMBERED_CAPACITY';
+    final public const ENCUMBERED_CAPACITY = 'ENCUMBERED_CAPACITY';
 
-    public const RESERVED_CAPACITY = 'RESERVED_CAPACITY';
+    final public const RESERVED_CAPACITY = 'RESERVED_CAPACITY';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
+class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +161,6 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +172,6 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -196,8 +192,6 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets ordered_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ?ItemQuantity
     {
@@ -208,8 +202,6 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
      * Sets ordered_quantity.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $ordered_quantity ordered_quantity
-     *
-     * @return self
      */
     public function setOrderedQuantity(?ItemQuantity $ordered_quantity) : self
     {
@@ -232,8 +224,6 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
      * Sets ordered_quantity_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderedQuantityDetails[] $ordered_quantity_details details of item quantity ordered
-     *
-     * @return self
      */
     public function setOrderedQuantityDetails(?array $ordered_quantity_details) : self
     {
@@ -244,8 +234,6 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -258,7 +246,7 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -292,18 +280,16 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

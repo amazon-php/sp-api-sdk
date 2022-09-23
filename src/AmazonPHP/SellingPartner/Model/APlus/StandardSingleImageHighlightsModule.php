@@ -185,8 +185,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

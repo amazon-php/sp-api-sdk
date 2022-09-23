@@ -23,45 +23,45 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializable, ModelInterface
+class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const PERIOD_PT5_M = 'PT5M';
+    final public const PERIOD_PT5_M = 'PT5M';
 
-    public const PERIOD_PT15_M = 'PT15M';
+    final public const PERIOD_PT15_M = 'PT15M';
 
-    public const PERIOD_PT30_M = 'PT30M';
+    final public const PERIOD_PT30_M = 'PT30M';
 
-    public const PERIOD_PT1_H = 'PT1H';
+    final public const PERIOD_PT1_H = 'PT1H';
 
-    public const PERIOD_PT2_H = 'PT2H';
+    final public const PERIOD_PT2_H = 'PT2H';
 
-    public const PERIOD_PT4_H = 'PT4H';
+    final public const PERIOD_PT4_H = 'PT4H';
 
-    public const PERIOD_PT8_H = 'PT8H';
+    final public const PERIOD_PT8_H = 'PT8H';
 
-    public const PERIOD_PT12_H = 'PT12H';
+    final public const PERIOD_PT12_H = 'PT12H';
 
-    public const PERIOD_P1_D = 'P1D';
+    final public const PERIOD_P1_D = 'P1D';
 
-    public const PERIOD_P2_D = 'P2D';
+    final public const PERIOD_P2_D = 'P2D';
 
-    public const PERIOD_P3_D = 'P3D';
+    final public const PERIOD_P3_D = 'P3D';
 
-    public const PERIOD_PT84_H = 'PT84H';
+    final public const PERIOD_PT84_H = 'PT84H';
 
-    public const PERIOD_P7_D = 'P7D';
+    final public const PERIOD_P7_D = 'P7D';
 
-    public const PERIOD_P14_D = 'P14D';
+    final public const PERIOD_P14_D = 'P14D';
 
-    public const PERIOD_P15_D = 'P15D';
+    final public const PERIOD_P15_D = 'P15D';
 
-    public const PERIOD_P18_D = 'P18D';
+    final public const PERIOD_P18_D = 'P18D';
 
-    public const PERIOD_P30_D = 'P30D';
+    final public const PERIOD_P30_D = 'P30D';
 
-    public const PERIOD_P1_M = 'P1M';
+    final public const PERIOD_P1_M = 'P1M';
 
     /**
      * The original name of the model.
@@ -150,8 +150,8 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -165,7 +165,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -175,7 +175,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -186,7 +186,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -196,7 +196,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -206,7 +206,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -215,8 +215,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -228,8 +226,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -307,8 +303,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets report_type.
-     *
-     * @return string
      */
     public function getReportType() : string
     {
@@ -319,8 +313,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets report_type.
      *
      * @param string $report_type the report type
-     *
-     * @return self
      */
     public function setReportType(string $report_type) : self
     {
@@ -343,8 +335,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets marketplace_ids.
      *
      * @param string[] $marketplace_ids a list of marketplace identifiers for the report schedule
-     *
-     * @return self
      */
     public function setMarketplaceIds(array $marketplace_ids) : self
     {
@@ -367,8 +357,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets report_options.
      *
      * @param null|array<string,string> $report_options Additional information passed to reports. This varies by report type.
-     *
-     * @return self
      */
     public function setReportOptions(?array $report_options) : self
     {
@@ -379,8 +367,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets period.
-     *
-     * @return string
      */
     public function getPeriod() : string
     {
@@ -391,8 +377,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets period.
      *
      * @param string $period one of a set of predefined ISO 8601 periods that specifies how often a report should be created
-     *
-     * @return self
      */
     public function setPeriod(string $period) : self
     {
@@ -403,8 +387,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets next_report_creation_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getNextReportCreationTime() : ?\DateTimeInterface
     {
@@ -415,8 +397,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets next_report_creation_time.
      *
      * @param null|\DateTimeInterface $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setNextReportCreationTime(?\DateTimeInterface $next_report_creation_time) : self
     {
@@ -427,8 +407,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -441,7 +419,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -475,18 +453,16 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

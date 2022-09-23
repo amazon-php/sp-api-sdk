@@ -191,8 +191,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

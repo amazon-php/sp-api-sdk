@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PackedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -42,6 +42,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $openAPITypes = [
         'item_sequence_number' => 'int',
         'buyer_product_identifier' => 'string',
+        'piece_number' => 'int',
         'vendor_product_identifier' => 'string',
         'packed_quantity' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ItemQuantity',
     ];
@@ -58,6 +59,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $openAPIFormats = [
         'item_sequence_number' => null,
         'buyer_product_identifier' => null,
+        'piece_number' => null,
         'vendor_product_identifier' => null,
         'packed_quantity' => null,
     ];
@@ -71,6 +73,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $attributeMap = [
         'item_sequence_number' => 'itemSequenceNumber',
         'buyer_product_identifier' => 'buyerProductIdentifier',
+        'piece_number' => 'pieceNumber',
         'vendor_product_identifier' => 'vendorProductIdentifier',
         'packed_quantity' => 'packedQuantity',
     ];
@@ -83,6 +86,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $setters = [
         'item_sequence_number' => 'setItemSequenceNumber',
         'buyer_product_identifier' => 'setBuyerProductIdentifier',
+        'piece_number' => 'setPieceNumber',
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'packed_quantity' => 'setPackedQuantity',
     ];
@@ -95,6 +99,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     protected static array $getters = [
         'item_sequence_number' => 'getItemSequenceNumber',
         'buyer_product_identifier' => 'getBuyerProductIdentifier',
+        'piece_number' => 'getPieceNumber',
         'vendor_product_identifier' => 'getVendorProductIdentifier',
         'packed_quantity' => 'getPackedQuantity',
     ];
@@ -109,13 +114,14 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
         $this->container['item_sequence_number'] = $data['item_sequence_number'] ?? null;
         $this->container['buyer_product_identifier'] = $data['buyer_product_identifier'] ?? null;
+        $this->container['piece_number'] = $data['piece_number'] ?? null;
         $this->container['vendor_product_identifier'] = $data['vendor_product_identifier'] ?? null;
         $this->container['packed_quantity'] = $data['packed_quantity'] ?? null;
     }
@@ -123,7 +129,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +139,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +150,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +160,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +170,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +179,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +190,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -214,8 +216,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return int
      */
     public function getItemSequenceNumber() : int
     {
@@ -226,8 +226,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_sequence_number.
      *
      * @param int $item_sequence_number Item Sequence Number for the item. This must be the same value as sent in the order for a given item.
-     *
-     * @return self
      */
     public function setItemSequenceNumber(int $item_sequence_number) : self
     {
@@ -238,8 +236,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -250,8 +246,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_product_identifier.
      *
      * @param null|string $buyer_product_identifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
-     *
-     * @return self
      */
     public function setBuyerProductIdentifier(?string $buyer_product_identifier) : self
     {
@@ -261,9 +255,27 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     }
 
     /**
-     * Gets vendor_product_identifier.
+     * Gets piece_number.
+     */
+    public function getPieceNumber() : ?int
+    {
+        return $this->container['piece_number'];
+    }
+
+    /**
+     * Sets piece_number.
      *
-     * @return null|string
+     * @param null|int $piece_number The piece number of the item in this container. This is required when the item is split across different containers.
+     */
+    public function setPieceNumber(?int $piece_number) : self
+    {
+        $this->container['piece_number'] = $piece_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets vendor_product_identifier.
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -274,8 +286,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets vendor_product_identifier.
      *
      * @param null|string $vendor_product_identifier The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
-     *
-     * @return self
      */
     public function setVendorProductIdentifier(?string $vendor_product_identifier) : self
     {
@@ -286,8 +296,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets packed_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ItemQuantity
      */
     public function getPackedQuantity() : ItemQuantity
     {
@@ -298,8 +306,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets packed_quantity.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ItemQuantity $packed_quantity packed_quantity
-     *
-     * @return self
      */
     public function setPackedQuantity(ItemQuantity $packed_quantity) : self
     {
@@ -310,8 +316,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -324,7 +328,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -358,18 +362,16 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

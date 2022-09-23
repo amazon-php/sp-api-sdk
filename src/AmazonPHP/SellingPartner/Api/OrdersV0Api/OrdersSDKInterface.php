@@ -55,8 +55,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrder.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -69,8 +67,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrderAddress.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -83,8 +79,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrderBuyerInfo.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -97,8 +91,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrderItems.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
@@ -112,8 +104,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrderItemsBuyerInfo.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
@@ -127,8 +117,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrderRegulatedInfo.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
@@ -141,8 +129,6 @@ interface OrdersSDKInterface
     /**
      * Operation getOrders.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param null|string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
@@ -172,8 +158,6 @@ interface OrdersSDKInterface
     /**
      * Operation updateVerificationStatus.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $order_id An orderId is an Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload The request body for the updateVerificationStatus operation. (required)
      *

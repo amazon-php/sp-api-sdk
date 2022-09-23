@@ -19,15 +19,12 @@ class GuidanceReason
     /**
      * Possible values of this enum.
      */
-    public const SLOW_MOVING_ASIN = 'SlowMovingASIN';
+    final public const SLOW_MOVING_ASIN = 'SlowMovingASIN';
 
-    public const NO_APPLICABLE_GUIDANCE = 'NoApplicableGuidance';
+    final public const NO_APPLICABLE_GUIDANCE = 'NoApplicableGuidance';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

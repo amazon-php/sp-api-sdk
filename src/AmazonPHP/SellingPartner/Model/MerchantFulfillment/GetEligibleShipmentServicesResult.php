@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializable, ModelInterface
+class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -220,8 +216,6 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      * Sets shipping_service_list.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingService[] $shipping_service_list a list of shipping services offers
-     *
-     * @return self
      */
     public function setShippingServiceList(array $shipping_service_list) : self
     {
@@ -244,8 +238,6 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      * Sets rejected_shipping_service_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\RejectedShippingService[] $rejected_shipping_service_list List of services that were for some reason unavailable for this request
-     *
-     * @return self
      */
     public function setRejectedShippingServiceList(?array $rejected_shipping_service_list) : self
     {
@@ -268,8 +260,6 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      * Sets temporarily_unavailable_carrier_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[] $temporarily_unavailable_carrier_list a list of temporarily unavailable carriers
-     *
-     * @return self
      */
     public function setTemporarilyUnavailableCarrierList(?array $temporarily_unavailable_carrier_list) : self
     {
@@ -292,8 +282,6 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      * Sets terms_and_conditions_not_accepted_carrier_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[] $terms_and_conditions_not_accepted_carrier_list list of carriers whose terms and conditions were not accepted by the seller
-     *
-     * @return self
      */
     public function setTermsAndConditionsNotAcceptedCarrierList(?array $terms_and_conditions_not_accepted_carrier_list) : self
     {
@@ -304,8 +292,6 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -318,7 +304,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -352,18 +338,16 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

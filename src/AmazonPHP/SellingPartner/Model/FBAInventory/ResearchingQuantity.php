@@ -161,8 +161,6 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

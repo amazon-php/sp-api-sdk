@@ -19,77 +19,74 @@ class EventCode
     /**
      * Possible values of this enum.
      */
-    public const _101 = 'EVENT_101';
+    final public const _101 = 'EVENT_101';
 
-    public const _102 = 'EVENT_102';
+    final public const _102 = 'EVENT_102';
 
-    public const _201 = 'EVENT_201';
+    final public const _201 = 'EVENT_201';
 
-    public const _202 = 'EVENT_202';
+    final public const _202 = 'EVENT_202';
 
-    public const _203 = 'EVENT_203';
+    final public const _203 = 'EVENT_203';
 
-    public const _204 = 'EVENT_204';
+    final public const _204 = 'EVENT_204';
 
-    public const _205 = 'EVENT_205';
+    final public const _205 = 'EVENT_205';
 
-    public const _206 = 'EVENT_206';
+    final public const _206 = 'EVENT_206';
 
-    public const _301 = 'EVENT_301';
+    final public const _301 = 'EVENT_301';
 
-    public const _302 = 'EVENT_302';
+    final public const _302 = 'EVENT_302';
 
-    public const _304 = 'EVENT_304';
+    final public const _304 = 'EVENT_304';
 
-    public const _306 = 'EVENT_306';
+    final public const _306 = 'EVENT_306';
 
-    public const _307 = 'EVENT_307';
+    final public const _307 = 'EVENT_307';
 
-    public const _308 = 'EVENT_308';
+    final public const _308 = 'EVENT_308';
 
-    public const _309 = 'EVENT_309';
+    final public const _309 = 'EVENT_309';
 
-    public const _401 = 'EVENT_401';
+    final public const _401 = 'EVENT_401';
 
-    public const _402 = 'EVENT_402';
+    final public const _402 = 'EVENT_402';
 
-    public const _403 = 'EVENT_403';
+    final public const _403 = 'EVENT_403';
 
-    public const _404 = 'EVENT_404';
+    final public const _404 = 'EVENT_404';
 
-    public const _405 = 'EVENT_405';
+    final public const _405 = 'EVENT_405';
 
-    public const _406 = 'EVENT_406';
+    final public const _406 = 'EVENT_406';
 
-    public const _407 = 'EVENT_407';
+    final public const _407 = 'EVENT_407';
 
-    public const _408 = 'EVENT_408';
+    final public const _408 = 'EVENT_408';
 
-    public const _409 = 'EVENT_409';
+    final public const _409 = 'EVENT_409';
 
-    public const _411 = 'EVENT_411';
+    final public const _411 = 'EVENT_411';
 
-    public const _412 = 'EVENT_412';
+    final public const _412 = 'EVENT_412';
 
-    public const _413 = 'EVENT_413';
+    final public const _413 = 'EVENT_413';
 
-    public const _414 = 'EVENT_414';
+    final public const _414 = 'EVENT_414';
 
-    public const _415 = 'EVENT_415';
+    final public const _415 = 'EVENT_415';
 
-    public const _416 = 'EVENT_416';
+    final public const _416 = 'EVENT_416';
 
-    public const _417 = 'EVENT_417';
+    final public const _417 = 'EVENT_417';
 
-    public const _418 = 'EVENT_418';
+    final public const _418 = 'EVENT_418';
 
-    public const _419 = 'EVENT_419';
+    final public const _419 = 'EVENT_419';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

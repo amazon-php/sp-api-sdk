@@ -23,13 +23,13 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInterface
+class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const SCHEDULING_TYPE_REAL_TIME_SCHEDULING = 'REAL_TIME_SCHEDULING';
+    final public const SCHEDULING_TYPE_REAL_TIME_SCHEDULING = 'REAL_TIME_SCHEDULING';
 
-    public const SCHEDULING_TYPE_NON_REAL_TIME_SCHEDULING = 'NON_REAL_TIME_SCHEDULING';
+    final public const SCHEDULING_TYPE_NON_REAL_TIME_SCHEDULING = 'NON_REAL_TIME_SCHEDULING';
 
     /**
      * The original name of the model.
@@ -113,8 +113,8 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -127,7 +127,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -137,7 +137,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -148,7 +148,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -158,7 +158,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -168,7 +168,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -177,8 +177,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -190,8 +188,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -233,8 +229,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets scheduling_type.
-     *
-     * @return null|string
      */
     public function getSchedulingType() : ?string
     {
@@ -245,8 +239,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets scheduling_type.
      *
      * @param null|string $scheduling_type defines the type of slots
-     *
-     * @return self
      */
     public function setSchedulingType(?string $scheduling_type) : self
     {
@@ -257,8 +249,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartTime() : ?\DateTimeInterface
     {
@@ -269,8 +259,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets start_time.
      *
      * @param null|\DateTimeInterface $start_time start Time from which the appointment slots are generated in ISO 8601 format
-     *
-     * @return self
      */
     public function setStartTime(?\DateTimeInterface $start_time) : self
     {
@@ -281,8 +269,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEndTime() : ?\DateTimeInterface
     {
@@ -293,8 +279,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets end_time.
      *
      * @param null|\DateTimeInterface $end_time end Time up to which the appointment slots are generated in ISO 8601 format
-     *
-     * @return self
      */
     public function setEndTime(?\DateTimeInterface $end_time) : self
     {
@@ -317,8 +301,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets appointment_slots.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentSlot[] $appointment_slots a list of time windows along with associated capacity in which the service can be performed
-     *
-     * @return self
      */
     public function setAppointmentSlots(?array $appointment_slots) : self
     {
@@ -329,8 +311,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -343,7 +323,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -377,18 +357,16 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, ModelInt
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

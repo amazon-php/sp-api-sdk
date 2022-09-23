@@ -19,47 +19,44 @@ class CurrentStatus
     /**
      * Possible values of this enum.
      */
-    public const IN_TRANSIT = 'IN_TRANSIT';
+    final public const IN_TRANSIT = 'IN_TRANSIT';
 
-    public const DELIVERED = 'DELIVERED';
+    final public const DELIVERED = 'DELIVERED';
 
-    public const RETURNING = 'RETURNING';
+    final public const RETURNING = 'RETURNING';
 
-    public const RETURNED = 'RETURNED';
+    final public const RETURNED = 'RETURNED';
 
-    public const UNDELIVERABLE = 'UNDELIVERABLE';
+    final public const UNDELIVERABLE = 'UNDELIVERABLE';
 
-    public const DELAYED = 'DELAYED';
+    final public const DELAYED = 'DELAYED';
 
-    public const AVAILABLE_FOR_PICKUP = 'AVAILABLE_FOR_PICKUP';
+    final public const AVAILABLE_FOR_PICKUP = 'AVAILABLE_FOR_PICKUP';
 
-    public const CUSTOMER_ACTION = 'CUSTOMER_ACTION';
+    final public const CUSTOMER_ACTION = 'CUSTOMER_ACTION';
 
-    public const UNKNOWN = 'UNKNOWN';
+    final public const UNKNOWN = 'UNKNOWN';
 
-    public const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
+    final public const OUT_FOR_DELIVERY = 'OUT_FOR_DELIVERY';
 
-    public const DELIVERY_ATTEMPTED = 'DELIVERY_ATTEMPTED';
+    final public const DELIVERY_ATTEMPTED = 'DELIVERY_ATTEMPTED';
 
-    public const PICKUP_SUCCESSFUL = 'PICKUP_SUCCESSFUL';
+    final public const PICKUP_SUCCESSFUL = 'PICKUP_SUCCESSFUL';
 
-    public const PICKUP_CANCELLED = 'PICKUP_CANCELLED';
+    final public const PICKUP_CANCELLED = 'PICKUP_CANCELLED';
 
-    public const PICKUP_ATTEMPTED = 'PICKUP_ATTEMPTED';
+    final public const PICKUP_ATTEMPTED = 'PICKUP_ATTEMPTED';
 
-    public const PICKUP_SCHEDULED = 'PICKUP_SCHEDULED';
+    final public const PICKUP_SCHEDULED = 'PICKUP_SCHEDULED';
 
-    public const RETURN_REQUEST_ACCEPTED = 'RETURN_REQUEST_ACCEPTED';
+    final public const RETURN_REQUEST_ACCEPTED = 'RETURN_REQUEST_ACCEPTED';
 
-    public const REFUND_ISSUED = 'REFUND_ISSUED';
+    final public const REFUND_ISSUED = 'REFUND_ISSUED';
 
-    public const RETURN_RECEIVED_IN_FC = 'RETURN_RECEIVED_IN_FC';
+    final public const RETURN_RECEIVED_IN_FC = 'RETURN_RECEIVED_IN_FC';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

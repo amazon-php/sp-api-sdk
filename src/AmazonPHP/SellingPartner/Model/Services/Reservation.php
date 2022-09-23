@@ -23,19 +23,19 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Reservation implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const TYPE_APPOINTMENT = 'APPOINTMENT';
+    final public const TYPE_APPOINTMENT = 'APPOINTMENT';
 
-    public const TYPE_TRAVEL = 'TRAVEL';
+    final public const TYPE_TRAVEL = 'TRAVEL';
 
-    public const TYPE_VACATION = 'VACATION';
+    final public const TYPE_VACATION = 'VACATION';
 
-    public const TYPE__BREAK = 'BREAK';
+    final public const TYPE__BREAK = 'BREAK';
 
-    public const TYPE_TRAINING = 'TRAINING';
+    final public const TYPE_TRAINING = 'TRAINING';
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -127,7 +127,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -137,7 +137,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -148,7 +148,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -158,7 +158,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -168,7 +168,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -177,8 +177,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -190,8 +188,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -246,8 +242,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets reservation_id.
-     *
-     * @return null|string
      */
     public function getReservationId() : ?string
     {
@@ -258,8 +252,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets reservation_id.
      *
      * @param null|string $reservation_id Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
-     *
-     * @return self
      */
     public function setReservationId(?string $reservation_id) : self
     {
@@ -270,8 +262,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -282,8 +272,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets type.
      *
      * @param string $type type of reservation
-     *
-     * @return self
      */
     public function setType(string $type) : self
     {
@@ -294,8 +282,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets availability.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord
      */
     public function getAvailability() : AvailabilityRecord
     {
@@ -306,8 +292,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets availability.
      *
      * @param \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord $availability availability
-     *
-     * @return self
      */
     public function setAvailability(AvailabilityRecord $availability) : self
     {
@@ -318,8 +302,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -332,7 +314,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,18 +348,16 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

@@ -27,8 +27,6 @@ interface TokensSDKInterface
     /**
      * Operation createRestrictedDataToken.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Tokens\CreateRestrictedDataTokenRequest $body The restricted data token request details. (required)
      *
      * @throws ApiException on non-2xx response

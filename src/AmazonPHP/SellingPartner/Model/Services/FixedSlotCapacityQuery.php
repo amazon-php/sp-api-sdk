@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelInterface
+class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -224,8 +220,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets capacity_types.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\CapacityType[] $capacity_types An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
-     *
-     * @return self
      */
     public function setCapacityTypes(?array $capacity_types) : self
     {
@@ -236,8 +230,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets slot_duration.
-     *
-     * @return null|float
      */
     public function getSlotDuration() : ?float
     {
@@ -248,8 +240,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets slot_duration.
      *
      * @param null|float $slot_duration Size in which slots are being requested. This value should be a multiple of 5 and fall in the range: 5 <= `slotDuration` <= 360.
-     *
-     * @return self
      */
     public function setSlotDuration(?float $slot_duration) : self
     {
@@ -260,8 +250,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets start_date_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getStartDateTime() : \DateTimeInterface
     {
@@ -272,8 +260,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets start_date_time.
      *
      * @param \DateTimeInterface $start_date_time start date time from which the capacity slots are being requested in ISO 8601 format
-     *
-     * @return self
      */
     public function setStartDateTime(\DateTimeInterface $start_date_time) : self
     {
@@ -284,8 +270,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets end_date_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getEndDateTime() : \DateTimeInterface
     {
@@ -296,8 +280,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets end_date_time.
      *
      * @param \DateTimeInterface $end_date_time end date time up to which the capacity slots are being requested in ISO 8601 format
-     *
-     * @return self
      */
     public function setEndDateTime(\DateTimeInterface $end_date_time) : self
     {
@@ -308,8 +290,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -322,7 +302,7 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -356,18 +336,16 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, ModelIn
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

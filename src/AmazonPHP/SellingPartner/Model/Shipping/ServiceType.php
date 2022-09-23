@@ -19,17 +19,14 @@ class ServiceType
     /**
      * Possible values of this enum.
      */
-    public const GROUND = 'Amazon Shipping Ground';
+    final public const GROUND = 'Amazon Shipping Ground';
 
-    public const STANDARD = 'Amazon Shipping Standard';
+    final public const STANDARD = 'Amazon Shipping Standard';
 
-    public const PREMIUM = 'Amazon Shipping Premium';
+    final public const PREMIUM = 'Amazon Shipping Premium';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

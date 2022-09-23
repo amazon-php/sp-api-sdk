@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, ModelInterface
+class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -217,8 +213,6 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
      * Sets sku_inbound_guidance_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SKUInboundGuidance[] $sku_inbound_guidance_list a list of SKU inbound guidance information
-     *
-     * @return self
      */
     public function setSkuInboundGuidanceList(?array $sku_inbound_guidance_list) : self
     {
@@ -241,8 +235,6 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
      * Sets invalid_sku_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\InvalidSKU[] $invalid_sku_list a list of invalid SKU values and the reason they are invalid
-     *
-     * @return self
      */
     public function setInvalidSkuList(?array $invalid_sku_list) : self
     {
@@ -265,8 +257,6 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
      * Sets asin_inbound_guidance_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ASINInboundGuidance[] $asin_inbound_guidance_list a list of ASINs and their associated inbound guidance
-     *
-     * @return self
      */
     public function setAsinInboundGuidanceList(?array $asin_inbound_guidance_list) : self
     {
@@ -289,8 +279,6 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
      * Sets invalid_asin_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\InvalidASIN[] $invalid_asin_list a list of invalid ASIN values and the reasons they are invalid
-     *
-     * @return self
      */
     public function setInvalidAsinList(?array $invalid_asin_list) : self
     {
@@ -301,8 +289,6 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -315,7 +301,7 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -349,18 +335,16 @@ class GetInboundGuidanceResult implements \ArrayAccess, \JsonSerializable, Model
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }
