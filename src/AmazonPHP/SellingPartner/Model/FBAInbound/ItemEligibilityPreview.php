@@ -23,91 +23,91 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const PROGRAM_INBOUND = 'INBOUND';
+    final public const PROGRAM_INBOUND = 'INBOUND';
 
-    public const PROGRAM_COMMINGLING = 'COMMINGLING';
+    final public const PROGRAM_COMMINGLING = 'COMMINGLING';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0004 = 'FBA_INB_0004';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0004 = 'FBA_INB_0004';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0006 = 'FBA_INB_0006';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0006 = 'FBA_INB_0006';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0007 = 'FBA_INB_0007';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0007 = 'FBA_INB_0007';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0008 = 'FBA_INB_0008';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0008 = 'FBA_INB_0008';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0009 = 'FBA_INB_0009';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0009 = 'FBA_INB_0009';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0010 = 'FBA_INB_0010';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0010 = 'FBA_INB_0010';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0011 = 'FBA_INB_0011';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0011 = 'FBA_INB_0011';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0012 = 'FBA_INB_0012';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0012 = 'FBA_INB_0012';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0013 = 'FBA_INB_0013';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0013 = 'FBA_INB_0013';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0014 = 'FBA_INB_0014';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0014 = 'FBA_INB_0014';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0015 = 'FBA_INB_0015';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0015 = 'FBA_INB_0015';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0016 = 'FBA_INB_0016';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0016 = 'FBA_INB_0016';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0017 = 'FBA_INB_0017';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0017 = 'FBA_INB_0017';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0018 = 'FBA_INB_0018';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0018 = 'FBA_INB_0018';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0019 = 'FBA_INB_0019';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0019 = 'FBA_INB_0019';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0034 = 'FBA_INB_0034';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0034 = 'FBA_INB_0034';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0035 = 'FBA_INB_0035';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0035 = 'FBA_INB_0035';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0036 = 'FBA_INB_0036';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0036 = 'FBA_INB_0036';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0037 = 'FBA_INB_0037';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0037 = 'FBA_INB_0037';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0038 = 'FBA_INB_0038';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0038 = 'FBA_INB_0038';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0050 = 'FBA_INB_0050';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0050 = 'FBA_INB_0050';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0051 = 'FBA_INB_0051';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0051 = 'FBA_INB_0051';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0053 = 'FBA_INB_0053';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0053 = 'FBA_INB_0053';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0055 = 'FBA_INB_0055';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0055 = 'FBA_INB_0055';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0056 = 'FBA_INB_0056';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0056 = 'FBA_INB_0056';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0059 = 'FBA_INB_0059';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0059 = 'FBA_INB_0059';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0065 = 'FBA_INB_0065';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0065 = 'FBA_INB_0065';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0066 = 'FBA_INB_0066';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0066 = 'FBA_INB_0066';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0067 = 'FBA_INB_0067';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0067 = 'FBA_INB_0067';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0068 = 'FBA_INB_0068';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0068 = 'FBA_INB_0068';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0095 = 'FBA_INB_0095';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0095 = 'FBA_INB_0095';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0097 = 'FBA_INB_0097';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0097 = 'FBA_INB_0097';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0098 = 'FBA_INB_0098';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0098 = 'FBA_INB_0098';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0099 = 'FBA_INB_0099';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0099 = 'FBA_INB_0099';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0100 = 'FBA_INB_0100';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0100 = 'FBA_INB_0100';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0103 = 'FBA_INB_0103';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0103 = 'FBA_INB_0103';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0104 = 'FBA_INB_0104';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0104 = 'FBA_INB_0104';
 
-    public const INELIGIBILITY_REASON_LIST_FBA_INB_0197 = 'FBA_INB_0197';
+    final public const INELIGIBILITY_REASON_LIST_FBA_INB_0197 = 'FBA_INB_0197';
 
-    public const INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE = 'UNKNOWN_INB_ERROR_CODE';
+    final public const INELIGIBILITY_REASON_LIST_UNKNOWN_INB_ERROR_CODE = 'UNKNOWN_INB_ERROR_CODE';
 
     /**
      * The original name of the model.
@@ -196,8 +196,8 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -211,7 +211,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -221,7 +221,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -232,7 +232,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -242,7 +242,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -252,7 +252,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -261,8 +261,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -274,8 +272,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -379,8 +375,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -391,8 +385,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets asin.
      *
      * @param string $asin the ASIN for which eligibility was determined
-     *
-     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -403,8 +395,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -415,8 +405,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace for which eligibility was determined
-     *
-     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -427,8 +415,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets program.
-     *
-     * @return string
      */
     public function getProgram() : string
     {
@@ -439,8 +425,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets program.
      *
      * @param string $program the program for which eligibility was determined
-     *
-     * @return self
      */
     public function setProgram(string $program) : self
     {
@@ -451,8 +435,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets is_eligible_for_program.
-     *
-     * @return bool
      */
     public function getIsEligibleForProgram() : bool
     {
@@ -463,8 +445,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets is_eligible_for_program.
      *
      * @param bool $is_eligible_for_program indicates if the item is eligible for the program
-     *
-     * @return self
      */
     public function setIsEligibleForProgram(bool $is_eligible_for_program) : self
     {
@@ -487,8 +467,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets ineligibility_reason_list.
      *
      * @param null|string[] $ineligibility_reason_list potential Ineligibility Reason Codes
-     *
-     * @return self
      */
     public function setIneligibilityReasonList(?array $ineligibility_reason_list) : self
     {
@@ -499,8 +477,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -513,7 +489,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -547,18 +523,16 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

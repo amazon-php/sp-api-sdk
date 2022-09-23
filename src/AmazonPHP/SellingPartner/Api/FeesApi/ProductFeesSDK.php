@@ -28,34 +28,18 @@ use Psr\Log\LoggerInterface;
  */
 final class ProductFeesSDK implements ProductFeesSDKInterface
 {
-    private ClientInterface $client;
-
-    private HttpFactory $httpFactory;
-
-    private Configuration $configuration;
-
-    private LoggerInterface $logger;
-
-    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration, LoggerInterface $logger)
+    public function __construct(private readonly ClientInterface $client, private readonly HttpFactory $httpFactory, private readonly Configuration $configuration, private readonly LoggerInterface $logger)
     {
-        $this->client = $client;
-        $this->httpFactory = $requestFactory;
-        $this->configuration = $configuration;
-        $this->logger = $logger;
     }
 
     /**
      * Operation getMyFeesEstimateForASIN.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
      */
     public function getMyFeesEstimateForASIN(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
     {
@@ -147,14 +131,10 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
     /**
      * Create request for operation 'getMyFeesEstimateForASIN'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getMyFeesEstimateForASINRequest(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {
@@ -214,7 +194,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
@@ -236,7 +216,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -257,15 +237,11 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
     /**
      * Operation getMyFeesEstimateForSKU.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
      */
     public function getMyFeesEstimateForSKU(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResponse
     {
@@ -357,14 +333,10 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
     /**
      * Create request for operation 'getMyFeesEstimateForSKU'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getMyFeesEstimateForSKURequest(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {
@@ -424,7 +396,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
@@ -446,7 +418,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -467,8 +439,6 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
     /**
      * Operation getMyFeesEstimates.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -566,13 +536,9 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
     /**
      * Create request for operation 'getMyFeesEstimates'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getMyFeesEstimatesRequest(AccessToken $accessToken, string $region, array $body) : RequestInterface
     {
@@ -617,7 +583,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
@@ -639,7 +605,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }

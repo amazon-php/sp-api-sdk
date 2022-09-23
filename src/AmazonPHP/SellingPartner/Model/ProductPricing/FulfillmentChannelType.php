@@ -19,15 +19,12 @@ class FulfillmentChannelType
     /**
      * Possible values of this enum.
      */
-    public const AMAZON = 'Amazon';
+    final public const AMAZON = 'Amazon';
 
-    public const MERCHANT = 'Merchant';
+    final public const MERCHANT = 'Merchant';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

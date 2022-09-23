@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
+class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +161,6 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +172,6 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,19 +185,17 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
      */
     public function validate() : void
     {
-        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) > 800)) {
+        if (null !== $this->container['text'] && (\mb_strlen((string) $this->container['text']) > 800)) {
             throw new AssertionException("invalid value for 'text', the character length must be smaller than or equal to 800.");
         }
 
-        if (null !== $this->container['text'] && (\mb_strlen($this->container['text']) < 1)) {
+        if (null !== $this->container['text'] && (\mb_strlen((string) $this->container['text']) < 1)) {
             throw new AssertionException("invalid value for 'text', the character length must be bigger than or equal to 1.");
         }
     }
 
     /**
      * Gets text.
-     *
-     * @return null|string
      */
     public function getText() : ?string
     {
@@ -212,8 +206,6 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
      * Sets text.
      *
      * @param null|string $text The text to be sent to the buyer. Only links related to customization details are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
-     *
-     * @return self
      */
     public function setText(?string $text) : self
     {
@@ -236,8 +228,6 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
      * Sets attachments.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Attachment[] $attachments attachments to include in the message to the buyer
-     *
-     * @return self
      */
     public function setAttachments(?array $attachments) : self
     {
@@ -248,8 +238,6 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,7 +250,7 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -296,18 +284,16 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

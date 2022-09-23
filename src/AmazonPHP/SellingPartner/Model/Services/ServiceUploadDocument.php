@@ -23,21 +23,21 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const CONTENT_TYPE_TIFF = 'TIFF';
+    final public const CONTENT_TYPE_TIFF = 'TIFF';
 
-    public const CONTENT_TYPE_JPG = 'JPG';
+    final public const CONTENT_TYPE_JPG = 'JPG';
 
-    public const CONTENT_TYPE_PNG = 'PNG';
+    final public const CONTENT_TYPE_PNG = 'PNG';
 
-    public const CONTENT_TYPE_JPEG = 'JPEG';
+    final public const CONTENT_TYPE_JPEG = 'JPEG';
 
-    public const CONTENT_TYPE_GIF = 'GIF';
+    final public const CONTENT_TYPE_GIF = 'GIF';
 
-    public const CONTENT_TYPE_PDF = 'PDF';
+    final public const CONTENT_TYPE_PDF = 'PDF';
 
     /**
      * The original name of the model.
@@ -116,8 +116,8 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -252,15 +248,13 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
             throw new AssertionException("invalid value for 'content_length', must be bigger than or equal to 1.");
         }
 
-        if (null !== $this->container['content_md5'] && !\preg_match("/^[A-Za-z0-9\\\\+\/]{22}={2}$/", $this->container['content_md5'])) {
+        if (null !== $this->container['content_md5'] && !\preg_match("/^[A-Za-z0-9\\\\+\/]{22}={2}$/", (string) $this->container['content_md5'])) {
             throw new AssertionException("invalid value for 'content_md5', must be conform to the pattern /^[A-Za-z0-9\\\\+\/]{22}={2}$/.");
         }
     }
 
     /**
      * Gets content_type.
-     *
-     * @return string
      */
     public function getContentType() : string
     {
@@ -271,8 +265,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets content_type.
      *
      * @param string $content_type The content type of the to-be-uploaded file
-     *
-     * @return self
      */
     public function setContentType(string $content_type) : self
     {
@@ -283,8 +275,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets content_length.
-     *
-     * @return float
      */
     public function getContentLength() : float
     {
@@ -295,8 +285,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets content_length.
      *
      * @param float $content_length The content length of the to-be-uploaded file
-     *
-     * @return self
      */
     public function setContentLength(float $content_length) : self
     {
@@ -307,8 +295,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets content_md5.
-     *
-     * @return null|string
      */
     public function getContentMd5() : ?string
     {
@@ -319,8 +305,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets content_md5.
      *
      * @param null|string $content_md5 An MD5 hash of the content to be submitted to the upload destination. This value is used to determine if the data has been corrupted or tampered with during transit.
-     *
-     * @return self
      */
     public function setContentMd5(?string $content_md5) : self
     {
@@ -331,8 +315,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -345,7 +327,7 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -379,18 +361,16 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, ModelInt
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

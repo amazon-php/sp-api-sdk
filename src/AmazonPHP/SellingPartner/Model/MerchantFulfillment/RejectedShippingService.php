@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelInterface
+class RejectedShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -226,8 +222,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
     public function getCarrierName() : string
     {
@@ -238,8 +232,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets carrier_name.
      *
      * @param string $carrier_name The rejected shipping carrier name. e.g. USPS
-     *
-     * @return self
      */
     public function setCarrierName(string $carrier_name) : self
     {
@@ -250,8 +242,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets shipping_service_name.
-     *
-     * @return string
      */
     public function getShippingServiceName() : string
     {
@@ -262,8 +252,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets shipping_service_name.
      *
      * @param string $shipping_service_name The rejected shipping service localized name. e.g. FedEx Standard Overnight
-     *
-     * @return self
      */
     public function setShippingServiceName(string $shipping_service_name) : self
     {
@@ -274,8 +262,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets shipping_service_id.
-     *
-     * @return string
      */
     public function getShippingServiceId() : string
     {
@@ -286,8 +272,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets shipping_service_id.
      *
      * @param string $shipping_service_id an Amazon-defined shipping service identifier
-     *
-     * @return self
      */
     public function setShippingServiceId(string $shipping_service_id) : self
     {
@@ -298,8 +282,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets rejection_reason_code.
-     *
-     * @return string
      */
     public function getRejectionReasonCode() : string
     {
@@ -310,8 +292,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets rejection_reason_code.
      *
      * @param string $rejection_reason_code A reason code meant to be consumed programatically. e.g. CARRIER_CANNOT_SHIP_TO_POBOX
-     *
-     * @return self
      */
     public function setRejectionReasonCode(string $rejection_reason_code) : self
     {
@@ -322,8 +302,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets rejection_reason_message.
-     *
-     * @return null|string
      */
     public function getRejectionReasonMessage() : ?string
     {
@@ -334,8 +312,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets rejection_reason_message.
      *
      * @param null|string $rejection_reason_message a localized human readable description of the rejected reason
-     *
-     * @return self
      */
     public function setRejectionReasonMessage(?string $rejection_reason_message) : self
     {
@@ -346,8 +322,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -360,7 +334,7 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -394,18 +368,16 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, ModelI
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

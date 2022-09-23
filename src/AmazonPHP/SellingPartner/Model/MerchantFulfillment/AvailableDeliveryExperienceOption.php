@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializable, ModelInterface
+class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +161,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +172,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -202,8 +198,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets delivery_experience_option.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption
      */
     public function getDeliveryExperienceOption() : DeliveryExperienceOption
     {
@@ -214,8 +208,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      * Sets delivery_experience_option.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption $delivery_experience_option delivery_experience_option
-     *
-     * @return self
      */
     public function setDeliveryExperienceOption(DeliveryExperienceOption $delivery_experience_option) : self
     {
@@ -226,8 +218,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets charge.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getCharge() : CurrencyAmount
     {
@@ -238,8 +228,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      * Sets charge.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount $charge charge
-     *
-     * @return self
      */
     public function setCharge(CurrencyAmount $charge) : self
     {
@@ -250,8 +238,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -264,7 +250,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -298,18 +284,16 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

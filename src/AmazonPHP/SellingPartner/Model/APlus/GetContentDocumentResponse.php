@@ -161,8 +161,6 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

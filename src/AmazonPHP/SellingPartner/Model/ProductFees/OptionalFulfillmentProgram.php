@@ -19,17 +19,14 @@ class OptionalFulfillmentProgram
     /**
      * Possible values of this enum.
      */
-    public const CORE = 'FBA_CORE';
+    final public const CORE = 'FBA_CORE';
 
-    public const SNL = 'FBA_SNL';
+    final public const SNL = 'FBA_SNL';
 
-    public const EFN = 'FBA_EFN';
+    final public const EFN = 'FBA_EFN';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

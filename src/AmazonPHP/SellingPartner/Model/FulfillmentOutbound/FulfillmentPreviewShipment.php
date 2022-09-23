@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, ModelInterface
+class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -119,8 +119,8 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -135,7 +135,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -145,7 +145,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -156,7 +156,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -166,7 +166,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -176,7 +176,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -185,8 +185,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -198,8 +196,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -220,8 +216,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets earliest_ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEarliestShipDate() : ?\DateTimeInterface
     {
@@ -232,8 +226,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * Sets earliest_ship_date.
      *
      * @param null|\DateTimeInterface $earliest_ship_date earliest_ship_date
-     *
-     * @return self
      */
     public function setEarliestShipDate(?\DateTimeInterface $earliest_ship_date) : self
     {
@@ -244,8 +236,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets latest_ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLatestShipDate() : ?\DateTimeInterface
     {
@@ -256,8 +246,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * Sets latest_ship_date.
      *
      * @param null|\DateTimeInterface $latest_ship_date latest_ship_date
-     *
-     * @return self
      */
     public function setLatestShipDate(?\DateTimeInterface $latest_ship_date) : self
     {
@@ -268,8 +256,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets earliest_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEarliestArrivalDate() : ?\DateTimeInterface
     {
@@ -280,8 +266,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * Sets earliest_arrival_date.
      *
      * @param null|\DateTimeInterface $earliest_arrival_date earliest_arrival_date
-     *
-     * @return self
      */
     public function setEarliestArrivalDate(?\DateTimeInterface $earliest_arrival_date) : self
     {
@@ -292,8 +276,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets latest_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLatestArrivalDate() : ?\DateTimeInterface
     {
@@ -304,8 +286,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * Sets latest_arrival_date.
      *
      * @param null|\DateTimeInterface $latest_arrival_date latest_arrival_date
-     *
-     * @return self
      */
     public function setLatestArrivalDate(?\DateTimeInterface $latest_arrival_date) : self
     {
@@ -328,8 +308,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * Sets shipping_notes.
      *
      * @param null|string[] $shipping_notes provides additional insight into the shipment timeline when exact delivery dates are not able to be precomputed
-     *
-     * @return self
      */
     public function setShippingNotes(?array $shipping_notes) : self
     {
@@ -352,8 +330,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * Sets fulfillment_preview_items.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPreviewItem[] $fulfillment_preview_items an array of fulfillment preview item information
-     *
-     * @return self
      */
     public function setFulfillmentPreviewItems(array $fulfillment_preview_items) : self
     {
@@ -364,8 +340,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -378,7 +352,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -412,18 +386,16 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, Mod
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

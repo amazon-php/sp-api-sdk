@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterface
+class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -129,8 +129,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -147,7 +147,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -157,7 +157,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -168,7 +168,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -178,7 +178,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -188,7 +188,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -197,8 +197,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -210,8 +208,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -232,8 +228,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -244,8 +238,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of an item
-     *
-     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -256,8 +248,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets fn_sku.
-     *
-     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -268,8 +258,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets fn_sku.
      *
      * @param null|string $fn_sku amazon's fulfillment network SKU identifier
-     *
-     * @return self
      */
     public function setFnSku(?string $fn_sku) : self
     {
@@ -280,8 +268,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -292,8 +278,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets seller_sku.
      *
      * @param null|string $seller_sku the seller SKU of the item
-     *
-     * @return self
      */
     public function setSellerSku(?string $seller_sku) : self
     {
@@ -304,8 +288,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets condition.
-     *
-     * @return null|string
      */
     public function getCondition() : ?string
     {
@@ -316,8 +298,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets condition.
      *
      * @param null|string $condition the condition of the item as described by the seller (for example, New Item)
-     *
-     * @return self
      */
     public function setCondition(?string $condition) : self
     {
@@ -328,8 +308,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets inventory_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails
      */
     public function getInventoryDetails() : ?InventoryDetails
     {
@@ -340,8 +318,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets inventory_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails $inventory_details inventory_details
-     *
-     * @return self
      */
     public function setInventoryDetails(?InventoryDetails $inventory_details) : self
     {
@@ -352,8 +328,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets last_updated_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLastUpdatedTime() : ?\DateTimeInterface
     {
@@ -364,8 +338,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets last_updated_time.
      *
      * @param null|\DateTimeInterface $last_updated_time the date and time that any quantity was last updated
-     *
-     * @return self
      */
     public function setLastUpdatedTime(?\DateTimeInterface $last_updated_time) : self
     {
@@ -376,8 +348,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets product_name.
-     *
-     * @return null|string
      */
     public function getProductName() : ?string
     {
@@ -388,8 +358,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets product_name.
      *
      * @param null|string $product_name the localized language product title of the item within the specific marketplace
-     *
-     * @return self
      */
     public function setProductName(?string $product_name) : self
     {
@@ -400,8 +368,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets total_quantity.
-     *
-     * @return null|int
      */
     public function getTotalQuantity() : ?int
     {
@@ -412,8 +378,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets total_quantity.
      *
      * @param null|int $total_quantity the total number of units in an inbound shipment or in Amazon fulfillment centers
-     *
-     * @return self
      */
     public function setTotalQuantity(?int $total_quantity) : self
     {
@@ -424,8 +388,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -438,7 +400,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -472,18 +434,16 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

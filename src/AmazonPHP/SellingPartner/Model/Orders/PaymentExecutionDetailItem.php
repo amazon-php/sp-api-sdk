@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +161,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +172,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -202,8 +198,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets payment.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPayment() : Money
     {
@@ -214,8 +208,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets payment.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\Money $payment payment
-     *
-     * @return self
      */
     public function setPayment(Money $payment) : self
     {
@@ -226,8 +218,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets payment_method.
-     *
-     * @return string
      */
     public function getPaymentMethod() : string
     {
@@ -238,8 +228,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets payment_method.
      *
      * @param string $payment_method A sub-payment method for a COD order.  Possible values:  * COD - Cash On Delivery.  * GC - Gift Card.  * PointsAccount - Amazon Points.
-     *
-     * @return self
      */
     public function setPaymentMethod(string $payment_method) : self
     {
@@ -250,8 +238,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -264,7 +250,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -298,18 +284,16 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, Mod
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

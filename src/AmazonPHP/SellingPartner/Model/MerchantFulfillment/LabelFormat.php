@@ -19,21 +19,18 @@ class LabelFormat
     /**
      * Possible values of this enum.
      */
-    public const PDF = 'PDF';
+    final public const PDF = 'PDF';
 
-    public const PNG = 'PNG';
+    final public const PNG = 'PNG';
 
-    public const ZPL203 = 'ZPL203';
+    final public const ZPL203 = 'ZPL203';
 
-    public const ZPL300 = 'ZPL300';
+    final public const ZPL300 = 'ZPL300';
 
-    public const SHIPPING_SERVICE_DEFAULT = 'ShippingServiceDefault';
+    final public const SHIPPING_SERVICE_DEFAULT = 'ShippingServiceDefault';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

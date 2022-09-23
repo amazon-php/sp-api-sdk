@@ -23,16 +23,18 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PackingSlip implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
+
+    final public const CONTENT_TYPE_APPLICATION_PDF = 'application/pdf';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetCustomerInvoiceResponse';
+    protected static string $openAPIModelName = 'PackingSlip';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,8 +42,9 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'purchase_order_number' => 'string',
+        'content' => 'string',
+        'content_type' => 'string',
     ];
 
     /**
@@ -54,8 +57,9 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'purchase_order_number' => null,
+        'content' => null,
+        'content_type' => null,
     ];
 
     /**
@@ -65,8 +69,9 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'purchase_order_number' => 'purchaseOrderNumber',
+        'content' => 'content',
+        'content_type' => 'contentType',
     ];
 
     /**
@@ -75,8 +80,9 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
+        'content' => 'setContent',
+        'content_type' => 'setContentType',
     ];
 
     /**
@@ -85,8 +91,9 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'purchase_order_number' => 'getPurchaseOrderNumber',
+        'content' => 'getContent',
+        'content_type' => 'getContentType',
     ];
 
     /**
@@ -99,19 +106,20 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
+        $this->container['content'] = $data['content'] ?? null;
+        $this->container['content_type'] = $data['content_type'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +129,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +140,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +150,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +160,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +169,6 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,12 +180,22 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
         return self::$openAPIModelName;
+    }
+
+    /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getContentTypeAllowableValues() : array
+    {
+        return [
+            self::CONTENT_TYPE_APPLICATION_PDF,
+        ];
     }
 
     /**
@@ -189,67 +205,93 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
+        if ($this->container['purchase_order_number'] === null) {
+            throw new AssertionException("'purchase_order_number' can't be null");
         }
 
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
+        if (!\preg_match('/^[a-zA-Z0-9]+$/', (string) $this->container['purchase_order_number'])) {
+            throw new AssertionException("invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        if ($this->container['content'] === null) {
+            throw new AssertionException("'content' can't be null");
+        }
+
+        $allowedValues = $this->getContentTypeAllowableValues();
+
+        if (null !== $this->container['content_type'] && !\in_array($this->container['content_type'], $allowedValues, true)) {
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'content_type', must be one of '%s'",
+                    $this->container['content_type'],
+                    \implode("', '", $allowedValues)
+                )
+            );
         }
     }
 
     /**
-     * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice
+     * Gets purchase_order_number.
      */
-    public function getPayload() : ?CustomerInvoice
+    public function getPurchaseOrderNumber() : string
     {
-        return $this->container['payload'];
+        return $this->container['purchase_order_number'];
     }
 
     /**
-     * Sets payload.
+     * Sets purchase_order_number.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice $payload payload
-     *
-     * @return self
+     * @param string $purchase_order_number purchase order number of the shipment that the packing slip is for
      */
-    public function setPayload(?CustomerInvoice $payload) : self
+    public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;
     }
 
     /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
+     * Gets content.
      */
-    public function getErrors() : ?ErrorList
+    public function getContent() : string
     {
-        return $this->container['errors'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets errors.
+     * Sets content.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
+     * @param string $content a Base64encoded string of the packing slip PDF
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setContent(string $content) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_type.
+     */
+    public function getContentType() : ?string
+    {
+        return $this->container['content_type'];
+    }
+
+    /**
+     * Sets content_type.
+     *
+     * @param null|string $content_type the format of the file such as PDF, JPEG etc
+     */
+    public function setContentType(?string $content_type) : self
+    {
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,7 +304,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -296,18 +338,16 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

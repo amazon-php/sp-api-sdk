@@ -161,8 +161,6 @@ class ImageCropSpecification implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

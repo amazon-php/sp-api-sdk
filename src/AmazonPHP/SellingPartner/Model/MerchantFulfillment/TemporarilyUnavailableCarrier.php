@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, ModelInterface
+class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -94,8 +94,8 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -105,7 +105,7 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -115,7 +115,7 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -126,7 +126,7 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -136,7 +136,7 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -146,7 +146,7 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -155,8 +155,6 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -168,8 +166,6 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -190,8 +186,6 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
     public function getCarrierName() : string
     {
@@ -202,8 +196,6 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
      * Sets carrier_name.
      *
      * @param string $carrier_name the name of the carrier
-     *
-     * @return self
      */
     public function setCarrierName(string $carrier_name) : self
     {
@@ -214,8 +206,6 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -228,7 +218,7 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -262,18 +252,16 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

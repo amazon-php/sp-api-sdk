@@ -23,13 +23,13 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const UNIT_OF_MEASURE_CASES = 'Cases';
+    final public const UNIT_OF_MEASURE_CASES = 'Cases';
 
-    public const UNIT_OF_MEASURE_EACHES = 'Eaches';
+    final public const UNIT_OF_MEASURE_EACHES = 'Eaches';
 
     /**
      * The original name of the model.
@@ -108,8 +108,8 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -121,7 +121,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -131,7 +131,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -142,7 +142,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -152,7 +152,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -162,7 +162,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -171,8 +171,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -184,8 +182,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -235,8 +231,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets amount.
-     *
-     * @return int
      */
     public function getAmount() : int
     {
@@ -247,8 +241,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amount.
      *
      * @param int $amount Quantity of an item. This value should not be zero.
-     *
-     * @return self
      */
     public function setAmount(int $amount) : self
     {
@@ -259,8 +251,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets unit_of_measure.
-     *
-     * @return string
      */
     public function getUnitOfMeasure() : string
     {
@@ -271,8 +261,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets unit_of_measure.
      *
      * @param string $unit_of_measure unit of measure for the quantity
-     *
-     * @return self
      */
     public function setUnitOfMeasure(string $unit_of_measure) : self
     {
@@ -283,8 +271,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets unit_size.
-     *
-     * @return null|int
      */
     public function getUnitSize() : ?int
     {
@@ -295,8 +281,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets unit_size.
      *
      * @param null|int $unit_size the case size, if the unit of measure value is Cases
-     *
-     * @return self
      */
     public function setUnitSize(?int $unit_size) : self
     {
@@ -307,8 +291,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -321,7 +303,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -355,18 +337,16 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

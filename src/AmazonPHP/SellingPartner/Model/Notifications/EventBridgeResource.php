@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInterface
+class EventBridgeResource implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -199,7 +195,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
             throw new AssertionException("'name' can't be null");
         }
 
-        if ((\mb_strlen($this->container['name']) > 256)) {
+        if ((\mb_strlen((string) $this->container['name']) > 256)) {
             throw new AssertionException("invalid value for 'name', the character length must be smaller than or equal to 256.");
         }
 
@@ -214,8 +210,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -226,8 +220,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets name.
      *
      * @param string $name the name of the partner event source associated with the destination
-     *
-     * @return self
      */
     public function setName(string $name) : self
     {
@@ -238,8 +230,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets region.
-     *
-     * @return string
      */
     public function getRegion() : string
     {
@@ -250,8 +240,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets region.
      *
      * @param string $region The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html.
-     *
-     * @return self
      */
     public function setRegion(string $region) : self
     {
@@ -262,8 +250,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets account_id.
-     *
-     * @return string
      */
     public function getAccountId() : string
     {
@@ -274,8 +260,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets account_id.
      *
      * @param string $account_id the identifier for the AWS account that is responsible for charges related to receiving notifications
-     *
-     * @return self
      */
     public function setAccountId(string $account_id) : self
     {
@@ -286,8 +270,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -300,7 +282,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -334,18 +316,16 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

@@ -23,19 +23,19 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const REQUIREMENTS_LISTING = 'LISTING';
+    final public const REQUIREMENTS_LISTING = 'LISTING';
 
-    public const REQUIREMENTS_LISTING_PRODUCT_ONLY = 'LISTING_PRODUCT_ONLY';
+    final public const REQUIREMENTS_LISTING_PRODUCT_ONLY = 'LISTING_PRODUCT_ONLY';
 
-    public const REQUIREMENTS_LISTING_OFFER_ONLY = 'LISTING_OFFER_ONLY';
+    final public const REQUIREMENTS_LISTING_OFFER_ONLY = 'LISTING_OFFER_ONLY';
 
-    public const REQUIREMENTS_ENFORCED_ENFORCED = 'ENFORCED';
+    final public const REQUIREMENTS_ENFORCED_ENFORCED = 'ENFORCED';
 
-    public const REQUIREMENTS_ENFORCED_NOT_ENFORCED = 'NOT_ENFORCED';
+    final public const REQUIREMENTS_ENFORCED_NOT_ENFORCED = 'NOT_ENFORCED';
 
     /**
      * The original name of the model.
@@ -144,8 +144,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -163,7 +163,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -173,7 +173,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -184,7 +184,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -194,7 +194,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -204,7 +204,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -213,8 +213,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -226,8 +224,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -335,8 +331,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets meta_schema.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink
      */
     public function getMetaSchema() : ?SchemaLink
     {
@@ -347,8 +341,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets meta_schema.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink $meta_schema meta_schema
-     *
-     * @return self
      */
     public function setMetaSchema(?SchemaLink $meta_schema) : self
     {
@@ -359,8 +351,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets schema.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink
      */
     public function getSchema() : SchemaLink
     {
@@ -371,8 +361,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets schema.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink $schema schema
-     *
-     * @return self
      */
     public function setSchema(SchemaLink $schema) : self
     {
@@ -383,8 +371,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets requirements.
-     *
-     * @return string
      */
     public function getRequirements() : string
     {
@@ -395,8 +381,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets requirements.
      *
      * @param string $requirements name of the requirements set represented in this product type definition
-     *
-     * @return self
      */
     public function setRequirements(string $requirements) : self
     {
@@ -407,8 +391,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets requirements_enforced.
-     *
-     * @return string
      */
     public function getRequirementsEnforced() : string
     {
@@ -419,8 +401,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets requirements_enforced.
      *
      * @param string $requirements_enforced Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all of the required attributes being present (such as for partial updates).
-     *
-     * @return self
      */
     public function setRequirementsEnforced(string $requirements_enforced) : self
     {
@@ -443,8 +423,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets property_groups.
      *
      * @param array<string,\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\PropertyGroup> $property_groups Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
-     *
-     * @return self
      */
     public function setPropertyGroups(array $property_groups) : self
     {
@@ -455,8 +433,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets locale.
-     *
-     * @return string
      */
     public function getLocale() : string
     {
@@ -467,8 +443,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets locale.
      *
      * @param string $locale locale of the display elements contained in the product type definition
-     *
-     * @return self
      */
     public function setLocale(string $locale) : self
     {
@@ -491,8 +465,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets marketplace_ids.
      *
      * @param string[] $marketplace_ids amazon marketplace identifiers for which the product type definition is applicable
-     *
-     * @return self
      */
     public function setMarketplaceIds(array $marketplace_ids) : self
     {
@@ -503,8 +475,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets product_type.
-     *
-     * @return string
      */
     public function getProductType() : string
     {
@@ -515,8 +485,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets product_type.
      *
      * @param string $product_type the name of the Amazon product type that this product type definition applies to
-     *
-     * @return self
      */
     public function setProductType(string $product_type) : self
     {
@@ -527,8 +495,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets product_type_version.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeVersion
      */
     public function getProductTypeVersion() : ProductTypeVersion
     {
@@ -539,8 +505,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets product_type_version.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeVersion $product_type_version product_type_version
-     *
-     * @return self
      */
     public function setProductTypeVersion(ProductTypeVersion $product_type_version) : self
     {
@@ -551,8 +515,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -565,7 +527,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -599,18 +561,16 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, ModelInt
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

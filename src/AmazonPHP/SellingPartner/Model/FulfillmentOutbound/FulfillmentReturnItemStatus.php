@@ -19,15 +19,12 @@ class FulfillmentReturnItemStatus
     /**
      * Possible values of this enum.
      */
-    public const _NEW = 'New';
+    final public const _NEW = 'New';
 
-    public const PROCESSED = 'Processed';
+    final public const PROCESSED = 'Processed';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

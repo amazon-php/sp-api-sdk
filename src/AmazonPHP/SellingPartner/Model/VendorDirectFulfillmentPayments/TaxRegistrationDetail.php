@@ -23,13 +23,13 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
+class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const TAX_REGISTRATION_TYPE_VAT = 'VAT';
+    final public const TAX_REGISTRATION_TYPE_VAT = 'VAT';
 
-    public const TAX_REGISTRATION_TYPE_GST = 'GST';
+    final public const TAX_REGISTRATION_TYPE_GST = 'GST';
 
     /**
      * The original name of the model.
@@ -113,8 +113,8 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -127,7 +127,7 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -137,7 +137,7 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -148,7 +148,7 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -158,7 +158,7 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -168,7 +168,7 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -177,8 +177,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -190,8 +188,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -241,8 +237,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets tax_registration_type.
-     *
-     * @return null|string
      */
     public function getTaxRegistrationType() : ?string
     {
@@ -253,8 +247,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets tax_registration_type.
      *
      * @param null|string $tax_registration_type tax registration type for the entity
-     *
-     * @return self
      */
     public function setTaxRegistrationType(?string $tax_registration_type) : self
     {
@@ -265,8 +257,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets tax_registration_number.
-     *
-     * @return string
      */
     public function getTaxRegistrationNumber() : string
     {
@@ -277,8 +267,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets tax_registration_number.
      *
      * @param string $tax_registration_number Tax registration number for the party. For example, VAT ID.
-     *
-     * @return self
      */
     public function setTaxRegistrationNumber(string $tax_registration_number) : self
     {
@@ -289,8 +277,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets tax_registration_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Address
      */
     public function getTaxRegistrationAddress() : ?Address
     {
@@ -301,8 +287,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets tax_registration_address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Address $tax_registration_address tax_registration_address
-     *
-     * @return self
      */
     public function setTaxRegistrationAddress(?Address $tax_registration_address) : self
     {
@@ -313,8 +297,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets tax_registration_message.
-     *
-     * @return null|string
      */
     public function getTaxRegistrationMessage() : ?string
     {
@@ -325,8 +307,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets tax_registration_message.
      *
      * @param null|string $tax_registration_message tax registration message that can be used for additional tax related details
-     *
-     * @return self
      */
     public function setTaxRegistrationMessage(?string $tax_registration_message) : self
     {
@@ -337,8 +317,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -351,7 +329,7 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -385,18 +363,16 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, ModelInt
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

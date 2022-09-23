@@ -19,23 +19,20 @@ class PrepInstruction
     /**
      * Possible values of this enum.
      */
-    public const POLYBAGGING = 'Polybagging';
+    final public const POLYBAGGING = 'Polybagging';
 
-    public const BUBBLE_WRAPPING = 'BubbleWrapping';
+    final public const BUBBLE_WRAPPING = 'BubbleWrapping';
 
-    public const TAPING = 'Taping';
+    final public const TAPING = 'Taping';
 
-    public const BLACK_SHRINK_WRAPPING = 'BlackShrinkWrapping';
+    final public const BLACK_SHRINK_WRAPPING = 'BlackShrinkWrapping';
 
-    public const LABELING = 'Labeling';
+    final public const LABELING = 'Labeling';
 
-    public const HANG_GARMENT = 'HangGarment';
+    final public const HANG_GARMENT = 'HangGarment';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

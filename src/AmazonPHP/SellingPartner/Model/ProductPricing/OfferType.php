@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
+class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -134,8 +134,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -153,7 +153,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -163,7 +163,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -174,7 +174,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -184,7 +184,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -194,7 +194,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -203,8 +203,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -216,8 +214,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -266,8 +262,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -278,8 +272,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offer_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType $offer_type offer_type
-     *
-     * @return self
      */
     public function setOfferType(?OfferCustomerType $offer_type) : self
     {
@@ -290,8 +282,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buying_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType
      */
     public function getBuyingPrice() : PriceType
     {
@@ -302,8 +292,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buying_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType $buying_price buying_price
-     *
-     * @return self
      */
     public function setBuyingPrice(PriceType $buying_price) : self
     {
@@ -314,8 +302,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets regular_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getRegularPrice() : MoneyType
     {
@@ -326,8 +312,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets regular_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $regular_price regular_price
-     *
-     * @return self
      */
     public function setRegularPrice(MoneyType $regular_price) : self
     {
@@ -338,8 +322,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets business_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getBusinessPrice() : ?MoneyType
     {
@@ -350,8 +332,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets business_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $business_price business_price
-     *
-     * @return self
      */
     public function setBusinessPrice(?MoneyType $business_price) : self
     {
@@ -374,8 +354,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity_discount_prices.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountPriceType[] $quantity_discount_prices quantity_discount_prices
-     *
-     * @return self
      */
     public function setQuantityDiscountPrices(?array $quantity_discount_prices) : self
     {
@@ -386,8 +364,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fulfillment_channel.
-     *
-     * @return string
      */
     public function getFulfillmentChannel() : string
     {
@@ -398,8 +374,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fulfillment_channel.
      *
      * @param string $fulfillment_channel The fulfillment channel for the offer listing. Possible values:  * Amazon - Fulfilled by Amazon. * Merchant - Fulfilled by the seller.
-     *
-     * @return self
      */
     public function setFulfillmentChannel(string $fulfillment_channel) : self
     {
@@ -410,8 +384,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_condition.
-     *
-     * @return string
      */
     public function getItemCondition() : string
     {
@@ -422,8 +394,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_condition.
      *
      * @param string $item_condition The item condition for the offer listing. Possible values: New, Used, Collectible, Refurbished, or Club.
-     *
-     * @return self
      */
     public function setItemCondition(string $item_condition) : self
     {
@@ -434,8 +404,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_sub_condition.
-     *
-     * @return string
      */
     public function getItemSubCondition() : string
     {
@@ -446,8 +414,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_sub_condition.
      *
      * @param string $item_sub_condition The item subcondition for the offer listing. Possible values: New, Mint, Very Good, Good, Acceptable, Poor, Club, OEM, Warranty, Refurbished Warranty, Refurbished, Open Box, or Other.
-     *
-     * @return self
      */
     public function setItemSubCondition(string $item_sub_condition) : self
     {
@@ -458,8 +424,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -470,8 +434,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller stock keeping unit (SKU) of the item
-     *
-     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -482,8 +444,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -496,7 +456,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -530,18 +490,16 @@ class OfferType implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

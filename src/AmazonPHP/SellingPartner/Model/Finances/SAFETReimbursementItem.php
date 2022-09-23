@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelInterface
+class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -211,8 +207,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets item_charge_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent[] $item_charge_list a list of charge information on the seller's account
-     *
-     * @return self
      */
     public function setItemChargeList(?array $item_charge_list) : self
     {
@@ -223,8 +217,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets product_description.
-     *
-     * @return null|string
      */
     public function getProductDescription() : ?string
     {
@@ -235,8 +227,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets product_description.
      *
      * @param null|string $product_description the description of the item as shown on the product detail page on the retail website
-     *
-     * @return self
      */
     public function setProductDescription(?string $product_description) : self
     {
@@ -247,8 +237,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets quantity.
-     *
-     * @return null|string
      */
     public function getQuantity() : ?string
     {
@@ -259,8 +247,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets quantity.
      *
      * @param null|string $quantity the number of units of the item being reimbursed
-     *
-     * @return self
      */
     public function setQuantity(?string $quantity) : self
     {
@@ -271,8 +257,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,7 +269,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -319,18 +303,16 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, ModelIn
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

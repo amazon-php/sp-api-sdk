@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
+class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -129,8 +129,8 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -147,7 +147,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -157,7 +157,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -168,7 +168,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -178,7 +178,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -188,7 +188,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -197,8 +197,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -210,8 +208,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -244,8 +240,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets removal_shipment_item_id.
-     *
-     * @return null|string
      */
     public function getRemovalShipmentItemId() : ?string
     {
@@ -256,8 +250,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets removal_shipment_item_id.
      *
      * @param null|string $removal_shipment_item_id an identifier for an item in a removal shipment
-     *
-     * @return self
      */
     public function setRemovalShipmentItemId(?string $removal_shipment_item_id) : self
     {
@@ -268,8 +260,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets tax_collection_model.
-     *
-     * @return null|string
      */
     public function getTaxCollectionModel() : ?string
     {
@@ -280,8 +270,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets tax_collection_model.
      *
      * @param null|string $tax_collection_model The tax collection model applied to the item.  Possible values:  * MarketplaceFacilitator - Tax is withheld and remitted to the taxing authority by Amazon on behalf of the seller.  * Standard - Tax is paid to the seller and not remitted to the taxing authority by Amazon.
-     *
-     * @return self
      */
     public function setTaxCollectionModel(?string $tax_collection_model) : self
     {
@@ -292,8 +280,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -304,8 +290,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fulfillment_network_sku.
      *
      * @param null|string $fulfillment_network_sku the Amazon fulfillment network SKU for the item
-     *
-     * @return self
      */
     public function setFulfillmentNetworkSku(?string $fulfillment_network_sku) : self
     {
@@ -316,8 +300,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -328,8 +310,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets quantity.
      *
      * @param null|int $quantity the quantity of the item
-     *
-     * @return self
      */
     public function setQuantity(?int $quantity) : self
     {
@@ -340,8 +320,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets revenue.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRevenue() : ?Currency
     {
@@ -352,8 +330,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets revenue.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $revenue revenue
-     *
-     * @return self
      */
     public function setRevenue(?Currency $revenue) : self
     {
@@ -364,8 +340,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets fee_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {
@@ -376,8 +350,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fee_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $fee_amount fee_amount
-     *
-     * @return self
      */
     public function setFeeAmount(?Currency $fee_amount) : self
     {
@@ -388,8 +360,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {
@@ -400,8 +370,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets tax_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_amount tax_amount
-     *
-     * @return self
      */
     public function setTaxAmount(?Currency $tax_amount) : self
     {
@@ -412,8 +380,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets tax_withheld.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxWithheld() : ?Currency
     {
@@ -424,8 +390,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets tax_withheld.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_withheld tax_withheld
-     *
-     * @return self
      */
     public function setTaxWithheld(?Currency $tax_withheld) : self
     {
@@ -436,8 +400,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -450,7 +412,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -484,18 +446,16 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInter
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

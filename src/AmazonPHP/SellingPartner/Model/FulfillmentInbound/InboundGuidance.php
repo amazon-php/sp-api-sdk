@@ -19,15 +19,12 @@ class InboundGuidance
     /**
      * Possible values of this enum.
      */
-    public const INBOUND_NOT_RECOMMENDED = 'InboundNotRecommended';
+    final public const INBOUND_NOT_RECOMMENDED = 'InboundNotRecommended';
 
-    public const INBOUND_OK = 'InboundOK';
+    final public const INBOUND_OK = 'InboundOK';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

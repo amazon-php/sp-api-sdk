@@ -19,21 +19,18 @@ class HttpMethod
     /**
      * Possible values of this enum.
      */
-    public const GET = 'GET';
+    final public const GET = 'GET';
 
-    public const PUT = 'PUT';
+    final public const PUT = 'PUT';
 
-    public const PATCH = 'PATCH';
+    final public const PATCH = 'PATCH';
 
-    public const DELETE = 'DELETE';
+    final public const DELETE = 'DELETE';
 
-    public const POST = 'POST';
+    final public const POST = 'POST';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

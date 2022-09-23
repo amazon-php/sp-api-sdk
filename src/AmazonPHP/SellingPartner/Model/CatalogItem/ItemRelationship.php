@@ -23,13 +23,13 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemRelationship implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const TYPE_VARIATION = 'VARIATION';
+    final public const TYPE_VARIATION = 'VARIATION';
 
-    public const TYPE_PACKAGE_HIERARCHY = 'PACKAGE_HIERARCHY';
+    final public const TYPE_PACKAGE_HIERARCHY = 'PACKAGE_HIERARCHY';
 
     /**
      * The original name of the model.
@@ -113,8 +113,8 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -127,7 +127,7 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -137,7 +137,7 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -148,7 +148,7 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -158,7 +158,7 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -168,7 +168,7 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -177,8 +177,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -190,8 +188,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -253,8 +249,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets child_asins.
      *
      * @param null|string[] $child_asins identifiers (ASINs) of the related items that are children of this item
-     *
-     * @return self
      */
     public function setChildAsins(?array $child_asins) : self
     {
@@ -277,8 +271,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets parent_asins.
      *
      * @param null|string[] $parent_asins identifiers (ASINs) of the related items that are parents of this item
-     *
-     * @return self
      */
     public function setParentAsins(?array $parent_asins) : self
     {
@@ -289,8 +281,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets variation_theme.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVariationTheme
      */
     public function getVariationTheme() : ?ItemVariationTheme
     {
@@ -301,8 +291,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets variation_theme.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVariationTheme $variation_theme variation_theme
-     *
-     * @return self
      */
     public function setVariationTheme(?ItemVariationTheme $variation_theme) : self
     {
@@ -313,8 +301,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -325,8 +311,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets type.
      *
      * @param string $type type of relationship
-     *
-     * @return self
      */
     public function setType(string $type) : self
     {
@@ -337,8 +321,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -351,7 +333,7 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -385,18 +367,16 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

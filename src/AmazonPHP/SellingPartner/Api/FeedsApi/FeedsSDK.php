@@ -28,27 +28,13 @@ use Psr\Log\LoggerInterface;
  */
 final class FeedsSDK implements FeedsSDKInterface
 {
-    private ClientInterface $client;
-
-    private HttpFactory $httpFactory;
-
-    private Configuration $configuration;
-
-    private LoggerInterface $logger;
-
-    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration, LoggerInterface $logger)
+    public function __construct(private readonly ClientInterface $client, private readonly HttpFactory $httpFactory, private readonly Configuration $configuration, private readonly LoggerInterface $logger)
     {
-        $this->client = $client;
-        $this->httpFactory = $requestFactory;
-        $this->configuration = $configuration;
-        $this->logger = $logger;
     }
 
     /**
      * Operation cancelFeed.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
@@ -139,13 +125,9 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'cancelFeed'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function cancelFeedRequest(AccessToken $accessToken, string $region, string $feed_id) : RequestInterface
     {
@@ -213,7 +195,7 @@ final class FeedsSDK implements FeedsSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -234,14 +216,10 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation createFeed.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body body (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedResponse
      */
     public function createFeed(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body) : \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedResponse
     {
@@ -333,13 +311,9 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'createFeed'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function createFeedRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body) : RequestInterface
     {
@@ -384,7 +358,7 @@ final class FeedsSDK implements FeedsSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
@@ -406,7 +380,7 @@ final class FeedsSDK implements FeedsSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -427,14 +401,10 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation createFeedDocument.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body body (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentResponse
      */
     public function createFeedDocument(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body) : \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentResponse
     {
@@ -526,13 +496,9 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'createFeedDocument'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function createFeedDocumentRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body) : RequestInterface
     {
@@ -577,7 +543,7 @@ final class FeedsSDK implements FeedsSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
             } else {
                 $httpBody = $body;
             }
@@ -599,7 +565,7 @@ final class FeedsSDK implements FeedsSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -620,14 +586,10 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation getFeed.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Feeds\Feed
      */
     public function getFeed(AccessToken $accessToken, string $region, string $feed_id) : \AmazonPHP\SellingPartner\Model\Feeds\Feed
     {
@@ -719,13 +681,9 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'getFeed'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedRequest(AccessToken $accessToken, string $region, string $feed_id) : RequestInterface
     {
@@ -793,7 +751,7 @@ final class FeedsSDK implements FeedsSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -814,14 +772,10 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation getFeedDocument.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Feeds\FeedDocument
      */
     public function getFeedDocument(AccessToken $accessToken, string $region, string $feed_document_id) : \AmazonPHP\SellingPartner\Model\Feeds\FeedDocument
     {
@@ -913,13 +867,9 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'getFeedDocument'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $feed_document_id The identifier of the feed document. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedDocumentRequest(AccessToken $accessToken, string $region, string $feed_document_id) : RequestInterface
     {
@@ -987,7 +937,7 @@ final class FeedsSDK implements FeedsSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -1008,8 +958,6 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation getFeeds.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param null|string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $page_size The maximum number of feeds to return in a single call. (optional, default to 10)
@@ -1020,8 +968,6 @@ final class FeedsSDK implements FeedsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse
      */
     public function getFeeds(AccessToken $accessToken, string $region, ?array $feed_types = null, ?array $marketplace_ids = null, int $page_size = 10, ?array $processing_statuses = null, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse
     {
@@ -1113,8 +1059,6 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'getFeeds'.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param null|string[] $feed_types A list of feed types used to filter feeds. When feedTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either feedTypes or nextToken is required. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter feeds. The feeds returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $page_size The maximum number of feeds to return in a single call. (optional, default to 10)
@@ -1124,8 +1068,6 @@ final class FeedsSDK implements FeedsSDKInterface
      * @param null|string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getFeeds operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getFeedsRequest(AccessToken $accessToken, string $region, ?array $feed_types = null, ?array $marketplace_ids = null, int $page_size = 10, ?array $processing_statuses = null, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : RequestInterface
     {
@@ -1262,7 +1204,7 @@ final class FeedsSDK implements FeedsSDKInterface
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }

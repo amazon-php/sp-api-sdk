@@ -23,21 +23,21 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
+class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const TYPE_DISCOUNT = 'Discount';
+    final public const TYPE_DISCOUNT = 'Discount';
 
-    public const TYPE_DISCOUNT_INCENTIVE = 'DiscountIncentive';
+    final public const TYPE_DISCOUNT_INCENTIVE = 'DiscountIncentive';
 
-    public const TYPE_DEFECTIVE = 'Defective';
+    final public const TYPE_DEFECTIVE = 'Defective';
 
-    public const TYPE_PROMOTIONAL = 'Promotional';
+    final public const TYPE_PROMOTIONAL = 'Promotional';
 
-    public const TYPE_UNSALEABLE_MERCHANDISE = 'UnsaleableMerchandise';
+    final public const TYPE_UNSALEABLE_MERCHANDISE = 'UnsaleableMerchandise';
 
-    public const TYPE_SPECIAL = 'Special';
+    final public const TYPE_SPECIAL = 'Special';
 
     /**
      * The original name of the model.
@@ -121,8 +121,8 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -135,7 +135,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -145,7 +145,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -156,7 +156,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -166,7 +166,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -176,7 +176,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -185,8 +185,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -198,8 +196,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -255,8 +251,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -267,8 +261,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets type.
      *
      * @param string $type type of the allowance applied
-     *
-     * @return self
      */
     public function setType(string $type) : self
     {
@@ -279,8 +271,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets description.
-     *
-     * @return null|string
      */
     public function getDescription() : ?string
     {
@@ -291,8 +281,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets description.
      *
      * @param null|string $description description of the allowance
-     *
-     * @return self
      */
     public function setDescription(?string $description) : self
     {
@@ -303,8 +291,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets allowance_amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getAllowanceAmount() : Money
     {
@@ -315,8 +301,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets allowance_amount.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\Money $allowance_amount allowance_amount
-     *
-     * @return self
      */
     public function setAllowanceAmount(Money $allowance_amount) : self
     {
@@ -339,8 +323,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets tax_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[] $tax_details tax amount details applied on this allowance
-     *
-     * @return self
      */
     public function setTaxDetails(?array $tax_details) : self
     {
@@ -351,8 +333,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -365,7 +345,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -399,18 +379,16 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

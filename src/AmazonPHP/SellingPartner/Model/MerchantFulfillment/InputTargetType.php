@@ -19,15 +19,12 @@ class InputTargetType
     /**
      * Possible values of this enum.
      */
-    public const SHIPMENT_LEVEL = 'SHIPMENT_LEVEL';
+    final public const SHIPMENT_LEVEL = 'SHIPMENT_LEVEL';
 
-    public const ITEM_LEVEL = 'ITEM_LEVEL';
+    final public const ITEM_LEVEL = 'ITEM_LEVEL';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

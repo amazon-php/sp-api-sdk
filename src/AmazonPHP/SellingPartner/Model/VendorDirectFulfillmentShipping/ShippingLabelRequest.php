@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,7 +201,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
             throw new AssertionException("'purchase_order_number' can't be null");
         }
 
-        if (!\preg_match('/^[a-zA-Z0-9]+$/', $this->container['purchase_order_number'])) {
+        if (!\preg_match('/^[a-zA-Z0-9]+$/', (string) $this->container['purchase_order_number'])) {
             throw new AssertionException("invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
 
@@ -224,8 +220,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -236,8 +230,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets purchase_order_number.
      *
      * @param string $purchase_order_number purchase order number of the order for which to create a shipping label
-     *
-     * @return self
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
@@ -248,8 +240,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -260,8 +250,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets selling_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
-     *
-     * @return self
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -272,8 +260,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -284,8 +270,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets ship_from_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
-     *
-     * @return self
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -308,8 +292,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets containers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Container[] $containers a list of the packages in this shipment
-     *
-     * @return self
      */
     public function setContainers(?array $containers) : self
     {
@@ -320,8 +302,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -334,7 +314,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,18 +348,16 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

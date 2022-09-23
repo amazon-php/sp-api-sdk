@@ -167,8 +167,6 @@ class ClassificationRefinement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

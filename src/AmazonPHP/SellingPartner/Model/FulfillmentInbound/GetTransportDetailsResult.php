@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, ModelInterface
+class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -94,8 +94,8 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -105,7 +105,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -115,7 +115,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -126,7 +126,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -136,7 +136,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -146,7 +146,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -155,8 +155,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -168,8 +166,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -190,8 +186,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets transport_content.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportContent
      */
     public function getTransportContent() : ?TransportContent
     {
@@ -202,8 +196,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
      * Sets transport_content.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportContent $transport_content transport_content
-     *
-     * @return self
      */
     public function setTransportContent(?TransportContent $transport_content) : self
     {
@@ -214,8 +206,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -228,7 +218,7 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -262,18 +252,16 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, Mode
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

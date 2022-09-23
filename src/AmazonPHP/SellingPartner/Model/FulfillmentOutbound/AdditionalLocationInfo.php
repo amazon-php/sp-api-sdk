@@ -19,63 +19,60 @@ class AdditionalLocationInfo
     /**
      * Possible values of this enum.
      */
-    public const AS_INSTRUCTED = 'AS_INSTRUCTED';
+    final public const AS_INSTRUCTED = 'AS_INSTRUCTED';
 
-    public const CARPORT = 'CARPORT';
+    final public const CARPORT = 'CARPORT';
 
-    public const CUSTOMER_PICKUP = 'CUSTOMER_PICKUP';
+    final public const CUSTOMER_PICKUP = 'CUSTOMER_PICKUP';
 
-    public const DECK = 'DECK';
+    final public const DECK = 'DECK';
 
-    public const DOOR_PERSON = 'DOOR_PERSON';
+    final public const DOOR_PERSON = 'DOOR_PERSON';
 
-    public const FRONT_DESK = 'FRONT_DESK';
+    final public const FRONT_DESK = 'FRONT_DESK';
 
-    public const FRONT_DOOR = 'FRONT_DOOR';
+    final public const FRONT_DOOR = 'FRONT_DOOR';
 
-    public const GARAGE = 'GARAGE';
+    final public const GARAGE = 'GARAGE';
 
-    public const GUARD = 'GUARD';
+    final public const GUARD = 'GUARD';
 
-    public const MAIL_ROOM = 'MAIL_ROOM';
+    final public const MAIL_ROOM = 'MAIL_ROOM';
 
-    public const MAIL_SLOT = 'MAIL_SLOT';
+    final public const MAIL_SLOT = 'MAIL_SLOT';
 
-    public const MAILBOX = 'MAILBOX';
+    final public const MAILBOX = 'MAILBOX';
 
-    public const MC_BOY = 'MC_BOY';
+    final public const MC_BOY = 'MC_BOY';
 
-    public const MC_GIRL = 'MC_GIRL';
+    final public const MC_GIRL = 'MC_GIRL';
 
-    public const MC_MAN = 'MC_MAN';
+    final public const MC_MAN = 'MC_MAN';
 
-    public const MC_WOMAN = 'MC_WOMAN';
+    final public const MC_WOMAN = 'MC_WOMAN';
 
-    public const NEIGHBOR = 'NEIGHBOR';
+    final public const NEIGHBOR = 'NEIGHBOR';
 
-    public const OFFICE = 'OFFICE';
+    final public const OFFICE = 'OFFICE';
 
-    public const OUTBUILDING = 'OUTBUILDING';
+    final public const OUTBUILDING = 'OUTBUILDING';
 
-    public const PATIO = 'PATIO';
+    final public const PATIO = 'PATIO';
 
-    public const PORCH = 'PORCH';
+    final public const PORCH = 'PORCH';
 
-    public const REAR_DOOR = 'REAR_DOOR';
+    final public const REAR_DOOR = 'REAR_DOOR';
 
-    public const RECEPTIONIST = 'RECEPTIONIST';
+    final public const RECEPTIONIST = 'RECEPTIONIST';
 
-    public const RECEIVER = 'RECEIVER';
+    final public const RECEIVER = 'RECEIVER';
 
-    public const SECURE_LOCATION = 'SECURE_LOCATION';
+    final public const SECURE_LOCATION = 'SECURE_LOCATION';
 
-    public const SIDE_DOOR = 'SIDE_DOOR';
+    final public const SIDE_DOOR = 'SIDE_DOOR';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

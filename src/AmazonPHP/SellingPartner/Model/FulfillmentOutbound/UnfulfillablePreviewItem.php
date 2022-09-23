@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, ModelInterface
+class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,7 +201,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
             throw new AssertionException("'seller_sku' can't be null");
         }
 
-        if ((\mb_strlen($this->container['seller_sku']) > 50)) {
+        if ((\mb_strlen((string) $this->container['seller_sku']) > 50)) {
             throw new AssertionException("invalid value for 'seller_sku', the character length must be smaller than or equal to 50.");
         }
 
@@ -217,15 +213,13 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
             throw new AssertionException("'seller_fulfillment_order_item_id' can't be null");
         }
 
-        if ((\mb_strlen($this->container['seller_fulfillment_order_item_id']) > 50)) {
+        if ((\mb_strlen((string) $this->container['seller_fulfillment_order_item_id']) > 50)) {
             throw new AssertionException("invalid value for 'seller_fulfillment_order_item_id', the character length must be smaller than or equal to 50.");
         }
     }
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -236,8 +230,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller SKU of the item
-     *
-     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -248,8 +240,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -260,8 +250,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets quantity.
      *
      * @param int $quantity the item quantity
-     *
-     * @return self
      */
     public function setQuantity(int $quantity) : self
     {
@@ -272,8 +260,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -284,8 +270,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier created with a call to the getFulfillmentPreview operation
-     *
-     * @return self
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -308,8 +292,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets item_unfulfillable_reasons.
      *
      * @param null|string[] $item_unfulfillable_reasons item_unfulfillable_reasons
-     *
-     * @return self
      */
     public function setItemUnfulfillableReasons(?array $item_unfulfillable_reasons) : self
     {
@@ -320,8 +302,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -334,7 +314,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,18 +348,16 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, Model
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

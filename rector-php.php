@@ -27,6 +27,8 @@ use PHPStan\Type\NullType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\UnionType;
 use Rector\Config\RectorConfig;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
+use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
 use Rector\Set\ValueObject\SetList;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddParamTypeDeclarationRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\AddReturnTypeDeclarationRector;
@@ -47,7 +49,9 @@ return static function (RectorConfig $config): void {
     ]);
 
     $config->rules([
-        FixArgumentDefaultValuesNotMatchingTypeRector::class
+        FixArgumentDefaultValuesNotMatchingTypeRector::class,
+        RemoveUselessParamTagRector::class,
+        RemoveUselessReturnTagRector::class,
     ]);
     $config->sets([
         SetList::PHP_73,

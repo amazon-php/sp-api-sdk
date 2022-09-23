@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInterface
+class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -99,8 +99,8 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -111,7 +111,7 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +121,7 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +132,7 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +142,7 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +152,7 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +161,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +172,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -193,8 +189,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets upload_destination_id.
-     *
-     * @return null|string
      */
     public function getUploadDestinationId() : ?string
     {
@@ -205,8 +199,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets upload_destination_id.
      *
      * @param null|string $upload_destination_id The identifier of the upload destination. Get this value by calling the `createServiceDocumentUploadDestination` operation of the Services API.
-     *
-     * @return self
      */
     public function setUploadDestinationId(?string $upload_destination_id) : self
     {
@@ -217,8 +209,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets content_sha256.
-     *
-     * @return null|string
      */
     public function getContentSha256() : ?string
     {
@@ -229,8 +219,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets content_sha256.
      *
      * @param null|string $content_sha256 Sha256 hash of the file content. This value is used to determine if the file has been corrupted or tampered with during transit.
-     *
-     * @return self
      */
     public function setContentSha256(?string $content_sha256) : self
     {
@@ -241,8 +229,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -255,7 +241,7 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -289,18 +275,16 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, ModelInter
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

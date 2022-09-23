@@ -19,25 +19,22 @@ class DayOfWeek
     /**
      * Possible values of this enum.
      */
-    public const MONDAY = 'MONDAY';
+    final public const MONDAY = 'MONDAY';
 
-    public const TUESDAY = 'TUESDAY';
+    final public const TUESDAY = 'TUESDAY';
 
-    public const WEDNESDAY = 'WEDNESDAY';
+    final public const WEDNESDAY = 'WEDNESDAY';
 
-    public const THURSDAY = 'THURSDAY';
+    final public const THURSDAY = 'THURSDAY';
 
-    public const FRIDAY = 'FRIDAY';
+    final public const FRIDAY = 'FRIDAY';
 
-    public const SATURDAY = 'SATURDAY';
+    final public const SATURDAY = 'SATURDAY';
 
-    public const SUNDAY = 'SUNDAY';
+    final public const SUNDAY = 'SUNDAY';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

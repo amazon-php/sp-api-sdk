@@ -19,17 +19,14 @@ class IntendedBoxContentsSource
     /**
      * Possible values of this enum.
      */
-    public const NONE = 'NONE';
+    final public const NONE = 'NONE';
 
-    public const FEED = 'FEED';
+    final public const FEED = 'FEED';
 
-    public const _2_D_BARCODE = '2D_BARCODE';
+    final public const _2_D_BARCODE = '2D_BARCODE';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

@@ -19,15 +19,12 @@ class ShipmentType
     /**
      * Possible values of this enum.
      */
-    public const SP = 'SP';
+    final public const SP = 'SP';
 
-    public const LTL = 'LTL';
+    final public const LTL = 'LTL';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

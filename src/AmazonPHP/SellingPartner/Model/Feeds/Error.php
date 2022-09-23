@@ -167,8 +167,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

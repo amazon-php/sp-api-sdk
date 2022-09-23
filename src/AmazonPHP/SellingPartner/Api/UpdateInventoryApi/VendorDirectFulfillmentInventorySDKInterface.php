@@ -27,8 +27,6 @@ interface VendorDirectFulfillmentInventorySDKInterface
     /**
      * Operation submitInventoryUpdate.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body body (required)
      *

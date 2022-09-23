@@ -19,15 +19,12 @@ class ErrorReason
     /**
      * Possible values of this enum.
      */
-    public const DOES_NOT_EXIST = 'DoesNotExist';
+    final public const DOES_NOT_EXIST = 'DoesNotExist';
 
-    public const INVALID_ASIN = 'InvalidASIN';
+    final public const INVALID_ASIN = 'InvalidASIN';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

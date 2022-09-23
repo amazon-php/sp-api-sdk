@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -164,8 +164,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -189,7 +189,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -199,7 +199,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -210,7 +210,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -220,7 +220,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -230,7 +230,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -239,8 +239,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -252,8 +250,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -330,8 +326,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets contact.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Contact
      */
     public function getContact() : Contact
     {
@@ -342,8 +336,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets contact.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Contact $contact contact
-     *
-     * @return self
      */
     public function setContact(Contact $contact) : self
     {
@@ -354,8 +346,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets box_count.
-     *
-     * @return int
      */
     public function getBoxCount() : int
     {
@@ -366,8 +356,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets box_count.
      *
      * @param int $box_count box_count
-     *
-     * @return self
      */
     public function setBoxCount(int $box_count) : self
     {
@@ -378,8 +366,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets seller_freight_class.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SellerFreightClass
      */
     public function getSellerFreightClass() : ?SellerFreightClass
     {
@@ -390,8 +376,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets seller_freight_class.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SellerFreightClass $seller_freight_class seller_freight_class
-     *
-     * @return self
      */
     public function setSellerFreightClass(?SellerFreightClass $seller_freight_class) : self
     {
@@ -402,8 +386,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets freight_ready_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getFreightReadyDate() : \DateTimeInterface
     {
@@ -414,8 +396,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets freight_ready_date.
      *
      * @param \DateTimeInterface $freight_ready_date freight_ready_date
-     *
-     * @return self
      */
     public function setFreightReadyDate(\DateTimeInterface $freight_ready_date) : self
     {
@@ -438,8 +418,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets pallet_list.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pallet[] $pallet_list a list of pallet information
-     *
-     * @return self
      */
     public function setPalletList(array $pallet_list) : self
     {
@@ -450,10 +428,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets total_weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight
      */
-    public function getTotalWeight() : Weight
+    public function getTotalWeight() : ?Weight
     {
         return $this->container['total_weight'];
     }
@@ -462,8 +438,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets total_weight.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight $total_weight total_weight
-     *
-     * @return self
      */
     public function setTotalWeight(Weight $total_weight) : self
     {
@@ -474,8 +448,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets seller_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount
      */
     public function getSellerDeclaredValue() : ?Amount
     {
@@ -486,8 +458,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets seller_declared_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount $seller_declared_value seller_declared_value
-     *
-     * @return self
      */
     public function setSellerDeclaredValue(?Amount $seller_declared_value) : self
     {
@@ -498,8 +468,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets amazon_calculated_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount
      */
     public function getAmazonCalculatedValue() : ?Amount
     {
@@ -510,8 +478,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets amazon_calculated_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount $amazon_calculated_value amazon_calculated_value
-     *
-     * @return self
      */
     public function setAmazonCalculatedValue(?Amount $amazon_calculated_value) : self
     {
@@ -522,10 +488,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets preview_pickup_date.
-     *
-     * @return \DateTimeInterface
      */
-    public function getPreviewPickupDate() : \DateTimeInterface
+    public function getPreviewPickupDate() : ?\DateTimeInterface
     {
         return $this->container['preview_pickup_date'];
     }
@@ -534,8 +498,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets preview_pickup_date.
      *
      * @param \DateTimeInterface $preview_pickup_date preview_pickup_date
-     *
-     * @return self
      */
     public function setPreviewPickupDate(\DateTimeInterface $preview_pickup_date) : self
     {
@@ -546,10 +508,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets preview_delivery_date.
-     *
-     * @return \DateTimeInterface
      */
-    public function getPreviewDeliveryDate() : \DateTimeInterface
+    public function getPreviewDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['preview_delivery_date'];
     }
@@ -558,8 +518,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets preview_delivery_date.
      *
      * @param \DateTimeInterface $preview_delivery_date preview_delivery_date
-     *
-     * @return self
      */
     public function setPreviewDeliveryDate(\DateTimeInterface $preview_delivery_date) : self
     {
@@ -570,10 +528,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets preview_freight_class.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SellerFreightClass
      */
-    public function getPreviewFreightClass() : SellerFreightClass
+    public function getPreviewFreightClass() : ?SellerFreightClass
     {
         return $this->container['preview_freight_class'];
     }
@@ -582,8 +538,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets preview_freight_class.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SellerFreightClass $preview_freight_class preview_freight_class
-     *
-     * @return self
      */
     public function setPreviewFreightClass(SellerFreightClass $preview_freight_class) : self
     {
@@ -594,10 +548,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets amazon_reference_id.
-     *
-     * @return string
      */
-    public function getAmazonReferenceId() : string
+    public function getAmazonReferenceId() : ?string
     {
         return $this->container['amazon_reference_id'];
     }
@@ -606,8 +558,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets amazon_reference_id.
      *
      * @param string $amazon_reference_id a unique identifier created by Amazon that identifies this Amazon-partnered, Less Than Truckload/Full Truckload (LTL/FTL) shipment
-     *
-     * @return self
      */
     public function setAmazonReferenceId(string $amazon_reference_id) : self
     {
@@ -618,10 +568,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets is_bill_of_lading_available.
-     *
-     * @return bool
      */
-    public function getIsBillOfLadingAvailable() : bool
+    public function getIsBillOfLadingAvailable() : ?bool
     {
         return $this->container['is_bill_of_lading_available'];
     }
@@ -630,8 +578,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets is_bill_of_lading_available.
      *
      * @param bool $is_bill_of_lading_available indicates whether the bill of lading for the shipment is available
-     *
-     * @return self
      */
     public function setIsBillOfLadingAvailable(bool $is_bill_of_lading_available) : self
     {
@@ -642,8 +588,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets partnered_estimate.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredEstimate
      */
     public function getPartneredEstimate() : ?PartneredEstimate
     {
@@ -654,8 +598,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets partnered_estimate.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredEstimate $partnered_estimate partnered_estimate
-     *
-     * @return self
      */
     public function setPartneredEstimate(?PartneredEstimate $partnered_estimate) : self
     {
@@ -666,10 +608,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }
@@ -678,8 +618,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets carrier_name.
      *
      * @param string $carrier_name the carrier for the inbound shipment
-     *
-     * @return self
      */
     public function setCarrierName(string $carrier_name) : self
     {
@@ -690,8 +628,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -704,7 +640,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -738,18 +674,16 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, ModelIn
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

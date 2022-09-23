@@ -19,17 +19,14 @@ class CarrierWillPickUpOption
     /**
      * Possible values of this enum.
      */
-    public const CARRIER_WILL_PICK_UP = 'CarrierWillPickUp';
+    final public const CARRIER_WILL_PICK_UP = 'CarrierWillPickUp';
 
-    public const SHIPPER_WILL_DROP_OFF = 'ShipperWillDropOff';
+    final public const SHIPPER_WILL_DROP_OFF = 'ShipperWillDropOff';
 
-    public const NO_PREFERENCE = 'NoPreference';
+    final public const NO_PREFERENCE = 'NoPreference';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

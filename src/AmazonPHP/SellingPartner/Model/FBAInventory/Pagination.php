@@ -155,8 +155,6 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

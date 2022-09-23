@@ -19,17 +19,14 @@ class BarcodeInstruction
     /**
      * Possible values of this enum.
      */
-    public const REQUIRES_FNSKU_LABEL = 'RequiresFNSKULabel';
+    final public const REQUIRES_FNSKU_LABEL = 'RequiresFNSKULabel';
 
-    public const CAN_USE_ORIGINAL_BARCODE = 'CanUseOriginalBarcode';
+    final public const CAN_USE_ORIGINAL_BARCODE = 'CanUseOriginalBarcode';
 
-    public const MUST_PROVIDE_SELLER_SKU = 'MustProvideSellerSKU';
+    final public const MUST_PROVIDE_SELLER_SKU = 'MustProvideSellerSKU';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

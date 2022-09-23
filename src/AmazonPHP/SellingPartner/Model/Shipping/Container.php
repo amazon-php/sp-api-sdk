@@ -23,11 +23,11 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const CONTAINER_TYPE_PACKAGE = 'PACKAGE';
+    final public const CONTAINER_TYPE_PACKAGE = 'PACKAGE';
 
     /**
      * The original name of the model.
@@ -121,8 +121,8 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -137,7 +137,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -147,7 +147,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -158,7 +158,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -168,7 +168,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -178,7 +178,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -187,8 +187,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -200,8 +198,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -243,7 +239,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'container_reference_id' can't be null");
         }
 
-        if ((\mb_strlen($this->container['container_reference_id']) > 40)) {
+        if ((\mb_strlen((string) $this->container['container_reference_id']) > 40)) {
             throw new AssertionException("invalid value for 'container_reference_id', the character length must be smaller than or equal to 40.");
         }
 
@@ -272,8 +268,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets container_type.
-     *
-     * @return null|string
      */
     public function getContainerType() : ?string
     {
@@ -284,8 +278,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets container_type.
      *
      * @param null|string $container_type The type of physical container being used. (always 'PACKAGE')
-     *
-     * @return self
      */
     public function setContainerType(?string $container_type) : self
     {
@@ -296,8 +288,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets container_reference_id.
-     *
-     * @return string
      */
     public function getContainerReferenceId() : string
     {
@@ -308,8 +298,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets container_reference_id.
      *
      * @param string $container_reference_id An identifier for the container. This must be unique within all the containers in the same shipment.
-     *
-     * @return self
      */
     public function setContainerReferenceId(string $container_reference_id) : self
     {
@@ -320,8 +308,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets value.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getValue() : Currency
     {
@@ -332,8 +318,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets value.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Currency $value value
-     *
-     * @return self
      */
     public function setValue(Currency $value) : self
     {
@@ -344,8 +328,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets dimensions.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -356,8 +338,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets dimensions.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Dimensions $dimensions dimensions
-     *
-     * @return self
      */
     public function setDimensions(Dimensions $dimensions) : self
     {
@@ -380,8 +360,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets items.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\ContainerItem[] $items a list of the items in the container
-     *
-     * @return self
      */
     public function setItems(array $items) : self
     {
@@ -392,8 +370,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getWeight() : Weight
     {
@@ -404,8 +380,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets weight.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Weight $weight weight
-     *
-     * @return self
      */
     public function setWeight(Weight $weight) : self
     {
@@ -416,8 +390,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -430,7 +402,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -464,18 +436,16 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

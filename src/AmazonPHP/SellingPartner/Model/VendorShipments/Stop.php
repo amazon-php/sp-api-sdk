@@ -23,15 +23,15 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
+    final public const FUNCTION_CODE_PORT_OF_DISCHARGE = 'PortOfDischarge';
 
-    public const FUNCTION_CODE_FREIGHT_PAYABLE_AT = 'FreightPayableAt';
+    final public const FUNCTION_CODE_FREIGHT_PAYABLE_AT = 'FreightPayableAt';
 
-    public const FUNCTION_CODE_PORT_OF_LOADING = 'PortOfLoading';
+    final public const FUNCTION_CODE_PORT_OF_LOADING = 'PortOfLoading';
 
     /**
      * The original name of the model.
@@ -115,8 +115,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -244,8 +240,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets function_code.
-     *
-     * @return string
      */
     public function getFunctionCode() : string
     {
@@ -256,8 +250,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets function_code.
      *
      * @param string $function_code provide the function code
-     *
-     * @return self
      */
     public function setFunctionCode(string $function_code) : self
     {
@@ -268,8 +260,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets location_identification.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Location
      */
     public function getLocationIdentification() : ?Location
     {
@@ -280,8 +270,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets location_identification.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Location $location_identification location_identification
-     *
-     * @return self
      */
     public function setLocationIdentification(?Location $location_identification) : self
     {
@@ -292,8 +280,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets arrival_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getArrivalTime() : ?\DateTimeInterface
     {
@@ -304,8 +290,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets arrival_time.
      *
      * @param null|\DateTimeInterface $arrival_time date and time of the arrival of the cargo
-     *
-     * @return self
      */
     public function setArrivalTime(?\DateTimeInterface $arrival_time) : self
     {
@@ -316,8 +300,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets departure_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDepartureTime() : ?\DateTimeInterface
     {
@@ -328,8 +310,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets departure_time.
      *
      * @param null|\DateTimeInterface $departure_time date and time of the departure of the cargo
-     *
-     * @return self
      */
     public function setDepartureTime(?\DateTimeInterface $departure_time) : self
     {
@@ -340,8 +320,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -354,7 +332,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -388,18 +366,16 @@ class Stop implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

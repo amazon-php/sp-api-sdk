@@ -19,15 +19,12 @@ class SmallAndLightEligibilityStatus
     /**
      * Possible values of this enum.
      */
-    public const ELIGIBLE = 'ELIGIBLE';
+    final public const ELIGIBLE = 'ELIGIBLE';
 
-    public const NOT_ELIGIBLE = 'NOT_ELIGIBLE';
+    final public const NOT_ELIGIBLE = 'NOT_ELIGIBLE';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

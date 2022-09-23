@@ -19,15 +19,12 @@ class IdType
     /**
      * Possible values of this enum.
      */
-    public const ASIN = 'ASIN';
+    final public const ASIN = 'ASIN';
 
-    public const SELLER_SKU = 'SellerSKU';
+    final public const SELLER_SKU = 'SellerSKU';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

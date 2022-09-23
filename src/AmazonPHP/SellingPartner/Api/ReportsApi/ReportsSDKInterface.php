@@ -59,8 +59,6 @@ interface ReportsSDKInterface
     /**
      * Operation cancelReport.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
@@ -71,8 +69,6 @@ interface ReportsSDKInterface
     /**
      * Operation cancelReportSchedule.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
@@ -83,8 +79,6 @@ interface ReportsSDKInterface
     /**
      * Operation createReport.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -97,8 +91,6 @@ interface ReportsSDKInterface
     /**
      * Operation createReportSchedule.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -111,8 +103,6 @@ interface ReportsSDKInterface
     /**
      * Operation getReport.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
@@ -125,8 +115,6 @@ interface ReportsSDKInterface
     /**
      * Operation getReportDocument.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws ApiException on non-2xx response
@@ -139,8 +127,6 @@ interface ReportsSDKInterface
     /**
      * Operation getReportSchedule.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
@@ -153,8 +139,6 @@ interface ReportsSDKInterface
     /**
      * Operation getReportSchedules.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string[] $report_types A list of report types used to filter report schedules. (required)
      *
      * @throws ApiException on non-2xx response
@@ -167,8 +151,6 @@ interface ReportsSDKInterface
     /**
      * Operation getReports.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param null|string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)

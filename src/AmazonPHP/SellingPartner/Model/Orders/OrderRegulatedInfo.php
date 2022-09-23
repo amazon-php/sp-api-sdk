@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterface
+class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -224,8 +220,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -236,8 +230,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets amazon_order_id.
      *
      * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
-     *
-     * @return self
      */
     public function setAmazonOrderId(string $amazon_order_id) : self
     {
@@ -248,8 +240,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets regulated_information.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RegulatedInformation
      */
     public function getRegulatedInformation() : RegulatedInformation
     {
@@ -260,8 +250,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets regulated_information.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\RegulatedInformation $regulated_information regulated_information
-     *
-     * @return self
      */
     public function setRegulatedInformation(RegulatedInformation $regulated_information) : self
     {
@@ -272,8 +260,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets requires_dosage_label.
-     *
-     * @return bool
      */
     public function getRequiresDosageLabel() : bool
     {
@@ -284,8 +270,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets requires_dosage_label.
      *
      * @param bool $requires_dosage_label when true, the order requires attaching a dosage information label when shipped
-     *
-     * @return self
      */
     public function setRequiresDosageLabel(bool $requires_dosage_label) : self
     {
@@ -296,8 +280,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets regulated_order_verification_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RegulatedOrderVerificationStatus
      */
     public function getRegulatedOrderVerificationStatus() : RegulatedOrderVerificationStatus
     {
@@ -308,8 +290,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets regulated_order_verification_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\RegulatedOrderVerificationStatus $regulated_order_verification_status regulated_order_verification_status
-     *
-     * @return self
      */
     public function setRegulatedOrderVerificationStatus(RegulatedOrderVerificationStatus $regulated_order_verification_status) : self
     {
@@ -320,8 +300,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -334,7 +312,7 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -368,18 +346,16 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

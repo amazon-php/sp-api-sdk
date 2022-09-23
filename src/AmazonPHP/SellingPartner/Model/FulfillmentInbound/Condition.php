@@ -19,47 +19,44 @@ class Condition
     /**
      * Possible values of this enum.
      */
-    public const NEW_ITEM = 'NewItem';
+    final public const NEW_ITEM = 'NewItem';
 
-    public const NEW_WITH_WARRANTY = 'NewWithWarranty';
+    final public const NEW_WITH_WARRANTY = 'NewWithWarranty';
 
-    public const NEW_OEM = 'NewOEM';
+    final public const NEW_OEM = 'NewOEM';
 
-    public const NEW_OPEN_BOX = 'NewOpenBox';
+    final public const NEW_OPEN_BOX = 'NewOpenBox';
 
-    public const USED_LIKE_NEW = 'UsedLikeNew';
+    final public const USED_LIKE_NEW = 'UsedLikeNew';
 
-    public const USED_VERY_GOOD = 'UsedVeryGood';
+    final public const USED_VERY_GOOD = 'UsedVeryGood';
 
-    public const USED_GOOD = 'UsedGood';
+    final public const USED_GOOD = 'UsedGood';
 
-    public const USED_ACCEPTABLE = 'UsedAcceptable';
+    final public const USED_ACCEPTABLE = 'UsedAcceptable';
 
-    public const USED_POOR = 'UsedPoor';
+    final public const USED_POOR = 'UsedPoor';
 
-    public const USED_REFURBISHED = 'UsedRefurbished';
+    final public const USED_REFURBISHED = 'UsedRefurbished';
 
-    public const COLLECTIBLE_LIKE_NEW = 'CollectibleLikeNew';
+    final public const COLLECTIBLE_LIKE_NEW = 'CollectibleLikeNew';
 
-    public const COLLECTIBLE_VERY_GOOD = 'CollectibleVeryGood';
+    final public const COLLECTIBLE_VERY_GOOD = 'CollectibleVeryGood';
 
-    public const COLLECTIBLE_GOOD = 'CollectibleGood';
+    final public const COLLECTIBLE_GOOD = 'CollectibleGood';
 
-    public const COLLECTIBLE_ACCEPTABLE = 'CollectibleAcceptable';
+    final public const COLLECTIBLE_ACCEPTABLE = 'CollectibleAcceptable';
 
-    public const COLLECTIBLE_POOR = 'CollectiblePoor';
+    final public const COLLECTIBLE_POOR = 'CollectiblePoor';
 
-    public const REFURBISHED_WITH_WARRANTY = 'RefurbishedWithWarranty';
+    final public const REFURBISHED_WITH_WARRANTY = 'RefurbishedWithWarranty';
 
-    public const REFURBISHED = 'Refurbished';
+    final public const REFURBISHED = 'Refurbished';
 
-    public const CLUB = 'Club';
+    final public const CLUB = 'Club';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

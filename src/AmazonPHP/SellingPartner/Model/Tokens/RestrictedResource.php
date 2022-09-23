@@ -23,17 +23,17 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterface
+class RestrictedResource implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const METHOD_GET = 'GET';
+    final public const METHOD_GET = 'GET';
 
-    public const METHOD_PUT = 'PUT';
+    final public const METHOD_PUT = 'PUT';
 
-    public const METHOD_POST = 'POST';
+    final public const METHOD_POST = 'POST';
 
-    public const METHOD_DELETE = 'DELETE';
+    final public const METHOD_DELETE = 'DELETE';
 
     /**
      * The original name of the model.
@@ -112,8 +112,8 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -125,7 +125,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -135,7 +135,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -146,7 +146,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -156,7 +156,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -166,7 +166,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -175,8 +175,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -188,8 +186,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -241,8 +237,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets method.
-     *
-     * @return string
      */
     public function getMethod() : string
     {
@@ -253,8 +247,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets method.
      *
      * @param string $method the HTTP method in the restricted resource
-     *
-     * @return self
      */
     public function setMethod(string $method) : self
     {
@@ -265,8 +257,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets path.
-     *
-     * @return string
      */
     public function getPath() : string
     {
@@ -277,8 +267,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets path.
      *
      * @param string $path The path in the restricted resource. Here are some path examples: - ```/orders/v0/orders```. For getting an RDT for the getOrders operation of the Orders API. For bulk orders. - ```/orders/v0/orders/123-1234567-1234567```. For getting an RDT for the getOrder operation of the Orders API. For a specific order. - ```/orders/v0/orders/123-1234567-1234567/orderItems```. For getting an RDT for the getOrderItems operation of the Orders API. For the order items in a specific order. - ```/mfn/v0/shipments/FBA1234ABC5D```. For getting an RDT for the getShipment operation of the Shipping API. For a specific shipment. - ```/mfn/v0/shipments/{shipmentId}```. For getting an RDT for the getShipment operation of the Shipping API. For any of a selling partner's shipments that you specify when you call the getShipment operation.
-     *
-     * @return self
      */
     public function setPath(string $path) : self
     {
@@ -301,8 +289,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets data_elements.
      *
      * @param null|string[] $data_elements Indicates the type of Personally Identifiable Information requested. This parameter is required only when getting an RDT for use with the getOrder, getOrders, or getOrderItems operation of the Orders API. For more information, see the [Tokens API Use Case Guide](doc:tokens-api-use-case-guide). Possible values include: - **buyerInfo**. On the order level this includes general identifying information about the buyer and tax-related information. On the order item level this includes gift wrap information and custom order information, if available. - **shippingAddress**. This includes information for fulfilling orders. - **buyerTaxInformation**. This includes information for issuing tax invoices.
-     *
-     * @return self
      */
     public function setDataElements(?array $data_elements) : self
     {
@@ -313,8 +299,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -327,7 +311,7 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -361,18 +345,16 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, ModelInterf
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

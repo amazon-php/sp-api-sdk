@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
+class FileContents implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -210,8 +206,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets contents.
-     *
-     * @return string
      */
     public function getContents() : string
     {
@@ -222,8 +216,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets contents.
      *
      * @param string $contents data for printing labels, in the form of a Base64-encoded, GZip-compressed string
-     *
-     * @return self
      */
     public function setContents(string $contents) : self
     {
@@ -234,8 +226,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets file_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\FileType
      */
     public function getFileType() : FileType
     {
@@ -246,8 +236,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets file_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\FileType $file_type file_type
-     *
-     * @return self
      */
     public function setFileType(FileType $file_type) : self
     {
@@ -258,8 +246,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets checksum.
-     *
-     * @return string
      */
     public function getChecksum() : string
     {
@@ -270,8 +256,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets checksum.
      *
      * @param string $checksum an MD5 hash to validate the PDF document data, in the form of a Base64-encoded string
-     *
-     * @return self
      */
     public function setChecksum(string $checksum) : self
     {
@@ -282,8 +266,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -296,7 +278,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,18 +312,16 @@ class FileContents implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

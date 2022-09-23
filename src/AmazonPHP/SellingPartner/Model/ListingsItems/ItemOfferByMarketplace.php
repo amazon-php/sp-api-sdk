@@ -23,13 +23,13 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const OFFER_TYPE_B2_C = 'B2C';
+    final public const OFFER_TYPE_B2_C = 'B2C';
 
-    public const OFFER_TYPE_B2_B = 'B2B';
+    final public const OFFER_TYPE_B2_B = 'B2B';
 
     /**
      * The original name of the model.
@@ -113,8 +113,8 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -127,7 +127,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -137,7 +137,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -148,7 +148,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -158,7 +158,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -168,7 +168,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -177,8 +177,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -190,8 +188,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -251,8 +247,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -263,8 +257,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets marketplace_id.
      *
      * @param string $marketplace_id amazon marketplace identifier
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -275,8 +267,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets offer_type.
-     *
-     * @return string
      */
     public function getOfferType() : string
     {
@@ -287,8 +277,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets offer_type.
      *
      * @param string $offer_type type of offer for the listings item
-     *
-     * @return self
      */
     public function setOfferType(string $offer_type) : self
     {
@@ -299,8 +287,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\Money
      */
     public function getPrice() : Money
     {
@@ -311,8 +297,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ListingsItems\Money $price price
-     *
-     * @return self
      */
     public function setPrice(Money $price) : self
     {
@@ -323,8 +307,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets points.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\Points
      */
     public function getPoints() : ?Points
     {
@@ -335,8 +317,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets points.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\Points $points points
-     *
-     * @return self
      */
     public function setPoints(?Points $points) : self
     {
@@ -347,8 +327,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -361,7 +339,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -395,18 +373,16 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, ModelIn
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

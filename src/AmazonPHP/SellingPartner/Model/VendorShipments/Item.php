@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -224,8 +220,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -236,8 +230,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_sequence_number.
      *
      * @param string $item_sequence_number Item sequence number for the item. The first item will be 001, the second 002, and so on. This number is used as a reference to refer to this item from the carton or pallet level.
-     *
-     * @return self
      */
     public function setItemSequenceNumber(string $item_sequence_number) : self
     {
@@ -248,8 +240,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets amazon_product_identifier.
-     *
-     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -260,8 +250,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amazon_product_identifier.
      *
      * @param null|string $amazon_product_identifier amazon Standard Identification Number (ASIN) of an item
-     *
-     * @return self
      */
     public function setAmazonProductIdentifier(?string $amazon_product_identifier) : self
     {
@@ -272,8 +260,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -284,8 +270,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets vendor_product_identifier.
      *
      * @param null|string $vendor_product_identifier The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
-     *
-     * @return self
      */
     public function setVendorProductIdentifier(?string $vendor_product_identifier) : self
     {
@@ -296,8 +280,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipped_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity
      */
     public function getShippedQuantity() : ItemQuantity
     {
@@ -308,8 +290,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipped_quantity.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity $shipped_quantity shipped_quantity
-     *
-     * @return self
      */
     public function setShippedQuantity(ItemQuantity $shipped_quantity) : self
     {
@@ -320,8 +300,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemDetails
      */
     public function getItemDetails() : ?ItemDetails
     {
@@ -332,8 +310,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemDetails $item_details item_details
-     *
-     * @return self
      */
     public function setItemDetails(?ItemDetails $item_details) : self
     {
@@ -344,8 +320,6 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -358,7 +332,7 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -392,18 +366,16 @@ class Item implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

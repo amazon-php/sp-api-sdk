@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelInterface
+class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -214,8 +210,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -226,8 +220,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets posted_date.
      *
      * @param null|\DateTimeInterface $posted_date posted_date
-     *
-     * @return self
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -238,8 +230,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets safet_claim_id.
-     *
-     * @return null|string
      */
     public function getSafetClaimId() : ?string
     {
@@ -250,8 +240,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets safet_claim_id.
      *
      * @param null|string $safet_claim_id a SAFE-T claim identifier
-     *
-     * @return self
      */
     public function setSafetClaimId(?string $safet_claim_id) : self
     {
@@ -262,8 +250,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets reimbursed_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getReimbursedAmount() : ?Currency
     {
@@ -274,8 +260,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets reimbursed_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $reimbursed_amount reimbursed_amount
-     *
-     * @return self
      */
     public function setReimbursedAmount(?Currency $reimbursed_amount) : self
     {
@@ -286,8 +270,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets reason_code.
-     *
-     * @return null|string
      */
     public function getReasonCode() : ?string
     {
@@ -298,8 +280,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets reason_code.
      *
      * @param null|string $reason_code indicates why the seller was reimbursed
-     *
-     * @return self
      */
     public function setReasonCode(?string $reason_code) : self
     {
@@ -322,8 +302,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets safet_reimbursement_item_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\SAFETReimbursementItem[] $safet_reimbursement_item_list a list of SAFETReimbursementItems
-     *
-     * @return self
      */
     public function setSafetReimbursementItemList(?array $safet_reimbursement_item_list) : self
     {
@@ -334,8 +312,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -348,7 +324,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -382,18 +358,16 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, ModelI
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

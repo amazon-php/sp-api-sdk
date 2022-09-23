@@ -23,16 +23,16 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ShipmentSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetCustomerInvoicesResponse';
+    protected static string $openAPIModelName = 'ShipmentSchedule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,8 +40,9 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'estimated_delivery_date_time' => '\DateTimeInterface',
+        'appt_window_start_date_time' => '\DateTimeInterface',
+        'appt_window_end_date_time' => '\DateTimeInterface',
     ];
 
     /**
@@ -54,8 +55,9 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'estimated_delivery_date_time' => 'date-time',
+        'appt_window_start_date_time' => 'date-time',
+        'appt_window_end_date_time' => 'date-time',
     ];
 
     /**
@@ -65,8 +67,9 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'estimated_delivery_date_time' => 'estimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'apptWindowStartDateTime',
+        'appt_window_end_date_time' => 'apptWindowEndDateTime',
     ];
 
     /**
@@ -75,8 +78,9 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'estimated_delivery_date_time' => 'setEstimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'setApptWindowStartDateTime',
+        'appt_window_end_date_time' => 'setApptWindowEndDateTime',
     ];
 
     /**
@@ -85,8 +89,9 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'estimated_delivery_date_time' => 'getEstimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'getApptWindowStartDateTime',
+        'appt_window_end_date_time' => 'getApptWindowEndDateTime',
     ];
 
     /**
@@ -99,19 +104,20 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['estimated_delivery_date_time'] = $data['estimated_delivery_date_time'] ?? null;
+        $this->container['appt_window_start_date_time'] = $data['appt_window_start_date_time'] ?? null;
+        $this->container['appt_window_end_date_time'] = $data['appt_window_end_date_time'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +127,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +138,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +148,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +158,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +167,6 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +178,6 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,67 +191,70 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
-        }
-
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
-        }
     }
 
     /**
-     * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList
+     * Gets estimated_delivery_date_time.
      */
-    public function getPayload() : ?CustomerInvoiceList
+    public function getEstimatedDeliveryDateTime() : ?\DateTimeInterface
     {
-        return $this->container['payload'];
+        return $this->container['estimated_delivery_date_time'];
     }
 
     /**
-     * Sets payload.
+     * Sets estimated_delivery_date_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList $payload payload
-     *
-     * @return self
+     * @param null|\DateTimeInterface $estimated_delivery_date_time Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setPayload(?CustomerInvoiceList $payload) : self
+    public function setEstimatedDeliveryDateTime(?\DateTimeInterface $estimated_delivery_date_time) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['estimated_delivery_date_time'] = $estimated_delivery_date_time;
 
         return $this;
     }
 
     /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
+     * Gets appt_window_start_date_time.
      */
-    public function getErrors() : ?ErrorList
+    public function getApptWindowStartDateTime() : ?\DateTimeInterface
     {
-        return $this->container['errors'];
+        return $this->container['appt_window_start_date_time'];
     }
 
     /**
-     * Sets errors.
+     * Sets appt_window_start_date_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
+     * @param null|\DateTimeInterface $appt_window_start_date_time This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setApptWindowStartDateTime(?\DateTimeInterface $appt_window_start_date_time) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['appt_window_start_date_time'] = $appt_window_start_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets appt_window_end_date_time.
+     */
+    public function getApptWindowEndDateTime() : ?\DateTimeInterface
+    {
+        return $this->container['appt_window_end_date_time'];
+    }
+
+    /**
+     * Sets appt_window_end_date_time.
+     *
+     * @param null|\DateTimeInterface $appt_window_end_date_time This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     */
+    public function setApptWindowEndDateTime(?\DateTimeInterface $appt_window_end_date_time) : self
+    {
+        $this->container['appt_window_end_date_time'] = $appt_window_end_date_time;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,7 +267,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -296,18 +301,16 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

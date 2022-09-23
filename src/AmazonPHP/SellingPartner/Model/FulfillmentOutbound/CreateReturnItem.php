@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
+class CreateReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -114,8 +114,8 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -129,7 +129,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -139,7 +139,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -150,7 +150,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -160,7 +160,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -170,7 +170,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -179,8 +179,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -192,8 +190,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -211,7 +207,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
             throw new AssertionException("'seller_return_item_id' can't be null");
         }
 
-        if ((\mb_strlen($this->container['seller_return_item_id']) > 80)) {
+        if ((\mb_strlen((string) $this->container['seller_return_item_id']) > 80)) {
             throw new AssertionException("invalid value for 'seller_return_item_id', the character length must be smaller than or equal to 80.");
         }
 
@@ -227,15 +223,13 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
             throw new AssertionException("'return_reason_code' can't be null");
         }
 
-        if (null !== $this->container['return_comment'] && (\mb_strlen($this->container['return_comment']) > 1000)) {
+        if (null !== $this->container['return_comment'] && (\mb_strlen((string) $this->container['return_comment']) > 1000)) {
             throw new AssertionException("invalid value for 'return_comment', the character length must be smaller than or equal to 1000.");
         }
     }
 
     /**
      * Gets seller_return_item_id.
-     *
-     * @return string
      */
     public function getSellerReturnItemId() : string
     {
@@ -246,8 +240,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets seller_return_item_id.
      *
      * @param string $seller_return_item_id an identifier assigned by the seller to the return item
-     *
-     * @return self
      */
     public function setSellerReturnItemId(string $seller_return_item_id) : self
     {
@@ -258,8 +250,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -270,8 +260,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id the identifier assigned to the item by the seller when the fulfillment order was created
-     *
-     * @return self
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -282,8 +270,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets amazon_shipment_id.
-     *
-     * @return string
      */
     public function getAmazonShipmentId() : string
     {
@@ -294,8 +280,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets amazon_shipment_id.
      *
      * @param string $amazon_shipment_id the identifier for the shipment that is associated with the return item
-     *
-     * @return self
      */
     public function setAmazonShipmentId(string $amazon_shipment_id) : self
     {
@@ -306,8 +290,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets return_reason_code.
-     *
-     * @return string
      */
     public function getReturnReasonCode() : string
     {
@@ -318,8 +300,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets return_reason_code.
      *
      * @param string $return_reason_code the return reason code assigned to the return item by the seller
-     *
-     * @return self
      */
     public function setReturnReasonCode(string $return_reason_code) : self
     {
@@ -330,8 +310,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets return_comment.
-     *
-     * @return null|string
      */
     public function getReturnComment() : ?string
     {
@@ -342,8 +320,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets return_comment.
      *
      * @param null|string $return_comment an optional comment about the return item
-     *
-     * @return self
      */
     public function setReturnComment(?string $return_comment) : self
     {
@@ -354,8 +330,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -368,7 +342,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -402,18 +376,16 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

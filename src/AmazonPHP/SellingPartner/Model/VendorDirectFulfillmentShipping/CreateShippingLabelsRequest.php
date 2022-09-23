@@ -23,16 +23,16 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class CreateShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetShippingLabelResponse';
+    protected static string $openAPIModelName = 'CreateShippingLabelsRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,8 +40,9 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'selling_party' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification',
+        'ship_from_party' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification',
+        'containers' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Container[]',
     ];
 
     /**
@@ -54,8 +55,9 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'containers' => null,
     ];
 
     /**
@@ -65,8 +67,9 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'containers' => 'containers',
     ];
 
     /**
@@ -75,8 +78,9 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'selling_party' => 'setSellingParty',
+        'ship_from_party' => 'setShipFromParty',
+        'containers' => 'setContainers',
     ];
 
     /**
@@ -85,8 +89,9 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'selling_party' => 'getSellingParty',
+        'ship_from_party' => 'getShipFromParty',
+        'containers' => 'getContainers',
     ];
 
     /**
@@ -99,19 +104,20 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['selling_party'] = $data['selling_party'] ?? null;
+        $this->container['ship_from_party'] = $data['ship_from_party'] ?? null;
+        $this->container['containers'] = $data['containers'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -121,7 +127,7 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -132,7 +138,7 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -142,7 +148,7 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -152,7 +158,7 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -161,8 +167,6 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -174,8 +178,6 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,67 +191,83 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
+        if ($this->container['selling_party'] === null) {
+            throw new AssertionException("'selling_party' can't be null");
         }
 
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
+        $this->container['selling_party']->validate();
+
+        if ($this->container['ship_from_party'] === null) {
+            throw new AssertionException("'ship_from_party' can't be null");
         }
+
+        $this->container['ship_from_party']->validate();
     }
 
     /**
-     * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
+     * Gets selling_party.
      */
-    public function getPayload() : ?ShippingLabel
+    public function getSellingParty() : PartyIdentification
     {
-        return $this->container['payload'];
+        return $this->container['selling_party'];
     }
 
     /**
-     * Sets payload.
+     * Sets selling_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel $payload payload
-     *
-     * @return self
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
      */
-    public function setPayload(?ShippingLabel $payload) : self
+    public function setSellingParty(PartyIdentification $selling_party) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['selling_party'] = $selling_party;
 
         return $this;
     }
 
     /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
+     * Gets ship_from_party.
      */
-    public function getErrors() : ?ErrorList
+    public function getShipFromParty() : PartyIdentification
     {
-        return $this->container['errors'];
+        return $this->container['ship_from_party'];
     }
 
     /**
-     * Sets errors.
+     * Sets ship_from_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['ship_from_party'] = $ship_from_party;
+
+        return $this;
+    }
+
+    /**
+     * Gets containers.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Container[]
+     */
+    public function getContainers() : ?array
+    {
+        return $this->container['containers'];
+    }
+
+    /**
+     * Sets containers.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Container[] $containers a list of the packages in this shipment
+     */
+    public function setContainers(?array $containers) : self
+    {
+        $this->container['containers'] = $containers;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,7 +280,7 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -296,18 +314,16 @@ class GetShippingLabelResponse implements \ArrayAccess, \JsonSerializable, Model
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

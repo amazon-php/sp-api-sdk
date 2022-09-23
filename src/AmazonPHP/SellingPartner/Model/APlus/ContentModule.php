@@ -245,8 +245,6 @@ class ContentModule implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

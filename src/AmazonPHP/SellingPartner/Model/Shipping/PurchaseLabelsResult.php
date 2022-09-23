@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,7 +201,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
             throw new AssertionException("'shipment_id' can't be null");
         }
 
-        if (null !== $this->container['client_reference_id'] && (\mb_strlen($this->container['client_reference_id']) > 40)) {
+        if (null !== $this->container['client_reference_id'] && (\mb_strlen((string) $this->container['client_reference_id']) > 40)) {
             throw new AssertionException("invalid value for 'client_reference_id', the character length must be smaller than or equal to 40.");
         }
 
@@ -222,8 +218,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets shipment_id.
-     *
-     * @return string
      */
     public function getShipmentId() : string
     {
@@ -234,8 +228,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets shipment_id.
      *
      * @param string $shipment_id the unique shipment identifier
-     *
-     * @return self
      */
     public function setShipmentId(string $shipment_id) : self
     {
@@ -246,8 +238,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets client_reference_id.
-     *
-     * @return null|string
      */
     public function getClientReferenceId() : ?string
     {
@@ -258,8 +248,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets client_reference_id.
      *
      * @param null|string $client_reference_id client reference id
-     *
-     * @return self
      */
     public function setClientReferenceId(?string $client_reference_id) : self
     {
@@ -270,8 +258,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets accepted_rate.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate() : AcceptedRate
     {
@@ -282,8 +268,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets accepted_rate.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate $accepted_rate accepted_rate
-     *
-     * @return self
      */
     public function setAcceptedRate(AcceptedRate $accepted_rate) : self
     {
@@ -306,8 +290,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets label_results.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\LabelResult[] $label_results A list of label results
-     *
-     * @return self
      */
     public function setLabelResults(array $label_results) : self
     {
@@ -318,8 +300,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -332,7 +312,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -366,18 +346,16 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, ModelInte
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

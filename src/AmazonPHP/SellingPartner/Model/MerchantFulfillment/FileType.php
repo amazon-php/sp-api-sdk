@@ -19,17 +19,14 @@ class FileType
     /**
      * Possible values of this enum.
      */
-    public const APPLICATION_PDF = 'application/pdf';
+    final public const APPLICATION_PDF = 'application/pdf';
 
-    public const APPLICATION_ZPL = 'application/zpl';
+    final public const APPLICATION_ZPL = 'application/zpl';
 
-    public const IMAGE_PNG = 'image/png';
+    final public const IMAGE_PNG = 'image/png';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

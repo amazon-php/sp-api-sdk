@@ -19,19 +19,16 @@ class ShippingSpeedCategory
     /**
      * Possible values of this enum.
      */
-    public const STANDARD = 'Standard';
+    final public const STANDARD = 'Standard';
 
-    public const EXPEDITED = 'Expedited';
+    final public const EXPEDITED = 'Expedited';
 
-    public const PRIORITY = 'Priority';
+    final public const PRIORITY = 'Priority';
 
-    public const SCHEDULED_DELIVERY = 'ScheduledDelivery';
+    final public const SCHEDULED_DELIVERY = 'ScheduledDelivery';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ServiceRate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -226,8 +222,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets total_charge.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getTotalCharge() : Currency
     {
@@ -238,8 +232,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_charge.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Currency $total_charge total_charge
-     *
-     * @return self
      */
     public function setTotalCharge(Currency $total_charge) : self
     {
@@ -250,8 +242,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets billable_weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getBillableWeight() : Weight
     {
@@ -262,8 +252,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets billable_weight.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Weight $billable_weight billable_weight
-     *
-     * @return self
      */
     public function setBillableWeight(Weight $billable_weight) : self
     {
@@ -274,8 +262,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets service_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\ServiceType
      */
     public function getServiceType() : ServiceType
     {
@@ -286,8 +272,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets service_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\ServiceType $service_type service_type
-     *
-     * @return self
      */
     public function setServiceType(ServiceType $service_type) : self
     {
@@ -298,8 +282,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets promise.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet
      */
     public function getPromise() : ShippingPromiseSet
     {
@@ -310,8 +292,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets promise.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet $promise promise
-     *
-     * @return self
      */
     public function setPromise(ShippingPromiseSet $promise) : self
     {
@@ -322,8 +302,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -336,7 +314,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -370,18 +348,16 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

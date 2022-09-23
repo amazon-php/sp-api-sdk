@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
+class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -139,8 +139,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -159,7 +159,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -169,7 +169,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -180,7 +180,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -190,7 +190,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -200,7 +200,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -209,8 +209,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -222,8 +220,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -260,8 +256,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -272,8 +266,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_sequence_number.
      *
      * @param string $item_sequence_number Numbering of the item on the purchase order. The first item will be 1, the second 2, and so on.
-     *
-     * @return self
      */
     public function setItemSequenceNumber(string $item_sequence_number) : self
     {
@@ -284,8 +276,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -296,8 +286,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_product_identifier.
      *
      * @param null|string $buyer_product_identifier buyer's standard identification number (ASIN) of an item
-     *
-     * @return self
      */
     public function setBuyerProductIdentifier(?string $buyer_product_identifier) : self
     {
@@ -308,8 +296,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -320,8 +306,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets vendor_product_identifier.
      *
      * @param null|string $vendor_product_identifier the vendor selected product identification of the item
-     *
-     * @return self
      */
     public function setVendorProductIdentifier(?string $vendor_product_identifier) : self
     {
@@ -332,8 +316,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets invoiced_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -344,8 +326,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets invoiced_quantity.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ItemQuantity $invoiced_quantity invoiced_quantity
-     *
-     * @return self
      */
     public function setInvoicedQuantity(ItemQuantity $invoiced_quantity) : self
     {
@@ -356,8 +336,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets net_cost.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getNetCost() : Money
     {
@@ -368,8 +346,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets net_cost.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money $net_cost net_cost
-     *
-     * @return self
      */
     public function setNetCost(Money $net_cost) : self
     {
@@ -380,8 +356,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -392,8 +366,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_number.
      *
      * @param string $purchase_order_number The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-     *
-     * @return self
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
@@ -404,8 +376,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets vendor_order_number.
-     *
-     * @return null|string
      */
     public function getVendorOrderNumber() : ?string
     {
@@ -416,8 +386,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets vendor_order_number.
      *
      * @param null|string $vendor_order_number the vendor's order number for this order
-     *
-     * @return self
      */
     public function setVendorOrderNumber(?string $vendor_order_number) : self
     {
@@ -428,8 +396,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets hsn_code.
-     *
-     * @return null|string
      */
     public function getHsnCode() : ?string
     {
@@ -440,8 +406,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets hsn_code.
      *
      * @param null|string $hsn_code HSN tax code. The HSN number cannot contain alphabets.
-     *
-     * @return self
      */
     public function setHsnCode(?string $hsn_code) : self
     {
@@ -464,8 +428,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tax_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\TaxDetail[] $tax_details individual tax details per line item
-     *
-     * @return self
      */
     public function setTaxDetails(?array $tax_details) : self
     {
@@ -488,8 +450,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets charge_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ChargeDetails[] $charge_details individual charge details per line item
-     *
-     * @return self
      */
     public function setChargeDetails(?array $charge_details) : self
     {
@@ -500,8 +460,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -514,7 +472,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -548,18 +506,16 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

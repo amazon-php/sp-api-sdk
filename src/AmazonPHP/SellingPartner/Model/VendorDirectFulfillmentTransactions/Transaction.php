@@ -23,15 +23,15 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
-    public const STATUS_FAILURE = 'Failure';
+    final public const STATUS_FAILURE = 'Failure';
 
-    public const STATUS_PROCESSING = 'Processing';
+    final public const STATUS_PROCESSING = 'Processing';
 
-    public const STATUS_SUCCESS = 'Success';
+    final public const STATUS_SUCCESS = 'Success';
 
     /**
      * The original name of the model.
@@ -110,8 +110,8 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -242,8 +238,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets transaction_id.
-     *
-     * @return string
      */
     public function getTransactionId() : string
     {
@@ -254,8 +248,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets transaction_id.
      *
      * @param string $transaction_id the unique identifier sent in the 'transactionId' field in response to the post request of a specific transaction
-     *
-     * @return self
      */
     public function setTransactionId(string $transaction_id) : self
     {
@@ -266,8 +258,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets status.
-     *
-     * @return string
      */
     public function getStatus() : string
     {
@@ -278,8 +268,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets status.
      *
      * @param string $status current processing status of the transaction
-     *
-     * @return self
      */
     public function setStatus(string $status) : self
     {
@@ -290,8 +278,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\ErrorList
      */
     public function getErrors() : ?ErrorList
     {
@@ -302,8 +288,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\ErrorList $errors errors
-     *
-     * @return self
      */
     public function setErrors(?ErrorList $errors) : self
     {
@@ -314,8 +298,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -328,7 +310,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -362,18 +344,16 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

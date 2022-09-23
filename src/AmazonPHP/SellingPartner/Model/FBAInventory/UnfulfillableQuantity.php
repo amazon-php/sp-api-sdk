@@ -191,8 +191,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

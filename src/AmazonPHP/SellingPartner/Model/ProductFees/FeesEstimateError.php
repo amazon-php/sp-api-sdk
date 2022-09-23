@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterface
+class FeesEstimateError implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -109,8 +109,8 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -123,7 +123,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -133,7 +133,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -144,7 +144,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -154,7 +154,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -164,7 +164,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -173,8 +173,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -186,8 +184,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -220,8 +216,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -232,8 +226,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets type.
      *
      * @param string $type an error type, identifying either the receiver or the sender as the originator of the error
-     *
-     * @return self
      */
     public function setType(string $type) : self
     {
@@ -244,8 +236,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -256,8 +246,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets code.
      *
      * @param string $code an error code that identifies the type of error that occurred
-     *
-     * @return self
      */
     public function setCode(string $code) : self
     {
@@ -268,8 +256,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets message.
-     *
-     * @return string
      */
     public function getMessage() : string
     {
@@ -280,8 +266,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets message.
      *
      * @param string $message a message that describes the error condition
-     *
-     * @return self
      */
     public function setMessage(string $message) : self
     {
@@ -304,8 +288,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets detail.
      *
      * @param object[] $detail additional information that can help the caller understand or fix the issue
-     *
-     * @return self
      */
     public function setDetail(array $detail) : self
     {
@@ -316,8 +298,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -330,7 +310,7 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -364,18 +344,16 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, ModelInterfa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

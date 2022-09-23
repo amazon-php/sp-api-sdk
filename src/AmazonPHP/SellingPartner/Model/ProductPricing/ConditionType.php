@@ -19,21 +19,18 @@ class ConditionType
     /**
      * Possible values of this enum.
      */
-    public const _NEW = 'New';
+    final public const _NEW = 'New';
 
-    public const USED = 'Used';
+    final public const USED = 'Used';
 
-    public const COLLECTIBLE = 'Collectible';
+    final public const COLLECTIBLE = 'Collectible';
 
-    public const REFURBISHED = 'Refurbished';
+    final public const REFURBISHED = 'Refurbished';
 
-    public const CLUB = 'Club';
+    final public const CLUB = 'Club';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

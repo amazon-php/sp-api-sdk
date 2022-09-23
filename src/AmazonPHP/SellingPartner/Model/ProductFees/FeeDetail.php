@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
+class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -119,8 +119,8 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -135,7 +135,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -145,7 +145,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -156,7 +156,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -166,7 +166,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -176,7 +176,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -185,8 +185,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -198,8 +196,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -240,8 +236,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fee_type.
-     *
-     * @return string
      */
     public function getFeeType() : string
     {
@@ -252,8 +246,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fee_type.
      *
      * @param string $fee_type the type of fee charged to a seller
-     *
-     * @return self
      */
     public function setFeeType(string $fee_type) : self
     {
@@ -264,8 +256,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fee_amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFeeAmount() : MoneyType
     {
@@ -276,8 +266,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fee_amount.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $fee_amount fee_amount
-     *
-     * @return self
      */
     public function setFeeAmount(MoneyType $fee_amount) : self
     {
@@ -288,8 +276,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fee_promotion.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFeePromotion() : ?MoneyType
     {
@@ -300,8 +286,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fee_promotion.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $fee_promotion fee_promotion
-     *
-     * @return self
      */
     public function setFeePromotion(?MoneyType $fee_promotion) : self
     {
@@ -312,8 +296,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getTaxAmount() : ?MoneyType
     {
@@ -324,8 +306,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tax_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $tax_amount tax_amount
-     *
-     * @return self
      */
     public function setTaxAmount(?MoneyType $tax_amount) : self
     {
@@ -336,8 +316,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets final_fee.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFinalFee() : MoneyType
     {
@@ -348,8 +326,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets final_fee.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $final_fee final_fee
-     *
-     * @return self
      */
     public function setFinalFee(MoneyType $final_fee) : self
     {
@@ -372,8 +348,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets included_fee_detail_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\IncludedFeeDetail[] $included_fee_detail_list a list of other fees that contribute to a given fee
-     *
-     * @return self
      */
     public function setIncludedFeeDetailList(?array $included_fee_detail_list) : self
     {
@@ -384,8 +358,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -398,7 +370,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -432,18 +404,16 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

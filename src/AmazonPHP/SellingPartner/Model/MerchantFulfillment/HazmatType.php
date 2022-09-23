@@ -19,15 +19,12 @@ class HazmatType
     /**
      * Possible values of this enum.
      */
-    public const NONE = 'None';
+    final public const NONE = 'None';
 
-    public const LQ_HAZMAT = 'LQHazmat';
+    final public const LQ_HAZMAT = 'LQHazmat';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

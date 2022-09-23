@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -104,8 +104,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -117,7 +117,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -127,7 +127,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -138,7 +138,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -148,7 +148,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -158,7 +158,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -167,8 +167,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -180,8 +178,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -210,8 +206,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets party_id.
-     *
-     * @return string
      */
     public function getPartyId() : string
     {
@@ -222,8 +216,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets party_id.
      *
      * @param string $party_id Assigned identification for the party. For example, warehouse code or vendor code. Please refer to specific party for more details.
-     *
-     * @return self
      */
     public function setPartyId(string $party_id) : self
     {
@@ -234,8 +226,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Address
      */
     public function getAddress() : ?Address
     {
@@ -246,8 +236,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Address $address address
-     *
-     * @return self
      */
     public function setAddress(?Address $address) : self
     {
@@ -258,8 +246,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets tax_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxRegistrationDetails
      */
     public function getTaxInfo() : ?TaxRegistrationDetails
     {
@@ -270,8 +256,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets tax_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxRegistrationDetails $tax_info tax_info
-     *
-     * @return self
      */
     public function setTaxInfo(?TaxRegistrationDetails $tax_info) : self
     {
@@ -282,8 +266,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -296,7 +278,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -330,18 +312,16 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, ModelInter
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

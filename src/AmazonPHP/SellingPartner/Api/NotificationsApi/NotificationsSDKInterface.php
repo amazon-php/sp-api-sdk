@@ -55,8 +55,6 @@ interface NotificationsSDKInterface
     /**
      * Operation createDestination.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -69,8 +67,6 @@ interface NotificationsSDKInterface
     /**
      * Operation createSubscription.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $notification_type The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body body (required)
      *
@@ -84,8 +80,6 @@ interface NotificationsSDKInterface
     /**
      * Operation deleteDestination.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
      * @throws ApiException on non-2xx response
@@ -98,8 +92,6 @@ interface NotificationsSDKInterface
     /**
      * Operation deleteSubscriptionById.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      *
@@ -113,8 +105,6 @@ interface NotificationsSDKInterface
     /**
      * Operation getDestination.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
      * @throws ApiException on non-2xx response
@@ -127,9 +117,6 @@ interface NotificationsSDKInterface
     /**
      * Operation getDestinations.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
-     *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
@@ -140,8 +127,6 @@ interface NotificationsSDKInterface
     /**
      * Operation getSubscription.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $notification_type The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      *
      * @throws ApiException on non-2xx response
@@ -154,8 +139,6 @@ interface NotificationsSDKInterface
     /**
      * Operation getSubscriptionById.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification.   For more information about notification types, see [the Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      *

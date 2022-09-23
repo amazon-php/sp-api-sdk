@@ -19,29 +19,26 @@ class FulfillmentOrderStatus
     /**
      * Possible values of this enum.
      */
-    public const _NEW = 'New';
+    final public const _NEW = 'New';
 
-    public const RECEIVED = 'Received';
+    final public const RECEIVED = 'Received';
 
-    public const PLANNING = 'Planning';
+    final public const PLANNING = 'Planning';
 
-    public const PROCESSING = 'Processing';
+    final public const PROCESSING = 'Processing';
 
-    public const CANCELLED = 'Cancelled';
+    final public const CANCELLED = 'Cancelled';
 
-    public const COMPLETE = 'Complete';
+    final public const COMPLETE = 'Complete';
 
-    public const COMPLETE_PARTIALLED = 'CompletePartialled';
+    final public const COMPLETE_PARTIALLED = 'CompletePartialled';
 
-    public const UNFULFILLABLE = 'Unfulfillable';
+    final public const UNFULFILLABLE = 'Unfulfillable';
 
-    public const INVALID = 'Invalid';
+    final public const INVALID = 'Invalid';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**

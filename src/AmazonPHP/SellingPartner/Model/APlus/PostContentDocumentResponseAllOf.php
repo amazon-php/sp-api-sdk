@@ -155,8 +155,6 @@ class PostContentDocumentResponseAllOf implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {

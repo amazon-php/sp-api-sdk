@@ -23,9 +23,9 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
+class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
-    public const DISCRIMINATOR = null;
+    final public const DISCRIMINATOR = null;
 
     /**
      * The original name of the model.
@@ -119,8 +119,8 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Constructor.
      *
-     * @param mixed[] $data Associated array of property values
-     *                      initializing the model
+     * @param null|mixed[] $data Associated array of property values
+     *                           initializing the model
      */
     public function __construct(array $data = null)
     {
@@ -135,7 +135,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -145,7 +145,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -156,7 +156,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -166,7 +166,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -176,7 +176,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -185,8 +185,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -198,8 +196,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -225,7 +221,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
             throw new AssertionException("'country_code' can't be null");
         }
 
-        if (!\preg_match('/^([A-Z]{2})$/', $this->container['country_code'])) {
+        if (!\preg_match('/^([A-Z]{2})$/', (string) $this->container['country_code'])) {
             throw new AssertionException("invalid value for 'country_code', must be conform to the pattern /^([A-Z]{2})$/.");
         }
 
@@ -244,8 +240,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets id.
-     *
-     * @return string
      */
     public function getId() : string
     {
@@ -256,8 +250,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets id.
      *
      * @param string $id the encrypted marketplace value
-     *
-     * @return self
      */
     public function setId(string $id) : self
     {
@@ -268,8 +260,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -280,8 +270,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets name.
      *
      * @param string $name marketplace name
-     *
-     * @return self
      */
     public function setName(string $name) : self
     {
@@ -292,8 +280,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets country_code.
-     *
-     * @return string
      */
     public function getCountryCode() : string
     {
@@ -304,8 +290,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets country_code.
      *
      * @param string $country_code the ISO 3166-1 alpha-2 format country code of the marketplace
-     *
-     * @return self
      */
     public function setCountryCode(string $country_code) : self
     {
@@ -316,8 +300,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets default_currency_code.
-     *
-     * @return string
      */
     public function getDefaultCurrencyCode() : string
     {
@@ -328,8 +310,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets default_currency_code.
      *
      * @param string $default_currency_code the ISO 4217 format currency code of the marketplace
-     *
-     * @return self
      */
     public function setDefaultCurrencyCode(string $default_currency_code) : self
     {
@@ -340,8 +320,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets default_language_code.
-     *
-     * @return string
      */
     public function getDefaultLanguageCode() : string
     {
@@ -352,8 +330,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets default_language_code.
      *
      * @param string $default_language_code the ISO 639-1 format language code of the marketplace
-     *
-     * @return self
      */
     public function setDefaultLanguageCode(string $default_language_code) : self
     {
@@ -364,8 +340,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets domain_name.
-     *
-     * @return string
      */
     public function getDomainName() : string
     {
@@ -376,8 +350,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets domain_name.
      *
      * @param string $domain_name the domain name of the marketplace
-     *
-     * @return self
      */
     public function setDomainName(string $domain_name) : self
     {
@@ -388,8 +360,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -402,7 +372,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      * @return null|mixed
      */
     #[\ReturnTypeWillChange]
-    public function offsetGet($offset)
+    public function offsetGet($offset) : mixed
     {
         return $this->container[$offset] ?? null;
     }
@@ -436,18 +406,16 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, ModelInterface
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string
+    public function jsonSerialize() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
-    public function toHeaderValue() : string
+    public function toHeaderValue() : string|bool
     {
-        return \json_encode(ObjectSerializer::sanitizeForSerialization($this));
+        return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
 }

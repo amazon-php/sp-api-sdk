@@ -19,15 +19,12 @@ class SmallAndLightEnrollmentStatus
     /**
      * Possible values of this enum.
      */
-    public const ENROLLED = 'ENROLLED';
+    final public const ENROLLED = 'ENROLLED';
 
-    public const NOT_ENROLLED = 'NOT_ENROLLED';
+    final public const NOT_ENROLLED = 'NOT_ENROLLED';
 
-    private string $value;
-
-    public function __construct(string $value)
+    public function __construct(private readonly string $value)
     {
-        $this->value = $value;
     }
 
     /**
