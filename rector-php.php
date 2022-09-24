@@ -26,6 +26,7 @@ use PHPStan\Type\MixedType;
 use PHPStan\Type\NullType;
 use PHPStan\Type\StringType;
 use PHPStan\Type\UnionType;
+use Rector\Caching\ValueObject\Storage\MemoryCacheStorage;
 use Rector\Config\RectorConfig;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector;
 use Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector;
@@ -47,6 +48,7 @@ return static function (RectorConfig $config): void {
         __DIR__ . '/src/AmazonPHP/SellingPartner/Marketplace.php',
         __DIR__ . '/src/AmazonPHP/SellingPartner/AccessToken.php',
     ]);
+    $config->cacheClass(MemoryCacheStorage::class);
 
     $config->rules([
         FixArgumentDefaultValuesNotMatchingTypeRector::class,
