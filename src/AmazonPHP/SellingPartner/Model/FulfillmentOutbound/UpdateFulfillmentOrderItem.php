@@ -148,7 +148,7 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -158,7 +158,7 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -169,7 +169,7 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -179,7 +179,7 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -189,7 +189,7 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -198,8 +198,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -211,8 +209,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -261,8 +257,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -273,8 +267,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets seller_sku.
      *
      * @param null|string $seller_sku the seller SKU of the item
-     *
-     * @return self
      */
     public function setSellerSku(?string $seller_sku) : self
     {
@@ -295,8 +287,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
-     *
-     * @return self
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -317,8 +307,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets quantity.
      *
      * @param int $quantity the item quantity
-     *
-     * @return self
      */
     public function setQuantity(int $quantity) : self
     {
@@ -329,8 +317,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets gift_message.
-     *
-     * @return null|string
      */
     public function getGiftMessage() : ?string
     {
@@ -341,8 +327,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets gift_message.
      *
      * @param null|string $gift_message a message to the gift recipient, if applicable
-     *
-     * @return self
      */
     public function setGiftMessage(?string $gift_message) : self
     {
@@ -353,8 +337,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets displayable_comment.
-     *
-     * @return null|string
      */
     public function getDisplayableComment() : ?string
     {
@@ -365,8 +347,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets displayable_comment.
      *
      * @param null|string $displayable_comment item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip
-     *
-     * @return self
      */
     public function setDisplayableComment(?string $displayable_comment) : self
     {
@@ -377,8 +357,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -389,8 +367,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets fulfillment_network_sku.
      *
      * @param null|string $fulfillment_network_sku amazon's fulfillment network SKU of the item
-     *
-     * @return self
      */
     public function setFulfillmentNetworkSku(?string $fulfillment_network_sku) : self
     {
@@ -401,8 +377,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets order_item_disposition.
-     *
-     * @return null|string
      */
     public function getOrderItemDisposition() : ?string
     {
@@ -413,8 +387,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets order_item_disposition.
      *
      * @param null|string $order_item_disposition indicates whether the item is sellable or unsellable
-     *
-     * @return self
      */
     public function setOrderItemDisposition(?string $order_item_disposition) : self
     {
@@ -425,8 +397,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets per_unit_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -437,8 +407,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets per_unit_declared_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_declared_value per_unit_declared_value
-     *
-     * @return self
      */
     public function setPerUnitDeclaredValue(?Money $per_unit_declared_value) : self
     {
@@ -449,8 +417,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets per_unit_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -461,8 +427,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets per_unit_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_price per_unit_price
-     *
-     * @return self
      */
     public function setPerUnitPrice(?Money $per_unit_price) : self
     {
@@ -473,8 +437,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets per_unit_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {
@@ -485,8 +447,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
      * Sets per_unit_tax.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_tax per_unit_tax
-     *
-     * @return self
      */
     public function setPerUnitTax(?Money $per_unit_tax) : self
     {
@@ -497,8 +457,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -552,8 +510,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

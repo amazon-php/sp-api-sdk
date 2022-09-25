@@ -136,7 +136,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -146,7 +146,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -157,7 +157,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -167,7 +167,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -177,7 +177,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -186,8 +186,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -199,8 +197,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -235,8 +231,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return null|string
      */
     public function getItemSequenceNumber() : ?string
     {
@@ -247,8 +241,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets item_sequence_number.
      *
      * @param null|string $item_sequence_number line item sequence number for the item
-     *
-     * @return self
      */
     public function setItemSequenceNumber(?string $item_sequence_number) : self
     {
@@ -259,8 +251,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets amazon_product_identifier.
-     *
-     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -271,8 +261,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets amazon_product_identifier.
      *
      * @param null|string $amazon_product_identifier amazon Standard Identification Number (ASIN) of an item
-     *
-     * @return self
      */
     public function setAmazonProductIdentifier(?string $amazon_product_identifier) : self
     {
@@ -283,8 +271,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -295,8 +281,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets vendor_product_identifier.
      *
      * @param null|string $vendor_product_identifier The vendor selected product identification of the item. Should be the same as was sent in the purchase order.
-     *
-     * @return self
      */
     public function setVendorProductIdentifier(?string $vendor_product_identifier) : self
     {
@@ -317,8 +301,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets ordered_quantity.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $ordered_quantity ordered_quantity
-     *
-     * @return self
      */
     public function setOrderedQuantity(ItemQuantity $ordered_quantity) : self
     {
@@ -329,8 +311,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets net_cost.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -341,8 +321,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets net_cost.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $net_cost net_cost
-     *
-     * @return self
      */
     public function setNetCost(?Money $net_cost) : self
     {
@@ -353,8 +331,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets list_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {
@@ -365,8 +341,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets list_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $list_price list_price
-     *
-     * @return self
      */
     public function setListPrice(?Money $list_price) : self
     {
@@ -377,8 +351,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets discount_multiplier.
-     *
-     * @return null|string
      */
     public function getDiscountMultiplier() : ?string
     {
@@ -389,8 +361,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets discount_multiplier.
      *
      * @param null|string $discount_multiplier The discount multiplier that should be applied to the price if a vendor sells books with a list price. This is a multiplier factor to arrive at a final discounted price. A multiplier of .90 would be the factor if a 10% discount is given.
-     *
-     * @return self
      */
     public function setDiscountMultiplier(?string $discount_multiplier) : self
     {
@@ -413,8 +383,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets item_acknowledgements.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemAcknowledgement[] $item_acknowledgements this is used to indicate acknowledged quantity
-     *
-     * @return self
      */
     public function setItemAcknowledgements(array $item_acknowledgements) : self
     {
@@ -425,8 +393,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -480,8 +446,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

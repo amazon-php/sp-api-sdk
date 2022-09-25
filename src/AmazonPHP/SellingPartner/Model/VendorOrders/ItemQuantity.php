@@ -110,7 +110,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -120,7 +120,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -131,7 +131,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -141,7 +141,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -151,7 +151,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -160,8 +160,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -173,8 +171,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -216,8 +212,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets amount.
-     *
-     * @return null|int
      */
     public function getAmount() : ?int
     {
@@ -228,8 +222,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amount.
      *
      * @param null|int $amount Acknowledged quantity. This value should not be zero.
-     *
-     * @return self
      */
     public function setAmount(?int $amount) : self
     {
@@ -240,8 +232,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets unit_of_measure.
-     *
-     * @return null|string
      */
     public function getUnitOfMeasure() : ?string
     {
@@ -252,8 +242,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets unit_of_measure.
      *
      * @param null|string $unit_of_measure unit of measure for the acknowledged quantity
-     *
-     * @return self
      */
     public function setUnitOfMeasure(?string $unit_of_measure) : self
     {
@@ -264,8 +252,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets unit_size.
-     *
-     * @return null|int
      */
     public function getUnitSize() : ?int
     {
@@ -276,8 +262,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets unit_size.
      *
      * @param null|int $unit_size the case size, in the event that we ordered using cases
-     *
-     * @return self
      */
     public function setUnitSize(?int $unit_size) : self
     {
@@ -288,8 +272,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -343,8 +325,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

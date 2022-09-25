@@ -106,7 +106,7 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -203,8 +199,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets amount.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount $amount amount
-     *
-     * @return self
      */
     public function setAmount(Amount $amount) : self
     {
@@ -215,8 +209,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets confirm_deadline.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getConfirmDeadline() : ?\DateTimeInterface
     {
@@ -227,8 +219,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets confirm_deadline.
      *
      * @param null|\DateTimeInterface $confirm_deadline confirm_deadline
-     *
-     * @return self
      */
     public function setConfirmDeadline(?\DateTimeInterface $confirm_deadline) : self
     {
@@ -239,8 +229,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets void_deadline.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getVoidDeadline() : ?\DateTimeInterface
     {
@@ -251,8 +239,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets void_deadline.
      *
      * @param null|\DateTimeInterface $void_deadline void_deadline
-     *
-     * @return self
      */
     public function setVoidDeadline(?\DateTimeInterface $void_deadline) : self
     {
@@ -263,8 +249,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -318,8 +302,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

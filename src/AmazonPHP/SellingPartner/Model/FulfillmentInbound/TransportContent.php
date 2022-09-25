@@ -106,7 +106,7 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -215,8 +211,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets transport_header.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportHeader $transport_header transport_header
-     *
-     * @return self
      */
     public function setTransportHeader(TransportHeader $transport_header) : self
     {
@@ -237,8 +231,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets transport_details.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportDetailOutput $transport_details transport_details
-     *
-     * @return self
      */
     public function setTransportDetails(TransportDetailOutput $transport_details) : self
     {
@@ -259,8 +251,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets transport_result.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportResult $transport_result transport_result
-     *
-     * @return self
      */
     public function setTransportResult(TransportResult $transport_result) : self
     {
@@ -271,8 +261,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -326,8 +314,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -148,7 +148,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -158,7 +158,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -169,7 +169,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -179,7 +179,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -189,7 +189,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -198,8 +198,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -211,8 +209,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -237,8 +233,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -249,8 +243,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets amazon_order_id.
      *
      * @param null|string $amazon_order_id an Amazon-defined identifier for an order
-     *
-     * @return self
      */
     public function setAmazonOrderId(?string $amazon_order_id) : self
     {
@@ -261,8 +253,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets rental_event_type.
-     *
-     * @return null|string
      */
     public function getRentalEventType() : ?string
     {
@@ -273,8 +263,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets rental_event_type.
      *
      * @param null|string $rental_event_type The type of rental event.  Possible values:  * RentalCustomerPayment-Buyout - Transaction type that represents when the customer wants to buy out a rented item.  * RentalCustomerPayment-Extension - Transaction type that represents when the customer wants to extend the rental period.  * RentalCustomerRefund-Buyout - Transaction type that represents when the customer requests a refund for the buyout of the rented item.  * RentalCustomerRefund-Extension - Transaction type that represents when the customer requests a refund over the extension on the rented item.  * RentalHandlingFee - Transaction type that represents the fee that Amazon charges sellers who rent through Amazon.  * RentalChargeFailureReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a failed charge.  * RentalLostItemReimbursement - Transaction type that represents when Amazon sends money to the seller to compensate for a lost item.
-     *
-     * @return self
      */
     public function setRentalEventType(?string $rental_event_type) : self
     {
@@ -285,8 +273,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets extension_length.
-     *
-     * @return null|int
      */
     public function getExtensionLength() : ?int
     {
@@ -297,8 +283,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets extension_length.
      *
      * @param null|int $extension_length The number of days that the buyer extended an already rented item. This value is only returned for RentalCustomerPayment-Extension and RentalCustomerRefund-Extension events.
-     *
-     * @return self
      */
     public function setExtensionLength(?int $extension_length) : self
     {
@@ -309,8 +293,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -321,8 +303,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets posted_date.
      *
      * @param null|\DateTimeInterface $posted_date posted_date
-     *
-     * @return self
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -345,8 +325,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets rental_charge_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent[] $rental_charge_list a list of charge information on the seller's account
-     *
-     * @return self
      */
     public function setRentalChargeList(?array $rental_charge_list) : self
     {
@@ -369,8 +347,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets rental_fee_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $rental_fee_list a list of fee component information
-     *
-     * @return self
      */
     public function setRentalFeeList(?array $rental_fee_list) : self
     {
@@ -381,8 +357,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets marketplace_name.
-     *
-     * @return null|string
      */
     public function getMarketplaceName() : ?string
     {
@@ -393,8 +367,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets marketplace_name.
      *
      * @param null|string $marketplace_name the name of the marketplace
-     *
-     * @return self
      */
     public function setMarketplaceName(?string $marketplace_name) : self
     {
@@ -405,8 +377,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets rental_initial_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalInitialValue() : ?Currency
     {
@@ -417,8 +387,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets rental_initial_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $rental_initial_value rental_initial_value
-     *
-     * @return self
      */
     public function setRentalInitialValue(?Currency $rental_initial_value) : self
     {
@@ -429,8 +397,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets rental_reimbursement.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalReimbursement() : ?Currency
     {
@@ -441,8 +407,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets rental_reimbursement.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $rental_reimbursement rental_reimbursement
-     *
-     * @return self
      */
     public function setRentalReimbursement(?Currency $rental_reimbursement) : self
     {
@@ -465,8 +429,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets rental_tax_withheld_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithheldComponent[] $rental_tax_withheld_list a list of information about taxes withheld
-     *
-     * @return self
      */
     public function setRentalTaxWithheldList(?array $rental_tax_withheld_list) : self
     {
@@ -477,8 +439,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -532,8 +492,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

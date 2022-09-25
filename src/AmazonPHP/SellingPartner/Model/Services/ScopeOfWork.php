@@ -112,7 +112,7 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -194,8 +190,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -206,8 +200,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the service job
-     *
-     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -218,8 +210,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -230,8 +220,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets title.
      *
      * @param null|string $title the title of the service job
-     *
-     * @return self
      */
     public function setTitle(?string $title) : self
     {
@@ -242,8 +230,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -254,8 +240,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity.
      *
      * @param null|int $quantity the number of service jobs
-     *
-     * @return self
      */
     public function setQuantity(?int $quantity) : self
     {
@@ -278,8 +262,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets required_skills.
      *
      * @param null|string[] $required_skills a list of skills required to perform the job
-     *
-     * @return self
      */
     public function setRequiredSkills(?array $required_skills) : self
     {
@@ -290,8 +272,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -345,8 +325,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

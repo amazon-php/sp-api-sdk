@@ -100,7 +100,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -195,8 +191,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets required_ship_date.
      *
      * @param \DateTimeInterface $required_ship_date time by which the vendor is required to ship the order
-     *
-     * @return self
      */
     public function setRequiredShipDate(\DateTimeInterface $required_ship_date) : self
     {
@@ -207,8 +201,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets promised_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPromisedDeliveryDate() : ?\DateTimeInterface
     {
@@ -219,8 +211,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets promised_delivery_date.
      *
      * @param null|\DateTimeInterface $promised_delivery_date delivery date promised to the Amazon customer
-     *
-     * @return self
      */
     public function setPromisedDeliveryDate(?\DateTimeInterface $promised_delivery_date) : self
     {
@@ -231,8 +221,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -286,8 +274,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

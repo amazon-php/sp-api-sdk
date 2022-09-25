@@ -106,7 +106,7 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -191,8 +187,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets availability.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord
      */
     public function getAvailability() : ?AvailabilityRecord
     {
@@ -203,8 +197,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets availability.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord $availability availability
-     *
-     * @return self
      */
     public function setAvailability(?AvailabilityRecord $availability) : self
     {
@@ -227,8 +219,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets warnings.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Warning[] $warnings a list of warnings returned in the sucessful execution response of an API request
-     *
-     * @return self
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -251,8 +241,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Error[] $errors a list of error responses returned when a request is unsuccessful
-     *
-     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -263,8 +251,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -318,8 +304,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -142,7 +142,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -152,7 +152,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -163,7 +163,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -173,7 +173,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -183,7 +183,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -192,8 +192,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -205,8 +203,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -239,8 +235,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets data_type.
-     *
-     * @return null|string
      */
     public function getDataType() : ?string
     {
@@ -251,8 +245,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets data_type.
      *
      * @param null|string $data_type the data type of the additional information
-     *
-     * @return self
      */
     public function setDataType(?string $data_type) : self
     {
@@ -263,8 +255,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_string.
-     *
-     * @return null|string
      */
     public function getValueAsString() : ?string
     {
@@ -275,8 +265,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_string.
      *
      * @param null|string $value_as_string the value when the data type is string
-     *
-     * @return self
      */
     public function setValueAsString(?string $value_as_string) : self
     {
@@ -287,8 +275,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_boolean.
-     *
-     * @return null|bool
      */
     public function getValueAsBoolean() : ?bool
     {
@@ -299,8 +285,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_boolean.
      *
      * @param null|bool $value_as_boolean the value when the data type is boolean
-     *
-     * @return self
      */
     public function setValueAsBoolean(?bool $value_as_boolean) : self
     {
@@ -311,8 +295,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_integer.
-     *
-     * @return null|int
      */
     public function getValueAsInteger() : ?int
     {
@@ -323,8 +305,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_integer.
      *
      * @param null|int $value_as_integer the value when the data type is integer
-     *
-     * @return self
      */
     public function setValueAsInteger(?int $value_as_integer) : self
     {
@@ -335,8 +315,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_timestamp.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getValueAsTimestamp() : ?\DateTimeInterface
     {
@@ -347,8 +325,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_timestamp.
      *
      * @param null|\DateTimeInterface $value_as_timestamp value_as_timestamp
-     *
-     * @return self
      */
     public function setValueAsTimestamp(?\DateTimeInterface $value_as_timestamp) : self
     {
@@ -359,8 +335,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getValueAsAddress() : ?Address
     {
@@ -371,8 +345,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address $value_as_address value_as_address
-     *
-     * @return self
      */
     public function setValueAsAddress(?Address $value_as_address) : self
     {
@@ -383,8 +355,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getValueAsWeight() : ?Weight
     {
@@ -395,8 +365,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_weight.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight $value_as_weight value_as_weight
-     *
-     * @return self
      */
     public function setValueAsWeight(?Weight $value_as_weight) : self
     {
@@ -407,8 +375,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_dimension.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Length
      */
     public function getValueAsDimension() : ?Length
     {
@@ -419,8 +385,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_dimension.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Length $value_as_dimension value_as_dimension
-     *
-     * @return self
      */
     public function setValueAsDimension(?Length $value_as_dimension) : self
     {
@@ -431,8 +395,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets value_as_currency.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getValueAsCurrency() : ?CurrencyAmount
     {
@@ -443,8 +405,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets value_as_currency.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount $value_as_currency value_as_currency
-     *
-     * @return self
      */
     public function setValueAsCurrency(?CurrencyAmount $value_as_currency) : self
     {
@@ -455,8 +415,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -510,8 +468,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

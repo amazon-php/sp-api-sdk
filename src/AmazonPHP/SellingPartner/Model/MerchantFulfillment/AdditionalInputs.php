@@ -100,7 +100,7 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets additional_input_field_name.
-     *
-     * @return null|string
      */
     public function getAdditionalInputFieldName() : ?string
     {
@@ -197,8 +191,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets additional_input_field_name.
      *
      * @param null|string $additional_input_field_name the field name
-     *
-     * @return self
      */
     public function setAdditionalInputFieldName(?string $additional_input_field_name) : self
     {
@@ -209,8 +201,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets seller_input_definition.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\SellerInputDefinition
      */
     public function getSellerInputDefinition() : ?SellerInputDefinition
     {
@@ -221,8 +211,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets seller_input_definition.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\SellerInputDefinition $seller_input_definition seller_input_definition
-     *
-     * @return self
      */
     public function setSellerInputDefinition(?SellerInputDefinition $seller_input_definition) : self
     {
@@ -233,8 +221,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +274,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

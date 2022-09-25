@@ -116,7 +116,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -126,7 +126,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -137,7 +137,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -147,7 +147,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -157,7 +157,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -166,8 +166,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -179,8 +177,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -248,8 +244,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets length.
      *
      * @param string $length A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  <br>**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-     *
-     * @return self
      */
     public function setLength(string $length) : self
     {
@@ -270,8 +264,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets width.
      *
      * @param string $width A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  <br>**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-     *
-     * @return self
      */
     public function setWidth(string $width) : self
     {
@@ -292,8 +284,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets height.
      *
      * @param string $height A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.  <br>**Pattern** : `^-?(0|([1-9]\\\\d*))(\\\\.\\\\d+)?([eE][+-]?\\\\d+)?$`.
-     *
-     * @return self
      */
     public function setHeight(string $height) : self
     {
@@ -314,8 +304,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets unit_of_measure.
      *
      * @param string $unit_of_measure the unit of measure for dimensions
-     *
-     * @return self
      */
     public function setUnitOfMeasure(string $unit_of_measure) : self
     {
@@ -326,8 +314,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -381,8 +367,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

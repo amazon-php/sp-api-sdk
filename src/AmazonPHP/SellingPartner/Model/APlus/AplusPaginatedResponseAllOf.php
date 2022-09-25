@@ -94,7 +94,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -144,8 +144,6 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -157,8 +155,6 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -179,8 +175,6 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {
@@ -191,8 +185,6 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
      * Sets next_page_token.
      *
      * @param null|string $next_page_token A page token that is returned when the results of the call exceed the page size. To get another page of results, call the operation again, passing in this value with the pageToken parameter.
-     *
-     * @return self
      */
     public function setNextPageToken(?string $next_page_token) : self
     {
@@ -203,8 +195,6 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -258,8 +248,6 @@ class AplusPaginatedResponseAllOf implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

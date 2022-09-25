@@ -100,7 +100,7 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets custom_text_for_label.
-     *
-     * @return null|string
      */
     public function getCustomTextForLabel() : ?string
     {
@@ -197,8 +191,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets custom_text_for_label.
      *
      * @param null|string $custom_text_for_label Custom text to print on the label.  Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support CustomTextForLabel.
-     *
-     * @return self
      */
     public function setCustomTextForLabel(?string $custom_text_for_label) : self
     {
@@ -209,8 +201,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets standard_id_for_label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\StandardIdForLabel
      */
     public function getStandardIdForLabel() : ?StandardIdForLabel
     {
@@ -221,8 +211,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets standard_id_for_label.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\StandardIdForLabel $standard_id_for_label standard_id_for_label
-     *
-     * @return self
      */
     public function setStandardIdForLabel(?StandardIdForLabel $standard_id_for_label) : self
     {
@@ -233,8 +221,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +274,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

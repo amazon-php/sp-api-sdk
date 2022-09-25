@@ -410,7 +410,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -420,7 +420,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -431,7 +431,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -441,7 +441,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -451,7 +451,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -460,8 +460,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -473,8 +471,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -684,8 +680,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amazon_order_id.
      *
      * @param string $amazon_order_id an Amazon-defined order identifier, in 3-7-7 format
-     *
-     * @return self
      */
     public function setAmazonOrderId(string $amazon_order_id) : self
     {
@@ -696,8 +690,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_order_id.
-     *
-     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -708,8 +700,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id a seller-defined order identifier
-     *
-     * @return self
      */
     public function setSellerOrderId(?string $seller_order_id) : self
     {
@@ -730,8 +720,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_date.
      *
      * @param string $purchase_date the date when the order was created
-     *
-     * @return self
      */
     public function setPurchaseDate(string $purchase_date) : self
     {
@@ -752,8 +740,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets last_update_date.
      *
      * @param string $last_update_date The date when the order was last updated.  __Note__: LastUpdateDate is returned with an incorrect date for orders that were last updated before 2009-04-01.
-     *
-     * @return self
      */
     public function setLastUpdateDate(string $last_update_date) : self
     {
@@ -774,8 +760,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_status.
      *
      * @param string $order_status the current order status
-     *
-     * @return self
      */
     public function setOrderStatus(string $order_status) : self
     {
@@ -786,8 +770,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fulfillment_channel.
-     *
-     * @return null|string
      */
     public function getFulfillmentChannel() : ?string
     {
@@ -798,8 +780,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fulfillment_channel.
      *
      * @param null|string $fulfillment_channel whether the order was fulfilled by Amazon (AFN) or by the seller (MFN)
-     *
-     * @return self
      */
     public function setFulfillmentChannel(?string $fulfillment_channel) : self
     {
@@ -810,8 +790,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets sales_channel.
-     *
-     * @return null|string
      */
     public function getSalesChannel() : ?string
     {
@@ -822,8 +800,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets sales_channel.
      *
      * @param null|string $sales_channel the sales channel of the first item in the order
-     *
-     * @return self
      */
     public function setSalesChannel(?string $sales_channel) : self
     {
@@ -834,8 +810,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_channel.
-     *
-     * @return null|string
      */
     public function getOrderChannel() : ?string
     {
@@ -846,8 +820,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_channel.
      *
      * @param null|string $order_channel the order channel of the first item in the order
-     *
-     * @return self
      */
     public function setOrderChannel(?string $order_channel) : self
     {
@@ -858,8 +830,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets ship_service_level.
-     *
-     * @return null|string
      */
     public function getShipServiceLevel() : ?string
     {
@@ -870,8 +840,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_service_level.
      *
      * @param null|string $ship_service_level the shipment service level of the order
-     *
-     * @return self
      */
     public function setShipServiceLevel(?string $ship_service_level) : self
     {
@@ -882,8 +850,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_total.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getOrderTotal() : ?Money
     {
@@ -894,8 +860,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_total.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $order_total order_total
-     *
-     * @return self
      */
     public function setOrderTotal(?Money $order_total) : self
     {
@@ -906,8 +870,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets number_of_items_shipped.
-     *
-     * @return null|int
      */
     public function getNumberOfItemsShipped() : ?int
     {
@@ -918,8 +880,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets number_of_items_shipped.
      *
      * @param null|int $number_of_items_shipped the number of items shipped
-     *
-     * @return self
      */
     public function setNumberOfItemsShipped(?int $number_of_items_shipped) : self
     {
@@ -930,8 +890,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets number_of_items_unshipped.
-     *
-     * @return null|int
      */
     public function getNumberOfItemsUnshipped() : ?int
     {
@@ -942,8 +900,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets number_of_items_unshipped.
      *
      * @param null|int $number_of_items_unshipped the number of items unshipped
-     *
-     * @return self
      */
     public function setNumberOfItemsUnshipped(?int $number_of_items_unshipped) : self
     {
@@ -966,8 +922,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets payment_execution_detail.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\PaymentExecutionDetailItem[] $payment_execution_detail a list of payment execution detail items
-     *
-     * @return self
      */
     public function setPaymentExecutionDetail(?array $payment_execution_detail) : self
     {
@@ -978,8 +932,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets payment_method.
-     *
-     * @return null|string
      */
     public function getPaymentMethod() : ?string
     {
@@ -990,8 +942,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets payment_method.
      *
      * @param null|string $payment_method The payment method for the order. This property is limited to Cash On Delivery (COD) and Convenience Store (CVS) payment methods. Unless you need the specific COD payment information provided by the PaymentExecutionDetailItem object, we recommend using the PaymentMethodDetails property to get payment method information.
-     *
-     * @return self
      */
     public function setPaymentMethod(?string $payment_method) : self
     {
@@ -1014,8 +964,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets payment_method_details.
      *
      * @param null|string[] $payment_method_details a list of payment method detail items
-     *
-     * @return self
      */
     public function setPaymentMethodDetails(?array $payment_method_details) : self
     {
@@ -1026,8 +974,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -1038,8 +984,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the identifier for the marketplace where the order was placed
-     *
-     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -1050,8 +994,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipment_service_level_category.
-     *
-     * @return null|string
      */
     public function getShipmentServiceLevelCategory() : ?string
     {
@@ -1062,8 +1004,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipment_service_level_category.
      *
      * @param null|string $shipment_service_level_category The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
-     *
-     * @return self
      */
     public function setShipmentServiceLevelCategory(?string $shipment_service_level_category) : self
     {
@@ -1074,8 +1014,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets easy_ship_shipment_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\EasyShipShipmentStatus
      */
     public function getEasyShipShipmentStatus() : ?EasyShipShipmentStatus
     {
@@ -1086,8 +1024,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets easy_ship_shipment_status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\EasyShipShipmentStatus $easy_ship_shipment_status easy_ship_shipment_status
-     *
-     * @return self
      */
     public function setEasyShipShipmentStatus(?EasyShipShipmentStatus $easy_ship_shipment_status) : self
     {
@@ -1098,8 +1034,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets cba_displayable_shipping_label.
-     *
-     * @return null|string
      */
     public function getCbaDisplayableShippingLabel() : ?string
     {
@@ -1110,8 +1044,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets cba_displayable_shipping_label.
      *
      * @param null|string $cba_displayable_shipping_label custom ship label for Checkout by Amazon (CBA)
-     *
-     * @return self
      */
     public function setCbaDisplayableShippingLabel(?string $cba_displayable_shipping_label) : self
     {
@@ -1122,8 +1054,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_type.
-     *
-     * @return null|string
      */
     public function getOrderType() : ?string
     {
@@ -1134,8 +1064,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_type.
      *
      * @param null|string $order_type the type of the order
-     *
-     * @return self
      */
     public function setOrderType(?string $order_type) : self
     {
@@ -1146,8 +1074,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets earliest_ship_date.
-     *
-     * @return null|string
      */
     public function getEarliestShipDate() : ?string
     {
@@ -1158,8 +1084,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets earliest_ship_date.
      *
      * @param null|string $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
-     *
-     * @return self
      */
     public function setEarliestShipDate(?string $earliest_ship_date) : self
     {
@@ -1170,8 +1094,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets latest_ship_date.
-     *
-     * @return null|string
      */
     public function getLatestShipDate() : ?string
     {
@@ -1182,8 +1104,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets latest_ship_date.
      *
      * @param null|string $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
-     *
-     * @return self
      */
     public function setLatestShipDate(?string $latest_ship_date) : self
     {
@@ -1194,8 +1114,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets earliest_delivery_date.
-     *
-     * @return null|string
      */
     public function getEarliestDeliveryDate() : ?string
     {
@@ -1206,8 +1124,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets earliest_delivery_date.
      *
      * @param null|string $earliest_delivery_date The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
-     *
-     * @return self
      */
     public function setEarliestDeliveryDate(?string $earliest_delivery_date) : self
     {
@@ -1218,8 +1134,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets latest_delivery_date.
-     *
-     * @return null|string
      */
     public function getLatestDeliveryDate() : ?string
     {
@@ -1230,8 +1144,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets latest_delivery_date.
      *
      * @param null|string $latest_delivery_date The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
-     *
-     * @return self
      */
     public function setLatestDeliveryDate(?string $latest_delivery_date) : self
     {
@@ -1242,8 +1154,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_business_order.
-     *
-     * @return null|bool
      */
     public function getIsBusinessOrder() : ?bool
     {
@@ -1254,8 +1164,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_business_order.
      *
      * @param null|bool $is_business_order When true, the order is an Amazon Business order. An Amazon Business order is an order where the buyer is a Verified Business Buyer.
-     *
-     * @return self
      */
     public function setIsBusinessOrder(?bool $is_business_order) : self
     {
@@ -1266,8 +1174,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_prime.
-     *
-     * @return null|bool
      */
     public function getIsPrime() : ?bool
     {
@@ -1278,8 +1184,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_prime.
      *
      * @param null|bool $is_prime when true, the order is a seller-fulfilled Amazon Prime order
-     *
-     * @return self
      */
     public function setIsPrime(?bool $is_prime) : self
     {
@@ -1290,8 +1194,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_premium_order.
-     *
-     * @return null|bool
      */
     public function getIsPremiumOrder() : ?bool
     {
@@ -1302,8 +1204,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_premium_order.
      *
      * @param null|bool $is_premium_order When true, the order has a Premium Shipping Service Level Agreement. For more information about Premium Shipping orders, see \"Premium Shipping Options\" in the Seller Central Help for your marketplace.
-     *
-     * @return self
      */
     public function setIsPremiumOrder(?bool $is_premium_order) : self
     {
@@ -1314,8 +1214,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_global_express_enabled.
-     *
-     * @return null|bool
      */
     public function getIsGlobalExpressEnabled() : ?bool
     {
@@ -1326,8 +1224,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_global_express_enabled.
      *
      * @param null|bool $is_global_express_enabled when true, the order is a GlobalExpress order
-     *
-     * @return self
      */
     public function setIsGlobalExpressEnabled(?bool $is_global_express_enabled) : self
     {
@@ -1338,8 +1234,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets replaced_order_id.
-     *
-     * @return null|string
      */
     public function getReplacedOrderId() : ?string
     {
@@ -1350,8 +1244,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets replaced_order_id.
      *
      * @param null|string $replaced_order_id The order ID value for the order that is being replaced. Returned only if IsReplacementOrder = true.
-     *
-     * @return self
      */
     public function setReplacedOrderId(?string $replaced_order_id) : self
     {
@@ -1362,8 +1254,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_replacement_order.
-     *
-     * @return null|bool
      */
     public function getIsReplacementOrder() : ?bool
     {
@@ -1374,8 +1264,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_replacement_order.
      *
      * @param null|bool $is_replacement_order when true, this is a replacement order
-     *
-     * @return self
      */
     public function setIsReplacementOrder(?bool $is_replacement_order) : self
     {
@@ -1386,8 +1274,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets promise_response_due_date.
-     *
-     * @return null|string
      */
     public function getPromiseResponseDueDate() : ?string
     {
@@ -1398,8 +1284,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets promise_response_due_date.
      *
      * @param null|string $promise_response_due_date Indicates the date by which the seller must respond to the buyer with an estimated ship date. Returned only for Sourcing on Demand orders.
-     *
-     * @return self
      */
     public function setPromiseResponseDueDate(?string $promise_response_due_date) : self
     {
@@ -1410,8 +1294,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_estimated_ship_date_set.
-     *
-     * @return null|bool
      */
     public function getIsEstimatedShipDateSet() : ?bool
     {
@@ -1422,8 +1304,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_estimated_ship_date_set.
      *
      * @param null|bool $is_estimated_ship_date_set When true, the estimated ship date is set for the order. Returned only for Sourcing on Demand orders.
-     *
-     * @return self
      */
     public function setIsEstimatedShipDateSet(?bool $is_estimated_ship_date_set) : self
     {
@@ -1434,8 +1314,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_sold_by_ab.
-     *
-     * @return null|bool
      */
     public function getIsSoldByAb() : ?bool
     {
@@ -1446,8 +1324,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_sold_by_ab.
      *
      * @param null|bool $is_sold_by_ab When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
-     *
-     * @return self
      */
     public function setIsSoldByAb(?bool $is_sold_by_ab) : self
     {
@@ -1458,8 +1334,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_iba.
-     *
-     * @return null|bool
      */
     public function getIsIba() : ?bool
     {
@@ -1470,8 +1344,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_iba.
      *
      * @param null|bool $is_iba When true, the item within this order was bought and re-sold by Amazon Business EU SARL (ABEU). By buying and instantly re-selling your items, ABEU becomes the seller of record, making your inventory available for sale to customers who would not otherwise purchase from a third-party seller.
-     *
-     * @return self
      */
     public function setIsIba(?bool $is_iba) : self
     {
@@ -1482,8 +1354,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets default_ship_from_location_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getDefaultShipFromLocationAddress() : ?Address
     {
@@ -1494,8 +1364,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets default_ship_from_location_address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\Address $default_ship_from_location_address default_ship_from_location_address
-     *
-     * @return self
      */
     public function setDefaultShipFromLocationAddress(?Address $default_ship_from_location_address) : self
     {
@@ -1506,8 +1374,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_invoice_preference.
-     *
-     * @return null|string
      */
     public function getBuyerInvoicePreference() : ?string
     {
@@ -1518,8 +1384,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_invoice_preference.
      *
      * @param null|string $buyer_invoice_preference The buyer's invoicing preference. Available only in the TR marketplace.
-     *
-     * @return self
      */
     public function setBuyerInvoicePreference(?string $buyer_invoice_preference) : self
     {
@@ -1530,8 +1394,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_tax_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInformation
      */
     public function getBuyerTaxInformation() : ?BuyerTaxInformation
     {
@@ -1542,8 +1404,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_tax_information.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInformation $buyer_tax_information buyer_tax_information
-     *
-     * @return self
      */
     public function setBuyerTaxInformation(?BuyerTaxInformation $buyer_tax_information) : self
     {
@@ -1554,8 +1414,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fulfillment_instruction.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\FulfillmentInstruction
      */
     public function getFulfillmentInstruction() : ?FulfillmentInstruction
     {
@@ -1566,8 +1424,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fulfillment_instruction.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\FulfillmentInstruction $fulfillment_instruction fulfillment_instruction
-     *
-     * @return self
      */
     public function setFulfillmentInstruction(?FulfillmentInstruction $fulfillment_instruction) : self
     {
@@ -1578,8 +1434,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_ispu.
-     *
-     * @return null|bool
      */
     public function getIsIspu() : ?bool
     {
@@ -1590,8 +1444,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_ispu.
      *
      * @param null|bool $is_ispu when true, this order is marked to be picked up from a store rather than delivered
-     *
-     * @return self
      */
     public function setIsIspu(?bool $is_ispu) : self
     {
@@ -1602,8 +1454,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_access_point_order.
-     *
-     * @return null|bool
      */
     public function getIsAccessPointOrder() : ?bool
     {
@@ -1614,8 +1464,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_access_point_order.
      *
      * @param null|bool $is_access_point_order When true, this order is marked to be delivered to an Access Point. The access location is chosen by the customer. Access Points include Amazon Hub Lockers, Amazon Hub Counters, and pickup points operated by carriers.
-     *
-     * @return self
      */
     public function setIsAccessPointOrder(?bool $is_access_point_order) : self
     {
@@ -1626,8 +1474,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets marketplace_tax_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo
      */
     public function getMarketplaceTaxInfo() : ?MarketplaceTaxInfo
     {
@@ -1638,8 +1484,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_tax_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo $marketplace_tax_info marketplace_tax_info
-     *
-     * @return self
      */
     public function setMarketplaceTaxInfo(?MarketplaceTaxInfo $marketplace_tax_info) : self
     {
@@ -1650,8 +1494,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_display_name.
-     *
-     * @return null|string
      */
     public function getSellerDisplayName() : ?string
     {
@@ -1662,8 +1504,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_display_name.
      *
      * @param null|string $seller_display_name the seller’s friendly name registered in the marketplace
-     *
-     * @return self
      */
     public function setSellerDisplayName(?string $seller_display_name) : self
     {
@@ -1674,8 +1514,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipping_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -1686,8 +1524,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping_address.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\Address $shipping_address shipping_address
-     *
-     * @return self
      */
     public function setShippingAddress(?Address $shipping_address) : self
     {
@@ -1698,8 +1534,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo
      */
     public function getBuyerInfo() : ?BuyerInfo
     {
@@ -1710,8 +1544,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_info.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo $buyer_info buyer_info
-     *
-     * @return self
      */
     public function setBuyerInfo(?BuyerInfo $buyer_info) : self
     {
@@ -1722,8 +1554,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets automated_shipping_settings.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings
      */
     public function getAutomatedShippingSettings() : ?AutomatedShippingSettings
     {
@@ -1734,8 +1564,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets automated_shipping_settings.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings $automated_shipping_settings automated_shipping_settings
-     *
-     * @return self
      */
     public function setAutomatedShippingSettings(?AutomatedShippingSettings $automated_shipping_settings) : self
     {
@@ -1746,8 +1574,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets has_regulated_items.
-     *
-     * @return null|bool
      */
     public function getHasRegulatedItems() : ?bool
     {
@@ -1758,8 +1584,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets has_regulated_items.
      *
      * @param null|bool $has_regulated_items whether the order contains regulated items which may require additional approval steps before being fulfilled
-     *
-     * @return self
      */
     public function setHasRegulatedItems(?bool $has_regulated_items) : self
     {
@@ -1770,8 +1594,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets electronic_invoice_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus
      */
     public function getElectronicInvoiceStatus() : ?ElectronicInvoiceStatus
     {
@@ -1782,8 +1604,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets electronic_invoice_status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus $electronic_invoice_status electronic_invoice_status
-     *
-     * @return self
      */
     public function setElectronicInvoiceStatus(?ElectronicInvoiceStatus $electronic_invoice_status) : self
     {
@@ -1794,8 +1614,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -1849,8 +1667,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

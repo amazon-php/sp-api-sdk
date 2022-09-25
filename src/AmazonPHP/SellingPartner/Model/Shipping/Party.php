@@ -94,7 +94,7 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -144,8 +144,6 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -157,8 +155,6 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -179,8 +175,6 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets account_id.
-     *
-     * @return null|string
      */
     public function getAccountId() : ?string
     {
@@ -191,8 +185,6 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets account_id.
      *
      * @param null|string $account_id this is the Amazon Shipping account id generated during the Amazon Shipping onboarding process
-     *
-     * @return self
      */
     public function setAccountId(?string $account_id) : self
     {
@@ -203,8 +195,6 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -258,8 +248,6 @@ class Party implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

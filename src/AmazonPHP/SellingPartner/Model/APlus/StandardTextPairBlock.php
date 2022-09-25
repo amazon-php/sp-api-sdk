@@ -100,7 +100,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,8 +185,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getLabel() : ?TextComponent
     {
@@ -201,8 +195,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets label.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $label label
-     *
-     * @return self
      */
     public function setLabel(?TextComponent $label) : self
     {
@@ -213,8 +205,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets description.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getDescription() : ?TextComponent
     {
@@ -225,8 +215,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets description.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $description description
-     *
-     * @return self
      */
     public function setDescription(?TextComponent $description) : self
     {
@@ -237,8 +225,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +278,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

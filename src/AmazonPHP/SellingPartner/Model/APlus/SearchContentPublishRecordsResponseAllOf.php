@@ -94,7 +94,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -144,8 +144,6 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -157,8 +155,6 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -191,8 +187,6 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
      * Sets publish_record_list.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[] $publish_record_list a list of A+ Content publishing records
-     *
-     * @return self
      */
     public function setPublishRecordList(array $publish_record_list) : self
     {
@@ -203,8 +197,6 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -258,8 +250,6 @@ class SearchContentPublishRecordsResponseAllOf implements \ArrayAccess, \JsonSer
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

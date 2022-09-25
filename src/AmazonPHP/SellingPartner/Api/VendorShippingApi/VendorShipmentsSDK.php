@@ -45,8 +45,6 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
     /**
      * Operation submitShipmentConfirmations.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -145,8 +143,6 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function submitShipmentConfirmationsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : RequestInterface
     {

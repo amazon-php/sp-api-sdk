@@ -118,7 +118,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -168,8 +168,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -181,8 +179,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -233,8 +229,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets seller_return_item_id.
      *
      * @param string $seller_return_item_id an identifier assigned by the seller to the return item
-     *
-     * @return self
      */
     public function setSellerReturnItemId(string $seller_return_item_id) : self
     {
@@ -255,8 +249,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id the identifier assigned to the item by the seller when the fulfillment order was created
-     *
-     * @return self
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -277,8 +269,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets amazon_shipment_id.
      *
      * @param string $amazon_shipment_id the identifier for the shipment that is associated with the return item
-     *
-     * @return self
      */
     public function setAmazonShipmentId(string $amazon_shipment_id) : self
     {
@@ -299,8 +289,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets return_reason_code.
      *
      * @param string $return_reason_code the return reason code assigned to the return item by the seller
-     *
-     * @return self
      */
     public function setReturnReasonCode(string $return_reason_code) : self
     {
@@ -311,8 +299,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets return_comment.
-     *
-     * @return null|string
      */
     public function getReturnComment() : ?string
     {
@@ -323,8 +309,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets return_comment.
      *
      * @param null|string $return_comment an optional comment about the return item
-     *
-     * @return self
      */
     public function setReturnComment(?string $return_comment) : self
     {
@@ -335,8 +319,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -390,8 +372,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

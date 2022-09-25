@@ -106,7 +106,7 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -209,8 +205,6 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
      * Sets marketplace_id.
      *
      * @param string $marketplace_id a marketplace identifier
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -231,8 +225,6 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
      * Sets seller_sku.
      *
      * @param string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
-     *
-     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -253,8 +245,6 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
      * Sets status.
      *
      * @param \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEligibilityStatus $status status
-     *
-     * @return self
      */
     public function setStatus(SmallAndLightEligibilityStatus $status) : self
     {
@@ -265,8 +255,6 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -320,8 +308,6 @@ class SmallAndLightEligibility implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

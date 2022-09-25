@@ -112,7 +112,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -211,8 +207,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the requested marketplace
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -233,8 +227,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
      * Sets feature_name.
      *
      * @param string $feature_name the name of the feature
-     *
-     * @return self
      */
     public function setFeatureName(string $feature_name) : self
     {
@@ -245,8 +237,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -257,8 +247,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
-     *
-     * @return self
      */
     public function setNextToken(?string $next_token) : self
     {
@@ -281,8 +269,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
      * Sets feature_skus.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSku[] $feature_skus an array of SKUs eligible for this feature and the quantity available
-     *
-     * @return self
      */
     public function setFeatureSkus(?array $feature_skus) : self
     {
@@ -293,8 +279,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -348,8 +332,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -51,8 +51,6 @@ interface VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrders.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param null|\DateTimeInterface $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
      * @param null|\DateTimeInterface $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
@@ -76,8 +74,6 @@ interface VendorOrdersSDKInterface
     /**
      * Operation getPurchaseOrdersStatus.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)

@@ -100,7 +100,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets target_application.
-     *
-     * @return null|string
      */
     public function getTargetApplication() : ?string
     {
@@ -197,8 +191,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * Sets target_application.
      *
      * @param null|string $target_application the application ID for the target application to which access is being delegated
-     *
-     * @return self
      */
     public function setTargetApplication(?string $target_application) : self
     {
@@ -221,8 +213,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * Sets restricted_resources.
      *
      * @param \AmazonPHP\SellingPartner\Model\Tokens\RestrictedResource[] $restricted_resources A list of restricted resources. Maximum: 50
-     *
-     * @return self
      */
     public function setRestrictedResources(array $restricted_resources) : self
     {
@@ -233,8 +223,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +276,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

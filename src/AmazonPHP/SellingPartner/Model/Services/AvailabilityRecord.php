@@ -112,7 +112,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -219,8 +215,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets start_time.
      *
      * @param \DateTimeInterface $start_time denotes the time from when the resource is available in a day in ISO-8601 format
-     *
-     * @return self
      */
     public function setStartTime(\DateTimeInterface $start_time) : self
     {
@@ -241,8 +235,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets end_time.
      *
      * @param \DateTimeInterface $end_time denotes the time till when the resource is available in a day in ISO-8601 format
-     *
-     * @return self
      */
     public function setEndTime(\DateTimeInterface $end_time) : self
     {
@@ -253,8 +245,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets recurrence.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Recurrence
      */
     public function getRecurrence() : ?Recurrence
     {
@@ -265,8 +255,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets recurrence.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Recurrence $recurrence recurrence
-     *
-     * @return self
      */
     public function setRecurrence(?Recurrence $recurrence) : self
     {
@@ -277,8 +265,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets capacity.
-     *
-     * @return null|int
      */
     public function getCapacity() : ?int
     {
@@ -289,8 +275,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets capacity.
      *
      * @param null|int $capacity signifies the capacity of a resource which is available
-     *
-     * @return self
      */
     public function setCapacity(?int $capacity) : self
     {
@@ -301,8 +285,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -356,8 +338,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

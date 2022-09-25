@@ -100,7 +100,7 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -199,8 +195,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets invalid_item_reason_code.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\InvalidItemReasonCode $invalid_item_reason_code invalid_item_reason_code
-     *
-     * @return self
      */
     public function setInvalidItemReasonCode(InvalidItemReasonCode $invalid_item_reason_code) : self
     {
@@ -221,8 +215,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets description.
      *
      * @param string $description a human readable description of the invalid item reason code
-     *
-     * @return self
      */
     public function setDescription(string $description) : self
     {
@@ -233,8 +225,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +278,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

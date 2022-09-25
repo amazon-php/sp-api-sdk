@@ -154,7 +154,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -164,7 +164,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -175,7 +175,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -185,7 +185,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -195,7 +195,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -204,8 +204,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -217,8 +215,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -306,8 +302,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets report_type.
      *
      * @param string $report_type the report type
-     *
-     * @return self
      */
     public function setReportType(string $report_type) : self
     {
@@ -330,8 +324,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets marketplace_ids.
      *
      * @param string[] $marketplace_ids a list of marketplace identifiers for the report schedule
-     *
-     * @return self
      */
     public function setMarketplaceIds(array $marketplace_ids) : self
     {
@@ -354,8 +346,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets report_options.
      *
      * @param null|array<string,string> $report_options Additional information passed to reports. This varies by report type.
-     *
-     * @return self
      */
     public function setReportOptions(?array $report_options) : self
     {
@@ -376,8 +366,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets period.
      *
      * @param string $period one of a set of predefined ISO 8601 periods that specifies how often a report should be created
-     *
-     * @return self
      */
     public function setPeriod(string $period) : self
     {
@@ -388,8 +376,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets next_report_creation_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getNextReportCreationTime() : ?\DateTimeInterface
     {
@@ -400,8 +386,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      * Sets next_report_creation_time.
      *
      * @param null|\DateTimeInterface $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setNextReportCreationTime(?\DateTimeInterface $next_report_creation_time) : self
     {
@@ -412,8 +396,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -467,8 +449,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

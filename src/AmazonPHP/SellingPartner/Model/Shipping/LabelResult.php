@@ -106,7 +106,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -195,8 +191,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets container_reference_id.
-     *
-     * @return null|string
      */
     public function getContainerReferenceId() : ?string
     {
@@ -207,8 +201,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets container_reference_id.
      *
      * @param null|string $container_reference_id An identifier for the container. This must be unique within all the containers in the same shipment.
-     *
-     * @return self
      */
     public function setContainerReferenceId(?string $container_reference_id) : self
     {
@@ -219,8 +211,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets tracking_id.
-     *
-     * @return null|string
      */
     public function getTrackingId() : ?string
     {
@@ -231,8 +221,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tracking_id.
      *
      * @param null|string $tracking_id the tracking identifier assigned to the container
-     *
-     * @return self
      */
     public function setTrackingId(?string $tracking_id) : self
     {
@@ -243,8 +231,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Label
      */
     public function getLabel() : ?Label
     {
@@ -255,8 +241,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets label.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Label $label label
-     *
-     * @return self
      */
     public function setLabel(?Label $label) : self
     {
@@ -267,8 +251,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -322,8 +304,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

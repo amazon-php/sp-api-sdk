@@ -130,7 +130,7 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -193,8 +191,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -243,8 +239,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipment_name.
      *
      * @param string $shipment_name The name for the shipment. Use a naming convention that helps distinguish between shipments over time, such as the date the shipment was created.
-     *
-     * @return self
      */
     public function setShipmentName(string $shipment_name) : self
     {
@@ -265,8 +259,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets ship_from_address.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address $ship_from_address ship_from_address
-     *
-     * @return self
      */
     public function setShipFromAddress(Address $ship_from_address) : self
     {
@@ -287,8 +279,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets destination_fulfillment_center_id.
      *
      * @param string $destination_fulfillment_center_id The identifier for the fulfillment center to which the shipment will be shipped. Get this value from the InboundShipmentPlan object in the response returned by the createInboundShipmentPlan operation.
-     *
-     * @return self
      */
     public function setDestinationFulfillmentCenterId(string $destination_fulfillment_center_id) : self
     {
@@ -299,8 +289,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets are_cases_required.
-     *
-     * @return null|bool
      */
     public function getAreCasesRequired() : ?bool
     {
@@ -311,8 +299,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets are_cases_required.
      *
      * @param null|bool $are_cases_required Indicates whether or not an inbound shipment contains case-packed boxes. Note: A shipment must contain either all case-packed boxes or all individually packed boxes.  Possible values:  true - All boxes in the shipment must be case packed.  false - All boxes in the shipment must be individually packed.  Note: If AreCasesRequired = true for an inbound shipment, then the value of QuantityInCase must be greater than zero for every item in the shipment. Otherwise the service returns an error.
-     *
-     * @return self
      */
     public function setAreCasesRequired(?bool $are_cases_required) : self
     {
@@ -333,8 +319,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets shipment_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentStatus $shipment_status shipment_status
-     *
-     * @return self
      */
     public function setShipmentStatus(ShipmentStatus $shipment_status) : self
     {
@@ -355,8 +339,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets label_prep_preference.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelPrepPreference $label_prep_preference label_prep_preference
-     *
-     * @return self
      */
     public function setLabelPrepPreference(LabelPrepPreference $label_prep_preference) : self
     {
@@ -367,8 +349,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets intended_box_contents_source.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\IntendedBoxContentsSource
      */
     public function getIntendedBoxContentsSource() : ?IntendedBoxContentsSource
     {
@@ -379,8 +359,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets intended_box_contents_source.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\IntendedBoxContentsSource $intended_box_contents_source intended_box_contents_source
-     *
-     * @return self
      */
     public function setIntendedBoxContentsSource(?IntendedBoxContentsSource $intended_box_contents_source) : self
     {
@@ -391,8 +369,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -446,8 +422,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

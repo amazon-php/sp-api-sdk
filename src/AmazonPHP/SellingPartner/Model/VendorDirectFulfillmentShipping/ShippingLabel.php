@@ -122,7 +122,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,7 +132,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,7 +143,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,7 +153,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,7 +163,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -172,8 +172,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -185,8 +183,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -266,8 +262,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_number.
      *
      * @param string $purchase_order_number this field will contain the Purchase Order Number for this order
-     *
-     * @return self
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
@@ -288,8 +282,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets selling_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
-     *
-     * @return self
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -310,8 +302,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_from_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
-     *
-     * @return self
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -332,8 +322,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets label_format.
      *
      * @param string $label_format format of the label
-     *
-     * @return self
      */
     public function setLabelFormat(string $label_format) : self
     {
@@ -356,8 +344,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets label_data.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\LabelData[] $label_data provides the details of the packages in this shipment
-     *
-     * @return self
      */
     public function setLabelData(array $label_data) : self
     {
@@ -368,8 +354,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -423,8 +407,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

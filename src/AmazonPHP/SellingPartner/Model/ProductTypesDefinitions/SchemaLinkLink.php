@@ -102,7 +102,7 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -112,7 +112,7 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -123,7 +123,7 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -133,7 +133,7 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -143,7 +143,7 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -152,8 +152,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -165,8 +163,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -225,8 +221,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets resource.
      *
      * @param string $resource URI resource for the link
-     *
-     * @return self
      */
     public function setResource(string $resource) : self
     {
@@ -247,8 +241,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets verb.
      *
      * @param string $verb HTTP method for the link operation
-     *
-     * @return self
      */
     public function setVerb(string $verb) : self
     {
@@ -259,8 +251,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -314,8 +304,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

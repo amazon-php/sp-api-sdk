@@ -106,7 +106,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,8 +201,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * Sets status.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
-     *
-     * @return self
      */
     public function setStatus(VerificationStatus $status) : self
     {
@@ -227,8 +221,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * Sets external_reviewer_id.
      *
      * @param string $external_reviewer_id the identifier for the order's regulated information reviewer
-     *
-     * @return self
      */
     public function setExternalReviewerId(string $external_reviewer_id) : self
     {
@@ -239,8 +231,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets rejection_reason_id.
-     *
-     * @return null|string
      */
     public function getRejectionReasonId() : ?string
     {
@@ -251,8 +241,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * Sets rejection_reason_id.
      *
      * @param null|string $rejection_reason_id The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
-     *
-     * @return self
      */
     public function setRejectionReasonId(?string $rejection_reason_id) : self
     {
@@ -263,8 +251,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -318,8 +304,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -100,7 +100,7 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -199,8 +195,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Sets feed_document_id.
      *
      * @param string $feed_document_id the identifier of the feed document
-     *
-     * @return self
      */
     public function setFeedDocumentId(string $feed_document_id) : self
     {
@@ -221,8 +215,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Sets url.
      *
      * @param string $url The presigned URL for uploading the feed contents. This URL expires after 5 minutes.
-     *
-     * @return self
      */
     public function setUrl(string $url) : self
     {
@@ -233,8 +225,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +278,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

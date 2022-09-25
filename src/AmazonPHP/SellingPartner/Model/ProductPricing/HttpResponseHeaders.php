@@ -100,7 +100,7 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -182,8 +178,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets date.
-     *
-     * @return null|string
      */
     public function getDate() : ?string
     {
@@ -194,8 +188,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets date.
      *
      * @param null|string $date The timestamp that the API request was received.  For more information, consult [RFC 2616 Section 14](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html).
-     *
-     * @return self
      */
     public function setDate(?string $date) : self
     {
@@ -206,8 +198,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets x_amzn_request_id.
-     *
-     * @return null|string
      */
     public function getXAmznRequestId() : ?string
     {
@@ -218,8 +208,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets x_amzn_request_id.
      *
      * @param null|string $x_amzn_request_id unique request reference ID
-     *
-     * @return self
      */
     public function setXAmznRequestId(?string $x_amzn_request_id) : self
     {
@@ -230,8 +218,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,8 +271,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

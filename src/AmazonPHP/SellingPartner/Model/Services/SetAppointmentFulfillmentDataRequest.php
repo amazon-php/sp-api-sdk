@@ -106,7 +106,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -191,8 +187,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets fulfillment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentTime
      */
     public function getFulfillmentTime() : ?FulfillmentTime
     {
@@ -203,8 +197,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Sets fulfillment_time.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentTime $fulfillment_time fulfillment_time
-     *
-     * @return self
      */
     public function setFulfillmentTime(?FulfillmentTime $fulfillment_time) : self
     {
@@ -227,8 +219,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Sets appointment_resources.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentResource[] $appointment_resources list of resources that performs or performed job appointment fulfillment
-     *
-     * @return self
      */
     public function setAppointmentResources(?array $appointment_resources) : self
     {
@@ -251,8 +241,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
      * Sets fulfillment_documents.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentDocument[] $fulfillment_documents list of documents captured during service appointment fulfillment
-     *
-     * @return self
      */
     public function setFulfillmentDocuments(?array $fulfillment_documents) : self
     {
@@ -263,8 +251,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -318,8 +304,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

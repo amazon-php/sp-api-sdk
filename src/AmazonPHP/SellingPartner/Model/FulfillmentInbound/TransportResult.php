@@ -106,7 +106,7 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -201,8 +197,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets transport_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportStatus $transport_status transport_status
-     *
-     * @return self
      */
     public function setTransportStatus(TransportStatus $transport_status) : self
     {
@@ -213,8 +207,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets error_code.
-     *
-     * @return null|string
      */
     public function getErrorCode() : ?string
     {
@@ -225,8 +217,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets error_code.
      *
      * @param null|string $error_code an error code that identifies the type of error that occured
-     *
-     * @return self
      */
     public function setErrorCode(?string $error_code) : self
     {
@@ -237,8 +227,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets error_description.
-     *
-     * @return null|string
      */
     public function getErrorDescription() : ?string
     {
@@ -249,8 +237,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets error_description.
      *
      * @param null|string $error_description a message that describes the error condition
-     *
-     * @return self
      */
     public function setErrorDescription(?string $error_description) : self
     {
@@ -261,8 +247,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -316,8 +300,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

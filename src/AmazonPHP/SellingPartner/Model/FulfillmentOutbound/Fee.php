@@ -108,7 +108,7 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -118,7 +118,7 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -129,7 +129,7 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -139,7 +139,7 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -149,7 +149,7 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -158,8 +158,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -171,8 +169,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -236,8 +232,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets name.
      *
      * @param string $name the type of fee
-     *
-     * @return self
      */
     public function setName(string $name) : self
     {
@@ -258,8 +252,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amount.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $amount amount
-     *
-     * @return self
      */
     public function setAmount(Money $amount) : self
     {
@@ -270,8 +262,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -325,8 +315,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

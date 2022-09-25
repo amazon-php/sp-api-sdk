@@ -112,7 +112,7 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -219,8 +215,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets subscription_id.
      *
      * @param string $subscription_id the subscription identifier generated when the subscription is created
-     *
-     * @return self
      */
     public function setSubscriptionId(string $subscription_id) : self
     {
@@ -241,8 +235,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets payload_version.
      *
      * @param string $payload_version the version of the payload object to be used in the notification
-     *
-     * @return self
      */
     public function setPayloadVersion(string $payload_version) : self
     {
@@ -263,8 +255,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets destination_id.
      *
      * @param string $destination_id the identifier for the destination where notifications will be delivered
-     *
-     * @return self
      */
     public function setDestinationId(string $destination_id) : self
     {
@@ -275,8 +265,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_directive.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective
      */
     public function getProcessingDirective() : ?ProcessingDirective
     {
@@ -287,8 +275,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_directive.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective $processing_directive processing_directive
-     *
-     * @return self
      */
     public function setProcessingDirective(?ProcessingDirective $processing_directive) : self
     {
@@ -299,8 +285,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -354,8 +338,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

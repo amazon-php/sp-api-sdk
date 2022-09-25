@@ -136,7 +136,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -146,7 +146,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -157,7 +157,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -167,7 +167,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -177,7 +177,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -186,8 +186,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -199,8 +197,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -229,8 +225,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -241,8 +235,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets posted_date.
      *
      * @param null|\DateTimeInterface $posted_date posted_date
-     *
-     * @return self
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -253,8 +245,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets deal_id.
-     *
-     * @return null|string
      */
     public function getDealId() : ?string
     {
@@ -265,8 +255,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets deal_id.
      *
      * @param null|string $deal_id the unique identifier of the deal
-     *
-     * @return self
      */
     public function setDealId(?string $deal_id) : self
     {
@@ -277,8 +265,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets deal_description.
-     *
-     * @return null|string
      */
     public function getDealDescription() : ?string
     {
@@ -289,8 +275,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets deal_description.
      *
      * @param null|string $deal_description the internal description of the deal
-     *
-     * @return self
      */
     public function setDealDescription(?string $deal_description) : self
     {
@@ -301,8 +285,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets event_type.
-     *
-     * @return null|string
      */
     public function getEventType() : ?string
     {
@@ -313,8 +295,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets event_type.
      *
      * @param null|string $event_type the type of event: SellerDealComplete
-     *
-     * @return self
      */
     public function setEventType(?string $event_type) : self
     {
@@ -325,8 +305,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets fee_type.
-     *
-     * @return null|string
      */
     public function getFeeType() : ?string
     {
@@ -337,8 +315,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets fee_type.
      *
      * @param null|string $fee_type the type of fee: RunLightningDealFee
-     *
-     * @return self
      */
     public function setFeeType(?string $fee_type) : self
     {
@@ -349,8 +325,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets fee_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {
@@ -361,8 +335,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets fee_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $fee_amount fee_amount
-     *
-     * @return self
      */
     public function setFeeAmount(?Currency $fee_amount) : self
     {
@@ -373,8 +345,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {
@@ -385,8 +355,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets tax_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $tax_amount tax_amount
-     *
-     * @return self
      */
     public function setTaxAmount(?Currency $tax_amount) : self
     {
@@ -397,8 +365,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets total_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {
@@ -409,8 +375,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets total_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $total_amount total_amount
-     *
-     * @return self
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {
@@ -421,8 +385,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -476,8 +438,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

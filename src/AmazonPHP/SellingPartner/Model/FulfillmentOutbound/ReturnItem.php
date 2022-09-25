@@ -154,7 +154,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -164,7 +164,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -175,7 +175,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -185,7 +185,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -195,7 +195,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -204,8 +204,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -217,8 +215,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -269,8 +265,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_return_item_id.
      *
      * @param string $seller_return_item_id an identifier assigned by the seller to the return item
-     *
-     * @return self
      */
     public function setSellerReturnItemId(string $seller_return_item_id) : self
     {
@@ -291,8 +285,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id the identifier assigned to the item by the seller when the fulfillment order was created
-     *
-     * @return self
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -313,8 +305,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amazon_shipment_id.
      *
      * @param string $amazon_shipment_id the identifier for the shipment that is associated with the return item
-     *
-     * @return self
      */
     public function setAmazonShipmentId(string $amazon_shipment_id) : self
     {
@@ -335,8 +325,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_return_reason_code.
      *
      * @param string $seller_return_reason_code the return reason code assigned to the return item by the seller
-     *
-     * @return self
      */
     public function setSellerReturnReasonCode(string $seller_return_reason_code) : self
     {
@@ -347,8 +335,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets return_comment.
-     *
-     * @return null|string
      */
     public function getReturnComment() : ?string
     {
@@ -359,8 +345,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets return_comment.
      *
      * @param null|string $return_comment an optional comment about the return item
-     *
-     * @return self
      */
     public function setReturnComment(?string $return_comment) : self
     {
@@ -371,8 +355,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets amazon_return_reason_code.
-     *
-     * @return null|string
      */
     public function getAmazonReturnReasonCode() : ?string
     {
@@ -383,8 +365,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets amazon_return_reason_code.
      *
      * @param null|string $amazon_return_reason_code the return reason code that the Amazon fulfillment center assigned to the return item
-     *
-     * @return self
      */
     public function setAmazonReturnReasonCode(?string $amazon_return_reason_code) : self
     {
@@ -405,8 +385,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets status.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentReturnItemStatus $status status
-     *
-     * @return self
      */
     public function setStatus(FulfillmentReturnItemStatus $status) : self
     {
@@ -427,8 +405,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets status_changed_date.
      *
      * @param \DateTimeInterface $status_changed_date status_changed_date
-     *
-     * @return self
      */
     public function setStatusChangedDate(\DateTimeInterface $status_changed_date) : self
     {
@@ -439,8 +415,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets return_authorization_id.
-     *
-     * @return null|string
      */
     public function getReturnAuthorizationId() : ?string
     {
@@ -451,8 +425,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets return_authorization_id.
      *
      * @param null|string $return_authorization_id Identifies the return authorization used to return this item. See ReturnAuthorization.
-     *
-     * @return self
      */
     public function setReturnAuthorizationId(?string $return_authorization_id) : self
     {
@@ -463,8 +435,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets return_received_condition.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItemDisposition
      */
     public function getReturnReceivedCondition() : ?ReturnItemDisposition
     {
@@ -475,8 +445,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets return_received_condition.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItemDisposition $return_received_condition return_received_condition
-     *
-     * @return self
      */
     public function setReturnReceivedCondition(?ReturnItemDisposition $return_received_condition) : self
     {
@@ -487,8 +455,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fulfillment_center_id.
-     *
-     * @return null|string
      */
     public function getFulfillmentCenterId() : ?string
     {
@@ -499,8 +465,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fulfillment_center_id.
      *
      * @param null|string $fulfillment_center_id the identifier for the Amazon fulfillment center that processed the return item
-     *
-     * @return self
      */
     public function setFulfillmentCenterId(?string $fulfillment_center_id) : self
     {
@@ -511,8 +475,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -566,8 +528,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

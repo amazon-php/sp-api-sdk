@@ -106,7 +106,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -213,8 +209,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets name.
      *
      * @param string $name the name of the partner event source associated with the destination
-     *
-     * @return self
      */
     public function setName(string $name) : self
     {
@@ -235,8 +229,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets region.
      *
      * @param string $region The AWS region in which you receive the notifications. For AWS regions that are supported in Amazon EventBridge, see https://docs.aws.amazon.com/general/latest/gr/ev.html.
-     *
-     * @return self
      */
     public function setRegion(string $region) : self
     {
@@ -257,8 +249,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets account_id.
      *
      * @param string $account_id the identifier for the AWS account that is responsible for charges related to receiving notifications
-     *
-     * @return self
      */
     public function setAccountId(string $account_id) : self
     {
@@ -269,8 +259,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -324,8 +312,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

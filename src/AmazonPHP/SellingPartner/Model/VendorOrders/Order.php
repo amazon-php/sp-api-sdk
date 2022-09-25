@@ -112,7 +112,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -241,8 +237,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_number.
      *
      * @param string $purchase_order_number The purchase order number for this order. Formatting Notes: 8-character alpha-numeric code.
-     *
-     * @return self
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
@@ -263,8 +257,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_state.
      *
      * @param string $purchase_order_state this field will contain the current state of the purchase order
-     *
-     * @return self
      */
     public function setPurchaseOrderState(string $purchase_order_state) : self
     {
@@ -275,8 +267,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderDetails
      */
     public function getOrderDetails() : ?OrderDetails
     {
@@ -287,8 +277,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderDetails $order_details order_details
-     *
-     * @return self
      */
     public function setOrderDetails(?OrderDetails $order_details) : self
     {
@@ -299,8 +287,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -354,8 +340,6 @@ class Order implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

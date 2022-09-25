@@ -14,7 +14,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -23,7 +23,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetCustomerInvoicesResponse';
+    protected static string $openAPIModelName = 'SubmitShipmentConfirmationsRequest';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -31,8 +31,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'shipment_confirmations' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[]',
     ];
 
     /**
@@ -43,8 +42,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'shipment_confirmations' => null,
     ];
 
     /**
@@ -54,8 +52,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'shipment_confirmations' => 'shipmentConfirmations',
     ];
 
     /**
@@ -64,8 +61,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'shipment_confirmations' => 'setShipmentConfirmations',
     ];
 
     /**
@@ -74,8 +70,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'shipment_confirmations' => 'getShipmentConfirmations',
     ];
 
     /**
@@ -93,14 +88,13 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['shipment_confirmations'] = $data['shipment_confirmations'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +104,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +115,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +125,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +135,7 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +144,6 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +155,6 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -178,67 +168,32 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
-        }
-
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
-        }
     }
 
     /**
-     * Gets payload.
+     * Gets shipment_confirmations.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[]
      */
-    public function getPayload() : ?CustomerInvoiceList
+    public function getShipmentConfirmations() : ?array
     {
-        return $this->container['payload'];
+        return $this->container['shipment_confirmations'];
     }
 
     /**
-     * Sets payload.
+     * Sets shipment_confirmations.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList $payload payload
-     *
-     * @return self
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[] $shipment_confirmations shipment_confirmations
      */
-    public function setPayload(?CustomerInvoiceList $payload) : self
+    public function setShipmentConfirmations(?array $shipment_confirmations) : self
     {
-        $this->container['payload'] = $payload;
-
-        return $this;
-    }
-
-    /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
-     */
-    public function getErrors() : ?ErrorList
-    {
-        return $this->container['errors'];
-    }
-
-    /**
-     * Sets errors.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
-     */
-    public function setErrors(?ErrorList $errors) : self
-    {
-        $this->container['errors'] = $errors;
+        $this->container['shipment_confirmations'] = $shipment_confirmations;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +247,6 @@ class GetCustomerInvoicesResponse implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

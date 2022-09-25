@@ -118,7 +118,7 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -168,8 +168,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -181,8 +179,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -200,8 +196,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets length.
-     *
-     * @return null|float
      */
     public function getLength() : ?float
     {
@@ -212,8 +206,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets length.
      *
      * @param null|float $length length
-     *
-     * @return self
      */
     public function setLength(?float $length) : self
     {
@@ -224,8 +216,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets width.
-     *
-     * @return null|float
      */
     public function getWidth() : ?float
     {
@@ -236,8 +226,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets width.
      *
      * @param null|float $width width
-     *
-     * @return self
      */
     public function setWidth(?float $width) : self
     {
@@ -248,8 +236,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets height.
-     *
-     * @return null|float
      */
     public function getHeight() : ?float
     {
@@ -260,8 +246,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets height.
      *
      * @param null|float $height height
-     *
-     * @return self
      */
     public function setHeight(?float $height) : self
     {
@@ -272,8 +256,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets unit.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength
      */
     public function getUnit() : ?UnitOfLength
     {
@@ -284,8 +266,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets unit.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength $unit unit
-     *
-     * @return self
      */
     public function setUnit(?UnitOfLength $unit) : self
     {
@@ -296,8 +276,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets predefined_package_dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\PredefinedPackageDimensions
      */
     public function getPredefinedPackageDimensions() : ?PredefinedPackageDimensions
     {
@@ -308,8 +286,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets predefined_package_dimensions.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\PredefinedPackageDimensions $predefined_package_dimensions predefined_package_dimensions
-     *
-     * @return self
      */
     public function setPredefinedPackageDimensions(?PredefinedPackageDimensions $predefined_package_dimensions) : self
     {
@@ -320,8 +296,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -375,8 +349,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

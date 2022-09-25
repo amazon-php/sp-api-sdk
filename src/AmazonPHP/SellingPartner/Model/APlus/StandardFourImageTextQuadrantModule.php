@@ -112,7 +112,7 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -227,8 +223,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
      * Sets block1.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block1 block1
-     *
-     * @return self
      */
     public function setBlock1(StandardImageTextBlock $block1) : self
     {
@@ -249,8 +243,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
      * Sets block2.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block2 block2
-     *
-     * @return self
      */
     public function setBlock2(StandardImageTextBlock $block2) : self
     {
@@ -271,8 +263,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
      * Sets block3.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block3 block3
-     *
-     * @return self
      */
     public function setBlock3(StandardImageTextBlock $block3) : self
     {
@@ -293,8 +283,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
      * Sets block4.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block4 block4
-     *
-     * @return self
      */
     public function setBlock4(StandardImageTextBlock $block4) : self
     {
@@ -305,8 +293,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -360,8 +346,6 @@ class StandardFourImageTextQuadrantModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

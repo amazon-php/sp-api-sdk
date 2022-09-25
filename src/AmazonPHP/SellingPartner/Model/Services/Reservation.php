@@ -116,7 +116,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -126,7 +126,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -137,7 +137,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -147,7 +147,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -157,7 +157,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -166,8 +166,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -179,8 +177,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -235,8 +231,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets reservation_id.
-     *
-     * @return null|string
      */
     public function getReservationId() : ?string
     {
@@ -247,8 +241,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets reservation_id.
      *
      * @param null|string $reservation_id Unique identifier for a reservation. If present, it is treated as an update reservation request and will update the corresponding reservation. Otherwise, it is treated as a new create reservation request.
-     *
-     * @return self
      */
     public function setReservationId(?string $reservation_id) : self
     {
@@ -269,8 +261,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets type.
      *
      * @param string $type type of reservation
-     *
-     * @return self
      */
     public function setType(string $type) : self
     {
@@ -291,8 +281,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets availability.
      *
      * @param \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord $availability availability
-     *
-     * @return self
      */
     public function setAvailability(AvailabilityRecord $availability) : self
     {
@@ -303,8 +291,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -358,8 +344,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

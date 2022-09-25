@@ -94,7 +94,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -144,8 +144,6 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -157,8 +155,6 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -176,8 +172,6 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets authorization_code.
-     *
-     * @return null|string
      */
     public function getAuthorizationCode() : ?string
     {
@@ -188,8 +182,6 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets authorization_code.
      *
      * @param null|string $authorization_code a Login with Amazon (LWA) authorization code that can be exchanged for a refresh token and access token that authorize you to make calls to a Selling Partner API
-     *
-     * @return self
      */
     public function setAuthorizationCode(?string $authorization_code) : self
     {
@@ -200,8 +192,6 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -255,8 +245,6 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

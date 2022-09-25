@@ -100,7 +100,7 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -182,8 +178,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_item_id.
-     *
-     * @return null|string
      */
     public function getOrderItemId() : ?string
     {
@@ -194,8 +188,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_item_id.
      *
      * @param null|string $order_item_id the unique identifier of the order item
-     *
-     * @return self
      */
     public function setOrderItemId(?string $order_item_id) : self
     {
@@ -206,8 +198,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -218,8 +208,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity.
      *
      * @param null|int $quantity the quantity for which to update the shipment status
-     *
-     * @return self
      */
     public function setQuantity(?int $quantity) : self
     {
@@ -230,8 +218,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,8 +271,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

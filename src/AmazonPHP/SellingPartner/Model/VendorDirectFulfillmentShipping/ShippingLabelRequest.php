@@ -112,7 +112,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -223,8 +219,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets purchase_order_number.
      *
      * @param string $purchase_order_number purchase order number of the order for which to create a shipping label
-     *
-     * @return self
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
@@ -245,8 +239,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets selling_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
-     *
-     * @return self
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -267,8 +259,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets ship_from_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
-     *
-     * @return self
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -291,8 +281,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets containers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Container[] $containers a list of the packages in this shipment
-     *
-     * @return self
      */
     public function setContainers(?array $containers) : self
     {
@@ -303,8 +291,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -358,8 +344,6 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

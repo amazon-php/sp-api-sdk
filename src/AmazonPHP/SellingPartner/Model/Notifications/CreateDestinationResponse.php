@@ -100,7 +100,7 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Destination
      */
     public function getPayload() : ?Destination
     {
@@ -197,8 +191,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
      * Sets payload.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Destination $payload payload
-     *
-     * @return self
      */
     public function setPayload(?Destination $payload) : self
     {
@@ -221,8 +213,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
-     *
-     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -233,8 +223,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +276,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

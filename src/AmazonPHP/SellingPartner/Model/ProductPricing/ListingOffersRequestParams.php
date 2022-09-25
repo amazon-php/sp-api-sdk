@@ -112,7 +112,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -215,8 +211,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets marketplace_id.
      *
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned.
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -237,8 +231,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets item_condition.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition $item_condition item_condition
-     *
-     * @return self
      */
     public function setItemCondition(ItemCondition $item_condition) : self
     {
@@ -249,8 +241,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets customer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {
@@ -261,8 +251,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets customer_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType $customer_type customer_type
-     *
-     * @return self
      */
     public function setCustomerType(?CustomerType $customer_type) : self
     {
@@ -283,8 +271,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
      * Sets seller_sku.
      *
      * @param string $seller_sku The seller stock keeping unit (SKU) of the item. This is the same SKU passed as a path parameter.
-     *
-     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -295,8 +281,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -350,8 +334,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

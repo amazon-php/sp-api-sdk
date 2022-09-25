@@ -130,7 +130,7 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -193,8 +191,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -212,8 +208,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets total_unfulfillable_quantity.
-     *
-     * @return null|int
      */
     public function getTotalUnfulfillableQuantity() : ?int
     {
@@ -224,8 +218,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets total_unfulfillable_quantity.
      *
      * @param null|int $total_unfulfillable_quantity the total number of units in Amazon's fulfillment network in unsellable condition
-     *
-     * @return self
      */
     public function setTotalUnfulfillableQuantity(?int $total_unfulfillable_quantity) : self
     {
@@ -236,8 +228,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets customer_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getCustomerDamagedQuantity() : ?int
     {
@@ -248,8 +238,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets customer_damaged_quantity.
      *
      * @param null|int $customer_damaged_quantity the number of units in customer damaged disposition
-     *
-     * @return self
      */
     public function setCustomerDamagedQuantity(?int $customer_damaged_quantity) : self
     {
@@ -260,8 +248,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets warehouse_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getWarehouseDamagedQuantity() : ?int
     {
@@ -272,8 +258,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets warehouse_damaged_quantity.
      *
      * @param null|int $warehouse_damaged_quantity the number of units in warehouse damaged disposition
-     *
-     * @return self
      */
     public function setWarehouseDamagedQuantity(?int $warehouse_damaged_quantity) : self
     {
@@ -284,8 +268,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets distributor_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getDistributorDamagedQuantity() : ?int
     {
@@ -296,8 +278,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets distributor_damaged_quantity.
      *
      * @param null|int $distributor_damaged_quantity the number of units in distributor damaged disposition
-     *
-     * @return self
      */
     public function setDistributorDamagedQuantity(?int $distributor_damaged_quantity) : self
     {
@@ -308,8 +288,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets carrier_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getCarrierDamagedQuantity() : ?int
     {
@@ -320,8 +298,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets carrier_damaged_quantity.
      *
      * @param null|int $carrier_damaged_quantity the number of units in carrier damaged disposition
-     *
-     * @return self
      */
     public function setCarrierDamagedQuantity(?int $carrier_damaged_quantity) : self
     {
@@ -332,8 +308,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets defective_quantity.
-     *
-     * @return null|int
      */
     public function getDefectiveQuantity() : ?int
     {
@@ -344,8 +318,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets defective_quantity.
      *
      * @param null|int $defective_quantity the number of units in defective disposition
-     *
-     * @return self
      */
     public function setDefectiveQuantity(?int $defective_quantity) : self
     {
@@ -356,8 +328,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets expired_quantity.
-     *
-     * @return null|int
      */
     public function getExpiredQuantity() : ?int
     {
@@ -368,8 +338,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets expired_quantity.
      *
      * @param null|int $expired_quantity the number of units in expired disposition
-     *
-     * @return self
      */
     public function setExpiredQuantity(?int $expired_quantity) : self
     {
@@ -380,8 +348,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -435,8 +401,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

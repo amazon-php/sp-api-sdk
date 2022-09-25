@@ -94,7 +94,7 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -144,8 +144,6 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -157,8 +155,6 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -183,8 +179,6 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text.
-     *
-     * @return null|string
      */
     public function getText() : ?string
     {
@@ -195,8 +189,6 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
      * Sets text.
      *
      * @param null|string $text The text to be sent to the buyer. Only links related to order delivery are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
-     *
-     * @return self
      */
     public function setText(?string $text) : self
     {
@@ -207,8 +199,6 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -262,8 +252,6 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

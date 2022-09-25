@@ -106,7 +106,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -197,8 +193,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets headers.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders
      */
     public function getHeaders() : ?HttpResponseHeaders
     {
@@ -209,8 +203,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets headers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders $headers headers
-     *
-     * @return self
      */
     public function setHeaders(?HttpResponseHeaders $headers) : self
     {
@@ -221,8 +213,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine
      */
     public function getStatus() : ?GetOffersHttpStatusLine
     {
@@ -233,8 +223,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets status.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine $status status
-     *
-     * @return self
      */
     public function setStatus(?GetOffersHttpStatusLine $status) : self
     {
@@ -255,8 +243,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets body.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse $body body
-     *
-     * @return self
      */
     public function setBody(GetOffersResponse $body) : self
     {
@@ -267,8 +253,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -322,8 +306,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

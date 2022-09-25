@@ -12,9 +12,9 @@ use PHPStan\Type\UnionType;
 use Rector\Core\Contract\Rector\ConfigurableRectorInterface;
 use Rector\Core\Rector\AbstractRector;
 use Rector\PHPStanStaticTypeMapper\Enum\TypeKind;
-use RectorPrefix202208\Webmozart\Assert\Assert;
 use Symplify\RuleDocGenerator\ValueObject\CodeSample\ConfiguredCodeSample;
 use Symplify\RuleDocGenerator\ValueObject\RuleDefinition;
+use Webmozart\Assert\Assert;
 
 /**
  * AddReturnTypeDeclarationRector rector can't detect a change from return type to nullable return type, so changing `string` to `?string` will not work.

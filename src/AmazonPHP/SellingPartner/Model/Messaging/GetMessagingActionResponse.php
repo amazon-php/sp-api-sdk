@@ -112,7 +112,7 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,8 +201,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets _links.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionResponseLinks
      */
     public function getLinks() : ?GetMessagingActionResponseLinks
     {
@@ -217,8 +211,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Sets _links.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionResponseLinks $_links _links
-     *
-     * @return self
      */
     public function setLinks(?GetMessagingActionResponseLinks $_links) : self
     {
@@ -229,8 +221,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets _embedded.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionResponseEmbedded
      */
     public function getEmbedded() : ?GetMessagingActionResponseEmbedded
     {
@@ -241,8 +231,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Sets _embedded.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionResponseEmbedded $_embedded _embedded
-     *
-     * @return self
      */
     public function setEmbedded(?GetMessagingActionResponseEmbedded $_embedded) : self
     {
@@ -253,8 +241,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\MessagingAction
      */
     public function getPayload() : ?MessagingAction
     {
@@ -265,8 +251,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Sets payload.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\MessagingAction $payload payload
-     *
-     * @return self
      */
     public function setPayload(?MessagingAction $payload) : self
     {
@@ -289,8 +273,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Error[] $errors a list of error responses returned when a request is unsuccessful
-     *
-     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -301,8 +283,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -356,8 +336,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

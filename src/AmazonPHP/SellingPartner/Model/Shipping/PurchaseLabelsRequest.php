@@ -100,7 +100,7 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -201,8 +197,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets rate_id.
      *
      * @param string $rate_id an identifier for the rating
-     *
-     * @return self
      */
     public function setRateId(string $rate_id) : self
     {
@@ -223,8 +217,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets label_specification.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification $label_specification label_specification
-     *
-     * @return self
      */
     public function setLabelSpecification(LabelSpecification $label_specification) : self
     {
@@ -235,8 +227,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -290,8 +280,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

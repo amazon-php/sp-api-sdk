@@ -94,7 +94,7 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -144,8 +144,6 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -157,8 +155,6 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,8 +185,6 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets event_filter_type.
      *
      * @param string $event_filter_type An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
-     *
-     * @return self
      */
     public function setEventFilterType(string $event_filter_type) : self
     {
@@ -201,8 +195,6 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -256,8 +248,6 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

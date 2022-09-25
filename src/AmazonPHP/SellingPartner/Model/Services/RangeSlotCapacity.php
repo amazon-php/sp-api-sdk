@@ -106,7 +106,7 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -188,8 +184,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets resource_id.
-     *
-     * @return null|string
      */
     public function getResourceId() : ?string
     {
@@ -200,8 +194,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets resource_id.
      *
      * @param null|string $resource_id resource Identifier
-     *
-     * @return self
      */
     public function setResourceId(?string $resource_id) : self
     {
@@ -224,8 +216,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets capacities.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\RangeCapacity[] $capacities array of range capacities where each entry is for a specific capacity type
-     *
-     * @return self
      */
     public function setCapacities(?array $capacities) : self
     {
@@ -236,8 +226,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {
@@ -248,8 +236,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets next_page_token.
      *
      * @param null|string $next_page_token next page token, if there are more pages
-     *
-     * @return self
      */
     public function setNextPageToken(?string $next_page_token) : self
     {
@@ -260,8 +246,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -315,8 +299,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {
