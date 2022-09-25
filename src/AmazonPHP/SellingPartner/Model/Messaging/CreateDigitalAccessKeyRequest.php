@@ -100,7 +100,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,8 +185,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets text.
-     *
-     * @return null|string
      */
     public function getText() : ?string
     {
@@ -201,8 +195,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets text.
      *
      * @param null|string $text The text to be sent to the buyer. Only links related to the digital access key are allowed. Do not include HTML or email addresses. The text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
-     *
-     * @return self
      */
     public function setText(?string $text) : self
     {
@@ -225,8 +217,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
      * Sets attachments.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Attachment[] $attachments attachments to include in the message to the buyer
-     *
-     * @return self
      */
     public function setAttachments(?array $attachments) : self
     {
@@ -237,8 +227,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +280,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -112,7 +112,7 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -231,8 +227,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets name.
      *
      * @param string $name the name of the contact person
-     *
-     * @return self
      */
     public function setName(string $name) : self
     {
@@ -253,8 +247,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets phone.
      *
      * @param string $phone the phone number of the contact person
-     *
-     * @return self
      */
     public function setPhone(string $phone) : self
     {
@@ -275,8 +267,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets email.
      *
      * @param string $email the email address of the contact person
-     *
-     * @return self
      */
     public function setEmail(string $email) : self
     {
@@ -287,8 +277,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fax.
-     *
-     * @return null|string
      */
     public function getFax() : ?string
     {
@@ -299,8 +287,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fax.
      *
      * @param null|string $fax the fax number of the contact person
-     *
-     * @return self
      */
     public function setFax(?string $fax) : self
     {
@@ -311,8 +297,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -366,8 +350,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

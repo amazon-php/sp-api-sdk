@@ -100,7 +100,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -201,8 +197,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      * Sets self.
      *
      * @param \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject $self self
-     *
-     * @return self
      */
     public function setSelf(LinkObject $self) : self
     {
@@ -225,8 +219,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
      * Sets actions.
      *
      * @param \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject[] $actions eligible actions for the specified amazonOrderId
-     *
-     * @return self
      */
     public function setActions(array $actions) : self
     {
@@ -237,8 +229,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +282,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

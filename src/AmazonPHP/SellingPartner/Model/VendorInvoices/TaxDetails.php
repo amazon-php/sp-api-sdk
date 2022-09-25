@@ -140,7 +140,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,7 +150,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,7 +161,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,7 +171,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,7 +181,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -190,8 +190,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -203,8 +201,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -282,8 +278,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tax_type.
      *
      * @param string $tax_type type of the tax applied
-     *
-     * @return self
      */
     public function setTaxType(string $tax_type) : self
     {
@@ -294,8 +288,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets tax_rate.
-     *
-     * @return null|string
      */
     public function getTaxRate() : ?string
     {
@@ -306,8 +298,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tax_rate.
      *
      * @param null|string $tax_rate A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation. <br>**Pattern** : `^-?(0|([1-9]\\d*))(\\.\\d+)?([eE][+-]?\\d+)?$`.
-     *
-     * @return self
      */
     public function setTaxRate(?string $tax_rate) : self
     {
@@ -328,8 +318,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tax_amount.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\Money $tax_amount tax_amount
-     *
-     * @return self
      */
     public function setTaxAmount(Money $tax_amount) : self
     {
@@ -340,8 +328,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets taxable_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getTaxableAmount() : ?Money
     {
@@ -352,8 +338,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets taxable_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\Money $taxable_amount taxable_amount
-     *
-     * @return self
      */
     public function setTaxableAmount(?Money $taxable_amount) : self
     {
@@ -364,8 +348,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -419,8 +401,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

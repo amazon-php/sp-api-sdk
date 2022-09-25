@@ -118,7 +118,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -168,8 +168,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -181,8 +179,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -200,8 +196,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -212,8 +206,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets posted_date.
      *
      * @param null|\DateTimeInterface $posted_date posted_date
-     *
-     * @return self
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -224,8 +216,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets merchant_order_id.
-     *
-     * @return null|string
      */
     public function getMerchantOrderId() : ?string
     {
@@ -236,8 +226,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets merchant_order_id.
      *
      * @param null|string $merchant_order_id the merchant removal orderId
-     *
-     * @return self
      */
     public function setMerchantOrderId(?string $merchant_order_id) : self
     {
@@ -248,8 +236,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets order_id.
-     *
-     * @return null|string
      */
     public function getOrderId() : ?string
     {
@@ -260,8 +246,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets order_id.
      *
      * @param null|string $order_id the identifier for the removal shipment order
-     *
-     * @return self
      */
     public function setOrderId(?string $order_id) : self
     {
@@ -272,8 +256,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets transaction_type.
-     *
-     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -284,8 +266,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets transaction_type.
      *
      * @param null|string $transaction_type The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
-     *
-     * @return self
      */
     public function setTransactionType(?string $transaction_type) : self
     {
@@ -308,8 +288,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets removal_shipment_item_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[] $removal_shipment_item_list a list of information about removal shipment items
-     *
-     * @return self
      */
     public function setRemovalShipmentItemList(?array $removal_shipment_item_list) : self
     {
@@ -320,8 +298,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -375,8 +351,6 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

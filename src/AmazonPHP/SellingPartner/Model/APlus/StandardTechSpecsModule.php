@@ -106,7 +106,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -211,8 +207,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -223,8 +217,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets headline.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
-     *
-     * @return self
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -247,8 +239,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets specification_list.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[] $specification_list the specification list
-     *
-     * @return self
      */
     public function setSpecificationList(array $specification_list) : self
     {
@@ -259,8 +249,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets table_count.
-     *
-     * @return null|int
      */
     public function getTableCount() : ?int
     {
@@ -271,8 +259,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets table_count.
      *
      * @param null|int $table_count The number of tables to present. Features are evenly divided between the tables.
-     *
-     * @return self
      */
     public function setTableCount(?int $table_count) : self
     {
@@ -283,8 +269,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -338,8 +322,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

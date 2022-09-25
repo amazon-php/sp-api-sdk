@@ -112,7 +112,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -241,8 +237,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets transaction_id.
      *
      * @param string $transaction_id the unique identifier sent in the 'transactionId' field in response to the post request of a specific transaction
-     *
-     * @return self
      */
     public function setTransactionId(string $transaction_id) : self
     {
@@ -263,8 +257,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets status.
      *
      * @param string $status current processing status of the transaction
-     *
-     * @return self
      */
     public function setStatus(string $status) : self
     {
@@ -275,8 +267,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\ErrorList
      */
     public function getErrors() : ?ErrorList
     {
@@ -287,8 +277,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\ErrorList $errors errors
-     *
-     * @return self
      */
     public function setErrors(?ErrorList $errors) : self
     {
@@ -299,8 +287,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -354,8 +340,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -184,8 +184,6 @@ interface FulfillmentOutboundSDKInterface
     /**
      * Operation listAllFulfillmentOrders.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param null|\DateTimeInterface $query_start_date A date used to select fulfillment orders that were last updated after (or at) a specified time. An update is defined as any change in fulfillment order status, including the creation of a new fulfillment order. (optional)
      * @param null|string $next_token A string token returned in the response to your previous request. (optional)
      *

@@ -100,7 +100,7 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -182,8 +178,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartTime() : ?\DateTimeInterface
     {
@@ -194,8 +188,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets start_time.
      *
      * @param null|\DateTimeInterface $start_time the date and time of the start of the promised delivery window in ISO 8601 format
-     *
-     * @return self
      */
     public function setStartTime(?\DateTimeInterface $start_time) : self
     {
@@ -206,8 +198,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEndTime() : ?\DateTimeInterface
     {
@@ -218,8 +208,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets end_time.
      *
      * @param null|\DateTimeInterface $end_time the date and time of the end of the promised delivery window in ISO 8601 format
-     *
-     * @return self
      */
     public function setEndTime(?\DateTimeInterface $end_time) : self
     {
@@ -230,8 +218,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,8 +271,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -126,7 +126,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -136,7 +136,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -147,7 +147,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -157,7 +157,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -167,7 +167,7 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,8 +176,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -189,8 +187,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -261,8 +257,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets container_type.
-     *
-     * @return null|string
      */
     public function getContainerType() : ?string
     {
@@ -273,8 +267,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets container_type.
      *
      * @param null|string $container_type The type of physical container being used. (always 'PACKAGE')
-     *
-     * @return self
      */
     public function setContainerType(?string $container_type) : self
     {
@@ -295,8 +287,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets container_reference_id.
      *
      * @param string $container_reference_id An identifier for the container. This must be unique within all the containers in the same shipment.
-     *
-     * @return self
      */
     public function setContainerReferenceId(string $container_reference_id) : self
     {
@@ -317,8 +307,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets value.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Currency $value value
-     *
-     * @return self
      */
     public function setValue(Currency $value) : self
     {
@@ -339,8 +327,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets dimensions.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Dimensions $dimensions dimensions
-     *
-     * @return self
      */
     public function setDimensions(Dimensions $dimensions) : self
     {
@@ -363,8 +349,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets items.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\ContainerItem[] $items a list of the items in the container
-     *
-     * @return self
      */
     public function setItems(array $items) : self
     {
@@ -385,8 +369,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets weight.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Weight $weight weight
-     *
-     * @return self
      */
     public function setWeight(Weight $weight) : self
     {
@@ -397,8 +379,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -452,8 +432,6 @@ class Container implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

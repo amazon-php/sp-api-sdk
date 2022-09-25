@@ -188,7 +188,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -198,7 +198,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -209,7 +209,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -219,7 +219,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -229,7 +229,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -238,8 +238,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -251,8 +249,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -365,8 +361,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_date.
      *
      * @param \DateTimeInterface $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
-     *
-     * @return self
      */
     public function setPurchaseOrderDate(\DateTimeInterface $purchase_order_date) : self
     {
@@ -377,8 +371,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_changed_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPurchaseOrderChangedDate() : ?\DateTimeInterface
     {
@@ -389,8 +381,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_changed_date.
      *
      * @param null|\DateTimeInterface $purchase_order_changed_date The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
-     *
-     * @return self
      */
     public function setPurchaseOrderChangedDate(?\DateTimeInterface $purchase_order_changed_date) : self
     {
@@ -411,8 +401,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_state_changed_date.
      *
      * @param \DateTimeInterface $purchase_order_state_changed_date The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.
-     *
-     * @return self
      */
     public function setPurchaseOrderStateChangedDate(\DateTimeInterface $purchase_order_state_changed_date) : self
     {
@@ -423,8 +411,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets purchase_order_type.
-     *
-     * @return null|string
      */
     public function getPurchaseOrderType() : ?string
     {
@@ -435,8 +421,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets purchase_order_type.
      *
      * @param null|string $purchase_order_type type of purchase order
-     *
-     * @return self
      */
     public function setPurchaseOrderType(?string $purchase_order_type) : self
     {
@@ -447,8 +431,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets import_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ImportDetails
      */
     public function getImportDetails() : ?ImportDetails
     {
@@ -459,8 +441,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets import_details.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ImportDetails $import_details import_details
-     *
-     * @return self
      */
     public function setImportDetails(?ImportDetails $import_details) : self
     {
@@ -471,8 +451,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets deal_code.
-     *
-     * @return null|string
      */
     public function getDealCode() : ?string
     {
@@ -483,8 +461,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets deal_code.
      *
      * @param null|string $deal_code If requested by the recipient, this field will contain a promotional/deal number. The discount code line is optional. It is used to obtain a price discount on items on the order.
-     *
-     * @return self
      */
     public function setDealCode(?string $deal_code) : self
     {
@@ -495,8 +471,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets payment_method.
-     *
-     * @return null|string
      */
     public function getPaymentMethod() : ?string
     {
@@ -507,8 +481,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets payment_method.
      *
      * @param null|string $payment_method payment method used
-     *
-     * @return self
      */
     public function setPaymentMethod(?string $payment_method) : self
     {
@@ -519,8 +491,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buying_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getBuyingParty() : ?PartyIdentification
     {
@@ -531,8 +501,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buying_party.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $buying_party buying_party
-     *
-     * @return self
      */
     public function setBuyingParty(?PartyIdentification $buying_party) : self
     {
@@ -543,8 +511,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets selling_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : ?PartyIdentification
     {
@@ -555,8 +521,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets selling_party.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $selling_party selling_party
-     *
-     * @return self
      */
     public function setSellingParty(?PartyIdentification $selling_party) : self
     {
@@ -567,8 +531,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets ship_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getShipToParty() : ?PartyIdentification
     {
@@ -579,8 +541,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_to_party.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $ship_to_party ship_to_party
-     *
-     * @return self
      */
     public function setShipToParty(?PartyIdentification $ship_to_party) : self
     {
@@ -591,8 +551,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets bill_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getBillToParty() : ?PartyIdentification
     {
@@ -603,8 +561,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets bill_to_party.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $bill_to_party bill_to_party
-     *
-     * @return self
      */
     public function setBillToParty(?PartyIdentification $bill_to_party) : self
     {
@@ -615,8 +571,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets ship_window.
-     *
-     * @return null|string
      */
     public function getShipWindow() : ?string
     {
@@ -627,8 +581,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets ship_window.
      *
      * @param null|string $ship_window Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
-     *
-     * @return self
      */
     public function setShipWindow(?string $ship_window) : self
     {
@@ -639,8 +591,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets delivery_window.
-     *
-     * @return null|string
      */
     public function getDeliveryWindow() : ?string
     {
@@ -651,8 +601,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets delivery_window.
      *
      * @param null|string $delivery_window Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
-     *
-     * @return self
      */
     public function setDeliveryWindow(?string $delivery_window) : self
     {
@@ -675,8 +623,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets items.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\OrderItem[] $items a list of items in this purchase order
-     *
-     * @return self
      */
     public function setItems(array $items) : self
     {
@@ -687,8 +633,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -742,8 +686,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

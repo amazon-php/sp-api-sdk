@@ -126,7 +126,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -136,7 +136,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -147,7 +147,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -157,7 +157,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -167,7 +167,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,8 +176,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -189,8 +187,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -246,8 +242,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets appointment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime
      */
     public function getAppointmentTime() : ?AppointmentTime
     {
@@ -258,8 +252,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets appointment_time.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime $appointment_time appointment_time
-     *
-     * @return self
      */
     public function setAppointmentTime(?AppointmentTime $appointment_time) : self
     {
@@ -282,8 +274,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets technicians.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\Technician[] $technicians a list of technicians
-     *
-     * @return self
      */
     public function setTechnicians(?array $technicians) : self
     {
@@ -294,8 +284,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets uploading_technician.
-     *
-     * @return null|string
      */
     public function getUploadingTechnician() : ?string
     {
@@ -306,8 +294,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets uploading_technician.
      *
      * @param null|string $uploading_technician the identifier of the technician who uploaded the POA
-     *
-     * @return self
      */
     public function setUploadingTechnician(?string $uploading_technician) : self
     {
@@ -318,8 +304,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets upload_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getUploadTime() : ?\DateTimeInterface
     {
@@ -330,8 +314,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets upload_time.
      *
      * @param null|\DateTimeInterface $upload_time the date and time when the POA was uploaded in ISO 8601 format
-     *
-     * @return self
      */
     public function setUploadTime(?\DateTimeInterface $upload_time) : self
     {
@@ -342,8 +324,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets poa_type.
-     *
-     * @return null|string
      */
     public function getPoaType() : ?string
     {
@@ -354,8 +334,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets poa_type.
      *
      * @param null|string $poa_type the type of POA uploaded
-     *
-     * @return self
      */
     public function setPoaType(?string $poa_type) : self
     {
@@ -366,8 +344,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -421,8 +397,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -45,8 +45,6 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
     /**
      * Operation submitInvoice.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -145,8 +143,6 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function submitInvoiceRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body) : RequestInterface
     {

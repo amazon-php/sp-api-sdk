@@ -124,7 +124,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -174,8 +174,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -187,8 +185,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -233,8 +229,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets carton_identifiers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ContainerIdentification[] $carton_identifiers a list of carton identifiers
-     *
-     * @return self
      */
     public function setCartonIdentifiers(?array $carton_identifiers) : self
     {
@@ -255,8 +249,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets carton_sequence_number.
      *
      * @param string $carton_sequence_number Carton sequence number for the carton. The first carton will be 001, the second 002, and so on. This number is used as a reference to refer to this carton from the pallet level.
-     *
-     * @return self
      */
     public function setCartonSequenceNumber(string $carton_sequence_number) : self
     {
@@ -267,8 +259,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -279,8 +269,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets dimensions.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions $dimensions dimensions
-     *
-     * @return self
      */
     public function setDimensions(?Dimensions $dimensions) : self
     {
@@ -291,8 +279,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {
@@ -303,8 +289,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets weight.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $weight weight
-     *
-     * @return self
      */
     public function setWeight(?Weight $weight) : self
     {
@@ -315,8 +299,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets tracking_number.
-     *
-     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -327,8 +309,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets tracking_number.
      *
      * @param null|string $tracking_number this is required to be provided for every carton in the small parcel shipments
-     *
-     * @return self
      */
     public function setTrackingNumber(?string $tracking_number) : self
     {
@@ -351,8 +331,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets items.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\ContainerItem[] $items a list of container item details
-     *
-     * @return self
      */
     public function setItems(array $items) : self
     {
@@ -363,8 +341,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -418,8 +394,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

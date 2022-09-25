@@ -100,7 +100,7 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets seller_positive_feedback_rating.
-     *
-     * @return null|float
      */
     public function getSellerPositiveFeedbackRating() : ?float
     {
@@ -197,8 +191,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets seller_positive_feedback_rating.
      *
      * @param null|float $seller_positive_feedback_rating the percentage of positive feedback for the seller in the past 365 days
-     *
-     * @return self
      */
     public function setSellerPositiveFeedbackRating(?float $seller_positive_feedback_rating) : self
     {
@@ -219,8 +211,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets feedback_count.
      *
      * @param int $feedback_count the number of ratings received about the seller
-     *
-     * @return self
      */
     public function setFeedbackCount(int $feedback_count) : self
     {
@@ -231,8 +221,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -286,8 +274,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

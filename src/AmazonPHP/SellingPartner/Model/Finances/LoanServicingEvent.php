@@ -100,7 +100,7 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets loan_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLoanAmount() : ?Currency
     {
@@ -197,8 +191,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets loan_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $loan_amount loan_amount
-     *
-     * @return self
      */
     public function setLoanAmount(?Currency $loan_amount) : self
     {
@@ -209,8 +201,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets source_business_event_type.
-     *
-     * @return null|string
      */
     public function getSourceBusinessEventType() : ?string
     {
@@ -221,8 +211,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets source_business_event_type.
      *
      * @param null|string $source_business_event_type The type of event.  Possible values:  * LoanAdvance  * LoanPayment  * LoanRefund
-     *
-     * @return self
      */
     public function setSourceBusinessEventType(?string $source_business_event_type) : self
     {
@@ -233,8 +221,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +274,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

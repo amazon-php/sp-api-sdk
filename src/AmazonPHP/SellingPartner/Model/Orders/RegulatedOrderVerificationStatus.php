@@ -124,7 +124,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -174,8 +174,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -187,8 +185,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -231,8 +227,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * Sets status.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
-     *
-     * @return self
      */
     public function setStatus(VerificationStatus $status) : self
     {
@@ -253,8 +247,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * Sets requires_merchant_action.
      *
      * @param bool $requires_merchant_action when true, the regulated information provided in the order requires a review by the merchant
-     *
-     * @return self
      */
     public function setRequiresMerchantAction(bool $requires_merchant_action) : self
     {
@@ -277,8 +269,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * Sets valid_rejection_reasons.
      *
      * @param \AmazonPHP\SellingPartner\Model\Orders\RejectionReason[] $valid_rejection_reasons a list of valid rejection reasons that may be used to reject the order's regulated information
-     *
-     * @return self
      */
     public function setValidRejectionReasons(array $valid_rejection_reasons) : self
     {
@@ -289,8 +279,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets rejection_reason.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\RejectionReason
      */
     public function getRejectionReason() : ?RejectionReason
     {
@@ -301,8 +289,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * Sets rejection_reason.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Orders\RejectionReason $rejection_reason rejection_reason
-     *
-     * @return self
      */
     public function setRejectionReason(?RejectionReason $rejection_reason) : self
     {
@@ -313,8 +299,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets review_date.
-     *
-     * @return null|string
      */
     public function getReviewDate() : ?string
     {
@@ -325,8 +309,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * Sets review_date.
      *
      * @param null|string $review_date The date the order was reviewed. In ISO 8601 date time format.
-     *
-     * @return self
      */
     public function setReviewDate(?string $review_date) : self
     {
@@ -337,8 +319,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets external_reviewer_id.
-     *
-     * @return null|string
      */
     public function getExternalReviewerId() : ?string
     {
@@ -349,8 +329,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      * Sets external_reviewer_id.
      *
      * @param null|string $external_reviewer_id the identifier for the order's regulated information reviewer
-     *
-     * @return self
      */
     public function setExternalReviewerId(?string $external_reviewer_id) : self
     {
@@ -361,8 +339,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -416,8 +392,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

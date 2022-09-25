@@ -14,7 +14,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -23,7 +23,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetCustomerInvoiceResponse';
+    protected static string $openAPIModelName = 'ShipmentStatusUpdate';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -31,8 +31,10 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'purchase_order_number' => 'string',
+        'selling_party' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification',
+        'ship_from_party' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification',
+        'status_update_details' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\StatusUpdateDetails',
     ];
 
     /**
@@ -43,8 +45,10 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'purchase_order_number' => null,
+        'selling_party' => null,
+        'ship_from_party' => null,
+        'status_update_details' => null,
     ];
 
     /**
@@ -54,8 +58,10 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'purchase_order_number' => 'purchaseOrderNumber',
+        'selling_party' => 'sellingParty',
+        'ship_from_party' => 'shipFromParty',
+        'status_update_details' => 'statusUpdateDetails',
     ];
 
     /**
@@ -64,8 +70,10 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
+        'selling_party' => 'setSellingParty',
+        'ship_from_party' => 'setShipFromParty',
+        'status_update_details' => 'setStatusUpdateDetails',
     ];
 
     /**
@@ -74,8 +82,10 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'purchase_order_number' => 'getPurchaseOrderNumber',
+        'selling_party' => 'getSellingParty',
+        'ship_from_party' => 'getShipFromParty',
+        'status_update_details' => 'getStatusUpdateDetails',
     ];
 
     /**
@@ -93,14 +103,16 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
+        $this->container['selling_party'] = $data['selling_party'] ?? null;
+        $this->container['ship_from_party'] = $data['ship_from_party'] ?? null;
+        $this->container['status_update_details'] = $data['status_update_details'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +122,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +133,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +143,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +153,7 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +162,6 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +173,6 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -178,67 +186,115 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
+        if ($this->container['purchase_order_number'] === null) {
+            throw new AssertionException("'purchase_order_number' can't be null");
         }
 
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
+        if (!\preg_match('/^[a-zA-Z0-9]+$/', $this->container['purchase_order_number'])) {
+            throw new AssertionException("invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.");
         }
+
+        if ($this->container['selling_party'] === null) {
+            throw new AssertionException("'selling_party' can't be null");
+        }
+
+        $this->container['selling_party']->validate();
+
+        if ($this->container['ship_from_party'] === null) {
+            throw new AssertionException("'ship_from_party' can't be null");
+        }
+
+        $this->container['ship_from_party']->validate();
+
+        if ($this->container['status_update_details'] === null) {
+            throw new AssertionException("'status_update_details' can't be null");
+        }
+
+        $this->container['status_update_details']->validate();
     }
 
     /**
-     * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice
+     * Gets purchase_order_number.
      */
-    public function getPayload() : ?CustomerInvoice
+    public function getPurchaseOrderNumber() : string
     {
-        return $this->container['payload'];
+        return $this->container['purchase_order_number'];
     }
 
     /**
-     * Sets payload.
+     * Sets purchase_order_number.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice $payload payload
-     *
-     * @return self
+     * @param string $purchase_order_number purchase order number of the shipment for which to update the shipment status
      */
-    public function setPayload(?CustomerInvoice $payload) : self
+    public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;
     }
 
     /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
+     * Gets selling_party.
      */
-    public function getErrors() : ?ErrorList
+    public function getSellingParty() : PartyIdentification
     {
-        return $this->container['errors'];
+        return $this->container['selling_party'];
     }
 
     /**
-     * Sets errors.
+     * Sets selling_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setSellingParty(PartyIdentification $selling_party) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['selling_party'] = $selling_party;
+
+        return $this;
+    }
+
+    /**
+     * Gets ship_from_party.
+     */
+    public function getShipFromParty() : PartyIdentification
+    {
+        return $this->container['ship_from_party'];
+    }
+
+    /**
+     * Sets ship_from_party.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
+     */
+    public function setShipFromParty(PartyIdentification $ship_from_party) : self
+    {
+        $this->container['ship_from_party'] = $ship_from_party;
+
+        return $this;
+    }
+
+    /**
+     * Gets status_update_details.
+     */
+    public function getStatusUpdateDetails() : StatusUpdateDetails
+    {
+        return $this->container['status_update_details'];
+    }
+
+    /**
+     * Sets status_update_details.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\StatusUpdateDetails $status_update_details status_update_details
+     */
+    public function setStatusUpdateDetails(StatusUpdateDetails $status_update_details) : self
+    {
+        $this->container['status_update_details'] = $status_update_details;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +348,6 @@ class GetCustomerInvoiceResponse implements \ArrayAccess, \JsonSerializable, Mod
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

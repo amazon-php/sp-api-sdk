@@ -112,7 +112,7 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -194,8 +190,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets total_result_size.
-     *
-     * @return null|int
      */
     public function getTotalResultSize() : ?int
     {
@@ -206,8 +200,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_result_size.
      *
      * @param null|int $total_result_size total result size of the query result
-     *
-     * @return self
      */
     public function setTotalResultSize(?int $total_result_size) : self
     {
@@ -218,8 +210,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {
@@ -230,8 +220,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets next_page_token.
      *
      * @param null|string $next_page_token A generated string used to pass information to your next request. If `nextPageToken` is returned, pass the value of `nextPageToken` to the `pageToken` to get next results.
-     *
-     * @return self
      */
     public function setNextPageToken(?string $next_page_token) : self
     {
@@ -242,8 +230,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets previous_page_token.
-     *
-     * @return null|string
      */
     public function getPreviousPageToken() : ?string
     {
@@ -254,8 +240,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets previous_page_token.
      *
      * @param null|string $previous_page_token A generated string used to pass information to your next request. If `previousPageToken` is returned, pass the value of `previousPageToken` to the `pageToken` to get previous page results.
-     *
-     * @return self
      */
     public function setPreviousPageToken(?string $previous_page_token) : self
     {
@@ -278,8 +262,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets jobs.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\ServiceJob[] $jobs list of job details for the given input
-     *
-     * @return self
      */
     public function setJobs(?array $jobs) : self
     {
@@ -290,8 +272,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -345,8 +325,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

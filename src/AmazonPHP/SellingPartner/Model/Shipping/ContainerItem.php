@@ -112,7 +112,7 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -227,8 +223,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity.
      *
      * @param float $quantity the quantity of the items of this type in the container
-     *
-     * @return self
      */
     public function setQuantity(float $quantity) : self
     {
@@ -249,8 +243,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets unit_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Currency $unit_price unit_price
-     *
-     * @return self
      */
     public function setUnitPrice(Currency $unit_price) : self
     {
@@ -271,8 +263,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets unit_weight.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Weight $unit_weight unit_weight
-     *
-     * @return self
      */
     public function setUnitWeight(Weight $unit_weight) : self
     {
@@ -293,8 +283,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets title.
      *
      * @param string $title a descriptive title of the item
-     *
-     * @return self
      */
     public function setTitle(string $title) : self
     {
@@ -305,8 +293,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -360,8 +346,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

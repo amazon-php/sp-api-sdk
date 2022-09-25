@@ -104,7 +104,7 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -114,7 +114,7 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -125,7 +125,7 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -135,7 +135,7 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -145,7 +145,7 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -154,8 +154,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -167,8 +165,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -251,8 +247,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets label_format.
      *
      * @param string $label_format The format of the label. Enum of PNG only for now.
-     *
-     * @return self
      */
     public function setLabelFormat(string $label_format) : self
     {
@@ -273,8 +267,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets label_stock_size.
      *
      * @param string $label_stock_size The label stock size specification in length and height. Enum of 4x6 only for now.
-     *
-     * @return self
      */
     public function setLabelStockSize(string $label_stock_size) : self
     {
@@ -285,8 +277,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -340,8 +330,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

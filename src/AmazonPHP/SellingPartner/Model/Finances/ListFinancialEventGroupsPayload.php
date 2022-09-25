@@ -100,7 +100,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -182,8 +178,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -194,8 +188,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
      * Sets next_token.
      *
      * @param null|string $next_token when present and not empty, pass this string token in the next request to return the next response page
-     *
-     * @return self
      */
     public function setNextToken(?string $next_token) : self
     {
@@ -218,8 +210,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
      * Sets financial_event_group_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEventGroup[] $financial_event_group_list a list of financial event group information
-     *
-     * @return self
      */
     public function setFinancialEventGroupList(?array $financial_event_group_list) : self
     {
@@ -230,8 +220,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,8 +273,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

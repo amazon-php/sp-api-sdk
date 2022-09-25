@@ -106,7 +106,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -211,8 +207,6 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
      * Sets quantity_tier.
      *
      * @param int $quantity_tier indicates at what quantity this price becomes active
-     *
-     * @return self
      */
     public function setQuantityTier(int $quantity_tier) : self
     {
@@ -233,8 +227,6 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
      * Sets quantity_discount_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType $quantity_discount_type quantity_discount_type
-     *
-     * @return self
      */
     public function setQuantityDiscountType(QuantityDiscountType $quantity_discount_type) : self
     {
@@ -255,8 +247,6 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
      * Sets listing_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $listing_price listing_price
-     *
-     * @return self
      */
     public function setListingPrice(MoneyType $listing_price) : self
     {
@@ -267,8 +257,6 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -322,8 +310,6 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, Mode
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

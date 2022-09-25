@@ -14,16 +14,18 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class PackingSlip implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
+
+    public const CONTENT_TYPE_APPLICATION_PDF = 'application/pdf';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'SubmitShippingLabelsResponse';
+    protected static string $openAPIModelName = 'PackingSlip';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -31,8 +33,9 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'purchase_order_number' => 'string',
+        'content' => 'string',
+        'content_type' => 'string',
     ];
 
     /**
@@ -43,8 +46,9 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'purchase_order_number' => null,
+        'content' => null,
+        'content_type' => null,
     ];
 
     /**
@@ -54,8 +58,9 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'purchase_order_number' => 'purchaseOrderNumber',
+        'content' => 'content',
+        'content_type' => 'contentType',
     ];
 
     /**
@@ -64,8 +69,9 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'purchase_order_number' => 'setPurchaseOrderNumber',
+        'content' => 'setContent',
+        'content_type' => 'setContentType',
     ];
 
     /**
@@ -74,8 +80,9 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'purchase_order_number' => 'getPurchaseOrderNumber',
+        'content' => 'getContent',
+        'content_type' => 'getContentType',
     ];
 
     /**
@@ -93,14 +100,15 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
+        $this->container['content'] = $data['content'] ?? null;
+        $this->container['content_type'] = $data['content_type'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +118,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +129,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +139,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +149,7 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +158,6 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,12 +169,22 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
         return self::$openAPIModelName;
+    }
+
+    /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getContentTypeAllowableValues() : array
+    {
+        return [
+            self::CONTENT_TYPE_APPLICATION_PDF,
+        ];
     }
 
     /**
@@ -178,67 +194,93 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
+        if ($this->container['purchase_order_number'] === null) {
+            throw new AssertionException("'purchase_order_number' can't be null");
         }
 
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
+        if (!\preg_match('/^[a-zA-Z0-9]+$/', $this->container['purchase_order_number'])) {
+            throw new AssertionException("invalid value for 'purchase_order_number', must be conform to the pattern /^[a-zA-Z0-9]+$/.");
+        }
+
+        if ($this->container['content'] === null) {
+            throw new AssertionException("'content' can't be null");
+        }
+
+        $allowedValues = $this->getContentTypeAllowableValues();
+
+        if (null !== $this->container['content_type'] && !\in_array($this->container['content_type'], $allowedValues, true)) {
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'content_type', must be one of '%s'",
+                    $this->container['content_type'],
+                    \implode("', '", $allowedValues)
+                )
+            );
         }
     }
 
     /**
-     * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference
+     * Gets purchase_order_number.
      */
-    public function getPayload() : ?TransactionReference
+    public function getPurchaseOrderNumber() : string
     {
-        return $this->container['payload'];
+        return $this->container['purchase_order_number'];
     }
 
     /**
-     * Sets payload.
+     * Sets purchase_order_number.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference $payload payload
-     *
-     * @return self
+     * @param string $purchase_order_number purchase order number of the shipment that the packing slip is for
      */
-    public function setPayload(?TransactionReference $payload) : self
+    public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['purchase_order_number'] = $purchase_order_number;
 
         return $this;
     }
 
     /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
+     * Gets content.
      */
-    public function getErrors() : ?ErrorList
+    public function getContent() : string
     {
-        return $this->container['errors'];
+        return $this->container['content'];
     }
 
     /**
-     * Sets errors.
+     * Sets content.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
+     * @param string $content a Base64encoded string of the packing slip PDF
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setContent(string $content) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['content'] = $content;
+
+        return $this;
+    }
+
+    /**
+     * Gets content_type.
+     */
+    public function getContentType() : ?string
+    {
+        return $this->container['content_type'];
+    }
+
+    /**
+     * Sets content_type.
+     *
+     * @param null|string $content_type the format of the file such as PDF, JPEG etc
+     */
+    public function setContentType(?string $content_type) : self
+    {
+        $this->container['content_type'] = $content_type;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +334,6 @@ class SubmitShippingLabelsResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

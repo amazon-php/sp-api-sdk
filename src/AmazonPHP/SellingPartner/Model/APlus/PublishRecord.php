@@ -124,7 +124,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -134,7 +134,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -145,7 +145,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -155,7 +155,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -165,7 +165,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -174,8 +174,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -187,8 +185,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -255,8 +251,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_id.
      *
      * @param string $marketplace_id the identifier for the marketplace where the A+ Content is published
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -277,8 +271,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets locale.
      *
      * @param string $locale The IETF language tag. This only supports the primary language subtag with one secondary language subtag. The secondary language subtag is almost always a regional designation. This does not support additional subtags beyond the primary and secondary subtags. **Pattern:** ^[a-z]{2,}-[A-Z0-9]{2,}$
-     *
-     * @return self
      */
     public function setLocale(string $locale) : self
     {
@@ -299,8 +291,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets asin.
      *
      * @param string $asin the Amazon Standard Identification Number (ASIN)
-     *
-     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -321,8 +311,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets content_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\ContentType $content_type content_type
-     *
-     * @return self
      */
     public function setContentType(ContentType $content_type) : self
     {
@@ -333,8 +321,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets content_sub_type.
-     *
-     * @return null|string
      */
     public function getContentSubType() : ?string
     {
@@ -345,8 +331,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets content_sub_type.
      *
      * @param null|string $content_sub_type The A+ Content document subtype. This represents a special-purpose type of an A+ Content document. Not every A+ Content document type will have a subtype, and subtypes may change at any time.
-     *
-     * @return self
      */
     public function setContentSubType(?string $content_sub_type) : self
     {
@@ -367,8 +351,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets content_reference_key.
      *
      * @param string $content_reference_key A unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier.
-     *
-     * @return self
      */
     public function setContentReferenceKey(string $content_reference_key) : self
     {
@@ -379,8 +361,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -434,8 +414,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

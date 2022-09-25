@@ -154,7 +154,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -164,7 +164,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -175,7 +175,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -185,7 +185,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -195,7 +195,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -204,8 +204,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -217,8 +215,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -255,8 +251,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -267,8 +261,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
-     *
-     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -279,8 +271,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -291,8 +281,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_sku.
      *
      * @param null|string $seller_sku the seller SKU of the item
-     *
-     * @return self
      */
     public function setSellerSku(?string $seller_sku) : self
     {
@@ -303,8 +291,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets order_item_id.
-     *
-     * @return null|string
      */
     public function getOrderItemId() : ?string
     {
@@ -315,8 +301,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets order_item_id.
      *
      * @param null|string $order_item_id the Amazon-defined identifier for the order item
-     *
-     * @return self
      */
     public function setOrderItemId(?string $order_item_id) : self
     {
@@ -327,8 +311,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -339,8 +321,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets title.
      *
      * @param null|string $title the name of the item
-     *
-     * @return self
      */
     public function setTitle(?string $title) : self
     {
@@ -351,8 +331,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets quantity_ordered.
-     *
-     * @return null|float
      */
     public function getQuantityOrdered() : ?float
     {
@@ -363,8 +341,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity_ordered.
      *
      * @param null|float $quantity_ordered the number of items ordered
-     *
-     * @return self
      */
     public function setQuantityOrdered(?float $quantity_ordered) : self
     {
@@ -375,8 +351,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getItemPrice() : ?Money
     {
@@ -387,8 +361,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money $item_price item_price
-     *
-     * @return self
      */
     public function setItemPrice(?Money $item_price) : self
     {
@@ -399,8 +371,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipping_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getShippingPrice() : ?Money
     {
@@ -411,8 +381,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money $shipping_price shipping_price
-     *
-     * @return self
      */
     public function setShippingPrice(?Money $shipping_price) : self
     {
@@ -423,8 +391,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets gift_wrap_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getGiftWrapPrice() : ?Money
     {
@@ -435,8 +401,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets gift_wrap_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money $gift_wrap_price gift_wrap_price
-     *
-     * @return self
      */
     public function setGiftWrapPrice(?Money $gift_wrap_price) : self
     {
@@ -447,8 +411,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets shipping_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getShippingDiscount() : ?Money
     {
@@ -459,8 +421,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping_discount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money $shipping_discount shipping_discount
-     *
-     * @return self
      */
     public function setShippingDiscount(?Money $shipping_discount) : self
     {
@@ -471,8 +431,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets promotion_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getPromotionDiscount() : ?Money
     {
@@ -483,8 +441,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets promotion_discount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money $promotion_discount promotion_discount
-     *
-     * @return self
      */
     public function setPromotionDiscount(?Money $promotion_discount) : self
     {
@@ -507,8 +463,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets serial_numbers.
      *
      * @param null|string[] $serial_numbers the list of serial numbers
-     *
-     * @return self
      */
     public function setSerialNumbers(?array $serial_numbers) : self
     {
@@ -519,8 +473,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -574,8 +526,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

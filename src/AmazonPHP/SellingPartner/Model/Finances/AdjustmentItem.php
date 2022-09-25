@@ -130,7 +130,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -193,8 +191,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -219,8 +215,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets quantity.
-     *
-     * @return null|string
      */
     public function getQuantity() : ?string
     {
@@ -231,8 +225,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity.
      *
      * @param null|string $quantity represents the number of units in the seller's inventory when the AdustmentType is FBAInventoryReimbursement
-     *
-     * @return self
      */
     public function setQuantity(?string $quantity) : self
     {
@@ -243,8 +235,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets per_unit_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getPerUnitAmount() : ?Currency
     {
@@ -255,8 +245,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets per_unit_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $per_unit_amount per_unit_amount
-     *
-     * @return self
      */
     public function setPerUnitAmount(?Currency $per_unit_amount) : self
     {
@@ -267,8 +255,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets total_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {
@@ -279,8 +265,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_amount.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $total_amount total_amount
-     *
-     * @return self
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {
@@ -291,8 +275,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -303,8 +285,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets seller_sku.
      *
      * @param null|string $seller_sku The seller SKU of the item. The seller SKU is qualified by the seller's seller ID, which is included with every call to the Selling Partner API.
-     *
-     * @return self
      */
     public function setSellerSku(?string $seller_sku) : self
     {
@@ -315,8 +295,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets fn_sku.
-     *
-     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -327,8 +305,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fn_sku.
      *
      * @param null|string $fn_sku a unique identifier assigned to products stored in and fulfilled from a fulfillment center
-     *
-     * @return self
      */
     public function setFnSku(?string $fn_sku) : self
     {
@@ -339,8 +315,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets product_description.
-     *
-     * @return null|string
      */
     public function getProductDescription() : ?string
     {
@@ -351,8 +325,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets product_description.
      *
      * @param null|string $product_description a short description of the item
-     *
-     * @return self
      */
     public function setProductDescription(?string $product_description) : self
     {
@@ -363,8 +335,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -375,8 +345,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets asin.
      *
      * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
-     *
-     * @return self
      */
     public function setAsin(?string $asin) : self
     {
@@ -387,8 +355,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -442,8 +408,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

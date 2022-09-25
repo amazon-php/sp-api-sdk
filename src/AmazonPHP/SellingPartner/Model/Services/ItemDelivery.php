@@ -100,7 +100,7 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets estimated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {
@@ -197,8 +191,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets estimated_delivery_date.
      *
      * @param null|\DateTimeInterface $estimated_delivery_date The date and time of the latest Estimated Delivery Date (EDD) of all the items with an EDD. In ISO 8601 format.
-     *
-     * @return self
      */
     public function setEstimatedDeliveryDate(?\DateTimeInterface $estimated_delivery_date) : self
     {
@@ -209,8 +201,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets item_delivery_promise.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ItemDeliveryPromise
      */
     public function getItemDeliveryPromise() : ?ItemDeliveryPromise
     {
@@ -221,8 +211,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets item_delivery_promise.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\ItemDeliveryPromise $item_delivery_promise item_delivery_promise
-     *
-     * @return self
      */
     public function setItemDeliveryPromise(?ItemDeliveryPromise $item_delivery_promise) : self
     {
@@ -233,8 +221,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +274,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

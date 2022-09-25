@@ -148,7 +148,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -158,7 +158,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -169,7 +169,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -179,7 +179,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -189,7 +189,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -198,8 +198,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -211,8 +209,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -255,8 +251,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_offer_count.
      *
      * @param int $total_offer_count the number of unique offers contained in NumberOfOffers
-     *
-     * @return self
      */
     public function setTotalOfferCount(int $total_offer_count) : self
     {
@@ -279,8 +273,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets number_of_offers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCountType[] $number_of_offers number_of_offers
-     *
-     * @return self
      */
     public function setNumberOfOffers(?array $number_of_offers) : self
     {
@@ -303,8 +295,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets lowest_prices.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\LowestPriceType[] $lowest_prices lowest_prices
-     *
-     * @return self
      */
     public function setLowestPrices(?array $lowest_prices) : self
     {
@@ -327,8 +317,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buy_box_prices.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\BuyBoxPriceType[] $buy_box_prices buy_box_prices
-     *
-     * @return self
      */
     public function setBuyBoxPrices(?array $buy_box_prices) : self
     {
@@ -339,8 +327,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets list_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListPrice() : ?MoneyType
     {
@@ -351,8 +337,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets list_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $list_price list_price
-     *
-     * @return self
      */
     public function setListPrice(?MoneyType $list_price) : self
     {
@@ -363,8 +347,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets competitive_price_threshold.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getCompetitivePriceThreshold() : ?MoneyType
     {
@@ -375,8 +357,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets competitive_price_threshold.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $competitive_price_threshold competitive_price_threshold
-     *
-     * @return self
      */
     public function setCompetitivePriceThreshold(?MoneyType $competitive_price_threshold) : self
     {
@@ -387,8 +367,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets suggested_lower_price_plus_shipping.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getSuggestedLowerPricePlusShipping() : ?MoneyType
     {
@@ -399,8 +377,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets suggested_lower_price_plus_shipping.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
-     *
-     * @return self
      */
     public function setSuggestedLowerPricePlusShipping(?MoneyType $suggested_lower_price_plus_shipping) : self
     {
@@ -423,8 +399,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets sales_rankings.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\SalesRankType[] $sales_rankings a list of sales rank information for the item, by category
-     *
-     * @return self
      */
     public function setSalesRankings(?array $sales_rankings) : self
     {
@@ -447,8 +421,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buy_box_eligible_offers.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCountType[] $buy_box_eligible_offers buy_box_eligible_offers
-     *
-     * @return self
      */
     public function setBuyBoxEligibleOffers(?array $buy_box_eligible_offers) : self
     {
@@ -459,8 +431,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offers_available_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getOffersAvailableTime() : ?\DateTimeInterface
     {
@@ -471,8 +441,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offers_available_time.
      *
      * @param null|\DateTimeInterface $offers_available_time when the status is ActiveButTooSoonForProcessing, this is the time when the offers will be available for processing
-     *
-     * @return self
      */
     public function setOffersAvailableTime(?\DateTimeInterface $offers_available_time) : self
     {
@@ -483,8 +451,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -538,8 +504,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

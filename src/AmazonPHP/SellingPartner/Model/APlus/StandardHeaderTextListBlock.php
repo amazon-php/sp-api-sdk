@@ -100,7 +100,7 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -189,8 +185,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -201,8 +195,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
      * Sets headline.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
-     *
-     * @return self
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -213,8 +205,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets block.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock
      */
     public function getBlock() : ?StandardTextListBlock
     {
@@ -225,8 +215,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
      * Sets block.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock $block block
-     *
-     * @return self
      */
     public function setBlock(?StandardTextListBlock $block) : self
     {
@@ -237,8 +225,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +278,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, Mo
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

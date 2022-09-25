@@ -172,7 +172,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -182,7 +182,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -193,7 +193,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -203,7 +203,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -213,7 +213,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -222,8 +222,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -235,8 +233,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -295,8 +291,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller SKU of the item
-     *
-     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -317,8 +311,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation
-     *
-     * @return self
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -339,8 +331,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets quantity.
      *
      * @param int $quantity the item quantity
-     *
-     * @return self
      */
     public function setQuantity(int $quantity) : self
     {
@@ -351,8 +341,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets gift_message.
-     *
-     * @return null|string
      */
     public function getGiftMessage() : ?string
     {
@@ -363,8 +351,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets gift_message.
      *
      * @param null|string $gift_message a message to the gift recipient, if applicable
-     *
-     * @return self
      */
     public function setGiftMessage(?string $gift_message) : self
     {
@@ -375,8 +361,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets displayable_comment.
-     *
-     * @return null|string
      */
     public function getDisplayableComment() : ?string
     {
@@ -387,8 +371,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets displayable_comment.
      *
      * @param null|string $displayable_comment item-specific text that displays in recipient-facing materials such as the outbound shipment packing slip
-     *
-     * @return self
      */
     public function setDisplayableComment(?string $displayable_comment) : self
     {
@@ -399,8 +381,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -411,8 +391,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets fulfillment_network_sku.
      *
      * @param null|string $fulfillment_network_sku amazon's fulfillment network SKU of the item
-     *
-     * @return self
      */
     public function setFulfillmentNetworkSku(?string $fulfillment_network_sku) : self
     {
@@ -423,8 +401,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets order_item_disposition.
-     *
-     * @return null|string
      */
     public function getOrderItemDisposition() : ?string
     {
@@ -435,8 +411,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets order_item_disposition.
      *
      * @param null|string $order_item_disposition indicates whether the item is sellable or unsellable
-     *
-     * @return self
      */
     public function setOrderItemDisposition(?string $order_item_disposition) : self
     {
@@ -457,8 +431,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets cancelled_quantity.
      *
      * @param int $cancelled_quantity the item quantity
-     *
-     * @return self
      */
     public function setCancelledQuantity(int $cancelled_quantity) : self
     {
@@ -479,8 +451,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets unfulfillable_quantity.
      *
      * @param int $unfulfillable_quantity the item quantity
-     *
-     * @return self
      */
     public function setUnfulfillableQuantity(int $unfulfillable_quantity) : self
     {
@@ -491,8 +461,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets estimated_ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedShipDate() : ?\DateTimeInterface
     {
@@ -503,8 +471,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets estimated_ship_date.
      *
      * @param null|\DateTimeInterface $estimated_ship_date estimated_ship_date
-     *
-     * @return self
      */
     public function setEstimatedShipDate(?\DateTimeInterface $estimated_ship_date) : self
     {
@@ -515,8 +481,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets estimated_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {
@@ -527,8 +491,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets estimated_arrival_date.
      *
      * @param null|\DateTimeInterface $estimated_arrival_date estimated_arrival_date
-     *
-     * @return self
      */
     public function setEstimatedArrivalDate(?\DateTimeInterface $estimated_arrival_date) : self
     {
@@ -539,8 +501,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets per_unit_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -551,8 +511,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets per_unit_price.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_price per_unit_price
-     *
-     * @return self
      */
     public function setPerUnitPrice(?Money $per_unit_price) : self
     {
@@ -563,8 +521,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets per_unit_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {
@@ -575,8 +531,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets per_unit_tax.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_tax per_unit_tax
-     *
-     * @return self
      */
     public function setPerUnitTax(?Money $per_unit_tax) : self
     {
@@ -587,8 +541,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets per_unit_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -599,8 +551,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets per_unit_declared_value.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_declared_value per_unit_declared_value
-     *
-     * @return self
      */
     public function setPerUnitDeclaredValue(?Money $per_unit_declared_value) : self
     {
@@ -611,8 +561,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -666,8 +614,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

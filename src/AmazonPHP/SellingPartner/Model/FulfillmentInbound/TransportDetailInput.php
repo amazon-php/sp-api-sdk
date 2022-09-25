@@ -112,7 +112,7 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -209,8 +205,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets partnered_small_parcel_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelDataInput
      */
     public function getPartneredSmallParcelData() : ?PartneredSmallParcelDataInput
     {
@@ -221,8 +215,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets partnered_small_parcel_data.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelDataInput $partnered_small_parcel_data partnered_small_parcel_data
-     *
-     * @return self
      */
     public function setPartneredSmallParcelData(?PartneredSmallParcelDataInput $partnered_small_parcel_data) : self
     {
@@ -233,8 +225,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets non_partnered_small_parcel_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredSmallParcelDataInput
      */
     public function getNonPartneredSmallParcelData() : ?NonPartneredSmallParcelDataInput
     {
@@ -245,8 +235,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets non_partnered_small_parcel_data.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredSmallParcelDataInput $non_partnered_small_parcel_data non_partnered_small_parcel_data
-     *
-     * @return self
      */
     public function setNonPartneredSmallParcelData(?NonPartneredSmallParcelDataInput $non_partnered_small_parcel_data) : self
     {
@@ -257,8 +245,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets partnered_ltl_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredLtlDataInput
      */
     public function getPartneredLtlData() : ?PartneredLtlDataInput
     {
@@ -269,8 +255,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets partnered_ltl_data.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredLtlDataInput $partnered_ltl_data partnered_ltl_data
-     *
-     * @return self
      */
     public function setPartneredLtlData(?PartneredLtlDataInput $partnered_ltl_data) : self
     {
@@ -281,8 +265,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets non_partnered_ltl_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredLtlDataInput
      */
     public function getNonPartneredLtlData() : ?NonPartneredLtlDataInput
     {
@@ -293,8 +275,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
      * Sets non_partnered_ltl_data.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredLtlDataInput $non_partnered_ltl_data non_partnered_ltl_data
-     *
-     * @return self
      */
     public function setNonPartneredLtlData(?NonPartneredLtlDataInput $non_partnered_ltl_data) : self
     {
@@ -305,8 +285,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -360,8 +338,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, ModelInte
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

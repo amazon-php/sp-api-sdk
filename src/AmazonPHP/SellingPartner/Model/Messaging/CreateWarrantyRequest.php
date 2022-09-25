@@ -106,7 +106,7 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -200,8 +196,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets attachments.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Attachment[] $attachments Attachments to include in the message to the buyer. If any text is included in the attachment, the text must be written in the buyer's language of preference, which can be retrieved from the GetAttributes operation.
-     *
-     * @return self
      */
     public function setAttachments(?array $attachments) : self
     {
@@ -212,8 +206,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets coverage_start_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getCoverageStartDate() : ?\DateTimeInterface
     {
@@ -224,8 +216,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets coverage_start_date.
      *
      * @param null|\DateTimeInterface $coverage_start_date the start date of the warranty coverage to include in the message to the buyer
-     *
-     * @return self
      */
     public function setCoverageStartDate(?\DateTimeInterface $coverage_start_date) : self
     {
@@ -236,8 +226,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets coverage_end_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getCoverageEndDate() : ?\DateTimeInterface
     {
@@ -248,8 +236,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
      * Sets coverage_end_date.
      *
      * @param null|\DateTimeInterface $coverage_end_date the end date of the warranty coverage to include in the message to the buyer
-     *
-     * @return self
      */
     public function setCoverageEndDate(?\DateTimeInterface $coverage_end_date) : self
     {
@@ -260,8 +246,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -315,8 +299,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, ModelInt
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

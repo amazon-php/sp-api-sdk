@@ -116,7 +116,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -126,7 +126,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -137,7 +137,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -147,7 +147,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -157,7 +157,7 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -166,8 +166,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -179,8 +177,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -240,8 +236,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets code.
      *
      * @param string $code an error code that identifies the type of error that occurred
-     *
-     * @return self
      */
     public function setCode(string $code) : self
     {
@@ -262,8 +256,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets message.
      *
      * @param string $message a message that describes the error condition in a human-readable form
-     *
-     * @return self
      */
     public function setMessage(string $message) : self
     {
@@ -274,8 +266,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets details.
-     *
-     * @return null|string
      */
     public function getDetails() : ?string
     {
@@ -286,8 +276,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets details.
      *
      * @param null|string $details additional details that can help the caller understand or fix the issue
-     *
-     * @return self
      */
     public function setDetails(?string $details) : self
     {
@@ -298,8 +286,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets error_level.
-     *
-     * @return null|string
      */
     public function getErrorLevel() : ?string
     {
@@ -310,8 +296,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets error_level.
      *
      * @param null|string $error_level the type of error
-     *
-     * @return self
      */
     public function setErrorLevel(?string $error_level) : self
     {
@@ -322,8 +306,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -377,8 +359,6 @@ class Error implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -100,7 +100,7 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -185,8 +181,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Shipment
      */
     public function getPayload() : ?Shipment
     {
@@ -197,8 +191,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets payload.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Shipment $payload payload
-     *
-     * @return self
      */
     public function setPayload(?Shipment $payload) : self
     {
@@ -221,8 +213,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Error[] $errors a list of error responses returned when a request is unsuccessful
-     *
-     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -233,8 +223,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -288,8 +276,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

@@ -142,7 +142,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -152,7 +152,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -163,7 +163,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -173,7 +173,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -183,7 +183,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -192,8 +192,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -205,8 +203,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -263,8 +259,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets condition.
      *
      * @param string $condition Indicates the condition of the item. For example: New, Used, Collectible, Refurbished, or Club.
-     *
-     * @return self
      */
     public function setCondition(string $condition) : self
     {
@@ -285,8 +279,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets fulfillment_channel.
      *
      * @param string $fulfillment_channel indicates whether the item is fulfilled by Amazon or by the seller
-     *
-     * @return self
      */
     public function setFulfillmentChannel(string $fulfillment_channel) : self
     {
@@ -297,8 +289,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -309,8 +299,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offer_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType $offer_type offer_type
-     *
-     * @return self
      */
     public function setOfferType(?OfferCustomerType $offer_type) : self
     {
@@ -321,8 +309,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets quantity_tier.
-     *
-     * @return null|int
      */
     public function getQuantityTier() : ?int
     {
@@ -333,8 +319,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity_tier.
      *
      * @param null|int $quantity_tier indicates at what quantity this price becomes active
-     *
-     * @return self
      */
     public function setQuantityTier(?int $quantity_tier) : self
     {
@@ -345,8 +329,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets quantity_discount_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType
      */
     public function getQuantityDiscountType() : ?QuantityDiscountType
     {
@@ -357,8 +339,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets quantity_discount_type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType $quantity_discount_type quantity_discount_type
-     *
-     * @return self
      */
     public function setQuantityDiscountType(?QuantityDiscountType $quantity_discount_type) : self
     {
@@ -379,8 +359,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets landed_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $landed_price landed_price
-     *
-     * @return self
      */
     public function setLandedPrice(MoneyType $landed_price) : self
     {
@@ -401,8 +379,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets listing_price.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $listing_price listing_price
-     *
-     * @return self
      */
     public function setListingPrice(MoneyType $listing_price) : self
     {
@@ -423,8 +399,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets shipping.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $shipping shipping
-     *
-     * @return self
      */
     public function setShipping(MoneyType $shipping) : self
     {
@@ -435,8 +409,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets points.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points
      */
     public function getPoints() : ?Points
     {
@@ -447,8 +419,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets points.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points $points points
-     *
-     * @return self
      */
     public function setPoints(?Points $points) : self
     {
@@ -459,8 +429,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -514,8 +482,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

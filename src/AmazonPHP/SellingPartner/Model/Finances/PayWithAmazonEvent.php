@@ -148,7 +148,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -158,7 +158,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -169,7 +169,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -179,7 +179,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -189,7 +189,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -198,8 +198,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -211,8 +209,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -233,8 +229,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets seller_order_id.
-     *
-     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -245,8 +239,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets seller_order_id.
      *
      * @param null|string $seller_order_id an order identifier that is specified by the seller
-     *
-     * @return self
      */
     public function setSellerOrderId(?string $seller_order_id) : self
     {
@@ -257,8 +249,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets transaction_posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getTransactionPostedDate() : ?\DateTimeInterface
     {
@@ -269,8 +259,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets transaction_posted_date.
      *
      * @param null|\DateTimeInterface $transaction_posted_date transaction_posted_date
-     *
-     * @return self
      */
     public function setTransactionPostedDate(?\DateTimeInterface $transaction_posted_date) : self
     {
@@ -281,8 +269,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets business_object_type.
-     *
-     * @return null|string
      */
     public function getBusinessObjectType() : ?string
     {
@@ -293,8 +279,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets business_object_type.
      *
      * @param null|string $business_object_type the type of business object
-     *
-     * @return self
      */
     public function setBusinessObjectType(?string $business_object_type) : self
     {
@@ -305,8 +289,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets sales_channel.
-     *
-     * @return null|string
      */
     public function getSalesChannel() : ?string
     {
@@ -317,8 +299,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets sales_channel.
      *
      * @param null|string $sales_channel the sales channel for the transaction
-     *
-     * @return self
      */
     public function setSalesChannel(?string $sales_channel) : self
     {
@@ -329,8 +309,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets charge.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getCharge() : ?ChargeComponent
     {
@@ -341,8 +319,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets charge.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent $charge charge
-     *
-     * @return self
      */
     public function setCharge(?ChargeComponent $charge) : self
     {
@@ -365,8 +341,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets fee_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent[] $fee_list a list of fee component information
-     *
-     * @return self
      */
     public function setFeeList(?array $fee_list) : self
     {
@@ -377,8 +351,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets payment_amount_type.
-     *
-     * @return null|string
      */
     public function getPaymentAmountType() : ?string
     {
@@ -389,8 +361,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets payment_amount_type.
      *
      * @param null|string $payment_amount_type The type of payment.  Possible values:  * Sales
-     *
-     * @return self
      */
     public function setPaymentAmountType(?string $payment_amount_type) : self
     {
@@ -401,8 +371,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets amount_description.
-     *
-     * @return null|string
      */
     public function getAmountDescription() : ?string
     {
@@ -413,8 +381,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets amount_description.
      *
      * @param null|string $amount_description a short description of this payment event
-     *
-     * @return self
      */
     public function setAmountDescription(?string $amount_description) : self
     {
@@ -425,8 +391,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets fulfillment_channel.
-     *
-     * @return null|string
      */
     public function getFulfillmentChannel() : ?string
     {
@@ -437,8 +401,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets fulfillment_channel.
      *
      * @param null|string $fulfillment_channel The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled)
-     *
-     * @return self
      */
     public function setFulfillmentChannel(?string $fulfillment_channel) : self
     {
@@ -449,8 +411,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets store_name.
-     *
-     * @return null|string
      */
     public function getStoreName() : ?string
     {
@@ -461,8 +421,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets store_name.
      *
      * @param null|string $store_name the store name where the event occurred
-     *
-     * @return self
      */
     public function setStoreName(?string $store_name) : self
     {
@@ -473,8 +431,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -528,8 +484,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

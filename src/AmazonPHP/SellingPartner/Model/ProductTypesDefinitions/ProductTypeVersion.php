@@ -106,7 +106,7 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -205,8 +201,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets version.
      *
      * @param string $version version identifier
-     *
-     * @return self
      */
     public function setVersion(string $version) : self
     {
@@ -227,8 +221,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets latest.
      *
      * @param bool $latest when true, the version indicated by the version identifier is the latest available for the Amazon product type
-     *
-     * @return self
      */
     public function setLatest(bool $latest) : self
     {
@@ -239,8 +231,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets release_candidate.
-     *
-     * @return null|bool
      */
     public function getReleaseCandidate() : ?bool
     {
@@ -251,8 +241,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets release_candidate.
      *
      * @param null|bool $release_candidate when true, the version indicated by the version identifier is the prerelease (release candidate) for the Amazon product type
-     *
-     * @return self
      */
     public function setReleaseCandidate(?bool $release_candidate) : self
     {
@@ -263,8 +251,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -318,8 +304,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

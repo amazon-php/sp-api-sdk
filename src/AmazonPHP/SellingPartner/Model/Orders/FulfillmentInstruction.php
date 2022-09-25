@@ -94,7 +94,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -104,7 +104,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -115,7 +115,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -125,7 +125,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -135,7 +135,7 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -144,8 +144,6 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -157,8 +155,6 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -176,8 +172,6 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets fulfillment_supply_source_id.
-     *
-     * @return null|string
      */
     public function getFulfillmentSupplySourceId() : ?string
     {
@@ -188,8 +182,6 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets fulfillment_supply_source_id.
      *
      * @param null|string $fulfillment_supply_source_id denotes the recommended sourceId where the order should be fulfilled from
-     *
-     * @return self
      */
     public function setFulfillmentSupplySourceId(?string $fulfillment_supply_source_id) : self
     {
@@ -200,8 +192,6 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -255,8 +245,6 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

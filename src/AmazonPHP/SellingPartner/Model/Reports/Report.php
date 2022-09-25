@@ -164,7 +164,7 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -174,7 +174,7 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -185,7 +185,7 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -195,7 +195,7 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -205,7 +205,7 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -214,8 +214,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -227,8 +225,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -301,8 +297,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_ids.
      *
      * @param null|string[] $marketplace_ids a list of marketplace identifiers for the report
-     *
-     * @return self
      */
     public function setMarketplaceIds(?array $marketplace_ids) : self
     {
@@ -323,8 +317,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets report_id.
      *
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID.
-     *
-     * @return self
      */
     public function setReportId(string $report_id) : self
     {
@@ -345,8 +337,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets report_type.
      *
      * @param string $report_type the report type
-     *
-     * @return self
      */
     public function setReportType(string $report_type) : self
     {
@@ -357,8 +347,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets data_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDataStartTime() : ?\DateTimeInterface
     {
@@ -369,8 +357,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets data_start_time.
      *
      * @param null|\DateTimeInterface $data_start_time the start of a date and time range used for selecting the data to report
-     *
-     * @return self
      */
     public function setDataStartTime(?\DateTimeInterface $data_start_time) : self
     {
@@ -381,8 +367,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets data_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDataEndTime() : ?\DateTimeInterface
     {
@@ -393,8 +377,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets data_end_time.
      *
      * @param null|\DateTimeInterface $data_end_time the end of a date and time range used for selecting the data to report
-     *
-     * @return self
      */
     public function setDataEndTime(?\DateTimeInterface $data_end_time) : self
     {
@@ -405,8 +387,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets report_schedule_id.
-     *
-     * @return null|string
      */
     public function getReportScheduleId() : ?string
     {
@@ -417,8 +397,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets report_schedule_id.
      *
      * @param null|string $report_schedule_id The identifier of the report schedule that created this report (if any). This identifier is unique only in combination with a seller ID.
-     *
-     * @return self
      */
     public function setReportScheduleId(?string $report_schedule_id) : self
     {
@@ -439,8 +417,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets created_time.
      *
      * @param \DateTimeInterface $created_time the date and time when the report was created
-     *
-     * @return self
      */
     public function setCreatedTime(\DateTimeInterface $created_time) : self
     {
@@ -461,8 +437,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_status.
      *
      * @param string $processing_status the processing status of the report
-     *
-     * @return self
      */
     public function setProcessingStatus(string $processing_status) : self
     {
@@ -473,8 +447,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingStartTime() : ?\DateTimeInterface
     {
@@ -485,8 +457,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_start_time.
      *
      * @param null|\DateTimeInterface $processing_start_time the date and time when the report processing started, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setProcessingStartTime(?\DateTimeInterface $processing_start_time) : self
     {
@@ -497,8 +467,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingEndTime() : ?\DateTimeInterface
     {
@@ -509,8 +477,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_end_time.
      *
      * @param null|\DateTimeInterface $processing_end_time the date and time when the report processing completed, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setProcessingEndTime(?\DateTimeInterface $processing_end_time) : self
     {
@@ -521,8 +487,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets report_document_id.
-     *
-     * @return null|string
      */
     public function getReportDocumentId() : ?string
     {
@@ -533,8 +497,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets report_document_id.
      *
      * @param null|string $report_document_id The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve the report document's contents.
-     *
-     * @return self
      */
     public function setReportDocumentId(?string $report_document_id) : self
     {
@@ -545,8 +507,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -600,8 +560,6 @@ class Report implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

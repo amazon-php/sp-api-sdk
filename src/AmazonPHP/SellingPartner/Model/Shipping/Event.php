@@ -106,7 +106,7 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -217,8 +213,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets event_code.
      *
      * @param string $event_code the event code of a shipment, such as Departed, Received, and ReadyForReceive
-     *
-     * @return self
      */
     public function setEventCode(string $event_code) : self
     {
@@ -239,8 +233,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets event_time.
      *
      * @param \DateTimeInterface $event_time the date and time of an event for a shipment
-     *
-     * @return self
      */
     public function setEventTime(\DateTimeInterface $event_time) : self
     {
@@ -251,8 +243,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets location.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Location
      */
     public function getLocation() : ?Location
     {
@@ -263,8 +253,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets location.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Location $location location
-     *
-     * @return self
      */
     public function setLocation(?Location $location) : self
     {
@@ -275,8 +263,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -330,8 +316,6 @@ class Event implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

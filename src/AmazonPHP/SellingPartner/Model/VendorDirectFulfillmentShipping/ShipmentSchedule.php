@@ -14,7 +14,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, ModelInterface
+class ShipmentSchedule implements \ArrayAccess, \JsonSerializable, ModelInterface
 {
     public const DISCRIMINATOR = null;
 
@@ -23,7 +23,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetShippingLabelListResponse';
+    protected static string $openAPIModelName = 'ShipmentSchedule';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -31,8 +31,9 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'payload' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList',
-        'errors' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList',
+        'estimated_delivery_date_time' => '\DateTimeInterface',
+        'appt_window_start_date_time' => '\DateTimeInterface',
+        'appt_window_end_date_time' => '\DateTimeInterface',
     ];
 
     /**
@@ -43,8 +44,9 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'payload' => null,
-        'errors' => null,
+        'estimated_delivery_date_time' => 'date-time',
+        'appt_window_start_date_time' => 'date-time',
+        'appt_window_end_date_time' => 'date-time',
     ];
 
     /**
@@ -54,8 +56,9 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $attributeMap = [
-        'payload' => 'payload',
-        'errors' => 'errors',
+        'estimated_delivery_date_time' => 'estimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'apptWindowStartDateTime',
+        'appt_window_end_date_time' => 'apptWindowEndDateTime',
     ];
 
     /**
@@ -64,8 +67,9 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $setters = [
-        'payload' => 'setPayload',
-        'errors' => 'setErrors',
+        'estimated_delivery_date_time' => 'setEstimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'setApptWindowStartDateTime',
+        'appt_window_end_date_time' => 'setApptWindowEndDateTime',
     ];
 
     /**
@@ -74,8 +78,9 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * @var string[]
      */
     protected static array $getters = [
-        'payload' => 'getPayload',
-        'errors' => 'getErrors',
+        'estimated_delivery_date_time' => 'getEstimatedDeliveryDateTime',
+        'appt_window_start_date_time' => 'getApptWindowStartDateTime',
+        'appt_window_end_date_time' => 'getApptWindowEndDateTime',
     ];
 
     /**
@@ -93,14 +98,15 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      */
     public function __construct(array $data = null)
     {
-        $this->container['payload'] = $data['payload'] ?? null;
-        $this->container['errors'] = $data['errors'] ?? null;
+        $this->container['estimated_delivery_date_time'] = $data['estimated_delivery_date_time'] ?? null;
+        $this->container['appt_window_start_date_time'] = $data['appt_window_start_date_time'] ?? null;
+        $this->container['appt_window_end_date_time'] = $data['appt_window_end_date_time'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +116,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +127,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +137,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +147,7 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +156,6 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +167,6 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -178,67 +180,70 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
      */
     public function validate() : void
     {
-        if ($this->container['payload'] !== null) {
-            $this->container['payload']->validate();
-        }
-
-        if ($this->container['errors'] !== null) {
-            $this->container['errors']->validate();
-        }
     }
 
     /**
-     * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList
+     * Gets estimated_delivery_date_time.
      */
-    public function getPayload() : ?ShippingLabelList
+    public function getEstimatedDeliveryDateTime() : ?\DateTimeInterface
     {
-        return $this->container['payload'];
+        return $this->container['estimated_delivery_date_time'];
     }
 
     /**
-     * Sets payload.
+     * Sets estimated_delivery_date_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList $payload payload
-     *
-     * @return self
+     * @param null|\DateTimeInterface $estimated_delivery_date_time Date on which the shipment is expected to reach the customer delivery location. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setPayload(?ShippingLabelList $payload) : self
+    public function setEstimatedDeliveryDateTime(?\DateTimeInterface $estimated_delivery_date_time) : self
     {
-        $this->container['payload'] = $payload;
+        $this->container['estimated_delivery_date_time'] = $estimated_delivery_date_time;
 
         return $this;
     }
 
     /**
-     * Gets errors.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList
+     * Gets appt_window_start_date_time.
      */
-    public function getErrors() : ?ErrorList
+    public function getApptWindowStartDateTime() : ?\DateTimeInterface
     {
-        return $this->container['errors'];
+        return $this->container['appt_window_start_date_time'];
     }
 
     /**
-     * Sets errors.
+     * Sets appt_window_start_date_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ErrorList $errors errors
-     *
-     * @return self
+     * @param null|\DateTimeInterface $appt_window_start_date_time This field indicates the date and time at the start of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
-    public function setErrors(?ErrorList $errors) : self
+    public function setApptWindowStartDateTime(?\DateTimeInterface $appt_window_start_date_time) : self
     {
-        $this->container['errors'] = $errors;
+        $this->container['appt_window_start_date_time'] = $appt_window_start_date_time;
+
+        return $this;
+    }
+
+    /**
+     * Gets appt_window_end_date_time.
+     */
+    public function getApptWindowEndDateTime() : ?\DateTimeInterface
+    {
+        return $this->container['appt_window_end_date_time'];
+    }
+
+    /**
+     * Sets appt_window_end_date_time.
+     *
+     * @param null|\DateTimeInterface $appt_window_end_date_time This field indicates the date and time at the end of the appointment window scheduled to deliver the shipment. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     */
+    public function setApptWindowEndDateTime(?\DateTimeInterface $appt_window_end_date_time) : self
+    {
+        $this->container['appt_window_end_date_time'] = $appt_window_end_date_time;
 
         return $this;
     }
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +297,6 @@ class GetShippingLabelListResponse implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

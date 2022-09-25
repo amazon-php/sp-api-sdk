@@ -100,7 +100,7 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -201,8 +197,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
      * Sets package_list.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredSmallParcelPackageOutput[] $package_list a list of packages, including shipping information from the Amazon-partnered carrier
-     *
-     * @return self
      */
     public function setPackageList(array $package_list) : self
     {
@@ -213,8 +207,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets partnered_estimate.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredEstimate
      */
     public function getPartneredEstimate() : ?PartneredEstimate
     {
@@ -225,8 +217,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
      * Sets partnered_estimate.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PartneredEstimate $partnered_estimate partnered_estimate
-     *
-     * @return self
      */
     public function setPartneredEstimate(?PartneredEstimate $partnered_estimate) : self
     {
@@ -237,8 +227,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +280,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

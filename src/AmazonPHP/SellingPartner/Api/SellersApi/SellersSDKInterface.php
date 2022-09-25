@@ -27,9 +27,6 @@ interface SellersSDKInterface
     /**
      * Operation getMarketplaceParticipations.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
-     *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *

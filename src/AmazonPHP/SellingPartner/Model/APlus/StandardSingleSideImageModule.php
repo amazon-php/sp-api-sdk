@@ -100,7 +100,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -199,8 +195,6 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * Sets image_position_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\APlus\PositionType $image_position_type image_position_type
-     *
-     * @return self
      */
     public function setImagePositionType(PositionType $image_position_type) : self
     {
@@ -211,8 +205,6 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets block.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock() : ?StandardImageTextBlock
     {
@@ -223,8 +215,6 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
      * Sets block.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block block
-     *
-     * @return self
      */
     public function setBlock(?StandardImageTextBlock $block) : self
     {
@@ -235,8 +225,6 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -290,8 +278,6 @@ class StandardSingleSideImageModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

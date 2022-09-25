@@ -106,7 +106,7 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -201,8 +197,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets end_time.
      *
      * @param \DateTimeInterface $end_time end time of the recurrence
-     *
-     * @return self
      */
     public function setEndTime(\DateTimeInterface $end_time) : self
     {
@@ -225,8 +219,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets days_of_week.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Services\DayOfWeek[] $days_of_week Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
-     *
-     * @return self
      */
     public function setDaysOfWeek(?array $days_of_week) : self
     {
@@ -249,8 +241,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets days_of_month.
      *
      * @param null|int[] $days_of_month days of the month when recurrence is valid
-     *
-     * @return self
      */
     public function setDaysOfMonth(?array $days_of_month) : self
     {
@@ -261,8 +251,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -316,8 +304,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

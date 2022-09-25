@@ -112,7 +112,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -225,8 +221,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets total_charge.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Currency $total_charge total_charge
-     *
-     * @return self
      */
     public function setTotalCharge(Currency $total_charge) : self
     {
@@ -247,8 +241,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets billable_weight.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\Weight $billable_weight billable_weight
-     *
-     * @return self
      */
     public function setBillableWeight(Weight $billable_weight) : self
     {
@@ -269,8 +261,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets service_type.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\ServiceType $service_type service_type
-     *
-     * @return self
      */
     public function setServiceType(ServiceType $service_type) : self
     {
@@ -291,8 +281,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets promise.
      *
      * @param \AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet $promise promise
-     *
-     * @return self
      */
     public function setPromise(ShippingPromiseSet $promise) : self
     {
@@ -303,8 +291,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -358,8 +344,6 @@ class ServiceRate implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

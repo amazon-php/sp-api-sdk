@@ -118,7 +118,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -168,8 +168,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -181,8 +179,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -221,8 +217,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets seller_sku.
      *
      * @param string $seller_sku the seller SKU of the item
-     *
-     * @return self
      */
     public function setSellerSku(string $seller_sku) : self
     {
@@ -243,8 +237,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets seller_fulfillment_order_item_id.
      *
      * @param string $seller_fulfillment_order_item_id the fulfillment order item identifier that the seller created and submitted with a call to the createFulfillmentOrder operation
-     *
-     * @return self
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -265,8 +257,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets quantity.
      *
      * @param int $quantity the item quantity
-     *
-     * @return self
      */
     public function setQuantity(int $quantity) : self
     {
@@ -277,8 +267,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets package_number.
-     *
-     * @return null|int
      */
     public function getPackageNumber() : ?int
     {
@@ -289,8 +277,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets package_number.
      *
      * @param null|int $package_number an identifier for the package that contains the item quantity
-     *
-     * @return self
      */
     public function setPackageNumber(?int $package_number) : self
     {
@@ -301,8 +287,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets serial_number.
-     *
-     * @return null|string
      */
     public function getSerialNumber() : ?string
     {
@@ -313,8 +297,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
      * Sets serial_number.
      *
      * @param null|string $serial_number the serial number of the shipped item
-     *
-     * @return self
      */
     public function setSerialNumber(?string $serial_number) : self
     {
@@ -325,8 +307,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -380,8 +360,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, ModelI
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

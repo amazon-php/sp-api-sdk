@@ -106,7 +106,7 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -200,8 +196,6 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
      * Sets return_items.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItem[] $return_items An array of items that Amazon accepted for return. Returns empty if no items were accepted for return.
-     *
-     * @return self
      */
     public function setReturnItems(?array $return_items) : self
     {
@@ -224,8 +218,6 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
      * Sets invalid_return_items.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\InvalidReturnItem[] $invalid_return_items an array of invalid return item information
-     *
-     * @return self
      */
     public function setInvalidReturnItems(?array $invalid_return_items) : self
     {
@@ -248,8 +240,6 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
      * Sets return_authorizations.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnAuthorization[] $return_authorizations an array of return authorization information
-     *
-     * @return self
      */
     public function setReturnAuthorizations(?array $return_authorizations) : self
     {
@@ -260,8 +250,6 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -315,8 +303,6 @@ class CreateFulfillmentReturnResult implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

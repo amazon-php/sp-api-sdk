@@ -100,7 +100,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -201,8 +197,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_asin.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ASINIdentifier $marketplace_asin marketplace_asin
-     *
-     * @return self
      */
     public function setMarketplaceAsin(ASINIdentifier $marketplace_asin) : self
     {
@@ -213,8 +207,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets sku_identifier.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerSKUIdentifier
      */
     public function getSkuIdentifier() : ?SellerSKUIdentifier
     {
@@ -225,8 +217,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets sku_identifier.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerSKUIdentifier $sku_identifier sku_identifier
-     *
-     * @return self
      */
     public function setSkuIdentifier(?SellerSKUIdentifier $sku_identifier) : self
     {
@@ -237,8 +227,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -292,8 +280,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

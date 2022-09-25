@@ -130,7 +130,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -193,8 +191,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -255,8 +251,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets purchase_order_number.
      *
      * @param string $purchase_order_number The purchase order number for this order. Formatting Notes: alpha-numeric code.
-     *
-     * @return self
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {
@@ -277,8 +271,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets vendor_order_number.
      *
      * @param string $vendor_order_number the vendor's order number for this order
-     *
-     * @return self
      */
     public function setVendorOrderNumber(string $vendor_order_number) : self
     {
@@ -299,8 +291,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets acknowledgement_date.
      *
      * @param \DateTimeInterface $acknowledgement_date The date and time when the order is acknowledged, in ISO-8601 date/time format. For example: 2018-07-16T23:00:00Z / 2018-07-16T23:00:00-05:00 / 2018-07-16T23:00:00-08:00.
-     *
-     * @return self
      */
     public function setAcknowledgementDate(\DateTimeInterface $acknowledgement_date) : self
     {
@@ -321,8 +311,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets acknowledgement_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\AcknowledgementStatus $acknowledgement_status acknowledgement_status
-     *
-     * @return self
      */
     public function setAcknowledgementStatus(AcknowledgementStatus $acknowledgement_status) : self
     {
@@ -343,8 +331,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets selling_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification $selling_party selling_party
-     *
-     * @return self
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -365,8 +351,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets ship_from_party.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification $ship_from_party ship_from_party
-     *
-     * @return self
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -389,8 +373,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
      * Sets item_acknowledgements.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderItemAcknowledgement[] $item_acknowledgements item details including acknowledged quantity
-     *
-     * @return self
      */
     public function setItemAcknowledgements(array $item_acknowledgements) : self
     {
@@ -401,8 +383,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -456,8 +436,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, Model
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

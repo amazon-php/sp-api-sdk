@@ -130,7 +130,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -140,7 +140,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -151,7 +151,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -161,7 +161,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -171,7 +171,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,8 +180,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -193,8 +191,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -221,8 +217,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -233,8 +227,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace the fulfillment order is placed against
-     *
-     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -255,8 +247,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets address.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address $address address
-     *
-     * @return self
      */
     public function setAddress(Address $address) : self
     {
@@ -279,8 +269,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets items.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewItem[] $items an array of fulfillment preview item information
-     *
-     * @return self
      */
     public function setItems(array $items) : self
     {
@@ -303,8 +291,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets shipping_speed_categories.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory[] $shipping_speed_categories shipping_speed_categories
-     *
-     * @return self
      */
     public function setShippingSpeedCategories(?array $shipping_speed_categories) : self
     {
@@ -315,8 +301,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets include_cod_fulfillment_preview.
-     *
-     * @return null|bool
      */
     public function getIncludeCodFulfillmentPreview() : ?bool
     {
@@ -327,8 +311,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets include_cod_fulfillment_preview.
      *
      * @param null|bool $include_cod_fulfillment_preview Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
-     *
-     * @return self
      */
     public function setIncludeCodFulfillmentPreview(?bool $include_cod_fulfillment_preview) : self
     {
@@ -339,8 +321,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets include_delivery_windows.
-     *
-     * @return null|bool
      */
     public function getIncludeDeliveryWindows() : ?bool
     {
@@ -351,8 +331,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets include_delivery_windows.
      *
      * @param null|bool $include_delivery_windows Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
-     *
-     * @return self
      */
     public function setIncludeDeliveryWindows(?bool $include_delivery_windows) : self
     {
@@ -375,8 +353,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
      * Sets feature_constraints.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
-     *
-     * @return self
      */
     public function setFeatureConstraints(?array $feature_constraints) : self
     {
@@ -387,8 +363,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -442,8 +416,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, M
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

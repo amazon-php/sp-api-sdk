@@ -100,7 +100,7 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -182,8 +178,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets granularity_type.
-     *
-     * @return null|string
      */
     public function getGranularityType() : ?string
     {
@@ -194,8 +188,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets granularity_type.
      *
      * @param null|string $granularity_type the granularity type for the inventory aggregation level
-     *
-     * @return self
      */
     public function setGranularityType(?string $granularity_type) : self
     {
@@ -206,8 +198,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets granularity_id.
-     *
-     * @return null|string
      */
     public function getGranularityId() : ?string
     {
@@ -218,8 +208,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets granularity_id.
      *
      * @param null|string $granularity_id The granularity ID for the specified granularity type. When granularityType is Marketplace, specify the marketplaceId.
-     *
-     * @return self
      */
     public function setGranularityId(?string $granularity_id) : self
     {
@@ -230,8 +218,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,8 +271,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

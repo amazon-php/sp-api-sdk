@@ -112,7 +112,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -237,8 +233,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets op.
      *
      * @param string $op Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See <https://tools.ietf.org/html/rfc6902>.
-     *
-     * @return self
      */
     public function setOp(string $op) : self
     {
@@ -259,8 +253,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets path.
      *
      * @param string $path JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>.
-     *
-     * @return self
      */
     public function setPath(string $path) : self
     {
@@ -283,8 +275,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets value.
      *
      * @param null|object[] $value JSON value to add, replace, or delete
-     *
-     * @return self
      */
     public function setValue(?array $value) : self
     {
@@ -295,8 +285,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -350,8 +338,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

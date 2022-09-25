@@ -146,7 +146,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,7 +156,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,7 +167,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,7 +177,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,7 +187,7 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -196,8 +196,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -209,8 +207,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -281,8 +277,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets feed_id.
      *
      * @param string $feed_id The identifier for the feed. This identifier is unique only in combination with a seller ID.
-     *
-     * @return self
      */
     public function setFeedId(string $feed_id) : self
     {
@@ -303,8 +297,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets feed_type.
      *
      * @param string $feed_type the feed type
-     *
-     * @return self
      */
     public function setFeedType(string $feed_type) : self
     {
@@ -327,8 +319,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets marketplace_ids.
      *
      * @param null|string[] $marketplace_ids a list of identifiers for the marketplaces that the feed is applied to
-     *
-     * @return self
      */
     public function setMarketplaceIds(?array $marketplace_ids) : self
     {
@@ -349,8 +339,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets created_time.
      *
      * @param \DateTimeInterface $created_time the date and time when the feed was created, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setCreatedTime(\DateTimeInterface $created_time) : self
     {
@@ -371,8 +359,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_status.
      *
      * @param string $processing_status the processing status of the feed
-     *
-     * @return self
      */
     public function setProcessingStatus(string $processing_status) : self
     {
@@ -383,8 +369,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingStartTime() : ?\DateTimeInterface
     {
@@ -395,8 +379,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_start_time.
      *
      * @param null|\DateTimeInterface $processing_start_time the date and time when feed processing started, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setProcessingStartTime(?\DateTimeInterface $processing_start_time) : self
     {
@@ -407,8 +389,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets processing_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingEndTime() : ?\DateTimeInterface
     {
@@ -419,8 +399,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets processing_end_time.
      *
      * @param null|\DateTimeInterface $processing_end_time the date and time when feed processing completed, in ISO 8601 date time format
-     *
-     * @return self
      */
     public function setProcessingEndTime(?\DateTimeInterface $processing_end_time) : self
     {
@@ -431,8 +409,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets result_feed_document_id.
-     *
-     * @return null|string
      */
     public function getResultFeedDocumentId() : ?string
     {
@@ -443,8 +419,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets result_feed_document_id.
      *
      * @param null|string $result_feed_document_id The identifier for the feed document. This identifier is unique only in combination with a seller ID.
-     *
-     * @return self
      */
     public function setResultFeedDocumentId(?string $result_feed_document_id) : self
     {
@@ -455,8 +429,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -510,8 +482,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

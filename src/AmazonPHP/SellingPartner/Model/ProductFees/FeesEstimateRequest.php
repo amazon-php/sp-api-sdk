@@ -118,7 +118,7 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -168,8 +168,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -181,8 +179,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -223,8 +219,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets marketplace_id.
      *
      * @param string $marketplace_id a marketplace identifier
-     *
-     * @return self
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -235,8 +229,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets is_amazon_fulfilled.
-     *
-     * @return null|bool
      */
     public function getIsAmazonFulfilled() : ?bool
     {
@@ -247,8 +239,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets is_amazon_fulfilled.
      *
      * @param null|bool $is_amazon_fulfilled when true, the offer is fulfilled by Amazon
-     *
-     * @return self
      */
     public function setIsAmazonFulfilled(?bool $is_amazon_fulfilled) : self
     {
@@ -269,8 +259,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets price_to_estimate_fees.
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
-     *
-     * @return self
      */
     public function setPriceToEstimateFees(PriceToEstimateFees $price_to_estimate_fees) : self
     {
@@ -291,8 +279,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets identifier.
      *
      * @param string $identifier a unique identifier provided by the caller to track this request
-     *
-     * @return self
      */
     public function setIdentifier(string $identifier) : self
     {
@@ -303,8 +289,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets optional_fulfillment_program.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram
      */
     public function getOptionalFulfillmentProgram() : ?OptionalFulfillmentProgram
     {
@@ -315,8 +299,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets optional_fulfillment_program.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram $optional_fulfillment_program optional_fulfillment_program
-     *
-     * @return self
      */
     public function setOptionalFulfillmentProgram(?OptionalFulfillmentProgram $optional_fulfillment_program) : self
     {
@@ -327,8 +309,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -382,8 +362,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

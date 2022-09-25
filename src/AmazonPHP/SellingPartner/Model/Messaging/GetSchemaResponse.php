@@ -106,7 +106,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -191,8 +187,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets _links.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponseLinks
      */
     public function getLinks() : ?GetSchemaResponseLinks
     {
@@ -203,8 +197,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets _links.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponseLinks $_links _links
-     *
-     * @return self
      */
     public function setLinks(?GetSchemaResponseLinks $_links) : self
     {
@@ -227,8 +219,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets payload.
      *
      * @param null|array<string,object> $payload A JSON schema document describing the expected payload of the action. This object can be validated against <a href=http://json-schema.org/draft-04/schema>http://json-schema.org/draft-04/schema</a>.
-     *
-     * @return self
      */
     public function setPayload(?array $payload) : self
     {
@@ -251,8 +241,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
      * Sets errors.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Error[] $errors a list of error responses returned when a request is unsuccessful
-     *
-     * @return self
      */
     public function setErrors(?array $errors) : self
     {
@@ -263,8 +251,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -318,8 +304,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, ModelInterfa
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

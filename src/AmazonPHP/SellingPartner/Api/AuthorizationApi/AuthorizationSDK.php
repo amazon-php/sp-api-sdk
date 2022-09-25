@@ -151,8 +151,6 @@ final class AuthorizationSDK implements AuthorizationSDKInterface
      * @param string $mws_auth_token The MWS Auth Token that was generated when the seller authorized your application on the Marketplace Appstore. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     *
-     * @return \Psr\Http\Message\RequestInterface
      */
     public function getAuthorizationCodeRequest(AccessToken $accessToken, string $region, string $selling_partner_id, string $developer_id, string $mws_auth_token) : RequestInterface
     {

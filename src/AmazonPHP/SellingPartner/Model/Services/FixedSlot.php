@@ -118,7 +118,7 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -168,8 +168,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -181,8 +179,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -200,8 +196,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets start_date_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartDateTime() : ?\DateTimeInterface
     {
@@ -212,8 +206,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets start_date_time.
      *
      * @param null|\DateTimeInterface $start_date_time start date time of slot in ISO 8601 format with precision of seconds
-     *
-     * @return self
      */
     public function setStartDateTime(?\DateTimeInterface $start_date_time) : self
     {
@@ -224,8 +216,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets scheduled_capacity.
-     *
-     * @return null|int
      */
     public function getScheduledCapacity() : ?int
     {
@@ -236,8 +226,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets scheduled_capacity.
      *
      * @param null|int $scheduled_capacity Scheduled capacity corresponding to the slot. This capacity represents the originally allocated capacity as per resource schedule.
-     *
-     * @return self
      */
     public function setScheduledCapacity(?int $scheduled_capacity) : self
     {
@@ -248,8 +236,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets available_capacity.
-     *
-     * @return null|int
      */
     public function getAvailableCapacity() : ?int
     {
@@ -260,8 +246,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets available_capacity.
      *
      * @param null|int $available_capacity Available capacity corresponding to the slot. This capacity represents the capacity available for allocation to reservations.
-     *
-     * @return self
      */
     public function setAvailableCapacity(?int $available_capacity) : self
     {
@@ -272,8 +256,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets encumbered_capacity.
-     *
-     * @return null|int
      */
     public function getEncumberedCapacity() : ?int
     {
@@ -284,8 +266,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets encumbered_capacity.
      *
      * @param null|int $encumbered_capacity Encumbered capacity corresponding to the slot. This capacity represents the capacity allocated for Amazon Jobs/Appointments/Orders.
-     *
-     * @return self
      */
     public function setEncumberedCapacity(?int $encumbered_capacity) : self
     {
@@ -296,8 +276,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets reserved_capacity.
-     *
-     * @return null|int
      */
     public function getReservedCapacity() : ?int
     {
@@ -308,8 +286,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets reserved_capacity.
      *
      * @param null|int $reserved_capacity Reserved capacity corresponding to the slot. This capacity represents the capacity made unavailable due to events like Breaks/Leaves/Lunch.
-     *
-     * @return self
      */
     public function setReservedCapacity(?int $reserved_capacity) : self
     {
@@ -320,8 +296,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -375,8 +349,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

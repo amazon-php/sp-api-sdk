@@ -106,7 +106,7 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -116,7 +116,7 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -127,7 +127,7 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -137,7 +137,7 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -147,7 +147,7 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -156,8 +156,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -169,8 +167,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -188,8 +184,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets company_legal_name.
-     *
-     * @return null|string
      */
     public function getCompanyLegalName() : ?string
     {
@@ -200,8 +194,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets company_legal_name.
      *
      * @param null|string $company_legal_name the legal name of the company
-     *
-     * @return self
      */
     public function setCompanyLegalName(?string $company_legal_name) : self
     {
@@ -212,8 +204,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets taxing_region.
-     *
-     * @return null|string
      */
     public function getTaxingRegion() : ?string
     {
@@ -224,8 +214,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets taxing_region.
      *
      * @param null|string $taxing_region the country or region imposing the tax
-     *
-     * @return self
      */
     public function setTaxingRegion(?string $taxing_region) : self
     {
@@ -248,8 +236,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
      * Sets tax_classifications.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\TaxClassification[] $tax_classifications the list of tax classifications
-     *
-     * @return self
      */
     public function setTaxClassifications(?array $tax_classifications) : self
     {
@@ -260,8 +246,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -315,8 +299,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, ModelInterf
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

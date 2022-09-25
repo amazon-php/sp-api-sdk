@@ -83,9 +83,6 @@ interface ShippingSDKInterface
     /**
      * Operation getAccount.
      *
-     * @param AccessToken $accessToken
-     * @param string $region
-     *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *

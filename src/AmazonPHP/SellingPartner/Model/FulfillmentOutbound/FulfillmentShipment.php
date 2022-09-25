@@ -144,7 +144,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -154,7 +154,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -165,7 +165,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -175,7 +175,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -185,7 +185,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,8 +194,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -207,8 +205,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -278,8 +274,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets amazon_shipment_id.
      *
      * @param string $amazon_shipment_id a shipment identifier assigned by Amazon
-     *
-     * @return self
      */
     public function setAmazonShipmentId(string $amazon_shipment_id) : self
     {
@@ -300,8 +294,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fulfillment_center_id.
      *
      * @param string $fulfillment_center_id an identifier for the fulfillment center that the shipment will be sent from
-     *
-     * @return self
      */
     public function setFulfillmentCenterId(string $fulfillment_center_id) : self
     {
@@ -322,8 +314,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fulfillment_shipment_status.
      *
      * @param string $fulfillment_shipment_status the current status of the shipment
-     *
-     * @return self
      */
     public function setFulfillmentShipmentStatus(string $fulfillment_shipment_status) : self
     {
@@ -334,8 +324,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets shipping_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShippingDate() : ?\DateTimeInterface
     {
@@ -346,8 +334,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets shipping_date.
      *
      * @param null|\DateTimeInterface $shipping_date shipping_date
-     *
-     * @return self
      */
     public function setShippingDate(?\DateTimeInterface $shipping_date) : self
     {
@@ -358,8 +344,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets estimated_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {
@@ -370,8 +354,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets estimated_arrival_date.
      *
      * @param null|\DateTimeInterface $estimated_arrival_date estimated_arrival_date
-     *
-     * @return self
      */
     public function setEstimatedArrivalDate(?\DateTimeInterface $estimated_arrival_date) : self
     {
@@ -394,8 +376,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets shipping_notes.
      *
      * @param null|string[] $shipping_notes Provides additional insight into shipment timeline. Primairly used to communicate that actual delivery dates aren't available.
-     *
-     * @return self
      */
     public function setShippingNotes(?array $shipping_notes) : self
     {
@@ -418,8 +398,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fulfillment_shipment_item.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentShipmentItem[] $fulfillment_shipment_item an array of fulfillment shipment item information
-     *
-     * @return self
      */
     public function setFulfillmentShipmentItem(array $fulfillment_shipment_item) : self
     {
@@ -442,8 +420,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
      * Sets fulfillment_shipment_package.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentShipmentPackage[] $fulfillment_shipment_package an array of fulfillment shipment package information
-     *
-     * @return self
      */
     public function setFulfillmentShipmentPackage(?array $fulfillment_shipment_package) : self
     {
@@ -454,8 +430,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -509,8 +483,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, ModelInter
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

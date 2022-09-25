@@ -112,7 +112,7 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -194,8 +190,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets total_reserved_quantity.
-     *
-     * @return null|int
      */
     public function getTotalReservedQuantity() : ?int
     {
@@ -206,8 +200,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets total_reserved_quantity.
      *
      * @param null|int $total_reserved_quantity the total number of units in Amazon's fulfillment network that are currently being picked, packed, and shipped; or are sidelined for measurement, sampling, or other internal processes
-     *
-     * @return self
      */
     public function setTotalReservedQuantity(?int $total_reserved_quantity) : self
     {
@@ -218,8 +210,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets pending_customer_order_quantity.
-     *
-     * @return null|int
      */
     public function getPendingCustomerOrderQuantity() : ?int
     {
@@ -230,8 +220,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets pending_customer_order_quantity.
      *
      * @param null|int $pending_customer_order_quantity the number of units reserved for customer orders
-     *
-     * @return self
      */
     public function setPendingCustomerOrderQuantity(?int $pending_customer_order_quantity) : self
     {
@@ -242,8 +230,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets pending_transshipment_quantity.
-     *
-     * @return null|int
      */
     public function getPendingTransshipmentQuantity() : ?int
     {
@@ -254,8 +240,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets pending_transshipment_quantity.
      *
      * @param null|int $pending_transshipment_quantity the number of units being transferred from one fulfillment center to another
-     *
-     * @return self
      */
     public function setPendingTransshipmentQuantity(?int $pending_transshipment_quantity) : self
     {
@@ -266,8 +250,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets fc_processing_quantity.
-     *
-     * @return null|int
      */
     public function getFcProcessingQuantity() : ?int
     {
@@ -278,8 +260,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
      * Sets fc_processing_quantity.
      *
      * @param null|int $fc_processing_quantity the number of units that have been sidelined at the fulfillment center for additional processing
-     *
-     * @return self
      */
     public function setFcProcessingQuantity(?int $fc_processing_quantity) : self
     {
@@ -290,8 +270,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -345,8 +323,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, ModelInterfac
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

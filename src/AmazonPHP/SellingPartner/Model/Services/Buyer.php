@@ -112,7 +112,7 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -197,8 +193,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets buyer_id.
-     *
-     * @return null|string
      */
     public function getBuyerId() : ?string
     {
@@ -209,8 +203,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets buyer_id.
      *
      * @param null|string $buyer_id the identifier of the buyer
-     *
-     * @return self
      */
     public function setBuyerId(?string $buyer_id) : self
     {
@@ -221,8 +213,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets name.
-     *
-     * @return null|string
      */
     public function getName() : ?string
     {
@@ -233,8 +223,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets name.
      *
      * @param null|string $name the name of the buyer
-     *
-     * @return self
      */
     public function setName(?string $name) : self
     {
@@ -245,8 +233,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets phone.
-     *
-     * @return null|string
      */
     public function getPhone() : ?string
     {
@@ -257,8 +243,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets phone.
      *
      * @param null|string $phone the phone number of the buyer
-     *
-     * @return self
      */
     public function setPhone(?string $phone) : self
     {
@@ -269,8 +253,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets is_prime_member.
-     *
-     * @return null|bool
      */
     public function getIsPrimeMember() : ?bool
     {
@@ -281,8 +263,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets is_prime_member.
      *
      * @param null|bool $is_prime_member when true, the service is for an Amazon Prime buyer
-     *
-     * @return self
      */
     public function setIsPrimeMember(?bool $is_prime_member) : self
     {
@@ -293,8 +273,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -348,8 +326,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

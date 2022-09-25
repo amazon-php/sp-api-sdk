@@ -112,7 +112,7 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -217,8 +213,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\DecoratorType
      */
     public function getType() : ?DecoratorType
     {
@@ -229,8 +223,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets type.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\APlus\DecoratorType $type type
-     *
-     * @return self
      */
     public function setType(?DecoratorType $type) : self
     {
@@ -241,8 +233,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets offset.
-     *
-     * @return null|int
      */
     public function getOffset() : ?int
     {
@@ -253,8 +243,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets offset.
      *
      * @param null|int $offset The starting character of this decorator within the content string. Use zero for the first character.
-     *
-     * @return self
      */
     public function setOffset(?int $offset) : self
     {
@@ -265,8 +253,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets length.
-     *
-     * @return null|int
      */
     public function getLength() : ?int
     {
@@ -277,8 +263,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets length.
      *
      * @param null|int $length The number of content characters to alter with this decorator. Decorators such as line breaks can have zero length and fit between characters.
-     *
-     * @return self
      */
     public function setLength(?int $length) : self
     {
@@ -289,8 +273,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets depth.
-     *
-     * @return null|int
      */
     public function getDepth() : ?int
     {
@@ -301,8 +283,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
      * Sets depth.
      *
      * @param null|int $depth The relative intensity or variation of this decorator. Decorators such as bullet-points, for example, can have multiple indentation depths.
-     *
-     * @return self
      */
     public function setDepth(?int $depth) : self
     {
@@ -313,8 +293,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -368,8 +346,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, ModelInterface
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

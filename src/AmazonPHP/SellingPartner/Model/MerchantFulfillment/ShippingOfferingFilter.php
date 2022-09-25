@@ -112,7 +112,7 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -122,7 +122,7 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -133,7 +133,7 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -143,7 +143,7 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -153,7 +153,7 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -162,8 +162,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -175,8 +173,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -194,8 +190,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets include_packing_slip_with_label.
-     *
-     * @return null|bool
      */
     public function getIncludePackingSlipWithLabel() : ?bool
     {
@@ -206,8 +200,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets include_packing_slip_with_label.
      *
      * @param null|bool $include_packing_slip_with_label when true, include a packing slip with the label
-     *
-     * @return self
      */
     public function setIncludePackingSlipWithLabel(?bool $include_packing_slip_with_label) : self
     {
@@ -218,8 +210,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets include_complex_shipping_options.
-     *
-     * @return null|bool
      */
     public function getIncludeComplexShippingOptions() : ?bool
     {
@@ -230,8 +220,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets include_complex_shipping_options.
      *
      * @param null|bool $include_complex_shipping_options when true, include complex shipping options
-     *
-     * @return self
      */
     public function setIncludeComplexShippingOptions(?bool $include_complex_shipping_options) : self
     {
@@ -242,8 +230,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets carrier_will_pick_up.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUp() : ?CarrierWillPickUpOption
     {
@@ -254,8 +240,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets carrier_will_pick_up.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption $carrier_will_pick_up carrier_will_pick_up
-     *
-     * @return self
      */
     public function setCarrierWillPickUp(?CarrierWillPickUpOption $carrier_will_pick_up) : self
     {
@@ -266,8 +250,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets delivery_experience.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption
      */
     public function getDeliveryExperience() : ?DeliveryExperienceOption
     {
@@ -278,8 +260,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets delivery_experience.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption $delivery_experience delivery_experience
-     *
-     * @return self
      */
     public function setDeliveryExperience(?DeliveryExperienceOption $delivery_experience) : self
     {
@@ -290,8 +270,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -345,8 +323,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

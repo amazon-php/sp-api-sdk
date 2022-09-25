@@ -118,7 +118,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -128,7 +128,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -139,7 +139,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -149,7 +149,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -159,7 +159,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -168,8 +168,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -181,8 +179,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -233,8 +229,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
      * Sets dimensions.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions $dimensions dimensions
-     *
-     * @return self
      */
     public function setDimensions(Dimensions $dimensions) : self
     {
@@ -255,8 +249,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
      * Sets weight.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight $weight weight
-     *
-     * @return self
      */
     public function setWeight(Weight $weight) : self
     {
@@ -277,8 +269,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
      * Sets carrier_name.
      *
      * @param string $carrier_name the carrier specified with a previous call to putTransportDetails
-     *
-     * @return self
      */
     public function setCarrierName(string $carrier_name) : self
     {
@@ -299,8 +289,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
      * Sets tracking_id.
      *
      * @param string $tracking_id the tracking number of the package, provided by the carrier
-     *
-     * @return self
      */
     public function setTrackingId(string $tracking_id) : self
     {
@@ -321,8 +309,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
      * Sets package_status.
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageStatus $package_status package_status
-     *
-     * @return self
      */
     public function setPackageStatus(PackageStatus $package_status) : self
     {
@@ -333,8 +319,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -388,8 +372,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

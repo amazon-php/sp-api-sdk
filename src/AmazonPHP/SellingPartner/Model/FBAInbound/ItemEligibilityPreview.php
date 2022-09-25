@@ -200,7 +200,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -210,7 +210,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -221,7 +221,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -231,7 +231,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -241,7 +241,7 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -250,8 +250,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -263,8 +261,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -378,8 +374,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets asin.
      *
      * @param string $asin the ASIN for which eligibility was determined
-     *
-     * @return self
      */
     public function setAsin(string $asin) : self
     {
@@ -390,8 +384,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -402,8 +394,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets marketplace_id.
      *
      * @param null|string $marketplace_id the marketplace for which eligibility was determined
-     *
-     * @return self
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -424,8 +414,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets program.
      *
      * @param string $program the program for which eligibility was determined
-     *
-     * @return self
      */
     public function setProgram(string $program) : self
     {
@@ -446,8 +434,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets is_eligible_for_program.
      *
      * @param bool $is_eligible_for_program indicates if the item is eligible for the program
-     *
-     * @return self
      */
     public function setIsEligibleForProgram(bool $is_eligible_for_program) : self
     {
@@ -470,8 +456,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
      * Sets ineligibility_reason_list.
      *
      * @param null|string[] $ineligibility_reason_list potential Ineligibility Reason Codes
-     *
-     * @return self
      */
     public function setIneligibilityReasonList(?array $ineligibility_reason_list) : self
     {
@@ -482,8 +466,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -537,8 +519,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, ModelIn
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {

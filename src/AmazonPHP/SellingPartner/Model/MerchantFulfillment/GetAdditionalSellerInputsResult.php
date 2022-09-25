@@ -100,7 +100,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Array of property to type mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -110,7 +110,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Array of property to format mappings. Used for (de)serialization.
      *
-     * @return array
+     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -121,7 +121,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
      * Array of attributes where the key is the local name,
      * and the value is the original name.
      *
-     * @return array
+     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -131,7 +131,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes to setter functions (for deserialization of responses).
      *
-     * @return array
+     * @return string[]
      */
     public static function setters() : array
     {
@@ -141,7 +141,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes to getter functions (for serialization of requests).
      *
-     * @return array
+     * @return string[]
      */
     public static function getters() : array
     {
@@ -150,8 +150,6 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets the string presentation of the object.
-     *
-     * @return string
      */
     public function __toString() : string
     {
@@ -163,8 +161,6 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
-     *
-     * @return string
      */
     public function getModelName() : string
     {
@@ -194,8 +190,6 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
      * Sets shipment_level_fields.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalInputs[] $shipment_level_fields a list of additional inputs
-     *
-     * @return self
      */
     public function setShipmentLevelFields(?array $shipment_level_fields) : self
     {
@@ -218,8 +212,6 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
      * Sets item_level_fields_list.
      *
      * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ItemLevelFields[] $item_level_fields_list a list of item level fields
-     *
-     * @return self
      */
     public function setItemLevelFieldsList(?array $item_level_fields_list) : self
     {
@@ -230,8 +222,6 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
 
     /**
      * Returns true if offset exists. False otherwise.
-     *
-     * @return bool
      */
     public function offsetExists($offset) : bool
     {
@@ -285,8 +275,6 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets a header-safe presentation of the object.
-     *
-     * @return string
      */
     public function toHeaderValue() : string
     {
