@@ -192,11 +192,11 @@ final class ObjectSerializer
      * If it's a datetime object, format it in ISO8601
      * If it's a boolean, convert it to "true" or "false".
      *
-     * @param bool|\DateTimeInterface|string $value the value of the parameter
+     * @param mixed $value the value of the parameter
      *
      * @return string the header string
      */
-    public static function toString(bool|\DateTimeInterface|string $value) : string
+    public static function toString(mixed $value) : string
     {
         if ($value instanceof \DateTimeInterface) { // datetime in ISO8601 zulu format
             return $value->setTimezone(new \DateTimeZone('UTC'))->format(self::$dateTimeFormat);

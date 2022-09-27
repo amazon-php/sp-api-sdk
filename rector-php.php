@@ -7,6 +7,7 @@ use AmazonPHP\Rector\ClassMethod\SetNullableFunctionReturnTypeRector;
 use AmazonPHP\Rector\ValueObject\NullableReturnTypeDeclaration;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
 use AmazonPHP\SellingPartner\Model\CatalogItem\Item as CatalogItem;
+use AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentInfo;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredLtlDataOutput;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\NonPartneredSmallParcelPackageOutput;
@@ -42,11 +43,8 @@ return static function (RectorConfig $config): void {
         __DIR__ ,
     ]);
     $config->paths([
-        __DIR__ . '/src',
-    ]);
-    $config->skip([
-        __DIR__ . '/src/AmazonPHP/SellingPartner/Marketplace.php',
-        __DIR__ . '/src/AmazonPHP/SellingPartner/AccessToken.php',
+        __DIR__ . '/src/AmazonPHP/SellingPartner/Api',
+        __DIR__ . '/src/AmazonPHP/SellingPartner/Model',
     ]);
     $config->cacheClass(MemoryCacheStorage::class);
 
@@ -174,6 +172,11 @@ return static function (RectorConfig $config): void {
              * Listings API
              */
             new NullableReturnTypeDeclaration(ItemProcurement::class, 'getCostPrice'),
+            /**
+             * Catalog Items API
+             */
+            new NullableReturnTypeDeclaration(ItemSearchResults::class, 'getPagination'),
+            new NullableReturnTypeDeclaration(ItemSearchResults::class, 'getRefinements'),
         ]
     );
 };

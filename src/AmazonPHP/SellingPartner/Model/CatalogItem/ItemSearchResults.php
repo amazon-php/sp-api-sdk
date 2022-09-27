@@ -241,7 +241,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets pagination.
      */
-    public function getPagination() : Pagination
+    public function getPagination() : ?Pagination
     {
         return $this->container['pagination'];
     }
@@ -261,7 +261,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets refinements.
      */
-    public function getRefinements() : Refinements
+    public function getRefinements() : ?Refinements
     {
         return $this->container['refinements'];
     }
