@@ -12,9 +12,9 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
  * @method static MX()
  * @method static BR()
  * @method static ES()
- * @method static BE()
  * @method static GB()
  * @method static FR()
+ * @method static BE()
  * @method static NL()
  * @method static DE()
  * @method static IT()
@@ -22,6 +22,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
  * @method static PL()
  * @method static EG()
  * @method static TR()
+ * @method static SA()
  * @method static AE()
  * @method static IN()
  * @method static SG()
@@ -55,12 +56,6 @@ final class Marketplace
             'region' => Regions::NORTH_AMERICA,
             'url'    => 'https://sellercentral.amazon.com.br',
         ],
-        'BE' => [
-            'name'   => 'Belgium',
-            'id'     => 'AMEN7PMS3EDWL',
-            'region' => Regions::EUROPE,
-            'url'    => 'https://sellercentral-europe.amazon.com',
-        ],
         'ES' => [
             'name'   => 'Spain',
             'id'     => 'A1RKKUPIHCS9HS',
@@ -76,6 +71,12 @@ final class Marketplace
         'FR' => [
             'name'   => 'France',
             'id'     => 'A13V1IB3VIYZZH',
+            'region' => Regions::EUROPE,
+            'url'    => 'https://sellercentral-europe.amazon.com',
+        ],
+        'BE' => [
+            'name'   => 'Belgium',
+            'id'     => 'AMEN7PMS3EDWL',
             'region' => Regions::EUROPE,
             'url'    => 'https://sellercentral-europe.amazon.com',
         ],
@@ -120,6 +121,12 @@ final class Marketplace
             'id'     => 'A33AVAJ2PDY3EV',
             'region' => Regions::EUROPE,
             'url'    => 'https://sellercentral.amazon.com.tr',
+        ],
+        'SA' => [
+            'name'   => 'Saudi Arabia',
+            'id'     => 'A17E79C6D8DWNP',
+            'region' => Regions::EUROPE,
+            'url'    => 'https://sellercentral-europe.amazon.com',
         ],
         'AE' => [
             'name'   => 'United Arab Emirates',
