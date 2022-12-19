@@ -12,6 +12,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
  * @method static MX()
  * @method static BR()
  * @method static ES()
+ * @method static BE()
  * @method static GB()
  * @method static FR()
  * @method static NL()
@@ -53,6 +54,12 @@ final class Marketplace
             'id'     => 'A2Q3Y263D00KWC',
             'region' => Regions::NORTH_AMERICA,
             'url'    => 'https://sellercentral.amazon.com.br',
+        ],
+        'BE' => [
+            'name'   => 'Belgium',
+            'id'     => 'AMEN7PMS3EDWL',
+            'region' => Regions::EUROPE,
+            'url'    => 'https://sellercentral-europe.amazon.com',
         ],
         'ES' => [
             'name'   => 'Spain',
