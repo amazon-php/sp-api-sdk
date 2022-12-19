@@ -78,7 +78,7 @@ final class Marketplace
             'name'   => 'Belgium',
             'id'     => 'AMEN7PMS3EDWL',
             'region' => Regions::EUROPE,
-            'url'    => 'https://sellercentral-europe.amazon.com',
+            'url'    => 'https://sellercentral.amazon.com.be',
         ],
         'NL' => [
             'name'   => 'Netherlands',
@@ -126,7 +126,7 @@ final class Marketplace
             'name'   => 'Saudi Arabia',
             'id'     => 'A17E79C6D8DWNP',
             'region' => Regions::EUROPE,
-            'url'    => 'https://sellercentral-europe.amazon.com',
+            'url'    => 'https://sellercentral.amazon.sa',
         ],
         'AE' => [
             'name'   => 'United Arab Emirates',
