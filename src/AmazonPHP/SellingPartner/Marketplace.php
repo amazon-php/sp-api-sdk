@@ -14,6 +14,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
  * @method static ES()
  * @method static GB()
  * @method static FR()
+ * @method static BE()
  * @method static NL()
  * @method static DE()
  * @method static IT()
@@ -21,6 +22,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
  * @method static PL()
  * @method static EG()
  * @method static TR()
+ * @method static SA()
  * @method static AE()
  * @method static IN()
  * @method static SG()
@@ -72,6 +74,12 @@ final class Marketplace
             'region' => Regions::EUROPE,
             'url'    => 'https://sellercentral-europe.amazon.com',
         ],
+        'BE' => [
+            'name'   => 'Belgium',
+            'id'     => 'AMEN7PMS3EDWL',
+            'region' => Regions::EUROPE,
+            'url'    => 'https://sellercentral.amazon.com.be',
+        ],
         'NL' => [
             'name'   => 'Netherlands',
             'id'     => 'A1805IZSGTT6HS',
@@ -113,6 +121,12 @@ final class Marketplace
             'id'     => 'A33AVAJ2PDY3EV',
             'region' => Regions::EUROPE,
             'url'    => 'https://sellercentral.amazon.com.tr',
+        ],
+        'SA' => [
+            'name'   => 'Saudi Arabia',
+            'id'     => 'A17E79C6D8DWNP',
+            'region' => Regions::EUROPE,
+            'url'    => 'https://sellercentral.amazon.sa',
         ],
         'AE' => [
             'name'   => 'United Arab Emirates',
