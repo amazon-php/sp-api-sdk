@@ -390,7 +390,7 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
@@ -398,7 +398,7 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Gets a header-safe presentation of the object.
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }

@@ -229,7 +229,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets number_of_results.
      *
-     * @param int $number_of_results The estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  **Note:** The maximum number of items (ASINs) that can be returned and paged through is 1000.
+     * @param int $number_of_results For `identifiers`-based searches, the total number of Amazon catalog items found. For `keywords`-based searches, the estimated total number of Amazon catalog items matched by the search query (only results up to the page count limit will be returned per request regardless of the number found).  Note: The maximum number of items (ASINs) that can be returned and paged through is 1000.
      */
     public function setNumberOfResults(int $number_of_results) : self
     {
@@ -348,7 +348,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
@@ -356,7 +356,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets a header-safe presentation of the object.
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }

@@ -237,7 +237,7 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets uri.
      *
-     * @param string $uri The `getItemOffers` resource path without any query parameters.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`
+     * @param string $uri The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
      */
     public function setUri(string $uri) : self
     {
@@ -396,7 +396,7 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
@@ -404,7 +404,7 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets a header-safe presentation of the object.
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }

@@ -31,6 +31,24 @@ class PrepInstruction
 
     final public const HANG_GARMENT = 'HangGarment';
 
+    final public const SET_CREATION = 'SetCreation';
+
+    final public const BOXING = 'Boxing';
+
+    final public const REMOVE_FROM_HANGER = 'RemoveFromHanger';
+
+    final public const DEBUNDLE = 'Debundle';
+
+    final public const SUFFOCATION_STICKERING = 'SuffocationStickering';
+
+    final public const CAP_SEALING = 'CapSealing';
+
+    final public const SET_STICKERING = 'SetStickering';
+
+    final public const BLANK_STICKERING = 'BlankStickering';
+
+    final public const NO_PREP = 'NoPrep';
+
     public function __construct(private readonly string $value)
     {
     }
@@ -49,6 +67,15 @@ class PrepInstruction
             self::BLACK_SHRINK_WRAPPING,
             self::LABELING,
             self::HANG_GARMENT,
+            self::SET_CREATION,
+            self::BOXING,
+            self::REMOVE_FROM_HANGER,
+            self::DEBUNDLE,
+            self::SUFFOCATION_STICKERING,
+            self::CAP_SEALING,
+            self::SET_STICKERING,
+            self::BLANK_STICKERING,
+            self::NO_PREP,
         ];
     }
 

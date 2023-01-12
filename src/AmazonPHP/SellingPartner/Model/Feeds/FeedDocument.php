@@ -257,7 +257,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets url.
      *
-     * @param string $url A presigned URL for the feed document. This URL expires after 5 minutes.
+     * @param string $url A presigned URL for the feed document. If `compressionAlgorithm` is not returned, you can download the feed directly from this URL. This URL expires after 5 minutes.
      */
     public function setUrl(string $url) : self
     {
@@ -277,7 +277,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets compression_algorithm.
      *
-     * @param null|string $compression_algorithm if present, the feed document contents are compressed using the indicated algorithm
+     * @param null|string $compression_algorithm If the feed document contents have been compressed, the compression algorithm used is returned in this property and you must decompress the feed when you download. Otherwise, you can download the feed directly. Refer to [Step 7. Download the feed processing report](doc:feeds-api-v2021-06-30-use-case-guide#step-7-download-the-feed-processing-report) in the use case guide, where sample code is provided.
      */
     public function setCompressionAlgorithm(?string $compression_algorithm) : self
     {
@@ -334,7 +334,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
@@ -342,7 +342,7 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets a header-safe presentation of the object.
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }

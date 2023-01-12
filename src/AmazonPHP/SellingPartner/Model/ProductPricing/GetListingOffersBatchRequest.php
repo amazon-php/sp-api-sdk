@@ -201,7 +201,7 @@ class GetListingOffersBatchRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets requests.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequest[] $requests a list of getItemOffers batched requests to run
+     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequest[] $requests a list of `getListingOffers` batched requests to run
      */
     public function setRequests(?array $requests) : self
     {
@@ -258,7 +258,7 @@ class GetListingOffersBatchRequest implements \ArrayAccess, \JsonSerializable, \
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
@@ -266,7 +266,7 @@ class GetListingOffersBatchRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Gets a header-safe presentation of the object.
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
