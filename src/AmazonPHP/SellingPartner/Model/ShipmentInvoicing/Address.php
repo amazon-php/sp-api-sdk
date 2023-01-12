@@ -535,7 +535,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
@@ -543,7 +543,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets a header-safe presentation of the object.
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }

@@ -211,7 +211,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets uri.
      *
-1     * @param string $uri The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
+     * @param string $uri The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
      */
     public function setUri(string $uri) : self
     {
@@ -310,7 +310,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      *               of any type other than a resource
      */
     #[\ReturnTypeWillChange]
-    public function jsonSerialize() : string|bool
+    public function jsonSerialize() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
@@ -318,7 +318,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets a header-safe presentation of the object.
      */
-    public function toHeaderValue() : string|bool
+    public function toHeaderValue() : string
     {
         return \json_encode(ObjectSerializer::sanitizeForSerialization($this), JSON_THROW_ON_ERROR);
     }
