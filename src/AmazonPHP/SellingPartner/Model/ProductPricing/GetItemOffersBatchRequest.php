@@ -201,7 +201,7 @@ class GetItemOffersBatchRequest implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets requests.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersRequest[] $requests a list of getItemOffers batched requests to run
+     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersRequest[] $requests a list of `getListingOffers` batched requests to run
      */
     public function setRequests(?array $requests) : self
     {

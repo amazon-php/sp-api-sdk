@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Model\ProductPricing;
+namespace AmazonPHP\SellingPartner\Model\Finances;
 
 use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Pricing.
+ * Selling Partner API for Finances.
  *
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer information for Amazon Marketplace products.
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,7 +23,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
@@ -32,7 +32,7 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'ListingOffersRequest';
+    protected static string $openAPIModelName = 'FailedAdhocDisbursementEventList';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,12 +40,13 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'uri' => 'string',
-        'method' => '\AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod',
-        'headers' => 'array<string,string>',
-        'marketplace_id' => 'string',
-        'item_condition' => '\AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition',
-        'customer_type' => '\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType',
+        'funds_transfers_type' => 'string',
+        'transfer_id' => 'string',
+        'disbursement_id' => 'string',
+        'payment_disbursement_type' => 'string',
+        'status' => 'string',
+        'transfer_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'posted_date' => '\DateTimeInterface',
     ];
 
     /**
@@ -58,12 +59,13 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'uri' => null,
-        'method' => null,
-        'headers' => null,
-        'marketplace_id' => null,
-        'item_condition' => null,
-        'customer_type' => null,
+        'funds_transfers_type' => null,
+        'transfer_id' => null,
+        'disbursement_id' => null,
+        'payment_disbursement_type' => null,
+        'status' => null,
+        'transfer_amount' => null,
+        'posted_date' => 'date-time',
     ];
 
     /**
@@ -73,12 +75,13 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $attributeMap = [
-        'uri' => 'uri',
-        'method' => 'method',
-        'headers' => 'headers',
-        'marketplace_id' => 'MarketplaceId',
-        'item_condition' => 'ItemCondition',
-        'customer_type' => 'CustomerType',
+        'funds_transfers_type' => 'FundsTransfersType',
+        'transfer_id' => 'TransferId',
+        'disbursement_id' => 'DisbursementId',
+        'payment_disbursement_type' => 'PaymentDisbursementType',
+        'status' => 'Status',
+        'transfer_amount' => 'TransferAmount',
+        'posted_date' => 'PostedDate',
     ];
 
     /**
@@ -87,12 +90,13 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $setters = [
-        'uri' => 'setUri',
-        'method' => 'setMethod',
-        'headers' => 'setHeaders',
-        'marketplace_id' => 'setMarketplaceId',
-        'item_condition' => 'setItemCondition',
-        'customer_type' => 'setCustomerType',
+        'funds_transfers_type' => 'setFundsTransfersType',
+        'transfer_id' => 'setTransferId',
+        'disbursement_id' => 'setDisbursementId',
+        'payment_disbursement_type' => 'setPaymentDisbursementType',
+        'status' => 'setStatus',
+        'transfer_amount' => 'setTransferAmount',
+        'posted_date' => 'setPostedDate',
     ];
 
     /**
@@ -101,12 +105,13 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $getters = [
-        'uri' => 'getUri',
-        'method' => 'getMethod',
-        'headers' => 'getHeaders',
-        'marketplace_id' => 'getMarketplaceId',
-        'item_condition' => 'getItemCondition',
-        'customer_type' => 'getCustomerType',
+        'funds_transfers_type' => 'getFundsTransfersType',
+        'transfer_id' => 'getTransferId',
+        'disbursement_id' => 'getDisbursementId',
+        'payment_disbursement_type' => 'getPaymentDisbursementType',
+        'status' => 'getStatus',
+        'transfer_amount' => 'getTransferAmount',
+        'posted_date' => 'getPostedDate',
     ];
 
     /**
@@ -124,12 +129,13 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function __construct(array $data = null)
     {
-        $this->container['uri'] = $data['uri'] ?? null;
-        $this->container['method'] = $data['method'] ?? null;
-        $this->container['headers'] = $data['headers'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['item_condition'] = $data['item_condition'] ?? null;
-        $this->container['customer_type'] = $data['customer_type'] ?? null;
+        $this->container['funds_transfers_type'] = $data['funds_transfers_type'] ?? null;
+        $this->container['transfer_id'] = $data['transfer_id'] ?? null;
+        $this->container['disbursement_id'] = $data['disbursement_id'] ?? null;
+        $this->container['payment_disbursement_type'] = $data['payment_disbursement_type'] ?? null;
+        $this->container['status'] = $data['status'] ?? null;
+        $this->container['transfer_amount'] = $data['transfer_amount'] ?? null;
+        $this->container['posted_date'] = $data['posted_date'] ?? null;
     }
 
     /**
@@ -209,141 +215,147 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function validate() : void
     {
-        if ($this->container['uri'] === null) {
-            throw new AssertionException("'uri' can't be null");
-        }
-
-        if ($this->container['method'] === null) {
-            throw new AssertionException("'method' can't be null");
-        }
-
-        if ($this->container['marketplace_id'] === null) {
-            throw new AssertionException("'marketplace_id' can't be null");
-        }
-
-        if ($this->container['item_condition'] === null) {
-            throw new AssertionException("'item_condition' can't be null");
+        if ($this->container['transfer_amount'] !== null) {
+            $this->container['transfer_amount']->validate();
         }
     }
 
     /**
-     * Gets uri.
+     * Gets funds_transfers_type.
      */
-    public function getUri() : string
+    public function getFundsTransfersType() : ?string
     {
-        return $this->container['uri'];
+        return $this->container['funds_transfers_type'];
     }
 
     /**
-     * Sets uri.
+     * Sets funds_transfers_type.
      *
-     * @param string $uri The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
+     * @param null|string $funds_transfers_type The type of fund transfer.   Example \"Refund\"
      */
-    public function setUri(string $uri) : self
+    public function setFundsTransfersType(?string $funds_transfers_type) : self
     {
-        $this->container['uri'] = $uri;
+        $this->container['funds_transfers_type'] = $funds_transfers_type;
 
         return $this;
     }
 
     /**
-     * Gets method.
+     * Gets transfer_id.
      */
-    public function getMethod() : HttpMethod
+    public function getTransferId() : ?string
     {
-        return $this->container['method'];
+        return $this->container['transfer_id'];
     }
 
     /**
-     * Sets method.
+     * Sets transfer_id.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod $method method
+     * @param null|string $transfer_id the transfer identifier
      */
-    public function setMethod(HttpMethod $method) : self
+    public function setTransferId(?string $transfer_id) : self
     {
-        $this->container['method'] = $method;
+        $this->container['transfer_id'] = $transfer_id;
 
         return $this;
     }
 
     /**
-     * Gets headers.
-     *
-     * @return null|array<string,string>
+     * Gets disbursement_id.
      */
-    public function getHeaders() : ?array
+    public function getDisbursementId() : ?string
     {
-        return $this->container['headers'];
+        return $this->container['disbursement_id'];
     }
 
     /**
-     * Sets headers.
+     * Sets disbursement_id.
      *
-     * @param null|array<string,string> $headers a mapping of additional HTTP headers to send/receive for the individual batch request
+     * @param null|string $disbursement_id the disbursement identifier
      */
-    public function setHeaders(?array $headers) : self
+    public function setDisbursementId(?string $disbursement_id) : self
     {
-        $this->container['headers'] = $headers;
+        $this->container['disbursement_id'] = $disbursement_id;
 
         return $this;
     }
 
     /**
-     * Gets marketplace_id.
+     * Gets payment_disbursement_type.
      */
-    public function getMarketplaceId() : string
+    public function getPaymentDisbursementType() : ?string
     {
-        return $this->container['marketplace_id'];
+        return $this->container['payment_disbursement_type'];
     }
 
     /**
-     * Sets marketplace_id.
+     * Sets payment_disbursement_type.
      *
-     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned.
+     * @param null|string $payment_disbursement_type The type of payment for disbursement.   Example `CREDIT_CARD`
      */
-    public function setMarketplaceId(string $marketplace_id) : self
+    public function setPaymentDisbursementType(?string $payment_disbursement_type) : self
     {
-        $this->container['marketplace_id'] = $marketplace_id;
+        $this->container['payment_disbursement_type'] = $payment_disbursement_type;
 
         return $this;
     }
 
     /**
-     * Gets item_condition.
+     * Gets status.
      */
-    public function getItemCondition() : ItemCondition
+    public function getStatus() : ?string
     {
-        return $this->container['item_condition'];
+        return $this->container['status'];
     }
 
     /**
-     * Sets item_condition.
+     * Sets status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition $item_condition item_condition
+     * @param null|string $status The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
      */
-    public function setItemCondition(ItemCondition $item_condition) : self
+    public function setStatus(?string $status) : self
     {
-        $this->container['item_condition'] = $item_condition;
+        $this->container['status'] = $status;
 
         return $this;
     }
 
     /**
-     * Gets customer_type.
+     * Gets transfer_amount.
      */
-    public function getCustomerType() : ?CustomerType
+    public function getTransferAmount() : ?Currency
     {
-        return $this->container['customer_type'];
+        return $this->container['transfer_amount'];
     }
 
     /**
-     * Sets customer_type.
+     * Sets transfer_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType $customer_type customer_type
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $transfer_amount transfer_amount
      */
-    public function setCustomerType(?CustomerType $customer_type) : self
+    public function setTransferAmount(?Currency $transfer_amount) : self
     {
-        $this->container['customer_type'] = $customer_type;
+        $this->container['transfer_amount'] = $transfer_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets posted_date.
+     */
+    public function getPostedDate() : ?\DateTimeInterface
+    {
+        return $this->container['posted_date'];
+    }
+
+    /**
+     * Sets posted_date.
+     *
+     * @param null|\DateTimeInterface $posted_date posted_date
+     */
+    public function setPostedDate(?\DateTimeInterface $posted_date) : self
+    {
+        $this->container['posted_date'] = $posted_date;
 
         return $this;
     }

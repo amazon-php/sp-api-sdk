@@ -49,17 +49,23 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
      */
     protected static array $openAPITypes = [
         'marketplace_id' => 'string',
+        'adult_product' => 'bool',
+        'autographed' => 'bool',
         'brand' => 'string',
         'browse_classification' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification',
         'color' => 'string',
+        'contributors' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ItemContributor[]',
         'item_classification' => 'string',
         'item_name' => 'string',
         'manufacturer' => 'string',
+        'memorabilia' => 'bool',
         'model_number' => 'string',
         'package_quantity' => 'int',
         'part_number' => 'string',
+        'release_date' => '\DateTimeInterface',
         'size' => 'string',
         'style' => 'string',
+        'trade_in_eligible' => 'bool',
         'website_display_group' => 'string',
         'website_display_group_name' => 'string',
     ];
@@ -75,17 +81,23 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
      */
     protected static array $openAPIFormats = [
         'marketplace_id' => null,
+        'adult_product' => null,
+        'autographed' => null,
         'brand' => null,
         'browse_classification' => null,
         'color' => null,
+        'contributors' => null,
         'item_classification' => null,
         'item_name' => null,
         'manufacturer' => null,
+        'memorabilia' => null,
         'model_number' => null,
         'package_quantity' => null,
         'part_number' => null,
+        'release_date' => 'date',
         'size' => null,
         'style' => null,
+        'trade_in_eligible' => null,
         'website_display_group' => null,
         'website_display_group_name' => null,
     ];
@@ -98,17 +110,23 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
      */
     protected static array $attributeMap = [
         'marketplace_id' => 'marketplaceId',
+        'adult_product' => 'adultProduct',
+        'autographed' => 'autographed',
         'brand' => 'brand',
         'browse_classification' => 'browseClassification',
         'color' => 'color',
+        'contributors' => 'contributors',
         'item_classification' => 'itemClassification',
         'item_name' => 'itemName',
         'manufacturer' => 'manufacturer',
+        'memorabilia' => 'memorabilia',
         'model_number' => 'modelNumber',
         'package_quantity' => 'packageQuantity',
         'part_number' => 'partNumber',
+        'release_date' => 'releaseDate',
         'size' => 'size',
         'style' => 'style',
+        'trade_in_eligible' => 'tradeInEligible',
         'website_display_group' => 'websiteDisplayGroup',
         'website_display_group_name' => 'websiteDisplayGroupName',
     ];
@@ -120,17 +138,23 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
      */
     protected static array $setters = [
         'marketplace_id' => 'setMarketplaceId',
+        'adult_product' => 'setAdultProduct',
+        'autographed' => 'setAutographed',
         'brand' => 'setBrand',
         'browse_classification' => 'setBrowseClassification',
         'color' => 'setColor',
+        'contributors' => 'setContributors',
         'item_classification' => 'setItemClassification',
         'item_name' => 'setItemName',
         'manufacturer' => 'setManufacturer',
+        'memorabilia' => 'setMemorabilia',
         'model_number' => 'setModelNumber',
         'package_quantity' => 'setPackageQuantity',
         'part_number' => 'setPartNumber',
+        'release_date' => 'setReleaseDate',
         'size' => 'setSize',
         'style' => 'setStyle',
+        'trade_in_eligible' => 'setTradeInEligible',
         'website_display_group' => 'setWebsiteDisplayGroup',
         'website_display_group_name' => 'setWebsiteDisplayGroupName',
     ];
@@ -142,17 +166,23 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
      */
     protected static array $getters = [
         'marketplace_id' => 'getMarketplaceId',
+        'adult_product' => 'getAdultProduct',
+        'autographed' => 'getAutographed',
         'brand' => 'getBrand',
         'browse_classification' => 'getBrowseClassification',
         'color' => 'getColor',
+        'contributors' => 'getContributors',
         'item_classification' => 'getItemClassification',
         'item_name' => 'getItemName',
         'manufacturer' => 'getManufacturer',
+        'memorabilia' => 'getMemorabilia',
         'model_number' => 'getModelNumber',
         'package_quantity' => 'getPackageQuantity',
         'part_number' => 'getPartNumber',
+        'release_date' => 'getReleaseDate',
         'size' => 'getSize',
         'style' => 'getStyle',
+        'trade_in_eligible' => 'getTradeInEligible',
         'website_display_group' => 'getWebsiteDisplayGroup',
         'website_display_group_name' => 'getWebsiteDisplayGroupName',
     ];
@@ -173,17 +203,23 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     public function __construct(array $data = null)
     {
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
+        $this->container['adult_product'] = $data['adult_product'] ?? null;
+        $this->container['autographed'] = $data['autographed'] ?? null;
         $this->container['brand'] = $data['brand'] ?? null;
         $this->container['browse_classification'] = $data['browse_classification'] ?? null;
         $this->container['color'] = $data['color'] ?? null;
+        $this->container['contributors'] = $data['contributors'] ?? null;
         $this->container['item_classification'] = $data['item_classification'] ?? null;
         $this->container['item_name'] = $data['item_name'] ?? null;
         $this->container['manufacturer'] = $data['manufacturer'] ?? null;
+        $this->container['memorabilia'] = $data['memorabilia'] ?? null;
         $this->container['model_number'] = $data['model_number'] ?? null;
         $this->container['package_quantity'] = $data['package_quantity'] ?? null;
         $this->container['part_number'] = $data['part_number'] ?? null;
+        $this->container['release_date'] = $data['release_date'] ?? null;
         $this->container['size'] = $data['size'] ?? null;
         $this->container['style'] = $data['style'] ?? null;
+        $this->container['trade_in_eligible'] = $data['trade_in_eligible'] ?? null;
         $this->container['website_display_group'] = $data['website_display_group'] ?? null;
         $this->container['website_display_group_name'] = $data['website_display_group_name'] ?? null;
     }
@@ -322,6 +358,46 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     }
 
     /**
+     * Gets adult_product.
+     */
+    public function getAdultProduct() : ?bool
+    {
+        return $this->container['adult_product'];
+    }
+
+    /**
+     * Sets adult_product.
+     *
+     * @param null|bool $adult_product identifies an Amazon catalog item is intended for an adult audience or is sexual in nature
+     */
+    public function setAdultProduct(?bool $adult_product) : self
+    {
+        $this->container['adult_product'] = $adult_product;
+
+        return $this;
+    }
+
+    /**
+     * Gets autographed.
+     */
+    public function getAutographed() : ?bool
+    {
+        return $this->container['autographed'];
+    }
+
+    /**
+     * Sets autographed.
+     *
+     * @param null|bool $autographed identifies an Amazon catalog item is autographed by a player or celebrity
+     */
+    public function setAutographed(?bool $autographed) : self
+    {
+        $this->container['autographed'] = $autographed;
+
+        return $this;
+    }
+
+    /**
      * Gets brand.
      */
     public function getBrand() : ?string
@@ -377,6 +453,28 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     public function setColor(?string $color) : self
     {
         $this->container['color'] = $color;
+
+        return $this;
+    }
+
+    /**
+     * Gets contributors.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemContributor[]
+     */
+    public function getContributors() : ?array
+    {
+        return $this->container['contributors'];
+    }
+
+    /**
+     * Sets contributors.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemContributor[] $contributors individual contributors to the creation of an item, such as the authors or actors
+     */
+    public function setContributors(?array $contributors) : self
+    {
+        $this->container['contributors'] = $contributors;
 
         return $this;
     }
@@ -442,6 +540,26 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     }
 
     /**
+     * Gets memorabilia.
+     */
+    public function getMemorabilia() : ?bool
+    {
+        return $this->container['memorabilia'];
+    }
+
+    /**
+     * Sets memorabilia.
+     *
+     * @param null|bool $memorabilia identifies an Amazon catalog item is memorabilia valued for its connection with historical events, culture, or entertainment
+     */
+    public function setMemorabilia(?bool $memorabilia) : self
+    {
+        $this->container['memorabilia'] = $memorabilia;
+
+        return $this;
+    }
+
+    /**
      * Gets model_number.
      */
     public function getModelNumber() : ?string
@@ -502,6 +620,26 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     }
 
     /**
+     * Gets release_date.
+     */
+    public function getReleaseDate() : ?\DateTimeInterface
+    {
+        return $this->container['release_date'];
+    }
+
+    /**
+     * Sets release_date.
+     *
+     * @param null|\DateTimeInterface $release_date first date on which an Amazon catalog item is shippable to customers
+     */
+    public function setReleaseDate(?\DateTimeInterface $release_date) : self
+    {
+        $this->container['release_date'] = $release_date;
+
+        return $this;
+    }
+
+    /**
      * Gets size.
      */
     public function getSize() : ?string
@@ -537,6 +675,26 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     public function setStyle(?string $style) : self
     {
         $this->container['style'] = $style;
+
+        return $this;
+    }
+
+    /**
+     * Gets trade_in_eligible.
+     */
+    public function getTradeInEligible() : ?bool
+    {
+        return $this->container['trade_in_eligible'];
+    }
+
+    /**
+     * Sets trade_in_eligible.
+     *
+     * @param null|bool $trade_in_eligible identifies an Amazon catalog item is eligible for trade-in
+     */
+    public function setTradeInEligible(?bool $trade_in_eligible) : self
+    {
+        $this->container['trade_in_eligible'] = $trade_in_eligible;
 
         return $this;
     }

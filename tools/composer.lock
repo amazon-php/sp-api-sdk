@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d5d6bfe0426958049da9ed8b61ed9ca",
+    "content-hash": "b36449b57fc7f9eec15a3dcdc70eb1a4",
     "packages": [],
     "packages-dev": [
         {
@@ -2131,26 +2131,28 @@
         },
         {
             "name": "rector/rector",
-            "version": "0.15.3",
+            "version": "0.14.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "3f15e3a2412d3dd4803905bdad35fbee84a2953c"
+                "reference": "c4ec650b298158fd7ccdf4613777792f0d1d13d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/3f15e3a2412d3dd4803905bdad35fbee84a2953c",
-                "reference": "3f15e3a2412d3dd4803905bdad35fbee84a2953c",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/c4ec650b298158fd7ccdf4613777792f0d1d13d7",
+                "reference": "c4ec650b298158fd7ccdf4613777792f0d1d13d7",
                 "shasum": ""
             },
             "require": {
                 "php": "^7.2|^8.0",
-                "phpstan/phpstan": "^1.9.7"
+                "phpstan/phpstan": "^1.8.3"
             },
             "conflict": {
+                "rector/rector-cakephp": "*",
                 "rector/rector-doctrine": "*",
-                "rector/rector-downgrade-php": "*",
+                "rector/rector-laravel": "*",
                 "rector/rector-php-parser": "*",
+                "rector/rector-phpoffice": "*",
                 "rector/rector-phpunit": "*",
                 "rector/rector-symfony": "*"
             },
@@ -2175,7 +2177,7 @@
             "description": "Instant Upgrade and Automated Refactoring of any PHP code",
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/0.15.3"
+                "source": "https://github.com/rectorphp/rector/tree/0.14.3"
             },
             "funding": [
                 {
@@ -2183,7 +2185,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-01-08T16:14:58+00:00"
+            "time": "2022-09-23T09:46:53+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -4814,5 +4816,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

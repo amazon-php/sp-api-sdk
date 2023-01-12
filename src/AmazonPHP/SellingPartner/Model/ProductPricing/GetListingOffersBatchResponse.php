@@ -201,7 +201,7 @@ class GetListingOffersBatchResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets responses.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersResponse[] $responses a list of getListingOffers batched responses
+     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersResponse[] $responses a list of `getListingOffers` batched responses
      */
     public function setResponses(?array $responses) : self
     {

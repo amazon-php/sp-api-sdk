@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Model\ProductPricing;
+namespace AmazonPHP\SellingPartner\Model\Finances;
 
 use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Pricing.
+ * Selling Partner API for Finances.
  *
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer information for Amazon Marketplace products.
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,7 +23,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
@@ -32,7 +32,7 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'ListingOffersRequest';
+    protected static string $openAPIModelName = 'TDSReimbursementEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,12 +40,9 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'uri' => 'string',
-        'method' => '\AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod',
-        'headers' => 'array<string,string>',
-        'marketplace_id' => 'string',
-        'item_condition' => '\AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition',
-        'customer_type' => '\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType',
+        'posted_date' => '\DateTimeInterface',
+        'tds_order_id' => 'string',
+        'reimbursed_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
     ];
 
     /**
@@ -58,12 +55,9 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'uri' => null,
-        'method' => null,
-        'headers' => null,
-        'marketplace_id' => null,
-        'item_condition' => null,
-        'customer_type' => null,
+        'posted_date' => 'date-time',
+        'tds_order_id' => null,
+        'reimbursed_amount' => null,
     ];
 
     /**
@@ -73,12 +67,9 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $attributeMap = [
-        'uri' => 'uri',
-        'method' => 'method',
-        'headers' => 'headers',
-        'marketplace_id' => 'MarketplaceId',
-        'item_condition' => 'ItemCondition',
-        'customer_type' => 'CustomerType',
+        'posted_date' => 'PostedDate',
+        'tds_order_id' => 'TDSOrderId',
+        'reimbursed_amount' => 'ReimbursedAmount',
     ];
 
     /**
@@ -87,12 +78,9 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $setters = [
-        'uri' => 'setUri',
-        'method' => 'setMethod',
-        'headers' => 'setHeaders',
-        'marketplace_id' => 'setMarketplaceId',
-        'item_condition' => 'setItemCondition',
-        'customer_type' => 'setCustomerType',
+        'posted_date' => 'setPostedDate',
+        'tds_order_id' => 'setTdsOrderId',
+        'reimbursed_amount' => 'setReimbursedAmount',
     ];
 
     /**
@@ -101,12 +89,9 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $getters = [
-        'uri' => 'getUri',
-        'method' => 'getMethod',
-        'headers' => 'getHeaders',
-        'marketplace_id' => 'getMarketplaceId',
-        'item_condition' => 'getItemCondition',
-        'customer_type' => 'getCustomerType',
+        'posted_date' => 'getPostedDate',
+        'tds_order_id' => 'getTdsOrderId',
+        'reimbursed_amount' => 'getReimbursedAmount',
     ];
 
     /**
@@ -124,12 +109,9 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function __construct(array $data = null)
     {
-        $this->container['uri'] = $data['uri'] ?? null;
-        $this->container['method'] = $data['method'] ?? null;
-        $this->container['headers'] = $data['headers'] ?? null;
-        $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
-        $this->container['item_condition'] = $data['item_condition'] ?? null;
-        $this->container['customer_type'] = $data['customer_type'] ?? null;
+        $this->container['posted_date'] = $data['posted_date'] ?? null;
+        $this->container['tds_order_id'] = $data['tds_order_id'] ?? null;
+        $this->container['reimbursed_amount'] = $data['reimbursed_amount'] ?? null;
     }
 
     /**
@@ -209,141 +191,67 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function validate() : void
     {
-        if ($this->container['uri'] === null) {
-            throw new AssertionException("'uri' can't be null");
-        }
-
-        if ($this->container['method'] === null) {
-            throw new AssertionException("'method' can't be null");
-        }
-
-        if ($this->container['marketplace_id'] === null) {
-            throw new AssertionException("'marketplace_id' can't be null");
-        }
-
-        if ($this->container['item_condition'] === null) {
-            throw new AssertionException("'item_condition' can't be null");
+        if ($this->container['reimbursed_amount'] !== null) {
+            $this->container['reimbursed_amount']->validate();
         }
     }
 
     /**
-     * Gets uri.
+     * Gets posted_date.
      */
-    public function getUri() : string
+    public function getPostedDate() : ?\DateTimeInterface
     {
-        return $this->container['uri'];
+        return $this->container['posted_date'];
     }
 
     /**
-     * Sets uri.
+     * Sets posted_date.
      *
-     * @param string $uri The resource path of the operation you are calling in batch without any query parameters.  If you are calling `getItemOffersBatch`, supply the path of `getItemOffers`.  **Example:** `/products/pricing/v0/items/B000P6Q7MY/offers`  If you are calling `getListingOffersBatch`, supply the path of `getListingOffers`.  **Example:** `/products/pricing/v0/listings/B000P6Q7MY/offers`
+     * @param null|\DateTimeInterface $posted_date posted_date
      */
-    public function setUri(string $uri) : self
+    public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
-        $this->container['uri'] = $uri;
+        $this->container['posted_date'] = $posted_date;
 
         return $this;
     }
 
     /**
-     * Gets method.
+     * Gets tds_order_id.
      */
-    public function getMethod() : HttpMethod
+    public function getTdsOrderId() : ?string
     {
-        return $this->container['method'];
+        return $this->container['tds_order_id'];
     }
 
     /**
-     * Sets method.
+     * Sets tds_order_id.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod $method method
+     * @param null|string $tds_order_id the Tax-Deducted-at-Source (TDS) identifier
      */
-    public function setMethod(HttpMethod $method) : self
+    public function setTdsOrderId(?string $tds_order_id) : self
     {
-        $this->container['method'] = $method;
+        $this->container['tds_order_id'] = $tds_order_id;
 
         return $this;
     }
 
     /**
-     * Gets headers.
+     * Gets reimbursed_amount.
+     */
+    public function getReimbursedAmount() : ?Currency
+    {
+        return $this->container['reimbursed_amount'];
+    }
+
+    /**
+     * Sets reimbursed_amount.
      *
-     * @return null|array<string,string>
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $reimbursed_amount reimbursed_amount
      */
-    public function getHeaders() : ?array
+    public function setReimbursedAmount(?Currency $reimbursed_amount) : self
     {
-        return $this->container['headers'];
-    }
-
-    /**
-     * Sets headers.
-     *
-     * @param null|array<string,string> $headers a mapping of additional HTTP headers to send/receive for the individual batch request
-     */
-    public function setHeaders(?array $headers) : self
-    {
-        $this->container['headers'] = $headers;
-
-        return $this;
-    }
-
-    /**
-     * Gets marketplace_id.
-     */
-    public function getMarketplaceId() : string
-    {
-        return $this->container['marketplace_id'];
-    }
-
-    /**
-     * Sets marketplace_id.
-     *
-     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace for which prices are returned.
-     */
-    public function setMarketplaceId(string $marketplace_id) : self
-    {
-        $this->container['marketplace_id'] = $marketplace_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets item_condition.
-     */
-    public function getItemCondition() : ItemCondition
-    {
-        return $this->container['item_condition'];
-    }
-
-    /**
-     * Sets item_condition.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition $item_condition item_condition
-     */
-    public function setItemCondition(ItemCondition $item_condition) : self
-    {
-        $this->container['item_condition'] = $item_condition;
-
-        return $this;
-    }
-
-    /**
-     * Gets customer_type.
-     */
-    public function getCustomerType() : ?CustomerType
-    {
-        return $this->container['customer_type'];
-    }
-
-    /**
-     * Sets customer_type.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType $customer_type customer_type
-     */
-    public function setCustomerType(?CustomerType $customer_type) : self
-    {
-        $this->container['customer_type'] = $customer_type;
+        $this->container['reimbursed_amount'] = $reimbursed_amount;
 
         return $this;
     }

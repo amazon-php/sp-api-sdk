@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Model\ProductPricing;
+namespace AmazonPHP\SellingPartner\Model\Finances;
 
 use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Pricing.
+ * Selling Partner API for Finances.
  *
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer information for Amazon Marketplace products.
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,7 +23,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class ChargeRefundTransaction implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
@@ -32,7 +32,7 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'GetItemOffersBatchResponse';
+    protected static string $openAPIModelName = 'ChargeRefundTransaction';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,7 +40,8 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'responses' => '\AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersResponse[]',
+        'charge_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'charge_type' => 'string',
     ];
 
     /**
@@ -53,7 +54,8 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'responses' => null,
+        'charge_amount' => null,
+        'charge_type' => null,
     ];
 
     /**
@@ -63,7 +65,8 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $attributeMap = [
-        'responses' => 'responses',
+        'charge_amount' => 'ChargeAmount',
+        'charge_type' => 'ChargeType',
     ];
 
     /**
@@ -72,7 +75,8 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $setters = [
-        'responses' => 'setResponses',
+        'charge_amount' => 'setChargeAmount',
+        'charge_type' => 'setChargeType',
     ];
 
     /**
@@ -81,7 +85,8 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $getters = [
-        'responses' => 'getResponses',
+        'charge_amount' => 'getChargeAmount',
+        'charge_type' => 'getChargeType',
     ];
 
     /**
@@ -99,7 +104,8 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      */
     public function __construct(array $data = null)
     {
-        $this->container['responses'] = $data['responses'] ?? null;
+        $this->container['charge_amount'] = $data['charge_amount'] ?? null;
+        $this->container['charge_type'] = $data['charge_type'] ?? null;
     }
 
     /**
@@ -179,33 +185,47 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
      */
     public function validate() : void
     {
-        if (null !== $this->container['responses'] && (\count($this->container['responses']) > 20)) {
-            throw new AssertionException("invalid value for 'responses', number of items must be less than or equal to 20.");
-        }
-
-        if (null !== $this->container['responses'] && (\count($this->container['responses']) < 1)) {
-            throw new AssertionException("invalid value for 'responses', number of items must be greater than or equal to 1.");
+        if ($this->container['charge_amount'] !== null) {
+            $this->container['charge_amount']->validate();
         }
     }
 
     /**
-     * Gets responses.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersResponse[]
+     * Gets charge_amount.
      */
-    public function getResponses() : ?array
+    public function getChargeAmount() : ?Currency
     {
-        return $this->container['responses'];
+        return $this->container['charge_amount'];
     }
 
     /**
-     * Sets responses.
+     * Sets charge_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersResponse[] $responses a list of `getItemOffers` batched responses
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $charge_amount charge_amount
      */
-    public function setResponses(?array $responses) : self
+    public function setChargeAmount(?Currency $charge_amount) : self
     {
-        $this->container['responses'] = $responses;
+        $this->container['charge_amount'] = $charge_amount;
+
+        return $this;
+    }
+
+    /**
+     * Gets charge_type.
+     */
+    public function getChargeType() : ?string
+    {
+        return $this->container['charge_type'];
+    }
+
+    /**
+     * Sets charge_type.
+     *
+     * @param null|string $charge_type the type of charge
+     */
+    public function setChargeType(?string $charge_type) : self
+    {
+        $this->container['charge_type'] = $charge_type;
 
         return $this;
     }
