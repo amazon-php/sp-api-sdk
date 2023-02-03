@@ -3,6 +3,7 @@
 namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Model\CatalogItem\ItemImage;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\CurrencyCode;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepDetails;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepInstruction;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\SellerFreightClass;
@@ -420,6 +421,7 @@ final class ObjectSerializer
         return [
             \ltrim(EventCode::class, '\\'),
             \ltrim(ItemImage::class, '\\'),
+            \ltrim(CurrencyCode::class, '\\'),
             \ltrim(AdditionalLocationInfo::class, '\\'),
             \ltrim(CurrentStatus::class, '\\'),
             \ltrim(FileType::class, '\\'),
