@@ -101,7 +101,6 @@ final class HttpSignatureHeaders
             . "\n" . $signedHeadersStr
             . "\n" . $hashedPayload;
 
-        \dump($canonicalString);
         //Prepare the string to sign
         $stringToSign = $algorithm . "\n"
             . $amzdate . "\n"
