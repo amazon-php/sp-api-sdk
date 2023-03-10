@@ -682,7 +682,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Gets amazon_order_id.
      */
-    public function getAmazonOrderId() : string
+    public function getAmazonOrderId() : ?string
     {
         return $this->container['amazon_order_id'];
     }
