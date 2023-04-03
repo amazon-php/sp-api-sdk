@@ -21,7 +21,7 @@
         "ext-mbstring": "*",
         "psr/http-client": "^1.0.1",
         "psr/http-factory": "^1.0",
-        "psr/log": "^1.1",
+        "psr/log": "^1.1||^2.0||^3.0",
         "symfony/polyfill-uuid": "^1.23"
     },
     "require-dev": {
