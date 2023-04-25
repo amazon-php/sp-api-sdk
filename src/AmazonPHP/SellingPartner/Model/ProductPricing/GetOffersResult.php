@@ -257,7 +257,7 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets marketplace_id.
      */
-    public function getMarketplaceId() : string
+    public function getMarketplaceId() : ?string
     {
         return $this->container['marketplace_id'];
     }

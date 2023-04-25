@@ -20,6 +20,7 @@ use AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement;
 use AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest;
 use AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponse;
 use AmazonPHP\SellingPartner\Model\Orders\Address;
+use AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResult;
 use AmazonPHP\SellingPartner\Model\Uploads\UploadDestination;
 use PHPStan\Type\ArrayType;
 use PHPStan\Type\BooleanType;
@@ -109,6 +110,11 @@ return static function (RectorConfig $config): void {
     $config->ruleWithConfiguration(
         AddReturnTypeDeclarationRector::class,
         [
+            new AddReturnTypeDeclaration(
+                GetOffersResult::class,
+                'getMarketplaceId',
+                new UnionType([new NullType(), new StringType()]),
+            ),
             new AddReturnTypeDeclaration(
                 CatalogItem::class,
                 'getAttributes',
