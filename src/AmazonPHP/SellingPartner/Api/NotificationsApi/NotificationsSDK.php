@@ -39,6 +39,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationResponse
      */
     public function createDestination(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body) : \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationResponse
     {
@@ -48,14 +50,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'createDestination')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'createDestination'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -225,6 +228,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionResponse
      */
     public function createSubscription(AccessToken $accessToken, string $region, string $notification_type, \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body) : \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionResponse
     {
@@ -234,14 +239,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'createSubscription')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'createSubscription'),
                     'Amazon Selling Partner API pre request',
@@ -277,6 +281,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -426,6 +432,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\DeleteDestinationResponse
      */
     public function deleteDestination(AccessToken $accessToken, string $region, string $destination_id) : \AmazonPHP\SellingPartner\Model\Notifications\DeleteDestinationResponse
     {
@@ -435,14 +443,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'deleteDestination')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'deleteDestination'),
                     'Amazon Selling Partner API pre request',
@@ -478,6 +485,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -613,6 +622,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\DeleteSubscriptionByIdResponse
      */
     public function deleteSubscriptionById(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\DeleteSubscriptionByIdResponse
     {
@@ -622,14 +633,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'deleteSubscriptionById')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'deleteSubscriptionById'),
                     'Amazon Selling Partner API pre request',
@@ -665,6 +675,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -814,6 +826,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationResponse
      */
     public function getDestination(AccessToken $accessToken, string $region, string $destination_id) : \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationResponse
     {
@@ -823,14 +837,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'getDestination')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'getDestination'),
                     'Amazon Selling Partner API pre request',
@@ -866,6 +879,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -998,6 +1013,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationsResponse
      */
     public function getDestinations(AccessToken $accessToken, string $region) : \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationsResponse
     {
@@ -1007,14 +1024,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'getDestinations')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'getDestinations'),
                     'Amazon Selling Partner API pre request',
@@ -1050,6 +1066,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1166,6 +1184,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionResponse
      */
     public function getSubscription(AccessToken $accessToken, string $region, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionResponse
     {
@@ -1175,14 +1195,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'getSubscription')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'getSubscription'),
                     'Amazon Selling Partner API pre request',
@@ -1218,6 +1237,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1353,6 +1374,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionByIdResponse
      */
     public function getSubscriptionById(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionByIdResponse
     {
@@ -1362,14 +1385,13 @@ final class NotificationsSDK implements NotificationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Notifications', 'getSubscriptionById')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Notifications', 'getSubscriptionById'),
                     'Amazon Selling Partner API pre request',
@@ -1405,6 +1427,8 @@ final class NotificationsSDK implements NotificationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

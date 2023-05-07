@@ -146,8 +146,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,8 +154,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,8 +163,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,8 +171,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,8 +179,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -200,7 +190,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -232,6 +222,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_id.
+     *
+     * @return null|string
      */
     public function getShipmentId() : ?string
     {
@@ -252,6 +244,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets seller_sku.
+     *
+     * @return string
      */
     public function getSellerSku() : string
     {
@@ -272,6 +266,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_network_sku.
+     *
+     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -292,6 +288,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets quantity_shipped.
+     *
+     * @return int
      */
     public function getQuantityShipped() : int
     {
@@ -312,6 +310,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets quantity_received.
+     *
+     * @return null|int
      */
     public function getQuantityReceived() : ?int
     {
@@ -332,6 +332,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets quantity_in_case.
+     *
+     * @return null|int
      */
     public function getQuantityInCase() : ?int
     {
@@ -352,6 +354,8 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets release_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getReleaseDate() : ?\DateTimeInterface
     {

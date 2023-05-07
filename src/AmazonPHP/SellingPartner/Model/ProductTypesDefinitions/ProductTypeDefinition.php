@@ -162,8 +162,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -172,8 +170,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -183,8 +179,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -193,8 +187,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -203,8 +195,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -216,7 +206,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -331,6 +321,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets meta_schema.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink
      */
     public function getMetaSchema() : ?SchemaLink
     {
@@ -351,6 +343,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets schema.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink
      */
     public function getSchema() : SchemaLink
     {
@@ -371,6 +365,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets requirements.
+     *
+     * @return string
      */
     public function getRequirements() : string
     {
@@ -391,6 +387,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets requirements_enforced.
+     *
+     * @return string
      */
     public function getRequirementsEnforced() : string
     {
@@ -433,6 +431,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets locale.
+     *
+     * @return string
      */
     public function getLocale() : string
     {
@@ -475,6 +475,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets product_type.
+     *
+     * @return string
      */
     public function getProductType() : string
     {
@@ -495,6 +497,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets product_type_version.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeVersion
      */
     public function getProductTypeVersion() : ProductTypeVersion
     {

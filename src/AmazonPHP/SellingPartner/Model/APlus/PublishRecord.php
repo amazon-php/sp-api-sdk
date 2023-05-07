@@ -134,8 +134,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -252,6 +242,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -272,6 +264,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets locale.
+     *
+     * @return string
      */
     public function getLocale() : string
     {
@@ -292,6 +286,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
     public function getAsin() : string
     {
@@ -312,6 +308,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_type.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {
@@ -332,6 +330,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_sub_type.
+     *
+     * @return null|string
      */
     public function getContentSubType() : ?string
     {
@@ -352,6 +352,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_reference_key.
+     *
+     * @return string
      */
     public function getContentReferenceKey() : string
     {

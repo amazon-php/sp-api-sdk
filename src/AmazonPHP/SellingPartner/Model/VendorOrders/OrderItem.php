@@ -140,8 +140,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_sequence_number.
+     *
+     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -260,6 +252,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets amazon_product_identifier.
+     *
+     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -280,6 +274,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -300,6 +296,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ItemQuantity
     {
@@ -320,6 +318,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets is_back_order_allowed.
+     *
+     * @return bool
      */
     public function getIsBackOrderAllowed() : bool
     {
@@ -340,6 +340,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets net_cost.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -360,6 +362,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {

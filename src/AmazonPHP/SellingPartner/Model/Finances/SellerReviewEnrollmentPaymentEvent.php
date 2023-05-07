@@ -134,8 +134,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -224,6 +214,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -244,6 +236,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets enrollment_id.
+     *
+     * @return null|string
      */
     public function getEnrollmentId() : ?string
     {
@@ -264,6 +258,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets parent_asin.
+     *
+     * @return null|string
      */
     public function getParentAsin() : ?string
     {
@@ -284,6 +280,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets fee_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent
      */
     public function getFeeComponent() : ?FeeComponent
     {
@@ -304,6 +302,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets charge_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getChargeComponent() : ?ChargeComponent
     {
@@ -324,6 +324,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets total_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

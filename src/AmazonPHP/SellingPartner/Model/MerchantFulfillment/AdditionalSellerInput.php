@@ -152,8 +152,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -162,8 +160,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -173,8 +169,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -183,8 +177,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -193,8 +185,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -206,7 +196,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -246,6 +236,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets data_type.
+     *
+     * @return null|string
      */
     public function getDataType() : ?string
     {
@@ -266,6 +258,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_string.
+     *
+     * @return null|string
      */
     public function getValueAsString() : ?string
     {
@@ -286,6 +280,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_boolean.
+     *
+     * @return null|bool
      */
     public function getValueAsBoolean() : ?bool
     {
@@ -306,6 +302,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_integer.
+     *
+     * @return null|int
      */
     public function getValueAsInteger() : ?int
     {
@@ -326,6 +324,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_timestamp.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getValueAsTimestamp() : ?\DateTimeInterface
     {
@@ -346,6 +346,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getValueAsAddress() : ?Address
     {
@@ -366,6 +368,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getValueAsWeight() : ?Weight
     {
@@ -386,6 +390,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_dimension.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Length
      */
     public function getValueAsDimension() : ?Length
     {
@@ -406,6 +412,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_currency.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getValueAsCurrency() : ?CurrencyAmount
     {

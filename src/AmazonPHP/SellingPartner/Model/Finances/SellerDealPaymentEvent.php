@@ -146,8 +146,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,8 +154,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,8 +163,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,8 +171,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,8 +179,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -200,7 +190,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -236,6 +226,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -256,6 +248,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets deal_id.
+     *
+     * @return null|string
      */
     public function getDealId() : ?string
     {
@@ -276,6 +270,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets deal_description.
+     *
+     * @return null|string
      */
     public function getDealDescription() : ?string
     {
@@ -296,6 +292,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets event_type.
+     *
+     * @return null|string
      */
     public function getEventType() : ?string
     {
@@ -316,6 +314,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets fee_type.
+     *
+     * @return null|string
      */
     public function getFeeType() : ?string
     {
@@ -336,6 +336,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets fee_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {
@@ -356,6 +358,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {
@@ -376,6 +380,8 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets total_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

@@ -188,8 +188,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -198,8 +196,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -209,8 +205,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -219,8 +213,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -229,8 +221,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -242,7 +232,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -332,6 +322,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
     public function getShipmentId() : string
     {
@@ -352,6 +344,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -372,6 +366,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -414,6 +410,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_from_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -434,6 +432,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_to_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipToAddress() : Address
     {
@@ -454,6 +454,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets package_dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\PackageDimensions
      */
     public function getPackageDimensions() : PackageDimensions
     {
@@ -474,6 +476,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets weight.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getWeight() : Weight
     {
@@ -494,6 +498,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets insurance.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getInsurance() : CurrencyAmount
     {
@@ -514,6 +520,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipping_service.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingService
      */
     public function getShippingService() : ShippingService
     {
@@ -534,6 +542,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets label.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Label
      */
     public function getLabel() : Label
     {
@@ -554,6 +564,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentStatus
      */
     public function getStatus() : ShipmentStatus
     {
@@ -574,6 +586,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets tracking_id.
+     *
+     * @return null|string
      */
     public function getTrackingId() : ?string
     {
@@ -594,6 +608,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets created_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getCreatedDate() : \DateTimeInterface
     {
@@ -614,6 +630,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets last_updated_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getLastUpdatedDate() : ?\DateTimeInterface
     {

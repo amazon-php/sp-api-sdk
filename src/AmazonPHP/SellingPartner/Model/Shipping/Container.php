@@ -136,8 +136,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -146,8 +144,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -157,8 +153,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -167,8 +161,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -177,8 +169,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -190,7 +180,7 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -268,6 +258,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets container_type.
+     *
+     * @return null|string
      */
     public function getContainerType() : ?string
     {
@@ -288,6 +280,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets container_reference_id.
+     *
+     * @return string
      */
     public function getContainerReferenceId() : string
     {
@@ -308,6 +302,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets value.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getValue() : Currency
     {
@@ -328,6 +324,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -370,6 +368,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets weight.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getWeight() : Weight
     {

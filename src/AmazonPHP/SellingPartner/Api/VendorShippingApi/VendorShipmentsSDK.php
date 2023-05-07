@@ -33,12 +33,694 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
     }
 
     /**
+     * Operation getShipmentDetails.
+     *
+     * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
+     * @param null|string $next_token Used for pagination when there are more shipments than the specified result size limit. (optional)
+     * @param null|\DateTimeInterface $created_after Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_before Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_before Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_after Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_before Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_after Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipped_before Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipped_after Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_before Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_after Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_before Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_after Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_before Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_after Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_before Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_after Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|string $current_shipment_status Get Shipment Details by passing Current shipment status. (optional)
+     * @param null|string $vendor_shipment_identifier Get Shipment Details by passing Vendor Shipment ID (optional)
+     * @param null|string $buyer_reference_number Get Shipment Details by passing buyer Reference ID (optional)
+     * @param null|string $buyer_warehouse_code Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
+     * @param null|string $seller_warehouse_code Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentDetailsResponse
+     */
+    public function getShipmentDetails(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $shipment_confirmed_before = null, ?\DateTimeInterface $shipment_confirmed_after = null, ?\DateTimeInterface $package_label_created_before = null, ?\DateTimeInterface $package_label_created_after = null, ?\DateTimeInterface $shipped_before = null, ?\DateTimeInterface $shipped_after = null, ?\DateTimeInterface $estimated_delivery_before = null, ?\DateTimeInterface $estimated_delivery_after = null, ?\DateTimeInterface $shipment_delivery_before = null, ?\DateTimeInterface $shipment_delivery_after = null, ?\DateTimeInterface $requested_pick_up_before = null, ?\DateTimeInterface $requested_pick_up_after = null, ?\DateTimeInterface $scheduled_pick_up_before = null, ?\DateTimeInterface $scheduled_pick_up_after = null, ?string $current_shipment_status = null, ?string $vendor_shipment_identifier = null, ?string $buyer_reference_number = null, ?string $buyer_warehouse_code = null, ?string $seller_warehouse_code = null) : \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentDetailsResponse
+    {
+        $request = $this->getShipmentDetailsRequest($accessToken, $region, $limit, $sort_order, $next_token, $created_after, $created_before, $shipment_confirmed_before, $shipment_confirmed_after, $package_label_created_before, $package_label_created_after, $shipped_before, $shipped_after, $estimated_delivery_before, $estimated_delivery_after, $shipment_delivery_before, $shipment_delivery_after, $requested_pick_up_before, $requested_pick_up_after, $scheduled_pick_up_before, $scheduled_pick_up_after, $current_shipment_status, $vendor_shipment_identifier, $buyer_reference_number, $buyer_warehouse_code, $seller_warehouse_code);
+
+        $this->configuration->extensions()->preRequest('VendorShipments', 'getShipmentDetails', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('VendorShipments', 'getShipmentDetails')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('VendorShipments', 'getShipmentDetails'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'VendorShipments',
+                        'operation' => 'getShipmentDetails',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('VendorShipments', 'getShipmentDetails', $request, $response);
+
+            if ($this->configuration->loggingEnabled('VendorShipments', 'getShipmentDetails')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('VendorShipments', 'getShipmentDetails'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'VendorShipments',
+                        'operation' => 'getShipmentDetails',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentDetailsResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'getShipmentDetails'.
+     *
+     * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
+     * @param null|string $next_token Used for pagination when there are more shipments than the specified result size limit. (optional)
+     * @param null|\DateTimeInterface $created_after Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_before Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_before Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_after Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_before Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_after Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipped_before Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipped_after Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_before Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_after Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_before Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_after Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_before Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_after Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_before Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_after Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|string $current_shipment_status Get Shipment Details by passing Current shipment status. (optional)
+     * @param null|string $vendor_shipment_identifier Get Shipment Details by passing Vendor Shipment ID (optional)
+     * @param null|string $buyer_reference_number Get Shipment Details by passing buyer Reference ID (optional)
+     * @param null|string $buyer_warehouse_code Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
+     * @param null|string $seller_warehouse_code Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function getShipmentDetailsRequest(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $shipment_confirmed_before = null, ?\DateTimeInterface $shipment_confirmed_after = null, ?\DateTimeInterface $package_label_created_before = null, ?\DateTimeInterface $package_label_created_after = null, ?\DateTimeInterface $shipped_before = null, ?\DateTimeInterface $shipped_after = null, ?\DateTimeInterface $estimated_delivery_before = null, ?\DateTimeInterface $estimated_delivery_after = null, ?\DateTimeInterface $shipment_delivery_before = null, ?\DateTimeInterface $shipment_delivery_after = null, ?\DateTimeInterface $requested_pick_up_before = null, ?\DateTimeInterface $requested_pick_up_after = null, ?\DateTimeInterface $scheduled_pick_up_before = null, ?\DateTimeInterface $scheduled_pick_up_after = null, ?string $current_shipment_status = null, ?string $vendor_shipment_identifier = null, ?string $buyer_reference_number = null, ?string $buyer_warehouse_code = null, ?string $seller_warehouse_code = null) : RequestInterface
+    {
+        if ($limit !== null && $limit > 50) {
+            throw new InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentDetails, must be smaller than or equal to 50.');
+        }
+
+        if ($limit !== null && $limit < 1) {
+            throw new InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentDetails, must be bigger than or equal to 1.');
+        }
+
+        $resourcePath = '/vendor/shipping/v1/shipments';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        // query params
+        if (\is_array($limit)) {
+            $limit = ObjectSerializer::serializeCollection($limit, '', true);
+        }
+
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toString($limit);
+        }
+        // query params
+        if (\is_array($sort_order)) {
+            $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
+        }
+
+        if ($sort_order !== null) {
+            $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
+        }
+        // query params
+        if (\is_array($next_token)) {
+            $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
+        }
+
+        if ($next_token !== null) {
+            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
+        }
+        // query params
+        if (\is_array($created_after)) {
+            $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
+        }
+
+        if ($created_after !== null) {
+            $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
+        }
+        // query params
+        if (\is_array($created_before)) {
+            $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
+        }
+
+        if ($created_before !== null) {
+            $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
+        }
+        // query params
+        if (\is_array($shipment_confirmed_before)) {
+            $shipment_confirmed_before = ObjectSerializer::serializeCollection($shipment_confirmed_before, '', true);
+        }
+
+        if ($shipment_confirmed_before !== null) {
+            $queryParams['shipmentConfirmedBefore'] = ObjectSerializer::toString($shipment_confirmed_before);
+        }
+        // query params
+        if (\is_array($shipment_confirmed_after)) {
+            $shipment_confirmed_after = ObjectSerializer::serializeCollection($shipment_confirmed_after, '', true);
+        }
+
+        if ($shipment_confirmed_after !== null) {
+            $queryParams['shipmentConfirmedAfter'] = ObjectSerializer::toString($shipment_confirmed_after);
+        }
+        // query params
+        if (\is_array($package_label_created_before)) {
+            $package_label_created_before = ObjectSerializer::serializeCollection($package_label_created_before, '', true);
+        }
+
+        if ($package_label_created_before !== null) {
+            $queryParams['packageLabelCreatedBefore'] = ObjectSerializer::toString($package_label_created_before);
+        }
+        // query params
+        if (\is_array($package_label_created_after)) {
+            $package_label_created_after = ObjectSerializer::serializeCollection($package_label_created_after, '', true);
+        }
+
+        if ($package_label_created_after !== null) {
+            $queryParams['packageLabelCreatedAfter'] = ObjectSerializer::toString($package_label_created_after);
+        }
+        // query params
+        if (\is_array($shipped_before)) {
+            $shipped_before = ObjectSerializer::serializeCollection($shipped_before, '', true);
+        }
+
+        if ($shipped_before !== null) {
+            $queryParams['shippedBefore'] = ObjectSerializer::toString($shipped_before);
+        }
+        // query params
+        if (\is_array($shipped_after)) {
+            $shipped_after = ObjectSerializer::serializeCollection($shipped_after, '', true);
+        }
+
+        if ($shipped_after !== null) {
+            $queryParams['shippedAfter'] = ObjectSerializer::toString($shipped_after);
+        }
+        // query params
+        if (\is_array($estimated_delivery_before)) {
+            $estimated_delivery_before = ObjectSerializer::serializeCollection($estimated_delivery_before, '', true);
+        }
+
+        if ($estimated_delivery_before !== null) {
+            $queryParams['estimatedDeliveryBefore'] = ObjectSerializer::toString($estimated_delivery_before);
+        }
+        // query params
+        if (\is_array($estimated_delivery_after)) {
+            $estimated_delivery_after = ObjectSerializer::serializeCollection($estimated_delivery_after, '', true);
+        }
+
+        if ($estimated_delivery_after !== null) {
+            $queryParams['estimatedDeliveryAfter'] = ObjectSerializer::toString($estimated_delivery_after);
+        }
+        // query params
+        if (\is_array($shipment_delivery_before)) {
+            $shipment_delivery_before = ObjectSerializer::serializeCollection($shipment_delivery_before, '', true);
+        }
+
+        if ($shipment_delivery_before !== null) {
+            $queryParams['shipmentDeliveryBefore'] = ObjectSerializer::toString($shipment_delivery_before);
+        }
+        // query params
+        if (\is_array($shipment_delivery_after)) {
+            $shipment_delivery_after = ObjectSerializer::serializeCollection($shipment_delivery_after, '', true);
+        }
+
+        if ($shipment_delivery_after !== null) {
+            $queryParams['shipmentDeliveryAfter'] = ObjectSerializer::toString($shipment_delivery_after);
+        }
+        // query params
+        if (\is_array($requested_pick_up_before)) {
+            $requested_pick_up_before = ObjectSerializer::serializeCollection($requested_pick_up_before, '', true);
+        }
+
+        if ($requested_pick_up_before !== null) {
+            $queryParams['requestedPickUpBefore'] = ObjectSerializer::toString($requested_pick_up_before);
+        }
+        // query params
+        if (\is_array($requested_pick_up_after)) {
+            $requested_pick_up_after = ObjectSerializer::serializeCollection($requested_pick_up_after, '', true);
+        }
+
+        if ($requested_pick_up_after !== null) {
+            $queryParams['requestedPickUpAfter'] = ObjectSerializer::toString($requested_pick_up_after);
+        }
+        // query params
+        if (\is_array($scheduled_pick_up_before)) {
+            $scheduled_pick_up_before = ObjectSerializer::serializeCollection($scheduled_pick_up_before, '', true);
+        }
+
+        if ($scheduled_pick_up_before !== null) {
+            $queryParams['scheduledPickUpBefore'] = ObjectSerializer::toString($scheduled_pick_up_before);
+        }
+        // query params
+        if (\is_array($scheduled_pick_up_after)) {
+            $scheduled_pick_up_after = ObjectSerializer::serializeCollection($scheduled_pick_up_after, '', true);
+        }
+
+        if ($scheduled_pick_up_after !== null) {
+            $queryParams['scheduledPickUpAfter'] = ObjectSerializer::toString($scheduled_pick_up_after);
+        }
+        // query params
+        if (\is_array($current_shipment_status)) {
+            $current_shipment_status = ObjectSerializer::serializeCollection($current_shipment_status, '', true);
+        }
+
+        if ($current_shipment_status !== null) {
+            $queryParams['currentShipmentStatus'] = ObjectSerializer::toString($current_shipment_status);
+        }
+        // query params
+        if (\is_array($vendor_shipment_identifier)) {
+            $vendor_shipment_identifier = ObjectSerializer::serializeCollection($vendor_shipment_identifier, '', true);
+        }
+
+        if ($vendor_shipment_identifier !== null) {
+            $queryParams['vendorShipmentIdentifier'] = ObjectSerializer::toString($vendor_shipment_identifier);
+        }
+        // query params
+        if (\is_array($buyer_reference_number)) {
+            $buyer_reference_number = ObjectSerializer::serializeCollection($buyer_reference_number, '', true);
+        }
+
+        if ($buyer_reference_number !== null) {
+            $queryParams['buyerReferenceNumber'] = ObjectSerializer::toString($buyer_reference_number);
+        }
+        // query params
+        if (\is_array($buyer_warehouse_code)) {
+            $buyer_warehouse_code = ObjectSerializer::serializeCollection($buyer_warehouse_code, '', true);
+        }
+
+        if ($buyer_warehouse_code !== null) {
+            $queryParams['buyerWarehouseCode'] = ObjectSerializer::toString($buyer_warehouse_code);
+        }
+        // query params
+        if (\is_array($seller_warehouse_code)) {
+            $seller_warehouse_code = ObjectSerializer::serializeCollection($seller_warehouse_code, '', true);
+        }
+
+        if ($seller_warehouse_code !== null) {
+            $queryParams['sellerWarehouseCode'] = ObjectSerializer::toString($seller_warehouse_code);
+        }
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation getShipmentLabels.
+     *
+     * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param null|string $sort_order Sort in ascending or descending order by transport label creation date. (optional)
+     * @param null|string $next_token Used for pagination when there are more transport label than the specified result size limit. (optional)
+     * @param null|\DateTimeInterface $label_created_after transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $labelcreated_before transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|string $buyer_reference_number Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label. (optional)
+     * @param null|string $vendor_shipment_identifier Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label. (optional)
+     * @param null|string $seller_warehouse_code Get Shipping labels based Vendor Warehouse code. This value should be same as &#39;shipFromParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels
+     */
+    public function getShipmentLabels(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $label_created_after = null, ?\DateTimeInterface $labelcreated_before = null, ?string $buyer_reference_number = null, ?string $vendor_shipment_identifier = null, ?string $seller_warehouse_code = null) : \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels
+    {
+        $request = $this->getShipmentLabelsRequest($accessToken, $region, $limit, $sort_order, $next_token, $label_created_after, $labelcreated_before, $buyer_reference_number, $vendor_shipment_identifier, $seller_warehouse_code);
+
+        $this->configuration->extensions()->preRequest('VendorShipments', 'getShipmentLabels', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('VendorShipments', 'getShipmentLabels')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('VendorShipments', 'getShipmentLabels'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'VendorShipments',
+                        'operation' => 'getShipmentLabels',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('VendorShipments', 'getShipmentLabels', $request, $response);
+
+            if ($this->configuration->loggingEnabled('VendorShipments', 'getShipmentLabels')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('VendorShipments', 'getShipmentLabels'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'VendorShipments',
+                        'operation' => 'getShipmentLabels',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'getShipmentLabels'.
+     *
+     * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param null|string $sort_order Sort in ascending or descending order by transport label creation date. (optional)
+     * @param null|string $next_token Used for pagination when there are more transport label than the specified result size limit. (optional)
+     * @param null|\DateTimeInterface $label_created_after transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $labelcreated_before transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|string $buyer_reference_number Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label. (optional)
+     * @param null|string $vendor_shipment_identifier Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label. (optional)
+     * @param null|string $seller_warehouse_code Get Shipping labels based Vendor Warehouse code. This value should be same as &#39;shipFromParty.partyId&#39; in the Shipment. (optional)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function getShipmentLabelsRequest(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $label_created_after = null, ?\DateTimeInterface $labelcreated_before = null, ?string $buyer_reference_number = null, ?string $vendor_shipment_identifier = null, ?string $seller_warehouse_code = null) : RequestInterface
+    {
+        if ($limit !== null && $limit > 50) {
+            throw new InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentLabels, must be smaller than or equal to 50.');
+        }
+
+        if ($limit !== null && $limit < 1) {
+            throw new InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentLabels, must be bigger than or equal to 1.');
+        }
+
+        $resourcePath = '/vendor/shipping/v1/transportLabels';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        // query params
+        if (\is_array($limit)) {
+            $limit = ObjectSerializer::serializeCollection($limit, '', true);
+        }
+
+        if ($limit !== null) {
+            $queryParams['limit'] = ObjectSerializer::toString($limit);
+        }
+        // query params
+        if (\is_array($sort_order)) {
+            $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
+        }
+
+        if ($sort_order !== null) {
+            $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
+        }
+        // query params
+        if (\is_array($next_token)) {
+            $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
+        }
+
+        if ($next_token !== null) {
+            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
+        }
+        // query params
+        if (\is_array($label_created_after)) {
+            $label_created_after = ObjectSerializer::serializeCollection($label_created_after, '', true);
+        }
+
+        if ($label_created_after !== null) {
+            $queryParams['labelCreatedAfter'] = ObjectSerializer::toString($label_created_after);
+        }
+        // query params
+        if (\is_array($labelcreated_before)) {
+            $labelcreated_before = ObjectSerializer::serializeCollection($labelcreated_before, '', true);
+        }
+
+        if ($labelcreated_before !== null) {
+            $queryParams['labelcreatedBefore'] = ObjectSerializer::toString($labelcreated_before);
+        }
+        // query params
+        if (\is_array($buyer_reference_number)) {
+            $buyer_reference_number = ObjectSerializer::serializeCollection($buyer_reference_number, '', true);
+        }
+
+        if ($buyer_reference_number !== null) {
+            $queryParams['buyerReferenceNumber'] = ObjectSerializer::toString($buyer_reference_number);
+        }
+        // query params
+        if (\is_array($vendor_shipment_identifier)) {
+            $vendor_shipment_identifier = ObjectSerializer::serializeCollection($vendor_shipment_identifier, '', true);
+        }
+
+        if ($vendor_shipment_identifier !== null) {
+            $queryParams['vendorShipmentIdentifier'] = ObjectSerializer::toString($vendor_shipment_identifier);
+        }
+        // query params
+        if (\is_array($seller_warehouse_code)) {
+            $seller_warehouse_code = ObjectSerializer::serializeCollection($seller_warehouse_code, '', true);
+        }
+
+        if ($seller_warehouse_code !== null) {
+            $queryParams['sellerWarehouseCode'] = ObjectSerializer::toString($seller_warehouse_code);
+        }
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
      * Operation submitShipmentConfirmations.
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
      */
     public function submitShipmentConfirmations(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
     {
@@ -48,14 +730,13 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorShipments', 'submitShipmentConfirmations')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorShipments', 'submitShipmentConfirmations'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +772,8 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -144,6 +827,194 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         }
 
         $resourcePath = '/vendor/shipping/v1/shipmentConfirmations';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'POST',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $body;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation submitShipments.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body body (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
+     */
+    public function submitShipments(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body) : \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
+    {
+        $request = $this->submitShipmentsRequest($accessToken, $region, $body);
+
+        $this->configuration->extensions()->preRequest('VendorShipments', 'submitShipments', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('VendorShipments', 'submitShipments')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('VendorShipments', 'submitShipments'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'VendorShipments',
+                        'operation' => 'submitShipments',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('VendorShipments', 'submitShipments', $request, $response);
+
+            if ($this->configuration->loggingEnabled('VendorShipments', 'submitShipments')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('VendorShipments', 'submitShipments'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'VendorShipments',
+                        'operation' => 'submitShipments',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'submitShipments'.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function submitShipmentsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body) : RequestInterface
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $body when calling submitShipments'
+            );
+        }
+
+        $resourcePath = '/vendor/shipping/v1/shipments';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

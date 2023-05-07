@@ -128,8 +128,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -230,6 +220,8 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -250,6 +242,8 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets weight.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight
      */
     public function getWeight() : Weight
     {
@@ -270,6 +264,8 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets carrier_name.
+     *
+     * @return string
      */
     public function getCarrierName() : string
     {
@@ -290,8 +286,10 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets tracking_id.
+     *
+     * @return string
      */
-    public function getTrackingId() : ?string
+    public function getTrackingId() : string
     {
         return $this->container['tracking_id'];
     }
@@ -310,6 +308,8 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets package_status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageStatus
      */
     public function getPackageStatus() : PackageStatus
     {

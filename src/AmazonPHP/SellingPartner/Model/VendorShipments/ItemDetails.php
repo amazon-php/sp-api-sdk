@@ -136,8 +136,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -146,8 +144,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -157,8 +153,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -167,8 +161,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -177,8 +169,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -190,7 +180,7 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -249,6 +239,8 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_number.
+     *
+     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {
@@ -258,7 +250,7 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets purchase_order_number.
      *
-     * @param null|string $purchase_order_number The Amazon purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
+     * @param null|string $purchase_order_number The purchase order number for the shipment being confirmed. If the items in this shipment belong to multiple purchase order numbers that are in particular carton or pallet within the shipment, then provide the purchaseOrderNumber at the appropriate carton or pallet level. Formatting Notes: 8-character alpha-numeric code.
      */
     public function setPurchaseOrderNumber(?string $purchase_order_number) : self
     {
@@ -269,6 +261,8 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets lot_number.
+     *
+     * @return null|string
      */
     public function getLotNumber() : ?string
     {
@@ -289,6 +283,8 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets expiry.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Expiry
      */
     public function getExpiry() : ?Expiry
     {
@@ -309,6 +305,8 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets maximum_retail_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Money
      */
     public function getMaximumRetailPrice() : ?Money
     {
@@ -329,6 +327,8 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets handling_code.
+     *
+     * @return null|string
      */
     public function getHandlingCode() : ?string
     {

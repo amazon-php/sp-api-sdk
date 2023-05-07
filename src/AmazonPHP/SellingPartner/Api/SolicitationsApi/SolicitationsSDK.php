@@ -40,6 +40,8 @@ final class SolicitationsSDK implements SolicitationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
      */
     public function createProductReviewAndSellerFeedbackSolicitation(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Solicitations\CreateProductReviewAndSellerFeedbackSolicitationResponse
     {
@@ -49,14 +51,13 @@ final class SolicitationsSDK implements SolicitationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Solicitations', 'createProductReviewAndSellerFeedbackSolicitation')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Solicitations', 'createProductReviewAndSellerFeedbackSolicitation'),
                     'Amazon Selling Partner API pre request',
@@ -92,6 +93,8 @@ final class SolicitationsSDK implements SolicitationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -247,6 +250,8 @@ final class SolicitationsSDK implements SolicitationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponse
      */
     public function getSolicitationActionsForOrder(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponse
     {
@@ -256,14 +261,13 @@ final class SolicitationsSDK implements SolicitationsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Solicitations', 'getSolicitationActionsForOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Solicitations', 'getSolicitationActionsForOrder'),
                     'Amazon Selling Partner API pre request',
@@ -299,6 +303,8 @@ final class SolicitationsSDK implements SolicitationsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

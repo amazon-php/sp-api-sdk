@@ -140,8 +140,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -230,6 +220,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets removal_shipment_item_id.
+     *
+     * @return null|string
      */
     public function getRemovalShipmentItemId() : ?string
     {
@@ -250,6 +242,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_collection_model.
+     *
+     * @return null|string
      */
     public function getTaxCollectionModel() : ?string
     {
@@ -270,6 +264,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_network_sku.
+     *
+     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -290,6 +286,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets adjusted_quantity.
+     *
+     * @return null|int
      */
     public function getAdjustedQuantity() : ?int
     {
@@ -310,6 +308,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets revenue_adjustment.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRevenueAdjustment() : ?Currency
     {
@@ -330,6 +330,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_amount_adjustment.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmountAdjustment() : ?Currency
     {
@@ -350,6 +352,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_withheld_adjustment.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxWithheldAdjustment() : ?Currency
     {

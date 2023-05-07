@@ -170,8 +170,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -180,8 +178,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -191,8 +187,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -201,8 +195,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -211,8 +203,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -224,7 +214,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -249,6 +239,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets name.
+     *
+     * @return null|string
      */
     public function getName() : ?string
     {
@@ -269,6 +261,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_line1.
+     *
+     * @return null|string
      */
     public function getAddressLine1() : ?string
     {
@@ -289,6 +283,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_line2.
+     *
+     * @return null|string
      */
     public function getAddressLine2() : ?string
     {
@@ -309,6 +305,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_line3.
+     *
+     * @return null|string
      */
     public function getAddressLine3() : ?string
     {
@@ -329,6 +327,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets city.
+     *
+     * @return null|string
      */
     public function getCity() : ?string
     {
@@ -349,6 +349,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets county.
+     *
+     * @return null|string
      */
     public function getCounty() : ?string
     {
@@ -369,6 +371,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets district.
+     *
+     * @return null|string
      */
     public function getDistrict() : ?string
     {
@@ -389,6 +393,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets state_or_region.
+     *
+     * @return null|string
      */
     public function getStateOrRegion() : ?string
     {
@@ -409,6 +415,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets postal_code.
+     *
+     * @return null|string
      */
     public function getPostalCode() : ?string
     {
@@ -429,6 +437,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets country_code.
+     *
+     * @return null|string
      */
     public function getCountryCode() : ?string
     {
@@ -449,6 +459,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets phone.
+     *
+     * @return null|string
      */
     public function getPhone() : ?string
     {
@@ -469,6 +481,8 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\AddressTypeEnum
      */
     public function getAddressType() : ?AddressTypeEnum
     {

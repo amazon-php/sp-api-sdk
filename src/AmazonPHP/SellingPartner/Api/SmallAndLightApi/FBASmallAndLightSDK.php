@@ -49,14 +49,13 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FBASmallAndLight', 'deleteSmallAndLightEnrollmentBySellerSKU')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FBASmallAndLight', 'deleteSmallAndLightEnrollmentBySellerSKU'),
                     'Amazon Selling Partner API pre request',
@@ -92,6 +91,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -242,6 +243,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEligibility
      */
     public function getSmallAndLightEligibilityBySellerSKU(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEligibility
     {
@@ -251,14 +254,13 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FBASmallAndLight', 'getSmallAndLightEligibilityBySellerSKU')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FBASmallAndLight', 'getSmallAndLightEligibilityBySellerSKU'),
                     'Amazon Selling Partner API pre request',
@@ -294,6 +296,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -449,6 +453,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
      */
     public function getSmallAndLightEnrollmentBySellerSKU(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
     {
@@ -458,14 +464,13 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FBASmallAndLight', 'getSmallAndLightEnrollmentBySellerSKU')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FBASmallAndLight', 'getSmallAndLightEnrollmentBySellerSKU'),
                     'Amazon Selling Partner API pre request',
@@ -501,6 +506,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -655,6 +662,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviews
      */
     public function getSmallAndLightFeePreview(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviews
     {
@@ -664,14 +673,13 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FBASmallAndLight', 'getSmallAndLightFeePreview')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FBASmallAndLight', 'getSmallAndLightFeePreview'),
                     'Amazon Selling Partner API pre request',
@@ -707,6 +715,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -841,6 +851,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
      */
     public function putSmallAndLightEnrollmentBySellerSKU(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
     {
@@ -850,14 +862,13 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FBASmallAndLight', 'putSmallAndLightEnrollmentBySellerSKU')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FBASmallAndLight', 'putSmallAndLightEnrollmentBySellerSKU'),
                     'Amazon Selling Partner API pre request',
@@ -893,6 +904,8 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

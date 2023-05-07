@@ -134,8 +134,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets id.
+     *
+     * @return string
      */
     public function getId() : string
     {
@@ -260,6 +252,8 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets name.
+     *
+     * @return string
      */
     public function getName() : string
     {
@@ -280,6 +274,8 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets country_code.
+     *
+     * @return string
      */
     public function getCountryCode() : string
     {
@@ -300,6 +296,8 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets default_currency_code.
+     *
+     * @return string
      */
     public function getDefaultCurrencyCode() : string
     {
@@ -320,6 +318,8 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets default_language_code.
+     *
+     * @return string
      */
     public function getDefaultLanguageCode() : string
     {
@@ -340,6 +340,8 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets domain_name.
+     *
+     * @return string
      */
     public function getDomainName() : string
     {

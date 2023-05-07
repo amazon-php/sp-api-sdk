@@ -140,8 +140,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -230,6 +220,8 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets contact.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Contact
      */
     public function getContact() : ?Contact
     {
@@ -250,6 +242,8 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets box_count.
+     *
+     * @return null|int
      */
     public function getBoxCount() : ?int
     {
@@ -270,6 +264,8 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets seller_freight_class.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SellerFreightClass
      */
     public function getSellerFreightClass() : ?SellerFreightClass
     {
@@ -290,6 +286,8 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets freight_ready_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getFreightReadyDate() : ?\DateTimeInterface
     {
@@ -332,6 +330,8 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets total_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight
      */
     public function getTotalWeight() : ?Weight
     {
@@ -352,6 +352,8 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets seller_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount
      */
     public function getSellerDeclaredValue() : ?Amount
     {

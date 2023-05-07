@@ -134,8 +134,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -220,6 +210,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -240,6 +232,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_email.
+     *
+     * @return null|string
      */
     public function getBuyerEmail() : ?string
     {
@@ -260,6 +254,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_name.
+     *
+     * @return null|string
      */
     public function getBuyerName() : ?string
     {
@@ -280,6 +276,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_county.
+     *
+     * @return null|string
      */
     public function getBuyerCounty() : ?string
     {
@@ -300,6 +298,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_tax_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo
      */
     public function getBuyerTaxInfo() : ?BuyerTaxInfo
     {
@@ -320,6 +320,8 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets purchase_order_number.
+     *
+     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {

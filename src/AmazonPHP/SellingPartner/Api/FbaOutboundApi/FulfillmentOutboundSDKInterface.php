@@ -64,6 +64,10 @@ interface FulfillmentOutboundSDKInterface
 
     public const OPERATION_LISTRETURNREASONCODES_PATH = '/fba/outbound/2020-07-01/returnReasonCodes';
 
+    public const OPERATION_SUBMITFULFILLMENTORDERSTATUSUPDATE = 'submitFulfillmentOrderStatusUpdate';
+
+    public const OPERATION_SUBMITFULFILLMENTORDERSTATUSUPDATE_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status';
+
     public const OPERATION_UPDATEFULFILLMENTORDER = 'updateFulfillmentOrder';
 
     public const OPERATION_UPDATEFULFILLMENTORDER_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}';
@@ -208,6 +212,19 @@ interface FulfillmentOutboundSDKInterface
      * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse
      */
     public function listReturnReasonCodes(AccessToken $accessToken, string $region, string $seller_sku, string $language, ?string $marketplace_id = null, ?string $seller_fulfillment_order_id = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse;
+
+    /**
+     * Operation submitFulfillmentOrderStatusUpdate.
+     *
+     * @param string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body body (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateResponse
+     */
+    public function submitFulfillmentOrderStatusUpdate(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateResponse;
 
     /**
      * Operation updateFulfillmentOrder.

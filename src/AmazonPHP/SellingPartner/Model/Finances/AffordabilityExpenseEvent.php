@@ -152,8 +152,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -162,8 +160,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -173,8 +169,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -183,8 +177,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -193,8 +185,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -206,7 +196,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -256,6 +246,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -276,6 +268,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -296,6 +290,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -316,6 +312,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -336,6 +334,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets base_expense.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseExpense() : ?Currency
     {
@@ -356,6 +356,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets tax_type_cgst.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxTypeCgst() : Currency
     {
@@ -376,6 +378,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets tax_type_sgst.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxTypeSgst() : Currency
     {
@@ -396,6 +400,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets tax_type_igst.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxTypeIgst() : Currency
     {
@@ -416,6 +422,8 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets total_expense.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalExpense() : ?Currency
     {

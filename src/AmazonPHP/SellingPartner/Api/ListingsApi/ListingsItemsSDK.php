@@ -42,6 +42,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function deleteListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
@@ -51,14 +53,13 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('ListingsItems', 'deleteListingsItem')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('ListingsItems', 'deleteListingsItem'),
                     'Amazon Selling Partner API pre request',
@@ -94,6 +95,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -272,6 +275,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\Item
      */
     public function getListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null, ?array $included_data = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\Item
     {
@@ -281,14 +286,13 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('ListingsItems', 'getListingsItem')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('ListingsItems', 'getListingsItem'),
                     'Amazon Selling Partner API pre request',
@@ -324,6 +328,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -511,6 +517,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function patchListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
@@ -520,14 +528,13 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('ListingsItems', 'patchListingsItem')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('ListingsItems', 'patchListingsItem'),
                     'Amazon Selling Partner API pre request',
@@ -563,6 +570,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -756,6 +765,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function putListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
     {
@@ -765,14 +776,13 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('ListingsItems', 'putListingsItem')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('ListingsItems', 'putListingsItem'),
                     'Amazon Selling Partner API pre request',
@@ -808,6 +818,8 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

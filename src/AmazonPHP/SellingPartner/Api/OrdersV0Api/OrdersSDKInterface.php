@@ -20,6 +20,10 @@ interface OrdersSDKInterface
 {
     public const API_NAME = 'Orders';
 
+    public const OPERATION_CONFIRMSHIPMENT = 'confirmShipment';
+
+    public const OPERATION_CONFIRMSHIPMENT_PATH = '/orders/v0/orders/{orderId}/shipmentConfirmation';
+
     public const OPERATION_GETORDER = 'getOrder';
 
     public const OPERATION_GETORDER_PATH = '/orders/v0/orders/{orderId}';
@@ -51,6 +55,17 @@ interface OrdersSDKInterface
     public const OPERATION_UPDATEVERIFICATIONSTATUS = 'updateVerificationStatus';
 
     public const OPERATION_UPDATEVERIFICATIONSTATUS_PATH = '/orders/v0/orders/{orderId}/regulatedInfo';
+
+    /**
+     * Operation confirmShipment.
+     *
+     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload Request body of confirmShipment. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function confirmShipment(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload);
 
     /**
      * Operation getOrder.
@@ -147,13 +162,15 @@ interface OrdersSDKInterface
      * @param null|string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param null|bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param null|string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      *
      * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
      */
-    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse;
+    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?array $item_approval_types = null, ?array $item_approval_status = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse;
 
     /**
      * Operation updateVerificationStatus.

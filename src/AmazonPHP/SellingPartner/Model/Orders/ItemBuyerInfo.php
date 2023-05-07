@@ -128,8 +128,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -218,6 +208,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets buyer_customized_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail
      */
     public function getBuyerCustomizedInfo() : ?BuyerCustomizedInfoDetail
     {
@@ -238,6 +230,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets gift_wrap_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getGiftWrapPrice() : ?Money
     {
@@ -258,6 +252,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets gift_wrap_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getGiftWrapTax() : ?Money
     {
@@ -278,6 +274,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets gift_message_text.
+     *
+     * @return null|string
      */
     public function getGiftMessageText() : ?string
     {
@@ -298,6 +296,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets gift_wrap_level.
+     *
+     * @return null|string
      */
     public function getGiftWrapLevel() : ?string
     {

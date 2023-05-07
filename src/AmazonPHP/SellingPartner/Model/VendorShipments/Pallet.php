@@ -140,8 +140,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -256,6 +246,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets tier.
+     *
+     * @return null|int
      */
     public function getTier() : ?int
     {
@@ -265,7 +257,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets tier.
      *
-     * @param null|int $tier number of layers per pallet
+     * @param null|int $tier Number of layers per pallet. Only applicable to container type Pallet.
      */
     public function setTier(?int $tier) : self
     {
@@ -276,6 +268,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets block.
+     *
+     * @return null|int
      */
     public function getBlock() : ?int
     {
@@ -285,7 +279,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets block.
      *
-     * @param null|int $block number of cartons per layer on the pallet
+     * @param null|int $block Number of cartons per layer on the pallet. Only applicable to container type Pallet.
      */
     public function setBlock(?int $block) : self
     {
@@ -296,6 +290,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets dimensions.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -316,6 +312,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {
@@ -336,6 +334,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets carton_reference_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CartonReferenceDetails
      */
     public function getCartonReferenceDetails() : ?CartonReferenceDetails
     {

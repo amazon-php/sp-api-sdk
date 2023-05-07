@@ -158,8 +158,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +166,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +175,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +183,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +191,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +202,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -260,6 +252,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets transaction_posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getTransactionPostedDate() : ?\DateTimeInterface
     {
@@ -280,6 +274,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets business_object_type.
+     *
+     * @return null|string
      */
     public function getBusinessObjectType() : ?string
     {
@@ -300,6 +296,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets sales_channel.
+     *
+     * @return null|string
      */
     public function getSalesChannel() : ?string
     {
@@ -320,6 +318,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getCharge() : ?ChargeComponent
     {
@@ -362,6 +362,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets payment_amount_type.
+     *
+     * @return null|string
      */
     public function getPaymentAmountType() : ?string
     {
@@ -382,6 +384,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets amount_description.
+     *
+     * @return null|string
      */
     public function getAmountDescription() : ?string
     {
@@ -402,6 +406,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return null|string
      */
     public function getFulfillmentChannel() : ?string
     {
@@ -422,6 +428,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets store_name.
+     *
+     * @return null|string
      */
     public function getStoreName() : ?string
     {

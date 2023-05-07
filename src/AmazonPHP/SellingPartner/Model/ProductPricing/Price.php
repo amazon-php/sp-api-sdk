@@ -122,8 +122,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -208,6 +198,8 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets status.
+     *
+     * @return string
      */
     public function getStatus() : string
     {
@@ -228,6 +220,8 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -248,6 +242,8 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -268,6 +264,8 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets product.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Product
      */
     public function getProduct() : ?Product
     {

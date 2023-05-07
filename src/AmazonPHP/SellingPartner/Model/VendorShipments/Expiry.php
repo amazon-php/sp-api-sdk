@@ -116,8 +116,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -126,8 +124,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -137,8 +133,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -147,8 +141,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -157,8 +149,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -170,7 +160,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -198,6 +188,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets manufacturer_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getManufacturerDate() : ?\DateTimeInterface
     {
@@ -218,6 +210,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets expiry_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getExpiryDate() : ?\DateTimeInterface
     {
@@ -238,6 +232,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets expiry_after_duration.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Duration
      */
     public function getExpiryAfterDuration() : ?Duration
     {

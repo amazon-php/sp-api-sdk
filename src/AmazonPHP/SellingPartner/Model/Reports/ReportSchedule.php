@@ -134,8 +134,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -224,6 +214,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets report_schedule_id.
+     *
+     * @return string
      */
     public function getReportScheduleId() : string
     {
@@ -244,6 +236,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets report_type.
+     *
+     * @return string
      */
     public function getReportType() : string
     {
@@ -253,7 +247,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets report_type.
      *
-     * @param string $report_type the report type
+     * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      */
     public function setReportType(string $report_type) : self
     {
@@ -308,6 +302,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets period.
+     *
+     * @return string
      */
     public function getPeriod() : string
     {
@@ -328,6 +324,8 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets next_report_creation_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getNextReportCreationTime() : ?\DateTimeInterface
     {

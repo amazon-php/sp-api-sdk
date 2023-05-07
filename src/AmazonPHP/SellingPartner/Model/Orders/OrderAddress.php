@@ -41,7 +41,9 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     protected static array $openAPITypes = [
         'amazon_order_id' => 'string',
+        'buyer_company_name' => 'string',
         'shipping_address' => '\AmazonPHP\SellingPartner\Model\Orders\Address',
+        'delivery_preferences' => '\AmazonPHP\SellingPartner\Model\Orders\DeliveryPreferences',
     ];
 
     /**
@@ -55,7 +57,9 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     protected static array $openAPIFormats = [
         'amazon_order_id' => null,
+        'buyer_company_name' => null,
         'shipping_address' => null,
+        'delivery_preferences' => null,
     ];
 
     /**
@@ -66,7 +70,9 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     protected static array $attributeMap = [
         'amazon_order_id' => 'AmazonOrderId',
+        'buyer_company_name' => 'BuyerCompanyName',
         'shipping_address' => 'ShippingAddress',
+        'delivery_preferences' => 'DeliveryPreferences',
     ];
 
     /**
@@ -76,7 +82,9 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     protected static array $setters = [
         'amazon_order_id' => 'setAmazonOrderId',
+        'buyer_company_name' => 'setBuyerCompanyName',
         'shipping_address' => 'setShippingAddress',
+        'delivery_preferences' => 'setDeliveryPreferences',
     ];
 
     /**
@@ -86,7 +94,9 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     protected static array $getters = [
         'amazon_order_id' => 'getAmazonOrderId',
+        'buyer_company_name' => 'getBuyerCompanyName',
         'shipping_address' => 'getShippingAddress',
+        'delivery_preferences' => 'getDeliveryPreferences',
     ];
 
     /**
@@ -105,13 +115,13 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     public function __construct(array $data = null)
     {
         $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
+        $this->container['buyer_company_name'] = $data['buyer_company_name'] ?? null;
         $this->container['shipping_address'] = $data['shipping_address'] ?? null;
+        $this->container['delivery_preferences'] = $data['delivery_preferences'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -120,8 +130,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -131,8 +139,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -141,8 +147,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -151,8 +155,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -164,7 +166,7 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -192,10 +194,16 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
         if ($this->container['shipping_address'] !== null) {
             $this->container['shipping_address']->validate();
         }
+
+        if ($this->container['delivery_preferences'] !== null) {
+            $this->container['delivery_preferences']->validate();
+        }
     }
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -215,7 +223,31 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     }
 
     /**
+     * Gets buyer_company_name.
+     *
+     * @return null|string
+     */
+    public function getBuyerCompanyName() : ?string
+    {
+        return $this->container['buyer_company_name'];
+    }
+
+    /**
+     * Sets buyer_company_name.
+     *
+     * @param null|string $buyer_company_name company name of the destination address
+     */
+    public function setBuyerCompanyName(?string $buyer_company_name) : self
+    {
+        $this->container['buyer_company_name'] = $buyer_company_name;
+
+        return $this;
+    }
+
+    /**
      * Gets shipping_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -230,6 +262,28 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     public function setShippingAddress(?Address $shipping_address) : self
     {
         $this->container['shipping_address'] = $shipping_address;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_preferences.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\DeliveryPreferences
+     */
+    public function getDeliveryPreferences() : ?DeliveryPreferences
+    {
+        return $this->container['delivery_preferences'];
+    }
+
+    /**
+     * Sets delivery_preferences.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\DeliveryPreferences $delivery_preferences delivery_preferences
+     */
+    public function setDeliveryPreferences(?DeliveryPreferences $delivery_preferences) : self
+    {
+        $this->container['delivery_preferences'] = $delivery_preferences;
 
         return $this;
     }

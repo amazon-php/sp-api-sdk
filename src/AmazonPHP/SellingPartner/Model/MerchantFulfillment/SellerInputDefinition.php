@@ -140,8 +140,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets is_required.
+     *
+     * @return bool
      */
     public function getIsRequired() : bool
     {
@@ -260,6 +252,8 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets data_type.
+     *
+     * @return string
      */
     public function getDataType() : string
     {
@@ -302,6 +296,8 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets input_display_text.
+     *
+     * @return string
      */
     public function getInputDisplayText() : string
     {
@@ -322,6 +318,8 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets input_target.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\InputTargetType
      */
     public function getInputTarget() : ?InputTargetType
     {
@@ -342,6 +340,8 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets stored_value.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInput
      */
     public function getStoredValue() : AdditionalSellerInput
     {

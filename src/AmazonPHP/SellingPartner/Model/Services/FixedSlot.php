@@ -128,8 +128,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -207,6 +197,8 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets start_date_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getStartDateTime() : ?\DateTimeInterface
     {
@@ -227,6 +219,8 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets scheduled_capacity.
+     *
+     * @return null|int
      */
     public function getScheduledCapacity() : ?int
     {
@@ -247,6 +241,8 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets available_capacity.
+     *
+     * @return null|int
      */
     public function getAvailableCapacity() : ?int
     {
@@ -267,6 +263,8 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets encumbered_capacity.
+     *
+     * @return null|int
      */
     public function getEncumberedCapacity() : ?int
     {
@@ -287,6 +285,8 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets reserved_capacity.
+     *
+     * @return null|int
      */
     public function getReservedCapacity() : ?int
     {

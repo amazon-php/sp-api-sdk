@@ -134,8 +134,6 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -236,6 +226,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -256,6 +248,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets image_caption_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageCaptionBlock
      */
     public function getImageCaptionBlock() : ?StandardImageCaptionBlock
     {
@@ -276,6 +270,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets description_text_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getDescriptionTextBlock() : ?StandardTextBlock
     {
@@ -296,6 +292,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets description_list_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock
      */
     public function getDescriptionListBlock() : ?StandardTextListBlock
     {
@@ -316,6 +314,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets sidebar_image_text_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getSidebarImageTextBlock() : ?StandardImageTextBlock
     {
@@ -336,6 +336,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets sidebar_list_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock
      */
     public function getSidebarListBlock() : ?StandardTextListBlock
     {

@@ -122,8 +122,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -208,6 +198,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets gross_shipment_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getGrossShipmentWeight() : ?Weight
     {
@@ -228,6 +220,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_volume.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Volume
      */
     public function getShipmentVolume() : ?Volume
     {
@@ -248,6 +242,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets carton_count.
+     *
+     * @return null|int
      */
     public function getCartonCount() : ?int
     {
@@ -257,7 +253,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets carton_count.
      *
-     * @param null|int $carton_count Number of cartons present in the shipment. Provide the cartonCount only for unpalletized shipments.
+     * @param null|int $carton_count Number of cartons present in the shipment. Provide the cartonCount only for non-palletized shipments.
      */
     public function setCartonCount(?int $carton_count) : self
     {
@@ -268,6 +264,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets pallet_count.
+     *
+     * @return null|int
      */
     public function getPalletCount() : ?int
     {

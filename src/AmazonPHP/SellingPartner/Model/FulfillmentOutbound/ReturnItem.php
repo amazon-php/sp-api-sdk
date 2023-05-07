@@ -164,8 +164,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -174,8 +172,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -185,8 +181,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -195,8 +189,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -205,8 +197,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -218,7 +208,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -266,6 +256,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_return_item_id.
+     *
+     * @return string
      */
     public function getSellerReturnItemId() : string
     {
@@ -286,6 +278,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -306,6 +300,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets amazon_shipment_id.
+     *
+     * @return string
      */
     public function getAmazonShipmentId() : string
     {
@@ -326,6 +322,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_return_reason_code.
+     *
+     * @return string
      */
     public function getSellerReturnReasonCode() : string
     {
@@ -346,6 +344,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets return_comment.
+     *
+     * @return null|string
      */
     public function getReturnComment() : ?string
     {
@@ -366,6 +366,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets amazon_return_reason_code.
+     *
+     * @return null|string
      */
     public function getAmazonReturnReasonCode() : ?string
     {
@@ -386,6 +388,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentReturnItemStatus
      */
     public function getStatus() : FulfillmentReturnItemStatus
     {
@@ -406,6 +410,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets status_changed_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getStatusChangedDate() : \DateTimeInterface
     {
@@ -426,6 +432,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets return_authorization_id.
+     *
+     * @return null|string
      */
     public function getReturnAuthorizationId() : ?string
     {
@@ -446,6 +454,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets return_received_condition.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItemDisposition
      */
     public function getReturnReceivedCondition() : ?ReturnItemDisposition
     {
@@ -466,6 +476,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets fulfillment_center_id.
+     *
+     * @return null|string
      */
     public function getFulfillmentCenterId() : ?string
     {

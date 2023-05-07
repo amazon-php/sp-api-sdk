@@ -116,8 +116,6 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -126,8 +124,6 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -137,8 +133,6 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -147,8 +141,6 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -157,8 +149,6 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -170,7 +160,7 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -224,6 +214,8 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets next_page_token.
+     *
+     * @return null|string
      */
     public function getNextPageToken() : ?string
     {

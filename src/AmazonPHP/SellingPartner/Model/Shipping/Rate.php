@@ -134,8 +134,6 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -224,6 +214,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets rate_id.
+     *
+     * @return null|string
      */
     public function getRateId() : ?string
     {
@@ -244,6 +236,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets total_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getTotalCharge() : ?Currency
     {
@@ -264,6 +258,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets billed_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getBilledWeight() : ?Weight
     {
@@ -284,6 +280,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets expiration_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getExpirationTime() : ?\DateTimeInterface
     {
@@ -304,6 +302,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets service_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\ServiceType
      */
     public function getServiceType() : ?ServiceType
     {
@@ -324,6 +324,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets promise.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet
      */
     public function getPromise() : ?ShippingPromiseSet
     {

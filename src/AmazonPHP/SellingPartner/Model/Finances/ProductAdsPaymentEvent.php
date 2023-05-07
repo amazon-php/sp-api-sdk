@@ -134,8 +134,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -224,6 +214,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -244,6 +236,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -264,6 +258,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets invoice_id.
+     *
+     * @return null|string
      */
     public function getInvoiceId() : ?string
     {
@@ -284,6 +280,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets base_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseValue() : ?Currency
     {
@@ -304,6 +302,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxValue() : ?Currency
     {
@@ -324,6 +324,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionValue() : ?Currency
     {

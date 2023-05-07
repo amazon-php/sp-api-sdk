@@ -158,8 +158,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +166,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +175,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +183,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +191,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +202,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -244,6 +234,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -264,6 +256,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_event_type.
+     *
+     * @return null|string
      */
     public function getRentalEventType() : ?string
     {
@@ -284,6 +278,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets extension_length.
+     *
+     * @return null|int
      */
     public function getExtensionLength() : ?int
     {
@@ -304,6 +300,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -368,6 +366,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_name.
+     *
+     * @return null|string
      */
     public function getMarketplaceName() : ?string
     {
@@ -388,6 +388,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_initial_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalInitialValue() : ?Currency
     {
@@ -408,6 +410,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_reimbursement.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalReimbursement() : ?Currency
     {

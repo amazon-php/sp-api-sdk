@@ -158,8 +158,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +166,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +175,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +183,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +191,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +202,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -256,6 +246,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets item_sequence_number.
+     *
+     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -276,6 +268,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets buyer_product_identifier.
+     *
+     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -296,6 +290,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -316,6 +312,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets invoiced_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -336,6 +334,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets net_cost.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getNetCost() : Money
     {
@@ -356,6 +356,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_number.
+     *
+     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -376,6 +378,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_order_number.
+     *
+     * @return null|string
      */
     public function getVendorOrderNumber() : ?string
     {
@@ -396,6 +400,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets hsn_code.
+     *
+     * @return null|string
      */
     public function getHsnCode() : ?string
     {
@@ -405,7 +411,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets hsn_code.
      *
-     * @param null|string $hsn_code HSN tax code. The HSN number cannot contain alphabets.
+     * @param null|string $hsn_code Harmonized System of Nomenclature (HSN) tax code. The HSN number cannot contain alphabets.
      */
     public function setHsnCode(?string $hsn_code) : self
     {

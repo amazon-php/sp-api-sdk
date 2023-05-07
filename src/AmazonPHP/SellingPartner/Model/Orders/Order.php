@@ -127,6 +127,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => '\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings',
         'has_regulated_items' => 'bool',
         'electronic_invoice_status' => '\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus',
+        'item_approval_types' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[]',
+        'item_approval_status' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[]',
     ];
 
     /**
@@ -186,6 +188,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => null,
         'has_regulated_items' => null,
         'electronic_invoice_status' => null,
+        'item_approval_types' => null,
+        'item_approval_status' => null,
     ];
 
     /**
@@ -242,6 +246,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => 'AutomatedShippingSettings',
         'has_regulated_items' => 'HasRegulatedItems',
         'electronic_invoice_status' => 'ElectronicInvoiceStatus',
+        'item_approval_types' => 'ItemApprovalTypes',
+        'item_approval_status' => 'ItemApprovalStatus',
     ];
 
     /**
@@ -297,6 +303,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => 'setAutomatedShippingSettings',
         'has_regulated_items' => 'setHasRegulatedItems',
         'electronic_invoice_status' => 'setElectronicInvoiceStatus',
+        'item_approval_types' => 'setItemApprovalTypes',
+        'item_approval_status' => 'setItemApprovalStatus',
     ];
 
     /**
@@ -352,6 +360,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => 'getAutomatedShippingSettings',
         'has_regulated_items' => 'getHasRegulatedItems',
         'electronic_invoice_status' => 'getElectronicInvoiceStatus',
+        'item_approval_types' => 'getItemApprovalTypes',
+        'item_approval_status' => 'getItemApprovalStatus',
     ];
 
     /**
@@ -416,12 +426,12 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
         $this->container['has_regulated_items'] = $data['has_regulated_items'] ?? null;
         $this->container['electronic_invoice_status'] = $data['electronic_invoice_status'] ?? null;
+        $this->container['item_approval_types'] = $data['item_approval_types'] ?? null;
+        $this->container['item_approval_status'] = $data['item_approval_status'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -430,8 +440,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -441,8 +449,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -451,8 +457,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -461,8 +465,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -474,7 +476,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -681,6 +683,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -701,6 +705,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -721,6 +727,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets purchase_date.
+     *
+     * @return string
      */
     public function getPurchaseDate() : string
     {
@@ -741,6 +749,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets last_update_date.
+     *
+     * @return string
      */
     public function getLastUpdateDate() : string
     {
@@ -761,6 +771,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_status.
+     *
+     * @return string
      */
     public function getOrderStatus() : string
     {
@@ -781,6 +793,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return null|string
      */
     public function getFulfillmentChannel() : ?string
     {
@@ -801,6 +815,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets sales_channel.
+     *
+     * @return null|string
      */
     public function getSalesChannel() : ?string
     {
@@ -821,6 +837,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_channel.
+     *
+     * @return null|string
      */
     public function getOrderChannel() : ?string
     {
@@ -841,6 +859,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets ship_service_level.
+     *
+     * @return null|string
      */
     public function getShipServiceLevel() : ?string
     {
@@ -861,6 +881,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_total.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getOrderTotal() : ?Money
     {
@@ -881,6 +903,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets number_of_items_shipped.
+     *
+     * @return null|int
      */
     public function getNumberOfItemsShipped() : ?int
     {
@@ -901,6 +925,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets number_of_items_unshipped.
+     *
+     * @return null|int
      */
     public function getNumberOfItemsUnshipped() : ?int
     {
@@ -943,6 +969,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets payment_method.
+     *
+     * @return null|string
      */
     public function getPaymentMethod() : ?string
     {
@@ -985,6 +1013,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -1005,6 +1035,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets shipment_service_level_category.
+     *
+     * @return null|string
      */
     public function getShipmentServiceLevelCategory() : ?string
     {
@@ -1025,6 +1057,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets easy_ship_shipment_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\EasyShipShipmentStatus
      */
     public function getEasyShipShipmentStatus() : ?EasyShipShipmentStatus
     {
@@ -1045,6 +1079,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets cba_displayable_shipping_label.
+     *
+     * @return null|string
      */
     public function getCbaDisplayableShippingLabel() : ?string
     {
@@ -1065,6 +1101,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_type.
+     *
+     * @return null|string
      */
     public function getOrderType() : ?string
     {
@@ -1085,6 +1123,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets earliest_ship_date.
+     *
+     * @return null|string
      */
     public function getEarliestShipDate() : ?string
     {
@@ -1105,6 +1145,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets latest_ship_date.
+     *
+     * @return null|string
      */
     public function getLatestShipDate() : ?string
     {
@@ -1125,6 +1167,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets earliest_delivery_date.
+     *
+     * @return null|string
      */
     public function getEarliestDeliveryDate() : ?string
     {
@@ -1145,6 +1189,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets latest_delivery_date.
+     *
+     * @return null|string
      */
     public function getLatestDeliveryDate() : ?string
     {
@@ -1165,6 +1211,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_business_order.
+     *
+     * @return null|bool
      */
     public function getIsBusinessOrder() : ?bool
     {
@@ -1185,6 +1233,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_prime.
+     *
+     * @return null|bool
      */
     public function getIsPrime() : ?bool
     {
@@ -1205,6 +1255,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_premium_order.
+     *
+     * @return null|bool
      */
     public function getIsPremiumOrder() : ?bool
     {
@@ -1225,6 +1277,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_global_express_enabled.
+     *
+     * @return null|bool
      */
     public function getIsGlobalExpressEnabled() : ?bool
     {
@@ -1245,6 +1299,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets replaced_order_id.
+     *
+     * @return null|string
      */
     public function getReplacedOrderId() : ?string
     {
@@ -1265,6 +1321,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_replacement_order.
+     *
+     * @return null|bool
      */
     public function getIsReplacementOrder() : ?bool
     {
@@ -1285,6 +1343,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets promise_response_due_date.
+     *
+     * @return null|string
      */
     public function getPromiseResponseDueDate() : ?string
     {
@@ -1305,6 +1365,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_estimated_ship_date_set.
+     *
+     * @return null|bool
      */
     public function getIsEstimatedShipDateSet() : ?bool
     {
@@ -1325,6 +1387,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_sold_by_ab.
+     *
+     * @return null|bool
      */
     public function getIsSoldByAb() : ?bool
     {
@@ -1345,6 +1409,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_iba.
+     *
+     * @return null|bool
      */
     public function getIsIba() : ?bool
     {
@@ -1365,6 +1431,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets default_ship_from_location_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getDefaultShipFromLocationAddress() : ?Address
     {
@@ -1385,6 +1453,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets buyer_invoice_preference.
+     *
+     * @return null|string
      */
     public function getBuyerInvoicePreference() : ?string
     {
@@ -1405,6 +1475,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets buyer_tax_information.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInformation
      */
     public function getBuyerTaxInformation() : ?BuyerTaxInformation
     {
@@ -1425,6 +1497,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets fulfillment_instruction.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\FulfillmentInstruction
      */
     public function getFulfillmentInstruction() : ?FulfillmentInstruction
     {
@@ -1445,6 +1519,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_ispu.
+     *
+     * @return null|bool
      */
     public function getIsIspu() : ?bool
     {
@@ -1465,6 +1541,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_access_point_order.
+     *
+     * @return null|bool
      */
     public function getIsAccessPointOrder() : ?bool
     {
@@ -1485,6 +1563,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets marketplace_tax_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo
      */
     public function getMarketplaceTaxInfo() : ?MarketplaceTaxInfo
     {
@@ -1505,6 +1585,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets seller_display_name.
+     *
+     * @return null|string
      */
     public function getSellerDisplayName() : ?string
     {
@@ -1525,6 +1607,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets shipping_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -1545,6 +1629,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets buyer_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo
      */
     public function getBuyerInfo() : ?BuyerInfo
     {
@@ -1565,6 +1651,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets automated_shipping_settings.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings
      */
     public function getAutomatedShippingSettings() : ?AutomatedShippingSettings
     {
@@ -1585,6 +1673,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets has_regulated_items.
+     *
+     * @return null|bool
      */
     public function getHasRegulatedItems() : ?bool
     {
@@ -1605,6 +1695,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets electronic_invoice_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus
      */
     public function getElectronicInvoiceStatus() : ?ElectronicInvoiceStatus
     {
@@ -1619,6 +1711,50 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     public function setElectronicInvoiceStatus(?ElectronicInvoiceStatus $electronic_invoice_status) : self
     {
         $this->container['electronic_invoice_status'] = $electronic_invoice_status;
+
+        return $this;
+    }
+
+    /**
+     * Gets item_approval_types.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[]
+     */
+    public function getItemApprovalTypes() : ?array
+    {
+        return $this->container['item_approval_types'];
+    }
+
+    /**
+     * Sets item_approval_types.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[] $item_approval_types set of approval types which applies to at least one order item in the order
+     */
+    public function setItemApprovalTypes(?array $item_approval_types) : self
+    {
+        $this->container['item_approval_types'] = $item_approval_types;
+
+        return $this;
+    }
+
+    /**
+     * Gets item_approval_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[]
+     */
+    public function getItemApprovalStatus() : ?array
+    {
+        return $this->container['item_approval_status'];
+    }
+
+    /**
+     * Sets item_approval_status.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[] $item_approval_status subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals
+     */
+    public function setItemApprovalStatus(?array $item_approval_status) : self
+    {
+        $this->container['item_approval_status'] = $item_approval_status;
 
         return $this;
     }

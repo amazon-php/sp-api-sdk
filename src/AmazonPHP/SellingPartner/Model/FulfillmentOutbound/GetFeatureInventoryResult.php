@@ -122,8 +122,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -208,6 +198,8 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -228,6 +220,8 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets feature_name.
+     *
+     * @return string
      */
     public function getFeatureName() : string
     {
@@ -248,6 +242,8 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets next_token.
+     *
+     * @return null|string
      */
     public function getNextToken() : ?string
     {

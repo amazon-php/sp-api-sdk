@@ -146,8 +146,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,8 +154,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,8 +163,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,8 +171,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,8 +179,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -200,7 +190,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -248,6 +238,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets item_sequence_number.
+     *
+     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -268,6 +260,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets buyer_product_identifier.
+     *
+     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -288,6 +282,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -308,6 +304,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets net_cost.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -328,6 +326,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {
@@ -348,6 +348,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusOrderedQuantity
      */
     public function getOrderedQuantity() : ?OrderItemStatusOrderedQuantity
     {
@@ -368,6 +370,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets acknowledgement_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusAcknowledgementStatus
      */
     public function getAcknowledgementStatus() : ?OrderItemStatusAcknowledgementStatus
     {
@@ -388,6 +392,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets receiving_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusReceivingStatus
      */
     public function getReceivingStatus() : ?OrderItemStatusReceivingStatus
     {

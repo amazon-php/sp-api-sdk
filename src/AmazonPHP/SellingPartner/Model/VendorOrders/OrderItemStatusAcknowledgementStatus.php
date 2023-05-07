@@ -130,8 +130,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -140,8 +138,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -151,8 +147,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -161,8 +155,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -171,8 +163,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -184,7 +174,7 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -243,6 +233,8 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets confirmation_status.
+     *
+     * @return null|string
      */
     public function getConfirmationStatus() : ?string
     {
@@ -263,6 +255,8 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets accepted_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getAcceptedQuantity() : ?ItemQuantity
     {
@@ -283,6 +277,8 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets rejected_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getRejectedQuantity() : ?ItemQuantity
     {

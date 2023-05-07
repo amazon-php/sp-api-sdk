@@ -128,8 +128,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets function_code.
+     *
+     * @return string
      */
     public function getFunctionCode() : string
     {
@@ -260,6 +252,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets location_identification.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Location
      */
     public function getLocationIdentification() : ?Location
     {
@@ -280,6 +274,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets arrival_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getArrivalTime() : ?\DateTimeInterface
     {
@@ -300,6 +296,8 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets departure_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getDepartureTime() : ?\DateTimeInterface
     {

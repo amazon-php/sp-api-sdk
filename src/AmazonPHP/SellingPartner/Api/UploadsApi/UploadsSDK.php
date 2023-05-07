@@ -42,6 +42,8 @@ final class UploadsSDK implements UploadsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse
      */
     public function createUploadDestinationForResource(AccessToken $accessToken, string $region, array $marketplace_ids, string $content_md5, string $resource, ?string $content_type = null) : \AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse
     {
@@ -51,14 +53,13 @@ final class UploadsSDK implements UploadsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Uploads', 'createUploadDestinationForResource')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Uploads', 'createUploadDestinationForResource'),
                     'Amazon Selling Partner API pre request',
@@ -94,6 +95,8 @@ final class UploadsSDK implements UploadsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

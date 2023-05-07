@@ -140,8 +140,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_priority_shipment.
+     *
+     * @return bool
      */
     public function getIsPriorityShipment() : bool
     {
@@ -260,6 +252,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_scheduled_delivery_shipment.
+     *
+     * @return null|bool
      */
     public function getIsScheduledDeliveryShipment() : ?bool
     {
@@ -280,6 +274,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_pslip_required.
+     *
+     * @return bool
      */
     public function getIsPslipRequired() : bool
     {
@@ -300,6 +296,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_gift.
+     *
+     * @return null|bool
      */
     public function getIsGift() : ?bool
     {
@@ -320,6 +318,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_method.
+     *
+     * @return string
      */
     public function getShipMethod() : string
     {
@@ -340,6 +340,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_dates.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDates
      */
     public function getShipmentDates() : ShipmentDates
     {
@@ -360,6 +362,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets message_to_customer.
+     *
+     * @return string
      */
     public function getMessageToCustomer() : string
     {

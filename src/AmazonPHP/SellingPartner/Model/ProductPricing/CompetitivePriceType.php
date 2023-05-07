@@ -152,8 +152,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -162,8 +160,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -173,8 +169,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -183,8 +177,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -193,8 +185,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -206,7 +196,7 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets competitive_price_id.
+     *
+     * @return string
      */
     public function getCompetitivePriceId() : string
     {
@@ -260,6 +252,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType
      */
     public function getPrice() : PriceType
     {
@@ -280,6 +274,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets condition.
+     *
+     * @return null|string
      */
     public function getCondition() : ?string
     {
@@ -300,6 +296,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets subcondition.
+     *
+     * @return null|string
      */
     public function getSubcondition() : ?string
     {
@@ -320,6 +318,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -340,6 +340,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets quantity_tier.
+     *
+     * @return null|int
      */
     public function getQuantityTier() : ?int
     {
@@ -360,6 +362,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets quantity_discount_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType
      */
     public function getQuantityDiscountType() : ?QuantityDiscountType
     {
@@ -380,6 +384,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -400,6 +406,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets belongs_to_requester.
+     *
+     * @return null|bool
      */
     public function getBelongsToRequester() : ?bool
     {

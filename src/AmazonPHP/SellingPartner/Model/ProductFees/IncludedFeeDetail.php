@@ -128,8 +128,6 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -230,6 +220,8 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets fee_type.
+     *
+     * @return string
      */
     public function getFeeType() : string
     {
@@ -250,6 +242,8 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets fee_amount.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFeeAmount() : MoneyType
     {
@@ -270,6 +264,8 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets fee_promotion.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFeePromotion() : ?MoneyType
     {
@@ -290,6 +286,8 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getTaxAmount() : ?MoneyType
     {
@@ -310,6 +308,8 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets final_fee.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFinalFee() : MoneyType
     {

@@ -174,8 +174,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -184,8 +182,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -195,8 +191,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -205,8 +199,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -215,8 +207,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -228,7 +218,7 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -318,6 +308,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_id.
+     *
+     * @return string
      */
     public function getReportId() : string
     {
@@ -338,6 +330,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_type.
+     *
+     * @return string
      */
     public function getReportType() : string
     {
@@ -347,7 +341,7 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets report_type.
      *
-     * @param string $report_type the report type
+     * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      */
     public function setReportType(string $report_type) : self
     {
@@ -358,6 +352,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets data_start_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getDataStartTime() : ?\DateTimeInterface
     {
@@ -378,6 +374,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets data_end_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getDataEndTime() : ?\DateTimeInterface
     {
@@ -398,6 +396,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_schedule_id.
+     *
+     * @return null|string
      */
     public function getReportScheduleId() : ?string
     {
@@ -418,6 +418,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets created_time.
+     *
+     * @return \DateTimeInterface
      */
     public function getCreatedTime() : \DateTimeInterface
     {
@@ -438,6 +440,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets processing_status.
+     *
+     * @return string
      */
     public function getProcessingStatus() : string
     {
@@ -458,6 +462,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets processing_start_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getProcessingStartTime() : ?\DateTimeInterface
     {
@@ -478,6 +484,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets processing_end_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getProcessingEndTime() : ?\DateTimeInterface
     {
@@ -498,6 +506,8 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_document_id.
+     *
+     * @return null|string
      */
     public function getReportDocumentId() : ?string
     {

@@ -110,8 +110,6 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -120,8 +118,6 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -131,8 +127,6 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -141,8 +135,6 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -151,8 +143,6 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -164,7 +154,7 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -200,6 +190,8 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets x.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits
      */
     public function getX() : IntegerWithUnits
     {
@@ -220,6 +212,8 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets y.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits
      */
     public function getY() : IntegerWithUnits
     {

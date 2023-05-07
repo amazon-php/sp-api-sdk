@@ -122,8 +122,6 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -204,6 +194,8 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -213,7 +205,7 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
     /**
      * Sets transaction_type.
      *
-     * @param null|string $transaction_type Indicates the type of transaction.  Example: \"FBA Inventory Fee\"
+     * @param null|string $transaction_type Indicates the type of transaction. For example, FBA Inventory Fee
      */
     public function setTransactionType(?string $transaction_type) : self
     {
@@ -224,6 +216,8 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -244,6 +238,8 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets description.
+     *
+     * @return null|string
      */
     public function getDescription() : ?string
     {
@@ -264,6 +260,8 @@ class CapacityReservationBillingEvent implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

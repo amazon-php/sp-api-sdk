@@ -158,8 +158,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +166,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +175,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +183,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +191,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +202,7 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -250,6 +240,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_id.
+     *
+     * @return null|string
      */
     public function getShipmentId() : ?string
     {
@@ -270,6 +262,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_name.
+     *
+     * @return null|string
      */
     public function getShipmentName() : ?string
     {
@@ -290,6 +284,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets ship_from_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -310,6 +306,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets destination_fulfillment_center_id.
+     *
+     * @return null|string
      */
     public function getDestinationFulfillmentCenterId() : ?string
     {
@@ -330,6 +328,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentStatus
      */
     public function getShipmentStatus() : ?ShipmentStatus
     {
@@ -350,6 +350,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets label_prep_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelPrepType
      */
     public function getLabelPrepType() : ?LabelPrepType
     {
@@ -370,8 +372,10 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets are_cases_required.
+     *
+     * @return bool
      */
-    public function getAreCasesRequired() : ?bool
+    public function getAreCasesRequired() : bool
     {
         return $this->container['are_cases_required'];
     }
@@ -390,6 +394,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets confirmed_need_by_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getConfirmedNeedByDate() : ?\DateTimeInterface
     {
@@ -410,6 +416,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets box_contents_source.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentsSource
      */
     public function getBoxContentsSource() : ?BoxContentsSource
     {
@@ -430,6 +438,8 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets estimated_box_contents_fee.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentsFeeDetails
      */
     public function getEstimatedBoxContentsFee() : ?BoxContentsFeeDetails
     {

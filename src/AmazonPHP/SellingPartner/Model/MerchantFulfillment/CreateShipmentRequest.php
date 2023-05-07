@@ -134,8 +134,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -226,6 +216,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_request_details.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails
      */
     public function getShipmentRequestDetails() : ShipmentRequestDetails
     {
@@ -246,6 +238,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipping_service_id.
+     *
+     * @return string
      */
     public function getShippingServiceId() : string
     {
@@ -266,6 +260,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipping_service_offer_id.
+     *
+     * @return null|string
      */
     public function getShippingServiceOfferId() : ?string
     {
@@ -286,6 +282,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets hazmat_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\HazmatType
      */
     public function getHazmatType() : ?HazmatType
     {
@@ -306,6 +304,8 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets label_format_option.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormatOptionRequest
      */
     public function getLabelFormatOption() : ?LabelFormatOptionRequest
     {

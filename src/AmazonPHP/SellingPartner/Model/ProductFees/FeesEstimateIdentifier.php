@@ -146,8 +146,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,8 +154,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,8 +163,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,8 +171,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,8 +179,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -200,7 +190,7 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -228,6 +218,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -248,6 +240,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -268,6 +262,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets id_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\IdType
      */
     public function getIdType() : ?IdType
     {
@@ -288,6 +284,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets id_value.
+     *
+     * @return null|string
      */
     public function getIdValue() : ?string
     {
@@ -308,6 +306,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets is_amazon_fulfilled.
+     *
+     * @return null|bool
      */
     public function getIsAmazonFulfilled() : ?bool
     {
@@ -328,6 +328,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets price_to_estimate_fees.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees
      */
     public function getPriceToEstimateFees() : ?PriceToEstimateFees
     {
@@ -348,6 +350,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_input_identifier.
+     *
+     * @return null|string
      */
     public function getSellerInputIdentifier() : ?string
     {
@@ -368,6 +372,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets optional_fulfillment_program.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram
      */
     public function getOptionalFulfillmentProgram() : ?OptionalFulfillmentProgram
     {

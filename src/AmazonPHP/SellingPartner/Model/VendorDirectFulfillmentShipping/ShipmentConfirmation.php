@@ -134,8 +134,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -242,6 +232,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets purchase_order_number.
+     *
+     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -262,6 +254,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_details.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentDetails
      */
     public function getShipmentDetails() : ShipmentDetails
     {
@@ -282,6 +276,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -302,6 +298,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_from_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {

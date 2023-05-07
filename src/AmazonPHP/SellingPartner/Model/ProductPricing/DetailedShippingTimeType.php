@@ -128,8 +128,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -232,6 +222,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets minimum_hours.
+     *
+     * @return null|int
      */
     public function getMinimumHours() : ?int
     {
@@ -252,6 +244,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets maximum_hours.
+     *
+     * @return null|int
      */
     public function getMaximumHours() : ?int
     {
@@ -272,6 +266,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets available_date.
+     *
+     * @return null|string
      */
     public function getAvailableDate() : ?string
     {
@@ -292,6 +288,8 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets availability_type.
+     *
+     * @return null|string
      */
     public function getAvailabilityType() : ?string
     {

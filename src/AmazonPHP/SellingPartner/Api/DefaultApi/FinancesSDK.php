@@ -42,6 +42,8 @@ final class FinancesSDK implements FinancesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
      */
     public function listFinancialEventGroups(AccessToken $accessToken, string $region, int $max_results_per_page = 100, ?\DateTimeInterface $financial_event_group_started_before = null, ?\DateTimeInterface $financial_event_group_started_after = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventGroupsResponse
     {
@@ -51,14 +53,13 @@ final class FinancesSDK implements FinancesSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Finances', 'listFinancialEventGroups')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Finances', 'listFinancialEventGroups'),
                     'Amazon Selling Partner API pre request',
@@ -94,6 +95,8 @@ final class FinancesSDK implements FinancesSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -259,6 +262,8 @@ final class FinancesSDK implements FinancesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
      */
     public function listFinancialEvents(AccessToken $accessToken, string $region, int $max_results_per_page = 100, ?\DateTimeInterface $posted_after = null, ?\DateTimeInterface $posted_before = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
@@ -268,14 +273,13 @@ final class FinancesSDK implements FinancesSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Finances', 'listFinancialEvents')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Finances', 'listFinancialEvents'),
                     'Amazon Selling Partner API pre request',
@@ -311,6 +315,8 @@ final class FinancesSDK implements FinancesSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -477,6 +483,8 @@ final class FinancesSDK implements FinancesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
      */
     public function listFinancialEventsByGroupId(AccessToken $accessToken, string $region, string $event_group_id, int $max_results_per_page = 100, ?\DateTimeInterface $posted_after = null, ?\DateTimeInterface $posted_before = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
@@ -486,14 +494,13 @@ final class FinancesSDK implements FinancesSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Finances', 'listFinancialEventsByGroupId')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Finances', 'listFinancialEventsByGroupId'),
                     'Amazon Selling Partner API pre request',
@@ -529,6 +536,8 @@ final class FinancesSDK implements FinancesSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -710,6 +719,8 @@ final class FinancesSDK implements FinancesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
      */
     public function listFinancialEventsByOrderId(AccessToken $accessToken, string $region, string $order_id, int $max_results_per_page = 100, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsResponse
     {
@@ -719,14 +730,13 @@ final class FinancesSDK implements FinancesSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Finances', 'listFinancialEventsByOrderId')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Finances', 'listFinancialEventsByOrderId'),
                     'Amazon Selling Partner API pre request',
@@ -762,6 +772,8 @@ final class FinancesSDK implements FinancesSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

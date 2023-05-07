@@ -50,6 +50,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'net_price' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money',
         'tax_details' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails',
         'total_price' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money',
+        'buyer_customized_info' => '\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\BuyerCustomizedInfoDetail',
     ];
 
     /**
@@ -72,6 +73,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'net_price' => null,
         'tax_details' => null,
         'total_price' => null,
+        'buyer_customized_info' => null,
     ];
 
     /**
@@ -91,6 +93,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'net_price' => 'netPrice',
         'tax_details' => 'taxDetails',
         'total_price' => 'totalPrice',
+        'buyer_customized_info' => 'buyerCustomizedInfo',
     ];
 
     /**
@@ -109,6 +112,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'net_price' => 'setNetPrice',
         'tax_details' => 'setTaxDetails',
         'total_price' => 'setTotalPrice',
+        'buyer_customized_info' => 'setBuyerCustomizedInfo',
     ];
 
     /**
@@ -127,6 +131,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'net_price' => 'getNetPrice',
         'tax_details' => 'getTaxDetails',
         'total_price' => 'getTotalPrice',
+        'buyer_customized_info' => 'getBuyerCustomizedInfo',
     ];
 
     /**
@@ -154,12 +159,11 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         $this->container['net_price'] = $data['net_price'] ?? null;
         $this->container['tax_details'] = $data['tax_details'] ?? null;
         $this->container['total_price'] = $data['total_price'] ?? null;
+        $this->container['buyer_customized_info'] = $data['buyer_customized_info'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +172,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +181,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +189,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +197,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +208,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -264,10 +260,16 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         if ($this->container['total_price'] !== null) {
             $this->container['total_price']->validate();
         }
+
+        if ($this->container['buyer_customized_info'] !== null) {
+            $this->container['buyer_customized_info']->validate();
+        }
     }
 
     /**
      * Gets item_sequence_number.
+     *
+     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -288,6 +290,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buyer_product_identifier.
+     *
+     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -308,6 +312,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -328,6 +334,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -348,6 +356,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ItemQuantity
     {
@@ -368,6 +378,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets scheduled_delivery_shipment.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ScheduledDeliveryShipment
      */
     public function getScheduledDeliveryShipment() : ?ScheduledDeliveryShipment
     {
@@ -388,6 +400,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets gift_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GiftDetails
      */
     public function getGiftDetails() : ?GiftDetails
     {
@@ -408,6 +422,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets net_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money
      */
     public function getNetPrice() : Money
     {
@@ -428,6 +444,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tax_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails
      */
     public function getTaxDetails() : ?TaxItemDetails
     {
@@ -448,6 +466,8 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets total_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money
      */
     public function getTotalPrice() : ?Money
     {
@@ -462,6 +482,28 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     public function setTotalPrice(?Money $total_price) : self
     {
         $this->container['total_price'] = $total_price;
+
+        return $this;
+    }
+
+    /**
+     * Gets buyer_customized_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\BuyerCustomizedInfoDetail
+     */
+    public function getBuyerCustomizedInfo() : ?BuyerCustomizedInfoDetail
+    {
+        return $this->container['buyer_customized_info'];
+    }
+
+    /**
+     * Sets buyer_customized_info.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
+     */
+    public function setBuyerCustomizedInfo(?BuyerCustomizedInfoDetail $buyer_customized_info) : self
+    {
+        $this->container['buyer_customized_info'] = $buyer_customized_info;
 
         return $this;
     }

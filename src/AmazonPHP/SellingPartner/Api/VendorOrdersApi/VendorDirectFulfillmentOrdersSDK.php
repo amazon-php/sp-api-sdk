@@ -39,6 +39,8 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Order
      */
     public function getOrder(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Order
     {
@@ -48,14 +50,13 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentOrders', 'getOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentOrders', 'getOrder'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -232,6 +235,8 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList
      */
     public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?string $status = null, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList
     {
@@ -241,14 +246,13 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentOrders', 'getOrders')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentOrders', 'getOrders'),
                     'Amazon Selling Partner API pre request',
@@ -284,6 +288,8 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -495,6 +501,8 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TransactionId
      */
     public function submitAcknowledgement(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TransactionId
     {
@@ -504,14 +512,13 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentOrders', 'submitAcknowledgement')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentOrders', 'submitAcknowledgement'),
                     'Amazon Selling Partner API pre request',
@@ -547,6 +554,8 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

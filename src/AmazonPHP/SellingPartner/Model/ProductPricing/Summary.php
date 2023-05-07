@@ -158,8 +158,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +166,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +175,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +183,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +191,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +202,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -252,6 +242,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets total_offer_count.
+     *
+     * @return int
      */
     public function getTotalOfferCount() : int
     {
@@ -338,6 +330,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListPrice() : ?MoneyType
     {
@@ -358,6 +352,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets competitive_price_threshold.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getCompetitivePriceThreshold() : ?MoneyType
     {
@@ -378,6 +374,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets suggested_lower_price_plus_shipping.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getSuggestedLowerPricePlusShipping() : ?MoneyType
     {
@@ -442,6 +440,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets offers_available_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getOffersAvailableTime() : ?\DateTimeInterface
     {

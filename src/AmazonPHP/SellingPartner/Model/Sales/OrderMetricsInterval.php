@@ -134,8 +134,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets interval.
+     *
+     * @return string
      */
     public function getInterval() : string
     {
@@ -260,6 +252,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets unit_count.
+     *
+     * @return int
      */
     public function getUnitCount() : int
     {
@@ -280,6 +274,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets order_item_count.
+     *
+     * @return int
      */
     public function getOrderItemCount() : int
     {
@@ -300,6 +296,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets order_count.
+     *
+     * @return int
      */
     public function getOrderCount() : int
     {
@@ -320,6 +318,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets average_unit_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Sales\Money
      */
     public function getAverageUnitPrice() : Money
     {
@@ -340,6 +340,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets total_sales.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Sales\Money
      */
     public function getTotalSales() : Money
     {

@@ -140,8 +140,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -222,6 +212,8 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets funds_transfers_type.
+     *
+     * @return null|string
      */
     public function getFundsTransfersType() : ?string
     {
@@ -242,6 +234,8 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets transfer_id.
+     *
+     * @return null|string
      */
     public function getTransferId() : ?string
     {
@@ -262,6 +256,8 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets disbursement_id.
+     *
+     * @return null|string
      */
     public function getDisbursementId() : ?string
     {
@@ -282,6 +278,8 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets payment_disbursement_type.
+     *
+     * @return null|string
      */
     public function getPaymentDisbursementType() : ?string
     {
@@ -302,6 +300,8 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets status.
+     *
+     * @return null|string
      */
     public function getStatus() : ?string
     {
@@ -322,6 +322,8 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets transfer_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransferAmount() : ?Currency
     {
@@ -342,6 +344,8 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {

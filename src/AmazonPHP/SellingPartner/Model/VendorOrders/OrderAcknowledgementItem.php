@@ -146,8 +146,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,8 +154,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,8 +163,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,8 +171,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,8 +179,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -200,7 +190,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -242,6 +232,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_sequence_number.
+     *
+     * @return null|string
      */
     public function getItemSequenceNumber() : ?string
     {
@@ -262,6 +254,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets amazon_product_identifier.
+     *
+     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -282,6 +276,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -302,6 +298,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ItemQuantity
     {
@@ -322,6 +320,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets net_cost.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -342,6 +342,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {
@@ -362,6 +364,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets discount_multiplier.
+     *
+     * @return null|string
      */
     public function getDiscountMultiplier() : ?string
     {

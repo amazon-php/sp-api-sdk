@@ -148,8 +148,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -158,8 +156,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -169,8 +165,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -179,8 +173,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -189,8 +181,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -202,7 +192,7 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -265,6 +255,8 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -285,6 +277,8 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -305,6 +299,8 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets quantity.
+     *
+     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -325,6 +321,8 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets order_id.
+     *
+     * @return null|string
      */
     public function getOrderId() : ?string
     {
@@ -345,6 +343,8 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets item_status.
+     *
+     * @return null|string
      */
     public function getItemStatus() : ?string
     {
@@ -365,6 +365,8 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets brand_name.
+     *
+     * @return null|string
      */
     public function getBrandName() : ?string
     {
@@ -385,6 +387,8 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets item_delivery.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\ItemDelivery
      */
     public function getItemDelivery() : ?ItemDelivery
     {

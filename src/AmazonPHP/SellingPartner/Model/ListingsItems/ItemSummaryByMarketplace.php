@@ -188,8 +188,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -198,8 +196,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -209,8 +205,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -219,8 +213,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -229,8 +221,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -242,7 +232,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -347,6 +337,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -367,6 +359,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets asin.
+     *
+     * @return string
      */
     public function getAsin() : string
     {
@@ -387,6 +381,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets product_type.
+     *
+     * @return string
      */
     public function getProductType() : string
     {
@@ -407,6 +403,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets condition_type.
+     *
+     * @return null|string
      */
     public function getConditionType() : ?string
     {
@@ -449,6 +447,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -469,6 +469,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_name.
+     *
+     * @return string
      */
     public function getItemName() : string
     {
@@ -489,6 +491,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets created_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getCreatedDate() : \DateTimeInterface
     {
@@ -509,6 +513,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets last_updated_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getLastUpdatedDate() : \DateTimeInterface
     {
@@ -529,6 +535,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets main_image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage
      */
     public function getMainImage() : ?ItemImage
     {
