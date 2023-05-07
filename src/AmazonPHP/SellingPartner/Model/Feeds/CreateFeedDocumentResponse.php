@@ -186,8 +186,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets feed_document_id.
-     *
-     * @return string
      */
     public function getFeedDocumentId() : string
     {
@@ -208,8 +206,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets url.
-     *
-     * @return string
      */
     public function getUrl() : string
     {

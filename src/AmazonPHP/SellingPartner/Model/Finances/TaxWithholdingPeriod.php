@@ -179,8 +179,6 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets start_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartDate() : ?\DateTimeInterface
     {
@@ -201,8 +199,6 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets end_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEndDate() : ?\DateTimeInterface
     {

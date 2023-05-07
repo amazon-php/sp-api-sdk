@@ -31,8 +31,6 @@ interface VendorTransactionStatusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorTransactionStatus\GetTransactionResponse
      */
     public function getTransaction(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorTransactionStatus\GetTransactionResponse;
 }

@@ -178,10 +178,8 @@ class ItemProcurement implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets cost_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\Money
      */
-    public function getCostPrice() : Money
+    public function getCostPrice() : ?Money
     {
         return $this->container['cost_price'];
     }

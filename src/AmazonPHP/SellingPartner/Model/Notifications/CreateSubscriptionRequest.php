@@ -188,8 +188,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets payload_version.
-     *
-     * @return null|string
      */
     public function getPayloadVersion() : ?string
     {
@@ -210,8 +208,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets destination_id.
-     *
-     * @return null|string
      */
     public function getDestinationId() : ?string
     {
@@ -232,8 +228,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets processing_directive.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective
      */
     public function getProcessingDirective() : ?ProcessingDirective
     {

@@ -196,8 +196,6 @@ class LabelDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets length.
-     *
-     * @return float
      */
     public function getLength() : float
     {
@@ -218,8 +216,6 @@ class LabelDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets width.
-     *
-     * @return float
      */
     public function getWidth() : float
     {
@@ -240,8 +236,6 @@ class LabelDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets unit.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength
      */
     public function getUnit() : UnitOfLength
     {

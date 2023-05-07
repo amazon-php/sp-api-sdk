@@ -186,8 +186,6 @@ class ItemRelationshipsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {

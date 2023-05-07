@@ -186,8 +186,6 @@ class BrandRefinement implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets number_of_results.
-     *
-     * @return int
      */
     public function getNumberOfResults() : int
     {
@@ -208,8 +206,6 @@ class BrandRefinement implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets brand_name.
-     *
-     * @return string
      */
     public function getBrandName() : string
     {

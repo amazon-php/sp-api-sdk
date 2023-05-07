@@ -182,8 +182,6 @@ class GetShipmentLabels implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationLabels
      */
     public function getPayload() : ?TransportationLabels
     {

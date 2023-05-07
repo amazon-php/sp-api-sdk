@@ -176,8 +176,6 @@ class Points implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets points_number.
-     *
-     * @return int
      */
     public function getPointsNumber() : int
     {

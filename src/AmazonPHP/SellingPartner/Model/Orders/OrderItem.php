@@ -487,8 +487,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -509,8 +507,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -531,8 +527,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets order_item_id.
-     *
-     * @return string
      */
     public function getOrderItemId() : string
     {
@@ -553,8 +547,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -575,8 +567,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets quantity_ordered.
-     *
-     * @return int
      */
     public function getQuantityOrdered() : int
     {
@@ -597,8 +587,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets quantity_shipped.
-     *
-     * @return null|int
      */
     public function getQuantityShipped() : ?int
     {
@@ -619,8 +607,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets product_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ProductInfoDetail
      */
     public function getProductInfo() : ?ProductInfoDetail
     {
@@ -641,8 +627,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets points_granted.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\PointsGrantedDetail
      */
     public function getPointsGranted() : ?PointsGrantedDetail
     {
@@ -663,8 +647,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getItemPrice() : ?Money
     {
@@ -685,8 +667,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingPrice() : ?Money
     {
@@ -707,8 +687,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getItemTax() : ?Money
     {
@@ -729,8 +707,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingTax() : ?Money
     {
@@ -751,8 +727,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingDiscount() : ?Money
     {
@@ -773,8 +747,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_discount_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingDiscountTax() : ?Money
     {
@@ -795,8 +767,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPromotionDiscount() : ?Money
     {
@@ -817,8 +787,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_discount_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPromotionDiscountTax() : ?Money
     {
@@ -861,8 +829,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets cod_fee.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getCodFee() : ?Money
     {
@@ -883,8 +849,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets cod_fee_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getCodFeeDiscount() : ?Money
     {
@@ -905,8 +869,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets is_gift.
-     *
-     * @return null|bool
      */
     public function getIsGift() : ?bool
     {
@@ -927,8 +889,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets condition_note.
-     *
-     * @return null|string
      */
     public function getConditionNote() : ?string
     {
@@ -949,8 +909,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets condition_id.
-     *
-     * @return null|string
      */
     public function getConditionId() : ?string
     {
@@ -971,8 +929,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets condition_subtype_id.
-     *
-     * @return null|string
      */
     public function getConditionSubtypeId() : ?string
     {
@@ -993,8 +949,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets scheduled_delivery_start_date.
-     *
-     * @return null|string
      */
     public function getScheduledDeliveryStartDate() : ?string
     {
@@ -1015,8 +969,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets scheduled_delivery_end_date.
-     *
-     * @return null|string
      */
     public function getScheduledDeliveryEndDate() : ?string
     {
@@ -1037,8 +989,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets price_designation.
-     *
-     * @return null|string
      */
     public function getPriceDesignation() : ?string
     {
@@ -1059,8 +1009,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tax_collection.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\TaxCollection
      */
     public function getTaxCollection() : ?TaxCollection
     {
@@ -1081,8 +1029,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets serial_number_required.
-     *
-     * @return null|bool
      */
     public function getSerialNumberRequired() : ?bool
     {
@@ -1103,8 +1049,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets is_transparency.
-     *
-     * @return null|bool
      */
     public function getIsTransparency() : ?bool
     {
@@ -1125,8 +1069,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ioss_number.
-     *
-     * @return null|string
      */
     public function getIossNumber() : ?string
     {
@@ -1147,8 +1089,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets store_chain_store_id.
-     *
-     * @return null|string
      */
     public function getStoreChainStoreId() : ?string
     {
@@ -1169,8 +1109,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets deemed_reseller_category.
-     *
-     * @return null|string
      */
     public function getDeemedResellerCategory() : ?string
     {
@@ -1191,8 +1129,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buyer_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemBuyerInfo
      */
     public function getBuyerInfo() : ?ItemBuyerInfo
     {
@@ -1213,8 +1149,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buyer_requested_cancel.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerRequestedCancel
      */
     public function getBuyerRequestedCancel() : ?BuyerRequestedCancel
     {
@@ -1235,8 +1169,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_approval_context.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalContext
      */
     public function getItemApprovalContext() : ?ItemApprovalContext
     {

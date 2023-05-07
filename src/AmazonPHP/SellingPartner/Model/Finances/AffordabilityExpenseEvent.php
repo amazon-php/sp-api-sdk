@@ -246,8 +246,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -268,8 +266,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -290,8 +286,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -312,8 +306,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets transaction_type.
-     *
-     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -334,8 +326,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets base_expense.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseExpense() : ?Currency
     {
@@ -356,8 +346,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets tax_type_cgst.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxTypeCgst() : Currency
     {
@@ -378,8 +366,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets tax_type_sgst.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxTypeSgst() : Currency
     {
@@ -400,8 +386,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets tax_type_igst.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxTypeIgst() : Currency
     {
@@ -422,8 +406,6 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets total_expense.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalExpense() : ?Currency
     {

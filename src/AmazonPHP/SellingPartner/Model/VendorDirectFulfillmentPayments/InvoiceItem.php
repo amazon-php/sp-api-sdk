@@ -246,8 +246,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -268,8 +266,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -290,8 +286,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -312,8 +306,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets invoiced_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -334,8 +326,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets net_cost.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getNetCost() : Money
     {
@@ -356,8 +346,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -378,8 +366,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_order_number.
-     *
-     * @return null|string
      */
     public function getVendorOrderNumber() : ?string
     {
@@ -400,8 +386,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets hsn_code.
-     *
-     * @return null|string
      */
     public function getHsnCode() : ?string
     {

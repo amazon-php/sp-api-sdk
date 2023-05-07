@@ -200,8 +200,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets package_identifier.
-     *
-     * @return null|string
      */
     public function getPackageIdentifier() : ?string
     {
@@ -222,8 +220,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tracking_number.
-     *
-     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -244,8 +240,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ship_method.
-     *
-     * @return null|string
      */
     public function getShipMethod() : ?string
     {
@@ -266,8 +260,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ship_method_name.
-     *
-     * @return null|string
      */
     public function getShipMethodName() : ?string
     {
@@ -288,8 +280,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets content.
-     *
-     * @return string
      */
     public function getContent() : string
     {

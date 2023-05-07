@@ -182,8 +182,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets additional_input_field_name.
-     *
-     * @return null|string
      */
     public function getAdditionalInputFieldName() : ?string
     {
@@ -204,8 +202,6 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets seller_input_definition.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\SellerInputDefinition
      */
     public function getSellerInputDefinition() : ?SellerInputDefinition
     {

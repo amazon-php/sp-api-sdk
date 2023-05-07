@@ -179,8 +179,6 @@ class ShipsFromType implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets state.
-     *
-     * @return null|string
      */
     public function getState() : ?string
     {
@@ -201,8 +199,6 @@ class ShipsFromType implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets country.
-     *
-     * @return null|string
      */
     public function getCountry() : ?string
     {

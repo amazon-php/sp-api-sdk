@@ -218,8 +218,6 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets feed_document_id.
-     *
-     * @return string
      */
     public function getFeedDocumentId() : string
     {
@@ -240,8 +238,6 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets url.
-     *
-     * @return string
      */
     public function getUrl() : string
     {
@@ -262,8 +258,6 @@ class FeedDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets compression_algorithm.
-     *
-     * @return null|string
      */
     public function getCompressionAlgorithm() : ?string
     {

@@ -192,8 +192,6 @@ class SetAppointmentResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets appointment_id.
-     *
-     * @return null|string
      */
     public function getAppointmentId() : ?string
     {

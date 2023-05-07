@@ -173,8 +173,6 @@ class FulfillmentInstruction implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets fulfillment_supply_source_id.
-     *
-     * @return null|string
      */
     public function getFulfillmentSupplySourceId() : ?string
     {

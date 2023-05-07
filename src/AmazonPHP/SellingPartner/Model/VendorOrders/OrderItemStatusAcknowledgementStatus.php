@@ -233,8 +233,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets confirmation_status.
-     *
-     * @return null|string
      */
     public function getConfirmationStatus() : ?string
     {
@@ -255,8 +253,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets accepted_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getAcceptedQuantity() : ?ItemQuantity
     {
@@ -277,8 +273,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets rejected_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getRejectedQuantity() : ?ItemQuantity
     {

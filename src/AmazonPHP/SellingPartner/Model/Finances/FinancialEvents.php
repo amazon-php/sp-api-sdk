@@ -1032,8 +1032,6 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets failed_adhoc_disbursement_event_list.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEventList
      */
     public function getFailedAdhocDisbursementEventList() : ?FailedAdhocDisbursementEventList
     {
@@ -1054,8 +1052,6 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets value_added_service_charge_event_list.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ValueAddedServiceChargeEventList
      */
     public function getValueAddedServiceChargeEventList() : ?ValueAddedServiceChargeEventList
     {

@@ -186,8 +186,6 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets fulfillment_channel_code.
-     *
-     * @return string
      */
     public function getFulfillmentChannelCode() : string
     {
@@ -208,8 +206,6 @@ class FulfillmentAvailability implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {

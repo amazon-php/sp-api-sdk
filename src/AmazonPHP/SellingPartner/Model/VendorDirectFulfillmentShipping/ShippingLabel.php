@@ -253,8 +253,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -275,8 +273,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -297,8 +293,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -319,8 +313,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets label_format.
-     *
-     * @return string
      */
     public function getLabelFormat() : string
     {

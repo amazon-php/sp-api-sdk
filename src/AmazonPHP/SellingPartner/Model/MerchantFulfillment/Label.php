@@ -212,8 +212,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets custom_text_for_label.
-     *
-     * @return null|string
      */
     public function getCustomTextForLabel() : ?string
     {
@@ -234,8 +232,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets dimensions.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelDimensions
      */
     public function getDimensions() : LabelDimensions
     {
@@ -256,8 +252,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets file_contents.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\FileContents
      */
     public function getFileContents() : FileContents
     {
@@ -278,8 +272,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets label_format.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat
      */
     public function getLabelFormat() : ?LabelFormat
     {
@@ -300,8 +292,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets standard_id_for_label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\StandardIdForLabel
      */
     public function getStandardIdForLabel() : ?StandardIdForLabel
     {

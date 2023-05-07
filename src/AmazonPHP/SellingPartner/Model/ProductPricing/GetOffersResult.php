@@ -266,8 +266,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -288,8 +286,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets sku.
-     *
-     * @return null|string
      */
     public function getSku() : ?string
     {
@@ -310,8 +306,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets item_condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ConditionType
      */
     public function getItemCondition() : ConditionType
     {
@@ -332,8 +326,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets status.
-     *
-     * @return string
      */
     public function getStatus() : string
     {
@@ -354,8 +346,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets identifier.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemIdentifier
      */
     public function getIdentifier() : ItemIdentifier
     {
@@ -376,8 +366,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets summary.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\Summary
      */
     public function getSummary() : Summary
     {

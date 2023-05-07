@@ -182,8 +182,6 @@ class CreateReservationResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\CreateReservationRecord
      */
     public function getPayload() : ?CreateReservationRecord
     {

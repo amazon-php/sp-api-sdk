@@ -223,8 +223,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -245,8 +243,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getAmount() : Money
     {

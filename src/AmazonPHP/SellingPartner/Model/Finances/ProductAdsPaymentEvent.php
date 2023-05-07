@@ -214,8 +214,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -236,8 +234,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_type.
-     *
-     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -258,8 +254,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets invoice_id.
-     *
-     * @return null|string
      */
     public function getInvoiceId() : ?string
     {
@@ -280,8 +274,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets base_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseValue() : ?Currency
     {
@@ -302,8 +294,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxValue() : ?Currency
     {
@@ -324,8 +314,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionValue() : ?Currency
     {

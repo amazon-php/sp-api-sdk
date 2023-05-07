@@ -188,8 +188,6 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets shipment_request_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails
      */
     public function getShipmentRequestDetails() : ShipmentRequestDetails
     {
@@ -210,8 +208,6 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets shipping_offering_filter.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingOfferingFilter
      */
     public function getShippingOfferingFilter() : ?ShippingOfferingFilter
     {

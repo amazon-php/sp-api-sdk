@@ -176,8 +176,6 @@ class MessagingAction implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {

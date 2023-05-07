@@ -188,8 +188,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets delivery_experience_option.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption
      */
     public function getDeliveryExperienceOption() : DeliveryExperienceOption
     {
@@ -210,8 +208,6 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets charge.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getCharge() : CurrencyAmount
     {

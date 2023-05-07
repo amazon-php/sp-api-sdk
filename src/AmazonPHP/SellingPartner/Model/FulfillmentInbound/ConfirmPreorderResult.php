@@ -179,8 +179,6 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets confirmed_need_by_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getConfirmedNeedByDate() : ?\DateTimeInterface
     {
@@ -201,8 +199,6 @@ class ConfirmPreorderResult implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets confirmed_fulfillable_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getConfirmedFulfillableDate() : ?\DateTimeInterface
     {

@@ -218,8 +218,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -240,8 +238,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets phone.
-     *
-     * @return string
      */
     public function getPhone() : string
     {
@@ -262,8 +258,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets email.
-     *
-     * @return string
      */
     public function getEmail() : string
     {
@@ -284,8 +278,6 @@ class Contact implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets fax.
-     *
-     * @return null|string
      */
     public function getFax() : ?string
     {

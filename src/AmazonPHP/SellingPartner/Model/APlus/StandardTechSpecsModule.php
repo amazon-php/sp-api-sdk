@@ -208,8 +208,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -252,8 +250,6 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets table_count.
-     *
-     * @return null|int
      */
     public function getTableCount() : ?int
     {

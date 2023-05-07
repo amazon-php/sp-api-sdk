@@ -192,8 +192,6 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -214,8 +212,6 @@ class ASINInboundGuidance implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets inbound_guidance.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundGuidance
      */
     public function getInboundGuidance() : InboundGuidance
     {

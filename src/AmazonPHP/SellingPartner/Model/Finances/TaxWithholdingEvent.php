@@ -202,8 +202,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -224,8 +222,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets base_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseAmount() : ?Currency
     {
@@ -246,8 +242,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets withheld_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getWithheldAmount() : ?Currency
     {
@@ -268,8 +262,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tax_withholding_period.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingPeriod
      */
     public function getTaxWithholdingPeriod() : ?TaxWithholdingPeriod
     {

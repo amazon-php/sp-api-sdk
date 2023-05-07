@@ -188,8 +188,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets manufacturer_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getManufacturerDate() : ?\DateTimeInterface
     {
@@ -210,8 +208,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets expiry_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getExpiryDate() : ?\DateTimeInterface
     {
@@ -232,8 +228,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets expiry_after_duration.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Duration
      */
     public function getExpiryAfterDuration() : ?Duration
     {

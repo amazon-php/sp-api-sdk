@@ -191,8 +191,6 @@ class PurchaseOrders implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {
@@ -213,8 +211,6 @@ class PurchaseOrders implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets purchase_order_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPurchaseOrderDate() : ?\DateTimeInterface
     {
@@ -235,8 +231,6 @@ class PurchaseOrders implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets ship_window.
-     *
-     * @return null|string
      */
     public function getShipWindow() : ?string
     {

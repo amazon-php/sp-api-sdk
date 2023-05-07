@@ -203,8 +203,6 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -225,8 +223,6 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -247,8 +243,6 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets barcode_instruction.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BarcodeInstruction
      */
     public function getBarcodeInstruction() : ?BarcodeInstruction
     {
@@ -269,8 +263,6 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets prep_guidance.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepGuidance
      */
     public function getPrepGuidance() : ?PrepGuidance
     {

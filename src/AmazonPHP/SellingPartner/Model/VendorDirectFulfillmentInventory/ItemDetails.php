@@ -196,8 +196,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -218,8 +216,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -240,8 +236,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets available_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\ItemQuantity
      */
     public function getAvailableQuantity() : ItemQuantity
     {
@@ -262,8 +256,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets is_obsolete.
-     *
-     * @return null|bool
      */
     public function getIsObsolete() : ?bool
     {

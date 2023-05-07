@@ -182,8 +182,6 @@ class TransportationLabels implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Pagination
      */
     public function getPagination() : ?Pagination
     {

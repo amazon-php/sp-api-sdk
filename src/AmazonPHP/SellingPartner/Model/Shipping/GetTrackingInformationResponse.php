@@ -182,8 +182,6 @@ class GetTrackingInformationResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\TrackingInformation
      */
     public function getPayload() : ?TrackingInformation
     {

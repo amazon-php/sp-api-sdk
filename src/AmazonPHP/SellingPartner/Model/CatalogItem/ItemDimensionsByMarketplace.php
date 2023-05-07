@@ -196,8 +196,6 @@ class ItemDimensionsByMarketplace implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -218,8 +216,6 @@ class ItemDimensionsByMarketplace implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets item.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimensions
      */
     public function getItem() : ?Dimensions
     {
@@ -240,8 +236,6 @@ class ItemDimensionsByMarketplace implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets package.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimensions
      */
     public function getPackage() : ?Dimensions
     {

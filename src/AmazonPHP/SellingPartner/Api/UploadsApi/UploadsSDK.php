@@ -42,8 +42,6 @@ final class UploadsSDK implements UploadsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse
      */
     public function createUploadDestinationForResource(AccessToken $accessToken, string $region, array $marketplace_ids, string $content_md5, string $resource, ?string $content_type = null) : \AmazonPHP\SellingPartner\Model\Uploads\CreateUploadDestinationResponse
     {

@@ -178,8 +178,6 @@ class RetrieveShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets label_specification.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification() : LabelSpecification
     {

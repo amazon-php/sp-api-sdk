@@ -216,8 +216,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets retrocharge_event_type.
-     *
-     * @return null|string
      */
     public function getRetrochargeEventType() : ?string
     {
@@ -238,8 +236,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -260,8 +256,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -282,8 +276,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets base_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseTax() : ?Currency
     {
@@ -304,8 +296,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets shipping_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getShippingTax() : ?Currency
     {
@@ -326,8 +316,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets marketplace_name.
-     *
-     * @return null|string
      */
     public function getMarketplaceName() : ?string
     {

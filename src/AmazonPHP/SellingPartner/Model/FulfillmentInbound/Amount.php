@@ -186,8 +186,6 @@ class Amount implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets currency_code.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CurrencyCode
      */
     public function getCurrencyCode() : CurrencyCode
     {
@@ -208,8 +206,6 @@ class Amount implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets value.
-     *
-     * @return float
      */
     public function getValue() : float
     {

@@ -198,8 +198,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -220,8 +218,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets original_removal_order_id.
-     *
-     * @return null|string
      */
     public function getOriginalRemovalOrderId() : ?string
     {
@@ -242,8 +238,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets liquidation_proceeds_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLiquidationProceedsAmount() : ?Currency
     {
@@ -264,8 +258,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets liquidation_fee_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLiquidationFeeAmount() : ?Currency
     {

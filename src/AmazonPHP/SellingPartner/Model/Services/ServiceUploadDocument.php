@@ -245,8 +245,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets content_type.
-     *
-     * @return string
      */
     public function getContentType() : string
     {
@@ -267,8 +265,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets content_length.
-     *
-     * @return float
      */
     public function getContentLength() : float
     {
@@ -289,8 +285,6 @@ class ServiceUploadDocument implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets content_md5.
-     *
-     * @return null|string
      */
     public function getContentMd5() : ?string
     {

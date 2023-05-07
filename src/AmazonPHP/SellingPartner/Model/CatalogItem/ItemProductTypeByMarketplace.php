@@ -179,8 +179,6 @@ class ItemProductTypeByMarketplace implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -201,8 +199,6 @@ class ItemProductTypeByMarketplace implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets product_type.
-     *
-     * @return null|string
      */
     public function getProductType() : ?string
     {

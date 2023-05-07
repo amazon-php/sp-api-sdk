@@ -182,8 +182,6 @@ class GetInboundGuidanceResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResult
      */
     public function getPayload() : ?GetInboundGuidanceResult
     {

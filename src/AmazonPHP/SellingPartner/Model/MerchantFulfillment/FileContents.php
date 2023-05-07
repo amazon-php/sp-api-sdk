@@ -196,8 +196,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets contents.
-     *
-     * @return string
      */
     public function getContents() : string
     {
@@ -218,8 +216,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets file_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\FileType
      */
     public function getFileType() : FileType
     {
@@ -240,8 +236,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets checksum.
-     *
-     * @return string
      */
     public function getChecksum() : string
     {

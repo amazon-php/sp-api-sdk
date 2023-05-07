@@ -198,8 +198,6 @@ class InboundShipmentRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets inbound_shipment_header.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentHeader
      */
     public function getInboundShipmentHeader() : InboundShipmentHeader
     {
@@ -242,8 +240,6 @@ class InboundShipmentRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {

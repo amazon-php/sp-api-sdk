@@ -196,10 +196,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }
@@ -218,10 +216,8 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets tracking_id.
-     *
-     * @return string
      */
-    public function getTrackingId() : string
+    public function getTrackingId() : ?string
     {
         return $this->container['tracking_id'];
     }
@@ -240,8 +236,6 @@ class NonPartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets package_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageStatus
      */
     public function getPackageStatus() : PackageStatus
     {

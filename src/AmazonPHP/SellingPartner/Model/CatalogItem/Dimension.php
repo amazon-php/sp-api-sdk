@@ -179,8 +179,6 @@ class Dimension implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets unit.
-     *
-     * @return null|string
      */
     public function getUnit() : ?string
     {
@@ -201,8 +199,6 @@ class Dimension implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets value.
-     *
-     * @return null|float
      */
     public function getValue() : ?float
     {

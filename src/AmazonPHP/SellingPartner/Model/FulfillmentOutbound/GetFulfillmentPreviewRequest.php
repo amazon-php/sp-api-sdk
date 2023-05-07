@@ -218,8 +218,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -240,8 +238,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getAddress() : Address
     {
@@ -306,8 +302,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets include_cod_fulfillment_preview.
-     *
-     * @return null|bool
      */
     public function getIncludeCodFulfillmentPreview() : ?bool
     {
@@ -328,8 +322,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets include_delivery_windows.
-     *
-     * @return null|bool
      */
     public function getIncludeDeliveryWindows() : ?bool
     {

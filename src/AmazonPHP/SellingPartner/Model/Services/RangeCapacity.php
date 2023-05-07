@@ -179,8 +179,6 @@ class RangeCapacity implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets capacity_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\CapacityType
      */
     public function getCapacityType() : ?CapacityType
     {

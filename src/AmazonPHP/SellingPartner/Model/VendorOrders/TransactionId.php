@@ -173,8 +173,6 @@ class TransactionId implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets transaction_id.
-     *
-     * @return null|string
      */
     public function getTransactionId() : ?string
     {

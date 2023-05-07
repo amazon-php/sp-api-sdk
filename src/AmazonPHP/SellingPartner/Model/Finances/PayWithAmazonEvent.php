@@ -230,8 +230,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets seller_order_id.
-     *
-     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -252,8 +250,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets transaction_posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getTransactionPostedDate() : ?\DateTimeInterface
     {
@@ -274,8 +270,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets business_object_type.
-     *
-     * @return null|string
      */
     public function getBusinessObjectType() : ?string
     {
@@ -296,8 +290,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets sales_channel.
-     *
-     * @return null|string
      */
     public function getSalesChannel() : ?string
     {
@@ -318,8 +310,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets charge.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getCharge() : ?ChargeComponent
     {
@@ -362,8 +352,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets payment_amount_type.
-     *
-     * @return null|string
      */
     public function getPaymentAmountType() : ?string
     {
@@ -384,8 +372,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets amount_description.
-     *
-     * @return null|string
      */
     public function getAmountDescription() : ?string
     {
@@ -406,8 +392,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fulfillment_channel.
-     *
-     * @return null|string
      */
     public function getFulfillmentChannel() : ?string
     {
@@ -428,8 +412,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets store_name.
-     *
-     * @return null|string
      */
     public function getStoreName() : ?string
     {

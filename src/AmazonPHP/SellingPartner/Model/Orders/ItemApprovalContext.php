@@ -192,8 +192,6 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets approval_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType
      */
     public function getApprovalType() : ItemApprovalType
     {
@@ -214,8 +212,6 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets approval_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus
      */
     public function getApprovalStatus() : ItemApprovalStatus
     {

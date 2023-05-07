@@ -182,8 +182,6 @@ class LinkObject implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets href.
-     *
-     * @return string
      */
     public function getHref() : string
     {
@@ -204,8 +202,6 @@ class LinkObject implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets name.
-     *
-     * @return null|string
      */
     public function getName() : ?string
     {

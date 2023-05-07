@@ -296,8 +296,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets method_of_payment.
-     *
-     * @return null|string
      */
     public function getMethodOfPayment() : ?string
     {
@@ -318,8 +316,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets seal_number.
-     *
-     * @return null|string
      */
     public function getSealNumber() : ?string
     {
@@ -340,8 +336,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets route.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route
      */
     public function getRoute() : ?Route
     {
@@ -362,8 +356,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets import_containers.
-     *
-     * @return null|string
      */
     public function getImportContainers() : ?string
     {
@@ -384,8 +376,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets billable_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getBillableWeight() : ?Weight
     {
@@ -406,8 +396,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets estimated_ship_by_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedShipByDate() : ?\DateTimeInterface
     {
@@ -428,8 +416,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets handling_instructions.
-     *
-     * @return null|string
      */
     public function getHandlingInstructions() : ?string
     {

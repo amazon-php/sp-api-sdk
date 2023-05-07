@@ -192,8 +192,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets version.
-     *
-     * @return string
      */
     public function getVersion() : string
     {
@@ -214,8 +212,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets latest.
-     *
-     * @return bool
      */
     public function getLatest() : bool
     {
@@ -236,8 +232,6 @@ class ProductTypeVersion implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets release_candidate.
-     *
-     * @return null|bool
      */
     public function getReleaseCandidate() : ?bool
     {

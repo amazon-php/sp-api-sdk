@@ -276,8 +276,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets ship_mode.
-     *
-     * @return null|string
      */
     public function getShipMode() : ?string
     {
@@ -298,8 +296,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets transportation_mode.
-     *
-     * @return null|string
      */
     public function getTransportationMode() : ?string
     {
@@ -320,8 +316,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipped_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShippedDate() : ?\DateTimeInterface
     {
@@ -342,8 +336,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets estimated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {
@@ -364,8 +356,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShipmentDeliveryDate() : ?\DateTimeInterface
     {
@@ -386,8 +376,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets carrier_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CarrierDetails
      */
     public function getCarrierDetails() : ?CarrierDetails
     {
@@ -408,8 +396,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets bill_of_lading_number.
-     *
-     * @return null|string
      */
     public function getBillOfLadingNumber() : ?string
     {

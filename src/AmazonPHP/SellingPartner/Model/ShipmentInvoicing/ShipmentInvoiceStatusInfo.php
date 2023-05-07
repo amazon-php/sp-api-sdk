@@ -179,8 +179,6 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets amazon_shipment_id.
-     *
-     * @return null|string
      */
     public function getAmazonShipmentId() : ?string
     {
@@ -201,8 +199,6 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets invoice_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatus
      */
     public function getInvoiceStatus() : ?ShipmentInvoiceStatus
     {

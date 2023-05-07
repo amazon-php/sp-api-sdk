@@ -252,8 +252,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return int
      */
     public function getItemSequenceNumber() : int
     {
@@ -274,8 +272,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets amazon_product_identifier.
-     *
-     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -296,8 +292,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -318,8 +312,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets invoiced_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -340,8 +332,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets net_cost.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getNetCost() : Money
     {
@@ -362,8 +352,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {
@@ -384,8 +372,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets hsn_code.
-     *
-     * @return null|string
      */
     public function getHsnCode() : ?string
     {
@@ -406,8 +392,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets credit_note_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\CreditNoteDetails
      */
     public function getCreditNoteDetails() : ?CreditNoteDetails
     {

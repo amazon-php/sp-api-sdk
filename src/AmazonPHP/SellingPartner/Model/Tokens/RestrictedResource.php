@@ -227,8 +227,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets method.
-     *
-     * @return string
      */
     public function getMethod() : string
     {
@@ -249,8 +247,6 @@ class RestrictedResource implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets path.
-     *
-     * @return string
      */
     public function getPath() : string
     {

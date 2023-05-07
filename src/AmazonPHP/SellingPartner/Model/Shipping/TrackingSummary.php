@@ -180,8 +180,6 @@ class TrackingSummary implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets status.
-     *
-     * @return null|string
      */
     public function getStatus() : ?string
     {

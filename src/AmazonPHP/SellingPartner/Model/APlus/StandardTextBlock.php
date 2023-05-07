@@ -186,8 +186,6 @@ class StandardTextBlock implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -208,8 +206,6 @@ class StandardTextBlock implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets body.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent
      */
     public function getBody() : ?ParagraphComponent
     {

@@ -196,8 +196,6 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets link.
-     *
-     * @return string
      */
     public function getLink() : string
     {
@@ -218,8 +216,6 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets height.
-     *
-     * @return int
      */
     public function getHeight() : int
     {
@@ -240,8 +236,6 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets width.
-     *
-     * @return int
      */
     public function getWidth() : int
     {

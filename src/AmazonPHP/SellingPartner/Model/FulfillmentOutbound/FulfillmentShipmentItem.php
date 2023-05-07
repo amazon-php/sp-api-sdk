@@ -208,8 +208,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -230,8 +228,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -252,8 +248,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -274,8 +268,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets package_number.
-     *
-     * @return null|int
      */
     public function getPackageNumber() : ?int
     {
@@ -296,8 +288,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets serial_number.
-     *
-     * @return null|string
      */
     public function getSerialNumber() : ?string
     {

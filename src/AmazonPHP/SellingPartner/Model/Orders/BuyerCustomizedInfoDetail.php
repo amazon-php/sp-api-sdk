@@ -173,8 +173,6 @@ class BuyerCustomizedInfoDetail implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets customized_url.
-     *
-     * @return null|string
      */
     public function getCustomizedUrl() : ?string
     {

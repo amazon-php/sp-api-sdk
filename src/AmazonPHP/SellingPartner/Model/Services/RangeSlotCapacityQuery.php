@@ -214,8 +214,6 @@ class RangeSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets start_date_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getStartDateTime() : \DateTimeInterface
     {
@@ -236,8 +234,6 @@ class RangeSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets end_date_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getEndDateTime() : \DateTimeInterface
     {

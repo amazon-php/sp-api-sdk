@@ -179,8 +179,6 @@ class TaxClassification implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets name.
-     *
-     * @return null|string
      */
     public function getName() : ?string
     {
@@ -201,8 +199,6 @@ class TaxClassification implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets value.
-     *
-     * @return null|string
      */
     public function getValue() : ?string
     {

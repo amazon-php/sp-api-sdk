@@ -260,8 +260,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -282,8 +280,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -304,8 +300,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -326,8 +320,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets gift_message.
-     *
-     * @return null|string
      */
     public function getGiftMessage() : ?string
     {
@@ -348,8 +340,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets displayable_comment.
-     *
-     * @return null|string
      */
     public function getDisplayableComment() : ?string
     {
@@ -370,8 +360,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -392,8 +380,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -414,8 +400,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -436,8 +420,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {

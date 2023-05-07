@@ -216,8 +216,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -238,8 +236,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block1.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock1() : ?StandardImageTextBlock
     {
@@ -260,8 +256,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block2.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock2() : ?StandardImageTextBlock
     {
@@ -282,8 +276,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block3.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock3() : ?StandardImageTextBlock
     {
@@ -304,8 +296,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block4.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock4() : ?StandardImageTextBlock
     {

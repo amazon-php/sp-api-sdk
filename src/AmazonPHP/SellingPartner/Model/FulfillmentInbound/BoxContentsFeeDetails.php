@@ -192,8 +192,6 @@ class BoxContentsFeeDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets total_units.
-     *
-     * @return null|int
      */
     public function getTotalUnits() : ?int
     {
@@ -214,8 +212,6 @@ class BoxContentsFeeDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets fee_per_unit.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount
      */
     public function getFeePerUnit() : ?Amount
     {
@@ -236,8 +232,6 @@ class BoxContentsFeeDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets total_fee.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount
      */
     public function getTotalFee() : ?Amount
     {

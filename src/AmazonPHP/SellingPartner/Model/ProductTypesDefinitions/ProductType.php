@@ -186,8 +186,6 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {

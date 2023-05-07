@@ -222,8 +222,6 @@ class BusinessHours implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets day_of_week.
-     *
-     * @return null|string
      */
     public function getDayOfWeek() : ?string
     {

@@ -194,8 +194,6 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -216,8 +214,6 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets reason_code.
-     *
-     * @return null|string
      */
     public function getReasonCode() : ?string
     {
@@ -238,8 +234,6 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets reason_code_description.
-     *
-     * @return null|string
      */
     public function getReasonCodeDescription() : ?string
     {
@@ -260,8 +254,6 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets charge_refund_transactions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction
      */
     public function getChargeRefundTransactions() : ?ChargeRefundTransaction
     {

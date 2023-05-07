@@ -194,8 +194,6 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_type.
-     *
-     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -216,8 +214,6 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -238,8 +234,6 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_id.
-     *
-     * @return null|string
      */
     public function getTransactionId() : ?string
     {
@@ -260,8 +254,6 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

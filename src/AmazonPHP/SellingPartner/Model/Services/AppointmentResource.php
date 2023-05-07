@@ -173,8 +173,6 @@ class AppointmentResource implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets resource_id.
-     *
-     * @return null|string
      */
     public function getResourceId() : ?string
     {

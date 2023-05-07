@@ -190,8 +190,6 @@ class CustomerInvoice implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -212,8 +210,6 @@ class CustomerInvoice implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets content.
-     *
-     * @return string
      */
     public function getContent() : string
     {

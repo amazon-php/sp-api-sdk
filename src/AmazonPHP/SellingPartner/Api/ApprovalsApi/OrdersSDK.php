@@ -42,8 +42,6 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderApprovalsResponse
      */
     public function getOrderItemsApprovals(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null, ?array $item_approval_types = null, ?array $item_approval_status = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderApprovalsResponse
     {

@@ -186,8 +186,6 @@ class ItemLevelFields implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {

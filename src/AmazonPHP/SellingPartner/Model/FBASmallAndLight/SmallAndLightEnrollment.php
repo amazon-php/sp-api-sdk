@@ -196,8 +196,6 @@ class SmallAndLightEnrollment implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -218,8 +216,6 @@ class SmallAndLightEnrollment implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -240,8 +236,6 @@ class SmallAndLightEnrollment implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollmentStatus
      */
     public function getStatus() : SmallAndLightEnrollmentStatus
     {

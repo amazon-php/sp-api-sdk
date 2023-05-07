@@ -176,8 +176,6 @@ class CreateFeedDocumentSpecification implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets content_type.
-     *
-     * @return string
      */
     public function getContentType() : string
     {

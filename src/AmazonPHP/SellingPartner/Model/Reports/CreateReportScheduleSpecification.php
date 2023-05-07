@@ -293,8 +293,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets report_type.
-     *
-     * @return string
      */
     public function getReportType() : string
     {
@@ -359,8 +357,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets period.
-     *
-     * @return string
      */
     public function getPeriod() : string
     {
@@ -381,8 +377,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets next_report_creation_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getNextReportCreationTime() : ?\DateTimeInterface
     {

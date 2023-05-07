@@ -198,8 +198,6 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -220,8 +218,6 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_full_update.
-     *
-     * @return bool
      */
     public function getIsFullUpdate() : bool
     {

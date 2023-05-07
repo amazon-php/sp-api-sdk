@@ -202,8 +202,6 @@ class ItemClassificationSalesRank implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets classification_id.
-     *
-     * @return string
      */
     public function getClassificationId() : string
     {
@@ -224,8 +222,6 @@ class ItemClassificationSalesRank implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets title.
-     *
-     * @return string
      */
     public function getTitle() : string
     {
@@ -246,8 +242,6 @@ class ItemClassificationSalesRank implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets link.
-     *
-     * @return null|string
      */
     public function getLink() : ?string
     {
@@ -268,8 +262,6 @@ class ItemClassificationSalesRank implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets rank.
-     *
-     * @return int
      */
     public function getRank() : int
     {

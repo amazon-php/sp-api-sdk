@@ -182,8 +182,6 @@ class OrderListStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Pagination
      */
     public function getPagination() : ?Pagination
     {

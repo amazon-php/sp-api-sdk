@@ -237,8 +237,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -259,8 +257,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets offer_type.
-     *
-     * @return string
      */
     public function getOfferType() : string
     {
@@ -281,8 +277,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\Money
      */
     public function getPrice() : Money
     {
@@ -303,8 +297,6 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets points.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\Points
      */
     public function getPoints() : ?Points
     {

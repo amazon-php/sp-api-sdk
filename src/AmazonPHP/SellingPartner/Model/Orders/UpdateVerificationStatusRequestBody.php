@@ -192,8 +192,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus
      */
     public function getStatus() : VerificationStatus
     {
@@ -214,8 +212,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets external_reviewer_id.
-     *
-     * @return string
      */
     public function getExternalReviewerId() : string
     {
@@ -236,8 +232,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets rejection_reason_id.
-     *
-     * @return null|string
      */
     public function getRejectionReasonId() : ?string
     {

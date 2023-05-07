@@ -220,8 +220,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets dimensions.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -242,8 +240,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight
      */
     public function getWeight() : Weight
     {
@@ -264,8 +260,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
     public function getCarrierName() : string
     {
@@ -286,10 +280,8 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets tracking_id.
-     *
-     * @return string
      */
-    public function getTrackingId() : string
+    public function getTrackingId() : ?string
     {
         return $this->container['tracking_id'];
     }
@@ -308,8 +300,6 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets package_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageStatus
      */
     public function getPackageStatus() : PackageStatus
     {

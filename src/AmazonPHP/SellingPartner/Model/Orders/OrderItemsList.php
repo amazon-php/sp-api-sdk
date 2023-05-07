@@ -214,8 +214,6 @@ class OrderItemsList implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -236,8 +234,6 @@ class OrderItemsList implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return string
      */
     public function getAmazonOrderId() : string
     {

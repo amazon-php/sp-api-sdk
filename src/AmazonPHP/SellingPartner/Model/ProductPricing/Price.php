@@ -198,8 +198,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets status.
-     *
-     * @return string
      */
     public function getStatus() : string
     {
@@ -220,8 +218,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -242,8 +238,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -264,8 +258,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets product.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Product
      */
     public function getProduct() : ?Product
     {

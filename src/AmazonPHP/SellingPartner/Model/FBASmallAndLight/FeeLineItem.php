@@ -223,8 +223,6 @@ class FeeLineItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets fee_type.
-     *
-     * @return string
      */
     public function getFeeType() : string
     {
@@ -245,8 +243,6 @@ class FeeLineItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets fee_charge.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType
      */
     public function getFeeCharge() : MoneyType
     {

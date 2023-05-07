@@ -188,8 +188,6 @@ class GetMessagingActionsForOrderResponseLinks implements \ArrayAccess, \JsonSer
 
     /**
      * Gets self.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Messaging\LinkObject
      */
     public function getSelf() : LinkObject
     {

@@ -192,8 +192,6 @@ class BatchOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -214,8 +212,6 @@ class BatchOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -236,8 +232,6 @@ class BatchOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets customer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {

@@ -186,8 +186,6 @@ class OfferListingCountType implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets count.
-     *
-     * @return int
      */
     public function getCount() : int
     {
@@ -208,8 +206,6 @@ class OfferListingCountType implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets condition.
-     *
-     * @return string
      */
     public function getCondition() : string
     {

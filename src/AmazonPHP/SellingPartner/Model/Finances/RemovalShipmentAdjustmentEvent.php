@@ -203,8 +203,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -225,8 +223,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets adjustment_event_id.
-     *
-     * @return null|string
      */
     public function getAdjustmentEventId() : ?string
     {
@@ -247,8 +243,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets merchant_order_id.
-     *
-     * @return null|string
      */
     public function getMerchantOrderId() : ?string
     {
@@ -269,8 +263,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets order_id.
-     *
-     * @return null|string
      */
     public function getOrderId() : ?string
     {
@@ -291,8 +283,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets transaction_type.
-     *
-     * @return null|string
      */
     public function getTransactionType() : ?string
     {

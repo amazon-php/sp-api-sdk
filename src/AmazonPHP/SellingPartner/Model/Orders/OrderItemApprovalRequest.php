@@ -188,8 +188,6 @@ class OrderItemApprovalRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets order_item_id.
-     *
-     * @return string
      */
     public function getOrderItemId() : string
     {
@@ -210,8 +208,6 @@ class OrderItemApprovalRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets approval_action.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalAction
      */
     public function getApprovalAction() : ItemApprovalAction
     {

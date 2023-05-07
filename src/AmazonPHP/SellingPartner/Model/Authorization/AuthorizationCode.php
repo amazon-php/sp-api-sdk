@@ -173,8 +173,6 @@ class AuthorizationCode implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets authorization_code.
-     *
-     * @return null|string
      */
     public function getAuthorizationCode() : ?string
     {

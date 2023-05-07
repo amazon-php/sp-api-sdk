@@ -198,8 +198,6 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets shipping_service_id.
-     *
-     * @return string
      */
     public function getShippingServiceId() : string
     {
@@ -220,8 +218,6 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets ship_from_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -242,8 +238,6 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets order_id.
-     *
-     * @return string
      */
     public function getOrderId() : string
     {

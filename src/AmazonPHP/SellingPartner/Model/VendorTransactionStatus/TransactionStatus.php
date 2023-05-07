@@ -176,8 +176,6 @@ class TransactionStatus implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets transaction_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorTransactionStatus\Transaction
      */
     public function getTransactionStatus() : ?Transaction
     {

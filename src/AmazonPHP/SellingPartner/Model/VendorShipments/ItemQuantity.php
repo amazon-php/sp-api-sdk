@@ -221,8 +221,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets amount.
-     *
-     * @return int
      */
     public function getAmount() : int
     {
@@ -243,8 +241,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets unit_of_measure.
-     *
-     * @return string
      */
     public function getUnitOfMeasure() : string
     {
@@ -265,8 +261,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets unit_size.
-     *
-     * @return null|int
      */
     public function getUnitSize() : ?int
     {

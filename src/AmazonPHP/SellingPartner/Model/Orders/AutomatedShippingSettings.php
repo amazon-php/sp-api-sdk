@@ -185,8 +185,6 @@ class AutomatedShippingSettings implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets has_automated_shipping_settings.
-     *
-     * @return null|bool
      */
     public function getHasAutomatedShippingSettings() : ?bool
     {
@@ -207,8 +205,6 @@ class AutomatedShippingSettings implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets automated_carrier.
-     *
-     * @return null|string
      */
     public function getAutomatedCarrier() : ?string
     {
@@ -229,8 +225,6 @@ class AutomatedShippingSettings implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets automated_ship_method.
-     *
-     * @return null|string
      */
     public function getAutomatedShipMethod() : ?string
     {

@@ -214,8 +214,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets report_schedule_id.
-     *
-     * @return string
      */
     public function getReportScheduleId() : string
     {
@@ -236,8 +234,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets report_type.
-     *
-     * @return string
      */
     public function getReportType() : string
     {
@@ -302,8 +298,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets period.
-     *
-     * @return string
      */
     public function getPeriod() : string
     {
@@ -324,8 +318,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets next_report_creation_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getNextReportCreationTime() : ?\DateTimeInterface
     {

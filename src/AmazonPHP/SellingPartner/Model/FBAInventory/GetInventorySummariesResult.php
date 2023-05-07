@@ -188,8 +188,6 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets granularity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBAInventory\Granularity
      */
     public function getGranularity() : Granularity
     {

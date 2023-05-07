@@ -202,8 +202,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -224,8 +222,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets item_condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -246,8 +242,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets customer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {
@@ -268,8 +262,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {

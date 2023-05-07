@@ -182,8 +182,6 @@ class CreateServiceDocumentUploadDestination implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ServiceDocumentUploadDestination
      */
     public function getPayload() : ?ServiceDocumentUploadDestination
     {

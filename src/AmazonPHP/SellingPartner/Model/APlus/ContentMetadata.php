@@ -228,8 +228,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -250,8 +248,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -272,8 +268,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentStatus
      */
     public function getStatus() : ContentStatus
     {
@@ -316,8 +310,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets update_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getUpdateTime() : \DateTimeInterface
     {

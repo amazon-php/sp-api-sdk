@@ -206,8 +206,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -228,8 +226,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -250,8 +246,6 @@ class FeesEstimateError implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets message.
-     *
-     * @return string
      */
     public function getMessage() : string
     {

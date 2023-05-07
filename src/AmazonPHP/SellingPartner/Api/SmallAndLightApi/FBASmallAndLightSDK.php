@@ -243,8 +243,6 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEligibility
      */
     public function getSmallAndLightEligibilityBySellerSKU(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEligibility
     {
@@ -453,8 +451,6 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
      */
     public function getSmallAndLightEnrollmentBySellerSKU(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
     {
@@ -662,8 +658,6 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviews
      */
     public function getSmallAndLightFeePreview(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviewRequest $body) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightFeePreviews
     {
@@ -851,8 +845,6 @@ final class FBASmallAndLightSDK implements FBASmallAndLightSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
      */
     public function putSmallAndLightEnrollmentBySellerSKU(AccessToken $accessToken, string $region, string $seller_sku, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\FBASmallAndLight\SmallAndLightEnrollment
     {

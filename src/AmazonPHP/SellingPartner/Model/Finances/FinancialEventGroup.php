@@ -244,8 +244,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets financial_event_group_id.
-     *
-     * @return null|string
      */
     public function getFinancialEventGroupId() : ?string
     {
@@ -266,8 +264,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets processing_status.
-     *
-     * @return null|string
      */
     public function getProcessingStatus() : ?string
     {
@@ -288,8 +284,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fund_transfer_status.
-     *
-     * @return null|string
      */
     public function getFundTransferStatus() : ?string
     {
@@ -310,8 +304,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets original_total.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getOriginalTotal() : ?Currency
     {
@@ -332,8 +324,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets converted_total.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getConvertedTotal() : ?Currency
     {
@@ -354,8 +344,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fund_transfer_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getFundTransferDate() : ?\DateTimeInterface
     {
@@ -376,8 +364,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets trace_id.
-     *
-     * @return null|string
      */
     public function getTraceId() : ?string
     {
@@ -398,8 +384,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets account_tail.
-     *
-     * @return null|string
      */
     public function getAccountTail() : ?string
     {
@@ -420,8 +404,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets beginning_balance.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBeginningBalance() : ?Currency
     {
@@ -442,8 +424,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets financial_event_group_start.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getFinancialEventGroupStart() : ?\DateTimeInterface
     {
@@ -464,8 +444,6 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets financial_event_group_end.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getFinancialEventGroupEnd() : ?\DateTimeInterface
     {

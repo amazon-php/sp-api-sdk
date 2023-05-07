@@ -255,8 +255,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets vendor_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\VendorDetails
      */
     public function getVendorDetails() : ?VendorDetails
     {
@@ -277,8 +275,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets buyer_reference_number.
-     *
-     * @return null|string
      */
     public function getBuyerReferenceNumber() : ?string
     {
@@ -299,8 +295,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets ship_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipToParty() : ?PartyIdentification
     {
@@ -321,8 +315,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets ship_from_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipFromParty() : ?PartyIdentification
     {
@@ -343,8 +335,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets warehouse_id.
-     *
-     * @return null|string
      */
     public function getWarehouseId() : ?string
     {
@@ -365,8 +355,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets master_tracking_id.
-     *
-     * @return null|string
      */
     public function getMasterTrackingId() : ?string
     {
@@ -387,8 +375,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets total_label_count.
-     *
-     * @return null|int
      */
     public function getTotalLabelCount() : ?int
     {
@@ -409,8 +395,6 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets ship_mode.
-     *
-     * @return null|string
      */
     public function getShipMode() : ?string
     {

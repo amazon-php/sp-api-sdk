@@ -234,8 +234,6 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets report_type.
-     *
-     * @return string
      */
     public function getReportType() : string
     {
@@ -256,8 +254,6 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets data_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDataStartTime() : ?\DateTimeInterface
     {
@@ -278,8 +274,6 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets data_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDataEndTime() : ?\DateTimeInterface
     {

@@ -188,8 +188,6 @@ class TransportLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets label_create_date_time.
-     *
-     * @return null|string
      */
     public function getLabelCreateDateTime() : ?string
     {
@@ -210,8 +208,6 @@ class TransportLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets shipment_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentInformation
      */
     public function getShipmentInformation() : ?ShipmentInformation
     {

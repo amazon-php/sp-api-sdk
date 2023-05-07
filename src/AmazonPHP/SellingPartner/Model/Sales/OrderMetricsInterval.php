@@ -230,8 +230,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets interval.
-     *
-     * @return string
      */
     public function getInterval() : string
     {
@@ -252,8 +250,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets unit_count.
-     *
-     * @return int
      */
     public function getUnitCount() : int
     {
@@ -274,8 +270,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets order_item_count.
-     *
-     * @return int
      */
     public function getOrderItemCount() : int
     {
@@ -296,8 +290,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets order_count.
-     *
-     * @return int
      */
     public function getOrderCount() : int
     {
@@ -318,8 +310,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets average_unit_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Sales\Money
      */
     public function getAverageUnitPrice() : Money
     {
@@ -340,8 +330,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets total_sales.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Sales\Money
      */
     public function getTotalSales() : Money
     {

@@ -220,8 +220,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets removal_shipment_item_id.
-     *
-     * @return null|string
      */
     public function getRemovalShipmentItemId() : ?string
     {
@@ -242,8 +240,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_collection_model.
-     *
-     * @return null|string
      */
     public function getTaxCollectionModel() : ?string
     {
@@ -264,8 +260,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -286,8 +280,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets adjusted_quantity.
-     *
-     * @return null|int
      */
     public function getAdjustedQuantity() : ?int
     {
@@ -308,8 +300,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets revenue_adjustment.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRevenueAdjustment() : ?Currency
     {
@@ -330,8 +320,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_amount_adjustment.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmountAdjustment() : ?Currency
     {
@@ -352,8 +340,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_withheld_adjustment.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxWithheldAdjustment() : ?Currency
     {

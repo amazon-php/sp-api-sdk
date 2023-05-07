@@ -176,8 +176,6 @@ class CreateReportResponse implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets report_id.
-     *
-     * @return string
      */
     public function getReportId() : string
     {

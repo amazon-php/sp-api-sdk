@@ -265,8 +265,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -287,8 +285,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_status.
-     *
-     * @return string
      */
     public function getPurchaseOrderStatus() : string
     {
@@ -309,8 +305,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getPurchaseOrderDate() : \DateTimeInterface
     {
@@ -331,8 +325,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets last_updated_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLastUpdatedDate() : ?\DateTimeInterface
     {
@@ -353,8 +345,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -375,8 +365,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets ship_to_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getShipToParty() : PartyIdentification
     {

@@ -192,8 +192,6 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets _links.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponseLinks
      */
     public function getLinks() : ?GetMessagingActionsForOrderResponseLinks
     {
@@ -214,8 +212,6 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets _embedded.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded
      */
     public function getEmbedded() : ?GetMessagingActionsForOrderResponseEmbedded
     {

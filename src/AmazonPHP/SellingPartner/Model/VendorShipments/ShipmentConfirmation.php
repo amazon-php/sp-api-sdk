@@ -419,8 +419,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_identifier.
-     *
-     * @return string
      */
     public function getShipmentIdentifier() : string
     {
@@ -441,8 +439,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_confirmation_type.
-     *
-     * @return string
      */
     public function getShipmentConfirmationType() : string
     {
@@ -463,8 +459,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_type.
-     *
-     * @return null|string
      */
     public function getShipmentType() : ?string
     {
@@ -485,8 +479,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_structure.
-     *
-     * @return null|string
      */
     public function getShipmentStructure() : ?string
     {
@@ -507,8 +499,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets transportation_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetails
      */
     public function getTransportationDetails() : ?TransportationDetails
     {
@@ -529,8 +519,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets amazon_reference_number.
-     *
-     * @return null|string
      */
     public function getAmazonReferenceNumber() : ?string
     {
@@ -551,8 +539,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_confirmation_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getShipmentConfirmationDate() : \DateTimeInterface
     {
@@ -573,8 +559,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipped_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShippedDate() : ?\DateTimeInterface
     {
@@ -595,8 +579,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets estimated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {
@@ -617,8 +599,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -639,8 +619,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -661,8 +639,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_to_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipToParty() : PartyIdentification
     {
@@ -683,8 +659,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_measurements.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentMeasurements
      */
     public function getShipmentMeasurements() : ?ShipmentMeasurements
     {
@@ -705,8 +679,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets import_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ImportDetails
      */
     public function getImportDetails() : ?ImportDetails
     {

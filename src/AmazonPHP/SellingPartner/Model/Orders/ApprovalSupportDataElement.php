@@ -186,8 +186,6 @@ class ApprovalSupportDataElement implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -208,8 +206,6 @@ class ApprovalSupportDataElement implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets value.
-     *
-     * @return string
      */
     public function getValue() : string
     {

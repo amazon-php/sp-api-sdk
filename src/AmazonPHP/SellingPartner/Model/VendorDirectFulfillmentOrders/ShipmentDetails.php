@@ -230,8 +230,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_priority_shipment.
-     *
-     * @return bool
      */
     public function getIsPriorityShipment() : bool
     {
@@ -252,8 +250,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_scheduled_delivery_shipment.
-     *
-     * @return null|bool
      */
     public function getIsScheduledDeliveryShipment() : ?bool
     {
@@ -274,8 +270,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_pslip_required.
-     *
-     * @return bool
      */
     public function getIsPslipRequired() : bool
     {
@@ -296,8 +290,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_gift.
-     *
-     * @return null|bool
      */
     public function getIsGift() : ?bool
     {
@@ -318,8 +310,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_method.
-     *
-     * @return string
      */
     public function getShipMethod() : string
     {
@@ -340,8 +330,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_dates.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDates
      */
     public function getShipmentDates() : ShipmentDates
     {
@@ -362,8 +350,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets message_to_customer.
-     *
-     * @return string
      */
     public function getMessageToCustomer() : string
     {

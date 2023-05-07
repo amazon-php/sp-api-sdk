@@ -191,8 +191,6 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_contains_preorderable_items.
-     *
-     * @return null|bool
      */
     public function getShipmentContainsPreorderableItems() : ?bool
     {
@@ -213,8 +211,6 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_confirmed_for_preorder.
-     *
-     * @return null|bool
      */
     public function getShipmentConfirmedForPreorder() : ?bool
     {
@@ -235,8 +231,6 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets need_by_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getNeedByDate() : ?\DateTimeInterface
     {
@@ -257,8 +251,6 @@ class GetPreorderInfoResult implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets confirmed_fulfillable_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getConfirmedFulfillableDate() : ?\DateTimeInterface
     {

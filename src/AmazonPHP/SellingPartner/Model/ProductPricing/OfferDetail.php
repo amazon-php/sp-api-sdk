@@ -304,8 +304,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets my_offer.
-     *
-     * @return null|bool
      */
     public function getMyOffer() : ?bool
     {
@@ -326,8 +324,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets offer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -348,8 +344,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets sub_condition.
-     *
-     * @return string
      */
     public function getSubCondition() : string
     {
@@ -370,8 +364,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets seller_id.
-     *
-     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -392,8 +384,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets condition_notes.
-     *
-     * @return null|string
      */
     public function getConditionNotes() : ?string
     {
@@ -414,8 +404,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets seller_feedback_rating.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerFeedbackType
      */
     public function getSellerFeedbackRating() : ?SellerFeedbackType
     {
@@ -436,8 +424,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping_time.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\DetailedShippingTimeType
      */
     public function getShippingTime() : DetailedShippingTimeType
     {
@@ -458,8 +444,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets listing_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListingPrice() : MoneyType
     {
@@ -502,8 +486,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets points.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points
      */
     public function getPoints() : ?Points
     {
@@ -524,8 +506,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getShipping() : MoneyType
     {
@@ -546,8 +526,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets ships_from.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ShipsFromType
      */
     public function getShipsFrom() : ?ShipsFromType
     {
@@ -568,8 +546,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets is_fulfilled_by_amazon.
-     *
-     * @return bool
      */
     public function getIsFulfilledByAmazon() : bool
     {
@@ -590,8 +566,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets prime_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\PrimeInformationType
      */
     public function getPrimeInformation() : ?PrimeInformationType
     {
@@ -612,8 +586,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets is_buy_box_winner.
-     *
-     * @return null|bool
      */
     public function getIsBuyBoxWinner() : ?bool
     {
@@ -634,8 +606,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets is_featured_merchant.
-     *
-     * @return null|bool
      */
     public function getIsFeaturedMerchant() : ?bool
     {

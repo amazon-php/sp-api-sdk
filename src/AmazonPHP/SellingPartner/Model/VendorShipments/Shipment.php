@@ -425,8 +425,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets vendor_shipment_identifier.
-     *
-     * @return string
      */
     public function getVendorShipmentIdentifier() : string
     {
@@ -447,8 +445,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets transaction_type.
-     *
-     * @return string
      */
     public function getTransactionType() : string
     {
@@ -469,8 +465,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets buyer_reference_number.
-     *
-     * @return null|string
      */
     public function getBuyerReferenceNumber() : ?string
     {
@@ -491,8 +485,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets transaction_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getTransactionDate() : \DateTimeInterface
     {
@@ -513,8 +505,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets current_shipment_status.
-     *
-     * @return null|string
      */
     public function getCurrentShipmentStatus() : ?string
     {
@@ -535,8 +525,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets currentshipment_status_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getCurrentshipmentStatusDate() : ?\DateTimeInterface
     {
@@ -579,8 +567,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipment_create_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShipmentCreateDate() : ?\DateTimeInterface
     {
@@ -601,8 +587,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipment_confirm_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShipmentConfirmDate() : ?\DateTimeInterface
     {
@@ -623,8 +607,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets package_label_create_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPackageLabelCreateDate() : ?\DateTimeInterface
     {
@@ -645,8 +627,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipment_freight_term.
-     *
-     * @return null|string
      */
     public function getShipmentFreightTerm() : ?string
     {
@@ -667,8 +647,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -689,8 +667,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -711,8 +687,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_to_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipToParty() : PartyIdentification
     {
@@ -733,8 +707,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipment_measurements.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportShipmentMeasurements
      */
     public function getShipmentMeasurements() : ?TransportShipmentMeasurements
     {
@@ -755,8 +727,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets collect_freight_pickup_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CollectFreightPickupDetails
      */
     public function getCollectFreightPickupDetails() : ?CollectFreightPickupDetails
     {
@@ -799,8 +769,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets import_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ImportDetails
      */
     public function getImportDetails() : ?ImportDetails
     {
@@ -843,8 +811,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets transportation_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetails
      */
     public function getTransportationDetails() : ?TransportationDetails
     {

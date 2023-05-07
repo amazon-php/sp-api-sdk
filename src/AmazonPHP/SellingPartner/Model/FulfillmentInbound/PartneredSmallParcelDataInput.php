@@ -201,8 +201,6 @@ class PartneredSmallParcelDataInput implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets carrier_name.
-     *
-     * @return null|string
      */
     public function getCarrierName() : ?string
     {

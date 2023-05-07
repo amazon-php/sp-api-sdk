@@ -178,8 +178,6 @@ class ItemOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets request.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersRequestParams
      */
     public function getRequest() : ItemOffersRequestParams
     {

@@ -192,8 +192,6 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets time_of_fees_estimation.
-     *
-     * @return \DateTimeInterface
      */
     public function getTimeOfFeesEstimation() : \DateTimeInterface
     {
@@ -214,8 +212,6 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets total_fees_estimate.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getTotalFeesEstimate() : ?MoneyType
     {

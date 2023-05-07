@@ -179,8 +179,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets upload_destination_id.
-     *
-     * @return null|string
      */
     public function getUploadDestinationId() : ?string
     {
@@ -201,8 +199,6 @@ class FulfillmentDocument implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets content_sha256.
-     *
-     * @return null|string
      */
     public function getContentSha256() : ?string
     {

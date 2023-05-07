@@ -182,8 +182,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets loan_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLoanAmount() : ?Currency
     {
@@ -204,8 +202,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets source_business_event_type.
-     *
-     * @return null|string
      */
     public function getSourceBusinessEventType() : ?string
     {

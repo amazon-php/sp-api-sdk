@@ -235,8 +235,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets length.
-     *
-     * @return float
      */
     public function getLength() : float
     {
@@ -257,8 +255,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets width.
-     *
-     * @return float
      */
     public function getWidth() : float
     {
@@ -279,8 +275,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets height.
-     *
-     * @return float
      */
     public function getHeight() : float
     {
@@ -301,8 +295,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets unit.
-     *
-     * @return string
      */
     public function getUnit() : string
     {

@@ -255,8 +255,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -277,8 +275,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -299,8 +295,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -321,8 +315,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets order_id.
-     *
-     * @return null|string
      */
     public function getOrderId() : ?string
     {
@@ -343,8 +335,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets item_status.
-     *
-     * @return null|string
      */
     public function getItemStatus() : ?string
     {
@@ -365,8 +355,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets brand_name.
-     *
-     * @return null|string
      */
     public function getBrandName() : ?string
     {
@@ -387,8 +375,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets item_delivery.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ItemDelivery
      */
     public function getItemDelivery() : ?ItemDelivery
     {

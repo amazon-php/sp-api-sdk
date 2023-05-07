@@ -40,8 +40,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
      */
     public function createContentDocument(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
@@ -251,8 +249,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse
      */
     public function getContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse
     {
@@ -489,8 +485,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse
      */
     public function listContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, ?array $included_data_set = null, ?array $asin_set = null, ?string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse
     {
@@ -739,8 +733,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse
      */
     public function postContentDocumentApprovalSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse
     {
@@ -955,8 +947,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse
      */
     public function postContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse
     {
@@ -1186,8 +1176,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse
      */
     public function postContentDocumentSuspendSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse
     {
@@ -1401,8 +1389,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse
      */
     public function searchContentDocuments(AccessToken $accessToken, string $region, string $marketplace_id, ?string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse
     {
@@ -1609,8 +1595,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse
      */
     public function searchContentPublishRecords(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, ?string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse
     {
@@ -1837,8 +1821,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
      */
     public function updateContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
@@ -2069,8 +2051,6 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse
      */
     public function validateContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, ?array $asin_set = null) : \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse
     {

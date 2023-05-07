@@ -186,8 +186,6 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets value.
-     *
-     * @return int
      */
     public function getValue() : int
     {
@@ -208,8 +206,6 @@ class IntegerWithUnits implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets units.
-     *
-     * @return string
      */
     public function getUnits() : string
     {

@@ -197,8 +197,6 @@ class FeatureSku implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -219,8 +217,6 @@ class FeatureSku implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets fn_sku.
-     *
-     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -241,8 +237,6 @@ class FeatureSku implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -263,8 +257,6 @@ class FeatureSku implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets sku_count.
-     *
-     * @return null|float
      */
     public function getSkuCount() : ?float
     {

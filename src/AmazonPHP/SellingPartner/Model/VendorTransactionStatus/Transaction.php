@@ -224,8 +224,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets transaction_id.
-     *
-     * @return string
      */
     public function getTransactionId() : string
     {
@@ -246,8 +244,6 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets status.
-     *
-     * @return string
      */
     public function getStatus() : string
     {

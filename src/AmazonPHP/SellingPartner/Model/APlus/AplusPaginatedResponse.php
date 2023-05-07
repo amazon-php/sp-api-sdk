@@ -204,8 +204,6 @@ class AplusPaginatedResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {

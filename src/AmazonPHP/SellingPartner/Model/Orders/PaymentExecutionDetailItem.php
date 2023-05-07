@@ -188,8 +188,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets payment.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPayment() : Money
     {
@@ -210,8 +208,6 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets payment_method.
-     *
-     * @return string
      */
     public function getPaymentMethod() : string
     {

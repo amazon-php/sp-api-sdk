@@ -194,8 +194,6 @@ class Currency implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets value.
-     *
-     * @return float
      */
     public function getValue() : float
     {
@@ -216,8 +214,6 @@ class Currency implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets unit.
-     *
-     * @return string
      */
     public function getUnit() : string
     {

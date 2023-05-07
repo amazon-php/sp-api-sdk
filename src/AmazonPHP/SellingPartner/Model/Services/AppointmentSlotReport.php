@@ -219,8 +219,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets scheduling_type.
-     *
-     * @return null|string
      */
     public function getSchedulingType() : ?string
     {
@@ -241,8 +239,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartTime() : ?\DateTimeInterface
     {
@@ -263,8 +259,6 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEndTime() : ?\DateTimeInterface
     {

@@ -186,8 +186,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -208,8 +206,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderDetails
      */
     public function getOrderDetails() : ?OrderDetails
     {

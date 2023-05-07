@@ -179,8 +179,6 @@ class MoneyType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets currency_code.
-     *
-     * @return null|string
      */
     public function getCurrencyCode() : ?string
     {
@@ -201,8 +199,6 @@ class MoneyType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets amount.
-     *
-     * @return null|float
      */
     public function getAmount() : ?float
     {

@@ -182,8 +182,6 @@ class DirectPayment implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets direct_payment_type.
-     *
-     * @return null|string
      */
     public function getDirectPaymentType() : ?string
     {
@@ -204,8 +202,6 @@ class DirectPayment implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets direct_payment_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getDirectPaymentAmount() : ?Currency
     {

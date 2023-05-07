@@ -218,8 +218,6 @@ class ReportDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets report_document_id.
-     *
-     * @return string
      */
     public function getReportDocumentId() : string
     {
@@ -240,8 +238,6 @@ class ReportDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets url.
-     *
-     * @return string
      */
     public function getUrl() : string
     {
@@ -262,8 +258,6 @@ class ReportDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets compression_algorithm.
-     *
-     * @return null|string
      */
     public function getCompressionAlgorithm() : ?string
     {

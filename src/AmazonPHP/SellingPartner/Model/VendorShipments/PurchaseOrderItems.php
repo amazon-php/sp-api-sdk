@@ -210,8 +210,6 @@ class PurchaseOrderItems implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -232,8 +230,6 @@ class PurchaseOrderItems implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -254,8 +250,6 @@ class PurchaseOrderItems implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -276,8 +270,6 @@ class PurchaseOrderItems implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets shipped_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity
      */
     public function getShippedQuantity() : ItemQuantity
     {
@@ -298,8 +290,6 @@ class PurchaseOrderItems implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets maximum_retail_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Money
      */
     public function getMaximumRetailPrice() : ?Money
     {

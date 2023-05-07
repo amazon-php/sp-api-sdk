@@ -230,8 +230,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {

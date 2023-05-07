@@ -182,8 +182,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets estimated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {
@@ -204,8 +202,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets item_delivery_promise.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ItemDeliveryPromise
      */
     public function getItemDeliveryPromise() : ?ItemDeliveryPromise
     {

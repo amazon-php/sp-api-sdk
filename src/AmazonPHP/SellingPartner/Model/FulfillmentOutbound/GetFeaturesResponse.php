@@ -182,8 +182,6 @@ class GetFeaturesResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeaturesResult
      */
     public function getPayload() : ?GetFeaturesResult
     {

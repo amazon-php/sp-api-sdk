@@ -188,8 +188,6 @@ class AdditionalSellerInputs implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets additional_input_field_name.
-     *
-     * @return string
      */
     public function getAdditionalInputFieldName() : string
     {
@@ -210,8 +208,6 @@ class AdditionalSellerInputs implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets additional_seller_input.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInput
      */
     public function getAdditionalSellerInput() : AdditionalSellerInput
     {

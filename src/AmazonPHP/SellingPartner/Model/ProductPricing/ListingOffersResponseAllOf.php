@@ -176,8 +176,6 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets request.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequestParams
      */
     public function getRequest() : ?ListingOffersRequestParams
     {

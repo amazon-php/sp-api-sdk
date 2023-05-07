@@ -270,8 +270,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledgement_code.
-     *
-     * @return string
      */
     public function getAcknowledgementCode() : string
     {
@@ -292,8 +290,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledged_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getAcknowledgedQuantity() : ItemQuantity
     {
@@ -314,8 +310,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets scheduled_ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getScheduledShipDate() : ?\DateTimeInterface
     {
@@ -336,8 +330,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets scheduled_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getScheduledDeliveryDate() : ?\DateTimeInterface
     {
@@ -358,8 +350,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets rejection_reason.
-     *
-     * @return null|string
      */
     public function getRejectionReason() : ?string
     {

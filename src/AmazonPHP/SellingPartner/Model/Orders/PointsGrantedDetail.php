@@ -182,8 +182,6 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets points_number.
-     *
-     * @return null|int
      */
     public function getPointsNumber() : ?int
     {
@@ -204,8 +202,6 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets points_monetary_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPointsMonetaryValue() : ?Money
     {

@@ -173,8 +173,6 @@ class Pagination implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {

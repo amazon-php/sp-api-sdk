@@ -186,8 +186,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets invalid_item_reason_code.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\InvalidItemReasonCode
      */
     public function getInvalidItemReasonCode() : InvalidItemReasonCode
     {
@@ -208,8 +206,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets description.
-     *
-     * @return string
      */
     public function getDescription() : string
     {

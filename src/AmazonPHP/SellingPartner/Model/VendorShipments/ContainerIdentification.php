@@ -224,8 +224,6 @@ class ContainerIdentification implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets container_identification_type.
-     *
-     * @return string
      */
     public function getContainerIdentificationType() : string
     {
@@ -246,8 +244,6 @@ class ContainerIdentification implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets container_identification_number.
-     *
-     * @return string
      */
     public function getContainerIdentificationNumber() : string
     {

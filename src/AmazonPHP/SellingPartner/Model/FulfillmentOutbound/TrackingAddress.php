@@ -208,8 +208,6 @@ class TrackingAddress implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets city.
-     *
-     * @return string
      */
     public function getCity() : string
     {
@@ -230,8 +228,6 @@ class TrackingAddress implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets state.
-     *
-     * @return string
      */
     public function getState() : string
     {
@@ -252,8 +248,6 @@ class TrackingAddress implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets country.
-     *
-     * @return string
      */
     public function getCountry() : string
     {

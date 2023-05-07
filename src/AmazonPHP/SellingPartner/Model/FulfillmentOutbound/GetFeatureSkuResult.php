@@ -212,8 +212,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -234,8 +232,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets feature_name.
-     *
-     * @return string
      */
     public function getFeatureName() : string
     {
@@ -256,8 +252,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets is_eligible.
-     *
-     * @return bool
      */
     public function getIsEligible() : bool
     {
@@ -300,8 +294,6 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets sku_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSku
      */
     public function getSkuInfo() : ?FeatureSku
     {

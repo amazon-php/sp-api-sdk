@@ -179,8 +179,6 @@ class TaxWithheldComponent implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets tax_collection_model.
-     *
-     * @return null|string
      */
     public function getTaxCollectionModel() : ?string
     {

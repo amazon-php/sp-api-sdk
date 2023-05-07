@@ -220,8 +220,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets receive_status.
-     *
-     * @return null|string
      */
     public function getReceiveStatus() : ?string
     {
@@ -242,8 +240,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets received_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getReceivedQuantity() : ?ItemQuantity
     {
@@ -264,8 +260,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets last_receive_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLastReceiveDate() : ?\DateTimeInterface
     {

@@ -182,8 +182,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Pagination
      */
     public function getPagination() : ?Pagination
     {

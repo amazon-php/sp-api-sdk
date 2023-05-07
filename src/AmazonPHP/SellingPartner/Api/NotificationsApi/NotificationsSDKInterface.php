@@ -59,8 +59,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationResponse
      */
     public function createDestination(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body) : \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationResponse;
 
@@ -72,8 +70,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionResponse
      */
     public function createSubscription(AccessToken $accessToken, string $region, string $notification_type, \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body) : \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionResponse;
 
@@ -84,8 +80,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\DeleteDestinationResponse
      */
     public function deleteDestination(AccessToken $accessToken, string $region, string $destination_id) : \AmazonPHP\SellingPartner\Model\Notifications\DeleteDestinationResponse;
 
@@ -97,8 +91,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\DeleteSubscriptionByIdResponse
      */
     public function deleteSubscriptionById(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\DeleteSubscriptionByIdResponse;
 
@@ -109,8 +101,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationResponse
      */
     public function getDestination(AccessToken $accessToken, string $region, string $destination_id) : \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationResponse;
 
@@ -119,8 +109,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationsResponse
      */
     public function getDestinations(AccessToken $accessToken, string $region) : \AmazonPHP\SellingPartner\Model\Notifications\GetDestinationsResponse;
 
@@ -131,8 +119,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionResponse
      */
     public function getSubscription(AccessToken $accessToken, string $region, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionResponse;
 
@@ -144,8 +130,6 @@ interface NotificationsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionByIdResponse
      */
     public function getSubscriptionById(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : \AmazonPHP\SellingPartner\Model\Notifications\GetSubscriptionByIdResponse;
 }

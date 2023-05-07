@@ -202,8 +202,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -224,8 +222,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets buyer_company_name.
-     *
-     * @return null|string
      */
     public function getBuyerCompanyName() : ?string
     {
@@ -246,8 +242,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets shipping_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -268,8 +262,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets delivery_preferences.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\DeliveryPreferences
      */
     public function getDeliveryPreferences() : ?DeliveryPreferences
     {

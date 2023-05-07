@@ -185,8 +185,6 @@ class ExceptionDates implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets exception_date.
-     *
-     * @return null|string
      */
     public function getExceptionDate() : ?string
     {
@@ -207,8 +205,6 @@ class ExceptionDates implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets is_open.
-     *
-     * @return null|bool
      */
     public function getIsOpen() : ?bool
     {

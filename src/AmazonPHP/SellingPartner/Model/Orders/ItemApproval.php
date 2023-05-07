@@ -291,8 +291,6 @@ class ItemApproval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets sequence_id.
-     *
-     * @return int
      */
     public function getSequenceId() : int
     {
@@ -313,8 +311,6 @@ class ItemApproval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets timestamp.
-     *
-     * @return string
      */
     public function getTimestamp() : string
     {
@@ -335,8 +331,6 @@ class ItemApproval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets actor.
-     *
-     * @return string
      */
     public function getActor() : string
     {
@@ -357,8 +351,6 @@ class ItemApproval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets approver.
-     *
-     * @return null|string
      */
     public function getApprover() : ?string
     {
@@ -379,8 +371,6 @@ class ItemApproval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets approval_action.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalAction
      */
     public function getApprovalAction() : ItemApprovalAction
     {
@@ -401,8 +391,6 @@ class ItemApproval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets approval_action_process_status.
-     *
-     * @return string
      */
     public function getApprovalActionProcessStatus() : string
     {
@@ -423,8 +411,6 @@ class ItemApproval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets approval_action_process_status_message.
-     *
-     * @return null|string
      */
     public function getApprovalActionProcessStatusMessage() : ?string
     {

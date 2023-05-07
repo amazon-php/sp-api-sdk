@@ -182,8 +182,6 @@ class FeeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets fee_type.
-     *
-     * @return null|string
      */
     public function getFeeType() : ?string
     {
@@ -204,8 +202,6 @@ class FeeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets fee_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {

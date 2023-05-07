@@ -186,8 +186,6 @@ class GetOffersHttpStatusLine implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets status_code.
-     *
-     * @return null|int
      */
     public function getStatusCode() : ?int
     {
@@ -208,8 +206,6 @@ class GetOffersHttpStatusLine implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets reason_phrase.
-     *
-     * @return null|string
      */
     public function getReasonPhrase() : ?string
     {

@@ -337,8 +337,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -359,8 +357,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -381,8 +377,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets product_type.
-     *
-     * @return string
      */
     public function getProductType() : string
     {
@@ -403,8 +397,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets condition_type.
-     *
-     * @return null|string
      */
     public function getConditionType() : ?string
     {
@@ -447,8 +439,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets fn_sku.
-     *
-     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -469,8 +459,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_name.
-     *
-     * @return string
      */
     public function getItemName() : string
     {
@@ -491,8 +479,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets created_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getCreatedDate() : \DateTimeInterface
     {
@@ -513,8 +499,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets last_updated_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getLastUpdatedDate() : \DateTimeInterface
     {
@@ -535,8 +519,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets main_image.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage
      */
     public function getMainImage() : ?ItemImage
     {

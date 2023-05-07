@@ -179,8 +179,6 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets total_researching_quantity.
-     *
-     * @return null|int
      */
     public function getTotalResearchingQuantity() : ?int
     {

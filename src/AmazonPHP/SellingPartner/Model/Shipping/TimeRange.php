@@ -179,8 +179,6 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets start.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStart() : ?\DateTimeInterface
     {
@@ -201,8 +199,6 @@ class TimeRange implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets end.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEnd() : ?\DateTimeInterface
     {

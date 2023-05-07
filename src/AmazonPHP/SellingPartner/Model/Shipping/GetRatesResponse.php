@@ -182,8 +182,6 @@ class GetRatesResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\GetRatesResult
      */
     public function getPayload() : ?GetRatesResult
     {

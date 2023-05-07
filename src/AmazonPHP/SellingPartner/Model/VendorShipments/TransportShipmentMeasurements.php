@@ -204,8 +204,6 @@ class TransportShipmentMeasurements implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets total_carton_count.
-     *
-     * @return null|int
      */
     public function getTotalCartonCount() : ?int
     {
@@ -226,8 +224,6 @@ class TransportShipmentMeasurements implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets total_pallet_stackable.
-     *
-     * @return null|int
      */
     public function getTotalPalletStackable() : ?int
     {
@@ -248,8 +244,6 @@ class TransportShipmentMeasurements implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets total_pallet_non_stackable.
-     *
-     * @return null|int
      */
     public function getTotalPalletNonStackable() : ?int
     {
@@ -270,8 +264,6 @@ class TransportShipmentMeasurements implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipment_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getShipmentWeight() : ?Weight
     {
@@ -292,8 +284,6 @@ class TransportShipmentMeasurements implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipment_volume.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Volume
      */
     public function getShipmentVolume() : ?Volume
     {

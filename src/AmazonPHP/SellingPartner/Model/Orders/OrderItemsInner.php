@@ -179,8 +179,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets order_item_id.
-     *
-     * @return null|string
      */
     public function getOrderItemId() : ?string
     {
@@ -201,8 +199,6 @@ class OrderItemsInner implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {

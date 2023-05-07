@@ -209,8 +209,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets total_unfulfillable_quantity.
-     *
-     * @return null|int
      */
     public function getTotalUnfulfillableQuantity() : ?int
     {
@@ -231,8 +229,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets customer_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getCustomerDamagedQuantity() : ?int
     {
@@ -253,8 +249,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets warehouse_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getWarehouseDamagedQuantity() : ?int
     {
@@ -275,8 +269,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets distributor_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getDistributorDamagedQuantity() : ?int
     {
@@ -297,8 +289,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets carrier_damaged_quantity.
-     *
-     * @return null|int
      */
     public function getCarrierDamagedQuantity() : ?int
     {
@@ -319,8 +309,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets defective_quantity.
-     *
-     * @return null|int
      */
     public function getDefectiveQuantity() : ?int
     {
@@ -341,8 +329,6 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets expired_quantity.
-     *
-     * @return null|int
      */
     public function getExpiredQuantity() : ?int
     {

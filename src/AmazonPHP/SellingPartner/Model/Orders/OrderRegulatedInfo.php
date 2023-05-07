@@ -210,8 +210,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -232,8 +230,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets regulated_information.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RegulatedInformation
      */
     public function getRegulatedInformation() : RegulatedInformation
     {
@@ -254,8 +250,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets requires_dosage_label.
-     *
-     * @return bool
      */
     public function getRequiresDosageLabel() : bool
     {
@@ -276,8 +270,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets regulated_order_verification_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RegulatedOrderVerificationStatus
      */
     public function getRegulatedOrderVerificationStatus() : RegulatedOrderVerificationStatus
     {

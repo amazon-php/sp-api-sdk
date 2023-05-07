@@ -230,8 +230,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets is_required.
-     *
-     * @return bool
      */
     public function getIsRequired() : bool
     {
@@ -252,8 +250,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets data_type.
-     *
-     * @return string
      */
     public function getDataType() : string
     {
@@ -296,8 +292,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets input_display_text.
-     *
-     * @return string
      */
     public function getInputDisplayText() : string
     {
@@ -318,8 +312,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets input_target.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\InputTargetType
      */
     public function getInputTarget() : ?InputTargetType
     {
@@ -340,8 +332,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets stored_value.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInput
      */
     public function getStoredValue() : AdditionalSellerInput
     {

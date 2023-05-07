@@ -178,8 +178,6 @@ class AddAppointmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets appointment_time.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\AppointmentTimeInput
      */
     public function getAppointmentTime() : AppointmentTimeInput
     {

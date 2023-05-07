@@ -236,8 +236,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -258,8 +256,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets content_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {
@@ -280,8 +276,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets content_sub_type.
-     *
-     * @return null|string
      */
     public function getContentSubType() : ?string
     {
@@ -302,8 +296,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets locale.
-     *
-     * @return string
      */
     public function getLocale() : string
     {

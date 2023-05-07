@@ -186,8 +186,6 @@ class DestinationResourceSpecification implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets sqs.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\SqsResource
      */
     public function getSqs() : ?SqsResource
     {
@@ -208,8 +206,6 @@ class DestinationResourceSpecification implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets event_bridge.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\EventBridgeResourceSpecification
      */
     public function getEventBridge() : ?EventBridgeResourceSpecification
     {

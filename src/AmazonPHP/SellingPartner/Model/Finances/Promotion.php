@@ -188,8 +188,6 @@ class Promotion implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_type.
-     *
-     * @return null|string
      */
     public function getPromotionType() : ?string
     {
@@ -210,8 +208,6 @@ class Promotion implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_id.
-     *
-     * @return null|string
      */
     public function getPromotionId() : ?string
     {
@@ -232,8 +228,6 @@ class Promotion implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getPromotionAmount() : ?Currency
     {

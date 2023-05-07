@@ -186,8 +186,6 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -208,8 +206,6 @@ class ASINIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {

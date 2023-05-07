@@ -186,8 +186,6 @@ class PrimeInformationType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets is_prime.
-     *
-     * @return bool
      */
     public function getIsPrime() : bool
     {
@@ -208,8 +206,6 @@ class PrimeInformationType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets is_national_prime.
-     *
-     * @return bool
      */
     public function getIsNationalPrime() : bool
     {

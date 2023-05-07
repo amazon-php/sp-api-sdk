@@ -212,8 +212,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets resource.
-     *
-     * @return string
      */
     public function getResource() : string
     {
@@ -234,8 +232,6 @@ class SchemaLinkLink implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets verb.
-     *
-     * @return string
      */
     public function getVerb() : string
     {

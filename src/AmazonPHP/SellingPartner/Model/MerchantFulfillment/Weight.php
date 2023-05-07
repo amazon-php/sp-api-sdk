@@ -186,8 +186,6 @@ class Weight implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets value.
-     *
-     * @return float
      */
     public function getValue() : float
     {
@@ -208,8 +206,6 @@ class Weight implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets unit.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfWeight
      */
     public function getUnit() : UnitOfWeight
     {

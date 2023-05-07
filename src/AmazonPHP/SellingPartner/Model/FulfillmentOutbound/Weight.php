@@ -221,8 +221,6 @@ class Weight implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets unit.
-     *
-     * @return string
      */
     public function getUnit() : string
     {
@@ -243,8 +241,6 @@ class Weight implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets value.
-     *
-     * @return string
      */
     public function getValue() : string
     {

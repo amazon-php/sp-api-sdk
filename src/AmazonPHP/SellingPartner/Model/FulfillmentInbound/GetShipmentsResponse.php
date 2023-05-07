@@ -182,8 +182,6 @@ class GetShipmentsResponse implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResult
      */
     public function getPayload() : ?GetShipmentsResult
     {

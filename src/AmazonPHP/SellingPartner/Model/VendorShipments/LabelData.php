@@ -222,8 +222,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets label_sequence_number.
-     *
-     * @return null|int
      */
     public function getLabelSequenceNumber() : ?int
     {
@@ -244,8 +242,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets label_format.
-     *
-     * @return null|string
      */
     public function getLabelFormat() : ?string
     {
@@ -266,8 +262,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets carrier_code.
-     *
-     * @return null|string
      */
     public function getCarrierCode() : ?string
     {
@@ -288,8 +282,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tracking_id.
-     *
-     * @return null|string
      */
     public function getTrackingId() : ?string
     {
@@ -310,8 +302,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets label.
-     *
-     * @return null|string
      */
     public function getLabel() : ?string
     {

@@ -186,8 +186,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets start_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getStartDate() : \DateTimeInterface
     {
@@ -208,8 +206,6 @@ class DeliveryWindow implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets end_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getEndDate() : \DateTimeInterface
     {

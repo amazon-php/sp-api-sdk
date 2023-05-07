@@ -186,8 +186,6 @@ class CreateShipmentResult implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_id.
-     *
-     * @return string
      */
     public function getShipmentId() : string
     {

@@ -186,8 +186,6 @@ class StandardImageTextCaptionBlock implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets block.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock() : ?StandardImageTextBlock
     {
@@ -208,8 +206,6 @@ class StandardImageTextCaptionBlock implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets caption.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getCaption() : ?TextComponent
     {

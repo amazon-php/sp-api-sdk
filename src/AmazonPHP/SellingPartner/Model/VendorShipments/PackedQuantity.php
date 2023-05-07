@@ -221,8 +221,6 @@ class PackedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets amount.
-     *
-     * @return int
      */
     public function getAmount() : int
     {
@@ -243,8 +241,6 @@ class PackedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets unit_of_measure.
-     *
-     * @return string
      */
     public function getUnitOfMeasure() : string
     {
@@ -265,8 +261,6 @@ class PackedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets unit_size.
-     *
-     * @return null|int
      */
     public function getUnitSize() : ?int
     {

@@ -197,8 +197,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -219,8 +217,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets financial_event_group_id.
-     *
-     * @return null|string
      */
     public function getFinancialEventGroupId() : ?string
     {
@@ -241,8 +237,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -263,8 +257,6 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets sku.
-     *
-     * @return null|string
      */
     public function getSku() : ?string
     {

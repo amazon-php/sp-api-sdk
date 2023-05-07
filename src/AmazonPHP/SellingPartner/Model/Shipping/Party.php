@@ -176,8 +176,6 @@ class Party implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets account_id.
-     *
-     * @return null|string
      */
     public function getAccountId() : ?string
     {

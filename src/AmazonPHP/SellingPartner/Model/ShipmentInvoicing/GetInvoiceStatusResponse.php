@@ -182,8 +182,6 @@ class GetInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatusResponse
      */
     public function getPayload() : ?ShipmentInvoiceStatusResponse
     {

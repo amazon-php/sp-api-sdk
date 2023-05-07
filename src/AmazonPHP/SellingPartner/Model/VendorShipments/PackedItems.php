@@ -204,8 +204,6 @@ class PackedItems implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return null|string
      */
     public function getItemSequenceNumber() : ?string
     {
@@ -226,8 +224,6 @@ class PackedItems implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -248,8 +244,6 @@ class PackedItems implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -270,8 +264,6 @@ class PackedItems implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets packed_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity
      */
     public function getPackedQuantity() : ?ItemQuantity
     {
@@ -292,8 +284,6 @@ class PackedItems implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets item_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\PackageItemDetails
      */
     public function getItemDetails() : ?PackageItemDetails
     {

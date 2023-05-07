@@ -182,8 +182,6 @@ class ListFinancialEventsPayload implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -204,8 +202,6 @@ class ListFinancialEventsPayload implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets financial_events.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents
      */
     public function getFinancialEvents() : ?FinancialEvents
     {

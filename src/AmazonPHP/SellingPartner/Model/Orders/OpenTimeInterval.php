@@ -179,8 +179,6 @@ class OpenTimeInterval implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets hour.
-     *
-     * @return null|int
      */
     public function getHour() : ?int
     {
@@ -201,8 +199,6 @@ class OpenTimeInterval implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets minute.
-     *
-     * @return null|int
      */
     public function getMinute() : ?int
     {

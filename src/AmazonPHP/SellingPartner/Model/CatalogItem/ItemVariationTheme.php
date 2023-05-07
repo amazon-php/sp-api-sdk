@@ -201,8 +201,6 @@ class ItemVariationTheme implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets theme.
-     *
-     * @return null|string
      */
     public function getTheme() : ?string
     {

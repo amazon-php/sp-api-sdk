@@ -179,8 +179,6 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {

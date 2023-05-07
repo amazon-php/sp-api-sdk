@@ -268,8 +268,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets feed_id.
-     *
-     * @return string
      */
     public function getFeedId() : string
     {
@@ -290,8 +288,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets feed_type.
-     *
-     * @return string
      */
     public function getFeedType() : string
     {
@@ -334,8 +330,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets created_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getCreatedTime() : \DateTimeInterface
     {
@@ -356,8 +350,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets processing_status.
-     *
-     * @return string
      */
     public function getProcessingStatus() : string
     {
@@ -378,8 +370,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets processing_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingStartTime() : ?\DateTimeInterface
     {
@@ -400,8 +390,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets processing_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingEndTime() : ?\DateTimeInterface
     {
@@ -422,8 +410,6 @@ class Feed implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets result_feed_document_id.
-     *
-     * @return null|string
      */
     public function getResultFeedDocumentId() : ?string
     {

@@ -198,8 +198,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -220,8 +218,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets feature_name.
-     *
-     * @return string
      */
     public function getFeatureName() : string
     {
@@ -242,8 +238,6 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {

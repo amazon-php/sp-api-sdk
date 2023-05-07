@@ -185,8 +185,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets resource_id.
-     *
-     * @return null|string
      */
     public function getResourceId() : ?string
     {
@@ -229,8 +227,6 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {

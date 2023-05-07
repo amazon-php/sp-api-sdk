@@ -218,8 +218,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus
      */
     public function getStatus() : VerificationStatus
     {
@@ -240,8 +238,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets requires_merchant_action.
-     *
-     * @return bool
      */
     public function getRequiresMerchantAction() : bool
     {
@@ -284,8 +280,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets rejection_reason.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\RejectionReason
      */
     public function getRejectionReason() : ?RejectionReason
     {
@@ -306,8 +300,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets review_date.
-     *
-     * @return null|string
      */
     public function getReviewDate() : ?string
     {
@@ -328,8 +320,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets external_reviewer_id.
-     *
-     * @return null|string
      */
     public function getExternalReviewerId() : ?string
     {

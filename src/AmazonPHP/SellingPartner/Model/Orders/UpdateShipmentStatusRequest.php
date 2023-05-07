@@ -192,8 +192,6 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -214,8 +212,6 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets shipment_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ShipmentStatus
      */
     public function getShipmentStatus() : ShipmentStatus
     {

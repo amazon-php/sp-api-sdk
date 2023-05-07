@@ -192,8 +192,6 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets invoice_content.
-     *
-     * @return string
      */
     public function getInvoiceContent() : string
     {
@@ -214,8 +212,6 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -236,8 +232,6 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets content_md5_value.
-     *
-     * @return string
      */
     public function getContentMd5Value() : string
     {

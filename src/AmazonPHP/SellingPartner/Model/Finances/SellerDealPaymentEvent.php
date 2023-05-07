@@ -226,8 +226,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -248,8 +246,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets deal_id.
-     *
-     * @return null|string
      */
     public function getDealId() : ?string
     {
@@ -270,8 +266,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets deal_description.
-     *
-     * @return null|string
      */
     public function getDealDescription() : ?string
     {
@@ -292,8 +286,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets event_type.
-     *
-     * @return null|string
      */
     public function getEventType() : ?string
     {
@@ -314,8 +306,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets fee_type.
-     *
-     * @return null|string
      */
     public function getFeeType() : ?string
     {
@@ -336,8 +326,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets fee_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {
@@ -358,8 +346,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {
@@ -380,8 +366,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets total_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

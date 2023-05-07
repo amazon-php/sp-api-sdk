@@ -210,8 +210,6 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets feed_type.
-     *
-     * @return string
      */
     public function getFeedType() : string
     {
@@ -254,8 +252,6 @@ class CreateFeedSpecification implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets input_feed_document_id.
-     *
-     * @return string
      */
     public function getInputFeedDocumentId() : string
     {

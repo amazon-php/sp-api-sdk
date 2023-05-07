@@ -244,8 +244,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipment_id.
-     *
-     * @return string
      */
     public function getShipmentId() : string
     {
@@ -266,8 +264,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets client_reference_id.
-     *
-     * @return string
      */
     public function getClientReferenceId() : string
     {
@@ -288,8 +284,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_from.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipFrom() : Address
     {
@@ -310,8 +304,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_to.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipTo() : Address
     {
@@ -332,8 +324,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets accepted_rate.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate() : ?AcceptedRate
     {
@@ -354,8 +344,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipper.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Party
      */
     public function getShipper() : ?Party
     {

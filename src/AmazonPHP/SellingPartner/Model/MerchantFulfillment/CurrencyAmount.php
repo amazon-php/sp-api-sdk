@@ -190,8 +190,6 @@ class CurrencyAmount implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets currency_code.
-     *
-     * @return string
      */
     public function getCurrencyCode() : string
     {
@@ -212,8 +210,6 @@ class CurrencyAmount implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets amount.
-     *
-     * @return float
      */
     public function getAmount() : float
     {

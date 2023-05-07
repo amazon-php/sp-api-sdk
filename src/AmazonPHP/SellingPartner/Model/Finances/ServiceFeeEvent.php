@@ -209,8 +209,6 @@ class ServiceFeeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -231,8 +229,6 @@ class ServiceFeeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets fee_reason.
-     *
-     * @return null|string
      */
     public function getFeeReason() : ?string
     {
@@ -275,8 +271,6 @@ class ServiceFeeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -297,8 +291,6 @@ class ServiceFeeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets fn_sku.
-     *
-     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -319,8 +311,6 @@ class ServiceFeeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets fee_description.
-     *
-     * @return null|string
      */
     public function getFeeDescription() : ?string
     {
@@ -341,8 +331,6 @@ class ServiceFeeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {

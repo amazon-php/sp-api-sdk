@@ -190,8 +190,6 @@ class AppointmentTime implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets start_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getStartTime() : \DateTimeInterface
     {
@@ -212,8 +210,6 @@ class AppointmentTime implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets duration_in_minutes.
-     *
-     * @return int
      */
     public function getDurationInMinutes() : int
     {

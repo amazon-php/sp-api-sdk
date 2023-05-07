@@ -240,8 +240,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets carton_sequence_number.
-     *
-     * @return string
      */
     public function getCartonSequenceNumber() : string
     {
@@ -262,8 +260,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -284,8 +280,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {
@@ -306,8 +300,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets tracking_number.
-     *
-     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {

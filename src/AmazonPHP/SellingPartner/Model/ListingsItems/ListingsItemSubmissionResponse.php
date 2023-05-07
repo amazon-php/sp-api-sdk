@@ -231,8 +231,6 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets sku.
-     *
-     * @return string
      */
     public function getSku() : string
     {
@@ -253,8 +251,6 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets status.
-     *
-     * @return string
      */
     public function getStatus() : string
     {
@@ -275,8 +271,6 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets submission_id.
-     *
-     * @return string
      */
     public function getSubmissionId() : string
     {

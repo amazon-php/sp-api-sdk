@@ -62,8 +62,6 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentDetailsResponse
      */
     public function getShipmentDetails(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $shipment_confirmed_before = null, ?\DateTimeInterface $shipment_confirmed_after = null, ?\DateTimeInterface $package_label_created_before = null, ?\DateTimeInterface $package_label_created_after = null, ?\DateTimeInterface $shipped_before = null, ?\DateTimeInterface $shipped_after = null, ?\DateTimeInterface $estimated_delivery_before = null, ?\DateTimeInterface $estimated_delivery_after = null, ?\DateTimeInterface $shipment_delivery_before = null, ?\DateTimeInterface $shipment_delivery_after = null, ?\DateTimeInterface $requested_pick_up_before = null, ?\DateTimeInterface $requested_pick_up_after = null, ?\DateTimeInterface $scheduled_pick_up_before = null, ?\DateTimeInterface $scheduled_pick_up_after = null, ?string $current_shipment_status = null, ?string $vendor_shipment_identifier = null, ?string $buyer_reference_number = null, ?string $buyer_warehouse_code = null, ?string $seller_warehouse_code = null) : \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentDetailsResponse
     {
@@ -466,8 +464,6 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels
      */
     public function getShipmentLabels(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $label_created_after = null, ?\DateTimeInterface $labelcreated_before = null, ?string $buyer_reference_number = null, ?string $vendor_shipment_identifier = null, ?string $seller_warehouse_code = null) : \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels
     {
@@ -719,8 +715,6 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
      */
     public function submitShipmentConfirmations(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
     {
@@ -907,8 +901,6 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
      */
     public function submitShipments(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body) : \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsResponse
     {

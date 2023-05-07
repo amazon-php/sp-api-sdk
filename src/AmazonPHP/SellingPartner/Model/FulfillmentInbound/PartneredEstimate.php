@@ -190,8 +190,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Amount
      */
     public function getAmount() : Amount
     {
@@ -212,8 +210,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets confirm_deadline.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getConfirmDeadline() : ?\DateTimeInterface
     {
@@ -234,8 +230,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets void_deadline.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getVoidDeadline() : ?\DateTimeInterface
     {

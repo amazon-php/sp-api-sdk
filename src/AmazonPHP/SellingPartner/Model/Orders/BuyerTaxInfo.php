@@ -185,8 +185,6 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets company_legal_name.
-     *
-     * @return null|string
      */
     public function getCompanyLegalName() : ?string
     {
@@ -207,8 +205,6 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets taxing_region.
-     *
-     * @return null|string
      */
     public function getTaxingRegion() : ?string
     {

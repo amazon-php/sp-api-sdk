@@ -179,8 +179,6 @@ class GiftDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets gift_message.
-     *
-     * @return null|string
      */
     public function getGiftMessage() : ?string
     {
@@ -201,8 +199,6 @@ class GiftDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets gift_wrap_id.
-     *
-     * @return null|string
      */
     public function getGiftWrapId() : ?string
     {

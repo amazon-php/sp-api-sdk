@@ -186,8 +186,6 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
     public function getCarrierName() : string
     {
@@ -208,8 +206,6 @@ class NonPartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets pro_number.
-     *
-     * @return string
      */
     public function getProNumber() : string
     {

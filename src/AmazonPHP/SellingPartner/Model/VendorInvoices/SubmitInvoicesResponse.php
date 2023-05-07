@@ -182,8 +182,6 @@ class SubmitInvoicesResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TransactionId
      */
     public function getPayload() : ?TransactionId
     {

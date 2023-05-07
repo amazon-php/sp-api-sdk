@@ -230,8 +230,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets competitive_price_id.
-     *
-     * @return string
      */
     public function getCompetitivePriceId() : string
     {
@@ -252,8 +250,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType
      */
     public function getPrice() : PriceType
     {
@@ -274,8 +270,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets condition.
-     *
-     * @return null|string
      */
     public function getCondition() : ?string
     {
@@ -296,8 +290,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets subcondition.
-     *
-     * @return null|string
      */
     public function getSubcondition() : ?string
     {
@@ -318,8 +310,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets offer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -340,8 +330,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets quantity_tier.
-     *
-     * @return null|int
      */
     public function getQuantityTier() : ?int
     {
@@ -362,8 +350,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets quantity_discount_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType
      */
     public function getQuantityDiscountType() : ?QuantityDiscountType
     {
@@ -384,8 +370,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets seller_id.
-     *
-     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -406,8 +390,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets belongs_to_requester.
-     *
-     * @return null|bool
      */
     public function getBelongsToRequester() : ?bool
     {

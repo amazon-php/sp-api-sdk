@@ -185,8 +185,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets company_legal_name.
-     *
-     * @return null|string
      */
     public function getCompanyLegalName() : ?string
     {
@@ -207,8 +205,6 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets taxing_region.
-     *
-     * @return null|string
      */
     public function getTaxingRegion() : ?string
     {

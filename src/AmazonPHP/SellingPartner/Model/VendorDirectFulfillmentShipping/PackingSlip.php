@@ -222,8 +222,6 @@ class PackingSlip implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -244,8 +242,6 @@ class PackingSlip implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets content.
-     *
-     * @return string
      */
     public function getContent() : string
     {
@@ -266,8 +262,6 @@ class PackingSlip implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets content_type.
-     *
-     * @return null|string
      */
     public function getContentType() : ?string
     {

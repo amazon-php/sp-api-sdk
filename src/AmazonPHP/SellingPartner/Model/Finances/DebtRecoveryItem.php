@@ -198,8 +198,6 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets recovery_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRecoveryAmount() : ?Currency
     {
@@ -220,8 +218,6 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets original_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getOriginalAmount() : ?Currency
     {
@@ -242,8 +238,6 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets group_begin_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getGroupBeginDate() : ?\DateTimeInterface
     {
@@ -264,8 +258,6 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets group_end_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getGroupEndDate() : ?\DateTimeInterface
     {

@@ -182,8 +182,6 @@ class CreateShipmentResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentResult
      */
     public function getPayload() : ?CreateShipmentResult
     {

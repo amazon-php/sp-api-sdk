@@ -186,8 +186,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets identifier_type.
-     *
-     * @return string
      */
     public function getIdentifierType() : string
     {
@@ -208,8 +206,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets identifier.
-     *
-     * @return string
      */
     public function getIdentifier() : string
     {

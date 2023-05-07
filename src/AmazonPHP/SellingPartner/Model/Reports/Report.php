@@ -308,8 +308,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_id.
-     *
-     * @return string
      */
     public function getReportId() : string
     {
@@ -330,8 +328,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_type.
-     *
-     * @return string
      */
     public function getReportType() : string
     {
@@ -352,8 +348,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets data_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDataStartTime() : ?\DateTimeInterface
     {
@@ -374,8 +368,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets data_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDataEndTime() : ?\DateTimeInterface
     {
@@ -396,8 +388,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_schedule_id.
-     *
-     * @return null|string
      */
     public function getReportScheduleId() : ?string
     {
@@ -418,8 +408,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets created_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getCreatedTime() : \DateTimeInterface
     {
@@ -440,8 +428,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets processing_status.
-     *
-     * @return string
      */
     public function getProcessingStatus() : string
     {
@@ -462,8 +448,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets processing_start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingStartTime() : ?\DateTimeInterface
     {
@@ -484,8 +468,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets processing_end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getProcessingEndTime() : ?\DateTimeInterface
     {
@@ -506,8 +488,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets report_document_id.
-     *
-     * @return null|string
      */
     public function getReportDocumentId() : ?string
     {

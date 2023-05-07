@@ -182,8 +182,6 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInbound\ItemEligibilityPreview
      */
     public function getPayload() : ?ItemEligibilityPreview
     {

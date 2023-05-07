@@ -198,8 +198,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -220,8 +218,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -242,8 +238,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -264,8 +258,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets item_condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ConditionType
      */
     public function getItemCondition() : ConditionType
     {

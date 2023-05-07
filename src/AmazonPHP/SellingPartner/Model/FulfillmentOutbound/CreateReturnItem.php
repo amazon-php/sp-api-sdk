@@ -220,8 +220,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets seller_return_item_id.
-     *
-     * @return string
      */
     public function getSellerReturnItemId() : string
     {
@@ -242,8 +240,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -264,8 +260,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets amazon_shipment_id.
-     *
-     * @return string
      */
     public function getAmazonShipmentId() : string
     {
@@ -286,8 +280,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets return_reason_code.
-     *
-     * @return string
      */
     public function getReturnReasonCode() : string
     {
@@ -308,8 +300,6 @@ class CreateReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets return_comment.
-     *
-     * @return null|string
      */
     public function getReturnComment() : ?string
     {

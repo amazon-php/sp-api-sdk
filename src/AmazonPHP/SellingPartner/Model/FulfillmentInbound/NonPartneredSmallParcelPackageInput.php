@@ -176,8 +176,6 @@ class NonPartneredSmallParcelPackageInput implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets tracking_id.
-     *
-     * @return string
      */
     public function getTrackingId() : string
     {

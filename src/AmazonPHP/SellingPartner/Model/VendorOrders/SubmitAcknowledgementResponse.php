@@ -182,8 +182,6 @@ class SubmitAcknowledgementResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\TransactionId
      */
     public function getPayload() : ?TransactionId
     {

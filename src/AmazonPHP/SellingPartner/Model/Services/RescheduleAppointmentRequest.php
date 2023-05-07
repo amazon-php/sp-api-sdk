@@ -188,8 +188,6 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets appointment_time.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\AppointmentTimeInput
      */
     public function getAppointmentTime() : AppointmentTimeInput
     {
@@ -210,8 +208,6 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets reschedule_reason_code.
-     *
-     * @return string
      */
     public function getRescheduleReasonCode() : string
     {

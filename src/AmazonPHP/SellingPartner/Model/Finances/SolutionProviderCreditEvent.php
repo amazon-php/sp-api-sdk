@@ -230,8 +230,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets provider_transaction_type.
-     *
-     * @return null|string
      */
     public function getProviderTransactionType() : ?string
     {
@@ -252,8 +250,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets seller_order_id.
-     *
-     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -274,8 +270,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -296,8 +290,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets marketplace_country_code.
-     *
-     * @return null|string
      */
     public function getMarketplaceCountryCode() : ?string
     {
@@ -318,8 +310,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets seller_id.
-     *
-     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -340,8 +330,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets seller_store_name.
-     *
-     * @return null|string
      */
     public function getSellerStoreName() : ?string
     {
@@ -362,8 +350,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets provider_id.
-     *
-     * @return null|string
      */
     public function getProviderId() : ?string
     {
@@ -384,8 +370,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets provider_store_name.
-     *
-     * @return null|string
      */
     public function getProviderStoreName() : ?string
     {
@@ -406,8 +390,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets transaction_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {
@@ -428,8 +410,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets transaction_creation_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getTransactionCreationDate() : ?\DateTimeInterface
     {

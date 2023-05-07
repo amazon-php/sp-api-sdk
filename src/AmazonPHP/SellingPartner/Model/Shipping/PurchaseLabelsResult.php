@@ -208,8 +208,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_id.
-     *
-     * @return string
      */
     public function getShipmentId() : string
     {
@@ -230,8 +228,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets client_reference_id.
-     *
-     * @return null|string
      */
     public function getClientReferenceId() : ?string
     {
@@ -252,8 +248,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets accepted_rate.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate() : AcceptedRate
     {

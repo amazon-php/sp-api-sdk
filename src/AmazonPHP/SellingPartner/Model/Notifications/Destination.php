@@ -202,8 +202,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -224,8 +222,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets destination_id.
-     *
-     * @return string
      */
     public function getDestinationId() : string
     {
@@ -246,8 +242,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets resource.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\DestinationResource
      */
     public function getResource() : DestinationResource
     {

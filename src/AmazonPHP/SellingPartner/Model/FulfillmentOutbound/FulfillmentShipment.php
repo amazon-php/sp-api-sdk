@@ -265,8 +265,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets amazon_shipment_id.
-     *
-     * @return string
      */
     public function getAmazonShipmentId() : string
     {
@@ -287,8 +285,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_center_id.
-     *
-     * @return string
      */
     public function getFulfillmentCenterId() : string
     {
@@ -309,8 +305,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_shipment_status.
-     *
-     * @return string
      */
     public function getFulfillmentShipmentStatus() : string
     {
@@ -331,8 +325,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipping_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShippingDate() : ?\DateTimeInterface
     {
@@ -353,8 +345,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets estimated_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {

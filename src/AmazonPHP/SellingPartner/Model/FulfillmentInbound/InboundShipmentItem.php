@@ -222,8 +222,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_id.
-     *
-     * @return null|string
      */
     public function getShipmentId() : ?string
     {
@@ -244,8 +242,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -266,8 +262,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -288,8 +282,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets quantity_shipped.
-     *
-     * @return int
      */
     public function getQuantityShipped() : int
     {
@@ -310,8 +302,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets quantity_received.
-     *
-     * @return null|int
      */
     public function getQuantityReceived() : ?int
     {
@@ -332,8 +322,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets quantity_in_case.
-     *
-     * @return null|int
      */
     public function getQuantityInCase() : ?int
     {
@@ -354,8 +342,6 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets release_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getReleaseDate() : ?\DateTimeInterface
     {

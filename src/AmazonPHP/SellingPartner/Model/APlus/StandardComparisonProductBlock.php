@@ -238,8 +238,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets position.
-     *
-     * @return int
      */
     public function getPosition() : int
     {
@@ -260,8 +258,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets image.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -282,8 +278,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -304,8 +298,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -326,8 +318,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets highlight.
-     *
-     * @return null|bool
      */
     public function getHighlight() : ?bool
     {

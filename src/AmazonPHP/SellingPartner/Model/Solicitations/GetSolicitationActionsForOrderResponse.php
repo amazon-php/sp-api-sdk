@@ -192,8 +192,6 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets _links.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks
      */
     public function getLinks() : ?GetSolicitationActionsForOrderResponseLinks
     {
@@ -214,8 +212,6 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets _embedded.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded
      */
     public function getEmbedded() : ?GetSolicitationActionsForOrderResponseEmbedded
     {

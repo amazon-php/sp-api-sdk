@@ -214,8 +214,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -236,8 +234,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -258,8 +254,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets per_unit_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -280,8 +274,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {

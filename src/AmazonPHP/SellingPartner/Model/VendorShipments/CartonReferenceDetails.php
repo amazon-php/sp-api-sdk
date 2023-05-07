@@ -182,8 +182,6 @@ class CartonReferenceDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets carton_count.
-     *
-     * @return null|int
      */
     public function getCartonCount() : ?int
     {

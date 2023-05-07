@@ -184,8 +184,6 @@ class SqsResource implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets arn.
-     *
-     * @return string
      */
     public function getArn() : string
     {

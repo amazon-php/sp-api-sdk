@@ -242,8 +242,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -264,8 +262,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets locale.
-     *
-     * @return string
      */
     public function getLocale() : string
     {
@@ -286,8 +282,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -308,8 +302,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {
@@ -330,8 +322,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_sub_type.
-     *
-     * @return null|string
      */
     public function getContentSubType() : ?string
     {
@@ -352,8 +342,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_reference_key.
-     *
-     * @return string
      */
     public function getContentReferenceKey() : string
     {

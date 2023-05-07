@@ -204,8 +204,6 @@ class Event implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets event_code.
-     *
-     * @return string
      */
     public function getEventCode() : string
     {
@@ -226,8 +224,6 @@ class Event implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets event_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getEventTime() : \DateTimeInterface
     {
@@ -248,8 +244,6 @@ class Event implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets location.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Location
      */
     public function getLocation() : ?Location
     {

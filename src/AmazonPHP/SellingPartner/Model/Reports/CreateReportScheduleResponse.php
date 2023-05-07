@@ -176,8 +176,6 @@ class CreateReportScheduleResponse implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets report_schedule_id.
-     *
-     * @return string
      */
     public function getReportScheduleId() : string
     {

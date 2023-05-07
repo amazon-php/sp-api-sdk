@@ -179,8 +179,6 @@ class FulfillmentTime implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartTime() : ?\DateTimeInterface
     {
@@ -201,8 +199,6 @@ class FulfillmentTime implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEndTime() : ?\DateTimeInterface
     {

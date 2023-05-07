@@ -173,8 +173,6 @@ class GetAttributesResponseBuyer implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets locale.
-     *
-     * @return null|string
      */
     public function getLocale() : ?string
     {

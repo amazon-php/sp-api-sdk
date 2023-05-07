@@ -191,8 +191,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets total_result_size.
-     *
-     * @return null|int
      */
     public function getTotalResultSize() : ?int
     {
@@ -213,8 +211,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {
@@ -235,8 +231,6 @@ class JobListing implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets previous_page_token.
-     *
-     * @return null|string
      */
     public function getPreviousPageToken() : ?string
     {

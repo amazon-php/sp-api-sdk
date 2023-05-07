@@ -210,8 +210,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -232,8 +230,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets is_amazon_fulfilled.
-     *
-     * @return null|bool
      */
     public function getIsAmazonFulfilled() : ?bool
     {
@@ -254,8 +250,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets price_to_estimate_fees.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees
      */
     public function getPriceToEstimateFees() : PriceToEstimateFees
     {
@@ -276,8 +270,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets identifier.
-     *
-     * @return string
      */
     public function getIdentifier() : string
     {
@@ -298,8 +290,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets optional_fulfillment_program.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram
      */
     public function getOptionalFulfillmentProgram() : ?OptionalFulfillmentProgram
     {

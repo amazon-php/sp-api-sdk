@@ -192,8 +192,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets return_reason_code.
-     *
-     * @return string
      */
     public function getReturnReasonCode() : string
     {
@@ -214,8 +212,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets description.
-     *
-     * @return string
      */
     public function getDescription() : string
     {
@@ -236,8 +232,6 @@ class ReasonCodeDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets translated_description.
-     *
-     * @return null|string
      */
     public function getTranslatedDescription() : ?string
     {

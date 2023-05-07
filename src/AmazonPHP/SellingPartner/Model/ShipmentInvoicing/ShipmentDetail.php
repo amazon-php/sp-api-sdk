@@ -262,8 +262,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets warehouse_id.
-     *
-     * @return null|string
      */
     public function getWarehouseId() : ?string
     {
@@ -284,8 +282,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -306,8 +302,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets amazon_shipment_id.
-     *
-     * @return null|string
      */
     public function getAmazonShipmentId() : ?string
     {
@@ -328,8 +322,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets purchase_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPurchaseDate() : ?\DateTimeInterface
     {
@@ -350,8 +342,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets shipping_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -394,8 +384,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -416,8 +404,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets seller_id.
-     *
-     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -438,8 +424,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_name.
-     *
-     * @return null|string
      */
     public function getBuyerName() : ?string
     {
@@ -460,8 +444,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_county.
-     *
-     * @return null|string
      */
     public function getBuyerCounty() : ?string
     {
@@ -482,8 +464,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_tax_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\BuyerTaxInfo
      */
     public function getBuyerTaxInfo() : ?BuyerTaxInfo
     {
@@ -504,8 +484,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets marketplace_tax_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\MarketplaceTaxInfo
      */
     public function getMarketplaceTaxInfo() : ?MarketplaceTaxInfo
     {
@@ -526,8 +504,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets seller_display_name.
-     *
-     * @return null|string
      */
     public function getSellerDisplayName() : ?string
     {

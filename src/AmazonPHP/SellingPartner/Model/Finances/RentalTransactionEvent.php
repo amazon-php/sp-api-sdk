@@ -234,8 +234,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -256,8 +254,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_event_type.
-     *
-     * @return null|string
      */
     public function getRentalEventType() : ?string
     {
@@ -278,8 +274,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets extension_length.
-     *
-     * @return null|int
      */
     public function getExtensionLength() : ?int
     {
@@ -300,8 +294,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -366,8 +358,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_name.
-     *
-     * @return null|string
      */
     public function getMarketplaceName() : ?string
     {
@@ -388,8 +378,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_initial_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalInitialValue() : ?Currency
     {
@@ -410,8 +398,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_reimbursement.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalReimbursement() : ?Currency
     {

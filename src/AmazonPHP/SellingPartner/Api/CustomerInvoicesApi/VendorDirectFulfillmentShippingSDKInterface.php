@@ -35,8 +35,6 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice
      */
     public function getCustomerInvoice(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice;
 
@@ -52,8 +50,6 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList
      */
     public function getCustomerInvoices(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoiceList;
 }

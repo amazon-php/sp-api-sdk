@@ -185,8 +185,6 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets upload_destination_id.
-     *
-     * @return null|string
      */
     public function getUploadDestinationId() : ?string
     {
@@ -207,8 +205,6 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets url.
-     *
-     * @return null|string
      */
     public function getUrl() : ?string
     {
@@ -229,8 +225,6 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets headers.
-     *
-     * @return null|object
      */
     public function getHeaders() : ?object
     {

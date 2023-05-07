@@ -182,8 +182,6 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination
      */
     public function getPagination() : ?Pagination
     {

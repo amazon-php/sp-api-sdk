@@ -188,8 +188,6 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets end_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getEndTime() : \DateTimeInterface
     {

@@ -176,8 +176,6 @@ class CreateFeedResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets feed_id.
-     *
-     * @return string
      */
     public function getFeedId() : string
     {

@@ -176,8 +176,6 @@ class TemporarilyUnavailableCarrier implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
     public function getCarrierName() : string
     {

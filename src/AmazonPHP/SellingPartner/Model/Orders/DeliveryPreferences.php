@@ -194,8 +194,6 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets drop_off_location.
-     *
-     * @return null|string
      */
     public function getDropOffLocation() : ?string
     {
@@ -216,8 +214,6 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets preferred_delivery_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\PreferredDeliveryTime
      */
     public function getPreferredDeliveryTime() : ?PreferredDeliveryTime
     {
@@ -260,8 +256,6 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets address_instructions.
-     *
-     * @return null|string
      */
     public function getAddressInstructions() : ?string
     {

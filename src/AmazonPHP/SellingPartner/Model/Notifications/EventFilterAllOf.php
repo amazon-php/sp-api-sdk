@@ -176,8 +176,6 @@ class EventFilterAllOf implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets event_filter_type.
-     *
-     * @return string
      */
     public function getEventFilterType() : string
     {

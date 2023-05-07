@@ -284,8 +284,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping_service_name.
-     *
-     * @return string
      */
     public function getShippingServiceName() : string
     {
@@ -306,8 +304,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
     public function getCarrierName() : string
     {
@@ -328,8 +324,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping_service_id.
-     *
-     * @return string
      */
     public function getShippingServiceId() : string
     {
@@ -350,8 +344,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping_service_offer_id.
-     *
-     * @return string
      */
     public function getShippingServiceOfferId() : string
     {
@@ -372,8 +364,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getShipDate() : \DateTimeInterface
     {
@@ -394,8 +384,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets earliest_estimated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEarliestEstimatedDeliveryDate() : ?\DateTimeInterface
     {
@@ -416,8 +404,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets latest_estimated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLatestEstimatedDeliveryDate() : ?\DateTimeInterface
     {
@@ -438,8 +424,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets rate.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getRate() : CurrencyAmount
     {
@@ -460,8 +444,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping_service_options.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions
      */
     public function getShippingServiceOptions() : ShippingServiceOptions
     {
@@ -482,8 +464,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets available_shipping_service_options.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AvailableShippingServiceOptions
      */
     public function getAvailableShippingServiceOptions() : ?AvailableShippingServiceOptions
     {
@@ -548,8 +528,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets requires_additional_seller_inputs.
-     *
-     * @return bool
      */
     public function getRequiresAdditionalSellerInputs() : bool
     {

@@ -182,8 +182,6 @@ class GetOrderRegulatedInfoResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OrderRegulatedInfo
      */
     public function getPayload() : ?OrderRegulatedInfo
     {

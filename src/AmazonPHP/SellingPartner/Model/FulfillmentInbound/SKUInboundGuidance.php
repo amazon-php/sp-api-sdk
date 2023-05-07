@@ -202,8 +202,6 @@ class SKUInboundGuidance implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -224,8 +222,6 @@ class SKUInboundGuidance implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -246,8 +242,6 @@ class SKUInboundGuidance implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets inbound_guidance.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundGuidance
      */
     public function getInboundGuidance() : InboundGuidance
     {

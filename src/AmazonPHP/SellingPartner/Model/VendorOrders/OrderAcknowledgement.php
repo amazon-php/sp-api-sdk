@@ -208,8 +208,6 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -230,8 +228,6 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -252,8 +248,6 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets acknowledgement_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getAcknowledgementDate() : \DateTimeInterface
     {

@@ -191,8 +191,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets imaging_request_billing_item_id.
-     *
-     * @return null|string
      */
     public function getImagingRequestBillingItemId() : ?string
     {
@@ -213,8 +211,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -235,8 +231,6 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {

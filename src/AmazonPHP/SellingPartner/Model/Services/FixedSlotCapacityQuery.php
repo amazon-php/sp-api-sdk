@@ -220,8 +220,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets slot_duration.
-     *
-     * @return null|float
      */
     public function getSlotDuration() : ?float
     {
@@ -242,8 +240,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets start_date_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getStartDateTime() : \DateTimeInterface
     {
@@ -264,8 +260,6 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets end_date_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getEndDateTime() : \DateTimeInterface
     {

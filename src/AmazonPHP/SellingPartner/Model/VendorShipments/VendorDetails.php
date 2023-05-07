@@ -182,8 +182,6 @@ class VendorDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets selling_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getSellingParty() : ?PartyIdentification
     {
@@ -204,8 +202,6 @@ class VendorDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets vendor_shipment_id.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getVendorShipmentId() : ?\DateTimeInterface
     {

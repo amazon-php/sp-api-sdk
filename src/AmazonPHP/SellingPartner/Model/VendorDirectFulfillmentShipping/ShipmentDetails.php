@@ -233,8 +233,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipped_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getShippedDate() : \DateTimeInterface
     {
@@ -255,8 +253,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_status.
-     *
-     * @return string
      */
     public function getShipmentStatus() : string
     {
@@ -277,8 +273,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_priority_shipment.
-     *
-     * @return null|bool
      */
     public function getIsPriorityShipment() : ?bool
     {
@@ -299,8 +293,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets vendor_order_number.
-     *
-     * @return null|string
      */
     public function getVendorOrderNumber() : ?string
     {
@@ -321,8 +313,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets estimated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {

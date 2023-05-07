@@ -218,8 +218,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -240,8 +238,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fn_sku.
-     *
-     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -262,8 +258,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -284,8 +278,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets condition.
-     *
-     * @return null|string
      */
     public function getCondition() : ?string
     {
@@ -306,8 +298,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets inventory_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails
      */
     public function getInventoryDetails() : ?InventoryDetails
     {
@@ -328,8 +318,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets last_updated_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLastUpdatedTime() : ?\DateTimeInterface
     {
@@ -350,8 +338,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets product_name.
-     *
-     * @return null|string
      */
     public function getProductName() : ?string
     {
@@ -372,8 +358,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets total_quantity.
-     *
-     * @return null|int
      */
     public function getTotalQuantity() : ?int
     {

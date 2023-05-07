@@ -200,8 +200,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -222,8 +220,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets region.
-     *
-     * @return string
      */
     public function getRegion() : string
     {
@@ -244,8 +240,6 @@ class EventBridgeResource implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets account_id.
-     *
-     * @return string
      */
     public function getAccountId() : string
     {

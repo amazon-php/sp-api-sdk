@@ -200,8 +200,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -222,8 +220,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -244,8 +240,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -266,8 +260,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledged_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ItemQuantity
      */
     public function getAcknowledgedQuantity() : ItemQuantity
     {

@@ -192,8 +192,6 @@ class ItemApprovalActionChanges implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets item_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getItemPrice() : ?Money
     {
@@ -214,8 +212,6 @@ class ItemApprovalActionChanges implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -236,8 +232,6 @@ class ItemApprovalActionChanges implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets substituted_by.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemIdentifier
      */
     public function getSubstitutedBy() : ?ItemIdentifier
     {

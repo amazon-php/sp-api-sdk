@@ -216,8 +216,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets sku.
-     *
-     * @return string
      */
     public function getSku() : string
     {
@@ -348,8 +346,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets procurement.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement
      */
     public function getProcurement() : ?ItemProcurement
     {

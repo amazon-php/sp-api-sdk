@@ -214,8 +214,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\DecoratorType
      */
     public function getType() : ?DecoratorType
     {
@@ -236,8 +234,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets offset.
-     *
-     * @return null|int
      */
     public function getOffset() : ?int
     {
@@ -258,8 +254,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets length.
-     *
-     * @return null|int
      */
     public function getLength() : ?int
     {
@@ -280,8 +274,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets depth.
-     *
-     * @return null|int
      */
     public function getDepth() : ?int
     {

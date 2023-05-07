@@ -231,8 +231,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets type.
-     *
-     * @return null|string
      */
     public function getType() : ?string
     {
@@ -253,8 +251,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets discount_percent.
-     *
-     * @return null|string
      */
     public function getDiscountPercent() : ?string
     {
@@ -275,8 +271,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets discount_due_days.
-     *
-     * @return null|float
      */
     public function getDiscountDueDays() : ?float
     {
@@ -297,8 +291,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets net_due_days.
-     *
-     * @return null|float
      */
     public function getNetDueDays() : ?float
     {

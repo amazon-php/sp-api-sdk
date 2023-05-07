@@ -212,8 +212,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets funds_transfers_type.
-     *
-     * @return null|string
      */
     public function getFundsTransfersType() : ?string
     {
@@ -234,8 +232,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets transfer_id.
-     *
-     * @return null|string
      */
     public function getTransferId() : ?string
     {
@@ -256,8 +252,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets disbursement_id.
-     *
-     * @return null|string
      */
     public function getDisbursementId() : ?string
     {
@@ -278,8 +272,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets payment_disbursement_type.
-     *
-     * @return null|string
      */
     public function getPaymentDisbursementType() : ?string
     {
@@ -300,8 +292,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets status.
-     *
-     * @return null|string
      */
     public function getStatus() : ?string
     {
@@ -322,8 +312,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets transfer_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransferAmount() : ?Currency
     {
@@ -344,8 +332,6 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {

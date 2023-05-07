@@ -191,8 +191,6 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -213,8 +211,6 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets barcode_instruction.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BarcodeInstruction
      */
     public function getBarcodeInstruction() : ?BarcodeInstruction
     {
@@ -235,8 +231,6 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets prep_guidance.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepGuidance
      */
     public function getPrepGuidance() : ?PrepGuidance
     {

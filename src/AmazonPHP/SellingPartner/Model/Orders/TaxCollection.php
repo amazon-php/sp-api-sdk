@@ -230,8 +230,6 @@ class TaxCollection implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets model.
-     *
-     * @return null|string
      */
     public function getModel() : ?string
     {
@@ -252,8 +250,6 @@ class TaxCollection implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets responsible_party.
-     *
-     * @return null|string
      */
     public function getResponsibleParty() : ?string
     {

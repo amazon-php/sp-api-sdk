@@ -365,8 +365,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -387,8 +385,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -409,8 +405,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets program.
-     *
-     * @return string
      */
     public function getProgram() : string
     {
@@ -431,8 +425,6 @@ class ItemEligibilityPreview implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets is_eligible_for_program.
-     *
-     * @return bool
      */
     public function getIsEligibleForProgram() : bool
     {

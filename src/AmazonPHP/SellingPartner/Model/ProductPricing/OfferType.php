@@ -252,8 +252,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets offer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -274,8 +272,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buying_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType
      */
     public function getBuyingPrice() : PriceType
     {
@@ -296,8 +292,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets regular_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getRegularPrice() : MoneyType
     {
@@ -318,8 +312,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets business_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getBusinessPrice() : ?MoneyType
     {
@@ -362,8 +354,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets fulfillment_channel.
-     *
-     * @return string
      */
     public function getFulfillmentChannel() : string
     {
@@ -384,8 +374,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_condition.
-     *
-     * @return string
      */
     public function getItemCondition() : string
     {
@@ -406,8 +394,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_sub_condition.
-     *
-     * @return string
      */
     public function getItemSubCondition() : string
     {
@@ -428,8 +414,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {

@@ -241,8 +241,6 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -263,8 +261,6 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -285,8 +281,6 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -307,8 +301,6 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets estimated_shipping_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight
      */
     public function getEstimatedShippingWeight() : ?Weight
     {
@@ -329,8 +321,6 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets shipping_weight_calculation_method.
-     *
-     * @return null|string
      */
     public function getShippingWeightCalculationMethod() : ?string
     {

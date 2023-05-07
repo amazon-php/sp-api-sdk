@@ -204,8 +204,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -226,8 +224,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType
      */
     public function getPrice() : ?MoneyType
     {
@@ -270,8 +266,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets total_fees.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType
      */
     public function getTotalFees() : ?MoneyType
     {

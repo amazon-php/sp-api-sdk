@@ -208,8 +208,6 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets delivery_experience.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceType
      */
     public function getDeliveryExperience() : DeliveryExperienceType
     {
@@ -230,8 +228,6 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getDeclaredValue() : ?CurrencyAmount
     {
@@ -252,8 +248,6 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets carrier_will_pick_up.
-     *
-     * @return bool
      */
     public function getCarrierWillPickUp() : bool
     {
@@ -274,8 +268,6 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets carrier_will_pick_up_option.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUpOption() : ?CarrierWillPickUpOption
     {
@@ -296,8 +288,6 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets label_format.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat
      */
     public function getLabelFormat() : ?LabelFormat
     {

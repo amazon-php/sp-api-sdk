@@ -192,8 +192,6 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets aggregation_settings.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings
      */
     public function getAggregationSettings() : ?AggregationSettings
     {
@@ -236,8 +234,6 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets event_filter_type.
-     *
-     * @return string
      */
     public function getEventFilterType() : string
     {

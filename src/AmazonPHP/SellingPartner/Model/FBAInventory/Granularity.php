@@ -179,8 +179,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets granularity_type.
-     *
-     * @return null|string
      */
     public function getGranularityType() : ?string
     {
@@ -201,8 +199,6 @@ class Granularity implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets granularity_id.
-     *
-     * @return null|string
      */
     public function getGranularityId() : ?string
     {

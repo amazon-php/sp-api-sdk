@@ -213,8 +213,6 @@ class ShipmentStatusDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_status.
-     *
-     * @return null|string
      */
     public function getShipmentStatus() : ?string
     {
@@ -235,8 +233,6 @@ class ShipmentStatusDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_status_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShipmentStatusDate() : ?\DateTimeInterface
     {

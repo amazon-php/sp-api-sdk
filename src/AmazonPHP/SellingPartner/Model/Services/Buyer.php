@@ -194,8 +194,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets buyer_id.
-     *
-     * @return null|string
      */
     public function getBuyerId() : ?string
     {
@@ -216,8 +214,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets name.
-     *
-     * @return null|string
      */
     public function getName() : ?string
     {
@@ -238,8 +234,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets phone.
-     *
-     * @return null|string
      */
     public function getPhone() : ?string
     {
@@ -260,8 +254,6 @@ class Buyer implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets is_prime_member.
-     *
-     * @return null|bool
      */
     public function getIsPrimeMember() : ?bool
     {

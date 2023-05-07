@@ -262,8 +262,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets appointment_id.
-     *
-     * @return null|string
      */
     public function getAppointmentId() : ?string
     {
@@ -284,8 +282,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets appointment_status.
-     *
-     * @return null|string
      */
     public function getAppointmentStatus() : ?string
     {
@@ -306,8 +302,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets appointment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime
      */
     public function getAppointmentTime() : ?AppointmentTime
     {
@@ -350,8 +344,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets rescheduled_appointment_id.
-     *
-     * @return null|string
      */
     public function getRescheduledAppointmentId() : ?string
     {
@@ -372,8 +364,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets poa.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Poa
      */
     public function getPoa() : ?Poa
     {

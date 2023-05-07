@@ -186,8 +186,6 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets product_category_id.
-     *
-     * @return string
      */
     public function getProductCategoryId() : string
     {
@@ -208,8 +206,6 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets rank.
-     *
-     * @return int
      */
     public function getRank() : int
     {

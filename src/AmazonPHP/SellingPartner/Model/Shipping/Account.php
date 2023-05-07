@@ -180,8 +180,6 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets account_id.
-     *
-     * @return string
      */
     public function getAccountId() : string
     {

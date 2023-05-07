@@ -191,8 +191,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets total_reserved_quantity.
-     *
-     * @return null|int
      */
     public function getTotalReservedQuantity() : ?int
     {
@@ -213,8 +211,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets pending_customer_order_quantity.
-     *
-     * @return null|int
      */
     public function getPendingCustomerOrderQuantity() : ?int
     {
@@ -235,8 +231,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets pending_transshipment_quantity.
-     *
-     * @return null|int
      */
     public function getPendingTransshipmentQuantity() : ?int
     {
@@ -257,8 +251,6 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fc_processing_quantity.
-     *
-     * @return null|int
      */
     public function getFcProcessingQuantity() : ?int
     {

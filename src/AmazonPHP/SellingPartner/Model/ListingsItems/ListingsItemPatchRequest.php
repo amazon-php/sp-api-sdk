@@ -190,8 +190,6 @@ class ListingsItemPatchRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets product_type.
-     *
-     * @return string
      */
     public function getProductType() : string
     {

@@ -242,8 +242,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -264,8 +262,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets vendor_order_number.
-     *
-     * @return string
      */
     public function getVendorOrderNumber() : string
     {
@@ -286,8 +282,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledgement_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getAcknowledgementDate() : \DateTimeInterface
     {
@@ -308,8 +302,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledgement_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\AcknowledgementStatus
      */
     public function getAcknowledgementStatus() : AcknowledgementStatus
     {
@@ -330,8 +322,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -352,8 +342,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {

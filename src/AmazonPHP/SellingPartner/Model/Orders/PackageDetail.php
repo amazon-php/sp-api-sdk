@@ -234,8 +234,6 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets package_reference_id.
-     *
-     * @return string
      */
     public function getPackageReferenceId() : string
     {
@@ -256,8 +254,6 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets carrier_code.
-     *
-     * @return string
      */
     public function getCarrierCode() : string
     {
@@ -278,8 +274,6 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets carrier_name.
-     *
-     * @return null|string
      */
     public function getCarrierName() : ?string
     {
@@ -300,8 +294,6 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets shipping_method.
-     *
-     * @return null|string
      */
     public function getShippingMethod() : ?string
     {
@@ -322,8 +314,6 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets tracking_number.
-     *
-     * @return string
      */
     public function getTrackingNumber() : string
     {
@@ -344,8 +334,6 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets ship_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getShipDate() : \DateTimeInterface
     {
@@ -366,8 +354,6 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets ship_from_supply_source_id.
-     *
-     * @return null|string
      */
     public function getShipFromSupplySourceId() : ?string
     {

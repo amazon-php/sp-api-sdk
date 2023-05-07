@@ -182,8 +182,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets required_ship_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getRequiredShipDate() : \DateTimeInterface
     {
@@ -204,8 +202,6 @@ class ShipmentDates implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets promised_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPromisedDeliveryDate() : ?\DateTimeInterface
     {

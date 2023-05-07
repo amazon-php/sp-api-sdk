@@ -202,8 +202,6 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets _links.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionResponseLinks
      */
     public function getLinks() : ?GetSolicitationActionResponseLinks
     {
@@ -224,8 +222,6 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets _embedded.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionResponseEmbedded
      */
     public function getEmbedded() : ?GetSolicitationActionResponseEmbedded
     {
@@ -246,8 +242,6 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\SolicitationsAction
      */
     public function getPayload() : ?SolicitationsAction
     {

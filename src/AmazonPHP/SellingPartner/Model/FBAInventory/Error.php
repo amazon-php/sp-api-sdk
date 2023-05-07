@@ -188,8 +188,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -210,8 +208,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets message.
-     *
-     * @return null|string
      */
     public function getMessage() : ?string
     {
@@ -232,8 +228,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets details.
-     *
-     * @return null|string
      */
     public function getDetails() : ?string
     {

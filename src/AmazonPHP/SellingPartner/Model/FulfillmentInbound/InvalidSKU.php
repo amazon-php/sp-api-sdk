@@ -179,8 +179,6 @@ class InvalidSKU implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -201,8 +199,6 @@ class InvalidSKU implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets error_reason.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ErrorReason
      */
     public function getErrorReason() : ?ErrorReason
     {

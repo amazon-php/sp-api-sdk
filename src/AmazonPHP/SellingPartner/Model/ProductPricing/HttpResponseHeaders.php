@@ -179,8 +179,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets date.
-     *
-     * @return null|string
      */
     public function getDate() : ?string
     {
@@ -201,8 +199,6 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets x_amzn_request_id.
-     *
-     * @return null|string
      */
     public function getXAmznRequestId() : ?string
     {

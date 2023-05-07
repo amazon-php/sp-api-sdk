@@ -33,8 +33,6 @@ interface FBAInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
      */
     public function getItemEligibilityPreview(AccessToken $accessToken, string $region, string $asin, string $program, ?array $marketplace_ids = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse;
 }

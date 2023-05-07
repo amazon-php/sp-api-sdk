@@ -207,8 +207,6 @@ class FeatureSettings implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets feature_name.
-     *
-     * @return null|string
      */
     public function getFeatureName() : ?string
     {
@@ -229,8 +227,6 @@ class FeatureSettings implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets feature_fulfillment_policy.
-     *
-     * @return null|string
      */
     public function getFeatureFulfillmentPolicy() : ?string
     {

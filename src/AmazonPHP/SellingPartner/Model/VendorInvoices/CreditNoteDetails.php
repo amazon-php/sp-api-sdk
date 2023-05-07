@@ -209,8 +209,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets reference_invoice_number.
-     *
-     * @return null|string
      */
     public function getReferenceInvoiceNumber() : ?string
     {
@@ -231,8 +229,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets debit_note_number.
-     *
-     * @return null|string
      */
     public function getDebitNoteNumber() : ?string
     {
@@ -253,8 +249,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets returns_reference_number.
-     *
-     * @return null|string
      */
     public function getReturnsReferenceNumber() : ?string
     {
@@ -275,8 +269,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets goods_return_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getGoodsReturnDate() : ?\DateTimeInterface
     {
@@ -297,8 +289,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets rma_id.
-     *
-     * @return null|string
      */
     public function getRmaId() : ?string
     {
@@ -319,8 +309,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets coop_reference_number.
-     *
-     * @return null|string
      */
     public function getCoopReferenceNumber() : ?string
     {
@@ -341,8 +329,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets consignors_reference_number.
-     *
-     * @return null|string
      */
     public function getConsignorsReferenceNumber() : ?string
     {

@@ -173,8 +173,6 @@ class LabelFormatOptionRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets include_packing_slip_with_label.
-     *
-     * @return null|bool
      */
     public function getIncludePackingSlipWithLabel() : ?bool
     {

@@ -39,8 +39,6 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesResponse
      */
     public function submitInvoices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body) : \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesResponse
     {

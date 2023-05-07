@@ -191,8 +191,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets include_packing_slip_with_label.
-     *
-     * @return null|bool
      */
     public function getIncludePackingSlipWithLabel() : ?bool
     {
@@ -213,8 +211,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets include_complex_shipping_options.
-     *
-     * @return null|bool
      */
     public function getIncludeComplexShippingOptions() : ?bool
     {
@@ -235,8 +231,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets carrier_will_pick_up.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUp() : ?CarrierWillPickUpOption
     {
@@ -257,8 +251,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets delivery_experience.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption
      */
     public function getDeliveryExperience() : ?DeliveryExperienceOption
     {

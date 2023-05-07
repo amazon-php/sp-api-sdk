@@ -258,8 +258,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets container_type.
-     *
-     * @return null|string
      */
     public function getContainerType() : ?string
     {
@@ -280,8 +278,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets container_reference_id.
-     *
-     * @return string
      */
     public function getContainerReferenceId() : string
     {
@@ -302,8 +298,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets value.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getValue() : Currency
     {
@@ -324,8 +318,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets dimensions.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -368,8 +360,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getWeight() : Weight
     {

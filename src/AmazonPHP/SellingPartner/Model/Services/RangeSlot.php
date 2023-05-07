@@ -185,8 +185,6 @@ class RangeSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets start_date_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartDateTime() : ?\DateTimeInterface
     {
@@ -207,8 +205,6 @@ class RangeSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets end_date_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEndDateTime() : ?\DateTimeInterface
     {
@@ -229,8 +225,6 @@ class RangeSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets capacity.
-     *
-     * @return null|int
      */
     public function getCapacity() : ?int
     {

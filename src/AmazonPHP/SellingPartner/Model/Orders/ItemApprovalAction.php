@@ -224,8 +224,6 @@ class ItemApprovalAction implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets action_type.
-     *
-     * @return string
      */
     public function getActionType() : string
     {
@@ -246,8 +244,6 @@ class ItemApprovalAction implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets comment.
-     *
-     * @return null|string
      */
     public function getComment() : ?string
     {
@@ -268,8 +264,6 @@ class ItemApprovalAction implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets changes.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalActionChanges
      */
     public function getChanges() : ?ItemApprovalActionChanges
     {

@@ -202,8 +202,6 @@ class InboundShipmentPlanItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -224,8 +222,6 @@ class InboundShipmentPlanItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return string
      */
     public function getFulfillmentNetworkSku() : string
     {
@@ -246,8 +242,6 @@ class InboundShipmentPlanItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {

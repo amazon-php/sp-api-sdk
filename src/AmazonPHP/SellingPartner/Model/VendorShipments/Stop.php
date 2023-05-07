@@ -230,8 +230,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets function_code.
-     *
-     * @return string
      */
     public function getFunctionCode() : string
     {
@@ -252,8 +250,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets location_identification.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Location
      */
     public function getLocationIdentification() : ?Location
     {
@@ -274,8 +270,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets arrival_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getArrivalTime() : ?\DateTimeInterface
     {
@@ -296,8 +290,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets departure_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDepartureTime() : ?\DateTimeInterface
     {

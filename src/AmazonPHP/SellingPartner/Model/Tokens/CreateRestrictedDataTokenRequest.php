@@ -182,8 +182,6 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets target_application.
-     *
-     * @return null|string
      */
     public function getTargetApplication() : ?string
     {

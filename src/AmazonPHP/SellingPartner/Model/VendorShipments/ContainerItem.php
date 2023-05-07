@@ -198,8 +198,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets item_reference.
-     *
-     * @return string
      */
     public function getItemReference() : string
     {
@@ -220,8 +218,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets shipped_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity
      */
     public function getShippedQuantity() : ItemQuantity
     {
@@ -242,8 +238,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets item_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemDetails
      */
     public function getItemDetails() : ?ItemDetails
     {

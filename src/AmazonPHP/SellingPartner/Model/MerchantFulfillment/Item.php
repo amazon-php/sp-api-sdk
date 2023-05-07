@@ -214,8 +214,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets order_item_id.
-     *
-     * @return string
      */
     public function getOrderItemId() : string
     {
@@ -236,8 +234,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -258,8 +254,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getItemWeight() : ?Weight
     {
@@ -280,8 +274,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_description.
-     *
-     * @return null|string
      */
     public function getItemDescription() : ?string
     {

@@ -188,8 +188,6 @@ class PackageItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {
@@ -210,8 +208,6 @@ class PackageItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets lot_number.
-     *
-     * @return null|string
      */
     public function getLotNumber() : ?string
     {
@@ -232,8 +228,6 @@ class PackageItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets expiry.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Expiry
      */
     public function getExpiry() : ?Expiry
     {

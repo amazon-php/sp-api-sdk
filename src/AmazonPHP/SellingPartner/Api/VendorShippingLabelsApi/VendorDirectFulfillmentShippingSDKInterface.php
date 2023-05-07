@@ -44,8 +44,6 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
      */
     public function createShippingLabels(AccessToken $accessToken, string $region, string $purchase_order_number, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel;
 
@@ -56,8 +54,6 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
      */
     public function getShippingLabel(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel;
 
@@ -73,8 +69,6 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList
      */
     public function getShippingLabels(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, string $sort_order = 'ASC', ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList;
 
@@ -85,8 +79,6 @@ interface VendorDirectFulfillmentShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference
      */
     public function submitShippingLabelRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference;
 }

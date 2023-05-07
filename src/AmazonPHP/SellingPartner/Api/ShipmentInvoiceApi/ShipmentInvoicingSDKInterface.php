@@ -39,8 +39,6 @@ interface ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse
      */
     public function getInvoiceStatus(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse;
 
@@ -51,8 +49,6 @@ interface ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse
      */
     public function getShipmentDetails(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse;
 
@@ -64,8 +60,6 @@ interface ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse
      */
     public function submitInvoice(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse;
 }

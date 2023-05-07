@@ -186,8 +186,6 @@ class Participation implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets is_participating.
-     *
-     * @return bool
      */
     public function getIsParticipating() : bool
     {
@@ -208,8 +206,6 @@ class Participation implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets has_suspended_listings.
-     *
-     * @return bool
      */
     public function getHasSuspendedListings() : bool
     {

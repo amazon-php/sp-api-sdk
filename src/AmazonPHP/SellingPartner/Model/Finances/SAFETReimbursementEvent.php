@@ -200,8 +200,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -222,8 +220,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets safet_claim_id.
-     *
-     * @return null|string
      */
     public function getSafetClaimId() : ?string
     {
@@ -244,8 +240,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets reimbursed_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getReimbursedAmount() : ?Currency
     {
@@ -266,8 +260,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets reason_code.
-     *
-     * @return null|string
      */
     public function getReasonCode() : ?string
     {

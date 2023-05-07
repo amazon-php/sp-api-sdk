@@ -186,8 +186,6 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets text.
-     *
-     * @return null|string
      */
     public function getText() : ?string
     {

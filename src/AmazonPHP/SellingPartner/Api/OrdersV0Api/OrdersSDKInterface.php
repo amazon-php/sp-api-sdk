@@ -74,8 +74,6 @@ interface OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderResponse
      */
     public function getOrder(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderResponse;
 
@@ -86,8 +84,6 @@ interface OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderAddressResponse
      */
     public function getOrderAddress(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderAddressResponse;
 
@@ -98,8 +94,6 @@ interface OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderBuyerInfoResponse
      */
     public function getOrderBuyerInfo(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderBuyerInfoResponse;
 
@@ -111,8 +105,6 @@ interface OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsResponse
      */
     public function getOrderItems(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsResponse;
 
@@ -124,8 +116,6 @@ interface OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsBuyerInfoResponse
      */
     public function getOrderItemsBuyerInfo(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsBuyerInfoResponse;
 
@@ -136,8 +126,6 @@ interface OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse
      */
     public function getOrderRegulatedInfo(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse;
 
@@ -167,8 +155,6 @@ interface OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
      */
     public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?array $item_approval_types = null, ?array $item_approval_status = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse;
 

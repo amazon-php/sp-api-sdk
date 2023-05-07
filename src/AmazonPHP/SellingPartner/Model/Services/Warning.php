@@ -192,8 +192,6 @@ class Warning implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -214,8 +212,6 @@ class Warning implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets message.
-     *
-     * @return string
      */
     public function getMessage() : string
     {
@@ -236,8 +232,6 @@ class Warning implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets details.
-     *
-     * @return null|string
      */
     public function getDetails() : ?string
     {

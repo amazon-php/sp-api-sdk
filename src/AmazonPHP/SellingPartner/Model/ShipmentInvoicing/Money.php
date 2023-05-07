@@ -179,8 +179,6 @@ class Money implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets currency_code.
-     *
-     * @return null|string
      */
     public function getCurrencyCode() : ?string
     {
@@ -201,8 +199,6 @@ class Money implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets amount.
-     *
-     * @return null|string
      */
     public function getAmount() : ?string
     {

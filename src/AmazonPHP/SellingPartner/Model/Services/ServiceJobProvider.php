@@ -176,8 +176,6 @@ class ServiceJobProvider implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets service_job_provider_id.
-     *
-     * @return null|string
      */
     public function getServiceJobProviderId() : ?string
     {

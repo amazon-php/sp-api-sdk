@@ -227,8 +227,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -249,8 +247,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets message.
-     *
-     * @return string
      */
     public function getMessage() : string
     {
@@ -271,8 +267,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets details.
-     *
-     * @return null|string
      */
     public function getDetails() : ?string
     {
@@ -293,8 +287,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets error_level.
-     *
-     * @return null|string
      */
     public function getErrorLevel() : ?string
     {

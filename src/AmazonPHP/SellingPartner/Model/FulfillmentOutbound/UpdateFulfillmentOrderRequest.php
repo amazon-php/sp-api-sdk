@@ -250,8 +250,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -272,8 +270,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_id.
-     *
-     * @return null|string
      */
     public function getDisplayableOrderId() : ?string
     {
@@ -294,8 +290,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getDisplayableOrderDate() : ?\DateTimeInterface
     {
@@ -316,8 +310,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets displayable_order_comment.
-     *
-     * @return null|string
      */
     public function getDisplayableOrderComment() : ?string
     {
@@ -338,8 +330,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipping_speed_category.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ?ShippingSpeedCategory
     {
@@ -360,8 +350,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets destination_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getDestinationAddress() : ?Address
     {
@@ -382,8 +370,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_action.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction
      */
     public function getFulfillmentAction() : ?FulfillmentAction
     {
@@ -404,8 +390,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_policy.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy
      */
     public function getFulfillmentPolicy() : ?FulfillmentPolicy
     {
@@ -426,8 +410,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets ship_from_country_code.
-     *
-     * @return null|string
      */
     public function getShipFromCountryCode() : ?string
     {

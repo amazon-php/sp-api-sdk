@@ -207,8 +207,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets product_description.
-     *
-     * @return null|string
      */
     public function getProductDescription() : ?string
     {
@@ -229,8 +227,6 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets quantity.
-     *
-     * @return null|string
      */
     public function getQuantity() : ?string
     {

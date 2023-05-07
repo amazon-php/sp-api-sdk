@@ -186,8 +186,6 @@ class Attachment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets upload_destination_id.
-     *
-     * @return string
      */
     public function getUploadDestinationId() : string
     {
@@ -208,8 +206,6 @@ class Attachment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets file_name.
-     *
-     * @return string
      */
     public function getFileName() : string
     {

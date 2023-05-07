@@ -182,8 +182,6 @@ class ItemContributorRole implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets display_name.
-     *
-     * @return null|string
      */
     public function getDisplayName() : ?string
     {
@@ -204,8 +202,6 @@ class ItemContributorRole implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets value.
-     *
-     * @return string
      */
     public function getValue() : string
     {

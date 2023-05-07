@@ -188,8 +188,6 @@ class CreateReservationRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets resource_id.
-     *
-     * @return string
      */
     public function getResourceId() : string
     {
@@ -210,8 +208,6 @@ class CreateReservationRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets reservation.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\Reservation
      */
     public function getReservation() : Reservation
     {

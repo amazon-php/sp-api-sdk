@@ -352,8 +352,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets purchase_order_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getPurchaseOrderDate() : \DateTimeInterface
     {
@@ -374,8 +372,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets purchase_order_changed_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPurchaseOrderChangedDate() : ?\DateTimeInterface
     {
@@ -396,8 +392,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets purchase_order_state_changed_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getPurchaseOrderStateChangedDate() : \DateTimeInterface
     {
@@ -418,8 +412,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets purchase_order_type.
-     *
-     * @return null|string
      */
     public function getPurchaseOrderType() : ?string
     {
@@ -440,8 +432,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets import_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ImportDetails
      */
     public function getImportDetails() : ?ImportDetails
     {
@@ -462,8 +452,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets deal_code.
-     *
-     * @return null|string
      */
     public function getDealCode() : ?string
     {
@@ -484,8 +472,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets payment_method.
-     *
-     * @return null|string
      */
     public function getPaymentMethod() : ?string
     {
@@ -506,8 +492,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets buying_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getBuyingParty() : ?PartyIdentification
     {
@@ -528,8 +512,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets selling_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : ?PartyIdentification
     {
@@ -550,8 +532,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets ship_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getShipToParty() : ?PartyIdentification
     {
@@ -572,8 +552,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets bill_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getBillToParty() : ?PartyIdentification
     {
@@ -594,8 +572,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets ship_window.
-     *
-     * @return null|string
      */
     public function getShipWindow() : ?string
     {
@@ -616,8 +592,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets delivery_window.
-     *
-     * @return null|string
      */
     public function getDeliveryWindow() : ?string
     {

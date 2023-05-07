@@ -215,8 +215,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_type.
-     *
-     * @return string
      */
     public function getTaxRegistrationType() : string
     {
@@ -237,8 +235,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_number.
-     *
-     * @return string
      */
     public function getTaxRegistrationNumber() : string
     {

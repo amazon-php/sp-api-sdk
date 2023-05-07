@@ -192,8 +192,6 @@ class Feature implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets feature_name.
-     *
-     * @return string
      */
     public function getFeatureName() : string
     {
@@ -214,8 +212,6 @@ class Feature implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets feature_description.
-     *
-     * @return string
      */
     public function getFeatureDescription() : string
     {
@@ -236,8 +232,6 @@ class Feature implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets seller_eligible.
-     *
-     * @return null|bool
      */
     public function getSellerEligible() : ?bool
     {

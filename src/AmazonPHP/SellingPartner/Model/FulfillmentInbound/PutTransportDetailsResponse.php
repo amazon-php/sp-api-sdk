@@ -182,8 +182,6 @@ class PutTransportDetailsResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\CommonTransportResult
      */
     public function getPayload() : ?CommonTransportResult
     {

@@ -182,8 +182,6 @@ class GetFulfillmentOrderResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentOrderResult
      */
     public function getPayload() : ?GetFulfillmentOrderResult
     {

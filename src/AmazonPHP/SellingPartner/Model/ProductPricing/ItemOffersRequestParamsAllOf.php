@@ -173,8 +173,6 @@ class ItemOffersRequestParamsAllOf implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {

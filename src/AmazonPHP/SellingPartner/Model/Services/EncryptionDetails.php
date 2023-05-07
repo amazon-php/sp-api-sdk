@@ -222,8 +222,6 @@ class EncryptionDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets standard.
-     *
-     * @return string
      */
     public function getStandard() : string
     {
@@ -244,8 +242,6 @@ class EncryptionDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets initialization_vector.
-     *
-     * @return string
      */
     public function getInitializationVector() : string
     {
@@ -266,8 +262,6 @@ class EncryptionDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets key.
-     *
-     * @return string
      */
     public function getKey() : string
     {

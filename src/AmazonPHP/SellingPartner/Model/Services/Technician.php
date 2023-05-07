@@ -186,8 +186,6 @@ class Technician implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets technician_id.
-     *
-     * @return null|string
      */
     public function getTechnicianId() : ?string
     {
@@ -208,8 +206,6 @@ class Technician implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets name.
-     *
-     * @return null|string
      */
     public function getName() : ?string
     {

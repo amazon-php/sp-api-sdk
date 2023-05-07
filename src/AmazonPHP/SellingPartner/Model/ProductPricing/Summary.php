@@ -242,8 +242,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets total_offer_count.
-     *
-     * @return int
      */
     public function getTotalOfferCount() : int
     {
@@ -330,8 +328,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets list_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListPrice() : ?MoneyType
     {
@@ -352,8 +348,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets competitive_price_threshold.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getCompetitivePriceThreshold() : ?MoneyType
     {
@@ -374,8 +368,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets suggested_lower_price_plus_shipping.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getSuggestedLowerPricePlusShipping() : ?MoneyType
     {
@@ -440,8 +432,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets offers_available_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getOffersAvailableTime() : ?\DateTimeInterface
     {

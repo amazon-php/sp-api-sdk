@@ -185,8 +185,6 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets scheduled_delivery_service_type.
-     *
-     * @return null|string
      */
     public function getScheduledDeliveryServiceType() : ?string
     {
@@ -207,8 +205,6 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets earliest_nominated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEarliestNominatedDeliveryDate() : ?\DateTimeInterface
     {
@@ -229,8 +225,6 @@ class ScheduledDeliveryShipment implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets latest_nominated_delivery_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLatestNominatedDeliveryDate() : ?\DateTimeInterface
     {

@@ -206,8 +206,6 @@ class TransportHeader implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets seller_id.
-     *
-     * @return string
      */
     public function getSellerId() : string
     {
@@ -228,8 +226,6 @@ class TransportHeader implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_id.
-     *
-     * @return string
      */
     public function getShipmentId() : string
     {
@@ -250,10 +246,8 @@ class TransportHeader implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_partnered.
-     *
-     * @return bool
      */
-    public function getIsPartnered() : bool
+    public function getIsPartnered() : ?bool
     {
         return $this->container['is_partnered'];
     }
@@ -272,8 +266,6 @@ class TransportHeader implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentType
      */
     public function getShipmentType() : ShipmentType
     {

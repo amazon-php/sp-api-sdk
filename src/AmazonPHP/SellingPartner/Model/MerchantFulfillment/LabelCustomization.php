@@ -182,8 +182,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets custom_text_for_label.
-     *
-     * @return null|string
      */
     public function getCustomTextForLabel() : ?string
     {
@@ -204,8 +202,6 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets standard_id_for_label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\StandardIdForLabel
      */
     public function getStandardIdForLabel() : ?StandardIdForLabel
     {

@@ -278,8 +278,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets invoice_number.
-     *
-     * @return string
      */
     public function getInvoiceNumber() : string
     {
@@ -300,8 +298,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets invoice_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getInvoiceDate() : \DateTimeInterface
     {
@@ -322,8 +318,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets reference_number.
-     *
-     * @return null|string
      */
     public function getReferenceNumber() : ?string
     {
@@ -344,8 +338,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets remit_to_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification
      */
     public function getRemitToParty() : PartyIdentification
     {
@@ -366,8 +358,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -388,8 +378,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets bill_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification
      */
     public function getBillToParty() : ?PartyIdentification
     {
@@ -410,8 +398,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets ship_to_country_code.
-     *
-     * @return null|string
      */
     public function getShipToCountryCode() : ?string
     {
@@ -432,8 +418,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets payment_terms_code.
-     *
-     * @return null|string
      */
     public function getPaymentTermsCode() : ?string
     {
@@ -454,8 +438,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets invoice_total.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getInvoiceTotal() : Money
     {

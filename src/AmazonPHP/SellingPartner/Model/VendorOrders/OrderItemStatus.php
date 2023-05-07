@@ -238,8 +238,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -260,8 +258,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets buyer_product_identifier.
-     *
-     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -282,8 +278,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -304,8 +298,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets net_cost.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -326,8 +318,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets list_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {
@@ -348,8 +338,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ordered_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusOrderedQuantity
      */
     public function getOrderedQuantity() : ?OrderItemStatusOrderedQuantity
     {
@@ -370,8 +358,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets acknowledgement_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusAcknowledgementStatus
      */
     public function getAcknowledgementStatus() : ?OrderItemStatusAcknowledgementStatus
     {
@@ -392,8 +378,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets receiving_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusReceivingStatus
      */
     public function getReceivingStatus() : ?OrderItemStatusReceivingStatus
     {

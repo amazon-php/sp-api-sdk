@@ -194,8 +194,6 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets adjustment_type.
-     *
-     * @return null|string
      */
     public function getAdjustmentType() : ?string
     {
@@ -216,8 +214,6 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -238,8 +234,6 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets adjustment_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getAdjustmentAmount() : ?Currency
     {

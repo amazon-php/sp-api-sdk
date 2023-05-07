@@ -245,8 +245,6 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return null|string
      */
     public function getAmazonOrderId() : ?string
     {
@@ -267,8 +265,6 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets seller_order_id.
-     *
-     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -289,8 +285,6 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets marketplace_name.
-     *
-     * @return null|string
      */
     public function getMarketplaceName() : ?string
     {
@@ -465,8 +459,6 @@ class ShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {

@@ -207,8 +207,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets coverage_start_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getCoverageStartDate() : ?\DateTimeInterface
     {
@@ -229,8 +227,6 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets coverage_end_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getCoverageEndDate() : ?\DateTimeInterface
     {

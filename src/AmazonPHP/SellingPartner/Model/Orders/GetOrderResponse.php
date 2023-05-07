@@ -182,8 +182,6 @@ class GetOrderResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Order
      */
     public function getPayload() : ?Order
     {

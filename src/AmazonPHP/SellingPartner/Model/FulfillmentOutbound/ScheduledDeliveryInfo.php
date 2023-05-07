@@ -186,8 +186,6 @@ class ScheduledDeliveryInfo implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets delivery_time_zone.
-     *
-     * @return string
      */
     public function getDeliveryTimeZone() : string
     {

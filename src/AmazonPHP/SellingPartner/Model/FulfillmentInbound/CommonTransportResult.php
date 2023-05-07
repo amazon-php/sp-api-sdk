@@ -176,8 +176,6 @@ class CommonTransportResult implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets transport_result.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportResult
      */
     public function getTransportResult() : ?TransportResult
     {

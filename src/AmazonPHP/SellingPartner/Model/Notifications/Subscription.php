@@ -206,8 +206,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets subscription_id.
-     *
-     * @return string
      */
     public function getSubscriptionId() : string
     {
@@ -228,8 +226,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets payload_version.
-     *
-     * @return string
      */
     public function getPayloadVersion() : string
     {
@@ -250,8 +246,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets destination_id.
-     *
-     * @return string
      */
     public function getDestinationId() : string
     {
@@ -272,8 +266,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets processing_directive.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective
      */
     public function getProcessingDirective() : ?ProcessingDirective
     {

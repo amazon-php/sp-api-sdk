@@ -190,8 +190,6 @@ class GetMessagingActionResponseLinks implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets self.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Messaging\LinkObject
      */
     public function getSelf() : LinkObject
     {
@@ -212,8 +210,6 @@ class GetMessagingActionResponseLinks implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets schema.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Messaging\LinkObject
      */
     public function getSchema() : LinkObject
     {

@@ -197,8 +197,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets length.
-     *
-     * @return null|float
      */
     public function getLength() : ?float
     {
@@ -219,8 +217,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets width.
-     *
-     * @return null|float
      */
     public function getWidth() : ?float
     {
@@ -241,8 +237,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets height.
-     *
-     * @return null|float
      */
     public function getHeight() : ?float
     {
@@ -263,8 +257,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets unit.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength
      */
     public function getUnit() : ?UnitOfLength
     {
@@ -285,8 +277,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets predefined_package_dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\PredefinedPackageDimensions
      */
     public function getPredefinedPackageDimensions() : ?PredefinedPackageDimensions
     {

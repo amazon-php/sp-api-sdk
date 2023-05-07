@@ -179,8 +179,6 @@ class LabelFormatOption implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets include_packing_slip_with_label.
-     *
-     * @return null|bool
      */
     public function getIncludePackingSlipWithLabel() : ?bool
     {
@@ -201,8 +199,6 @@ class LabelFormatOption implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets label_format.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat
      */
     public function getLabelFormat() : ?LabelFormat
     {

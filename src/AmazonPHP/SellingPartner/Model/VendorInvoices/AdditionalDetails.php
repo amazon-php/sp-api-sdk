@@ -224,8 +224,6 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -246,8 +244,6 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets detail.
-     *
-     * @return string
      */
     public function getDetail() : string
     {
@@ -268,8 +264,6 @@ class AdditionalDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets language_code.
-     *
-     * @return null|string
      */
     public function getLanguageCode() : ?string
     {

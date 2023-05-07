@@ -188,8 +188,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets _links.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSchemaResponseLinks
      */
     public function getLinks() : ?GetSchemaResponseLinks
     {

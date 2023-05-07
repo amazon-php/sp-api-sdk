@@ -173,8 +173,6 @@ class ContainerSequenceNumbers implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets container_sequence_number.
-     *
-     * @return null|string
      */
     public function getContainerSequenceNumber() : ?string
     {

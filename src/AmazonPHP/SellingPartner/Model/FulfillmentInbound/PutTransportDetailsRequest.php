@@ -198,8 +198,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets is_partnered.
-     *
-     * @return bool
      */
     public function getIsPartnered() : bool
     {
@@ -220,8 +218,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets shipment_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentType
      */
     public function getShipmentType() : ShipmentType
     {
@@ -242,8 +238,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets transport_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportDetailInput
      */
     public function getTransportDetails() : TransportDetailInput
     {

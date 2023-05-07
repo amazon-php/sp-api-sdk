@@ -197,8 +197,6 @@ class CarrierDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets name.
-     *
-     * @return null|string
      */
     public function getName() : ?string
     {
@@ -219,8 +217,6 @@ class CarrierDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets code.
-     *
-     * @return null|string
      */
     public function getCode() : ?string
     {
@@ -241,8 +237,6 @@ class CarrierDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets phone.
-     *
-     * @return null|string
      */
     public function getPhone() : ?string
     {
@@ -263,8 +257,6 @@ class CarrierDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets email.
-     *
-     * @return null|string
      */
     public function getEmail() : ?string
     {
@@ -285,8 +277,6 @@ class CarrierDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets shipment_reference_number.
-     *
-     * @return null|string
      */
     public function getShipmentReferenceNumber() : ?string
     {

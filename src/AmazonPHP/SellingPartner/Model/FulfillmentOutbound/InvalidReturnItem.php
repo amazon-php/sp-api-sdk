@@ -198,8 +198,6 @@ class InvalidReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets seller_return_item_id.
-     *
-     * @return string
      */
     public function getSellerReturnItemId() : string
     {
@@ -220,8 +218,6 @@ class InvalidReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -242,8 +238,6 @@ class InvalidReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets invalid_item_reason.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\InvalidItemReason
      */
     public function getInvalidItemReason() : InvalidItemReason
     {

@@ -214,8 +214,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets service_location_type.
-     *
-     * @return null|string
      */
     public function getServiceLocationType() : ?string
     {
@@ -236,8 +234,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Address
      */
     public function getAddress() : ?Address
     {

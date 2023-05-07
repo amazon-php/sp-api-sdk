@@ -186,8 +186,6 @@ class CreateConfirmCustomizationDetailsRequest implements \ArrayAccess, \JsonSer
 
     /**
      * Gets text.
-     *
-     * @return null|string
      */
     public function getText() : ?string
     {

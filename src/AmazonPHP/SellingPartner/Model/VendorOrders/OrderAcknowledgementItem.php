@@ -232,8 +232,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return null|string
      */
     public function getItemSequenceNumber() : ?string
     {
@@ -254,8 +252,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets amazon_product_identifier.
-     *
-     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -276,8 +272,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -298,8 +292,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets ordered_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ItemQuantity
     {
@@ -320,8 +312,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets net_cost.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -342,8 +332,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets list_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {
@@ -364,8 +352,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets discount_multiplier.
-     *
-     * @return null|string
      */
     public function getDiscountMultiplier() : ?string
     {

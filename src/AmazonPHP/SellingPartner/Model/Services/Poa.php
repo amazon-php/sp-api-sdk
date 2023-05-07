@@ -243,8 +243,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets appointment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime
      */
     public function getAppointmentTime() : ?AppointmentTime
     {
@@ -287,8 +285,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets uploading_technician.
-     *
-     * @return null|string
      */
     public function getUploadingTechnician() : ?string
     {
@@ -309,8 +305,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets upload_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getUploadTime() : ?\DateTimeInterface
     {
@@ -331,8 +325,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets poa_type.
-     *
-     * @return null|string
      */
     public function getPoaType() : ?string
     {

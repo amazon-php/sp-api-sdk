@@ -230,8 +230,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets id.
-     *
-     * @return string
      */
     public function getId() : string
     {
@@ -252,8 +250,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -274,8 +270,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets country_code.
-     *
-     * @return string
      */
     public function getCountryCode() : string
     {
@@ -296,8 +290,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets default_currency_code.
-     *
-     * @return string
      */
     public function getDefaultCurrencyCode() : string
     {
@@ -318,8 +310,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets default_language_code.
-     *
-     * @return string
      */
     public function getDefaultLanguageCode() : string
     {
@@ -340,8 +330,6 @@ class Marketplace implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets domain_name.
-     *
-     * @return string
      */
     public function getDomainName() : string
     {

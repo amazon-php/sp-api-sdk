@@ -208,8 +208,6 @@ class PostContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets content_reference_key.
-     *
-     * @return string
      */
     public function getContentReferenceKey() : string
     {

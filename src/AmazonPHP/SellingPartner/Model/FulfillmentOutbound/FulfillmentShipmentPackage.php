@@ -198,8 +198,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets package_number.
-     *
-     * @return int
      */
     public function getPackageNumber() : int
     {
@@ -220,8 +218,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets carrier_code.
-     *
-     * @return string
      */
     public function getCarrierCode() : string
     {
@@ -242,8 +238,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets tracking_number.
-     *
-     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -264,8 +258,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets estimated_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {

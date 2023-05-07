@@ -40,8 +40,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse
      */
     public function addAppointmentForServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id, \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body) : \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse
     {
@@ -255,8 +253,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesResponse
      */
     public function assignAppointmentResources(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesRequest $body) : \AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesResponse
     {
@@ -493,8 +489,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\CancelReservationResponse
      */
     public function cancelReservation(AccessToken $accessToken, string $region, string $reservation_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Services\CancelReservationResponse
     {
@@ -712,8 +706,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse
      */
     public function cancelServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id, string $cancellation_reason_code) : \AmazonPHP\SellingPartner\Model\Services\CancelServiceJobByServiceJobIdResponse
     {
@@ -938,8 +930,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse
      */
     public function completeServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id) : \AmazonPHP\SellingPartner\Model\Services\CompleteServiceJobByServiceJobIdResponse
     {
@@ -1136,8 +1126,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\CreateReservationResponse
      */
     public function createReservation(AccessToken $accessToken, string $region, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\CreateReservationRequest $body) : \AmazonPHP\SellingPartner\Model\Services\CreateReservationResponse
     {
@@ -1345,8 +1333,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\CreateServiceDocumentUploadDestination
      */
     public function createServiceDocumentUploadDestination(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Services\ServiceUploadDocument $body) : \AmazonPHP\SellingPartner\Model\Services\CreateServiceDocumentUploadDestination
     {
@@ -1537,8 +1523,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\GetAppointmentSlotsResponse
      */
     public function getAppointmentSlots(AccessToken $accessToken, string $region, string $asin, string $store_id, array $marketplace_ids, ?string $start_time = null, ?string $end_time = null) : \AmazonPHP\SellingPartner\Model\Services\GetAppointmentSlotsResponse
     {
@@ -1790,8 +1774,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\GetAppointmentSlotsResponse
      */
     public function getAppointmmentSlotsByJobId(AccessToken $accessToken, string $region, string $service_job_id, array $marketplace_ids, ?string $start_time = null, ?string $end_time = null) : \AmazonPHP\SellingPartner\Model\Services\GetAppointmentSlotsResponse
     {
@@ -2029,8 +2011,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\FixedSlotCapacity
      */
     public function getFixedSlotCapacity(AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\FixedSlotCapacityQuery $body, ?string $next_page_token = null) : \AmazonPHP\SellingPartner\Model\Services\FixedSlotCapacity
     {
@@ -2275,8 +2255,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\RangeSlotCapacity
      */
     public function getRangeSlotCapacity(AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\RangeSlotCapacityQuery $body, ?string $next_page_token = null) : \AmazonPHP\SellingPartner\Model\Services\RangeSlotCapacity
     {
@@ -2518,8 +2496,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse
      */
     public function getServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobByServiceJobIdResponse
     {
@@ -2730,8 +2706,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse
      */
     public function getServiceJobs(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $service_order_ids = null, ?array $service_job_status = null, ?string $page_token = null, int $page_size = 20, ?string $sort_field = null, ?string $sort_order = null, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?string $schedule_start_date = null, ?string $schedule_end_date = null, ?array $asins = null, ?array $required_skills = null, ?array $store_ids = null) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse
     {
@@ -3100,8 +3074,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse
      */
     public function rescheduleAppointmentForServiceJobByServiceJobId(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body) : \AmazonPHP\SellingPartner\Model\Services\SetAppointmentResponse
     {
@@ -3339,8 +3311,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return string
      */
     public function setAppointmentFulfillmentData(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\SetAppointmentFulfillmentDataRequest $body) : string
     {
@@ -3578,8 +3548,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\UpdateReservationResponse
      */
     public function updateReservation(AccessToken $accessToken, string $region, string $reservation_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\UpdateReservationRequest $body) : \AmazonPHP\SellingPartner\Model\Services\UpdateReservationResponse
     {
@@ -3814,8 +3782,6 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\UpdateScheduleResponse
      */
     public function updateSchedule(AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\UpdateScheduleRequest $body) : \AmazonPHP\SellingPartner\Model\Services\UpdateScheduleResponse
     {

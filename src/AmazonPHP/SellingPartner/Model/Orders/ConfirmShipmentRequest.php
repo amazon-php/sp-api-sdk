@@ -220,8 +220,6 @@ class ConfirmShipmentRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets package_detail.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\PackageDetail
      */
     public function getPackageDetail() : PackageDetail
     {
@@ -242,8 +240,6 @@ class ConfirmShipmentRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets cod_collection_method.
-     *
-     * @return null|string
      */
     public function getCodCollectionMethod() : ?string
     {
@@ -264,8 +260,6 @@ class ConfirmShipmentRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {

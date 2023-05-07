@@ -224,8 +224,6 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets product_type.
-     *
-     * @return string
      */
     public function getProductType() : string
     {
@@ -246,8 +244,6 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets requirements.
-     *
-     * @return null|string
      */
     public function getRequirements() : ?string
     {

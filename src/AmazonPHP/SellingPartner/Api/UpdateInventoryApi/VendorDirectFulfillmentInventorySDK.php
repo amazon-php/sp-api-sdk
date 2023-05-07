@@ -40,8 +40,6 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse
      */
     public function submitInventoryUpdate(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateResponse
     {

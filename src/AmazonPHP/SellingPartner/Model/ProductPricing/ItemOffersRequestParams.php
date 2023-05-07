@@ -198,8 +198,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -220,8 +218,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets item_condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -242,8 +238,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets customer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {
@@ -264,8 +258,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {

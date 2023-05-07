@@ -206,8 +206,6 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets order_item_id.
-     *
-     * @return string
      */
     public function getOrderItemId() : string
     {
@@ -228,8 +226,6 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets approval_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType
      */
     public function getApprovalType() : ItemApprovalType
     {
@@ -250,8 +246,6 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets approval_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus
      */
     public function getApprovalStatus() : ItemApprovalStatus
     {

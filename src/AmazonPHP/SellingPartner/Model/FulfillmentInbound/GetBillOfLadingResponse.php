@@ -182,8 +182,6 @@ class GetBillOfLadingResponse implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BillOfLadingDownloadURL
      */
     public function getPayload() : ?BillOfLadingDownloadURL
     {

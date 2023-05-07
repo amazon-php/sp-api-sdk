@@ -252,8 +252,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets seller_sku.
-     *
-     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -274,8 +272,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets order_item_id.
-     *
-     * @return null|string
      */
     public function getOrderItemId() : ?string
     {
@@ -296,8 +292,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets order_adjustment_item_id.
-     *
-     * @return null|string
      */
     public function getOrderAdjustmentItemId() : ?string
     {
@@ -318,8 +312,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets quantity_shipped.
-     *
-     * @return null|int
      */
     public function getQuantityShipped() : ?int
     {
@@ -494,8 +486,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets cost_of_points_granted.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getCostOfPointsGranted() : ?Currency
     {
@@ -516,8 +506,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets cost_of_points_returned.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getCostOfPointsReturned() : ?Currency
     {

@@ -176,8 +176,6 @@ class SolicitationsAction implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {

@@ -186,8 +186,6 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets overlay_color_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ColorType
      */
     public function getOverlayColorType() : ColorType
     {
@@ -208,8 +206,6 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets block.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock() : ?StandardImageTextBlock
     {

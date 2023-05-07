@@ -210,8 +210,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets amazon_order_id.
-     *
-     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -232,8 +230,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_email.
-     *
-     * @return null|string
      */
     public function getBuyerEmail() : ?string
     {
@@ -254,8 +250,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_name.
-     *
-     * @return null|string
      */
     public function getBuyerName() : ?string
     {
@@ -276,8 +270,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_county.
-     *
-     * @return null|string
      */
     public function getBuyerCounty() : ?string
     {
@@ -298,8 +290,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_tax_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo
      */
     public function getBuyerTaxInfo() : ?BuyerTaxInfo
     {
@@ -320,8 +310,6 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {

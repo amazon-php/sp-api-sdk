@@ -179,8 +179,6 @@ class InvalidASIN implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -201,8 +199,6 @@ class InvalidASIN implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets error_reason.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ErrorReason
      */
     public function getErrorReason() : ?ErrorReason
     {

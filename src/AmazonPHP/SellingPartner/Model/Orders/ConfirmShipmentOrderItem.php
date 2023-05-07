@@ -192,8 +192,6 @@ class ConfirmShipmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets order_item_id.
-     *
-     * @return string
      */
     public function getOrderItemId() : string
     {
@@ -214,8 +212,6 @@ class ConfirmShipmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {

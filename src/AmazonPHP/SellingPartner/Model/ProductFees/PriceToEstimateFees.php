@@ -198,8 +198,6 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets listing_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getListingPrice() : MoneyType
     {
@@ -220,8 +218,6 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipping.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getShipping() : ?MoneyType
     {
@@ -242,8 +238,6 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets points.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\Points
      */
     public function getPoints() : ?Points
     {

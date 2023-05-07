@@ -182,8 +182,6 @@ class Constraint implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets validation_reg_ex.
-     *
-     * @return null|string
      */
     public function getValidationRegEx() : ?string
     {
@@ -204,8 +202,6 @@ class Constraint implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets validation_string.
-     *
-     * @return string
      */
     public function getValidationString() : string
     {

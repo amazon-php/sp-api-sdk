@@ -186,8 +186,6 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets display_name.
-     *
-     * @return string
      */
     public function getDisplayName() : string
     {
@@ -208,8 +206,6 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets classification_id.
-     *
-     * @return string
      */
     public function getClassificationId() : string
     {

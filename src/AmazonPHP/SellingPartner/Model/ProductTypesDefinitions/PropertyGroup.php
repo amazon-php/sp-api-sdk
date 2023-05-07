@@ -185,8 +185,6 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -207,8 +205,6 @@ class PropertyGroup implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets description.
-     *
-     * @return null|string
      */
     public function getDescription() : ?string
     {

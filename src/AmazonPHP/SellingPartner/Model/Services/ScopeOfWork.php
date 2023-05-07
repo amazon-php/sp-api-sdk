@@ -191,8 +191,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -213,8 +211,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -235,8 +231,6 @@ class ScopeOfWork implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {

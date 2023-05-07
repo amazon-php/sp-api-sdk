@@ -275,8 +275,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets container_type.
-     *
-     * @return string
      */
     public function getContainerType() : string
     {
@@ -297,8 +295,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets container_sequence_number.
-     *
-     * @return null|string
      */
     public function getContainerSequenceNumber() : ?string
     {
@@ -341,8 +337,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets tracking_number.
-     *
-     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -363,8 +357,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -385,8 +377,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {
@@ -407,8 +397,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets tier.
-     *
-     * @return null|int
      */
     public function getTier() : ?int
     {
@@ -429,8 +417,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets block.
-     *
-     * @return null|int
      */
     public function getBlock() : ?int
     {
@@ -451,8 +437,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets inner_containers_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\InnerContainersDetails
      */
     public function getInnerContainersDetails() : ?InnerContainersDetails
     {

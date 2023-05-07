@@ -182,8 +182,6 @@ class GetServiceJobsResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\JobListing
      */
     public function getPayload() : ?JobListing
     {

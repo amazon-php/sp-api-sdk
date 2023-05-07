@@ -185,8 +185,6 @@ class Location implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets type.
-     *
-     * @return null|string
      */
     public function getType() : ?string
     {
@@ -207,8 +205,6 @@ class Location implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets location_code.
-     *
-     * @return null|string
      */
     public function getLocationCode() : ?string
     {
@@ -229,8 +225,6 @@ class Location implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets country_code.
-     *
-     * @return null|string
      */
     public function getCountryCode() : ?string
     {

@@ -212,8 +212,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets carrier_name.
-     *
-     * @return string
      */
     public function getCarrierName() : string
     {
@@ -234,8 +232,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets shipping_service_name.
-     *
-     * @return string
      */
     public function getShippingServiceName() : string
     {
@@ -256,8 +252,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets shipping_service_id.
-     *
-     * @return string
      */
     public function getShippingServiceId() : string
     {
@@ -278,8 +272,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets rejection_reason_code.
-     *
-     * @return string
      */
     public function getRejectionReasonCode() : string
     {
@@ -300,8 +292,6 @@ class RejectedShippingService implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets rejection_reason_message.
-     *
-     * @return null|string
      */
     public function getRejectionReasonMessage() : ?string
     {

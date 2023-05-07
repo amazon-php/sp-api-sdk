@@ -185,8 +185,6 @@ class ShipmentSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets estimated_delivery_date_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEstimatedDeliveryDateTime() : ?\DateTimeInterface
     {
@@ -207,8 +205,6 @@ class ShipmentSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets appt_window_start_date_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getApptWindowStartDateTime() : ?\DateTimeInterface
     {
@@ -229,8 +225,6 @@ class ShipmentSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets appt_window_end_date_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getApptWindowEndDateTime() : ?\DateTimeInterface
     {

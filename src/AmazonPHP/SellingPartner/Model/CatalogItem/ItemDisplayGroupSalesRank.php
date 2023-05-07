@@ -202,8 +202,6 @@ class ItemDisplayGroupSalesRank implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets website_display_group.
-     *
-     * @return string
      */
     public function getWebsiteDisplayGroup() : string
     {
@@ -224,8 +222,6 @@ class ItemDisplayGroupSalesRank implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets title.
-     *
-     * @return string
      */
     public function getTitle() : string
     {
@@ -246,8 +242,6 @@ class ItemDisplayGroupSalesRank implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets link.
-     *
-     * @return null|string
      */
     public function getLink() : ?string
     {
@@ -268,8 +262,6 @@ class ItemDisplayGroupSalesRank implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets rank.
-     *
-     * @return int
      */
     public function getRank() : int
     {

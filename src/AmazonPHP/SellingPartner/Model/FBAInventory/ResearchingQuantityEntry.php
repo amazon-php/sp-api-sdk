@@ -218,8 +218,6 @@ class ResearchingQuantityEntry implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets name.
-     *
-     * @return string
      */
     public function getName() : string
     {
@@ -240,8 +238,6 @@ class ResearchingQuantityEntry implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {

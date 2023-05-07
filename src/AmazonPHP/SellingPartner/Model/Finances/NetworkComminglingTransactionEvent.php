@@ -222,8 +222,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets transaction_type.
-     *
-     * @return null|string
      */
     public function getTransactionType() : ?string
     {
@@ -244,8 +242,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -266,8 +262,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets net_co_transaction_id.
-     *
-     * @return null|string
      */
     public function getNetCoTransactionId() : ?string
     {
@@ -288,8 +282,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets swap_reason.
-     *
-     * @return null|string
      */
     public function getSwapReason() : ?string
     {
@@ -310,8 +302,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets asin.
-     *
-     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -332,8 +322,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -354,8 +342,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets tax_exclusive_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxExclusiveAmount() : ?Currency
     {
@@ -376,8 +362,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {

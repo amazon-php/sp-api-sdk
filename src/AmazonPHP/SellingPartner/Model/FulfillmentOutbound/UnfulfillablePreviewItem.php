@@ -210,8 +210,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -232,8 +230,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -254,8 +250,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {

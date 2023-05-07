@@ -179,8 +179,6 @@ class CreateRestrictedDataTokenResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets restricted_data_token.
-     *
-     * @return null|string
      */
     public function getRestrictedDataToken() : ?string
     {
@@ -201,8 +199,6 @@ class CreateRestrictedDataTokenResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets expires_in.
-     *
-     * @return null|int
      */
     public function getExpiresIn() : ?int
     {

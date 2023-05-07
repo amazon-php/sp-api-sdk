@@ -179,8 +179,6 @@ class Length implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets value.
-     *
-     * @return null|float
      */
     public function getValue() : ?float
     {
@@ -201,8 +199,6 @@ class Length implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets unit.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength
      */
     public function getUnit() : ?UnitOfLength
     {

@@ -176,8 +176,6 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipments.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatusInfo
      */
     public function getShipments() : ?ShipmentInvoiceStatusInfo
     {

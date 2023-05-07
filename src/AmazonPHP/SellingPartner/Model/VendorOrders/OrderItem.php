@@ -230,8 +230,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -252,8 +250,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets amazon_product_identifier.
-     *
-     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -274,8 +270,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -296,8 +290,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ordered_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ItemQuantity
     {
@@ -318,8 +310,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets is_back_order_allowed.
-     *
-     * @return bool
      */
     public function getIsBackOrderAllowed() : bool
     {
@@ -340,8 +330,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets net_cost.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -362,8 +350,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets list_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {

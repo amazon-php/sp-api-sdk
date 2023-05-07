@@ -287,8 +287,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets container_type.
-     *
-     * @return string
      */
     public function getContainerType() : string
     {
@@ -309,8 +307,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets container_identifier.
-     *
-     * @return string
      */
     public function getContainerIdentifier() : string
     {
@@ -331,8 +327,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tracking_number.
-     *
-     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -353,8 +347,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets manifest_id.
-     *
-     * @return null|string
      */
     public function getManifestId() : ?string
     {
@@ -375,8 +367,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets manifest_date.
-     *
-     * @return null|string
      */
     public function getManifestDate() : ?string
     {
@@ -397,8 +387,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ship_method.
-     *
-     * @return null|string
      */
     public function getShipMethod() : ?string
     {
@@ -419,8 +407,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets scac_code.
-     *
-     * @return null|string
      */
     public function getScacCode() : ?string
     {
@@ -441,8 +427,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets carrier.
-     *
-     * @return null|string
      */
     public function getCarrier() : ?string
     {
@@ -463,8 +447,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets container_sequence_number.
-     *
-     * @return null|int
      */
     public function getContainerSequenceNumber() : ?int
     {
@@ -485,8 +467,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -507,8 +487,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Weight
      */
     public function getWeight() : ?Weight
     {

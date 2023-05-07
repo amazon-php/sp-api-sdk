@@ -206,8 +206,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets start_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getStartTime() : \DateTimeInterface
     {
@@ -228,8 +226,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets end_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getEndTime() : \DateTimeInterface
     {
@@ -250,8 +246,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets recurrence.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Recurrence
      */
     public function getRecurrence() : ?Recurrence
     {
@@ -272,8 +266,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets capacity.
-     *
-     * @return null|int
      */
     public function getCapacity() : ?int
     {

@@ -179,8 +179,6 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets is_buyer_requested_cancel.
-     *
-     * @return null|bool
      */
     public function getIsBuyerRequestedCancel() : ?bool
     {
@@ -201,8 +199,6 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets buyer_cancel_reason.
-     *
-     * @return null|string
      */
     public function getBuyerCancelReason() : ?string
     {

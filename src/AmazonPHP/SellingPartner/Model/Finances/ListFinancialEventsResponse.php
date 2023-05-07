@@ -182,8 +182,6 @@ class ListFinancialEventsResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ListFinancialEventsPayload
      */
     public function getPayload() : ?ListFinancialEventsPayload
     {

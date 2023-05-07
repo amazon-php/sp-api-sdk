@@ -186,8 +186,6 @@ class ItemImagesByMarketplace implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {

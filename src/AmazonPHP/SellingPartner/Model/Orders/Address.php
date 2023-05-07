@@ -297,8 +297,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_line1.
-     *
-     * @return null|string
      */
     public function getAddressLine1() : ?string
     {
@@ -319,8 +317,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_line2.
-     *
-     * @return null|string
      */
     public function getAddressLine2() : ?string
     {
@@ -341,8 +337,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_line3.
-     *
-     * @return null|string
      */
     public function getAddressLine3() : ?string
     {
@@ -363,8 +357,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets city.
-     *
-     * @return null|string
      */
     public function getCity() : ?string
     {
@@ -385,8 +377,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets county.
-     *
-     * @return null|string
      */
     public function getCounty() : ?string
     {
@@ -407,8 +397,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets district.
-     *
-     * @return null|string
      */
     public function getDistrict() : ?string
     {
@@ -429,8 +417,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets state_or_region.
-     *
-     * @return null|string
      */
     public function getStateOrRegion() : ?string
     {
@@ -451,8 +437,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets municipality.
-     *
-     * @return null|string
      */
     public function getMunicipality() : ?string
     {
@@ -473,8 +457,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets postal_code.
-     *
-     * @return null|string
      */
     public function getPostalCode() : ?string
     {
@@ -495,8 +477,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets country_code.
-     *
-     * @return null|string
      */
     public function getCountryCode() : ?string
     {
@@ -517,8 +497,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets phone.
-     *
-     * @return null|string
      */
     public function getPhone() : ?string
     {
@@ -539,8 +517,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_type.
-     *
-     * @return null|string
      */
     public function getAddressType() : ?string
     {

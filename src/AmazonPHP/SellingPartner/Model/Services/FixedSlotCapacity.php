@@ -191,8 +191,6 @@ class FixedSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets resource_id.
-     *
-     * @return null|string
      */
     public function getResourceId() : ?string
     {
@@ -213,8 +211,6 @@ class FixedSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets slot_duration.
-     *
-     * @return null|float
      */
     public function getSlotDuration() : ?float
     {
@@ -257,8 +253,6 @@ class FixedSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {

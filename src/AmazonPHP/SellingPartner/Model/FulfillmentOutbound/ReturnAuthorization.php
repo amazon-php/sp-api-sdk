@@ -218,8 +218,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets return_authorization_id.
-     *
-     * @return string
      */
     public function getReturnAuthorizationId() : string
     {
@@ -240,8 +238,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_center_id.
-     *
-     * @return string
      */
     public function getFulfillmentCenterId() : string
     {
@@ -262,8 +258,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets return_to_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getReturnToAddress() : Address
     {
@@ -284,8 +278,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets amazon_rma_id.
-     *
-     * @return string
      */
     public function getAmazonRmaId() : string
     {
@@ -306,8 +298,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets rma_page_url.
-     *
-     * @return string
      */
     public function getRmaPageUrl() : string
     {

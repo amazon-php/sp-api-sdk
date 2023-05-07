@@ -39,8 +39,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CancelFulfillmentOrderResponse
      */
     public function cancelFulfillmentOrder(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CancelFulfillmentOrderResponse
     {
@@ -232,8 +230,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderResponse
      */
     public function createFulfillmentOrder(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderResponse
     {
@@ -421,8 +417,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnResponse
      */
     public function createFulfillmentReturn(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnResponse
     {
@@ -627,8 +621,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResponse
      */
     public function getFeatureInventory(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResponse
     {
@@ -843,8 +835,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureSkuResponse
      */
     public function getFeatureSKU(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, string $seller_sku) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureSkuResponse
     {
@@ -1063,8 +1053,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeaturesResponse
      */
     public function getFeatures(AccessToken $accessToken, string $region, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeaturesResponse
     {
@@ -1252,8 +1240,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentOrderResponse
      */
     public function getFulfillmentOrder(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentOrderResponse
     {
@@ -1445,8 +1431,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewResponse
      */
     public function getFulfillmentPreview(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewResponse
     {
@@ -1633,8 +1617,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetPackageTrackingDetailsResponse
      */
     public function getPackageTrackingDetails(AccessToken $accessToken, string $region, int $package_number) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetPackageTrackingDetailsResponse
     {
@@ -1823,8 +1805,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResponse
      */
     public function listAllFulfillmentOrders(AccessToken $accessToken, string $region, ?\DateTimeInterface $query_start_date = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResponse
     {
@@ -2017,8 +1997,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse
      */
     public function listReturnReasonCodes(AccessToken $accessToken, string $region, string $seller_sku, string $language, ?string $marketplace_id = null, ?string $seller_fulfillment_order_id = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse
     {
@@ -2240,8 +2218,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateResponse
      */
     public function submitFulfillmentOrderStatusUpdate(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateResponse
     {
@@ -2450,8 +2426,6 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderResponse
      */
     public function updateFulfillmentOrder(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderResponse
     {

@@ -230,8 +230,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets removal_shipment_item_id.
-     *
-     * @return null|string
      */
     public function getRemovalShipmentItemId() : ?string
     {
@@ -252,8 +250,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tax_collection_model.
-     *
-     * @return null|string
      */
     public function getTaxCollectionModel() : ?string
     {
@@ -274,8 +270,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_network_sku.
-     *
-     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -296,8 +290,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets quantity.
-     *
-     * @return null|int
      */
     public function getQuantity() : ?int
     {
@@ -318,8 +310,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets revenue.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRevenue() : ?Currency
     {
@@ -340,8 +330,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fee_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {
@@ -362,8 +350,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {
@@ -384,8 +370,6 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tax_withheld.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxWithheld() : ?Currency
     {

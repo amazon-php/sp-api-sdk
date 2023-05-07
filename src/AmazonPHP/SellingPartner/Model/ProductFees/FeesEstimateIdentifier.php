@@ -218,8 +218,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -240,8 +238,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_id.
-     *
-     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -262,8 +258,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets id_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\IdType
      */
     public function getIdType() : ?IdType
     {
@@ -284,8 +278,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets id_value.
-     *
-     * @return null|string
      */
     public function getIdValue() : ?string
     {
@@ -306,8 +298,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets is_amazon_fulfilled.
-     *
-     * @return null|bool
      */
     public function getIsAmazonFulfilled() : ?bool
     {
@@ -328,8 +318,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets price_to_estimate_fees.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees
      */
     public function getPriceToEstimateFees() : ?PriceToEstimateFees
     {
@@ -350,8 +338,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_input_identifier.
-     *
-     * @return null|string
      */
     public function getSellerInputIdentifier() : ?string
     {
@@ -372,8 +358,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets optional_fulfillment_program.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram
      */
     public function getOptionalFulfillmentProgram() : ?OptionalFulfillmentProgram
     {

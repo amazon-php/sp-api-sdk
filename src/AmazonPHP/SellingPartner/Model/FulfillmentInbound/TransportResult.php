@@ -188,8 +188,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets transport_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportStatus
      */
     public function getTransportStatus() : TransportStatus
     {
@@ -210,8 +208,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets error_code.
-     *
-     * @return null|string
      */
     public function getErrorCode() : ?string
     {
@@ -232,8 +228,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets error_description.
-     *
-     * @return null|string
      */
     public function getErrorDescription() : ?string
     {

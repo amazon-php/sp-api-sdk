@@ -182,8 +182,6 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination
      */
     public function getPagination() : ?Pagination
     {

@@ -182,8 +182,6 @@ class UpdateOrderApprovalsRequest implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets approver.
-     *
-     * @return null|string
      */
     public function getApprover() : ?string
     {

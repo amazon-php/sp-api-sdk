@@ -216,8 +216,6 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {
@@ -238,8 +236,6 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets last_updated_before.
-     *
-     * @return null|string
      */
     public function getLastUpdatedBefore() : ?string
     {
@@ -260,8 +256,6 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets created_before.
-     *
-     * @return null|string
      */
     public function getCreatedBefore() : ?string
     {

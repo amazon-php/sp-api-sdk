@@ -329,8 +329,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -351,8 +349,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets adult_product.
-     *
-     * @return null|bool
      */
     public function getAdultProduct() : ?bool
     {
@@ -373,8 +369,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets autographed.
-     *
-     * @return null|bool
      */
     public function getAutographed() : ?bool
     {
@@ -395,8 +389,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets brand.
-     *
-     * @return null|string
      */
     public function getBrand() : ?string
     {
@@ -417,8 +409,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets browse_classification.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification
      */
     public function getBrowseClassification() : ?ItemBrowseClassification
     {
@@ -439,8 +429,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets color.
-     *
-     * @return null|string
      */
     public function getColor() : ?string
     {
@@ -483,8 +471,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_classification.
-     *
-     * @return null|string
      */
     public function getItemClassification() : ?string
     {
@@ -505,8 +491,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_name.
-     *
-     * @return null|string
      */
     public function getItemName() : ?string
     {
@@ -527,8 +511,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets manufacturer.
-     *
-     * @return null|string
      */
     public function getManufacturer() : ?string
     {
@@ -549,8 +531,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets memorabilia.
-     *
-     * @return null|bool
      */
     public function getMemorabilia() : ?bool
     {
@@ -571,8 +551,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets model_number.
-     *
-     * @return null|string
      */
     public function getModelNumber() : ?string
     {
@@ -593,8 +571,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets package_quantity.
-     *
-     * @return null|int
      */
     public function getPackageQuantity() : ?int
     {
@@ -615,8 +591,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets part_number.
-     *
-     * @return null|string
      */
     public function getPartNumber() : ?string
     {
@@ -637,8 +611,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets release_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getReleaseDate() : ?\DateTimeInterface
     {
@@ -659,8 +631,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets size.
-     *
-     * @return null|string
      */
     public function getSize() : ?string
     {
@@ -681,8 +651,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets style.
-     *
-     * @return null|string
      */
     public function getStyle() : ?string
     {
@@ -703,8 +671,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets trade_in_eligible.
-     *
-     * @return null|bool
      */
     public function getTradeInEligible() : ?bool
     {
@@ -725,8 +691,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets website_display_group.
-     *
-     * @return null|string
      */
     public function getWebsiteDisplayGroup() : ?string
     {
@@ -747,8 +711,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets website_display_group_name.
-     *
-     * @return null|string
      */
     public function getWebsiteDisplayGroupName() : ?string
     {

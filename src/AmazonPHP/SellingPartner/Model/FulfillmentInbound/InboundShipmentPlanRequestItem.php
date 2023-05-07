@@ -218,8 +218,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {
@@ -240,8 +238,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -262,8 +258,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Condition
      */
     public function getCondition() : Condition
     {
@@ -284,8 +278,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets quantity.
-     *
-     * @return int
      */
     public function getQuantity() : int
     {
@@ -306,8 +298,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets quantity_in_case.
-     *
-     * @return null|int
      */
     public function getQuantityInCase() : ?int
     {

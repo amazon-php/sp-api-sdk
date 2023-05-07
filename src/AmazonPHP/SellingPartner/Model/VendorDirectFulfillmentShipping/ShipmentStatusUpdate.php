@@ -216,8 +216,6 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets purchase_order_number.
-     *
-     * @return string
      */
     public function getPurchaseOrderNumber() : string
     {
@@ -238,8 +236,6 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -260,8 +256,6 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -282,8 +276,6 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets status_update_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\StatusUpdateDetails
      */
     public function getStatusUpdateDetails() : StatusUpdateDetails
     {

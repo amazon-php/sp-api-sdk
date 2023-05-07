@@ -215,8 +215,6 @@ class Duration implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets duration_unit.
-     *
-     * @return string
      */
     public function getDurationUnit() : string
     {
@@ -237,8 +235,6 @@ class Duration implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets duration_value.
-     *
-     * @return int
      */
     public function getDurationValue() : int
     {

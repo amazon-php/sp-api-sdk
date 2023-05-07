@@ -188,8 +188,6 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {

@@ -206,8 +206,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets earliest_ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEarliestShipDate() : ?\DateTimeInterface
     {
@@ -228,8 +226,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets latest_ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLatestShipDate() : ?\DateTimeInterface
     {
@@ -250,8 +246,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets earliest_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEarliestArrivalDate() : ?\DateTimeInterface
     {
@@ -272,8 +266,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets latest_arrival_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getLatestArrivalDate() : ?\DateTimeInterface
     {

@@ -182,8 +182,6 @@ class GetEligibleShipmentServicesResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResult
      */
     public function getPayload() : ?GetEligibleShipmentServicesResult
     {

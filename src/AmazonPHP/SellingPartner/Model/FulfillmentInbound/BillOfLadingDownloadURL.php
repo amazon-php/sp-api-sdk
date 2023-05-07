@@ -173,8 +173,6 @@ class BillOfLadingDownloadURL implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets download_url.
-     *
-     * @return null|string
      */
     public function getDownloadUrl() : ?string
     {

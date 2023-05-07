@@ -190,8 +190,6 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets value.
-     *
-     * @return string
      */
     public function getValue() : string
     {

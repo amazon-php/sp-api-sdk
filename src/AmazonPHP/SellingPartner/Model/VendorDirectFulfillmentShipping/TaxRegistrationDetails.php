@@ -227,8 +227,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_type.
-     *
-     * @return null|string
      */
     public function getTaxRegistrationType() : ?string
     {
@@ -249,8 +247,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_number.
-     *
-     * @return string
      */
     public function getTaxRegistrationNumber() : string
     {
@@ -271,8 +267,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Address
      */
     public function getTaxRegistrationAddress() : ?Address
     {
@@ -293,8 +287,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_messages.
-     *
-     * @return null|string
      */
     public function getTaxRegistrationMessages() : ?string
     {

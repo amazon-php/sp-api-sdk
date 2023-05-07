@@ -176,8 +176,6 @@ class ListingOffersRequestParamsAllOf implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {

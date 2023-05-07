@@ -182,8 +182,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets label_stream.
-     *
-     * @return null|string
      */
     public function getLabelStream() : ?string
     {
@@ -204,8 +202,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets label_specification.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification() : ?LabelSpecification
     {

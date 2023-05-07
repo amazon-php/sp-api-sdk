@@ -222,8 +222,6 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets asin.
-     *
-     * @return string
      */
     public function getAsin() : string
     {
@@ -266,8 +264,6 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets parent.
-     *
-     * @return null|string
      */
     public function getParent() : ?string
     {
@@ -288,8 +284,6 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets title.
-     *
-     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -310,8 +304,6 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets image_url.
-     *
-     * @return null|string
      */
     public function getImageUrl() : ?string
     {

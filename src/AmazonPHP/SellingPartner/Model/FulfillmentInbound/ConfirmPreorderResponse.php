@@ -182,8 +182,6 @@ class ConfirmPreorderResponse implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmPreorderResult
      */
     public function getPayload() : ?ConfirmPreorderResult
     {

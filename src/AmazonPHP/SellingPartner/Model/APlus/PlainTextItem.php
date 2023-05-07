@@ -202,8 +202,6 @@ class PlainTextItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets position.
-     *
-     * @return int
      */
     public function getPosition() : int
     {
@@ -224,8 +222,6 @@ class PlainTextItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets value.
-     *
-     * @return string
      */
     public function getValue() : string
     {

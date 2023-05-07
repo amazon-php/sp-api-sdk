@@ -182,8 +182,6 @@ class GetAttributesResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets buyer.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponseBuyer
      */
     public function getBuyer() : ?GetAttributesResponseBuyer
     {

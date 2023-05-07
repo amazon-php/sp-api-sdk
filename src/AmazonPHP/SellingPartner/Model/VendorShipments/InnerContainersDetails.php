@@ -179,8 +179,6 @@ class InnerContainersDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets container_count.
-     *
-     * @return null|int
      */
     public function getContainerCount() : ?int
     {

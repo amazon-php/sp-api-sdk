@@ -188,8 +188,6 @@ class AvailableCarrierWillPickUpOption implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets carrier_will_pick_up_option.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUpOption() : CarrierWillPickUpOption
     {
@@ -210,8 +208,6 @@ class AvailableCarrierWillPickUpOption implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets charge.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getCharge() : CurrencyAmount
     {

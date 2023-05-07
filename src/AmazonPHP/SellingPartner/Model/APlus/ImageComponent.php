@@ -210,8 +210,6 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets upload_destination_id.
-     *
-     * @return string
      */
     public function getUploadDestinationId() : string
     {
@@ -232,8 +230,6 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets image_crop_specification.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ImageCropSpecification
      */
     public function getImageCropSpecification() : ImageCropSpecification
     {
@@ -254,8 +250,6 @@ class ImageComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets alt_text.
-     *
-     * @return string
      */
     public function getAltText() : string
     {

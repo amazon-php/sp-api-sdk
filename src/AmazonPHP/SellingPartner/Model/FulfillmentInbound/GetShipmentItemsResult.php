@@ -201,8 +201,6 @@ class GetShipmentItemsResult implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets next_token.
-     *
-     * @return null|string
      */
     public function getNextToken() : ?string
     {

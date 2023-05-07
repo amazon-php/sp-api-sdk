@@ -228,8 +228,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tracking_number.
-     *
-     * @return string
      */
     public function getTrackingNumber() : string
     {
@@ -250,8 +248,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets status_code.
-     *
-     * @return string
      */
     public function getStatusCode() : string
     {
@@ -272,8 +268,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets reason_code.
-     *
-     * @return string
      */
     public function getReasonCode() : string
     {
@@ -294,8 +288,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets status_date_time.
-     *
-     * @return \DateTimeInterface
      */
     public function getStatusDateTime() : \DateTimeInterface
     {
@@ -316,8 +308,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets status_location_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Address
      */
     public function getStatusLocationAddress() : Address
     {
@@ -338,8 +328,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_schedule.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentSchedule
      */
     public function getShipmentSchedule() : ?ShipmentSchedule
     {

@@ -238,8 +238,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets label_format.
-     *
-     * @return string
      */
     public function getLabelFormat() : string
     {
@@ -260,8 +258,6 @@ class LabelSpecification implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets label_stock_size.
-     *
-     * @return string
      */
     public function getLabelStockSize() : string
     {

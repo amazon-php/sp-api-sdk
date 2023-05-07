@@ -186,8 +186,6 @@ class EventBridgeResourceSpecification implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets region.
-     *
-     * @return string
      */
     public function getRegion() : string
     {
@@ -208,8 +206,6 @@ class EventBridgeResourceSpecification implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets account_id.
-     *
-     * @return string
      */
     public function getAccountId() : string
     {

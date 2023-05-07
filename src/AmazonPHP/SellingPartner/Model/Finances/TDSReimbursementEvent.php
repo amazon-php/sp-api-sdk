@@ -188,8 +188,6 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -210,8 +208,6 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets tds_order_id.
-     *
-     * @return null|string
      */
     public function getTdsOrderId() : ?string
     {
@@ -232,8 +228,6 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets reimbursed_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getReimbursedAmount() : ?Currency
     {

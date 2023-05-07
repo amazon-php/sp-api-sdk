@@ -241,8 +241,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -263,8 +261,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets description.
-     *
-     * @return null|string
      */
     public function getDescription() : ?string
     {
@@ -285,8 +281,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets allowance_amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getAllowanceAmount() : Money
     {

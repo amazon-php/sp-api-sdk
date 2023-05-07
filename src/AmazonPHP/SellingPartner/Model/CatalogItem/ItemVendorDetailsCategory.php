@@ -179,8 +179,6 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets display_name.
-     *
-     * @return null|string
      */
     public function getDisplayName() : ?string
     {
@@ -201,8 +199,6 @@ class ItemVendorDetailsCategory implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets value.
-     *
-     * @return null|string
      */
     public function getValue() : ?string
     {

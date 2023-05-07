@@ -186,8 +186,6 @@ class RejectionReason implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets rejection_reason_id.
-     *
-     * @return string
      */
     public function getRejectionReasonId() : string
     {
@@ -208,8 +206,6 @@ class RejectionReason implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets rejection_reason_description.
-     *
-     * @return string
      */
     public function getRejectionReasonDescription() : string
     {

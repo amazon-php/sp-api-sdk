@@ -342,8 +342,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets create_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getCreateTime() : ?\DateTimeInterface
     {
@@ -364,8 +362,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets service_job_id.
-     *
-     * @return null|string
      */
     public function getServiceJobId() : ?string
     {
@@ -386,8 +382,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets service_job_status.
-     *
-     * @return null|string
      */
     public function getServiceJobStatus() : ?string
     {
@@ -408,8 +402,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets scope_of_work.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ScopeOfWork
      */
     public function getScopeOfWork() : ?ScopeOfWork
     {
@@ -430,8 +422,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Seller
      */
     public function getSeller() : ?Seller
     {
@@ -452,8 +442,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets service_job_provider.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ServiceJobProvider
      */
     public function getServiceJobProvider() : ?ServiceJobProvider
     {
@@ -518,8 +506,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets service_order_id.
-     *
-     * @return null|string
      */
     public function getServiceOrderId() : ?string
     {
@@ -540,8 +526,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets marketplace_id.
-     *
-     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -562,8 +546,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets store_id.
-     *
-     * @return null|string
      */
     public function getStoreId() : ?string
     {
@@ -584,8 +566,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets buyer.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Buyer
      */
     public function getBuyer() : ?Buyer
     {
@@ -628,8 +608,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets service_location.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ServiceLocation
      */
     public function getServiceLocation() : ?ServiceLocation
     {

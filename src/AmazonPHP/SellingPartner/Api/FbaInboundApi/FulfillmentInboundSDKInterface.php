@@ -97,8 +97,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmPreorderResponse
      */
     public function confirmPreorder(AccessToken $accessToken, string $region, string $shipment_id, \DateTimeInterface $need_by_date, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmPreorderResponse;
 
@@ -109,8 +107,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportResponse
      */
     public function confirmTransport(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportResponse;
 
@@ -122,8 +118,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse
      */
     public function createInboundShipment(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse;
 
@@ -134,8 +128,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanResponse
      */
     public function createInboundShipmentPlan(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanResponse;
 
@@ -146,8 +138,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\EstimateTransportResponse
      */
     public function estimateTransport(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\EstimateTransportResponse;
 
@@ -158,8 +148,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetBillOfLadingResponse
      */
     public function getBillOfLading(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetBillOfLadingResponse;
 
@@ -172,8 +160,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse
      */
     public function getInboundGuidance(AccessToken $accessToken, string $region, string $marketplace_id, ?array $seller_sku_list = null, ?array $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse;
 
@@ -191,8 +177,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse
      */
     public function getLabels(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, ?int $number_of_packages = null, ?array $package_labels_to_print = null, ?int $number_of_pallets = null, ?int $page_size = null, ?int $page_start_index = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse;
 
@@ -204,8 +188,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPreorderInfoResponse
      */
     public function getPreorderInfo(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPreorderInfoResponse;
 
@@ -218,8 +200,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse
      */
     public function getPrepInstructions(AccessToken $accessToken, string $region, string $ship_to_country_code, ?array $seller_sku_list = null, ?array $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse;
 
@@ -234,8 +214,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
      */
     public function getShipmentItems(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse;
 
@@ -247,8 +225,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
      */
     public function getShipmentItemsByShipmentId(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse;
 
@@ -265,8 +241,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse
      */
     public function getShipments(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?array $shipment_status_list = null, ?array $shipment_id_list = null, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse;
 
@@ -277,8 +251,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetTransportDetailsResponse
      */
     public function getTransportDetails(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetTransportDetailsResponse;
 
@@ -290,8 +262,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsResponse
      */
     public function putTransportDetails(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsResponse;
 
@@ -303,8 +273,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse
      */
     public function updateInboundShipment(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse;
 
@@ -315,8 +283,6 @@ interface FulfillmentInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\VoidTransportResponse
      */
     public function voidTransport(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\VoidTransportResponse;
 }

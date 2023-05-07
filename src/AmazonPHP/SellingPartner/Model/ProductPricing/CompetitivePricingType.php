@@ -240,8 +240,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets trade_in_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getTradeInValue() : ?MoneyType
     {

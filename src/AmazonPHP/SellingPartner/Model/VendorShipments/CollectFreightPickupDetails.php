@@ -185,8 +185,6 @@ class CollectFreightPickupDetails implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets requested_pick_up.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getRequestedPickUp() : ?\DateTimeInterface
     {
@@ -207,8 +205,6 @@ class CollectFreightPickupDetails implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets scheduled_pick_up.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getScheduledPickUp() : ?\DateTimeInterface
     {
@@ -229,8 +225,6 @@ class CollectFreightPickupDetails implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets carrier_assignment_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getCarrierAssignmentDate() : ?\DateTimeInterface
     {

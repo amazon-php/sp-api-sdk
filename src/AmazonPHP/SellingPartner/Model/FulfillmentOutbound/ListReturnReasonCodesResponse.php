@@ -182,8 +182,6 @@ class ListReturnReasonCodesResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResult
      */
     public function getPayload() : ?ListReturnReasonCodesResult
     {

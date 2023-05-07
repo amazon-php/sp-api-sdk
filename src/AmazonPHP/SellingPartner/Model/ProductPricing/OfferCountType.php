@@ -185,8 +185,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets condition.
-     *
-     * @return null|string
      */
     public function getCondition() : ?string
     {
@@ -207,8 +205,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets fulfillment_channel.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\FulfillmentChannelType
      */
     public function getFulfillmentChannel() : ?FulfillmentChannelType
     {
@@ -229,8 +225,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets offer_count.
-     *
-     * @return null|int
      */
     public function getOfferCount() : ?int
     {

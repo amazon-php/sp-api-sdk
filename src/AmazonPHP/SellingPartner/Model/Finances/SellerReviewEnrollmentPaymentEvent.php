@@ -214,8 +214,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -236,8 +234,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets enrollment_id.
-     *
-     * @return null|string
      */
     public function getEnrollmentId() : ?string
     {
@@ -258,8 +254,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets parent_asin.
-     *
-     * @return null|string
      */
     public function getParentAsin() : ?string
     {
@@ -280,8 +274,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets fee_component.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent
      */
     public function getFeeComponent() : ?FeeComponent
     {
@@ -302,8 +294,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets charge_component.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getChargeComponent() : ?ChargeComponent
     {
@@ -324,8 +314,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets total_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

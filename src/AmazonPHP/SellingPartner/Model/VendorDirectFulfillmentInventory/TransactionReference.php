@@ -173,8 +173,6 @@ class TransactionReference implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets transaction_id.
-     *
-     * @return null|string
      */
     public function getTransactionId() : ?string
     {

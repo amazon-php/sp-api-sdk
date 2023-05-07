@@ -232,8 +232,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets reservation_id.
-     *
-     * @return null|string
      */
     public function getReservationId() : ?string
     {
@@ -254,8 +252,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -276,8 +272,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets availability.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord
      */
     public function getAvailability() : AvailabilityRecord
     {

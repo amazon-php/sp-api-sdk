@@ -214,8 +214,6 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets next_page_token.
-     *
-     * @return null|string
      */
     public function getNextPageToken() : ?string
     {

@@ -234,8 +234,6 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets code.
-     *
-     * @return string
      */
     public function getCode() : string
     {
@@ -256,8 +254,6 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets message.
-     *
-     * @return string
      */
     public function getMessage() : string
     {
@@ -278,8 +274,6 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets severity.
-     *
-     * @return string
      */
     public function getSeverity() : string
     {

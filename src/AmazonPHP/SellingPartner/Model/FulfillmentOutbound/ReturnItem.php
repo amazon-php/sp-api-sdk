@@ -256,8 +256,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_return_item_id.
-     *
-     * @return string
      */
     public function getSellerReturnItemId() : string
     {
@@ -278,8 +276,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_fulfillment_order_item_id.
-     *
-     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -300,8 +296,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets amazon_shipment_id.
-     *
-     * @return string
      */
     public function getAmazonShipmentId() : string
     {
@@ -322,8 +316,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller_return_reason_code.
-     *
-     * @return string
      */
     public function getSellerReturnReasonCode() : string
     {
@@ -344,8 +336,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets return_comment.
-     *
-     * @return null|string
      */
     public function getReturnComment() : ?string
     {
@@ -366,8 +356,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets amazon_return_reason_code.
-     *
-     * @return null|string
      */
     public function getAmazonReturnReasonCode() : ?string
     {
@@ -388,8 +376,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentReturnItemStatus
      */
     public function getStatus() : FulfillmentReturnItemStatus
     {
@@ -410,8 +396,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets status_changed_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getStatusChangedDate() : \DateTimeInterface
     {
@@ -432,8 +416,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets return_authorization_id.
-     *
-     * @return null|string
      */
     public function getReturnAuthorizationId() : ?string
     {
@@ -454,8 +436,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets return_received_condition.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItemDisposition
      */
     public function getReturnReceivedCondition() : ?ReturnItemDisposition
     {
@@ -476,8 +456,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets fulfillment_center_id.
-     *
-     * @return null|string
      */
     public function getFulfillmentCenterId() : ?string
     {

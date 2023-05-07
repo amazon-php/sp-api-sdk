@@ -214,8 +214,6 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets fulfillment_order.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrder
      */
     public function getFulfillmentOrder() : FulfillmentOrder
     {

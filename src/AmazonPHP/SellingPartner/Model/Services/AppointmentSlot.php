@@ -188,8 +188,6 @@ class AppointmentSlot implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets start_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getStartTime() : ?\DateTimeInterface
     {
@@ -210,8 +208,6 @@ class AppointmentSlot implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets end_time.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getEndTime() : ?\DateTimeInterface
     {
@@ -232,8 +228,6 @@ class AppointmentSlot implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets capacity.
-     *
-     * @return null|int
      */
     public function getCapacity() : ?int
     {

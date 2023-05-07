@@ -204,8 +204,6 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets upload_destination_id.
-     *
-     * @return string
      */
     public function getUploadDestinationId() : string
     {
@@ -226,8 +224,6 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets url.
-     *
-     * @return string
      */
     public function getUrl() : string
     {
@@ -248,8 +244,6 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets encryption_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\EncryptionDetails
      */
     public function getEncryptionDetails() : EncryptionDetails
     {
@@ -270,8 +264,6 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets headers.
-     *
-     * @return null|object
      */
     public function getHeaders() : ?object
     {

@@ -173,8 +173,6 @@ class LabelDownloadURL implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets download_url.
-     *
-     * @return null|string
      */
     public function getDownloadUrl() : ?string
     {

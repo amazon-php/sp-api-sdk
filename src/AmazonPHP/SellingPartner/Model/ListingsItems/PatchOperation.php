@@ -224,8 +224,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets op.
-     *
-     * @return string
      */
     public function getOp() : string
     {
@@ -246,8 +244,6 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets path.
-     *
-     * @return string
      */
     public function getPath() : string
     {

@@ -182,8 +182,6 @@ class CreateFulfillmentReturnResponse implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnResult
      */
     public function getPayload() : ?CreateFulfillmentReturnResult
     {

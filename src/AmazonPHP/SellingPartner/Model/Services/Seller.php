@@ -176,8 +176,6 @@ class Seller implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets seller_id.
-     *
-     * @return null|string
      */
     public function getSellerId() : ?string
     {

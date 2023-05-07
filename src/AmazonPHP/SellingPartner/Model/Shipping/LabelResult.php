@@ -192,8 +192,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets container_reference_id.
-     *
-     * @return null|string
      */
     public function getContainerReferenceId() : ?string
     {
@@ -214,8 +212,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets tracking_id.
-     *
-     * @return null|string
      */
     public function getTrackingId() : ?string
     {
@@ -236,8 +232,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Label
      */
     public function getLabel() : ?Label
     {

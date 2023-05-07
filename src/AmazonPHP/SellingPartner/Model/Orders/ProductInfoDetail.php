@@ -173,8 +173,6 @@ class ProductInfoDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets number_of_items.
-     *
-     * @return null|int
      */
     public function getNumberOfItems() : ?int
     {

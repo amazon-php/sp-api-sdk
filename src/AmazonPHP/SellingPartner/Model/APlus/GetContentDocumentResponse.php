@@ -206,8 +206,6 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets content_record.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentRecord
      */
     public function getContentRecord() : ContentRecord
     {

@@ -188,8 +188,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Gets self.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject
      */
     public function getSelf() : LinkObject
     {

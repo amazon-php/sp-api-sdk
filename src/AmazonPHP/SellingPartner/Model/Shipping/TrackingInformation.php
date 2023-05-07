@@ -216,8 +216,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tracking_id.
-     *
-     * @return string
      */
     public function getTrackingId() : string
     {
@@ -238,8 +236,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets summary.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\TrackingSummary
      */
     public function getSummary() : TrackingSummary
     {
@@ -260,8 +256,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets promised_delivery_date.
-     *
-     * @return \DateTimeInterface
      */
     public function getPromisedDeliveryDate() : \DateTimeInterface
     {

@@ -182,8 +182,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets seller_positive_feedback_rating.
-     *
-     * @return null|float
      */
     public function getSellerPositiveFeedbackRating() : ?float
     {
@@ -204,8 +202,6 @@ class SellerFeedbackType implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets feedback_count.
-     *
-     * @return int
      */
     public function getFeedbackCount() : int
     {

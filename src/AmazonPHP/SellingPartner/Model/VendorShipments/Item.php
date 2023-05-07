@@ -210,8 +210,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_sequence_number.
-     *
-     * @return string
      */
     public function getItemSequenceNumber() : string
     {
@@ -232,8 +230,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets amazon_product_identifier.
-     *
-     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -254,8 +250,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets vendor_product_identifier.
-     *
-     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -276,8 +270,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets shipped_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity
      */
     public function getShippedQuantity() : ItemQuantity
     {
@@ -298,8 +290,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemDetails
      */
     public function getItemDetails() : ?ItemDetails
     {

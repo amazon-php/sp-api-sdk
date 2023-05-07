@@ -206,8 +206,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets headers.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders
      */
     public function getHeaders() : ?HttpResponseHeaders
     {
@@ -228,8 +226,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine
      */
     public function getStatus() : ?GetOffersHttpStatusLine
     {
@@ -250,8 +246,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets body.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getBody() : GetOffersResponse
     {
@@ -272,8 +266,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets request.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersRequestParams
      */
     public function getRequest() : ItemOffersRequestParams
     {

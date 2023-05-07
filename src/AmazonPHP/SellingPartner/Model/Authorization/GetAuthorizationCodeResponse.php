@@ -182,8 +182,6 @@ class GetAuthorizationCodeResponse implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Authorization\AuthorizationCode
      */
     public function getPayload() : ?AuthorizationCode
     {

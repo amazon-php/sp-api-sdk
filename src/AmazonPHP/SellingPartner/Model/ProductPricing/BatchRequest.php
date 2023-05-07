@@ -192,8 +192,6 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets uri.
-     *
-     * @return string
      */
     public function getUri() : string
     {
@@ -214,8 +212,6 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets method.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod
      */
     public function getMethod() : HttpMethod
     {

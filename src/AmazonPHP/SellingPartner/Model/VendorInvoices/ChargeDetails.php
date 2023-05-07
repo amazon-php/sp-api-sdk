@@ -256,8 +256,6 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets type.
-     *
-     * @return string
      */
     public function getType() : string
     {
@@ -278,8 +276,6 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets description.
-     *
-     * @return null|string
      */
     public function getDescription() : ?string
     {
@@ -300,8 +296,6 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets charge_amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getChargeAmount() : Money
     {

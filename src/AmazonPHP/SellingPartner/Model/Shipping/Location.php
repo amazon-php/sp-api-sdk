@@ -214,8 +214,6 @@ class Location implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets state_or_region.
-     *
-     * @return null|string
      */
     public function getStateOrRegion() : ?string
     {
@@ -236,8 +234,6 @@ class Location implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets city.
-     *
-     * @return null|string
      */
     public function getCity() : ?string
     {
@@ -258,8 +254,6 @@ class Location implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets country_code.
-     *
-     * @return null|string
      */
     public function getCountryCode() : ?string
     {
@@ -280,8 +274,6 @@ class Location implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets postal_code.
-     *
-     * @return null|string
      */
     public function getPostalCode() : ?string
     {

@@ -191,8 +191,6 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets buyer_legal_company_name.
-     *
-     * @return null|string
      */
     public function getBuyerLegalCompanyName() : ?string
     {
@@ -213,8 +211,6 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets buyer_business_address.
-     *
-     * @return null|string
      */
     public function getBuyerBusinessAddress() : ?string
     {
@@ -235,8 +231,6 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets buyer_tax_registration_id.
-     *
-     * @return null|string
      */
     public function getBuyerTaxRegistrationId() : ?string
     {
@@ -257,8 +251,6 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets buyer_tax_office.
-     *
-     * @return null|string
      */
     public function getBuyerTaxOffice() : ?string
     {

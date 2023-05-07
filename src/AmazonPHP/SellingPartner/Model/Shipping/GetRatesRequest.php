@@ -216,8 +216,6 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_to.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipTo() : Address
     {
@@ -238,8 +236,6 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_from.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipFrom() : Address
     {
@@ -282,8 +278,6 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getShipDate() : ?\DateTimeInterface
     {

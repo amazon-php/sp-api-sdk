@@ -196,8 +196,6 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -218,8 +216,6 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets seller_id.
-     *
-     * @return string
      */
     public function getSellerId() : string
     {
@@ -240,8 +236,6 @@ class SellerSKUIdentifier implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets seller_sku.
-     *
-     * @return string
      */
     public function getSellerSku() : string
     {

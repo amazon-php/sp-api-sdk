@@ -226,8 +226,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets posted_date.
-     *
-     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -248,8 +246,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets coupon_id.
-     *
-     * @return null|string
      */
     public function getCouponId() : ?string
     {
@@ -270,8 +266,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets seller_coupon_description.
-     *
-     * @return null|string
      */
     public function getSellerCouponDescription() : ?string
     {
@@ -292,8 +286,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets clip_or_redemption_count.
-     *
-     * @return null|int
      */
     public function getClipOrRedemptionCount() : ?int
     {
@@ -314,8 +306,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets payment_event_id.
-     *
-     * @return null|string
      */
     public function getPaymentEventId() : ?string
     {
@@ -336,8 +326,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fee_component.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent
      */
     public function getFeeComponent() : ?FeeComponent
     {
@@ -358,8 +346,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets charge_component.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getChargeComponent() : ?ChargeComponent
     {
@@ -380,8 +366,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets total_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

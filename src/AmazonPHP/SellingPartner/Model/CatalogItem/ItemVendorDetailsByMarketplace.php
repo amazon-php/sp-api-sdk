@@ -279,8 +279,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets marketplace_id.
-     *
-     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -301,8 +299,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets brand_code.
-     *
-     * @return null|string
      */
     public function getBrandCode() : ?string
     {
@@ -323,8 +319,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets manufacturer_code.
-     *
-     * @return null|string
      */
     public function getManufacturerCode() : ?string
     {
@@ -345,8 +339,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets manufacturer_code_parent.
-     *
-     * @return null|string
      */
     public function getManufacturerCodeParent() : ?string
     {
@@ -367,8 +359,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets product_category.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsCategory
      */
     public function getProductCategory() : ?ItemVendorDetailsCategory
     {
@@ -389,8 +379,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets product_group.
-     *
-     * @return null|string
      */
     public function getProductGroup() : ?string
     {
@@ -411,8 +399,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets product_subcategory.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsCategory
      */
     public function getProductSubcategory() : ?ItemVendorDetailsCategory
     {
@@ -433,8 +419,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets replenishment_category.
-     *
-     * @return null|string
      */
     public function getReplenishmentCategory() : ?string
     {

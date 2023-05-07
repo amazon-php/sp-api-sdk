@@ -179,8 +179,6 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets code.
-     *
-     * @return null|string
      */
     public function getCode() : ?string
     {
@@ -201,8 +199,6 @@ class AcknowledgementStatus implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets description.
-     *
-     * @return null|string
      */
     public function getDescription() : ?string
     {

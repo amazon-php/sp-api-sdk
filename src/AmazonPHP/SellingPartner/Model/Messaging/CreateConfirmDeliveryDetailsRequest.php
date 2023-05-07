@@ -180,8 +180,6 @@ class CreateConfirmDeliveryDetailsRequest implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text.
-     *
-     * @return null|string
      */
     public function getText() : ?string
     {

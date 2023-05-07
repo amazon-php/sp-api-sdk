@@ -182,8 +182,6 @@ class ChargeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets charge_type.
-     *
-     * @return null|string
      */
     public function getChargeType() : ?string
     {
@@ -204,8 +202,6 @@ class ChargeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets charge_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getChargeAmount() : ?Currency
     {
