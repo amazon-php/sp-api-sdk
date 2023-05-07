@@ -146,8 +146,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,8 +154,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,8 +163,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,8 +171,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,8 +179,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -200,7 +190,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -228,6 +218,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -248,6 +240,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -268,6 +262,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -288,6 +284,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets condition.
+     *
+     * @return null|string
      */
     public function getCondition() : ?string
     {
@@ -308,6 +306,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets inventory_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails
      */
     public function getInventoryDetails() : ?InventoryDetails
     {
@@ -328,6 +328,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets last_updated_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getLastUpdatedTime() : ?\DateTimeInterface
     {
@@ -348,6 +350,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets product_name.
+     *
+     * @return null|string
      */
     public function getProductName() : ?string
     {
@@ -368,6 +372,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets total_quantity.
+     *
+     * @return null|int
      */
     public function getTotalQuantity() : ?int
     {

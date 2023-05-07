@@ -39,6 +39,14 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     final public const METHOD_OF_PAYMENT_PAID_BY_SELLER = 'PaidBySeller';
 
+    final public const HANDLING_INSTRUCTIONS_OVERSIZED = 'Oversized';
+
+    final public const HANDLING_INSTRUCTIONS_FRAGILE = 'Fragile';
+
+    final public const HANDLING_INSTRUCTIONS_FOOD = 'Food';
+
+    final public const HANDLING_INSTRUCTIONS_HANDLE_WITH_CARE = 'HandleWithCare';
+
     /**
      * The original name of the model.
      *
@@ -58,6 +66,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'import_containers' => 'string',
         'billable_weight' => '\AmazonPHP\SellingPartner\Model\VendorShipments\Weight',
         'estimated_ship_by_date' => '\DateTimeInterface',
+        'handling_instructions' => 'string',
     ];
 
     /**
@@ -76,6 +85,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'import_containers' => null,
         'billable_weight' => null,
         'estimated_ship_by_date' => 'date-time',
+        'handling_instructions' => null,
     ];
 
     /**
@@ -91,6 +101,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'import_containers' => 'importContainers',
         'billable_weight' => 'billableWeight',
         'estimated_ship_by_date' => 'estimatedShipByDate',
+        'handling_instructions' => 'handlingInstructions',
     ];
 
     /**
@@ -105,6 +116,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'import_containers' => 'setImportContainers',
         'billable_weight' => 'setBillableWeight',
         'estimated_ship_by_date' => 'setEstimatedShipByDate',
+        'handling_instructions' => 'setHandlingInstructions',
     ];
 
     /**
@@ -119,6 +131,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'import_containers' => 'getImportContainers',
         'billable_weight' => 'getBillableWeight',
         'estimated_ship_by_date' => 'getEstimatedShipByDate',
+        'handling_instructions' => 'getHandlingInstructions',
     ];
 
     /**
@@ -142,12 +155,11 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         $this->container['import_containers'] = $data['import_containers'] ?? null;
         $this->container['billable_weight'] = $data['billable_weight'] ?? null;
         $this->container['estimated_ship_by_date'] = $data['estimated_ship_by_date'] ?? null;
+        $this->container['handling_instructions'] = $data['handling_instructions'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -156,8 +168,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -167,8 +177,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -177,8 +185,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -187,8 +193,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -200,7 +204,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -228,6 +232,21 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
             self::METHOD_OF_PAYMENT_FOB_PORT_OF_CALL,
             self::METHOD_OF_PAYMENT_PREPAID_BY_SELLER,
             self::METHOD_OF_PAYMENT_PAID_BY_SELLER,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getHandlingInstructionsAllowableValues() : array
+    {
+        return [
+            self::HANDLING_INSTRUCTIONS_OVERSIZED,
+            self::HANDLING_INSTRUCTIONS_FRAGILE,
+            self::HANDLING_INSTRUCTIONS_FOOD,
+            self::HANDLING_INSTRUCTIONS_HANDLE_WITH_CARE,
         ];
     }
 
@@ -261,10 +280,24 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         if ($this->container['billable_weight'] !== null) {
             $this->container['billable_weight']->validate();
         }
+
+        $allowedValues = $this->getHandlingInstructionsAllowableValues();
+
+        if (null !== $this->container['handling_instructions'] && !\in_array($this->container['handling_instructions'], $allowedValues, true)) {
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'handling_instructions', must be one of '%s'",
+                    $this->container['handling_instructions'],
+                    \implode("', '", $allowedValues)
+                )
+            );
+        }
     }
 
     /**
      * Gets method_of_payment.
+     *
+     * @return null|string
      */
     public function getMethodOfPayment() : ?string
     {
@@ -285,6 +318,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets seal_number.
+     *
+     * @return null|string
      */
     public function getSealNumber() : ?string
     {
@@ -305,6 +340,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets route.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route
      */
     public function getRoute() : ?Route
     {
@@ -325,6 +362,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets import_containers.
+     *
+     * @return null|string
      */
     public function getImportContainers() : ?string
     {
@@ -345,6 +384,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets billable_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getBillableWeight() : ?Weight
     {
@@ -365,6 +406,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets estimated_ship_by_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getEstimatedShipByDate() : ?\DateTimeInterface
     {
@@ -379,6 +422,28 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     public function setEstimatedShipByDate(?\DateTimeInterface $estimated_ship_by_date) : self
     {
         $this->container['estimated_ship_by_date'] = $estimated_ship_by_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets handling_instructions.
+     *
+     * @return null|string
+     */
+    public function getHandlingInstructions() : ?string
+    {
+        return $this->container['handling_instructions'];
+    }
+
+    /**
+     * Sets handling_instructions.
+     *
+     * @param null|string $handling_instructions identification of the instructions on how specified item/carton/pallet should be handled
+     */
+    public function setHandlingInstructions(?string $handling_instructions) : self
+    {
+        $this->container['handling_instructions'] = $handling_instructions;
 
         return $this;
     }

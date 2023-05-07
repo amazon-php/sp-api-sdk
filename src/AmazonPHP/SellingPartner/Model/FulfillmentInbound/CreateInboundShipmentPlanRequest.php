@@ -128,8 +128,6 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -220,6 +210,8 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets ship_from_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -240,6 +232,8 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets label_prep_preference.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelPrepPreference
      */
     public function getLabelPrepPreference() : LabelPrepPreference
     {
@@ -260,6 +254,8 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets ship_to_country_code.
+     *
+     * @return null|string
      */
     public function getShipToCountryCode() : ?string
     {
@@ -280,6 +276,8 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets ship_to_country_subdivision_code.
+     *
+     * @return null|string
      */
     public function getShipToCountrySubdivisionCode() : ?string
     {

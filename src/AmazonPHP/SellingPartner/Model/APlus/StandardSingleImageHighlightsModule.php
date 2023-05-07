@@ -134,8 +134,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -236,6 +226,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -256,6 +248,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -276,6 +270,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block1.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock1() : ?StandardTextBlock
     {
@@ -296,6 +292,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block2.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock2() : ?StandardTextBlock
     {
@@ -316,6 +314,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block3.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock3() : ?StandardTextBlock
     {
@@ -336,6 +336,8 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets bulleted_list_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock
      */
     public function getBulletedListBlock() : ?StandardHeaderTextListBlock
     {

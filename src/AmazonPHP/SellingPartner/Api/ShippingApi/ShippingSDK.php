@@ -39,6 +39,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\CancelShipmentResponse
      */
     public function cancelShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\Shipping\CancelShipmentResponse
     {
@@ -48,14 +50,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'cancelShipment')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'cancelShipment'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -225,6 +228,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentResponse
      */
     public function createShipment(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentResponse
     {
@@ -234,14 +239,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'createShipment')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'createShipment'),
                     'Amazon Selling Partner API pre request',
@@ -277,6 +281,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -408,6 +414,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\GetAccountResponse
      */
     public function getAccount(AccessToken $accessToken, string $region) : \AmazonPHP\SellingPartner\Model\Shipping\GetAccountResponse
     {
@@ -417,14 +425,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'getAccount')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'getAccount'),
                     'Amazon Selling Partner API pre request',
@@ -460,6 +467,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -576,6 +585,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\GetRatesResponse
      */
     public function getRates(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Shipping\GetRatesRequest $body) : \AmazonPHP\SellingPartner\Model\Shipping\GetRatesResponse
     {
@@ -585,14 +596,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'getRates')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'getRates'),
                     'Amazon Selling Partner API pre request',
@@ -628,6 +638,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -761,6 +773,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\GetShipmentResponse
      */
     public function getShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\Shipping\GetShipmentResponse
     {
@@ -770,14 +784,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'getShipment')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'getShipment'),
                     'Amazon Selling Partner API pre request',
@@ -813,6 +826,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -947,6 +962,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\GetTrackingInformationResponse
      */
     public function getTrackingInformation(AccessToken $accessToken, string $region, string $tracking_id) : \AmazonPHP\SellingPartner\Model\Shipping\GetTrackingInformationResponse
     {
@@ -956,14 +973,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'getTrackingInformation')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'getTrackingInformation'),
                     'Amazon Selling Partner API pre request',
@@ -999,6 +1015,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1134,6 +1152,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\PurchaseLabelsResponse
      */
     public function purchaseLabels(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\Shipping\PurchaseLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\Shipping\PurchaseLabelsResponse
     {
@@ -1143,14 +1163,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'purchaseLabels')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'purchaseLabels'),
                     'Amazon Selling Partner API pre request',
@@ -1186,6 +1205,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1335,6 +1356,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentResponse
      */
     public function purchaseShipment(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentResponse
     {
@@ -1344,14 +1367,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'purchaseShipment')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'purchaseShipment'),
                     'Amazon Selling Partner API pre request',
@@ -1387,6 +1409,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1522,6 +1546,8 @@ final class ShippingSDK implements ShippingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\RetrieveShippingLabelResponse
      */
     public function retrieveShippingLabel(AccessToken $accessToken, string $region, string $shipment_id, string $tracking_id, \AmazonPHP\SellingPartner\Model\Shipping\RetrieveShippingLabelRequest $body) : \AmazonPHP\SellingPartner\Model\Shipping\RetrieveShippingLabelResponse
     {
@@ -1531,14 +1557,13 @@ final class ShippingSDK implements ShippingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Shipping', 'retrieveShippingLabel')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Shipping', 'retrieveShippingLabel'),
                     'Amazon Selling Partner API pre request',
@@ -1574,6 +1599,8 @@ final class ShippingSDK implements ShippingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

@@ -39,6 +39,8 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse
      */
     public function getInvoiceStatus(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetInvoiceStatusResponse
     {
@@ -48,14 +50,13 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('ShipmentInvoicing', 'getInvoiceStatus')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('ShipmentInvoicing', 'getInvoiceStatus'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -225,6 +228,8 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse
      */
     public function getShipmentDetails(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\GetShipmentDetailsResponse
     {
@@ -234,14 +239,13 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('ShipmentInvoicing', 'getShipmentDetails')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('ShipmentInvoicing', 'getShipmentDetails'),
                     'Amazon Selling Partner API pre request',
@@ -277,6 +281,8 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -412,6 +418,8 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse
      */
     public function submitInvoice(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceResponse
     {
@@ -421,14 +429,13 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('ShipmentInvoicing', 'submitInvoice')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('ShipmentInvoicing', 'submitInvoice'),
                     'Amazon Selling Partner API pre request',
@@ -464,6 +471,8 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

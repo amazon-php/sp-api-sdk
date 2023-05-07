@@ -122,8 +122,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -210,6 +200,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_sequence_number.
+     *
+     * @return int
      */
     public function getItemSequenceNumber() : int
     {
@@ -230,6 +222,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets buyer_product_identifier.
+     *
+     * @return null|string
      */
     public function getBuyerProductIdentifier() : ?string
     {
@@ -250,6 +244,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -270,6 +266,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets shipped_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ItemQuantity
      */
     public function getShippedQuantity() : ItemQuantity
     {

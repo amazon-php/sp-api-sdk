@@ -33,12 +33,212 @@ final class OrdersSDK implements OrdersSDKInterface
     }
 
     /**
+     * Operation confirmShipment.
+     *
+     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload Request body of confirmShipment. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function confirmShipment(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload)
+    {
+        $request = $this->confirmShipmentRequest($accessToken, $region, $order_id, $payload);
+
+        $this->configuration->extensions()->preRequest('Orders', 'confirmShipment', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('Orders', 'confirmShipment')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('Orders', 'confirmShipment'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'Orders',
+                        'operation' => 'confirmShipment',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('Orders', 'confirmShipment', $request, $response);
+
+            if ($this->configuration->loggingEnabled('Orders', 'confirmShipment')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('Orders', 'confirmShipment'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'Orders',
+                        'operation' => 'confirmShipment',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return null;
+    }
+
+    /**
+     * Create request for operation 'confirmShipment'.
+     *
+     * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload Request body of confirmShipment. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function confirmShipmentRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload) : RequestInterface
+    {
+        // verify the required parameter 'order_id' is set
+        if ($order_id === null || (\is_array($order_id) && \count($order_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $order_id when calling confirmShipment'
+            );
+        }
+        // verify the required parameter 'payload' is set
+        if ($payload === null || (\is_array($payload) && \count($payload) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $payload when calling confirmShipment'
+            );
+        }
+
+        $resourcePath = '/orders/v0/orders/{orderId}/shipmentConfirmation';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // path params
+        if ($order_id !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'orderId' . '}',
+                ObjectSerializer::toPathValue($order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'POST',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($payload)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($payload), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $payload;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
      * Operation getOrder.
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderResponse
      */
     public function getOrder(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderResponse
     {
@@ -48,14 +248,13 @@ final class OrdersSDK implements OrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'getOrder'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +290,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -225,6 +426,8 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderAddressResponse
      */
     public function getOrderAddress(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderAddressResponse
     {
@@ -234,14 +437,13 @@ final class OrdersSDK implements OrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderAddress')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'getOrderAddress'),
                     'Amazon Selling Partner API pre request',
@@ -277,6 +479,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -411,6 +615,8 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderBuyerInfoResponse
      */
     public function getOrderBuyerInfo(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderBuyerInfoResponse
     {
@@ -420,14 +626,13 @@ final class OrdersSDK implements OrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderBuyerInfo')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'getOrderBuyerInfo'),
                     'Amazon Selling Partner API pre request',
@@ -463,6 +668,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -598,6 +805,8 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsResponse
      */
     public function getOrderItems(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsResponse
     {
@@ -607,14 +816,13 @@ final class OrdersSDK implements OrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderItems')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'getOrderItems'),
                     'Amazon Selling Partner API pre request',
@@ -650,6 +858,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -795,6 +1005,8 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsBuyerInfoResponse
      */
     public function getOrderItemsBuyerInfo(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderItemsBuyerInfoResponse
     {
@@ -804,14 +1016,13 @@ final class OrdersSDK implements OrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderItemsBuyerInfo')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'getOrderItemsBuyerInfo'),
                     'Amazon Selling Partner API pre request',
@@ -847,6 +1058,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -991,6 +1204,8 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse
      */
     public function getOrderRegulatedInfo(AccessToken $accessToken, string $region, string $order_id) : \AmazonPHP\SellingPartner\Model\Orders\GetOrderRegulatedInfoResponse
     {
@@ -1000,14 +1215,13 @@ final class OrdersSDK implements OrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrderRegulatedInfo')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'getOrderRegulatedInfo'),
                     'Amazon Selling Partner API pre request',
@@ -1043,6 +1257,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1191,26 +1407,29 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param null|string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param null|bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param null|string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
      */
-    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
+    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?array $item_approval_types = null, ?array $item_approval_status = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
     {
-        $request = $this->getOrdersRequest($accessToken, $region, $marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id);
+        $request = $this->getOrdersRequest($accessToken, $region, $marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status);
 
         $this->configuration->extensions()->preRequest('Orders', 'getOrders', $request);
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'getOrders')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'getOrders'),
                     'Amazon Selling Partner API pre request',
@@ -1246,6 +1465,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1303,10 +1524,12 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param null|string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param null|bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param null|string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrdersRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null) : RequestInterface
+    public function getOrdersRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?array $item_approval_types = null, ?array $item_approval_status = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
@@ -1321,6 +1544,14 @@ final class OrdersSDK implements OrdersSDKInterface
 
         if ($amazon_order_ids !== null && \count($amazon_order_ids) > 50) {
             throw new InvalidArgumentException('invalid value for "$amazon_order_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
+        }
+
+        if ($item_approval_types !== null && \count($item_approval_types) > 1) {
+            throw new InvalidArgumentException('invalid value for "$item_approval_types" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 1.');
+        }
+
+        if ($item_approval_status !== null && \count($item_approval_status) > 6) {
+            throw new InvalidArgumentException('invalid value for "$item_approval_status" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 6.');
         }
 
         $resourcePath = '/orders/v0/orders';
@@ -1474,6 +1705,22 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($store_chain_store_id !== null) {
             $queryParams['StoreChainStoreId'] = ObjectSerializer::toString($store_chain_store_id);
         }
+        // query params
+        if (\is_array($item_approval_types)) {
+            $item_approval_types = ObjectSerializer::serializeCollection($item_approval_types, 'form', true);
+        }
+
+        if ($item_approval_types !== null) {
+            $queryParams['ItemApprovalTypes'] = ObjectSerializer::toString($item_approval_types);
+        }
+        // query params
+        if (\is_array($item_approval_status)) {
+            $item_approval_status = ObjectSerializer::serializeCollection($item_approval_status, 'form', true);
+        }
+
+        if ($item_approval_status !== null) {
+            $queryParams['ItemApprovalStatus'] = ObjectSerializer::toString($item_approval_status);
+        }
 
         if (\count($queryParams)) {
             $query = \http_build_query($queryParams);
@@ -1551,14 +1798,13 @@ final class OrdersSDK implements OrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Orders', 'updateVerificationStatus')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Orders', 'updateVerificationStatus'),
                     'Amazon Selling Partner API pre request',
@@ -1594,6 +1840,8 @@ final class OrdersSDK implements OrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

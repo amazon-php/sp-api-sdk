@@ -39,6 +39,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CancelFulfillmentOrderResponse
      */
     public function cancelFulfillmentOrder(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CancelFulfillmentOrderResponse
     {
@@ -48,14 +50,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'cancelFulfillmentOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'cancelFulfillmentOrder'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -229,6 +232,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderResponse
      */
     public function createFulfillmentOrder(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderResponse
     {
@@ -238,14 +243,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'createFulfillmentOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'createFulfillmentOrder'),
                     'Amazon Selling Partner API pre request',
@@ -281,6 +285,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -415,6 +421,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnResponse
      */
     public function createFulfillmentReturn(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnResponse
     {
@@ -424,14 +432,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'createFulfillmentReturn')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'createFulfillmentReturn'),
                     'Amazon Selling Partner API pre request',
@@ -467,6 +474,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -618,6 +627,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResponse
      */
     public function getFeatureInventory(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResponse
     {
@@ -627,14 +638,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'getFeatureInventory')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'getFeatureInventory'),
                     'Amazon Selling Partner API pre request',
@@ -670,6 +680,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -831,6 +843,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureSkuResponse
      */
     public function getFeatureSKU(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, string $seller_sku) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureSkuResponse
     {
@@ -840,14 +854,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'getFeatureSKU')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'getFeatureSKU'),
                     'Amazon Selling Partner API pre request',
@@ -883,6 +896,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1048,6 +1063,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeaturesResponse
      */
     public function getFeatures(AccessToken $accessToken, string $region, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeaturesResponse
     {
@@ -1057,14 +1074,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'getFeatures')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'getFeatures'),
                     'Amazon Selling Partner API pre request',
@@ -1100,6 +1116,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1234,6 +1252,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentOrderResponse
      */
     public function getFulfillmentOrder(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentOrderResponse
     {
@@ -1243,14 +1263,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'getFulfillmentOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'getFulfillmentOrder'),
                     'Amazon Selling Partner API pre request',
@@ -1286,6 +1305,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1424,6 +1445,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewResponse
      */
     public function getFulfillmentPreview(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewResponse
     {
@@ -1433,14 +1456,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'getFulfillmentPreview')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'getFulfillmentPreview'),
                     'Amazon Selling Partner API pre request',
@@ -1476,6 +1498,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1609,6 +1633,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetPackageTrackingDetailsResponse
      */
     public function getPackageTrackingDetails(AccessToken $accessToken, string $region, int $package_number) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetPackageTrackingDetailsResponse
     {
@@ -1618,14 +1644,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'getPackageTrackingDetails')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'getPackageTrackingDetails'),
                     'Amazon Selling Partner API pre request',
@@ -1661,6 +1686,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1796,6 +1823,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResponse
      */
     public function listAllFulfillmentOrders(AccessToken $accessToken, string $region, ?\DateTimeInterface $query_start_date = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResponse
     {
@@ -1805,14 +1834,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'listAllFulfillmentOrders')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'listAllFulfillmentOrders'),
                     'Amazon Selling Partner API pre request',
@@ -1848,6 +1876,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1987,6 +2017,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse
      */
     public function listReturnReasonCodes(AccessToken $accessToken, string $region, string $seller_sku, string $language, ?string $marketplace_id = null, ?string $seller_fulfillment_order_id = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse
     {
@@ -1996,14 +2028,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'listReturnReasonCodes')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'listReturnReasonCodes'),
                     'Amazon Selling Partner API pre request',
@@ -2039,6 +2070,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -2200,6 +2233,216 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
     }
 
     /**
+     * Operation submitFulfillmentOrderStatusUpdate.
+     *
+     * @param string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body body (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateResponse
+     */
+    public function submitFulfillmentOrderStatusUpdate(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateResponse
+    {
+        $request = $this->submitFulfillmentOrderStatusUpdateRequest($accessToken, $region, $seller_fulfillment_order_id, $body);
+
+        $this->configuration->extensions()->preRequest('FulfillmentOutbound', 'submitFulfillmentOrderStatusUpdate', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'submitFulfillmentOrderStatusUpdate')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('FulfillmentOutbound', 'submitFulfillmentOrderStatusUpdate'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'FulfillmentOutbound',
+                        'operation' => 'submitFulfillmentOrderStatusUpdate',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FulfillmentOutbound', 'submitFulfillmentOrderStatusUpdate', $request, $response);
+
+            if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'submitFulfillmentOrderStatusUpdate')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('FulfillmentOutbound', 'submitFulfillmentOrderStatusUpdate'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'FulfillmentOutbound',
+                        'operation' => 'submitFulfillmentOrderStatusUpdate',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'submitFulfillmentOrderStatusUpdate'.
+     *
+     * @param string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function submitFulfillmentOrderStatusUpdateRequest(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body) : RequestInterface
+    {
+        // verify the required parameter 'seller_fulfillment_order_id' is set
+        if ($seller_fulfillment_order_id === null || (\is_array($seller_fulfillment_order_id) && \count($seller_fulfillment_order_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $seller_fulfillment_order_id when calling submitFulfillmentOrderStatusUpdate'
+            );
+        }
+
+        if (\strlen($seller_fulfillment_order_id) > 40) {
+            throw new InvalidArgumentException('invalid length for "$seller_fulfillment_order_id" when calling FbaOutboundApi.submitFulfillmentOrderStatusUpdate, must be smaller than or equal to 40.');
+        }
+
+        // verify the required parameter 'body' is set
+        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $body when calling submitFulfillmentOrderStatusUpdate'
+            );
+        }
+
+        $resourcePath = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/status';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // path params
+        if ($seller_fulfillment_order_id !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'sellerFulfillmentOrderId' . '}',
+                ObjectSerializer::toPathValue($seller_fulfillment_order_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'PUT',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $body;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
      * Operation updateFulfillmentOrder.
      *
      * @param string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
@@ -2207,6 +2450,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderResponse
      */
     public function updateFulfillmentOrder(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderResponse
     {
@@ -2216,14 +2461,13 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FulfillmentOutbound', 'updateFulfillmentOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FulfillmentOutbound', 'updateFulfillmentOrder'),
                     'Amazon Selling Partner API pre request',
@@ -2259,6 +2503,8 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

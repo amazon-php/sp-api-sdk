@@ -134,8 +134,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -213,6 +203,8 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets posted_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getPostedDate() : ?\DateTimeInterface
     {
@@ -233,6 +225,8 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets adjustment_event_id.
+     *
+     * @return null|string
      */
     public function getAdjustmentEventId() : ?string
     {
@@ -253,6 +247,8 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets merchant_order_id.
+     *
+     * @return null|string
      */
     public function getMerchantOrderId() : ?string
     {
@@ -273,6 +269,8 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets order_id.
+     *
+     * @return null|string
      */
     public function getOrderId() : ?string
     {
@@ -293,6 +291,8 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets transaction_type.
+     *
+     * @return null|string
      */
     public function getTransactionType() : ?string
     {

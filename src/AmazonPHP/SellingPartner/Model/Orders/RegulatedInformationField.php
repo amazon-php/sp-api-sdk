@@ -126,8 +126,6 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -136,8 +134,6 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -147,8 +143,6 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -157,8 +151,6 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -167,8 +159,6 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -180,7 +170,7 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -245,6 +235,8 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets field_id.
+     *
+     * @return string
      */
     public function getFieldId() : string
     {
@@ -265,6 +257,8 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets field_label.
+     *
+     * @return string
      */
     public function getFieldLabel() : string
     {
@@ -285,6 +279,8 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets field_type.
+     *
+     * @return string
      */
     public function getFieldType() : string
     {
@@ -305,6 +301,8 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets field_value.
+     *
+     * @return string
      */
     public function getFieldValue() : string
     {

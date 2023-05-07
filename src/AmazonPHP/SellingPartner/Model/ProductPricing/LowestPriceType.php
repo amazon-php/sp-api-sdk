@@ -152,8 +152,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -162,8 +160,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -173,8 +169,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -183,8 +177,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -193,8 +185,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -206,7 +196,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -260,6 +250,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets condition.
+     *
+     * @return string
      */
     public function getCondition() : string
     {
@@ -280,6 +272,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return string
      */
     public function getFulfillmentChannel() : string
     {
@@ -300,6 +294,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -320,6 +316,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets quantity_tier.
+     *
+     * @return null|int
      */
     public function getQuantityTier() : ?int
     {
@@ -340,6 +338,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets quantity_discount_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType
      */
     public function getQuantityDiscountType() : ?QuantityDiscountType
     {
@@ -360,6 +360,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets landed_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getLandedPrice() : MoneyType
     {
@@ -380,6 +382,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets listing_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListingPrice() : MoneyType
     {
@@ -400,6 +404,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getShipping() : MoneyType
     {
@@ -420,6 +426,8 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets points.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points
      */
     public function getPoints() : ?Points
     {

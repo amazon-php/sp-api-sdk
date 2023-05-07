@@ -48,14 +48,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'cancelReport')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'cancelReport'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +90,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -229,14 +230,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'cancelReportSchedule')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'cancelReportSchedule'),
                     'Amazon Selling Partner API pre request',
@@ -272,6 +272,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -401,6 +403,8 @@ final class ReportsSDK implements ReportsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
      */
     public function createReport(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportResponse
     {
@@ -410,14 +414,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'createReport')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'createReport'),
                     'Amazon Selling Partner API pre request',
@@ -453,6 +456,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -586,6 +591,8 @@ final class ReportsSDK implements ReportsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
      */
     public function createReportSchedule(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body) : \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleResponse
     {
@@ -595,14 +602,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'createReportSchedule')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'createReportSchedule'),
                     'Amazon Selling Partner API pre request',
@@ -638,6 +644,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -771,6 +779,8 @@ final class ReportsSDK implements ReportsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Reports\Report
      */
     public function getReport(AccessToken $accessToken, string $region, string $report_id) : \AmazonPHP\SellingPartner\Model\Reports\Report
     {
@@ -780,14 +790,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'getReport')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'getReport'),
                     'Amazon Selling Partner API pre request',
@@ -823,6 +832,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -957,6 +968,8 @@ final class ReportsSDK implements ReportsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Reports\ReportDocument
      */
     public function getReportDocument(AccessToken $accessToken, string $region, string $report_document_id) : \AmazonPHP\SellingPartner\Model\Reports\ReportDocument
     {
@@ -966,14 +979,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'getReportDocument')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'getReportDocument'),
                     'Amazon Selling Partner API pre request',
@@ -1009,6 +1021,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1143,6 +1157,8 @@ final class ReportsSDK implements ReportsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule
      */
     public function getReportSchedule(AccessToken $accessToken, string $region, string $report_schedule_id) : \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule
     {
@@ -1152,14 +1168,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'getReportSchedule')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'getReportSchedule'),
                     'Amazon Selling Partner API pre request',
@@ -1195,6 +1210,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1325,10 +1342,12 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation getReportSchedules.
      *
-     * @param string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Reports\ReportScheduleList
      */
     public function getReportSchedules(AccessToken $accessToken, string $region, array $report_types) : \AmazonPHP\SellingPartner\Model\Reports\ReportScheduleList
     {
@@ -1338,14 +1357,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'getReportSchedules')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'getReportSchedules'),
                     'Amazon Selling Partner API pre request',
@@ -1381,6 +1399,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1420,7 +1440,7 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'getReportSchedules'.
      *
-     * @param string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -1519,7 +1539,7 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation getReports.
      *
-     * @param null|string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param null|string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
@@ -1529,6 +1549,8 @@ final class ReportsSDK implements ReportsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
      */
     public function getReports(AccessToken $accessToken, string $region, ?array $report_types = null, ?array $processing_statuses = null, ?array $marketplace_ids = null, int $page_size = 10, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
@@ -1538,14 +1560,13 @@ final class ReportsSDK implements ReportsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Reports', 'getReports')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Reports', 'getReports'),
                     'Amazon Selling Partner API pre request',
@@ -1581,6 +1602,8 @@ final class ReportsSDK implements ReportsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1620,7 +1643,7 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Create request for operation 'getReports'.
      *
-     * @param null|string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param null|string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)

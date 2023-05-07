@@ -40,6 +40,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
      */
     public function createShippingLabels(AccessToken $accessToken, string $region, string $purchase_order_number, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
     {
@@ -49,14 +51,13 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentShipping', 'createShippingLabels')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentShipping', 'createShippingLabels'),
                     'Amazon Selling Partner API pre request',
@@ -92,6 +93,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -246,6 +249,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
      */
     public function getShippingLabel(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel
     {
@@ -255,14 +260,13 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentShipping', 'getShippingLabel')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentShipping', 'getShippingLabel'),
                     'Amazon Selling Partner API pre request',
@@ -298,6 +302,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -441,6 +447,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList
      */
     public function getShippingLabels(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, string $sort_order = 'ASC', ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelList
     {
@@ -450,14 +458,13 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentShipping', 'getShippingLabels')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentShipping', 'getShippingLabels'),
                     'Amazon Selling Partner API pre request',
@@ -493,6 +500,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -686,6 +695,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference
      */
     public function submitShippingLabelRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TransactionReference
     {
@@ -695,14 +706,13 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentShipping', 'submitShippingLabelRequest')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentShipping', 'submitShippingLabelRequest'),
                     'Amazon Selling Partner API pre request',
@@ -738,6 +748,8 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

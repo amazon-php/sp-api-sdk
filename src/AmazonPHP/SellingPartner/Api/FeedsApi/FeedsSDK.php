@@ -48,14 +48,13 @@ final class FeedsSDK implements FeedsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Feeds', 'cancelFeed')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Feeds', 'cancelFeed'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +90,8 @@ final class FeedsSDK implements FeedsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -220,6 +221,8 @@ final class FeedsSDK implements FeedsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedResponse
      */
     public function createFeed(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body) : \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedResponse
     {
@@ -229,14 +232,13 @@ final class FeedsSDK implements FeedsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Feeds', 'createFeed')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Feeds', 'createFeed'),
                     'Amazon Selling Partner API pre request',
@@ -272,6 +274,8 @@ final class FeedsSDK implements FeedsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -405,6 +409,8 @@ final class FeedsSDK implements FeedsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentResponse
      */
     public function createFeedDocument(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body) : \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentResponse
     {
@@ -414,14 +420,13 @@ final class FeedsSDK implements FeedsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Feeds', 'createFeedDocument')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Feeds', 'createFeedDocument'),
                     'Amazon Selling Partner API pre request',
@@ -457,6 +462,8 @@ final class FeedsSDK implements FeedsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -590,6 +597,8 @@ final class FeedsSDK implements FeedsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Feeds\Feed
      */
     public function getFeed(AccessToken $accessToken, string $region, string $feed_id) : \AmazonPHP\SellingPartner\Model\Feeds\Feed
     {
@@ -599,14 +608,13 @@ final class FeedsSDK implements FeedsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Feeds', 'getFeed')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Feeds', 'getFeed'),
                     'Amazon Selling Partner API pre request',
@@ -642,6 +650,8 @@ final class FeedsSDK implements FeedsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -776,6 +786,8 @@ final class FeedsSDK implements FeedsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Feeds\FeedDocument
      */
     public function getFeedDocument(AccessToken $accessToken, string $region, string $feed_document_id) : \AmazonPHP\SellingPartner\Model\Feeds\FeedDocument
     {
@@ -785,14 +797,13 @@ final class FeedsSDK implements FeedsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Feeds', 'getFeedDocument')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Feeds', 'getFeedDocument'),
                     'Amazon Selling Partner API pre request',
@@ -828,6 +839,8 @@ final class FeedsSDK implements FeedsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -968,6 +981,8 @@ final class FeedsSDK implements FeedsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse
      */
     public function getFeeds(AccessToken $accessToken, string $region, ?array $feed_types = null, ?array $marketplace_ids = null, int $page_size = 10, ?array $processing_statuses = null, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Feeds\GetFeedsResponse
     {
@@ -977,14 +992,13 @@ final class FeedsSDK implements FeedsSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Feeds', 'getFeeds')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Feeds', 'getFeeds'),
                     'Amazon Selling Partner API pre request',
@@ -1020,6 +1034,8 @@ final class FeedsSDK implements FeedsSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

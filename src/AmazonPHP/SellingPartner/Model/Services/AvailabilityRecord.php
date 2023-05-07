@@ -122,8 +122,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -216,6 +206,8 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets start_time.
+     *
+     * @return \DateTimeInterface
      */
     public function getStartTime() : \DateTimeInterface
     {
@@ -236,6 +228,8 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets end_time.
+     *
+     * @return \DateTimeInterface
      */
     public function getEndTime() : \DateTimeInterface
     {
@@ -256,6 +250,8 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets recurrence.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\Recurrence
      */
     public function getRecurrence() : ?Recurrence
     {
@@ -276,6 +272,8 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets capacity.
+     *
+     * @return null|int
      */
     public function getCapacity() : ?int
     {

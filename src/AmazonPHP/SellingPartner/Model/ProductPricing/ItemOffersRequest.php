@@ -134,8 +134,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -228,6 +218,8 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets uri.
+     *
+     * @return string
      */
     public function getUri() : string
     {
@@ -248,6 +240,8 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets method.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod
      */
     public function getMethod() : HttpMethod
     {
@@ -290,6 +284,8 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -310,6 +306,8 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets item_condition.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -330,6 +328,8 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets customer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {

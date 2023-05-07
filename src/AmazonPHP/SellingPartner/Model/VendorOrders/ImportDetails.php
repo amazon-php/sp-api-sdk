@@ -162,8 +162,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -172,8 +170,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -183,8 +179,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -193,8 +187,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -203,8 +195,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -216,7 +206,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -311,6 +301,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets method_of_payment.
+     *
+     * @return null|string
      */
     public function getMethodOfPayment() : ?string
     {
@@ -331,6 +323,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets international_commercial_terms.
+     *
+     * @return null|string
      */
     public function getInternationalCommercialTerms() : ?string
     {
@@ -351,6 +345,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets port_of_delivery.
+     *
+     * @return null|string
      */
     public function getPortOfDelivery() : ?string
     {
@@ -371,6 +367,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets import_containers.
+     *
+     * @return null|string
      */
     public function getImportContainers() : ?string
     {
@@ -391,6 +389,8 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets shipping_instructions.
+     *
+     * @return null|string
      */
     public function getShippingInstructions() : ?string
     {

@@ -140,8 +140,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -219,6 +209,8 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets reference_invoice_number.
+     *
+     * @return null|string
      */
     public function getReferenceInvoiceNumber() : ?string
     {
@@ -239,6 +231,8 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets debit_note_number.
+     *
+     * @return null|string
      */
     public function getDebitNoteNumber() : ?string
     {
@@ -259,6 +253,8 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets returns_reference_number.
+     *
+     * @return null|string
      */
     public function getReturnsReferenceNumber() : ?string
     {
@@ -279,6 +275,8 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets goods_return_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getGoodsReturnDate() : ?\DateTimeInterface
     {
@@ -299,6 +297,8 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets rma_id.
+     *
+     * @return null|string
      */
     public function getRmaId() : ?string
     {
@@ -319,6 +319,8 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets coop_reference_number.
+     *
+     * @return null|string
      */
     public function getCoopReferenceNumber() : ?string
     {
@@ -339,6 +341,8 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets consignors_reference_number.
+     *
+     * @return null|string
      */
     public function getConsignorsReferenceNumber() : ?string
     {

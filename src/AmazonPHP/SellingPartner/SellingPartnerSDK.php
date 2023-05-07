@@ -6,6 +6,7 @@ namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDK;
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDKInterface;
+use AmazonPHP\SellingPartner\Api\ApprovalsApi\OrdersSDKInterface;
 use AmazonPHP\SellingPartner\Api\AuthorizationApi\AuthorizationSDK;
 use AmazonPHP\SellingPartner\Api\AuthorizationApi\AuthorizationSDKInterface;
 use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
@@ -106,6 +107,11 @@ final class SellingPartnerSDK
     public function aPlus() : APlusSDKInterface
     {
         return $this->instantiateSDK(APlusSDK::class);
+    }
+
+    public function approvals() : OrdersSDKInterface
+    {
+        return $this->instantiateSDK(OrdersSDKInterface::class);
     }
 
     public function authorization() : AuthorizationSDKInterface

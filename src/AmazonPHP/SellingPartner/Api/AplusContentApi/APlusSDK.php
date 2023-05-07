@@ -40,6 +40,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
      */
     public function createContentDocument(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
@@ -49,14 +51,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'createContentDocument')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'createContentDocument'),
                     'Amazon Selling Partner API pre request',
@@ -92,6 +93,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -248,6 +251,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse
      */
     public function getContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : \AmazonPHP\SellingPartner\Model\APlus\GetContentDocumentResponse
     {
@@ -257,14 +262,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'getContentDocument')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'getContentDocument'),
                     'Amazon Selling Partner API pre request',
@@ -300,6 +304,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -483,6 +489,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse
      */
     public function listContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, ?array $included_data_set = null, ?array $asin_set = null, ?string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\ListContentDocumentAsinRelationsResponse
     {
@@ -492,14 +500,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'listContentDocumentAsinRelations')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'listContentDocumentAsinRelations'),
                     'Amazon Selling Partner API pre request',
@@ -535,6 +542,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -730,6 +739,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse
      */
     public function postContentDocumentApprovalSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentApprovalSubmissionResponse
     {
@@ -739,14 +750,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'postContentDocumentApprovalSubmission')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'postContentDocumentApprovalSubmission'),
                     'Amazon Selling Partner API pre request',
@@ -782,6 +792,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -943,6 +955,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse
      */
     public function postContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsResponse
     {
@@ -952,14 +966,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'postContentDocumentAsinRelations')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'postContentDocumentAsinRelations'),
                     'Amazon Selling Partner API pre request',
@@ -995,6 +1008,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1171,6 +1186,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse
      */
     public function postContentDocumentSuspendSubmission(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentSuspendSubmissionResponse
     {
@@ -1180,14 +1197,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'postContentDocumentSuspendSubmission')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'postContentDocumentSuspendSubmission'),
                     'Amazon Selling Partner API pre request',
@@ -1223,6 +1239,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1383,6 +1401,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse
      */
     public function searchContentDocuments(AccessToken $accessToken, string $region, string $marketplace_id, ?string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentDocumentsResponse
     {
@@ -1392,14 +1412,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'searchContentDocuments')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'searchContentDocuments'),
                     'Amazon Selling Partner API pre request',
@@ -1435,6 +1454,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1588,6 +1609,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse
      */
     public function searchContentPublishRecords(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, ?string $page_token = null) : \AmazonPHP\SellingPartner\Model\APlus\SearchContentPublishRecordsResponse
     {
@@ -1597,14 +1620,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'searchContentPublishRecords')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'searchContentPublishRecords'),
                     'Amazon Selling Partner API pre request',
@@ -1640,6 +1662,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1813,6 +1837,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
      */
     public function updateContentDocument(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentResponse
     {
@@ -1822,14 +1848,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'updateContentDocument')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'updateContentDocument'),
                     'Amazon Selling Partner API pre request',
@@ -1865,6 +1890,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -2042,6 +2069,8 @@ final class APlusSDK implements APlusSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse
      */
     public function validateContentDocumentAsinRelations(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, ?array $asin_set = null) : \AmazonPHP\SellingPartner\Model\APlus\ValidateContentDocumentAsinRelationsResponse
     {
@@ -2051,14 +2080,13 @@ final class APlusSDK implements APlusSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('APlus', 'validateContentDocumentAsinRelations')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('APlus', 'validateContentDocumentAsinRelations'),
                     'Amazon Selling Partner API pre request',
@@ -2094,6 +2122,8 @@ final class APlusSDK implements APlusSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

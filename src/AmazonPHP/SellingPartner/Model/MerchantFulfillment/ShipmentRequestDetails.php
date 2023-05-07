@@ -158,8 +158,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +166,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +175,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +183,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +191,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +202,7 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -276,6 +266,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets amazon_order_id.
+     *
+     * @return string
      */
     public function getAmazonOrderId() : string
     {
@@ -296,6 +288,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -338,6 +332,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ship_from_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -358,6 +354,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets package_dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\PackageDimensions
      */
     public function getPackageDimensions() : PackageDimensions
     {
@@ -378,6 +376,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets weight.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getWeight() : Weight
     {
@@ -398,6 +398,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets must_arrive_by_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getMustArriveByDate() : ?\DateTimeInterface
     {
@@ -418,6 +420,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ship_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getShipDate() : ?\DateTimeInterface
     {
@@ -438,6 +442,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets shipping_service_options.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions
      */
     public function getShippingServiceOptions() : ShippingServiceOptions
     {
@@ -458,6 +464,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets label_customization.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelCustomization
      */
     public function getLabelCustomization() : ?LabelCustomization
     {

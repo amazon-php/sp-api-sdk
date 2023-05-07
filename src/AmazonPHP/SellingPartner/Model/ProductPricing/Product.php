@@ -134,8 +134,6 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -222,6 +212,8 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets identifiers.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\IdentifierType
      */
     public function getIdentifiers() : IdentifierType
     {
@@ -286,6 +278,8 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets competitive_pricing.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePricingType
      */
     public function getCompetitivePricing() : ?CompetitivePricingType
     {

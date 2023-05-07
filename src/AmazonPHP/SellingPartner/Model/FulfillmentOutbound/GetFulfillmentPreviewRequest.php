@@ -140,8 +140,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -228,6 +218,8 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -248,6 +240,8 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getAddress() : Address
     {
@@ -312,6 +306,8 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets include_cod_fulfillment_preview.
+     *
+     * @return null|bool
      */
     public function getIncludeCodFulfillmentPreview() : ?bool
     {
@@ -321,7 +317,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets include_cod_fulfillment_preview.
      *
-     * @param null|bool $include_cod_fulfillment_preview Specifies whether to return fulfillment order previews that are for COD (Cash On Delivery).  Possible values:  * true - Returns all fulfillment order previews (both for COD and not for COD). * false - Returns only fulfillment order previews that are not for COD.
+     * @param null|bool $include_cod_fulfillment_preview When true, returns all fulfillment order previews both for COD and not for COD. Otherwise, returns only fulfillment order previews that are not for COD.
      */
     public function setIncludeCodFulfillmentPreview(?bool $include_cod_fulfillment_preview) : self
     {
@@ -332,6 +328,8 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets include_delivery_windows.
+     *
+     * @return null|bool
      */
     public function getIncludeDeliveryWindows() : ?bool
     {
@@ -341,7 +339,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets include_delivery_windows.
      *
-     * @param null|bool $include_delivery_windows Specifies whether to return the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
+     * @param null|bool $include_delivery_windows When true, returns the ScheduledDeliveryInfo response object, which contains the available delivery windows for a Scheduled Delivery. The ScheduledDeliveryInfo response object can only be returned for fulfillment order previews with ShippingSpeedCategories = ScheduledDelivery.
      */
     public function setIncludeDeliveryWindows(?bool $include_delivery_windows) : self
     {

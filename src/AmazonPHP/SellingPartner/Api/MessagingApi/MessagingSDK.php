@@ -41,6 +41,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsResponse
      */
     public function confirmCustomizationDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsResponse
     {
@@ -50,14 +52,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'confirmCustomizationDetails')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'confirmCustomizationDetails'),
                     'Amazon Selling Partner API pre request',
@@ -93,6 +94,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -265,6 +268,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsResponse
      */
     public function createAmazonMotors(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsResponse
     {
@@ -274,14 +279,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createAmazonMotors')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createAmazonMotors'),
                     'Amazon Selling Partner API pre request',
@@ -317,6 +321,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -489,6 +495,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsResponse
      */
     public function createConfirmDeliveryDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsResponse
     {
@@ -498,14 +506,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createConfirmDeliveryDetails')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createConfirmDeliveryDetails'),
                     'Amazon Selling Partner API pre request',
@@ -541,6 +548,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -713,6 +722,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsResponse
      */
     public function createConfirmOrderDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsResponse
     {
@@ -722,14 +733,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createConfirmOrderDetails')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createConfirmOrderDetails'),
                     'Amazon Selling Partner API pre request',
@@ -765,6 +775,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -937,6 +949,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsResponse
      */
     public function createConfirmServiceDetails(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsResponse
     {
@@ -946,14 +960,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createConfirmServiceDetails')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createConfirmServiceDetails'),
                     'Amazon Selling Partner API pre request',
@@ -989,6 +1002,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1161,6 +1176,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyResponse
      */
     public function createDigitalAccessKey(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyResponse
     {
@@ -1170,14 +1187,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createDigitalAccessKey')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createDigitalAccessKey'),
                     'Amazon Selling Partner API pre request',
@@ -1213,6 +1229,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1385,6 +1403,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureResponse
      */
     public function createLegalDisclosure(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureResponse
     {
@@ -1394,14 +1414,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createLegalDisclosure')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createLegalDisclosure'),
                     'Amazon Selling Partner API pre request',
@@ -1437,6 +1456,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1608,6 +1629,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateNegativeFeedbackRemovalResponse
      */
     public function createNegativeFeedbackRemoval(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Messaging\CreateNegativeFeedbackRemovalResponse
     {
@@ -1617,14 +1640,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createNegativeFeedbackRemoval')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createNegativeFeedbackRemoval'),
                     'Amazon Selling Partner API pre request',
@@ -1660,6 +1682,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1816,6 +1840,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemResponse
      */
     public function createUnexpectedProblem(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemResponse
     {
@@ -1825,14 +1851,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createUnexpectedProblem')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createUnexpectedProblem'),
                     'Amazon Selling Partner API pre request',
@@ -1868,6 +1893,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -2040,6 +2067,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyResponse
      */
     public function createWarranty(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyResponse
     {
@@ -2049,14 +2078,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'createWarranty')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'createWarranty'),
                     'Amazon Selling Partner API pre request',
@@ -2092,6 +2120,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -2263,6 +2293,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponse
      */
     public function getAttributes(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Messaging\GetAttributesResponse
     {
@@ -2272,14 +2304,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'getAttributes')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'getAttributes'),
                     'Amazon Selling Partner API pre request',
@@ -2315,6 +2346,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -2470,6 +2503,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponse
      */
     public function getMessagingActionsForOrder(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : \AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponse
     {
@@ -2479,14 +2514,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'getMessagingActionsForOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'getMessagingActionsForOrder'),
                     'Amazon Selling Partner API pre request',
@@ -2522,6 +2556,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -2678,6 +2714,8 @@ final class MessagingSDK implements MessagingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\InvoiceResponse
      */
     public function sendInvoice(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\InvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\Messaging\InvoiceResponse
     {
@@ -2687,14 +2725,13 @@ final class MessagingSDK implements MessagingSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('Messaging', 'sendInvoice')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('Messaging', 'sendInvoice'),
                     'Amazon Selling Partner API pre request',
@@ -2730,6 +2767,8 @@ final class MessagingSDK implements MessagingSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

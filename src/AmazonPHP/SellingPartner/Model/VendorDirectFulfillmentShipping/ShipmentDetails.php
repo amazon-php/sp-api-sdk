@@ -132,8 +132,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -142,8 +140,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -153,8 +149,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -163,8 +157,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -173,8 +165,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -186,7 +176,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -243,6 +233,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipped_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getShippedDate() : \DateTimeInterface
     {
@@ -263,6 +255,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_status.
+     *
+     * @return string
      */
     public function getShipmentStatus() : string
     {
@@ -283,6 +277,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets is_priority_shipment.
+     *
+     * @return null|bool
      */
     public function getIsPriorityShipment() : ?bool
     {
@@ -303,6 +299,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets vendor_order_number.
+     *
+     * @return null|string
      */
     public function getVendorOrderNumber() : ?string
     {
@@ -323,6 +321,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets estimated_delivery_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getEstimatedDeliveryDate() : ?\DateTimeInterface
     {

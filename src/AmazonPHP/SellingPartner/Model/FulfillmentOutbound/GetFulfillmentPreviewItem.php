@@ -122,8 +122,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -224,6 +214,8 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets seller_sku.
+     *
+     * @return string
      */
     public function getSellerSku() : string
     {
@@ -244,6 +236,8 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
     public function getQuantity() : int
     {
@@ -264,6 +258,8 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -284,6 +280,8 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {

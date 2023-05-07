@@ -134,8 +134,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -248,6 +238,8 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets position.
+     *
+     * @return int
      */
     public function getPosition() : int
     {
@@ -268,6 +260,8 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -288,6 +282,8 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets title.
+     *
+     * @return null|string
      */
     public function getTitle() : ?string
     {
@@ -308,6 +304,8 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -328,6 +326,8 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets highlight.
+     *
+     * @return null|bool
      */
     public function getHighlight() : ?bool
     {

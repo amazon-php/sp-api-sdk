@@ -39,6 +39,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse
      */
     public function getPurchaseOrder(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse
     {
@@ -48,14 +50,13 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorOrders', 'getPurchaseOrder')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorOrders', 'getPurchaseOrder'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -236,6 +239,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse
      */
     public function getPurchaseOrders(AccessToken $accessToken, string $region, ?int $limit = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?string $sort_order = null, ?string $next_token = null, ?bool $include_details = null, ?\DateTimeInterface $changed_after = null, ?\DateTimeInterface $changed_before = null, ?string $po_item_state = null, ?bool $is_po_changed = null, ?string $purchase_order_state = null, ?string $ordering_vendor_code = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse
     {
@@ -245,14 +250,13 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorOrders', 'getPurchaseOrders')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorOrders', 'getPurchaseOrders'),
                     'Amazon Selling Partner API pre request',
@@ -288,6 +292,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -534,6 +540,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse
      */
     public function getPurchaseOrdersStatus(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $updated_after = null, ?\DateTimeInterface $updated_before = null, ?string $purchase_order_number = null, ?string $purchase_order_status = null, ?string $item_confirmation_status = null, ?string $item_receive_status = null, ?string $ordering_vendor_code = null, ?string $ship_to_party_id = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse
     {
@@ -543,14 +551,13 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorOrders', 'getPurchaseOrdersStatus')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorOrders', 'getPurchaseOrdersStatus'),
                     'Amazon Selling Partner API pre request',
@@ -586,6 +593,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -829,6 +838,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse
      */
     public function submitAcknowledgement(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body) : \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse
     {
@@ -838,14 +849,13 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorOrders', 'submitAcknowledgement')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorOrders', 'submitAcknowledgement'),
                     'Amazon Selling Partner API pre request',
@@ -881,6 +891,8 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

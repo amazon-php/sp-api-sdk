@@ -139,7 +139,7 @@ interface ReportsSDKInterface
     /**
      * Operation getReportSchedules.
      *
-     * @param string[] $report_types A list of report types used to filter report schedules. (required)
+     * @param string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -151,7 +151,7 @@ interface ReportsSDKInterface
     /**
      * Operation getReports.
      *
-     * @param null|string[] $report_types A list of report types used to filter reports. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
+     * @param null|string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
      * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)

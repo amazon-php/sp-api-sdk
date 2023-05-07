@@ -164,8 +164,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -174,8 +172,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -185,8 +181,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -195,8 +189,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -205,8 +197,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -218,7 +208,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -262,6 +252,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets item_sequence_number.
+     *
+     * @return int
      */
     public function getItemSequenceNumber() : int
     {
@@ -282,6 +274,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets amazon_product_identifier.
+     *
+     * @return null|string
      */
     public function getAmazonProductIdentifier() : ?string
     {
@@ -302,6 +296,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets vendor_product_identifier.
+     *
+     * @return null|string
      */
     public function getVendorProductIdentifier() : ?string
     {
@@ -322,6 +318,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets invoiced_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -342,6 +340,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets net_cost.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getNetCost() : Money
     {
@@ -362,6 +362,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets purchase_order_number.
+     *
+     * @return null|string
      */
     public function getPurchaseOrderNumber() : ?string
     {
@@ -382,6 +384,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets hsn_code.
+     *
+     * @return null|string
      */
     public function getHsnCode() : ?string
     {
@@ -402,6 +406,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets credit_note_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\CreditNoteDetails
      */
     public function getCreditNoteDetails() : ?CreditNoteDetails
     {

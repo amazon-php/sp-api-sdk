@@ -122,8 +122,6 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -220,6 +210,8 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets number_of_results.
+     *
+     * @return int
      */
     public function getNumberOfResults() : int
     {
@@ -240,8 +232,10 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets pagination.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Pagination
      */
-    public function getPagination() : ?Pagination
+    public function getPagination() : Pagination
     {
         return $this->container['pagination'];
     }
@@ -260,8 +254,10 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets refinements.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Refinements
      */
-    public function getRefinements() : ?Refinements
+    public function getRefinements() : Refinements
     {
         return $this->container['refinements'];
     }

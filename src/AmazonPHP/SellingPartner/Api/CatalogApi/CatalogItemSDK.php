@@ -42,6 +42,8 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Item
      */
     public function getCatalogItem(AccessToken $accessToken, string $region, string $asin, array $marketplace_ids, ?array $included_data = null, ?string $locale = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\Item
     {
@@ -51,14 +53,13 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('CatalogItem', 'getCatalogItem')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('CatalogItem', 'getCatalogItem'),
                     'Amazon Selling Partner API pre request',
@@ -94,6 +95,8 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -273,6 +276,8 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults
      */
     public function searchCatalogItems(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, ?array $included_data = null, ?string $locale = null, ?string $seller_id = null, ?array $keywords = null, ?array $brand_names = null, ?array $classification_ids = null, int $page_size = 10, ?string $page_token = null, ?string $keywords_locale = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults
     {
@@ -282,14 +287,13 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('CatalogItem', 'searchCatalogItems')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('CatalogItem', 'searchCatalogItems'),
                     'Amazon Selling Partner API pre request',
@@ -325,6 +329,8 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

@@ -154,8 +154,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -164,8 +162,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -175,8 +171,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -185,8 +179,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -195,8 +187,6 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -208,7 +198,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -275,6 +265,8 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets amazon_shipment_id.
+     *
+     * @return string
      */
     public function getAmazonShipmentId() : string
     {
@@ -295,6 +287,8 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_center_id.
+     *
+     * @return string
      */
     public function getFulfillmentCenterId() : string
     {
@@ -315,6 +309,8 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_shipment_status.
+     *
+     * @return string
      */
     public function getFulfillmentShipmentStatus() : string
     {
@@ -335,6 +331,8 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipping_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getShippingDate() : ?\DateTimeInterface
     {
@@ -355,6 +353,8 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets estimated_arrival_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {

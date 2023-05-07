@@ -122,8 +122,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -212,6 +202,8 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets status.
+     *
+     * @return null|string
      */
     public function getStatus() : ?string
     {
@@ -232,6 +224,8 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fees_estimate_identifier.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateIdentifier
      */
     public function getFeesEstimateIdentifier() : ?FeesEstimateIdentifier
     {
@@ -252,6 +246,8 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fees_estimate.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimate
      */
     public function getFeesEstimate() : ?FeesEstimate
     {
@@ -272,6 +268,8 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets error.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateError
      */
     public function getError() : ?FeesEstimateError
     {

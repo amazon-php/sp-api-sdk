@@ -39,6 +39,8 @@ final class VendorDirectFulfillmentTransactionsSDK implements VendorDirectFulfil
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus
      */
     public function getTransactionStatus(AccessToken $accessToken, string $region, string $transaction_id) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\TransactionStatus
     {
@@ -48,14 +50,13 @@ final class VendorDirectFulfillmentTransactionsSDK implements VendorDirectFulfil
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentTransactions', 'getTransactionStatus')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentTransactions', 'getTransactionStatus'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class VendorDirectFulfillmentTransactionsSDK implements VendorDirectFulfil
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

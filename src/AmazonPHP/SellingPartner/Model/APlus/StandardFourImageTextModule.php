@@ -128,8 +128,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -226,6 +216,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -246,6 +238,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block1.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock1() : ?StandardImageTextBlock
     {
@@ -266,6 +260,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block2.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock2() : ?StandardImageTextBlock
     {
@@ -286,6 +282,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block3.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock3() : ?StandardImageTextBlock
     {
@@ -306,6 +304,8 @@ class StandardFourImageTextModule implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block4.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock4() : ?StandardImageTextBlock
     {

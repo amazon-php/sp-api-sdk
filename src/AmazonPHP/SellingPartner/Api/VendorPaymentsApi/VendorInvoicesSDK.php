@@ -39,6 +39,8 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesResponse
      */
     public function submitInvoices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body) : \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesResponse
     {
@@ -48,14 +50,13 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorInvoices', 'submitInvoices')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorInvoices', 'submitInvoices'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

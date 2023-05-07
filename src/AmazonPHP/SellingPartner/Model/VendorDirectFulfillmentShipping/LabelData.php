@@ -128,8 +128,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -210,6 +200,8 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets package_identifier.
+     *
+     * @return null|string
      */
     public function getPackageIdentifier() : ?string
     {
@@ -230,6 +222,8 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tracking_number.
+     *
+     * @return null|string
      */
     public function getTrackingNumber() : ?string
     {
@@ -250,6 +244,8 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ship_method.
+     *
+     * @return null|string
      */
     public function getShipMethod() : ?string
     {
@@ -270,6 +266,8 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ship_method_name.
+     *
+     * @return null|string
      */
     public function getShipMethodName() : ?string
     {
@@ -290,6 +288,8 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets content.
+     *
+     * @return string
      */
     public function getContent() : string
     {

@@ -152,8 +152,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -162,8 +160,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -173,8 +169,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -183,8 +177,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -193,8 +185,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -206,7 +196,7 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -270,6 +260,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets seller_sku.
+     *
+     * @return string
      */
     public function getSellerSku() : string
     {
@@ -290,6 +282,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -310,6 +304,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
     public function getQuantity() : int
     {
@@ -330,6 +326,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets gift_message.
+     *
+     * @return null|string
      */
     public function getGiftMessage() : ?string
     {
@@ -350,6 +348,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets displayable_comment.
+     *
+     * @return null|string
      */
     public function getDisplayableComment() : ?string
     {
@@ -370,6 +370,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets fulfillment_network_sku.
+     *
+     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -390,6 +392,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -410,6 +414,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -430,6 +436,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {

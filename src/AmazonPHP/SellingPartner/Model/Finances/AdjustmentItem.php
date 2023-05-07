@@ -140,8 +140,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -226,6 +216,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets quantity.
+     *
+     * @return null|string
      */
     public function getQuantity() : ?string
     {
@@ -246,6 +238,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets per_unit_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getPerUnitAmount() : ?Currency
     {
@@ -266,6 +260,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets total_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {
@@ -286,6 +282,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets seller_sku.
+     *
+     * @return null|string
      */
     public function getSellerSku() : ?string
     {
@@ -306,6 +304,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets fn_sku.
+     *
+     * @return null|string
      */
     public function getFnSku() : ?string
     {
@@ -326,6 +326,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets product_description.
+     *
+     * @return null|string
      */
     public function getProductDescription() : ?string
     {
@@ -346,6 +348,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {

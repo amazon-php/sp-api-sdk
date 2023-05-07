@@ -41,6 +41,8 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
      */
     public function getItemEligibilityPreview(AccessToken $accessToken, string $region, string $asin, string $program, ?array $marketplace_ids = null) : \AmazonPHP\SellingPartner\Model\FBAInbound\GetItemEligibilityPreviewResponse
     {
@@ -50,14 +52,13 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('FBAInbound', 'getItemEligibilityPreview')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('FBAInbound', 'getItemEligibilityPreview'),
                     'Amazon Selling Partner API pre request',
@@ -93,6 +94,8 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

@@ -122,8 +122,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -132,8 +130,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -143,8 +139,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -153,8 +147,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -163,8 +155,6 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -176,7 +166,7 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -216,6 +206,8 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets headers.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders
      */
     public function getHeaders() : ?HttpResponseHeaders
     {
@@ -236,6 +228,8 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine
      */
     public function getStatus() : ?GetOffersHttpStatusLine
     {
@@ -256,6 +250,8 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets body.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getBody() : GetOffersResponse
     {
@@ -276,6 +272,8 @@ class ItemOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets request.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersRequestParams
      */
     public function getRequest() : ItemOffersRequestParams
     {

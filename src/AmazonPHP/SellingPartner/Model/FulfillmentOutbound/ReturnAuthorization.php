@@ -128,8 +128,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -228,6 +218,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets return_authorization_id.
+     *
+     * @return string
      */
     public function getReturnAuthorizationId() : string
     {
@@ -248,6 +240,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets fulfillment_center_id.
+     *
+     * @return string
      */
     public function getFulfillmentCenterId() : string
     {
@@ -268,6 +262,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets return_to_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getReturnToAddress() : Address
     {
@@ -288,6 +284,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets amazon_rma_id.
+     *
+     * @return string
      */
     public function getAmazonRmaId() : string
     {
@@ -308,6 +306,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets rma_page_url.
+     *
+     * @return string
      */
     public function getRmaPageUrl() : string
     {

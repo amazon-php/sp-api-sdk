@@ -158,8 +158,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -168,8 +166,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -179,8 +175,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -189,8 +183,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -199,8 +191,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -212,7 +202,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets provider_transaction_type.
+     *
+     * @return null|string
      */
     public function getProviderTransactionType() : ?string
     {
@@ -260,6 +252,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets seller_order_id.
+     *
+     * @return null|string
      */
     public function getSellerOrderId() : ?string
     {
@@ -280,6 +274,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets marketplace_id.
+     *
+     * @return null|string
      */
     public function getMarketplaceId() : ?string
     {
@@ -300,6 +296,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets marketplace_country_code.
+     *
+     * @return null|string
      */
     public function getMarketplaceCountryCode() : ?string
     {
@@ -320,6 +318,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets seller_id.
+     *
+     * @return null|string
      */
     public function getSellerId() : ?string
     {
@@ -340,6 +340,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets seller_store_name.
+     *
+     * @return null|string
      */
     public function getSellerStoreName() : ?string
     {
@@ -360,6 +362,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets provider_id.
+     *
+     * @return null|string
      */
     public function getProviderId() : ?string
     {
@@ -380,6 +384,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets provider_store_name.
+     *
+     * @return null|string
      */
     public function getProviderStoreName() : ?string
     {
@@ -400,6 +406,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {
@@ -420,6 +428,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets transaction_creation_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getTransactionCreationDate() : ?\DateTimeInterface
     {

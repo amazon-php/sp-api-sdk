@@ -128,8 +128,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -214,6 +204,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets asin.
+     *
+     * @return null|string
      */
     public function getAsin() : ?string
     {
@@ -234,6 +226,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType
      */
     public function getPrice() : ?MoneyType
     {
@@ -276,6 +270,8 @@ class FeePreview implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets total_fees.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBASmallAndLight\MoneyType
      */
     public function getTotalFees() : ?MoneyType
     {

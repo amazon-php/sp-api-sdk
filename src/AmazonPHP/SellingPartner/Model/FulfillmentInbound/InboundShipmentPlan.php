@@ -134,8 +134,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -238,6 +228,8 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_id.
+     *
+     * @return string
      */
     public function getShipmentId() : string
     {
@@ -258,6 +250,8 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets destination_fulfillment_center_id.
+     *
+     * @return string
      */
     public function getDestinationFulfillmentCenterId() : string
     {
@@ -278,6 +272,8 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets ship_to_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address
      */
     public function getShipToAddress() : Address
     {
@@ -298,6 +294,8 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets label_prep_type.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelPrepType
      */
     public function getLabelPrepType() : LabelPrepType
     {
@@ -340,6 +338,8 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets estimated_box_contents_fee.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentsFeeDetails
      */
     public function getEstimatedBoxContentsFee() : ?BoxContentsFeeDetails
     {

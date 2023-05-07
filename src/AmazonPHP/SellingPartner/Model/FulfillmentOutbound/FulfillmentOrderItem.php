@@ -182,8 +182,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -192,8 +190,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -203,8 +199,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -213,8 +207,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -223,8 +215,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -236,7 +226,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -292,6 +282,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets seller_sku.
+     *
+     * @return string
      */
     public function getSellerSku() : string
     {
@@ -312,6 +304,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets seller_fulfillment_order_item_id.
+     *
+     * @return string
      */
     public function getSellerFulfillmentOrderItemId() : string
     {
@@ -332,6 +326,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets quantity.
+     *
+     * @return int
      */
     public function getQuantity() : int
     {
@@ -352,6 +348,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets gift_message.
+     *
+     * @return null|string
      */
     public function getGiftMessage() : ?string
     {
@@ -372,6 +370,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets displayable_comment.
+     *
+     * @return null|string
      */
     public function getDisplayableComment() : ?string
     {
@@ -392,6 +392,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets fulfillment_network_sku.
+     *
+     * @return null|string
      */
     public function getFulfillmentNetworkSku() : ?string
     {
@@ -412,6 +414,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets order_item_disposition.
+     *
+     * @return null|string
      */
     public function getOrderItemDisposition() : ?string
     {
@@ -432,6 +436,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets cancelled_quantity.
+     *
+     * @return int
      */
     public function getCancelledQuantity() : int
     {
@@ -452,6 +458,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets unfulfillable_quantity.
+     *
+     * @return int
      */
     public function getUnfulfillableQuantity() : int
     {
@@ -472,6 +480,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets estimated_ship_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getEstimatedShipDate() : ?\DateTimeInterface
     {
@@ -492,6 +502,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets estimated_arrival_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getEstimatedArrivalDate() : ?\DateTimeInterface
     {
@@ -512,6 +524,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -532,6 +546,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {
@@ -552,6 +568,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {

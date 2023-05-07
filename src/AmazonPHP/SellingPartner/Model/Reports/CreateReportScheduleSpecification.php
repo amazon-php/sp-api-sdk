@@ -164,8 +164,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -174,8 +172,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -185,8 +181,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -195,8 +189,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -205,8 +197,6 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -218,7 +208,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -303,6 +293,8 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets report_type.
+     *
+     * @return string
      */
     public function getReportType() : string
     {
@@ -312,7 +304,7 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
     /**
      * Sets report_type.
      *
-     * @param string $report_type the report type
+     * @param string $report_type The report type. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information.
      */
     public function setReportType(string $report_type) : self
     {
@@ -367,6 +359,8 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets period.
+     *
+     * @return string
      */
     public function getPeriod() : string
     {
@@ -387,6 +381,8 @@ class CreateReportScheduleSpecification implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets next_report_creation_time.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getNextReportCreationTime() : ?\DateTimeInterface
     {

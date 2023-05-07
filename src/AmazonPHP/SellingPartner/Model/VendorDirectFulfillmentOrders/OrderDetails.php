@@ -166,8 +166,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -176,8 +174,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -187,8 +183,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -197,8 +191,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -207,8 +199,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -220,7 +210,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -317,6 +307,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets customer_order_number.
+     *
+     * @return string
      */
     public function getCustomerOrderNumber() : string
     {
@@ -337,6 +329,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets order_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getOrderDate() : \DateTimeInterface
     {
@@ -357,6 +351,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets order_status.
+     *
+     * @return null|string
      */
     public function getOrderStatus() : ?string
     {
@@ -377,6 +373,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets shipment_details.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDetails
      */
     public function getShipmentDetails() : ShipmentDetails
     {
@@ -397,6 +395,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets tax_total.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails
      */
     public function getTaxTotal() : ?TaxItemDetails
     {
@@ -417,6 +417,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -437,6 +439,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets ship_from_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -457,6 +461,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets ship_to_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Address
      */
     public function getShipToParty() : Address
     {
@@ -477,6 +483,8 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets bill_to_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getBillToParty() : PartyIdentification
     {

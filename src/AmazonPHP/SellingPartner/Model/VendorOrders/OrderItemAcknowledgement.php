@@ -140,8 +140,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -280,6 +270,8 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledgement_code.
+     *
+     * @return string
      */
     public function getAcknowledgementCode() : string
     {
@@ -300,6 +292,8 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledged_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getAcknowledgedQuantity() : ItemQuantity
     {
@@ -320,6 +314,8 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets scheduled_ship_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getScheduledShipDate() : ?\DateTimeInterface
     {
@@ -340,6 +336,8 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets scheduled_delivery_date.
+     *
+     * @return null|\DateTimeInterface
      */
     public function getScheduledDeliveryDate() : ?\DateTimeInterface
     {
@@ -360,6 +358,8 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets rejection_reason.
+     *
+     * @return null|string
      */
     public function getRejectionReason() : ?string
     {

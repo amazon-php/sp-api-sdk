@@ -27,6 +27,12 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 {
     final public const DISCRIMINATOR = null;
 
+    final public const SHIP_MODE_TRUCK_LOAD = 'TruckLoad';
+
+    final public const SHIP_MODE_LESS_THAN_TRUCK_LOAD = 'LessThanTruckLoad';
+
+    final public const SHIP_MODE_SMALL_PARCEL = 'SmallParcel';
+
     final public const TRANSPORTATION_MODE_ROAD = 'Road';
 
     final public const TRANSPORTATION_MODE_AIR = 'Air';
@@ -46,9 +52,12 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'carrier_scac' => 'string',
-        'carrier_shipment_reference_number' => 'string',
+        'ship_mode' => 'string',
         'transportation_mode' => 'string',
+        'shipped_date' => '\DateTimeInterface',
+        'estimated_delivery_date' => '\DateTimeInterface',
+        'shipment_delivery_date' => '\DateTimeInterface',
+        'carrier_details' => '\AmazonPHP\SellingPartner\Model\VendorShipments\CarrierDetails',
         'bill_of_lading_number' => 'string',
     ];
 
@@ -62,9 +71,12 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'carrier_scac' => null,
-        'carrier_shipment_reference_number' => null,
+        'ship_mode' => null,
         'transportation_mode' => null,
+        'shipped_date' => 'date-time',
+        'estimated_delivery_date' => 'date-time',
+        'shipment_delivery_date' => 'date-time',
+        'carrier_details' => null,
         'bill_of_lading_number' => null,
     ];
 
@@ -75,9 +87,12 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      * @var string[]
      */
     protected static array $attributeMap = [
-        'carrier_scac' => 'carrierScac',
-        'carrier_shipment_reference_number' => 'carrierShipmentReferenceNumber',
+        'ship_mode' => 'shipMode',
         'transportation_mode' => 'transportationMode',
+        'shipped_date' => 'shippedDate',
+        'estimated_delivery_date' => 'estimatedDeliveryDate',
+        'shipment_delivery_date' => 'shipmentDeliveryDate',
+        'carrier_details' => 'carrierDetails',
         'bill_of_lading_number' => 'billOfLadingNumber',
     ];
 
@@ -87,9 +102,12 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      * @var string[]
      */
     protected static array $setters = [
-        'carrier_scac' => 'setCarrierScac',
-        'carrier_shipment_reference_number' => 'setCarrierShipmentReferenceNumber',
+        'ship_mode' => 'setShipMode',
         'transportation_mode' => 'setTransportationMode',
+        'shipped_date' => 'setShippedDate',
+        'estimated_delivery_date' => 'setEstimatedDeliveryDate',
+        'shipment_delivery_date' => 'setShipmentDeliveryDate',
+        'carrier_details' => 'setCarrierDetails',
         'bill_of_lading_number' => 'setBillOfLadingNumber',
     ];
 
@@ -99,9 +117,12 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      * @var string[]
      */
     protected static array $getters = [
-        'carrier_scac' => 'getCarrierScac',
-        'carrier_shipment_reference_number' => 'getCarrierShipmentReferenceNumber',
+        'ship_mode' => 'getShipMode',
         'transportation_mode' => 'getTransportationMode',
+        'shipped_date' => 'getShippedDate',
+        'estimated_delivery_date' => 'getEstimatedDeliveryDate',
+        'shipment_delivery_date' => 'getShipmentDeliveryDate',
+        'carrier_details' => 'getCarrierDetails',
         'bill_of_lading_number' => 'getBillOfLadingNumber',
     ];
 
@@ -120,16 +141,17 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __construct(array $data = null)
     {
-        $this->container['carrier_scac'] = $data['carrier_scac'] ?? null;
-        $this->container['carrier_shipment_reference_number'] = $data['carrier_shipment_reference_number'] ?? null;
+        $this->container['ship_mode'] = $data['ship_mode'] ?? null;
         $this->container['transportation_mode'] = $data['transportation_mode'] ?? null;
+        $this->container['shipped_date'] = $data['shipped_date'] ?? null;
+        $this->container['estimated_delivery_date'] = $data['estimated_delivery_date'] ?? null;
+        $this->container['shipment_delivery_date'] = $data['shipment_delivery_date'] ?? null;
+        $this->container['carrier_details'] = $data['carrier_details'] ?? null;
         $this->container['bill_of_lading_number'] = $data['bill_of_lading_number'] ?? null;
     }
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +160,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +169,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +177,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +185,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +196,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -194,6 +208,20 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
     public function getModelName() : string
     {
         return self::$openAPIModelName;
+    }
+
+    /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getShipModeAllowableValues() : array
+    {
+        return [
+            self::SHIP_MODE_TRUCK_LOAD,
+            self::SHIP_MODE_LESS_THAN_TRUCK_LOAD,
+            self::SHIP_MODE_SMALL_PARCEL,
+        ];
     }
 
     /**
@@ -217,6 +245,18 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function validate() : void
     {
+        $allowedValues = $this->getShipModeAllowableValues();
+
+        if (null !== $this->container['ship_mode'] && !\in_array($this->container['ship_mode'], $allowedValues, true)) {
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'ship_mode', must be one of '%s'",
+                    $this->container['ship_mode'],
+                    \implode("', '", $allowedValues)
+                )
+            );
+        }
+
         $allowedValues = $this->getTransportationModeAllowableValues();
 
         if (null !== $this->container['transportation_mode'] && !\in_array($this->container['transportation_mode'], $allowedValues, true)) {
@@ -228,50 +268,38 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
                 )
             );
         }
+
+        if ($this->container['carrier_details'] !== null) {
+            $this->container['carrier_details']->validate();
+        }
     }
 
     /**
-     * Gets carrier_scac.
-     */
-    public function getCarrierScac() : ?string
-    {
-        return $this->container['carrier_scac'];
-    }
-
-    /**
-     * Sets carrier_scac.
+     * Gets ship_mode.
      *
-     * @param null|string $carrier_scac Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
+     * @return null|string
      */
-    public function setCarrierScac(?string $carrier_scac) : self
+    public function getShipMode() : ?string
     {
-        $this->container['carrier_scac'] = $carrier_scac;
-
-        return $this;
+        return $this->container['ship_mode'];
     }
 
     /**
-     * Gets carrier_shipment_reference_number.
-     */
-    public function getCarrierShipmentReferenceNumber() : ?string
-    {
-        return $this->container['carrier_shipment_reference_number'];
-    }
-
-    /**
-     * Sets carrier_shipment_reference_number.
+     * Sets ship_mode.
      *
-     * @param null|string $carrier_shipment_reference_number The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
+     * @param null|string $ship_mode the type of shipment
      */
-    public function setCarrierShipmentReferenceNumber(?string $carrier_shipment_reference_number) : self
+    public function setShipMode(?string $ship_mode) : self
     {
-        $this->container['carrier_shipment_reference_number'] = $carrier_shipment_reference_number;
+        $this->container['ship_mode'] = $ship_mode;
 
         return $this;
     }
 
     /**
      * Gets transportation_mode.
+     *
+     * @return null|string
      */
     public function getTransportationMode() : ?string
     {
@@ -291,7 +319,97 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
     }
 
     /**
+     * Gets shipped_date.
+     *
+     * @return null|\DateTimeInterface
+     */
+    public function getShippedDate() : ?\DateTimeInterface
+    {
+        return $this->container['shipped_date'];
+    }
+
+    /**
+     * Sets shipped_date.
+     *
+     * @param null|\DateTimeInterface $shipped_date Date when shipment is performed by the Vendor to Buyer
+     */
+    public function setShippedDate(?\DateTimeInterface $shipped_date) : self
+    {
+        $this->container['shipped_date'] = $shipped_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets estimated_delivery_date.
+     *
+     * @return null|\DateTimeInterface
+     */
+    public function getEstimatedDeliveryDate() : ?\DateTimeInterface
+    {
+        return $this->container['estimated_delivery_date'];
+    }
+
+    /**
+     * Sets estimated_delivery_date.
+     *
+     * @param null|\DateTimeInterface $estimated_delivery_date Estimated Date on which shipment will be delivered from Vendor to Buyer
+     */
+    public function setEstimatedDeliveryDate(?\DateTimeInterface $estimated_delivery_date) : self
+    {
+        $this->container['estimated_delivery_date'] = $estimated_delivery_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipment_delivery_date.
+     *
+     * @return null|\DateTimeInterface
+     */
+    public function getShipmentDeliveryDate() : ?\DateTimeInterface
+    {
+        return $this->container['shipment_delivery_date'];
+    }
+
+    /**
+     * Sets shipment_delivery_date.
+     *
+     * @param null|\DateTimeInterface $shipment_delivery_date Date on which shipment will be delivered from Vendor to Buyer
+     */
+    public function setShipmentDeliveryDate(?\DateTimeInterface $shipment_delivery_date) : self
+    {
+        $this->container['shipment_delivery_date'] = $shipment_delivery_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets carrier_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CarrierDetails
+     */
+    public function getCarrierDetails() : ?CarrierDetails
+    {
+        return $this->container['carrier_details'];
+    }
+
+    /**
+     * Sets carrier_details.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\CarrierDetails $carrier_details carrier_details
+     */
+    public function setCarrierDetails(?CarrierDetails $carrier_details) : self
+    {
+        $this->container['carrier_details'] = $carrier_details;
+
+        return $this;
+    }
+
+    /**
      * Gets bill_of_lading_number.
+     *
+     * @return null|string
      */
     public function getBillOfLadingNumber() : ?string
     {

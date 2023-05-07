@@ -39,6 +39,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse
      */
     public function cancelShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse
     {
@@ -48,14 +50,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'cancelShipment')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'cancelShipment'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -229,6 +232,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse
      */
     public function cancelShipmentOld(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse
     {
@@ -238,14 +243,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'cancelShipmentOld')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'cancelShipmentOld'),
                     'Amazon Selling Partner API pre request',
@@ -281,6 +285,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -419,6 +425,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentResponse
      */
     public function createShipment(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentResponse
     {
@@ -428,14 +436,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'createShipment')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'createShipment'),
                     'Amazon Selling Partner API pre request',
@@ -471,6 +478,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -604,6 +613,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
      */
     public function getAdditionalSellerInputs(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
     {
@@ -613,14 +624,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getAdditionalSellerInputs')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'getAdditionalSellerInputs'),
                     'Amazon Selling Partner API pre request',
@@ -656,6 +666,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -789,6 +801,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
      */
     public function getAdditionalSellerInputsOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
     {
@@ -798,14 +812,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getAdditionalSellerInputsOld')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'getAdditionalSellerInputsOld'),
                     'Amazon Selling Partner API pre request',
@@ -841,6 +854,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -974,6 +989,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
      */
     public function getEligibleShipmentServices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
     {
@@ -983,14 +1000,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getEligibleShipmentServices')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'getEligibleShipmentServices'),
                     'Amazon Selling Partner API pre request',
@@ -1026,6 +1042,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1159,6 +1177,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
      */
     public function getEligibleShipmentServicesOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
     {
@@ -1168,14 +1188,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getEligibleShipmentServicesOld')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'getEligibleShipmentServicesOld'),
                     'Amazon Selling Partner API pre request',
@@ -1211,6 +1230,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }
@@ -1344,6 +1365,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetShipmentResponse
      */
     public function getShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetShipmentResponse
     {
@@ -1353,14 +1376,13 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getShipment')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('MerchantFulfillment', 'getShipment'),
                     'Amazon Selling Partner API pre request',
@@ -1396,6 +1418,8 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

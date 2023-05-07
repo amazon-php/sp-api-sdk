@@ -194,8 +194,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -204,8 +202,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -215,8 +211,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -225,8 +219,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -235,8 +227,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -248,7 +238,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -322,6 +312,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets seller_fulfillment_order_id.
+     *
+     * @return string
      */
     public function getSellerFulfillmentOrderId() : string
     {
@@ -342,6 +334,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets marketplace_id.
+     *
+     * @return string
      */
     public function getMarketplaceId() : string
     {
@@ -362,6 +356,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets displayable_order_id.
+     *
+     * @return string
      */
     public function getDisplayableOrderId() : string
     {
@@ -382,6 +378,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets displayable_order_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getDisplayableOrderDate() : \DateTimeInterface
     {
@@ -402,6 +400,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets displayable_order_comment.
+     *
+     * @return string
      */
     public function getDisplayableOrderComment() : string
     {
@@ -422,6 +422,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ShippingSpeedCategory
     {
@@ -442,6 +444,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets delivery_window.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryWindow
      */
     public function getDeliveryWindow() : ?DeliveryWindow
     {
@@ -462,6 +466,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets destination_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getDestinationAddress() : Address
     {
@@ -482,6 +488,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_action.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction
      */
     public function getFulfillmentAction() : ?FulfillmentAction
     {
@@ -502,6 +510,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_policy.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy
      */
     public function getFulfillmentPolicy() : ?FulfillmentPolicy
     {
@@ -522,6 +532,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets cod_settings.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CODSettings
      */
     public function getCodSettings() : ?CODSettings
     {
@@ -542,6 +554,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets received_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getReceivedDate() : \DateTimeInterface
     {
@@ -562,6 +576,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_order_status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrderStatus
      */
     public function getFulfillmentOrderStatus() : FulfillmentOrderStatus
     {
@@ -582,6 +598,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets status_updated_date.
+     *
+     * @return \DateTimeInterface
      */
     public function getStatusUpdatedDate() : \DateTimeInterface
     {

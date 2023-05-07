@@ -134,8 +134,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -144,8 +142,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -155,8 +151,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -165,8 +159,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -175,8 +167,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -188,7 +178,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -228,6 +218,8 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus
      */
     public function getStatus() : VerificationStatus
     {
@@ -248,6 +240,8 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets requires_merchant_action.
+     *
+     * @return bool
      */
     public function getRequiresMerchantAction() : bool
     {
@@ -290,6 +284,8 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets rejection_reason.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\RejectionReason
      */
     public function getRejectionReason() : ?RejectionReason
     {
@@ -310,6 +306,8 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets review_date.
+     *
+     * @return null|string
      */
     public function getReviewDate() : ?string
     {
@@ -330,6 +328,8 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets external_reviewer_id.
+     *
+     * @return null|string
      */
     public function getExternalReviewerId() : ?string
     {

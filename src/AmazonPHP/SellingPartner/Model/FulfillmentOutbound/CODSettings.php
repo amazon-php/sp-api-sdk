@@ -128,8 +128,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -138,8 +136,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -149,8 +145,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -159,8 +153,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -169,8 +161,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -182,7 +172,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -226,6 +216,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets is_cod_required.
+     *
+     * @return bool
      */
     public function getIsCodRequired() : bool
     {
@@ -246,6 +238,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets cod_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getCodCharge() : ?Money
     {
@@ -266,6 +260,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets cod_charge_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getCodChargeTax() : ?Money
     {
@@ -286,6 +282,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getShippingCharge() : ?Money
     {
@@ -306,6 +304,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping_charge_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getShippingChargeTax() : ?Money
     {

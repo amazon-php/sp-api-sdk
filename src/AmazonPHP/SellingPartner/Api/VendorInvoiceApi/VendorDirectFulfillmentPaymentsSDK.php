@@ -39,6 +39,8 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceResponse
      */
     public function submitInvoice(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceResponse
     {
@@ -48,14 +50,13 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
 
         try {
             $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
 
             if ($this->configuration->loggingEnabled('VendorDirectFulfillmentPayments', 'submitInvoice')) {
-                $sanitizedRequest = $request;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-                }
-
                 $this->logger->log(
                     $this->configuration->logLevel('VendorDirectFulfillmentPayments', 'submitInvoice'),
                     'Amazon Selling Partner API pre request',
@@ -91,6 +92,8 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
                         'response_body' => (string) $sanitizedResponse->getBody(),
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
                     ]
                 );
             }

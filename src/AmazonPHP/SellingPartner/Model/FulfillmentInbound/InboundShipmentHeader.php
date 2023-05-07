@@ -140,8 +140,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
-     *
-     * @return string[]
      */
     public static function openAPITypes() : array
     {
@@ -150,8 +148,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of property to format mappings. Used for (de)serialization.
-     *
-     * @return null[]|string[]
      */
     public static function openAPIFormats() : array
     {
@@ -161,8 +157,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Array of attributes where the key is the local name,
      * and the value is the original name.
-     *
-     * @return string[]
      */
     public static function attributeMap() : array
     {
@@ -171,8 +165,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to setter functions (for deserialization of responses).
-     *
-     * @return string[]
      */
     public static function setters() : array
     {
@@ -181,8 +173,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Array of attributes to getter functions (for serialization of requests).
-     *
-     * @return string[]
      */
     public static function getters() : array
     {
@@ -194,7 +184,7 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
      */
     public function __toString() : string
     {
-        return \json_encode(
+        return (string) \json_encode(
             ObjectSerializer::sanitizeForSerialization($this),
             JSON_PRETTY_PRINT
         );
@@ -240,6 +230,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_name.
+     *
+     * @return string
      */
     public function getShipmentName() : string
     {
@@ -260,6 +252,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets ship_from_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -280,6 +274,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets destination_fulfillment_center_id.
+     *
+     * @return string
      */
     public function getDestinationFulfillmentCenterId() : string
     {
@@ -300,6 +296,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets are_cases_required.
+     *
+     * @return null|bool
      */
     public function getAreCasesRequired() : ?bool
     {
@@ -320,6 +318,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentStatus
      */
     public function getShipmentStatus() : ShipmentStatus
     {
@@ -340,6 +340,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets label_prep_preference.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelPrepPreference
      */
     public function getLabelPrepPreference() : LabelPrepPreference
     {
@@ -360,6 +362,8 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets intended_box_contents_source.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\IntendedBoxContentsSource
      */
     public function getIntendedBoxContentsSource() : ?IntendedBoxContentsSource
     {
