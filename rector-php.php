@@ -173,6 +173,7 @@ return static function (RectorConfig $config): void {
             new NullableReturnTypeDeclaration(Pallet::class, 'getIsStacked'),
             new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getCarrierName'),
             new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getProNumber'),
+            new NullableReturnTypeDeclaration(PartneredSmallParcelPackageOutput::class, 'getCarrierName'),
             /**
              * Listings API
              */
