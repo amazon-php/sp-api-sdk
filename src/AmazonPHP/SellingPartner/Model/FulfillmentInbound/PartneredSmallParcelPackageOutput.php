@@ -271,7 +271,7 @@ class PartneredSmallParcelPackageOutput implements \ArrayAccess, \JsonSerializab
     /**
      * Gets carrier_name.
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }

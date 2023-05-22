@@ -235,8 +235,6 @@ class UploadDestination implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets headers.
-     *
-     * @return null|object
      */
     public function getHeaders() : ?object
     {

@@ -46,8 +46,6 @@ interface ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function deleteListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
 
@@ -62,8 +60,6 @@ interface ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\Item
      */
     public function getListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null, ?array $included_data = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\Item;
 
@@ -78,8 +74,6 @@ interface ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function patchListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
 
@@ -94,8 +88,6 @@ interface ListingsItemsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse
      */
     public function putListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
 }

@@ -39,8 +39,6 @@ interface SalesSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Sales\GetOrderMetricsResponse
      */
     public function getOrderMetrics(AccessToken $accessToken, string $region, array $marketplace_ids, string $interval, string $granularity, ?string $granularity_time_zone = null, string $buyer_type = 'All', ?string $fulfillment_network = null, string $first_day_of_week = 'Monday', ?string $asin = null, ?string $sku = null) : \AmazonPHP\SellingPartner\Model\Sales\GetOrderMetricsResponse;
 }

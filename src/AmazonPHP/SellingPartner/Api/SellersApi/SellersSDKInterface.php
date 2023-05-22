@@ -29,8 +29,6 @@ interface SellersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Sellers\GetMarketplaceParticipationsResponse
      */
     public function getMarketplaceParticipations(AccessToken $accessToken, string $region) : \AmazonPHP\SellingPartner\Model\Sellers\GetMarketplaceParticipationsResponse;
 }

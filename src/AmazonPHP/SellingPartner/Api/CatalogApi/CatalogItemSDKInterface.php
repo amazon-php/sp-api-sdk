@@ -38,8 +38,6 @@ interface CatalogItemSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Item
      */
     public function getCatalogItem(AccessToken $accessToken, string $region, string $asin, array $marketplace_ids, ?array $included_data = null, ?string $locale = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\Item;
 
@@ -61,8 +59,6 @@ interface CatalogItemSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults
      */
     public function searchCatalogItems(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, ?array $included_data = null, ?string $locale = null, ?string $seller_id = null, ?array $keywords = null, ?array $brand_names = null, ?array $classification_ids = null, int $page_size = 10, ?string $page_token = null, ?string $keywords_locale = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults;
 }

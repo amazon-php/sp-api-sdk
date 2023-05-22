@@ -37,8 +37,6 @@ interface AuthorizationSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse
      */
     public function getAuthorizationCode(AccessToken $accessToken, string $region, string $selling_partner_id, string $developer_id, string $mws_auth_token) : \AmazonPHP\SellingPartner\Model\Authorization\GetAuthorizationCodeResponse;
 }

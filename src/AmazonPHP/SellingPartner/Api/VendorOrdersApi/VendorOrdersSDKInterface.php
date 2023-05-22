@@ -43,8 +43,6 @@ interface VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse
      */
     public function getPurchaseOrder(AccessToken $accessToken, string $region, string $purchase_order_number) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrderResponse;
 
@@ -66,8 +64,6 @@ interface VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse
      */
     public function getPurchaseOrders(AccessToken $accessToken, string $region, ?int $limit = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?string $sort_order = null, ?string $next_token = null, ?bool $include_details = null, ?\DateTimeInterface $changed_after = null, ?\DateTimeInterface $changed_before = null, ?string $po_item_state = null, ?bool $is_po_changed = null, ?string $purchase_order_state = null, ?string $ordering_vendor_code = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersResponse;
 
@@ -90,8 +86,6 @@ interface VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse
      */
     public function getPurchaseOrdersStatus(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $updated_after = null, ?\DateTimeInterface $updated_before = null, ?string $purchase_order_number = null, ?string $purchase_order_status = null, ?string $item_confirmation_status = null, ?string $item_receive_status = null, ?string $ordering_vendor_code = null, ?string $ship_to_party_id = null) : \AmazonPHP\SellingPartner\Model\VendorOrders\GetPurchaseOrdersStatusResponse;
 
@@ -102,8 +96,6 @@ interface VendorOrdersSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse
      */
     public function submitAcknowledgement(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body) : \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementResponse;
 }

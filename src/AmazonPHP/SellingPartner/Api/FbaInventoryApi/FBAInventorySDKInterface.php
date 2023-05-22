@@ -37,8 +37,6 @@ interface FBAInventorySDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse
      */
     public function getInventorySummaries(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, ?\DateTimeInterface $start_date_time = null, ?array $seller_skus = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResponse;
 }

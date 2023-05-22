@@ -55,8 +55,6 @@ interface ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
      */
     public function getCompetitivePricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse;
 
@@ -70,8 +68,6 @@ interface ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getItemOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, ?string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse;
 
@@ -82,8 +78,6 @@ interface ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchResponse
      */
     public function getItemOffersBatch(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchResponse;
 
@@ -97,8 +91,6 @@ interface ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getListingOffers(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, ?string $customer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse;
 
@@ -109,8 +101,6 @@ interface ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchResponse
      */
     public function getListingOffersBatch(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchResponse;
 
@@ -126,8 +116,6 @@ interface ProductPricingSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse
      */
     public function getPricing(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $item_condition = null, ?string $offer_type = null) : \AmazonPHP\SellingPartner\Model\ProductPricing\GetPricingResponse;
 }

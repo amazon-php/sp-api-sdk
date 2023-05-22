@@ -274,8 +274,6 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets headers.
-     *
-     * @return null|object
      */
     public function getHeaders() : ?object
     {

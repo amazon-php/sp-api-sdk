@@ -41,8 +41,6 @@ interface ProductTypesDefinitionsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeDefinition
      */
     public function getDefinitionsProductType(AccessToken $accessToken, string $region, string $product_type, array $marketplace_ids, ?string $seller_id = null, string $product_type_version = 'LATEST', string $requirements = 'LISTING', string $requirements_enforced = 'ENFORCED', string $locale = 'DEFAULT') : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeDefinition;
 
@@ -54,8 +52,6 @@ interface ProductTypesDefinitionsSDKInterface
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
      */
     public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $keywords = null) : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList;
 }
