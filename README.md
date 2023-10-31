@@ -4,6 +4,27 @@ This repository is not an official Amazon PHP library for their SP API.
 
 ![social-preview](https://repository-images.githubusercontent.com/372302167/e16f602b-c263-48ee-a36a-a06177d1fa68)
 
+## We Stand Against Terror
+
+<table>
+  <thead>
+    <tr>
+      <td align="center"><a href="https://www.standwithukraine.how/" target="_blank">Stand With Ukraine</a></td>
+      <td align="center"><a href="https://www.standwithus.com/">Stand With Us</a></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td align="center"><img width="256" height="186" alt="Flag of Ukraine" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Flag_of_Ukraine.svg/256px-Flag_of_Ukraine.svg.png"></td>
+      <td align="center"><img width="256" height="186" alt="Flag of Israel" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Flag_of_Israel.svg/256px-Flag_of_Israel.svg.png"></td>
+    </tr>
+  </tbody>
+</table>
+
+> On Feb. 24, 2022, Russia declared an unprovoked war on Ukraine and launched a full-scale invasion. Russia is currently bombing peaceful Ukrainian cities, including schools and hospitals and attacking civilians who are fleeing conflict zones.
+
+> On Oct. 7, 2023, the national holiday of Simchat Torah, Hamas terrorists initiated an attack on Israel in the early hours, targeting civilians. They unleashed violence that resulted in at least 1,400 casualties and abducted at least 200 individuals, not limited to Israelis.
+
 ### Why next library?
 
 The main goal of this SDK is to provide SDK's for the Amazon SP API in a way that would let
