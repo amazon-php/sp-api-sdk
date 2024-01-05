@@ -1,5 +1,9 @@
 # Amazon Selling Partner API - PHP SDK
 
+> [!CAUTION]
+> This project is currently not actively maintained. I don't have any Amazon Developer Account that I could use for testing, plus I don't work with Amazon API's anymore.
+> If anyone would be interested in taking over maintenance of this project, please reach out to contact@norbert.tech 
+
 This repository is not an official Amazon PHP library for their SP API.
 
 ![social-preview](https://repository-images.githubusercontent.com/372302167/e16f602b-c263-48ee-a36a-a06177d1fa68)
