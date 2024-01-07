@@ -28,13 +28,22 @@
         "kriswallsmith/buzz": "^1.2",
         "symfony/var-dumper": "^6.1",
         "monolog/monolog": "^3.3",
-        "symfony/dotenv": "^6.1"
+        "symfony/dotenv": "^6.1",
+        "phpunit/phpunit": "^9.4",
+        "fig/log-test": "^1.1",
+        "rector/rector": "^0.15.19",
+        "friendsofphp/php-cs-fixer": "^3.20.0",
+        "phpstan/phpstan": "^1.7",
+        "vimeo/psalm": "^5"
     },
     "autoload": {
         "psr-4": { "AmazonPHP\\" : "src/AmazonPHP/" }
     },
     "autoload-dev": {
-        "psr-4": { "AmazonPHP\\Test\\" : "tests/" }
+        "psr-4": {
+            "AmazonPHP\\Test\\" : "tests/",
+            "AmazonPHP\\Rector\\" : "tools/src/AmazonPHP/Rector/"
+        }
     },
     "scripts": {
         "clean": [
@@ -52,33 +61,26 @@
             "@static:analyze"
         ],
         "static:analyze": [
-            "tools/vendor/bin/php-cs-fixer fix --dry-run",
-            "tools/vendor/bin/psalm"
+            "vendor/bin/php-cs-fixer fix --dry-run",
+            "vendor/bin/psalm"
         ],
         "test": [
             "@test:unit"
         ],
         "test:unit": [
-            "tools/vendor/bin/phpunit --testsuite unit"
+            "vendor/bin/phpunit --testsuite unit"
         ],
         "test:functional": [
-            "tools/vendor/bin/phpunit --testsuite functional"
+            "vendor/bin/phpunit --testsuite functional"
         ],
         "rector:process:php": [
             "Composer\\Config::disableProcessTimeout",
-            "tools/vendor/bin/rector process --config=rector-php.php --dry-run"
+            "vendor/bin/rector process --config=rector-php.php --dry-run"
         ],
         "rector:process:force:php": [
             "Composer\\Config::disableProcessTimeout",
-            "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-php.php"
+            "vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-php.php"
         ],
-        "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
-        "tools:install": "composer install --working-dir=./tools",
-        "post-install-cmd": [
-            "@tools:install"
-        ],
-        "post-update-cmd": [
-            "@tools:install"
-        ]
+        "cs:php:fix": "vendor/bin/php-cs-fixer fix"
     }
 }
