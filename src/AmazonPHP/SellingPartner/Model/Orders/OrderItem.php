@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -47,6 +47,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'asin' => 'string',
         'seller_sku' => 'string',
         'order_item_id' => 'string',
+        'associated_items' => '\AmazonPHP\SellingPartner\Model\Orders\AssociatedItem[]',
         'title' => 'string',
         'quantity_ordered' => 'int',
         'quantity_shipped' => 'int',
@@ -78,8 +79,9 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'deemed_reseller_category' => 'string',
         'buyer_info' => '\AmazonPHP\SellingPartner\Model\Orders\ItemBuyerInfo',
         'buyer_requested_cancel' => '\AmazonPHP\SellingPartner\Model\Orders\BuyerRequestedCancel',
-        'item_approval_context' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalContext',
         'serial_numbers' => 'string[]',
+        'substitution_preferences' => '\AmazonPHP\SellingPartner\Model\Orders\SubstitutionPreferences',
+        'measurement' => '\AmazonPHP\SellingPartner\Model\Orders\Measurement',
     ];
 
     /**
@@ -95,6 +97,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'asin' => null,
         'seller_sku' => null,
         'order_item_id' => null,
+        'associated_items' => null,
         'title' => null,
         'quantity_ordered' => null,
         'quantity_shipped' => null,
@@ -126,8 +129,9 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'deemed_reseller_category' => null,
         'buyer_info' => null,
         'buyer_requested_cancel' => null,
-        'item_approval_context' => null,
         'serial_numbers' => null,
+        'substitution_preferences' => null,
+        'measurement' => null,
     ];
 
     /**
@@ -140,6 +144,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'asin' => 'ASIN',
         'seller_sku' => 'SellerSKU',
         'order_item_id' => 'OrderItemId',
+        'associated_items' => 'AssociatedItems',
         'title' => 'Title',
         'quantity_ordered' => 'QuantityOrdered',
         'quantity_shipped' => 'QuantityShipped',
@@ -171,8 +176,9 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'deemed_reseller_category' => 'DeemedResellerCategory',
         'buyer_info' => 'BuyerInfo',
         'buyer_requested_cancel' => 'BuyerRequestedCancel',
-        'item_approval_context' => 'ItemApprovalContext',
         'serial_numbers' => 'SerialNumbers',
+        'substitution_preferences' => 'SubstitutionPreferences',
+        'measurement' => 'Measurement',
     ];
 
     /**
@@ -184,6 +190,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'asin' => 'setAsin',
         'seller_sku' => 'setSellerSku',
         'order_item_id' => 'setOrderItemId',
+        'associated_items' => 'setAssociatedItems',
         'title' => 'setTitle',
         'quantity_ordered' => 'setQuantityOrdered',
         'quantity_shipped' => 'setQuantityShipped',
@@ -215,8 +222,9 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'deemed_reseller_category' => 'setDeemedResellerCategory',
         'buyer_info' => 'setBuyerInfo',
         'buyer_requested_cancel' => 'setBuyerRequestedCancel',
-        'item_approval_context' => 'setItemApprovalContext',
         'serial_numbers' => 'setSerialNumbers',
+        'substitution_preferences' => 'setSubstitutionPreferences',
+        'measurement' => 'setMeasurement',
     ];
 
     /**
@@ -228,6 +236,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'asin' => 'getAsin',
         'seller_sku' => 'getSellerSku',
         'order_item_id' => 'getOrderItemId',
+        'associated_items' => 'getAssociatedItems',
         'title' => 'getTitle',
         'quantity_ordered' => 'getQuantityOrdered',
         'quantity_shipped' => 'getQuantityShipped',
@@ -259,8 +268,9 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         'deemed_reseller_category' => 'getDeemedResellerCategory',
         'buyer_info' => 'getBuyerInfo',
         'buyer_requested_cancel' => 'getBuyerRequestedCancel',
-        'item_approval_context' => 'getItemApprovalContext',
         'serial_numbers' => 'getSerialNumbers',
+        'substitution_preferences' => 'getSubstitutionPreferences',
+        'measurement' => 'getMeasurement',
     ];
 
     /**
@@ -281,6 +291,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         $this->container['asin'] = $data['asin'] ?? null;
         $this->container['seller_sku'] = $data['seller_sku'] ?? null;
         $this->container['order_item_id'] = $data['order_item_id'] ?? null;
+        $this->container['associated_items'] = $data['associated_items'] ?? null;
         $this->container['title'] = $data['title'] ?? null;
         $this->container['quantity_ordered'] = $data['quantity_ordered'] ?? null;
         $this->container['quantity_shipped'] = $data['quantity_shipped'] ?? null;
@@ -312,8 +323,9 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
         $this->container['deemed_reseller_category'] = $data['deemed_reseller_category'] ?? null;
         $this->container['buyer_info'] = $data['buyer_info'] ?? null;
         $this->container['buyer_requested_cancel'] = $data['buyer_requested_cancel'] ?? null;
-        $this->container['item_approval_context'] = $data['item_approval_context'] ?? null;
         $this->container['serial_numbers'] = $data['serial_numbers'] ?? null;
+        $this->container['substitution_preferences'] = $data['substitution_preferences'] ?? null;
+        $this->container['measurement'] = $data['measurement'] ?? null;
     }
 
     /**
@@ -480,8 +492,12 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
             $this->container['buyer_requested_cancel']->validate();
         }
 
-        if ($this->container['item_approval_context'] !== null) {
-            $this->container['item_approval_context']->validate();
+        if ($this->container['substitution_preferences'] !== null) {
+            $this->container['substitution_preferences']->validate();
+        }
+
+        if ($this->container['measurement'] !== null) {
+            $this->container['measurement']->validate();
         }
     }
 
@@ -541,6 +557,28 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     public function setOrderItemId(string $order_item_id) : self
     {
         $this->container['order_item_id'] = $order_item_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets associated_items.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\AssociatedItem[]
+     */
+    public function getAssociatedItems() : ?array
+    {
+        return $this->container['associated_items'];
+    }
+
+    /**
+     * Sets associated_items.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\AssociatedItem[] $associated_items A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
+     */
+    public function setAssociatedItems(?array $associated_items) : self
+    {
+        $this->container['associated_items'] = $associated_items;
 
         return $this;
     }
@@ -1058,7 +1096,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets is_transparency.
      *
-     * @param null|bool $is_transparency when true, transparency codes are required
+     * @param null|bool $is_transparency When true, the ASIN is enrolled in Transparency and the Transparency serial number that needs to be submitted can be determined by the following:  **1D or 2D Barcode:** This has a **T** logo. Submit either the 29-character alpha-numeric identifier beginning with **AZ** or **ZA**, or the 38-character Serialized Global Trade Item Number (SGTIN). **2D Barcode SN:** Submit the 7- to 20-character serial number barcode, which likely has the prefix **SN**. The serial number will be applied to the same side of the packaging as the GTIN (UPC/EAN/ISBN) barcode. **QR code SN:** Submit the URL that the QR code generates.
      */
     public function setIsTransparency(?bool $is_transparency) : self
     {
@@ -1168,26 +1206,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     }
 
     /**
-     * Gets item_approval_context.
-     */
-    public function getItemApprovalContext() : ?ItemApprovalContext
-    {
-        return $this->container['item_approval_context'];
-    }
-
-    /**
-     * Sets item_approval_context.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalContext $item_approval_context item_approval_context
-     */
-    public function setItemApprovalContext(?ItemApprovalContext $item_approval_context) : self
-    {
-        $this->container['item_approval_context'] = $item_approval_context;
-
-        return $this;
-    }
-
-    /**
      * Gets serial_numbers.
      *
      * @return null|string[]
@@ -1205,6 +1223,46 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     public function setSerialNumbers(?array $serial_numbers) : self
     {
         $this->container['serial_numbers'] = $serial_numbers;
+
+        return $this;
+    }
+
+    /**
+     * Gets substitution_preferences.
+     */
+    public function getSubstitutionPreferences() : ?SubstitutionPreferences
+    {
+        return $this->container['substitution_preferences'];
+    }
+
+    /**
+     * Sets substitution_preferences.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\SubstitutionPreferences $substitution_preferences substitution_preferences
+     */
+    public function setSubstitutionPreferences(?SubstitutionPreferences $substitution_preferences) : self
+    {
+        $this->container['substitution_preferences'] = $substitution_preferences;
+
+        return $this;
+    }
+
+    /**
+     * Gets measurement.
+     */
+    public function getMeasurement() : ?Measurement
+    {
+        return $this->container['measurement'];
+    }
+
+    /**
+     * Sets measurement.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Measurement $measurement measurement
+     */
+    public function setMeasurement(?Measurement $measurement) : self
+    {
+        $this->container['measurement'] = $measurement;
 
         return $this;
     }

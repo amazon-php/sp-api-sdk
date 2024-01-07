@@ -263,7 +263,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets name.
      *
-     * @param string $name the name of the person, business or institution at that address
+     * @param string $name The name of the person, business or institution at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setName(string $name) : self
     {
@@ -283,7 +283,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets attention.
      *
-     * @param null|string $attention the attention name of the person at that address
+     * @param null|string $attention The attention name of the person at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setAttention(?string $attention) : self
     {
@@ -303,7 +303,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets address_line1.
      *
-     * @param string $address_line1 first line of the address
+     * @param string $address_line1 First line of the address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setAddressLine1(string $address_line1) : self
     {
@@ -323,7 +323,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets address_line2.
      *
-     * @param null|string $address_line2 additional address information, if required
+     * @param null|string $address_line2 Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setAddressLine2(?string $address_line2) : self
     {
@@ -343,7 +343,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets address_line3.
      *
-     * @param null|string $address_line3 additional address information, if required
+     * @param null|string $address_line3 Additional address information, if required. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setAddressLine3(?string $address_line3) : self
     {
@@ -363,7 +363,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets city.
      *
-     * @param null|string $city the city where the person, business or institution is located
+     * @param null|string $city The city where the person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setCity(?string $city) : self
     {
@@ -383,7 +383,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets county.
      *
-     * @param null|string $county the county where person, business or institution is located
+     * @param null|string $county The county where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setCounty(?string $county) : self
     {
@@ -403,7 +403,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets district.
      *
-     * @param null|string $district the district where person, business or institution is located
+     * @param null|string $district The district where person, business or institution is located. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setDistrict(?string $district) : self
     {
@@ -483,7 +483,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets phone.
      *
-     * @param null|string $phone the phone number of the person, business or institution located at that address
+     * @param null|string $phone The phone number of the person, business or institution located at that address. For Amazon label only vendors, this field will have the value `xxxxx` within the object `shipToParty`.
      */
     public function setPhone(?string $phone) : self
     {

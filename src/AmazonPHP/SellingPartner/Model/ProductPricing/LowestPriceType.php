@@ -225,11 +225,9 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
             throw new AssertionException("'fulfillment_channel' can't be null");
         }
 
-        if ($this->container['landed_price'] === null) {
-            throw new AssertionException("'landed_price' can't be null");
+        if ($this->container['landed_price'] !== null) {
+            $this->container['landed_price']->validate();
         }
-
-        $this->container['landed_price']->validate();
 
         if ($this->container['listing_price'] === null) {
             throw new AssertionException("'listing_price' can't be null");
@@ -237,11 +235,9 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
         $this->container['listing_price']->validate();
 
-        if ($this->container['shipping'] === null) {
-            throw new AssertionException("'shipping' can't be null");
+        if ($this->container['shipping'] !== null) {
+            $this->container['shipping']->validate();
         }
-
-        $this->container['shipping']->validate();
 
         if ($this->container['points'] !== null) {
             $this->container['points']->validate();
@@ -351,7 +347,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets landed_price.
      */
-    public function getLandedPrice() : MoneyType
+    public function getLandedPrice() : ?MoneyType
     {
         return $this->container['landed_price'];
     }
@@ -359,9 +355,9 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets landed_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $landed_price landed_price
+     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $landed_price landed_price
      */
-    public function setLandedPrice(MoneyType $landed_price) : self
+    public function setLandedPrice(?MoneyType $landed_price) : self
     {
         $this->container['landed_price'] = $landed_price;
 
@@ -391,7 +387,7 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets shipping.
      */
-    public function getShipping() : MoneyType
+    public function getShipping() : ?MoneyType
     {
         return $this->container['shipping'];
     }
@@ -399,9 +395,9 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipping.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $shipping shipping
+     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $shipping shipping
      */
-    public function setShipping(MoneyType $shipping) : self
+    public function setShipping(?MoneyType $shipping) : self
     {
         $this->container['shipping'] = $shipping;
 

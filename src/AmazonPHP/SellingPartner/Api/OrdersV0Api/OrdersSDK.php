@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -1377,7 +1377,7 @@ final class OrdersSDK implements OrdersSDKInterface
     /**
      * Operation getOrders.
      *
-     * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
+     * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param null|string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param null|string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -1395,15 +1395,17 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param null|string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param null|bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param null|string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
+     * @param null|string $earliest_delivery_date_before A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format. (optional)
+     * @param null|string $earliest_delivery_date_after A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format. (optional)
+     * @param null|string $latest_delivery_date_before A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format. (optional)
+     * @param null|string $latest_delivery_date_after A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?array $item_approval_types = null, ?array $item_approval_status = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
+    public function getOrders(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?string $earliest_delivery_date_before = null, ?string $earliest_delivery_date_after = null, ?string $latest_delivery_date_before = null, ?string $latest_delivery_date_after = null) : \AmazonPHP\SellingPartner\Model\Orders\GetOrdersResponse
     {
-        $request = $this->getOrdersRequest($accessToken, $region, $marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $item_approval_types, $item_approval_status);
+        $request = $this->getOrdersRequest($accessToken, $region, $marketplace_ids, $created_after, $created_before, $last_updated_after, $last_updated_before, $order_statuses, $fulfillment_channels, $payment_methods, $buyer_email, $seller_order_id, $max_results_per_page, $easy_ship_shipment_statuses, $electronic_invoice_statuses, $next_token, $amazon_order_ids, $actual_fulfillment_supply_source_id, $is_ispu, $store_chain_store_id, $earliest_delivery_date_before, $earliest_delivery_date_after, $latest_delivery_date_before, $latest_delivery_date_after);
 
         $this->configuration->extensions()->preRequest('Orders', 'getOrders', $request);
 
@@ -1492,7 +1494,7 @@ final class OrdersSDK implements OrdersSDKInterface
     /**
      * Create request for operation 'getOrders'.
      *
-     * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  See the [Selling Partner API Developer Guide](doc:marketplace-ids) for a complete list of marketplaceId values. (required)
+     * @param string[] $marketplace_ids A list of MarketplaceId values. Used to select orders that were placed in the specified marketplaces.  Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a complete list of marketplaceId values. (required)
      * @param null|string $created_after A date used for selecting orders created after (or at) a specified time. Only orders placed after the specified time are returned. Either the CreatedAfter parameter or the LastUpdatedAfter parameter is required. Both cannot be empty. The date must be in ISO 8601 format. (optional)
      * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format. (optional)
      * @param null|string $last_updated_after A date used for selecting orders that were last updated after (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. The date must be in ISO 8601 format. (optional)
@@ -1510,12 +1512,14 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param null|string $actual_fulfillment_supply_source_id Denotes the recommended sourceId where the order should be fulfilled from. (optional)
      * @param null|bool $is_ispu When true, this order is marked to be picked up from a store rather than delivered. (optional)
      * @param null|string $store_chain_store_id The store chain store identifier. Linked to a specific store in a store chain. (optional)
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[] $item_approval_types When set, only return orders that contain items which approval type is contained in the specified approval types. (optional)
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[] $item_approval_status When set, only return orders that contain items which approval status is contained in the specified approval status. (optional)
+     * @param null|string $earliest_delivery_date_before A date used for selecting orders with a earliest delivery date before (or at) a specified time. The date must be in ISO 8601 format. (optional)
+     * @param null|string $earliest_delivery_date_after A date used for selecting orders with a earliest delivery date after (or at) a specified time. The date must be in ISO 8601 format. (optional)
+     * @param null|string $latest_delivery_date_before A date used for selecting orders with a latest delivery date before (or at) a specified time. The date must be in ISO 8601 format. (optional)
+     * @param null|string $latest_delivery_date_after A date used for selecting orders with a latest delivery date after (or at) a specified time. The date must be in ISO 8601 format. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getOrdersRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?array $item_approval_types = null, ?array $item_approval_status = null) : RequestInterface
+    public function getOrdersRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?string $earliest_delivery_date_before = null, ?string $earliest_delivery_date_after = null, ?string $latest_delivery_date_before = null, ?string $latest_delivery_date_after = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
@@ -1530,14 +1534,6 @@ final class OrdersSDK implements OrdersSDKInterface
 
         if ($amazon_order_ids !== null && \count($amazon_order_ids) > 50) {
             throw new InvalidArgumentException('invalid value for "$amazon_order_ids" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 50.');
-        }
-
-        if ($item_approval_types !== null && \count($item_approval_types) > 1) {
-            throw new InvalidArgumentException('invalid value for "$item_approval_types" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 1.');
-        }
-
-        if ($item_approval_status !== null && \count($item_approval_status) > 6) {
-            throw new InvalidArgumentException('invalid value for "$item_approval_status" when calling OrdersV0Api.getOrders, number of items must be less than or equal to 6.');
         }
 
         $resourcePath = '/orders/v0/orders';
@@ -1692,20 +1688,36 @@ final class OrdersSDK implements OrdersSDKInterface
             $queryParams['StoreChainStoreId'] = ObjectSerializer::toString($store_chain_store_id);
         }
         // query params
-        if (\is_array($item_approval_types)) {
-            $item_approval_types = ObjectSerializer::serializeCollection($item_approval_types, 'form', true);
+        if (\is_array($earliest_delivery_date_before)) {
+            $earliest_delivery_date_before = ObjectSerializer::serializeCollection($earliest_delivery_date_before, '', true);
         }
 
-        if ($item_approval_types !== null) {
-            $queryParams['ItemApprovalTypes'] = ObjectSerializer::toString($item_approval_types);
+        if ($earliest_delivery_date_before !== null) {
+            $queryParams['EarliestDeliveryDateBefore'] = ObjectSerializer::toString($earliest_delivery_date_before);
         }
         // query params
-        if (\is_array($item_approval_status)) {
-            $item_approval_status = ObjectSerializer::serializeCollection($item_approval_status, 'form', true);
+        if (\is_array($earliest_delivery_date_after)) {
+            $earliest_delivery_date_after = ObjectSerializer::serializeCollection($earliest_delivery_date_after, '', true);
         }
 
-        if ($item_approval_status !== null) {
-            $queryParams['ItemApprovalStatus'] = ObjectSerializer::toString($item_approval_status);
+        if ($earliest_delivery_date_after !== null) {
+            $queryParams['EarliestDeliveryDateAfter'] = ObjectSerializer::toString($earliest_delivery_date_after);
+        }
+        // query params
+        if (\is_array($latest_delivery_date_before)) {
+            $latest_delivery_date_before = ObjectSerializer::serializeCollection($latest_delivery_date_before, '', true);
+        }
+
+        if ($latest_delivery_date_before !== null) {
+            $queryParams['LatestDeliveryDateBefore'] = ObjectSerializer::toString($latest_delivery_date_before);
+        }
+        // query params
+        if (\is_array($latest_delivery_date_after)) {
+            $latest_delivery_date_after = ObjectSerializer::serializeCollection($latest_delivery_date_after, '', true);
+        }
+
+        if ($latest_delivery_date_after !== null) {
+            $queryParams['LatestDeliveryDateAfter'] = ObjectSerializer::toString($latest_delivery_date_after);
         }
 
         if (\count($queryParams)) {

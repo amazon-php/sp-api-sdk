@@ -41,7 +41,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
      */
     protected static array $openAPITypes = [
         'asin' => 'string',
-        'attributes' => 'object',
+        'attributes' => 'array<string,mixed>',
         'dimensions' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ItemDimensionsByMarketplace[]',
         'identifiers' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ItemIdentifiersByMarketplace[]',
         'images' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ItemImagesByMarketplace[]',
@@ -251,7 +251,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets attributes.
      *
-     * @return null|object
+     * @return null|array<string,mixed>
      */
     public function getAttributes() : ?array
     {
@@ -261,7 +261,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets attributes.
      *
-     * @param null|object $attributes A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
+     * @param null|array<string,mixed> $attributes A JSON object that contains structured item attribute data keyed by attribute name. Catalog item attributes conform to the related product type definitions available in the Selling Partner API for Product Type Definitions.
      */
     public function setAttributes(?array $attributes) : self
     {
