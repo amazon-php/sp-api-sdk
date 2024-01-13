@@ -1,5 +1,5 @@
 {
-    "name": "amazon-php/sp-api-sdk",
+    "name": "onetech/sp-api-sdk",
     "description": "Amazon Selling Partner API - PHP SDK",
     "keywords": ["amazon", "selling-partner-api", "php", "sdk", "rest", "api"],
     "homepage": "https://openapi-generator.tech",
