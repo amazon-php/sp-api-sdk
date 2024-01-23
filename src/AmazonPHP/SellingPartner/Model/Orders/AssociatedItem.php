@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,7 +23,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
@@ -32,7 +32,7 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'OrderItemApprovals';
+    protected static string $openAPIModelName = 'AssociatedItem';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,10 +40,9 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      * @var string[]
      */
     protected static array $openAPITypes = [
+        'order_id' => 'string',
         'order_item_id' => 'string',
-        'approval_type' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType',
-        'approval_status' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus',
-        'item_approvals' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApproval[]',
+        'association_type' => '\AmazonPHP\SellingPartner\Model\Orders\AssociationType',
     ];
 
     /**
@@ -56,10 +55,9 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
+        'order_id' => null,
         'order_item_id' => null,
-        'approval_type' => null,
-        'approval_status' => null,
-        'item_approvals' => null,
+        'association_type' => null,
     ];
 
     /**
@@ -69,10 +67,9 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      * @var string[]
      */
     protected static array $attributeMap = [
+        'order_id' => 'OrderId',
         'order_item_id' => 'OrderItemId',
-        'approval_type' => 'ApprovalType',
-        'approval_status' => 'ApprovalStatus',
-        'item_approvals' => 'ItemApprovals',
+        'association_type' => 'AssociationType',
     ];
 
     /**
@@ -81,10 +78,9 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      * @var string[]
      */
     protected static array $setters = [
+        'order_id' => 'setOrderId',
         'order_item_id' => 'setOrderItemId',
-        'approval_type' => 'setApprovalType',
-        'approval_status' => 'setApprovalStatus',
-        'item_approvals' => 'setItemApprovals',
+        'association_type' => 'setAssociationType',
     ];
 
     /**
@@ -93,10 +89,9 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      * @var string[]
      */
     protected static array $getters = [
+        'order_id' => 'getOrderId',
         'order_item_id' => 'getOrderItemId',
-        'approval_type' => 'getApprovalType',
-        'approval_status' => 'getApprovalStatus',
-        'item_approvals' => 'getItemApprovals',
+        'association_type' => 'getAssociationType',
     ];
 
     /**
@@ -114,10 +109,9 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      */
     public function __construct(array $data = null)
     {
+        $this->container['order_id'] = $data['order_id'] ?? null;
         $this->container['order_item_id'] = $data['order_item_id'] ?? null;
-        $this->container['approval_type'] = $data['approval_type'] ?? null;
-        $this->container['approval_status'] = $data['approval_status'] ?? null;
-        $this->container['item_approvals'] = $data['item_approvals'] ?? null;
+        $this->container['association_type'] = $data['association_type'] ?? null;
     }
 
     /**
@@ -187,27 +181,32 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
      */
     public function validate() : void
     {
-        if ($this->container['order_item_id'] === null) {
-            throw new AssertionException("'order_item_id' can't be null");
-        }
+    }
 
-        if ($this->container['approval_type'] === null) {
-            throw new AssertionException("'approval_type' can't be null");
-        }
+    /**
+     * Gets order_id.
+     */
+    public function getOrderId() : ?string
+    {
+        return $this->container['order_id'];
+    }
 
-        if ($this->container['approval_status'] === null) {
-            throw new AssertionException("'approval_status' can't be null");
-        }
+    /**
+     * Sets order_id.
+     *
+     * @param null|string $order_id the order item's order identifier, in 3-7-7 format
+     */
+    public function setOrderId(?string $order_id) : self
+    {
+        $this->container['order_id'] = $order_id;
 
-        if ($this->container['item_approvals'] === null) {
-            throw new AssertionException("'item_approvals' can't be null");
-        }
+        return $this;
     }
 
     /**
      * Gets order_item_id.
      */
-    public function getOrderItemId() : string
+    public function getOrderItemId() : ?string
     {
         return $this->container['order_item_id'];
     }
@@ -215,9 +214,9 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets order_item_id.
      *
-     * @param string $order_item_id the unique identifier of the order item
+     * @param null|string $order_item_id an Amazon-defined item identifier for the associated item
      */
-    public function setOrderItemId(string $order_item_id) : self
+    public function setOrderItemId(?string $order_item_id) : self
     {
         $this->container['order_item_id'] = $order_item_id;
 
@@ -225,63 +224,21 @@ class OrderItemApprovals implements \ArrayAccess, \JsonSerializable, \Stringable
     }
 
     /**
-     * Gets approval_type.
+     * Gets association_type.
      */
-    public function getApprovalType() : ItemApprovalType
+    public function getAssociationType() : ?AssociationType
     {
-        return $this->container['approval_type'];
+        return $this->container['association_type'];
     }
 
     /**
-     * Sets approval_type.
+     * Sets association_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType $approval_type approval_type
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\AssociationType $association_type association_type
      */
-    public function setApprovalType(ItemApprovalType $approval_type) : self
+    public function setAssociationType(?AssociationType $association_type) : self
     {
-        $this->container['approval_type'] = $approval_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets approval_status.
-     */
-    public function getApprovalStatus() : ItemApprovalStatus
-    {
-        return $this->container['approval_status'];
-    }
-
-    /**
-     * Sets approval_status.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus $approval_status approval_status
-     */
-    public function setApprovalStatus(ItemApprovalStatus $approval_status) : self
-    {
-        $this->container['approval_status'] = $approval_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets item_approvals.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ItemApproval[]
-     */
-    public function getItemApprovals() : array
-    {
-        return $this->container['item_approvals'];
-    }
-
-    /**
-     * Sets item_approvals.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\ItemApproval[] $item_approvals item_approvals
-     */
-    public function setItemApprovals(array $item_approvals) : self
-    {
-        $this->container['item_approvals'] = $item_approvals;
+        $this->container['association_type'] = $association_type;
 
         return $this;
     }

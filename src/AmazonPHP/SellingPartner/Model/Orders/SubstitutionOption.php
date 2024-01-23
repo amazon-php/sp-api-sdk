@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Model\ProductPricing;
+namespace AmazonPHP\SellingPartner\Model\Orders;
 
 use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Pricing.
+ * Selling Partner API for Orders.
  *
- * The Selling Partner API for Pricing helps you programmatically retrieve product pricing and offer information for Amazon Marketplace products.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,7 +23,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class SubstitutionOption implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
@@ -32,7 +32,7 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'ListingOffersResponse_allOf';
+    protected static string $openAPIModelName = 'SubstitutionOption';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,7 +40,11 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'request' => '\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequestParams',
+        'asin' => 'string',
+        'quantity_ordered' => 'int',
+        'seller_sku' => 'string',
+        'title' => 'string',
+        'measurement' => '\AmazonPHP\SellingPartner\Model\Orders\Measurement',
     ];
 
     /**
@@ -53,7 +57,11 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'request' => null,
+        'asin' => null,
+        'quantity_ordered' => null,
+        'seller_sku' => null,
+        'title' => null,
+        'measurement' => null,
     ];
 
     /**
@@ -63,7 +71,11 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $attributeMap = [
-        'request' => 'request',
+        'asin' => 'ASIN',
+        'quantity_ordered' => 'QuantityOrdered',
+        'seller_sku' => 'SellerSKU',
+        'title' => 'Title',
+        'measurement' => 'Measurement',
     ];
 
     /**
@@ -72,7 +84,11 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $setters = [
-        'request' => 'setRequest',
+        'asin' => 'setAsin',
+        'quantity_ordered' => 'setQuantityOrdered',
+        'seller_sku' => 'setSellerSku',
+        'title' => 'setTitle',
+        'measurement' => 'setMeasurement',
     ];
 
     /**
@@ -81,7 +97,11 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      * @var string[]
      */
     protected static array $getters = [
-        'request' => 'getRequest',
+        'asin' => 'getAsin',
+        'quantity_ordered' => 'getQuantityOrdered',
+        'seller_sku' => 'getSellerSku',
+        'title' => 'getTitle',
+        'measurement' => 'getMeasurement',
     ];
 
     /**
@@ -99,7 +119,11 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      */
     public function __construct(array $data = null)
     {
-        $this->container['request'] = $data['request'] ?? null;
+        $this->container['asin'] = $data['asin'] ?? null;
+        $this->container['quantity_ordered'] = $data['quantity_ordered'] ?? null;
+        $this->container['seller_sku'] = $data['seller_sku'] ?? null;
+        $this->container['title'] = $data['title'] ?? null;
+        $this->container['measurement'] = $data['measurement'] ?? null;
     }
 
     /**
@@ -169,27 +193,107 @@ class ListingOffersResponseAllOf implements \ArrayAccess, \JsonSerializable, \St
      */
     public function validate() : void
     {
-        if ($this->container['request'] !== null) {
-            $this->container['request']->validate();
+        if ($this->container['measurement'] !== null) {
+            $this->container['measurement']->validate();
         }
     }
 
     /**
-     * Gets request.
+     * Gets asin.
      */
-    public function getRequest() : ?ListingOffersRequestParams
+    public function getAsin() : ?string
     {
-        return $this->container['request'];
+        return $this->container['asin'];
     }
 
     /**
-     * Sets request.
+     * Sets asin.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequestParams $request request
+     * @param null|string $asin the Amazon Standard Identification Number (ASIN) of the item
      */
-    public function setRequest(?ListingOffersRequestParams $request) : self
+    public function setAsin(?string $asin) : self
     {
-        $this->container['request'] = $request;
+        $this->container['asin'] = $asin;
+
+        return $this;
+    }
+
+    /**
+     * Gets quantity_ordered.
+     */
+    public function getQuantityOrdered() : ?int
+    {
+        return $this->container['quantity_ordered'];
+    }
+
+    /**
+     * Sets quantity_ordered.
+     *
+     * @param null|int $quantity_ordered the number of items to be picked for this substitution option
+     */
+    public function setQuantityOrdered(?int $quantity_ordered) : self
+    {
+        $this->container['quantity_ordered'] = $quantity_ordered;
+
+        return $this;
+    }
+
+    /**
+     * Gets seller_sku.
+     */
+    public function getSellerSku() : ?string
+    {
+        return $this->container['seller_sku'];
+    }
+
+    /**
+     * Sets seller_sku.
+     *
+     * @param null|string $seller_sku the seller stock keeping unit (SKU) of the item
+     */
+    public function setSellerSku(?string $seller_sku) : self
+    {
+        $this->container['seller_sku'] = $seller_sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets title.
+     */
+    public function getTitle() : ?string
+    {
+        return $this->container['title'];
+    }
+
+    /**
+     * Sets title.
+     *
+     * @param null|string $title the title of the item
+     */
+    public function setTitle(?string $title) : self
+    {
+        $this->container['title'] = $title;
+
+        return $this;
+    }
+
+    /**
+     * Gets measurement.
+     */
+    public function getMeasurement() : ?Measurement
+    {
+        return $this->container['measurement'];
+    }
+
+    /**
+     * Sets measurement.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Measurement $measurement measurement
+     */
+    public function setMeasurement(?Measurement $measurement) : self
+    {
+        $this->container['measurement'] = $measurement;
 
         return $this;
     }

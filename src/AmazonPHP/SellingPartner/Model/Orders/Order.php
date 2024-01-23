@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -127,8 +127,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => '\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings',
         'has_regulated_items' => 'bool',
         'electronic_invoice_status' => '\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus',
-        'item_approval_types' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[]',
-        'item_approval_status' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[]',
     ];
 
     /**
@@ -188,8 +186,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => null,
         'has_regulated_items' => null,
         'electronic_invoice_status' => null,
-        'item_approval_types' => null,
-        'item_approval_status' => null,
     ];
 
     /**
@@ -246,8 +242,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => 'AutomatedShippingSettings',
         'has_regulated_items' => 'HasRegulatedItems',
         'electronic_invoice_status' => 'ElectronicInvoiceStatus',
-        'item_approval_types' => 'ItemApprovalTypes',
-        'item_approval_status' => 'ItemApprovalStatus',
     ];
 
     /**
@@ -303,8 +297,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => 'setAutomatedShippingSettings',
         'has_regulated_items' => 'setHasRegulatedItems',
         'electronic_invoice_status' => 'setElectronicInvoiceStatus',
-        'item_approval_types' => 'setItemApprovalTypes',
-        'item_approval_status' => 'setItemApprovalStatus',
     ];
 
     /**
@@ -360,8 +352,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'automated_shipping_settings' => 'getAutomatedShippingSettings',
         'has_regulated_items' => 'getHasRegulatedItems',
         'electronic_invoice_status' => 'getElectronicInvoiceStatus',
-        'item_approval_types' => 'getItemApprovalTypes',
-        'item_approval_status' => 'getItemApprovalStatus',
     ];
 
     /**
@@ -426,8 +416,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         $this->container['automated_shipping_settings'] = $data['automated_shipping_settings'] ?? null;
         $this->container['has_regulated_items'] = $data['has_regulated_items'] ?? null;
         $this->container['electronic_invoice_status'] = $data['electronic_invoice_status'] ?? null;
-        $this->container['item_approval_types'] = $data['item_approval_types'] ?? null;
-        $this->container['item_approval_status'] = $data['item_approval_status'] ?? null;
     }
 
     /**
@@ -1016,7 +1004,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets shipment_service_level_category.
      *
-     * @param null|string $shipment_service_level_category The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, SameDay, SecondDay, Scheduled, Standard.
+     * @param null|string $shipment_service_level_category The shipment service level category of the order.  Possible values: Expedited, FreeEconomy, NextDay, Priority, SameDay, SecondDay, Scheduled, Standard.
      */
     public function setShipmentServiceLevelCategory(?string $shipment_service_level_category) : self
     {
@@ -1621,50 +1609,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     public function setElectronicInvoiceStatus(?ElectronicInvoiceStatus $electronic_invoice_status) : self
     {
         $this->container['electronic_invoice_status'] = $electronic_invoice_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets item_approval_types.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[]
-     */
-    public function getItemApprovalTypes() : ?array
-    {
-        return $this->container['item_approval_types'];
-    }
-
-    /**
-     * Sets item_approval_types.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType[] $item_approval_types set of approval types which applies to at least one order item in the order
-     */
-    public function setItemApprovalTypes(?array $item_approval_types) : self
-    {
-        $this->container['item_approval_types'] = $item_approval_types;
-
-        return $this;
-    }
-
-    /**
-     * Gets item_approval_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[]
-     */
-    public function getItemApprovalStatus() : ?array
-    {
-        return $this->container['item_approval_status'];
-    }
-
-    /**
-     * Sets item_approval_status.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus[] $item_approval_status subset of all ItemApprovalStatus that are set in at least one of the order items subject to approvals
-     */
-    public function setItemApprovalStatus(?array $item_approval_status) : self
-    {
-        $this->container['item_approval_status'] = $item_approval_status;
 
         return $this;
     }

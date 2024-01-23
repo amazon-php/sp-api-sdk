@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Listings Items.
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  *
@@ -42,11 +42,11 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     protected static array $openAPITypes = [
         'sku' => 'string',
         'summaries' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemSummaryByMarketplace[]',
-        'attributes' => 'object',
+        'attributes' => 'array<string,mixed>',
         'issues' => '\AmazonPHP\SellingPartner\Model\ListingsItems\Issue[]',
         'offers' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemOfferByMarketplace[]',
         'fulfillment_availability' => '\AmazonPHP\SellingPartner\Model\ListingsItems\FulfillmentAvailability[]',
-        'procurement' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement',
+        'procurement' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement[]',
     ];
 
     /**
@@ -208,10 +208,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         if ($this->container['sku'] === null) {
             throw new AssertionException("'sku' can't be null");
         }
-
-        if ($this->container['procurement'] !== null) {
-            $this->container['procurement']->validate();
-        }
     }
 
     /**
@@ -259,7 +255,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets attributes.
      *
-     * @return null|object
+     * @return null|array<string,mixed>
      */
     public function getAttributes() : ?array
     {
@@ -269,7 +265,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets attributes.
      *
-     * @param null|object $attributes JSON object containing structured listings item attribute data keyed by attribute name
+     * @param null|array<string,mixed> $attributes a JSON object containing structured listings item attribute data keyed by attribute name
      */
     public function setAttributes(?array $attributes) : self
     {
@@ -291,7 +287,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets issues.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\Issue[] $issues issues associated with the listings item
+     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\Issue[] $issues the issues associated with the listings item
      */
     public function setIssues(?array $issues) : self
     {
@@ -335,7 +331,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets fulfillment_availability.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\FulfillmentAvailability[] $fulfillment_availability fulfillment availability for the listings item
+     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\FulfillmentAvailability[] $fulfillment_availability the fulfillment availability for the listings item
      */
     public function setFulfillmentAvailability(?array $fulfillment_availability) : self
     {
@@ -346,8 +342,10 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets procurement.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement[]
      */
-    public function getProcurement() : ?ItemProcurement
+    public function getProcurement() : ?array
     {
         return $this->container['procurement'];
     }
@@ -355,9 +353,9 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets procurement.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement $procurement procurement
+     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement[] $procurement the vendor procurement information for the listings item
      */
-    public function setProcurement(?ItemProcurement $procurement) : self
+    public function setProcurement(?array $procurement) : self
     {
         $this->container['procurement'] = $procurement;
 

@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Listings Items.
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  *
@@ -48,7 +48,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, \String
     protected static array $openAPITypes = [
         'product_type' => 'string',
         'requirements' => 'string',
-        'attributes' => 'object',
+        'attributes' => 'array<string,mixed>',
     ];
 
     /**
@@ -265,7 +265,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets attributes.
      *
-     * @return null|object
+     * @return null|array<string, mixed>
      */
     public function getAttributes() : ?array
     {
@@ -275,7 +275,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets attributes.
      *
-     * @param object $attributes JSON object containing structured listings item attribute data keyed by attribute name
+     * @param array<string,mixed> $attributes a JSON object containing structured listings item attribute data keyed by attribute name
      */
     public function setAttributes(array $attributes) : self
     {

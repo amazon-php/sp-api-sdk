@@ -58,6 +58,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
         'locale' => 'string',
         'marketplace_ids' => 'string[]',
         'product_type' => 'string',
+        'display_name' => 'string',
         'product_type_version' => '\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeVersion',
     ];
 
@@ -79,6 +80,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
         'locale' => null,
         'marketplace_ids' => null,
         'product_type' => null,
+        'display_name' => null,
         'product_type_version' => null,
     ];
 
@@ -97,6 +99,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
         'locale' => 'locale',
         'marketplace_ids' => 'marketplaceIds',
         'product_type' => 'productType',
+        'display_name' => 'displayName',
         'product_type_version' => 'productTypeVersion',
     ];
 
@@ -114,6 +117,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
         'locale' => 'setLocale',
         'marketplace_ids' => 'setMarketplaceIds',
         'product_type' => 'setProductType',
+        'display_name' => 'setDisplayName',
         'product_type_version' => 'setProductTypeVersion',
     ];
 
@@ -131,6 +135,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
         'locale' => 'getLocale',
         'marketplace_ids' => 'getMarketplaceIds',
         'product_type' => 'getProductType',
+        'display_name' => 'getDisplayName',
         'product_type_version' => 'getProductTypeVersion',
     ];
 
@@ -157,6 +162,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
         $this->container['locale'] = $data['locale'] ?? null;
         $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
         $this->container['product_type'] = $data['product_type'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['product_type_version'] = $data['product_type_version'] ?? null;
     }
 
@@ -310,6 +316,10 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
         if ($this->container['product_type'] === null) {
             throw new AssertionException("'product_type' can't be null");
+        }
+
+        if ($this->container['display_name'] === null) {
+            throw new AssertionException("'display_name' can't be null");
         }
 
         if ($this->container['product_type_version'] === null) {
@@ -479,6 +489,26 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     public function setProductType(string $product_type) : self
     {
         $this->container['product_type'] = $product_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_name.
+     */
+    public function getDisplayName() : string
+    {
+        return $this->container['display_name'];
+    }
+
+    /**
+     * Sets display_name.
+     *
+     * @param string $display_name human-readable and localized description of the Amazon product type
+     */
+    public function setDisplayName(string $display_name) : self
+    {
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }

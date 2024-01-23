@@ -43,7 +43,7 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
         'posted_date' => '\DateTimeInterface',
         'reason_code' => 'string',
         'reason_code_description' => 'string',
-        'charge_refund_transactions' => '\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction',
+        'charge_refund_transactions' => '\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction[]',
     ];
 
     /**
@@ -187,9 +187,6 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
      */
     public function validate() : void
     {
-        if ($this->container['charge_refund_transactions'] !== null) {
-            $this->container['charge_refund_transactions']->validate();
-        }
     }
 
     /**
@@ -254,8 +251,10 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets charge_refund_transactions.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction[]
      */
-    public function getChargeRefundTransactions() : ?ChargeRefundTransaction
+    public function getChargeRefundTransactions() : ?array
     {
         return $this->container['charge_refund_transactions'];
     }
@@ -263,9 +262,9 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets charge_refund_transactions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction $charge_refund_transactions charge_refund_transactions
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction[] $charge_refund_transactions a list of `ChargeRefund` transactions
      */
-    public function setChargeRefundTransactions(?ChargeRefundTransaction $charge_refund_transactions) : self
+    public function setChargeRefundTransactions(?array $charge_refund_transactions) : self
     {
         $this->container['charge_refund_transactions'] = $charge_refund_transactions;
 

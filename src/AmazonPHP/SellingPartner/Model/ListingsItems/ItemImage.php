@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Listings Items.
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  *
@@ -205,7 +205,7 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets link.
      *
-     * @param string $link link, or URL, for the image
+     * @param string $link the link, or URL, to the image
      */
     public function setLink(string $link) : self
     {
@@ -225,7 +225,7 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets height.
      *
-     * @param int $height height of the image in pixels
+     * @param int $height the height of the image in pixels
      */
     public function setHeight(int $height) : self
     {
@@ -245,7 +245,7 @@ class ItemImage implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets width.
      *
-     * @param int $width width of the image in pixels
+     * @param int $width the width of the image in pixels
      */
     public function setWidth(int $width) : self
     {

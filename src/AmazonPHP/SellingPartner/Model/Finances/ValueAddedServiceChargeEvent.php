@@ -23,7 +23,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class ValueAddedServiceChargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
@@ -32,7 +32,7 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'FailedAdhocDisbursementEventList';
+    protected static string $openAPIModelName = 'ValueAddedServiceChargeEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,13 +40,10 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'funds_transfers_type' => 'string',
-        'transfer_id' => 'string',
-        'disbursement_id' => 'string',
-        'payment_disbursement_type' => 'string',
-        'status' => 'string',
-        'transfer_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'transaction_type' => 'string',
         'posted_date' => '\DateTimeInterface',
+        'description' => 'string',
+        'transaction_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
     ];
 
     /**
@@ -59,13 +56,10 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'funds_transfers_type' => null,
-        'transfer_id' => null,
-        'disbursement_id' => null,
-        'payment_disbursement_type' => null,
-        'status' => null,
-        'transfer_amount' => null,
+        'transaction_type' => null,
         'posted_date' => 'date-time',
+        'description' => null,
+        'transaction_amount' => null,
     ];
 
     /**
@@ -75,13 +69,10 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $attributeMap = [
-        'funds_transfers_type' => 'FundsTransfersType',
-        'transfer_id' => 'TransferId',
-        'disbursement_id' => 'DisbursementId',
-        'payment_disbursement_type' => 'PaymentDisbursementType',
-        'status' => 'Status',
-        'transfer_amount' => 'TransferAmount',
+        'transaction_type' => 'TransactionType',
         'posted_date' => 'PostedDate',
+        'description' => 'Description',
+        'transaction_amount' => 'TransactionAmount',
     ];
 
     /**
@@ -90,13 +81,10 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $setters = [
-        'funds_transfers_type' => 'setFundsTransfersType',
-        'transfer_id' => 'setTransferId',
-        'disbursement_id' => 'setDisbursementId',
-        'payment_disbursement_type' => 'setPaymentDisbursementType',
-        'status' => 'setStatus',
-        'transfer_amount' => 'setTransferAmount',
+        'transaction_type' => 'setTransactionType',
         'posted_date' => 'setPostedDate',
+        'description' => 'setDescription',
+        'transaction_amount' => 'setTransactionAmount',
     ];
 
     /**
@@ -105,13 +93,10 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      * @var string[]
      */
     protected static array $getters = [
-        'funds_transfers_type' => 'getFundsTransfersType',
-        'transfer_id' => 'getTransferId',
-        'disbursement_id' => 'getDisbursementId',
-        'payment_disbursement_type' => 'getPaymentDisbursementType',
-        'status' => 'getStatus',
-        'transfer_amount' => 'getTransferAmount',
+        'transaction_type' => 'getTransactionType',
         'posted_date' => 'getPostedDate',
+        'description' => 'getDescription',
+        'transaction_amount' => 'getTransactionAmount',
     ];
 
     /**
@@ -129,13 +114,10 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['funds_transfers_type'] = $data['funds_transfers_type'] ?? null;
-        $this->container['transfer_id'] = $data['transfer_id'] ?? null;
-        $this->container['disbursement_id'] = $data['disbursement_id'] ?? null;
-        $this->container['payment_disbursement_type'] = $data['payment_disbursement_type'] ?? null;
-        $this->container['status'] = $data['status'] ?? null;
-        $this->container['transfer_amount'] = $data['transfer_amount'] ?? null;
+        $this->container['transaction_type'] = $data['transaction_type'] ?? null;
         $this->container['posted_date'] = $data['posted_date'] ?? null;
+        $this->container['description'] = $data['description'] ?? null;
+        $this->container['transaction_amount'] = $data['transaction_amount'] ?? null;
     }
 
     /**
@@ -205,127 +187,27 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
      */
     public function validate() : void
     {
-        if ($this->container['transfer_amount'] !== null) {
-            $this->container['transfer_amount']->validate();
+        if ($this->container['transaction_amount'] !== null) {
+            $this->container['transaction_amount']->validate();
         }
     }
 
     /**
-     * Gets funds_transfers_type.
+     * Gets transaction_type.
      */
-    public function getFundsTransfersType() : ?string
+    public function getTransactionType() : ?string
     {
-        return $this->container['funds_transfers_type'];
+        return $this->container['transaction_type'];
     }
 
     /**
-     * Sets funds_transfers_type.
+     * Sets transaction_type.
      *
-     * @param null|string $funds_transfers_type The type of fund transfer.   Example \"Refund\"
+     * @param null|string $transaction_type Indicates the type of transaction.  Example: 'Other Support Service fees'
      */
-    public function setFundsTransfersType(?string $funds_transfers_type) : self
+    public function setTransactionType(?string $transaction_type) : self
     {
-        $this->container['funds_transfers_type'] = $funds_transfers_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets transfer_id.
-     */
-    public function getTransferId() : ?string
-    {
-        return $this->container['transfer_id'];
-    }
-
-    /**
-     * Sets transfer_id.
-     *
-     * @param null|string $transfer_id the transfer identifier
-     */
-    public function setTransferId(?string $transfer_id) : self
-    {
-        $this->container['transfer_id'] = $transfer_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets disbursement_id.
-     */
-    public function getDisbursementId() : ?string
-    {
-        return $this->container['disbursement_id'];
-    }
-
-    /**
-     * Sets disbursement_id.
-     *
-     * @param null|string $disbursement_id the disbursement identifier
-     */
-    public function setDisbursementId(?string $disbursement_id) : self
-    {
-        $this->container['disbursement_id'] = $disbursement_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets payment_disbursement_type.
-     */
-    public function getPaymentDisbursementType() : ?string
-    {
-        return $this->container['payment_disbursement_type'];
-    }
-
-    /**
-     * Sets payment_disbursement_type.
-     *
-     * @param null|string $payment_disbursement_type The type of payment for disbursement.   Example `CREDIT_CARD`
-     */
-    public function setPaymentDisbursementType(?string $payment_disbursement_type) : self
-    {
-        $this->container['payment_disbursement_type'] = $payment_disbursement_type;
-
-        return $this;
-    }
-
-    /**
-     * Gets status.
-     */
-    public function getStatus() : ?string
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status.
-     *
-     * @param null|string $status The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
-     */
-    public function setStatus(?string $status) : self
-    {
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets transfer_amount.
-     */
-    public function getTransferAmount() : ?Currency
-    {
-        return $this->container['transfer_amount'];
-    }
-
-    /**
-     * Sets transfer_amount.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $transfer_amount transfer_amount
-     */
-    public function setTransferAmount(?Currency $transfer_amount) : self
-    {
-        $this->container['transfer_amount'] = $transfer_amount;
+        $this->container['transaction_type'] = $transaction_type;
 
         return $this;
     }
@@ -346,6 +228,46 @@ class FailedAdhocDisbursementEventList implements \ArrayAccess, \JsonSerializabl
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
         $this->container['posted_date'] = $posted_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets description.
+     */
+    public function getDescription() : ?string
+    {
+        return $this->container['description'];
+    }
+
+    /**
+     * Sets description.
+     *
+     * @param null|string $description a short description of the service charge event
+     */
+    public function setDescription(?string $description) : self
+    {
+        $this->container['description'] = $description;
+
+        return $this;
+    }
+
+    /**
+     * Gets transaction_amount.
+     */
+    public function getTransactionAmount() : ?Currency
+    {
+        return $this->container['transaction_amount'];
+    }
+
+    /**
+     * Sets transaction_amount.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $transaction_amount transaction_amount
+     */
+    public function setTransactionAmount(?Currency $transaction_amount) : self
+    {
+        $this->container['transaction_amount'] = $transaction_amount;
 
         return $this;
     }

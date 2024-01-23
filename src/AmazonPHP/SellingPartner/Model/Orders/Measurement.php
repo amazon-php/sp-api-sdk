@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,16 +23,64 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class Measurement implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
+
+    final public const UNIT_OUNCES = 'OUNCES';
+
+    final public const UNIT_POUNDS = 'POUNDS';
+
+    final public const UNIT_KILOGRAMS = 'KILOGRAMS';
+
+    final public const UNIT_GRAMS = 'GRAMS';
+
+    final public const UNIT_MILLIGRAMS = 'MILLIGRAMS';
+
+    final public const UNIT_INCHES = 'INCHES';
+
+    final public const UNIT_FEET = 'FEET';
+
+    final public const UNIT_METERS = 'METERS';
+
+    final public const UNIT_CENTIMETERS = 'CENTIMETERS';
+
+    final public const UNIT_MILLIMETERS = 'MILLIMETERS';
+
+    final public const UNIT_SQUARE_METERS = 'SQUARE_METERS';
+
+    final public const UNIT_SQUARE_CENTIMETERS = 'SQUARE_CENTIMETERS';
+
+    final public const UNIT_SQUARE_FEET = 'SQUARE_FEET';
+
+    final public const UNIT_SQUARE_INCHES = 'SQUARE_INCHES';
+
+    final public const UNIT_GALLONS = 'GALLONS';
+
+    final public const UNIT_PINTS = 'PINTS';
+
+    final public const UNIT_QUARTS = 'QUARTS';
+
+    final public const UNIT_FLUID_OUNCES = 'FLUID_OUNCES';
+
+    final public const UNIT_LITERS = 'LITERS';
+
+    final public const UNIT_CUBIC_METERS = 'CUBIC_METERS';
+
+    final public const UNIT_CUBIC_FEET = 'CUBIC_FEET';
+
+    final public const UNIT_CUBIC_INCHES = 'CUBIC_INCHES';
+
+    final public const UNIT_CUBIC_CENTIMETERS = 'CUBIC_CENTIMETERS';
+
+    final public const UNIT_COUNT = 'COUNT';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'ItemApprovalContext';
+    protected static string $openAPIModelName = 'Measurement';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,9 +88,8 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'approval_type' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType',
-        'approval_status' => '\AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus',
-        'approval_support_data' => '\AmazonPHP\SellingPartner\Model\Orders\ApprovalSupportDataElement[]',
+        'unit' => 'string',
+        'value' => 'float',
     ];
 
     /**
@@ -55,9 +102,8 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'approval_type' => null,
-        'approval_status' => null,
-        'approval_support_data' => null,
+        'unit' => null,
+        'value' => null,
     ];
 
     /**
@@ -67,9 +113,8 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @var string[]
      */
     protected static array $attributeMap = [
-        'approval_type' => 'ApprovalType',
-        'approval_status' => 'ApprovalStatus',
-        'approval_support_data' => 'ApprovalSupportData',
+        'unit' => 'Unit',
+        'value' => 'Value',
     ];
 
     /**
@@ -78,9 +123,8 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @var string[]
      */
     protected static array $setters = [
-        'approval_type' => 'setApprovalType',
-        'approval_status' => 'setApprovalStatus',
-        'approval_support_data' => 'setApprovalSupportData',
+        'unit' => 'setUnit',
+        'value' => 'setValue',
     ];
 
     /**
@@ -89,9 +133,8 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @var string[]
      */
     protected static array $getters = [
-        'approval_type' => 'getApprovalType',
-        'approval_status' => 'getApprovalStatus',
-        'approval_support_data' => 'getApprovalSupportData',
+        'unit' => 'getUnit',
+        'value' => 'getValue',
     ];
 
     /**
@@ -109,9 +152,8 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
      */
     public function __construct(array $data = null)
     {
-        $this->container['approval_type'] = $data['approval_type'] ?? null;
-        $this->container['approval_status'] = $data['approval_status'] ?? null;
-        $this->container['approval_support_data'] = $data['approval_support_data'] ?? null;
+        $this->container['unit'] = $data['unit'] ?? null;
+        $this->container['value'] = $data['value'] ?? null;
     }
 
     /**
@@ -175,79 +217,104 @@ class ItemApprovalContext implements \ArrayAccess, \JsonSerializable, \Stringabl
     }
 
     /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getUnitAllowableValues() : array
+    {
+        return [
+            self::UNIT_OUNCES,
+            self::UNIT_POUNDS,
+            self::UNIT_KILOGRAMS,
+            self::UNIT_GRAMS,
+            self::UNIT_MILLIGRAMS,
+            self::UNIT_INCHES,
+            self::UNIT_FEET,
+            self::UNIT_METERS,
+            self::UNIT_CENTIMETERS,
+            self::UNIT_MILLIMETERS,
+            self::UNIT_SQUARE_METERS,
+            self::UNIT_SQUARE_CENTIMETERS,
+            self::UNIT_SQUARE_FEET,
+            self::UNIT_SQUARE_INCHES,
+            self::UNIT_GALLONS,
+            self::UNIT_PINTS,
+            self::UNIT_QUARTS,
+            self::UNIT_FLUID_OUNCES,
+            self::UNIT_LITERS,
+            self::UNIT_CUBIC_METERS,
+            self::UNIT_CUBIC_FEET,
+            self::UNIT_CUBIC_INCHES,
+            self::UNIT_CUBIC_CENTIMETERS,
+            self::UNIT_COUNT,
+        ];
+    }
+
+    /**
      * Validate all properties.
      *
      * @throws AssertionException
      */
     public function validate() : void
     {
-        if ($this->container['approval_type'] === null) {
-            throw new AssertionException("'approval_type' can't be null");
+        if ($this->container['unit'] === null) {
+            throw new AssertionException("'unit' can't be null");
         }
 
-        if ($this->container['approval_status'] === null) {
-            throw new AssertionException("'approval_status' can't be null");
+        $allowedValues = $this->getUnitAllowableValues();
+
+        if (null !== $this->container['unit'] && !\in_array($this->container['unit'], $allowedValues, true)) {
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'unit', must be one of '%s'",
+                    $this->container['unit'],
+                    \implode("', '", $allowedValues)
+                )
+            );
+        }
+
+        if ($this->container['value'] === null) {
+            throw new AssertionException("'value' can't be null");
         }
     }
 
     /**
-     * Gets approval_type.
+     * Gets unit.
      */
-    public function getApprovalType() : ItemApprovalType
+    public function getUnit() : string
     {
-        return $this->container['approval_type'];
+        return $this->container['unit'];
     }
 
     /**
-     * Sets approval_type.
+     * Sets unit.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalType $approval_type approval_type
+     * @param string $unit the unit of measure for this measurement
      */
-    public function setApprovalType(ItemApprovalType $approval_type) : self
+    public function setUnit(string $unit) : self
     {
-        $this->container['approval_type'] = $approval_type;
+        $this->container['unit'] = $unit;
 
         return $this;
     }
 
     /**
-     * Gets approval_status.
+     * Gets value.
      */
-    public function getApprovalStatus() : ItemApprovalStatus
+    public function getValue() : float
     {
-        return $this->container['approval_status'];
+        return $this->container['value'];
     }
 
     /**
-     * Sets approval_status.
+     * Sets value.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\ItemApprovalStatus $approval_status approval_status
+     * @param float $value the value of the measurement
      */
-    public function setApprovalStatus(ItemApprovalStatus $approval_status) : self
+    public function setValue(float $value) : self
     {
-        $this->container['approval_status'] = $approval_status;
-
-        return $this;
-    }
-
-    /**
-     * Gets approval_support_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ApprovalSupportDataElement[]
-     */
-    public function getApprovalSupportData() : ?array
-    {
-        return $this->container['approval_support_data'];
-    }
-
-    /**
-     * Sets approval_support_data.
-     *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ApprovalSupportDataElement[] $approval_support_data List of additional data elements supporting the approval process. Check the applicable restrictions at the specific approval type schemas.
-     */
-    public function setApprovalSupportData(?array $approval_support_data) : self
-    {
-        $this->container['approval_support_data'] = $approval_support_data;
+        $this->container['value'] = $value;
 
         return $this;
     }

@@ -276,9 +276,11 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
             $this->container['dimensions']->validate();
         }
 
-        if ($this->container['weight'] !== null) {
-            $this->container['weight']->validate();
+        if ($this->container['weight'] === null) {
+            throw new AssertionException("'weight' can't be null");
         }
+
+        $this->container['weight']->validate();
 
         if ($this->container['packed_items'] === null) {
             throw new AssertionException("'packed_items' can't be null");
@@ -488,7 +490,7 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Gets weight.
      */
-    public function getWeight() : ?Weight
+    public function getWeight() : Weight
     {
         return $this->container['weight'];
     }
@@ -496,9 +498,9 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Weight $weight weight
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Weight $weight weight
      */
-    public function setWeight(?Weight $weight) : self
+    public function setWeight(Weight $weight) : self
     {
         $this->container['weight'] = $weight;
 

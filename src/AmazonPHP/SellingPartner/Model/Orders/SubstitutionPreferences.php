@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,22 +23,22 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class SubstitutionPreferences implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
-    final public const IDENTIFIER_TYPE_ASIN = 'ASIN';
+    final public const SUBSTITUTION_TYPE_CUSTOMER_PREFERENCE = 'CUSTOMER_PREFERENCE';
 
-    final public const IDENTIFIER_TYPE_SELLER_SKU = 'SELLER_SKU';
+    final public const SUBSTITUTION_TYPE_AMAZON_RECOMMENDED = 'AMAZON_RECOMMENDED';
 
-    final public const IDENTIFIER_TYPE_EXTERNAL_ID = 'EXTERNAL_ID';
+    final public const SUBSTITUTION_TYPE_DO_NOT_SUBSTITUTE = 'DO_NOT_SUBSTITUTE';
 
     /**
      * The original name of the model.
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'ItemIdentifier';
+    protected static string $openAPIModelName = 'SubstitutionPreferences';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -46,8 +46,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'identifier_type' => 'string',
-        'identifier' => 'string',
+        'substitution_type' => 'string',
+        'substitution_options' => '\AmazonPHP\SellingPartner\Model\Orders\SubstitutionOption[]',
     ];
 
     /**
@@ -60,8 +60,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'identifier_type' => null,
-        'identifier' => null,
+        'substitution_type' => null,
+        'substitution_options' => null,
     ];
 
     /**
@@ -71,8 +71,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @var string[]
      */
     protected static array $attributeMap = [
-        'identifier_type' => 'IdentifierType',
-        'identifier' => 'Identifier',
+        'substitution_type' => 'SubstitutionType',
+        'substitution_options' => 'SubstitutionOptions',
     ];
 
     /**
@@ -81,8 +81,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @var string[]
      */
     protected static array $setters = [
-        'identifier_type' => 'setIdentifierType',
-        'identifier' => 'setIdentifier',
+        'substitution_type' => 'setSubstitutionType',
+        'substitution_options' => 'setSubstitutionOptions',
     ];
 
     /**
@@ -91,8 +91,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @var string[]
      */
     protected static array $getters = [
-        'identifier_type' => 'getIdentifierType',
-        'identifier' => 'getIdentifier',
+        'substitution_type' => 'getSubstitutionType',
+        'substitution_options' => 'getSubstitutionOptions',
     ];
 
     /**
@@ -110,8 +110,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      */
     public function __construct(array $data = null)
     {
-        $this->container['identifier_type'] = $data['identifier_type'] ?? null;
-        $this->container['identifier'] = $data['identifier'] ?? null;
+        $this->container['substitution_type'] = $data['substitution_type'] ?? null;
+        $this->container['substitution_options'] = $data['substitution_options'] ?? null;
     }
 
     /**
@@ -179,12 +179,12 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      *
      * @return string[]
      */
-    public function getIdentifierTypeAllowableValues() : array
+    public function getSubstitutionTypeAllowableValues() : array
     {
         return [
-            self::IDENTIFIER_TYPE_ASIN,
-            self::IDENTIFIER_TYPE_SELLER_SKU,
-            self::IDENTIFIER_TYPE_EXTERNAL_ID,
+            self::SUBSTITUTION_TYPE_CUSTOMER_PREFERENCE,
+            self::SUBSTITUTION_TYPE_AMAZON_RECOMMENDED,
+            self::SUBSTITUTION_TYPE_DO_NOT_SUBSTITUTE,
         ];
     }
 
@@ -195,63 +195,61 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      */
     public function validate() : void
     {
-        if ($this->container['identifier_type'] === null) {
-            throw new AssertionException("'identifier_type' can't be null");
+        if ($this->container['substitution_type'] === null) {
+            throw new AssertionException("'substitution_type' can't be null");
         }
 
-        $allowedValues = $this->getIdentifierTypeAllowableValues();
+        $allowedValues = $this->getSubstitutionTypeAllowableValues();
 
-        if (null !== $this->container['identifier_type'] && !\in_array($this->container['identifier_type'], $allowedValues, true)) {
+        if (null !== $this->container['substitution_type'] && !\in_array($this->container['substitution_type'], $allowedValues, true)) {
             throw new AssertionException(
                 \sprintf(
-                    "invalid value '%s' for 'identifier_type', must be one of '%s'",
-                    $this->container['identifier_type'],
+                    "invalid value '%s' for 'substitution_type', must be one of '%s'",
+                    $this->container['substitution_type'],
                     \implode("', '", $allowedValues)
                 )
             );
         }
-
-        if ($this->container['identifier'] === null) {
-            throw new AssertionException("'identifier' can't be null");
-        }
     }
 
     /**
-     * Gets identifier_type.
+     * Gets substitution_type.
      */
-    public function getIdentifierType() : string
+    public function getSubstitutionType() : string
     {
-        return $this->container['identifier_type'];
+        return $this->container['substitution_type'];
     }
 
     /**
-     * Sets identifier_type.
+     * Sets substitution_type.
      *
-     * @param string $identifier_type defines the type of identifiers allowed to specify a substitution
+     * @param string $substitution_type the type of substitution that these preferences represent
      */
-    public function setIdentifierType(string $identifier_type) : self
+    public function setSubstitutionType(string $substitution_type) : self
     {
-        $this->container['identifier_type'] = $identifier_type;
+        $this->container['substitution_type'] = $substitution_type;
 
         return $this;
     }
 
     /**
-     * Gets identifier.
+     * Gets substitution_options.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\SubstitutionOption[]
      */
-    public function getIdentifier() : string
+    public function getSubstitutionOptions() : ?array
     {
-        return $this->container['identifier'];
+        return $this->container['substitution_options'];
     }
 
     /**
-     * Sets identifier.
+     * Sets substitution_options.
      *
-     * @param string $identifier identifier
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\SubstitutionOption[] $substitution_options a collection of substitution options
      */
-    public function setIdentifier(string $identifier) : self
+    public function setSubstitutionOptions(?array $substitution_options) : self
     {
-        $this->container['identifier'] = $identifier;
+        $this->container['substitution_options'] = $substitution_options;
 
         return $this;
     }

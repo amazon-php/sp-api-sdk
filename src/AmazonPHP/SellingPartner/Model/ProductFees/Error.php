@@ -241,7 +241,7 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets details.
      *
-     * @param null|string $details additional information that can help the caller understand or fix the issue
+     * @param null|string $details additional details that can help the caller understand or fix the issue
      */
     public function setDetails(?string $details) : self
     {

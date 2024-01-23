@@ -2,3 +2,6 @@ vendor/
 .openapi-generator
 var/
 .env
+
+### Jetbrains IDE's ###
+.idea/

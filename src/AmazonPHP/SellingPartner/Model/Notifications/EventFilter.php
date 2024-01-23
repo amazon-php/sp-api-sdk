@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Notifications.
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  *
@@ -26,6 +26,10 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
+
+    final public const EVENT_FILTER_TYPE_ANY_OFFER_CHANGED = 'ANY_OFFER_CHANGED';
+
+    final public const EVENT_FILTER_TYPE_ORDER_CHANGE = 'ORDER_CHANGE';
 
     /**
      * The original name of the model.
@@ -42,6 +46,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     protected static array $openAPITypes = [
         'aggregation_settings' => '\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings',
         'marketplace_ids' => 'string[]',
+        'order_change_types' => '\AmazonPHP\SellingPartner\Model\Notifications\OrderChangeTypeEnum[]',
         'event_filter_type' => 'string',
     ];
 
@@ -57,6 +62,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     protected static array $openAPIFormats = [
         'aggregation_settings' => null,
         'marketplace_ids' => null,
+        'order_change_types' => null,
         'event_filter_type' => null,
     ];
 
@@ -69,6 +75,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     protected static array $attributeMap = [
         'aggregation_settings' => 'aggregationSettings',
         'marketplace_ids' => 'marketplaceIds',
+        'order_change_types' => 'orderChangeTypes',
         'event_filter_type' => 'eventFilterType',
     ];
 
@@ -80,6 +87,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     protected static array $setters = [
         'aggregation_settings' => 'setAggregationSettings',
         'marketplace_ids' => 'setMarketplaceIds',
+        'order_change_types' => 'setOrderChangeTypes',
         'event_filter_type' => 'setEventFilterType',
     ];
 
@@ -91,6 +99,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     protected static array $getters = [
         'aggregation_settings' => 'getAggregationSettings',
         'marketplace_ids' => 'getMarketplaceIds',
+        'order_change_types' => 'getOrderChangeTypes',
         'event_filter_type' => 'getEventFilterType',
     ];
 
@@ -111,6 +120,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     {
         $this->container['aggregation_settings'] = $data['aggregation_settings'] ?? null;
         $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
+        $this->container['order_change_types'] = $data['order_change_types'] ?? null;
         $this->container['event_filter_type'] = $data['event_filter_type'] ?? null;
     }
 
@@ -175,6 +185,19 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     }
 
     /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getEventFilterTypeAllowableValues() : array
+    {
+        return [
+            self::EVENT_FILTER_TYPE_ANY_OFFER_CHANGED,
+            self::EVENT_FILTER_TYPE_ORDER_CHANGE,
+        ];
+    }
+
+    /**
      * Validate all properties.
      *
      * @throws AssertionException
@@ -187,6 +210,18 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
         if ($this->container['event_filter_type'] === null) {
             throw new AssertionException("'event_filter_type' can't be null");
+        }
+
+        $allowedValues = $this->getEventFilterTypeAllowableValues();
+
+        if (null !== $this->container['event_filter_type'] && !\in_array($this->container['event_filter_type'], $allowedValues, true)) {
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'event_filter_type', must be one of '%s'",
+                    $this->container['event_filter_type'],
+                    \implode("', '", $allowedValues)
+                )
+            );
         }
     }
 
@@ -223,11 +258,33 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets marketplace_ids.
      *
-     * @param null|string[] $marketplace_ids A list of marketplace identifiers to subscribe to (e.g. ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
+     * @param null|string[] $marketplace_ids A list of marketplace identifiers to subscribe to (for example: ATVPDKIKX0DER). To receive notifications in every marketplace, do not provide this list.
      */
     public function setMarketplaceIds(?array $marketplace_ids) : self
     {
         $this->container['marketplace_ids'] = $marketplace_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets order_change_types.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\OrderChangeTypeEnum[]
+     */
+    public function getOrderChangeTypes() : ?array
+    {
+        return $this->container['order_change_types'];
+    }
+
+    /**
+     * Sets order_change_types.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\OrderChangeTypeEnum[] $order_change_types A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     */
+    public function setOrderChangeTypes(?array $order_change_types) : self
+    {
+        $this->container['order_change_types'] = $order_change_types;
 
         return $this;
     }
@@ -243,7 +300,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets event_filter_type.
      *
-     * @param string $event_filter_type An eventFilterType value that is supported by the specific notificationType. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide) that describes the specific notificationType to determine if an eventFilterType is supported.
+     * @param string $event_filter_type An `eventFilterType` value that is supported by the specific `notificationType`. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide) that describes the specific `notificationType` to determine if an `eventFilterType` is supported.
      */
     public function setEventFilterType(string $event_filter_type) : self
     {
