@@ -290,14 +290,17 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * Operation searchDefinitionsProductTypes.
      *
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param null|string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
+     * @param null|string[] $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
+     * @param null|string $item_name The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
+     * @param null|string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
+     * @param null|string $search_locale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $keywords = null) : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
+    public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $keywords = null, ?string $item_name = null, ?string $locale = null, ?string $search_locale = null) : \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
     {
-        $request = $this->searchDefinitionsProductTypesRequest($accessToken, $region, $marketplace_ids, $keywords);
+        $request = $this->searchDefinitionsProductTypesRequest($accessToken, $region, $marketplace_ids, $keywords, $item_name, $locale, $search_locale);
 
         $this->configuration->extensions()->preRequest('ProductTypesDefinitions', 'searchDefinitionsProductTypes', $request);
 
@@ -387,11 +390,14 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * Create request for operation 'searchDefinitionsProductTypes'.
      *
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
-     * @param null|string[] $keywords A comma-delimited list of keywords to search product types by. (optional)
+     * @param null|string[] $keywords A comma-delimited list of keywords to search product types. **Note:** Cannot be used with &#x60;itemName&#x60;. (optional)
+     * @param null|string $item_name The title of the ASIN to get the product type recommendation. **Note:** Cannot be used with &#x60;keywords&#x60;. (optional)
+     * @param null|string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
+     * @param null|string $search_locale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $keywords = null) : RequestInterface
+    public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $keywords = null, ?string $item_name = null, ?string $locale = null, ?string $search_locale = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
@@ -422,6 +428,30 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
 
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
+        }
+        // query params
+        if (\is_array($item_name)) {
+            $item_name = ObjectSerializer::serializeCollection($item_name, '', true);
+        }
+
+        if ($item_name !== null) {
+            $queryParams['itemName'] = ObjectSerializer::toString($item_name);
+        }
+        // query params
+        if (\is_array($locale)) {
+            $locale = ObjectSerializer::serializeCollection($locale, '', true);
+        }
+
+        if ($locale !== null) {
+            $queryParams['locale'] = ObjectSerializer::toString($locale);
+        }
+        // query params
+        if (\is_array($search_locale)) {
+            $search_locale = ObjectSerializer::serializeCollection($search_locale, '', true);
+        }
+
+        if ($search_locale !== null) {
+            $queryParams['searchLocale'] = ObjectSerializer::toString($search_locale);
         }
 
         if (\count($queryParams)) {

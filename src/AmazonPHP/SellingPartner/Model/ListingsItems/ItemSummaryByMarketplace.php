@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Listings Items.
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  *
@@ -448,7 +448,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets fn_sku.
      *
-     * @param null|string $fn_sku fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item
+     * @param null|string $fn_sku the fulfillment network stock keeping unit is an identifier used by Amazon fulfillment centers to identify each unique item
      */
     public function setFnSku(?string $fn_sku) : self
     {
@@ -468,7 +468,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets item_name.
      *
-     * @param string $item_name name, or title, associated with an Amazon catalog item
+     * @param string $item_name the name or title associated with an Amazon catalog item
      */
     public function setItemName(string $item_name) : self
     {
@@ -488,7 +488,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets created_date.
      *
-     * @param \DateTimeInterface $created_date date the listings item was created, in ISO 8601 format
+     * @param \DateTimeInterface $created_date the date the listings item was created in ISO 8601 format
      */
     public function setCreatedDate(\DateTimeInterface $created_date) : self
     {
@@ -508,7 +508,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets last_updated_date.
      *
-     * @param \DateTimeInterface $last_updated_date date the listings item was last updated, in ISO 8601 format
+     * @param \DateTimeInterface $last_updated_date the date the listings item was last updated in ISO 8601 format
      */
     public function setLastUpdatedDate(\DateTimeInterface $last_updated_date) : self
     {

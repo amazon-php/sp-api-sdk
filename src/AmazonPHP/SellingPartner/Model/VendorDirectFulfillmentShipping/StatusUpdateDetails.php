@@ -257,7 +257,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets status_code.
      *
-     * @param string $status_code indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer
+     * @param string $status_code Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
      */
     public function setStatusCode(string $status_code) : self
     {
@@ -277,7 +277,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets reason_code.
      *
-     * @param string $reason_code provides a reason code for the status of the package that will provide additional information about the transportation status
+     * @param string $reason_code Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
      */
     public function setReasonCode(string $reason_code) : self
     {

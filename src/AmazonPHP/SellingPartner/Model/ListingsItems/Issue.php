@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Listings Items.
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  *
@@ -50,6 +50,8 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'message' => 'string',
         'severity' => 'string',
         'attribute_names' => 'string[]',
+        'categories' => 'string[]',
+        'enforcements' => '\AmazonPHP\SellingPartner\Model\ListingsItems\IssueEnforcements',
     ];
 
     /**
@@ -66,6 +68,8 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'message' => null,
         'severity' => null,
         'attribute_names' => null,
+        'categories' => null,
+        'enforcements' => null,
     ];
 
     /**
@@ -79,6 +83,8 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'message' => 'message',
         'severity' => 'severity',
         'attribute_names' => 'attributeNames',
+        'categories' => 'categories',
+        'enforcements' => 'enforcements',
     ];
 
     /**
@@ -91,6 +97,8 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'message' => 'setMessage',
         'severity' => 'setSeverity',
         'attribute_names' => 'setAttributeNames',
+        'categories' => 'setCategories',
+        'enforcements' => 'setEnforcements',
     ];
 
     /**
@@ -103,6 +111,8 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         'message' => 'getMessage',
         'severity' => 'getSeverity',
         'attribute_names' => 'getAttributeNames',
+        'categories' => 'getCategories',
+        'enforcements' => 'getEnforcements',
     ];
 
     /**
@@ -124,6 +134,8 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
         $this->container['message'] = $data['message'] ?? null;
         $this->container['severity'] = $data['severity'] ?? null;
         $this->container['attribute_names'] = $data['attribute_names'] ?? null;
+        $this->container['categories'] = $data['categories'] ?? null;
+        $this->container['enforcements'] = $data['enforcements'] ?? null;
     }
 
     /**
@@ -230,6 +242,14 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
                 )
             );
         }
+
+        if ($this->container['categories'] === null) {
+            throw new AssertionException("'categories' can't be null");
+        }
+
+        if ($this->container['enforcements'] !== null) {
+            $this->container['enforcements']->validate();
+        }
     }
 
     /**
@@ -305,11 +325,53 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets attribute_names.
      *
-     * @param null|string[] $attribute_names names of the attributes associated with the issue, if applicable
+     * @param null|string[] $attribute_names the names of the attributes associated with the issue, if applicable
      */
     public function setAttributeNames(?array $attribute_names) : self
     {
         $this->container['attribute_names'] = $attribute_names;
+
+        return $this;
+    }
+
+    /**
+     * Gets categories.
+     *
+     * @return string[]
+     */
+    public function getCategories() : array
+    {
+        return $this->container['categories'];
+    }
+
+    /**
+     * Sets categories.
+     *
+     * @param string[] $categories List of issue categories.   Possible vales:   * `INVALID_ATTRIBUTE` - Indicating an invalid attribute in the listing.   * `MISSING_ATTRIBUTE` - Highlighting a missing attribute in the listing.   * `INVALID_IMAGE` - Signifying an invalid image in the listing.   * `MISSING_IMAGE` - Noting the absence of an image in the listing.   * `INVALID_PRICE` - Pertaining to issues with the listing's price-related attributes.   * `MISSING_PRICE` - Pointing out the absence of a price attribute in the listing.   * `DUPLICATE` - Identifying listings with potential duplicate problems, such as this ASIN potentially being a duplicate of another ASIN.   * `QUALIFICATION_REQUIRED` - Indicating that the listing requires qualification-related approval.
+     */
+    public function setCategories(array $categories) : self
+    {
+        $this->container['categories'] = $categories;
+
+        return $this;
+    }
+
+    /**
+     * Gets enforcements.
+     */
+    public function getEnforcements() : ?IssueEnforcements
+    {
+        return $this->container['enforcements'];
+    }
+
+    /**
+     * Sets enforcements.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\IssueEnforcements $enforcements enforcements
+     */
+    public function setEnforcements(?IssueEnforcements $enforcements) : self
+    {
+        $this->container['enforcements'] = $enforcements;
 
         return $this;
     }

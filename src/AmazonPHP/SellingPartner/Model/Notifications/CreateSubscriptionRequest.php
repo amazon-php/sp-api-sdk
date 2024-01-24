@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Notifications.
  *
- * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, see the [Notifications Use Case Guide](doc:notifications-api-v1-use-case-guide).
+ * The Selling Partner API for Notifications lets you subscribe to notifications that are relevant to a selling partner's business. Using this API you can create a destination to receive notifications, subscribe to notifications, delete notification subscriptions, and more.  For more information, refer to the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide).
  *
  * The version of the OpenAPI document: v1
  *
@@ -181,6 +181,14 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
      */
     public function validate() : void
     {
+        if ($this->container['payload_version'] === null) {
+            throw new AssertionException("'payload_version' can't be null");
+        }
+
+        if ($this->container['destination_id'] === null) {
+            throw new AssertionException("'destination_id' can't be null");
+        }
+
         if ($this->container['processing_directive'] !== null) {
             $this->container['processing_directive']->validate();
         }
@@ -189,7 +197,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets payload_version.
      */
-    public function getPayloadVersion() : ?string
+    public function getPayloadVersion() : string
     {
         return $this->container['payload_version'];
     }
@@ -197,9 +205,9 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets payload_version.
      *
-     * @param null|string $payload_version the version of the payload object to be used in the notification
+     * @param string $payload_version the version of the payload object to be used in the notification
      */
-    public function setPayloadVersion(?string $payload_version) : self
+    public function setPayloadVersion(string $payload_version) : self
     {
         $this->container['payload_version'] = $payload_version;
 
@@ -209,7 +217,7 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets destination_id.
      */
-    public function getDestinationId() : ?string
+    public function getDestinationId() : string
     {
         return $this->container['destination_id'];
     }
@@ -217,9 +225,9 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets destination_id.
      *
-     * @param null|string $destination_id the identifier for the destination where notifications will be delivered
+     * @param string $destination_id the identifier for the destination where notifications will be delivered
      */
-    public function setDestinationId(?string $destination_id) : self
+    public function setDestinationId(string $destination_id) : self
     {
         $this->container['destination_id'] = $destination_id;
 

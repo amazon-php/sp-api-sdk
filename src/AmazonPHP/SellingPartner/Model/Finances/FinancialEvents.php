@@ -70,8 +70,8 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'adhoc_disbursement_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\AdhocDisbursementEvent[]',
         'tax_withholding_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingEvent[]',
         'charge_refund_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundEvent[]',
-        'failed_adhoc_disbursement_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEventList',
-        'value_added_service_charge_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\ValueAddedServiceChargeEventList',
+        'failed_adhoc_disbursement_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEvent[]',
+        'value_added_service_charge_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\ValueAddedServiceChargeEvent[]',
         'capacity_reservation_billing_event_list' => '\AmazonPHP\SellingPartner\Model\Finances\CapacityReservationBillingEvent[]',
     ];
 
@@ -361,13 +361,6 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
      */
     public function validate() : void
     {
-        if ($this->container['failed_adhoc_disbursement_event_list'] !== null) {
-            $this->container['failed_adhoc_disbursement_event_list']->validate();
-        }
-
-        if ($this->container['value_added_service_charge_event_list'] !== null) {
-            $this->container['value_added_service_charge_event_list']->validate();
-        }
     }
 
     /**
@@ -1032,8 +1025,10 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets failed_adhoc_disbursement_event_list.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEvent[]
      */
-    public function getFailedAdhocDisbursementEventList() : ?FailedAdhocDisbursementEventList
+    public function getFailedAdhocDisbursementEventList() : ?array
     {
         return $this->container['failed_adhoc_disbursement_event_list'];
     }
@@ -1041,9 +1036,9 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets failed_adhoc_disbursement_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEventList $failed_adhoc_disbursement_event_list failed_adhoc_disbursement_event_list
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEvent[] $failed_adhoc_disbursement_event_list a list of `FailedAdhocDisbursementEvent`s
      */
-    public function setFailedAdhocDisbursementEventList(?FailedAdhocDisbursementEventList $failed_adhoc_disbursement_event_list) : self
+    public function setFailedAdhocDisbursementEventList(?array $failed_adhoc_disbursement_event_list) : self
     {
         $this->container['failed_adhoc_disbursement_event_list'] = $failed_adhoc_disbursement_event_list;
 
@@ -1052,8 +1047,10 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets value_added_service_charge_event_list.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ValueAddedServiceChargeEvent[]
      */
-    public function getValueAddedServiceChargeEventList() : ?ValueAddedServiceChargeEventList
+    public function getValueAddedServiceChargeEventList() : ?array
     {
         return $this->container['value_added_service_charge_event_list'];
     }
@@ -1061,9 +1058,9 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets value_added_service_charge_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\ValueAddedServiceChargeEventList $value_added_service_charge_event_list value_added_service_charge_event_list
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\ValueAddedServiceChargeEvent[] $value_added_service_charge_event_list a list of `ValueAddedServiceCharge` events
      */
-    public function setValueAddedServiceChargeEventList(?ValueAddedServiceChargeEventList $value_added_service_charge_event_list) : self
+    public function setValueAddedServiceChargeEventList(?array $value_added_service_charge_event_list) : self
     {
         $this->container['value_added_service_charge_event_list'] = $value_added_service_charge_event_list;
 

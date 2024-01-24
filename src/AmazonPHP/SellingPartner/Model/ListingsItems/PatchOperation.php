@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Listings Items.
  *
- * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](doc:listings-items-api-v2021-08-01-use-case-guide).
+ * The Selling Partner API for Listings Items (Listings Items API) provides programmatic access to selling partner listings on Amazon. Use this API in collaboration with the Selling Partner API for Product Type Definitions, which you use to retrieve the information about Amazon product types needed to use the Listings Items API.  For more information, see the [Listings Items API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/listings-items-api-v2021-08-01-use-case-guide).
  *
  * The version of the OpenAPI document: 2021-08-01
  *
@@ -48,7 +48,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     protected static array $openAPITypes = [
         'op' => 'string',
         'path' => 'string',
-        'value' => 'object[]',
+        'value' => 'array<string,mixed>[]',
     ];
 
     /**
@@ -233,7 +233,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets op.
      *
-     * @param string $op Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. See <https://tools.ietf.org/html/rfc6902>.
+     * @param string $op Type of JSON Patch operation. Supported JSON Patch operations include add, replace, and delete. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
      */
     public function setOp(string $op) : self
     {
@@ -253,7 +253,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets path.
      *
-     * @param string $path JSON Pointer path of the element to patch. See <https://tools.ietf.org/html/rfc6902>.
+     * @param string $path JSON Pointer path of the element to patch. Refer to [JavaScript Object Notation (JSON) Patch](https://tools.ietf.org/html/rfc6902) for more information.
      */
     public function setPath(string $path) : self
     {
@@ -265,7 +265,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets value.
      *
-     * @return null|object[]
+     * @return null|array<string,mixed>[]
      */
     public function getValue() : ?array
     {
@@ -275,7 +275,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets value.
      *
-     * @param null|object[] $value JSON value to add, replace, or delete
+     * @param null|array<string,mixed>[] $value JSON value to add, replace, or delete
      */
     public function setValue(?array $value) : self
     {

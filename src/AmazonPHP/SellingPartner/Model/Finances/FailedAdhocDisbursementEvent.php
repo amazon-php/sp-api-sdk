@@ -2,16 +2,16 @@
 
 declare(strict_types=1);
 
-namespace AmazonPHP\SellingPartner\Model\Orders;
+namespace AmazonPHP\SellingPartner\Model\Finances;
 
 use AmazonPHP\SellingPartner\Exception\AssertionException;
 use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Orders.
+ * Selling Partner API for Finances.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -23,7 +23,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
 
@@ -32,7 +32,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      *
      * @var string
      */
-    protected static string $openAPIModelName = 'UpdateVerificationStatusRequestBody';
+    protected static string $openAPIModelName = 'FailedAdhocDisbursementEvent';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,9 +40,13 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'status' => '\AmazonPHP\SellingPartner\Model\Orders\VerificationStatus',
-        'external_reviewer_id' => 'string',
-        'rejection_reason_id' => 'string',
+        'funds_transfers_type' => 'string',
+        'transfer_id' => 'string',
+        'disbursement_id' => 'string',
+        'payment_disbursement_type' => 'string',
+        'status' => 'string',
+        'transfer_amount' => '\AmazonPHP\SellingPartner\Model\Finances\Currency',
+        'posted_date' => '\DateTimeInterface',
     ];
 
     /**
@@ -55,9 +59,13 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
+        'funds_transfers_type' => null,
+        'transfer_id' => null,
+        'disbursement_id' => null,
+        'payment_disbursement_type' => null,
         'status' => null,
-        'external_reviewer_id' => null,
-        'rejection_reason_id' => null,
+        'transfer_amount' => null,
+        'posted_date' => 'date-time',
     ];
 
     /**
@@ -67,9 +75,13 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $attributeMap = [
-        'status' => 'status',
-        'external_reviewer_id' => 'externalReviewerId',
-        'rejection_reason_id' => 'rejectionReasonId',
+        'funds_transfers_type' => 'FundsTransfersType',
+        'transfer_id' => 'TransferId',
+        'disbursement_id' => 'DisbursementId',
+        'payment_disbursement_type' => 'PaymentDisbursementType',
+        'status' => 'Status',
+        'transfer_amount' => 'TransferAmount',
+        'posted_date' => 'PostedDate',
     ];
 
     /**
@@ -78,9 +90,13 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $setters = [
+        'funds_transfers_type' => 'setFundsTransfersType',
+        'transfer_id' => 'setTransferId',
+        'disbursement_id' => 'setDisbursementId',
+        'payment_disbursement_type' => 'setPaymentDisbursementType',
         'status' => 'setStatus',
-        'external_reviewer_id' => 'setExternalReviewerId',
-        'rejection_reason_id' => 'setRejectionReasonId',
+        'transfer_amount' => 'setTransferAmount',
+        'posted_date' => 'setPostedDate',
     ];
 
     /**
@@ -89,9 +105,13 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static array $getters = [
+        'funds_transfers_type' => 'getFundsTransfersType',
+        'transfer_id' => 'getTransferId',
+        'disbursement_id' => 'getDisbursementId',
+        'payment_disbursement_type' => 'getPaymentDisbursementType',
         'status' => 'getStatus',
-        'external_reviewer_id' => 'getExternalReviewerId',
-        'rejection_reason_id' => 'getRejectionReasonId',
+        'transfer_amount' => 'getTransferAmount',
+        'posted_date' => 'getPostedDate',
     ];
 
     /**
@@ -109,9 +129,13 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
+        $this->container['funds_transfers_type'] = $data['funds_transfers_type'] ?? null;
+        $this->container['transfer_id'] = $data['transfer_id'] ?? null;
+        $this->container['disbursement_id'] = $data['disbursement_id'] ?? null;
+        $this->container['payment_disbursement_type'] = $data['payment_disbursement_type'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
-        $this->container['external_reviewer_id'] = $data['external_reviewer_id'] ?? null;
-        $this->container['rejection_reason_id'] = $data['rejection_reason_id'] ?? null;
+        $this->container['transfer_amount'] = $data['transfer_amount'] ?? null;
+        $this->container['posted_date'] = $data['posted_date'] ?? null;
     }
 
     /**
@@ -181,19 +205,95 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      */
     public function validate() : void
     {
-        if ($this->container['status'] === null) {
-            throw new AssertionException("'status' can't be null");
+        if ($this->container['transfer_amount'] !== null) {
+            $this->container['transfer_amount']->validate();
         }
+    }
 
-        if ($this->container['external_reviewer_id'] === null) {
-            throw new AssertionException("'external_reviewer_id' can't be null");
-        }
+    /**
+     * Gets funds_transfers_type.
+     */
+    public function getFundsTransfersType() : ?string
+    {
+        return $this->container['funds_transfers_type'];
+    }
+
+    /**
+     * Sets funds_transfers_type.
+     *
+     * @param null|string $funds_transfers_type The type of fund transfer.   Example \"Refund\"
+     */
+    public function setFundsTransfersType(?string $funds_transfers_type) : self
+    {
+        $this->container['funds_transfers_type'] = $funds_transfers_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets transfer_id.
+     */
+    public function getTransferId() : ?string
+    {
+        return $this->container['transfer_id'];
+    }
+
+    /**
+     * Sets transfer_id.
+     *
+     * @param null|string $transfer_id the transfer identifier
+     */
+    public function setTransferId(?string $transfer_id) : self
+    {
+        $this->container['transfer_id'] = $transfer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets disbursement_id.
+     */
+    public function getDisbursementId() : ?string
+    {
+        return $this->container['disbursement_id'];
+    }
+
+    /**
+     * Sets disbursement_id.
+     *
+     * @param null|string $disbursement_id the disbursement identifier
+     */
+    public function setDisbursementId(?string $disbursement_id) : self
+    {
+        $this->container['disbursement_id'] = $disbursement_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_disbursement_type.
+     */
+    public function getPaymentDisbursementType() : ?string
+    {
+        return $this->container['payment_disbursement_type'];
+    }
+
+    /**
+     * Sets payment_disbursement_type.
+     *
+     * @param null|string $payment_disbursement_type The type of payment for disbursement.   Example `CREDIT_CARD`
+     */
+    public function setPaymentDisbursementType(?string $payment_disbursement_type) : self
+    {
+        $this->container['payment_disbursement_type'] = $payment_disbursement_type;
+
+        return $this;
     }
 
     /**
      * Gets status.
      */
-    public function getStatus() : VerificationStatus
+    public function getStatus() : ?string
     {
         return $this->container['status'];
     }
@@ -201,9 +301,9 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Sets status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
+     * @param null|string $status The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
      */
-    public function setStatus(VerificationStatus $status) : self
+    public function setStatus(?string $status) : self
     {
         $this->container['status'] = $status;
 
@@ -211,41 +311,41 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     }
 
     /**
-     * Gets external_reviewer_id.
+     * Gets transfer_amount.
      */
-    public function getExternalReviewerId() : string
+    public function getTransferAmount() : ?Currency
     {
-        return $this->container['external_reviewer_id'];
+        return $this->container['transfer_amount'];
     }
 
     /**
-     * Sets external_reviewer_id.
+     * Sets transfer_amount.
      *
-     * @param string $external_reviewer_id the identifier for the order's regulated information reviewer
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\Currency $transfer_amount transfer_amount
      */
-    public function setExternalReviewerId(string $external_reviewer_id) : self
+    public function setTransferAmount(?Currency $transfer_amount) : self
     {
-        $this->container['external_reviewer_id'] = $external_reviewer_id;
+        $this->container['transfer_amount'] = $transfer_amount;
 
         return $this;
     }
 
     /**
-     * Gets rejection_reason_id.
+     * Gets posted_date.
      */
-    public function getRejectionReasonId() : ?string
+    public function getPostedDate() : ?\DateTimeInterface
     {
-        return $this->container['rejection_reason_id'];
+        return $this->container['posted_date'];
     }
 
     /**
-     * Sets rejection_reason_id.
+     * Sets posted_date.
      *
-     * @param null|string $rejection_reason_id The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
+     * @param null|\DateTimeInterface $posted_date posted_date
      */
-    public function setRejectionReasonId(?string $rejection_reason_id) : self
+    public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
-        $this->container['rejection_reason_id'] = $rejection_reason_id;
+        $this->container['posted_date'] = $posted_date;
 
         return $this;
     }

@@ -41,6 +41,7 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     protected static array $openAPITypes = [
         'name' => 'string',
+        'display_name' => 'string',
         'marketplace_ids' => 'string[]',
     ];
 
@@ -55,6 +56,7 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     protected static array $openAPIFormats = [
         'name' => null,
+        'display_name' => null,
         'marketplace_ids' => null,
     ];
 
@@ -66,6 +68,7 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     protected static array $attributeMap = [
         'name' => 'name',
+        'display_name' => 'displayName',
         'marketplace_ids' => 'marketplaceIds',
     ];
 
@@ -76,6 +79,7 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     protected static array $setters = [
         'name' => 'setName',
+        'display_name' => 'setDisplayName',
         'marketplace_ids' => 'setMarketplaceIds',
     ];
 
@@ -86,6 +90,7 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      */
     protected static array $getters = [
         'name' => 'getName',
+        'display_name' => 'getDisplayName',
         'marketplace_ids' => 'getMarketplaceIds',
     ];
 
@@ -105,6 +110,7 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     public function __construct(array $data = null)
     {
         $this->container['name'] = $data['name'] ?? null;
+        $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;
     }
 
@@ -179,6 +185,10 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
             throw new AssertionException("'name' can't be null");
         }
 
+        if ($this->container['display_name'] === null) {
+            throw new AssertionException("'display_name' can't be null");
+        }
+
         if ($this->container['marketplace_ids'] === null) {
             throw new AssertionException("'marketplace_ids' can't be null");
         }
@@ -200,6 +210,26 @@ class ProductType implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     public function setName(string $name) : self
     {
         $this->container['name'] = $name;
+
+        return $this;
+    }
+
+    /**
+     * Gets display_name.
+     */
+    public function getDisplayName() : string
+    {
+        return $this->container['display_name'];
+    }
+
+    /**
+     * Sets display_name.
+     *
+     * @param string $display_name the human-readable and localized description of the Amazon product type
+     */
+    public function setDisplayName(string $display_name) : self
+    {
+        $this->container['display_name'] = $display_name;
 
         return $this;
     }
