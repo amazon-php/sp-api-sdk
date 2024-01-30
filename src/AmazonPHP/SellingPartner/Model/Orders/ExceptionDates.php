@@ -194,7 +194,7 @@ class ExceptionDates implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets exception_date.
      *
-     * @param null|string $exception_date date when the business is closed, in ISO-8601 date format
+     * @param null|string $exception_date Date when the business is closed, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date format.
      */
     public function setExceptionDate(?string $exception_date) : self
     {

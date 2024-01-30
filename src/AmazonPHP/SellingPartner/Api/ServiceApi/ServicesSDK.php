@@ -2691,7 +2691,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param null|string[] $service_order_ids List of service order ids for the query you want to perform.Max values supported 20. (optional)
      * @param null|string[] $service_job_status A list of one or more job status by which to filter the list of jobs. (optional)
      * @param null|string $page_token String returned in the response of your previous request. (optional)
-     * @param int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
+     * @param null|int $page_size A non-negative integer that indicates the maximum number of jobs to return in the list, Value must be 1 - 20. Default 20. (optional, default to 20)
      * @param null|string $sort_field Sort fields on which you want to sort the output. (optional)
      * @param null|string $sort_order Sort order for the query you want to perform. (optional)
      * @param null|string $created_after A date used for selecting jobs created at or after a specified time. Must be in ISO 8601 format. Required if &#x60;LastUpdatedAfter&#x60; is not specified. Specifying both &#x60;CreatedAfter&#x60; and &#x60;LastUpdatedAfter&#x60; returns an error. (optional)
@@ -2707,7 +2707,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getServiceJobs(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $service_order_ids = null, ?array $service_job_status = null, ?string $page_token = null, int $page_size = 20, ?string $sort_field = null, ?string $sort_order = null, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?string $schedule_start_date = null, ?string $schedule_end_date = null, ?array $asins = null, ?array $required_skills = null, ?array $store_ids = null) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse
+    public function getServiceJobs(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $service_order_ids = null, ?array $service_job_status = null, ?string $page_token = null, ?int $page_size = 20, ?string $sort_field = null, ?string $sort_order = null, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?string $schedule_start_date = null, ?string $schedule_end_date = null, ?array $asins = null, ?array $required_skills = null, ?array $store_ids = null) : \AmazonPHP\SellingPartner\Model\Services\GetServiceJobsResponse
     {
         $request = $this->getServiceJobsRequest($accessToken, $region, $marketplace_ids, $service_order_ids, $service_job_status, $page_token, $page_size, $sort_field, $sort_order, $created_after, $created_before, $last_updated_after, $last_updated_before, $schedule_start_date, $schedule_end_date, $asins, $required_skills, $store_ids);
 

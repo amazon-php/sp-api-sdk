@@ -1084,7 +1084,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets earliest_ship_date.
      *
-     * @param null|string $earliest_ship_date The start of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param null|string $earliest_ship_date The start of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  __Note__: EarliestShipDate might not be returned for orders placed before February 1, 2013.
      */
     public function setEarliestShipDate(?string $earliest_ship_date) : self
     {
@@ -1104,7 +1104,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets latest_ship_date.
      *
-     * @param null|string $latest_ship_date The end of the time period within which you have committed to ship the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
+     * @param null|string $latest_ship_date The end of the time period within which you have committed to ship the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.  __Note__: LatestShipDate might not be returned for orders placed before February 1, 2013.
      */
     public function setLatestShipDate(?string $latest_ship_date) : self
     {
@@ -1124,7 +1124,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets earliest_delivery_date.
      *
-     * @param null|string $earliest_delivery_date The start of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders.
+     * @param null|string $earliest_delivery_date The start of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders.
      */
     public function setEarliestDeliveryDate(?string $earliest_delivery_date) : self
     {
@@ -1144,7 +1144,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets latest_delivery_date.
      *
-     * @param null|string $latest_delivery_date The end of the time period within which you have committed to fulfill the order. In ISO 8601 date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
+     * @param null|string $latest_delivery_date The end of the time period within which you have committed to fulfill the order. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format. Returned only for seller-fulfilled orders that do not have a PendingAvailability, Pending, or Canceled status.
      */
     public function setLatestDeliveryDate(?string $latest_delivery_date) : self
     {
