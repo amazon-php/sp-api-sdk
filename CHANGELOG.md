@@ -1,3 +1,100 @@
+## [5.0.9] - 2024-01-31
+
+### Changed
+- [#561](https://github.com/amazon-php/sp-api-sdk/pull/561) - **Modified api.mustache template to make method parameters nullable if they are optional even if a default value is presented.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#558](https://github.com/amazon-php/sp-api-sdk/pull/558) - **Add Jetbrains .idea directory to .gitignore.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#558](https://github.com/amazon-php/sp-api-sdk/pull/558) - **Add user flag to Docker run commands in bin/generate.sh so files created are owned by the user/group running the operation.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#558](https://github.com/amazon-php/sp-api-sdk/pull/558) - **Increase rector parallel processing timeout from 2 minutes to 10 minutes.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#558](https://github.com/amazon-php/sp-api-sdk/pull/558) - **Update Amazon SP API models to the latest version** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Updated
+- [48c72b](https://github.com/amazon-php/sp-api-sdk/commit/48c72b9e80e45961f90386eeac37bbaac47fae47) - **README.md** - [@norberttech](https://github.com/norberttech)
+- [a20e6e](https://github.com/amazon-php/sp-api-sdk/commit/a20e6e3d87247aaa901e078421af6ebf844d1058) - **README.md** - [@norberttech](https://github.com/norberttech)
+- [e11a4b](https://github.com/amazon-php/sp-api-sdk/commit/e11a4bf8287f34abfbecd1102951851560899ac3) - **README.md** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [#558](https://github.com/amazon-php/sp-api-sdk/pull/558) - **Remove Order Approvals API from SDK as it has been removed from the library.** - [@jasonhebert](https://github.com/jasonhebert)
+
+## Contributors
+
+- @jasonhebert
+- @norberttech
+
+## [5.0.8] - 2023-05-07
+
+### Fixed
+- [1b44f8](https://github.com/amazon-php/sp-api-sdk/commit/1b44f8c445394cf35ad38dbb24e5f0a9027399ec) - **return types skipped during models regeneration** - [@norberttech](https://github.com/norberttech)
+
+## [5.0.7] - 2023-05-07
+
+### Changed
+- [#399](https://github.com/amazon-php/sp-api-sdk/pull/399) - **amazon sp api models to the latest ve. sion** - [@norberttech](https://github.com/norberttech)
+- [#399](https://github.com/amazon-php/sp-api-sdk/pull/399) - **added request body/uri/headers to response log to simplify browsing logs** - [@norberttech](https://github.com/norberttech)
+
+## [5.0.6] - 2023-04-25
+
+### Changed
+- [bed512](https://github.com/amazon-php/sp-api-sdk/commit/bed51233b21281362957812511d6081cf15a49be) - **Make marketplace id optional in GetOffersResult** - [@norberttech](https://github.com/norberttech)
+
+### Updated
+- [3c2ff0](https://github.com/amazon-php/sp-api-sdk/commit/3c2ff02ba85378bbbcbceacf9b938dd0e6cd5618) - **supported version of php** - [@norberttech](https://github.com/norberttech)
+
+## [5.0.5] - 2023-02-14
+
+### Added
+- [#342](https://github.com/amazon-php/sp-api-sdk/pull/342) - **support for psr/log ^3.0** - [@norberttech](https://github.com/norberttech)
+
+## [5.0.4] - 2023-02-13
+
+### Fixed
+- [bab350](https://github.com/amazon-php/sp-api-sdk/commit/bab350d2b94c4e54bc02ff5f1c8bbe9f529aa581) - **added missing ksort to query element** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [2226b9](https://github.com/amazon-php/sp-api-sdk/commit/2226b9d7bb7f14b4aee8af5a62902961b55a41a9) - **development leftover** - [@norberttech](https://github.com/norberttech)
+
+## [5.0.3] - 2023-02-13
+
+### Fixed
+- [#341](https://github.com/amazon-php/sp-api-sdk/pull/341) - **creating http signature for queries with spaces** - [@norberttech](https://github.com/norberttech)
+
+## [5.0.2] - 2023-02-03
+
+### Fixed
+- [#331](https://github.com/amazon-php/sp-api-sdk/pull/331) - **issues with currency codes other than USD and GBP** - [@norberttech](https://github.com/norberttech)
+
+## [5.0.1] - 2023-01-12
+
+### Added
+- [#299](https://github.com/amazon-php/sp-api-sdk/pull/299) - **Added Belgium Marketplace** - [@sw-Oldeu](https://github.com/sw-Oldeu)
+- [#299](https://github.com/amazon-php/sp-api-sdk/pull/299) - **Added Saudi Arabia Marketplace** - [@sw-Oldeu](https://github.com/sw-Oldeu)
+
+### Changed
+- [#314](https://github.com/amazon-php/sp-api-sdk/pull/314) - **Updated model definitions** - [@owsiakl](https://github.com/owsiakl)
+- [#314](https://github.com/amazon-php/sp-api-sdk/pull/314) - **Changed rector to use earlier versions** - [@owsiakl](https://github.com/owsiakl)
+- [#280](https://github.com/amazon-php/sp-api-sdk/pull/280) - **Change lwaClientID to lwaClientIdSecret from IAM Role section in README.md file** - [@To-heeb](https://github.com/To-heeb)
+
+### Removed
+- [#314](https://github.com/amazon-php/sp-api-sdk/pull/314) - **Remove deprecated rector rule TYPE_DECLARATION** - [@owsiakl](https://github.com/owsiakl)
+
+## [5.0.0] - 2022-09-27
+
+### Changed
+- [#260](https://github.com/amazon-php/sp-api-sdk/pull/260) - **rector rules are modifying only `Api` and `Model` paths** - [@owsiakl](https://github.com/owsiakl)
+- [#260](https://github.com/amazon-php/sp-api-sdk/pull/260) - **marked some methods return types in `ItemSearchResults` as nullable** - [@owsiakl](https://github.com/owsiakl)
+- [#258](https://github.com/amazon-php/sp-api-sdk/pull/258) - **Forcing rector to always use in memory cache seems to resolve the issue where it starts adding redundant docblocks while regenerating models** - [@norberttech](https://github.com/norberttech)
+- [#257](https://github.com/amazon-php/sp-api-sdk/pull/257) - **Updated models** - [@norberttech](https://github.com/norberttech)
+- [#252](https://github.com/amazon-php/sp-api-sdk/pull/252) - **Updated minimum PHP requirement to ~8.1** - [@norberttech](https://github.com/norberttech)
+- [#252](https://github.com/amazon-php/sp-api-sdk/pull/252) - **Updated CatalogItem API models** - [@norberttech](https://github.com/norberttech)
+
+### Fixed
+- [#260](https://github.com/amazon-php/sp-api-sdk/pull/260) - **fixed loading env vars in functional sandbox tests** - [@owsiakl](https://github.com/owsiakl)
+- [#260](https://github.com/amazon-php/sp-api-sdk/pull/260) - **fixed api exception constructor** - [@owsiakl](https://github.com/owsiakl)
+- [#257](https://github.com/amazon-php/sp-api-sdk/pull/257) - **Wrong dependency in custom rector rule** - [@norberttech](https://github.com/norberttech)
+- [#257](https://github.com/amazon-php/sp-api-sdk/pull/257) - **Models generated previous time** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [#252](https://github.com/amazon-php/sp-api-sdk/pull/252) - **uuid library dependency** - [@norberttech](https://github.com/norberttech)
+
 ## [4.0.11] - 2022-09-10
 
 ### Added
