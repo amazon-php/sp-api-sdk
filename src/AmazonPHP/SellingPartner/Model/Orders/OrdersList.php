@@ -245,7 +245,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets last_updated_before.
      *
-     * @param null|string $last_updated_before A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in ISO 8601 format.
+     * @param null|string $last_updated_before A date used for selecting orders that were last updated before (or at) a specified time. An update is defined as any change in order status, including the creation of a new order. Includes updates made by Amazon and by the seller. All dates must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      */
     public function setLastUpdatedBefore(?string $last_updated_before) : self
     {
@@ -265,7 +265,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets created_before.
      *
-     * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in ISO 8601 format.
+     * @param null|string $created_before A date used for selecting orders created before (or at) a specified time. Only orders placed before the specified time are returned. The date must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> format.
      */
     public function setCreatedBefore(?string $created_before) : self
     {

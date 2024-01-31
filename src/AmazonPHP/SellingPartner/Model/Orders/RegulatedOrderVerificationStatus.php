@@ -309,7 +309,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets review_date.
      *
-     * @param null|string $review_date The date the order was reviewed. In ISO 8601 date time format.
+     * @param null|string $review_date The date the order was reviewed. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      */
     public function setReviewDate(?string $review_date) : self
     {

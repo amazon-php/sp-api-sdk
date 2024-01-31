@@ -996,7 +996,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets scheduled_delivery_start_date.
      *
-     * @param null|string $scheduled_delivery_start_date The start date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+     * @param null|string $scheduled_delivery_start_date The start date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      */
     public function setScheduledDeliveryStartDate(?string $scheduled_delivery_start_date) : self
     {
@@ -1016,7 +1016,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets scheduled_delivery_end_date.
      *
-     * @param null|string $scheduled_delivery_end_date The end date of the scheduled delivery window in the time zone of the order destination. In ISO 8601 date time format.
+     * @param null|string $scheduled_delivery_end_date The end date of the scheduled delivery window in the time zone of the order destination. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      */
     public function setScheduledDeliveryEndDate(?string $scheduled_delivery_end_date) : self
     {

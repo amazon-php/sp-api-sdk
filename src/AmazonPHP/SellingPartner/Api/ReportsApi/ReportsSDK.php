@@ -1530,7 +1530,7 @@ final class ReportsSDK implements ReportsSDKInterface
      * @param null|string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
+     * @param null|int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
      * @param null|\DateTimeInterface $created_since The earliest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
      * @param null|\DateTimeInterface $created_until The latest report creation date and time for reports to include in the response, in ISO 8601 date time format. The default is now. (optional)
      * @param null|string $next_token A string token returned in the response to your previous request. nextToken is returned when the number of results exceeds the specified pageSize value. To get the next page of results, call the getReports operation and include this token as the only parameter. Specifying nextToken with any other parameters will cause the request to fail. (optional)
@@ -1538,7 +1538,7 @@ final class ReportsSDK implements ReportsSDKInterface
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getReports(AccessToken $accessToken, string $region, ?array $report_types = null, ?array $processing_statuses = null, ?array $marketplace_ids = null, int $page_size = 10, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
+    public function getReports(AccessToken $accessToken, string $region, ?array $report_types = null, ?array $processing_statuses = null, ?array $marketplace_ids = null, ?int $page_size = 10, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\Reports\GetReportsResponse
     {
         $request = $this->getReportsRequest($accessToken, $region, $report_types, $processing_statuses, $marketplace_ids, $page_size, $created_since, $created_until, $next_token);
 

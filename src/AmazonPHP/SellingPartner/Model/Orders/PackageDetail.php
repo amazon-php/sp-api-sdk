@@ -343,7 +343,7 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets ship_date.
      *
-     * @param \DateTimeInterface $ship_date The shipping date for the package. Must be in ISO-8601 date/time format.
+     * @param \DateTimeInterface $ship_date The shipping date for the package. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      */
     public function setShipDate(\DateTimeInterface $ship_date) : self
     {

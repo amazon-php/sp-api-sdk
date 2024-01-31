@@ -268,14 +268,14 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
      * @param null|string[] $keywords A comma-delimited list of words to search the Amazon catalog for. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
      * @param null|string[] $brand_names A comma-delimited list of brand names to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
      * @param null|string[] $classification_ids A comma-delimited list of classification identifiers to limit the search for &#x60;keywords&#x60;-based queries. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
-     * @param int $page_size Number of results to be returned per page. (optional, default to 10)
+     * @param null|int $page_size Number of results to be returned per page. (optional, default to 10)
      * @param null|string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
      * @param null|string $keywords_locale The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function searchCatalogItems(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, ?array $included_data = null, ?string $locale = null, ?string $seller_id = null, ?array $keywords = null, ?array $brand_names = null, ?array $classification_ids = null, int $page_size = 10, ?string $page_token = null, ?string $keywords_locale = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults
+    public function searchCatalogItems(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, ?array $included_data = null, ?string $locale = null, ?string $seller_id = null, ?array $keywords = null, ?array $brand_names = null, ?array $classification_ids = null, ?int $page_size = 10, ?string $page_token = null, ?string $keywords_locale = null) : \AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults
     {
         $request = $this->searchCatalogItemsRequest($accessToken, $region, $marketplace_ids, $identifiers, $identifiers_type, $included_data, $locale, $seller_id, $keywords, $brand_names, $classification_ids, $page_size, $page_token, $keywords_locale);
 
