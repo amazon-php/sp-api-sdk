@@ -333,7 +333,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets marketplace_id.
      */
-    public function getMarketplaceId() : string
+    public function getMarketplaceId() : ?string
     {
         return $this->container['marketplace_id'];
     }
