@@ -17,7 +17,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Selling Partner API for Fulfillment Inbound.
+ * Selling Partner API for Fulfillment Inbound
  *
  * The Selling Partner API for Fulfillment Inbound lets you create applications that create and update inbound shipments of inventory to Amazon's fulfillment network.
  *
@@ -28,21 +28,36 @@ use Psr\Log\LoggerInterface;
  */
 final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 {
-    public function __construct(private readonly ClientInterface $client, private readonly HttpFactory $httpFactory, private readonly Configuration $configuration, private readonly LoggerInterface $logger)
+    private ClientInterface $client;
+
+    private HttpFactory $httpFactory;
+
+    private Configuration $configuration;
+
+    private LoggerInterface $logger;
+
+    public function __construct(ClientInterface $client, HttpFactory $requestFactory, Configuration $configuration, LoggerInterface $logger)
     {
+        $this->client = $client;
+        $this->httpFactory = $requestFactory;
+        $this->configuration = $configuration;
+        $this->logger = $logger;
     }
 
     /**
-     * Operation confirmPreorder.
+     * Operation confirmPreorder
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param \DateTimeInterface $need_by_date Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmPreorderResponse
      */
-    public function confirmPreorder(AccessToken $accessToken, string $region, string $shipment_id, \DateTimeInterface $need_by_date, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmPreorderResponse
+    public function confirmPreorder(AccessToken $accessToken, string $region, $shipment_id, $need_by_date, $marketplace_id)
     {
         $request = $this->confirmPreorderRequest($accessToken, $region, $shipment_id, $need_by_date, $marketplace_id);
 
@@ -76,6 +91,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'confirmPreorder', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'confirmPreorder')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -93,7 +109,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -111,7 +127,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -131,30 +147,33 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'confirmPreorder'.
+     * Create request for operation 'confirmPreorder'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param \DateTimeInterface $need_by_date Date that the shipment must arrive at the Amazon fulfillment center to avoid delivery promise breaks for pre-ordered items. Must be in YYYY-MM-DD format. The response to the getPreorderInfo operation returns this value. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function confirmPreorderRequest(AccessToken $accessToken, string $region, string $shipment_id, \DateTimeInterface $need_by_date, string $marketplace_id) : RequestInterface
+    public function confirmPreorderRequest(AccessToken $accessToken, string $region, $shipment_id, $need_by_date, $marketplace_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling confirmPreorder'
             );
         }
         // verify the required parameter 'need_by_date' is set
-        if ($need_by_date === null || (\is_array($need_by_date) && \count($need_by_date) === 0)) {
+        if ($need_by_date === null || (is_array($need_by_date) && count($need_by_date) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $need_by_date when calling confirmPreorder'
             );
         }
         // verify the required parameter 'marketplace_id' is set
-        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
+        if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $marketplace_id when calling confirmPreorder'
             );
@@ -168,34 +187,34 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $query = '';
 
         // query params
-        if (\is_array($need_by_date)) {
+        if (is_array($need_by_date)) {
             $need_by_date = ObjectSerializer::serializeCollection($need_by_date, '', true);
         }
-
         if ($need_by_date !== null) {
             $queryParams['NeedByDate'] = ObjectSerializer::toString($need_by_date);
         }
         // query params
-        if (\is_array($marketplace_id)) {
+        if (is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
-
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -218,23 +237,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -253,14 +270,17 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation confirmTransport.
+     * Operation confirmTransport
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportResponse
      */
-    public function confirmTransport(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportResponse
+    public function confirmTransport(AccessToken $accessToken, string $region, $shipment_id)
     {
         $request = $this->confirmTransportRequest($accessToken, $region, $shipment_id);
 
@@ -294,6 +314,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'confirmTransport', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'confirmTransport')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -311,7 +332,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -329,7 +350,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -349,16 +370,19 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'confirmTransport'.
+     * Create request for operation 'confirmTransport'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function confirmTransportRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
+    public function confirmTransportRequest(AccessToken $accessToken, string $region, $shipment_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling confirmTransport'
             );
@@ -371,18 +395,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -405,23 +432,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -440,15 +465,18 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation createInboundShipment.
+     * Operation createInboundShipment
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse
      */
-    public function createInboundShipment(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse
+    public function createInboundShipment(AccessToken $accessToken, string $region, $shipment_id, $body)
     {
         $request = $this->createInboundShipmentRequest($accessToken, $region, $shipment_id, $body);
 
@@ -482,6 +510,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'createInboundShipment', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'createInboundShipment')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -499,7 +528,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -517,7 +546,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -537,23 +566,26 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'createInboundShipment'.
+     * Create request for operation 'createInboundShipment'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function createInboundShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : RequestInterface
+    public function createInboundShipmentRequest(AccessToken $accessToken, string $region, $shipment_id, $body): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling createInboundShipment'
             );
         }
         // verify the required parameter 'body' is set
-        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $body when calling createInboundShipment'
             );
@@ -566,18 +598,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -602,29 +637,27 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
             }
 
             $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
-        } elseif (\count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -643,14 +676,17 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation createInboundShipmentPlan.
+     * Operation createInboundShipmentPlan
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body body (required)
+     * @param AccessToken $accessToken
+     * @param string $region
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body The request schema for the CreateInboundShipmentPlanRequest operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanResponse
      */
-    public function createInboundShipmentPlan(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanResponse
+    public function createInboundShipmentPlan(AccessToken $accessToken, string $region, $body)
     {
         $request = $this->createInboundShipmentPlanRequest($accessToken, $region, $body);
 
@@ -684,6 +720,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'createInboundShipmentPlan', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'createInboundShipmentPlan')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -701,7 +738,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -719,7 +756,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -739,16 +776,19 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'createInboundShipmentPlan'.
+     * Create request for operation 'createInboundShipmentPlan'
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body (required)
+     * @param AccessToken $accessToken
+     * @param string $region
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body The request schema for the CreateInboundShipmentPlanRequest operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function createInboundShipmentPlanRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundShipmentPlanRequest $body) : RequestInterface
+    public function createInboundShipmentPlanRequest(AccessToken $accessToken, string $region, $body): RequestInterface
     {
         // verify the required parameter 'body' is set
-        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $body when calling createInboundShipmentPlan'
             );
@@ -761,9 +801,11 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         if ($multipart) {
             $headers = [
@@ -788,29 +830,27 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
             }
 
             $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
-        } elseif (\count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -829,14 +869,17 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation estimateTransport.
+     * Operation estimateTransport
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\EstimateTransportResponse
      */
-    public function estimateTransport(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\EstimateTransportResponse
+    public function estimateTransport(AccessToken $accessToken, string $region, $shipment_id)
     {
         $request = $this->estimateTransportRequest($accessToken, $region, $shipment_id);
 
@@ -870,6 +913,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'estimateTransport', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'estimateTransport')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -887,7 +931,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -905,7 +949,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -925,16 +969,19 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'estimateTransport'.
+     * Create request for operation 'estimateTransport'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function estimateTransportRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
+    public function estimateTransportRequest(AccessToken $accessToken, string $region, $shipment_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling estimateTransport'
             );
@@ -947,18 +994,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -981,23 +1031,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -1016,14 +1064,17 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getBillOfLading.
+     * Operation getBillOfLading
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetBillOfLadingResponse
      */
-    public function getBillOfLading(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetBillOfLadingResponse
+    public function getBillOfLading(AccessToken $accessToken, string $region, $shipment_id)
     {
         $request = $this->getBillOfLadingRequest($accessToken, $region, $shipment_id);
 
@@ -1057,6 +1108,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getBillOfLading', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getBillOfLading')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -1074,7 +1126,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -1092,7 +1144,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -1112,16 +1164,19 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getBillOfLading'.
+     * Create request for operation 'getBillOfLading'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getBillOfLadingRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
+    public function getBillOfLadingRequest(AccessToken $accessToken, string $region, $shipment_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling getBillOfLading'
             );
@@ -1134,233 +1189,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
 
-        if ($multipart) {
-            $headers = [
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        } else {
-            $headers = [
-                'content-type' => ['application/json'],
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        }
-
-        $request = $this->httpFactory->createRequest(
-            'GET',
-            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
-        );
-
-        // for model (json/xml)
-        if (\count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem,
-                        ];
-                    }
-                }
-                $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
-            } else {
-                $request = $request->withParsedBody($formParams);
-            }
-        }
-
-        foreach (\array_merge($headerParams, $headers) as $name => $header) {
-            $request = $request->withHeader($name, $header);
-        }
-
-        return HttpSignatureHeaders::forConfig(
-            $this->configuration,
-            $accessToken,
-            $region,
-            $request
-        );
-    }
-
-    /**
-     * Operation getInboundGuidance.
-     *
-     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param null|string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param null|string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function getInboundGuidance(AccessToken $accessToken, string $region, string $marketplace_id, ?array $seller_sku_list = null, ?array $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse
-    {
-        $request = $this->getInboundGuidanceRequest($accessToken, $region, $marketplace_id, $seller_sku_list, $asin_list);
-
-        $this->configuration->extensions()->preRequest('FulfillmentInbound', 'getInboundGuidance', $request);
-
-        try {
-            $correlationId = $this->configuration->idGenerator()->generate();
-            $sanitizedRequest = $request;
-
-            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-            }
-
-            if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getInboundGuidance')) {
-                $this->logger->log(
-                    $this->configuration->logLevel('FulfillmentInbound', 'getInboundGuidance'),
-                    'Amazon Selling Partner API pre request',
-                    [
-                        'api' => 'FulfillmentInbound',
-                        'operation' => 'getInboundGuidance',
-                        'request_correlation_id' => $correlationId,
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                        'request_headers' => $sanitizedRequest->getHeaders(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                    ]
-                );
-            }
-
-            $response = $this->client->sendRequest($request);
-
-            $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getInboundGuidance', $request, $response);
-
-            if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getInboundGuidance')) {
-                $sanitizedResponse = $response;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
-                }
-
-                $this->logger->log(
-                    $this->configuration->logLevel('FulfillmentInbound', 'getInboundGuidance'),
-                    'Amazon Selling Partner API post request',
-                    [
-                        'api' => 'FulfillmentInbound',
-                        'operation' => 'getInboundGuidance',
-                        'response_correlation_id' => $correlationId,
-                        'response_body' => (string) $sanitizedResponse->getBody(),
-                        'response_headers' => $sanitizedResponse->getHeaders(),
-                        'response_status_code' => $sanitizedResponse->getStatusCode(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                    ]
-                );
-            }
-        } catch (ClientExceptionInterface $e) {
-            throw new ApiException(
-                "[{$e->getCode()}] {$e->getMessage()}",
-                (int) $e->getCode(),
-                null,
-                null,
-                $e
-            );
-        }
-
-        $statusCode = $response->getStatusCode();
-
-        if ($statusCode < 200 || $statusCode > 299) {
-            throw new ApiException(
-                \sprintf(
-                    '[%d] Error connecting to the API (%s)',
-                    $statusCode,
-                    (string) $request->getUri()
-                ),
-                $statusCode,
-                $response->getHeaders(),
-                (string) $response->getBody()
-            );
-        }
-
-        return ObjectSerializer::deserialize(
-            $this->configuration,
-            (string) $response->getBody(),
-            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetInboundGuidanceResponse',
-            []
-        );
-    }
-
-    /**
-     * Create request for operation 'getInboundGuidance'.
-     *
-     * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param null|string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: SellerSKU is qualified by the SellerId, which is included with every Selling Partner API operation that you submit. If you specify a SellerSKU that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     * @param null|string[] $asin_list A list of ASIN values. Used to identify items for which you want inbound guidance for shipment to Amazon&#39;s fulfillment network. Note: If you specify a ASIN that identifies a variation parent ASIN, this operation returns an error. A variation parent ASIN represents a generic product that cannot be sold. Variation child ASINs represent products that have specific characteristics (such as size and color) and can be sold. (optional)
-     *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     */
-    public function getInboundGuidanceRequest(AccessToken $accessToken, string $region, string $marketplace_id, ?array $seller_sku_list = null, ?array $asin_list = null) : RequestInterface
-    {
-        // verify the required parameter 'marketplace_id' is set
-        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $marketplace_id when calling getInboundGuidance'
-            );
-        }
-
-        if ($seller_sku_list !== null && \count($seller_sku_list) > 50) {
-            throw new InvalidArgumentException('invalid value for "$seller_sku_list" when calling FbaInboundApi.getInboundGuidance, number of items must be less than or equal to 50.');
-        }
-
-        if ($asin_list !== null && \count($asin_list) > 50) {
-            throw new InvalidArgumentException('invalid value for "$asin_list" when calling FbaInboundApi.getInboundGuidance, number of items must be less than or equal to 50.');
-        }
-
-        $resourcePath = '/fba/inbound/v0/itemsGuidance';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $multipart = false;
-        $query = '';
-
-        // query params
-        if (\is_array($marketplace_id)) {
-            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
-        }
-
-        if ($marketplace_id !== null) {
-            $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
-        }
-        // query params
-        if (\is_array($seller_sku_list)) {
-            $seller_sku_list = ObjectSerializer::serializeCollection($seller_sku_list, 'form', true);
-        }
-
-        if ($seller_sku_list !== null) {
-            $queryParams['SellerSKUList'] = ObjectSerializer::toString($seller_sku_list);
-        }
-        // query params
-        if (\is_array($asin_list)) {
-            $asin_list = ObjectSerializer::serializeCollection($asin_list, 'form', true);
-        }
-
-        if ($asin_list !== null) {
-            $queryParams['ASINList'] = ObjectSerializer::toString($asin_list);
-        }
-
-        if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
-        }
 
         if ($multipart) {
             $headers = [
@@ -1383,23 +1226,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -1418,21 +1259,24 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getLabels.
+     * Operation getLabels
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $page_type The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
      * @param string $label_type The type of labels requested. (required)
-     * @param null|int $number_of_packages The number of packages in the shipment. (optional)
-     * @param null|string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
-     * @param null|int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
-     * @param null|int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
-     * @param null|int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
+     * @param int|null $number_of_packages The number of packages in the shipment. (optional)
+     * @param string[]|null $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
+     * @param int|null $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param int|null $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
+     * @param int|null $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse
      */
-    public function getLabels(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, ?int $number_of_packages = null, ?array $package_labels_to_print = null, ?int $number_of_pallets = null, ?int $page_size = null, ?int $page_start_index = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetLabelsResponse
+    public function getLabels(AccessToken $accessToken, string $region, $shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null)
     {
         $request = $this->getLabelsRequest($accessToken, $region, $shipment_id, $page_type, $label_type, $number_of_packages, $package_labels_to_print, $number_of_pallets, $page_size, $page_start_index);
 
@@ -1466,6 +1310,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getLabels', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getLabels')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -1483,7 +1328,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -1501,7 +1346,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -1521,42 +1366,41 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getLabels'.
+     * Create request for operation 'getLabels'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $page_type The page type to use to print the labels. Submitting a PageType value that is not supported in your marketplace returns an error. (required)
      * @param string $label_type The type of labels requested. (required)
-     * @param null|int $number_of_packages The number of packages in the shipment. (optional)
-     * @param null|string[] $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
-     * @param null|int $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
-     * @param null|int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
-     * @param null|int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
+     * @param int|null $number_of_packages The number of packages in the shipment. (optional)
+     * @param string[]|null $package_labels_to_print A list of identifiers that specify packages for which you want package labels printed.  Must match CartonId values previously passed using the FBA Inbound Shipment Carton Information Feed. If not, the operation returns the IncorrectPackageIdentifier error code. (optional)
+     * @param int|null $number_of_pallets The number of pallets in the shipment. This returns four identical labels for each pallet. (optional)
+     * @param int|null $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
+     * @param int|null $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getLabelsRequest(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, ?int $number_of_packages = null, ?array $package_labels_to_print = null, ?int $number_of_pallets = null, ?int $page_size = null, ?int $page_start_index = null) : RequestInterface
+    public function getLabelsRequest(AccessToken $accessToken, string $region, $shipment_id, $page_type, $label_type, $number_of_packages = null, $package_labels_to_print = null, $number_of_pallets = null, $page_size = null, $page_start_index = null): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling getLabels'
             );
         }
         // verify the required parameter 'page_type' is set
-        if ($page_type === null || (\is_array($page_type) && \count($page_type) === 0)) {
+        if ($page_type === null || (is_array($page_type) && count($page_type) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $page_type when calling getLabels'
             );
         }
         // verify the required parameter 'label_type' is set
-        if ($label_type === null || (\is_array($label_type) && \count($label_type) === 0)) {
+        if ($label_type === null || (is_array($label_type) && count($label_type) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $label_type when calling getLabels'
             );
-        }
-
-        if ($package_labels_to_print !== null && \count($package_labels_to_print) > 999) {
-            throw new InvalidArgumentException('invalid value for "$package_labels_to_print" when calling FbaInboundApi.getLabels, number of items must be less than or equal to 999.');
         }
 
         $resourcePath = '/fba/inbound/v0/shipments/{shipmentId}/labels';
@@ -1567,74 +1411,69 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $query = '';
 
         // query params
-        if (\is_array($page_type)) {
+        if (is_array($page_type)) {
             $page_type = ObjectSerializer::serializeCollection($page_type, '', true);
         }
-
         if ($page_type !== null) {
             $queryParams['PageType'] = ObjectSerializer::toString($page_type);
         }
         // query params
-        if (\is_array($label_type)) {
+        if (is_array($label_type)) {
             $label_type = ObjectSerializer::serializeCollection($label_type, '', true);
         }
-
         if ($label_type !== null) {
             $queryParams['LabelType'] = ObjectSerializer::toString($label_type);
         }
         // query params
-        if (\is_array($number_of_packages)) {
+        if (is_array($number_of_packages)) {
             $number_of_packages = ObjectSerializer::serializeCollection($number_of_packages, '', true);
         }
-
         if ($number_of_packages !== null) {
             $queryParams['NumberOfPackages'] = ObjectSerializer::toString($number_of_packages);
         }
         // query params
-        if (\is_array($package_labels_to_print)) {
+        if (is_array($package_labels_to_print)) {
             $package_labels_to_print = ObjectSerializer::serializeCollection($package_labels_to_print, 'form', true);
         }
-
         if ($package_labels_to_print !== null) {
             $queryParams['PackageLabelsToPrint'] = ObjectSerializer::toString($package_labels_to_print);
         }
         // query params
-        if (\is_array($number_of_pallets)) {
+        if (is_array($number_of_pallets)) {
             $number_of_pallets = ObjectSerializer::serializeCollection($number_of_pallets, '', true);
         }
-
         if ($number_of_pallets !== null) {
             $queryParams['NumberOfPallets'] = ObjectSerializer::toString($number_of_pallets);
         }
         // query params
-        if (\is_array($page_size)) {
+        if (is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
         }
-
         if ($page_size !== null) {
             $queryParams['PageSize'] = ObjectSerializer::toString($page_size);
         }
         // query params
-        if (\is_array($page_start_index)) {
+        if (is_array($page_start_index)) {
             $page_start_index = ObjectSerializer::serializeCollection($page_start_index, '', true);
         }
-
         if ($page_start_index !== null) {
             $queryParams['PageStartIndex'] = ObjectSerializer::toString($page_start_index);
         }
 
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -1657,23 +1496,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -1692,15 +1529,18 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getPreorderInfo.
+     * Operation getPreorderInfo
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPreorderInfoResponse
      */
-    public function getPreorderInfo(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPreorderInfoResponse
+    public function getPreorderInfo(AccessToken $accessToken, string $region, $shipment_id, $marketplace_id)
     {
         $request = $this->getPreorderInfoRequest($accessToken, $region, $shipment_id, $marketplace_id);
 
@@ -1734,6 +1574,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getPreorderInfo', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getPreorderInfo')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -1751,7 +1592,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -1769,7 +1610,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -1789,23 +1630,26 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getPreorderInfo'.
+     * Create request for operation 'getPreorderInfo'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace the shipment is tied to. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getPreorderInfoRequest(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : RequestInterface
+    public function getPreorderInfoRequest(AccessToken $accessToken, string $region, $shipment_id, $marketplace_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling getPreorderInfo'
             );
         }
         // verify the required parameter 'marketplace_id' is set
-        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
+        if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $marketplace_id when calling getPreorderInfo'
             );
@@ -1819,26 +1663,27 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $query = '';
 
         // query params
-        if (\is_array($marketplace_id)) {
+        if (is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
-
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -1861,23 +1706,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -1896,16 +1739,19 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getPrepInstructions.
+     * Operation getPrepInstructions
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
-     * @param null|string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
-     * @param null|string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
+     * @param string[]|null $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
+     * @param string[]|null $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse
      */
-    public function getPrepInstructions(AccessToken $accessToken, string $region, string $ship_to_country_code, ?array $seller_sku_list = null, ?array $asin_list = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetPrepInstructionsResponse
+    public function getPrepInstructions(AccessToken $accessToken, string $region, $ship_to_country_code, $seller_sku_list = null, $asin_list = null)
     {
         $request = $this->getPrepInstructionsRequest($accessToken, $region, $ship_to_country_code, $seller_sku_list, $asin_list);
 
@@ -1939,6 +1785,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getPrepInstructions', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getPrepInstructions')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -1956,7 +1803,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -1974,7 +1821,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -1994,30 +1841,33 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getPrepInstructions'.
+     * Create request for operation 'getPrepInstructions'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $ship_to_country_code The country code of the country to which the items will be shipped. Note that labeling requirements and item preparation instructions can vary by country. (required)
-     * @param null|string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
-     * @param null|string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
+     * @param string[]|null $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
+     * @param string[]|null $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getPrepInstructionsRequest(AccessToken $accessToken, string $region, string $ship_to_country_code, ?array $seller_sku_list = null, ?array $asin_list = null) : RequestInterface
+    public function getPrepInstructionsRequest(AccessToken $accessToken, string $region, $ship_to_country_code, $seller_sku_list = null, $asin_list = null): RequestInterface
     {
         // verify the required parameter 'ship_to_country_code' is set
-        if ($ship_to_country_code === null || (\is_array($ship_to_country_code) && \count($ship_to_country_code) === 0)) {
+        if ($ship_to_country_code === null || (is_array($ship_to_country_code) && count($ship_to_country_code) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $ship_to_country_code when calling getPrepInstructions'
             );
         }
-
-        if ($seller_sku_list !== null && \count($seller_sku_list) > 50) {
+        if ($seller_sku_list !== null && count($seller_sku_list) > 50) {
             throw new InvalidArgumentException('invalid value for "$seller_sku_list" when calling FbaInboundApi.getPrepInstructions, number of items must be less than or equal to 50.');
         }
 
-        if ($asin_list !== null && \count($asin_list) > 50) {
+        if ($asin_list !== null && count($asin_list) > 50) {
             throw new InvalidArgumentException('invalid value for "$asin_list" when calling FbaInboundApi.getPrepInstructions, number of items must be less than or equal to 50.');
         }
+
 
         $resourcePath = '/fba/inbound/v0/prepInstructions';
         $formParams = [];
@@ -2027,33 +1877,31 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $query = '';
 
         // query params
-        if (\is_array($ship_to_country_code)) {
+        if (is_array($ship_to_country_code)) {
             $ship_to_country_code = ObjectSerializer::serializeCollection($ship_to_country_code, '', true);
         }
-
         if ($ship_to_country_code !== null) {
             $queryParams['ShipToCountryCode'] = ObjectSerializer::toString($ship_to_country_code);
         }
         // query params
-        if (\is_array($seller_sku_list)) {
+        if (is_array($seller_sku_list)) {
             $seller_sku_list = ObjectSerializer::serializeCollection($seller_sku_list, 'form', true);
         }
-
         if ($seller_sku_list !== null) {
             $queryParams['SellerSKUList'] = ObjectSerializer::toString($seller_sku_list);
         }
         // query params
-        if (\is_array($asin_list)) {
+        if (is_array($asin_list)) {
             $asin_list = ObjectSerializer::serializeCollection($asin_list, 'form', true);
         }
-
         if ($asin_list !== null) {
             $queryParams['ASINList'] = ObjectSerializer::toString($asin_list);
         }
 
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         if ($multipart) {
             $headers = [
@@ -2076,23 +1924,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -2111,18 +1957,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getShipmentItems.
+     * Operation getShipmentItems
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $query_type Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param null|\DateTimeInterface $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|\DateTimeInterface $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|string $next_token A string token returned in the response to your previous request. (optional)
+     * @param \DateTimeInterface|null $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param \DateTimeInterface|null $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string|null $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
      */
-    public function getShipmentItems(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
+    public function getShipmentItems(AccessToken $accessToken, string $region, $query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
         $request = $this->getShipmentItemsRequest($accessToken, $region, $query_type, $marketplace_id, $last_updated_after, $last_updated_before, $next_token);
 
@@ -2156,6 +2005,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getShipmentItems', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getShipmentItems')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -2173,7 +2023,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -2191,7 +2041,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -2211,26 +2061,29 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getShipmentItems'.
+     * Create request for operation 'getShipmentItems'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $query_type Indicates whether items are returned using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or using NextToken, which continues returning items specified in a previous request. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param null|\DateTimeInterface $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|\DateTimeInterface $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|string $next_token A string token returned in the response to your previous request. (optional)
+     * @param \DateTimeInterface|null $last_updated_after A date used for selecting inbound shipment items that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param \DateTimeInterface|null $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string|null $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getShipmentItemsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : RequestInterface
+    public function getShipmentItemsRequest(AccessToken $accessToken, string $region, $query_type, $marketplace_id, $last_updated_after = null, $last_updated_before = null, $next_token = null): RequestInterface
     {
         // verify the required parameter 'query_type' is set
-        if ($query_type === null || (\is_array($query_type) && \count($query_type) === 0)) {
+        if ($query_type === null || (is_array($query_type) && count($query_type) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $query_type when calling getShipmentItems'
             );
         }
         // verify the required parameter 'marketplace_id' is set
-        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
+        if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $marketplace_id when calling getShipmentItems'
             );
@@ -2244,49 +2097,45 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $query = '';
 
         // query params
-        if (\is_array($last_updated_after)) {
+        if (is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
         }
-
         if ($last_updated_after !== null) {
             $queryParams['LastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
         // query params
-        if (\is_array($last_updated_before)) {
+        if (is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
         }
-
         if ($last_updated_before !== null) {
             $queryParams['LastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
         // query params
-        if (\is_array($query_type)) {
+        if (is_array($query_type)) {
             $query_type = ObjectSerializer::serializeCollection($query_type, '', true);
         }
-
         if ($query_type !== null) {
             $queryParams['QueryType'] = ObjectSerializer::toString($query_type);
         }
         // query params
-        if (\is_array($next_token)) {
+        if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
-
         if ($next_token !== null) {
             $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
         // query params
-        if (\is_array($marketplace_id)) {
+        if (is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
-
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         if ($multipart) {
             $headers = [
@@ -2309,23 +2158,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -2344,15 +2191,18 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getShipmentItemsByShipmentId.
+     * Operation getShipmentItemsByShipmentId
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
      */
-    public function getShipmentItemsByShipmentId(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentItemsResponse
+    public function getShipmentItemsByShipmentId(AccessToken $accessToken, string $region, $shipment_id, $marketplace_id)
     {
         $request = $this->getShipmentItemsByShipmentIdRequest($accessToken, $region, $shipment_id, $marketplace_id);
 
@@ -2386,6 +2236,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getShipmentItemsByShipmentId', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getShipmentItemsByShipmentId')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -2403,7 +2254,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -2421,7 +2272,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -2441,23 +2292,26 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getShipmentItemsByShipmentId'.
+     * Create request for operation 'getShipmentItemsByShipmentId'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getShipmentItemsByShipmentIdRequest(AccessToken $accessToken, string $region, string $shipment_id, string $marketplace_id) : RequestInterface
+    public function getShipmentItemsByShipmentIdRequest(AccessToken $accessToken, string $region, $shipment_id, $marketplace_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling getShipmentItemsByShipmentId'
             );
         }
         // verify the required parameter 'marketplace_id' is set
-        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
+        if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $marketplace_id when calling getShipmentItemsByShipmentId'
             );
@@ -2471,26 +2325,27 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $query = '';
 
         // query params
-        if (\is_array($marketplace_id)) {
+        if (is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
-
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -2513,23 +2368,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -2548,20 +2401,23 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getShipments.
+     * Operation getShipments
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $query_type Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param null|string[] $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
-     * @param null|string[] $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
-     * @param null|\DateTimeInterface $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|\DateTimeInterface $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|string $next_token A string token returned in the response to your previous request. (optional)
+     * @param string[]|null $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
+     * @param string[]|null $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
+     * @param \DateTimeInterface|null $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param \DateTimeInterface|null $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string|null $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse
      */
-    public function getShipments(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?array $shipment_status_list = null, ?array $shipment_id_list = null, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetShipmentsResponse
+    public function getShipments(AccessToken $accessToken, string $region, $query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null)
     {
         $request = $this->getShipmentsRequest($accessToken, $region, $query_type, $marketplace_id, $shipment_status_list, $shipment_id_list, $last_updated_after, $last_updated_before, $next_token);
 
@@ -2595,6 +2451,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getShipments', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getShipments')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -2612,7 +2469,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -2630,7 +2487,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -2650,32 +2507,39 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getShipments'.
+     * Create request for operation 'getShipments'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $query_type Indicates whether shipments are returned using shipment information (by providing the ShipmentStatusList or ShipmentIdList parameters), using a date range (by providing the LastUpdatedAfter and LastUpdatedBefore parameters), or by using NextToken to continue returning items specified in a previous request. (required)
      * @param string $marketplace_id A marketplace identifier. Specifies the marketplace where the product would be stored. (required)
-     * @param null|string[] $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
-     * @param null|string[] $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
-     * @param null|\DateTimeInterface $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|\DateTimeInterface $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
-     * @param null|string $next_token A string token returned in the response to your previous request. (optional)
+     * @param string[]|null $shipment_status_list A list of ShipmentStatus values. Used to select shipments with a current status that matches the status values that you specify. (optional)
+     * @param string[]|null $shipment_id_list A list of shipment IDs used to select the shipments that you want. If both ShipmentStatusList and ShipmentIdList are specified, only shipments that match both parameters are returned. (optional)
+     * @param \DateTimeInterface|null $last_updated_after A date used for selecting inbound shipments that were last updated after (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param \DateTimeInterface|null $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
+     * @param string|null $next_token A string token returned in the response to your previous request. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getShipmentsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?array $shipment_status_list = null, ?array $shipment_id_list = null, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : RequestInterface
+    public function getShipmentsRequest(AccessToken $accessToken, string $region, $query_type, $marketplace_id, $shipment_status_list = null, $shipment_id_list = null, $last_updated_after = null, $last_updated_before = null, $next_token = null): RequestInterface
     {
         // verify the required parameter 'query_type' is set
-        if ($query_type === null || (\is_array($query_type) && \count($query_type) === 0)) {
+        if ($query_type === null || (is_array($query_type) && count($query_type) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $query_type when calling getShipments'
             );
         }
         // verify the required parameter 'marketplace_id' is set
-        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
+        if ($marketplace_id === null || (is_array($marketplace_id) && count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $marketplace_id when calling getShipments'
             );
         }
+        if ($shipment_id_list !== null && count($shipment_id_list) > 999) {
+            throw new InvalidArgumentException('invalid value for "$shipment_id_list" when calling FbaInboundApi.getShipments, number of items must be less than or equal to 999.');
+        }
+
 
         $resourcePath = '/fba/inbound/v0/shipments';
         $formParams = [];
@@ -2685,65 +2549,59 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $query = '';
 
         // query params
-        if (\is_array($shipment_status_list)) {
+        if (is_array($shipment_status_list)) {
             $shipment_status_list = ObjectSerializer::serializeCollection($shipment_status_list, 'form', true);
         }
-
         if ($shipment_status_list !== null) {
             $queryParams['ShipmentStatusList'] = ObjectSerializer::toString($shipment_status_list);
         }
         // query params
-        if (\is_array($shipment_id_list)) {
+        if (is_array($shipment_id_list)) {
             $shipment_id_list = ObjectSerializer::serializeCollection($shipment_id_list, 'form', true);
         }
-
         if ($shipment_id_list !== null) {
             $queryParams['ShipmentIdList'] = ObjectSerializer::toString($shipment_id_list);
         }
         // query params
-        if (\is_array($last_updated_after)) {
+        if (is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
         }
-
         if ($last_updated_after !== null) {
             $queryParams['LastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
         // query params
-        if (\is_array($last_updated_before)) {
+        if (is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
         }
-
         if ($last_updated_before !== null) {
             $queryParams['LastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
         // query params
-        if (\is_array($query_type)) {
+        if (is_array($query_type)) {
             $query_type = ObjectSerializer::serializeCollection($query_type, '', true);
         }
-
         if ($query_type !== null) {
             $queryParams['QueryType'] = ObjectSerializer::toString($query_type);
         }
         // query params
-        if (\is_array($next_token)) {
+        if (is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
         }
-
         if ($next_token !== null) {
             $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
         // query params
-        if (\is_array($marketplace_id)) {
+        if (is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
         }
-
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
 
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         if ($multipart) {
             $headers = [
@@ -2766,23 +2624,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -2801,14 +2657,17 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation getTransportDetails.
+     * Operation getTransportDetails
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetTransportDetailsResponse
      */
-    public function getTransportDetails(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GetTransportDetailsResponse
+    public function getTransportDetails(AccessToken $accessToken, string $region, $shipment_id)
     {
         $request = $this->getTransportDetailsRequest($accessToken, $region, $shipment_id);
 
@@ -2842,6 +2701,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'getTransportDetails', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'getTransportDetails')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -2859,7 +2719,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -2877,7 +2737,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -2897,16 +2757,19 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'getTransportDetails'.
+     * Create request for operation 'getTransportDetails'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function getTransportDetailsRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
+    public function getTransportDetailsRequest(AccessToken $accessToken, string $region, $shipment_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling getTransportDetails'
             );
@@ -2919,18 +2782,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -2953,23 +2819,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -2988,15 +2852,18 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation putTransportDetails.
+     * Operation putTransportDetails
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body The request schema for the PutTransportDetailsRequest operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsResponse
      */
-    public function putTransportDetails(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsResponse
+    public function putTransportDetails(AccessToken $accessToken, string $region, $shipment_id, $body)
     {
         $request = $this->putTransportDetailsRequest($accessToken, $region, $shipment_id, $body);
 
@@ -3030,6 +2897,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'putTransportDetails', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'putTransportDetails')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -3047,7 +2915,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -3065,7 +2933,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -3085,23 +2953,26 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'putTransportDetails'.
+     * Create request for operation 'putTransportDetails'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body The request schema for the PutTransportDetailsRequest operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function putTransportDetailsRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PutTransportDetailsRequest $body) : RequestInterface
+    public function putTransportDetailsRequest(AccessToken $accessToken, string $region, $shipment_id, $body): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling putTransportDetails'
             );
         }
         // verify the required parameter 'body' is set
-        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $body when calling putTransportDetails'
             );
@@ -3114,18 +2985,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -3150,29 +3024,27 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
             }
 
             $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
-        } elseif (\count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -3191,15 +3063,18 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation updateInboundShipment.
+     * Operation updateInboundShipment
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse
      */
-    public function updateInboundShipment(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentResponse
+    public function updateInboundShipment(AccessToken $accessToken, string $region, $shipment_id, $body)
     {
         $request = $this->updateInboundShipmentRequest($accessToken, $region, $shipment_id, $body);
 
@@ -3233,6 +3108,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'updateInboundShipment', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'updateInboundShipment')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -3250,7 +3126,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -3268,7 +3144,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -3288,23 +3164,26 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'updateInboundShipment'.
+     * Create request for operation 'updateInboundShipment'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body The request schema for the InboundShipmentRequest operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function updateInboundShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\InboundShipmentRequest $body) : RequestInterface
+    public function updateInboundShipmentRequest(AccessToken $accessToken, string $region, $shipment_id, $body): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling updateInboundShipment'
             );
         }
         // verify the required parameter 'body' is set
-        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+        if ($body === null || (is_array($body) && count($body) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $body when calling updateInboundShipment'
             );
@@ -3317,18 +3196,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -3353,29 +3235,27 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         // for model (json/xml)
         if (isset($body)) {
             if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body));
             } else {
                 $httpBody = $body;
             }
 
             $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
-        } elseif (\count($formParams) > 0) {
+        } elseif (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -3394,14 +3274,17 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Operation voidTransport.
+     * Operation voidTransport
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\VoidTransportResponse
      */
-    public function voidTransport(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\VoidTransportResponse
+    public function voidTransport(AccessToken $accessToken, string $region, $shipment_id)
     {
         $request = $this->voidTransportRequest($accessToken, $region, $shipment_id);
 
@@ -3435,6 +3318,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $this->configuration->extensions()->postRequest('FulfillmentInbound', 'voidTransport', $request, $response);
 
             if ($this->configuration->loggingEnabled('FulfillmentInbound', 'voidTransport')) {
+
                 $sanitizedResponse = $response;
 
                 foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
@@ -3452,7 +3336,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                         'response_headers' => $sanitizedResponse->getHeaders(),
                         'response_status_code' => $sanitizedResponse->getStatusCode(),
                         'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_body' => (string) $sanitizedRequest->getBody()
                     ]
                 );
             }
@@ -3470,7 +3354,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
 
         if ($statusCode < 200 || $statusCode > 299) {
             throw new ApiException(
-                \sprintf(
+                sprintf(
                     '[%d] Error connecting to the API (%s)',
                     $statusCode,
                     (string) $request->getUri()
@@ -3490,16 +3374,19 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
-     * Create request for operation 'voidTransport'.
+     * Create request for operation 'voidTransport'
      *
+     * @param AccessToken $accessToken
+     * @param string $region
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @return \Psr\Http\Message\RequestInterface
      */
-    public function voidTransportRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
+    public function voidTransportRequest(AccessToken $accessToken, string $region, $shipment_id): RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
+        if ($shipment_id === null || (is_array($shipment_id) && count($shipment_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $shipment_id when calling voidTransport'
             );
@@ -3512,18 +3399,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         $multipart = false;
         $query = '';
 
+
         if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
+            $query = http_build_query($queryParams);
         }
+
 
         // path params
         if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
+            $resourcePath = str_replace(
                 '{' . 'shipmentId' . '}',
                 ObjectSerializer::toPathValue($shipment_id),
                 $resourcePath
             );
         }
+
 
         if ($multipart) {
             $headers = [
@@ -3546,23 +3436,21 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         );
 
         // for model (json/xml)
-        if (\count($formParams) > 0) {
+        if (count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
-
                 foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
                     foreach ($formParamValueItems as $formParamValueItem) {
                         $multipartContents[] = [
                             'name' => $formParamName,
-                            'contents' => $formParamValueItem,
+                            'contents' => $formParamValueItem
                         ];
                     }
                 }
                 $request = $request->withParsedBody($multipartContents);
             } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams)));
             } else {
                 $request = $request->withParsedBody($formParams);
             }
@@ -3579,4 +3467,5 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             $request
         );
     }
+
 }
