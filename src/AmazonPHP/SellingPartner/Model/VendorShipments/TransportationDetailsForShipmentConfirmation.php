@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 
-namespace AmazonPHP\SellingPartner\Model\VendorOrders;
+namespace AmazonPHP\SellingPartner\Model\VendorShipments;
 
 use \ArrayAccess;
 use \AmazonPHP\SellingPartner\ObjectSerializer;
@@ -11,9 +11,9 @@ use \AmazonPHP\SellingPartner\ModelInterface;
 use \AmazonPHP\SellingPartner\Exception\AssertionException;
 
 /**
-* Selling Partner API for Retail Procurement Orders
+* Selling Partner API for Retail Procurement Shipments
 *
-* The Selling Partner API for Retail Procurement Orders provides programmatic access to vendor orders data.
+* The Selling Partner API for Retail Procurement Shipments provides programmatic access to retail shipping data for vendors.
 *
 * The version of the OpenAPI document: v1
 *
@@ -24,7 +24,7 @@ use \AmazonPHP\SellingPartner\Exception\AssertionException;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAccess, \JsonSerializable
+class TransportationDetailsForShipmentConfirmation implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -33,7 +33,7 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
       *
       * @var string
       */
-    protected static string $openAPIModelName = 'OrderItemStatus_acknowledgementStatus';
+    protected static string $openAPIModelName = 'TransportationDetailsForShipmentConfirmation';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -41,10 +41,10 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
       * @var string[]
       */
     protected static array $openAPITypes = [
-        'confirmation_status' => 'string',
-        'accepted_quantity' => '\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity',
-        'rejected_quantity' => '\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity',
-        'acknowledgement_status_details' => '\AmazonPHP\SellingPartner\Model\VendorOrders\AcknowledgementStatusDetails[]'
+        'carrier_scac' => 'string',
+        'carrier_shipment_reference_number' => 'string',
+        'transportation_mode' => 'string',
+        'bill_of_lading_number' => 'string'
     ];
 
     /**
@@ -55,10 +55,10 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
       * @psalm-var array<string, string|null>
       */
     protected static array $openAPIFormats = [
-        'confirmation_status' => null,
-        'accepted_quantity' => null,
-        'rejected_quantity' => null,
-        'acknowledgement_status_details' => null
+        'carrier_scac' => null,
+        'carrier_shipment_reference_number' => null,
+        'transportation_mode' => null,
+        'bill_of_lading_number' => null
     ];
 
     /**
@@ -88,10 +88,10 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $attributeMap = [
-        'confirmation_status' => 'confirmationStatus',
-        'accepted_quantity' => 'acceptedQuantity',
-        'rejected_quantity' => 'rejectedQuantity',
-        'acknowledgement_status_details' => 'acknowledgementStatusDetails'
+        'carrier_scac' => 'carrierScac',
+        'carrier_shipment_reference_number' => 'carrierShipmentReferenceNumber',
+        'transportation_mode' => 'transportationMode',
+        'bill_of_lading_number' => 'billOfLadingNumber'
     ];
 
     /**
@@ -100,10 +100,10 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $setters = [
-        'confirmation_status' => 'setConfirmationStatus',
-        'accepted_quantity' => 'setAcceptedQuantity',
-        'rejected_quantity' => 'setRejectedQuantity',
-        'acknowledgement_status_details' => 'setAcknowledgementStatusDetails'
+        'carrier_scac' => 'setCarrierScac',
+        'carrier_shipment_reference_number' => 'setCarrierShipmentReferenceNumber',
+        'transportation_mode' => 'setTransportationMode',
+        'bill_of_lading_number' => 'setBillOfLadingNumber'
     ];
 
     /**
@@ -112,10 +112,10 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
      * @var string[]
      */
     protected static array $getters = [
-        'confirmation_status' => 'getConfirmationStatus',
-        'accepted_quantity' => 'getAcceptedQuantity',
-        'rejected_quantity' => 'getRejectedQuantity',
-        'acknowledgement_status_details' => 'getAcknowledgementStatusDetails'
+        'carrier_scac' => 'getCarrierScac',
+        'carrier_shipment_reference_number' => 'getCarrierShipmentReferenceNumber',
+        'transportation_mode' => 'getTransportationMode',
+        'bill_of_lading_number' => 'getBillOfLadingNumber'
     ];
 
     /**
@@ -159,23 +159,21 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
         return self::$openAPIModelName;
     }
 
-    const CONFIRMATION_STATUS_ACCEPTED = 'ACCEPTED';
-    const CONFIRMATION_STATUS_PARTIALLY_ACCEPTED = 'PARTIALLY_ACCEPTED';
-    const CONFIRMATION_STATUS_REJECTED = 'REJECTED';
-    const CONFIRMATION_STATUS_UNCONFIRMED = 'UNCONFIRMED';
+    const TRANSPORTATION_MODE_ROAD = 'Road';
+    const TRANSPORTATION_MODE_AIR = 'Air';
+    const TRANSPORTATION_MODE_OCEAN = 'Ocean';
 
     /**
      * Gets allowable values of the enum
      *
      * @return string[]
      */
-    public function getConfirmationStatusAllowableValues() : array
+    public function getTransportationModeAllowableValues() : array
     {
         return [
-            self::CONFIRMATION_STATUS_ACCEPTED,
-            self::CONFIRMATION_STATUS_PARTIALLY_ACCEPTED,
-            self::CONFIRMATION_STATUS_REJECTED,
-            self::CONFIRMATION_STATUS_UNCONFIRMED,
+            self::TRANSPORTATION_MODE_ROAD,
+            self::TRANSPORTATION_MODE_AIR,
+            self::TRANSPORTATION_MODE_OCEAN,
         ];
     }
 
@@ -194,10 +192,10 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
      */
     public function __construct(array $data = null)
     {
-        $this->container['confirmation_status'] = $data['confirmation_status'] ?? null;
-        $this->container['accepted_quantity'] = $data['accepted_quantity'] ?? null;
-        $this->container['rejected_quantity'] = $data['rejected_quantity'] ?? null;
-        $this->container['acknowledgement_status_details'] = $data['acknowledgement_status_details'] ?? null;
+        $this->container['carrier_scac'] = $data['carrier_scac'] ?? null;
+        $this->container['carrier_shipment_reference_number'] = $data['carrier_shipment_reference_number'] ?? null;
+        $this->container['transportation_mode'] = $data['transportation_mode'] ?? null;
+        $this->container['bill_of_lading_number'] = $data['bill_of_lading_number'] ?? null;
     }
 
     /**
@@ -207,120 +205,112 @@ class OrderItemStatusAcknowledgementStatus implements ModelInterface, ArrayAcces
      */
     public function validate() : void
     {
-        $allowedValues = $this->getConfirmationStatusAllowableValues();
-        if (!is_null($this->container['confirmation_status']) && !in_array($this->container['confirmation_status'], $allowedValues, true)) {
+        $allowedValues = $this->getTransportationModeAllowableValues();
+        if (!is_null($this->container['transportation_mode']) && !in_array($this->container['transportation_mode'], $allowedValues, true)) {
             throw new AssertionException(
                 \sprintf(
-                    "invalid value '%s' for 'confirmation_status', must be one of '%s'",
-                    $this->container['confirmation_status'],
+                    "invalid value '%s' for 'transportation_mode', must be one of '%s'",
+                    $this->container['transportation_mode'],
                     implode("', '", $allowedValues)
                 )
             );
         }
 
-            if ($this->container['accepted_quantity'] !== null) {
-            $this->container['accepted_quantity']->validate();
-            }
-
-            if ($this->container['rejected_quantity'] !== null) {
-            $this->container['rejected_quantity']->validate();
-            }
-
     }
 
 
     /**
-     * Gets confirmation_status
+     * Gets carrier_scac
      *
      * @return string|null
      */
-    public function getConfirmationStatus()
+    public function getCarrierScac()
     {
-        return $this->container['confirmation_status'];
+        return $this->container['carrier_scac'];
     }
 
     /**
-     * Sets confirmation_status
+     * Sets carrier_scac
      *
-     * @param string|null $confirmation_status Confirmation status of line item.
+     * @param string|null $carrier_scac Code that identifies the carrier for the shipment. The Standard Carrier Alpha Code (SCAC) is a unique two to four letter code used to identify a carrier. Carrier SCAC codes are assigned and maintained by the NMFTA (National Motor Freight Association). This field is mandatory for US, CA, MX shipment confirmations.
      *
      * @return self
      */
-    public function setConfirmationStatus($confirmation_status) : self
+    public function setCarrierScac($carrier_scac) : self
     {
-        $this->container['confirmation_status'] = $confirmation_status;
+        $this->container['carrier_scac'] = $carrier_scac;
 
         return $this;
     }
 
     /**
-     * Gets accepted_quantity
+     * Gets carrier_shipment_reference_number
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity|null
+     * @return string|null
      */
-    public function getAcceptedQuantity()
+    public function getCarrierShipmentReferenceNumber()
     {
-        return $this->container['accepted_quantity'];
+        return $this->container['carrier_shipment_reference_number'];
     }
 
     /**
-     * Sets accepted_quantity
+     * Sets carrier_shipment_reference_number
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity|null $accepted_quantity accepted_quantity
+     * @param string|null $carrier_shipment_reference_number The field also known as PRO number is a unique number assigned by the carrier. It is used to identify and track the shipment that goes out for delivery. This field is mandatory for UA, CA, MX shipment confirmations.
      *
      * @return self
      */
-    public function setAcceptedQuantity($accepted_quantity) : self
+    public function setCarrierShipmentReferenceNumber($carrier_shipment_reference_number) : self
     {
-        $this->container['accepted_quantity'] = $accepted_quantity;
+        $this->container['carrier_shipment_reference_number'] = $carrier_shipment_reference_number;
 
         return $this;
     }
 
     /**
-     * Gets rejected_quantity
+     * Gets transportation_mode
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity|null
+     * @return string|null
      */
-    public function getRejectedQuantity()
+    public function getTransportationMode()
     {
-        return $this->container['rejected_quantity'];
+        return $this->container['transportation_mode'];
     }
 
     /**
-     * Sets rejected_quantity
+     * Sets transportation_mode
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity|null $rejected_quantity rejected_quantity
+     * @param string|null $transportation_mode The mode of transportation for this shipment.
      *
      * @return self
      */
-    public function setRejectedQuantity($rejected_quantity) : self
+    public function setTransportationMode($transportation_mode) : self
     {
-        $this->container['rejected_quantity'] = $rejected_quantity;
+        $this->container['transportation_mode'] = $transportation_mode;
 
         return $this;
     }
 
     /**
-     * Gets acknowledgement_status_details
+     * Gets bill_of_lading_number
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\AcknowledgementStatusDetails[]|null
+     * @return string|null
      */
-    public function getAcknowledgementStatusDetails()
+    public function getBillOfLadingNumber()
     {
-        return $this->container['acknowledgement_status_details'];
+        return $this->container['bill_of_lading_number'];
     }
 
     /**
-     * Sets acknowledgement_status_details
+     * Sets bill_of_lading_number
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\AcknowledgementStatusDetails[]|null $acknowledgement_status_details Details of item quantity confirmed.
+     * @param string|null $bill_of_lading_number The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
      *
      * @return self
      */
-    public function setAcknowledgementStatusDetails($acknowledgement_status_details) : self
+    public function setBillOfLadingNumber($bill_of_lading_number) : self
     {
-        $this->container['acknowledgement_status_details'] = $acknowledgement_status_details;
+        $this->container['bill_of_lading_number'] = $bill_of_lading_number;
 
         return $this;
     }
