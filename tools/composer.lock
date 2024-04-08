@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "009b49e8054b1243447f712fc092f711",
+    "content-hash": "894c5f38cc6088fc5140a8088622013e",
     "packages": [],
     "packages-dev": [
         {
@@ -2154,16 +2154,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "1.0.3",
+            "version": "1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "c59507a9090b465d65e1aceed91e5b81986e375b"
+                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/c59507a9090b465d65e1aceed91e5b81986e375b",
-                "reference": "c59507a9090b465d65e1aceed91e5b81986e375b",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
+                "reference": "6e04d0eb087aef707fa0c5686d33d6ff61f4a555",
                 "shasum": ""
             },
             "require": {
@@ -2175,6 +2175,9 @@
                 "rector/rector-downgrade-php": "*",
                 "rector/rector-phpunit": "*",
                 "rector/rector-symfony": "*"
+            },
+            "suggest": {
+                "ext-dom": "To manipulate phpunit.xml via the custom-rule command"
             },
             "bin": [
                 "bin/rector"
@@ -2198,7 +2201,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/1.0.3"
+                "source": "https://github.com/rectorphp/rector/tree/1.0.4"
             },
             "funding": [
                 {
@@ -2206,7 +2209,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-03-14T15:04:18+00:00"
+            "time": "2024-04-05T09:01:07+00:00"
         },
         {
             "name": "sebastian/cli-parser",
