@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace AmazonPHP\Test\AmazonPHP\SellingPartner\Tests\Unit;
 
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDK;
-use AmazonPHP\SellingPartner\Api\AuthorizationApi\AuthorizationSDK;
+use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDK;
 use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
 use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDK;
 use AmazonPHP\SellingPartner\Api\DefinitionsApi\ProductTypesDefinitionsSDK;
@@ -28,7 +28,6 @@ use AmazonPHP\SellingPartner\Api\ServiceApi\ServicesSDK;
 use AmazonPHP\SellingPartner\Api\ShipmentApi;
 use AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi\ShipmentInvoicingSDK;
 use AmazonPHP\SellingPartner\Api\ShippingApi\ShippingSDK;
-use AmazonPHP\SellingPartner\Api\SmallAndLightApi\FBASmallAndLightSDK;
 use AmazonPHP\SellingPartner\Api\SolicitationsApi\SolicitationsSDK;
 use AmazonPHP\SellingPartner\Api\TokensApi\TokensSDK;
 use AmazonPHP\SellingPartner\Api\UploadsApi\UploadsSDK;
@@ -60,11 +59,9 @@ final class SellingPartnerSDKTest extends TestCase
     private array $sdkMap = [
         'oAuth'                   => OAuth::class,
         'aPlus'                   => APlusSDK::class,
-        'authorization'           => AuthorizationSDK::class,
         'catalogItem'             => CatalogItemSDK::class,
         'fbaInbound'              => FBAInboundSDK::class,
         'fbaInventory'            => FBAInventorySDK::class,
-        'fbaSmallAndLight'        => FBASmallAndLightSDK::class,
         'feeds'                   => FeedsSDK::class,
         'finances'                => FinancesSDK::class,
         'fulfillmentInbound'      => FulfillmentInboundSDK::class,
@@ -87,6 +84,7 @@ final class SellingPartnerSDKTest extends TestCase
         'solicitations'           => SolicitationsSDK::class,
         'tokens'                  => TokensSDK::class,
         'uploads'                 => UploadsSDK::class,
+        'warehousingDistribution' => WarehousingAndDistributionSDK::class,
         'vendor'                  => VendorSDK::class,
     ];
 

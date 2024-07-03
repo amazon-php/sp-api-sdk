@@ -127,7 +127,7 @@ Some minor adjustments were made in the template files for models/api.
 - [SolicitationsSDK](/src/AmazonPHP/SellingPartner/Api/SolicitationsApi/SolicitationsSDK.php)
 - [TokensSDK](/src/AmazonPHP/SellingPartner/Api/TokensApi/TokensSDK.php)
 - [UploadsSDK](/src/AmazonPHP/SellingPartner/Api/UploadsApi/UploadsSDK.php)
-- [WarehousingAndDistributionSDK](/src/AmazonPHP/SellingPartner/Api/WarehousingDistributionApi/WarehousingAndDistributionSDK.php)
+- [WarehousingAndDistributionSDK](/src/AmazonPHP/SellingPartner/Api/AwdApi/WarehousingAndDistributionSDK.php)
 - VendorSDK
   - [VendorInvoicesSDK](/src/AmazonPHP/SellingPartner/Api/VendorPaymentsApi/VendorInvoicesSDK.php)
   - [VendorOrdersSDK](/src/AmazonPHP/SellingPartner/Api/VendorOrdersApi/VendorOrdersSDK.php)
