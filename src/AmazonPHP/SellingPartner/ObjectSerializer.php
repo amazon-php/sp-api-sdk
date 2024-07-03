@@ -3,11 +3,7 @@
 namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Model\CatalogItem\ItemImage;
-use AmazonPHP\SellingPartner\Model\FulfillmentInbound\CurrencyCode;
-use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepDetails;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepInstruction;
-use AmazonPHP\SellingPartner\Model\FulfillmentInbound\SellerFreightClass;
-use AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentStatus;
 use AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfMeasurement;
 use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo;
 use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus;
@@ -393,7 +389,6 @@ final class ObjectSerializer
 
             if (isset($data->{$instance::attributeMap()[$property]})) {
                 $propertyValue = self::castEmptyStringToNull($data->{$instance::attributeMap()[$property]}, $type);
-                $propertyValue = self::filterEmptyCollectionElement($propertyValue, $type);
 
                 $instance->{$propertySetter}(self::deserialize($configuration, $propertyValue, $type, null));
             }
@@ -421,14 +416,11 @@ final class ObjectSerializer
         return [
             \ltrim(EventCode::class, '\\'),
             \ltrim(ItemImage::class, '\\'),
-            \ltrim(CurrencyCode::class, '\\'),
             \ltrim(AdditionalLocationInfo::class, '\\'),
             \ltrim(CurrentStatus::class, '\\'),
             \ltrim(FileType::class, '\\'),
-            \ltrim(ShipmentStatus::class, '\\'),
             \ltrim(UnitOfMeasurement::class, '\\'),
             \ltrim(PrepInstruction::class, '\\'),
-            \ltrim(SellerFreightClass::class, '\\'),
         ];
     }
 
@@ -444,33 +436,6 @@ final class ObjectSerializer
     {
         if ('' === $value && \is_a(LabelFormat::class, $type, true)) {
             $value = null;
-        }
-
-        return $value;
-    }
-
-    /**
-     * @note amazon sometimes return collection with empty elements.
-     * We're going to filter those element, and if resulting array is empty, it'll return null.
-     *
-     * @param null|array|string $value value that needs to be parsed
-     *
-     * @return null|array|string parsed object property
-     */
-    private static function filterEmptyCollectionElement($value, string $type)
-    {
-        if (!\str_ends_with($type, '[]')) {
-            return $value;
-        }
-
-        if (!\is_array($value)) {
-            return $value;
-        }
-
-        if (\is_a(PrepDetails::class, \substr($type, 0, -2), true)) {
-            $value = \array_filter($value, fn ($prepDetails) : bool => \count((array) $prepDetails) > 0);
-
-            return \count($value) > 0 ? $value : null;
         }
 
         return $value;

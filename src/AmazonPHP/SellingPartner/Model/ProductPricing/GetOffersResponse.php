@@ -29,8 +29,6 @@ class GetOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetOffersResponse';
 
@@ -182,6 +180,8 @@ class GetOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResult
      */
     public function getPayload() : ?GetOffersResult
     {

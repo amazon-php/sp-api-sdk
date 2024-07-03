@@ -29,8 +29,6 @@ class CreateFeedDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateFeedDocumentResponse';
 

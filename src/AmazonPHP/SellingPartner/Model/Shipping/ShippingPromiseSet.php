@@ -29,8 +29,6 @@ class ShippingPromiseSet implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShippingPromiseSet';
 
@@ -186,6 +184,8 @@ class ShippingPromiseSet implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets delivery_window.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\TimeRange
      */
     public function getDeliveryWindow() : ?TimeRange
     {
@@ -206,6 +206,8 @@ class ShippingPromiseSet implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets receive_window.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\TimeRange
      */
     public function getReceiveWindow() : ?TimeRange
     {

@@ -29,8 +29,6 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemOffersRequestParams';
 
@@ -218,6 +216,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets item_condition.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -238,6 +238,8 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets customer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {

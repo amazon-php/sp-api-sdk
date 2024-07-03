@@ -29,8 +29,6 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateDestinationRequest';
 
@@ -188,6 +186,8 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets resource_specification.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\DestinationResourceSpecification
      */
     public function getResourceSpecification() : DestinationResourceSpecification
     {

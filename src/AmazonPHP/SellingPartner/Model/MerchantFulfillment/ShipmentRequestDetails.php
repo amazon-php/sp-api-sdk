@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentRequestDetails';
 
@@ -317,7 +315,7 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets item_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Item[] $item_list the list of items to be included in a shipment
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Item[] $item_list the list of items you want to include in a shipment
      */
     public function setItemList(array $item_list) : self
     {
@@ -328,6 +326,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ship_from_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -348,6 +348,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets package_dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\PackageDimensions
      */
     public function getPackageDimensions() : PackageDimensions
     {
@@ -368,6 +370,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets weight.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getWeight() : Weight
     {
@@ -397,7 +401,7 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets must_arrive_by_date.
      *
-     * @param null|\DateTimeInterface $must_arrive_by_date must_arrive_by_date
+     * @param null|\DateTimeInterface $must_arrive_by_date date-time formatted timestamp
      */
     public function setMustArriveByDate(?\DateTimeInterface $must_arrive_by_date) : self
     {
@@ -417,7 +421,7 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets ship_date.
      *
-     * @param null|\DateTimeInterface $ship_date ship_date
+     * @param null|\DateTimeInterface $ship_date date-time formatted timestamp
      */
     public function setShipDate(?\DateTimeInterface $ship_date) : self
     {
@@ -428,6 +432,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets shipping_service_options.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions
      */
     public function getShippingServiceOptions() : ShippingServiceOptions
     {
@@ -448,6 +454,8 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets label_customization.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelCustomization
      */
     public function getLabelCustomization() : ?LabelCustomization
     {

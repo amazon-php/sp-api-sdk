@@ -29,8 +29,6 @@ class GetSolicitationActionResponseEmbedded implements \ArrayAccess, \JsonSerial
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetSolicitationActionResponse__embedded';
 
@@ -176,6 +174,8 @@ class GetSolicitationActionResponseEmbedded implements \ArrayAccess, \JsonSerial
 
     /**
      * Gets schema.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSchemaResponse
      */
     public function getSchema() : ?GetSchemaResponse
     {

@@ -29,8 +29,6 @@ class CompleteServiceJobByServiceJobIdResponse implements \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CompleteServiceJobByServiceJobIdResponse';
 

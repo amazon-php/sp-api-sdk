@@ -29,8 +29,6 @@ class SubmitAcknowledgementResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitAcknowledgementResponse';
 
@@ -182,6 +180,8 @@ class SubmitAcknowledgementResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\TransactionId
      */
     public function getPayload() : ?TransactionId
     {

@@ -29,8 +29,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FulfillmentShipmentPackage';
 
@@ -44,6 +42,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'carrier_code' => 'string',
         'tracking_number' => 'string',
         'estimated_arrival_date' => '\DateTimeInterface',
+        'locker_details' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\LockerDetails',
     ];
 
     /**
@@ -60,6 +59,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'carrier_code' => null,
         'tracking_number' => null,
         'estimated_arrival_date' => 'date-time',
+        'locker_details' => null,
     ];
 
     /**
@@ -73,6 +73,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'carrier_code' => 'carrierCode',
         'tracking_number' => 'trackingNumber',
         'estimated_arrival_date' => 'estimatedArrivalDate',
+        'locker_details' => 'lockerDetails',
     ];
 
     /**
@@ -85,6 +86,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'carrier_code' => 'setCarrierCode',
         'tracking_number' => 'setTrackingNumber',
         'estimated_arrival_date' => 'setEstimatedArrivalDate',
+        'locker_details' => 'setLockerDetails',
     ];
 
     /**
@@ -97,6 +99,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'carrier_code' => 'getCarrierCode',
         'tracking_number' => 'getTrackingNumber',
         'estimated_arrival_date' => 'getEstimatedArrivalDate',
+        'locker_details' => 'getLockerDetails',
     ];
 
     /**
@@ -118,6 +121,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         $this->container['carrier_code'] = $data['carrier_code'] ?? null;
         $this->container['tracking_number'] = $data['tracking_number'] ?? null;
         $this->container['estimated_arrival_date'] = $data['estimated_arrival_date'] ?? null;
+        $this->container['locker_details'] = $data['locker_details'] ?? null;
     }
 
     /**
@@ -194,6 +198,10 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         if ($this->container['carrier_code'] === null) {
             throw new AssertionException("'carrier_code' can't be null");
         }
+
+        if ($this->container['locker_details'] !== null) {
+            $this->container['locker_details']->validate();
+        }
     }
 
     /**
@@ -267,11 +275,33 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets estimated_arrival_date.
      *
-     * @param null|\DateTimeInterface $estimated_arrival_date estimated_arrival_date
+     * @param null|\DateTimeInterface $estimated_arrival_date Date timestamp
      */
     public function setEstimatedArrivalDate(?\DateTimeInterface $estimated_arrival_date) : self
     {
         $this->container['estimated_arrival_date'] = $estimated_arrival_date;
+
+        return $this;
+    }
+
+    /**
+     * Gets locker_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\LockerDetails
+     */
+    public function getLockerDetails() : ?LockerDetails
+    {
+        return $this->container['locker_details'];
+    }
+
+    /**
+     * Sets locker_details.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\LockerDetails $locker_details locker_details
+     */
+    public function setLockerDetails(?LockerDetails $locker_details) : self
+    {
+        $this->container['locker_details'] = $locker_details;
 
         return $this;
     }

@@ -29,8 +29,6 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderAcknowledgement';
 
@@ -228,6 +226,8 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -257,7 +257,7 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets acknowledgement_date.
      *
-     * @param \DateTimeInterface $acknowledgement_date the date and time when the purchase order is acknowledged, in ISO-8601 date/time format
+     * @param \DateTimeInterface $acknowledgement_date The date and time when the purchase order is acknowledged, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      */
     public function setAcknowledgementDate(\DateTimeInterface $acknowledgement_date) : self
     {

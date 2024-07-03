@@ -33,8 +33,6 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'EventFilter';
 
@@ -227,6 +225,8 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets aggregation_settings.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings
      */
     public function getAggregationSettings() : ?AggregationSettings
     {
@@ -300,7 +300,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets event_filter_type.
      *
-     * @param string $event_filter_type An `eventFilterType` value that is supported by the specific `notificationType`. This is used by the subscription service to determine the type of event filter. Refer to the section of the [Notifications Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide) that describes the specific `notificationType` to determine if an `eventFilterType` is supported.
+     * @param string $event_filter_type An `eventFilterType` value that is supported by the specific `notificationType`. This is used by the subscription service to determine the type of event filter. Refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values) to determine if an `eventFilterType` is supported.
      */
     public function setEventFilterType(string $event_filter_type) : self
     {

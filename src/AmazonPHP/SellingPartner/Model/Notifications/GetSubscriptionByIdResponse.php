@@ -29,8 +29,6 @@ class GetSubscriptionByIdResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetSubscriptionByIdResponse';
 
@@ -182,6 +180,8 @@ class GetSubscriptionByIdResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Subscription
      */
     public function getPayload() : ?Subscription
     {

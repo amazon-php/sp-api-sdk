@@ -29,8 +29,6 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetOffersResult';
 
@@ -306,6 +304,8 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets item_condition.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ConditionType
      */
     public function getItemCondition() : ConditionType
     {
@@ -346,6 +346,8 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets identifier.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemIdentifier
      */
     public function getIdentifier() : ItemIdentifier
     {
@@ -366,6 +368,8 @@ class GetOffersResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets summary.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\Summary
      */
     public function getSummary() : Summary
     {

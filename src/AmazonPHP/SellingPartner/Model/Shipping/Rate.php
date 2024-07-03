@@ -29,8 +29,6 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Rate';
 
@@ -234,6 +232,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets total_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getTotalCharge() : ?Currency
     {
@@ -254,6 +254,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets billed_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getBilledWeight() : ?Weight
     {
@@ -294,6 +296,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets service_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\ServiceType
      */
     public function getServiceType() : ?ServiceType
     {
@@ -314,6 +318,8 @@ class Rate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets promise.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet
      */
     public function getPromise() : ?ShippingPromiseSet
     {

@@ -223,15 +223,15 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      * Operation getPurchaseOrders.
      *
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
-     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call (optional)
-     * @param null|bool $include_details When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. (optional)
-     * @param null|\DateTimeInterface $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|string $po_item_state Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
-     * @param null|bool $is_po_changed When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. (optional)
+     * @param null|bool $include_details When &#x60;true&#x60;, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is &#x60;true&#x60;. (optional)
+     * @param null|\DateTimeInterface $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|string $po_item_state Current state of the purchase order item. If this value is &#x60;Cancelled&#x60;, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
+     * @param null|bool $is_po_changed When &#x60;true&#x60;, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is &#x60;false&#x60;. (optional)
      * @param null|string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
      * @param null|string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)
      *
@@ -330,15 +330,15 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      * Create request for operation 'getPurchaseOrders'.
      *
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
-     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this time will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this time will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there is more purchase orders than the specified result size limit. The token value is returned in the previous API call (optional)
-     * @param null|bool $include_details When true, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is true. (optional)
-     * @param null|\DateTimeInterface $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|string $po_item_state Current state of the purchase order item. If this value is Cancelled, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
-     * @param null|bool $is_po_changed When true, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is false. (optional)
+     * @param null|bool $include_details When &#x60;true&#x60;, returns purchase orders with complete details. Otherwise, only purchase order numbers are returned. Default value is &#x60;true&#x60;. (optional)
+     * @param null|\DateTimeInterface $changed_after Purchase orders that changed after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $changed_before Purchase orders that changed before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|string $po_item_state Current state of the purchase order item. If this value is &#x60;Cancelled&#x60;, this API will return purchase orders which have one or more items cancelled by Amazon with updated item quantity as zero. (optional)
+     * @param null|bool $is_po_changed When &#x60;true&#x60;, returns purchase orders which were modified after the order was placed. Vendors are required to pull the changed purchase order and fulfill the updated purchase order and not the original one. Default value is &#x60;false&#x60;. (optional)
      * @param null|string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
      * @param null|string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)
      *
@@ -523,10 +523,10 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
-     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
      * @param null|string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param null|string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
      * @param null|string $item_confirmation_status Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. (optional)
@@ -631,10 +631,10 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      * @param null|int $limit The limit to the number of records returned. Default value is 100 records. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more purchase orders than the specified result size limit. (optional)
-     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_after Purchase orders that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $created_before Purchase orders that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $updated_after Purchase orders for which the last purchase order update happened after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
+     * @param null|\DateTimeInterface $updated_before Purchase orders for which the last purchase order update happened before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date/time format. (optional)
      * @param null|string $purchase_order_number Provides purchase order status for the specified purchase order number. (optional)
      * @param null|string $purchase_order_status Filters purchase orders based on the specified purchase order status. If not included in filter, this will return purchase orders for all statuses. (optional)
      * @param null|string $item_confirmation_status Filters purchase orders based on their item confirmation status. If the item confirmation status is not included in the filter, purchase orders for all confirmation statuses are included. (optional)
@@ -828,7 +828,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Operation submitAcknowledgement.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -924,7 +924,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
     /**
      * Create request for operation 'submitAcknowledgement'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

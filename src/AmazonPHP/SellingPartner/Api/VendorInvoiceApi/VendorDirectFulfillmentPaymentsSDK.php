@@ -35,7 +35,7 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
     /**
      * Operation submitInvoice.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -131,7 +131,7 @@ final class VendorDirectFulfillmentPaymentsSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'submitInvoice'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

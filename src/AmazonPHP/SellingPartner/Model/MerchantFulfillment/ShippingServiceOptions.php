@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShippingServiceOptions';
 
@@ -208,6 +206,8 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets delivery_experience.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceType
      */
     public function getDeliveryExperience() : DeliveryExperienceType
     {
@@ -228,6 +228,8 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getDeclaredValue() : ?CurrencyAmount
     {
@@ -257,7 +259,7 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets carrier_will_pick_up.
      *
-     * @param bool $carrier_will_pick_up When true, the carrier will pick up the package.  Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
+     * @param bool $carrier_will_pick_up When true, the carrier will pick up the package. Note: Scheduled carrier pickup is available only using Dynamex (US), DPD (UK), and Royal Mail (UK).
      */
     public function setCarrierWillPickUp(bool $carrier_will_pick_up) : self
     {
@@ -268,6 +270,8 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets carrier_will_pick_up_option.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUpOption() : ?CarrierWillPickUpOption
     {
@@ -288,6 +292,8 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets label_format.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat
      */
     public function getLabelFormat() : ?LabelFormat
     {

@@ -29,8 +29,6 @@ class GetAppointmentSlotsResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetAppointmentSlotsResponse';
 
@@ -182,6 +180,8 @@ class GetAppointmentSlotsResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentSlotReport
      */
     public function getPayload() : ?AppointmentSlotReport
     {

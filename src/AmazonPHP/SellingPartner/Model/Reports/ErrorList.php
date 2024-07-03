@@ -29,8 +29,6 @@ class ErrorList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ErrorList';
 
@@ -187,7 +185,7 @@ class ErrorList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets errors.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Reports\Error[] $errors errors
+     * @param \AmazonPHP\SellingPartner\Model\Reports\Error[] $errors error response returned when the request is unsuccessful
      */
     public function setErrors(array $errors) : self
     {

@@ -29,8 +29,6 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FulfillmentPreviewShipment';
 
@@ -215,7 +213,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets earliest_ship_date.
      *
-     * @param null|\DateTimeInterface $earliest_ship_date earliest_ship_date
+     * @param null|\DateTimeInterface $earliest_ship_date Date timestamp
      */
     public function setEarliestShipDate(?\DateTimeInterface $earliest_ship_date) : self
     {
@@ -235,7 +233,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets latest_ship_date.
      *
-     * @param null|\DateTimeInterface $latest_ship_date latest_ship_date
+     * @param null|\DateTimeInterface $latest_ship_date Date timestamp
      */
     public function setLatestShipDate(?\DateTimeInterface $latest_ship_date) : self
     {
@@ -255,7 +253,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets earliest_arrival_date.
      *
-     * @param null|\DateTimeInterface $earliest_arrival_date earliest_arrival_date
+     * @param null|\DateTimeInterface $earliest_arrival_date Date timestamp
      */
     public function setEarliestArrivalDate(?\DateTimeInterface $earliest_arrival_date) : self
     {
@@ -275,7 +273,7 @@ class FulfillmentPreviewShipment implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets latest_arrival_date.
      *
-     * @param null|\DateTimeInterface $latest_arrival_date latest_arrival_date
+     * @param null|\DateTimeInterface $latest_arrival_date Date timestamp
      */
     public function setLatestArrivalDate(?\DateTimeInterface $latest_arrival_date) : self
     {

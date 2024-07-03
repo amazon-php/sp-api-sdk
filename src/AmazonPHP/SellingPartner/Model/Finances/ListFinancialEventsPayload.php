@@ -29,8 +29,6 @@ class ListFinancialEventsPayload implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ListFinancialEventsPayload';
 
@@ -202,6 +200,8 @@ class ListFinancialEventsPayload implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets financial_events.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents
      */
     public function getFinancialEvents() : ?FinancialEvents
     {

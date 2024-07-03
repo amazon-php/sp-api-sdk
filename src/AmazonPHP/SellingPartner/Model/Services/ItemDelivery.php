@@ -29,8 +29,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemDelivery';
 
@@ -202,6 +200,8 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets item_delivery_promise.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\ItemDeliveryPromise
      */
     public function getItemDeliveryPromise() : ?ItemDeliveryPromise
     {

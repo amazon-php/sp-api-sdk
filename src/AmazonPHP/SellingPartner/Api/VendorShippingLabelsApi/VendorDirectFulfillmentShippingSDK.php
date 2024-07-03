@@ -36,7 +36,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      * Operation createShippingLabels.
      *
      * @param string $purchase_order_number The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body The request payload that contains parameters for creating shipping labels. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -133,7 +133,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      * Create request for operation 'createShippingLabels'.
      *
      * @param string $purchase_order_number The purchase order number for which you want to return the shipping labels. It should be the same purchaseOrderNumber as received in the order. (required)
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateShippingLabelsRequest $body The request payload that contains parameters for creating shipping labels. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -243,7 +243,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Operation getShippingLabel.
      *
-     * @param string $purchase_order_number The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param string $purchase_order_number The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -339,7 +339,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'getShippingLabel'.
      *
-     * @param string $purchase_order_number The purchase order number for which you want to return the shipping label. It should be the same purchaseOrderNumber as received in the order. (required)
+     * @param string $purchase_order_number The purchase order number for which you want to return the shipping label. Should be the same &#x60;purchaseOrderNumber&#x60; as received in the order. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -685,7 +685,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Operation submitShippingLabelRequest.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body Request body that contains the shipping labels data. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -781,7 +781,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'submitShippingLabelRequest'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShippingLabelsRequest $body Request body that contains the shipping labels data. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

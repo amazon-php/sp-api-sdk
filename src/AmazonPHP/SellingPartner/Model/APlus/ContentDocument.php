@@ -29,8 +29,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ContentDocument';
 
@@ -256,6 +254,8 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets content_type.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {

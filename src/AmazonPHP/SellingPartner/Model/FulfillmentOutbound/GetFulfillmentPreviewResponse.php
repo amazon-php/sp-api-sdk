@@ -29,8 +29,6 @@ class GetFulfillmentPreviewResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetFulfillmentPreviewResponse';
 
@@ -182,6 +180,8 @@ class GetFulfillmentPreviewResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewResult
      */
     public function getPayload() : ?GetFulfillmentPreviewResult
     {

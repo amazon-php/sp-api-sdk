@@ -29,8 +29,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Decorator';
 
@@ -214,6 +212,8 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\DecoratorType
      */
     public function getType() : ?DecoratorType
     {

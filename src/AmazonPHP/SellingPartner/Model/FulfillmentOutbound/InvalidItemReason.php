@@ -29,8 +29,6 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'InvalidItemReason';
 
@@ -186,6 +184,8 @@ class InvalidItemReason implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets invalid_item_reason_code.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\InvalidItemReasonCode
      */
     public function getInvalidItemReasonCode() : InvalidItemReasonCode
     {

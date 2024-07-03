@@ -32,6 +32,10 @@ interface FulfillmentOutboundSDKInterface
 
     public const OPERATION_CREATEFULFILLMENTRETURN_PATH = '/fba/outbound/2020-07-01/fulfillmentOrders/{sellerFulfillmentOrderId}/return';
 
+    public const OPERATION_DELIVERYOFFERS = 'deliveryOffers';
+
+    public const OPERATION_DELIVERYOFFERS_PATH = '/fba/outbound/2020-07-01/deliveryOffers';
+
     public const OPERATION_GETFEATUREINVENTORY = 'getFeatureInventory';
 
     public const OPERATION_GETFEATUREINVENTORY_PATH = '/fba/outbound/2020-07-01/features/inventory/{featureName}';
@@ -85,7 +89,7 @@ interface FulfillmentOutboundSDKInterface
     /**
      * Operation createFulfillmentOrder.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderRequest $body CreateFulfillmentOrderRequest parameter (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -95,13 +99,23 @@ interface FulfillmentOutboundSDKInterface
     /**
      * Operation createFulfillmentReturn.
      *
-     * @param string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct SellerFulfillmentOrderId value based on the buyer&#39;s request to return items. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnRequest $body body (required)
+     * @param string $seller_fulfillment_order_id An identifier assigned by the seller to the fulfillment order at the time it was created. The seller uses their own records to find the correct &#x60;SellerFulfillmentOrderId&#x60; value based on the buyer&#39;s request to return items. (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnRequest $body CreateFulfillmentReturnRequest parameter (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
     public function createFulfillmentReturn(AccessToken $accessToken, string $region, string $seller_fulfillment_order_id, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentReturnResponse;
+
+    /**
+     * Operation deliveryOffers.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersRequest $body GetDeliveryOffersRequest parameter (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function deliveryOffers(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersResponse;
 
     /**
      * Operation getFeatureInventory.
@@ -120,7 +134,7 @@ interface FulfillmentOutboundSDKInterface
      *
      * @param string $marketplace_id The marketplace for which to return the count. (required)
      * @param string $feature_name The name of the feature. (required)
-     * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
+     * @param string $seller_sku Used to identify an item in the given marketplace. &#x60;SellerSKU&#x60; is qualified by the seller&#39;s &#x60;SellerId&#x60;, which is included with every operation that you submit. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -150,7 +164,7 @@ interface FulfillmentOutboundSDKInterface
     /**
      * Operation getFulfillmentPreview.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewRequest $body GetFulfillmentPreviewRequest parameter (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -160,7 +174,7 @@ interface FulfillmentOutboundSDKInterface
     /**
      * Operation getPackageTrackingDetails.
      *
-     * @param int $package_number The unencrypted package identifier returned by the getFulfillmentOrder operation. (required)
+     * @param int $package_number The unencrypted package identifier returned by the &#x60;getFulfillmentOrder&#x60; operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -182,20 +196,20 @@ interface FulfillmentOutboundSDKInterface
      * Operation listReturnReasonCodes.
      *
      * @param string $seller_sku The seller SKU for which return reason codes are required. (required)
-     * @param string $language The language that the TranslatedDescription property of the ReasonCodeDetails response object should be translated into. (required)
      * @param null|string $marketplace_id The marketplace for which the seller wants return reason codes. (optional)
      * @param null|string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. The service uses this value to determine the marketplace for which the seller wants return reason codes. (optional)
+     * @param null|string $language The language that the &#x60;TranslatedDescription&#x60; property of the &#x60;ReasonCodeDetails&#x60; response object should be translated into. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function listReturnReasonCodes(AccessToken $accessToken, string $region, string $seller_sku, string $language, ?string $marketplace_id = null, ?string $seller_fulfillment_order_id = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse;
+    public function listReturnReasonCodes(AccessToken $accessToken, string $region, string $seller_sku, ?string $marketplace_id = null, ?string $seller_fulfillment_order_id = null, ?string $language = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResponse;
 
     /**
      * Operation submitFulfillmentOrderStatusUpdate.
      *
      * @param string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\SubmitFulfillmentOrderStatusUpdateRequest $body The identifier assigned to the item by the seller when the fulfillment order was created. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -206,7 +220,7 @@ interface FulfillmentOutboundSDKInterface
      * Operation updateFulfillmentOrder.
      *
      * @param string $seller_fulfillment_order_id The identifier assigned to the item by the seller when the fulfillment order was created. (required)
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UpdateFulfillmentOrderRequest $body UpdateFulfillmentOrderRequest parameter (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException

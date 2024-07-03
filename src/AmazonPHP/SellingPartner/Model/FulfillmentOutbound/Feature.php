@@ -29,8 +29,6 @@ class Feature implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Feature';
 

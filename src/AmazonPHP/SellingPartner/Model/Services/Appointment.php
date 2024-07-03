@@ -35,8 +35,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Appointment';
 
@@ -302,6 +300,8 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets appointment_time.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime
      */
     public function getAppointmentTime() : ?AppointmentTime
     {
@@ -364,6 +364,8 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets poa.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\Poa
      */
     public function getPoa() : ?Poa
     {

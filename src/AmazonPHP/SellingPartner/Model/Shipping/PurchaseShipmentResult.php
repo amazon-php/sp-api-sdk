@@ -29,8 +29,6 @@ class PurchaseShipmentResult implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PurchaseShipmentResult';
 
@@ -218,6 +216,8 @@ class PurchaseShipmentResult implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets service_rate.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\ServiceRate
      */
     public function getServiceRate() : ServiceRate
     {

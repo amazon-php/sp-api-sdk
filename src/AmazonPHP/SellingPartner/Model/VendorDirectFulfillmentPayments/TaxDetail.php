@@ -57,8 +57,6 @@ class TaxDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TaxDetail';
 
@@ -309,6 +307,8 @@ class TaxDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tax_amount.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getTaxAmount() : Money
     {
@@ -329,6 +329,8 @@ class TaxDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets taxable_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getTaxableAmount() : ?Money
     {

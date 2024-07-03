@@ -29,8 +29,6 @@ class Points implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Points';
 
@@ -202,6 +200,8 @@ class Points implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets points_monetary_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getPointsMonetaryValue() : ?MoneyType
     {

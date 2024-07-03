@@ -29,8 +29,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Shipment';
 
@@ -284,6 +282,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_from.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipFrom() : Address
     {
@@ -304,6 +304,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_to.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipTo() : Address
     {
@@ -324,6 +326,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets accepted_rate.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate() : ?AcceptedRate
     {
@@ -344,6 +348,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipper.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Party
      */
     public function getShipper() : ?Party
     {

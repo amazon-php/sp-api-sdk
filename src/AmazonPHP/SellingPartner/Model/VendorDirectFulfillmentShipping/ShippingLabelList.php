@@ -29,8 +29,6 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShippingLabelList';
 
@@ -182,6 +180,8 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets pagination.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination
      */
     public function getPagination() : ?Pagination
     {
@@ -213,7 +213,7 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets shipping_labels.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel[] $shipping_labels shipping_labels
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel[] $shipping_labels an array that contains the details of the generated shipping labels
      */
     public function setShippingLabels(?array $shipping_labels) : self
     {

@@ -62,7 +62,7 @@ interface VendorDirectFulfillmentOrdersSDKInterface
     /**
      * Operation submitAcknowledgement.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body The request body containing the acknowledgement to an order (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException

@@ -29,8 +29,6 @@ class GetTrackingInformationResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetTrackingInformationResponse';
 
@@ -182,6 +180,8 @@ class GetTrackingInformationResponse implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\TrackingInformation
      */
     public function getPayload() : ?TrackingInformation
     {

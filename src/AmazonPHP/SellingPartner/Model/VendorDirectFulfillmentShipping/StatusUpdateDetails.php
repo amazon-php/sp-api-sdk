@@ -29,8 +29,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'StatusUpdateDetails';
 
@@ -257,7 +255,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets status_code.
      *
-     * @param string $status_code Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
+     * @param string $status_code The shipment status code for the package that provides transportation information for Amazon tracking systems and the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
      */
     public function setStatusCode(string $status_code) : self
     {
@@ -277,7 +275,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets reason_code.
      *
-     * @param string $reason_code Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
+     * @param string $reason_code Provides a reason code for the package status that provides additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
      */
     public function setReasonCode(string $reason_code) : self
     {
@@ -308,6 +306,8 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets status_location_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Address
      */
     public function getStatusLocationAddress() : Address
     {
@@ -328,6 +328,8 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_schedule.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentSchedule
      */
     public function getShipmentSchedule() : ?ShipmentSchedule
     {

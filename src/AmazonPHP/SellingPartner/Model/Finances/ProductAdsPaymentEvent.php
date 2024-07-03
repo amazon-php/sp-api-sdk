@@ -29,8 +29,6 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ProductAdsPaymentEvent';
 
@@ -274,6 +272,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets base_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseValue() : ?Currency
     {
@@ -294,6 +294,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxValue() : ?Currency
     {
@@ -314,6 +316,8 @@ class ProductAdsPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionValue() : ?Currency
     {

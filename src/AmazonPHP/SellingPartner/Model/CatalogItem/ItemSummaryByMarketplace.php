@@ -37,8 +37,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemSummaryByMarketplace';
 
@@ -409,6 +407,8 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets browse_classification.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification
      */
     public function getBrowseClassification() : ?ItemBrowseClassification
     {

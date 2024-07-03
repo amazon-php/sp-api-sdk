@@ -7,14 +7,6 @@ docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/op
     --type-mappings date=\\DateTimeInterface,Date=\\DateTimeInterface,DateTime=\\DateTimeInterface
 
 docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/authorization-api-model/authorization.json \
-    -c /sp-api/config/generator-authorization.yaml \
-    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
-    -o /sp-api \
-    --language-specific-primitives \\DateTimeInterface \
-    --type-mappings date=\\DateTimeInterface,Date=\\DateTimeInterface,DateTime=\\DateTimeInterface
-
-docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/catalog-items-api-model/catalogItems_2022-04-01.json \
     --skip-validate-spec \
     -c /sp-api/config/generator-catalog-item.yaml \
@@ -40,14 +32,6 @@ docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/op
     --type-mappings date=\\DateTimeInterface,Date=\\DateTimeInterface,DateTime=\\DateTimeInterface
 
 docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fba-small-and-light-api-model/fbaSmallandLight.json \
-    -c /sp-api/config/generator-fba-small-and-light.yaml \
-    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
-    -o /sp-api \
-    --language-specific-primitives \\DateTimeInterface \
-    --type-mappings date=\\DateTimeInterface,Date=\\DateTimeInterface,DateTime=\\DateTimeInterface
-
-docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/feeds-api-model/feeds_2021-06-30.json \
     -c /sp-api/config/generator-feeds.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
@@ -64,7 +48,7 @@ docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/op
     --type-mappings date=\\DateTimeInterface,Date=\\DateTimeInterface,DateTime=\\DateTimeInterface
 
 docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
-    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-inbound-api-model/fulfillmentInboundV0.json \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/fulfillment-inbound-api-model/fulfillmentInbound_2024-03-20.json \
     -c /sp-api/config/generator-fulfillment-inbound.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api \
@@ -289,6 +273,14 @@ docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/op
 docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
     -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/vendor-transaction-status-api-model/vendorTransactionStatus.json \
     -c /sp-api/config/generator-vendor-transaction-status.yaml \
+    --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
+    -o /sp-api \
+    --language-specific-primitives \\DateTimeInterface \
+    --type-mappings date=\\DateTimeInterface,Date=\\DateTimeInterface,DateTime=\\DateTimeInterface
+
+docker run --user "$(id -u)":"$(id -g)" --rm -v "${PWD}:/sp-api" openapitools/openapi-generator-cli generate \
+    -i https://raw.githubusercontent.com/amzn/selling-partner-api-models/main/models/amazon-warehousing-and-distribution-model/awd_2024-05-09.json \
+    -c /sp-api/config/generator-warehousing-and-distribution.yaml \
     --global-property models,apis,apiDocs=false,modelDocs=false,modelTests=false,apiTests=false,supportingFiles=false \
     -o /sp-api \
     --language-specific-primitives \\DateTimeInterface \

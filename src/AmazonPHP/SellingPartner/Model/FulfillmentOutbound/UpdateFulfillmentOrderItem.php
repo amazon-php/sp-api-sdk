@@ -29,8 +29,6 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'UpdateFulfillmentOrderItem';
 
@@ -287,7 +285,7 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets seller_fulfillment_order_item_id.
      *
-     * @param string $seller_fulfillment_order_item_id Identifies the fulfillment order item to update. Created with a previous call to the createFulfillmentOrder operation.
+     * @param string $seller_fulfillment_order_item_id Identifies the fulfillment order item to update. Created with a previous call to the `createFulfillmentOrder` operation.
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -398,6 +396,8 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -418,6 +418,8 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -438,6 +440,8 @@ class UpdateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {

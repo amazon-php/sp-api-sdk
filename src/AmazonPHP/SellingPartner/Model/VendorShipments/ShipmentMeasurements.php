@@ -29,8 +29,6 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentMeasurements';
 
@@ -198,6 +196,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets gross_shipment_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getGrossShipmentWeight() : ?Weight
     {
@@ -218,6 +218,8 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_volume.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Volume
      */
     public function getShipmentVolume() : ?Volume
     {

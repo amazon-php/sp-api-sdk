@@ -29,8 +29,6 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FulfillmentShipmentItem';
 
@@ -45,6 +43,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
         'quantity' => 'int',
         'package_number' => 'int',
         'serial_number' => 'string',
+        'manufacturer_lot_codes' => 'string[]',
     ];
 
     /**
@@ -62,6 +61,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
         'quantity' => 'int32',
         'package_number' => 'int32',
         'serial_number' => null,
+        'manufacturer_lot_codes' => null,
     ];
 
     /**
@@ -76,6 +76,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
         'quantity' => 'quantity',
         'package_number' => 'packageNumber',
         'serial_number' => 'serialNumber',
+        'manufacturer_lot_codes' => 'manufacturerLotCodes',
     ];
 
     /**
@@ -89,6 +90,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
         'quantity' => 'setQuantity',
         'package_number' => 'setPackageNumber',
         'serial_number' => 'setSerialNumber',
+        'manufacturer_lot_codes' => 'setManufacturerLotCodes',
     ];
 
     /**
@@ -102,6 +104,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
         'quantity' => 'getQuantity',
         'package_number' => 'getPackageNumber',
         'serial_number' => 'getSerialNumber',
+        'manufacturer_lot_codes' => 'getManufacturerLotCodes',
     ];
 
     /**
@@ -124,6 +127,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
         $this->container['quantity'] = $data['quantity'] ?? null;
         $this->container['package_number'] = $data['package_number'] ?? null;
         $this->container['serial_number'] = $data['serial_number'] ?? null;
+        $this->container['manufacturer_lot_codes'] = $data['manufacturer_lot_codes'] ?? null;
     }
 
     /**
@@ -237,7 +241,7 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets seller_fulfillment_order_item_id.
      *
-     * @param string $seller_fulfillment_order_item_id the fulfillment order item identifier that the seller created and submitted with a call to the createFulfillmentOrder operation
+     * @param string $seller_fulfillment_order_item_id the fulfillment order item identifier that the seller created and submitted with a call to the `createFulfillmentOrder` operation
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -302,6 +306,28 @@ class FulfillmentShipmentItem implements \ArrayAccess, \JsonSerializable, \Strin
     public function setSerialNumber(?string $serial_number) : self
     {
         $this->container['serial_number'] = $serial_number;
+
+        return $this;
+    }
+
+    /**
+     * Gets manufacturer_lot_codes.
+     *
+     * @return null|string[]
+     */
+    public function getManufacturerLotCodes() : ?array
+    {
+        return $this->container['manufacturer_lot_codes'];
+    }
+
+    /**
+     * Sets manufacturer_lot_codes.
+     *
+     * @param null|string[] $manufacturer_lot_codes String list
+     */
+    public function setManufacturerLotCodes(?array $manufacturer_lot_codes) : self
+    {
+        $this->container['manufacturer_lot_codes'] = $manufacturer_lot_codes;
 
         return $this;
     }

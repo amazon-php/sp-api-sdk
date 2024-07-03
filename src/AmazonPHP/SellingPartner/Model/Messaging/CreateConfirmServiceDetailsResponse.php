@@ -29,8 +29,6 @@ class CreateConfirmServiceDetailsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateConfirmServiceDetailsResponse';
 

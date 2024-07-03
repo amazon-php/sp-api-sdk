@@ -29,8 +29,6 @@ class GetFeaturesResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetFeaturesResponse';
 
@@ -182,6 +180,8 @@ class GetFeaturesResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeaturesResult
      */
     public function getPayload() : ?GetFeaturesResult
     {

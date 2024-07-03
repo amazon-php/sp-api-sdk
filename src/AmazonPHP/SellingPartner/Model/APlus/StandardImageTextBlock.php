@@ -29,8 +29,6 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'StandardImageTextBlock';
 
@@ -196,6 +194,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -216,6 +216,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -236,6 +238,8 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets body.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent
      */
     public function getBody() : ?ParagraphComponent
     {

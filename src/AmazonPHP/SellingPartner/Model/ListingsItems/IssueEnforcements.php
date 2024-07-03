@@ -29,8 +29,6 @@ class IssueEnforcements implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'IssueEnforcements';
 
@@ -210,6 +208,8 @@ class IssueEnforcements implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets exemption.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\IssueExemption
      */
     public function getExemption() : IssueExemption
     {

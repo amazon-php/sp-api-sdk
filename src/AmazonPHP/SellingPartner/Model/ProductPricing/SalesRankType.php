@@ -29,8 +29,6 @@ class SalesRankType implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SalesRankType';
 

@@ -29,8 +29,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PurchaseLabelsRequest';
 
@@ -208,6 +206,8 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets label_specification.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification() : LabelSpecification
     {

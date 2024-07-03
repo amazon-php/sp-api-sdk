@@ -29,8 +29,6 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FeesEstimate';
 
@@ -212,6 +210,8 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets total_fees_estimate.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getTotalFeesEstimate() : ?MoneyType
     {

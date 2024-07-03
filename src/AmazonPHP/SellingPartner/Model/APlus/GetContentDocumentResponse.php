@@ -29,8 +29,6 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetContentDocumentResponse';
 
@@ -206,6 +204,8 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets content_record.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentRecord
      */
     public function getContentRecord() : ContentRecord
     {

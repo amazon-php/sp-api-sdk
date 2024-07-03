@@ -29,8 +29,6 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'RentalTransactionEvent';
 
@@ -378,6 +376,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_initial_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalInitialValue() : ?Currency
     {
@@ -398,6 +398,8 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets rental_reimbursement.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRentalReimbursement() : ?Currency
     {

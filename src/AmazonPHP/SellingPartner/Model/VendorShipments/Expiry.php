@@ -29,8 +29,6 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Expiry';
 
@@ -228,6 +226,8 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets expiry_after_duration.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Duration
      */
     public function getExpiryAfterDuration() : ?Duration
     {

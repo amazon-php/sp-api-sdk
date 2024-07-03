@@ -29,8 +29,6 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TaxWithholdingEvent';
 
@@ -222,6 +220,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets base_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseAmount() : ?Currency
     {
@@ -242,6 +242,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets withheld_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getWithheldAmount() : ?Currency
     {
@@ -262,6 +264,8 @@ class TaxWithholdingEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tax_withholding_period.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingPeriod
      */
     public function getTaxWithholdingPeriod() : ?TaxWithholdingPeriod
     {

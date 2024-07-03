@@ -29,8 +29,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemDetails';
 
@@ -205,7 +203,7 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets buyer_product_identifier.
      *
-     * @param null|string $buyer_product_identifier The buyer selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
+     * @param null|string $buyer_product_identifier The buyer-selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
      */
     public function setBuyerProductIdentifier(?string $buyer_product_identifier) : self
     {
@@ -225,7 +223,7 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets vendor_product_identifier.
      *
-     * @param null|string $vendor_product_identifier The vendor selected product identification of the item. Either buyerProductIdentifier or vendorProductIdentifier should be submitted.
+     * @param null|string $vendor_product_identifier The vendor selected product identification for the item. Either `buyerProductIdentifier` or `vendorProductIdentifier` must be submitted.
      */
     public function setVendorProductIdentifier(?string $vendor_product_identifier) : self
     {
@@ -236,6 +234,8 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets available_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\ItemQuantity
      */
     public function getAvailableQuantity() : ItemQuantity
     {
@@ -265,7 +265,7 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets is_obsolete.
      *
-     * @param null|bool $is_obsolete when true, the item is permanently unavailable
+     * @param null|bool $is_obsolete when `true`, the item is permanently unavailable
      */
     public function setIsObsolete(?bool $is_obsolete) : self
     {

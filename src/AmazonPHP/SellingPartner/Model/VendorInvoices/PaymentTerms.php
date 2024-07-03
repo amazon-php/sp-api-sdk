@@ -41,8 +41,6 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PaymentTerms';
 
@@ -280,7 +278,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets discount_due_days.
      *
-     * @param null|float $discount_due_days the number of calendar days from the Base date (Invoice date) until the discount is no longer valid
+     * @param null|float $discount_due_days the number of calendar days from the base date (Invoice date) until the discount is no longer valid
      */
     public function setDiscountDueDays(?float $discount_due_days) : self
     {

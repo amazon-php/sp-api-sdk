@@ -29,8 +29,6 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentInvoiceStatusInfo';
 
@@ -199,6 +197,8 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets invoice_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatus
      */
     public function getInvoiceStatus() : ?ShipmentInvoiceStatus
     {

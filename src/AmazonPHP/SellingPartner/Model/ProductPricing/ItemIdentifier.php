@@ -29,8 +29,6 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemIdentifier';
 
@@ -258,6 +256,8 @@ class ItemIdentifier implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets item_condition.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ConditionType
      */
     public function getItemCondition() : ConditionType
     {

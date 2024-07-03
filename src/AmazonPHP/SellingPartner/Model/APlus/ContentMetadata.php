@@ -29,8 +29,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ContentMetadata';
 
@@ -268,6 +266,8 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentStatus
      */
     public function getStatus() : ContentStatus
     {

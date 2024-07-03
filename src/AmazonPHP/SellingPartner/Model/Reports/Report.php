@@ -39,8 +39,6 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Report';
 
@@ -457,7 +455,7 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets processing_start_time.
      *
-     * @param null|\DateTimeInterface $processing_start_time the date and time when the report processing started, in ISO 8601 date time format
+     * @param null|\DateTimeInterface $processing_start_time The date and time when the report processing started, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      */
     public function setProcessingStartTime(?\DateTimeInterface $processing_start_time) : self
     {
@@ -477,7 +475,7 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets processing_end_time.
      *
-     * @param null|\DateTimeInterface $processing_end_time the date and time when the report processing completed, in ISO 8601 date time format
+     * @param null|\DateTimeInterface $processing_end_time The date and time when the report processing completed, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      */
     public function setProcessingEndTime(?\DateTimeInterface $processing_end_time) : self
     {
@@ -497,7 +495,7 @@ class Report implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets report_document_id.
      *
-     * @param null|string $report_document_id The identifier for the report document. Pass this into the getReportDocument operation to get the information you will need to retrieve the report document's contents.
+     * @param null|string $report_document_id The identifier for the report document. Pass this into the `getReportDocument` operation to get the information you will need to retrieve the report document's contents.
      */
     public function setReportDocumentId(?string $report_document_id) : self
     {

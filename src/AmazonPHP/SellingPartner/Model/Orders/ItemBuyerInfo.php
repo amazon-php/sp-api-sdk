@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemBuyerInfo';
 
@@ -208,6 +206,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets buyer_customized_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerCustomizedInfoDetail
      */
     public function getBuyerCustomizedInfo() : ?BuyerCustomizedInfoDetail
     {
@@ -228,6 +228,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets gift_wrap_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getGiftWrapPrice() : ?Money
     {
@@ -248,6 +250,8 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets gift_wrap_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getGiftWrapTax() : ?Money
     {
@@ -277,7 +281,7 @@ class ItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets gift_message_text.
      *
-     * @param null|string $gift_message_text a gift message provided by the buyer
+     * @param null|string $gift_message_text A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (Fulfilled by the seller) orders.
      */
     public function setGiftMessageText(?string $gift_message_text) : self
     {

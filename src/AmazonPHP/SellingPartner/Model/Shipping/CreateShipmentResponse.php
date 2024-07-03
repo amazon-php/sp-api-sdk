@@ -29,8 +29,6 @@ class CreateShipmentResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateShipmentResponse';
 
@@ -182,6 +180,8 @@ class CreateShipmentResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentResult
      */
     public function getPayload() : ?CreateShipmentResult
     {

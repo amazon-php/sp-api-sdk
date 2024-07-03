@@ -29,8 +29,6 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TDSReimbursementEvent';
 
@@ -228,6 +226,8 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets reimbursed_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getReimbursedAmount() : ?Currency
     {

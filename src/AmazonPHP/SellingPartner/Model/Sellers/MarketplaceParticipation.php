@@ -29,8 +29,6 @@ class MarketplaceParticipation implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'MarketplaceParticipation';
 
@@ -190,6 +188,8 @@ class MarketplaceParticipation implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets marketplace.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Sellers\Marketplace
      */
     public function getMarketplace() : Marketplace
     {
@@ -210,6 +210,8 @@ class MarketplaceParticipation implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets participation.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Sellers\Participation
      */
     public function getParticipation() : Participation
     {

@@ -29,8 +29,6 @@ class RangeCapacity implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'RangeCapacity';
 
@@ -179,6 +177,8 @@ class RangeCapacity implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets capacity_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\CapacityType
      */
     public function getCapacityType() : ?CapacityType
     {

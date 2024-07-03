@@ -29,8 +29,6 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentStatusUpdate';
 
@@ -236,6 +234,8 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -256,6 +256,8 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_from_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -276,6 +278,8 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets status_update_details.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\StatusUpdateDetails
      */
     public function getStatusUpdateDetails() : StatusUpdateDetails
     {

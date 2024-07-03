@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -24,10 +24,6 @@ interface MerchantFulfillmentSDKInterface
 
     public const OPERATION_CANCELSHIPMENT_PATH = '/mfn/v0/shipments/{shipmentId}';
 
-    public const OPERATION_CANCELSHIPMENTOLD = 'cancelShipmentOld';
-
-    public const OPERATION_CANCELSHIPMENTOLD_PATH = '/mfn/v0/shipments/{shipmentId}/cancel';
-
     public const OPERATION_CREATESHIPMENT = 'createShipment';
 
     public const OPERATION_CREATESHIPMENT_PATH = '/mfn/v0/shipments';
@@ -36,17 +32,9 @@ interface MerchantFulfillmentSDKInterface
 
     public const OPERATION_GETADDITIONALSELLERINPUTS_PATH = '/mfn/v0/additionalSellerInputs';
 
-    public const OPERATION_GETADDITIONALSELLERINPUTSOLD = 'getAdditionalSellerInputsOld';
-
-    public const OPERATION_GETADDITIONALSELLERINPUTSOLD_PATH = '/mfn/v0/sellerInputs';
-
     public const OPERATION_GETELIGIBLESHIPMENTSERVICES = 'getEligibleShipmentServices';
 
     public const OPERATION_GETELIGIBLESHIPMENTSERVICES_PATH = '/mfn/v0/eligibleShippingServices';
-
-    public const OPERATION_GETELIGIBLESHIPMENTSERVICESOLD = 'getEligibleShipmentServicesOld';
-
-    public const OPERATION_GETELIGIBLESHIPMENTSERVICESOLD_PATH = '/mfn/v0/eligibleServices';
 
     public const OPERATION_GETSHIPMENT = 'getShipment';
 
@@ -63,19 +51,9 @@ interface MerchantFulfillmentSDKInterface
     public function cancelShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse;
 
     /**
-     * Operation cancelShipmentOld.
-     *
-     * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function cancelShipmentOld(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse;
-
-    /**
      * Operation createShipment.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body Request schema for &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -85,7 +63,7 @@ interface MerchantFulfillmentSDKInterface
     /**
      * Operation getAdditionalSellerInputs.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body Request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -93,34 +71,14 @@ interface MerchantFulfillmentSDKInterface
     public function getAdditionalSellerInputs(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse;
 
     /**
-     * Operation getAdditionalSellerInputsOld.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function getAdditionalSellerInputsOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse;
-
-    /**
      * Operation getEligibleShipmentServices.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body Request schema for GetEligibleShipmentServices operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
     public function getEligibleShipmentServices(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse;
-
-    /**
-     * Operation getEligibleShipmentServicesOld.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function getEligibleShipmentServicesOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse;
 
     /**
      * Operation getShipment.

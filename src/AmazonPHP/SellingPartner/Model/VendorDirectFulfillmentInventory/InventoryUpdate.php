@@ -29,8 +29,6 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'InventoryUpdate';
 
@@ -198,6 +196,8 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -227,7 +227,7 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets is_full_update.
      *
-     * @param bool $is_full_update When true, this request contains a full feed. Otherwise, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an update to inventory. The status of other items will remain unchanged.
+     * @param bool $is_full_update When `true`, this request contains a full feed. When `false`, this request contains a partial feed. When sending a full feed, you must send information about all items in the warehouse. Any items not in the full feed are updated as not available. When sending a partial feed, only include the items that need an inventory update. The status of other items will remain unchanged.
      */
     public function setIsFullUpdate(bool $is_full_update) : self
     {

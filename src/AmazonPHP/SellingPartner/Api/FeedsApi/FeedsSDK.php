@@ -217,7 +217,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation createFeed.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body Information required to create the feed. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -313,7 +313,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'createFeed'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body Information required to create the feed. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -403,7 +403,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Operation createFeedDocument.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body Specifies the content type for the createFeedDocument operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -499,7 +499,7 @@ final class FeedsSDK implements FeedsSDKInterface
     /**
      * Create request for operation 'createFeedDocument'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body Specifies the content type for the createFeedDocument operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

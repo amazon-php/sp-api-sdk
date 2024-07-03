@@ -29,8 +29,6 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OfferType';
 
@@ -252,6 +250,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -272,6 +272,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buying_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType
      */
     public function getBuyingPrice() : PriceType
     {
@@ -292,6 +294,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets regular_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getRegularPrice() : MoneyType
     {
@@ -312,6 +316,8 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets business_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getBusinessPrice() : ?MoneyType
     {

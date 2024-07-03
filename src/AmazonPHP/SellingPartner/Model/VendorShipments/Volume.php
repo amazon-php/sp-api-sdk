@@ -37,8 +37,6 @@ class Volume implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Volume';
 

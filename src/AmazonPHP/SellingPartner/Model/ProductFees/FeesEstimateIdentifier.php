@@ -29,8 +29,6 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FeesEstimateIdentifier';
 
@@ -258,6 +256,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets id_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\IdType
      */
     public function getIdType() : ?IdType
     {
@@ -318,6 +318,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets price_to_estimate_fees.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees
      */
     public function getPriceToEstimateFees() : ?PriceToEstimateFees
     {
@@ -358,6 +360,8 @@ class FeesEstimateIdentifier implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets optional_fulfillment_program.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram
      */
     public function getOptionalFulfillmentProgram() : ?OptionalFulfillmentProgram
     {

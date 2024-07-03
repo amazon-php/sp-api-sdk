@@ -29,8 +29,6 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FinancialEvents';
 

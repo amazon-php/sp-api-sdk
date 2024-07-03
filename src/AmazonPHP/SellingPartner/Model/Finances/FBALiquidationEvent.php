@@ -29,8 +29,6 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FBALiquidationEvent';
 
@@ -238,6 +236,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets liquidation_proceeds_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLiquidationProceedsAmount() : ?Currency
     {
@@ -258,6 +258,8 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets liquidation_fee_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLiquidationFeeAmount() : ?Currency
     {

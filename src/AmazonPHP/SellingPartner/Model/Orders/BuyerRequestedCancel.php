@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'BuyerRequestedCancel';
 
@@ -40,7 +38,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, \Stringab
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'is_buyer_requested_cancel' => 'bool',
+        'is_buyer_requested_cancel' => 'string',
         'buyer_cancel_reason' => 'string',
     ];
 
@@ -180,7 +178,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets is_buyer_requested_cancel.
      */
-    public function getIsBuyerRequestedCancel() : ?bool
+    public function getIsBuyerRequestedCancel() : ?string
     {
         return $this->container['is_buyer_requested_cancel'];
     }
@@ -188,9 +186,9 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets is_buyer_requested_cancel.
      *
-     * @param null|bool $is_buyer_requested_cancel when true, the buyer has requested cancellation
+     * @param null|string $is_buyer_requested_cancel Indicate whether the buyer has requested cancellation.  **Possible Values**: `true`, `false`.
      */
-    public function setIsBuyerRequestedCancel(?bool $is_buyer_requested_cancel) : self
+    public function setIsBuyerRequestedCancel(?string $is_buyer_requested_cancel) : self
     {
         $this->container['is_buyer_requested_cancel'] = $is_buyer_requested_cancel;
 

@@ -6,8 +6,8 @@ namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDK;
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDKInterface;
-use AmazonPHP\SellingPartner\Api\AuthorizationApi\AuthorizationSDK;
-use AmazonPHP\SellingPartner\Api\AuthorizationApi\AuthorizationSDKInterface;
+use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDK;
+use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDKInterface;
 use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
 use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDKInterface;
 use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDK;
@@ -49,8 +49,6 @@ use AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi\ShipmentInvoicingSDK;
 use AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi\ShipmentInvoicingSDKInterface;
 use AmazonPHP\SellingPartner\Api\ShippingApi\ShippingSDK;
 use AmazonPHP\SellingPartner\Api\ShippingApi\ShippingSDKInterface;
-use AmazonPHP\SellingPartner\Api\SmallAndLightApi\FBASmallAndLightSDK;
-use AmazonPHP\SellingPartner\Api\SmallAndLightApi\FBASmallAndLightSDKInterface;
 use AmazonPHP\SellingPartner\Api\SolicitationsApi\SolicitationsSDK;
 use AmazonPHP\SellingPartner\Api\SolicitationsApi\SolicitationsSDKInterface;
 use AmazonPHP\SellingPartner\Api\TokensApi\TokensSDK;
@@ -108,11 +106,6 @@ final class SellingPartnerSDK
         return $this->instantiateSDK(APlusSDK::class);
     }
 
-    public function authorization() : AuthorizationSDKInterface
-    {
-        return $this->instantiateSDK(AuthorizationSDK::class);
-    }
-
     public function catalogItem() : CatalogItemSDKInterface
     {
         return $this->instantiateSDK(CatalogItemSDK::class);
@@ -126,11 +119,6 @@ final class SellingPartnerSDK
     public function fbaInventory() : FBAInventorySDKInterface
     {
         return $this->instantiateSDK(FBAInventorySDK::class);
-    }
-
-    public function fbaSmallAndLight() : FBASmallAndLightSDKInterface
-    {
-        return $this->instantiateSDK(FBASmallAndLightSDK::class);
     }
 
     public function feeds() : FeedsSDKInterface
@@ -241,6 +229,11 @@ final class SellingPartnerSDK
     public function uploads() : UploadsSDKInterface
     {
         return $this->instantiateSDK(UploadsSDK::class);
+    }
+
+    public function warehousingDistribution() : WarehousingAndDistributionSDKInterface
+    {
+        return $this->instantiateSDK(WarehousingAndDistributionSDK::class);
     }
 
     public function vendor() : VendorSDK

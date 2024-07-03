@@ -57,7 +57,7 @@ interface FeedsSDKInterface
     /**
      * Operation createFeed.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedSpecification $body Information required to create the feed. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -67,7 +67,7 @@ interface FeedsSDKInterface
     /**
      * Operation createFeedDocument.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\Feeds\CreateFeedDocumentSpecification $body Specifies the content type for the createFeedDocument operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException

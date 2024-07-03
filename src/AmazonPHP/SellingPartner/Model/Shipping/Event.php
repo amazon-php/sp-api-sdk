@@ -29,8 +29,6 @@ class Event implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Event';
 
@@ -244,6 +242,8 @@ class Event implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets location.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Location
      */
     public function getLocation() : ?Location
     {

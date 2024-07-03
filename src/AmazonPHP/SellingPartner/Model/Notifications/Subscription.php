@@ -29,8 +29,6 @@ class Subscription implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Subscription';
 
@@ -266,6 +264,8 @@ class Subscription implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets processing_directive.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective
      */
     public function getProcessingDirective() : ?ProcessingDirective
     {

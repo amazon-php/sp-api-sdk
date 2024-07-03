@@ -29,8 +29,6 @@ class ChargeRefundTransaction implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ChargeRefundTransaction';
 
@@ -182,6 +180,8 @@ class ChargeRefundTransaction implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets charge_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getChargeAmount() : ?Currency
     {

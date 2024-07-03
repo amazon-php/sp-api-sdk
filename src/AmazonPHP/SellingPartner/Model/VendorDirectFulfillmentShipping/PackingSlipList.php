@@ -29,8 +29,6 @@ class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PackingSlipList';
 
@@ -182,6 +180,8 @@ class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets pagination.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination
      */
     public function getPagination() : ?Pagination
     {
@@ -213,7 +213,7 @@ class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets packing_slips.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlip[] $packing_slips packing_slips
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlip[] $packing_slips an array of packing slip objects
      */
     public function setPackingSlips(?array $packing_slips) : self
     {

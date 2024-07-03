@@ -29,8 +29,6 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CompetitivePricingType';
 
@@ -240,6 +238,8 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets trade_in_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getTradeInValue() : ?MoneyType
     {

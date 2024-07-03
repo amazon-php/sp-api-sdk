@@ -29,8 +29,6 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetReportsResponse';
 
@@ -213,7 +211,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets next_token.
      *
-     * @param null|string $next_token Returned when the number of results exceeds pageSize. To get the next page of results, call getReports with this token as the only parameter.
+     * @param null|string $next_token Returned when the number of results exceeds `pageSize`. To get the next page of results, call `getReports` with this token as the only parameter.
      */
     public function setNextToken(?string $next_token) : self
     {

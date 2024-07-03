@@ -37,8 +37,6 @@ class Fee implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Fee';
 
@@ -243,6 +241,8 @@ class Fee implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets amount.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getAmount() : Money
     {

@@ -29,8 +29,6 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateFulfillmentOrderRequest';
 
@@ -48,6 +46,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'shipping_speed_category' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory',
         'delivery_window' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryWindow',
         'destination_address' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address',
+        'delivery_preferences' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryPreferences',
         'fulfillment_action' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction',
         'fulfillment_policy' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy',
         'cod_settings' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CODSettings',
@@ -55,6 +54,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'notification_emails' => 'string[]',
         'feature_constraints' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[]',
         'items' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateFulfillmentOrderItem[]',
+        'payment_information' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PaymentInformation[]',
     ];
 
     /**
@@ -75,6 +75,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'shipping_speed_category' => null,
         'delivery_window' => null,
         'destination_address' => null,
+        'delivery_preferences' => null,
         'fulfillment_action' => null,
         'fulfillment_policy' => null,
         'cod_settings' => null,
@@ -82,6 +83,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'notification_emails' => null,
         'feature_constraints' => null,
         'items' => null,
+        'payment_information' => null,
     ];
 
     /**
@@ -99,6 +101,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'shipping_speed_category' => 'shippingSpeedCategory',
         'delivery_window' => 'deliveryWindow',
         'destination_address' => 'destinationAddress',
+        'delivery_preferences' => 'deliveryPreferences',
         'fulfillment_action' => 'fulfillmentAction',
         'fulfillment_policy' => 'fulfillmentPolicy',
         'cod_settings' => 'codSettings',
@@ -106,6 +109,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'notification_emails' => 'notificationEmails',
         'feature_constraints' => 'featureConstraints',
         'items' => 'items',
+        'payment_information' => 'paymentInformation',
     ];
 
     /**
@@ -122,6 +126,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'shipping_speed_category' => 'setShippingSpeedCategory',
         'delivery_window' => 'setDeliveryWindow',
         'destination_address' => 'setDestinationAddress',
+        'delivery_preferences' => 'setDeliveryPreferences',
         'fulfillment_action' => 'setFulfillmentAction',
         'fulfillment_policy' => 'setFulfillmentPolicy',
         'cod_settings' => 'setCodSettings',
@@ -129,6 +134,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'notification_emails' => 'setNotificationEmails',
         'feature_constraints' => 'setFeatureConstraints',
         'items' => 'setItems',
+        'payment_information' => 'setPaymentInformation',
     ];
 
     /**
@@ -145,6 +151,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'shipping_speed_category' => 'getShippingSpeedCategory',
         'delivery_window' => 'getDeliveryWindow',
         'destination_address' => 'getDestinationAddress',
+        'delivery_preferences' => 'getDeliveryPreferences',
         'fulfillment_action' => 'getFulfillmentAction',
         'fulfillment_policy' => 'getFulfillmentPolicy',
         'cod_settings' => 'getCodSettings',
@@ -152,6 +159,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         'notification_emails' => 'getNotificationEmails',
         'feature_constraints' => 'getFeatureConstraints',
         'items' => 'getItems',
+        'payment_information' => 'getPaymentInformation',
     ];
 
     /**
@@ -177,6 +185,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         $this->container['shipping_speed_category'] = $data['shipping_speed_category'] ?? null;
         $this->container['delivery_window'] = $data['delivery_window'] ?? null;
         $this->container['destination_address'] = $data['destination_address'] ?? null;
+        $this->container['delivery_preferences'] = $data['delivery_preferences'] ?? null;
         $this->container['fulfillment_action'] = $data['fulfillment_action'] ?? null;
         $this->container['fulfillment_policy'] = $data['fulfillment_policy'] ?? null;
         $this->container['cod_settings'] = $data['cod_settings'] ?? null;
@@ -184,6 +193,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         $this->container['notification_emails'] = $data['notification_emails'] ?? null;
         $this->container['feature_constraints'] = $data['feature_constraints'] ?? null;
         $this->container['items'] = $data['items'] ?? null;
+        $this->container['payment_information'] = $data['payment_information'] ?? null;
     }
 
     /**
@@ -277,8 +287,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
             throw new AssertionException("'displayable_order_comment' can't be null");
         }
 
-        if ((\mb_strlen((string) $this->container['displayable_order_comment']) > 1000)) {
-            throw new AssertionException("invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 1000.");
+        if ((\mb_strlen((string) $this->container['displayable_order_comment']) > 750)) {
+            throw new AssertionException("invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 750.");
         }
 
         if ($this->container['shipping_speed_category'] === null) {
@@ -294,6 +304,10 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
         }
 
         $this->container['destination_address']->validate();
+
+        if ($this->container['delivery_preferences'] !== null) {
+            $this->container['delivery_preferences']->validate();
+        }
 
         if ($this->container['cod_settings'] !== null) {
             $this->container['cod_settings']->validate();
@@ -335,7 +349,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets seller_fulfillment_order_id.
      *
-     * @param string $seller_fulfillment_order_id A fulfillment order identifier that the seller creates to track their fulfillment order. The SellerFulfillmentOrderId must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
+     * @param string $seller_fulfillment_order_id A fulfillment order identifier that the seller creates to track their fulfillment order. The `SellerFulfillmentOrderId` must be unique for each fulfillment order that a seller creates. If the seller's system already creates unique order identifiers, then these might be good values for them to use.
      */
     public function setSellerFulfillmentOrderId(string $seller_fulfillment_order_id) : self
     {
@@ -355,7 +369,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets displayable_order_id.
      *
-     * @param string $displayable_order_id A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
+     * @param string $displayable_order_id A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.  The value must be an alpha-numeric or ISO 8859-1 compliant string from one to 40 characters in length. Cannot contain two spaces in a row. Leading and trailing white space is removed.
      */
     public function setDisplayableOrderId(string $displayable_order_id) : self
     {
@@ -375,7 +389,7 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets displayable_order_date.
      *
-     * @param \DateTimeInterface $displayable_order_date displayable_order_date
+     * @param \DateTimeInterface $displayable_order_date Date timestamp
      */
     public function setDisplayableOrderDate(\DateTimeInterface $displayable_order_date) : self
     {
@@ -406,6 +420,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ShippingSpeedCategory
     {
@@ -426,6 +442,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets delivery_window.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryWindow
      */
     public function getDeliveryWindow() : ?DeliveryWindow
     {
@@ -446,6 +464,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets destination_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getDestinationAddress() : Address
     {
@@ -465,7 +485,31 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     }
 
     /**
+     * Gets delivery_preferences.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryPreferences
+     */
+    public function getDeliveryPreferences() : ?DeliveryPreferences
+    {
+        return $this->container['delivery_preferences'];
+    }
+
+    /**
+     * Sets delivery_preferences.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryPreferences $delivery_preferences delivery_preferences
+     */
+    public function setDeliveryPreferences(?DeliveryPreferences $delivery_preferences) : self
+    {
+        $this->container['delivery_preferences'] = $delivery_preferences;
+
+        return $this;
+    }
+
+    /**
      * Gets fulfillment_action.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction
      */
     public function getFulfillmentAction() : ?FulfillmentAction
     {
@@ -486,6 +530,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_policy.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy
      */
     public function getFulfillmentPolicy() : ?FulfillmentPolicy
     {
@@ -506,6 +552,8 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets cod_settings.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CODSettings
      */
     public function getCodSettings() : ?CODSettings
     {
@@ -606,6 +654,28 @@ class CreateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     public function setItems(array $items) : self
     {
         $this->container['items'] = $items;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_information.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PaymentInformation[]
+     */
+    public function getPaymentInformation() : ?array
+    {
+        return $this->container['payment_information'];
+    }
+
+    /**
+     * Sets payment_information.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PaymentInformation[] $payment_information an array of various payment attributes related to this fulfillment order
+     */
+    public function setPaymentInformation(?array $payment_information) : self
+    {
+        $this->container['payment_information'] = $payment_information;
 
         return $this;
     }

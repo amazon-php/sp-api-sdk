@@ -29,8 +29,6 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'BatchRequest';
 
@@ -212,6 +210,8 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets method.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod
      */
     public function getMethod() : HttpMethod
     {

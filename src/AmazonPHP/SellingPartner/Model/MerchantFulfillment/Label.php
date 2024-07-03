@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Label';
 
@@ -221,7 +219,7 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets custom_text_for_label.
      *
-     * @param null|string $custom_text_for_label Custom text to print on the label.  Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support CustomTextForLabel.
+     * @param null|string $custom_text_for_label Custom text to print on the label. Note: Custom text is only included on labels that are in ZPL format (ZPL203). FedEx does not support `CustomTextForLabel`.
      */
     public function setCustomTextForLabel(?string $custom_text_for_label) : self
     {
@@ -232,6 +230,8 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelDimensions
      */
     public function getDimensions() : LabelDimensions
     {
@@ -252,6 +252,8 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets file_contents.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\FileContents
      */
     public function getFileContents() : FileContents
     {
@@ -272,6 +274,8 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets label_format.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat
      */
     public function getLabelFormat() : ?LabelFormat
     {
@@ -292,6 +296,8 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets standard_id_for_label.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\StandardIdForLabel
      */
     public function getStandardIdForLabel() : ?StandardIdForLabel
     {

@@ -29,8 +29,6 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'IdentifierType';
 
@@ -188,6 +186,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets marketplace_asin.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ASINIdentifier
      */
     public function getMarketplaceAsin() : ASINIdentifier
     {
@@ -208,6 +208,8 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets sku_identifier.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerSKUIdentifier
      */
     public function getSkuIdentifier() : ?SellerSKUIdentifier
     {

@@ -29,8 +29,6 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'BatchOffersResponse';
 
@@ -194,6 +192,8 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets headers.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders
      */
     public function getHeaders() : ?HttpResponseHeaders
     {
@@ -214,6 +214,8 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine
      */
     public function getStatus() : ?GetOffersHttpStatusLine
     {
@@ -234,6 +236,8 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets body.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getBody() : GetOffersResponse
     {

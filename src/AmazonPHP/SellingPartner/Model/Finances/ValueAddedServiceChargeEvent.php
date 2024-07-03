@@ -29,8 +29,6 @@ class ValueAddedServiceChargeEvent implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ValueAddedServiceChargeEvent';
 
@@ -254,6 +252,8 @@ class ValueAddedServiceChargeEvent implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

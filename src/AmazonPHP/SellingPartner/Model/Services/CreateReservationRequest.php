@@ -29,8 +29,6 @@ class CreateReservationRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateReservationRequest';
 
@@ -208,6 +206,8 @@ class CreateReservationRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets reservation.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Services\Reservation
      */
     public function getReservation() : Reservation
     {

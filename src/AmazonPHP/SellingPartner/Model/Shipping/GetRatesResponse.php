@@ -29,8 +29,6 @@ class GetRatesResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetRatesResponse';
 
@@ -182,6 +180,8 @@ class GetRatesResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\GetRatesResult
      */
     public function getPayload() : ?GetRatesResult
     {

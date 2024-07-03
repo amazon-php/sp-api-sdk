@@ -70,12 +70,14 @@ interface ListingsItemsSDKInterface
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body The request body schema for the &#x60;patchListingsItem&#x60; operation. (required)
+     * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param null|string $mode The mode of operation for the request. (optional)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function patchListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
+    public function patchListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, ?array $included_data = null, ?string $mode = null, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
 
     /**
      * Operation putListingsItem.
@@ -84,10 +86,12 @@ interface ListingsItemsSDKInterface
      * @param string $sku A selling partner provided identifier for an Amazon listing. (required)
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body The request body schema for the &#x60;putListingsItem&#x60; operation. (required)
+     * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: &#x60;issues&#x60;. (optional)
+     * @param null|string $mode The mode of operation for the request. (optional)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function putListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
+    public function putListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, ?array $included_data = null, ?string $mode = null, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
 }

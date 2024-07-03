@@ -29,8 +29,6 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OfferDetail';
 
@@ -324,6 +322,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -404,6 +404,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets seller_feedback_rating.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerFeedbackType
      */
     public function getSellerFeedbackRating() : ?SellerFeedbackType
     {
@@ -424,6 +426,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping_time.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\DetailedShippingTimeType
      */
     public function getShippingTime() : DetailedShippingTimeType
     {
@@ -444,6 +448,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets listing_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListingPrice() : MoneyType
     {
@@ -486,6 +492,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets points.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points
      */
     public function getPoints() : ?Points
     {
@@ -506,6 +514,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getShipping() : MoneyType
     {
@@ -526,6 +536,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets ships_from.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ShipsFromType
      */
     public function getShipsFrom() : ?ShipsFromType
     {
@@ -566,6 +578,8 @@ class OfferDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets prime_information.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\PrimeInformationType
      */
     public function getPrimeInformation() : ?PrimeInformationType
     {

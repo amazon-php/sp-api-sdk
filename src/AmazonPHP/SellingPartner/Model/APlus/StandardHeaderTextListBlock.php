@@ -29,8 +29,6 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'StandardHeaderTextListBlock';
 
@@ -186,6 +184,8 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -206,6 +206,8 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock
      */
     public function getBlock() : ?StandardTextListBlock
     {

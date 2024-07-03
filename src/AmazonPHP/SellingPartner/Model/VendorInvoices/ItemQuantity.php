@@ -33,8 +33,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemQuantity';
 
@@ -270,7 +268,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets unit_size.
      *
-     * @param null|int $unit_size the case size, if the unit of measure value is Cases
+     * @param null|int $unit_size the case size, if the unit of measure value is `Cases`
      */
     public function setUnitSize(?int $unit_size) : self
     {

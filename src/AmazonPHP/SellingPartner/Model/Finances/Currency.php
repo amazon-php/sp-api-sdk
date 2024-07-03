@@ -29,8 +29,6 @@ class Currency implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Currency';
 

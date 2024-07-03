@@ -29,8 +29,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Pallet';
 
@@ -286,6 +284,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets dimensions.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -306,6 +306,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {
@@ -326,6 +328,8 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets carton_reference_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CartonReferenceDetails
      */
     public function getCartonReferenceDetails() : ?CartonReferenceDetails
     {

@@ -29,8 +29,6 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'BuyBoxPriceType';
 
@@ -266,6 +264,8 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -306,6 +306,8 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets quantity_discount_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType
      */
     public function getQuantityDiscountType() : ?QuantityDiscountType
     {
@@ -326,6 +328,8 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets landed_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getLandedPrice() : MoneyType
     {
@@ -346,6 +350,8 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets listing_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListingPrice() : MoneyType
     {
@@ -366,6 +372,8 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getShipping() : MoneyType
     {
@@ -386,6 +394,8 @@ class BuyBoxPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets points.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points
      */
     public function getPoints() : ?Points
     {

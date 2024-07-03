@@ -33,8 +33,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderStatus';
 
@@ -314,7 +312,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets purchase_order_date.
      *
-     * @param \DateTimeInterface $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
+     * @param \DateTimeInterface $purchase_order_date The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      */
     public function setPurchaseOrderDate(\DateTimeInterface $purchase_order_date) : self
     {
@@ -334,7 +332,7 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets last_updated_date.
      *
-     * @param null|\DateTimeInterface $last_updated_date The date when the purchase order was last updated. Must be in ISO-8601 date/time format.
+     * @param null|\DateTimeInterface $last_updated_date The date when the purchase order was last updated. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      */
     public function setLastUpdatedDate(?\DateTimeInterface $last_updated_date) : self
     {
@@ -345,6 +343,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -365,6 +365,8 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets ship_to_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getShipToParty() : PartyIdentification
     {

@@ -29,8 +29,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Price';
 
@@ -258,6 +256,8 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets product.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Product
      */
     public function getProduct() : ?Product
     {

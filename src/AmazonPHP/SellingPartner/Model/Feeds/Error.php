@@ -29,8 +29,6 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Error';
 
@@ -221,7 +219,7 @@ class Error implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets message.
      *
-     * @param string $message a message that describes the error condition in a human-readable form
+     * @param string $message a message that describes the error condition
      */
     public function setMessage(string $message) : self
     {

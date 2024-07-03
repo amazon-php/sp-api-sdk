@@ -29,8 +29,6 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FeeDetail';
 
@@ -246,6 +244,8 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets fee_amount.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFeeAmount() : MoneyType
     {
@@ -266,6 +266,8 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets fee_promotion.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFeePromotion() : ?MoneyType
     {
@@ -286,6 +288,8 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tax_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getTaxAmount() : ?MoneyType
     {
@@ -306,6 +310,8 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets final_fee.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getFinalFee() : MoneyType
     {

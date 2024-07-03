@@ -33,6 +33,595 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
     }
 
     /**
+     * Operation addInventory.
+     *
+     * @param string $x_amzn_idempotency_token A unique token/requestId provided with each call to ensure idempotency. (required)
+     * @param \AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryRequest $add_inventory_request_body List of items to add to Sandbox inventory. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function addInventory(AccessToken $accessToken, string $region, string $x_amzn_idempotency_token, \AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryRequest $add_inventory_request_body) : \AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryResponse
+    {
+        $request = $this->addInventoryRequest($accessToken, $region, $x_amzn_idempotency_token, $add_inventory_request_body);
+
+        $this->configuration->extensions()->preRequest('FBAInventory', 'addInventory', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('FBAInventory', 'addInventory')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('FBAInventory', 'addInventory'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'FBAInventory',
+                        'operation' => 'addInventory',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FBAInventory', 'addInventory', $request, $response);
+
+            if ($this->configuration->loggingEnabled('FBAInventory', 'addInventory')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('FBAInventory', 'addInventory'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'FBAInventory',
+                        'operation' => 'addInventory',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'addInventory'.
+     *
+     * @param string $x_amzn_idempotency_token A unique token/requestId provided with each call to ensure idempotency. (required)
+     * @param \AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryRequest $add_inventory_request_body List of items to add to Sandbox inventory. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function addInventoryRequest(AccessToken $accessToken, string $region, string $x_amzn_idempotency_token, \AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryRequest $add_inventory_request_body) : RequestInterface
+    {
+        // verify the required parameter 'x_amzn_idempotency_token' is set
+        if ($x_amzn_idempotency_token === null || (\is_array($x_amzn_idempotency_token) && \count($x_amzn_idempotency_token) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $x_amzn_idempotency_token when calling addInventory'
+            );
+        }
+        // verify the required parameter 'add_inventory_request_body' is set
+        if ($add_inventory_request_body === null || (\is_array($add_inventory_request_body) && \count($add_inventory_request_body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $add_inventory_request_body when calling addInventory'
+            );
+        }
+
+        $resourcePath = '/fba/inventory/v1/items/inventory';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // header params
+        if ($x_amzn_idempotency_token !== null) {
+            $headerParams['x-amzn-idempotency-token'] = ObjectSerializer::toHeaderValue($x_amzn_idempotency_token);
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'POST',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($add_inventory_request_body)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($add_inventory_request_body), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $add_inventory_request_body;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation createInventoryItem.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemRequest $create_inventory_item_request_body CreateInventoryItem Request Body Parameter. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function createInventoryItem(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemRequest $create_inventory_item_request_body) : \AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemResponse
+    {
+        $request = $this->createInventoryItemRequest($accessToken, $region, $create_inventory_item_request_body);
+
+        $this->configuration->extensions()->preRequest('FBAInventory', 'createInventoryItem', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('FBAInventory', 'createInventoryItem')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('FBAInventory', 'createInventoryItem'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'FBAInventory',
+                        'operation' => 'createInventoryItem',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FBAInventory', 'createInventoryItem', $request, $response);
+
+            if ($this->configuration->loggingEnabled('FBAInventory', 'createInventoryItem')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('FBAInventory', 'createInventoryItem'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'FBAInventory',
+                        'operation' => 'createInventoryItem',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'createInventoryItem'.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemRequest $create_inventory_item_request_body CreateInventoryItem Request Body Parameter. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function createInventoryItemRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemRequest $create_inventory_item_request_body) : RequestInterface
+    {
+        // verify the required parameter 'create_inventory_item_request_body' is set
+        if ($create_inventory_item_request_body === null || (\is_array($create_inventory_item_request_body) && \count($create_inventory_item_request_body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $create_inventory_item_request_body when calling createInventoryItem'
+            );
+        }
+
+        $resourcePath = '/fba/inventory/v1/items';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'POST',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($create_inventory_item_request_body)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($create_inventory_item_request_body), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $create_inventory_item_request_body;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation deleteInventoryItem.
+     *
+     * @param string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (required)
+     * @param string $marketplace_id The marketplace ID for the marketplace for which the sellerSku is to be deleted. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function deleteInventoryItem(AccessToken $accessToken, string $region, string $seller_sku, string $marketplace_id) : \AmazonPHP\SellingPartner\Model\FBAInventory\DeleteInventoryItemResponse
+    {
+        $request = $this->deleteInventoryItemRequest($accessToken, $region, $seller_sku, $marketplace_id);
+
+        $this->configuration->extensions()->preRequest('FBAInventory', 'deleteInventoryItem', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('FBAInventory', 'deleteInventoryItem')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('FBAInventory', 'deleteInventoryItem'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'FBAInventory',
+                        'operation' => 'deleteInventoryItem',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FBAInventory', 'deleteInventoryItem', $request, $response);
+
+            if ($this->configuration->loggingEnabled('FBAInventory', 'deleteInventoryItem')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('FBAInventory', 'deleteInventoryItem'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'FBAInventory',
+                        'operation' => 'deleteInventoryItem',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\FBAInventory\DeleteInventoryItemResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'deleteInventoryItem'.
+     *
+     * @param string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (required)
+     * @param string $marketplace_id The marketplace ID for the marketplace for which the sellerSku is to be deleted. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function deleteInventoryItemRequest(AccessToken $accessToken, string $region, string $seller_sku, string $marketplace_id) : RequestInterface
+    {
+        // verify the required parameter 'seller_sku' is set
+        if ($seller_sku === null || (\is_array($seller_sku) && \count($seller_sku) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $seller_sku when calling deleteInventoryItem'
+            );
+        }
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $marketplace_id when calling deleteInventoryItem'
+            );
+        }
+
+        $resourcePath = '/fba/inventory/v1/items/{sellerSku}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        // query params
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
+        }
+
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
+        }
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // path params
+        if ($seller_sku !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'sellerSku' . '}',
+                ObjectSerializer::toPathValue($seller_sku),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'DELETE',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
      * Operation getInventorySummaries.
      *
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)

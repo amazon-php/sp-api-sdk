@@ -33,8 +33,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemRelationship';
 
@@ -271,6 +269,8 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets variation_theme.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVariationTheme
      */
     public function getVariationTheme() : ?ItemVariationTheme
     {

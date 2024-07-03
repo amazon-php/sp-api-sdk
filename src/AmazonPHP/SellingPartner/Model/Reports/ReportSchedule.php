@@ -29,8 +29,6 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ReportSchedule';
 
@@ -307,7 +305,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets period.
      *
-     * @param string $period an ISO 8601 period value that indicates how often a report should be created
+     * @param string $period An <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> period value that indicates how often a report should be created.
      */
     public function setPeriod(string $period) : self
     {
@@ -327,7 +325,7 @@ class ReportSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets next_report_creation_time.
      *
-     * @param null|\DateTimeInterface $next_report_creation_time the date and time when the schedule will create its next report, in ISO 8601 date time format
+     * @param null|\DateTimeInterface $next_report_creation_time The date and time when the schedule will create its next report, in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
      */
     public function setNextReportCreationTime(?\DateTimeInterface $next_report_creation_time) : self
     {

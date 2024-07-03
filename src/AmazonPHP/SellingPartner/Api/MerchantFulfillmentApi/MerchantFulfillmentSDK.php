@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -224,200 +224,9 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     }
 
     /**
-     * Operation cancelShipmentOld.
-     *
-     * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function cancelShipmentOld(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse
-    {
-        $request = $this->cancelShipmentOldRequest($accessToken, $region, $shipment_id);
-
-        $this->configuration->extensions()->preRequest('MerchantFulfillment', 'cancelShipmentOld', $request);
-
-        try {
-            $correlationId = $this->configuration->idGenerator()->generate();
-            $sanitizedRequest = $request;
-
-            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-            }
-
-            if ($this->configuration->loggingEnabled('MerchantFulfillment', 'cancelShipmentOld')) {
-                $this->logger->log(
-                    $this->configuration->logLevel('MerchantFulfillment', 'cancelShipmentOld'),
-                    'Amazon Selling Partner API pre request',
-                    [
-                        'api' => 'MerchantFulfillment',
-                        'operation' => 'cancelShipmentOld',
-                        'request_correlation_id' => $correlationId,
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                        'request_headers' => $sanitizedRequest->getHeaders(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                    ]
-                );
-            }
-
-            $response = $this->client->sendRequest($request);
-
-            $this->configuration->extensions()->postRequest('MerchantFulfillment', 'cancelShipmentOld', $request, $response);
-
-            if ($this->configuration->loggingEnabled('MerchantFulfillment', 'cancelShipmentOld')) {
-                $sanitizedResponse = $response;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
-                }
-
-                $this->logger->log(
-                    $this->configuration->logLevel('MerchantFulfillment', 'cancelShipmentOld'),
-                    'Amazon Selling Partner API post request',
-                    [
-                        'api' => 'MerchantFulfillment',
-                        'operation' => 'cancelShipmentOld',
-                        'response_correlation_id' => $correlationId,
-                        'response_body' => (string) $sanitizedResponse->getBody(),
-                        'response_headers' => $sanitizedResponse->getHeaders(),
-                        'response_status_code' => $sanitizedResponse->getStatusCode(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                    ]
-                );
-            }
-        } catch (ClientExceptionInterface $e) {
-            throw new ApiException(
-                "[{$e->getCode()}] {$e->getMessage()}",
-                (int) $e->getCode(),
-                null,
-                null,
-                $e
-            );
-        }
-
-        $statusCode = $response->getStatusCode();
-
-        if ($statusCode < 200 || $statusCode > 299) {
-            throw new ApiException(
-                \sprintf(
-                    '[%d] Error connecting to the API (%s)',
-                    $statusCode,
-                    (string) $request->getUri()
-                ),
-                $statusCode,
-                $response->getHeaders(),
-                (string) $response->getBody()
-            );
-        }
-
-        return ObjectSerializer::deserialize(
-            $this->configuration,
-            (string) $response->getBody(),
-            '\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CancelShipmentResponse',
-            []
-        );
-    }
-
-    /**
-     * Create request for operation 'cancelShipmentOld'.
-     *
-     * @param string $shipment_id The Amazon-defined shipment identifier for the shipment to cancel. (required)
-     *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     */
-    public function cancelShipmentOldRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
-    {
-        // verify the required parameter 'shipment_id' is set
-        if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $shipment_id when calling cancelShipmentOld'
-            );
-        }
-
-        if (!\preg_match('/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/', $shipment_id)) {
-            throw new InvalidArgumentException('invalid value for "shipment_id" when calling MerchantFulfillmentApi.cancelShipmentOld, must conform to the pattern /[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}/.');
-        }
-
-        $resourcePath = '/mfn/v0/shipments/{shipmentId}/cancel';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $multipart = false;
-        $query = '';
-
-        if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
-        }
-
-        // path params
-        if ($shipment_id !== null) {
-            $resourcePath = \str_replace(
-                '{' . 'shipmentId' . '}',
-                ObjectSerializer::toPathValue($shipment_id),
-                $resourcePath
-            );
-        }
-
-        if ($multipart) {
-            $headers = [
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        } else {
-            $headers = [
-                'content-type' => ['application/json'],
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        }
-
-        $request = $this->httpFactory->createRequest(
-            'PUT',
-            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
-        );
-
-        // for model (json/xml)
-        if (\count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem,
-                        ];
-                    }
-                }
-                $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
-            } else {
-                $request = $request->withParsedBody($formParams);
-            }
-        }
-
-        foreach (\array_merge($headerParams, $headers) as $name => $header) {
-            $request = $request->withHeader($name, $header);
-        }
-
-        return HttpSignatureHeaders::forConfig(
-            $this->configuration,
-            $accessToken,
-            $region,
-            $request
-        );
-    }
-
-    /**
      * Operation createShipment.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body Request schema for &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -513,7 +322,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Create request for operation 'createShipment'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body Request schema for &#x60;CreateShipment&#x60; operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -603,7 +412,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Operation getAdditionalSellerInputs.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body Request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -699,7 +508,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Create request for operation 'getAdditionalSellerInputs'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body Request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -787,195 +596,9 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     }
 
     /**
-     * Operation getAdditionalSellerInputsOld.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body body (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function getAdditionalSellerInputsOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse
-    {
-        $request = $this->getAdditionalSellerInputsOldRequest($accessToken, $region, $body);
-
-        $this->configuration->extensions()->preRequest('MerchantFulfillment', 'getAdditionalSellerInputsOld', $request);
-
-        try {
-            $correlationId = $this->configuration->idGenerator()->generate();
-            $sanitizedRequest = $request;
-
-            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-            }
-
-            if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getAdditionalSellerInputsOld')) {
-                $this->logger->log(
-                    $this->configuration->logLevel('MerchantFulfillment', 'getAdditionalSellerInputsOld'),
-                    'Amazon Selling Partner API pre request',
-                    [
-                        'api' => 'MerchantFulfillment',
-                        'operation' => 'getAdditionalSellerInputsOld',
-                        'request_correlation_id' => $correlationId,
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                        'request_headers' => $sanitizedRequest->getHeaders(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                    ]
-                );
-            }
-
-            $response = $this->client->sendRequest($request);
-
-            $this->configuration->extensions()->postRequest('MerchantFulfillment', 'getAdditionalSellerInputsOld', $request, $response);
-
-            if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getAdditionalSellerInputsOld')) {
-                $sanitizedResponse = $response;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
-                }
-
-                $this->logger->log(
-                    $this->configuration->logLevel('MerchantFulfillment', 'getAdditionalSellerInputsOld'),
-                    'Amazon Selling Partner API post request',
-                    [
-                        'api' => 'MerchantFulfillment',
-                        'operation' => 'getAdditionalSellerInputsOld',
-                        'response_correlation_id' => $correlationId,
-                        'response_body' => (string) $sanitizedResponse->getBody(),
-                        'response_headers' => $sanitizedResponse->getHeaders(),
-                        'response_status_code' => $sanitizedResponse->getStatusCode(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                    ]
-                );
-            }
-        } catch (ClientExceptionInterface $e) {
-            throw new ApiException(
-                "[{$e->getCode()}] {$e->getMessage()}",
-                (int) $e->getCode(),
-                null,
-                null,
-                $e
-            );
-        }
-
-        $statusCode = $response->getStatusCode();
-
-        if ($statusCode < 200 || $statusCode > 299) {
-            throw new ApiException(
-                \sprintf(
-                    '[%d] Error connecting to the API (%s)',
-                    $statusCode,
-                    (string) $request->getUri()
-                ),
-                $statusCode,
-                $response->getHeaders(),
-                (string) $response->getBody()
-            );
-        }
-
-        return ObjectSerializer::deserialize(
-            $this->configuration,
-            (string) $response->getBody(),
-            '\AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResponse',
-            []
-        );
-    }
-
-    /**
-     * Create request for operation 'getAdditionalSellerInputsOld'.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body (required)
-     *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     */
-    public function getAdditionalSellerInputsOldRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body) : RequestInterface
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (\is_array($body) && \count($body) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $body when calling getAdditionalSellerInputsOld'
-            );
-        }
-
-        $resourcePath = '/mfn/v0/sellerInputs';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $multipart = false;
-        $query = '';
-
-        if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
-        }
-
-        if ($multipart) {
-            $headers = [
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        } else {
-            $headers = [
-                'content-type' => ['application/json'],
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        }
-
-        $request = $this->httpFactory->createRequest(
-            'POST',
-            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
-        );
-
-        // for model (json/xml)
-        if (isset($body)) {
-            if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
-            } else {
-                $httpBody = $body;
-            }
-
-            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
-        } elseif (\count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem,
-                        ];
-                    }
-                }
-                $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
-            } else {
-                $request = $request->withParsedBody($formParams);
-            }
-        }
-
-        foreach (\array_merge($headerParams, $headers) as $name => $header) {
-            $request = $request->withHeader($name, $header);
-        }
-
-        return HttpSignatureHeaders::forConfig(
-            $this->configuration,
-            $accessToken,
-            $region,
-            $request
-        );
-    }
-
-    /**
      * Operation getEligibleShipmentServices.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body Request schema for GetEligibleShipmentServices operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -1071,7 +694,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Create request for operation 'getEligibleShipmentServices'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body Request schema for GetEligibleShipmentServices operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -1085,192 +708,6 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
         }
 
         $resourcePath = '/mfn/v0/eligibleShippingServices';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $multipart = false;
-        $query = '';
-
-        if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
-        }
-
-        if ($multipart) {
-            $headers = [
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        } else {
-            $headers = [
-                'content-type' => ['application/json'],
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        }
-
-        $request = $this->httpFactory->createRequest(
-            'POST',
-            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
-        );
-
-        // for model (json/xml)
-        if (isset($body)) {
-            if ($headers['content-type'] === ['application/json']) {
-                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
-            } else {
-                $httpBody = $body;
-            }
-
-            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
-        } elseif (\count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem,
-                        ];
-                    }
-                }
-                $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
-            } else {
-                $request = $request->withParsedBody($formParams);
-            }
-        }
-
-        foreach (\array_merge($headerParams, $headers) as $name => $header) {
-            $request = $request->withHeader($name, $header);
-        }
-
-        return HttpSignatureHeaders::forConfig(
-            $this->configuration,
-            $accessToken,
-            $region,
-            $request
-        );
-    }
-
-    /**
-     * Operation getEligibleShipmentServicesOld.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body body (required)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function getEligibleShipmentServicesOld(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse
-    {
-        $request = $this->getEligibleShipmentServicesOldRequest($accessToken, $region, $body);
-
-        $this->configuration->extensions()->preRequest('MerchantFulfillment', 'getEligibleShipmentServicesOld', $request);
-
-        try {
-            $correlationId = $this->configuration->idGenerator()->generate();
-            $sanitizedRequest = $request;
-
-            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-            }
-
-            if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getEligibleShipmentServicesOld')) {
-                $this->logger->log(
-                    $this->configuration->logLevel('MerchantFulfillment', 'getEligibleShipmentServicesOld'),
-                    'Amazon Selling Partner API pre request',
-                    [
-                        'api' => 'MerchantFulfillment',
-                        'operation' => 'getEligibleShipmentServicesOld',
-                        'request_correlation_id' => $correlationId,
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                        'request_headers' => $sanitizedRequest->getHeaders(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                    ]
-                );
-            }
-
-            $response = $this->client->sendRequest($request);
-
-            $this->configuration->extensions()->postRequest('MerchantFulfillment', 'getEligibleShipmentServicesOld', $request, $response);
-
-            if ($this->configuration->loggingEnabled('MerchantFulfillment', 'getEligibleShipmentServicesOld')) {
-                $sanitizedResponse = $response;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
-                }
-
-                $this->logger->log(
-                    $this->configuration->logLevel('MerchantFulfillment', 'getEligibleShipmentServicesOld'),
-                    'Amazon Selling Partner API post request',
-                    [
-                        'api' => 'MerchantFulfillment',
-                        'operation' => 'getEligibleShipmentServicesOld',
-                        'response_correlation_id' => $correlationId,
-                        'response_body' => (string) $sanitizedResponse->getBody(),
-                        'response_headers' => $sanitizedResponse->getHeaders(),
-                        'response_status_code' => $sanitizedResponse->getStatusCode(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                    ]
-                );
-            }
-        } catch (ClientExceptionInterface $e) {
-            throw new ApiException(
-                "[{$e->getCode()}] {$e->getMessage()}",
-                (int) $e->getCode(),
-                null,
-                null,
-                $e
-            );
-        }
-
-        $statusCode = $response->getStatusCode();
-
-        if ($statusCode < 200 || $statusCode > 299) {
-            throw new ApiException(
-                \sprintf(
-                    '[%d] Error connecting to the API (%s)',
-                    $statusCode,
-                    (string) $request->getUri()
-                ),
-                $statusCode,
-                $response->getHeaders(),
-                (string) $response->getBody()
-            );
-        }
-
-        return ObjectSerializer::deserialize(
-            $this->configuration,
-            (string) $response->getBody(),
-            '\AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResponse',
-            []
-        );
-    }
-
-    /**
-     * Create request for operation 'getEligibleShipmentServicesOld'.
-     *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body (required)
-     *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     */
-    public function getEligibleShipmentServicesOldRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesRequest $body) : RequestInterface
-    {
-        // verify the required parameter 'body' is set
-        if ($body === null || (\is_array($body) && \count($body) === 0)) {
-            throw new InvalidArgumentException(
-                'Missing the required parameter $body when calling getEligibleShipmentServicesOld'
-            );
-        }
-
-        $resourcePath = '/mfn/v0/eligibleServices';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];

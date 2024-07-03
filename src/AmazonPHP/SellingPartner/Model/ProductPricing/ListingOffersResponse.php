@@ -29,8 +29,6 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ListingOffersResponse';
 
@@ -204,6 +202,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets headers.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders
      */
     public function getHeaders() : ?HttpResponseHeaders
     {
@@ -224,6 +224,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine
      */
     public function getStatus() : ?GetOffersHttpStatusLine
     {
@@ -244,6 +246,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets body.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse
      */
     public function getBody() : GetOffersResponse
     {
@@ -264,6 +268,8 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets request.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequestParams
      */
     public function getRequest() : ?ListingOffersRequestParams
     {

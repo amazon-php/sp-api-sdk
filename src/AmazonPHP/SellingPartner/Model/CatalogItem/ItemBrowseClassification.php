@@ -29,8 +29,6 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemBrowseClassification';
 
@@ -42,6 +40,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     protected static array $openAPITypes = [
         'display_name' => 'string',
         'classification_id' => 'string',
+        'parent' => '\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification',
     ];
 
     /**
@@ -56,6 +55,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     protected static array $openAPIFormats = [
         'display_name' => null,
         'classification_id' => null,
+        'parent' => null,
     ];
 
     /**
@@ -67,6 +67,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     protected static array $attributeMap = [
         'display_name' => 'displayName',
         'classification_id' => 'classificationId',
+        'parent' => 'parent',
     ];
 
     /**
@@ -77,6 +78,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     protected static array $setters = [
         'display_name' => 'setDisplayName',
         'classification_id' => 'setClassificationId',
+        'parent' => 'setParent',
     ];
 
     /**
@@ -87,6 +89,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     protected static array $getters = [
         'display_name' => 'getDisplayName',
         'classification_id' => 'getClassificationId',
+        'parent' => 'getParent',
     ];
 
     /**
@@ -106,6 +109,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     {
         $this->container['display_name'] = $data['display_name'] ?? null;
         $this->container['classification_id'] = $data['classification_id'] ?? null;
+        $this->container['parent'] = $data['parent'] ?? null;
     }
 
     /**
@@ -182,6 +186,10 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
         if ($this->container['classification_id'] === null) {
             throw new AssertionException("'classification_id' can't be null");
         }
+
+        if ($this->container['parent'] !== null) {
+            $this->container['parent']->validate();
+        }
     }
 
     /**
@@ -195,7 +203,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets display_name.
      *
-     * @param string $display_name display name for the classification
+     * @param string $display_name display name for the classification (browse node)
      */
     public function setDisplayName(string $display_name) : self
     {
@@ -220,6 +228,28 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     public function setClassificationId(string $classification_id) : self
     {
         $this->container['classification_id'] = $classification_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets parent.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification
+     */
+    public function getParent() : ?self
+    {
+        return $this->container['parent'];
+    }
+
+    /**
+     * Sets parent.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification $parent parent
+     */
+    public function setParent(?self $parent) : self
+    {
+        $this->container['parent'] = $parent;
 
         return $this;
     }

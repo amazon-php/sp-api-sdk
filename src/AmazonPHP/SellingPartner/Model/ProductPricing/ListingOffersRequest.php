@@ -29,8 +29,6 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ListingOffersRequest';
 
@@ -238,6 +236,8 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets method.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod
      */
     public function getMethod() : HttpMethod
     {
@@ -300,6 +300,8 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets item_condition.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -320,6 +322,8 @@ class ListingOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets customer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {

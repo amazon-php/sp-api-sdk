@@ -29,8 +29,6 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PayWithAmazonEvent';
 
@@ -310,6 +308,8 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getCharge() : ?ChargeComponent
     {

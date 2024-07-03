@@ -221,7 +221,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
     /**
      * Operation createSubscription.
      *
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body body (required)
      *
      * @throws ApiException on non-2xx response
@@ -318,7 +318,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
     /**
      * Create request for operation 'createSubscription'.
      *
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -612,7 +612,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * Operation deleteSubscriptionById.
      *
      * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -709,7 +709,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * Create request for operation 'deleteSubscriptionById'.
      *
      * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -1168,7 +1168,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
     /**
      * Operation getSubscription.
      *
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param null|string $payload_version The version of the payload object to be used in the notification. (optional)
      *
      * @throws ApiException on non-2xx response
@@ -1265,7 +1265,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
     /**
      * Create request for operation 'getSubscription'.
      *
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param null|string $payload_version The version of the payload object to be used in the notification. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -1367,7 +1367,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * Operation getSubscriptionById.
      *
      * @param string $subscription_id The identifier for the subscription that you want to get. (required)
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -1464,7 +1464,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * Create request for operation 'getSubscriptionById'.
      *
      * @param string $subscription_id The identifier for the subscription that you want to get. (required)
-     * @param string $notification_type The type of notification.   For more information about notification types, refer to [the Notifications API Use Case Guide](https://developer-docs.amazon.com/sp-api/docs/notifications-api-v1-use-case-guide). (required)
+     * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

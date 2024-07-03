@@ -29,8 +29,6 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CouponPaymentEvent';
 
@@ -326,6 +324,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fee_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent
      */
     public function getFeeComponent() : ?FeeComponent
     {
@@ -346,6 +346,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets charge_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getChargeComponent() : ?ChargeComponent
     {
@@ -366,6 +368,8 @@ class CouponPaymentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets total_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

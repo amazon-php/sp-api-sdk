@@ -29,8 +29,6 @@ class CreateSubscriptionResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateSubscriptionResponse';
 
@@ -182,6 +180,8 @@ class CreateSubscriptionResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Subscription
      */
     public function getPayload() : ?Subscription
     {

@@ -29,8 +29,6 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AdhocDisbursementEvent';
 
@@ -254,6 +252,8 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

@@ -29,8 +29,6 @@ class OrderListStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderListStatus';
 
@@ -182,6 +180,8 @@ class OrderListStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets pagination.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Pagination
      */
     public function getPagination() : ?Pagination
     {
@@ -213,7 +213,7 @@ class OrderListStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets orders_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderStatus[] $orders_status orders_status
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderStatus[] $orders_status represents an order status within the `OrderListStatus`
      */
     public function setOrdersStatus(?array $orders_status) : self
     {

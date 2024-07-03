@@ -37,8 +37,6 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderItemStatus_acknowledgementStatus';
 
@@ -253,6 +251,8 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets accepted_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getAcceptedQuantity() : ?ItemQuantity
     {
@@ -273,6 +273,8 @@ class OrderItemStatusAcknowledgementStatus implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets rejected_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getRejectedQuantity() : ?ItemQuantity
     {

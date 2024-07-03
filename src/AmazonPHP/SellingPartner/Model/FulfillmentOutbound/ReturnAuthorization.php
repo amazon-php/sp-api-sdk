@@ -29,8 +29,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ReturnAuthorization';
 
@@ -258,6 +256,8 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets return_to_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getReturnToAddress() : Address
     {

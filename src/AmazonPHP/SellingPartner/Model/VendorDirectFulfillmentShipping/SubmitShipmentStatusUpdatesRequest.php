@@ -29,8 +29,6 @@ class SubmitShipmentStatusUpdatesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitShipmentStatusUpdatesRequest';
 
@@ -187,7 +185,7 @@ class SubmitShipmentStatusUpdatesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_status_updates.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentStatusUpdate[] $shipment_status_updates shipment_status_updates
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentStatusUpdate[] $shipment_status_updates contains a list of one or more `ShipmentStatusUpdate` objects, each represents a status update of a specific shipment
      */
     public function setShipmentStatusUpdates(?array $shipment_status_updates) : self
     {

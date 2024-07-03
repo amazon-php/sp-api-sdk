@@ -29,8 +29,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ChargeInstrument';
 
@@ -228,6 +226,8 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getAmount() : ?Currency
     {

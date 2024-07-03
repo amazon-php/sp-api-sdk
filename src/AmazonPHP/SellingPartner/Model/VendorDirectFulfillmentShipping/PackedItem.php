@@ -29,8 +29,6 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PackedItem';
 
@@ -286,6 +284,8 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets packed_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ItemQuantity
      */
     public function getPackedQuantity() : ItemQuantity
     {

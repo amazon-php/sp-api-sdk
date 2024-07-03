@@ -33,10 +33,8 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
-    protected static string $openAPIModelName = 'containers';
+    protected static string $openAPIModelName = 'Containers';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -357,6 +355,8 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets dimensions.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -377,6 +377,8 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {
@@ -437,6 +439,8 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets inner_containers_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\InnerContainersDetails
      */
     public function getInnerContainersDetails() : ?InnerContainersDetails
     {

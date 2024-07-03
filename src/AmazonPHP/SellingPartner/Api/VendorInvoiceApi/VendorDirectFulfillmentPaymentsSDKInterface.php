@@ -27,7 +27,7 @@ interface VendorDirectFulfillmentPaymentsSDKInterface
     /**
      * Operation submitInvoice.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\SubmitInvoiceRequest $body The request body that contains one or more invoices for vendor orders. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException

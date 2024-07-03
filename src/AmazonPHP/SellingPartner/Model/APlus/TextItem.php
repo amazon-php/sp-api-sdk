@@ -29,8 +29,6 @@ class TextItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TextItem';
 
@@ -216,6 +214,8 @@ class TextItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets text.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getText() : TextComponent
     {

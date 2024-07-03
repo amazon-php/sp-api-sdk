@@ -35,8 +35,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Order';
 
@@ -268,6 +266,8 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderDetails
      */
     public function getOrderDetails() : ?OrderDetails
     {
