@@ -40,7 +40,7 @@ use Rector\TypeDeclaration\ValueObject\AddReturnTypeDeclaration;
 
 return static function (RectorConfig $config): void {
 
-    $config->parallel(processTimeout: 1200);
+    $config->parallel(seconds: 1200);
 
     $config->autoloadPaths([
         __DIR__ ,
