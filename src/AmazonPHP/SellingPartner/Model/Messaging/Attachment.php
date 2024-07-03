@@ -29,8 +29,6 @@ class Attachment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Attachment';
 

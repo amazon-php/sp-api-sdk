@@ -29,8 +29,6 @@ class ListReturnReasonCodesResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ListReturnReasonCodesResponse';
 
@@ -182,6 +180,8 @@ class ListReturnReasonCodesResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListReturnReasonCodesResult
      */
     public function getPayload() : ?ListReturnReasonCodesResult
     {

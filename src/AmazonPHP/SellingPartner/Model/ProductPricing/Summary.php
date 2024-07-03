@@ -29,8 +29,6 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Summary';
 
@@ -328,6 +326,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListPrice() : ?MoneyType
     {
@@ -348,6 +348,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets competitive_price_threshold.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getCompetitivePriceThreshold() : ?MoneyType
     {
@@ -368,6 +370,8 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets suggested_lower_price_plus_shipping.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getSuggestedLowerPricePlusShipping() : ?MoneyType
     {

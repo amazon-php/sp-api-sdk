@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  _Note:_ The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
  *
  * The version of the OpenAPI document: v0
  *
@@ -36,7 +36,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * Operation updateShipmentStatus.
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the &#x60;updateShipmentStatus&#x60; operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -128,7 +128,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * Create request for operation 'updateShipmentStatus'.
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
-     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the updateShipmentStatus operation. (required)
+     * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the &#x60;updateShipmentStatus&#x60; operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

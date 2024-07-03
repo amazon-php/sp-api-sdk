@@ -29,8 +29,6 @@ class FeeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FeeComponent';
 
@@ -202,6 +200,8 @@ class FeeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets fee_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {

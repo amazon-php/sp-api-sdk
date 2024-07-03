@@ -29,8 +29,6 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'RemovalShipmentItemAdjustment';
 
@@ -300,6 +298,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets revenue_adjustment.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRevenueAdjustment() : ?Currency
     {
@@ -320,6 +320,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_amount_adjustment.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmountAdjustment() : ?Currency
     {
@@ -340,6 +342,8 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets tax_withheld_adjustment.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxWithheldAdjustment() : ?Currency
     {

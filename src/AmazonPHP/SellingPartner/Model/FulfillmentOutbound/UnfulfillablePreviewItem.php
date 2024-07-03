@@ -29,8 +29,6 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'UnfulfillablePreviewItem';
 
@@ -259,7 +257,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets seller_fulfillment_order_item_id.
      *
-     * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier created with a call to the getFulfillmentPreview operation
+     * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier created with a call to the `getFulfillmentPreview` operation
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -281,7 +279,7 @@ class UnfulfillablePreviewItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets item_unfulfillable_reasons.
      *
-     * @param null|string[] $item_unfulfillable_reasons item_unfulfillable_reasons
+     * @param null|string[] $item_unfulfillable_reasons String list
      */
     public function setItemUnfulfillableReasons(?array $item_unfulfillable_reasons) : self
     {

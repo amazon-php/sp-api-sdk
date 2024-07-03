@@ -29,8 +29,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PublishRecord';
 
@@ -302,6 +300,8 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_type.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {

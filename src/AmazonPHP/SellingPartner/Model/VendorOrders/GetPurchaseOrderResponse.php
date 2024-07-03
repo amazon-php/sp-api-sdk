@@ -29,8 +29,6 @@ class GetPurchaseOrderResponse implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetPurchaseOrderResponse';
 
@@ -182,6 +180,8 @@ class GetPurchaseOrderResponse implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Order
      */
     public function getPayload() : ?Order
     {

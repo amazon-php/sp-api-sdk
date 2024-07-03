@@ -29,8 +29,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentItem';
 
@@ -352,6 +350,8 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets item_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getItemPrice() : ?Money
     {
@@ -372,6 +372,8 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets shipping_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getShippingPrice() : ?Money
     {
@@ -392,6 +394,8 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets gift_wrap_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getGiftWrapPrice() : ?Money
     {
@@ -412,6 +416,8 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets shipping_discount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getShippingDiscount() : ?Money
     {
@@ -432,6 +438,8 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets promotion_discount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Money
      */
     public function getPromotionDiscount() : ?Money
     {

@@ -29,8 +29,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PurchaseLabelsResult';
 
@@ -248,6 +246,8 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets accepted_rate.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate() : AcceptedRate
     {

@@ -29,8 +29,6 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'UpdateFulfillmentOrderRequest';
 
@@ -239,8 +237,8 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
             throw new AssertionException("invalid value for 'displayable_order_id', the character length must be smaller than or equal to 40.");
         }
 
-        if (null !== $this->container['displayable_order_comment'] && (\mb_strlen((string) $this->container['displayable_order_comment']) > 1000)) {
-            throw new AssertionException("invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 1000.");
+        if (null !== $this->container['displayable_order_comment'] && (\mb_strlen((string) $this->container['displayable_order_comment']) > 750)) {
+            throw new AssertionException("invalid value for 'displayable_order_comment', the character length must be smaller than or equal to 750.");
         }
 
         if ($this->container['destination_address'] !== null) {
@@ -279,7 +277,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets displayable_order_id.
      *
-     * @param null|string $displayable_order_id A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of DisplayableOrderId should match the order identifier that the seller provides to the recipient. The seller can use the SellerFulfillmentOrderId for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
+     * @param null|string $displayable_order_id A fulfillment order identifier that the seller creates. This value displays as the order identifier in recipient-facing materials such as the outbound shipment packing slip. The value of `DisplayableOrderId` should match the order identifier that the seller provides to the recipient. The seller can use the `SellerFulfillmentOrderId` for this value or they can specify an alternate value if they want the recipient to reference an alternate order identifier.
      */
     public function setDisplayableOrderId(?string $displayable_order_id) : self
     {
@@ -299,7 +297,7 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets displayable_order_date.
      *
-     * @param null|\DateTimeInterface $displayable_order_date displayable_order_date
+     * @param null|\DateTimeInterface $displayable_order_date Date timestamp
      */
     public function setDisplayableOrderDate(?\DateTimeInterface $displayable_order_date) : self
     {
@@ -330,6 +328,8 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ?ShippingSpeedCategory
     {
@@ -350,6 +350,8 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets destination_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getDestinationAddress() : ?Address
     {
@@ -370,6 +372,8 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_action.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction
      */
     public function getFulfillmentAction() : ?FulfillmentAction
     {
@@ -390,6 +394,8 @@ class UpdateFulfillmentOrderRequest implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets fulfillment_policy.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy
      */
     public function getFulfillmentPolicy() : ?FulfillmentPolicy
     {

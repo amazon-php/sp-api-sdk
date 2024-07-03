@@ -35,7 +35,7 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
     /**
      * Operation submitInvoices.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body The request body containing the invoice data to submit. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -131,7 +131,7 @@ final class VendorInvoicesSDK implements VendorInvoicesSDKInterface
     /**
      * Create request for operation 'submitInvoices'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\SubmitInvoicesRequest $body The request body containing the invoice data to submit. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

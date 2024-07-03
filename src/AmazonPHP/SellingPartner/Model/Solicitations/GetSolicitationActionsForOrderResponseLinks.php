@@ -29,8 +29,6 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetSolicitationActionsForOrderResponse__links';
 
@@ -188,6 +186,8 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
 
     /**
      * Gets self.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject
      */
     public function getSelf() : LinkObject
     {

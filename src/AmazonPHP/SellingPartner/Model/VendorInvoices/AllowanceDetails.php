@@ -41,8 +41,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AllowanceDetails';
 
@@ -281,6 +279,8 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets allowance_amount.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getAllowanceAmount() : Money
     {

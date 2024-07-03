@@ -29,8 +29,6 @@ class Route implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Route';
 
@@ -187,7 +185,7 @@ class Route implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets stops.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\Stop[] $stops stops
+     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\Stop[] $stops the port or location involved in transporting the cargo, as specified in transportation contracts or operational plans
      */
     public function setStops(array $stops) : self
     {

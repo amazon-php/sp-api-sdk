@@ -29,8 +29,6 @@ class SubmitInventoryUpdateResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitInventoryUpdateResponse';
 
@@ -182,6 +180,8 @@ class SubmitInventoryUpdateResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\TransactionReference
      */
     public function getPayload() : ?TransactionReference
     {

@@ -29,8 +29,6 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitShipmentConfirmationsRequest';
 
@@ -184,7 +182,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_confirmations.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[] $shipment_confirmations shipment_confirmations
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentConfirmation[] $shipment_confirmations an array of `ShipmentConfirmation` objects, each represents confirmation details for a specific shipment
      */
     public function setShipmentConfirmations(?array $shipment_confirmations) : self
     {

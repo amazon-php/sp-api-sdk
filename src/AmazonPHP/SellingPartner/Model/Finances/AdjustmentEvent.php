@@ -29,8 +29,6 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AdjustmentEvent';
 
@@ -234,6 +232,8 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets adjustment_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getAdjustmentAmount() : ?Currency
     {

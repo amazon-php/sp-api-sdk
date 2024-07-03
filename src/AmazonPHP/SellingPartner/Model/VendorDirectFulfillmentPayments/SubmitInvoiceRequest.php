@@ -29,8 +29,6 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitInvoiceRequest';
 
@@ -184,7 +182,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets invoices.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\InvoiceDetail[] $invoices invoices
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\InvoiceDetail[] $invoices an array of invoice details you want to submit
      */
     public function setInvoices(?array $invoices) : self
     {

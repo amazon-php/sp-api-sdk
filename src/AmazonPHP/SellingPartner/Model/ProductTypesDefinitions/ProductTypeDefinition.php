@@ -39,8 +39,6 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ProductTypeDefinition';
 
@@ -331,6 +329,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets meta_schema.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink
      */
     public function getMetaSchema() : ?SchemaLink
     {
@@ -351,6 +351,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets schema.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink
      */
     public function getSchema() : SchemaLink
     {
@@ -515,6 +517,8 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets product_type_version.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeVersion
      */
     public function getProductTypeVersion() : ProductTypeVersion
     {

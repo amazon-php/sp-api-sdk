@@ -1,0 +1,14 @@
+generatorName: php
+templateDir: sp-api/resources/php-amazon-selling-partner-api
+additionalProperties:
+  invokerPackage: AmazonPHP\SellingPartner
+  srcBasePath: src/AmazonPHP/SellingPartner
+  modelPackage: Model\WarehousingAndDistribution
+  packageName: WarehousingAndDistribution
+files:
+  api.mustache:
+    templateType: API
+    destinationFilename: /WarehousingAndDistributionSDK.php
+  api_interface.mustache:
+    templateType: API
+    destinationFilename: /WarehousingAndDistributionSDKInterface.php

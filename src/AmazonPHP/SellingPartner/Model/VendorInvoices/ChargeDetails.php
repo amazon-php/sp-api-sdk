@@ -51,8 +51,6 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ChargeDetails';
 
@@ -296,6 +294,8 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets charge_amount.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getChargeAmount() : Money
     {

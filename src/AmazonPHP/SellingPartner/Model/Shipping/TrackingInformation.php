@@ -29,8 +29,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TrackingInformation';
 
@@ -236,6 +234,8 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets summary.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\TrackingSummary
      */
     public function getSummary() : TrackingSummary
     {

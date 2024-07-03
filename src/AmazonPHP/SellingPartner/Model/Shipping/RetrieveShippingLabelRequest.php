@@ -29,8 +29,6 @@ class RetrieveShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'RetrieveShippingLabelRequest';
 
@@ -178,6 +176,8 @@ class RetrieveShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets label_specification.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification() : LabelSpecification
     {

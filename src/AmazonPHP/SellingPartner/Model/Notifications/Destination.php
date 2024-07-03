@@ -29,8 +29,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Destination';
 
@@ -242,6 +240,8 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets resource.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\DestinationResource
      */
     public function getResource() : DestinationResource
     {

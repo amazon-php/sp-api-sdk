@@ -29,8 +29,6 @@ class SubmitInvoicesResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitInvoicesResponse';
 
@@ -182,6 +180,8 @@ class SubmitInvoicesResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TransactionId
      */
     public function getPayload() : ?TransactionId
     {

@@ -33,8 +33,6 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FulfillmentPreviewItem';
 
@@ -290,7 +288,7 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets seller_fulfillment_order_item_id.
      *
-     * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier that the seller created with a call to the createFulfillmentOrder operation
+     * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier that the seller created with a call to the `createFulfillmentOrder` operation
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -301,6 +299,8 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets estimated_shipping_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight
      */
     public function getEstimatedShippingWeight() : ?Weight
     {

@@ -29,8 +29,6 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetMessagingActionResponse';
 
@@ -202,6 +200,8 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets _links.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionResponseLinks
      */
     public function getLinks() : ?GetMessagingActionResponseLinks
     {
@@ -222,6 +222,8 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets _embedded.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionResponseEmbedded
      */
     public function getEmbedded() : ?GetMessagingActionResponseEmbedded
     {
@@ -242,6 +244,8 @@ class GetMessagingActionResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\MessagingAction
      */
     public function getPayload() : ?MessagingAction
     {

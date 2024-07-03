@@ -64,7 +64,7 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation submitShipmentConfirmations.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsRequest $body Request body containing the shipment confirmations data. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -74,7 +74,7 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation submitShipmentStatusUpdates.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body Request body that contains the shipment status update data. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException

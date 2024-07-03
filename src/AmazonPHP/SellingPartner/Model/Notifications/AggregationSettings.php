@@ -29,8 +29,6 @@ class AggregationSettings implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AggregationSettings';
 
@@ -176,6 +174,8 @@ class AggregationSettings implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets aggregation_time_period.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Notifications\AggregationTimePeriod
      */
     public function getAggregationTimePeriod() : AggregationTimePeriod
     {

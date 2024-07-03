@@ -29,8 +29,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'StandardComparisonProductBlock';
 
@@ -258,6 +256,8 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets image.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {

@@ -29,8 +29,6 @@ class TransactionStatus implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TransactionStatus';
 
@@ -176,6 +174,8 @@ class TransactionStatus implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets transaction_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorTransactionStatus\Transaction
      */
     public function getTransactionStatus() : ?Transaction
     {

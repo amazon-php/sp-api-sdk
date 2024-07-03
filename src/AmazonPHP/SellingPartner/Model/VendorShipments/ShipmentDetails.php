@@ -29,8 +29,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentDetails';
 
@@ -182,6 +180,8 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets pagination.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Pagination
      */
     public function getPagination() : ?Pagination
     {
@@ -213,7 +213,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Shipment[] $shipments shipments
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Shipment[] $shipments a list of one or more shipments with underlying details
      */
     public function setShipments(?array $shipments) : self
     {

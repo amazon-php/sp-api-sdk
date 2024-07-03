@@ -29,8 +29,6 @@ class SubmitFulfillmentOrderStatusUpdateRequest implements \ArrayAccess, \JsonSe
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitFulfillmentOrderStatusUpdateRequest';
 
@@ -173,6 +171,8 @@ class SubmitFulfillmentOrderStatusUpdateRequest implements \ArrayAccess, \JsonSe
 
     /**
      * Gets fulfillment_order_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrderStatus
      */
     public function getFulfillmentOrderStatus() : ?FulfillmentOrderStatus
     {

@@ -29,8 +29,6 @@ class ItemContributor implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemContributor';
 
@@ -188,6 +186,8 @@ class ItemContributor implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets role.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\ItemContributorRole
      */
     public function getRole() : ItemContributorRole
     {

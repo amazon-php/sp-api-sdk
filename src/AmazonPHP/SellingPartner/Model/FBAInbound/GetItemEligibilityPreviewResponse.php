@@ -29,8 +29,6 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetItemEligibilityPreviewResponse';
 
@@ -182,6 +180,8 @@ class GetItemEligibilityPreviewResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInbound\ItemEligibilityPreview
      */
     public function getPayload() : ?ItemEligibilityPreview
     {

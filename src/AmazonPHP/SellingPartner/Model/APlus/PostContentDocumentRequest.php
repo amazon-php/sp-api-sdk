@@ -29,8 +29,6 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PostContentDocumentRequest';
 
@@ -178,6 +176,8 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets content_document.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentDocument
      */
     public function getContentDocument() : ContentDocument
     {

@@ -29,8 +29,6 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderItemStatus';
 
@@ -298,6 +296,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets net_cost.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -318,6 +318,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {
@@ -338,6 +340,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusOrderedQuantity
      */
     public function getOrderedQuantity() : ?OrderItemStatusOrderedQuantity
     {
@@ -358,6 +362,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets acknowledgement_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusAcknowledgementStatus
      */
     public function getAcknowledgementStatus() : ?OrderItemStatusAcknowledgementStatus
     {
@@ -378,6 +384,8 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets receiving_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusReceivingStatus
      */
     public function getReceivingStatus() : ?OrderItemStatusReceivingStatus
     {

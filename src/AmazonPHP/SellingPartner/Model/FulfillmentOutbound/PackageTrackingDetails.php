@@ -29,8 +29,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PackageTrackingDetails';
 
@@ -387,7 +385,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets ship_date.
      *
-     * @param null|\DateTimeInterface $ship_date ship_date
+     * @param null|\DateTimeInterface $ship_date Date timestamp
      */
     public function setShipDate(?\DateTimeInterface $ship_date) : self
     {
@@ -407,7 +405,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets estimated_arrival_date.
      *
-     * @param null|\DateTimeInterface $estimated_arrival_date estimated_arrival_date
+     * @param null|\DateTimeInterface $estimated_arrival_date Date timestamp
      */
     public function setEstimatedArrivalDate(?\DateTimeInterface $estimated_arrival_date) : self
     {
@@ -418,6 +416,8 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ship_to_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingAddress
      */
     public function getShipToAddress() : ?TrackingAddress
     {
@@ -438,6 +438,8 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets current_status.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus
      */
     public function getCurrentStatus() : ?CurrentStatus
     {
@@ -467,7 +469,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets current_status_description.
      *
-     * @param null|string $current_status_description description corresponding to the CurrentStatus value
+     * @param null|string $current_status_description description corresponding to the `CurrentStatus` value
      */
     public function setCurrentStatusDescription(?string $current_status_description) : self
     {
@@ -498,6 +500,8 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets additional_location_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo
      */
     public function getAdditionalLocationInfo() : ?AdditionalLocationInfo
     {

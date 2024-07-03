@@ -29,8 +29,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SetAppointmentFulfillmentDataRequest';
 
@@ -188,6 +186,8 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets fulfillment_time.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentTime
      */
     public function getFulfillmentTime() : ?FulfillmentTime
     {

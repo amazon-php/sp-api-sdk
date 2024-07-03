@@ -29,8 +29,6 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'InvoiceDetail';
 
@@ -338,6 +336,8 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets remit_to_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification
      */
     public function getRemitToParty() : PartyIdentification
     {
@@ -358,6 +358,8 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets ship_from_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -378,6 +380,8 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets bill_to_party.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification
      */
     public function getBillToParty() : ?PartyIdentification
     {
@@ -438,6 +442,8 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets invoice_total.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getInvoiceTotal() : Money
     {

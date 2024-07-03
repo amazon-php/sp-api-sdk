@@ -29,8 +29,6 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'StandardImageSidebarModule';
 
@@ -226,6 +224,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -246,6 +246,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets image_caption_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageCaptionBlock
      */
     public function getImageCaptionBlock() : ?StandardImageCaptionBlock
     {
@@ -266,6 +268,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets description_text_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getDescriptionTextBlock() : ?StandardTextBlock
     {
@@ -286,6 +290,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets description_list_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock
      */
     public function getDescriptionListBlock() : ?StandardTextListBlock
     {
@@ -306,6 +312,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets sidebar_image_text_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getSidebarImageTextBlock() : ?StandardImageTextBlock
     {
@@ -326,6 +334,8 @@ class StandardImageSidebarModule implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets sidebar_list_block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock
      */
     public function getSidebarListBlock() : ?StandardTextListBlock
     {

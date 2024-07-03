@@ -29,8 +29,6 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CustomerInvoiceList';
 
@@ -182,6 +180,8 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets pagination.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination
      */
     public function getPagination() : ?Pagination
     {
@@ -213,7 +213,7 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets customer_invoices.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice[] $customer_invoices customer_invoices
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice[] $customer_invoices represents a customer invoice within the `CustomerInvoiceList`
      */
     public function setCustomerInvoices(?array $customer_invoices) : self
     {

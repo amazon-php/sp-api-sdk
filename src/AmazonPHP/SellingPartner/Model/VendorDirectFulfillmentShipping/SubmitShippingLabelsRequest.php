@@ -29,8 +29,6 @@ class SubmitShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitShippingLabelsRequest';
 
@@ -184,7 +182,7 @@ class SubmitShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets shipping_label_requests.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelRequest[] $shipping_label_requests shipping_label_requests
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelRequest[] $shipping_label_requests an array of shipping label requests you want to process
      */
     public function setShippingLabelRequests(?array $shipping_label_requests) : self
     {

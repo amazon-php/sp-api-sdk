@@ -53,8 +53,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentConfirmation';
 
@@ -68,7 +66,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
         'shipment_confirmation_type' => 'string',
         'shipment_type' => 'string',
         'shipment_structure' => 'string',
-        'transportation_details' => '\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetails',
+        'transportation_details' => '\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetailsForShipmentConfirmation',
         'amazon_reference_number' => 'string',
         'shipment_confirmation_date' => '\DateTimeInterface',
         'shipped_date' => '\DateTimeInterface',
@@ -499,8 +497,10 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets transportation_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetailsForShipmentConfirmation
      */
-    public function getTransportationDetails() : ?TransportationDetails
+    public function getTransportationDetails() : ?TransportationDetailsForShipmentConfirmation
     {
         return $this->container['transportation_details'];
     }
@@ -508,9 +508,9 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets transportation_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetails $transportation_details transportation_details
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetailsForShipmentConfirmation $transportation_details transportation_details
      */
-    public function setTransportationDetails(?TransportationDetails $transportation_details) : self
+    public function setTransportationDetails(?TransportationDetailsForShipmentConfirmation $transportation_details) : self
     {
         $this->container['transportation_details'] = $transportation_details;
 
@@ -599,6 +599,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -619,6 +621,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_from_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -639,6 +643,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_to_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipToParty() : PartyIdentification
     {
@@ -659,6 +665,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_measurements.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentMeasurements
      */
     public function getShipmentMeasurements() : ?ShipmentMeasurements
     {
@@ -679,6 +687,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets import_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ImportDetails
      */
     public function getImportDetails() : ?ImportDetails
     {

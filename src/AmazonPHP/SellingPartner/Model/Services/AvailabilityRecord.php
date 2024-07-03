@@ -29,8 +29,6 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AvailabilityRecord';
 
@@ -246,6 +244,8 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets recurrence.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\Recurrence
      */
     public function getRecurrence() : ?Recurrence
     {

@@ -29,8 +29,6 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FeesEstimateRequest';
 
@@ -250,6 +248,8 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets price_to_estimate_fees.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees
      */
     public function getPriceToEstimateFees() : PriceToEstimateFees
     {
@@ -290,6 +290,8 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets optional_fulfillment_program.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram
      */
     public function getOptionalFulfillmentProgram() : ?OptionalFulfillmentProgram
     {

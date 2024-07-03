@@ -29,8 +29,6 @@ class GetMessagingActionResponseEmbedded implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetMessagingActionResponse__embedded';
 
@@ -176,6 +174,8 @@ class GetMessagingActionResponseEmbedded implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets schema.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponse
      */
     public function getSchema() : ?GetSchemaResponse
     {

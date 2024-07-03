@@ -29,8 +29,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FulfillmentOrder';
 
@@ -321,7 +319,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets seller_fulfillment_order_id.
      *
-     * @param string $seller_fulfillment_order_id the fulfillment order identifier submitted with the createFulfillmentOrder operation
+     * @param string $seller_fulfillment_order_id the fulfillment order identifier submitted with the `createFulfillmentOrder` operation
      */
     public function setSellerFulfillmentOrderId(string $seller_fulfillment_order_id) : self
     {
@@ -361,7 +359,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets displayable_order_id.
      *
-     * @param string $displayable_order_id A fulfillment order identifier submitted with the createFulfillmentOrder operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
+     * @param string $displayable_order_id A fulfillment order identifier submitted with the `createFulfillmentOrder` operation. Displays as the order identifier in recipient-facing materials such as the packing slip.
      */
     public function setDisplayableOrderId(string $displayable_order_id) : self
     {
@@ -381,7 +379,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets displayable_order_date.
      *
-     * @param \DateTimeInterface $displayable_order_date displayable_order_date
+     * @param \DateTimeInterface $displayable_order_date Date timestamp
      */
     public function setDisplayableOrderDate(\DateTimeInterface $displayable_order_date) : self
     {
@@ -401,7 +399,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets displayable_order_comment.
      *
-     * @param string $displayable_order_comment A text block submitted with the createFulfillmentOrder operation. Displays in recipient-facing materials such as the packing slip.
+     * @param string $displayable_order_comment A text block submitted with the `createFulfillmentOrder` operation. Displays in recipient-facing materials such as the packing slip.
      */
     public function setDisplayableOrderComment(string $displayable_order_comment) : self
     {
@@ -412,6 +410,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ShippingSpeedCategory
     {
@@ -432,6 +432,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets delivery_window.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryWindow
      */
     public function getDeliveryWindow() : ?DeliveryWindow
     {
@@ -452,6 +454,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets destination_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getDestinationAddress() : Address
     {
@@ -472,6 +476,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_action.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction
      */
     public function getFulfillmentAction() : ?FulfillmentAction
     {
@@ -492,6 +498,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_policy.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy
      */
     public function getFulfillmentPolicy() : ?FulfillmentPolicy
     {
@@ -512,6 +520,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets cod_settings.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CODSettings
      */
     public function getCodSettings() : ?CODSettings
     {
@@ -541,7 +551,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets received_date.
      *
-     * @param \DateTimeInterface $received_date received_date
+     * @param \DateTimeInterface $received_date Date timestamp
      */
     public function setReceivedDate(\DateTimeInterface $received_date) : self
     {
@@ -552,6 +562,8 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_order_status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrderStatus
      */
     public function getFulfillmentOrderStatus() : FulfillmentOrderStatus
     {
@@ -581,7 +593,7 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets status_updated_date.
      *
-     * @param \DateTimeInterface $status_updated_date status_updated_date
+     * @param \DateTimeInterface $status_updated_date Date timestamp
      */
     public function setStatusUpdatedDate(\DateTimeInterface $status_updated_date) : self
     {

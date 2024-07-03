@@ -29,10 +29,8 @@ class CollectFreightPickupDetails implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
-    protected static string $openAPIModelName = 'collectFreightPickupDetails';
+    protected static string $openAPIModelName = 'CollectFreightPickupDetails';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.

@@ -29,8 +29,6 @@ class ContentMetadataRecord implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ContentMetadataRecord';
 
@@ -212,6 +210,8 @@ class ContentMetadataRecord implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets content_metadata.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentMetadata
      */
     public function getContentMetadata() : ContentMetadata
     {

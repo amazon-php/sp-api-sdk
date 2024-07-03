@@ -29,8 +29,6 @@ class AssignAppointmentResourcesResponse implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AssignAppointmentResourcesResponse';
 
@@ -182,6 +180,8 @@ class AssignAppointmentResourcesResponse implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesResponsePayload
      */
     public function getPayload() : ?AssignAppointmentResourcesResponsePayload
     {

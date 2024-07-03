@@ -35,8 +35,6 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ServiceLocation';
 
@@ -234,6 +232,8 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\Address
      */
     public function getAddress() : ?Address
     {

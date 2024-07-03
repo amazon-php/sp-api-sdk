@@ -29,8 +29,6 @@ class AggregationFilter implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AggregationFilter';
 
@@ -176,6 +174,8 @@ class AggregationFilter implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets aggregation_settings.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings
      */
     public function getAggregationSettings() : ?AggregationSettings
     {

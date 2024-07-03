@@ -29,8 +29,6 @@ class GetSolicitationActionResponseLinks implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetSolicitationActionResponse__links';
 
@@ -190,6 +188,8 @@ class GetSolicitationActionResponseLinks implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets self.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject
      */
     public function getSelf() : LinkObject
     {
@@ -210,6 +210,8 @@ class GetSolicitationActionResponseLinks implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets schema.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject
      */
     public function getSchema() : LinkObject
     {

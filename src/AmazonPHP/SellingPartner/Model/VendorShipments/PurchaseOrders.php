@@ -29,10 +29,8 @@ class PurchaseOrders implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
-    protected static string $openAPIModelName = 'purchaseOrders';
+    protected static string $openAPIModelName = 'PurchaseOrders';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.

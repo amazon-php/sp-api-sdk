@@ -29,8 +29,6 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderMetricsInterval';
 
@@ -310,6 +308,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets average_unit_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Sales\Money
      */
     public function getAverageUnitPrice() : Money
     {
@@ -330,6 +330,8 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets total_sales.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Sales\Money
      */
     public function getTotalSales() : Money
     {

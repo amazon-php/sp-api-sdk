@@ -29,8 +29,6 @@ class ItemDeliveryPromise implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemDeliveryPromise';
 

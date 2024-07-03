@@ -29,8 +29,6 @@ class GetDestinationsResponse implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetDestinationsResponse';
 

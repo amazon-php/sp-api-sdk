@@ -29,8 +29,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SolutionProviderCreditEvent';
 
@@ -390,6 +388,8 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets transaction_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

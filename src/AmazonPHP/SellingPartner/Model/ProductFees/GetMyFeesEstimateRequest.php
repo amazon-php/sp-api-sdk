@@ -29,8 +29,6 @@ class GetMyFeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetMyFeesEstimateRequest';
 
@@ -176,6 +174,8 @@ class GetMyFeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets fees_estimate_request.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest
      */
     public function getFeesEstimateRequest() : ?FeesEstimateRequest
     {

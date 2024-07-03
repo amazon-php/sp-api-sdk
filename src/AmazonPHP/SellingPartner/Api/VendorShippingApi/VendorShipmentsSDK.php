@@ -38,22 +38,22 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more shipments than the specified result size limit. (optional)
-     * @param null|\DateTimeInterface $created_after Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $created_before Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_confirmed_before Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_confirmed_after Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $package_label_created_before Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $package_label_created_after Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipped_before Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipped_after Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $estimated_delivery_before Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $estimated_delivery_after Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_delivery_before Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_delivery_after Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $requested_pick_up_before Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $requested_pick_up_after Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $scheduled_pick_up_before Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $scheduled_pick_up_after Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_after Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $created_before Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_before Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_after Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_before Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_after Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipped_before Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipped_after Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_before Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_after Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_before Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_after Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_before Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_after Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_before Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_after Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param null|string $current_shipment_status Get Shipment Details by passing Current shipment status. (optional)
      * @param null|string $vendor_shipment_identifier Get Shipment Details by passing Vendor Shipment ID (optional)
      * @param null|string $buyer_reference_number Get Shipment Details by passing buyer Reference ID (optional)
@@ -157,22 +157,22 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more shipments than the specified result size limit. (optional)
-     * @param null|\DateTimeInterface $created_after Get Shipment Details that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $created_before Get Shipment Details that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_confirmed_before Get Shipment Details by passing Shipment confirmed create Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_confirmed_after Get Shipment Details by passing Shipment confirmed create Date After. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $package_label_created_before Get Shipment Details by passing Package label create Date by buyer. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $package_label_created_after Get Shipment Details by passing Package label create Date After by buyer. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipped_before Get Shipment Details by passing Shipped Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipped_after Get Shipment Details by passing Shipped Date After. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $estimated_delivery_before Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $estimated_delivery_after Get Shipment Details by passing Estimated Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_delivery_before Get Shipment Details by passing Shipment Delivery Date Before. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $shipment_delivery_after Get Shipment Details by passing Shipment Delivery Date After. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $requested_pick_up_before Get Shipment Details by passing Before Requested pickup date. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $requested_pick_up_after Get Shipment Details by passing After Requested pickup date. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $scheduled_pick_up_before Get Shipment Details by passing Before scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $scheduled_pick_up_after Get Shipment Details by passing After Scheduled pickup date. Must be in ISO-8601 date/time format. (optional)
+     * @param null|\DateTimeInterface $created_after Get Shipment Details that became available after this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $created_before Get Shipment Details that became available before this timestamp will be included in the result. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_before Get Shipment Details by passing Shipment confirmed create Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_confirmed_after Get Shipment Details by passing Shipment confirmed create Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_before Get Shipment Details by passing Package label create Date by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $package_label_created_after Get Shipment Details by passing Package label create Date After by buyer. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipped_before Get Shipment Details by passing Shipped Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipped_after Get Shipment Details by passing Shipped Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_before Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $estimated_delivery_after Get Shipment Details by passing Estimated Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_before Get Shipment Details by passing Shipment Delivery Date Before. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $shipment_delivery_after Get Shipment Details by passing Shipment Delivery Date After. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_before Get Shipment Details by passing Before Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $requested_pick_up_after Get Shipment Details by passing After Requested pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_before Get Shipment Details by passing Before scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
+     * @param null|\DateTimeInterface $scheduled_pick_up_after Get Shipment Details by passing After Scheduled pickup date. Must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param null|string $current_shipment_status Get Shipment Details by passing Current shipment status. (optional)
      * @param null|string $vendor_shipment_identifier Get Shipment Details by passing Vendor Shipment ID (optional)
      * @param null|string $buyer_reference_number Get Shipment Details by passing buyer Reference ID (optional)
@@ -451,267 +451,9 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
     }
 
     /**
-     * Operation getShipmentLabels.
-     *
-     * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
-     * @param null|string $sort_order Sort in ascending or descending order by transport label creation date. (optional)
-     * @param null|string $next_token Used for pagination when there are more transport label than the specified result size limit. (optional)
-     * @param null|\DateTimeInterface $label_created_after transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $labelcreated_before transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|string $buyer_reference_number Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label. (optional)
-     * @param null|string $vendor_shipment_identifier Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label. (optional)
-     * @param null|string $seller_warehouse_code Get Shipping labels based Vendor Warehouse code. This value should be same as &#39;shipFromParty.partyId&#39; in the Shipment. (optional)
-     *
-     * @throws ApiException on non-2xx response
-     * @throws InvalidArgumentException
-     */
-    public function getShipmentLabels(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $label_created_after = null, ?\DateTimeInterface $labelcreated_before = null, ?string $buyer_reference_number = null, ?string $vendor_shipment_identifier = null, ?string $seller_warehouse_code = null) : \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels
-    {
-        $request = $this->getShipmentLabelsRequest($accessToken, $region, $limit, $sort_order, $next_token, $label_created_after, $labelcreated_before, $buyer_reference_number, $vendor_shipment_identifier, $seller_warehouse_code);
-
-        $this->configuration->extensions()->preRequest('VendorShipments', 'getShipmentLabels', $request);
-
-        try {
-            $correlationId = $this->configuration->idGenerator()->generate();
-            $sanitizedRequest = $request;
-
-            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
-            }
-
-            if ($this->configuration->loggingEnabled('VendorShipments', 'getShipmentLabels')) {
-                $this->logger->log(
-                    $this->configuration->logLevel('VendorShipments', 'getShipmentLabels'),
-                    'Amazon Selling Partner API pre request',
-                    [
-                        'api' => 'VendorShipments',
-                        'operation' => 'getShipmentLabels',
-                        'request_correlation_id' => $correlationId,
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                        'request_headers' => $sanitizedRequest->getHeaders(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                    ]
-                );
-            }
-
-            $response = $this->client->sendRequest($request);
-
-            $this->configuration->extensions()->postRequest('VendorShipments', 'getShipmentLabels', $request, $response);
-
-            if ($this->configuration->loggingEnabled('VendorShipments', 'getShipmentLabels')) {
-                $sanitizedResponse = $response;
-
-                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
-                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
-                }
-
-                $this->logger->log(
-                    $this->configuration->logLevel('VendorShipments', 'getShipmentLabels'),
-                    'Amazon Selling Partner API post request',
-                    [
-                        'api' => 'VendorShipments',
-                        'operation' => 'getShipmentLabels',
-                        'response_correlation_id' => $correlationId,
-                        'response_body' => (string) $sanitizedResponse->getBody(),
-                        'response_headers' => $sanitizedResponse->getHeaders(),
-                        'response_status_code' => $sanitizedResponse->getStatusCode(),
-                        'request_uri' => (string) $sanitizedRequest->getUri(),
-                        'request_body' => (string) $sanitizedRequest->getBody(),
-                    ]
-                );
-            }
-        } catch (ClientExceptionInterface $e) {
-            throw new ApiException(
-                "[{$e->getCode()}] {$e->getMessage()}",
-                (int) $e->getCode(),
-                null,
-                null,
-                $e
-            );
-        }
-
-        $statusCode = $response->getStatusCode();
-
-        if ($statusCode < 200 || $statusCode > 299) {
-            throw new ApiException(
-                \sprintf(
-                    '[%d] Error connecting to the API (%s)',
-                    $statusCode,
-                    (string) $request->getUri()
-                ),
-                $statusCode,
-                $response->getHeaders(),
-                (string) $response->getBody()
-            );
-        }
-
-        return ObjectSerializer::deserialize(
-            $this->configuration,
-            (string) $response->getBody(),
-            '\AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels',
-            []
-        );
-    }
-
-    /**
-     * Create request for operation 'getShipmentLabels'.
-     *
-     * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
-     * @param null|string $sort_order Sort in ascending or descending order by transport label creation date. (optional)
-     * @param null|string $next_token Used for pagination when there are more transport label than the specified result size limit. (optional)
-     * @param null|\DateTimeInterface $label_created_after transport Labels that became available after this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|\DateTimeInterface $labelcreated_before transport Labels that became available before this timestamp will be included in the result. Must be in ISO-8601 date/time format. (optional)
-     * @param null|string $buyer_reference_number Get transport labels by passing Buyer Reference Number to retreive the corresponding transport label. (optional)
-     * @param null|string $vendor_shipment_identifier Get transport labels by passing Vendor Shipment ID to retreive the corresponding transport label. (optional)
-     * @param null|string $seller_warehouse_code Get Shipping labels based Vendor Warehouse code. This value should be same as &#39;shipFromParty.partyId&#39; in the Shipment. (optional)
-     *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
-     */
-    public function getShipmentLabelsRequest(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $label_created_after = null, ?\DateTimeInterface $labelcreated_before = null, ?string $buyer_reference_number = null, ?string $vendor_shipment_identifier = null, ?string $seller_warehouse_code = null) : RequestInterface
-    {
-        if ($limit !== null && $limit > 50) {
-            throw new InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentLabels, must be smaller than or equal to 50.');
-        }
-
-        if ($limit !== null && $limit < 1) {
-            throw new InvalidArgumentException('invalid value for "$limit" when calling VendorShippingApi.getShipmentLabels, must be bigger than or equal to 1.');
-        }
-
-        $resourcePath = '/vendor/shipping/v1/transportLabels';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $multipart = false;
-        $query = '';
-
-        // query params
-        if (\is_array($limit)) {
-            $limit = ObjectSerializer::serializeCollection($limit, '', true);
-        }
-
-        if ($limit !== null) {
-            $queryParams['limit'] = ObjectSerializer::toString($limit);
-        }
-        // query params
-        if (\is_array($sort_order)) {
-            $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
-        }
-
-        if ($sort_order !== null) {
-            $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
-        }
-        // query params
-        if (\is_array($next_token)) {
-            $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
-        }
-
-        if ($next_token !== null) {
-            $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
-        }
-        // query params
-        if (\is_array($label_created_after)) {
-            $label_created_after = ObjectSerializer::serializeCollection($label_created_after, '', true);
-        }
-
-        if ($label_created_after !== null) {
-            $queryParams['labelCreatedAfter'] = ObjectSerializer::toString($label_created_after);
-        }
-        // query params
-        if (\is_array($labelcreated_before)) {
-            $labelcreated_before = ObjectSerializer::serializeCollection($labelcreated_before, '', true);
-        }
-
-        if ($labelcreated_before !== null) {
-            $queryParams['labelcreatedBefore'] = ObjectSerializer::toString($labelcreated_before);
-        }
-        // query params
-        if (\is_array($buyer_reference_number)) {
-            $buyer_reference_number = ObjectSerializer::serializeCollection($buyer_reference_number, '', true);
-        }
-
-        if ($buyer_reference_number !== null) {
-            $queryParams['buyerReferenceNumber'] = ObjectSerializer::toString($buyer_reference_number);
-        }
-        // query params
-        if (\is_array($vendor_shipment_identifier)) {
-            $vendor_shipment_identifier = ObjectSerializer::serializeCollection($vendor_shipment_identifier, '', true);
-        }
-
-        if ($vendor_shipment_identifier !== null) {
-            $queryParams['vendorShipmentIdentifier'] = ObjectSerializer::toString($vendor_shipment_identifier);
-        }
-        // query params
-        if (\is_array($seller_warehouse_code)) {
-            $seller_warehouse_code = ObjectSerializer::serializeCollection($seller_warehouse_code, '', true);
-        }
-
-        if ($seller_warehouse_code !== null) {
-            $queryParams['sellerWarehouseCode'] = ObjectSerializer::toString($seller_warehouse_code);
-        }
-
-        if (\count($queryParams)) {
-            $query = \http_build_query($queryParams);
-        }
-
-        if ($multipart) {
-            $headers = [
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        } else {
-            $headers = [
-                'content-type' => ['application/json'],
-                'accept' => ['application/json'],
-                'host' => [$this->configuration->apiHost($region)],
-                'user-agent' => [$this->configuration->userAgent()],
-            ];
-        }
-
-        $request = $this->httpFactory->createRequest(
-            'GET',
-            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
-        );
-
-        // for model (json/xml)
-        if (\count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
-
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem,
-                        ];
-                    }
-                }
-                $request = $request->withParsedBody($multipartContents);
-            } elseif ($headers['content-type'] === ['application/json']) {
-                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
-            } else {
-                $request = $request->withParsedBody($formParams);
-            }
-        }
-
-        foreach (\array_merge($headerParams, $headers) as $name => $header) {
-            $request = $request->withHeader($name, $header);
-        }
-
-        return HttpSignatureHeaders::forConfig(
-            $this->configuration,
-            $accessToken,
-            $region,
-            $request
-        );
-    }
-
-    /**
      * Operation submitShipmentConfirmations.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -807,7 +549,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
     /**
      * Create request for operation 'submitShipmentConfirmations'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -897,7 +639,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
     /**
      * Operation submitShipments.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body A request to submit shipment request. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -993,7 +735,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
     /**
      * Create request for operation 'submitShipments'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body A request to submit shipment request. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

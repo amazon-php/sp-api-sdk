@@ -31,8 +31,6 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Container';
 
@@ -298,6 +296,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets value.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getValue() : Currency
     {
@@ -318,6 +318,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -360,6 +362,8 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets weight.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getWeight() : Weight
     {

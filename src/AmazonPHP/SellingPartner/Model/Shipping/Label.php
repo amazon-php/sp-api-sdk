@@ -29,8 +29,6 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Label';
 
@@ -202,6 +200,8 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets label_specification.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification() : ?LabelSpecification
     {

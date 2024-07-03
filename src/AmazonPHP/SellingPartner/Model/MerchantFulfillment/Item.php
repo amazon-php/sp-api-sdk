@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Item';
 
@@ -46,6 +44,9 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'item_description' => 'string',
         'transparency_code_list' => 'string[]',
         'item_level_seller_inputs_list' => '\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInputs[]',
+        'liquid_volume' => '\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LiquidVolume',
+        'is_hazmat' => 'bool',
+        'dangerous_goods_details' => '\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DangerousGoodsDetails',
     ];
 
     /**
@@ -64,6 +65,9 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'item_description' => null,
         'transparency_code_list' => null,
         'item_level_seller_inputs_list' => null,
+        'liquid_volume' => null,
+        'is_hazmat' => null,
+        'dangerous_goods_details' => null,
     ];
 
     /**
@@ -79,6 +83,9 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'item_description' => 'ItemDescription',
         'transparency_code_list' => 'TransparencyCodeList',
         'item_level_seller_inputs_list' => 'ItemLevelSellerInputsList',
+        'liquid_volume' => 'LiquidVolume',
+        'is_hazmat' => 'IsHazmat',
+        'dangerous_goods_details' => 'DangerousGoodsDetails',
     ];
 
     /**
@@ -93,6 +100,9 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'item_description' => 'setItemDescription',
         'transparency_code_list' => 'setTransparencyCodeList',
         'item_level_seller_inputs_list' => 'setItemLevelSellerInputsList',
+        'liquid_volume' => 'setLiquidVolume',
+        'is_hazmat' => 'setIsHazmat',
+        'dangerous_goods_details' => 'setDangerousGoodsDetails',
     ];
 
     /**
@@ -107,6 +117,9 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'item_description' => 'getItemDescription',
         'transparency_code_list' => 'getTransparencyCodeList',
         'item_level_seller_inputs_list' => 'getItemLevelSellerInputsList',
+        'liquid_volume' => 'getLiquidVolume',
+        'is_hazmat' => 'getIsHazmat',
+        'dangerous_goods_details' => 'getDangerousGoodsDetails',
     ];
 
     /**
@@ -130,6 +143,9 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         $this->container['item_description'] = $data['item_description'] ?? null;
         $this->container['transparency_code_list'] = $data['transparency_code_list'] ?? null;
         $this->container['item_level_seller_inputs_list'] = $data['item_level_seller_inputs_list'] ?? null;
+        $this->container['liquid_volume'] = $data['liquid_volume'] ?? null;
+        $this->container['is_hazmat'] = $data['is_hazmat'] ?? null;
+        $this->container['dangerous_goods_details'] = $data['dangerous_goods_details'] ?? null;
     }
 
     /**
@@ -210,6 +226,14 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         if ($this->container['item_weight'] !== null) {
             $this->container['item_weight']->validate();
         }
+
+        if ($this->container['liquid_volume'] !== null) {
+            $this->container['liquid_volume']->validate();
+        }
+
+        if ($this->container['dangerous_goods_details'] !== null) {
+            $this->container['dangerous_goods_details']->validate();
+        }
     }
 
     /**
@@ -254,6 +278,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getItemWeight() : ?Weight
     {
@@ -332,6 +358,70 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     public function setItemLevelSellerInputsList(?array $item_level_seller_inputs_list) : self
     {
         $this->container['item_level_seller_inputs_list'] = $item_level_seller_inputs_list;
+
+        return $this;
+    }
+
+    /**
+     * Gets liquid_volume.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LiquidVolume
+     */
+    public function getLiquidVolume() : ?LiquidVolume
+    {
+        return $this->container['liquid_volume'];
+    }
+
+    /**
+     * Sets liquid_volume.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LiquidVolume $liquid_volume liquid_volume
+     */
+    public function setLiquidVolume(?LiquidVolume $liquid_volume) : self
+    {
+        $this->container['liquid_volume'] = $liquid_volume;
+
+        return $this;
+    }
+
+    /**
+     * Gets is_hazmat.
+     */
+    public function getIsHazmat() : ?bool
+    {
+        return $this->container['is_hazmat'];
+    }
+
+    /**
+     * Sets is_hazmat.
+     *
+     * @param null|bool $is_hazmat When true, the item qualifies as hazardous materials (hazmat). Defaults to false.
+     */
+    public function setIsHazmat(?bool $is_hazmat) : self
+    {
+        $this->container['is_hazmat'] = $is_hazmat;
+
+        return $this;
+    }
+
+    /**
+     * Gets dangerous_goods_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DangerousGoodsDetails
+     */
+    public function getDangerousGoodsDetails() : ?DangerousGoodsDetails
+    {
+        return $this->container['dangerous_goods_details'];
+    }
+
+    /**
+     * Sets dangerous_goods_details.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DangerousGoodsDetails $dangerous_goods_details dangerous_goods_details
+     */
+    public function setDangerousGoodsDetails(?DangerousGoodsDetails $dangerous_goods_details) : self
+    {
+        $this->container['dangerous_goods_details'] = $dangerous_goods_details;
 
         return $this;
     }

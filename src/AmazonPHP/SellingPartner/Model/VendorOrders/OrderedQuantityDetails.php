@@ -29,8 +29,6 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderedQuantityDetails';
 
@@ -201,7 +199,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets updated_date.
      *
-     * @param null|\DateTimeInterface $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
+     * @param null|\DateTimeInterface $updated_date The date when the line item quantity was updated by the buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      */
     public function setUpdatedDate(?\DateTimeInterface $updated_date) : self
     {
@@ -212,6 +210,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ?ItemQuantity
     {
@@ -232,6 +232,8 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets cancelled_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getCancelledQuantity() : ?ItemQuantity
     {

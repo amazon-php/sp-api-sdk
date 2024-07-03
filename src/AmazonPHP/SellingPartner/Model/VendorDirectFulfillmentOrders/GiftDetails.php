@@ -29,8 +29,6 @@ class GiftDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GiftDetails';
 

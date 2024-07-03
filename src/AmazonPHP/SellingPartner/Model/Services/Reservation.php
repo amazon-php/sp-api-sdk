@@ -39,8 +39,6 @@ class Reservation implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Reservation';
 
@@ -272,6 +270,8 @@ class Reservation implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets availability.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord
      */
     public function getAvailability() : AvailabilityRecord
     {

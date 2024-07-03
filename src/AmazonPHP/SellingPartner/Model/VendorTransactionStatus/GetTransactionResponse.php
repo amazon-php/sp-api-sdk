@@ -29,8 +29,6 @@ class GetTransactionResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetTransactionResponse';
 
@@ -182,6 +180,8 @@ class GetTransactionResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorTransactionStatus\TransactionStatus
      */
     public function getPayload() : ?TransactionStatus
     {

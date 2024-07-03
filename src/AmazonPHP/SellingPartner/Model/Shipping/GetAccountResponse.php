@@ -29,8 +29,6 @@ class GetAccountResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetAccountResponse';
 
@@ -182,6 +180,8 @@ class GetAccountResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Account
      */
     public function getPayload() : ?Account
     {

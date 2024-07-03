@@ -29,8 +29,6 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AdjustmentItem';
 
@@ -236,6 +234,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets per_unit_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getPerUnitAmount() : ?Currency
     {
@@ -256,6 +256,8 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets total_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

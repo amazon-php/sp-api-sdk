@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetEligibleShipmentServicesRequest';
 
@@ -188,6 +186,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets shipment_request_details.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails
      */
     public function getShipmentRequestDetails() : ShipmentRequestDetails
     {
@@ -208,6 +208,8 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets shipping_offering_filter.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingOfferingFilter
      */
     public function getShippingOfferingFilter() : ?ShippingOfferingFilter
     {

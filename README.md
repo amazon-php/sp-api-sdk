@@ -56,12 +56,13 @@ This library is not in a stable stage yet, please use with caution.
 ### Releases
 
 | branch                                                   | maintained |
-| -------------------------------------------------------- | ---------- |
+|----------------------------------------------------------| ---------- |
 | [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) | 🚫         |
 | [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x) | 🚫         |
-| [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) | ✅         |
-| [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | ✅         |
+| [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) | 🚫         |
+| [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | 🚫         |
 | [5.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | ✅         |
+| [6.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | ✅         |
 
 Version <s> [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to
 make a little more sense of what Amazon is doing with using "tags" in their Open API specification.
@@ -87,17 +88,25 @@ Additionally, uuid used to generate correlation identifiers was replaced with Id
 default is using php internal uniqid(). This change allowed us to drop one additional dependency.
 Some minor adjustments were made in the template files for models/api.
 
+[6.x](https://github.com/amazon-php/sp-api-sdk/tree/6.x) comes with changes to the Fulfillment Inbound API as well as other additions and removals.
+- Additions
+  - Fulfillment Inbound API v2024-03-20
+  - Amazon Warehousing and Distribution API v2024-05-09
+- Removals
+  - Fulfillment Inbound API v0
+  - Authorization API
+  - FBA Small and Light API
+    - You can retrieve the new fees for affected products by using the Product Fees API and/or the relevant FBA and Referral Fee reports.
+
 ### Available SDKs
 
 [SellingPartnerSDK](/src/AmazonPHP/SellingPartner/SellingPartnerSDK.php) - Facade for all SDK's
 
 - [APlusSDK](/src/AmazonPHP/SellingPartner/Api/AplusContentApi/APlusSDK.php)
-- [AuthorizationSDK](/src/AmazonPHP/SellingPartner/Api/AuthorizationApi/AuthorizationSDK.php)
 - [CatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogApi/CatalogItemSDK.php)
 - [FBAInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FBAInboundSDK.php)
 - [FBAInventorySDK](/src/AmazonPHP/SellingPartner/Api/FbaInventoryApi/FBAInventorySDK.php)
 - [FulfillmentInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FulfillmentInboundSDK.php)
-- [FBASmallAndLightSDK](/src/AmazonPHP/SellingPartner/Api/SmallAndLightApi/FBASmallAndLightSDK.php)
 - [FeedsSDK](/src/AmazonPHP/SellingPartner/Api/FeedsApi/FeedsSDK.php)
 - [FinancesSDK](/src/AmazonPHP/SellingPartner/Api/DefaultApi/FinancesSDK.php)
 - [FulfillmentOutboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaOutboundApi/FulfillmentOutboundSDK.php)
@@ -118,6 +127,7 @@ Some minor adjustments were made in the template files for models/api.
 - [SolicitationsSDK](/src/AmazonPHP/SellingPartner/Api/SolicitationsApi/SolicitationsSDK.php)
 - [TokensSDK](/src/AmazonPHP/SellingPartner/Api/TokensApi/TokensSDK.php)
 - [UploadsSDK](/src/AmazonPHP/SellingPartner/Api/UploadsApi/UploadsSDK.php)
+- [WarehousingAndDistributionSDK](/src/AmazonPHP/SellingPartner/Api/WarehousingDistributionApi/WarehousingAndDistributionSDK.php)
 - VendorSDK
   - [VendorInvoicesSDK](/src/AmazonPHP/SellingPartner/Api/VendorPaymentsApi/VendorInvoicesSDK.php)
   - [VendorOrdersSDK](/src/AmazonPHP/SellingPartner/Api/VendorOrdersApi/VendorOrdersSDK.php)

@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class AvailableCarrierWillPickUpOption implements \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AvailableCarrierWillPickUpOption';
 
@@ -188,6 +186,8 @@ class AvailableCarrierWillPickUpOption implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets carrier_will_pick_up_option.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUpOption() : CarrierWillPickUpOption
     {
@@ -208,6 +208,8 @@ class AvailableCarrierWillPickUpOption implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets charge.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getCharge() : CurrencyAmount
     {

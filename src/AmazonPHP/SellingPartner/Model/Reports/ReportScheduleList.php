@@ -29,8 +29,6 @@ class ReportScheduleList implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ReportScheduleList';
 
@@ -187,7 +185,7 @@ class ReportScheduleList implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets report_schedules.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule[] $report_schedules report_schedules
+     * @param \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule[] $report_schedules detailed information about a report schedule
      */
     public function setReportSchedules(array $report_schedules) : self
     {

@@ -29,8 +29,6 @@ class GetSolicitationActionsForOrderResponseEmbedded implements \ArrayAccess, \J
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetSolicitationActionsForOrderResponse__embedded';
 

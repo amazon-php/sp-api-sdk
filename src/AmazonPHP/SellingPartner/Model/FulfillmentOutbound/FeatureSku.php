@@ -29,8 +29,6 @@ class FeatureSku implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FeatureSku';
 
@@ -206,7 +204,7 @@ class FeatureSku implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets seller_sku.
      *
-     * @param null|string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller's SellerId, which is included with every operation that you submit.
+     * @param null|string $seller_sku Used to identify an item in the given marketplace. `SellerSKU` is qualified by the seller's SellerId, which is included with every operation that you submit.
      */
     public function setSellerSku(?string $seller_sku) : self
     {

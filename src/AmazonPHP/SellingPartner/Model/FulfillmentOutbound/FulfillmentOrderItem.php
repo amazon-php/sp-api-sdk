@@ -29,8 +29,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FulfillmentOrderItem';
 
@@ -311,7 +309,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets seller_fulfillment_order_item_id.
      *
-     * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier submitted with a call to the createFulfillmentOrder operation
+     * @param string $seller_fulfillment_order_item_id a fulfillment order item identifier submitted with a call to the `createFulfillmentOrder` operation
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -471,7 +469,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets estimated_ship_date.
      *
-     * @param null|\DateTimeInterface $estimated_ship_date estimated_ship_date
+     * @param null|\DateTimeInterface $estimated_ship_date Date timestamp
      */
     public function setEstimatedShipDate(?\DateTimeInterface $estimated_ship_date) : self
     {
@@ -491,7 +489,7 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets estimated_arrival_date.
      *
-     * @param null|\DateTimeInterface $estimated_arrival_date estimated_arrival_date
+     * @param null|\DateTimeInterface $estimated_arrival_date Date timestamp
      */
     public function setEstimatedArrivalDate(?\DateTimeInterface $estimated_arrival_date) : self
     {
@@ -502,6 +500,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -522,6 +522,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {
@@ -542,6 +544,8 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {

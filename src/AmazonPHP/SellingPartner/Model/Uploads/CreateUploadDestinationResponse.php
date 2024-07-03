@@ -29,8 +29,6 @@ class CreateUploadDestinationResponse implements \ArrayAccess, \JsonSerializable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateUploadDestinationResponse';
 
@@ -182,6 +180,8 @@ class CreateUploadDestinationResponse implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Uploads\UploadDestination
      */
     public function getPayload() : ?UploadDestination
     {

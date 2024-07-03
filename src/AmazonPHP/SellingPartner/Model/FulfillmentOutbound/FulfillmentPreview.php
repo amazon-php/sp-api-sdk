@@ -29,8 +29,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FulfillmentPreview';
 
@@ -256,6 +254,8 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets shipping_speed_category.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ShippingSpeedCategory
     {
@@ -276,6 +276,8 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets scheduled_delivery_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ScheduledDeliveryInfo
      */
     public function getScheduledDeliveryInfo() : ?ScheduledDeliveryInfo
     {
@@ -336,6 +338,8 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets estimated_shipping_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight
      */
     public function getEstimatedShippingWeight() : ?Weight
     {
@@ -433,7 +437,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets order_unfulfillable_reasons.
      *
-     * @param null|string[] $order_unfulfillable_reasons order_unfulfillable_reasons
+     * @param null|string[] $order_unfulfillable_reasons String list
      */
     public function setOrderUnfulfillableReasons(?array $order_unfulfillable_reasons) : self
     {

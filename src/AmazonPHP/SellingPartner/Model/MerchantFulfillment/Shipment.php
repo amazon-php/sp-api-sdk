@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Shipment';
 
@@ -393,7 +391,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets item_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Item[] $item_list the list of items to be included in a shipment
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Item[] $item_list the list of items you want to include in a shipment
      */
     public function setItemList(array $item_list) : self
     {
@@ -404,6 +402,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_from_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -424,6 +424,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_to_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipToAddress() : Address
     {
@@ -444,6 +446,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets package_dimensions.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\PackageDimensions
      */
     public function getPackageDimensions() : PackageDimensions
     {
@@ -464,6 +468,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets weight.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getWeight() : Weight
     {
@@ -484,6 +490,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets insurance.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getInsurance() : CurrencyAmount
     {
@@ -504,6 +512,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipping_service.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingService
      */
     public function getShippingService() : ShippingService
     {
@@ -524,6 +534,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets label.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Label
      */
     public function getLabel() : Label
     {
@@ -544,6 +556,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentStatus
      */
     public function getStatus() : ShipmentStatus
     {
@@ -593,7 +607,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets created_date.
      *
-     * @param \DateTimeInterface $created_date created_date
+     * @param \DateTimeInterface $created_date date-time formatted timestamp
      */
     public function setCreatedDate(\DateTimeInterface $created_date) : self
     {
@@ -613,7 +627,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets last_updated_date.
      *
-     * @param null|\DateTimeInterface $last_updated_date last_updated_date
+     * @param null|\DateTimeInterface $last_updated_date date-time formatted timestamp
      */
     public function setLastUpdatedDate(?\DateTimeInterface $last_updated_date) : self
     {

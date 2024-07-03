@@ -29,8 +29,6 @@ class CreateServiceDocumentUploadDestination implements \ArrayAccess, \JsonSeria
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateServiceDocumentUploadDestination';
 
@@ -182,6 +180,8 @@ class CreateServiceDocumentUploadDestination implements \ArrayAccess, \JsonSeria
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\ServiceDocumentUploadDestination
      */
     public function getPayload() : ?ServiceDocumentUploadDestination
     {

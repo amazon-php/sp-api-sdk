@@ -29,8 +29,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateSubscriptionRequest';
 
@@ -236,6 +234,8 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets processing_directive.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective
      */
     public function getProcessingDirective() : ?ProcessingDirective
     {

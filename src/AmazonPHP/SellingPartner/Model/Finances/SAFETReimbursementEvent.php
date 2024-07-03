@@ -29,8 +29,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SAFETReimbursementEvent';
 
@@ -240,6 +238,8 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets reimbursed_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getReimbursedAmount() : ?Currency
     {

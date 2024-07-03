@@ -29,8 +29,6 @@ class ChargeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ChargeComponent';
 
@@ -202,6 +200,8 @@ class ChargeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets charge_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getChargeAmount() : ?Currency
     {

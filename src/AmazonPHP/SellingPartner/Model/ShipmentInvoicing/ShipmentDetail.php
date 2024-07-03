@@ -29,8 +29,6 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentDetail';
 
@@ -342,6 +340,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets shipping_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -464,6 +464,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets buyer_tax_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\BuyerTaxInfo
      */
     public function getBuyerTaxInfo() : ?BuyerTaxInfo
     {
@@ -484,6 +486,8 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets marketplace_tax_info.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\MarketplaceTaxInfo
      */
     public function getMarketplaceTaxInfo() : ?MarketplaceTaxInfo
     {

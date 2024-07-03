@@ -29,8 +29,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PartyIdentification';
 
@@ -212,6 +210,8 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Address
      */
     public function getAddress() : ?Address
     {

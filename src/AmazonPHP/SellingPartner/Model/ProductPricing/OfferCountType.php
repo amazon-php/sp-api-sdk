@@ -29,8 +29,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OfferCountType';
 
@@ -205,6 +203,8 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets fulfillment_channel.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\FulfillmentChannelType
      */
     public function getFulfillmentChannel() : ?FulfillmentChannelType
     {

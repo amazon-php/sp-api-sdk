@@ -29,8 +29,6 @@ class DestinationResourceSpecification implements \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'DestinationResourceSpecification';
 
@@ -186,6 +184,8 @@ class DestinationResourceSpecification implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets sqs.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\SqsResource
      */
     public function getSqs() : ?SqsResource
     {
@@ -206,6 +206,8 @@ class DestinationResourceSpecification implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets event_bridge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\EventBridgeResourceSpecification
      */
     public function getEventBridge() : ?EventBridgeResourceSpecification
     {

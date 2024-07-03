@@ -29,8 +29,6 @@ class StandardHeaderImageTextModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'StandardHeaderImageTextModule';
 
@@ -186,6 +184,8 @@ class StandardHeaderImageTextModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets headline.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -206,6 +206,8 @@ class StandardHeaderImageTextModule implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets block.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock
      */
     public function getBlock() : ?StandardImageTextBlock
     {

@@ -29,8 +29,6 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CompetitivePriceType';
 
@@ -250,6 +248,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType
      */
     public function getPrice() : PriceType
     {
@@ -310,6 +310,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets offer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -350,6 +352,8 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets quantity_discount_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType
      */
     public function getQuantityDiscountType() : ?QuantityDiscountType
     {

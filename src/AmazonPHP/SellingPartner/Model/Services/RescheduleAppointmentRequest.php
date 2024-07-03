@@ -29,8 +29,6 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'RescheduleAppointmentRequest';
 
@@ -188,6 +186,8 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets appointment_time.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Services\AppointmentTimeInput
      */
     public function getAppointmentTime() : AppointmentTimeInput
     {

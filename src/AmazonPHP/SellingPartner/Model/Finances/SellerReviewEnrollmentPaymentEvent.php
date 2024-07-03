@@ -29,8 +29,6 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SellerReviewEnrollmentPaymentEvent';
 
@@ -274,6 +272,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets fee_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FeeComponent
      */
     public function getFeeComponent() : ?FeeComponent
     {
@@ -294,6 +294,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets charge_component.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\ChargeComponent
      */
     public function getChargeComponent() : ?ChargeComponent
     {
@@ -314,6 +316,8 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets total_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

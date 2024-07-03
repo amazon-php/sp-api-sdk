@@ -41,8 +41,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TransportationDetails';
 
@@ -376,6 +374,8 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets carrier_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CarrierDetails
      */
     public function getCarrierDetails() : ?CarrierDetails
     {
@@ -405,7 +405,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets bill_of_lading_number.
      *
-     * @param null|string $bill_of_lading_number Bill Of Lading (BOL) number is the unique number assigned by the vendor. The BOL present in the Shipment Confirmation message ideally matches the paper BOL provided with the shipment, but that is no must. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
+     * @param null|string $bill_of_lading_number The Bill of Lading (BOL) number is a unique number assigned to each shipment of goods by the vendor or shipper during the creation of the Bill of Lading. This number must be unique for every shipment and cannot be a date/time or single character. The BOL numer is mandatory in Shipment Confirmation message for FTL and LTL shipments, and must match the paper BOL provided with the shipment. Instead of BOL, an alternative reference number (like Delivery Note Number) for the shipment can also be sent in this field.
      */
     public function setBillOfLadingNumber(?string $bill_of_lading_number) : self
     {

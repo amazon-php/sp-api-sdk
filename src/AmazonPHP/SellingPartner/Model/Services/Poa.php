@@ -37,8 +37,6 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Poa';
 
@@ -243,6 +241,8 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets appointment_time.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime
      */
     public function getAppointmentTime() : ?AppointmentTime
     {

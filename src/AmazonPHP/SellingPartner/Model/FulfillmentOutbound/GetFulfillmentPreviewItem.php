@@ -29,8 +29,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetFulfillmentPreviewItem';
 
@@ -254,6 +252,8 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {

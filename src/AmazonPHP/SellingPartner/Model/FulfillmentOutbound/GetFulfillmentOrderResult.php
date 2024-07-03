@@ -29,8 +29,6 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetFulfillmentOrderResult';
 
@@ -45,6 +43,7 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
         'fulfillment_shipments' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentShipment[]',
         'return_items' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItem[]',
         'return_authorizations' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnAuthorization[]',
+        'payment_information' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PaymentInformation[]',
     ];
 
     /**
@@ -62,6 +61,7 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
         'fulfillment_shipments' => null,
         'return_items' => null,
         'return_authorizations' => null,
+        'payment_information' => null,
     ];
 
     /**
@@ -76,6 +76,7 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
         'fulfillment_shipments' => 'fulfillmentShipments',
         'return_items' => 'returnItems',
         'return_authorizations' => 'returnAuthorizations',
+        'payment_information' => 'paymentInformation',
     ];
 
     /**
@@ -89,6 +90,7 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
         'fulfillment_shipments' => 'setFulfillmentShipments',
         'return_items' => 'setReturnItems',
         'return_authorizations' => 'setReturnAuthorizations',
+        'payment_information' => 'setPaymentInformation',
     ];
 
     /**
@@ -102,6 +104,7 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
         'fulfillment_shipments' => 'getFulfillmentShipments',
         'return_items' => 'getReturnItems',
         'return_authorizations' => 'getReturnAuthorizations',
+        'payment_information' => 'getPaymentInformation',
     ];
 
     /**
@@ -124,6 +127,7 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
         $this->container['fulfillment_shipments'] = $data['fulfillment_shipments'] ?? null;
         $this->container['return_items'] = $data['return_items'] ?? null;
         $this->container['return_authorizations'] = $data['return_authorizations'] ?? null;
+        $this->container['payment_information'] = $data['payment_information'] ?? null;
     }
 
     /**
@@ -214,6 +218,8 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets fulfillment_order.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrder
      */
     public function getFulfillmentOrder() : FulfillmentOrder
     {
@@ -316,6 +322,28 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
     public function setReturnAuthorizations(array $return_authorizations) : self
     {
         $this->container['return_authorizations'] = $return_authorizations;
+
+        return $this;
+    }
+
+    /**
+     * Gets payment_information.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PaymentInformation[]
+     */
+    public function getPaymentInformation() : ?array
+    {
+        return $this->container['payment_information'];
+    }
+
+    /**
+     * Sets payment_information.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PaymentInformation[] $payment_information an array of various payment attributes related to this fulfillment order
+     */
+    public function setPaymentInformation(?array $payment_information) : self
+    {
+        $this->container['payment_information'] = $payment_information;
 
         return $this;
     }

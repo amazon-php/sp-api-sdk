@@ -29,8 +29,6 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateFulfillmentOrderItem';
 
@@ -289,7 +287,7 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets seller_fulfillment_order_item_id.
      *
-     * @param string $seller_fulfillment_order_item_id A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same SellerSKU. For example, the seller might assign different SellerFulfillmentOrderItemId values to two items in a fulfillment order that share the same SellerSKU but have different GiftMessage values.
+     * @param string $seller_fulfillment_order_item_id A fulfillment order item identifier that the seller creates to track fulfillment order items. Used to disambiguate multiple fulfillment items that have the same `SellerSKU`. For example, the seller might assign different `SellerFulfillmentOrderItemId` values to two items in a fulfillment order that share the same `SellerSKU` but have different `GiftMessage` values.
      */
     public function setSellerFulfillmentOrderItemId(string $seller_fulfillment_order_item_id) : self
     {
@@ -380,6 +378,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_declared_value.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {
@@ -400,6 +400,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -420,6 +422,8 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets per_unit_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {

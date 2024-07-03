@@ -31,8 +31,6 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemQuantity';
 

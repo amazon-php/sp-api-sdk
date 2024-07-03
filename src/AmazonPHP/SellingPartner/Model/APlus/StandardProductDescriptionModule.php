@@ -29,8 +29,6 @@ class StandardProductDescriptionModule implements \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'StandardProductDescriptionModule';
 
@@ -178,6 +176,8 @@ class StandardProductDescriptionModule implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets body.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent
      */
     public function getBody() : ParagraphComponent
     {

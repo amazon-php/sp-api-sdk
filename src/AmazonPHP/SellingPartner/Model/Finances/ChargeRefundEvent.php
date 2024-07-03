@@ -29,8 +29,6 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ChargeRefundEvent';
 
@@ -262,7 +260,7 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets charge_refund_transactions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction[] $charge_refund_transactions a list of `ChargeRefund` transactions
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\ChargeRefundTransaction[] $charge_refund_transactions A list of `ChargeRefund` transactions
      */
     public function setChargeRefundTransactions(?array $charge_refund_transactions) : self
     {

@@ -29,8 +29,6 @@ class GetPackageTrackingDetailsResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetPackageTrackingDetailsResponse';
 
@@ -182,6 +180,8 @@ class GetPackageTrackingDetailsResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PackageTrackingDetails
      */
     public function getPayload() : ?PackageTrackingDetails
     {

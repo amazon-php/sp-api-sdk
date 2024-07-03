@@ -29,8 +29,6 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetSchemaResponse';
 
@@ -188,6 +186,8 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets _links.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSchemaResponseLinks
      */
     public function getLinks() : ?GetSchemaResponseLinks
     {

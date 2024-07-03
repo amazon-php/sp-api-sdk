@@ -29,8 +29,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'LoanServicingEvent';
 
@@ -182,6 +180,8 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets loan_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLoanAmount() : ?Currency
     {

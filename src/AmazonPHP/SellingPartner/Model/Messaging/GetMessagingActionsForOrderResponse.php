@@ -29,8 +29,6 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetMessagingActionsForOrderResponse';
 
@@ -192,6 +190,8 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets _links.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponseLinks
      */
     public function getLinks() : ?GetMessagingActionsForOrderResponseLinks
     {
@@ -212,6 +212,8 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets _embedded.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded
      */
     public function getEmbedded() : ?GetMessagingActionsForOrderResponseEmbedded
     {

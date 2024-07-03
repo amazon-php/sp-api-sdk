@@ -29,8 +29,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'InvoiceItem';
 
@@ -306,6 +304,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets invoiced_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -326,6 +326,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets net_cost.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money
      */
     public function getNetCost() : Money
     {

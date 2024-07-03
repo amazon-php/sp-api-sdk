@@ -33,8 +33,6 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TaxRegistrationDetail';
 
@@ -256,7 +254,7 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets tax_registration_number.
      *
-     * @param string $tax_registration_number Tax registration number for the entity. For example, VAT ID, Consumption Tax ID.
+     * @param string $tax_registration_number Tax registration number for the entity. For example, VAT ID or Consumption Tax ID.
      */
     public function setTaxRegistrationNumber(string $tax_registration_number) : self
     {
@@ -267,6 +265,8 @@ class TaxRegistrationDetail implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets tax_registration_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Address
      */
     public function getTaxRegistrationAddress() : ?Address
     {

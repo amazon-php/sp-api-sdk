@@ -33,8 +33,6 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Invoice';
 
@@ -394,7 +392,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets date.
      *
-     * @param \DateTimeInterface $date defines a date and time according to ISO8601
+     * @param \DateTimeInterface $date Defines a date and time according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>.
      */
     public function setDate(\DateTimeInterface $date) : self
     {
@@ -405,6 +403,8 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets remit_to_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification
      */
     public function getRemitToParty() : PartyIdentification
     {
@@ -425,6 +425,8 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets ship_to_party.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification
      */
     public function getShipToParty() : ?PartyIdentification
     {
@@ -445,6 +447,8 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets ship_from_party.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification
      */
     public function getShipFromParty() : ?PartyIdentification
     {
@@ -465,6 +469,8 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets bill_to_party.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification
      */
     public function getBillToParty() : ?PartyIdentification
     {
@@ -485,6 +491,8 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets payment_terms.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PaymentTerms
      */
     public function getPaymentTerms() : ?PaymentTerms
     {
@@ -505,6 +513,8 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets invoice_total.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getInvoiceTotal() : Money
     {

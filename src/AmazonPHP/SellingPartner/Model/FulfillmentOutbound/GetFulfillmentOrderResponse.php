@@ -29,8 +29,6 @@ class GetFulfillmentOrderResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetFulfillmentOrderResponse';
 
@@ -182,6 +180,8 @@ class GetFulfillmentOrderResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentOrderResult
      */
     public function getPayload() : ?GetFulfillmentOrderResult
     {

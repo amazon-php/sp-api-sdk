@@ -29,8 +29,6 @@ class CancelReservationResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CancelReservationResponse';
 

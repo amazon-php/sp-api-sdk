@@ -29,8 +29,6 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetRatesRequest';
 
@@ -216,6 +214,8 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_to.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipTo() : Address
     {
@@ -236,6 +236,8 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ship_from.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipFrom() : Address
     {

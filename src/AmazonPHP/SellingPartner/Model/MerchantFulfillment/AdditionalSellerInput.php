@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -29,8 +29,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AdditionalSellerInput';
 
@@ -325,7 +323,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets value_as_timestamp.
      *
-     * @param null|\DateTimeInterface $value_as_timestamp value_as_timestamp
+     * @param null|\DateTimeInterface $value_as_timestamp date-time formatted timestamp
      */
     public function setValueAsTimestamp(?\DateTimeInterface $value_as_timestamp) : self
     {
@@ -336,6 +334,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getValueAsAddress() : ?Address
     {
@@ -356,6 +356,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getValueAsWeight() : ?Weight
     {
@@ -376,6 +378,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_dimension.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Length
      */
     public function getValueAsDimension() : ?Length
     {
@@ -396,6 +400,8 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_currency.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getValueAsCurrency() : ?CurrencyAmount
     {

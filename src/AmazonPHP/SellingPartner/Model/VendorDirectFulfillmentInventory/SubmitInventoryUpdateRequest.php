@@ -29,8 +29,6 @@ class SubmitInventoryUpdateRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitInventoryUpdateRequest';
 
@@ -176,6 +174,8 @@ class SubmitInventoryUpdateRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets inventory.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\InventoryUpdate
      */
     public function getInventory() : ?InventoryUpdate
     {

@@ -29,8 +29,6 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetInventorySummariesResult';
 
@@ -188,6 +186,8 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets granularity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FBAInventory\Granularity
      */
     public function getGranularity() : Granularity
     {

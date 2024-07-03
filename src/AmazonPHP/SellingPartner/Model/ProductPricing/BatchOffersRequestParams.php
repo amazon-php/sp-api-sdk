@@ -29,8 +29,6 @@ class BatchOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'BatchOffersRequestParams';
 
@@ -212,6 +210,8 @@ class BatchOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets item_condition.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -232,6 +232,8 @@ class BatchOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets customer_type.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {

@@ -29,8 +29,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'InventorySummary';
 
@@ -298,6 +296,8 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets inventory_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails
      */
     public function getInventoryDetails() : ?InventoryDetails
     {

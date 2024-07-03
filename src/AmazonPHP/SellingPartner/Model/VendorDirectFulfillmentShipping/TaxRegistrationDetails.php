@@ -33,8 +33,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TaxRegistrationDetails';
 
@@ -267,6 +265,8 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_address.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Address
      */
     public function getTaxRegistrationAddress() : ?Address
     {

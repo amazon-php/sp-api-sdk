@@ -29,8 +29,6 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Carton';
 
@@ -260,6 +258,8 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets dimensions.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -280,6 +280,8 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets weight.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {

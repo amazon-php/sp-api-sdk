@@ -29,8 +29,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'InvoiceItem';
 
@@ -312,6 +310,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets invoiced_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -332,6 +332,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets net_cost.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getNetCost() : Money
     {
@@ -361,7 +363,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets purchase_order_number.
      *
-     * @param null|string $purchase_order_number The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
+     * @param null|string $purchase_order_number The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
      */
     public function setPurchaseOrderNumber(?string $purchase_order_number) : self
     {
@@ -381,7 +383,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets hsn_code.
      *
-     * @param null|string $hsn_code HSN Tax code. The HSN number cannot contain alphabets.
+     * @param null|string $hsn_code The HSN Tax code. The HSN number cannot contain alphabets.
      */
     public function setHsnCode(?string $hsn_code) : self
     {
@@ -392,6 +394,8 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets credit_note_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\CreditNoteDetails
      */
     public function getCreditNoteDetails() : ?CreditNoteDetails
     {

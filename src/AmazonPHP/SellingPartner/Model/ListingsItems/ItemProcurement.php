@@ -29,8 +29,6 @@ class ItemProcurement implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ItemProcurement';
 
@@ -178,8 +176,10 @@ class ItemProcurement implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets cost_price.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\Money
      */
-    public function getCostPrice() : ?Money
+    public function getCostPrice() : Money
     {
         return $this->container['cost_price'];
     }

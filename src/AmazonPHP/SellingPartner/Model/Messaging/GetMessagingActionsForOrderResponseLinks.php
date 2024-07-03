@@ -29,8 +29,6 @@ class GetMessagingActionsForOrderResponseLinks implements \ArrayAccess, \JsonSer
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetMessagingActionsForOrderResponse__links';
 
@@ -188,6 +186,8 @@ class GetMessagingActionsForOrderResponseLinks implements \ArrayAccess, \JsonSer
 
     /**
      * Gets self.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Messaging\LinkObject
      */
     public function getSelf() : LinkObject
     {

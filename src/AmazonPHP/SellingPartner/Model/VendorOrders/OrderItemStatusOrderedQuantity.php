@@ -29,8 +29,6 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderItemStatus_orderedQuantity';
 
@@ -182,6 +180,8 @@ class OrderItemStatusOrderedQuantity implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ?ItemQuantity
     {

@@ -29,8 +29,6 @@ class PackageItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'PackageItemDetails';
 
@@ -228,6 +226,8 @@ class PackageItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets expiry.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Expiry
      */
     public function getExpiry() : ?Expiry
     {

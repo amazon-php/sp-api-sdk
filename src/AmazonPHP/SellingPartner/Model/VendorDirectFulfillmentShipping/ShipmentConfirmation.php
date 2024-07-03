@@ -29,8 +29,6 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ShipmentConfirmation';
 
@@ -252,6 +250,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets shipment_details.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentDetails
      */
     public function getShipmentDetails() : ShipmentDetails
     {
@@ -272,6 +272,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -292,6 +294,8 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ship_from_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {

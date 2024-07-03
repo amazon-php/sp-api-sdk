@@ -29,8 +29,6 @@ class SubmitShipmentConfirmationsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitShipmentConfirmationsResponse';
 
@@ -182,6 +180,8 @@ class SubmitShipmentConfirmationsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransactionReference
      */
     public function getPayload() : ?TransactionReference
     {

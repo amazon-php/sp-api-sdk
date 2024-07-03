@@ -29,8 +29,6 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ServiceDocumentUploadDestination';
 
@@ -244,6 +242,8 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets encryption_details.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Services\EncryptionDetails
      */
     public function getEncryptionDetails() : EncryptionDetails
     {

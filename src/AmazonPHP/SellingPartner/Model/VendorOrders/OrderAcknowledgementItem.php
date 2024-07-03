@@ -29,8 +29,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderAcknowledgementItem';
 
@@ -292,6 +290,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets ordered_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ItemQuantity
     {
@@ -312,6 +312,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets net_cost.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getNetCost() : ?Money
     {
@@ -332,6 +334,8 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets list_price.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money
      */
     public function getListPrice() : ?Money
     {

@@ -29,8 +29,6 @@ class AddAppointmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AddAppointmentRequest';
 
@@ -178,6 +176,8 @@ class AddAppointmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets appointment_time.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\Services\AppointmentTimeInput
      */
     public function getAppointmentTime() : AppointmentTimeInput
     {

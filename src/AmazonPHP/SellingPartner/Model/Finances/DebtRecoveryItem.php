@@ -29,8 +29,6 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'DebtRecoveryItem';
 
@@ -198,6 +196,8 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets recovery_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRecoveryAmount() : ?Currency
     {
@@ -218,6 +218,8 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets original_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getOriginalAmount() : ?Currency
     {

@@ -29,8 +29,6 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderItemAcknowledgement';
 
@@ -260,6 +258,8 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledged_quantity.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ItemQuantity
      */
     public function getAcknowledgedQuantity() : ItemQuantity
     {

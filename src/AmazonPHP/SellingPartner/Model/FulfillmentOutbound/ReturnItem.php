@@ -29,8 +29,6 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ReturnItem';
 
@@ -376,6 +374,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets status.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentReturnItemStatus
      */
     public function getStatus() : FulfillmentReturnItemStatus
     {
@@ -405,7 +405,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets status_changed_date.
      *
-     * @param \DateTimeInterface $status_changed_date status_changed_date
+     * @param \DateTimeInterface $status_changed_date Date timestamp
      */
     public function setStatusChangedDate(\DateTimeInterface $status_changed_date) : self
     {
@@ -425,7 +425,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets return_authorization_id.
      *
-     * @param null|string $return_authorization_id Identifies the return authorization used to return this item. See ReturnAuthorization.
+     * @param null|string $return_authorization_id Identifies the return authorization used to return this item. Refer to `ReturnAuthorization`.
      */
     public function setReturnAuthorizationId(?string $return_authorization_id) : self
     {
@@ -436,6 +436,8 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets return_received_condition.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItemDisposition
      */
     public function getReturnReceivedCondition() : ?ReturnItemDisposition
     {

@@ -29,8 +29,6 @@ class InvalidReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'InvalidReturnItem';
 
@@ -238,6 +236,8 @@ class InvalidReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets invalid_item_reason.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\InvalidItemReason
      */
     public function getInvalidItemReason() : InvalidItemReason
     {

@@ -45,8 +45,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'Shipment';
 
@@ -647,6 +645,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets selling_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -667,6 +667,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_from_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -687,6 +689,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets ship_to_party.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification
      */
     public function getShipToParty() : PartyIdentification
     {
@@ -707,6 +711,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets shipment_measurements.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportShipmentMeasurements
      */
     public function getShipmentMeasurements() : ?TransportShipmentMeasurements
     {
@@ -727,6 +733,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets collect_freight_pickup_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CollectFreightPickupDetails
      */
     public function getCollectFreightPickupDetails() : ?CollectFreightPickupDetails
     {
@@ -769,6 +777,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets import_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ImportDetails
      */
     public function getImportDetails() : ?ImportDetails
     {
@@ -811,6 +821,8 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets transportation_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetails
      */
     public function getTransportationDetails() : ?TransportationDetails
     {

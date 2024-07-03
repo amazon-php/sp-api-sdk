@@ -36,7 +36,7 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
      * Operation submitInventoryUpdate.
      *
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body The request body that contains the inventory update data to submit. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -133,7 +133,7 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
      * Create request for operation 'submitInventoryUpdate'.
      *
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body The request body that contains the inventory update data to submit. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

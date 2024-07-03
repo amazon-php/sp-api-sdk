@@ -29,8 +29,6 @@ class SubmitAcknowledgementRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'SubmitAcknowledgementRequest';
 
@@ -184,7 +182,7 @@ class SubmitAcknowledgementRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets acknowledgements.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderAcknowledgement[] $acknowledgements acknowledgements
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderAcknowledgement[] $acknowledgements an array of order acknowledgements to be submitted
      */
     public function setAcknowledgements(?array $acknowledgements) : self
     {

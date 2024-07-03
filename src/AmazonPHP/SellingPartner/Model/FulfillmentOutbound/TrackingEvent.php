@@ -29,8 +29,6 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'TrackingEvent';
 
@@ -217,7 +215,7 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets event_date.
      *
-     * @param \DateTimeInterface $event_date event_date
+     * @param \DateTimeInterface $event_date Date timestamp
      */
     public function setEventDate(\DateTimeInterface $event_date) : self
     {
@@ -228,6 +226,8 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets event_address.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingAddress
      */
     public function getEventAddress() : TrackingAddress
     {
@@ -248,6 +248,8 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets event_code.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\EventCode
      */
     public function getEventCode() : EventCode
     {

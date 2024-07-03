@@ -29,8 +29,6 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CreateDestinationResponse';
 
@@ -182,6 +180,8 @@ class CreateDestinationResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Destination
      */
     public function getPayload() : ?Destination
     {

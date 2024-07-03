@@ -29,8 +29,6 @@ class GetServiceJobsResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetServiceJobsResponse';
 
@@ -182,6 +180,8 @@ class GetServiceJobsResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Services\JobListing
      */
     public function getPayload() : ?JobListing
     {

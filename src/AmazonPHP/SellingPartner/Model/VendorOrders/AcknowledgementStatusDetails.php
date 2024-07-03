@@ -29,8 +29,6 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'AcknowledgementStatusDetails';
 
@@ -201,7 +199,7 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets acknowledgement_date.
      *
-     * @param null|\DateTimeInterface $acknowledgement_date The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
+     * @param null|\DateTimeInterface $acknowledgement_date The date when the line item was confirmed by the vendor. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
      */
     public function setAcknowledgementDate(?\DateTimeInterface $acknowledgement_date) : self
     {
@@ -212,6 +210,8 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets accepted_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getAcceptedQuantity() : ?ItemQuantity
     {
@@ -232,6 +232,8 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets rejected_quantity.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getRejectedQuantity() : ?ItemQuantity
     {

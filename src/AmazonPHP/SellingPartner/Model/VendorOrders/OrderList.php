@@ -29,8 +29,6 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'OrderList';
 
@@ -182,6 +180,8 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets pagination.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Pagination
      */
     public function getPagination() : ?Pagination
     {
@@ -213,7 +213,7 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets orders.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Order[] $orders orders
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Order[] $orders represents an individual order within the `OrderList`
      */
     public function setOrders(?array $orders) : self
     {

@@ -29,8 +29,6 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'CODSettings';
 
@@ -236,6 +234,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets cod_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getCodCharge() : ?Money
     {
@@ -256,6 +256,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets cod_charge_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getCodChargeTax() : ?Money
     {
@@ -276,6 +278,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping_charge.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getShippingCharge() : ?Money
     {
@@ -296,6 +300,8 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets shipping_charge_tax.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getShippingChargeTax() : ?Money
     {

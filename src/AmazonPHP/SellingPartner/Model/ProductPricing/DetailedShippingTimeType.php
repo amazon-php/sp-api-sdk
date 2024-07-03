@@ -35,8 +35,6 @@ class DetailedShippingTimeType implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'DetailedShippingTimeType';
 

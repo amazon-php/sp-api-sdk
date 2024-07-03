@@ -63,8 +63,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'ImportDetails';
 
@@ -350,7 +348,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets port_of_delivery.
      *
-     * @param null|string $port_of_delivery The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the internationalCommercialTerms is FOB.
+     * @param null|string $port_of_delivery The port where goods on an import purchase order must be delivered by the vendor. This should only be specified when the `internationalCommercialTerms` is `FOB`.
      */
     public function setPortOfDelivery(?string $port_of_delivery) : self
     {
@@ -370,7 +368,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets import_containers.
      *
-     * @param null|string $import_containers Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: $NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE. The list of values for the container type is: 40'(40-foot container), 40'HC (40-foot high-capacity container), 45', 45'HC, 30', 30'HC, 20', 20'HC.
+     * @param null|string $import_containers Types and numbers of container(s) for import purchase orders. Can be a comma-separated list if the shipment has multiple containers. HC signifies a high-capacity container. Free-text field, limited to 64 characters. The format will be a comma-delimited list containing values of the type: `$NUMBER_OF_CONTAINERS_OF_THIS_TYPE-$CONTAINER_TYPE`. The list of values for the container type is: `40'`(40-foot container), `40'HC` (40-foot high-capacity container), `45'`, `45'HC`, `30'`, `30'HC`, `20'`, `20'HC`.
      */
     public function setImportContainers(?string $import_containers) : self
     {

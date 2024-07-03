@@ -29,8 +29,6 @@ class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'FailedAdhocDisbursementEvent';
 
@@ -312,6 +310,8 @@ class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets transfer_amount.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransferAmount() : ?Currency
     {

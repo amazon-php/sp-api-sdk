@@ -29,8 +29,6 @@ class GetInventorySummariesResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * The original name of the model.
-     *
-     * @var string
      */
     protected static string $openAPIModelName = 'GetInventorySummariesResponse';
 
@@ -192,6 +190,8 @@ class GetInventorySummariesResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\GetInventorySummariesResult
      */
     public function getPayload() : ?GetInventorySummariesResult
     {
@@ -212,6 +212,8 @@ class GetInventorySummariesResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets pagination.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\Pagination
      */
     public function getPagination() : ?Pagination
     {
