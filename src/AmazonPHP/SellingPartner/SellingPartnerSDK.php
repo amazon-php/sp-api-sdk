@@ -6,6 +6,8 @@ namespace AmazonPHP\SellingPartner;
 
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDK;
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDKInterface;
+use AmazonPHP\SellingPartner\Api\ApplicationsApi\ApplicationManagementSDK;
+use AmazonPHP\SellingPartner\Api\ApplicationsApi\ApplicationManagementSDKInterface;
 use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDK;
 use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDKInterface;
 use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
@@ -104,6 +106,11 @@ final class SellingPartnerSDK
     public function aPlus() : APlusSDKInterface
     {
         return $this->instantiateSDK(APlusSDK::class);
+    }
+
+    public function applicationManagement() : ApplicationManagementSDKInterface
+    {
+        return $this->instantiateSDK(ApplicationManagementSDK::class);
     }
 
     public function catalogItem() : CatalogItemSDKInterface

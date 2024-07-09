@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace AmazonPHP\Test\AmazonPHP\SellingPartner\Tests\Unit;
 
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDK;
+use AmazonPHP\SellingPartner\Api\ApplicationsApi\ApplicationManagementSDK;
 use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDK;
 use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
 use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDK;
@@ -59,6 +60,7 @@ final class SellingPartnerSDKTest extends TestCase
     private array $sdkMap = [
         'oAuth'                   => OAuth::class,
         'aPlus'                   => APlusSDK::class,
+        'applicationManagement'   => ApplicationManagementSDK::class,
         'catalogItem'             => CatalogItemSDK::class,
         'fbaInbound'              => FBAInboundSDK::class,
         'fbaInventory'            => FBAInventorySDK::class,

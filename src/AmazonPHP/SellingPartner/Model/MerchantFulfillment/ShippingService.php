@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -301,7 +301,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipping_service_name.
      *
-     * @param string $shipping_service_name A plain text representation of a carrier's shipping service. For example, UPS Ground or FedEx Standard Overnight.
+     * @param string $shipping_service_name A plain text representation of a carrier's shipping service. For example, \"UPS Ground\" or \"FedEx Standard Overnight\".
      */
     public function setShippingServiceName(string $shipping_service_name) : self
     {

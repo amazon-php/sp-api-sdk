@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -225,7 +225,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Sets rejected_shipping_service_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\RejectedShippingService[] $rejected_shipping_service_list List of services that are for some reason unavailable for this request
+     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\RejectedShippingService[] $rejected_shipping_service_list List of services that were for some reason unavailable for this request
      */
     public function setRejectedShippingServiceList(?array $rejected_shipping_service_list) : self
     {

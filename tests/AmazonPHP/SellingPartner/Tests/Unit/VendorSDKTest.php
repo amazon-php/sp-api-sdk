@@ -7,6 +7,7 @@ namespace AmazonPHP\Test\AmazonPHP\SellingPartner\Tests\Unit;
 use AmazonPHP\SellingPartner\Api\UpdateInventoryApi\VendorDirectFulfillmentInventorySDK;
 use AmazonPHP\SellingPartner\Api\VendorInvoiceApi\VendorDirectFulfillmentPaymentsSDK;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
+use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorOrdersSDK;
 use AmazonPHP\SellingPartner\Api\VendorPaymentsApi\VendorInvoicesSDK;
 use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorShipmentsSDK;
 use AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK;
@@ -36,7 +37,7 @@ final class VendorSDKTest extends TestCase
     private ?LoggerInterface $logger;
 
     private array $sdkMap = [
-        'ordersSDK'                          => VendorDirectFulfillmentOrdersSDK::class,
+        'ordersSDK'                          => VendorOrdersSDK::class,
         'invoicesSDK'                        => VendorInvoicesSDK::class,
         'shipmentsSDK'                       => VendorShipmentsSDK::class,
         'transactionStatusSDK'               => VendorTransactionStatusSDK::class,

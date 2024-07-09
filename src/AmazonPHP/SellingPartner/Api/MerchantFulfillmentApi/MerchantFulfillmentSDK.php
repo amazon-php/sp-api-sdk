@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -226,7 +226,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Operation createShipment.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body Request schema for &#x60;CreateShipment&#x60; operation. (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body Request schema for CreateShipment operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -322,7 +322,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Create request for operation 'createShipment'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body Request schema for &#x60;CreateShipment&#x60; operation. (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CreateShipmentRequest $body Request schema for CreateShipment operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -412,7 +412,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Operation getAdditionalSellerInputs.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body Request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body Request schema for GetAdditionalSellerInputs operation. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -508,7 +508,7 @@ final class MerchantFulfillmentSDK implements MerchantFulfillmentSDKInterface
     /**
      * Create request for operation 'getAdditionalSellerInputs'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body Request schema for the &#x60;GetAdditionalSellerInputs&#x60; operation. (required)
+     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsRequest $body Request schema for GetAdditionalSellerInputs operation. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
