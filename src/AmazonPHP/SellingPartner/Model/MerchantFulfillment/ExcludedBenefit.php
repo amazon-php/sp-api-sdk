@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
+ * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -186,7 +186,7 @@ class ExcludedBenefit implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets benefit.
      *
-     * @param null|string $benefit a benefit that is being excluded from a shipment
+     * @param null|string $benefit benefit that is being excluded from a shipment
      */
     public function setBenefit(?string $benefit) : self
     {
@@ -208,7 +208,7 @@ class ExcludedBenefit implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets reason_codes.
      *
-     * @param null|string[] $reason_codes list of reasons (for example, `LATE_DELIVERY_RISK`) why a benefit is excluded for a shipping offer
+     * @param null|string[] $reason_codes List of reasons (eg. LATE_DELIVERY_RISK, etc.) indicating why a benefit is excluded for a shipping offer.
      */
     public function setReasonCodes(?array $reason_codes) : self
     {

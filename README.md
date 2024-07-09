@@ -62,7 +62,7 @@ This library is not in a stable stage yet, please use with caution.
 | [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) | 🚫         |
 | [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | 🚫         |
 | [5.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | ✅         |
-| [6.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | ✅         |
+| [6.x](https://github.com/amazon-php/sp-api-sdk/tree/6.x) | ✅         |
 
 Version <s> [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to
 make a little more sense of what Amazon is doing with using "tags" in their Open API specification.
@@ -92,6 +92,7 @@ Some minor adjustments were made in the template files for models/api.
 - Additions
   - Fulfillment Inbound API v2024-03-20
   - Amazon Warehousing and Distribution API v2024-05-09
+  - Application Management API v2023-11-30
 - Removals
   - Fulfillment Inbound API v0
   - Authorization API
@@ -103,6 +104,7 @@ Some minor adjustments were made in the template files for models/api.
 [SellingPartnerSDK](/src/AmazonPHP/SellingPartner/SellingPartnerSDK.php) - Facade for all SDK's
 
 - [APlusSDK](/src/AmazonPHP/SellingPartner/Api/AplusContentApi/APlusSDK.php)
+- [ApplicationManagement](/src/AmazonPHP/SellingPartner/Api/ApplicationsApi/ApplicationManagementSDK.php)
 - [CatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogApi/CatalogItemSDK.php)
 - [FBAInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FBAInboundSDK.php)
 - [FBAInventorySDK](/src/AmazonPHP/SellingPartner/Api/FbaInventoryApi/FBAInventorySDK.php)
