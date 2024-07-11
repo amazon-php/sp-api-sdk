@@ -61,7 +61,7 @@ This library is not in a stable stage yet, please use with caution.
 | [2.x](https://github.com/amazon-php/sp-api-sdk/tree/2.x) | 🚫         |
 | [3.x](https://github.com/amazon-php/sp-api-sdk/tree/3.x) | 🚫         |
 | [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | 🚫         |
-| [5.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | ✅         |
+| [5.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | 🚫         |
 | [6.x](https://github.com/amazon-php/sp-api-sdk/tree/6.x) | ✅         |
 
 Version <s> [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to
