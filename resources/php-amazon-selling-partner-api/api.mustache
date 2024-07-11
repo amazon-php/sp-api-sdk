@@ -66,14 +66,18 @@ final {{#operations}}class {{packageName}}SDK implements {{packageName}}SDKInter
 {{#allParams}}
      * @param {{{dataType}}}{{^required}}|null{{/required}} ${{paramName}} {{#description}} {{description}}{{/description}}{{^description}} {{paramName}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
 {{/allParams}}
-     *
+     *{{#isDeprecated}}
+     * @deprecated
+     *{{/isDeprecated}}
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      * @return {{#returnType}}{{returnType}}{{/returnType}}{{^returnType}}null{{/returnType}}
      */
     public function {{operationId}}(AccessToken $accessToken, string $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^required}} = {{#defaultValue}}{{{.}}}{{/defaultValue}}{{^defaultValue}}null{{/defaultValue}}{{/required}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}})
     {
-        $request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
+        {{#isDeprecated}}trigger_error('Method ' . __METHOD__ . ' is deprecated', E_USER_DEPRECATED);
+
+        {{/isDeprecated}}$request = $this->{{operationId}}Request($accessToken, $region{{^vendorExtensions.x-group-parameters}}{{#allParams}}, ${{paramName}}{{^-last}}{{/-last}}{{/allParams}}{{/vendorExtensions.x-group-parameters}}{{#vendorExtensions.x-group-parameters}}, $associative_array{{/vendorExtensions.x-group-parameters}});
 
         $this->configuration->extensions()->preRequest('{{packageName}}', '{{operationId}}', $request);
 
