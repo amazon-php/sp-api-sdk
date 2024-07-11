@@ -20,6 +20,8 @@ use AmazonPHP\SellingPartner\Api\FbaInboundApi\FBAInboundSDK;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FBAInboundSDKInterface;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundSDK;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundSDKInterface;
+use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundV0SDK;
+use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundV0SDKInterface;
 use AmazonPHP\SellingPartner\Api\FbaInventoryApi\FBAInventorySDK;
 use AmazonPHP\SellingPartner\Api\FbaInventoryApi\FBAInventorySDKInterface;
 use AmazonPHP\SellingPartner\Api\FbaOutboundApi\FulfillmentOutboundSDK;
@@ -136,6 +138,11 @@ final class SellingPartnerSDK
     public function finances() : FinancesSDKInterface
     {
         return $this->instantiateSDK(FinancesSDK::class);
+    }
+
+    public function fulfillmentInboundV0() : FulfillmentInboundV0SDKInterface
+    {
+        return $this->instantiateSDK(FulfillmentInboundV0SDK::class);
     }
 
     public function fulfillmentInbound() : FulfillmentInboundSDKInterface

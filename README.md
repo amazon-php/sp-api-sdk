@@ -91,10 +91,10 @@ Some minor adjustments were made in the template files for models/api.
 [6.x](https://github.com/amazon-php/sp-api-sdk/tree/6.x) comes with changes to the Fulfillment Inbound API as well as other additions and removals.
 - Additions
   - Fulfillment Inbound API v2024-03-20
+    - This is a major change. The ```v2024-03-20``` version takes the place of the ```V0``` version in namespace whereas the ```V0``` version SDK is now ```FulfillmentInboundV0SDK``` and the ```V0``` models are within the ```Model\FulfillmentInboundV0``` directory.
   - Amazon Warehousing and Distribution API v2024-05-09
   - Application Management API v2023-11-30
 - Removals
-  - Fulfillment Inbound API v0
   - Authorization API
   - FBA Small and Light API
     - You can retrieve the new fees for affected products by using the Product Fees API and/or the relevant FBA and Referral Fee reports.
@@ -108,6 +108,7 @@ Some minor adjustments were made in the template files for models/api.
 - [CatalogItemSDK](/src/AmazonPHP/SellingPartner/Api/CatalogApi/CatalogItemSDK.php)
 - [FBAInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FBAInboundSDK.php)
 - [FBAInventorySDK](/src/AmazonPHP/SellingPartner/Api/FbaInventoryApi/FBAInventorySDK.php)
+- [FulfillmentInboundV0SDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FulfillmentInboundV0SDK.php)
 - [FulfillmentInboundSDK](/src/AmazonPHP/SellingPartner/Api/FbaInboundApi/FulfillmentInboundSDK.php)
 - [FeedsSDK](/src/AmazonPHP/SellingPartner/Api/FeedsApi/FeedsSDK.php)
 - [FinancesSDK](/src/AmazonPHP/SellingPartner/Api/DefaultApi/FinancesSDK.php)

@@ -12,6 +12,7 @@ use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDK;
 use AmazonPHP\SellingPartner\Api\DefinitionsApi\ProductTypesDefinitionsSDK;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FBAInboundSDK;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundSDK;
+use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundV0SDK;
 use AmazonPHP\SellingPartner\Api\FbaInventoryApi\FBAInventorySDK;
 use AmazonPHP\SellingPartner\Api\FbaOutboundApi\FulfillmentOutboundSDK;
 use AmazonPHP\SellingPartner\Api\FeedsApi\FeedsSDK;
@@ -66,6 +67,7 @@ final class SellingPartnerSDKTest extends TestCase
         'fbaInventory'            => FBAInventorySDK::class,
         'feeds'                   => FeedsSDK::class,
         'finances'                => FinancesSDK::class,
+        'fulfillmentInboundV0'    => FulfillmentInboundV0SDK::class,
         'fulfillmentInbound'      => FulfillmentInboundSDK::class,
         'fulfillmentOutbound'     => FulfillmentOutboundSDK::class,
         'listingsItems'           => ListingsItemsSDK::class,
