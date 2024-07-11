@@ -1,4 +1,4 @@
-## [Unreleased] - 2024-07-11
+## [6.0.0] - 2024-07-11
 
 ### Added
 - [#645](https://github.com/amazon-php/sp-api-sdk/pull/645) - **Add @deprecated and deprecation notice to API methods marked as such.** - [@jasonhebert](https://github.com/jasonhebert)
@@ -18,7 +18,7 @@
 
 ### Fixed
 - [#646](https://github.com/amazon-php/sp-api-sdk/pull/646) - **Update Github workflows for the 6.x branch** - [@jasonhebert](https://github.com/jasonhebert)
-- [#641](https://github.com/amazon-php/sp-api-sdk/pull/641) - **Modify Vendor SDK to return VendorOrdersSDK for  the ordersSDK() method.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#641](https://github.com/amazon-php/sp-api-sdk/pull/641) - **Modify Vendor SDK to return VendorOrdersSDK for the ordersSDK() method.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#635](https://github.com/amazon-php/sp-api-sdk/pull/635) - **Revert Rector version 1.2.0 back to version 0.15.19** - [@jasonhebert](https://github.com/jasonhebert)
 - [#634](https://github.com/amazon-php/sp-api-sdk/pull/634) - **Fixed errors related to Rector upgrade to version 1.2.0** - [@jasonhebert](https://github.com/jasonhebert)
 
