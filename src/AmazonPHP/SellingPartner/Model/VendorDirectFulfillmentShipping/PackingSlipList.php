@@ -180,8 +180,6 @@ class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination
      */
     public function getPagination() : ?Pagination
     {

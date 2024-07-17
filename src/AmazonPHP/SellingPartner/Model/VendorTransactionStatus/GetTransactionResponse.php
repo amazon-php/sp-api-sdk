@@ -180,8 +180,6 @@ class GetTransactionResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorTransactionStatus\TransactionStatus
      */
     public function getPayload() : ?TransactionStatus
     {

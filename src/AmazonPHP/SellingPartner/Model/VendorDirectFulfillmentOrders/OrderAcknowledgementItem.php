@@ -300,8 +300,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets acknowledgement_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\AcknowledgementStatus
      */
     public function getAcknowledgementStatus() : AcknowledgementStatus
     {
@@ -322,8 +320,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -344,8 +340,6 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {

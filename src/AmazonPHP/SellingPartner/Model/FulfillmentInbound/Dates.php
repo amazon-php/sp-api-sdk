@@ -174,8 +174,6 @@ class Dates implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets ready_to_ship_window.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Window
      */
     public function getReadyToShipWindow() : ?Window
     {

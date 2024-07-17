@@ -294,8 +294,6 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets charge_amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getChargeAmount() : Money
     {

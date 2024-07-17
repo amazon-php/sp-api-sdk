@@ -256,8 +256,6 @@ class ReturnAuthorization implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets return_to_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getReturnToAddress() : Address
     {

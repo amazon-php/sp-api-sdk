@@ -484,8 +484,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets cost_of_points_granted.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getCostOfPointsGranted() : ?Currency
     {
@@ -506,8 +504,6 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets cost_of_points_returned.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getCostOfPointsReturned() : ?Currency
     {

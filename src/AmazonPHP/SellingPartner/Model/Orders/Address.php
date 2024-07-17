@@ -551,8 +551,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets extended_fields.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\AddressExtendedFields
      */
     public function getExtendedFields() : ?AddressExtendedFields
     {

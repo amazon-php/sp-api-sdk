@@ -184,8 +184,6 @@ class PrepDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets prep_instruction.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepInstruction
      */
     public function getPrepInstruction() : PrepInstruction
     {
@@ -206,8 +204,6 @@ class PrepDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets prep_owner.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepOwner
      */
     public function getPrepOwner() : PrepOwner
     {

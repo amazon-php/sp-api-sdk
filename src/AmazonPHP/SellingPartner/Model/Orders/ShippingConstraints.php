@@ -171,8 +171,6 @@ class ShippingConstraints implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets pallet_delivery.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ConstraintType
      */
     public function getPalletDelivery() : ?ConstraintType
     {

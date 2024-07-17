@@ -188,8 +188,6 @@ class Quote implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets cost.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Currency
      */
     public function getCost() : Currency
     {

@@ -284,8 +284,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets offer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType
      */
     public function getOfferType() : ?OfferCustomerType
     {
@@ -326,8 +324,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets quantity_discount_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType
      */
     public function getQuantityDiscountType() : ?QuantityDiscountType
     {
@@ -348,8 +344,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets landed_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getLandedPrice() : ?MoneyType
     {
@@ -370,8 +364,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets listing_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getListingPrice() : MoneyType
     {
@@ -392,8 +384,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType
      */
     public function getShipping() : ?MoneyType
     {
@@ -414,8 +404,6 @@ class LowestPriceType implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets points.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points
      */
     public function getPoints() : ?Points
     {

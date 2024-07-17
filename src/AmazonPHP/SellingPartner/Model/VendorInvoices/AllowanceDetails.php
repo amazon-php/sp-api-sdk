@@ -279,8 +279,6 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets allowance_amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getAllowanceAmount() : Money
     {

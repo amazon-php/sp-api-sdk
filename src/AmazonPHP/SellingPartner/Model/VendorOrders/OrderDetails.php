@@ -430,8 +430,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets import_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ImportDetails
      */
     public function getImportDetails() : ?ImportDetails
     {
@@ -492,8 +490,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets buying_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getBuyingParty() : ?PartyIdentification
     {
@@ -514,8 +510,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets selling_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : ?PartyIdentification
     {
@@ -536,8 +530,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets ship_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getShipToParty() : ?PartyIdentification
     {
@@ -558,8 +550,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets bill_to_party.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getBillToParty() : ?PartyIdentification
     {

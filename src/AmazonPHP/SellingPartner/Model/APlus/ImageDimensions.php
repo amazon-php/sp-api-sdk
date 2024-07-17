@@ -188,8 +188,6 @@ class ImageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets width.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits
      */
     public function getWidth() : IntegerWithUnits
     {
@@ -210,8 +208,6 @@ class ImageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets height.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits
      */
     public function getHeight() : IntegerWithUnits
     {

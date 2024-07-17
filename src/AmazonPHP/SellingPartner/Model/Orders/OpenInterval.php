@@ -184,8 +184,6 @@ class OpenInterval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets start_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OpenTimeInterval
      */
     public function getStartTime() : ?OpenTimeInterval
     {
@@ -206,8 +204,6 @@ class OpenInterval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets end_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OpenTimeInterval
      */
     public function getEndTime() : ?OpenTimeInterval
     {

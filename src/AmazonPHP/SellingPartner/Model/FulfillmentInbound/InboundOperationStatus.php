@@ -286,8 +286,6 @@ class InboundOperationStatus implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets operation_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\OperationStatus
      */
     public function getOperationStatus() : OperationStatus
     {

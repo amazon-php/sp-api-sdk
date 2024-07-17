@@ -180,8 +180,6 @@ class RetrieveShippingLabelResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\RetrieveShippingLabelResult
      */
     public function getPayload() : ?RetrieveShippingLabelResult
     {

@@ -206,8 +206,6 @@ class PartneredSmallParcelDataOutput implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets partnered_estimate.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredEstimate
      */
     public function getPartneredEstimate() : ?PartneredEstimate
     {

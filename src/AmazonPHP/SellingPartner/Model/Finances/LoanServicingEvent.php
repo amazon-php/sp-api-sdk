@@ -180,8 +180,6 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets loan_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getLoanAmount() : ?Currency
     {

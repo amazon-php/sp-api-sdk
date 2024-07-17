@@ -204,8 +204,6 @@ class Weight implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets unit.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfWeight
      */
     public function getUnit() : UnitOfWeight
     {

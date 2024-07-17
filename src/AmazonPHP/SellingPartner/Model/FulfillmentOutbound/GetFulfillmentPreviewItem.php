@@ -252,8 +252,6 @@ class GetFulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets per_unit_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {

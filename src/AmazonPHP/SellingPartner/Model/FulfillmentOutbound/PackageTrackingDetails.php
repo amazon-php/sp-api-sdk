@@ -416,8 +416,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ship_to_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingAddress
      */
     public function getShipToAddress() : ?TrackingAddress
     {
@@ -438,8 +436,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets current_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus
      */
     public function getCurrentStatus() : ?CurrentStatus
     {
@@ -500,8 +496,6 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets additional_location_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo
      */
     public function getAdditionalLocationInfo() : ?AdditionalLocationInfo
     {

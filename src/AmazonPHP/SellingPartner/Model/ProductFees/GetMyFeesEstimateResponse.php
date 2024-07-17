@@ -180,8 +180,6 @@ class GetMyFeesEstimateResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateResult
      */
     public function getPayload() : ?GetMyFeesEstimateResult
     {

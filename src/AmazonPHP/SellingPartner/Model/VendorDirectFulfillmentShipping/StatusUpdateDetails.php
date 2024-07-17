@@ -306,8 +306,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets status_location_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Address
      */
     public function getStatusLocationAddress() : Address
     {
@@ -328,8 +326,6 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_schedule.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentSchedule
      */
     public function getShipmentSchedule() : ?ShipmentSchedule
     {

@@ -278,8 +278,6 @@ class SubstitutionOption implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets measurement.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Measurement
      */
     public function getMeasurement() : ?Measurement
     {

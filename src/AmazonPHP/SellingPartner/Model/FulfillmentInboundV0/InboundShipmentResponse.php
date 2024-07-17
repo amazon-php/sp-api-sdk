@@ -180,8 +180,6 @@ class InboundShipmentResponse implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\InboundShipmentResult
      */
     public function getPayload() : ?InboundShipmentResult
     {

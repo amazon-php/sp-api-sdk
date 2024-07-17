@@ -200,8 +200,6 @@ class ChargeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets charge_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getChargeAmount() : ?Currency
     {

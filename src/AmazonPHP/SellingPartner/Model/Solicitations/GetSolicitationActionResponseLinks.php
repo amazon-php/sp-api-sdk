@@ -188,8 +188,6 @@ class GetSolicitationActionResponseLinks implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets self.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject
      */
     public function getSelf() : LinkObject
     {
@@ -210,8 +208,6 @@ class GetSolicitationActionResponseLinks implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets schema.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject
      */
     public function getSchema() : LinkObject
     {

@@ -299,8 +299,6 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets estimated_shipping_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight
      */
     public function getEstimatedShippingWeight() : ?Weight
     {

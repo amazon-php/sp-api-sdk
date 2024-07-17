@@ -184,8 +184,6 @@ class PackageVolume implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets unit_of_measurement.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\VolumeUnitOfMeasurement
      */
     public function getUnitOfMeasurement() : VolumeUnitOfMeasurement
     {

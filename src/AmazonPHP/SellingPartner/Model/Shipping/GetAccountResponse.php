@@ -180,8 +180,6 @@ class GetAccountResponse implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Account
      */
     public function getPayload() : ?Account
     {

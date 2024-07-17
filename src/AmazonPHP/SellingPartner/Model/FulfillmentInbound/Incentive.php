@@ -290,8 +290,6 @@ class Incentive implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets value.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Currency
      */
     public function getValue() : Currency
     {

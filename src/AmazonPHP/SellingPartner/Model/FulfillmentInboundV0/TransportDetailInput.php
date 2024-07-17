@@ -204,8 +204,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets partnered_small_parcel_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredSmallParcelDataInput
      */
     public function getPartneredSmallParcelData() : ?PartneredSmallParcelDataInput
     {
@@ -226,8 +224,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets non_partnered_small_parcel_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\NonPartneredSmallParcelDataInput
      */
     public function getNonPartneredSmallParcelData() : ?NonPartneredSmallParcelDataInput
     {
@@ -248,8 +244,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets partnered_ltl_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredLtlDataInput
      */
     public function getPartneredLtlData() : ?PartneredLtlDataInput
     {
@@ -270,8 +264,6 @@ class TransportDetailInput implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets non_partnered_ltl_data.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\NonPartneredLtlDataInput
      */
     public function getNonPartneredLtlData() : ?NonPartneredLtlDataInput
     {

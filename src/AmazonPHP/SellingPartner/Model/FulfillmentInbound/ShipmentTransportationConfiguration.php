@@ -224,8 +224,6 @@ class ShipmentTransportationConfiguration implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets contact_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ContactInformation
      */
     public function getContactInformation() : ?ContactInformation
     {
@@ -246,8 +244,6 @@ class ShipmentTransportationConfiguration implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets freight_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\FreightInformation
      */
     public function getFreightInformation() : ?FreightInformation
     {
@@ -290,8 +286,6 @@ class ShipmentTransportationConfiguration implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets ready_to_ship_window.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\WindowInput
      */
     public function getReadyToShipWindow() : WindowInput
     {

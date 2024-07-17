@@ -180,8 +180,6 @@ class UpdateReservationResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\UpdateReservationRecord
      */
     public function getPayload() : ?UpdateReservationRecord
     {

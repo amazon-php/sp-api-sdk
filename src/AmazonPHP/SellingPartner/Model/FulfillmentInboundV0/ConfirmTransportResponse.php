@@ -180,8 +180,6 @@ class ConfirmTransportResponse implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\CommonTransportResult
      */
     public function getPayload() : ?CommonTransportResult
     {

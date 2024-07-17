@@ -240,8 +240,6 @@ class BoxUpdateInput implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets content_information_source.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource
      */
     public function getContentInformationSource() : BoxContentInformationSource
     {
@@ -262,8 +260,6 @@ class BoxUpdateInput implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets dimensions.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -346,8 +342,6 @@ class BoxUpdateInput implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight
      */
     public function getWeight() : Weight
     {

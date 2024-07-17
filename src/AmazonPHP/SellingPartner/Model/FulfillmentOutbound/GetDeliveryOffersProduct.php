@@ -186,8 +186,6 @@ class GetDeliveryOffersProduct implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets product_identifier.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ProductIdentifier
      */
     public function getProductIdentifier() : ProductIdentifier
     {
@@ -208,8 +206,6 @@ class GetDeliveryOffersProduct implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Amount
      */
     public function getAmount() : ?Amount
     {

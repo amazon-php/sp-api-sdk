@@ -326,8 +326,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ship_from_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -348,8 +346,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets package_dimensions.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\PackageDimensions
      */
     public function getPackageDimensions() : PackageDimensions
     {
@@ -370,8 +366,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getWeight() : Weight
     {
@@ -432,8 +426,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets shipping_service_options.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions
      */
     public function getShippingServiceOptions() : ShippingServiceOptions
     {
@@ -454,8 +446,6 @@ class ShipmentRequestDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets label_customization.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelCustomization
      */
     public function getLabelCustomization() : ?LabelCustomization
     {

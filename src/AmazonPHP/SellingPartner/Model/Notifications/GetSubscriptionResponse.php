@@ -180,8 +180,6 @@ class GetSubscriptionResponse implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Subscription
      */
     public function getPayload() : ?Subscription
     {

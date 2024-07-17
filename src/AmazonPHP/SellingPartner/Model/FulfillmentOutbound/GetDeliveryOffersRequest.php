@@ -188,8 +188,6 @@ class GetDeliveryOffersRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets product.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersProduct
      */
     public function getProduct() : GetDeliveryOffersProduct
     {
@@ -210,8 +208,6 @@ class GetDeliveryOffersRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets terms.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersTerms
      */
     public function getTerms() : GetDeliveryOffersTerms
     {

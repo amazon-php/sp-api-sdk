@@ -180,8 +180,6 @@ class CancelShipmentResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Shipment
      */
     public function getPayload() : ?Shipment
     {

@@ -208,8 +208,6 @@ class IssueEnforcements implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets exemption.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\IssueExemption
      */
     public function getExemption() : IssueExemption
     {

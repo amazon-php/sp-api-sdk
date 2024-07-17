@@ -252,8 +252,6 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets transaction_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

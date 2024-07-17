@@ -269,8 +269,6 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets variation_theme.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVariationTheme
      */
     public function getVariationTheme() : ?ItemVariationTheme
     {

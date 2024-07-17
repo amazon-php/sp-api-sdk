@@ -180,8 +180,6 @@ class GetPurchaseOrdersStatusResponse implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderListStatus
      */
     public function getPayload() : ?OrderListStatus
     {

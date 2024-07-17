@@ -180,8 +180,6 @@ class GetFulfillmentPreviewResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewResult
      */
     public function getPayload() : ?GetFulfillmentPreviewResult
     {

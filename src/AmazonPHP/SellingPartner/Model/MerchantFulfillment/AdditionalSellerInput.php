@@ -334,8 +334,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address
      */
     public function getValueAsAddress() : ?Address
     {
@@ -356,8 +354,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getValueAsWeight() : ?Weight
     {
@@ -378,8 +374,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_dimension.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Length
      */
     public function getValueAsDimension() : ?Length
     {
@@ -400,8 +394,6 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets value_as_currency.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getValueAsCurrency() : ?CurrencyAmount
     {

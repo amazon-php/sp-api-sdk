@@ -204,8 +204,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets height.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension
      */
     public function getHeight() : ?Dimension
     {
@@ -226,8 +224,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets length.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension
      */
     public function getLength() : ?Dimension
     {
@@ -248,8 +244,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension
      */
     public function getWeight() : ?Dimension
     {
@@ -270,8 +264,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets width.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension
      */
     public function getWidth() : ?Dimension
     {

@@ -218,8 +218,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets contact.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Contact
      */
     public function getContact() : ?Contact
     {
@@ -260,8 +258,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets seller_freight_class.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\SellerFreightClass
      */
     public function getSellerFreightClass() : ?SellerFreightClass
     {
@@ -324,8 +320,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets total_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Weight
      */
     public function getTotalWeight() : ?Weight
     {
@@ -346,8 +340,6 @@ class PartneredLtlDataInput implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets seller_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Amount
      */
     public function getSellerDeclaredValue() : ?Amount
     {

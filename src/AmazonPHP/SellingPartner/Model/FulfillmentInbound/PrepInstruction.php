@@ -202,8 +202,6 @@ class PrepInstruction implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets fee.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Currency
      */
     public function getFee() : ?Currency
     {

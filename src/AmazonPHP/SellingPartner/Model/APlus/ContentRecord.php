@@ -218,8 +218,6 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_metadata.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ContentMetadata
      */
     public function getContentMetadata() : ?ContentMetadata
     {
@@ -240,8 +238,6 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_document.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ContentDocument
      */
     public function getContentDocument() : ?ContentDocument
     {

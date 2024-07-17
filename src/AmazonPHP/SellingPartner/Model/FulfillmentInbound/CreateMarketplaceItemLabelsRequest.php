@@ -274,8 +274,6 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets label_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelPrintType
      */
     public function getLabelType() : LabelPrintType
     {
@@ -358,8 +356,6 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets page_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemLabelPageType
      */
     public function getPageType() : ?ItemLabelPageType
     {

@@ -222,8 +222,6 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets recovery_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getRecoveryAmount() : ?Currency
     {
@@ -244,8 +242,6 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets over_payment_credit.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getOverPaymentCredit() : ?Currency
     {

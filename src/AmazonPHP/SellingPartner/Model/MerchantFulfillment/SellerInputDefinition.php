@@ -310,8 +310,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets input_target.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\InputTargetType
      */
     public function getInputTarget() : ?InputTargetType
     {
@@ -332,8 +330,6 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets stored_value.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInput
      */
     public function getStoredValue() : AdditionalSellerInput
     {

@@ -210,8 +210,6 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets ordered_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ?ItemQuantity
     {
@@ -232,8 +230,6 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets cancelled_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getCancelledQuantity() : ?ItemQuantity
     {

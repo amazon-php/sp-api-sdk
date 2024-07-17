@@ -246,8 +246,6 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets accepted_rate.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate
      */
     public function getAcceptedRate() : AcceptedRate
     {

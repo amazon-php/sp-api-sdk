@@ -223,8 +223,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets association_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\AssociationType
      */
     public function getAssociationType() : ?AssociationType
     {

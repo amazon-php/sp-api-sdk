@@ -228,8 +228,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets regulated_information.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RegulatedInformation
      */
     public function getRegulatedInformation() : RegulatedInformation
     {
@@ -270,8 +268,6 @@ class OrderRegulatedInfo implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets regulated_order_verification_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RegulatedOrderVerificationStatus
      */
     public function getRegulatedOrderVerificationStatus() : RegulatedOrderVerificationStatus
     {

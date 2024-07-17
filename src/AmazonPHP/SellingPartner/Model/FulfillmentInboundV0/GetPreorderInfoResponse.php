@@ -180,8 +180,6 @@ class GetPreorderInfoResponse implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\GetPreorderInfoResult
      */
     public function getPayload() : ?GetPreorderInfoResult
     {

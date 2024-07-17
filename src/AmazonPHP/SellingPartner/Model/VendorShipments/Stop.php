@@ -248,8 +248,6 @@ class Stop implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets location_identification.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Location
      */
     public function getLocationIdentification() : ?Location
     {

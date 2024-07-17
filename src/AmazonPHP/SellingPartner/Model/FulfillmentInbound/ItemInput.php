@@ -264,8 +264,6 @@ class ItemInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets label_owner.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelOwner
      */
     public function getLabelOwner() : LabelOwner
     {
@@ -326,8 +324,6 @@ class ItemInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets prep_owner.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepOwner
      */
     public function getPrepOwner() : PrepOwner
     {

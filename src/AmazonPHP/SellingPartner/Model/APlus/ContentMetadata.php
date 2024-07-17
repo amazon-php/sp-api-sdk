@@ -266,8 +266,6 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentStatus
      */
     public function getStatus() : ContentStatus
     {

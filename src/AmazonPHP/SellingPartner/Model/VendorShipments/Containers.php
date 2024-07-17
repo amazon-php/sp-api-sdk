@@ -355,8 +355,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -377,8 +375,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getWeight() : ?Weight
     {
@@ -439,8 +435,6 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets inner_containers_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\InnerContainersDetails
      */
     public function getInnerContainersDetails() : ?InnerContainersDetails
     {

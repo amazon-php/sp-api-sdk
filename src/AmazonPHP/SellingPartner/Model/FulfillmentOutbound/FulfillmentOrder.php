@@ -410,8 +410,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets shipping_speed_category.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ShippingSpeedCategory
     {
@@ -432,8 +430,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets delivery_window.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryWindow
      */
     public function getDeliveryWindow() : ?DeliveryWindow
     {
@@ -454,8 +450,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets destination_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getDestinationAddress() : Address
     {
@@ -476,8 +470,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_action.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentAction
      */
     public function getFulfillmentAction() : ?FulfillmentAction
     {
@@ -498,8 +490,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_policy.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPolicy
      */
     public function getFulfillmentPolicy() : ?FulfillmentPolicy
     {
@@ -520,8 +510,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets cod_settings.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CODSettings
      */
     public function getCodSettings() : ?CODSettings
     {
@@ -562,8 +550,6 @@ class FulfillmentOrder implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets fulfillment_order_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrderStatus
      */
     public function getFulfillmentOrderStatus() : FulfillmentOrderStatus
     {

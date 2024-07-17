@@ -186,8 +186,6 @@ class UpdateScheduleRecord implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets availability.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord
      */
     public function getAvailability() : ?AvailabilityRecord
     {

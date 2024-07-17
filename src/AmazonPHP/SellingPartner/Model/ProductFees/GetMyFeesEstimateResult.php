@@ -174,8 +174,6 @@ class GetMyFeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets fees_estimate_result.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateResult
      */
     public function getFeesEstimateResult() : ?FeesEstimateResult
     {

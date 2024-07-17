@@ -343,8 +343,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -365,8 +363,6 @@ class OrderStatus implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets ship_to_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification
      */
     public function getShipToParty() : PartyIdentification
     {

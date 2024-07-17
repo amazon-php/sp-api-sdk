@@ -252,8 +252,6 @@ class ValueAddedServiceChargeEvent implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets transaction_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

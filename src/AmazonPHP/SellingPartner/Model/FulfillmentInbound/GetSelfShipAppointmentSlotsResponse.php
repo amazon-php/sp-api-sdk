@@ -186,8 +186,6 @@ class GetSelfShipAppointmentSlotsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination
      */
     public function getPagination() : ?Pagination
     {
@@ -208,8 +206,6 @@ class GetSelfShipAppointmentSlotsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets self_ship_appointment_slots_availability.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SelfShipAppointmentSlotsAvailability
      */
     public function getSelfShipAppointmentSlotsAvailability() : SelfShipAppointmentSlotsAvailability
     {

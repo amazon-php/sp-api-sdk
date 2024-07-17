@@ -197,8 +197,6 @@ class InvalidSKU implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets error_reason.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\ErrorReason
      */
     public function getErrorReason() : ?ErrorReason
     {

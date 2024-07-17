@@ -340,8 +340,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets tax_exclusive_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxExclusiveAmount() : ?Currency
     {
@@ -362,8 +360,6 @@ class NetworkComminglingTransactionEvent implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {

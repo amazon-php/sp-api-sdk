@@ -234,8 +234,6 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets summary.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\TrackingSummary
      */
     public function getSummary() : TrackingSummary
     {

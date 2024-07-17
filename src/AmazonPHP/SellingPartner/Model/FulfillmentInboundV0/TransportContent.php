@@ -200,8 +200,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets transport_header.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportHeader
      */
     public function getTransportHeader() : TransportHeader
     {
@@ -222,8 +220,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets transport_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportDetailOutput
      */
     public function getTransportDetails() : TransportDetailOutput
     {
@@ -244,8 +240,6 @@ class TransportContent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets transport_result.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportResult
      */
     public function getTransportResult() : TransportResult
     {

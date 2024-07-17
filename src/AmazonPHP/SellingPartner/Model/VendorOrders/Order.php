@@ -266,8 +266,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderDetails
      */
     public function getOrderDetails() : ?OrderDetails
     {

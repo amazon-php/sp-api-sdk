@@ -254,8 +254,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets shipping_speed_category.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory
      */
     public function getShippingSpeedCategory() : ShippingSpeedCategory
     {
@@ -276,8 +274,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets scheduled_delivery_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ScheduledDeliveryInfo
      */
     public function getScheduledDeliveryInfo() : ?ScheduledDeliveryInfo
     {
@@ -338,8 +334,6 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets estimated_shipping_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight
      */
     public function getEstimatedShippingWeight() : ?Weight
     {

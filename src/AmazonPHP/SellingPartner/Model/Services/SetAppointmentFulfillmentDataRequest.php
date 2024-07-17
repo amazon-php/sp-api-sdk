@@ -186,8 +186,6 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets fulfillment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentTime
      */
     public function getFulfillmentTime() : ?FulfillmentTime
     {

@@ -210,8 +210,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\Address
      */
     public function getAddress() : ?Address
     {

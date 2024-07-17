@@ -255,8 +255,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets unit.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength
      */
     public function getUnit() : ?UnitOfLength
     {
@@ -277,8 +275,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets predefined_package_dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\PredefinedPackageDimensions
      */
     public function getPredefinedPackageDimensions() : ?PredefinedPackageDimensions
     {

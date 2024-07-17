@@ -210,8 +210,6 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets identifiers.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\IdentifierType
      */
     public function getIdentifiers() : IdentifierType
     {
@@ -276,8 +274,6 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets competitive_pricing.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePricingType
      */
     public function getCompetitivePricing() : ?CompetitivePricingType
     {

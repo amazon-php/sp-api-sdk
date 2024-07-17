@@ -358,8 +358,6 @@ class InboundPlanSummary implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets source_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address
      */
     public function getSourceAddress() : Address
     {

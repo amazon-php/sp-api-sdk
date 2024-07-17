@@ -190,8 +190,6 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets inventory_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryDetails
      */
     public function getInventoryDetails() : ?InventoryDetails
     {

@@ -180,8 +180,6 @@ class GetPrepInstructionsResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\GetPrepInstructionsResult
      */
     public function getPayload() : ?GetPrepInstructionsResult
     {

@@ -292,8 +292,6 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets carrier_code.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\CarrierCode
      */
     public function getCarrierCode() : ?CarrierCode
     {
@@ -334,8 +332,6 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets destination_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\Address
      */
     public function getDestinationAddress() : Address
     {
@@ -396,8 +392,6 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets origin_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\Address
      */
     public function getOriginAddress() : Address
     {
@@ -502,8 +496,6 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentStatus
      */
     public function getShipmentStatus() : InboundShipmentStatus
     {

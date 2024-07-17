@@ -226,8 +226,6 @@ class PackageItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets expiry.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Expiry
      */
     public function getExpiry() : ?Expiry
     {

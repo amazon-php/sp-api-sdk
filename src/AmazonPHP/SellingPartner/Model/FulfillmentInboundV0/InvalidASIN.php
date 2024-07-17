@@ -197,8 +197,6 @@ class InvalidASIN implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets error_reason.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\ErrorReason
      */
     public function getErrorReason() : ?ErrorReason
     {

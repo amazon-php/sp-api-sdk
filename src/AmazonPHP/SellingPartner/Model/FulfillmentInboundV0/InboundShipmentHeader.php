@@ -248,8 +248,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets ship_from_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -310,8 +308,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\ShipmentStatus
      */
     public function getShipmentStatus() : ShipmentStatus
     {
@@ -332,8 +328,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets label_prep_preference.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\LabelPrepPreference
      */
     public function getLabelPrepPreference() : LabelPrepPreference
     {
@@ -354,8 +348,6 @@ class InboundShipmentHeader implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets intended_box_contents_source.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\IntendedBoxContentsSource
      */
     public function getIntendedBoxContentsSource() : ?IntendedBoxContentsSource
     {

@@ -180,8 +180,6 @@ class CreateInboundShipmentPlanResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\CreateInboundShipmentPlanResult
      */
     public function getPayload() : ?CreateInboundShipmentPlanResult
     {

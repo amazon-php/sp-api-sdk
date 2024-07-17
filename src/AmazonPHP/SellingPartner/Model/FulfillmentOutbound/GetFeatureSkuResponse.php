@@ -180,8 +180,6 @@ class GetFeatureSkuResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureSkuResult
      */
     public function getPayload() : ?GetFeatureSkuResult
     {

@@ -174,8 +174,6 @@ class GetSolicitationActionResponseEmbedded implements \ArrayAccess, \JsonSerial
 
     /**
      * Gets schema.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSchemaResponse
      */
     public function getSchema() : ?GetSchemaResponse
     {

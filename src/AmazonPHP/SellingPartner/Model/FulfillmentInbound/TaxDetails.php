@@ -194,8 +194,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Currency
      */
     public function getDeclaredValue() : ?Currency
     {

@@ -216,8 +216,6 @@ class PurchaseShipmentResult implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets service_rate.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\ServiceRate
      */
     public function getServiceRate() : ServiceRate
     {

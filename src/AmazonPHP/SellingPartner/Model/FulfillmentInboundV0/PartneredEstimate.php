@@ -188,8 +188,6 @@ class PartneredEstimate implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Amount
      */
     public function getAmount() : Amount
     {

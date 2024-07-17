@@ -216,8 +216,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus
      */
     public function getStatus() : VerificationStatus
     {
@@ -280,8 +278,6 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets rejection_reason.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\RejectionReason
      */
     public function getRejectionReason() : ?RejectionReason
     {

@@ -373,8 +373,6 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets item_delivery.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ItemDelivery
      */
     public function getItemDelivery() : ?ItemDelivery
     {

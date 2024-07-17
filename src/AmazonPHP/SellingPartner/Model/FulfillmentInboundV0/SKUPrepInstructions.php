@@ -241,8 +241,6 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets barcode_instruction.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\BarcodeInstruction
      */
     public function getBarcodeInstruction() : ?BarcodeInstruction
     {
@@ -263,8 +261,6 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets prep_guidance.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepGuidance
      */
     public function getPrepGuidance() : ?PrepGuidance
     {

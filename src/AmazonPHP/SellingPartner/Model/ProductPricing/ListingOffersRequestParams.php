@@ -220,8 +220,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets item_condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -242,8 +240,6 @@ class ListingOffersRequestParams implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets customer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {

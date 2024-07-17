@@ -256,8 +256,6 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets product.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Product
      */
     public function getProduct() : ?Product
     {

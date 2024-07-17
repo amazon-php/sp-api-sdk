@@ -216,8 +216,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets shipment_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\ShipmentType
      */
     public function getShipmentType() : ShipmentType
     {
@@ -238,8 +236,6 @@ class PutTransportDetailsRequest implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets transport_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportDetailInput
      */
     public function getTransportDetails() : TransportDetailInput
     {

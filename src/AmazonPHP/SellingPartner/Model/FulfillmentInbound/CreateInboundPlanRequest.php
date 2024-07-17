@@ -290,8 +290,6 @@ class CreateInboundPlanRequest implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets source_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\AddressInput
      */
     public function getSourceAddress() : AddressInput
     {

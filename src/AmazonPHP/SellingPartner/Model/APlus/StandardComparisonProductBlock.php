@@ -256,8 +256,6 @@ class StandardComparisonProductBlock implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets image.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {

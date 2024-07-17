@@ -180,8 +180,6 @@ class GetLabelsResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\LabelDownloadURL
      */
     public function getPayload() : ?LabelDownloadURL
     {

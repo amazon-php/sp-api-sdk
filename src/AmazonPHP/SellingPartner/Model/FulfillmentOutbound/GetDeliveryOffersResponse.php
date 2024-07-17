@@ -180,8 +180,6 @@ class GetDeliveryOffersResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersResult
      */
     public function getPayload() : ?GetDeliveryOffersResult
     {

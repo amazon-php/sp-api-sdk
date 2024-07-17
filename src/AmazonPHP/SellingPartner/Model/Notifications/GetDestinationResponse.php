@@ -180,8 +180,6 @@ class GetDestinationResponse implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Destination
      */
     public function getPayload() : ?Destination
     {

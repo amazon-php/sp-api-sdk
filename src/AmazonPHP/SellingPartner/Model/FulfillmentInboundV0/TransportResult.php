@@ -186,8 +186,6 @@ class TransportResult implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets transport_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportStatus
      */
     public function getTransportStatus() : TransportStatus
     {

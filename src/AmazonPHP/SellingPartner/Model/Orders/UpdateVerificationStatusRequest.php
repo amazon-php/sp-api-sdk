@@ -176,8 +176,6 @@ class UpdateVerificationStatusRequest implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets regulated_order_verification_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequestBody
      */
     public function getRegulatedOrderVerificationStatus() : UpdateVerificationStatusRequestBody
     {

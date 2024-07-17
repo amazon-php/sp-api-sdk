@@ -314,8 +314,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets contact.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Contact
      */
     public function getContact() : Contact
     {
@@ -356,8 +354,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_freight_class.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\SellerFreightClass
      */
     public function getSellerFreightClass() : ?SellerFreightClass
     {
@@ -420,10 +416,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets total_weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Weight
      */
-    public function getTotalWeight() : Weight
+    public function getTotalWeight() : ?Weight
     {
         return $this->container['total_weight'];
     }
@@ -442,8 +436,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets seller_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Amount
      */
     public function getSellerDeclaredValue() : ?Amount
     {
@@ -464,8 +456,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets amazon_calculated_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Amount
      */
     public function getAmazonCalculatedValue() : ?Amount
     {
@@ -487,7 +477,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets preview_pickup_date.
      */
-    public function getPreviewPickupDate() : \DateTimeInterface
+    public function getPreviewPickupDate() : ?\DateTimeInterface
     {
         return $this->container['preview_pickup_date'];
     }
@@ -507,7 +497,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets preview_delivery_date.
      */
-    public function getPreviewDeliveryDate() : \DateTimeInterface
+    public function getPreviewDeliveryDate() : ?\DateTimeInterface
     {
         return $this->container['preview_delivery_date'];
     }
@@ -526,10 +516,8 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets preview_freight_class.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\SellerFreightClass
      */
-    public function getPreviewFreightClass() : SellerFreightClass
+    public function getPreviewFreightClass() : ?SellerFreightClass
     {
         return $this->container['preview_freight_class'];
     }
@@ -549,7 +537,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets amazon_reference_id.
      */
-    public function getAmazonReferenceId() : string
+    public function getAmazonReferenceId() : ?string
     {
         return $this->container['amazon_reference_id'];
     }
@@ -569,7 +557,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets is_bill_of_lading_available.
      */
-    public function getIsBillOfLadingAvailable() : bool
+    public function getIsBillOfLadingAvailable() : ?bool
     {
         return $this->container['is_bill_of_lading_available'];
     }
@@ -588,8 +576,6 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets partnered_estimate.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredEstimate
      */
     public function getPartneredEstimate() : ?PartneredEstimate
     {
@@ -611,7 +597,7 @@ class PartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets carrier_name.
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }

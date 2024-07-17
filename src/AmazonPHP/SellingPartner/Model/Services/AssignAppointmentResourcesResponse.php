@@ -180,8 +180,6 @@ class AssignAppointmentResourcesResponse implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesResponsePayload
      */
     public function getPayload() : ?AssignAppointmentResourcesResponsePayload
     {

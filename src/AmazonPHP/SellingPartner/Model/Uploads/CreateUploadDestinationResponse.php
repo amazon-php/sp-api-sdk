@@ -180,8 +180,6 @@ class CreateUploadDestinationResponse implements \ArrayAccess, \JsonSerializable
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Uploads\UploadDestination
      */
     public function getPayload() : ?UploadDestination
     {

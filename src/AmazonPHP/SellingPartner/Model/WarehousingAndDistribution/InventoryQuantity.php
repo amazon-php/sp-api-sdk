@@ -204,8 +204,6 @@ class InventoryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets unit_of_measurement.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryUnitOfMeasurement
      */
     public function getUnitOfMeasurement() : InventoryUnitOfMeasurement
     {

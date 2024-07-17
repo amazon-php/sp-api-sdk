@@ -356,8 +356,6 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets enforcements.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\IssueEnforcements
      */
     public function getEnforcements() : ?IssueEnforcements
     {

@@ -185,7 +185,7 @@ class NonPartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets carrier_name.
      */
-    public function getCarrierName() : string
+    public function getCarrierName() : ?string
     {
         return $this->container['carrier_name'];
     }
@@ -205,7 +205,7 @@ class NonPartneredLtlDataOutput implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets pro_number.
      */
-    public function getProNumber() : string
+    public function getProNumber() : ?string
     {
         return $this->container['pro_number'];
     }

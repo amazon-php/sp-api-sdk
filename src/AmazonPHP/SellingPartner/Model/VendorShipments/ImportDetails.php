@@ -334,8 +334,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets route.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route
      */
     public function getRoute() : ?Route
     {
@@ -376,8 +374,6 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets billable_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight
      */
     public function getBillableWeight() : ?Weight
     {

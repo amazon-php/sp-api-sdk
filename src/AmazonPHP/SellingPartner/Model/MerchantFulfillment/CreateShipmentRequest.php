@@ -214,8 +214,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets shipment_request_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails
      */
     public function getShipmentRequestDetails() : ShipmentRequestDetails
     {
@@ -276,8 +274,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets hazmat_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\HazmatType
      */
     public function getHazmatType() : ?HazmatType
     {
@@ -298,8 +294,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets label_format_option.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormatOptionRequest
      */
     public function getLabelFormatOption() : ?LabelFormatOptionRequest
     {

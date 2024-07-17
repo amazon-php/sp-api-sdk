@@ -214,8 +214,6 @@ class SelfShipAppointmentDetails implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets appointment_slot_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\AppointmentSlotTime
      */
     public function getAppointmentSlotTime() : ?AppointmentSlotTime
     {

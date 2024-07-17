@@ -234,8 +234,6 @@ class CreateSubscriptionRequest implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets processing_directive.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\ProcessingDirective
      */
     public function getProcessingDirective() : ?ProcessingDirective
     {

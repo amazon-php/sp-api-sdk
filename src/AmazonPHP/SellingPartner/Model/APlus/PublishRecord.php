@@ -300,8 +300,6 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets content_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {

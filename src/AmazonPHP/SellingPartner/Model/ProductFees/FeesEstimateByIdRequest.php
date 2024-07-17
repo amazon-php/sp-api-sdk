@@ -194,8 +194,6 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets fees_estimate_request.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest
      */
     public function getFeesEstimateRequest() : ?FeesEstimateRequest
     {
@@ -216,8 +214,6 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets id_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductFees\IdType
      */
     public function getIdType() : IdType
     {

@@ -184,8 +184,6 @@ class TrackingDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets ltl_tracking_detail.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\LtlTrackingDetail
      */
     public function getLtlTrackingDetail() : ?LtlTrackingDetail
     {
@@ -206,8 +204,6 @@ class TrackingDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets spd_tracking_detail.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SpdTrackingDetail
      */
     public function getSpdTrackingDetail() : ?SpdTrackingDetail
     {

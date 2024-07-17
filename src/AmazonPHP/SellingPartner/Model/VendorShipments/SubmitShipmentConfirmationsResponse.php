@@ -180,8 +180,6 @@ class SubmitShipmentConfirmationsResponse implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransactionReference
      */
     public function getPayload() : ?TransactionReference
     {

@@ -212,8 +212,6 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets preferred_delivery_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\PreferredDeliveryTime
      */
     public function getPreferredDeliveryTime() : ?PreferredDeliveryTime
     {

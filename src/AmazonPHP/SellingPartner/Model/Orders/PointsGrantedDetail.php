@@ -200,8 +200,6 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets points_monetary_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPointsMonetaryValue() : ?Money
     {

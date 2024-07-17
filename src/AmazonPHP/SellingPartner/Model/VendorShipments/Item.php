@@ -268,8 +268,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets shipped_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity
      */
     public function getShippedQuantity() : ItemQuantity
     {
@@ -290,8 +288,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemDetails
      */
     public function getItemDetails() : ?ItemDetails
     {

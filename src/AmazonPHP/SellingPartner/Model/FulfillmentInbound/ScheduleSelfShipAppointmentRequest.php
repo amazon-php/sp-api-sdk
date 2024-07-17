@@ -171,8 +171,6 @@ class ScheduleSelfShipAppointmentRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets reason_comment.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ReasonComment
      */
     public function getReasonComment() : ?ReasonComment
     {

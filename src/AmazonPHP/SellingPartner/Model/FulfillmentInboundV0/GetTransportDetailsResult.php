@@ -174,8 +174,6 @@ class GetTransportDetailsResult implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets transport_content.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportContent
      */
     public function getTransportContent() : ?TransportContent
     {

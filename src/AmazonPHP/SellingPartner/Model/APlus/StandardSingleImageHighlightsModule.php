@@ -224,8 +224,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets image.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -246,8 +244,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -268,8 +264,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block1.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock1() : ?StandardTextBlock
     {
@@ -290,8 +284,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block2.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock2() : ?StandardTextBlock
     {
@@ -312,8 +304,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets text_block3.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getTextBlock3() : ?StandardTextBlock
     {
@@ -334,8 +324,6 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets bulleted_list_block.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock
      */
     public function getBulletedListBlock() : ?StandardHeaderTextListBlock
     {

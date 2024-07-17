@@ -328,8 +328,6 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipment_dates.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDates
      */
     public function getShipmentDates() : ShipmentDates
     {

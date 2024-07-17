@@ -432,8 +432,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets rate.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount
      */
     public function getRate() : CurrencyAmount
     {
@@ -454,8 +452,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets shipping_service_options.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions
      */
     public function getShippingServiceOptions() : ShippingServiceOptions
     {
@@ -476,8 +472,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets available_shipping_service_options.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AvailableShippingServiceOptions
      */
     public function getAvailableShippingServiceOptions() : ?AvailableShippingServiceOptions
     {
@@ -562,8 +556,6 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets benefits.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Benefits
      */
     public function getBenefits() : ?Benefits
     {

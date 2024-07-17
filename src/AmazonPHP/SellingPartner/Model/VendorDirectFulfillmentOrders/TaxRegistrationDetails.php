@@ -265,8 +265,6 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_registration_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Address
      */
     public function getTaxRegistrationAddress() : ?Address
     {

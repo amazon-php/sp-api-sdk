@@ -274,8 +274,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets base_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getBaseTax() : ?Currency
     {
@@ -296,8 +294,6 @@ class RetrochargeEvent implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets shipping_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getShippingTax() : ?Currency
     {

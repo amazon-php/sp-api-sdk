@@ -226,8 +226,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -288,8 +286,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets stackability.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Stackability
      */
     public function getStackability() : ?Stackability
     {
@@ -310,8 +306,6 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight
      */
     public function getWeight() : ?Weight
     {

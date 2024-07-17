@@ -200,8 +200,6 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets item_delivery_promise.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ItemDeliveryPromise
      */
     public function getItemDeliveryPromise() : ?ItemDeliveryPromise
     {
