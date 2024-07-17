@@ -1,3 +1,11 @@
+## [Unreleased] - 2024-07-17
+
+### Added
+- [#647](https://github.com/amazon-php/sp-api-sdk/pull/647) - **Add additional rector processing.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Fixed
+- [#647](https://github.com/amazon-php/sp-api-sdk/pull/647) - **Correct the class imports in the Rector config.** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [6.0.0] - 2024-07-11
 
 ### Added
