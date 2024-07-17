@@ -180,8 +180,6 @@ class ListAllFulfillmentOrdersResponse implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ListAllFulfillmentOrdersResult
      */
     public function getPayload() : ?ListAllFulfillmentOrdersResult
     {

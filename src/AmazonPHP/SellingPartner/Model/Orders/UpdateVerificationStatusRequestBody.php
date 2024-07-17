@@ -190,8 +190,6 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
 
     /**
      * Gets status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus
      */
     public function getStatus() : VerificationStatus
     {

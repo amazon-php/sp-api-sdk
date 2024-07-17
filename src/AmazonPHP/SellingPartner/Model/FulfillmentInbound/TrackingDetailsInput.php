@@ -184,8 +184,6 @@ class TrackingDetailsInput implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets ltl_tracking_detail.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\LtlTrackingDetailInput
      */
     public function getLtlTrackingDetail() : ?LtlTrackingDetailInput
     {
@@ -206,8 +204,6 @@ class TrackingDetailsInput implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets spd_tracking_detail.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SpdTrackingDetailInput
      */
     public function getSpdTrackingDetail() : ?SpdTrackingDetailInput
     {

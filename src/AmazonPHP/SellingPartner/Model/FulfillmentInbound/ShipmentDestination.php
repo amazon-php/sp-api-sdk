@@ -206,8 +206,6 @@ class ShipmentDestination implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address
      */
     public function getAddress() : ?Address
     {

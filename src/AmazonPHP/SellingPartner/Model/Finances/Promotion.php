@@ -226,8 +226,6 @@ class Promotion implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getPromotionAmount() : ?Currency
     {

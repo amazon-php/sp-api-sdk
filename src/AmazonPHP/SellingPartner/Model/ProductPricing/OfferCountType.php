@@ -203,8 +203,6 @@ class OfferCountType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets fulfillment_channel.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\FulfillmentChannelType
      */
     public function getFulfillmentChannel() : ?FulfillmentChannelType
     {

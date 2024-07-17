@@ -180,8 +180,6 @@ class GetShipmentDetailsResponse implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentDetails
      */
     public function getPayload() : ?ShipmentDetails
     {

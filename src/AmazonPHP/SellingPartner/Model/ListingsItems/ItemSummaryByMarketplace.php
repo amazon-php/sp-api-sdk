@@ -517,8 +517,6 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets main_image.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage
      */
     public function getMainImage() : ?ItemImage
     {

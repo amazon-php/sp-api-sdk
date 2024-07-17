@@ -374,8 +374,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets contact_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ContactInformation
      */
     public function getContactInformation() : ?ContactInformation
     {
@@ -396,8 +394,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets dates.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dates
      */
     public function getDates() : ?Dates
     {
@@ -418,8 +414,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets destination.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentDestination
      */
     public function getDestination() : ShipmentDestination
     {
@@ -440,8 +434,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets freight_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\FreightInformation
      */
     public function getFreightInformation() : ?FreightInformation
     {
@@ -502,8 +494,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets selected_delivery_window.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SelectedDeliveryWindow
      */
     public function getSelectedDeliveryWindow() : ?SelectedDeliveryWindow
     {
@@ -606,8 +596,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets source.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentSource
      */
     public function getSource() : ShipmentSource
     {
@@ -648,8 +636,6 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets tracking_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TrackingDetails
      */
     public function getTrackingDetails() : ?TrackingDetails
     {

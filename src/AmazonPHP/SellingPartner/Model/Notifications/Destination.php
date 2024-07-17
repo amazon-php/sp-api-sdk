@@ -240,8 +240,6 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets resource.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Notifications\DestinationResource
      */
     public function getResource() : DestinationResource
     {

@@ -184,8 +184,6 @@ class Amount implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets currency_code.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\CurrencyCode
      */
     public function getCurrencyCode() : CurrencyCode
     {

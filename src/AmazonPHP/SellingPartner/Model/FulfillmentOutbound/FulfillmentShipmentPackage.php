@@ -286,8 +286,6 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
 
     /**
      * Gets locker_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\LockerDetails
      */
     public function getLockerDetails() : ?LockerDetails
     {

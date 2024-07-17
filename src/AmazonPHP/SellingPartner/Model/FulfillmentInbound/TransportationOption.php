@@ -286,8 +286,6 @@ class TransportationOption implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets carrier.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Carrier
      */
     public function getCarrier() : Carrier
     {
@@ -308,8 +306,6 @@ class TransportationOption implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets carrier_appointment.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\CarrierAppointment
      */
     public function getCarrierAppointment() : ?CarrierAppointment
     {
@@ -352,8 +348,6 @@ class TransportationOption implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets quote.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Quote
      */
     public function getQuote() : ?Quote
     {

@@ -214,8 +214,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Address
      */
     public function getAddress() : ?Address
     {
@@ -236,8 +234,6 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets tax_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\TaxRegistrationDetails
      */
     public function getTaxInfo() : ?TaxRegistrationDetails
     {

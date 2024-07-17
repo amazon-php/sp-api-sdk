@@ -374,8 +374,6 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets carrier_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\CarrierDetails
      */
     public function getCarrierDetails() : ?CarrierDetails
     {

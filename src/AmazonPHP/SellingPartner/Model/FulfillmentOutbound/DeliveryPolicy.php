@@ -174,8 +174,6 @@ class DeliveryPolicy implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
 
     /**
      * Gets message.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryMessage
      */
     public function getMessage() : ?DeliveryMessage
     {

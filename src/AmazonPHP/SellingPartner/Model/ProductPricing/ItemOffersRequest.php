@@ -236,8 +236,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets method.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod
      */
     public function getMethod() : HttpMethod
     {
@@ -300,8 +298,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets item_condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition
      */
     public function getItemCondition() : ItemCondition
     {
@@ -322,8 +318,6 @@ class ItemOffersRequest implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets customer_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType
      */
     public function getCustomerType() : ?CustomerType
     {

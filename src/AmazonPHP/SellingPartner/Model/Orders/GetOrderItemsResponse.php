@@ -180,8 +180,6 @@ class GetOrderItemsResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OrderItemsList
      */
     public function getPayload() : ?OrderItemsList
     {

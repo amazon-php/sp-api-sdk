@@ -244,8 +244,6 @@ class PackageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets unit_of_measurement.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DimensionUnitOfMeasurement
      */
     public function getUnitOfMeasurement() : DimensionUnitOfMeasurement
     {

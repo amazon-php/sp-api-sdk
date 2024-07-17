@@ -180,8 +180,6 @@ class SubmitInventoryUpdateResponse implements \ArrayAccess, \JsonSerializable, 
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\TransactionReference
      */
     public function getPayload() : ?TransactionReference
     {

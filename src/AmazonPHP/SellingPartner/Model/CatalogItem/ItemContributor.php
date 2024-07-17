@@ -186,8 +186,6 @@ class ItemContributor implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets role.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\ItemContributorRole
      */
     public function getRole() : ItemContributorRole
     {

@@ -500,8 +500,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitPrice() : ?Money
     {
@@ -522,8 +520,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitTax() : ?Money
     {
@@ -544,8 +540,6 @@ class FulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets per_unit_declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money
      */
     public function getPerUnitDeclaredValue() : ?Money
     {

@@ -214,8 +214,6 @@ class UpdateItemComplianceDetailsRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets tax_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TaxDetails
      */
     public function getTaxDetails() : TaxDetails
     {

@@ -208,8 +208,6 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets ship_from_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -230,8 +228,6 @@ class CreateInboundShipmentPlanRequest implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets label_prep_preference.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\LabelPrepPreference
      */
     public function getLabelPrepPreference() : LabelPrepPreference
     {

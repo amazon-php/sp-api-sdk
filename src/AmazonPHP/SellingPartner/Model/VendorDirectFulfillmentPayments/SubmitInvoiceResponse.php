@@ -180,8 +180,6 @@ class SubmitInvoiceResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\TransactionReference
      */
     public function getPayload() : ?TransactionReference
     {

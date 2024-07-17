@@ -210,8 +210,6 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets shipment_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ShipmentStatus
      */
     public function getShipmentStatus() : ShipmentStatus
     {

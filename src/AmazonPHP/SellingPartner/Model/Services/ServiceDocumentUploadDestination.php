@@ -242,8 +242,6 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets encryption_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Services\EncryptionDetails
      */
     public function getEncryptionDetails() : EncryptionDetails
     {

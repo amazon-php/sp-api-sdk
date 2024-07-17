@@ -184,8 +184,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getLabel() : ?TextComponent
     {
@@ -206,8 +204,6 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets description.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getDescription() : ?TextComponent
     {

@@ -180,8 +180,6 @@ class VoidTransportResponse implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\CommonTransportResult
      */
     public function getPayload() : ?CommonTransportResult
     {

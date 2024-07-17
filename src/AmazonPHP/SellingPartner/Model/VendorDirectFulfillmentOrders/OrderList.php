@@ -180,8 +180,6 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Pagination
      */
     public function getPagination() : ?Pagination
     {

@@ -457,8 +457,6 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     /**
      * Gets address_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\AddressTypeEnum
      */
     public function getAddressType() : ?AddressTypeEnum
     {

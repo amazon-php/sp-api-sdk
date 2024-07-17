@@ -240,8 +240,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets shipping_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -262,8 +260,6 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets delivery_preferences.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\DeliveryPreferences
      */
     public function getDeliveryPreferences() : ?DeliveryPreferences
     {

@@ -180,8 +180,6 @@ class EstimateTransportResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\CommonTransportResult
      */
     public function getPayload() : ?CommonTransportResult
     {

@@ -365,8 +365,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets shipment_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDetails
      */
     public function getShipmentDetails() : ShipmentDetails
     {
@@ -387,8 +385,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets tax_total.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails
      */
     public function getTaxTotal() : ?TaxItemDetails
     {
@@ -409,8 +405,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -431,8 +425,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {
@@ -453,8 +445,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets ship_to_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Address
      */
     public function getShipToParty() : Address
     {
@@ -475,8 +465,6 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets bill_to_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification
      */
     public function getBillToParty() : PartyIdentification
     {

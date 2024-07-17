@@ -442,8 +442,6 @@ class InboundPlan implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets source_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address
      */
     public function getSourceAddress() : Address
     {

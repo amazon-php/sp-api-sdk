@@ -388,8 +388,6 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets transaction_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTransactionAmount() : ?Currency
     {

@@ -278,8 +278,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets ship_from_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Address
      */
     public function getShipFromAddress() : Address
     {
@@ -320,8 +318,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets shipment_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\ShipmentStatus
      */
     public function getShipmentStatus() : ?ShipmentStatus
     {
@@ -342,8 +338,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets label_prep_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\LabelPrepType
      */
     public function getLabelPrepType() : ?LabelPrepType
     {
@@ -365,7 +359,7 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets are_cases_required.
      */
-    public function getAreCasesRequired() : bool
+    public function getAreCasesRequired() : ?bool
     {
         return $this->container['are_cases_required'];
     }
@@ -404,8 +398,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets box_contents_source.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\BoxContentsSource
      */
     public function getBoxContentsSource() : ?BoxContentsSource
     {
@@ -426,8 +418,6 @@ class InboundShipmentInfo implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets estimated_box_contents_fee.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\BoxContentsFeeDetails
      */
     public function getEstimatedBoxContentsFee() : ?BoxContentsFeeDetails
     {

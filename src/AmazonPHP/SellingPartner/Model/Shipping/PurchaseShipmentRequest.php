@@ -260,8 +260,6 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets ship_to.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipTo() : Address
     {
@@ -282,8 +280,6 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets ship_from.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipFrom() : Address
     {
@@ -324,8 +320,6 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets service_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\ServiceType
      */
     public function getServiceType() : ServiceType
     {
@@ -368,8 +362,6 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets label_specification.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification() : LabelSpecification
     {

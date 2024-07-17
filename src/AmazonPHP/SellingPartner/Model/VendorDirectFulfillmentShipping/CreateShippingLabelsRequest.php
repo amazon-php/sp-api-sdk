@@ -194,8 +194,6 @@ class CreateShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -216,8 +214,6 @@ class CreateShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {

@@ -180,8 +180,6 @@ class GetAppointmentSlotsResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentSlotReport
      */
     public function getPayload() : ?AppointmentSlotReport
     {

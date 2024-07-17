@@ -849,8 +849,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets order_total.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getOrderTotal() : ?Money
     {
@@ -1015,8 +1013,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets easy_ship_shipment_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\EasyShipShipmentStatus
      */
     public function getEasyShipShipmentStatus() : ?EasyShipShipmentStatus
     {
@@ -1357,8 +1353,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets default_ship_from_location_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getDefaultShipFromLocationAddress() : ?Address
     {
@@ -1399,8 +1393,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets buyer_tax_information.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInformation
      */
     public function getBuyerTaxInformation() : ?BuyerTaxInformation
     {
@@ -1421,8 +1413,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets fulfillment_instruction.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\FulfillmentInstruction
      */
     public function getFulfillmentInstruction() : ?FulfillmentInstruction
     {
@@ -1483,8 +1473,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets marketplace_tax_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\MarketplaceTaxInfo
      */
     public function getMarketplaceTaxInfo() : ?MarketplaceTaxInfo
     {
@@ -1525,8 +1513,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets shipping_address.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Address
      */
     public function getShippingAddress() : ?Address
     {
@@ -1547,8 +1533,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets buyer_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerInfo
      */
     public function getBuyerInfo() : ?BuyerInfo
     {
@@ -1569,8 +1553,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets automated_shipping_settings.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\AutomatedShippingSettings
      */
     public function getAutomatedShippingSettings() : ?AutomatedShippingSettings
     {
@@ -1611,8 +1593,6 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets electronic_invoice_status.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ElectronicInvoiceStatus
      */
     public function getElectronicInvoiceStatus() : ?ElectronicInvoiceStatus
     {

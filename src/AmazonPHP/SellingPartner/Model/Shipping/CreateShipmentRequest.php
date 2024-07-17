@@ -232,8 +232,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets ship_to.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipTo() : Address
     {
@@ -254,8 +252,6 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets ship_from.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Address
      */
     public function getShipFrom() : Address
     {

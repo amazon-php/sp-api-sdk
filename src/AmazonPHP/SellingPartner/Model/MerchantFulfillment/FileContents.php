@@ -214,8 +214,6 @@ class FileContents implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets file_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\FileType
      */
     public function getFileType() : FileType
     {

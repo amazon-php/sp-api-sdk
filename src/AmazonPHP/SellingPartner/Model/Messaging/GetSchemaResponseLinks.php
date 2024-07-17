@@ -176,8 +176,6 @@ class GetSchemaResponseLinks implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets self.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Messaging\LinkObject
      */
     public function getSelf() : LinkObject
     {

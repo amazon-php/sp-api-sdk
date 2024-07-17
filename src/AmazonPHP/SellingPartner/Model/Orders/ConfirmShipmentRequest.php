@@ -218,8 +218,6 @@ class ConfirmShipmentRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets package_detail.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\PackageDetail
      */
     public function getPackageDetail() : PackageDetail
     {

@@ -653,8 +653,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets product_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ProductInfoDetail
      */
     public function getProductInfo() : ?ProductInfoDetail
     {
@@ -675,8 +673,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets points_granted.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\PointsGrantedDetail
      */
     public function getPointsGranted() : ?PointsGrantedDetail
     {
@@ -697,8 +693,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getItemPrice() : ?Money
     {
@@ -719,8 +713,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingPrice() : ?Money
     {
@@ -741,8 +733,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets item_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getItemTax() : ?Money
     {
@@ -763,8 +753,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingTax() : ?Money
     {
@@ -785,8 +773,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingDiscount() : ?Money
     {
@@ -807,8 +793,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_discount_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getShippingDiscountTax() : ?Money
     {
@@ -829,8 +813,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPromotionDiscount() : ?Money
     {
@@ -851,8 +833,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets promotion_discount_tax.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getPromotionDiscountTax() : ?Money
     {
@@ -895,8 +875,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets cod_fee.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getCodFee() : ?Money
     {
@@ -917,8 +895,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets cod_fee_discount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Money
      */
     public function getCodFeeDiscount() : ?Money
     {
@@ -1079,8 +1055,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tax_collection.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\TaxCollection
      */
     public function getTaxCollection() : ?TaxCollection
     {
@@ -1201,8 +1175,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buyer_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ItemBuyerInfo
      */
     public function getBuyerInfo() : ?ItemBuyerInfo
     {
@@ -1223,8 +1195,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buyer_requested_cancel.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BuyerRequestedCancel
      */
     public function getBuyerRequestedCancel() : ?BuyerRequestedCancel
     {
@@ -1267,8 +1237,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets substitution_preferences.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\SubstitutionPreferences
      */
     public function getSubstitutionPreferences() : ?SubstitutionPreferences
     {
@@ -1289,8 +1257,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets measurement.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Measurement
      */
     public function getMeasurement() : ?Measurement
     {
@@ -1311,8 +1277,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets shipping_constraints.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ShippingConstraints
      */
     public function getShippingConstraints() : ?ShippingConstraints
     {

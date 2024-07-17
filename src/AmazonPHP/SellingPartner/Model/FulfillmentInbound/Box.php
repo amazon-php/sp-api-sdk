@@ -290,8 +290,6 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets content_information_source.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource
      */
     public function getContentInformationSource() : ?BoxContentInformationSource
     {
@@ -312,8 +310,6 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets destination_region.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Region
      */
     public function getDestinationRegion() : ?Region
     {
@@ -334,8 +330,6 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets dimensions.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions
      */
     public function getDimensions() : ?Dimensions
     {
@@ -438,8 +432,6 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
     /**
      * Gets weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight
      */
     public function getWeight() : ?Weight
     {

@@ -324,8 +324,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets fee_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getFeeAmount() : ?Currency
     {
@@ -346,8 +344,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets tax_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTaxAmount() : ?Currency
     {
@@ -368,8 +364,6 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets total_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getTotalAmount() : ?Currency
     {

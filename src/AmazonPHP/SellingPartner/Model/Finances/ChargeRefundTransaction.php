@@ -180,8 +180,6 @@ class ChargeRefundTransaction implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets charge_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getChargeAmount() : ?Currency
     {

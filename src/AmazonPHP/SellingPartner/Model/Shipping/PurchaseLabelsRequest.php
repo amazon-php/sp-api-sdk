@@ -206,8 +206,6 @@ class PurchaseLabelsRequest implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets label_specification.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification
      */
     public function getLabelSpecification() : LabelSpecification
     {

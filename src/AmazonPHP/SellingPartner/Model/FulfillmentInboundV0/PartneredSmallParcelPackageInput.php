@@ -188,8 +188,6 @@ class PartneredSmallParcelPackageInput implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets dimensions.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Dimensions
      */
     public function getDimensions() : Dimensions
     {
@@ -210,8 +208,6 @@ class PartneredSmallParcelPackageInput implements \ArrayAccess, \JsonSerializabl
 
     /**
      * Gets weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Weight
      */
     public function getWeight() : Weight
     {

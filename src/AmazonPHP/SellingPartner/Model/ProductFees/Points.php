@@ -200,8 +200,6 @@ class Points implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
 
     /**
      * Gets points_monetary_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType
      */
     public function getPointsMonetaryValue() : ?MoneyType
     {

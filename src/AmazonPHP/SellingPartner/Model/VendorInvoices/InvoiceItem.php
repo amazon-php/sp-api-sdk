@@ -310,8 +310,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets invoiced_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\ItemQuantity
      */
     public function getInvoicedQuantity() : ItemQuantity
     {
@@ -332,8 +330,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets net_cost.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getNetCost() : Money
     {
@@ -394,8 +390,6 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets credit_note_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\CreditNoteDetails
      */
     public function getCreditNoteDetails() : ?CreditNoteDetails
     {

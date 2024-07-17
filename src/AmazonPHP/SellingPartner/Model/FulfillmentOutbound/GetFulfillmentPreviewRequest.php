@@ -236,8 +236,6 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address
      */
     public function getAddress() : Address
     {

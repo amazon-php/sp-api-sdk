@@ -271,8 +271,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets selling_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getSellingParty() : PartyIdentification
     {
@@ -293,8 +291,6 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets ship_from_party.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification
      */
     public function getShipFromParty() : PartyIdentification
     {

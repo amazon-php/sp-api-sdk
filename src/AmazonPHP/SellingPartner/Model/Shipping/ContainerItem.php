@@ -232,8 +232,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets unit_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Currency
      */
     public function getUnitPrice() : Currency
     {
@@ -254,8 +252,6 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets unit_weight.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Weight
      */
     public function getUnitWeight() : Weight
     {

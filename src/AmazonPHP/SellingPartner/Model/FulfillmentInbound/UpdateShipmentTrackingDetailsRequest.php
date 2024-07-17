@@ -176,8 +176,6 @@ class UpdateShipmentTrackingDetailsRequest implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets tracking_details.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TrackingDetailsInput
      */
     public function getTrackingDetails() : TrackingDetailsInput
     {

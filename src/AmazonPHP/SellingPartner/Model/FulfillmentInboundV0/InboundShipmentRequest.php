@@ -196,8 +196,6 @@ class InboundShipmentRequest implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets inbound_shipment_header.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\InboundShipmentHeader
      */
     public function getInboundShipmentHeader() : InboundShipmentHeader
     {

@@ -254,8 +254,6 @@ class ContentDocument implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets content_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentType
      */
     public function getContentType() : ContentType
     {

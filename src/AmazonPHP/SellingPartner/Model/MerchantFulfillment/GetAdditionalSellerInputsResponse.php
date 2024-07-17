@@ -180,8 +180,6 @@ class GetAdditionalSellerInputsResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetAdditionalSellerInputsResult
      */
     public function getPayload() : ?GetAdditionalSellerInputsResult
     {

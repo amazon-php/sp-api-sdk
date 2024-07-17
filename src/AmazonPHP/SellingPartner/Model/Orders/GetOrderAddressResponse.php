@@ -180,8 +180,6 @@ class GetOrderAddressResponse implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OrderAddress
      */
     public function getPayload() : ?OrderAddress
     {

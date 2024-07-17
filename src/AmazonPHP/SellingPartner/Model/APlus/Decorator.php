@@ -212,8 +212,6 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\DecoratorType
      */
     public function getType() : ?DecoratorType
     {

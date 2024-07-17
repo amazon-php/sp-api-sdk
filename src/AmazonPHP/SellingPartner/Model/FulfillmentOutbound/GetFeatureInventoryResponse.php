@@ -180,8 +180,6 @@ class GetFeatureInventoryResponse implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResult
      */
     public function getPayload() : ?GetFeatureInventoryResult
     {

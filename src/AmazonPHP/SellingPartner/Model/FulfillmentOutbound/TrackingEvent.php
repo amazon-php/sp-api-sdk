@@ -226,8 +226,6 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets event_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingAddress
      */
     public function getEventAddress() : TrackingAddress
     {
@@ -248,8 +246,6 @@ class TrackingEvent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets event_code.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\EventCode
      */
     public function getEventCode() : EventCode
     {

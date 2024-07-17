@@ -220,8 +220,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fees_estimate_identifier.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateIdentifier
      */
     public function getFeesEstimateIdentifier() : ?FeesEstimateIdentifier
     {
@@ -242,8 +240,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets fees_estimate.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimate
      */
     public function getFeesEstimate() : ?FeesEstimate
     {
@@ -264,8 +260,6 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets error.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateError
      */
     public function getError() : ?FeesEstimateError
     {

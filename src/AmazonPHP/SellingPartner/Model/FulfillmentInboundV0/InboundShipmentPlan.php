@@ -266,8 +266,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets ship_to_address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Address
      */
     public function getShipToAddress() : Address
     {
@@ -288,8 +286,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets label_prep_type.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\LabelPrepType
      */
     public function getLabelPrepType() : LabelPrepType
     {
@@ -332,8 +328,6 @@ class InboundShipmentPlan implements \ArrayAccess, \JsonSerializable, \Stringabl
 
     /**
      * Gets estimated_box_contents_fee.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\BoxContentsFeeDetails
      */
     public function getEstimatedBoxContentsFee() : ?BoxContentsFeeDetails
     {

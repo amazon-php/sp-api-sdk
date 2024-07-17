@@ -300,8 +300,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets appointment_time.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime
      */
     public function getAppointmentTime() : ?AppointmentTime
     {
@@ -364,8 +362,6 @@ class Appointment implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets poa.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Poa
      */
     public function getPoa() : ?Poa
     {

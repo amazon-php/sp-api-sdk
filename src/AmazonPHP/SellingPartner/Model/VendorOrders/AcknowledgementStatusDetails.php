@@ -210,8 +210,6 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets accepted_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getAcceptedQuantity() : ?ItemQuantity
     {
@@ -232,8 +230,6 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
 
     /**
      * Gets rejected_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getRejectedQuantity() : ?ItemQuantity
     {

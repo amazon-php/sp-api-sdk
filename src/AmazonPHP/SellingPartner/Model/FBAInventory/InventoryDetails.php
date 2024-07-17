@@ -298,8 +298,6 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets reserved_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity
      */
     public function getReservedQuantity() : ?ReservedQuantity
     {
@@ -320,8 +318,6 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets researching_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity
      */
     public function getResearchingQuantity() : ?ResearchingQuantity
     {
@@ -342,8 +338,6 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets unfulfillable_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity
      */
     public function getUnfulfillableQuantity() : ?UnfulfillableQuantity
     {

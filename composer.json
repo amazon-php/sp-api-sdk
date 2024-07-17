@@ -46,6 +46,8 @@
             "@clean",
             "bin/generate.sh",
             "@rector:process:force:php",
+            "@cs:php:fix",
+            "@rector:process:force:php",
             "@cs:php:fix"
         ],
         "build": [

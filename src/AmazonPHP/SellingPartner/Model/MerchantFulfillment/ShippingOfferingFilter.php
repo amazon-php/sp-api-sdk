@@ -229,8 +229,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets carrier_will_pick_up.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption
      */
     public function getCarrierWillPickUp() : ?CarrierWillPickUpOption
     {
@@ -251,8 +249,6 @@ class ShippingOfferingFilter implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets delivery_experience.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption
      */
     public function getDeliveryExperience() : ?DeliveryExperienceOption
     {

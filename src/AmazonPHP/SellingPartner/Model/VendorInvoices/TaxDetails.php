@@ -307,8 +307,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets tax_amount.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getTaxAmount() : Money
     {
@@ -329,8 +327,6 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets taxable_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\Money
      */
     public function getTaxableAmount() : ?Money
     {

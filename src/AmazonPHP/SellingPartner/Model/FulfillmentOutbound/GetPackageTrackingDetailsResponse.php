@@ -180,8 +180,6 @@ class GetPackageTrackingDetailsResponse implements \ArrayAccess, \JsonSerializab
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PackageTrackingDetails
      */
     public function getPayload() : ?PackageTrackingDetails
     {

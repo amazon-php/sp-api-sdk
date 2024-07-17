@@ -346,8 +346,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets ordered_quantity.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ItemQuantity
      */
     public function getOrderedQuantity() : ItemQuantity
     {
@@ -368,8 +366,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets scheduled_delivery_shipment.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ScheduledDeliveryShipment
      */
     public function getScheduledDeliveryShipment() : ?ScheduledDeliveryShipment
     {
@@ -390,8 +386,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets gift_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GiftDetails
      */
     public function getGiftDetails() : ?GiftDetails
     {
@@ -412,8 +406,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets net_price.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money
      */
     public function getNetPrice() : Money
     {
@@ -434,8 +426,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets tax_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails
      */
     public function getTaxDetails() : ?TaxItemDetails
     {
@@ -456,8 +446,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets total_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money
      */
     public function getTotalPrice() : ?Money
     {
@@ -478,8 +466,6 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets buyer_customized_info.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\BuyerCustomizedInfoDetail
      */
     public function getBuyerCustomizedInfo() : ?BuyerCustomizedInfoDetail
     {

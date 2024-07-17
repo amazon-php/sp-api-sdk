@@ -264,8 +264,6 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets unit.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\UnitOfMeasurement
      */
     public function getUnit() : UnitOfMeasurement
     {

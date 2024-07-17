@@ -210,8 +210,6 @@ class DeliveryOffer implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets date_range.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DateRange
      */
     public function getDateRange() : ?DateRange
     {
@@ -232,8 +230,6 @@ class DeliveryOffer implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
     /**
      * Gets policy.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryPolicy
      */
     public function getPolicy() : ?DeliveryPolicy
     {

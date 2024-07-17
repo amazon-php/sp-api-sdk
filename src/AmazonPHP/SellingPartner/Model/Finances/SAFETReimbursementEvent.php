@@ -238,8 +238,6 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
 
     /**
      * Gets reimbursed_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getReimbursedAmount() : ?Currency
     {

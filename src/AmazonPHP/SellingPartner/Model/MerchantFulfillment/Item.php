@@ -278,8 +278,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets item_weight.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight
      */
     public function getItemWeight() : ?Weight
     {
@@ -364,8 +362,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets liquid_volume.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LiquidVolume
      */
     public function getLiquidVolume() : ?LiquidVolume
     {
@@ -406,8 +402,6 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
 
     /**
      * Gets dangerous_goods_details.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DangerousGoodsDetails
      */
     public function getDangerousGoodsDetails() : ?DangerousGoodsDetails
     {

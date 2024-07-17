@@ -218,8 +218,6 @@ class AppointmentSlot implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets slot_time.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\AppointmentSlotTime
      */
     public function getSlotTime() : AppointmentSlotTime
     {

@@ -188,8 +188,6 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets x.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits
      */
     public function getX() : IntegerWithUnits
     {
@@ -210,8 +208,6 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
 
     /**
      * Gets y.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits
      */
     public function getY() : IntegerWithUnits
     {

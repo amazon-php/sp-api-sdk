@@ -214,8 +214,6 @@ class TextItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
 
     /**
      * Gets text.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getText() : TextComponent
     {

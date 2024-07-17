@@ -228,10 +228,8 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets pagination.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Pagination
      */
-    public function getPagination() : Pagination
+    public function getPagination() : ?Pagination
     {
         return $this->container['pagination'];
     }
@@ -250,10 +248,8 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
 
     /**
      * Gets refinements.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Refinements
      */
-    public function getRefinements() : Refinements
+    public function getRefinements() : ?Refinements
     {
         return $this->container['refinements'];
     }

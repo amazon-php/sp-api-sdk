@@ -176,8 +176,6 @@ class UpdateShipmentSourceAddressRequest implements \ArrayAccess, \JsonSerializa
 
     /**
      * Gets address.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\AddressInput
      */
     public function getAddress() : AddressInput
     {

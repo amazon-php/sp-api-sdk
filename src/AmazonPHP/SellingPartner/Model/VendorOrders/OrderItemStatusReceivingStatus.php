@@ -238,8 +238,6 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets received_quantity.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity
      */
     public function getReceivedQuantity() : ?ItemQuantity
     {

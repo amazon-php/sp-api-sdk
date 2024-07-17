@@ -230,8 +230,6 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets label.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Label
      */
     public function getLabel() : ?Label
     {

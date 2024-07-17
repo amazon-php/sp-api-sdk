@@ -232,8 +232,6 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets adjustment_amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getAdjustmentAmount() : ?Currency
     {

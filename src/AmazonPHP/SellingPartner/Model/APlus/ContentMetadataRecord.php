@@ -210,8 +210,6 @@ class ContentMetadataRecord implements \ArrayAccess, \JsonSerializable, \Stringa
 
     /**
      * Gets content_metadata.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentMetadata
      */
     public function getContentMetadata() : ContentMetadata
     {

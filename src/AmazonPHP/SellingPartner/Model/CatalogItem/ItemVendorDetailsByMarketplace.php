@@ -357,8 +357,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets product_category.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsCategory
      */
     public function getProductCategory() : ?ItemVendorDetailsCategory
     {
@@ -399,8 +397,6 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets product_subcategory.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsCategory
      */
     public function getProductSubcategory() : ?ItemVendorDetailsCategory
     {

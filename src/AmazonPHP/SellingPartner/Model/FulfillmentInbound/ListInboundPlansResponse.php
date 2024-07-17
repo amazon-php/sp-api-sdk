@@ -202,8 +202,6 @@ class ListInboundPlansResponse implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination
      */
     public function getPagination() : ?Pagination
     {

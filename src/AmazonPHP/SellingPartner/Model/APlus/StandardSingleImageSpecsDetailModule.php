@@ -244,8 +244,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getHeadline() : ?TextComponent
     {
@@ -266,8 +264,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets image.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent
      */
     public function getImage() : ?ImageComponent
     {
@@ -288,8 +284,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets description_headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getDescriptionHeadline() : ?TextComponent
     {
@@ -310,8 +304,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets description_block1.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getDescriptionBlock1() : ?StandardTextBlock
     {
@@ -332,8 +324,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets description_block2.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getDescriptionBlock2() : ?StandardTextBlock
     {
@@ -354,8 +344,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets specification_headline.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent
      */
     public function getSpecificationHeadline() : ?TextComponent
     {
@@ -376,8 +364,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets specification_list_block.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock
      */
     public function getSpecificationListBlock() : ?StandardHeaderTextListBlock
     {
@@ -398,8 +384,6 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
 
     /**
      * Gets specification_text_block.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock
      */
     public function getSpecificationTextBlock() : ?StandardTextBlock
     {

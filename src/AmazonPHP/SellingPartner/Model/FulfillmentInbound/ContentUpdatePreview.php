@@ -264,8 +264,6 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets requested_updates.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\RequestedUpdates
      */
     public function getRequestedUpdates() : RequestedUpdates
     {
@@ -286,8 +284,6 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
 
     /**
      * Gets transportation_option.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportationOption
      */
     public function getTransportationOption() : TransportationOption
     {

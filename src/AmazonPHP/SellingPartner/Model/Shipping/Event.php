@@ -242,8 +242,6 @@ class Event implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
 
     /**
      * Gets location.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Location
      */
     public function getLocation() : ?Location
     {

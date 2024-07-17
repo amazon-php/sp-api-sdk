@@ -256,8 +256,6 @@ class InboundShipmentPlanRequestItem implements \ArrayAccess, \JsonSerializable,
 
     /**
      * Gets condition.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Condition
      */
     public function getCondition() : Condition
     {

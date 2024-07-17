@@ -206,8 +206,6 @@ class DistributionPackageQuantity implements \ArrayAccess, \JsonSerializable, \S
 
     /**
      * Gets distribution_package.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackage
      */
     public function getDistributionPackage() : DistributionPackage
     {

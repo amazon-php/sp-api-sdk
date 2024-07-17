@@ -206,8 +206,6 @@ class ListShipmentBoxesResponse implements \ArrayAccess, \JsonSerializable, \Str
 
     /**
      * Gets pagination.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination
      */
     public function getPagination() : ?Pagination
     {

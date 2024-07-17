@@ -188,8 +188,6 @@ class FreightInformation implements \ArrayAccess, \JsonSerializable, \Stringable
 
     /**
      * Gets declared_value.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Currency
      */
     public function getDeclaredValue() : ?Currency
     {

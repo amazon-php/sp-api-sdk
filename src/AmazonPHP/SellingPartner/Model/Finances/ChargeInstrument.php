@@ -226,8 +226,6 @@ class ChargeInstrument implements \ArrayAccess, \JsonSerializable, \Stringable, 
 
     /**
      * Gets amount.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\Currency
      */
     public function getAmount() : ?Currency
     {

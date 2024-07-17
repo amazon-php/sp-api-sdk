@@ -234,8 +234,6 @@ class LabelDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
 
     /**
      * Gets unit.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength
      */
     public function getUnit() : UnitOfLength
     {

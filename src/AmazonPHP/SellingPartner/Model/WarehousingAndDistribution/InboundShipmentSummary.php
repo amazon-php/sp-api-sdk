@@ -300,8 +300,6 @@ class InboundShipmentSummary implements \ArrayAccess, \JsonSerializable, \String
 
     /**
      * Gets shipment_status.
-     *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentStatus
      */
     public function getShipmentStatus() : InboundShipmentStatus
     {

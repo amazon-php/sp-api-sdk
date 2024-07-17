@@ -277,8 +277,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets expiry.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Expiry
      */
     public function getExpiry() : ?Expiry
     {
@@ -299,8 +297,6 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets maximum_retail_price.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Money
      */
     public function getMaximumRetailPrice() : ?Money
     {

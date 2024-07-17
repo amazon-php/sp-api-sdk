@@ -180,8 +180,6 @@ class PurchaseShipmentResponse implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets payload.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\PurchaseShipmentResult
      */
     public function getPayload() : ?PurchaseShipmentResult
     {

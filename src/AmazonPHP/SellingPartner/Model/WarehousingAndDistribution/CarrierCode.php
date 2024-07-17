@@ -177,8 +177,6 @@ class CarrierCode implements \ArrayAccess, \JsonSerializable, \Stringable, Model
 
     /**
      * Gets carrier_code_type.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\CarrierCodeType
      */
     public function getCarrierCodeType() : ?CarrierCodeType
     {

@@ -400,8 +400,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets scope_of_work.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ScopeOfWork
      */
     public function getScopeOfWork() : ?ScopeOfWork
     {
@@ -422,8 +420,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets seller.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Seller
      */
     public function getSeller() : ?Seller
     {
@@ -444,8 +440,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets service_job_provider.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ServiceJobProvider
      */
     public function getServiceJobProvider() : ?ServiceJobProvider
     {
@@ -570,8 +564,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets buyer.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Buyer
      */
     public function getBuyer() : ?Buyer
     {
@@ -614,8 +606,6 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
 
     /**
      * Gets service_location.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ServiceLocation
      */
     public function getServiceLocation() : ?ServiceLocation
     {
