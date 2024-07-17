@@ -1,4 +1,4 @@
-## [Unreleased] - 2024-07-17
+## [6.0.1] - 2024-07-17
 
 ### Added
 - [#647](https://github.com/amazon-php/sp-api-sdk/pull/647) - **Add additional rector processing.** - [@jasonhebert](https://github.com/jasonhebert)
