@@ -28,7 +28,7 @@
         "kriswallsmith/buzz": "^1.2",
         "symfony/var-dumper": "^6.1",
         "monolog/monolog": "^3.3",
-        "symfony/dotenv": "^6.1"
+        "symfony/dotenv": "^7.1"
     },
     "autoload": {
         "psr-4": { "AmazonPHP\\" : "src/AmazonPHP/" }
