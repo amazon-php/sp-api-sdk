@@ -43,6 +43,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'tracking_number' => 'string',
         'estimated_arrival_date' => '\DateTimeInterface',
         'locker_details' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\LockerDetails',
+        'delivery_information' => '\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryInformation',
     ];
 
     /**
@@ -60,6 +61,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'tracking_number' => null,
         'estimated_arrival_date' => 'date-time',
         'locker_details' => null,
+        'delivery_information' => null,
     ];
 
     /**
@@ -74,6 +76,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'tracking_number' => 'trackingNumber',
         'estimated_arrival_date' => 'estimatedArrivalDate',
         'locker_details' => 'lockerDetails',
+        'delivery_information' => 'deliveryInformation',
     ];
 
     /**
@@ -87,6 +90,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'tracking_number' => 'setTrackingNumber',
         'estimated_arrival_date' => 'setEstimatedArrivalDate',
         'locker_details' => 'setLockerDetails',
+        'delivery_information' => 'setDeliveryInformation',
     ];
 
     /**
@@ -100,6 +104,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         'tracking_number' => 'getTrackingNumber',
         'estimated_arrival_date' => 'getEstimatedArrivalDate',
         'locker_details' => 'getLockerDetails',
+        'delivery_information' => 'getDeliveryInformation',
     ];
 
     /**
@@ -122,6 +127,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
         $this->container['tracking_number'] = $data['tracking_number'] ?? null;
         $this->container['estimated_arrival_date'] = $data['estimated_arrival_date'] ?? null;
         $this->container['locker_details'] = $data['locker_details'] ?? null;
+        $this->container['delivery_information'] = $data['delivery_information'] ?? null;
     }
 
     /**
@@ -201,6 +207,10 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
 
         if ($this->container['locker_details'] !== null) {
             $this->container['locker_details']->validate();
+        }
+
+        if ($this->container['delivery_information'] !== null) {
+            $this->container['delivery_information']->validate();
         }
     }
 
@@ -300,6 +310,26 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
     public function setLockerDetails(?LockerDetails $locker_details) : self
     {
         $this->container['locker_details'] = $locker_details;
+
+        return $this;
+    }
+
+    /**
+     * Gets delivery_information.
+     */
+    public function getDeliveryInformation() : ?DeliveryInformation
+    {
+        return $this->container['delivery_information'];
+    }
+
+    /**
+     * Sets delivery_information.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryInformation $delivery_information delivery_information
+     */
+    public function setDeliveryInformation(?DeliveryInformation $delivery_information) : self
+    {
+        $this->container['delivery_information'] = $delivery_information;
 
         return $this;
     }

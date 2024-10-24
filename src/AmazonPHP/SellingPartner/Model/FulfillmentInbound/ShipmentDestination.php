@@ -235,7 +235,7 @@ class ShipmentDestination implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets destination_type.
      *
-     * @param string $destination_type The type of destination for this shipment. Can be: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
+     * @param string $destination_type The type of destination for this shipment. Possible values: `AMAZON_OPTIMIZED`, `AMAZON_WAREHOUSE`.
      */
     public function setDestinationType(string $destination_type) : self
     {

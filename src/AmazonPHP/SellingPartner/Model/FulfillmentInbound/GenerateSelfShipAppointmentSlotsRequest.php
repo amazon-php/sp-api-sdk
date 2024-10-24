@@ -186,7 +186,7 @@ class GenerateSelfShipAppointmentSlotsRequest implements \ArrayAccess, \JsonSeri
     /**
      * Sets desired_end_date.
      *
-     * @param null|\DateTimeInterface $desired_end_date The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param null|\DateTimeInterface $desired_end_date The desired end date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
      */
     public function setDesiredEndDate(?\DateTimeInterface $desired_end_date) : self
     {
@@ -206,7 +206,7 @@ class GenerateSelfShipAppointmentSlotsRequest implements \ArrayAccess, \JsonSeri
     /**
      * Sets desired_start_date.
      *
-     * @param null|\DateTimeInterface $desired_start_date The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param null|\DateTimeInterface $desired_start_date The desired start date. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
      */
     public function setDesiredStartDate(?\DateTimeInterface $desired_start_date) : self
     {

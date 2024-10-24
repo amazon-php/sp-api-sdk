@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * The version of the OpenAPI document: v0
  *
@@ -305,7 +305,7 @@ class OrderItemBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets gift_message_text.
      *
-     * @param null|string $gift_message_text A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (Fulfilled by the seller) orders.
+     * @param null|string $gift_message_text A gift message provided by the buyer.  **Note**: This attribute is only available for MFN (fulfilled by seller) orders.
      */
     public function setGiftMessageText(?string $gift_message_text) : self
     {

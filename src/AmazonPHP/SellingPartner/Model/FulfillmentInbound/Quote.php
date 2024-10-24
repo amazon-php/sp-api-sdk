@@ -217,7 +217,7 @@ class Quote implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets expiration.
      *
-     * @param null|\DateTimeInterface $expiration The timestamp at which this transportation option quote becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param null|\DateTimeInterface $expiration The time at which this transportation option quote expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function setExpiration(?\DateTimeInterface $expiration) : self
     {

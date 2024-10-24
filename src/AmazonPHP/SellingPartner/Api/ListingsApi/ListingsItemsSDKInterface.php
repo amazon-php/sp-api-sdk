@@ -36,6 +36,10 @@ interface ListingsItemsSDKInterface
 
     public const OPERATION_PUTLISTINGSITEM_PATH = '/listings/2021-08-01/items/{sellerId}/{sku}';
 
+    public const OPERATION_SEARCHLISTINGSITEMS = 'searchListingsItems';
+
+    public const OPERATION_SEARCHLISTINGSITEMS_PATH = '/listings/2021-08-01/items/{sellerId}';
+
     /**
      * Operation deleteListingsItem.
      *
@@ -94,4 +98,21 @@ interface ListingsItemsSDKInterface
      * @throws InvalidArgumentException
      */
     public function putListingsItem(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, ?array $included_data = null, ?string $mode = null, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemSubmissionResponse;
+
+    /**
+     * Operation searchListingsItems.
+     *
+     * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param null|string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param null|string $identifiers_type Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param int $page_size Number of results to be returned per page. (optional, default to 10)
+     * @param null|string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function searchListingsItems(AccessToken $accessToken, string $region, string $seller_id, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, int $page_size = 10, ?string $page_token = null, ?array $included_data = null, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ItemSearchResults;
 }

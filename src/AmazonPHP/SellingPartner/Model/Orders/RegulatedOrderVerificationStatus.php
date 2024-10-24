@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * The version of the OpenAPI document: v0
  *
@@ -44,6 +44,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
         'rejection_reason' => '\AmazonPHP\SellingPartner\Model\Orders\RejectionReason',
         'review_date' => 'string',
         'external_reviewer_id' => 'string',
+        'valid_verification_details' => '\AmazonPHP\SellingPartner\Model\Orders\ValidVerificationDetail[]',
     ];
 
     /**
@@ -62,6 +63,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
         'rejection_reason' => null,
         'review_date' => null,
         'external_reviewer_id' => null,
+        'valid_verification_details' => null,
     ];
 
     /**
@@ -77,6 +79,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
         'rejection_reason' => 'RejectionReason',
         'review_date' => 'ReviewDate',
         'external_reviewer_id' => 'ExternalReviewerId',
+        'valid_verification_details' => 'ValidVerificationDetails',
     ];
 
     /**
@@ -91,6 +94,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
         'rejection_reason' => 'setRejectionReason',
         'review_date' => 'setReviewDate',
         'external_reviewer_id' => 'setExternalReviewerId',
+        'valid_verification_details' => 'setValidVerificationDetails',
     ];
 
     /**
@@ -105,6 +109,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
         'rejection_reason' => 'getRejectionReason',
         'review_date' => 'getReviewDate',
         'external_reviewer_id' => 'getExternalReviewerId',
+        'valid_verification_details' => 'getValidVerificationDetails',
     ];
 
     /**
@@ -128,6 +133,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
         $this->container['rejection_reason'] = $data['rejection_reason'] ?? null;
         $this->container['review_date'] = $data['review_date'] ?? null;
         $this->container['external_reviewer_id'] = $data['external_reviewer_id'] ?? null;
+        $this->container['valid_verification_details'] = $data['valid_verification_details'] ?? null;
     }
 
     /**
@@ -307,7 +313,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets review_date.
      *
-     * @param null|string $review_date The date the order was reviewed. In <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date time format.
+     * @param null|string $review_date The date the order was reviewed. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format.
      */
     public function setReviewDate(?string $review_date) : self
     {
@@ -332,6 +338,28 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     public function setExternalReviewerId(?string $external_reviewer_id) : self
     {
         $this->container['external_reviewer_id'] = $external_reviewer_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets valid_verification_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ValidVerificationDetail[]
+     */
+    public function getValidVerificationDetails() : ?array
+    {
+        return $this->container['valid_verification_details'];
+    }
+
+    /**
+     * Sets valid_verification_details.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ValidVerificationDetail[] $valid_verification_details a list of valid verification details that may be provided and the criteria required for when the verification detail can be provided
+     */
+    public function setValidVerificationDetails(?array $valid_verification_details) : self
+    {
+        $this->container['valid_verification_details'] = $valid_verification_details;
 
         return $this;
     }

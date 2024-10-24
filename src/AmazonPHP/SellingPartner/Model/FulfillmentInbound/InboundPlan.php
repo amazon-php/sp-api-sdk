@@ -283,7 +283,7 @@ class InboundPlan implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets created_at.
      *
-     * @param \DateTimeInterface $created_at The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param \DateTimeInterface $created_at The time at which the inbound plan was created. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      */
     public function setCreatedAt(\DateTimeInterface $created_at) : self
     {
@@ -323,7 +323,7 @@ class InboundPlan implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets last_updated_at.
      *
-     * @param \DateTimeInterface $last_updated_at The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param \DateTimeInterface $last_updated_at The time at which the inbound plan was last updated. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ssZ`.
      */
     public function setLastUpdatedAt(\DateTimeInterface $last_updated_at) : self
     {
@@ -345,7 +345,7 @@ class InboundPlan implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets marketplace_ids.
      *
-     * @param string[] $marketplace_ids marketplace IDs
+     * @param string[] $marketplace_ids a list of marketplace IDs
      */
     public function setMarketplaceIds(array $marketplace_ids) : self
     {
@@ -431,7 +431,7 @@ class InboundPlan implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets shipments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentSummary[] $shipments Shipment IDs for the inbound plan. This property will be populated when it has been generated via the corresponding operation. If there is a chosen placement option, only shipments for that option will be returned. If there are confirmed shipments, only those shipments will be returned. Query the shipment for more details.
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentSummary[] $shipments A list of shipment IDs for the inbound plan. This property is populated when it has been generated with the `confirmPlacementOptions` operation. Only shipments from the chosen placement option are returned. Query the shipment for more details.
      */
     public function setShipments(?array $shipments) : self
     {
@@ -471,7 +471,7 @@ class InboundPlan implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets status.
      *
-     * @param string $status Current status of the inbound plan. Can be: `ACTIVE`, `VOIDED`, `SHIPPED`, 'ERRORED'.
+     * @param string $status Current status of the inbound plan. Possible values: `ACTIVE`, `VOIDED`, `SHIPPED`, `ERRORED`.
      */
     public function setStatus(string $status) : self
     {

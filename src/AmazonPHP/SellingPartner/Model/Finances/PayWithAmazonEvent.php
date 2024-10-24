@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Finances.
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -257,7 +257,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets transaction_posted_date.
      *
-     * @param null|\DateTimeInterface $transaction_posted_date transaction_posted_date
+     * @param null|\DateTimeInterface $transaction_posted_date A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function setTransactionPostedDate(?\DateTimeInterface $transaction_posted_date) : self
     {
@@ -359,7 +359,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets payment_amount_type.
      *
-     * @param null|string $payment_amount_type The type of payment.  Possible values:  * Sales
+     * @param null|string $payment_amount_type The type of payment.  Possible values:  * `Sales`
      */
     public function setPaymentAmountType(?string $payment_amount_type) : self
     {
@@ -399,7 +399,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets fulfillment_channel.
      *
-     * @param null|string $fulfillment_channel The fulfillment channel.  Possible values:  * AFN - Amazon Fulfillment Network (Fulfillment by Amazon)  * MFN - Merchant Fulfillment Network (self-fulfilled)
+     * @param null|string $fulfillment_channel The fulfillment channel.  Possible values:  * `AFN`: Amazon Fulfillment Network (Fulfillment by Amazon)  * `MFN`: Merchant Fulfillment Network (self-fulfilled)
      */
     public function setFulfillmentChannel(?string $fulfillment_channel) : self
     {
@@ -419,7 +419,7 @@ class PayWithAmazonEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets store_name.
      *
-     * @param null|string $store_name the store name where the event occurred
+     * @param null|string $store_name the name of the store where the event occurred
      */
     public function setStoreName(?string $store_name) : self
     {

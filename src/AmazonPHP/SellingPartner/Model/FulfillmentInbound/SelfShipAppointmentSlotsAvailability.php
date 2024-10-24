@@ -186,7 +186,7 @@ class SelfShipAppointmentSlotsAvailability implements \ArrayAccess, \JsonSeriali
     /**
      * Sets expires_at.
      *
-     * @param null|\DateTimeInterface $expires_at The ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param null|\DateTimeInterface $expires_at The time at which the self ship appointment slot expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format.
      */
     public function setExpiresAt(?\DateTimeInterface $expires_at) : self
     {
@@ -208,7 +208,7 @@ class SelfShipAppointmentSlotsAvailability implements \ArrayAccess, \JsonSeriali
     /**
      * Sets slots.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\AppointmentSlot[] $slots list of appointment slots
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\AppointmentSlot[] $slots a list of appointment slots
      */
     public function setSlots(?array $slots) : self
     {

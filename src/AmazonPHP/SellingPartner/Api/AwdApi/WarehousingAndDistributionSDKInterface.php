@@ -7,9 +7,9 @@ use AmazonPHP\SellingPartner\Exception\ApiException;
 use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
 
 /**
- * The Selling Partner API for AWD.
+ * The Selling Partner API for Amazon Warehousing and Distribution.
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD).
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * The version of the OpenAPI document: 2024-05-09
  *
@@ -36,17 +36,18 @@ interface WarehousingAndDistributionSDKInterface
      * Operation getInboundShipment.
      *
      * @param string $shipment_id ID for the shipment. A shipment contains the cases being inbounded. (required)
+     * @param null|string $sku_quantities If equal to &#x60;SHOW&#x60;, the response includes the shipment SKU quantity details.  Defaults to &#x60;HIDE&#x60;, in which case the response does not contain SKU quantities (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getInboundShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipment;
+    public function getInboundShipment(AccessToken $accessToken, string $region, string $shipment_id, ?string $sku_quantities = null) : \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipment;
 
     /**
      * Operation listInboundShipments.
      *
-     * @param null|string $sort_by Field to sort results by. Required if &#x60;sortOrder&#x60; is provided. (optional)
-     * @param null|string $sort_order Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param null|string $sort_by Field to sort results by. By default, the response will be sorted by UPDATED_AT. (optional)
+     * @param null|string $sort_order Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order. (optional)
      * @param null|string $shipment_status Filter by inbound shipment status. (optional)
      * @param null|\DateTimeInterface $updated_after List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param null|\DateTimeInterface $updated_before List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)

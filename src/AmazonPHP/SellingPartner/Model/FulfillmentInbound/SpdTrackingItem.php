@@ -255,7 +255,7 @@ class SpdTrackingItem implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets tracking_number_validation_status.
      *
-     * @param null|string $tracking_number_validation_status Whether or not Amazon has validated the tracking number. If more than 24 hours have passed and the status is not yet 'VALIDATED', please verify the number and update if necessary. Can be: `VALIDATED`, `NOT_VALIDATED`.
+     * @param null|string $tracking_number_validation_status Whether or not Amazon has validated the tracking number. If more than 24 hours have passed and the status is not yet 'VALIDATED', please verify the number and update if necessary. Possible values: `VALIDATED`, `NOT_VALIDATED`.
      */
     public function setTrackingNumberValidationStatus(?string $tracking_number_validation_status) : self
     {

@@ -5,9 +5,9 @@ declare(strict_types=1);
 namespace AmazonPHP\SellingPartner\Model\WarehousingAndDistribution;
 
 /**
- * The Selling Partner API for AWD.
+ * The Selling Partner API for Amazon Warehousing and Distribution.
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD).
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * The version of the OpenAPI document: 2024-05-09
  *

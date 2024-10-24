@@ -23,16 +23,14 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
  * @template TKey int|null
  * @template TValue mixed|null
  */
-class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
+class DeliveryDocument implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterface
 {
     final public const DISCRIMINATOR = null;
-
-    final public const UNIT_OF_MEASURE_EACH = 'Each';
 
     /**
      * The original name of the model.
      */
-    protected static string $openAPIModelName = 'DeliveryQuantity';
+    protected static string $openAPIModelName = 'DeliveryDocument';
 
     /**
      * Array of property to type mappings. Used for (de)serialization.
@@ -40,8 +38,8 @@ class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'unit_of_measure' => 'string',
-        'amount' => 'string',
+        'document_type' => 'string',
+        'url' => 'string',
     ];
 
     /**
@@ -54,8 +52,8 @@ class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'unit_of_measure' => null,
-        'amount' => null,
+        'document_type' => null,
+        'url' => null,
     ];
 
     /**
@@ -65,8 +63,8 @@ class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $attributeMap = [
-        'unit_of_measure' => 'unitOfMeasure',
-        'amount' => 'amount',
+        'document_type' => 'documentType',
+        'url' => 'url',
     ];
 
     /**
@@ -75,8 +73,8 @@ class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $setters = [
-        'unit_of_measure' => 'setUnitOfMeasure',
-        'amount' => 'setAmount',
+        'document_type' => 'setDocumentType',
+        'url' => 'setUrl',
     ];
 
     /**
@@ -85,8 +83,8 @@ class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $getters = [
-        'unit_of_measure' => 'getUnitOfMeasure',
-        'amount' => 'getAmount',
+        'document_type' => 'getDocumentType',
+        'url' => 'getUrl',
     ];
 
     /**
@@ -104,8 +102,8 @@ class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     public function __construct(array $data = null)
     {
-        $this->container['unit_of_measure'] = $data['unit_of_measure'] ?? null;
-        $this->container['amount'] = $data['amount'] ?? null;
+        $this->container['document_type'] = $data['document_type'] ?? null;
+        $this->container['url'] = $data['url'] ?? null;
     }
 
     /**
@@ -169,81 +167,53 @@ class DeliveryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
     }
 
     /**
-     * Gets allowable values of the enum.
-     *
-     * @return string[]
-     */
-    public function getUnitOfMeasureAllowableValues() : array
-    {
-        return [
-            self::UNIT_OF_MEASURE_EACH,
-        ];
-    }
-
-    /**
      * Validate all properties.
      *
      * @throws AssertionException
      */
     public function validate() : void
     {
-        if ($this->container['unit_of_measure'] === null) {
-            throw new AssertionException("'unit_of_measure' can't be null");
-        }
-
-        $allowedValues = $this->getUnitOfMeasureAllowableValues();
-
-        if (null !== $this->container['unit_of_measure'] && !\in_array($this->container['unit_of_measure'], $allowedValues, true)) {
-            throw new AssertionException(
-                \sprintf(
-                    "invalid value '%s' for 'unit_of_measure', must be one of '%s'",
-                    $this->container['unit_of_measure'],
-                    \implode("', '", $allowedValues)
-                )
-            );
-        }
-
-        if ($this->container['amount'] === null) {
-            throw new AssertionException("'amount' can't be null");
+        if ($this->container['document_type'] === null) {
+            throw new AssertionException("'document_type' can't be null");
         }
     }
 
     /**
-     * Gets unit_of_measure.
+     * Gets document_type.
      */
-    public function getUnitOfMeasure() : string
+    public function getDocumentType() : string
     {
-        return $this->container['unit_of_measure'];
+        return $this->container['document_type'];
     }
 
     /**
-     * Sets unit_of_measure.
+     * Sets document_type.
      *
-     * @param string $unit_of_measure the unit of measure for the amount
+     * @param string $document_type The delivery document type. Values are `SIGNATURE` and `DELIVERY_IMAGE`.
      */
-    public function setUnitOfMeasure(string $unit_of_measure) : self
+    public function setDocumentType(string $document_type) : self
     {
-        $this->container['unit_of_measure'] = $unit_of_measure;
+        $this->container['document_type'] = $document_type;
 
         return $this;
     }
 
     /**
-     * Gets amount.
+     * Gets url.
      */
-    public function getAmount() : string
+    public function getUrl() : ?string
     {
-        return $this->container['amount'];
+        return $this->container['url'];
     }
 
     /**
-     * Sets amount.
+     * Sets url.
      *
-     * @param string $amount A decimal number with no loss of precision. Useful when precision loss is unacceptable, as with currencies. Follows RFC7159 for number representation.
+     * @param null|string $url A URL that you can use to download the document. This URL has a `Content-Type` header. Note that the URL expires after one hour. To get a new URL, you must call the API again.
      */
-    public function setAmount(string $amount) : self
+    public function setUrl(?string $url) : self
     {
-        $this->container['amount'] = $amount;
+        $this->container['url'] = $url;
 
         return $this;
     }

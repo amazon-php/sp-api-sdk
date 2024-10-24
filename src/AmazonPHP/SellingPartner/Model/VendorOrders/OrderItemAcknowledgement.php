@@ -317,7 +317,7 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets scheduled_ship_date.
      *
-     * @param null|\DateTimeInterface $scheduled_ship_date Estimated ship date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param null|\DateTimeInterface $scheduled_ship_date Estimated ship date per line item. Must be in ISO-8601 date/time format.
      */
     public function setScheduledShipDate(?\DateTimeInterface $scheduled_ship_date) : self
     {
@@ -337,7 +337,7 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets scheduled_delivery_date.
      *
-     * @param null|\DateTimeInterface $scheduled_delivery_date Estimated delivery date per line item. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param null|\DateTimeInterface $scheduled_delivery_date Estimated delivery date per line item. Must be in ISO-8601 date/time format.
      */
     public function setScheduledDeliveryDate(?\DateTimeInterface $scheduled_delivery_date) : self
     {

@@ -271,7 +271,7 @@ class PlacementOption implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets expiration.
      *
-     * @param null|\DateTimeInterface $expiration The expiration date of the placement option. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param null|\DateTimeInterface $expiration The expiration date of the placement option. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function setExpiration(?\DateTimeInterface $expiration) : self
     {
@@ -293,7 +293,7 @@ class PlacementOption implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets fees.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[] $fees fee for the offered option
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[] $fees the fee for the offered option
      */
     public function setFees(array $fees) : self
     {
@@ -355,7 +355,7 @@ class PlacementOption implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets status.
      *
-     * @param string $status The status of a placement option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+     * @param string $status The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
      */
     public function setStatus(string $status) : self
     {

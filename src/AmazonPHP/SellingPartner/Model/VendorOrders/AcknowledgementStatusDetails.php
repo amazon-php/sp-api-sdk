@@ -199,7 +199,7 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets acknowledgement_date.
      *
-     * @param null|\DateTimeInterface $acknowledgement_date The date when the line item was confirmed by the vendor. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param null|\DateTimeInterface $acknowledgement_date The date when the line item was confirmed by vendor. Must be in ISO-8601 date/time format.
      */
     public function setAcknowledgementDate(?\DateTimeInterface $acknowledgement_date) : self
     {

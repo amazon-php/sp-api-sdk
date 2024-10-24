@@ -221,7 +221,7 @@ class ShipmentSource implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets source_type.
      *
-     * @param string $source_type The type of source for this shipment. Can be: `SELLER_FACILITY`.
+     * @param string $source_type The type of source for this shipment. Possible values: `SELLER_FACILITY`.
      */
     public function setSourceType(string $source_type) : self
     {

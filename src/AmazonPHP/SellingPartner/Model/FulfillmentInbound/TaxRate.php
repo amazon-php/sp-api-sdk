@@ -239,7 +239,7 @@ class TaxRate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets tax_type.
      *
-     * @param null|string $tax_type Type of tax. Can be: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
+     * @param null|string $tax_type Type of tax. Possible values: `CGST`, `SGST`, `IGST`, `TOTAL_TAX`.
      */
     public function setTaxType(?string $tax_type) : self
     {

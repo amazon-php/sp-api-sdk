@@ -259,7 +259,7 @@ class Incentive implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets target.
      *
-     * @param string $target Target of the incentive. Can be 'Placement Services' or 'Fulfillment Fee Discount'.
+     * @param string $target Target of the incentive. Possible values: 'Placement Services', 'Fulfillment Fee Discount'.
      */
     public function setTarget(string $target) : self
     {
@@ -279,7 +279,7 @@ class Incentive implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets type.
      *
-     * @param string $type Type of incentive. Can be: `FEE`, `DISCOUNT`.
+     * @param string $type Type of incentive. Possible values: `FEE`, `DISCOUNT`.
      */
     public function setType(string $type) : self
     {

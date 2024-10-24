@@ -301,7 +301,7 @@ class OperationProblem implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets severity.
      *
-     * @param string $severity The severity of the problem. Can be: `WARNING`, `ERROR`.
+     * @param string $severity The severity of the problem. Possible values: `WARNING`, `ERROR`.
      */
     public function setSeverity(string $severity) : self
     {

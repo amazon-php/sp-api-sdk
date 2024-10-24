@@ -242,7 +242,7 @@ class TaxRegistrationDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets tax_registration_number.
      *
-     * @param string $tax_registration_number Tax registration number for the entity. For example, `VAT ID`.
+     * @param string $tax_registration_number Tax registration number for the entity. For example, VAT ID.
      */
     public function setTaxRegistrationNumber(string $tax_registration_number) : self
     {

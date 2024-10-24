@@ -199,7 +199,7 @@ class DocumentDownload implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets download_type.
      *
-     * @param string $download_type The type of download. Can be `URL`.
+     * @param string $download_type The type of download. Possible values: `URL`.
      */
     public function setDownloadType(string $download_type) : self
     {
@@ -219,7 +219,7 @@ class DocumentDownload implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets expiration.
      *
-     * @param null|\DateTimeInterface $expiration The timestamp of expiration of the URI. This is in ISO 8601 datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param null|\DateTimeInterface $expiration The URI's expiration time. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function setExpiration(?\DateTimeInterface $expiration) : self
     {

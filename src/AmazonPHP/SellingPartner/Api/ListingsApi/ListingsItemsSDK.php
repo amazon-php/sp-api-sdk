@@ -162,6 +162,10 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
             );
         }
 
+        if (\count($marketplace_ids) > 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling ListingsApi.deleteListingsItem, number of items must be less than or equal to 1.');
+        }
+
         $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
         $formParams = [];
         $queryParams = [];
@@ -392,6 +396,10 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
             throw new InvalidArgumentException(
                 'Missing the required parameter $marketplace_ids when calling getListingsItem'
             );
+        }
+
+        if (\count($marketplace_ids) > 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling ListingsApi.getListingsItem, number of items must be less than or equal to 1.');
         }
 
         $resourcePath = '/listings/2021-08-01/items/{sellerId}/{sku}';
@@ -637,6 +645,11 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 'Missing the required parameter $marketplace_ids when calling patchListingsItem'
             );
         }
+
+        if (\count($marketplace_ids) > 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling ListingsApi.patchListingsItem, number of items must be less than or equal to 1.');
+        }
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(
@@ -903,6 +916,11 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 'Missing the required parameter $marketplace_ids when calling putListingsItem'
             );
         }
+
+        if (\count($marketplace_ids) > 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling ListingsApi.putListingsItem, number of items must be less than or equal to 1.');
+        }
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(
@@ -1001,6 +1019,282 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
 
             $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
         } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation searchListingsItems.
+     *
+     * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param null|string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param null|string $identifiers_type Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param null|int $page_size Number of results to be returned per page. (optional, default to 10)
+     * @param null|string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function searchListingsItems(AccessToken $accessToken, string $region, string $seller_id, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, ?int $page_size = 10, ?string $page_token = null, ?array $included_data = null, ?string $issue_locale = null) : \AmazonPHP\SellingPartner\Model\ListingsItems\ItemSearchResults
+    {
+        $request = $this->searchListingsItemsRequest($accessToken, $region, $seller_id, $marketplace_ids, $identifiers, $identifiers_type, $page_size, $page_token, $included_data, $issue_locale);
+
+        $this->configuration->extensions()->preRequest('ListingsItems', 'searchListingsItems', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('ListingsItems', 'searchListingsItems')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('ListingsItems', 'searchListingsItems'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'ListingsItems',
+                        'operation' => 'searchListingsItems',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('ListingsItems', 'searchListingsItems', $request, $response);
+
+            if ($this->configuration->loggingEnabled('ListingsItems', 'searchListingsItems')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('ListingsItems', 'searchListingsItems'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'ListingsItems',
+                        'operation' => 'searchListingsItems',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemSearchResults',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'searchListingsItems'.
+     *
+     * @param string $seller_id A selling partner identifier, such as a merchant account or vendor code. (required)
+     * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
+     * @param null|string[] $identifiers A comma-delimited list of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiersType&#x60; is provided. (optional)
+     * @param null|string $identifiers_type Type of product identifiers to search for listings items by.   **Note**:  1. Required when &#x60;identifiers&#x60; is provided. (optional)
+     * @param int $page_size Number of results to be returned per page. (optional, default to 10)
+     * @param null|string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
+     * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: summaries. (optional)
+     * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: \&quot;en_US\&quot;, \&quot;fr_CA\&quot;, \&quot;fr_FR\&quot;. Localized messages default to \&quot;en_US\&quot; when a localization is not available in the specified locale. (optional)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function searchListingsItemsRequest(AccessToken $accessToken, string $region, string $seller_id, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, int $page_size = 10, ?string $page_token = null, ?array $included_data = null, ?string $issue_locale = null) : RequestInterface
+    {
+        // verify the required parameter 'seller_id' is set
+        if ($seller_id === null || (\is_array($seller_id) && \count($seller_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $seller_id when calling searchListingsItems'
+            );
+        }
+        // verify the required parameter 'marketplace_ids' is set
+        if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $marketplace_ids when calling searchListingsItems'
+            );
+        }
+
+        if (\count($marketplace_ids) > 1) {
+            throw new InvalidArgumentException('invalid value for "$marketplace_ids" when calling ListingsApi.searchListingsItems, number of items must be less than or equal to 1.');
+        }
+
+        if ($identifiers !== null && \count($identifiers) > 20) {
+            throw new InvalidArgumentException('invalid value for "$identifiers" when calling ListingsApi.searchListingsItems, number of items must be less than or equal to 20.');
+        }
+
+        if ($page_size !== null && $page_size > 20) {
+            throw new InvalidArgumentException('invalid value for "$page_size" when calling ListingsApi.searchListingsItems, must be smaller than or equal to 20.');
+        }
+
+        $resourcePath = '/listings/2021-08-01/items/{sellerId}';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        // query params
+        if (\is_array($marketplace_ids)) {
+            $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
+        }
+
+        if ($marketplace_ids !== null) {
+            $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
+        }
+        // query params
+        if (\is_array($identifiers)) {
+            $identifiers = ObjectSerializer::serializeCollection($identifiers, 'form', true);
+        }
+
+        if ($identifiers !== null) {
+            $queryParams['identifiers'] = ObjectSerializer::toString($identifiers);
+        }
+        // query params
+        if (\is_array($identifiers_type)) {
+            $identifiers_type = ObjectSerializer::serializeCollection($identifiers_type, '', true);
+        }
+
+        if ($identifiers_type !== null) {
+            $queryParams['identifiersType'] = ObjectSerializer::toString($identifiers_type);
+        }
+        // query params
+        if (\is_array($page_size)) {
+            $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
+        }
+
+        if ($page_size !== null) {
+            $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
+        }
+        // query params
+        if (\is_array($page_token)) {
+            $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
+        }
+
+        if ($page_token !== null) {
+            $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
+        }
+        // query params
+        if (\is_array($included_data)) {
+            $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
+        }
+
+        if ($included_data !== null) {
+            $queryParams['includedData'] = ObjectSerializer::toString($included_data);
+        }
+        // query params
+        if (\is_array($issue_locale)) {
+            $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
+        }
+
+        if ($issue_locale !== null) {
+            $queryParams['issueLocale'] = ObjectSerializer::toString($issue_locale);
+        }
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        // path params
+        if ($seller_id !== null) {
+            $resourcePath = \str_replace(
+                '{' . 'sellerId' . '}',
+                ObjectSerializer::toPathValue($seller_id),
+                $resourcePath
+            );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (\count($formParams) > 0) {
             if ($multipart) {
                 $multipartContents = [];
 

@@ -17,9 +17,9 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * The Selling Partner API for AWD.
+ * The Selling Partner API for Amazon Warehousing and Distribution.
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD).
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * The version of the OpenAPI document: 2024-05-09
  *
@@ -36,13 +36,14 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
      * Operation getInboundShipment.
      *
      * @param string $shipment_id ID for the shipment. A shipment contains the cases being inbounded. (required)
+     * @param null|string $sku_quantities If equal to &#x60;SHOW&#x60;, the response includes the shipment SKU quantity details.  Defaults to &#x60;HIDE&#x60;, in which case the response does not contain SKU quantities (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getInboundShipment(AccessToken $accessToken, string $region, string $shipment_id) : \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipment
+    public function getInboundShipment(AccessToken $accessToken, string $region, string $shipment_id, ?string $sku_quantities = null) : \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipment
     {
-        $request = $this->getInboundShipmentRequest($accessToken, $region, $shipment_id);
+        $request = $this->getInboundShipmentRequest($accessToken, $region, $shipment_id, $sku_quantities);
 
         $this->configuration->extensions()->preRequest('WarehousingAndDistribution', 'getInboundShipment', $request);
 
@@ -132,10 +133,11 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
      * Create request for operation 'getInboundShipment'.
      *
      * @param string $shipment_id ID for the shipment. A shipment contains the cases being inbounded. (required)
+     * @param null|string $sku_quantities If equal to &#x60;SHOW&#x60;, the response includes the shipment SKU quantity details.  Defaults to &#x60;HIDE&#x60;, in which case the response does not contain SKU quantities (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getInboundShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
+    public function getInboundShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id, ?string $sku_quantities = null) : RequestInterface
     {
         // verify the required parameter 'shipment_id' is set
         if ($shipment_id === null || (\is_array($shipment_id) && \count($shipment_id) === 0)) {
@@ -154,6 +156,15 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         $headerParams = [];
         $multipart = false;
         $query = '';
+
+        // query params
+        if (\is_array($sku_quantities)) {
+            $sku_quantities = ObjectSerializer::serializeCollection($sku_quantities, '', true);
+        }
+
+        if ($sku_quantities !== null) {
+            $queryParams['skuQuantities'] = ObjectSerializer::toString($sku_quantities);
+        }
 
         if (\count($queryParams)) {
             $query = \http_build_query($queryParams);
@@ -226,8 +237,8 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
     /**
      * Operation listInboundShipments.
      *
-     * @param null|string $sort_by Field to sort results by. Required if &#x60;sortOrder&#x60; is provided. (optional)
-     * @param null|string $sort_order Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param null|string $sort_by Field to sort results by. By default, the response will be sorted by UPDATED_AT. (optional)
+     * @param null|string $sort_order Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order. (optional)
      * @param null|string $shipment_status Filter by inbound shipment status. (optional)
      * @param null|\DateTimeInterface $updated_after List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param null|\DateTimeInterface $updated_before List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
@@ -328,8 +339,8 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
     /**
      * Create request for operation 'listInboundShipments'.
      *
-     * @param null|string $sort_by Field to sort results by. Required if &#x60;sortOrder&#x60; is provided. (optional)
-     * @param null|string $sort_order Sort the response in &#x60;ASCENDING&#x60; or &#x60;DESCENDING&#x60; order. (optional)
+     * @param null|string $sort_by Field to sort results by. By default, the response will be sorted by UPDATED_AT. (optional)
+     * @param null|string $sort_order Sort the response in ASCENDING or DESCENDING order. By default, the response will be sorted in DESCENDING order. (optional)
      * @param null|string $shipment_status Filter by inbound shipment status. (optional)
      * @param null|\DateTimeInterface $updated_after List the inbound shipments that were updated after a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)
      * @param null|\DateTimeInterface $updated_before List the inbound shipments that were updated before a certain time (inclusive). The date must be in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; format. (optional)

@@ -415,7 +415,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets postal_code.
      *
-     * @param null|string $postal_code The postal code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
+     * @param null|string $postal_code The postal code of that address. It conatins a series of letters or digits or both, sometimes including spaces or punctuation.
      */
     public function setPostalCode(?string $postal_code) : self
     {

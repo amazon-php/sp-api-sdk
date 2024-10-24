@@ -5971,8 +5971,8 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     /**
      * Operation listItemComplianceDetails.
      *
-     * @param string[] $mskus List of merchant SKUs - a merchant-supplied identifier for a specific SKU. (required)
-     * @param string $marketplace_id The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values. (required)
+     * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
+     * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -6068,8 +6068,8 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     /**
      * Create request for operation 'listItemComplianceDetails'.
      *
-     * @param string[] $mskus List of merchant SKUs - a merchant-supplied identifier for a specific SKU. (required)
-     * @param string $marketplace_id The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values. (required)
+     * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
+     * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
@@ -6097,8 +6097,8 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             );
         }
 
-        if (\strlen($marketplace_id) > 256) {
-            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling FbaInboundApi.listItemComplianceDetails, must be smaller than or equal to 256.');
+        if (\strlen($marketplace_id) > 20) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling FbaInboundApi.listItemComplianceDetails, must be smaller than or equal to 20.');
         }
 
         if (\strlen($marketplace_id) < 1) {
@@ -7135,6 +7135,228 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 ObjectSerializer::toPathValue($inbound_plan_id),
                 $resourcePath
             );
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'GET',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
+     * Operation listPrepDetails.
+     *
+     * @param string $marketplace_id The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function listPrepDetails(AccessToken $accessToken, string $region, string $marketplace_id, array $mskus) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ListPrepDetailsResponse
+    {
+        $request = $this->listPrepDetailsRequest($accessToken, $region, $marketplace_id, $mskus);
+
+        $this->configuration->extensions()->preRequest('FulfillmentInbound', 'listPrepDetails', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('FulfillmentInbound', 'listPrepDetails')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('FulfillmentInbound', 'listPrepDetails'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'FulfillmentInbound',
+                        'operation' => 'listPrepDetails',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FulfillmentInbound', 'listPrepDetails', $request, $response);
+
+            if ($this->configuration->loggingEnabled('FulfillmentInbound', 'listPrepDetails')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('FulfillmentInbound', 'listPrepDetails'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'FulfillmentInbound',
+                        'operation' => 'listPrepDetails',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ListPrepDetailsResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'listPrepDetails'.
+     *
+     * @param string $marketplace_id The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function listPrepDetailsRequest(AccessToken $accessToken, string $region, string $marketplace_id, array $mskus) : RequestInterface
+    {
+        // verify the required parameter 'marketplace_id' is set
+        if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $marketplace_id when calling listPrepDetails'
+            );
+        }
+
+        if (\strlen($marketplace_id) > 20) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling FbaInboundApi.listPrepDetails, must be smaller than or equal to 20.');
+        }
+
+        if (\strlen($marketplace_id) < 1) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling FbaInboundApi.listPrepDetails, must be bigger than or equal to 1.');
+        }
+
+        // verify the required parameter 'mskus' is set
+        if ($mskus === null || (\is_array($mskus) && \count($mskus) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $mskus when calling listPrepDetails'
+            );
+        }
+
+        if (\count($mskus) > 100) {
+            throw new InvalidArgumentException('invalid value for "$mskus" when calling FbaInboundApi.listPrepDetails, number of items must be less than or equal to 100.');
+        }
+
+        if (\count($mskus) < 1) {
+            throw new InvalidArgumentException('invalid value for "$mskus" when calling FbaInboundApi.listPrepDetails, number of items must be greater than or equal to 1.');
+        }
+
+        $resourcePath = '/inbound/fba/2024-03-20/items/prepDetails';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        // query params
+        if (\is_array($marketplace_id)) {
+            $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
+        }
+
+        if ($marketplace_id !== null) {
+            $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
+        }
+        // query params
+        if ($mskus !== null) {
+            if ('form' === 'form' && \is_array($mskus)) {
+                foreach ($mskus as $key => $value) {
+                    $queryParams[$key] = $value;
+                }
+            } else {
+                $queryParams['mskus'] = $mskus;
+            }
+        }
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
         }
 
         if ($multipart) {
@@ -9023,6 +9245,192 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     }
 
     /**
+     * Operation setPrepDetails.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body The body of the request to &#x60;setPrepDetails&#x60;. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function setPrepDetails(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsResponse
+    {
+        $request = $this->setPrepDetailsRequest($accessToken, $region, $body);
+
+        $this->configuration->extensions()->preRequest('FulfillmentInbound', 'setPrepDetails', $request);
+
+        try {
+            $correlationId = $this->configuration->idGenerator()->generate();
+            $sanitizedRequest = $request;
+
+            foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                $sanitizedRequest = $sanitizedRequest->withoutHeader($sensitiveHeader);
+            }
+
+            if ($this->configuration->loggingEnabled('FulfillmentInbound', 'setPrepDetails')) {
+                $this->logger->log(
+                    $this->configuration->logLevel('FulfillmentInbound', 'setPrepDetails'),
+                    'Amazon Selling Partner API pre request',
+                    [
+                        'api' => 'FulfillmentInbound',
+                        'operation' => 'setPrepDetails',
+                        'request_correlation_id' => $correlationId,
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                        'request_headers' => $sanitizedRequest->getHeaders(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                    ]
+                );
+            }
+
+            $response = $this->client->sendRequest($request);
+
+            $this->configuration->extensions()->postRequest('FulfillmentInbound', 'setPrepDetails', $request, $response);
+
+            if ($this->configuration->loggingEnabled('FulfillmentInbound', 'setPrepDetails')) {
+                $sanitizedResponse = $response;
+
+                foreach ($this->configuration->loggingSkipHeaders() as $sensitiveHeader) {
+                    $sanitizedResponse = $sanitizedResponse->withoutHeader($sensitiveHeader);
+                }
+
+                $this->logger->log(
+                    $this->configuration->logLevel('FulfillmentInbound', 'setPrepDetails'),
+                    'Amazon Selling Partner API post request',
+                    [
+                        'api' => 'FulfillmentInbound',
+                        'operation' => 'setPrepDetails',
+                        'response_correlation_id' => $correlationId,
+                        'response_body' => (string) $sanitizedResponse->getBody(),
+                        'response_headers' => $sanitizedResponse->getHeaders(),
+                        'response_status_code' => $sanitizedResponse->getStatusCode(),
+                        'request_uri' => (string) $sanitizedRequest->getUri(),
+                        'request_body' => (string) $sanitizedRequest->getBody(),
+                    ]
+                );
+            }
+        } catch (ClientExceptionInterface $e) {
+            throw new ApiException(
+                "[{$e->getCode()}] {$e->getMessage()}",
+                (int) $e->getCode(),
+                null,
+                null,
+                $e
+            );
+        }
+
+        $statusCode = $response->getStatusCode();
+
+        if ($statusCode < 200 || $statusCode > 299) {
+            throw new ApiException(
+                \sprintf(
+                    '[%d] Error connecting to the API (%s)',
+                    $statusCode,
+                    (string) $request->getUri()
+                ),
+                $statusCode,
+                $response->getHeaders(),
+                (string) $response->getBody()
+            );
+        }
+
+        return ObjectSerializer::deserialize(
+            $this->configuration,
+            (string) $response->getBody(),
+            '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsResponse',
+            []
+        );
+    }
+
+    /**
+     * Create request for operation 'setPrepDetails'.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body The body of the request to &#x60;setPrepDetails&#x60;. (required)
+     *
+     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     */
+    public function setPrepDetailsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body) : RequestInterface
+    {
+        // verify the required parameter 'body' is set
+        if ($body === null || (\is_array($body) && \count($body) === 0)) {
+            throw new InvalidArgumentException(
+                'Missing the required parameter $body when calling setPrepDetails'
+            );
+        }
+
+        $resourcePath = '/inbound/fba/2024-03-20/items/prepDetails';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $multipart = false;
+        $query = '';
+
+        if (\count($queryParams)) {
+            $query = \http_build_query($queryParams);
+        }
+
+        if ($multipart) {
+            $headers = [
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        } else {
+            $headers = [
+                'content-type' => ['application/json'],
+                'accept' => ['application/json'],
+                'host' => [$this->configuration->apiHost($region)],
+                'user-agent' => [$this->configuration->userAgent()],
+            ];
+        }
+
+        $request = $this->httpFactory->createRequest(
+            'POST',
+            $this->configuration->apiURL($region) . $resourcePath . '?' . $query
+        );
+
+        // for model (json/xml)
+        if (isset($body)) {
+            if ($headers['content-type'] === ['application/json']) {
+                $httpBody = \json_encode(ObjectSerializer::sanitizeForSerialization($body), JSON_THROW_ON_ERROR);
+            } else {
+                $httpBody = $body;
+            }
+
+            $request = $request->withBody($this->httpFactory->createStreamFromString($httpBody));
+        } elseif (\count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = \is_array($formParamValue) ? $formParamValue : [$formParamValue];
+
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem,
+                        ];
+                    }
+                }
+                $request = $request->withParsedBody($multipartContents);
+            } elseif ($headers['content-type'] === ['application/json']) {
+                $request = $request->withBody($this->httpFactory->createStreamFromString(\json_encode($formParams, JSON_THROW_ON_ERROR)));
+            } else {
+                $request = $request->withParsedBody($formParams);
+            }
+        }
+
+        foreach (\array_merge($headerParams, $headers) as $name => $header) {
+            $request = $request->withHeader($name, $header);
+        }
+
+        return HttpSignatureHeaders::forConfig(
+            $this->configuration,
+            $accessToken,
+            $region,
+            $request
+        );
+    }
+
+    /**
      * Operation updateInboundPlanName.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
@@ -9236,7 +9644,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     /**
      * Operation updateItemComplianceDetails.
      *
-     * @param string $marketplace_id The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values. (required)
+     * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateItemComplianceDetailsRequest $body The body of the request to &#x60;updateItemComplianceDetails&#x60;. (required)
      *
      * @throws ApiException on non-2xx response
@@ -9333,7 +9741,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     /**
      * Create request for operation 'updateItemComplianceDetails'.
      *
-     * @param string $marketplace_id The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values. (required)
+     * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateItemComplianceDetailsRequest $body The body of the request to &#x60;updateItemComplianceDetails&#x60;. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
@@ -9347,8 +9755,8 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
             );
         }
 
-        if (\strlen($marketplace_id) > 256) {
-            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling FbaInboundApi.updateItemComplianceDetails, must be smaller than or equal to 256.');
+        if (\strlen($marketplace_id) > 20) {
+            throw new InvalidArgumentException('invalid length for "$marketplace_id" when calling FbaInboundApi.updateItemComplianceDetails, must be smaller than or equal to 20.');
         }
 
         if (\strlen($marketplace_id) < 1) {

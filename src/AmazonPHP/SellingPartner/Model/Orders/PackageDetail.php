@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * The version of the OpenAPI document: v0
  *
@@ -261,7 +261,7 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets carrier_code.
      *
-     * @param string $carrier_code Identifies the carrier that will deliver the package. This field is required for all marketplaces. For the acceptable `CarrierCode` value, refer to the list of <a href='https://images-na.ssl-images-amazon.com/images/G/01/rainier/help/xsd/release_1_9/amzn-base._TTH_.xsd'>CarrierCode</a>.
+     * @param string $carrier_code Identifies the carrier that will deliver the package. This field is required for all marketplaces. For more information, refer to the [`CarrierCode` announcement](https://developer-docs.amazon.com/sp-api/changelog/carriercode-value-required-in-shipment-confirmations-for-br-mx-ca-sg-au-in-jp-marketplaces).
      */
     public function setCarrierCode(string $carrier_code) : self
     {
@@ -281,7 +281,7 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets carrier_name.
      *
-     * @param null|string $carrier_name Carrier Name that will deliver the package. Required when carrierCode is \"Others\"
+     * @param null|string $carrier_name Carrier Name that will deliver the package. Required when `carrierCode` is \"Others\"
      */
     public function setCarrierName(?string $carrier_name) : self
     {
@@ -361,7 +361,7 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets ship_from_supply_source_id.
      *
-     * @param null|string $ship_from_supply_source_id the unique identifier of the supply source
+     * @param null|string $ship_from_supply_source_id the unique identifier for the supply source
      */
     public function setShipFromSupplySourceId(?string $ship_from_supply_source_id) : self
     {

@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Finances.
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -273,7 +273,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets posted_date.
      *
-     * @param null|\DateTimeInterface $posted_date posted_date
+     * @param null|\DateTimeInterface $posted_date A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -293,7 +293,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets marketplace_id.
      *
-     * @param null|string $marketplace_id an encrypted, Amazon-defined marketplace identifier
+     * @param null|string $marketplace_id the Amazon-defined marketplace identifier
      */
     public function setMarketplaceId(?string $marketplace_id) : self
     {
@@ -313,7 +313,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets transaction_type.
      *
-     * @param null|string $transaction_type Indicates the type of transaction.   Possible values:  * Charge - For an affordability promotion expense.  * Refund - For an affordability promotion expense reversal.
+     * @param null|string $transaction_type The type of transaction.   Possible values:  * `Charge`: an affordability promotion expense. * `Refund`: an affordability promotion expense reversal.
      */
     public function setTransactionType(?string $transaction_type) : self
     {

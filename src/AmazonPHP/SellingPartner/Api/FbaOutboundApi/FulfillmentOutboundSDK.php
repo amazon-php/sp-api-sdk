@@ -804,13 +804,14 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      * @param string $marketplace_id The marketplace for which to return a list of the inventory that is eligible for the specified feature. (required)
      * @param string $feature_name The name of the feature for which to return a list of eligible inventory. (required)
      * @param null|string $next_token A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
+     * @param null|\DateTimeInterface $query_start_date A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getFeatureInventory(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResponse
+    public function getFeatureInventory(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, ?string $next_token = null, ?\DateTimeInterface $query_start_date = null) : \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureInventoryResponse
     {
-        $request = $this->getFeatureInventoryRequest($accessToken, $region, $marketplace_id, $feature_name, $next_token);
+        $request = $this->getFeatureInventoryRequest($accessToken, $region, $marketplace_id, $feature_name, $next_token, $query_start_date);
 
         $this->configuration->extensions()->preRequest('FulfillmentOutbound', 'getFeatureInventory', $request);
 
@@ -902,10 +903,11 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
      * @param string $marketplace_id The marketplace for which to return a list of the inventory that is eligible for the specified feature. (required)
      * @param string $feature_name The name of the feature for which to return a list of eligible inventory. (required)
      * @param null|string $next_token A string token returned in the response to your previous request that is used to return the next response page. A value of null will return the first page. (optional)
+     * @param null|\DateTimeInterface $query_start_date A date that you can use to select inventory that has been updated since a specified date. An update is defined as any change in feature-enabled inventory availability. The date must be in the format yyyy-MM-ddTHH:mm:ss.sssZ (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getFeatureInventoryRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, ?string $next_token = null) : RequestInterface
+    public function getFeatureInventoryRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $feature_name, ?string $next_token = null, ?\DateTimeInterface $query_start_date = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
@@ -942,6 +944,14 @@ final class FulfillmentOutboundSDK implements FulfillmentOutboundSDKInterface
 
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
+        }
+        // query params
+        if (\is_array($query_start_date)) {
+            $query_start_date = ObjectSerializer::serializeCollection($query_start_date, '', true);
+        }
+
+        if ($query_start_date !== null) {
+            $queryParams['queryStartDate'] = ObjectSerializer::toString($query_start_date);
         }
 
         if (\count($queryParams)) {

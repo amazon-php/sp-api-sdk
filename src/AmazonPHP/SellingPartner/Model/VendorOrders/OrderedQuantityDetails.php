@@ -199,7 +199,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets updated_date.
      *
-     * @param null|\DateTimeInterface $updated_date The date when the line item quantity was updated by the buyer. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param null|\DateTimeInterface $updated_date The date when the line item quantity was updated by buyer. Must be in ISO-8601 date/time format.
      */
     public function setUpdatedDate(?\DateTimeInterface $updated_date) : self
     {

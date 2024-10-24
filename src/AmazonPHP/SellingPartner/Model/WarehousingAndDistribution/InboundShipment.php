@@ -9,9 +9,9 @@ use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * The Selling Partner API for AWD.
+ * The Selling Partner API for Amazon Warehousing and Distribution.
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD).
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * The version of the OpenAPI document: 2024-05-09
  *
@@ -48,6 +48,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'ship_by' => '\DateTimeInterface',
         'shipment_container_quantities' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageQuantity[]',
         'shipment_id' => 'string',
+        'shipment_sku_quantities' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\SkuQuantity[]',
         'shipment_status' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentStatus',
         'tracking_id' => 'string',
         'updated_at' => '\DateTimeInterface',
@@ -74,6 +75,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'ship_by' => 'date-time',
         'shipment_container_quantities' => null,
         'shipment_id' => null,
+        'shipment_sku_quantities' => null,
         'shipment_status' => null,
         'tracking_id' => null,
         'updated_at' => 'date-time',
@@ -97,6 +99,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'ship_by' => 'shipBy',
         'shipment_container_quantities' => 'shipmentContainerQuantities',
         'shipment_id' => 'shipmentId',
+        'shipment_sku_quantities' => 'shipmentSkuQuantities',
         'shipment_status' => 'shipmentStatus',
         'tracking_id' => 'trackingId',
         'updated_at' => 'updatedAt',
@@ -119,6 +122,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'ship_by' => 'setShipBy',
         'shipment_container_quantities' => 'setShipmentContainerQuantities',
         'shipment_id' => 'setShipmentId',
+        'shipment_sku_quantities' => 'setShipmentSkuQuantities',
         'shipment_status' => 'setShipmentStatus',
         'tracking_id' => 'setTrackingId',
         'updated_at' => 'setUpdatedAt',
@@ -141,6 +145,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'ship_by' => 'getShipBy',
         'shipment_container_quantities' => 'getShipmentContainerQuantities',
         'shipment_id' => 'getShipmentId',
+        'shipment_sku_quantities' => 'getShipmentSkuQuantities',
         'shipment_status' => 'getShipmentStatus',
         'tracking_id' => 'getTrackingId',
         'updated_at' => 'getUpdatedAt',
@@ -172,6 +177,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         $this->container['ship_by'] = $data['ship_by'] ?? null;
         $this->container['shipment_container_quantities'] = $data['shipment_container_quantities'] ?? null;
         $this->container['shipment_id'] = $data['shipment_id'] ?? null;
+        $this->container['shipment_sku_quantities'] = $data['shipment_sku_quantities'] ?? null;
         $this->container['shipment_status'] = $data['shipment_status'] ?? null;
         $this->container['tracking_id'] = $data['tracking_id'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -490,6 +496,28 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     public function setShipmentId(string $shipment_id) : self
     {
         $this->container['shipment_id'] = $shipment_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets shipment_sku_quantities.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\SkuQuantity[]
+     */
+    public function getShipmentSkuQuantities() : ?array
+    {
+        return $this->container['shipment_sku_quantities'];
+    }
+
+    /**
+     * Sets shipment_sku_quantities.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\SkuQuantity[] $shipment_sku_quantities Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.
+     */
+    public function setShipmentSkuQuantities(?array $shipment_sku_quantities) : self
+    {
+        $this->container['shipment_sku_quantities'] = $shipment_sku_quantities;
 
         return $this;
     }

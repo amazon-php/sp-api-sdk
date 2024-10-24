@@ -233,7 +233,7 @@ class PlacementOptionSummary implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets status.
      *
-     * @param string $status The status of a placement option. Can be: `OFFERED` or `ACCEPTED`.
+     * @param string $status The status of a placement option. Possible values: `OFFERED`, `ACCEPTED`.
      */
     public function setStatus(string $status) : self
     {

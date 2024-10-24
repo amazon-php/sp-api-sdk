@@ -359,7 +359,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets purchase_order_date.
      *
-     * @param \DateTimeInterface $purchase_order_date The date the purchase order was placed. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param \DateTimeInterface $purchase_order_date The date the purchase order was placed. Must be in ISO-8601 date/time format.
      */
     public function setPurchaseOrderDate(\DateTimeInterface $purchase_order_date) : self
     {
@@ -379,7 +379,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets purchase_order_changed_date.
      *
-     * @param null|\DateTimeInterface $purchase_order_changed_date The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param null|\DateTimeInterface $purchase_order_changed_date The date when purchase order was last changed by Amazon after the order was placed. This date will be greater than 'purchaseOrderDate'. This means the PO data was changed on that date and vendors are required to fulfill the  updated PO. The PO changes can be related to Item Quantity, Ship to Location, Ship Window etc. This field will not be present in orders that have not changed after creation. Must be in ISO-8601 date/time format.
      */
     public function setPurchaseOrderChangedDate(?\DateTimeInterface $purchase_order_changed_date) : self
     {
@@ -399,7 +399,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets purchase_order_state_changed_date.
      *
-     * @param \DateTimeInterface $purchase_order_state_changed_date The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param \DateTimeInterface $purchase_order_state_changed_date The date when current purchase order state was changed. Current purchase order state is available in the field 'purchaseOrderState'. Must be in ISO-8601 date/time format.
      */
     public function setPurchaseOrderStateChangedDate(\DateTimeInterface $purchase_order_state_changed_date) : self
     {
@@ -579,7 +579,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets ship_window.
      *
-     * @param null|string $ship_window Defines a date time interval according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>. Interval is separated by double hyphen (--).
+     * @param null|string $ship_window Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      */
     public function setShipWindow(?string $ship_window) : self
     {
@@ -599,7 +599,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets delivery_window.
      *
-     * @param null|string $delivery_window Defines a date time interval according to <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a>. Interval is separated by double hyphen (--).
+     * @param null|string $delivery_window Defines a date time interval according to ISO8601. Interval is separated by double hyphen (--).
      */
     public function setDeliveryWindow(?string $delivery_window) : self
     {

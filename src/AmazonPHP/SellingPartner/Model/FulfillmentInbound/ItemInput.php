@@ -253,7 +253,7 @@ class ItemInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets expiration.
      *
-     * @param null|string $expiration The expiration date of the MSKU in ISO 8601 format. The same MSKU with different expiration dates cannot go into the same box.
+     * @param null|string $expiration The expiration date of the MSKU. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `YYYY-MM-DD`. Items with the same MSKU but different expiration dates cannot go into the same box.
      */
     public function setExpiration(?string $expiration) : self
     {
@@ -313,7 +313,7 @@ class ItemInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets msku.
      *
-     * @param string $msku merchant SKU
+     * @param string $msku the merchant SKU, a merchant-supplied identifier of a specific SKU
      */
     public function setMsku(string $msku) : self
     {
@@ -353,7 +353,7 @@ class ItemInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets quantity.
      *
-     * @param int $quantity the number of units of the specified msku that will be shipped
+     * @param int $quantity the number of units of the specified MSKU that will be shipped
      */
     public function setQuantity(int $quantity) : self
     {

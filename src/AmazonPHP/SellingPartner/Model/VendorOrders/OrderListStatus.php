@@ -211,7 +211,7 @@ class OrderListStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets orders_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderStatus[] $orders_status represents an order status within the `OrderListStatus`
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderStatus[] $orders_status orders_status
      */
     public function setOrdersStatus(?array $orders_status) : self
     {

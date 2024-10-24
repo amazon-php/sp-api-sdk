@@ -39,7 +39,7 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     protected static array $openAPITypes = [
         'content_update_preview_id' => 'string',
-        'expiration' => 'string',
+        'expiration' => '\DateTimeInterface',
         'requested_updates' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\RequestedUpdates',
         'transportation_option' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportationOption',
     ];
@@ -55,7 +55,7 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
      */
     protected static array $openAPIFormats = [
         'content_update_preview_id' => null,
-        'expiration' => null,
+        'expiration' => 'date-time',
         'requested_updates' => null,
         'transportation_option' => null,
     ];
@@ -205,10 +205,6 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
             throw new AssertionException("'expiration' can't be null");
         }
 
-        if (!\preg_match('/^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/', (string) $this->container['expiration'])) {
-            throw new AssertionException("invalid value for 'expiration', must be conform to the pattern /^([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])$/.");
-        }
-
         if ($this->container['requested_updates'] === null) {
             throw new AssertionException("'requested_updates' can't be null");
         }
@@ -245,7 +241,7 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets expiration.
      */
-    public function getExpiration() : string
+    public function getExpiration() : \DateTimeInterface
     {
         return $this->container['expiration'];
     }
@@ -253,9 +249,9 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets expiration.
      *
-     * @param string $expiration the date in ISO 8601 format for when the content update expires
+     * @param \DateTimeInterface $expiration The time at which the content update expires. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
-    public function setExpiration(string $expiration) : self
+    public function setExpiration(\DateTimeInterface $expiration) : self
     {
         $this->container['expiration'] = $expiration;
 

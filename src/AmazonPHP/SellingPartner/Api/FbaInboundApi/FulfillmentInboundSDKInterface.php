@@ -144,6 +144,10 @@ interface FulfillmentInboundSDKInterface
 
     public const OPERATION_LISTPLACEMENTOPTIONS_PATH = '/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/placementOptions';
 
+    public const OPERATION_LISTPREPDETAILS = 'listPrepDetails';
+
+    public const OPERATION_LISTPREPDETAILS_PATH = '/inbound/fba/2024-03-20/items/prepDetails';
+
     public const OPERATION_LISTSHIPMENTBOXES = 'listShipmentBoxes';
 
     public const OPERATION_LISTSHIPMENTBOXES_PATH = '/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/shipments/{shipmentId}/boxes';
@@ -171,6 +175,10 @@ interface FulfillmentInboundSDKInterface
     public const OPERATION_SETPACKINGINFORMATION = 'setPackingInformation';
 
     public const OPERATION_SETPACKINGINFORMATION_PATH = '/inbound/fba/2024-03-20/inboundPlans/{inboundPlanId}/packingInformation';
+
+    public const OPERATION_SETPREPDETAILS = 'setPrepDetails';
+
+    public const OPERATION_SETPREPDETAILS_PATH = '/inbound/fba/2024-03-20/items/prepDetails';
 
     public const OPERATION_UPDATEINBOUNDPLANNAME = 'updateInboundPlanName';
 
@@ -491,8 +499,8 @@ interface FulfillmentInboundSDKInterface
     /**
      * Operation listItemComplianceDetails.
      *
-     * @param string[] $mskus List of merchant SKUs - a merchant-supplied identifier for a specific SKU. (required)
-     * @param string $marketplace_id The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values. (required)
+     * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
+     * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -548,6 +556,17 @@ interface FulfillmentInboundSDKInterface
      * @throws InvalidArgumentException
      */
     public function listPlacementOptions(AccessToken $accessToken, string $region, string $inbound_plan_id, int $page_size = 10, ?string $pagination_token = null) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ListPlacementOptionsResponse;
+
+    /**
+     * Operation listPrepDetails.
+     *
+     * @param string $marketplace_id The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
+     * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function listPrepDetails(AccessToken $accessToken, string $region, string $marketplace_id, array $mskus) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ListPrepDetailsResponse;
 
     /**
      * Operation listShipmentBoxes.
@@ -640,6 +659,16 @@ interface FulfillmentInboundSDKInterface
     public function setPackingInformation(AccessToken $accessToken, string $region, string $inbound_plan_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPackingInformationRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPackingInformationResponse;
 
     /**
+     * Operation setPrepDetails.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body The body of the request to &#x60;setPrepDetails&#x60;. (required)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function setPrepDetails(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body) : \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsResponse;
+
+    /**
      * Operation updateInboundPlanName.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
@@ -653,7 +682,7 @@ interface FulfillmentInboundSDKInterface
     /**
      * Operation updateItemComplianceDetails.
      *
-     * @param string $marketplace_id The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values. (required)
+     * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateItemComplianceDetailsRequest $body The body of the request to &#x60;updateItemComplianceDetails&#x60;. (required)
      *
      * @throws ApiException on non-2xx response

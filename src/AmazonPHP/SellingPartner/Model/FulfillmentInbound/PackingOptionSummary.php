@@ -233,7 +233,7 @@ class PackingOptionSummary implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets status.
      *
-     * @param string $status The status of a packing option. Can be 'OFFERED', 'ACCEPTED', or 'EXPIRED'.
+     * @param string $status The status of a packing option. Possible values: 'OFFERED', 'ACCEPTED', 'EXPIRED'.
      */
     public function setStatus(string $status) : self
     {

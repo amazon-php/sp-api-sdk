@@ -211,7 +211,7 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets orders.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Order[] $orders represents an individual order within the `OrderList`
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Order[] $orders orders
      */
     public function setOrders(?array $orders) : self
     {

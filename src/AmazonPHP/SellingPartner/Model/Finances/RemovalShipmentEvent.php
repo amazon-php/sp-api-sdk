@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Finances.
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -42,6 +42,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
         'merchant_order_id' => 'string',
         'order_id' => 'string',
         'transaction_type' => 'string',
+        'store_name' => 'string',
         'removal_shipment_item_list' => '\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[]',
     ];
 
@@ -59,6 +60,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
         'merchant_order_id' => null,
         'order_id' => null,
         'transaction_type' => null,
+        'store_name' => null,
         'removal_shipment_item_list' => null,
     ];
 
@@ -73,6 +75,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
         'merchant_order_id' => 'MerchantOrderId',
         'order_id' => 'OrderId',
         'transaction_type' => 'TransactionType',
+        'store_name' => 'StoreName',
         'removal_shipment_item_list' => 'RemovalShipmentItemList',
     ];
 
@@ -86,6 +89,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
         'merchant_order_id' => 'setMerchantOrderId',
         'order_id' => 'setOrderId',
         'transaction_type' => 'setTransactionType',
+        'store_name' => 'setStoreName',
         'removal_shipment_item_list' => 'setRemovalShipmentItemList',
     ];
 
@@ -99,6 +103,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
         'merchant_order_id' => 'getMerchantOrderId',
         'order_id' => 'getOrderId',
         'transaction_type' => 'getTransactionType',
+        'store_name' => 'getStoreName',
         'removal_shipment_item_list' => 'getRemovalShipmentItemList',
     ];
 
@@ -121,6 +126,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
         $this->container['merchant_order_id'] = $data['merchant_order_id'] ?? null;
         $this->container['order_id'] = $data['order_id'] ?? null;
         $this->container['transaction_type'] = $data['transaction_type'] ?? null;
+        $this->container['store_name'] = $data['store_name'] ?? null;
         $this->container['removal_shipment_item_list'] = $data['removal_shipment_item_list'] ?? null;
     }
 
@@ -204,7 +210,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets posted_date.
      *
-     * @param null|\DateTimeInterface $posted_date posted_date
+     * @param null|\DateTimeInterface $posted_date A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {
@@ -224,7 +230,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets merchant_order_id.
      *
-     * @param null|string $merchant_order_id the merchant removal orderId
+     * @param null|string $merchant_order_id the merchant removal `orderId`
      */
     public function setMerchantOrderId(?string $merchant_order_id) : self
     {
@@ -264,11 +270,31 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets transaction_type.
      *
-     * @param null|string $transaction_type The type of removal order.  Possible values:  * WHOLESALE_LIQUIDATION
+     * @param null|string $transaction_type The type of removal order.  Possible values:  * `WHOLESALE_LIQUIDATION`
      */
     public function setTransactionType(?string $transaction_type) : self
     {
         $this->container['transaction_type'] = $transaction_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets store_name.
+     */
+    public function getStoreName() : ?string
+    {
+        return $this->container['store_name'];
+    }
+
+    /**
+     * Sets store_name.
+     *
+     * @param null|string $store_name the name of the store where the event occurred
+     */
+    public function setStoreName(?string $store_name) : self
+    {
+        $this->container['store_name'] = $store_name;
 
         return $this;
     }
@@ -286,7 +312,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets removal_shipment_item_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[] $removal_shipment_item_list a list of information about removal shipment items
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentItem[] $removal_shipment_item_list a list of `RemovalShipmentItem`
      */
     public function setRemovalShipmentItemList(?array $removal_shipment_item_list) : self
     {

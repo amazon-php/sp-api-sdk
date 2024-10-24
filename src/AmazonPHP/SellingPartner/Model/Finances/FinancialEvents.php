@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Finances.
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -506,7 +506,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets service_provider_credit_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\SolutionProviderCreditEvent[] $service_provider_credit_event_list a list of information about solution provider credits
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\SolutionProviderCreditEvent[] $service_provider_credit_event_list a list of `SolutionProviderCreditEvent`
      */
     public function setServiceProviderCreditEventList(?array $service_provider_credit_event_list) : self
     {
@@ -528,7 +528,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets retrocharge_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RetrochargeEvent[] $retrocharge_event_list a list of information about Retrocharge or RetrochargeReversal events
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RetrochargeEvent[] $retrocharge_event_list a list of information about `Retrocharge` or `RetrochargeReversal` events
      */
     public function setRetrochargeEventList(?array $retrocharge_event_list) : self
     {
@@ -704,7 +704,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets safet_reimbursement_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\SAFETReimbursementEvent[] $safet_reimbursement_event_list a list of SAFETReimbursementEvents
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\SAFETReimbursementEvent[] $safet_reimbursement_event_list a list of `SAFETReimbursementEvent`
      */
     public function setSafetReimbursementEventList(?array $safet_reimbursement_event_list) : self
     {
@@ -902,7 +902,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets removal_shipment_adjustment_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentAdjustmentEvent[] $removal_shipment_adjustment_event_list a comma-delimited list of Removal shipmentAdjustment details for FBA inventory
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\RemovalShipmentAdjustmentEvent[] $removal_shipment_adjustment_event_list a comma-delimited list of `RemovalShipmentAdjustment` details for FBA inventory
      */
     public function setRemovalShipmentAdjustmentEventList(?array $removal_shipment_adjustment_event_list) : self
     {
@@ -990,7 +990,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets tax_withholding_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingEvent[] $tax_withholding_event_list a list of `TaxWithholding` events
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\TaxWithholdingEvent[] $tax_withholding_event_list a list of tax withholding events
      */
     public function setTaxWithholdingEventList(?array $tax_withholding_event_list) : self
     {
@@ -1034,7 +1034,7 @@ class FinancialEvents implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets failed_adhoc_disbursement_event_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEvent[] $failed_adhoc_disbursement_event_list a list of `FailedAdhocDisbursementEvent`s
+     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FailedAdhocDisbursementEvent[] $failed_adhoc_disbursement_event_list a list of `FailedAdhocDisbursementEvent`
      */
     public function setFailedAdhocDisbursementEventList(?array $failed_adhoc_disbursement_event_list) : self
     {

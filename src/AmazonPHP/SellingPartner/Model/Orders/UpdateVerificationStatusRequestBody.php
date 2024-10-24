@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Orders.
  *
- * The Selling Partner API for Orders helps you programmatically retrieve order information. These APIs let you develop fast, flexible, custom applications in areas like order synchronization, order research, and demand-based decision support tools. The Orders API supports orders that are two years old or less. Orders more than two years old will not show in the API response.  **Note:** The Orders API supports orders from 2016 and after for the JP, AU, and SG marketplaces.
+ * Use the Orders Selling Partner API to programmatically retrieve order information. With this API, you can develop fast, flexible, and custom applications to manage order synchronization, perform order research, and create demand-based decision support tools.   _Note:_ For the JP, AU, and SG marketplaces, the Orders API supports orders from 2016 onward. For all other marketplaces, the Orders API supports orders for the last two years (orders older than this don't show up in the response).
  *
  * The version of the OpenAPI document: v0
  *
@@ -41,6 +41,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
         'status' => '\AmazonPHP\SellingPartner\Model\Orders\VerificationStatus',
         'external_reviewer_id' => 'string',
         'rejection_reason_id' => 'string',
+        'verification_details' => '\AmazonPHP\SellingPartner\Model\Orders\VerificationDetails',
     ];
 
     /**
@@ -56,6 +57,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
         'status' => null,
         'external_reviewer_id' => null,
         'rejection_reason_id' => null,
+        'verification_details' => null,
     ];
 
     /**
@@ -68,6 +70,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
         'status' => 'status',
         'external_reviewer_id' => 'externalReviewerId',
         'rejection_reason_id' => 'rejectionReasonId',
+        'verification_details' => 'verificationDetails',
     ];
 
     /**
@@ -79,6 +82,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
         'status' => 'setStatus',
         'external_reviewer_id' => 'setExternalReviewerId',
         'rejection_reason_id' => 'setRejectionReasonId',
+        'verification_details' => 'setVerificationDetails',
     ];
 
     /**
@@ -90,6 +94,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
         'status' => 'getStatus',
         'external_reviewer_id' => 'getExternalReviewerId',
         'rejection_reason_id' => 'getRejectionReasonId',
+        'verification_details' => 'getVerificationDetails',
     ];
 
     /**
@@ -110,6 +115,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
         $this->container['status'] = $data['status'] ?? null;
         $this->container['external_reviewer_id'] = $data['external_reviewer_id'] ?? null;
         $this->container['rejection_reason_id'] = $data['rejection_reason_id'] ?? null;
+        $this->container['verification_details'] = $data['verification_details'] ?? null;
     }
 
     /**
@@ -179,19 +185,19 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
      */
     public function validate() : void
     {
-        if ($this->container['status'] === null) {
-            throw new AssertionException("'status' can't be null");
-        }
-
         if ($this->container['external_reviewer_id'] === null) {
             throw new AssertionException("'external_reviewer_id' can't be null");
+        }
+
+        if ($this->container['verification_details'] !== null) {
+            $this->container['verification_details']->validate();
         }
     }
 
     /**
      * Gets status.
      */
-    public function getStatus() : VerificationStatus
+    public function getStatus() : ?VerificationStatus
     {
         return $this->container['status'];
     }
@@ -199,9 +205,9 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Sets status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
      */
-    public function setStatus(VerificationStatus $status) : self
+    public function setStatus(?VerificationStatus $status) : self
     {
         $this->container['status'] = $status;
 
@@ -219,7 +225,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Sets external_reviewer_id.
      *
-     * @param string $external_reviewer_id the identifier for the order's regulated information reviewer
+     * @param string $external_reviewer_id the identifier of the order's regulated information reviewer
      */
     public function setExternalReviewerId(string $external_reviewer_id) : self
     {
@@ -239,11 +245,31 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Sets rejection_reason_id.
      *
-     * @param null|string $rejection_reason_id The unique identifier for the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
+     * @param null|string $rejection_reason_id The unique identifier of the rejection reason used for rejecting the order's regulated information. Only required if the new status is rejected.
      */
     public function setRejectionReasonId(?string $rejection_reason_id) : self
     {
         $this->container['rejection_reason_id'] = $rejection_reason_id;
+
+        return $this;
+    }
+
+    /**
+     * Gets verification_details.
+     */
+    public function getVerificationDetails() : ?VerificationDetails
+    {
+        return $this->container['verification_details'];
+    }
+
+    /**
+     * Sets verification_details.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\Orders\VerificationDetails $verification_details verification_details
+     */
+    public function setVerificationDetails(?VerificationDetails $verification_details) : self
+    {
+        $this->container['verification_details'] = $verification_details;
 
         return $this;
     }

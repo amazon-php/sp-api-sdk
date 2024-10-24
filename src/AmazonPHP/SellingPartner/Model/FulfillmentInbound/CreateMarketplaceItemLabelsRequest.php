@@ -129,7 +129,7 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
     {
         $this->container['height'] = $data['height'] ?? null;
         $this->container['label_type'] = $data['label_type'] ?? null;
-        $this->container['locale_code'] = $data['locale_code'] ?? null;
+        $this->container['locale_code'] = $data['locale_code'] ?? 'en_US';
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
         $this->container['msku_quantities'] = $data['msku_quantities'] ?? null;
         $this->container['page_type'] = $data['page_type'] ?? null;
@@ -223,8 +223,8 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
             throw new AssertionException("'marketplace_id' can't be null");
         }
 
-        if ((\mb_strlen((string) $this->container['marketplace_id']) > 256)) {
-            throw new AssertionException("invalid value for 'marketplace_id', the character length must be smaller than or equal to 256.");
+        if ((\mb_strlen((string) $this->container['marketplace_id']) > 20)) {
+            throw new AssertionException("invalid value for 'marketplace_id', the character length must be smaller than or equal to 20.");
         }
 
         if ((\mb_strlen((string) $this->container['marketplace_id']) < 1)) {
@@ -323,7 +323,7 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets marketplace_id.
      *
-     * @param string $marketplace_id The Marketplace ID. Refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids) for a list of possible values.
+     * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids).
      */
     public function setMarketplaceId(string $marketplace_id) : self
     {
@@ -345,7 +345,7 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets msku_quantities.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\MskuQuantity[] $msku_quantities represents the quantity of an msku to print item labels for
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\MskuQuantity[] $msku_quantities represents the quantity of an MSKU to print item labels for
      */
     public function setMskuQuantities(array $msku_quantities) : self
     {

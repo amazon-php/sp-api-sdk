@@ -267,7 +267,7 @@ class OrderItemStatusReceivingStatus implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets last_receive_date.
      *
-     * @param null|\DateTimeInterface $last_receive_date The date when the most recent item was received at the buyer's warehouse. Must be in <a href='https://developer-docs.amazon.com/sp-api/docs/iso-8601'>ISO 8601</a> date/time format.
+     * @param null|\DateTimeInterface $last_receive_date The date when the most recent item was received at the buyer's warehouse. Must be in ISO-8601 date/time format.
      */
     public function setLastReceiveDate(?\DateTimeInterface $last_receive_date) : self
     {

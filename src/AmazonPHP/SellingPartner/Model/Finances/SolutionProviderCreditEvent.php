@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Finances.
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -417,7 +417,7 @@ class SolutionProviderCreditEvent implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets transaction_creation_date.
      *
-     * @param null|\DateTimeInterface $transaction_creation_date transaction_creation_date
+     * @param null|\DateTimeInterface $transaction_creation_date A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function setTransactionCreationDate(?\DateTimeInterface $transaction_creation_date) : self
     {

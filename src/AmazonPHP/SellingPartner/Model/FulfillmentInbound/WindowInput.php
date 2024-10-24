@@ -183,7 +183,7 @@ class WindowInput implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets start.
      *
-     * @param \DateTimeInterface $start The start date of the window. The time component must be zero.
+     * @param \DateTimeInterface $start The start date of the window. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with minute precision. Supports patterns `yyyy-MM-ddTHH:mmZ`, `yyyy-MM-ddTHH:mm:ssZ`, or `yyyy-MM-ddTHH:mm:ss.sssZ`. Note that non-zero second and millisecond components are removed.
      */
     public function setStart(\DateTimeInterface $start) : self
     {

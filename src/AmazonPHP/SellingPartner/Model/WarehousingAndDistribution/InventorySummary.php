@@ -9,9 +9,9 @@ use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * The Selling Partner API for AWD.
+ * The Selling Partner API for Amazon Warehousing and Distribution.
  *
- * The Selling Partner API for Amazon Warehousing and Distribution (AWD).
+ * The Selling Partner API for Amazon Warehousing and Distribution (AWD) provides programmatic access to information about AWD shipments and inventory.
  *
  * The version of the OpenAPI document: 2024-05-09
  *
@@ -40,6 +40,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     protected static array $openAPITypes = [
         'inventory_details' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryDetails',
         'sku' => 'string',
+        'total_inbound_quantity' => 'int',
         'total_onhand_quantity' => 'int',
     ];
 
@@ -55,6 +56,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     protected static array $openAPIFormats = [
         'inventory_details' => null,
         'sku' => null,
+        'total_inbound_quantity' => 'int64',
         'total_onhand_quantity' => 'int64',
     ];
 
@@ -67,6 +69,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     protected static array $attributeMap = [
         'inventory_details' => 'inventoryDetails',
         'sku' => 'sku',
+        'total_inbound_quantity' => 'totalInboundQuantity',
         'total_onhand_quantity' => 'totalOnhandQuantity',
     ];
 
@@ -78,6 +81,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     protected static array $setters = [
         'inventory_details' => 'setInventoryDetails',
         'sku' => 'setSku',
+        'total_inbound_quantity' => 'setTotalInboundQuantity',
         'total_onhand_quantity' => 'setTotalOnhandQuantity',
     ];
 
@@ -89,6 +93,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     protected static array $getters = [
         'inventory_details' => 'getInventoryDetails',
         'sku' => 'getSku',
+        'total_inbound_quantity' => 'getTotalInboundQuantity',
         'total_onhand_quantity' => 'getTotalOnhandQuantity',
     ];
 
@@ -109,6 +114,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     {
         $this->container['inventory_details'] = $data['inventory_details'] ?? null;
         $this->container['sku'] = $data['sku'] ?? null;
+        $this->container['total_inbound_quantity'] = $data['total_inbound_quantity'] ?? null;
         $this->container['total_onhand_quantity'] = $data['total_onhand_quantity'] ?? null;
     }
 
@@ -224,6 +230,26 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     public function setSku(string $sku) : self
     {
         $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_inbound_quantity.
+     */
+    public function getTotalInboundQuantity() : ?int
+    {
+        return $this->container['total_inbound_quantity'];
+    }
+
+    /**
+     * Sets total_inbound_quantity.
+     *
+     * @param null|int $total_inbound_quantity Total quantity that is in-transit from the seller and has not yet been received at an AWD Distribution Center
+     */
+    public function setTotalInboundQuantity(?int $total_inbound_quantity) : self
+    {
+        $this->container['total_inbound_quantity'] = $total_inbound_quantity;
 
         return $this;
     }

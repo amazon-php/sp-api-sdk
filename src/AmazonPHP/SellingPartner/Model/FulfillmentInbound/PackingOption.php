@@ -281,7 +281,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets expiration.
      *
-     * @param null|\DateTimeInterface $expiration The timestamp at which this packing option becomes no longer valid. This is based in ISO 8601 datetime with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
+     * @param null|\DateTimeInterface $expiration The time at which this packing option is no longer valid. In [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format with pattern `yyyy-MM-ddTHH:mm:ss.sssZ`.
      */
     public function setExpiration(?\DateTimeInterface $expiration) : self
     {
@@ -365,7 +365,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets status.
      *
-     * @param string $status The status of the packing option. Can be: `OFFERED`, `ACCEPTED`, or `EXPIRED`.
+     * @param string $status The status of the packing option. Possible values: `OFFERED`, `ACCEPTED`, `EXPIRED`.
      */
     public function setStatus(string $status) : self
     {

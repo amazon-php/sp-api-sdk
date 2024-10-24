@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Finances.
  *
- * The Selling Partner API for Finances helps you obtain financial information relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
+ * The Selling Partner API for Finances provides financial information that is relevant to a seller's business. You can obtain financial events for a given order, financial event group, or date range without having to wait until a statement period closes. You can also obtain financial event groups for a given date range.
  *
  * The version of the OpenAPI document: v0
  *
@@ -219,7 +219,7 @@ class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets funds_transfers_type.
      *
-     * @param null|string $funds_transfers_type The type of fund transfer.   Example \"Refund\"
+     * @param null|string $funds_transfers_type The type of fund transfer. For example, `Refund`.
      */
     public function setFundsTransfersType(?string $funds_transfers_type) : self
     {
@@ -279,7 +279,7 @@ class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets payment_disbursement_type.
      *
-     * @param null|string $payment_disbursement_type The type of payment for disbursement.   Example `CREDIT_CARD`
+     * @param null|string $payment_disbursement_type The type of payment for disbursement. For example, `CREDIT_CARD`.
      */
     public function setPaymentDisbursementType(?string $payment_disbursement_type) : self
     {
@@ -299,7 +299,7 @@ class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets status.
      *
-     * @param null|string $status The status of the failed `AdhocDisbursement`.   Example `HARD_DECLINED`
+     * @param null|string $status The status of the failed `AdhocDisbursement`. For example, `HARD_DECLINED`.
      */
     public function setStatus(?string $status) : self
     {
@@ -339,7 +339,7 @@ class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets posted_date.
      *
-     * @param null|\DateTimeInterface $posted_date posted_date
+     * @param null|\DateTimeInterface $posted_date A date in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
      */
     public function setPostedDate(?\DateTimeInterface $posted_date) : self
     {

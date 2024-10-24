@@ -182,7 +182,7 @@ class GeneratePlacementOptionsRequest implements \ArrayAccess, \JsonSerializable
     /**
      * Sets custom_placement.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\CustomPlacementInput[] $custom_placement custom placement options to be added to the plan
+     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\CustomPlacementInput[] $custom_placement Custom placement options you want to add to the plan. This is only used for the India (IN - A21TJRUUN4KGV) marketplace.
      */
     public function setCustomPlacement(?array $custom_placement) : self
     {
