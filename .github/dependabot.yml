@@ -4,9 +4,14 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
   - package-ecosystem: "composer"
     directory: "/tools"
     schedule:
       interval: "daily"
     ignore:
       - dependency-name: "rector/rector"
+      - dependency-name: "*"
+        update-types: ["version-update:semver-major"]
