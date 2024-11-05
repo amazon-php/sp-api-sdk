@@ -63,6 +63,7 @@ This library is not in a stable stage yet, please use with caution.
 | [4.x](https://github.com/amazon-php/sp-api-sdk/tree/4.x) | 🚫         |
 | [5.x](https://github.com/amazon-php/sp-api-sdk/tree/5.x) | 🚫         |
 | [6.x](https://github.com/amazon-php/sp-api-sdk/tree/6.x) | ✅         |
+| [7.x](https://github.com/amazon-php/sp-api-sdk/tree/7.x) | ✅         |
 
 Version <s> [1.x](https://github.com/amazon-php/sp-api-sdk/tree/1.x) </s> is deprecated becuase of the attempt to
 make a little more sense of what Amazon is doing with using "tags" in their Open API specification.
