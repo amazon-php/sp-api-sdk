@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - "6.x"
+      - "7.x"
   schedule:
     - cron:  '0 8 * * *'
 
