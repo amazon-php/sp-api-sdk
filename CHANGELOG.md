@@ -1,4 +1,4 @@
-## [Unreleased] - 2024-11-16
+## [6.2.0] - 2024-11-27
 
 ### Changed
 - [#688](https://github.com/amazon-php/sp-api-sdk/pull/688) - **Add 7.x branch designation to GitHub workflow configurations.** - [@jasonhebert](https://github.com/jasonhebert)
