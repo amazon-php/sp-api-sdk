@@ -331,12 +331,12 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      * @param \DateTimeInterface $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
      * @param null|string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
      * @param null|int $limit The limit to the number of records returned (optional)
-     * @param string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
+     * @param null|string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
      * @param null|string $next_token Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getPackingSlipsRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, string $sort_order = 'ASC', ?string $next_token = null) : RequestInterface
+    public function getPackingSlipsRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, ?string $sort_order = 'ASC', ?string $next_token = null) : RequestInterface
     {
         // verify the required parameter 'created_after' is set
         if ($created_after === null || (\is_array($created_after) && \count($created_after) === 0)) {
@@ -663,7 +663,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Operation submitShipmentStatusUpdates.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body Request body that contains the shipment status update data. (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body Request body containing the shipment status update data. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -759,7 +759,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
     /**
      * Create request for operation 'submitShipmentStatusUpdates'.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body Request body that contains the shipment status update data. (required)
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body Request body containing the shipment status update data. (required)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */

@@ -52,12 +52,12 @@ interface VendorDirectFulfillmentOrdersSDKInterface
      * @param null|int $limit The limit to the number of purchase orders returned. (optional)
      * @param null|string $sort_order Sort the list in ascending or descending order by order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)
-     * @param bool $include_details When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned. (optional, default to 'true')
+     * @param null|bool $include_details When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned. (optional, default to 'true')
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?string $status = null, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList;
+    public function getOrders(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?string $status = null, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?bool $include_details = true) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderList;
 
     /**
      * Operation submitAcknowledgement.

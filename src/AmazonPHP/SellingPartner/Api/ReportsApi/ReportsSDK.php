@@ -17,7 +17,7 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Log\LoggerInterface;
 
 /**
- * Selling Partner API for Reports.
+ * Report v2021-06-30.
  *
  * The Selling Partner API for Reports lets you retrieve and manage a variety of reports that can help selling partners manage their businesses.
  *
@@ -34,6 +34,8 @@ final class ReportsSDK implements ReportsSDKInterface
 
     /**
      * Operation cancelReport.
+     *
+     * cancelReport
      *
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
@@ -217,6 +219,8 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation cancelReportSchedule.
      *
+     * cancelReportSchedule
+     *
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
@@ -398,6 +402,8 @@ final class ReportsSDK implements ReportsSDKInterface
 
     /**
      * Operation createReport.
+     *
+     * createReport
      *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportSpecification $body Information required to create the report. (required)
      *
@@ -585,6 +591,8 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation createReportSchedule.
      *
+     * createReportSchedule
+     *
      * @param \AmazonPHP\SellingPartner\Model\Reports\CreateReportScheduleSpecification $body Information required to create the report schedule. (required)
      *
      * @throws ApiException on non-2xx response
@@ -770,6 +778,8 @@ final class ReportsSDK implements ReportsSDKInterface
 
     /**
      * Operation getReport.
+     *
+     * getReport
      *
      * @param string $report_id The identifier for the report. This identifier is unique only in combination with a seller ID. (required)
      *
@@ -958,6 +968,8 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation getReportDocument.
      *
+     * getReportDocument
+     *
      * @param string $report_document_id The identifier for the report document. (required)
      *
      * @throws ApiException on non-2xx response
@@ -1145,6 +1157,8 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation getReportSchedule.
      *
+     * getReportSchedule
+     *
      * @param string $report_schedule_id The identifier for the report schedule. This identifier is unique only in combination with a seller ID. (required)
      *
      * @throws ApiException on non-2xx response
@@ -1331,6 +1345,8 @@ final class ReportsSDK implements ReportsSDKInterface
 
     /**
      * Operation getReportSchedules.
+     *
+     * getReportSchedules
      *
      * @param string[] $report_types A list of report types used to filter report schedules. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. (required)
      *
@@ -1527,6 +1543,8 @@ final class ReportsSDK implements ReportsSDKInterface
     /**
      * Operation getReports.
      *
+     * getReports
+     *
      * @param null|string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
@@ -1632,14 +1650,14 @@ final class ReportsSDK implements ReportsSDKInterface
      * @param null|string[] $report_types A list of report types used to filter reports. Refer to [Report Type Values](https://developer-docs.amazon.com/sp-api/docs/report-type-values) for more information. When reportTypes is provided, the other filter parameters (processingStatuses, marketplaceIds, createdSince, createdUntil) and pageSize may also be provided. Either reportTypes or nextToken is required. (optional)
      * @param null|string[] $processing_statuses A list of processing statuses used to filter reports. (optional)
      * @param null|string[] $marketplace_ids A list of marketplace identifiers used to filter reports. The reports returned will match at least one of the marketplaces that you specify. (optional)
-     * @param int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
+     * @param null|int $page_size The maximum number of reports to return in a single call. (optional, default to 10)
      * @param null|\DateTimeInterface $created_since The earliest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is 90 days ago. Reports are retained for a maximum of 90 days. (optional)
      * @param null|\DateTimeInterface $created_until The latest report creation date and time for reports to include in the response, in &lt;a href&#x3D;&#39;https://developer-docs.amazon.com/sp-api/docs/iso-8601&#39;&gt;ISO 8601&lt;/a&gt; date time format. The default is now. (optional)
      * @param null|string $next_token A string token returned in the response to your previous request. &#x60;nextToken&#x60; is returned when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the &#x60;getReports&#x60; operation and include this token as the only parameter. Specifying &#x60;nextToken&#x60; with any other parameters will cause the request to fail. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getReportsRequest(AccessToken $accessToken, string $region, ?array $report_types = null, ?array $processing_statuses = null, ?array $marketplace_ids = null, int $page_size = 10, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : RequestInterface
+    public function getReportsRequest(AccessToken $accessToken, string $region, ?array $report_types = null, ?array $processing_statuses = null, ?array $marketplace_ids = null, ?int $page_size = 10, ?\DateTimeInterface $created_since = null, ?\DateTimeInterface $created_until = null, ?string $next_token = null) : RequestInterface
     {
         if ($report_types !== null && \count($report_types) > 10) {
             throw new InvalidArgumentException('invalid value for "$report_types" when calling ReportsApi.getReports, number of items must be less than or equal to 10.');
