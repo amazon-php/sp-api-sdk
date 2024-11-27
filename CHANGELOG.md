@@ -1,3 +1,15 @@
+## [Unreleased] - 2024-11-27
+
+### Changed
+- [#688](https://github.com/amazon-php/sp-api-sdk/pull/688) - **Add 7.x branch designation to GitHub workflow configurations.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#688](https://github.com/amazon-php/sp-api-sdk/pull/688) - **Add 7.x branch designation to README.md.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Fixed
+- [#689](https://github.com/amazon-php/sp-api-sdk/pull/689) - **Update checkout and cache GitHub workflow actions to v4** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Updated
+- [605649](https://github.com/amazon-php/sp-api-sdk/commit/605649521c1f49b392c4be12389699d8b321ebff) - **github actions** - [@norberttech](https://github.com/norberttech)
+
 ## [6.2.0] - 2024-11-27
 
 ### Changed
