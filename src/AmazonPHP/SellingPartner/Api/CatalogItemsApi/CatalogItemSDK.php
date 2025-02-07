@@ -141,7 +141,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
      * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
      * @param null|string $locale Locale for retrieving localized summaries. Defaults to the primary locale of the marketplace. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getCatalogItemRequest(AccessToken $accessToken, string $region, string $asin, array $marketplace_ids, ?array $included_data = null, ?string $locale = null) : RequestInterface
     {
@@ -151,6 +151,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
                 'Missing the required parameter $asin when calling getCatalogItem'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -173,6 +174,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
@@ -181,6 +183,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($included_data !== null) {
             $queryParams['includedData'] = ObjectSerializer::toString($included_data);
         }
+
         // query params
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
@@ -383,7 +386,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
      * @param null|string $page_token A token to fetch a certain page when there are multiple pages worth of results. (optional)
      * @param null|string $keywords_locale The language of the keywords provided for &#x60;keywords&#x60;-based queries. Defaults to the primary locale of the marketplace. **Note:** Cannot be used with &#x60;identifiers&#x60;. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function searchCatalogItemsRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $identifiers = null, ?string $identifiers_type = null, ?array $included_data = null, ?string $locale = null, ?string $seller_id = null, ?array $keywords = null, ?array $brand_names = null, ?array $classification_ids = null, ?int $page_size = 10, ?string $page_token = null, ?string $keywords_locale = null) : RequestInterface
     {
@@ -425,6 +428,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($identifiers !== null) {
             $queryParams['identifiers'] = ObjectSerializer::toString($identifiers);
         }
+
         // query params
         if (\is_array($identifiers_type)) {
             $identifiers_type = ObjectSerializer::serializeCollection($identifiers_type, '', true);
@@ -433,6 +437,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($identifiers_type !== null) {
             $queryParams['identifiersType'] = ObjectSerializer::toString($identifiers_type);
         }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -441,6 +446,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
@@ -449,6 +455,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($included_data !== null) {
             $queryParams['includedData'] = ObjectSerializer::toString($included_data);
         }
+
         // query params
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
@@ -457,6 +464,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($locale !== null) {
             $queryParams['locale'] = ObjectSerializer::toString($locale);
         }
+
         // query params
         if (\is_array($seller_id)) {
             $seller_id = ObjectSerializer::serializeCollection($seller_id, '', true);
@@ -465,6 +473,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($seller_id !== null) {
             $queryParams['sellerId'] = ObjectSerializer::toString($seller_id);
         }
+
         // query params
         if (\is_array($keywords)) {
             $keywords = ObjectSerializer::serializeCollection($keywords, 'form', true);
@@ -473,6 +482,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($keywords !== null) {
             $queryParams['keywords'] = ObjectSerializer::toString($keywords);
         }
+
         // query params
         if (\is_array($brand_names)) {
             $brand_names = ObjectSerializer::serializeCollection($brand_names, 'form', true);
@@ -481,6 +491,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($brand_names !== null) {
             $queryParams['brandNames'] = ObjectSerializer::toString($brand_names);
         }
+
         // query params
         if (\is_array($classification_ids)) {
             $classification_ids = ObjectSerializer::serializeCollection($classification_ids, 'form', true);
@@ -489,6 +500,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($classification_ids !== null) {
             $queryParams['classificationIds'] = ObjectSerializer::toString($classification_ids);
         }
+
         // query params
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
@@ -497,6 +509,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -505,6 +518,7 @@ final class CatalogItemSDK implements CatalogItemSDKInterface
         if ($page_token !== null) {
             $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
         }
+
         // query params
         if (\is_array($keywords_locale)) {
             $keywords_locale = ObjectSerializer::serializeCollection($keywords_locale, '', true);

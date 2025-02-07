@@ -281,7 +281,7 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Sets fee_component.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent $fee_component fee_component
+     * @param null|FeeComponent $fee_component fee_component
      */
     public function setFeeComponent(?FeeComponent $fee_component) : self
     {
@@ -301,7 +301,7 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Sets charge_component.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent $charge_component charge_component
+     * @param null|ChargeComponent $charge_component charge_component
      */
     public function setChargeComponent(?ChargeComponent $charge_component) : self
     {
@@ -321,7 +321,7 @@ class SellerReviewEnrollmentPaymentEvent implements \ArrayAccess, \JsonSerializa
     /**
      * Sets total_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $total_amount total_amount
+     * @param null|Currency $total_amount total_amount
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {

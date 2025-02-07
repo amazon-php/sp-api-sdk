@@ -187,7 +187,7 @@ class PackingConfiguration implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets box_packing_methods.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource[]
+     * @return null|BoxContentInformationSource[]
      */
     public function getBoxPackingMethods() : ?array
     {
@@ -197,7 +197,7 @@ class PackingConfiguration implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets box_packing_methods.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource[] $box_packing_methods the box content information sources that are allowed
+     * @param null|BoxContentInformationSource[] $box_packing_methods the box content information sources that are allowed
      */
     public function setBoxPackingMethods(?array $box_packing_methods) : self
     {
@@ -217,7 +217,7 @@ class PackingConfiguration implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets box_requirements.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxRequirements $box_requirements box_requirements
+     * @param null|BoxRequirements $box_requirements box_requirements
      */
     public function setBoxRequirements(?BoxRequirements $box_requirements) : self
     {
@@ -229,7 +229,7 @@ class PackingConfiguration implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets shipping_requirements.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingRequirements[]
+     * @return null|ShippingRequirements[]
      */
     public function getShippingRequirements() : ?array
     {
@@ -239,7 +239,7 @@ class PackingConfiguration implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets shipping_requirements.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingRequirements[] $shipping_requirements a list of supported shipping requirements for this packing configuration
+     * @param null|ShippingRequirements[] $shipping_requirements a list of supported shipping requirements for this packing configuration
      */
     public function setShippingRequirements(?array $shipping_requirements) : self
     {

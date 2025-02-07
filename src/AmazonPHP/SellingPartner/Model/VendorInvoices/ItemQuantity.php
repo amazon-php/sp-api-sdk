@@ -298,7 +298,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets total_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TotalWeight $total_weight total_weight
+     * @param null|TotalWeight $total_weight total_weight
      */
     public function setTotalWeight(?TotalWeight $total_weight) : self
     {

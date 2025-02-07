@@ -207,7 +207,7 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets days_of_week.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\DayOfWeek[]
+     * @return null|DayOfWeek[]
      */
     public function getDaysOfWeek() : ?array
     {
@@ -217,7 +217,7 @@ class Recurrence implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets days_of_week.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\DayOfWeek[] $days_of_week Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
+     * @param null|DayOfWeek[] $days_of_week Days of the week when recurrence is valid. If the schedule is valid every Monday, input will only contain `MONDAY` in the list.
      */
     public function setDaysOfWeek(?array $days_of_week) : self
     {

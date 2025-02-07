@@ -189,7 +189,7 @@ class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {
@@ -201,7 +201,7 @@ class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets packing_slips.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlip[]
+     * @return null|PackingSlip[]
      */
     public function getPackingSlips() : ?array
     {
@@ -211,7 +211,7 @@ class PackingSlipList implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets packing_slips.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlip[] $packing_slips an array of packing slip objects
+     * @param null|PackingSlip[] $packing_slips an array of packing slip objects
      */
     public function setPackingSlips(?array $packing_slips) : self
     {

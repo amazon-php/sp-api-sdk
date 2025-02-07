@@ -263,7 +263,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorTransactionStatus\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -273,7 +273,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorTransactionStatus\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

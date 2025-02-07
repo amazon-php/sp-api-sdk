@@ -313,7 +313,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets carrier_code.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\CarrierCode $carrier_code carrier_code
+     * @param null|CarrierCode $carrier_code carrier_code
      */
     public function setCarrierCode(?CarrierCode $carrier_code) : self
     {
@@ -353,7 +353,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets destination_address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\Address $destination_address destination_address
+     * @param Address $destination_address destination_address
      */
     public function setDestinationAddress(Address $destination_address) : self
     {
@@ -413,7 +413,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets origin_address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\Address $origin_address origin_address
+     * @param Address $origin_address origin_address
      */
     public function setOriginAddress(Address $origin_address) : self
     {
@@ -425,7 +425,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets received_quantity.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryQuantity[]
+     * @return null|InventoryQuantity[]
      */
     public function getReceivedQuantity() : ?array
     {
@@ -435,7 +435,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets received_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryQuantity[] $received_quantity quantity received (at the receiving end) as part of this shipment
+     * @param null|InventoryQuantity[] $received_quantity quantity received (at the receiving end) as part of this shipment
      */
     public function setReceivedQuantity(?array $received_quantity) : self
     {
@@ -467,7 +467,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets shipment_container_quantities.
      *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageQuantity[]
+     * @return DistributionPackageQuantity[]
      */
     public function getShipmentContainerQuantities() : array
     {
@@ -477,7 +477,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipment_container_quantities.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageQuantity[] $shipment_container_quantities packages that are part of this shipment
+     * @param DistributionPackageQuantity[] $shipment_container_quantities packages that are part of this shipment
      */
     public function setShipmentContainerQuantities(array $shipment_container_quantities) : self
     {
@@ -509,7 +509,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets shipment_sku_quantities.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\SkuQuantity[]
+     * @return null|SkuQuantity[]
      */
     public function getShipmentSkuQuantities() : ?array
     {
@@ -519,7 +519,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipment_sku_quantities.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\SkuQuantity[] $shipment_sku_quantities Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.
+     * @param null|SkuQuantity[] $shipment_sku_quantities Quantity details at SKU level for the shipment. This attribute will only appear if the skuQuantities parameter in the request is set to SHOW.
      */
     public function setShipmentSkuQuantities(?array $shipment_sku_quantities) : self
     {
@@ -559,7 +559,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipment_status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentStatus $shipment_status shipment_status
+     * @param InboundShipmentStatus $shipment_status shipment_status
      */
     public function setShipmentStatus(InboundShipmentStatus $shipment_status) : self
     {

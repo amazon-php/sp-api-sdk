@@ -198,7 +198,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Gets financial_event_group_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FinancialEventGroup[]
+     * @return null|FinancialEventGroup[]
      */
     public function getFinancialEventGroupList() : ?array
     {
@@ -208,7 +208,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
     /**
      * Sets financial_event_group_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FinancialEventGroup[] $financial_event_group_list a list of financial event group information
+     * @param null|FinancialEventGroup[] $financial_event_group_list a list of financial event group information
      */
     public function setFinancialEventGroupList(?array $financial_event_group_list) : self
     {

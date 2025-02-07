@@ -245,7 +245,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Address $address address
+     * @param Address $address address
      */
     public function setAddress(Address $address) : self
     {
@@ -257,7 +257,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewItem[]
+     * @return GetFulfillmentPreviewItem[]
      */
     public function getItems() : array
     {
@@ -267,7 +267,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFulfillmentPreviewItem[] $items an array of fulfillment preview item information
+     * @param GetFulfillmentPreviewItem[] $items an array of fulfillment preview item information
      */
     public function setItems(array $items) : self
     {
@@ -279,7 +279,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Gets shipping_speed_categories.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory[]
+     * @return null|ShippingSpeedCategory[]
      */
     public function getShippingSpeedCategories() : ?array
     {
@@ -289,7 +289,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets shipping_speed_categories.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory[] $shipping_speed_categories ShippingSpeedCategory List
+     * @param null|ShippingSpeedCategory[] $shipping_speed_categories ShippingSpeedCategory List
      */
     public function setShippingSpeedCategories(?array $shipping_speed_categories) : self
     {
@@ -341,7 +341,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Gets feature_constraints.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[]
+     * @return null|FeatureSettings[]
      */
     public function getFeatureConstraints() : ?array
     {
@@ -351,7 +351,7 @@ class GetFulfillmentPreviewRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets feature_constraints.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param null|FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
      */
     public function setFeatureConstraints(?array $feature_constraints) : self
     {

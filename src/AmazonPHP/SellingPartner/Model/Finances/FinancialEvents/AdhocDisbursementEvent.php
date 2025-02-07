@@ -261,7 +261,7 @@ class AdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets transaction_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $transaction_amount transaction_amount
+     * @param null|Currency $transaction_amount transaction_amount
      */
     public function setTransactionAmount(?Currency $transaction_amount) : self
     {

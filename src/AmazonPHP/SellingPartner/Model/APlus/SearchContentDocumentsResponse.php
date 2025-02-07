@@ -191,7 +191,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\Error[]
+     * @return null|Error[]
      */
     public function getWarnings() : ?array
     {
@@ -201,7 +201,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -233,7 +233,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets content_metadata_records.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[]
+     * @return ContentMetadataRecord[]
      */
     public function getContentMetadataRecords() : array
     {
@@ -243,7 +243,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets content_metadata_records.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentMetadataRecord[] $content_metadata_records a list of A+ Content metadata records
+     * @param ContentMetadataRecord[] $content_metadata_records a list of A+ Content metadata records
      */
     public function setContentMetadataRecords(array $content_metadata_records) : self
     {

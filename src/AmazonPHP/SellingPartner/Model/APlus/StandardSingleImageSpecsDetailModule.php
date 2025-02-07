@@ -253,7 +253,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -273,7 +273,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets image.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent $image image
+     * @param null|ImageComponent $image image
      */
     public function setImage(?ImageComponent $image) : self
     {
@@ -293,7 +293,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets description_headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $description_headline description_headline
+     * @param null|TextComponent $description_headline description_headline
      */
     public function setDescriptionHeadline(?TextComponent $description_headline) : self
     {
@@ -313,7 +313,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets description_block1.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $description_block1 description_block1
+     * @param null|StandardTextBlock $description_block1 description_block1
      */
     public function setDescriptionBlock1(?StandardTextBlock $description_block1) : self
     {
@@ -333,7 +333,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets description_block2.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $description_block2 description_block2
+     * @param null|StandardTextBlock $description_block2 description_block2
      */
     public function setDescriptionBlock2(?StandardTextBlock $description_block2) : self
     {
@@ -353,7 +353,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets specification_headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $specification_headline specification_headline
+     * @param null|TextComponent $specification_headline specification_headline
      */
     public function setSpecificationHeadline(?TextComponent $specification_headline) : self
     {
@@ -373,7 +373,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets specification_list_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock $specification_list_block specification_list_block
+     * @param null|StandardHeaderTextListBlock $specification_list_block specification_list_block
      */
     public function setSpecificationListBlock(?StandardHeaderTextListBlock $specification_list_block) : self
     {
@@ -393,7 +393,7 @@ class StandardSingleImageSpecsDetailModule implements \ArrayAccess, \JsonSeriali
     /**
      * Sets specification_text_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $specification_text_block specification_text_block
+     * @param null|StandardTextBlock $specification_text_block specification_text_block
      */
     public function setSpecificationTextBlock(?StandardTextBlock $specification_text_block) : self
     {

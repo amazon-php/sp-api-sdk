@@ -278,7 +278,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets appointment_slots.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentSlot[]
+     * @return null|AppointmentSlot[]
      */
     public function getAppointmentSlots() : ?array
     {
@@ -288,7 +288,7 @@ class AppointmentSlotReport implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets appointment_slots.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentSlot[] $appointment_slots a list of time windows along with associated capacity in which the service can be performed
+     * @param null|AppointmentSlot[] $appointment_slots a list of time windows along with associated capacity in which the service can be performed
      */
     public function setAppointmentSlots(?array $appointment_slots) : self
     {

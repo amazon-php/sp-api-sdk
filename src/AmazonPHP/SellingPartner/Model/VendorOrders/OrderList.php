@@ -189,7 +189,7 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {
@@ -201,7 +201,7 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Gets orders.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\Order[]
+     * @return null|Order[]
      */
     public function getOrders() : ?array
     {
@@ -211,7 +211,7 @@ class OrderList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets orders.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Order[] $orders represents an individual order within the OrderList
+     * @param null|Order[] $orders represents an individual order within the OrderList
      */
     public function setOrders(?array $orders) : self
     {

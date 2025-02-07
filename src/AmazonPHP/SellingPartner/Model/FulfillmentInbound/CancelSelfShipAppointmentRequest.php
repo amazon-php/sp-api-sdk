@@ -180,7 +180,7 @@ class CancelSelfShipAppointmentRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets reason_comment.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ReasonComment $reason_comment reason_comment
+     * @param null|ReasonComment $reason_comment reason_comment
      */
     public function setReasonComment(?ReasonComment $reason_comment) : self
     {

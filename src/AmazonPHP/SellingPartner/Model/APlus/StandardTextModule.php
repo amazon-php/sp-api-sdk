@@ -195,7 +195,7 @@ class StandardTextModule implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -215,7 +215,7 @@ class StandardTextModule implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets body.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent $body body
+     * @param ParagraphComponent $body body
      */
     public function setBody(ParagraphComponent $body) : self
     {

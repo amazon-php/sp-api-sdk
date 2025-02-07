@@ -213,7 +213,7 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets drop_off_location.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DropOffLocation $drop_off_location drop_off_location
+     * @param null|DropOffLocation $drop_off_location drop_off_location
      */
     public function setDropOffLocation(?DropOffLocation $drop_off_location) : self
     {

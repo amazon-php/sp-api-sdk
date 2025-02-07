@@ -193,7 +193,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets orders.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\Order[]
+     * @return Order[]
      */
     public function getOrders() : array
     {
@@ -203,7 +203,7 @@ class OrdersList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets orders.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\Order[] $orders a list of orders
+     * @param Order[] $orders a list of orders
      */
     public function setOrders(array $orders) : self
     {

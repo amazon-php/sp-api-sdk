@@ -185,7 +185,7 @@ class ListPackingGroupBoxesResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Gets boxes.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Box[]
+     * @return Box[]
      */
     public function getBoxes() : array
     {
@@ -195,7 +195,7 @@ class ListPackingGroupBoxesResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets boxes.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Box[] $boxes provides the information about the list of boxes in the packing group
+     * @param Box[] $boxes provides the information about the list of boxes in the packing group
      */
     public function setBoxes(array $boxes) : self
     {
@@ -215,7 +215,7 @@ class ListPackingGroupBoxesResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {

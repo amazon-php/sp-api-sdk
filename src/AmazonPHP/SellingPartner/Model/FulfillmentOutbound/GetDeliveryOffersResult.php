@@ -172,7 +172,7 @@ class GetDeliveryOffersResult implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets delivery_offers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryOffer[]
+     * @return null|DeliveryOffer[]
      */
     public function getDeliveryOffers() : ?array
     {
@@ -182,7 +182,7 @@ class GetDeliveryOffersResult implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets delivery_offers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryOffer[] $delivery_offers an array of delivery offer information
+     * @param null|DeliveryOffer[] $delivery_offers an array of delivery offer information
      */
     public function setDeliveryOffers(?array $delivery_offers) : self
     {

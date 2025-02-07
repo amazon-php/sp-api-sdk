@@ -277,7 +277,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets unit_of_measurement.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfMeasurement $unit_of_measurement unit_of_measurement
+     * @param UnitOfMeasurement $unit_of_measurement unit_of_measurement
      */
     public function setUnitOfMeasurement(UnitOfMeasurement $unit_of_measurement) : self
     {

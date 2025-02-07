@@ -201,7 +201,7 @@ class ItemBrowseClassificationsByMarketplace implements \ArrayAccess, \JsonSeria
     /**
      * Gets classifications.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification[]
+     * @return null|ItemBrowseClassification[]
      */
     public function getClassifications() : ?array
     {
@@ -211,7 +211,7 @@ class ItemBrowseClassificationsByMarketplace implements \ArrayAccess, \JsonSeria
     /**
      * Sets classifications.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification[] $classifications classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace
+     * @param null|ItemBrowseClassification[] $classifications classifications (browse nodes) associated with the item in the Amazon catalog for the indicated Amazon marketplace
      */
     public function setClassifications(?array $classifications) : self
     {

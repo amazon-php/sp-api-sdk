@@ -82,7 +82,7 @@
             "Composer\\Config::disableProcessTimeout",
             "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-php-rules.php"
         ],
-        "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
+        "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix -v",
         "tools:install": "composer install --working-dir=./tools",
         "post-install-cmd": [
             "@tools:install"

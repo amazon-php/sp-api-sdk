@@ -175,7 +175,7 @@ class RegulatedInformation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets fields.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RegulatedInformationField[]
+     * @return RegulatedInformationField[]
      */
     public function getFields() : array
     {
@@ -185,7 +185,7 @@ class RegulatedInformation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets fields.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\RegulatedInformationField[] $fields a list of regulated information fields as collected from the regulatory form
+     * @param RegulatedInformationField[] $fields a list of regulated information fields as collected from the regulatory form
      */
     public function setFields(array $fields) : self
     {

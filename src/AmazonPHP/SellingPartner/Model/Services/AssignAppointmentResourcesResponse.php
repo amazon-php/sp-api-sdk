@@ -189,7 +189,7 @@ class AssignAppointmentResourcesResponse implements \ArrayAccess, \JsonSerializa
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesResponsePayload $payload payload
+     * @param null|AssignAppointmentResourcesResponsePayload $payload payload
      */
     public function setPayload(?AssignAppointmentResourcesResponsePayload $payload) : self
     {
@@ -201,7 +201,7 @@ class AssignAppointmentResourcesResponse implements \ArrayAccess, \JsonSerializa
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class AssignAppointmentResourcesResponse implements \ArrayAccess, \JsonSerializa
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

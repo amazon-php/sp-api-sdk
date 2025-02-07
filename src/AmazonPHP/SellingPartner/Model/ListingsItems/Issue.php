@@ -365,7 +365,7 @@ class Issue implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets enforcements.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\IssueEnforcements $enforcements enforcements
+     * @param null|IssueEnforcements $enforcements enforcements
      */
     public function setEnforcements(?IssueEnforcements $enforcements) : self
     {

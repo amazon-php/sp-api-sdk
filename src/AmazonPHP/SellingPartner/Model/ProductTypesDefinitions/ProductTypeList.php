@@ -185,7 +185,7 @@ class ProductTypeList implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets product_types.
      *
-     * @return \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductType[]
+     * @return ProductType[]
      */
     public function getProductTypes() : array
     {
@@ -195,7 +195,7 @@ class ProductTypeList implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets product_types.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductType[] $product_types product_types
+     * @param ProductType[] $product_types product_types
      */
     public function setProductTypes(array $product_types) : self
     {

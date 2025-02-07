@@ -201,7 +201,7 @@ class ShipmentSource implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address $address address
+     * @param null|Address $address address
      */
     public function setAddress(?Address $address) : self
     {

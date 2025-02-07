@@ -383,7 +383,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentReturnItemStatus $status status
+     * @param FulfillmentReturnItemStatus $status status
      */
     public function setStatus(FulfillmentReturnItemStatus $status) : self
     {
@@ -443,7 +443,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets return_received_condition.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReturnItemDisposition $return_received_condition return_received_condition
+     * @param null|ReturnItemDisposition $return_received_condition return_received_condition
      */
     public function setReturnReceivedCondition(?ReturnItemDisposition $return_received_condition) : self
     {

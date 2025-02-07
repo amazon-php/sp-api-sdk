@@ -189,7 +189,7 @@ class GetPackageTrackingDetailsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\PackageTrackingDetails $payload payload
+     * @param null|PackageTrackingDetails $payload payload
      */
     public function setPayload(?PackageTrackingDetails $payload) : self
     {
@@ -201,7 +201,7 @@ class GetPackageTrackingDetailsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetPackageTrackingDetailsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

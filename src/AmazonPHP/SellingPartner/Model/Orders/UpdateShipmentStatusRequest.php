@@ -219,7 +219,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets shipment_status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\ShipmentStatus $shipment_status shipment_status
+     * @param ShipmentStatus $shipment_status shipment_status
      */
     public function setShipmentStatus(ShipmentStatus $shipment_status) : self
     {
@@ -231,7 +231,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets order_items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OrderItemsInner[]
+     * @return null|OrderItemsInner[]
      */
     public function getOrderItems() : ?array
     {
@@ -241,7 +241,7 @@ class UpdateShipmentStatusRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets order_items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\OrderItemsInner[] $order_items for partial shipment status updates, the list of order items and quantities to be updated
+     * @param null|OrderItemsInner[] $order_items for partial shipment status updates, the list of order items and quantities to be updated
      */
     public function setOrderItems(?array $order_items) : self
     {

@@ -187,7 +187,7 @@ class IssueEnforcements implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets actions.
      *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\IssueEnforcementAction[]
+     * @return IssueEnforcementAction[]
      */
     public function getActions() : array
     {
@@ -197,7 +197,7 @@ class IssueEnforcements implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets actions.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ListingsItems\IssueEnforcementAction[] $actions list of enforcement actions taken by Amazon that affect the publishing or status of a listing
+     * @param IssueEnforcementAction[] $actions list of enforcement actions taken by Amazon that affect the publishing or status of a listing
      */
     public function setActions(array $actions) : self
     {
@@ -217,7 +217,7 @@ class IssueEnforcements implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets exemption.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ListingsItems\IssueExemption $exemption exemption
+     * @param IssueExemption $exemption exemption
      */
     public function setExemption(IssueExemption $exemption) : self
     {

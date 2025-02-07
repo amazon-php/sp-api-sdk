@@ -205,7 +205,7 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -237,7 +237,7 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\ItemDetails[]
+     * @return ItemDetails[]
      */
     public function getItems() : array
     {
@@ -247,7 +247,7 @@ class InventoryUpdate implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\ItemDetails[] $items a list of inventory items with updated details, including quantity available
+     * @param ItemDetails[] $items a list of inventory items with updated details, including quantity available
      */
     public function setItems(array $items) : self
     {

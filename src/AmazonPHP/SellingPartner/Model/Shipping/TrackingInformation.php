@@ -243,7 +243,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets summary.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\TrackingSummary $summary summary
+     * @param TrackingSummary $summary summary
      */
     public function setSummary(TrackingSummary $summary) : self
     {
@@ -275,7 +275,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets event_history.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Event[]
+     * @return Event[]
      */
     public function getEventHistory() : array
     {
@@ -285,7 +285,7 @@ class TrackingInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets event_history.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Event[] $event_history a list of events of a shipment
+     * @param Event[] $event_history a list of events of a shipment
      */
     public function setEventHistory(array $event_history) : self
     {

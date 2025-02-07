@@ -186,7 +186,7 @@ class RangeCapacity implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets capacity_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\CapacityType $capacity_type capacity_type
+     * @param null|CapacityType $capacity_type capacity_type
      */
     public function setCapacityType(?CapacityType $capacity_type) : self
     {
@@ -198,7 +198,7 @@ class RangeCapacity implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets slots.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\RangeSlot[]
+     * @return null|RangeSlot[]
      */
     public function getSlots() : ?array
     {
@@ -208,7 +208,7 @@ class RangeCapacity implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets slots.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\RangeSlot[] $slots array of capacity slots in range slot format
+     * @param null|RangeSlot[] $slots array of capacity slots in range slot format
      */
     public function setSlots(?array $slots) : self
     {

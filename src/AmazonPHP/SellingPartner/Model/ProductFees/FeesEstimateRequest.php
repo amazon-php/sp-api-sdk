@@ -257,7 +257,7 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets price_to_estimate_fees.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
+     * @param PriceToEstimateFees $price_to_estimate_fees price_to_estimate_fees
      */
     public function setPriceToEstimateFees(PriceToEstimateFees $price_to_estimate_fees) : self
     {
@@ -297,7 +297,7 @@ class FeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets optional_fulfillment_program.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\OptionalFulfillmentProgram $optional_fulfillment_program optional_fulfillment_program
+     * @param null|OptionalFulfillmentProgram $optional_fulfillment_program optional_fulfillment_program
      */
     public function setOptionalFulfillmentProgram(?OptionalFulfillmentProgram $optional_fulfillment_program) : self
     {

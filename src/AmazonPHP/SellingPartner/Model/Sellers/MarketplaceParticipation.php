@@ -207,7 +207,7 @@ class MarketplaceParticipation implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets marketplace.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sellers\Marketplace $marketplace marketplace
+     * @param Marketplace $marketplace marketplace
      */
     public function setMarketplace(Marketplace $marketplace) : self
     {
@@ -227,7 +227,7 @@ class MarketplaceParticipation implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets participation.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sellers\Participation $participation participation
+     * @param Participation $participation participation
      */
     public function setParticipation(Participation $participation) : self
     {

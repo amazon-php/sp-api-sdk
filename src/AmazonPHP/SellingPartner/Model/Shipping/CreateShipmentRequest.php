@@ -241,7 +241,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets ship_to.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_to ship_to
+     * @param Address $ship_to ship_to
      */
     public function setShipTo(Address $ship_to) : self
     {
@@ -261,7 +261,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets ship_from.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_from ship_from
+     * @param Address $ship_from ship_from
      */
     public function setShipFrom(Address $ship_from) : self
     {
@@ -273,7 +273,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets containers.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Container[]
+     * @return Container[]
      */
     public function getContainers() : array
     {
@@ -283,7 +283,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets containers.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Container[] $containers a list of container
+     * @param Container[] $containers a list of container
      */
     public function setContainers(array $containers) : self
     {

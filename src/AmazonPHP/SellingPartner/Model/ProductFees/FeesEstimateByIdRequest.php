@@ -203,7 +203,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets fees_estimate_request.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest $fees_estimate_request fees_estimate_request
+     * @param null|FeesEstimateRequest $fees_estimate_request fees_estimate_request
      */
     public function setFeesEstimateRequest(?FeesEstimateRequest $fees_estimate_request) : self
     {
@@ -223,7 +223,7 @@ class FeesEstimateByIdRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets id_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\IdType $id_type id_type
+     * @param IdType $id_type id_type
      */
     public function setIdType(IdType $id_type) : self
     {

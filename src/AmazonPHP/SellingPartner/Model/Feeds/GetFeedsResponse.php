@@ -181,7 +181,7 @@ class GetFeedsResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets feeds.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Feeds\Feed[]
+     * @return Feed[]
      */
     public function getFeeds() : array
     {
@@ -191,7 +191,7 @@ class GetFeedsResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets feeds.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Feeds\Feed[] $feeds a list of feeds
+     * @param Feed[] $feeds a list of feeds
      */
     public function setFeeds(array $feeds) : self
     {

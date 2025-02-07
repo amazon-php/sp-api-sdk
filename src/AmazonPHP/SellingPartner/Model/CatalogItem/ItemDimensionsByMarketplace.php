@@ -223,7 +223,7 @@ class ItemDimensionsByMarketplace implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets item.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimensions $item item
+     * @param null|Dimensions $item item
      */
     public function setItem(?Dimensions $item) : self
     {
@@ -243,7 +243,7 @@ class ItemDimensionsByMarketplace implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets package.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimensions $package package
+     * @param null|Dimensions $package package
      */
     public function setPackage(?Dimensions $package) : self
     {

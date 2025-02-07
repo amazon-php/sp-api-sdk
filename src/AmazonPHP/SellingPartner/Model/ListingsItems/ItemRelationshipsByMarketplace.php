@@ -205,7 +205,7 @@ class ItemRelationshipsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets relationships.
      *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\ItemRelationship[]
+     * @return ItemRelationship[]
      */
     public function getRelationships() : array
     {
@@ -215,7 +215,7 @@ class ItemRelationshipsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets relationships.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ListingsItems\ItemRelationship[] $relationships relationships for the listing item
+     * @param ItemRelationship[] $relationships relationships for the listing item
      */
     public function setRelationships(array $relationships) : self
     {

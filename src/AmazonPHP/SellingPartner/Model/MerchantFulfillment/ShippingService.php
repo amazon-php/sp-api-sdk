@@ -441,7 +441,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets rate.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount $rate rate
+     * @param CurrencyAmount $rate rate
      */
     public function setRate(CurrencyAmount $rate) : self
     {
@@ -461,7 +461,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipping_service_options.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions $shipping_service_options shipping_service_options
+     * @param ShippingServiceOptions $shipping_service_options shipping_service_options
      */
     public function setShippingServiceOptions(ShippingServiceOptions $shipping_service_options) : self
     {
@@ -481,7 +481,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets available_shipping_service_options.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AvailableShippingServiceOptions $available_shipping_service_options available_shipping_service_options
+     * @param null|AvailableShippingServiceOptions $available_shipping_service_options available_shipping_service_options
      */
     public function setAvailableShippingServiceOptions(?AvailableShippingServiceOptions $available_shipping_service_options) : self
     {
@@ -493,7 +493,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets available_label_formats.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat[]
+     * @return null|LabelFormat[]
      */
     public function getAvailableLabelFormats() : ?array
     {
@@ -503,7 +503,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets available_label_formats.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat[] $available_label_formats list of label formats
+     * @param null|LabelFormat[] $available_label_formats list of label formats
      */
     public function setAvailableLabelFormats(?array $available_label_formats) : self
     {
@@ -515,7 +515,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets available_format_options_for_label.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormatOption[]
+     * @return null|LabelFormatOption[]
      */
     public function getAvailableFormatOptionsForLabel() : ?array
     {
@@ -525,7 +525,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets available_format_options_for_label.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormatOption[] $available_format_options_for_label the available label formats
+     * @param null|LabelFormatOption[] $available_format_options_for_label the available label formats
      */
     public function setAvailableFormatOptionsForLabel(?array $available_format_options_for_label) : self
     {
@@ -565,7 +565,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets benefits.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Benefits $benefits benefits
+     * @param null|Benefits $benefits benefits
      */
     public function setBenefits(?Benefits $benefits) : self
     {

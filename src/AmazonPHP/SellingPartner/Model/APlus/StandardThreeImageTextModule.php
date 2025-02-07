@@ -213,7 +213,7 @@ class StandardThreeImageTextModule implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -233,7 +233,7 @@ class StandardThreeImageTextModule implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets block1.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block1 block1
+     * @param null|StandardImageTextBlock $block1 block1
      */
     public function setBlock1(?StandardImageTextBlock $block1) : self
     {
@@ -253,7 +253,7 @@ class StandardThreeImageTextModule implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets block2.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block2 block2
+     * @param null|StandardImageTextBlock $block2 block2
      */
     public function setBlock2(?StandardImageTextBlock $block2) : self
     {
@@ -273,7 +273,7 @@ class StandardThreeImageTextModule implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets block3.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block3 block3
+     * @param null|StandardImageTextBlock $block3 block3
      */
     public function setBlock3(?StandardImageTextBlock $block3) : self
     {

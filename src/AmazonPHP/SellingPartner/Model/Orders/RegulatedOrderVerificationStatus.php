@@ -231,7 +231,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
+     * @param VerificationStatus $status status
      */
     public function setStatus(VerificationStatus $status) : self
     {
@@ -263,7 +263,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Gets valid_rejection_reasons.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\RejectionReason[]
+     * @return RejectionReason[]
      */
     public function getValidRejectionReasons() : array
     {
@@ -273,7 +273,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets valid_rejection_reasons.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\RejectionReason[] $valid_rejection_reasons a list of valid rejection reasons that may be used to reject the order's regulated information
+     * @param RejectionReason[] $valid_rejection_reasons a list of valid rejection reasons that may be used to reject the order's regulated information
      */
     public function setValidRejectionReasons(array $valid_rejection_reasons) : self
     {
@@ -293,7 +293,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets rejection_reason.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\RejectionReason $rejection_reason rejection_reason
+     * @param null|RejectionReason $rejection_reason rejection_reason
      */
     public function setRejectionReason(?RejectionReason $rejection_reason) : self
     {
@@ -345,7 +345,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Gets valid_verification_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ValidVerificationDetail[]
+     * @return null|ValidVerificationDetail[]
      */
     public function getValidVerificationDetails() : ?array
     {
@@ -355,7 +355,7 @@ class RegulatedOrderVerificationStatus implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets valid_verification_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ValidVerificationDetail[] $valid_verification_details a list of valid verification details that may be provided and the criteria required for when the verification detail can be provided
+     * @param null|ValidVerificationDetail[] $valid_verification_details a list of valid verification details that may be provided and the criteria required for when the verification detail can be provided
      */
     public function setValidVerificationDetails(?array $valid_verification_details) : self
     {

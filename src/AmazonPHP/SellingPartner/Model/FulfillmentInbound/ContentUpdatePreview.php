@@ -269,7 +269,7 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets requested_updates.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\RequestedUpdates $requested_updates requested_updates
+     * @param RequestedUpdates $requested_updates requested_updates
      */
     public function setRequestedUpdates(RequestedUpdates $requested_updates) : self
     {
@@ -289,7 +289,7 @@ class ContentUpdatePreview implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets transportation_option.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportationOption $transportation_option transportation_option
+     * @param TransportationOption $transportation_option transportation_option
      */
     public function setTransportationOption(TransportationOption $transportation_option) : self
     {

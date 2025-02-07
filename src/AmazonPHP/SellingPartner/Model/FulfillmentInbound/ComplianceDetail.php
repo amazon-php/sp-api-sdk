@@ -285,7 +285,7 @@ class ComplianceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets tax_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TaxDetails $tax_details tax_details
+     * @param null|TaxDetails $tax_details tax_details
      */
     public function setTaxDetails(?TaxDetails $tax_details) : self
     {

@@ -137,7 +137,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
      * @param string $program The program that you want to check eligibility against. (required)
      * @param null|string[] $marketplace_ids The identifier for the marketplace in which you want to determine eligibility. Required only when program&#x3D;INBOUND. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getItemEligibilityPreviewRequest(AccessToken $accessToken, string $region, string $asin, string $program, ?array $marketplace_ids = null) : RequestInterface
     {
@@ -147,6 +147,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
                 'Missing the required parameter $asin when calling getItemEligibilityPreview'
             );
         }
+
         // verify the required parameter 'program' is set
         if ($program === null || (\is_array($program) && \count($program) === 0)) {
             throw new InvalidArgumentException(
@@ -173,6 +174,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
@@ -181,6 +183,7 @@ final class FBAInboundSDK implements FBAInboundSDKInterface
         if ($asin !== null) {
             $queryParams['asin'] = ObjectSerializer::toString($asin);
         }
+
         // query params
         if (\is_array($program)) {
             $program = ObjectSerializer::serializeCollection($program, '', true);

@@ -198,7 +198,7 @@ class PrepDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets label_owner.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\LabelOwner $label_owner label_owner
+     * @param null|LabelOwner $label_owner label_owner
      */
     public function setLabelOwner(?LabelOwner $label_owner) : self
     {
@@ -230,7 +230,7 @@ class PrepDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets prep_instructions.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PrepInstruction[]
+     * @return null|PrepInstruction[]
      */
     public function getPrepInstructions() : ?array
     {
@@ -240,7 +240,7 @@ class PrepDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets prep_instructions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PrepInstruction[] $prep_instructions Information that pertains to the preparation of inbound products. This is generated based on the specified category.
+     * @param null|PrepInstruction[] $prep_instructions Information that pertains to the preparation of inbound products. This is generated based on the specified category.
      */
     public function setPrepInstructions(?array $prep_instructions) : self
     {
@@ -260,7 +260,7 @@ class PrepDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets prep_owner.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PrepOwner $prep_owner prep_owner
+     * @param null|PrepOwner $prep_owner prep_owner
      */
     public function setPrepOwner(?PrepOwner $prep_owner) : self
     {

@@ -189,7 +189,7 @@ class CreateShipmentResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\CreateShipmentResult $payload payload
+     * @param null|CreateShipmentResult $payload payload
      */
     public function setPayload(?CreateShipmentResult $payload) : self
     {
@@ -201,7 +201,7 @@ class CreateShipmentResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Shipping\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class CreateShipmentResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

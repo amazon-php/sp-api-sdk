@@ -245,7 +245,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets liquidation_proceeds_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $liquidation_proceeds_amount liquidation_proceeds_amount
+     * @param null|Currency $liquidation_proceeds_amount liquidation_proceeds_amount
      */
     public function setLiquidationProceedsAmount(?Currency $liquidation_proceeds_amount) : self
     {
@@ -265,7 +265,7 @@ class FBALiquidationEvent implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets liquidation_fee_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $liquidation_fee_amount liquidation_fee_amount
+     * @param null|Currency $liquidation_fee_amount liquidation_fee_amount
      */
     public function setLiquidationFeeAmount(?Currency $liquidation_fee_amount) : self
     {

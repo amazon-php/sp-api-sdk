@@ -225,7 +225,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets item_condition.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ItemCondition $item_condition item_condition
+     * @param ItemCondition $item_condition item_condition
      */
     public function setItemCondition(ItemCondition $item_condition) : self
     {
@@ -245,7 +245,7 @@ class ItemOffersRequestParams implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets customer_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CustomerType $customer_type customer_type
+     * @param null|CustomerType $customer_type customer_type
      */
     public function setCustomerType(?CustomerType $customer_type) : self
     {

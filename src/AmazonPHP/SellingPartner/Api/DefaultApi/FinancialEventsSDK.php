@@ -139,7 +139,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
      * @param null|\DateTimeInterface $financial_event_group_started_after A date used for selecting financial event groups that opened after (or at) a specified date and time, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. The date-time must be no later than two minutes before the request was submitted. (optional)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listFinancialEventGroupsRequest(AccessToken $accessToken, string $region, ?int $max_results_per_page = 10, ?\DateTimeInterface $financial_event_group_started_before = null, ?\DateTimeInterface $financial_event_group_started_after = null, ?string $next_token = null) : RequestInterface
     {
@@ -166,6 +166,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
+
         // query params
         if (\is_array($financial_event_group_started_before)) {
             $financial_event_group_started_before = ObjectSerializer::serializeCollection($financial_event_group_started_before, '', true);
@@ -174,6 +175,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($financial_event_group_started_before !== null) {
             $queryParams['FinancialEventGroupStartedBefore'] = ObjectSerializer::toString($financial_event_group_started_before);
         }
+
         // query params
         if (\is_array($financial_event_group_started_after)) {
             $financial_event_group_started_after = ObjectSerializer::serializeCollection($financial_event_group_started_after, '', true);
@@ -182,6 +184,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($financial_event_group_started_after !== null) {
             $queryParams['FinancialEventGroupStartedAfter'] = ObjectSerializer::toString($financial_event_group_started_after);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -357,7 +360,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
      * @param null|\DateTimeInterface $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than PostedAfter and no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. If PostedAfter and PostedBefore are more than 180 days apart, no financial events are returned. You must specify the PostedAfter parameter if you specify the PostedBefore parameter. Default: Now minus two minutes. (optional)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listFinancialEventsRequest(AccessToken $accessToken, string $region, ?int $max_results_per_page = 100, ?\DateTimeInterface $posted_after = null, ?\DateTimeInterface $posted_before = null, ?string $next_token = null) : RequestInterface
     {
@@ -384,6 +387,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
+
         // query params
         if (\is_array($posted_after)) {
             $posted_after = ObjectSerializer::serializeCollection($posted_after, '', true);
@@ -392,6 +396,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($posted_after !== null) {
             $queryParams['PostedAfter'] = ObjectSerializer::toString($posted_after);
         }
+
         // query params
         if (\is_array($posted_before)) {
             $posted_before = ObjectSerializer::serializeCollection($posted_before, '', true);
@@ -400,6 +405,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($posted_before !== null) {
             $queryParams['PostedBefore'] = ObjectSerializer::toString($posted_before);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -577,7 +583,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
      * @param null|\DateTimeInterface $posted_before A date used for selecting financial events posted before (but not at) a specified time. The date-time must be later than &#x60;PostedAfter&#x60; and no later than two minutes before the request was submitted, in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date time format. If &#x60;PostedAfter&#x60; and &#x60;PostedBefore&#x60; are more than 180 days apart, no financial events are returned. You must specify the &#x60;PostedAfter&#x60; parameter if you specify the &#x60;PostedBefore&#x60; parameter. Default: Now minus two minutes. (optional)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listFinancialEventsByGroupIdRequest(AccessToken $accessToken, string $region, string $event_group_id, ?int $max_results_per_page = 100, ?\DateTimeInterface $posted_after = null, ?\DateTimeInterface $posted_before = null, ?string $next_token = null) : RequestInterface
     {
@@ -611,6 +617,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
+
         // query params
         if (\is_array($posted_after)) {
             $posted_after = ObjectSerializer::serializeCollection($posted_after, '', true);
@@ -619,6 +626,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($posted_after !== null) {
             $queryParams['PostedAfter'] = ObjectSerializer::toString($posted_after);
         }
+
         // query params
         if (\is_array($posted_before)) {
             $posted_before = ObjectSerializer::serializeCollection($posted_before, '', true);
@@ -627,6 +635,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($posted_before !== null) {
             $queryParams['PostedBefore'] = ObjectSerializer::toString($posted_before);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -809,7 +818,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
      * @param null|int $max_results_per_page The maximum number of results to return per page. If the response exceeds the maximum number of transactions or 10 MB, the API responds with &#39;InvalidInput&#39;. (optional, default to 100)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listFinancialEventsByOrderIdRequest(AccessToken $accessToken, string $region, string $order_id, ?int $max_results_per_page = 100, ?string $next_token = null) : RequestInterface
     {
@@ -843,6 +852,7 @@ final class FinancialEventsSDK implements FinancialEventsSDKInterface
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);

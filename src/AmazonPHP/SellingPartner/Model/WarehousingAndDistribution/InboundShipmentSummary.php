@@ -309,7 +309,7 @@ class InboundShipmentSummary implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets shipment_status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentStatus $shipment_status shipment_status
+     * @param InboundShipmentStatus $shipment_status shipment_status
      */
     public function setShipmentStatus(InboundShipmentStatus $shipment_status) : self
     {

@@ -197,7 +197,7 @@ class GetDeliveryOffersRequest implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets product.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersProduct $product product
+     * @param GetDeliveryOffersProduct $product product
      */
     public function setProduct(GetDeliveryOffersProduct $product) : self
     {
@@ -217,7 +217,7 @@ class GetDeliveryOffersRequest implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets terms.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetDeliveryOffersTerms $terms terms
+     * @param GetDeliveryOffersTerms $terms terms
      */
     public function setTerms(GetDeliveryOffersTerms $terms) : self
     {

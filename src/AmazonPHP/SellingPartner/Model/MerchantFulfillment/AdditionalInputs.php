@@ -209,7 +209,7 @@ class AdditionalInputs implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets seller_input_definition.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\SellerInputDefinition $seller_input_definition seller_input_definition
+     * @param null|SellerInputDefinition $seller_input_definition seller_input_definition
      */
     public function setSellerInputDefinition(?SellerInputDefinition $seller_input_definition) : self
     {

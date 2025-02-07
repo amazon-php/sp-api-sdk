@@ -221,7 +221,7 @@ class Decorator implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\DecoratorType $type type
+     * @param null|DecoratorType $type type
      */
     public function setType(?DecoratorType $type) : self
     {

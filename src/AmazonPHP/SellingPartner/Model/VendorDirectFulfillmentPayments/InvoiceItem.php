@@ -313,7 +313,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets invoiced_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ItemQuantity $invoiced_quantity invoiced_quantity
+     * @param ItemQuantity $invoiced_quantity invoiced_quantity
      */
     public function setInvoicedQuantity(ItemQuantity $invoiced_quantity) : self
     {
@@ -333,7 +333,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets net_cost.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money $net_cost net_cost
+     * @param Money $net_cost net_cost
      */
     public function setNetCost(Money $net_cost) : self
     {
@@ -405,7 +405,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets tax_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\TaxDetail[]
+     * @return null|TaxDetail[]
      */
     public function getTaxDetails() : ?array
     {
@@ -415,7 +415,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets tax_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\TaxDetail[] $tax_details individual tax details per line item
+     * @param null|TaxDetail[] $tax_details individual tax details per line item
      */
     public function setTaxDetails(?array $tax_details) : self
     {
@@ -427,7 +427,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets charge_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ChargeDetails[]
+     * @return null|ChargeDetails[]
      */
     public function getChargeDetails() : ?array
     {
@@ -437,7 +437,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets charge_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ChargeDetails[] $charge_details individual charge details per line item
+     * @param null|ChargeDetails[] $charge_details individual charge details per line item
      */
     public function setChargeDetails(?array $charge_details) : self
     {

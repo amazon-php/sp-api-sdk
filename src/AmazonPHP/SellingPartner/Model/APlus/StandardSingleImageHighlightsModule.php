@@ -233,7 +233,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets image.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent $image image
+     * @param null|ImageComponent $image image
      */
     public function setImage(?ImageComponent $image) : self
     {
@@ -253,7 +253,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -273,7 +273,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets text_block1.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block1 text_block1
+     * @param null|StandardTextBlock $text_block1 text_block1
      */
     public function setTextBlock1(?StandardTextBlock $text_block1) : self
     {
@@ -293,7 +293,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets text_block2.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block2 text_block2
+     * @param null|StandardTextBlock $text_block2 text_block2
      */
     public function setTextBlock2(?StandardTextBlock $text_block2) : self
     {
@@ -313,7 +313,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets text_block3.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextBlock $text_block3 text_block3
+     * @param null|StandardTextBlock $text_block3 text_block3
      */
     public function setTextBlock3(?StandardTextBlock $text_block3) : self
     {
@@ -333,7 +333,7 @@ class StandardSingleImageHighlightsModule implements \ArrayAccess, \JsonSerializ
     /**
      * Sets bulleted_list_block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardHeaderTextListBlock $bulleted_list_block bulleted_list_block
+     * @param null|StandardHeaderTextListBlock $bulleted_list_block bulleted_list_block
      */
     public function setBulletedListBlock(?StandardHeaderTextListBlock $bulleted_list_block) : self
     {

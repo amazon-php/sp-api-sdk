@@ -189,7 +189,7 @@ class GetBillOfLadingResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\BillOfLadingDownloadURL $payload payload
+     * @param null|BillOfLadingDownloadURL $payload payload
      */
     public function setPayload(?BillOfLadingDownloadURL $payload) : self
     {
@@ -201,7 +201,7 @@ class GetBillOfLadingResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetBillOfLadingResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

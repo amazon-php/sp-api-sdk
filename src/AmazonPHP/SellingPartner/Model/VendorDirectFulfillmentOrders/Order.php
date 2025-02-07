@@ -213,7 +213,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets order_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderDetails $order_details order_details
+     * @param null|OrderDetails $order_details order_details
      */
     public function setOrderDetails(?OrderDetails $order_details) : self
     {

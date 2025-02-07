@@ -412,7 +412,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets remit_to_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification $remit_to_party remit_to_party
+     * @param PartyIdentification $remit_to_party remit_to_party
      */
     public function setRemitToParty(PartyIdentification $remit_to_party) : self
     {
@@ -432,7 +432,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets ship_to_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification $ship_to_party ship_to_party
+     * @param null|PartyIdentification $ship_to_party ship_to_party
      */
     public function setShipToParty(?PartyIdentification $ship_to_party) : self
     {
@@ -452,7 +452,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets ship_from_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification $ship_from_party ship_from_party
+     * @param null|PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(?PartyIdentification $ship_from_party) : self
     {
@@ -472,7 +472,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets bill_to_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PartyIdentification $bill_to_party bill_to_party
+     * @param null|PartyIdentification $bill_to_party bill_to_party
      */
     public function setBillToParty(?PartyIdentification $bill_to_party) : self
     {
@@ -492,7 +492,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets payment_terms.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\PaymentTerms $payment_terms payment_terms
+     * @param null|PaymentTerms $payment_terms payment_terms
      */
     public function setPaymentTerms(?PaymentTerms $payment_terms) : self
     {
@@ -512,7 +512,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets invoice_total.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\Money $invoice_total invoice_total
+     * @param Money $invoice_total invoice_total
      */
     public function setInvoiceTotal(Money $invoice_total) : self
     {
@@ -524,7 +524,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets tax_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[]
+     * @return null|TaxDetails[]
      */
     public function getTaxDetails() : ?array
     {
@@ -534,7 +534,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets tax_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[] $tax_details total tax amount details for all line items
+     * @param null|TaxDetails[] $tax_details total tax amount details for all line items
      */
     public function setTaxDetails(?array $tax_details) : self
     {
@@ -546,7 +546,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets additional_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\AdditionalDetails[]
+     * @return null|AdditionalDetails[]
      */
     public function getAdditionalDetails() : ?array
     {
@@ -556,7 +556,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets additional_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\AdditionalDetails[] $additional_details additional details provided by the selling party, for tax related or other purposes
+     * @param null|AdditionalDetails[] $additional_details additional details provided by the selling party, for tax related or other purposes
      */
     public function setAdditionalDetails(?array $additional_details) : self
     {
@@ -568,7 +568,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets charge_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\ChargeDetails[]
+     * @return null|ChargeDetails[]
      */
     public function getChargeDetails() : ?array
     {
@@ -578,7 +578,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets charge_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\ChargeDetails[] $charge_details total charge amount details for all line items
+     * @param null|ChargeDetails[] $charge_details total charge amount details for all line items
      */
     public function setChargeDetails(?array $charge_details) : self
     {
@@ -590,7 +590,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets allowance_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\AllowanceDetails[]
+     * @return null|AllowanceDetails[]
      */
     public function getAllowanceDetails() : ?array
     {
@@ -600,7 +600,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets allowance_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\AllowanceDetails[] $allowance_details total allowance amount details for all line items
+     * @param null|AllowanceDetails[] $allowance_details total allowance amount details for all line items
      */
     public function setAllowanceDetails(?array $allowance_details) : self
     {
@@ -612,7 +612,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\InvoiceItem[]
+     * @return null|InvoiceItem[]
      */
     public function getItems() : ?array
     {
@@ -622,7 +622,7 @@ class Invoice implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\InvoiceItem[] $items the list of invoice items
+     * @param null|InvoiceItem[] $items the list of invoice items
      */
     public function setItems(?array $items) : self
     {

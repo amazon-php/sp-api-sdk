@@ -241,7 +241,7 @@ class PlacementOption implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets discounts.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[]
+     * @return Incentive[]
      */
     public function getDiscounts() : array
     {
@@ -251,7 +251,7 @@ class PlacementOption implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets discounts.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[] $discounts discount for the offered option
+     * @param Incentive[] $discounts discount for the offered option
      */
     public function setDiscounts(array $discounts) : self
     {
@@ -283,7 +283,7 @@ class PlacementOption implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets fees.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[]
+     * @return Incentive[]
      */
     public function getFees() : array
     {
@@ -293,7 +293,7 @@ class PlacementOption implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets fees.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[] $fees the fee for the offered option
+     * @param Incentive[] $fees the fee for the offered option
      */
     public function setFees(array $fees) : self
     {

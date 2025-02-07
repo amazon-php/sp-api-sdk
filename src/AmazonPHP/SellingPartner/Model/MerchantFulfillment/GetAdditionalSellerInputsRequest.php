@@ -225,7 +225,7 @@ class GetAdditionalSellerInputsRequest implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets ship_from_address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address $ship_from_address ship_from_address
+     * @param Address $ship_from_address ship_from_address
      */
     public function setShipFromAddress(Address $ship_from_address) : self
     {

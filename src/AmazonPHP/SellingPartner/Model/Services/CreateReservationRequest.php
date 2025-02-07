@@ -215,7 +215,7 @@ class CreateReservationRequest implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets reservation.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Services\Reservation $reservation reservation
+     * @param Reservation $reservation reservation
      */
     public function setReservation(Reservation $reservation) : self
     {

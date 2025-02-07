@@ -275,7 +275,7 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentStatus $status status
+     * @param ContentStatus $status status
      */
     public function setStatus(ContentStatus $status) : self
     {
@@ -287,7 +287,7 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets badge_set.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\ContentBadge[]
+     * @return ContentBadge[]
      */
     public function getBadgeSet() : array
     {
@@ -297,7 +297,7 @@ class ContentMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets badge_set.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentBadge[] $badge_set the set of content badges
+     * @param ContentBadge[] $badge_set the set of content badges
      */
     public function setBadgeSet(array $badge_set) : self
     {

@@ -241,7 +241,7 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets badge_set.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\AsinBadge[]
+     * @return null|AsinBadge[]
      */
     public function getBadgeSet() : ?array
     {
@@ -251,7 +251,7 @@ class AsinMetadata implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets badge_set.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\AsinBadge[] $badge_set the set of ASIN badges
+     * @param null|AsinBadge[] $badge_set the set of ASIN badges
      */
     public function setBadgeSet(?array $badge_set) : self
     {

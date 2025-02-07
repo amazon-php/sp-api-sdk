@@ -366,7 +366,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets product_category.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsCategory $product_category product_category
+     * @param null|ItemVendorDetailsCategory $product_category product_category
      */
     public function setProductCategory(?ItemVendorDetailsCategory $product_category) : self
     {
@@ -406,7 +406,7 @@ class ItemVendorDetailsByMarketplace implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets product_subcategory.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsCategory $product_subcategory product_subcategory
+     * @param null|ItemVendorDetailsCategory $product_subcategory product_subcategory
      */
     public function setProductSubcategory(?ItemVendorDetailsCategory $product_subcategory) : self
     {

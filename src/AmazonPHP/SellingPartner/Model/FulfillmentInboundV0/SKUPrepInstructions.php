@@ -250,7 +250,7 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets barcode_instruction.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\BarcodeInstruction $barcode_instruction barcode_instruction
+     * @param null|BarcodeInstruction $barcode_instruction barcode_instruction
      */
     public function setBarcodeInstruction(?BarcodeInstruction $barcode_instruction) : self
     {
@@ -270,7 +270,7 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets prep_guidance.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepGuidance $prep_guidance prep_guidance
+     * @param null|PrepGuidance $prep_guidance prep_guidance
      */
     public function setPrepGuidance(?PrepGuidance $prep_guidance) : self
     {
@@ -282,7 +282,7 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets prep_instruction_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepInstruction[]
+     * @return null|PrepInstruction[]
      */
     public function getPrepInstructionList() : ?array
     {
@@ -292,7 +292,7 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets prep_instruction_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepInstruction[] $prep_instruction_list a list of preparation instructions to help with item sourcing decisions
+     * @param null|PrepInstruction[] $prep_instruction_list a list of preparation instructions to help with item sourcing decisions
      */
     public function setPrepInstructionList(?array $prep_instruction_list) : self
     {
@@ -304,7 +304,7 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets amazon_prep_fees_details_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\AmazonPrepFeesDetails[]
+     * @return null|AmazonPrepFeesDetails[]
      */
     public function getAmazonPrepFeesDetailsList() : ?array
     {
@@ -314,7 +314,7 @@ class SKUPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets amazon_prep_fees_details_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\AmazonPrepFeesDetails[] $amazon_prep_fees_details_list a list of preparation instructions and fees for Amazon to prep goods for shipment
+     * @param null|AmazonPrepFeesDetails[] $amazon_prep_fees_details_list a list of preparation instructions and fees for Amazon to prep goods for shipment
      */
     public function setAmazonPrepFeesDetailsList(?array $amazon_prep_fees_details_list) : self
     {

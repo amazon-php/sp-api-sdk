@@ -172,7 +172,7 @@ class GetPaymentMethodsResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets payment_methods.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransfers\PaymentMethodDetails[]
+     * @return null|PaymentMethodDetails[]
      */
     public function getPaymentMethods() : ?array
     {
@@ -182,7 +182,7 @@ class GetPaymentMethodsResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets payment_methods.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransfers\PaymentMethodDetails[] $payment_methods the list of payment methods with payment method details
+     * @param null|PaymentMethodDetails[] $payment_methods the list of payment methods with payment method details
      */
     public function setPaymentMethods(?array $payment_methods) : self
     {

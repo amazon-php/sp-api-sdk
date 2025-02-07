@@ -229,7 +229,7 @@ class MskuPrepDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets all_owners_constraint.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\AllOwnersConstraint $all_owners_constraint all_owners_constraint
+     * @param null|AllOwnersConstraint $all_owners_constraint all_owners_constraint
      */
     public function setAllOwnersConstraint(?AllOwnersConstraint $all_owners_constraint) : self
     {
@@ -249,7 +249,7 @@ class MskuPrepDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets label_owner_constraint.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\OwnerConstraint $label_owner_constraint label_owner_constraint
+     * @param null|OwnerConstraint $label_owner_constraint label_owner_constraint
      */
     public function setLabelOwnerConstraint(?OwnerConstraint $label_owner_constraint) : self
     {
@@ -289,7 +289,7 @@ class MskuPrepDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets prep_category.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepCategory $prep_category prep_category
+     * @param PrepCategory $prep_category prep_category
      */
     public function setPrepCategory(PrepCategory $prep_category) : self
     {
@@ -309,7 +309,7 @@ class MskuPrepDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets prep_owner_constraint.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\OwnerConstraint $prep_owner_constraint prep_owner_constraint
+     * @param null|OwnerConstraint $prep_owner_constraint prep_owner_constraint
      */
     public function setPrepOwnerConstraint(?OwnerConstraint $prep_owner_constraint) : self
     {
@@ -321,7 +321,7 @@ class MskuPrepDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets prep_types.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepType[]
+     * @return PrepType[]
      */
     public function getPrepTypes() : array
     {
@@ -331,7 +331,7 @@ class MskuPrepDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets prep_types.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepType[] $prep_types a list of preparation types associated with a preparation category
+     * @param PrepType[] $prep_types a list of preparation types associated with a preparation category
      */
     public function setPrepTypes(array $prep_types) : self
     {

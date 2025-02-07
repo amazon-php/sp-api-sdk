@@ -189,7 +189,7 @@ class GetPrepInstructionsResponse implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\GetPrepInstructionsResult $payload payload
+     * @param null|GetPrepInstructionsResult $payload payload
      */
     public function setPayload(?GetPrepInstructionsResult $payload) : self
     {
@@ -201,7 +201,7 @@ class GetPrepInstructionsResponse implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetPrepInstructionsResponse implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

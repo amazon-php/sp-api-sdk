@@ -183,7 +183,7 @@ class SubmitInventoryUpdateRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets inventory.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\InventoryUpdate $inventory inventory
+     * @param null|InventoryUpdate $inventory inventory
      */
     public function setInventory(?InventoryUpdate $inventory) : self
     {

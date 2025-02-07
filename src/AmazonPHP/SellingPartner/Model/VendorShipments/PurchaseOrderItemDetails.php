@@ -183,7 +183,7 @@ class PurchaseOrderItemDetails implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets maximum_retail_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Money $maximum_retail_price maximum_retail_price
+     * @param null|Money $maximum_retail_price maximum_retail_price
      */
     public function setMaximumRetailPrice(?Money $maximum_retail_price) : self
     {

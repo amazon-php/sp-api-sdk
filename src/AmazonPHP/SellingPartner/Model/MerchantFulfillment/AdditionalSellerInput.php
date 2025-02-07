@@ -343,7 +343,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets value_as_address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Address $value_as_address value_as_address
+     * @param null|Address $value_as_address value_as_address
      */
     public function setValueAsAddress(?Address $value_as_address) : self
     {
@@ -363,7 +363,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets value_as_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight $value_as_weight value_as_weight
+     * @param null|Weight $value_as_weight value_as_weight
      */
     public function setValueAsWeight(?Weight $value_as_weight) : self
     {
@@ -383,7 +383,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets value_as_dimension.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Length $value_as_dimension value_as_dimension
+     * @param null|Length $value_as_dimension value_as_dimension
      */
     public function setValueAsDimension(?Length $value_as_dimension) : self
     {
@@ -403,7 +403,7 @@ class AdditionalSellerInput implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets value_as_currency.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount $value_as_currency value_as_currency
+     * @param null|CurrencyAmount $value_as_currency value_as_currency
      */
     public function setValueAsCurrency(?CurrencyAmount $value_as_currency) : self
     {

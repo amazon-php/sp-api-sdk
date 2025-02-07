@@ -185,7 +185,7 @@ class UpdateShipmentTrackingDetailsRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Sets tracking_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TrackingDetailsInput $tracking_details tracking_details
+     * @param TrackingDetailsInput $tracking_details tracking_details
      */
     public function setTrackingDetails(TrackingDetailsInput $tracking_details) : self
     {

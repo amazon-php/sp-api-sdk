@@ -259,7 +259,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets offer_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType $offer_type offer_type
+     * @param null|OfferCustomerType $offer_type offer_type
      */
     public function setOfferType(?OfferCustomerType $offer_type) : self
     {
@@ -279,7 +279,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets buying_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType $buying_price buying_price
+     * @param PriceType $buying_price buying_price
      */
     public function setBuyingPrice(PriceType $buying_price) : self
     {
@@ -299,7 +299,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets regular_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $regular_price regular_price
+     * @param MoneyType $regular_price regular_price
      */
     public function setRegularPrice(MoneyType $regular_price) : self
     {
@@ -319,7 +319,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets business_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $business_price business_price
+     * @param null|MoneyType $business_price business_price
      */
     public function setBusinessPrice(?MoneyType $business_price) : self
     {
@@ -331,7 +331,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Gets quantity_discount_prices.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountPriceType[]
+     * @return null|QuantityDiscountPriceType[]
      */
     public function getQuantityDiscountPrices() : ?array
     {
@@ -341,7 +341,7 @@ class OfferType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets quantity_discount_prices.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountPriceType[] $quantity_discount_prices quantity_discount_prices
+     * @param null|QuantityDiscountPriceType[] $quantity_discount_prices quantity_discount_prices
      */
     public function setQuantityDiscountPrices(?array $quantity_discount_prices) : self
     {

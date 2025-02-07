@@ -181,7 +181,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      * @param null|string $buyer_warehouse_code Get Shipping Details based on buyer warehouse code. This value should be same as &#39;shipToParty.partyId&#39; in the Shipment. (optional)
      * @param null|string $seller_warehouse_code Get Shipping Details based on vendor warehouse code. This value should be same as &#39;sellingParty.partyId&#39; in the Shipment. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentDetailsRequest(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $shipment_confirmed_before = null, ?\DateTimeInterface $shipment_confirmed_after = null, ?\DateTimeInterface $package_label_created_before = null, ?\DateTimeInterface $package_label_created_after = null, ?\DateTimeInterface $shipped_before = null, ?\DateTimeInterface $shipped_after = null, ?\DateTimeInterface $estimated_delivery_before = null, ?\DateTimeInterface $estimated_delivery_after = null, ?\DateTimeInterface $shipment_delivery_before = null, ?\DateTimeInterface $shipment_delivery_after = null, ?\DateTimeInterface $requested_pick_up_before = null, ?\DateTimeInterface $requested_pick_up_after = null, ?\DateTimeInterface $scheduled_pick_up_before = null, ?\DateTimeInterface $scheduled_pick_up_after = null, ?string $current_shipment_status = null, ?string $vendor_shipment_identifier = null, ?string $buyer_reference_number = null, ?string $buyer_warehouse_code = null, ?string $seller_warehouse_code = null) : RequestInterface
     {
@@ -208,6 +208,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -216,6 +217,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -224,6 +226,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -232,6 +235,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($created_after !== null) {
             $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -240,6 +244,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($created_before !== null) {
             $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($shipment_confirmed_before)) {
             $shipment_confirmed_before = ObjectSerializer::serializeCollection($shipment_confirmed_before, '', true);
@@ -248,6 +253,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($shipment_confirmed_before !== null) {
             $queryParams['shipmentConfirmedBefore'] = ObjectSerializer::toString($shipment_confirmed_before);
         }
+
         // query params
         if (\is_array($shipment_confirmed_after)) {
             $shipment_confirmed_after = ObjectSerializer::serializeCollection($shipment_confirmed_after, '', true);
@@ -256,6 +262,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($shipment_confirmed_after !== null) {
             $queryParams['shipmentConfirmedAfter'] = ObjectSerializer::toString($shipment_confirmed_after);
         }
+
         // query params
         if (\is_array($package_label_created_before)) {
             $package_label_created_before = ObjectSerializer::serializeCollection($package_label_created_before, '', true);
@@ -264,6 +271,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($package_label_created_before !== null) {
             $queryParams['packageLabelCreatedBefore'] = ObjectSerializer::toString($package_label_created_before);
         }
+
         // query params
         if (\is_array($package_label_created_after)) {
             $package_label_created_after = ObjectSerializer::serializeCollection($package_label_created_after, '', true);
@@ -272,6 +280,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($package_label_created_after !== null) {
             $queryParams['packageLabelCreatedAfter'] = ObjectSerializer::toString($package_label_created_after);
         }
+
         // query params
         if (\is_array($shipped_before)) {
             $shipped_before = ObjectSerializer::serializeCollection($shipped_before, '', true);
@@ -280,6 +289,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($shipped_before !== null) {
             $queryParams['shippedBefore'] = ObjectSerializer::toString($shipped_before);
         }
+
         // query params
         if (\is_array($shipped_after)) {
             $shipped_after = ObjectSerializer::serializeCollection($shipped_after, '', true);
@@ -288,6 +298,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($shipped_after !== null) {
             $queryParams['shippedAfter'] = ObjectSerializer::toString($shipped_after);
         }
+
         // query params
         if (\is_array($estimated_delivery_before)) {
             $estimated_delivery_before = ObjectSerializer::serializeCollection($estimated_delivery_before, '', true);
@@ -296,6 +307,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($estimated_delivery_before !== null) {
             $queryParams['estimatedDeliveryBefore'] = ObjectSerializer::toString($estimated_delivery_before);
         }
+
         // query params
         if (\is_array($estimated_delivery_after)) {
             $estimated_delivery_after = ObjectSerializer::serializeCollection($estimated_delivery_after, '', true);
@@ -304,6 +316,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($estimated_delivery_after !== null) {
             $queryParams['estimatedDeliveryAfter'] = ObjectSerializer::toString($estimated_delivery_after);
         }
+
         // query params
         if (\is_array($shipment_delivery_before)) {
             $shipment_delivery_before = ObjectSerializer::serializeCollection($shipment_delivery_before, '', true);
@@ -312,6 +325,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($shipment_delivery_before !== null) {
             $queryParams['shipmentDeliveryBefore'] = ObjectSerializer::toString($shipment_delivery_before);
         }
+
         // query params
         if (\is_array($shipment_delivery_after)) {
             $shipment_delivery_after = ObjectSerializer::serializeCollection($shipment_delivery_after, '', true);
@@ -320,6 +334,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($shipment_delivery_after !== null) {
             $queryParams['shipmentDeliveryAfter'] = ObjectSerializer::toString($shipment_delivery_after);
         }
+
         // query params
         if (\is_array($requested_pick_up_before)) {
             $requested_pick_up_before = ObjectSerializer::serializeCollection($requested_pick_up_before, '', true);
@@ -328,6 +343,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($requested_pick_up_before !== null) {
             $queryParams['requestedPickUpBefore'] = ObjectSerializer::toString($requested_pick_up_before);
         }
+
         // query params
         if (\is_array($requested_pick_up_after)) {
             $requested_pick_up_after = ObjectSerializer::serializeCollection($requested_pick_up_after, '', true);
@@ -336,6 +352,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($requested_pick_up_after !== null) {
             $queryParams['requestedPickUpAfter'] = ObjectSerializer::toString($requested_pick_up_after);
         }
+
         // query params
         if (\is_array($scheduled_pick_up_before)) {
             $scheduled_pick_up_before = ObjectSerializer::serializeCollection($scheduled_pick_up_before, '', true);
@@ -344,6 +361,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($scheduled_pick_up_before !== null) {
             $queryParams['scheduledPickUpBefore'] = ObjectSerializer::toString($scheduled_pick_up_before);
         }
+
         // query params
         if (\is_array($scheduled_pick_up_after)) {
             $scheduled_pick_up_after = ObjectSerializer::serializeCollection($scheduled_pick_up_after, '', true);
@@ -352,6 +370,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($scheduled_pick_up_after !== null) {
             $queryParams['scheduledPickUpAfter'] = ObjectSerializer::toString($scheduled_pick_up_after);
         }
+
         // query params
         if (\is_array($current_shipment_status)) {
             $current_shipment_status = ObjectSerializer::serializeCollection($current_shipment_status, '', true);
@@ -360,6 +379,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($current_shipment_status !== null) {
             $queryParams['currentShipmentStatus'] = ObjectSerializer::toString($current_shipment_status);
         }
+
         // query params
         if (\is_array($vendor_shipment_identifier)) {
             $vendor_shipment_identifier = ObjectSerializer::serializeCollection($vendor_shipment_identifier, '', true);
@@ -368,6 +388,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($vendor_shipment_identifier !== null) {
             $queryParams['vendorShipmentIdentifier'] = ObjectSerializer::toString($vendor_shipment_identifier);
         }
+
         // query params
         if (\is_array($buyer_reference_number)) {
             $buyer_reference_number = ObjectSerializer::serializeCollection($buyer_reference_number, '', true);
@@ -376,6 +397,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($buyer_reference_number !== null) {
             $queryParams['buyerReferenceNumber'] = ObjectSerializer::toString($buyer_reference_number);
         }
+
         // query params
         if (\is_array($buyer_warehouse_code)) {
             $buyer_warehouse_code = ObjectSerializer::serializeCollection($buyer_warehouse_code, '', true);
@@ -384,6 +406,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($buyer_warehouse_code !== null) {
             $queryParams['buyerWarehouseCode'] = ObjectSerializer::toString($buyer_warehouse_code);
         }
+
         // query params
         if (\is_array($seller_warehouse_code)) {
             $seller_warehouse_code = ObjectSerializer::serializeCollection($seller_warehouse_code, '', true);
@@ -567,7 +590,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      * @param null|string $vendor_shipment_identifier Get Shipment labels by passing vendor shipment identifier. (optional)
      * @param null|string $seller_warehouse_code Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentLabelsRequest(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $label_created_after = null, ?\DateTimeInterface $label_created_before = null, ?string $buyer_reference_number = null, ?string $vendor_shipment_identifier = null, ?string $seller_warehouse_code = null) : RequestInterface
     {
@@ -594,6 +617,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -602,6 +626,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -610,6 +635,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($label_created_after)) {
             $label_created_after = ObjectSerializer::serializeCollection($label_created_after, '', true);
@@ -618,6 +644,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($label_created_after !== null) {
             $queryParams['labelCreatedAfter'] = ObjectSerializer::toString($label_created_after);
         }
+
         // query params
         if (\is_array($label_created_before)) {
             $label_created_before = ObjectSerializer::serializeCollection($label_created_before, '', true);
@@ -626,6 +653,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($label_created_before !== null) {
             $queryParams['labelCreatedBefore'] = ObjectSerializer::toString($label_created_before);
         }
+
         // query params
         if (\is_array($buyer_reference_number)) {
             $buyer_reference_number = ObjectSerializer::serializeCollection($buyer_reference_number, '', true);
@@ -634,6 +662,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($buyer_reference_number !== null) {
             $queryParams['buyerReferenceNumber'] = ObjectSerializer::toString($buyer_reference_number);
         }
+
         // query params
         if (\is_array($vendor_shipment_identifier)) {
             $vendor_shipment_identifier = ObjectSerializer::serializeCollection($vendor_shipment_identifier, '', true);
@@ -642,6 +671,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
         if ($vendor_shipment_identifier !== null) {
             $queryParams['vendorShipmentIdentifier'] = ObjectSerializer::toString($vendor_shipment_identifier);
         }
+
         // query params
         if (\is_array($seller_warehouse_code)) {
             $seller_warehouse_code = ObjectSerializer::serializeCollection($seller_warehouse_code, '', true);
@@ -813,7 +843,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function submitShipmentConfirmationsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body) : RequestInterface
     {
@@ -1001,7 +1031,7 @@ final class VendorShipmentsSDK implements VendorShipmentsSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body A request to submit shipment request. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function submitShipmentsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body) : RequestInterface
     {

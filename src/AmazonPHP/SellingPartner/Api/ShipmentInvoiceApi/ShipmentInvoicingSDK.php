@@ -133,7 +133,7 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @param string $shipment_id The shipment identifier for the shipment. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getInvoiceStatusRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {
@@ -320,7 +320,7 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      *
      * @param string $shipment_id The identifier for the shipment. Get this value from the FBAOutboundShipmentStatus notification. For information about subscribing to notifications, see the [Notifications API Use Case Guide](doc:notifications-api-v1-use-case-guide). (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentDetailsRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {
@@ -509,7 +509,7 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
      * @param string $shipment_id The identifier for the shipment. (required)
      * @param \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function submitInvoiceRequest(AccessToken $accessToken, string $region, string $shipment_id, \AmazonPHP\SellingPartner\Model\ShipmentInvoicing\SubmitInvoiceRequest $body) : RequestInterface
     {
@@ -519,6 +519,7 @@ final class ShipmentInvoicingSDK implements ShipmentInvoicingSDKInterface
                 'Missing the required parameter $shipment_id when calling submitInvoice'
             );
         }
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(

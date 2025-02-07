@@ -199,7 +199,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Sets _links.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseLinks $_links _links
+     * @param null|GetSolicitationActionsForOrderResponseLinks $_links _links
      */
     public function setLinks(?GetSolicitationActionsForOrderResponseLinks $_links) : self
     {
@@ -219,7 +219,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Sets _embedded.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionsForOrderResponseEmbedded $_embedded _embedded
+     * @param null|GetSolicitationActionsForOrderResponseEmbedded $_embedded _embedded
      */
     public function setEmbedded(?GetSolicitationActionsForOrderResponseEmbedded $_embedded) : self
     {
@@ -231,7 +231,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -241,7 +241,7 @@ class GetSolicitationActionsForOrderResponse implements \ArrayAccess, \JsonSeria
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

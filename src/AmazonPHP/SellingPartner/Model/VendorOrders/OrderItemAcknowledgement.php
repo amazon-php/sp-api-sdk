@@ -297,7 +297,7 @@ class OrderItemAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets acknowledged_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $acknowledged_quantity acknowledged_quantity
+     * @param ItemQuantity $acknowledged_quantity acknowledged_quantity
      */
     public function setAcknowledgedQuantity(ItemQuantity $acknowledged_quantity) : self
     {

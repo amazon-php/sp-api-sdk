@@ -338,7 +338,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets meta_schema.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink $meta_schema meta_schema
+     * @param null|SchemaLink $meta_schema meta_schema
      */
     public function setMetaSchema(?SchemaLink $meta_schema) : self
     {
@@ -358,7 +358,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets schema.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLink $schema schema
+     * @param SchemaLink $schema schema
      */
     public function setSchema(SchemaLink $schema) : self
     {
@@ -410,7 +410,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets property_groups.
      *
-     * @return array<string,\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\PropertyGroup>
+     * @return array<string,PropertyGroup>
      */
     public function getPropertyGroups() : array
     {
@@ -420,7 +420,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets property_groups.
      *
-     * @param array<string,\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\PropertyGroup> $property_groups Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
+     * @param array<string,PropertyGroup> $property_groups Mapping of property group names to property groups. Property groups represent logical groupings of schema properties that can be used for display or informational purposes.
      */
     public function setPropertyGroups(array $property_groups) : self
     {
@@ -522,7 +522,7 @@ class ProductTypeDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets product_type_version.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeVersion $product_type_version product_type_version
+     * @param ProductTypeVersion $product_type_version product_type_version
      */
     public function setProductTypeVersion(ProductTypeVersion $product_type_version) : self
     {

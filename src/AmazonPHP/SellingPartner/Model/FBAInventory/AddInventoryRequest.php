@@ -172,7 +172,7 @@ class AddInventoryRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets inventory_items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryItem[]
+     * @return null|InventoryItem[]
      */
     public function getInventoryItems() : ?array
     {
@@ -182,7 +182,7 @@ class AddInventoryRequest implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets inventory_items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryItem[] $inventory_items List of Inventory to be added
+     * @param null|InventoryItem[] $inventory_items List of Inventory to be added
      */
     public function setInventoryItems(?array $inventory_items) : self
     {

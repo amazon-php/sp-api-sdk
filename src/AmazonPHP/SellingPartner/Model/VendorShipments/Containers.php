@@ -314,7 +314,7 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets container_identifiers.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ContainerIdentification[]
+     * @return ContainerIdentification[]
      */
     public function getContainerIdentifiers() : array
     {
@@ -324,7 +324,7 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets container_identifiers.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\ContainerIdentification[] $container_identifiers a list of carton identifiers
+     * @param ContainerIdentification[] $container_identifiers a list of carton identifiers
      */
     public function setContainerIdentifiers(array $container_identifiers) : self
     {
@@ -364,7 +364,7 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions $dimensions dimensions
+     * @param null|Dimensions $dimensions dimensions
      */
     public function setDimensions(?Dimensions $dimensions) : self
     {
@@ -384,7 +384,7 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $weight weight
+     * @param null|Weight $weight weight
      */
     public function setWeight(?Weight $weight) : self
     {
@@ -444,7 +444,7 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets inner_containers_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\InnerContainersDetails $inner_containers_details inner_containers_details
+     * @param null|InnerContainersDetails $inner_containers_details inner_containers_details
      */
     public function setInnerContainersDetails(?InnerContainersDetails $inner_containers_details) : self
     {
@@ -456,7 +456,7 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets packed_items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\PackedItems[]
+     * @return null|PackedItems[]
      */
     public function getPackedItems() : ?array
     {
@@ -466,7 +466,7 @@ class Containers implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets packed_items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\PackedItems[] $packed_items a list of packed items
+     * @param null|PackedItems[] $packed_items a list of packed items
      */
     public function setPackedItems(?array $packed_items) : self
     {

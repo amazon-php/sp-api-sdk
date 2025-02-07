@@ -178,7 +178,7 @@ class DistributionPackageContents implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets packages.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageQuantity[]
+     * @return null|DistributionPackageQuantity[]
      */
     public function getPackages() : ?array
     {
@@ -188,7 +188,7 @@ class DistributionPackageContents implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets packages.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageQuantity[] $packages this is required only when `DistributionPackageType=PALLET`
+     * @param null|DistributionPackageQuantity[] $packages this is required only when `DistributionPackageType=PALLET`
      */
     public function setPackages(?array $packages) : self
     {
@@ -200,7 +200,7 @@ class DistributionPackageContents implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets products.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ProductQuantity[]
+     * @return null|ProductQuantity[]
      */
     public function getProducts() : ?array
     {
@@ -210,7 +210,7 @@ class DistributionPackageContents implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets products.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ProductQuantity[] $products this is required only when `DistributionPackageType=CASE`
+     * @param null|ProductQuantity[] $products this is required only when `DistributionPackageType=CASE`
      */
     public function setProducts(?array $products) : self
     {

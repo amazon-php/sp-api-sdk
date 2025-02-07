@@ -297,7 +297,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets buyer_tax_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerTaxInfo $buyer_tax_info buyer_tax_info
+     * @param null|BuyerTaxInfo $buyer_tax_info buyer_tax_info
      */
     public function setBuyerTaxInfo(?BuyerTaxInfo $buyer_tax_info) : self
     {

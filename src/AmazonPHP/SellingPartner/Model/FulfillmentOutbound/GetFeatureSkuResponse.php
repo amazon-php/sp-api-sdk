@@ -189,7 +189,7 @@ class GetFeatureSkuResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\GetFeatureSkuResult $payload payload
+     * @param null|GetFeatureSkuResult $payload payload
      */
     public function setPayload(?GetFeatureSkuResult $payload) : self
     {
@@ -201,7 +201,7 @@ class GetFeatureSkuResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetFeatureSkuResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

@@ -425,7 +425,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets ship_to_address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingAddress $ship_to_address ship_to_address
+     * @param null|TrackingAddress $ship_to_address ship_to_address
      */
     public function setShipToAddress(?TrackingAddress $ship_to_address) : self
     {
@@ -445,7 +445,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets current_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CurrentStatus $current_status current_status
+     * @param null|CurrentStatus $current_status current_status
      */
     public function setCurrentStatus(?CurrentStatus $current_status) : self
     {
@@ -505,7 +505,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets additional_location_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\AdditionalLocationInfo $additional_location_info additional_location_info
+     * @param null|AdditionalLocationInfo $additional_location_info additional_location_info
      */
     public function setAdditionalLocationInfo(?AdditionalLocationInfo $additional_location_info) : self
     {
@@ -517,7 +517,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets tracking_events.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingEvent[]
+     * @return null|TrackingEvent[]
      */
     public function getTrackingEvents() : ?array
     {
@@ -527,7 +527,7 @@ class PackageTrackingDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets tracking_events.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\TrackingEvent[] $tracking_events an array of tracking event information
+     * @param null|TrackingEvent[] $tracking_events an array of tracking event information
      */
     public function setTrackingEvents(?array $tracking_events) : self
     {

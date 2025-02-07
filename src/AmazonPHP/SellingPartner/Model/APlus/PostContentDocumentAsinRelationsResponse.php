@@ -172,7 +172,7 @@ class PostContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\Error[]
+     * @return null|Error[]
      */
     public function getWarnings() : ?array
     {
@@ -182,7 +182,7 @@ class PostContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
      */
     public function setWarnings(?array $warnings) : self
     {

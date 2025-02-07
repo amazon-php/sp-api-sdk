@@ -185,7 +185,7 @@ class ItemProcurement implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets cost_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ListingsItems\Money $cost_price cost_price
+     * @param Money $cost_price cost_price
      */
     public function setCostPrice(Money $cost_price) : self
     {

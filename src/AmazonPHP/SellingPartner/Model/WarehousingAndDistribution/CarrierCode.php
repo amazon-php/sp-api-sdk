@@ -186,7 +186,7 @@ class CarrierCode implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets carrier_code_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\CarrierCodeType $carrier_code_type carrier_code_type
+     * @param null|CarrierCodeType $carrier_code_type carrier_code_type
      */
     public function setCarrierCodeType(?CarrierCodeType $carrier_code_type) : self
     {

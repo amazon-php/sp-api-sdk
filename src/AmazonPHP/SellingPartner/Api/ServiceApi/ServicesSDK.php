@@ -135,7 +135,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body Add appointment operation input details. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function addAppointmentForServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id, \AmazonPHP\SellingPartner\Model\Services\AddAppointmentRequest $body) : RequestInterface
     {
@@ -349,7 +349,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesRequest $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function assignAppointmentResourcesRequest(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\AssignAppointmentResourcesRequest $body) : RequestInterface
     {
@@ -409,6 +409,7 @@ final class ServicesSDK implements ServicesSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($appointment_id !== null) {
             $resourcePath = \str_replace(
@@ -584,7 +585,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string $reservation_id Reservation Identifier (required)
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function cancelReservationRequest(AccessToken $accessToken, string $region, string $reservation_id, array $marketplace_ids) : RequestInterface
     {
@@ -801,7 +802,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      * @param string $cancellation_reason_code A cancel reason code that specifies the reason for cancelling a service job. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function cancelServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id, string $cancellation_reason_code) : RequestInterface
     {
@@ -1024,7 +1025,7 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @param string $service_job_id An Amazon defined service job identifier. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function completeServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id) : RequestInterface
     {
@@ -1221,7 +1222,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\CreateReservationRequest $body Reservation details (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createReservationRequest(AccessToken $accessToken, string $region, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\CreateReservationRequest $body) : RequestInterface
     {
@@ -1427,7 +1428,7 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\Services\ServiceUploadDocument $body Upload document operation input details. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createServiceDocumentUploadDestinationRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Services\ServiceUploadDocument $body) : RequestInterface
     {
@@ -1621,7 +1622,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param null|string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
      * @param null|string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getAppointmentSlotsRequest(AccessToken $accessToken, string $region, string $asin, string $store_id, array $marketplace_ids, ?string $start_time = null, ?string $end_time = null) : RequestInterface
     {
@@ -1631,6 +1632,7 @@ final class ServicesSDK implements ServicesSDKInterface
                 'Missing the required parameter $asin when calling getAppointmentSlots'
             );
         }
+
         // verify the required parameter 'store_id' is set
         if ($store_id === null || (\is_array($store_id) && \count($store_id) === 0)) {
             throw new InvalidArgumentException(
@@ -1672,6 +1674,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($asin !== null) {
             $queryParams['asin'] = ObjectSerializer::toString($asin);
         }
+
         // query params
         if (\is_array($store_id)) {
             $store_id = ObjectSerializer::serializeCollection($store_id, '', true);
@@ -1680,6 +1683,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($store_id !== null) {
             $queryParams['storeId'] = ObjectSerializer::toString($store_id);
         }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -1688,6 +1692,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($start_time)) {
             $start_time = ObjectSerializer::serializeCollection($start_time, '', true);
@@ -1696,6 +1701,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($start_time !== null) {
             $queryParams['startTime'] = ObjectSerializer::toString($start_time);
         }
+
         // query params
         if (\is_array($end_time)) {
             $end_time = ObjectSerializer::serializeCollection($end_time, '', true);
@@ -1871,7 +1877,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param null|string $start_time A time from which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;startTime&#x60; is provided, &#x60;endTime&#x60; should also be provided. Default value is as per business configuration. (optional)
      * @param null|string $end_time A time up to which the appointment slots will be retrieved. The specified time must be in ISO 8601 format. If &#x60;endTime&#x60; is provided, &#x60;startTime&#x60; should also be provided. Default value is as per business configuration. Maximum range of appointment slots can be 90 days. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getAppointmmentSlotsByJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id, array $marketplace_ids, ?string $start_time = null, ?string $end_time = null) : RequestInterface
     {
@@ -1916,6 +1922,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($start_time)) {
             $start_time = ObjectSerializer::serializeCollection($start_time, '', true);
@@ -1924,6 +1931,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($start_time !== null) {
             $queryParams['startTime'] = ObjectSerializer::toString($start_time);
         }
+
         // query params
         if (\is_array($end_time)) {
             $end_time = ObjectSerializer::serializeCollection($end_time, '', true);
@@ -2108,7 +2116,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param \AmazonPHP\SellingPartner\Model\Services\FixedSlotCapacityQuery $body Request body. (required)
      * @param null|string $next_page_token Next page token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getFixedSlotCapacityRequest(AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\FixedSlotCapacityQuery $body, ?string $next_page_token = null) : RequestInterface
     {
@@ -2160,6 +2168,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($next_page_token)) {
             $next_page_token = ObjectSerializer::serializeCollection($next_page_token, '', true);
@@ -2352,7 +2361,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param \AmazonPHP\SellingPartner\Model\Services\RangeSlotCapacityQuery $body Request body. (required)
      * @param null|string $next_page_token Next page token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getRangeSlotCapacityRequest(AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\RangeSlotCapacityQuery $body, ?string $next_page_token = null) : RequestInterface
     {
@@ -2404,6 +2413,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($next_page_token)) {
             $next_page_token = ObjectSerializer::serializeCollection($next_page_token, '', true);
@@ -2590,7 +2600,7 @@ final class ServicesSDK implements ServicesSDKInterface
      *
      * @param string $service_job_id A service job identifier. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id) : RequestInterface
     {
@@ -2815,7 +2825,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param null|string[] $required_skills A defined set of related knowledge, skills, experience, tools, materials, and work processes common to service delivery for a set of products and/or service scenarios. Max values supported is 20. (optional)
      * @param null|string[] $store_ids List of Amazon-defined identifiers for the region scope. Max values supported is 50. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getServiceJobsRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $service_order_ids = null, ?array $service_job_status = null, ?string $page_token = null, ?int $page_size = 20, ?string $sort_field = null, ?string $sort_order = null, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?string $schedule_start_date = null, ?string $schedule_end_date = null, ?array $asins = null, ?array $required_skills = null, ?array $store_ids = null) : RequestInterface
     {
@@ -2885,6 +2895,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($service_order_ids !== null) {
             $queryParams['serviceOrderIds'] = ObjectSerializer::toString($service_order_ids);
         }
+
         // query params
         if (\is_array($service_job_status)) {
             $service_job_status = ObjectSerializer::serializeCollection($service_job_status, 'form', true);
@@ -2893,6 +2904,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($service_job_status !== null) {
             $queryParams['serviceJobStatus'] = ObjectSerializer::toString($service_job_status);
         }
+
         // query params
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -2901,6 +2913,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($page_token !== null) {
             $queryParams['pageToken'] = ObjectSerializer::toString($page_token);
         }
+
         // query params
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
@@ -2909,6 +2922,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($sort_field)) {
             $sort_field = ObjectSerializer::serializeCollection($sort_field, '', true);
@@ -2917,6 +2931,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($sort_field !== null) {
             $queryParams['sortField'] = ObjectSerializer::toString($sort_field);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -2925,6 +2940,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -2933,6 +2949,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($created_after !== null) {
             $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -2941,6 +2958,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($created_before !== null) {
             $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
@@ -2949,6 +2967,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($last_updated_after !== null) {
             $queryParams['lastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
+
         // query params
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
@@ -2957,6 +2976,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($last_updated_before !== null) {
             $queryParams['lastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
+
         // query params
         if (\is_array($schedule_start_date)) {
             $schedule_start_date = ObjectSerializer::serializeCollection($schedule_start_date, '', true);
@@ -2965,6 +2985,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($schedule_start_date !== null) {
             $queryParams['scheduleStartDate'] = ObjectSerializer::toString($schedule_start_date);
         }
+
         // query params
         if (\is_array($schedule_end_date)) {
             $schedule_end_date = ObjectSerializer::serializeCollection($schedule_end_date, '', true);
@@ -2973,6 +2994,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($schedule_end_date !== null) {
             $queryParams['scheduleEndDate'] = ObjectSerializer::toString($schedule_end_date);
         }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -2981,6 +3003,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($asins)) {
             $asins = ObjectSerializer::serializeCollection($asins, 'form', true);
@@ -2989,6 +3012,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($asins !== null) {
             $queryParams['asins'] = ObjectSerializer::toString($asins);
         }
+
         // query params
         if (\is_array($required_skills)) {
             $required_skills = ObjectSerializer::serializeCollection($required_skills, 'form', true);
@@ -2997,6 +3021,7 @@ final class ServicesSDK implements ServicesSDKInterface
         if ($required_skills !== null) {
             $queryParams['requiredSkills'] = ObjectSerializer::toString($required_skills);
         }
+
         // query params
         if (\is_array($store_ids)) {
             $store_ids = ObjectSerializer::serializeCollection($store_ids, 'form', true);
@@ -3170,7 +3195,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string $appointment_id An existing appointment identifier for the Service Job. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body Reschedule appointment operation input details. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function rescheduleAppointmentForServiceJobByServiceJobIdRequest(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\RescheduleAppointmentRequest $body) : RequestInterface
     {
@@ -3230,6 +3255,7 @@ final class ServicesSDK implements ServicesSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($appointment_id !== null) {
             $resourcePath = \str_replace(
@@ -3407,7 +3433,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string $appointment_id An Amazon-defined identifier of active service job appointment. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\SetAppointmentFulfillmentDataRequest $body Appointment fulfillment data collection details. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setAppointmentFulfillmentDataRequest(AccessToken $accessToken, string $region, string $service_job_id, string $appointment_id, \AmazonPHP\SellingPartner\Model\Services\SetAppointmentFulfillmentDataRequest $body) : RequestInterface
     {
@@ -3467,6 +3493,7 @@ final class ServicesSDK implements ServicesSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($appointment_id !== null) {
             $resourcePath = \str_replace(
@@ -3644,7 +3671,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\UpdateReservationRequest $body Reservation details (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateReservationRequest(AccessToken $accessToken, string $region, string $reservation_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\UpdateReservationRequest $body) : RequestInterface
     {
@@ -3878,7 +3905,7 @@ final class ServicesSDK implements ServicesSDKInterface
      * @param string[] $marketplace_ids An identifier for the marketplace in which the resource operates. (required)
      * @param \AmazonPHP\SellingPartner\Model\Services\UpdateScheduleRequest $body Schedule details (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateScheduleRequest(AccessToken $accessToken, string $region, string $resource_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Services\UpdateScheduleRequest $body) : RequestInterface
     {

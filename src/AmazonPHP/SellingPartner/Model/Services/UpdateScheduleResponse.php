@@ -178,7 +178,7 @@ class UpdateScheduleResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets payload.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\UpdateScheduleRecord[]
+     * @return null|UpdateScheduleRecord[]
      */
     public function getPayload() : ?array
     {
@@ -188,7 +188,7 @@ class UpdateScheduleResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\UpdateScheduleRecord[] $payload contains the `UpdateScheduleRecords` for which the error/warning has occurred
+     * @param null|UpdateScheduleRecord[] $payload contains the `UpdateScheduleRecords` for which the error/warning has occurred
      */
     public function setPayload(?array $payload) : self
     {
@@ -200,7 +200,7 @@ class UpdateScheduleResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -210,7 +210,7 @@ class UpdateScheduleResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

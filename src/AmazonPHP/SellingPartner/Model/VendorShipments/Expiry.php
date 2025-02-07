@@ -235,7 +235,7 @@ class Expiry implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets expiry_after_duration.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Duration $expiry_after_duration expiry_after_duration
+     * @param null|Duration $expiry_after_duration expiry_after_duration
      */
     public function setExpiryAfterDuration(?Duration $expiry_after_duration) : self
     {

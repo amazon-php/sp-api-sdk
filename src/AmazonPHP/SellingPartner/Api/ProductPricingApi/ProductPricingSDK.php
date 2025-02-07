@@ -141,7 +141,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      * @param null|string[] $skus A list of up to twenty seller SKU values used to identify items in the given marketplace. (optional)
      * @param null|string $customer_type Indicates whether to request pricing information from the point of view of Consumer or Business buyers. Default is Consumer. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getCompetitivePricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $customer_type = null) : RequestInterface
     {
@@ -151,6 +151,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 'Missing the required parameter $marketplace_id when calling getCompetitivePricing'
             );
         }
+
         // verify the required parameter 'item_type' is set
         if ($item_type === null || (\is_array($item_type) && \count($item_type) === 0)) {
             throw new InvalidArgumentException(
@@ -181,6 +182,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($asins)) {
             $asins = ObjectSerializer::serializeCollection($asins, 'form', true);
@@ -189,6 +191,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($asins !== null) {
             $queryParams['Asins'] = ObjectSerializer::toString($asins);
         }
+
         // query params
         if (\is_array($skus)) {
             $skus = ObjectSerializer::serializeCollection($skus, 'form', true);
@@ -197,6 +200,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($skus !== null) {
             $queryParams['Skus'] = ObjectSerializer::toString($skus);
         }
+
         // query params
         if (\is_array($item_type)) {
             $item_type = ObjectSerializer::serializeCollection($item_type, '', true);
@@ -205,6 +209,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($item_type !== null) {
             $queryParams['ItemType'] = ObjectSerializer::toString($item_type);
         }
+
         // query params
         if (\is_array($customer_type)) {
             $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
@@ -380,7 +385,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param null|string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getItemOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $asin, ?string $customer_type = null) : RequestInterface
     {
@@ -390,12 +395,14 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 'Missing the required parameter $marketplace_id when calling getItemOffers'
             );
         }
+
         // verify the required parameter 'item_condition' is set
         if ($item_condition === null || (\is_array($item_condition) && \count($item_condition) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $item_condition when calling getItemOffers'
             );
         }
+
         // verify the required parameter 'asin' is set
         if ($asin === null || (\is_array($asin) && \count($asin) === 0)) {
             throw new InvalidArgumentException(
@@ -418,6 +425,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($item_condition)) {
             $item_condition = ObjectSerializer::serializeCollection($item_condition, '', true);
@@ -426,6 +434,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($item_condition !== null) {
             $queryParams['ItemCondition'] = ObjectSerializer::toString($item_condition);
         }
+
         // query params
         if (\is_array($customer_type)) {
             $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
@@ -604,7 +613,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getItemOffersBatchRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetItemOffersBatchRequest $get_item_offers_batch_request_body) : RequestInterface
     {
@@ -796,7 +805,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      * @param string $seller_sku Identifies an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param null|string $customer_type Indicates whether to request Consumer or Business offers. Default is Consumer. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getListingOffersRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_condition, string $seller_sku, ?string $customer_type = null) : RequestInterface
     {
@@ -806,12 +815,14 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 'Missing the required parameter $marketplace_id when calling getListingOffers'
             );
         }
+
         // verify the required parameter 'item_condition' is set
         if ($item_condition === null || (\is_array($item_condition) && \count($item_condition) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $item_condition when calling getListingOffers'
             );
         }
+
         // verify the required parameter 'seller_sku' is set
         if ($seller_sku === null || (\is_array($seller_sku) && \count($seller_sku) === 0)) {
             throw new InvalidArgumentException(
@@ -834,6 +845,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($item_condition)) {
             $item_condition = ObjectSerializer::serializeCollection($item_condition, '', true);
@@ -842,6 +854,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($item_condition !== null) {
             $queryParams['ItemCondition'] = ObjectSerializer::toString($item_condition);
         }
+
         // query params
         if (\is_array($customer_type)) {
             $customer_type = ObjectSerializer::serializeCollection($customer_type, '', true);
@@ -1020,7 +1033,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getListingOffersBatchRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\ProductPricing\GetListingOffersBatchRequest $get_listing_offers_batch_request_body) : RequestInterface
     {
@@ -1216,7 +1229,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
      * @param null|string $item_condition Filters the offer listings based on item condition. Possible values: New, Used, Collectible, Refurbished, Club. (optional)
      * @param null|string $offer_type Indicates whether to request pricing information for the seller&#39;s B2C or B2B offers. Default is B2C. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getPricingRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $item_type, ?array $asins = null, ?array $skus = null, ?string $item_condition = null, ?string $offer_type = null) : RequestInterface
     {
@@ -1226,6 +1239,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
                 'Missing the required parameter $marketplace_id when calling getPricing'
             );
         }
+
         // verify the required parameter 'item_type' is set
         if ($item_type === null || (\is_array($item_type) && \count($item_type) === 0)) {
             throw new InvalidArgumentException(
@@ -1256,6 +1270,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['MarketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($asins)) {
             $asins = ObjectSerializer::serializeCollection($asins, 'form', true);
@@ -1264,6 +1279,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($asins !== null) {
             $queryParams['Asins'] = ObjectSerializer::toString($asins);
         }
+
         // query params
         if (\is_array($skus)) {
             $skus = ObjectSerializer::serializeCollection($skus, 'form', true);
@@ -1272,6 +1288,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($skus !== null) {
             $queryParams['Skus'] = ObjectSerializer::toString($skus);
         }
+
         // query params
         if (\is_array($item_type)) {
             $item_type = ObjectSerializer::serializeCollection($item_type, '', true);
@@ -1280,6 +1297,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($item_type !== null) {
             $queryParams['ItemType'] = ObjectSerializer::toString($item_type);
         }
+
         // query params
         if (\is_array($item_condition)) {
             $item_condition = ObjectSerializer::serializeCollection($item_condition, '', true);
@@ -1288,6 +1306,7 @@ final class ProductPricingSDK implements ProductPricingSDKInterface
         if ($item_condition !== null) {
             $queryParams['ItemCondition'] = ObjectSerializer::toString($item_condition);
         }
+
         // query params
         if (\is_array($offer_type)) {
             $offer_type = ObjectSerializer::serializeCollection($offer_type, '', true);

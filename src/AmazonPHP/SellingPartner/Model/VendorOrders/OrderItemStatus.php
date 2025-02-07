@@ -305,7 +305,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets net_cost.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $net_cost net_cost
+     * @param null|Money $net_cost net_cost
      */
     public function setNetCost(?Money $net_cost) : self
     {
@@ -325,7 +325,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets list_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $list_price list_price
+     * @param null|Money $list_price list_price
      */
     public function setListPrice(?Money $list_price) : self
     {
@@ -345,7 +345,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets ordered_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusOrderedQuantity $ordered_quantity ordered_quantity
+     * @param null|OrderItemStatusOrderedQuantity $ordered_quantity ordered_quantity
      */
     public function setOrderedQuantity(?OrderItemStatusOrderedQuantity $ordered_quantity) : self
     {
@@ -365,7 +365,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets acknowledgement_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusAcknowledgementStatus $acknowledgement_status acknowledgement_status
+     * @param null|OrderItemStatusAcknowledgementStatus $acknowledgement_status acknowledgement_status
      */
     public function setAcknowledgementStatus(?OrderItemStatusAcknowledgementStatus $acknowledgement_status) : self
     {
@@ -385,7 +385,7 @@ class OrderItemStatus implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets receiving_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemStatusReceivingStatus $receiving_status receiving_status
+     * @param null|OrderItemStatusReceivingStatus $receiving_status receiving_status
      */
     public function setReceivingStatus(?OrderItemStatusReceivingStatus $receiving_status) : self
     {

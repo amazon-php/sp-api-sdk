@@ -203,7 +203,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets declared_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Currency $declared_value declared_value
+     * @param null|Currency $declared_value declared_value
      */
     public function setDeclaredValue(?Currency $declared_value) : self
     {
@@ -235,7 +235,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets tax_rates.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TaxRate[]
+     * @return null|TaxRate[]
      */
     public function getTaxRates() : ?array
     {
@@ -245,7 +245,7 @@ class TaxDetails implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets tax_rates.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TaxRate[] $tax_rates list of tax rates
+     * @param null|TaxRate[] $tax_rates list of tax rates
      */
     public function setTaxRates(?array $tax_rates) : self
     {

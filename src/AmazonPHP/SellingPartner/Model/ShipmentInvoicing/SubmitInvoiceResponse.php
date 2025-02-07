@@ -172,7 +172,7 @@ class SubmitInvoiceResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -182,7 +182,7 @@ class SubmitInvoiceResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

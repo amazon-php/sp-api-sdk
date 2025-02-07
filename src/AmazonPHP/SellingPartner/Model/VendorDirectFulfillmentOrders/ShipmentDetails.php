@@ -337,7 +337,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipment_dates.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ShipmentDates $shipment_dates shipment_dates
+     * @param ShipmentDates $shipment_dates shipment_dates
      */
     public function setShipmentDates(ShipmentDates $shipment_dates) : self
     {

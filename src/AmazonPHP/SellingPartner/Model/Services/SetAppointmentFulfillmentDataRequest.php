@@ -195,7 +195,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Sets fulfillment_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentTime $fulfillment_time fulfillment_time
+     * @param null|FulfillmentTime $fulfillment_time fulfillment_time
      */
     public function setFulfillmentTime(?FulfillmentTime $fulfillment_time) : self
     {
@@ -207,7 +207,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Gets appointment_resources.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentResource[]
+     * @return null|AppointmentResource[]
      */
     public function getAppointmentResources() : ?array
     {
@@ -217,7 +217,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Sets appointment_resources.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentResource[] $appointment_resources list of resources that performs or performed job appointment fulfillment
+     * @param null|AppointmentResource[] $appointment_resources list of resources that performs or performed job appointment fulfillment
      */
     public function setAppointmentResources(?array $appointment_resources) : self
     {
@@ -229,7 +229,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Gets fulfillment_documents.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentDocument[]
+     * @return null|FulfillmentDocument[]
      */
     public function getFulfillmentDocuments() : ?array
     {
@@ -239,7 +239,7 @@ class SetAppointmentFulfillmentDataRequest implements \ArrayAccess, \JsonSeriali
     /**
      * Sets fulfillment_documents.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\FulfillmentDocument[] $fulfillment_documents list of documents captured during service appointment fulfillment
+     * @param null|FulfillmentDocument[] $fulfillment_documents list of documents captured during service appointment fulfillment
      */
     public function setFulfillmentDocuments(?array $fulfillment_documents) : self
     {

@@ -189,7 +189,7 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets loan_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $loan_amount loan_amount
+     * @param null|Currency $loan_amount loan_amount
      */
     public function setLoanAmount(?Currency $loan_amount) : self
     {

@@ -189,7 +189,7 @@ class CreateReservationResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\CreateReservationRecord $payload payload
+     * @param null|CreateReservationRecord $payload payload
      */
     public function setPayload(?CreateReservationRecord $payload) : self
     {
@@ -201,7 +201,7 @@ class CreateReservationResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class CreateReservationResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

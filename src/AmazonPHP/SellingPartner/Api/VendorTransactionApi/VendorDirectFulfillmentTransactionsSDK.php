@@ -133,7 +133,7 @@ final class VendorDirectFulfillmentTransactionsSDK implements VendorDirectFulfil
      *
      * @param string $transaction_id Previously returned in the response to the POST request of a specific transaction. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getTransactionStatusRequest(AccessToken $accessToken, string $region, string $transaction_id) : RequestInterface
     {

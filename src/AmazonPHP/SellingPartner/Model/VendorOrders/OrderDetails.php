@@ -439,7 +439,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets import_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ImportDetails $import_details import_details
+     * @param null|ImportDetails $import_details import_details
      */
     public function setImportDetails(?ImportDetails $import_details) : self
     {
@@ -499,7 +499,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets buying_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $buying_party buying_party
+     * @param null|PartyIdentification $buying_party buying_party
      */
     public function setBuyingParty(?PartyIdentification $buying_party) : self
     {
@@ -519,7 +519,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets selling_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $selling_party selling_party
+     * @param null|PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(?PartyIdentification $selling_party) : self
     {
@@ -539,7 +539,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets ship_to_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $ship_to_party ship_to_party
+     * @param null|PartyIdentification $ship_to_party ship_to_party
      */
     public function setShipToParty(?PartyIdentification $ship_to_party) : self
     {
@@ -559,7 +559,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets bill_to_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $bill_to_party bill_to_party
+     * @param null|PartyIdentification $bill_to_party bill_to_party
      */
     public function setBillToParty(?PartyIdentification $bill_to_party) : self
     {
@@ -611,7 +611,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\OrderItem[]
+     * @return OrderItem[]
      */
     public function getItems() : array
     {
@@ -621,7 +621,7 @@ class OrderDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\OrderItem[] $items a list of items in this purchase order
+     * @param OrderItem[] $items a list of items in this purchase order
      */
     public function setItems(array $items) : self
     {

@@ -355,7 +355,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets ordered_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ItemQuantity $ordered_quantity ordered_quantity
+     * @param ItemQuantity $ordered_quantity ordered_quantity
      */
     public function setOrderedQuantity(ItemQuantity $ordered_quantity) : self
     {
@@ -375,7 +375,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets scheduled_delivery_shipment.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ScheduledDeliveryShipment $scheduled_delivery_shipment scheduled_delivery_shipment
+     * @param null|ScheduledDeliveryShipment $scheduled_delivery_shipment scheduled_delivery_shipment
      */
     public function setScheduledDeliveryShipment(?ScheduledDeliveryShipment $scheduled_delivery_shipment) : self
     {
@@ -395,7 +395,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets gift_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\GiftDetails $gift_details gift_details
+     * @param null|GiftDetails $gift_details gift_details
      */
     public function setGiftDetails(?GiftDetails $gift_details) : self
     {
@@ -415,7 +415,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets net_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money $net_price net_price
+     * @param Money $net_price net_price
      */
     public function setNetPrice(Money $net_price) : self
     {
@@ -435,7 +435,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets tax_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxItemDetails $tax_details tax_details
+     * @param null|TaxItemDetails $tax_details tax_details
      */
     public function setTaxDetails(?TaxItemDetails $tax_details) : self
     {
@@ -455,7 +455,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets total_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\Money $total_price total_price
+     * @param null|Money $total_price total_price
      */
     public function setTotalPrice(?Money $total_price) : self
     {
@@ -475,7 +475,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets buyer_customized_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
+     * @param null|BuyerCustomizedInfoDetail $buyer_customized_info buyer_customized_info
      */
     public function setBuyerCustomizedInfo(?BuyerCustomizedInfoDetail $buyer_customized_info) : self
     {

@@ -243,7 +243,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets cod_charge.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $cod_charge cod_charge
+     * @param null|Money $cod_charge cod_charge
      */
     public function setCodCharge(?Money $cod_charge) : self
     {
@@ -263,7 +263,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets cod_charge_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $cod_charge_tax cod_charge_tax
+     * @param null|Money $cod_charge_tax cod_charge_tax
      */
     public function setCodChargeTax(?Money $cod_charge_tax) : self
     {
@@ -283,7 +283,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets shipping_charge.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $shipping_charge shipping_charge
+     * @param null|Money $shipping_charge shipping_charge
      */
     public function setShippingCharge(?Money $shipping_charge) : self
     {
@@ -303,7 +303,7 @@ class CODSettings implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets shipping_charge_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $shipping_charge_tax shipping_charge_tax
+     * @param null|Money $shipping_charge_tax shipping_charge_tax
      */
     public function setShippingChargeTax(?Money $shipping_charge_tax) : self
     {

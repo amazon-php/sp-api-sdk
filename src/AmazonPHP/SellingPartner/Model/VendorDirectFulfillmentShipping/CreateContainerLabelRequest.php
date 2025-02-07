@@ -227,7 +227,7 @@ class CreateContainerLabelRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -247,7 +247,7 @@ class CreateContainerLabelRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -267,7 +267,7 @@ class CreateContainerLabelRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets carrier_id.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CarrierId $carrier_id carrier_id
+     * @param CarrierId $carrier_id carrier_id
      */
     public function setCarrierId(CarrierId $carrier_id) : self
     {
@@ -299,7 +299,7 @@ class CreateContainerLabelRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets packages.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Package[]
+     * @return Package[]
      */
     public function getPackages() : array
     {
@@ -309,7 +309,7 @@ class CreateContainerLabelRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets packages.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Package[] $packages an array of package objects in a container
+     * @param Package[] $packages an array of package objects in a container
      */
     public function setPackages(array $packages) : self
     {

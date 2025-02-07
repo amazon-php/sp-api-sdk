@@ -215,7 +215,7 @@ class DistributionPackageQuantity implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets distribution_package.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackage $distribution_package distribution_package
+     * @param DistributionPackage $distribution_package distribution_package
      */
     public function setDistributionPackage(DistributionPackage $distribution_package) : self
     {

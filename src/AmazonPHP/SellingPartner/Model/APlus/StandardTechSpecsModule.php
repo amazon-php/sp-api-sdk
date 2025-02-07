@@ -215,7 +215,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -227,7 +227,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets specification_list.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[]
+     * @return StandardTextPairBlock[]
      */
     public function getSpecificationList() : array
     {
@@ -237,7 +237,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets specification_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\StandardTextPairBlock[] $specification_list the specification list
+     * @param StandardTextPairBlock[] $specification_list the specification list
      */
     public function setSpecificationList(array $specification_list) : self
     {

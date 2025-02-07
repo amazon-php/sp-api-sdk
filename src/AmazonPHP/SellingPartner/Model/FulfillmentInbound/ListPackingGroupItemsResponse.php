@@ -185,7 +185,7 @@ class ListPackingGroupItemsResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Item[]
+     * @return Item[]
      */
     public function getItems() : array
     {
@@ -195,7 +195,7 @@ class ListPackingGroupItemsResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Item[] $items provides the information about the list of items in the packing group
+     * @param Item[] $items provides the information about the list of items in the packing group
      */
     public function setItems(array $items) : self
     {
@@ -215,7 +215,7 @@ class ListPackingGroupItemsResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {

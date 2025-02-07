@@ -316,7 +316,7 @@ class TaxDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets tax_amount.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money $tax_amount tax_amount
+     * @param Money $tax_amount tax_amount
      */
     public function setTaxAmount(Money $tax_amount) : self
     {
@@ -336,7 +336,7 @@ class TaxDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets taxable_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money $taxable_amount taxable_amount
+     * @param null|Money $taxable_amount taxable_amount
      */
     public function setTaxableAmount(?Money $taxable_amount) : self
     {

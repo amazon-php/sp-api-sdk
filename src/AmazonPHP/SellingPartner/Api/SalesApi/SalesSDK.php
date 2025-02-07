@@ -149,7 +149,7 @@ final class SalesSDK implements SalesSDKInterface
      * @param null|string $asin Filters the results by the ASIN that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all ASINs. Example: B0792R1RSN, if you want the response to include order metrics for only ASIN B0792R1RSN. (optional)
      * @param null|string $sku Filters the results by the SKU that you specify. Specifying both ASIN and SKU returns an error. Do not include this filter if you want the response to include order metrics for all SKUs. Example: TestSKU, if you want the response to include order metrics for only SKU TestSKU. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderMetricsRequest(AccessToken $accessToken, string $region, array $marketplace_ids, string $interval, string $granularity, ?string $granularity_time_zone = null, ?string $buyer_type = 'All', ?string $fulfillment_network = null, ?string $first_day_of_week = 'Monday', ?string $asin = null, ?string $sku = null) : RequestInterface
     {
@@ -159,12 +159,14 @@ final class SalesSDK implements SalesSDKInterface
                 'Missing the required parameter $marketplace_ids when calling getOrderMetrics'
             );
         }
+
         // verify the required parameter 'interval' is set
         if ($interval === null || (\is_array($interval) && \count($interval) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $interval when calling getOrderMetrics'
             );
         }
+
         // verify the required parameter 'granularity' is set
         if ($granularity === null || (\is_array($granularity) && \count($granularity) === 0)) {
             throw new InvalidArgumentException(
@@ -187,6 +189,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($interval)) {
             $interval = ObjectSerializer::serializeCollection($interval, '', true);
@@ -195,6 +198,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($interval !== null) {
             $queryParams['interval'] = ObjectSerializer::toString($interval);
         }
+
         // query params
         if (\is_array($granularity_time_zone)) {
             $granularity_time_zone = ObjectSerializer::serializeCollection($granularity_time_zone, '', true);
@@ -203,6 +207,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($granularity_time_zone !== null) {
             $queryParams['granularityTimeZone'] = ObjectSerializer::toString($granularity_time_zone);
         }
+
         // query params
         if (\is_array($granularity)) {
             $granularity = ObjectSerializer::serializeCollection($granularity, '', true);
@@ -211,6 +216,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($granularity !== null) {
             $queryParams['granularity'] = ObjectSerializer::toString($granularity);
         }
+
         // query params
         if (\is_array($buyer_type)) {
             $buyer_type = ObjectSerializer::serializeCollection($buyer_type, '', true);
@@ -219,6 +225,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($buyer_type !== null) {
             $queryParams['buyerType'] = ObjectSerializer::toString($buyer_type);
         }
+
         // query params
         if (\is_array($fulfillment_network)) {
             $fulfillment_network = ObjectSerializer::serializeCollection($fulfillment_network, '', true);
@@ -227,6 +234,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($fulfillment_network !== null) {
             $queryParams['fulfillmentNetwork'] = ObjectSerializer::toString($fulfillment_network);
         }
+
         // query params
         if (\is_array($first_day_of_week)) {
             $first_day_of_week = ObjectSerializer::serializeCollection($first_day_of_week, '', true);
@@ -235,6 +243,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($first_day_of_week !== null) {
             $queryParams['firstDayOfWeek'] = ObjectSerializer::toString($first_day_of_week);
         }
+
         // query params
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
@@ -243,6 +252,7 @@ final class SalesSDK implements SalesSDKInterface
         if ($asin !== null) {
             $queryParams['asin'] = ObjectSerializer::toString($asin);
         }
+
         // query params
         if (\is_array($sku)) {
             $sku = ObjectSerializer::serializeCollection($sku, '', true);

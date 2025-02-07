@@ -265,7 +265,7 @@ class InboundOperationStatus implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets operation_problems.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\OperationProblem[]
+     * @return OperationProblem[]
      */
     public function getOperationProblems() : array
     {
@@ -275,7 +275,7 @@ class InboundOperationStatus implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets operation_problems.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\OperationProblem[] $operation_problems the problems in the processing of the asynchronous operation
+     * @param OperationProblem[] $operation_problems the problems in the processing of the asynchronous operation
      */
     public function setOperationProblems(array $operation_problems) : self
     {
@@ -295,7 +295,7 @@ class InboundOperationStatus implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets operation_status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\OperationStatus $operation_status operation_status
+     * @param OperationStatus $operation_status operation_status
      */
     public function setOperationStatus(OperationStatus $operation_status) : self
     {

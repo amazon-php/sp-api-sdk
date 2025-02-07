@@ -279,7 +279,7 @@ class PaymentMethodDetails implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets expiry_date.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransfers\ExpiryDate $expiry_date expiry_date
+     * @param null|ExpiryDate $expiry_date expiry_date
      */
     public function setExpiryDate(?ExpiryDate $expiry_date) : self
     {
@@ -319,7 +319,7 @@ class PaymentMethodDetails implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets payment_method_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransfers\PaymentMethodType $payment_method_type payment_method_type
+     * @param null|PaymentMethodType $payment_method_type payment_method_type
      */
     public function setPaymentMethodType(?PaymentMethodType $payment_method_type) : self
     {
@@ -339,7 +339,7 @@ class PaymentMethodDetails implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets assignment_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransfers\AssignmentType $assignment_type assignment_type
+     * @param null|AssignmentType $assignment_type assignment_type
      */
     public function setAssignmentType(?AssignmentType $assignment_type) : self
     {

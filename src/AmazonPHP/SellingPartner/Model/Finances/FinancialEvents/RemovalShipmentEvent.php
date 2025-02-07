@@ -302,7 +302,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets removal_shipment_item_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\RemovalShipmentItem[]
+     * @return null|RemovalShipmentItem[]
      */
     public function getRemovalShipmentItemList() : ?array
     {
@@ -312,7 +312,7 @@ class RemovalShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets removal_shipment_item_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\RemovalShipmentItem[] $removal_shipment_item_list a list of information about removal shipment items
+     * @param null|RemovalShipmentItem[] $removal_shipment_item_list a list of information about removal shipment items
      */
     public function setRemovalShipmentItemList(?array $removal_shipment_item_list) : self
     {

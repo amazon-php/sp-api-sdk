@@ -221,7 +221,7 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets preferred_delivery_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\PreferredDeliveryTime $preferred_delivery_time preferred_delivery_time
+     * @param null|PreferredDeliveryTime $preferred_delivery_time preferred_delivery_time
      */
     public function setPreferredDeliveryTime(?PreferredDeliveryTime $preferred_delivery_time) : self
     {
@@ -233,7 +233,7 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets other_attributes.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OtherDeliveryAttributes[]
+     * @return null|OtherDeliveryAttributes[]
      */
     public function getOtherAttributes() : ?array
     {
@@ -243,7 +243,7 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets other_attributes.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\OtherDeliveryAttributes[] $other_attributes enumerated list of miscellaneous delivery attributes associated with the shipping address
+     * @param null|OtherDeliveryAttributes[] $other_attributes enumerated list of miscellaneous delivery attributes associated with the shipping address
      */
     public function setOtherAttributes(?array $other_attributes) : self
     {

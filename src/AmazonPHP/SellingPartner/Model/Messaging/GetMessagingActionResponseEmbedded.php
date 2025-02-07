@@ -183,7 +183,7 @@ class GetMessagingActionResponseEmbedded implements \ArrayAccess, \JsonSerializa
     /**
      * Sets schema.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponse $schema schema
+     * @param null|GetSchemaResponse $schema schema
      */
     public function setSchema(?GetSchemaResponse $schema) : self
     {

@@ -294,7 +294,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ListingsItems\Money $price price
+     * @param Money $price price
      */
     public function setPrice(Money $price) : self
     {
@@ -314,7 +314,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets points.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\Points $points points
+     * @param null|Points $points points
      */
     public function setPoints(?Points $points) : self
     {
@@ -334,7 +334,7 @@ class ItemOfferByMarketplace implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets audience.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\Audience $audience audience
+     * @param null|Audience $audience audience
      */
     public function setAudience(?Audience $audience) : self
     {

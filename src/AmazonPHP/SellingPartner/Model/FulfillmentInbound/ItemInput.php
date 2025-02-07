@@ -273,7 +273,7 @@ class ItemInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets label_owner.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelOwner $label_owner label_owner
+     * @param LabelOwner $label_owner label_owner
      */
     public function setLabelOwner(LabelOwner $label_owner) : self
     {
@@ -333,7 +333,7 @@ class ItemInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets prep_owner.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepOwner $prep_owner prep_owner
+     * @param PrepOwner $prep_owner prep_owner
      */
     public function setPrepOwner(PrepOwner $prep_owner) : self
     {

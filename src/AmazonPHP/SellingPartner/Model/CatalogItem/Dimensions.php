@@ -213,7 +213,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets height.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension $height height
+     * @param null|Dimension $height height
      */
     public function setHeight(?Dimension $height) : self
     {
@@ -233,7 +233,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets length.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension $length length
+     * @param null|Dimension $length length
      */
     public function setLength(?Dimension $length) : self
     {
@@ -253,7 +253,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension $weight weight
+     * @param null|Dimension $weight weight
      */
     public function setWeight(?Dimension $weight) : self
     {
@@ -273,7 +273,7 @@ class Dimensions implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets width.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\Dimension $width width
+     * @param null|Dimension $width width
      */
     public function setWidth(?Dimension $width) : self
     {

@@ -215,7 +215,7 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets delivery_experience.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceType $delivery_experience delivery_experience
+     * @param DeliveryExperienceType $delivery_experience delivery_experience
      */
     public function setDeliveryExperience(DeliveryExperienceType $delivery_experience) : self
     {
@@ -235,7 +235,7 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets declared_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount $declared_value declared_value
+     * @param null|CurrencyAmount $declared_value declared_value
      */
     public function setDeclaredValue(?CurrencyAmount $declared_value) : self
     {
@@ -275,7 +275,7 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets carrier_will_pick_up_option.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\CarrierWillPickUpOption $carrier_will_pick_up_option carrier_will_pick_up_option
+     * @param null|CarrierWillPickUpOption $carrier_will_pick_up_option carrier_will_pick_up_option
      */
     public function setCarrierWillPickUpOption(?CarrierWillPickUpOption $carrier_will_pick_up_option) : self
     {
@@ -295,7 +295,7 @@ class ShippingServiceOptions implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets label_format.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat $label_format label_format
+     * @param null|LabelFormat $label_format label_format
      */
     public function setLabelFormat(?LabelFormat $label_format) : self
     {

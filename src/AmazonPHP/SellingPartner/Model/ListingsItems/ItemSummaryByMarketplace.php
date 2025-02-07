@@ -518,7 +518,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets main_image.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemImage $main_image main_image
+     * @param null|ItemImage $main_image main_image
      */
     public function setMainImage(?ItemImage $main_image) : self
     {

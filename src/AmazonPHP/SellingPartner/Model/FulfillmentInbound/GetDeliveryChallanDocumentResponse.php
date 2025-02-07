@@ -185,7 +185,7 @@ class GetDeliveryChallanDocumentResponse implements \ArrayAccess, \JsonSerializa
     /**
      * Sets document_download.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\DocumentDownload $document_download document_download
+     * @param DocumentDownload $document_download document_download
      */
     public function setDocumentDownload(DocumentDownload $document_download) : self
     {

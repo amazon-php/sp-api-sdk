@@ -227,7 +227,7 @@ class AppointmentSlot implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets slot_time.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\AppointmentSlotTime $slot_time slot_time
+     * @param AppointmentSlotTime $slot_time slot_time
      */
     public function setSlotTime(AppointmentSlotTime $slot_time) : self
     {

@@ -189,7 +189,7 @@ class GetEligibleShipmentServicesResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\GetEligibleShipmentServicesResult $payload payload
+     * @param null|GetEligibleShipmentServicesResult $payload payload
      */
     public function setPayload(?GetEligibleShipmentServicesResult $payload) : self
     {
@@ -201,7 +201,7 @@ class GetEligibleShipmentServicesResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetEligibleShipmentServicesResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

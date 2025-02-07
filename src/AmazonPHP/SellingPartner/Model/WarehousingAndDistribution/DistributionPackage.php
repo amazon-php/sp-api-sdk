@@ -207,7 +207,7 @@ class DistributionPackage implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets contents.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageContents $contents contents
+     * @param DistributionPackageContents $contents contents
      */
     public function setContents(DistributionPackageContents $contents) : self
     {
@@ -227,7 +227,7 @@ class DistributionPackage implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets measurements.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\MeasurementData $measurements measurements
+     * @param MeasurementData $measurements measurements
      */
     public function setMeasurements(MeasurementData $measurements) : self
     {
@@ -247,7 +247,7 @@ class DistributionPackage implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageType $type type
+     * @param DistributionPackageType $type type
      */
     public function setType(DistributionPackageType $type) : self
     {

@@ -193,7 +193,7 @@ class PackageWeight implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets unit_of_measurement.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\WeightUnitOfMeasurement $unit_of_measurement unit_of_measurement
+     * @param WeightUnitOfMeasurement $unit_of_measurement unit_of_measurement
      */
     public function setUnitOfMeasurement(WeightUnitOfMeasurement $unit_of_measurement) : self
     {

@@ -223,7 +223,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets shipment_request_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
+     * @param ShipmentRequestDetails $shipment_request_details shipment_request_details
      */
     public function setShipmentRequestDetails(ShipmentRequestDetails $shipment_request_details) : self
     {
@@ -283,7 +283,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets hazmat_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\HazmatType $hazmat_type hazmat_type
+     * @param null|HazmatType $hazmat_type hazmat_type
      */
     public function setHazmatType(?HazmatType $hazmat_type) : self
     {
@@ -303,7 +303,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets label_format_option.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormatOptionRequest $label_format_option label_format_option
+     * @param null|LabelFormatOptionRequest $label_format_option label_format_option
      */
     public function setLabelFormatOption(?LabelFormatOptionRequest $label_format_option) : self
     {
@@ -315,7 +315,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets shipment_level_seller_inputs_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInputs[]
+     * @return null|AdditionalSellerInputs[]
      */
     public function getShipmentLevelSellerInputsList() : ?array
     {
@@ -325,7 +325,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets shipment_level_seller_inputs_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInputs[] $shipment_level_seller_inputs_list a list of additional seller input pairs required to purchase shipping
+     * @param null|AdditionalSellerInputs[] $shipment_level_seller_inputs_list a list of additional seller input pairs required to purchase shipping
      */
     public function setShipmentLevelSellerInputsList(?array $shipment_level_seller_inputs_list) : self
     {

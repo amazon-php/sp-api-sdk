@@ -234,8 +234,6 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
 
     /**
      * Gets parent.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification
      */
     public function getParent() : ?self
     {
@@ -245,7 +243,7 @@ class ItemBrowseClassification implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets parent.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification $parent parent
+     * @param null|ItemBrowseClassification $parent parent
      */
     public function setParent(?self $parent) : self
     {

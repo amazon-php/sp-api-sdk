@@ -213,7 +213,7 @@ class InventoryQuantity implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets unit_of_measurement.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryUnitOfMeasurement $unit_of_measurement unit_of_measurement
+     * @param InventoryUnitOfMeasurement $unit_of_measurement unit_of_measurement
      */
     public function setUnitOfMeasurement(InventoryUnitOfMeasurement $unit_of_measurement) : self
     {

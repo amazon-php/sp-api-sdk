@@ -201,7 +201,7 @@ class CustomPlacementInput implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[]
+     * @return ItemInput[]
      */
     public function getItems() : array
     {
@@ -211,7 +211,7 @@ class CustomPlacementInput implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[] $items items included while creating Inbound Plan
+     * @param ItemInput[] $items items included while creating Inbound Plan
      */
     public function setItems(array $items) : self
     {

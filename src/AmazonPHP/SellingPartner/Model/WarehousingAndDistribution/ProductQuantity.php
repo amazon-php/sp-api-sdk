@@ -207,7 +207,7 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets attributes.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ProductAttribute[]
+     * @return null|ProductAttribute[]
      */
     public function getAttributes() : ?array
     {
@@ -217,7 +217,7 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets attributes.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ProductAttribute[] $attributes Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
+     * @param null|ProductAttribute[] $attributes Attributes for this instance of the product. For example, already-prepped, or other attributes that distinguish the product beyond the SKU.
      */
     public function setAttributes(?array $attributes) : self
     {
@@ -297,7 +297,7 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets prep_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PrepDetails $prep_details prep_details
+     * @param null|PrepDetails $prep_details prep_details
      */
     public function setPrepDetails(?PrepDetails $prep_details) : self
     {

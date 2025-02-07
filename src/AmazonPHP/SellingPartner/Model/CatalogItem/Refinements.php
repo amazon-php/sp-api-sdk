@@ -185,7 +185,7 @@ class Refinements implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets brands.
      *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\BrandRefinement[]
+     * @return BrandRefinement[]
      */
     public function getBrands() : array
     {
@@ -195,7 +195,7 @@ class Refinements implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets brands.
      *
-     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\BrandRefinement[] $brands brand search refinements
+     * @param BrandRefinement[] $brands brand search refinements
      */
     public function setBrands(array $brands) : self
     {
@@ -207,7 +207,7 @@ class Refinements implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets classifications.
      *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\ClassificationRefinement[]
+     * @return ClassificationRefinement[]
      */
     public function getClassifications() : array
     {
@@ -217,7 +217,7 @@ class Refinements implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets classifications.
      *
-     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\ClassificationRefinement[] $classifications classification search refinements
+     * @param ClassificationRefinement[] $classifications classification search refinements
      */
     public function setClassifications(array $classifications) : self
     {

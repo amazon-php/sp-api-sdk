@@ -249,7 +249,7 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets shipping_address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Address $shipping_address shipping_address
+     * @param null|Address $shipping_address shipping_address
      */
     public function setShippingAddress(?Address $shipping_address) : self
     {
@@ -269,7 +269,7 @@ class OrderAddress implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets delivery_preferences.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\DeliveryPreferences $delivery_preferences delivery_preferences
+     * @param null|DeliveryPreferences $delivery_preferences delivery_preferences
      */
     public function setDeliveryPreferences(?DeliveryPreferences $delivery_preferences) : self
     {

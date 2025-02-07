@@ -189,7 +189,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {
@@ -201,7 +201,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets shipments.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Shipment[]
+     * @return null|Shipment[]
      */
     public function getShipments() : ?array
     {
@@ -211,7 +211,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Shipment[] $shipments a list of one or more shipments with underlying details
+     * @param null|Shipment[] $shipments a list of one or more shipments with underlying details
      */
     public function setShipments(?array $shipments) : self
     {

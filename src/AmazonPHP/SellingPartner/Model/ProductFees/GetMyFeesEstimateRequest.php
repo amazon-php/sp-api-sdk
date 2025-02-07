@@ -183,7 +183,7 @@ class GetMyFeesEstimateRequest implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets fees_estimate_request.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateRequest $fees_estimate_request fees_estimate_request
+     * @param null|FeesEstimateRequest $fees_estimate_request fees_estimate_request
      */
     public function setFeesEstimateRequest(?FeesEstimateRequest $fees_estimate_request) : self
     {

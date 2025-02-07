@@ -197,7 +197,7 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets x.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits $x x
+     * @param IntegerWithUnits $x x
      */
     public function setX(IntegerWithUnits $x) : self
     {
@@ -217,7 +217,7 @@ class ImageOffsets implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets y.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits $y y
+     * @param IntegerWithUnits $y y
      */
     public function setY(IntegerWithUnits $y) : self
     {

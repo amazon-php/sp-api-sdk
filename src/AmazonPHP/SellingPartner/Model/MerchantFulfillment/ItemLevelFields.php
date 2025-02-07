@@ -205,7 +205,7 @@ class ItemLevelFields implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets additional_inputs.
      *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalInputs[]
+     * @return AdditionalInputs[]
      */
     public function getAdditionalInputs() : array
     {
@@ -215,7 +215,7 @@ class ItemLevelFields implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets additional_inputs.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalInputs[] $additional_inputs a list of additional inputs
+     * @param AdditionalInputs[] $additional_inputs a list of additional inputs
      */
     public function setAdditionalInputs(array $additional_inputs) : self
     {

@@ -133,7 +133,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @param string $purchase_order_number The purchase order identifier for the order that you want. Formatting Notes: 8-character alpha-numeric code. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getPurchaseOrderRequest(AccessToken $accessToken, string $region, string $purchase_order_number) : RequestInterface
     {
@@ -342,7 +342,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      * @param null|string $purchase_order_state Filters purchase orders based on the purchase order state. (optional)
      * @param null|string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in the filter, all purchase orders for all of the vendor codes that exist in the vendor group used to authorize the API client application are returned. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getPurchaseOrdersRequest(AccessToken $accessToken, string $region, ?int $limit = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?string $sort_order = null, ?string $next_token = null, ?bool $include_details = null, ?\DateTimeInterface $changed_after = null, ?\DateTimeInterface $changed_before = null, ?string $po_item_state = null, ?bool $is_po_changed = null, ?string $purchase_order_state = null, ?string $ordering_vendor_code = null) : RequestInterface
     {
@@ -369,6 +369,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
+
         // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -377,6 +378,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($created_after !== null) {
             $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -385,6 +387,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($created_before !== null) {
             $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -393,6 +396,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -401,6 +405,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($include_details)) {
             $include_details = ObjectSerializer::serializeCollection($include_details, '', true);
@@ -409,6 +414,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($include_details !== null) {
             $queryParams['includeDetails'] = ObjectSerializer::toString($include_details);
         }
+
         // query params
         if (\is_array($changed_after)) {
             $changed_after = ObjectSerializer::serializeCollection($changed_after, '', true);
@@ -417,6 +423,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($changed_after !== null) {
             $queryParams['changedAfter'] = ObjectSerializer::toString($changed_after);
         }
+
         // query params
         if (\is_array($changed_before)) {
             $changed_before = ObjectSerializer::serializeCollection($changed_before, '', true);
@@ -425,6 +432,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($changed_before !== null) {
             $queryParams['changedBefore'] = ObjectSerializer::toString($changed_before);
         }
+
         // query params
         if (\is_array($po_item_state)) {
             $po_item_state = ObjectSerializer::serializeCollection($po_item_state, '', true);
@@ -433,6 +441,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($po_item_state !== null) {
             $queryParams['poItemState'] = ObjectSerializer::toString($po_item_state);
         }
+
         // query params
         if (\is_array($is_po_changed)) {
             $is_po_changed = ObjectSerializer::serializeCollection($is_po_changed, '', true);
@@ -441,6 +450,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($is_po_changed !== null) {
             $queryParams['isPOChanged'] = ObjectSerializer::toString($is_po_changed);
         }
+
         // query params
         if (\is_array($purchase_order_state)) {
             $purchase_order_state = ObjectSerializer::serializeCollection($purchase_order_state, '', true);
@@ -449,6 +459,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($purchase_order_state !== null) {
             $queryParams['purchaseOrderState'] = ObjectSerializer::toString($purchase_order_state);
         }
+
         // query params
         if (\is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
@@ -642,7 +653,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      * @param null|string $ordering_vendor_code Filters purchase orders based on the specified ordering vendor code. This value should be same as &#39;sellingParty.partyId&#39; in the purchase order. If not included in filter, all purchase orders for all the vendor codes that exist in the vendor group used to authorize API client application are returned. (optional)
      * @param null|string $ship_to_party_id Filters purchase orders for a specific buyer&#39;s Fulfillment Center/warehouse by providing ship to location id here. This value should be same as &#39;shipToParty.partyId&#39; in the purchase order. If not included in filter, this will return purchase orders for all the buyer&#39;s warehouses used for vendor group purchase orders. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getPurchaseOrdersStatusRequest(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $updated_after = null, ?\DateTimeInterface $updated_before = null, ?string $purchase_order_number = null, ?string $purchase_order_status = null, ?string $item_confirmation_status = null, ?string $item_receive_status = null, ?string $ordering_vendor_code = null, ?string $ship_to_party_id = null) : RequestInterface
     {
@@ -669,6 +680,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -677,6 +689,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -685,6 +698,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -693,6 +707,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($created_after !== null) {
             $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -701,6 +716,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($created_before !== null) {
             $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($updated_after)) {
             $updated_after = ObjectSerializer::serializeCollection($updated_after, '', true);
@@ -709,6 +725,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($updated_after !== null) {
             $queryParams['updatedAfter'] = ObjectSerializer::toString($updated_after);
         }
+
         // query params
         if (\is_array($updated_before)) {
             $updated_before = ObjectSerializer::serializeCollection($updated_before, '', true);
@@ -717,6 +734,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($updated_before !== null) {
             $queryParams['updatedBefore'] = ObjectSerializer::toString($updated_before);
         }
+
         // query params
         if (\is_array($purchase_order_number)) {
             $purchase_order_number = ObjectSerializer::serializeCollection($purchase_order_number, '', true);
@@ -725,6 +743,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($purchase_order_number !== null) {
             $queryParams['purchaseOrderNumber'] = ObjectSerializer::toString($purchase_order_number);
         }
+
         // query params
         if (\is_array($purchase_order_status)) {
             $purchase_order_status = ObjectSerializer::serializeCollection($purchase_order_status, '', true);
@@ -733,6 +752,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($purchase_order_status !== null) {
             $queryParams['purchaseOrderStatus'] = ObjectSerializer::toString($purchase_order_status);
         }
+
         // query params
         if (\is_array($item_confirmation_status)) {
             $item_confirmation_status = ObjectSerializer::serializeCollection($item_confirmation_status, '', true);
@@ -741,6 +761,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($item_confirmation_status !== null) {
             $queryParams['itemConfirmationStatus'] = ObjectSerializer::toString($item_confirmation_status);
         }
+
         // query params
         if (\is_array($item_receive_status)) {
             $item_receive_status = ObjectSerializer::serializeCollection($item_receive_status, '', true);
@@ -749,6 +770,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($item_receive_status !== null) {
             $queryParams['itemReceiveStatus'] = ObjectSerializer::toString($item_receive_status);
         }
+
         // query params
         if (\is_array($ordering_vendor_code)) {
             $ordering_vendor_code = ObjectSerializer::serializeCollection($ordering_vendor_code, '', true);
@@ -757,6 +779,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
         if ($ordering_vendor_code !== null) {
             $queryParams['orderingVendorCode'] = ObjectSerializer::toString($ordering_vendor_code);
         }
+
         // query params
         if (\is_array($ship_to_party_id)) {
             $ship_to_party_id = ObjectSerializer::serializeCollection($ship_to_party_id, '', true);
@@ -926,7 +949,7 @@ final class VendorOrdersSDK implements VendorOrdersSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body Submits acknowledgements for one or more purchase orders from a vendor. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function submitAcknowledgementRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorOrders\SubmitAcknowledgementRequest $body) : RequestInterface
     {
