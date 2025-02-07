@@ -193,7 +193,7 @@ class Attachment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets upload_destination_id.
      *
-     * @param string $upload_destination_id The identifier of the upload destination. Get this value by calling the [createUploadDestinationForResource](doc:uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation of the Uploads API.
+     * @param string $upload_destination_id The identifier for the upload destination. To retrieve this value, call the Uploads API [`createUploadDestinationForResource`](https://developer-docs.amazon.com/sp-api/docs/uploads-api-reference#post-uploads2020-11-01uploaddestinationsresource) operation.
      */
     public function setUploadDestinationId(string $upload_destination_id) : self
     {

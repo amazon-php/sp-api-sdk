@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Retail Procurement Payments.
+ * Vendor Invoices v1.
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -335,7 +335,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets city.
      *
-     * @param null|string $city the city where the person, business, or institution is located
+     * @param null|string $city the city where the person, business or institution is located
      */
     public function setCity(?string $city) : self
     {
@@ -355,7 +355,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets county.
      *
-     * @param null|string $county the county where person, business, or institution is located
+     * @param null|string $county the county where person, business or institution is located
      */
     public function setCounty(?string $county) : self
     {
@@ -375,7 +375,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets district.
      *
-     * @param null|string $district the district where person, business, or institution is located
+     * @param null|string $district the district where person, business or institution is located
      */
     public function setDistrict(?string $district) : self
     {
@@ -395,7 +395,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets state_or_region.
      *
-     * @param null|string $state_or_region the state or region where person, business, or institution is located
+     * @param null|string $state_or_region the state or region where person, business or institution is located
      */
     public function setStateOrRegion(?string $state_or_region) : self
     {
@@ -415,7 +415,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets postal_or_zip_code.
      *
-     * @param null|string $postal_or_zip_code The postal or zip code of that address. It contains a series of letters, digits, or both, sometimes including spaces or punctuation.
+     * @param null|string $postal_or_zip_code The postal or zip code of that address. It contains a series of letters or digits or both, sometimes including spaces or punctuation.
      */
     public function setPostalOrZipCode(?string $postal_or_zip_code) : self
     {

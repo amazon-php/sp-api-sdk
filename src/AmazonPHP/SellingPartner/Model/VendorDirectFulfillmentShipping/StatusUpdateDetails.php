@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -235,7 +235,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets tracking_number.
      *
-     * @param string $tracking_number this is required to be provided for every package and should match with the trackingNumber sent for the shipment confirmation
+     * @param string $tracking_number the shipment tracking number is required for every package and should match the `trackingNumber` sent for the shipment confirmation
      */
     public function setTrackingNumber(string $tracking_number) : self
     {
@@ -255,7 +255,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets status_code.
      *
-     * @param string $status_code The shipment status code for the package that provides transportation information for Amazon tracking systems and the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
+     * @param string $status_code Indicates the shipment status code of the package that provides transportation information for Amazon tracking systems and ultimately for the final customer. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
      */
     public function setStatusCode(string $status_code) : self
     {
@@ -275,7 +275,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets reason_code.
      *
-     * @param string $reason_code Provides a reason code for the package status that provides additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
+     * @param string $reason_code Provides a reason code for the status of the package that will provide additional information about the transportation status. For more information, refer to the [Additional Fields Explanation](https://developer-docs.amazon.com/sp-api/docs/vendor-direct-fulfillment-shipping-api-use-case-guide#additional-fields-explanation).
      */
     public function setReasonCode(string $reason_code) : self
     {
@@ -295,7 +295,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets status_date_time.
      *
-     * @param \DateTimeInterface $status_date_time The date and time when the shipment status was updated. This field is expected to be in ISO-8601 date/time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
+     * @param \DateTimeInterface $status_date_time The date and time when the shipment status was updated. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format, with UTC time zone or UTC offset. For example, 2020-07-16T23:00:00Z or 2020-07-16T23:00:00+01:00.
      */
     public function setStatusDateTime(\DateTimeInterface $status_date_time) : self
     {

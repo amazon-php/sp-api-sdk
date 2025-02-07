@@ -42,6 +42,8 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
         'content_information_source' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource',
         'destination_region' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Region',
         'dimensions' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions',
+        'external_container_identifier' => 'string',
+        'external_container_identifier_type' => 'string',
         'items' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Item[]',
         'package_id' => 'string',
         'quantity' => 'int',
@@ -63,6 +65,8 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
         'content_information_source' => null,
         'destination_region' => null,
         'dimensions' => null,
+        'external_container_identifier' => null,
+        'external_container_identifier_type' => null,
         'items' => null,
         'package_id' => null,
         'quantity' => null,
@@ -81,6 +85,8 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
         'content_information_source' => 'contentInformationSource',
         'destination_region' => 'destinationRegion',
         'dimensions' => 'dimensions',
+        'external_container_identifier' => 'externalContainerIdentifier',
+        'external_container_identifier_type' => 'externalContainerIdentifierType',
         'items' => 'items',
         'package_id' => 'packageId',
         'quantity' => 'quantity',
@@ -98,6 +104,8 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
         'content_information_source' => 'setContentInformationSource',
         'destination_region' => 'setDestinationRegion',
         'dimensions' => 'setDimensions',
+        'external_container_identifier' => 'setExternalContainerIdentifier',
+        'external_container_identifier_type' => 'setExternalContainerIdentifierType',
         'items' => 'setItems',
         'package_id' => 'setPackageId',
         'quantity' => 'setQuantity',
@@ -115,6 +123,8 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
         'content_information_source' => 'getContentInformationSource',
         'destination_region' => 'getDestinationRegion',
         'dimensions' => 'getDimensions',
+        'external_container_identifier' => 'getExternalContainerIdentifier',
+        'external_container_identifier_type' => 'getExternalContainerIdentifierType',
         'items' => 'getItems',
         'package_id' => 'getPackageId',
         'quantity' => 'getQuantity',
@@ -141,6 +151,8 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
         $this->container['content_information_source'] = $data['content_information_source'] ?? null;
         $this->container['destination_region'] = $data['destination_region'] ?? null;
         $this->container['dimensions'] = $data['dimensions'] ?? null;
+        $this->container['external_container_identifier'] = $data['external_container_identifier'] ?? null;
+        $this->container['external_container_identifier_type'] = $data['external_container_identifier_type'] ?? null;
         $this->container['items'] = $data['items'] ?? null;
         $this->container['package_id'] = $data['package_id'] ?? null;
         $this->container['quantity'] = $data['quantity'] ?? null;
@@ -229,6 +241,22 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
 
         if ($this->container['dimensions'] !== null) {
             $this->container['dimensions']->validate();
+        }
+
+        if (null !== $this->container['external_container_identifier'] && (\mb_strlen((string) $this->container['external_container_identifier']) > 1024)) {
+            throw new AssertionException("invalid value for 'external_container_identifier', the character length must be smaller than or equal to 1024.");
+        }
+
+        if (null !== $this->container['external_container_identifier'] && (\mb_strlen((string) $this->container['external_container_identifier']) < 1)) {
+            throw new AssertionException("invalid value for 'external_container_identifier', the character length must be bigger than or equal to 1.");
+        }
+
+        if (null !== $this->container['external_container_identifier_type'] && (\mb_strlen((string) $this->container['external_container_identifier_type']) > 1024)) {
+            throw new AssertionException("invalid value for 'external_container_identifier_type', the character length must be smaller than or equal to 1024.");
+        }
+
+        if (null !== $this->container['external_container_identifier_type'] && (\mb_strlen((string) $this->container['external_container_identifier_type']) < 1)) {
+            throw new AssertionException("invalid value for 'external_container_identifier_type', the character length must be bigger than or equal to 1.");
         }
 
         if ($this->container['package_id'] === null) {
@@ -344,6 +372,46 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     public function setDimensions(?Dimensions $dimensions) : self
     {
         $this->container['dimensions'] = $dimensions;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_container_identifier.
+     */
+    public function getExternalContainerIdentifier() : ?string
+    {
+        return $this->container['external_container_identifier'];
+    }
+
+    /**
+     * Sets external_container_identifier.
+     *
+     * @param null|string $external_container_identifier the external identifier for this container / box
+     */
+    public function setExternalContainerIdentifier(?string $external_container_identifier) : self
+    {
+        $this->container['external_container_identifier'] = $external_container_identifier;
+
+        return $this;
+    }
+
+    /**
+     * Gets external_container_identifier_type.
+     */
+    public function getExternalContainerIdentifierType() : ?string
+    {
+        return $this->container['external_container_identifier_type'];
+    }
+
+    /**
+     * Sets external_container_identifier_type.
+     *
+     * @param null|string $external_container_identifier_type Type of the external identifier used. Can be: `AMAZON`, `SSCC`.
+     */
+    public function setExternalContainerIdentifierType(?string $external_container_identifier_type) : self
+    {
+        $this->container['external_container_identifier_type'] = $external_container_identifier_type;
 
         return $this;
     }

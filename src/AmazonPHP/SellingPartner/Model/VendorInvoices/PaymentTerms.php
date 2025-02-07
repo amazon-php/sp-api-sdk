@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Retail Procurement Payments.
+ * Vendor Invoices v1.
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -278,7 +278,7 @@ class PaymentTerms implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets discount_due_days.
      *
-     * @param null|float $discount_due_days the number of calendar days from the base date (Invoice date) until the discount is no longer valid
+     * @param null|float $discount_due_days the number of calendar days from the Base date (Invoice date) until the discount is no longer valid
      */
     public function setDiscountDueDays(?float $discount_due_days) : self
     {

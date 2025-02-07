@@ -45,6 +45,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'offers' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemOfferByMarketplace[]',
         'fulfillment_availability' => '\AmazonPHP\SellingPartner\Model\ListingsItems\FulfillmentAvailability[]',
         'procurement' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement[]',
+        'relationships' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemRelationshipsByMarketplace[]',
+        'product_types' => '\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProductTypeByMarketplace[]',
     ];
 
     /**
@@ -64,6 +66,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'offers' => null,
         'fulfillment_availability' => null,
         'procurement' => null,
+        'relationships' => null,
+        'product_types' => null,
     ];
 
     /**
@@ -80,6 +84,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'offers' => 'offers',
         'fulfillment_availability' => 'fulfillmentAvailability',
         'procurement' => 'procurement',
+        'relationships' => 'relationships',
+        'product_types' => 'productTypes',
     ];
 
     /**
@@ -95,6 +101,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'offers' => 'setOffers',
         'fulfillment_availability' => 'setFulfillmentAvailability',
         'procurement' => 'setProcurement',
+        'relationships' => 'setRelationships',
+        'product_types' => 'setProductTypes',
     ];
 
     /**
@@ -110,6 +118,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         'offers' => 'getOffers',
         'fulfillment_availability' => 'getFulfillmentAvailability',
         'procurement' => 'getProcurement',
+        'relationships' => 'getRelationships',
+        'product_types' => 'getProductTypes',
     ];
 
     /**
@@ -134,6 +144,8 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
         $this->container['offers'] = $data['offers'] ?? null;
         $this->container['fulfillment_availability'] = $data['fulfillment_availability'] ?? null;
         $this->container['procurement'] = $data['procurement'] ?? null;
+        $this->container['relationships'] = $data['relationships'] ?? null;
+        $this->container['product_types'] = $data['product_types'] ?? null;
     }
 
     /**
@@ -356,6 +368,50 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     public function setProcurement(?array $procurement) : self
     {
         $this->container['procurement'] = $procurement;
+
+        return $this;
+    }
+
+    /**
+     * Gets relationships.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemRelationshipsByMarketplace[]
+     */
+    public function getRelationships() : ?array
+    {
+        return $this->container['relationships'];
+    }
+
+    /**
+     * Sets relationships.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemRelationshipsByMarketplace[] $relationships relationships for a listing item, by marketplace (for example, variations)
+     */
+    public function setRelationships(?array $relationships) : self
+    {
+        $this->container['relationships'] = $relationships;
+
+        return $this;
+    }
+
+    /**
+     * Gets product_types.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProductTypeByMarketplace[]
+     */
+    public function getProductTypes() : ?array
+    {
+        return $this->container['product_types'];
+    }
+
+    /**
+     * Sets product_types.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemProductTypeByMarketplace[] $product_types product types for a listing item, by marketplace
+     */
+    public function setProductTypes(?array $product_types) : self
+    {
+        $this->container['product_types'] = $product_types;
 
         return $this;
     }

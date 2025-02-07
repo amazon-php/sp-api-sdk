@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -199,7 +199,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets party_id.
      *
-     * @param string $party_id assigned Identification for the party
+     * @param string $party_id the identifier of the party
      */
     public function setPartyId(string $party_id) : self
     {
@@ -241,7 +241,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets tax_registration_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TaxRegistrationDetails[] $tax_registration_details tax registration details of the entity
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\TaxRegistrationDetails[] $tax_registration_details the tax registration details of the party
      */
     public function setTaxRegistrationDetails(?array $tax_registration_details) : self
     {

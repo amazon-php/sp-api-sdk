@@ -44,6 +44,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'packing_groups' => 'string[]',
         'packing_option_id' => 'string',
         'status' => 'string',
+        'supported_configurations' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackingConfiguration[]',
         'supported_shipping_configurations' => '\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingConfiguration[]',
     ];
 
@@ -63,6 +64,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'packing_groups' => null,
         'packing_option_id' => null,
         'status' => null,
+        'supported_configurations' => null,
         'supported_shipping_configurations' => null,
     ];
 
@@ -79,6 +81,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'packing_groups' => 'packingGroups',
         'packing_option_id' => 'packingOptionId',
         'status' => 'status',
+        'supported_configurations' => 'supportedConfigurations',
         'supported_shipping_configurations' => 'supportedShippingConfigurations',
     ];
 
@@ -94,6 +97,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'packing_groups' => 'setPackingGroups',
         'packing_option_id' => 'setPackingOptionId',
         'status' => 'setStatus',
+        'supported_configurations' => 'setSupportedConfigurations',
         'supported_shipping_configurations' => 'setSupportedShippingConfigurations',
     ];
 
@@ -109,6 +113,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         'packing_groups' => 'getPackingGroups',
         'packing_option_id' => 'getPackingOptionId',
         'status' => 'getStatus',
+        'supported_configurations' => 'getSupportedConfigurations',
         'supported_shipping_configurations' => 'getSupportedShippingConfigurations',
     ];
 
@@ -133,6 +138,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
         $this->container['packing_groups'] = $data['packing_groups'] ?? null;
         $this->container['packing_option_id'] = $data['packing_option_id'] ?? null;
         $this->container['status'] = $data['status'] ?? null;
+        $this->container['supported_configurations'] = $data['supported_configurations'] ?? null;
         $this->container['supported_shipping_configurations'] = $data['supported_shipping_configurations'] ?? null;
     }
 
@@ -241,6 +247,10 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
 
         if ((\mb_strlen((string) $this->container['status']) < 1)) {
             throw new AssertionException("invalid value for 'status', the character length must be bigger than or equal to 1.");
+        }
+
+        if ($this->container['supported_configurations'] === null) {
+            throw new AssertionException("'supported_configurations' can't be null");
         }
 
         if ($this->container['supported_shipping_configurations'] === null) {
@@ -375,6 +385,28 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     }
 
     /**
+     * Gets supported_configurations.
+     *
+     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackingConfiguration[]
+     */
+    public function getSupportedConfigurations() : array
+    {
+        return $this->container['supported_configurations'];
+    }
+
+    /**
+     * Sets supported_configurations.
+     *
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackingConfiguration[] $supported_configurations a list of possible configurations for this option
+     */
+    public function setSupportedConfigurations(array $supported_configurations) : self
+    {
+        $this->container['supported_configurations'] = $supported_configurations;
+
+        return $this;
+    }
+
+    /**
      * Gets supported_shipping_configurations.
      *
      * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingConfiguration[]
@@ -387,7 +419,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets supported_shipping_configurations.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingConfiguration[] $supported_shipping_configurations list of supported shipping modes
+     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingConfiguration[] $supported_shipping_configurations **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
      */
     public function setSupportedShippingConfigurations(array $supported_shipping_configurations) : self
     {

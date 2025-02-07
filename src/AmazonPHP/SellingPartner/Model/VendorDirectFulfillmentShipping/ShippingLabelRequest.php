@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -217,7 +217,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets purchase_order_number.
      *
-     * @param string $purchase_order_number purchase order number of the order for which to create a shipping label
+     * @param string $purchase_order_number the purchase order number of the order for which to create a shipping label
      */
     public function setPurchaseOrderNumber(string $purchase_order_number) : self
     {

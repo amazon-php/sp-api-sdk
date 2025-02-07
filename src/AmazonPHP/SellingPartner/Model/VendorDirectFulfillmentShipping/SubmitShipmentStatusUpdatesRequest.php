@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -185,7 +185,7 @@ class SubmitShipmentStatusUpdatesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_status_updates.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentStatusUpdate[] $shipment_status_updates contains a list of one or more `ShipmentStatusUpdate` objects, each represents a status update of a specific shipment
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentStatusUpdate[] $shipment_status_updates Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
      */
     public function setShipmentStatusUpdates(?array $shipment_status_updates) : self
     {

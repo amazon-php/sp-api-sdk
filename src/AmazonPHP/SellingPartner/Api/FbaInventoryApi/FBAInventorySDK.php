@@ -730,7 +730,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
      * @param string $granularity_type The granularity type for the inventory aggregation level. (required)
      * @param string $granularity_id The granularity ID for the inventory aggregation level. (required)
      * @param string[] $marketplace_ids The marketplace ID for the marketplace for which to return inventory summaries. (required)
-     * @param bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
+     * @param null|bool $details true to return inventory summaries with additional summarized inventory details and quantities. Otherwise, returns inventory summaries only (default value). (optional, default to false)
      * @param null|\DateTimeInterface $start_date_time A start date and time in ISO8601 format. If specified, all inventory summaries that have changed since then are returned. You must specify a date and time that is no earlier than 18 months prior to the date and time when you call the API. Note: Changes in inboundWorkingQuantity, inboundShippedQuantity and inboundReceivingQuantity are not detected. (optional)
      * @param null|string[] $seller_skus A list of seller SKUs for which to return inventory summaries. You may specify up to 50 SKUs. (optional)
      * @param null|string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)
@@ -738,7 +738,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getInventorySummariesRequest(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, bool $details = false, ?\DateTimeInterface $start_date_time = null, ?array $seller_skus = null, ?string $seller_sku = null, ?string $next_token = null) : RequestInterface
+    public function getInventorySummariesRequest(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, ?bool $details = false, ?\DateTimeInterface $start_date_time = null, ?array $seller_skus = null, ?string $seller_sku = null, ?string $next_token = null) : RequestInterface
     {
         // verify the required parameter 'granularity_type' is set
         if ($granularity_type === null || (\is_array($granularity_type) && \count($granularity_type) === 0)) {

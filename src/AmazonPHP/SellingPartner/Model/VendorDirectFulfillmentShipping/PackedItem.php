@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -213,7 +213,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets item_sequence_number.
      *
-     * @param int $item_sequence_number Item Sequence Number for the item. This must be the same value as sent in the order for a given item.
+     * @param int $item_sequence_number The sequence number of the item. The number must be the same as the order number of the item.
      */
     public function setItemSequenceNumber(int $item_sequence_number) : self
     {
@@ -233,7 +233,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets buyer_product_identifier.
      *
-     * @param null|string $buyer_product_identifier Buyer's Standard Identification Number (ASIN) of an item. Either buyerProductIdentifier or vendorProductIdentifier is required.
+     * @param null|string $buyer_product_identifier The buyer's Amazon Standard Identification Number (ASIN) of an item. Either `buyerProductIdentifier` or `vendorProductIdentifier` is required.
      */
     public function setBuyerProductIdentifier(?string $buyer_product_identifier) : self
     {
@@ -273,7 +273,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets vendor_product_identifier.
      *
-     * @param null|string $vendor_product_identifier The vendor selected product identification of the item. Should be the same as was sent in the Purchase Order, like SKU Number.
+     * @param null|string $vendor_product_identifier An item's product identifier, which the vendor selects. This identifier should be the same as the identifier, such as a SKU, in the purchase order.
      */
     public function setVendorProductIdentifier(?string $vendor_product_identifier) : self
     {

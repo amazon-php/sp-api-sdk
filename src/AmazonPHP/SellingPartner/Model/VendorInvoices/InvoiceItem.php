@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Retail Procurement Payments.
+ * Vendor Invoices v1.
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -43,6 +43,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
         'vendor_product_identifier' => 'string',
         'invoiced_quantity' => '\AmazonPHP\SellingPartner\Model\VendorInvoices\ItemQuantity',
         'net_cost' => '\AmazonPHP\SellingPartner\Model\VendorInvoices\Money',
+        'net_cost_unit_of_measure' => '\AmazonPHP\SellingPartner\Model\VendorInvoices\NetCostUnitOfMeasure',
         'purchase_order_number' => 'string',
         'hsn_code' => 'string',
         'credit_note_details' => '\AmazonPHP\SellingPartner\Model\VendorInvoices\CreditNoteDetails',
@@ -66,6 +67,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
         'vendor_product_identifier' => null,
         'invoiced_quantity' => null,
         'net_cost' => null,
+        'net_cost_unit_of_measure' => null,
         'purchase_order_number' => null,
         'hsn_code' => null,
         'credit_note_details' => null,
@@ -86,6 +88,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
         'vendor_product_identifier' => 'vendorProductIdentifier',
         'invoiced_quantity' => 'invoicedQuantity',
         'net_cost' => 'netCost',
+        'net_cost_unit_of_measure' => 'netCostUnitOfMeasure',
         'purchase_order_number' => 'purchaseOrderNumber',
         'hsn_code' => 'hsnCode',
         'credit_note_details' => 'creditNoteDetails',
@@ -105,6 +108,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
         'vendor_product_identifier' => 'setVendorProductIdentifier',
         'invoiced_quantity' => 'setInvoicedQuantity',
         'net_cost' => 'setNetCost',
+        'net_cost_unit_of_measure' => 'setNetCostUnitOfMeasure',
         'purchase_order_number' => 'setPurchaseOrderNumber',
         'hsn_code' => 'setHsnCode',
         'credit_note_details' => 'setCreditNoteDetails',
@@ -124,6 +128,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
         'vendor_product_identifier' => 'getVendorProductIdentifier',
         'invoiced_quantity' => 'getInvoicedQuantity',
         'net_cost' => 'getNetCost',
+        'net_cost_unit_of_measure' => 'getNetCostUnitOfMeasure',
         'purchase_order_number' => 'getPurchaseOrderNumber',
         'hsn_code' => 'getHsnCode',
         'credit_note_details' => 'getCreditNoteDetails',
@@ -152,6 +157,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
         $this->container['vendor_product_identifier'] = $data['vendor_product_identifier'] ?? null;
         $this->container['invoiced_quantity'] = $data['invoiced_quantity'] ?? null;
         $this->container['net_cost'] = $data['net_cost'] ?? null;
+        $this->container['net_cost_unit_of_measure'] = $data['net_cost_unit_of_measure'] ?? null;
         $this->container['purchase_order_number'] = $data['purchase_order_number'] ?? null;
         $this->container['hsn_code'] = $data['hsn_code'] ?? null;
         $this->container['credit_note_details'] = $data['credit_note_details'] ?? null;
@@ -349,6 +355,26 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     }
 
     /**
+     * Gets net_cost_unit_of_measure.
+     */
+    public function getNetCostUnitOfMeasure() : ?NetCostUnitOfMeasure
+    {
+        return $this->container['net_cost_unit_of_measure'];
+    }
+
+    /**
+     * Sets net_cost_unit_of_measure.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\NetCostUnitOfMeasure $net_cost_unit_of_measure net_cost_unit_of_measure
+     */
+    public function setNetCostUnitOfMeasure(?NetCostUnitOfMeasure $net_cost_unit_of_measure) : self
+    {
+        $this->container['net_cost_unit_of_measure'] = $net_cost_unit_of_measure;
+
+        return $this;
+    }
+
+    /**
      * Gets purchase_order_number.
      */
     public function getPurchaseOrderNumber() : ?string
@@ -359,7 +385,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets purchase_order_number.
      *
-     * @param null|string $purchase_order_number The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when `invoiceType` is `Invoice`, and is not required when `invoiceType` is `CreditNote`.
+     * @param null|string $purchase_order_number The Amazon purchase order number for this invoiced line item. Formatting Notes: 8-character alpha-numeric code. This value is mandatory only when invoiceType is Invoice, and is not required when invoiceType is CreditNote.
      */
     public function setPurchaseOrderNumber(?string $purchase_order_number) : self
     {
@@ -379,7 +405,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets hsn_code.
      *
-     * @param null|string $hsn_code The HSN Tax code. The HSN number cannot contain alphabets.
+     * @param null|string $hsn_code HSN Tax code. The HSN number cannot contain alphabets.
      */
     public function setHsnCode(?string $hsn_code) : self
     {

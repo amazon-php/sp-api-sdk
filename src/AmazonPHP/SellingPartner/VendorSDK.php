@@ -8,12 +8,12 @@ use AmazonPHP\SellingPartner\Api\UpdateInventoryApi\VendorDirectFulfillmentInven
 use AmazonPHP\SellingPartner\Api\UpdateInventoryApi\VendorDirectFulfillmentInventorySDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorInvoiceApi\VendorDirectFulfillmentPaymentsSDK;
 use AmazonPHP\SellingPartner\Api\VendorInvoiceApi\VendorDirectFulfillmentPaymentsSDKInterface;
+use AmazonPHP\SellingPartner\Api\VendorInvoicesApi\VendorInvoicesSDK;
+use AmazonPHP\SellingPartner\Api\VendorInvoicesApi\VendorInvoicesSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorOrdersSDK;
 use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorOrdersSDKInterface;
-use AmazonPHP\SellingPartner\Api\VendorPaymentsApi\VendorInvoicesSDK;
-use AmazonPHP\SellingPartner\Api\VendorPaymentsApi\VendorInvoicesSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorShipmentsSDK;
 use AmazonPHP\SellingPartner\Api\VendorShippingApi\VendorShipmentsSDKInterface;
 use AmazonPHP\SellingPartner\Api\VendorShippingLabelsApi\VendorDirectFulfillmentShippingSDK;

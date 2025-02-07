@@ -38,6 +38,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $openAPITypes = [
+        'expiration_details' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ExpirationDetails[]',
         'inventory_details' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryDetails',
         'sku' => 'string',
         'total_inbound_quantity' => 'int',
@@ -54,6 +55,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
+        'expiration_details' => null,
         'inventory_details' => null,
         'sku' => null,
         'total_inbound_quantity' => 'int64',
@@ -67,6 +69,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $attributeMap = [
+        'expiration_details' => 'expirationDetails',
         'inventory_details' => 'inventoryDetails',
         'sku' => 'sku',
         'total_inbound_quantity' => 'totalInboundQuantity',
@@ -79,6 +82,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $setters = [
+        'expiration_details' => 'setExpirationDetails',
         'inventory_details' => 'setInventoryDetails',
         'sku' => 'setSku',
         'total_inbound_quantity' => 'setTotalInboundQuantity',
@@ -91,6 +95,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @var string[]
      */
     protected static array $getters = [
+        'expiration_details' => 'getExpirationDetails',
         'inventory_details' => 'getInventoryDetails',
         'sku' => 'getSku',
         'total_inbound_quantity' => 'getTotalInboundQuantity',
@@ -112,6 +117,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     public function __construct(array $data = null)
     {
+        $this->container['expiration_details'] = $data['expiration_details'] ?? null;
         $this->container['inventory_details'] = $data['inventory_details'] ?? null;
         $this->container['sku'] = $data['sku'] ?? null;
         $this->container['total_inbound_quantity'] = $data['total_inbound_quantity'] ?? null;
@@ -192,6 +198,28 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
         if ($this->container['sku'] === null) {
             throw new AssertionException("'sku' can't be null");
         }
+    }
+
+    /**
+     * Gets expiration_details.
+     *
+     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ExpirationDetails[]
+     */
+    public function getExpirationDetails() : ?array
+    {
+        return $this->container['expiration_details'];
+    }
+
+    /**
+     * Sets expiration_details.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ExpirationDetails[] $expiration_details The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
+     */
+    public function setExpirationDetails(?array $expiration_details) : self
+    {
+        $this->container['expiration_details'] = $expiration_details;
+
+        return $this;
     }
 
     /**

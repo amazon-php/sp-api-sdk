@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -31,6 +31,8 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation getCustomerInvoice.
      *
+     * getCustomerInvoice
+     *
      * @param string $purchase_order_number Purchase order number of the shipment for which to return the invoice. (required)
      *
      * @throws ApiException on non-2xx response
@@ -41,8 +43,10 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation getCustomerInvoices.
      *
-     * @param \DateTimeInterface $created_after Orders that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param \DateTimeInterface $created_before Orders that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
+     * getCustomerInvoices
+     *
+     * @param \DateTimeInterface $created_after Orders that became available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param \DateTimeInterface $created_before Orders that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
      * @param null|string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified, the result will contain orders for all warehouses. (optional)
      * @param null|int $limit The limit to the number of records returned (optional)
      * @param null|string $sort_order Sort ASC or DESC by order creation date. (optional)

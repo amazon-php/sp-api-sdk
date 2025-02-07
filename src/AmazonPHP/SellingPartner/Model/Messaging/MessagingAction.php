@@ -183,7 +183,7 @@ class MessagingAction implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets name.
      *
-     * @param string $name name
+     * @param string $name the name of the template
      */
     public function setName(string $name) : self
     {

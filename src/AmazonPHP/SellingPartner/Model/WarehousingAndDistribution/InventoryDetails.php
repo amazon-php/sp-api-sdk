@@ -39,6 +39,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     protected static array $openAPITypes = [
         'available_distributable_quantity' => 'int',
+        'replenishment_quantity' => 'int',
         'reserved_distributable_quantity' => 'int',
     ];
 
@@ -53,6 +54,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     protected static array $openAPIFormats = [
         'available_distributable_quantity' => 'int64',
+        'replenishment_quantity' => 'int64',
         'reserved_distributable_quantity' => 'int64',
     ];
 
@@ -64,6 +66,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     protected static array $attributeMap = [
         'available_distributable_quantity' => 'availableDistributableQuantity',
+        'replenishment_quantity' => 'replenishmentQuantity',
         'reserved_distributable_quantity' => 'reservedDistributableQuantity',
     ];
 
@@ -74,6 +77,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     protected static array $setters = [
         'available_distributable_quantity' => 'setAvailableDistributableQuantity',
+        'replenishment_quantity' => 'setReplenishmentQuantity',
         'reserved_distributable_quantity' => 'setReservedDistributableQuantity',
     ];
 
@@ -84,6 +88,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
      */
     protected static array $getters = [
         'available_distributable_quantity' => 'getAvailableDistributableQuantity',
+        'replenishment_quantity' => 'getReplenishmentQuantity',
         'reserved_distributable_quantity' => 'getReservedDistributableQuantity',
     ];
 
@@ -103,6 +108,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     public function __construct(array $data = null)
     {
         $this->container['available_distributable_quantity'] = $data['available_distributable_quantity'] ?? null;
+        $this->container['replenishment_quantity'] = $data['replenishment_quantity'] ?? null;
         $this->container['reserved_distributable_quantity'] = $data['reserved_distributable_quantity'] ?? null;
     }
 
@@ -191,6 +197,26 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     public function setAvailableDistributableQuantity(?int $available_distributable_quantity) : self
     {
         $this->container['available_distributable_quantity'] = $available_distributable_quantity;
+
+        return $this;
+    }
+
+    /**
+     * Gets replenishment_quantity.
+     */
+    public function getReplenishmentQuantity() : ?int
+    {
+        return $this->container['replenishment_quantity'];
+    }
+
+    /**
+     * Sets replenishment_quantity.
+     *
+     * @param null|int $replenishment_quantity quantity that is in transit from AWD and has not yet been received at FBA
+     */
+    public function setReplenishmentQuantity(?int $replenishment_quantity) : self
+    {
+        $this->container['replenishment_quantity'] = $replenishment_quantity;
 
         return $this;
     }

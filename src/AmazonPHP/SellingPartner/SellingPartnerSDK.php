@@ -10,10 +10,14 @@ use AmazonPHP\SellingPartner\Api\ApplicationsApi\ApplicationManagementSDK;
 use AmazonPHP\SellingPartner\Api\ApplicationsApi\ApplicationManagementSDKInterface;
 use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDK;
 use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDKInterface;
-use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
-use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDKInterface;
-use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDK;
-use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDKInterface;
+use AmazonPHP\SellingPartner\Api\CatalogItemsApi\CatalogItemSDK;
+use AmazonPHP\SellingPartner\Api\CatalogItemsApi\CatalogItemSDKInterface;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialEventsSDK;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialEventsSDKInterface;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialTransactionsSDK;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialTransactionsSDKInterface;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialTransfersSDK;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialTransfersSDKInterface;
 use AmazonPHP\SellingPartner\Api\DefinitionsApi\ProductTypesDefinitionsSDK;
 use AmazonPHP\SellingPartner\Api\DefinitionsApi\ProductTypesDefinitionsSDKInterface;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FBAInboundSDK;
@@ -37,7 +41,8 @@ use AmazonPHP\SellingPartner\Api\MessagingApi\MessagingSDK;
 use AmazonPHP\SellingPartner\Api\MessagingApi\MessagingSDKInterface;
 use AmazonPHP\SellingPartner\Api\NotificationsApi\NotificationsSDK;
 use AmazonPHP\SellingPartner\Api\NotificationsApi\NotificationsSDKInterface;
-use AmazonPHP\SellingPartner\Api\OrdersV0Api;
+use AmazonPHP\SellingPartner\Api\OrdersApi\OrdersSDK;
+use AmazonPHP\SellingPartner\Api\OrdersApi\OrdersSDKInterface;
 use AmazonPHP\SellingPartner\Api\ProductPricingApi\ProductPricingSDK;
 use AmazonPHP\SellingPartner\Api\ProductPricingApi\ProductPricingSDKInterface;
 use AmazonPHP\SellingPartner\Api\ReportsApi\ReportsSDK;
@@ -48,7 +53,6 @@ use AmazonPHP\SellingPartner\Api\SellersApi\SellersSDK;
 use AmazonPHP\SellingPartner\Api\SellersApi\SellersSDKInterface;
 use AmazonPHP\SellingPartner\Api\ServiceApi\ServicesSDK;
 use AmazonPHP\SellingPartner\Api\ServiceApi\ServicesSDKInterface;
-use AmazonPHP\SellingPartner\Api\ShipmentApi;
 use AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi\ShipmentInvoicingSDK;
 use AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi\ShipmentInvoicingSDKInterface;
 use AmazonPHP\SellingPartner\Api\ShippingApi\ShippingSDK;
@@ -135,9 +139,19 @@ final class SellingPartnerSDK
         return $this->instantiateSDK(FeedsSDK::class);
     }
 
-    public function finances() : FinancesSDKInterface
+    public function financialEvents() : FinancialEventsSDKInterface
     {
-        return $this->instantiateSDK(FinancesSDK::class);
+        return $this->instantiateSDK(FinancialEventsSDK::class);
+    }
+
+    public function financialTransactions() : FinancialTransactionsSDKInterface
+    {
+        return $this->instantiateSDK(FinancialTransactionsSDK::class);
+    }
+
+    public function financialTransfers() : FinancialTransfersSDKInterface
+    {
+        return $this->instantiateSDK(FinancialTransfersSDK::class);
     }
 
     public function fulfillmentInboundV0() : FulfillmentInboundV0SDKInterface
@@ -175,14 +189,9 @@ final class SellingPartnerSDK
         return $this->instantiateSDK(NotificationsSDK::class);
     }
 
-    public function orders() : OrdersV0Api\OrdersSDKInterface
+    public function orders() : OrdersSDKInterface
     {
-        return $this->instantiateSDK(OrdersV0Api\OrdersSDK::class);
-    }
-
-    public function orderShipment() : ShipmentApi\OrdersSDKInterface
-    {
-        return $this->instantiateSDK(ShipmentApi\OrdersSDK::class);
+        return $this->instantiateSDK(OrdersSDK::class);
     }
 
     public function productFees() : ProductFeesSDKInterface

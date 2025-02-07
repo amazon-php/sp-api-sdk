@@ -263,9 +263,9 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets attributes.
      *
-     * @return null|array<string, mixed>
+     * @return array<string,mixed>
      */
-    public function getAttributes() : ?array
+    public function getAttributes() : array
     {
         return $this->container['attributes'];
     }

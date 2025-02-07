@@ -47,7 +47,7 @@ use Psr\Http\Message\RequestInterface;
     * @param AccessToken $accessToken
     * @param string $region
     {{#allParams}}
-    * @param {{{dataType}}}{{^required}}{{#defaultValue}}{{/defaultValue}}{{^defaultValue}}|null{{/defaultValue}}{{/required}} ${{paramName}} {{#description}} {{description}}{{/description}}{{^description}} {{paramName}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
+    * @param {{{dataType}}}{{^required}}|null{{/required}} ${{paramName}} {{#description}} {{description}}{{/description}}{{^description}} {{paramName}}{{/description}} {{#required}}(required){{/required}}{{^required}}(optional{{#defaultValue}}, default to {{{.}}}{{/defaultValue}}){{/required}}
     {{/allParams}}
     *
     * @throws ApiException on non-2xx response
