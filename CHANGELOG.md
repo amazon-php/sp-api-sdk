@@ -1,14 +1,32 @@
-## [Unreleased] - 2024-11-27
+## [Unreleased] - 2025-02-07
+
+### Added
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Add Financial Transfers SDK and Related Models.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Add Financial Transactions SDK and Related Models.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Changed
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Move Finances SDK and related models from Finances namespace to Finances/FinancialEvents namespace.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Rename FinancesSDK to FinancialEventsSDK.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Rename generator-finances.yaml to generator-finances-financial-events.yaml.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **CatalogItemSDK moved from CatalogApi namespace to CatalogItemsApi namespace.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **OrdersSDK moved from OrdersV0Api namespace to OrdersApi namespace.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **VendorInvoicesSDK moved from VendorPaymentsApi namespace to VendorInvoicesApi namespace.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Separate rector runs and configurations for efficiency in the build process.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#688](https://github.com/amazon-php/sp-api-sdk/pull/688) - **Add 7.x branch designation to GitHub workflow configurations.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#688](https://github.com/amazon-php/sp-api-sdk/pull/688) - **Add 7.x branch designation to README.md.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Fixed
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Correct templates so that optional request method params are nullable.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#689](https://github.com/amazon-php/sp-api-sdk/pull/689) - **Update checkout and cache GitHub workflow actions to v4** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Updated
 - [605649](https://github.com/amazon-php/sp-api-sdk/commit/605649521c1f49b392c4be12389699d8b321ebff) - **github actions** - [@norberttech](https://github.com/norberttech)
+
+### Removed
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Removed ShipmentApi/OrdersSDK.** - [@jasonhebert](https://github.com/jasonhebert)
+
+### Deprecated
+- [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Breaking changes to the FulfillmentInboundV0SDK due to deprecations.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ## [6.2.0] - 2024-11-27
 
