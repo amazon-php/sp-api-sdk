@@ -5,16 +5,18 @@ declare(strict_types=1);
 namespace AmazonPHP\Test\AmazonPHP\SellingPartner\Tests\Unit;
 
 use AmazonPHP\SellingPartner\Configuration;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Dimensions;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxInput;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelOwner;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageGroupingInput;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepOwner;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPackingInformationRequest;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfMeasurement;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfWeight;
+use AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight;
 use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\InboundShipmentItem;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredSmallParcelDataInput;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredSmallParcelPackageInput;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PutTransportDetailsRequest;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\ShipmentType;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportDetailInput;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\UnitOfMeasurement;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\UnitOfWeight;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Weight;
 use AmazonPHP\SellingPartner\Model\FulfillmentOutbound\EventCode;
 use AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingServiceOptions;
 use AmazonPHP\SellingPartner\ObjectSerializer;
@@ -24,28 +26,39 @@ final class ObjectSerializerTest extends TestCase
 {
     public function test_serialization_of_object_with_enums(): void
     {
-        $object = new PutTransportDetailsRequest([
-            'is_partnered' => true,
-            'shipment_type' => new ShipmentType(ShipmentType::SP),
-            'transport_details' => new TransportDetailInput([
-                'partnered_small_parcel_data' => new PartneredSmallParcelDataInput([
-                    'carrier_name' => 'UNITED_PARCEL_SERVICE_INC',
-                    'package_list' => [
-                        new PartneredSmallParcelPackageInput([
+        $object = new SetPackingInformationRequest([
+            'package_groupings' => [
+                new PackageGroupingInput([
+                    'boxes' => [
+                        new BoxInput([
+                            'content_information_source' => new BoxContentInformationSource(BoxContentInformationSource::BOX_CONTENT_PROVIDED),
                             'dimensions' => new Dimensions([
-                                'length' => 18,
-                                'width' => 12,
                                 'height' => 12,
-                                'unit' => new UnitOfMeasurement(UnitOfMeasurement::INCHES)
+                                'length' => 18,
+                                'unit_of_measurement' => new UnitOfMeasurement(UnitOfMeasurement::IN),
+                                'width' => 12,
                             ]),
+                            'items' => [
+                                new ItemInput([
+                                    'expiration' => '2025-02-28',
+                                    'label_owner' => new LabelOwner(LabelOwner::AMAZON),
+                                    'manufacturing_lot_code' => 'ABCDEF',
+                                    'msku' => 'TEST-SKU',
+                                    'prep_owner' => new PrepOwner(PrepOwner::AMAZON),
+                                    'quantity' => 5,
+                                ]),
+                            ],
+                            'quantity' => 1,
                             'weight' => new Weight([
                                 'value' => 25,
-                                'unit' => new UnitOfWeight(UnitOfWeight::POUNDS)
-                            ])
-                        ])
-                    ]
-                ])
-            ])
+                                'unit' => new UnitOfWeight(UnitOfWeight::LB),
+                            ]),
+                        ]),
+                    ],
+                    'packing_group_id' => 'ABC123DEF',
+                    'shipment_id' => 'UVW456XYZ',
+                ]),
+            ],
         ]);
 
         $jsonObject = json_encode(ObjectSerializer::sanitizeForSerialization($object));
@@ -53,27 +66,43 @@ final class ObjectSerializerTest extends TestCase
         $this->assertJsonStringEqualsJsonString(
             <<<JSON
 {
-  "IsPartnered": true,
-  "ShipmentType": "SP",
-  "TransportDetails": {
-    "PartneredSmallParcelData": {
-      "PackageList": [
+  "packageGroupings":
+  [
+    {
+      "boxes":
+      [
         {
-          "Dimensions": {
-            "Length": 18,
-            "Width": 12,
-            "Height": 12,
-            "Unit": "inches"
+          "contentInformationSource": "BOX_CONTENT_PROVIDED",
+          "dimensions":
+          {
+            "height": 12,
+            "length": 18,
+            "unitOfMeasurement": "IN",
+            "width": 12
           },
-          "Weight": {
-            "Value": 25,
-            "Unit": "pounds"
+          "items":
+          [
+            {
+              "expiration": "2025-02-28",
+              "labelOwner": "AMAZON",
+              "manufacturingLotCode": "ABCDEF",
+              "msku": "TEST-SKU",
+              "prepOwner": "AMAZON",
+              "quantity": 5
+            }
+          ],
+          "quantity": 1,
+          "weight":
+          {
+            "unit": "LB",
+            "value": 25
           }
         }
       ],
-      "CarrierName": "UNITED_PARCEL_SERVICE_INC"
+      "packingGroupId": "ABC123DEF",
+      "shipmentId": "UVW456XYZ"
     }
-  }
+  ]
 }
 JSON
             ,
@@ -88,7 +117,7 @@ JSON
         );
         $this->assertEquals(
             $object,
-            ObjectSerializer::deserialize($config, $jsonObject, PutTransportDetailsRequest::class)
+            ObjectSerializer::deserialize($config, $jsonObject, SetPackingInformationRequest::class)
         );
     }
 

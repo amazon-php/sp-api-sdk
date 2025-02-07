@@ -5,16 +5,9 @@ declare(strict_types=1);
 use AmazonPHP\Rector\ClassMethod\FixArgumentDefaultValuesNotMatchingTypeRector;
 use AmazonPHP\Rector\ClassMethod\SetNullableFunctionReturnTypeRector;
 use AmazonPHP\Rector\ValueObject\NullableReturnTypeDeclaration;
-use AmazonPHP\SellingPartner\Api\VendorOrdersApi\VendorDirectFulfillmentOrdersSDK;
 use AmazonPHP\SellingPartner\Model\CatalogItem\Item as CatalogItem;
 use AmazonPHP\SellingPartner\Model\CatalogItem\ItemSearchResults;
 use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\InboundShipmentInfo;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\NonPartneredLtlDataOutput;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\NonPartneredSmallParcelPackageOutput;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Pallet;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredLtlDataOutput;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PartneredSmallParcelPackageOutput;
-use AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\TransportHeader;
 use AmazonPHP\SellingPartner\Model\ListingsItems\Item as ListingsItem;
 use AmazonPHP\SellingPartner\Model\ListingsItems\ItemProcurement;
 use AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest;
@@ -83,7 +76,7 @@ return static function (RectorConfig $config): void {
                 new ArrayType(new MixedType(), new MixedType())
             ),
             new AddParamTypeDeclaration(
-                \AmazonPHP\SellingPartner\Model\ListingsItems\Item::class,
+                ListingsItem::class,
                 'setAttributes',
                 0,
                 new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
@@ -99,12 +92,6 @@ return static function (RectorConfig $config): void {
                 'setHeaders',
                 0,
                 new UnionType([new NullType(), new ArrayType(new MixedType(), new MixedType())])
-            ),
-            new AddParamTypeDeclaration(
-                VendorDirectFulfillmentOrdersSDK::class,
-                'getOrders',
-                9,
-                new BooleanType()
             ),
         ]
     );
@@ -161,20 +148,6 @@ return static function (RectorConfig $config): void {
              * Fulfillment Inbound API
              */
             new NullableReturnTypeDeclaration(InboundShipmentInfo::class, 'getAreCasesRequired'),
-            new NullableReturnTypeDeclaration(TransportHeader::class, 'getIsPartnered'),
-            new NullableReturnTypeDeclaration(PartneredSmallParcelPackageOutput::class, 'getTrackingId'),
-            new NullableReturnTypeDeclaration(NonPartneredSmallParcelPackageOutput::class, 'getCarrierName'),
-            new NullableReturnTypeDeclaration(NonPartneredSmallParcelPackageOutput::class, 'getTrackingId'),
-            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getCarrierName'),
-            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getTotalWeight'),
-            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getPreviewPickupDate'),
-            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getPreviewDeliveryDate'),
-            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getPreviewFreightClass'),
-            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getAmazonReferenceId'),
-            new NullableReturnTypeDeclaration(PartneredLtlDataOutput::class, 'getIsBillOfLadingAvailable'),
-            new NullableReturnTypeDeclaration(Pallet::class, 'getIsStacked'),
-            new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getCarrierName'),
-            new NullableReturnTypeDeclaration(NonPartneredLtlDataOutput::class, 'getProNumber'),
             /**
              * Listings API
              */

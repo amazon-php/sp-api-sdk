@@ -4113,12 +4113,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
-     * @param int $page_size The number of self ship appointment slots to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of self ship appointment slots to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function getSelfShipAppointmentSlotsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function getSelfShipAppointmentSlotsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -4863,12 +4863,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id The shipment to get delivery window options for. (required)
-     * @param int $page_size The number of delivery window options to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of delivery window options to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listDeliveryWindowOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listDeliveryWindowOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -5126,12 +5126,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * Create request for operation 'listInboundPlanBoxes'.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
-     * @param int $page_size The number of boxes to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of boxes to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listInboundPlanBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listInboundPlanBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -5362,12 +5362,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * Create request for operation 'listInboundPlanItems'.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
-     * @param int $page_size The number of items to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of items to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listInboundPlanItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listInboundPlanItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -5598,12 +5598,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * Create request for operation 'listInboundPlanPallets'.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
-     * @param int $page_size The number of pallets to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of pallets to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listInboundPlanPalletsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listInboundPlanPalletsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -5835,7 +5835,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
     /**
      * Create request for operation 'listInboundPlans'.
      *
-     * @param int $page_size The number of inbound plans to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of inbound plans to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      * @param null|string $status The status of an inbound plan. (optional)
      * @param null|string $sort_by Sort by field. (optional)
@@ -5843,7 +5843,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listInboundPlansRequest(AccessToken $accessToken, string $region, int $page_size = 10, ?string $pagination_token = null, ?string $status = null, ?string $sort_by = null, ?string $sort_order = null) : RequestInterface
+    public function listInboundPlansRequest(AccessToken $accessToken, string $region, ?int $page_size = 10, ?string $pagination_token = null, ?string $status = null, ?string $sort_by = null, ?string $sort_order = null) : RequestInterface
     {
         if ($page_size !== null && $page_size > 30) {
             throw new InvalidArgumentException('invalid value for "$page_size" when calling FbaInboundApi.listInboundPlans, must be smaller than or equal to 30.');
@@ -6294,12 +6294,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $packing_group_id Identifier of a packing group. (required)
-     * @param int $page_size The number of packing group boxes to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of packing group boxes to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listPackingGroupBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $packing_group_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listPackingGroupBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $packing_group_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -6559,12 +6559,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $packing_group_id Identifier of a packing group. (required)
-     * @param int $page_size The number of packing group items to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of packing group items to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listPackingGroupItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $packing_group_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listPackingGroupItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $packing_group_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -6822,12 +6822,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * Create request for operation 'listPackingOptions'.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
-     * @param int $page_size The number of packing options to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of packing options to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listPackingOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listPackingOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -7058,12 +7058,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * Create request for operation 'listPlacementOptions'.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
-     * @param int $page_size The number of placement options to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of placement options to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listPlacementOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listPlacementOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -7518,12 +7518,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
-     * @param int $page_size The number of boxes to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of boxes to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listShipmentBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listShipmentBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -7783,12 +7783,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
-     * @param int $page_size The number of content update previews to return. (optional, default to 10)
+     * @param null|int $page_size The number of content update previews to return. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listShipmentContentUpdatePreviewsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listShipmentContentUpdatePreviewsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -8048,12 +8048,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
-     * @param int $page_size The number of items to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of items to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listShipmentItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listShipmentItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -8313,12 +8313,12 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
-     * @param int $page_size The number of pallets to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of pallets to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listShipmentPalletsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, int $page_size = 10, ?string $pagination_token = null) : RequestInterface
+    public function listShipmentPalletsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {
@@ -8578,14 +8578,14 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * Create request for operation 'listTransportationOptions'.
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
-     * @param int $page_size The number of transportation options to return in the response matching the given query. (optional, default to 10)
+     * @param null|int $page_size The number of transportation options to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      * @param null|string $placement_option_id The placement option to get transportation options for. Either &#x60;placementOptionId&#x60; or &#x60;shipmentId&#x60; must be specified. (optional)
      * @param null|string $shipment_id The shipment to get transportation options for. Either &#x60;placementOptionId&#x60; or &#x60;shipmentId&#x60; must be specified. (optional)
      *
      * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function listTransportationOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, int $page_size = 10, ?string $pagination_token = null, ?string $placement_option_id = null, ?string $shipment_id = null) : RequestInterface
+    public function listTransportationOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null, ?string $placement_option_id = null, ?string $shipment_id = null) : RequestInterface
     {
         // verify the required parameter 'inbound_plan_id' is set
         if ($inbound_plan_id === null || (\is_array($inbound_plan_id) && \count($inbound_plan_id) === 0)) {

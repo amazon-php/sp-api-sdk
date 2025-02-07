@@ -41,6 +41,8 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'attributes' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ProductAttribute[]',
         'quantity' => 'int',
         'sku' => 'string',
+        'expiration' => '\DateTimeInterface',
+        'prep_details' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PrepDetails',
     ];
 
     /**
@@ -56,6 +58,8 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'attributes' => null,
         'quantity' => 'int32',
         'sku' => null,
+        'expiration' => 'date-time',
+        'prep_details' => null,
     ];
 
     /**
@@ -68,6 +72,8 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'attributes' => 'attributes',
         'quantity' => 'quantity',
         'sku' => 'sku',
+        'expiration' => 'expiration',
+        'prep_details' => 'prepDetails',
     ];
 
     /**
@@ -79,6 +85,8 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'attributes' => 'setAttributes',
         'quantity' => 'setQuantity',
         'sku' => 'setSku',
+        'expiration' => 'setExpiration',
+        'prep_details' => 'setPrepDetails',
     ];
 
     /**
@@ -90,6 +98,8 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'attributes' => 'getAttributes',
         'quantity' => 'getQuantity',
         'sku' => 'getSku',
+        'expiration' => 'getExpiration',
+        'prep_details' => 'getPrepDetails',
     ];
 
     /**
@@ -110,6 +120,8 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
         $this->container['attributes'] = $data['attributes'] ?? null;
         $this->container['quantity'] = $data['quantity'] ?? null;
         $this->container['sku'] = $data['sku'] ?? null;
+        $this->container['expiration'] = $data['expiration'] ?? null;
+        $this->container['prep_details'] = $data['prep_details'] ?? null;
     }
 
     /**
@@ -186,6 +198,10 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
         if ($this->container['sku'] === null) {
             throw new AssertionException("'sku' can't be null");
         }
+
+        if ($this->container['prep_details'] !== null) {
+            $this->container['prep_details']->validate();
+        }
     }
 
     /**
@@ -246,6 +262,46 @@ class ProductQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, M
     public function setSku(string $sku) : self
     {
         $this->container['sku'] = $sku;
+
+        return $this;
+    }
+
+    /**
+     * Gets expiration.
+     */
+    public function getExpiration() : ?\DateTimeInterface
+    {
+        return $this->container['expiration'];
+    }
+
+    /**
+     * Sets expiration.
+     *
+     * @param null|\DateTimeInterface $expiration The expiration date for the SKU. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format.
+     */
+    public function setExpiration(?\DateTimeInterface $expiration) : self
+    {
+        $this->container['expiration'] = $expiration;
+
+        return $this;
+    }
+
+    /**
+     * Gets prep_details.
+     */
+    public function getPrepDetails() : ?PrepDetails
+    {
+        return $this->container['prep_details'];
+    }
+
+    /**
+     * Sets prep_details.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PrepDetails $prep_details prep_details
+     */
+    public function setPrepDetails(?PrepDetails $prep_details) : self
+    {
+        $this->container['prep_details'] = $prep_details;
 
         return $this;
     }

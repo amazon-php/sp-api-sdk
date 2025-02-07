@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -203,7 +203,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets contents.
      *
-     * @param string $contents data for printing labels, in the form of a Base64-encoded, GZip-compressed string
+     * @param string $contents data for printing labels encoded into a Base64, GZip-compressed string
      */
     public function setContents(string $contents) : self
     {
@@ -243,7 +243,7 @@ class FileContents implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets checksum.
      *
-     * @param string $checksum an MD5 hash to validate the PDF document data, in the form of a Base64-encoded string
+     * @param string $checksum an MD5 hash to validate the PDF document data, in the form of a Base64 string
      */
     public function setChecksum(string $checksum) : self
     {

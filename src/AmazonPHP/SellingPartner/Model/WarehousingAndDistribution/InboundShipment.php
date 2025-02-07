@@ -49,6 +49,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'shipment_container_quantities' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\DistributionPackageQuantity[]',
         'shipment_id' => 'string',
         'shipment_sku_quantities' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\SkuQuantity[]',
+        'destination_region' => 'string',
         'shipment_status' => '\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentStatus',
         'tracking_id' => 'string',
         'updated_at' => '\DateTimeInterface',
@@ -76,6 +77,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'shipment_container_quantities' => null,
         'shipment_id' => null,
         'shipment_sku_quantities' => null,
+        'destination_region' => null,
         'shipment_status' => null,
         'tracking_id' => null,
         'updated_at' => 'date-time',
@@ -100,6 +102,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'shipment_container_quantities' => 'shipmentContainerQuantities',
         'shipment_id' => 'shipmentId',
         'shipment_sku_quantities' => 'shipmentSkuQuantities',
+        'destination_region' => 'destinationRegion',
         'shipment_status' => 'shipmentStatus',
         'tracking_id' => 'trackingId',
         'updated_at' => 'updatedAt',
@@ -123,6 +126,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'shipment_container_quantities' => 'setShipmentContainerQuantities',
         'shipment_id' => 'setShipmentId',
         'shipment_sku_quantities' => 'setShipmentSkuQuantities',
+        'destination_region' => 'setDestinationRegion',
         'shipment_status' => 'setShipmentStatus',
         'tracking_id' => 'setTrackingId',
         'updated_at' => 'setUpdatedAt',
@@ -146,6 +150,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         'shipment_container_quantities' => 'getShipmentContainerQuantities',
         'shipment_id' => 'getShipmentId',
         'shipment_sku_quantities' => 'getShipmentSkuQuantities',
+        'destination_region' => 'getDestinationRegion',
         'shipment_status' => 'getShipmentStatus',
         'tracking_id' => 'getTrackingId',
         'updated_at' => 'getUpdatedAt',
@@ -178,6 +183,7 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
         $this->container['shipment_container_quantities'] = $data['shipment_container_quantities'] ?? null;
         $this->container['shipment_id'] = $data['shipment_id'] ?? null;
         $this->container['shipment_sku_quantities'] = $data['shipment_sku_quantities'] ?? null;
+        $this->container['destination_region'] = $data['destination_region'] ?? null;
         $this->container['shipment_status'] = $data['shipment_status'] ?? null;
         $this->container['tracking_id'] = $data['tracking_id'] ?? null;
         $this->container['updated_at'] = $data['updated_at'] ?? null;
@@ -518,6 +524,26 @@ class InboundShipment implements \ArrayAccess, \JsonSerializable, \Stringable, M
     public function setShipmentSkuQuantities(?array $shipment_sku_quantities) : self
     {
         $this->container['shipment_sku_quantities'] = $shipment_sku_quantities;
+
+        return $this;
+    }
+
+    /**
+     * Gets destination_region.
+     */
+    public function getDestinationRegion() : ?string
+    {
+        return $this->container['destination_region'];
+    }
+
+    /**
+     * Sets destination_region.
+     *
+     * @param null|string $destination_region Assigned region where the order will be shipped. This can differ from what was passed as preference. AWD currently supports following region IDs: [us-west, us-east]
+     */
+    public function setDestinationRegion(?string $destination_region) : self
+    {
+        $this->container['destination_region'] = $destination_region;
 
         return $this;
     }

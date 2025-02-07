@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Merchant Fulfillment.
  *
- * The Selling Partner API for Merchant Fulfillment helps you build applications that let sellers purchase shipping for non-Prime and Prime orders using Amazon’s Buy Shipping Services.
+ * With the Selling Partner API for Merchant Fulfillment, you can build applications that sellers can use to purchase shipping for non-Prime and Prime orders using Amazon's Buy Shipping Services.
  *
  * The version of the OpenAPI document: v0
  *
@@ -439,7 +439,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets state_or_province_code.
      *
-     * @param null|string $state_or_province_code The state or province code. **Note.** Required in the Canada, US, and UK marketplaces. Also required for shipments originating from China.
+     * @param null|string $state_or_province_code The state or province code. This is a required field in Canada, US, and UK marketplaces, and for shipments that originate in China.
      */
     public function setStateOrProvinceCode(?string $state_or_province_code) : self
     {
@@ -479,7 +479,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets country_code.
      *
-     * @param string $country_code The country code. A two-character country code, in ISO 3166-1 alpha-2 format.
+     * @param string $country_code The two-letter country code in [ISO 3166-1 alpha-2](https://www.iban.com/country-codes) format.
      */
     public function setCountryCode(string $country_code) : self
     {

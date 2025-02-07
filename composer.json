@@ -45,9 +45,9 @@
             "Composer\\Config::disableProcessTimeout",
             "@clean",
             "bin/generate.sh",
-            "@rector:process:force:php",
+            "@rector:process:force:php:sets",
             "@cs:php:fix",
-            "@rector:process:force:php",
+            "@rector:process:force:php:rules",
             "@cs:php:fix"
         ],
         "build": [
@@ -73,6 +73,14 @@
         "rector:process:force:php": [
             "Composer\\Config::disableProcessTimeout",
             "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-php.php"
+        ],
+        "rector:process:force:php:sets": [
+            "Composer\\Config::disableProcessTimeout",
+            "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-php-sets.php"
+        ],
+        "rector:process:force:php:rules": [
+            "Composer\\Config::disableProcessTimeout",
+            "tools/vendor/bin/rector process --no-diffs --no-progress-bar --config=rector-php-rules.php"
         ],
         "cs:php:fix": "tools/vendor/bin/php-cs-fixer fix",
         "tools:install": "composer install --working-dir=./tools",

@@ -24,6 +24,10 @@ interface VendorShipmentsSDKInterface
 
     public const OPERATION_GETSHIPMENTDETAILS_PATH = '/vendor/shipping/v1/shipments';
 
+    public const OPERATION_GETSHIPMENTLABELS = 'getShipmentLabels';
+
+    public const OPERATION_GETSHIPMENTLABELS_PATH = '/vendor/shipping/v1/transportLabels';
+
     public const OPERATION_SUBMITSHIPMENTCONFIRMATIONS = 'submitShipmentConfirmations';
 
     public const OPERATION_SUBMITSHIPMENTCONFIRMATIONS_PATH = '/vendor/shipping/v1/shipmentConfirmations';
@@ -34,6 +38,8 @@ interface VendorShipmentsSDKInterface
 
     /**
      * Operation getShipmentDetails.
+     *
+     * GetShipmentDetails
      *
      * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
      * @param null|string $sort_order Sort in ascending or descending order by purchase order creation date. (optional)
@@ -66,7 +72,26 @@ interface VendorShipmentsSDKInterface
     public function getShipmentDetails(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $shipment_confirmed_before = null, ?\DateTimeInterface $shipment_confirmed_after = null, ?\DateTimeInterface $package_label_created_before = null, ?\DateTimeInterface $package_label_created_after = null, ?\DateTimeInterface $shipped_before = null, ?\DateTimeInterface $shipped_after = null, ?\DateTimeInterface $estimated_delivery_before = null, ?\DateTimeInterface $estimated_delivery_after = null, ?\DateTimeInterface $shipment_delivery_before = null, ?\DateTimeInterface $shipment_delivery_after = null, ?\DateTimeInterface $requested_pick_up_before = null, ?\DateTimeInterface $requested_pick_up_after = null, ?\DateTimeInterface $scheduled_pick_up_before = null, ?\DateTimeInterface $scheduled_pick_up_after = null, ?string $current_shipment_status = null, ?string $vendor_shipment_identifier = null, ?string $buyer_reference_number = null, ?string $buyer_warehouse_code = null, ?string $seller_warehouse_code = null) : \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentDetailsResponse;
 
     /**
+     * Operation getShipmentLabels.
+     *
+     * @param null|int $limit The limit to the number of records returned. Default value is 50 records. (optional)
+     * @param null|string $sort_order Sort the list by shipment label creation date in ascending or descending order. (optional)
+     * @param null|string $next_token A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
+     * @param null|\DateTimeInterface $label_created_after Shipment labels created after this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param null|\DateTimeInterface $label_created_before Shipment labels created before this time will be included in the result. This field must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) datetime format. (optional)
+     * @param null|string $buyer_reference_number Get Shipment labels by passing buyer reference number. (optional)
+     * @param null|string $vendor_shipment_identifier Get Shipment labels by passing vendor shipment identifier. (optional)
+     * @param null|string $seller_warehouse_code Get Shipping labels based on vendor warehouse code. This value must be same as the &#x60;sellingParty.partyId&#x60; in the shipment. (optional)
+     *
+     * @throws ApiException on non-2xx response
+     * @throws InvalidArgumentException
+     */
+    public function getShipmentLabels(AccessToken $accessToken, string $region, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?\DateTimeInterface $label_created_after = null, ?\DateTimeInterface $label_created_before = null, ?string $buyer_reference_number = null, ?string $vendor_shipment_identifier = null, ?string $seller_warehouse_code = null) : \AmazonPHP\SellingPartner\Model\VendorShipments\GetShipmentLabels;
+
+    /**
      * Operation submitShipmentConfirmations.
+     *
+     * SubmitShipmentConfirmations
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipmentConfirmationsRequest $body A request to submit shipment confirmation. (required)
      *
@@ -77,6 +102,8 @@ interface VendorShipmentsSDKInterface
 
     /**
      * Operation submitShipments.
+     *
+     * SubmitShipments
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorShipments\SubmitShipments $body A request to submit shipment request. (required)
      *

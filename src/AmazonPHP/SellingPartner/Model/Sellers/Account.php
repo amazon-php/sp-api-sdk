@@ -9,9 +9,9 @@ use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Sellers.
+ * The Selling Partner API for Sellers.
  *
- * The [Selling Partner API for Sellers](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) (Sellers API) provides essential information about seller accounts, such as:  - The marketplaces a seller can list in - The default language and currency of a marketplace - Whether the seller has suspended listings  Refer to the [Sellers API reference](https://developer-docs.amazon.com/sp-api/docs/sellers-api-v1-reference) for details about this API's operations, data types, and schemas.
+ * The Selling Partner API for Sellers lets you retrieve information on behalf of sellers about their seller account, such as the marketplaces they participate in. Along with listing the marketplaces that a seller can sell in, the API also provides additional information about the marketplace such as the default language and the default currency. The API also provides seller-specific information such as whether the seller has suspended listings in that marketplace.
  *
  * The version of the OpenAPI document: v1
  *
@@ -43,6 +43,10 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
 
     final public const BUSINESS_TYPE_INDIVIDUAL = 'INDIVIDUAL';
 
+    final public const SELLING_PLAN_PROFESSIONAL = 'PROFESSIONAL';
+
+    final public const SELLING_PLAN_INDIVIDUAL = 'INDIVIDUAL';
+
     /**
      * The original name of the model.
      */
@@ -54,8 +58,9 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @var string[]
      */
     protected static array $openAPITypes = [
-        'marketplace_level_attributes' => '\AmazonPHP\SellingPartner\Model\Sellers\MarketplaceLevelAttributes[]',
+        'marketplace_participation_list' => '\AmazonPHP\SellingPartner\Model\Sellers\MarketplaceParticipation[]',
         'business_type' => 'string',
+        'selling_plan' => 'string',
         'business' => '\AmazonPHP\SellingPartner\Model\Sellers\Business',
         'primary_contact' => '\AmazonPHP\SellingPartner\Model\Sellers\PrimaryContact',
     ];
@@ -70,8 +75,9 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @psalm-var array<string, string|null>
      */
     protected static array $openAPIFormats = [
-        'marketplace_level_attributes' => null,
+        'marketplace_participation_list' => null,
         'business_type' => null,
+        'selling_plan' => null,
         'business' => null,
         'primary_contact' => null,
     ];
@@ -83,8 +89,9 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @var string[]
      */
     protected static array $attributeMap = [
-        'marketplace_level_attributes' => 'marketplaceLevelAttributes',
+        'marketplace_participation_list' => 'marketplaceParticipationList',
         'business_type' => 'businessType',
+        'selling_plan' => 'sellingPlan',
         'business' => 'business',
         'primary_contact' => 'primaryContact',
     ];
@@ -95,8 +102,9 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @var string[]
      */
     protected static array $setters = [
-        'marketplace_level_attributes' => 'setMarketplaceLevelAttributes',
+        'marketplace_participation_list' => 'setMarketplaceParticipationList',
         'business_type' => 'setBusinessType',
+        'selling_plan' => 'setSellingPlan',
         'business' => 'setBusiness',
         'primary_contact' => 'setPrimaryContact',
     ];
@@ -107,8 +115,9 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @var string[]
      */
     protected static array $getters = [
-        'marketplace_level_attributes' => 'getMarketplaceLevelAttributes',
+        'marketplace_participation_list' => 'getMarketplaceParticipationList',
         'business_type' => 'getBusinessType',
+        'selling_plan' => 'getSellingPlan',
         'business' => 'getBusiness',
         'primary_contact' => 'getPrimaryContact',
     ];
@@ -128,8 +137,9 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      */
     public function __construct(array $data = null)
     {
-        $this->container['marketplace_level_attributes'] = $data['marketplace_level_attributes'] ?? null;
+        $this->container['marketplace_participation_list'] = $data['marketplace_participation_list'] ?? null;
         $this->container['business_type'] = $data['business_type'] ?? null;
+        $this->container['selling_plan'] = $data['selling_plan'] ?? null;
         $this->container['business'] = $data['business'] ?? null;
         $this->container['primary_contact'] = $data['primary_contact'] ?? null;
     }
@@ -214,14 +224,27 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     }
 
     /**
+     * Gets allowable values of the enum.
+     *
+     * @return string[]
+     */
+    public function getSellingPlanAllowableValues() : array
+    {
+        return [
+            self::SELLING_PLAN_PROFESSIONAL,
+            self::SELLING_PLAN_INDIVIDUAL,
+        ];
+    }
+
+    /**
      * Validate all properties.
      *
      * @throws AssertionException
      */
     public function validate() : void
     {
-        if ($this->container['marketplace_level_attributes'] === null) {
-            throw new AssertionException("'marketplace_level_attributes' can't be null");
+        if ($this->container['marketplace_participation_list'] === null) {
+            throw new AssertionException("'marketplace_participation_list' can't be null");
         }
 
         if ($this->container['business_type'] === null) {
@@ -240,6 +263,22 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
             );
         }
 
+        if ($this->container['selling_plan'] === null) {
+            throw new AssertionException("'selling_plan' can't be null");
+        }
+
+        $allowedValues = $this->getSellingPlanAllowableValues();
+
+        if (null !== $this->container['selling_plan'] && !\in_array($this->container['selling_plan'], $allowedValues, true)) {
+            throw new AssertionException(
+                \sprintf(
+                    "invalid value '%s' for 'selling_plan', must be one of '%s'",
+                    $this->container['selling_plan'],
+                    \implode("', '", $allowedValues)
+                )
+            );
+        }
+
         if ($this->container['business'] !== null) {
             $this->container['business']->validate();
         }
@@ -250,23 +289,23 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     }
 
     /**
-     * Gets marketplace_level_attributes.
+     * Gets marketplace_participation_list.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Sellers\MarketplaceLevelAttributes[]
+     * @return \AmazonPHP\SellingPartner\Model\Sellers\MarketplaceParticipation[]
      */
-    public function getMarketplaceLevelAttributes() : array
+    public function getMarketplaceParticipationList() : array
     {
-        return $this->container['marketplace_level_attributes'];
+        return $this->container['marketplace_participation_list'];
     }
 
     /**
-     * Sets marketplace_level_attributes.
+     * Sets marketplace_participation_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sellers\MarketplaceLevelAttributes[] $marketplace_level_attributes a list of details of the marketplaces where the seller account is active
+     * @param \AmazonPHP\SellingPartner\Model\Sellers\MarketplaceParticipation[] $marketplace_participation_list list of marketplace participations
      */
-    public function setMarketplaceLevelAttributes(array $marketplace_level_attributes) : self
+    public function setMarketplaceParticipationList(array $marketplace_participation_list) : self
     {
-        $this->container['marketplace_level_attributes'] = $marketplace_level_attributes;
+        $this->container['marketplace_participation_list'] = $marketplace_participation_list;
 
         return $this;
     }
@@ -287,6 +326,26 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     public function setBusinessType(string $business_type) : self
     {
         $this->container['business_type'] = $business_type;
+
+        return $this;
+    }
+
+    /**
+     * Gets selling_plan.
+     */
+    public function getSellingPlan() : string
+    {
+        return $this->container['selling_plan'];
+    }
+
+    /**
+     * Sets selling_plan.
+     *
+     * @param string $selling_plan the selling plan details
+     */
+    public function setSellingPlan(string $selling_plan) : self
+    {
+        $this->container['selling_plan'] = $selling_plan;
 
         return $this;
     }

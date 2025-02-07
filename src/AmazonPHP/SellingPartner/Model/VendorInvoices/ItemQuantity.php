@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\ModelInterface;
 use AmazonPHP\SellingPartner\ObjectSerializer;
 
 /**
- * Selling Partner API for Retail Procurement Payments.
+ * Vendor Invoices v1.
  *
  * The Selling Partner API for Retail Procurement Payments provides programmatic access to vendors payments data.
  *
@@ -45,6 +45,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
         'amount' => 'int',
         'unit_of_measure' => 'string',
         'unit_size' => 'int',
+        'total_weight' => '\AmazonPHP\SellingPartner\Model\VendorInvoices\TotalWeight',
     ];
 
     /**
@@ -60,6 +61,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
         'amount' => null,
         'unit_of_measure' => null,
         'unit_size' => null,
+        'total_weight' => null,
     ];
 
     /**
@@ -72,6 +74,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
         'amount' => 'amount',
         'unit_of_measure' => 'unitOfMeasure',
         'unit_size' => 'unitSize',
+        'total_weight' => 'totalWeight',
     ];
 
     /**
@@ -83,6 +86,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
         'amount' => 'setAmount',
         'unit_of_measure' => 'setUnitOfMeasure',
         'unit_size' => 'setUnitSize',
+        'total_weight' => 'setTotalWeight',
     ];
 
     /**
@@ -94,6 +98,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
         'amount' => 'getAmount',
         'unit_of_measure' => 'getUnitOfMeasure',
         'unit_size' => 'getUnitSize',
+        'total_weight' => 'getTotalWeight',
     ];
 
     /**
@@ -114,6 +119,7 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
         $this->container['amount'] = $data['amount'] ?? null;
         $this->container['unit_of_measure'] = $data['unit_of_measure'] ?? null;
         $this->container['unit_size'] = $data['unit_size'] ?? null;
+        $this->container['total_weight'] = $data['total_weight'] ?? null;
     }
 
     /**
@@ -215,6 +221,10 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
                 )
             );
         }
+
+        if ($this->container['total_weight'] !== null) {
+            $this->container['total_weight']->validate();
+        }
     }
 
     /**
@@ -268,11 +278,31 @@ class ItemQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets unit_size.
      *
-     * @param null|int $unit_size the case size, if the unit of measure value is `Cases`
+     * @param null|int $unit_size the case size, if the unit of measure value is Cases
      */
     public function setUnitSize(?int $unit_size) : self
     {
         $this->container['unit_size'] = $unit_size;
+
+        return $this;
+    }
+
+    /**
+     * Gets total_weight.
+     */
+    public function getTotalWeight() : ?TotalWeight
+    {
+        return $this->container['total_weight'];
+    }
+
+    /**
+     * Sets total_weight.
+     *
+     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TotalWeight $total_weight total_weight
+     */
+    public function setTotalWeight(?TotalWeight $total_weight) : self
+    {
+        $this->container['total_weight'] = $total_weight;
 
         return $this;
     }

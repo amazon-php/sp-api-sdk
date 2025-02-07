@@ -9,7 +9,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -39,7 +39,9 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation getPackingSlip.
      *
-     * @param string $purchase_order_number The purchaseOrderNumber for the packing slip you want. (required)
+     * getPackingSlip
+     *
+     * @param string $purchase_order_number The &#x60;purchaseOrderNumber&#x60; for the packing slip that you want. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
@@ -49,20 +51,24 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation getPackingSlips.
      *
-     * @param \DateTimeInterface $created_after Packing slips that became available after this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param \DateTimeInterface $created_before Packing slips that became available before this date and time will be included in the result. Must be in ISO-8601 date/time format. (required)
-     * @param null|string $ship_from_party_id The vendor warehouseId for order fulfillment. If not specified the result will contain orders for all warehouses. (optional)
-     * @param null|int $limit The limit to the number of records returned (optional)
-     * @param string $sort_order Sort ASC or DESC by packing slip creation date. (optional, default to 'ASC')
+     * getPackingSlips
+     *
+     * @param \DateTimeInterface $created_after Packing slips that become available after this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param \DateTimeInterface $created_before Packing slips that became available before this date and time will be included in the result. Values are in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) date-time format. (required)
+     * @param null|string $ship_from_party_id The vendor &#x60;warehouseId&#x60; for order fulfillment. If not specified, the result contains orders for all warehouses. (optional)
+     * @param null|int $limit The maximum number of records to return. (optional)
+     * @param null|string $sort_order The packing slip creation dates, which are sorted by ascending or descending order. (optional, default to 'ASC')
      * @param null|string $next_token Used for pagination when there are more packing slips than the specified result size limit. The token value is returned in the previous API call. (optional)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException
      */
-    public function getPackingSlips(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, string $sort_order = 'ASC', ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlipList;
+    public function getPackingSlips(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, ?string $sort_order = 'ASC', ?string $next_token = null) : \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PackingSlipList;
 
     /**
      * Operation submitShipmentConfirmations.
+     *
+     * submitShipmentConfirmations
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentConfirmationsRequest $body Request body containing the shipment confirmations data. (required)
      *
@@ -74,7 +80,9 @@ interface VendorDirectFulfillmentShippingSDKInterface
     /**
      * Operation submitShipmentStatusUpdates.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body Request body that contains the shipment status update data. (required)
+     * submitShipmentStatusUpdates
+     *
+     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\SubmitShipmentStatusUpdatesRequest $body Request body containing the shipment status update data. (required)
      *
      * @throws ApiException on non-2xx response
      * @throws InvalidArgumentException

@@ -7,8 +7,10 @@ namespace AmazonPHP\Test\AmazonPHP\SellingPartner\Tests\Unit;
 use AmazonPHP\SellingPartner\Api\AplusContentApi\APlusSDK;
 use AmazonPHP\SellingPartner\Api\ApplicationsApi\ApplicationManagementSDK;
 use AmazonPHP\SellingPartner\Api\AwdApi\WarehousingAndDistributionSDK;
-use AmazonPHP\SellingPartner\Api\CatalogApi\CatalogItemSDK;
-use AmazonPHP\SellingPartner\Api\DefaultApi\FinancesSDK;
+use AmazonPHP\SellingPartner\Api\CatalogItemsApi\CatalogItemSDK;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialEventsSDK;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialTransactionsSDK;
+use AmazonPHP\SellingPartner\Api\DefaultApi\FinancialTransfersSDK;
 use AmazonPHP\SellingPartner\Api\DefinitionsApi\ProductTypesDefinitionsSDK;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FBAInboundSDK;
 use AmazonPHP\SellingPartner\Api\FbaInboundApi\FulfillmentInboundSDK;
@@ -21,13 +23,12 @@ use AmazonPHP\SellingPartner\Api\ListingsApi\ListingsItemsSDK;
 use AmazonPHP\SellingPartner\Api\MerchantFulfillmentApi\MerchantFulfillmentSDK;
 use AmazonPHP\SellingPartner\Api\MessagingApi\MessagingSDK;
 use AmazonPHP\SellingPartner\Api\NotificationsApi\NotificationsSDK;
-use AmazonPHP\SellingPartner\Api\OrdersV0Api;
+use AmazonPHP\SellingPartner\Api\OrdersApi;
 use AmazonPHP\SellingPartner\Api\ProductPricingApi\ProductPricingSDK;
 use AmazonPHP\SellingPartner\Api\ReportsApi\ReportsSDK;
 use AmazonPHP\SellingPartner\Api\SalesApi\SalesSDK;
 use AmazonPHP\SellingPartner\Api\SellersApi\SellersSDK;
 use AmazonPHP\SellingPartner\Api\ServiceApi\ServicesSDK;
-use AmazonPHP\SellingPartner\Api\ShipmentApi;
 use AmazonPHP\SellingPartner\Api\ShipmentInvoiceApi\ShipmentInvoicingSDK;
 use AmazonPHP\SellingPartner\Api\ShippingApi\ShippingSDK;
 use AmazonPHP\SellingPartner\Api\SolicitationsApi\SolicitationsSDK;
@@ -66,7 +67,9 @@ final class SellingPartnerSDKTest extends TestCase
         'fbaInbound'              => FBAInboundSDK::class,
         'fbaInventory'            => FBAInventorySDK::class,
         'feeds'                   => FeedsSDK::class,
-        'finances'                => FinancesSDK::class,
+        'financialEvents'         => FinancialEventsSDK::class,
+        'financialTransactions'   => FinancialTransactionsSDK::class,
+        'financialTransfers'      => FinancialTransfersSDK::class,
         'fulfillmentInboundV0'    => FulfillmentInboundV0SDK::class,
         'fulfillmentInbound'      => FulfillmentInboundSDK::class,
         'fulfillmentOutbound'     => FulfillmentOutboundSDK::class,
@@ -74,8 +77,7 @@ final class SellingPartnerSDKTest extends TestCase
         'merchantFulfillment'     => MerchantFulfillmentSDK::class,
         'messaging'               => MessagingSDK::class,
         'notifications'           => NotificationsSDK::class,
-        'orders'                  => OrdersV0Api\OrdersSDK::class,
-        'orderShipment'           => ShipmentApi\OrdersSDK::class,
+        'orders'                  => OrdersApi\OrdersSDK::class,
         'productFees'             => ProductFeesSDK::class,
         'productPricing'          => ProductPricingSDK::class,
         'productTypesDefinitions' => ProductTypesDefinitionsSDK::class,

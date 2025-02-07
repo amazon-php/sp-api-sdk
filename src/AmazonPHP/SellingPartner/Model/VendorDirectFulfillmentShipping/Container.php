@@ -11,7 +11,7 @@ use AmazonPHP\SellingPartner\ObjectSerializer;
 /**
  * Selling Partner API for Direct Fulfillment Shipping.
  *
- * The Selling Partner API for Direct Fulfillment Shipping provides programmatic access to a direct fulfillment vendor's shipping data.
+ * Use the Selling Partner API for Direct Fulfillment Shipping to access a direct fulfillment vendor's shipping data.
  *
  * The version of the OpenAPI document: 2021-12-28
  *
@@ -396,7 +396,7 @@ class Container implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets ship_method.
      *
-     * @param null|string $ship_method The shipment method. This property is required when calling the submitShipmentConfirmations operation, and optional otherwise.
+     * @param null|string $ship_method The shipment method. This property is required when calling the `submitShipmentConfirmations` operation, and optional otherwise.
      */
     public function setShipMethod(?string $ship_method) : self
     {
