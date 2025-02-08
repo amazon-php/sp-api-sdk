@@ -243,7 +243,7 @@ class ItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets available_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\ItemQuantity $available_quantity available_quantity
+     * @param ItemQuantity $available_quantity available_quantity
      */
     public function setAvailableQuantity(ItemQuantity $available_quantity) : self
     {

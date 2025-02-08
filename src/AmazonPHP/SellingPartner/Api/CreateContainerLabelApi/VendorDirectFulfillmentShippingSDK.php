@@ -135,7 +135,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateContainerLabelRequest $body Request body containing the container label data. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createContainerLabelRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CreateContainerLabelRequest $body) : RequestInterface
     {

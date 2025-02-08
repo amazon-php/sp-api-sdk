@@ -172,7 +172,7 @@ class CreateProductReviewAndSellerFeedbackSolicitationResponse implements \Array
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -182,7 +182,7 @@ class CreateProductReviewAndSellerFeedbackSolicitationResponse implements \Array
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

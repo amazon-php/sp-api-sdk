@@ -283,7 +283,7 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets label_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\LabelPrintType $label_type label_type
+     * @param LabelPrintType $label_type label_type
      */
     public function setLabelType(LabelPrintType $label_type) : self
     {
@@ -335,7 +335,7 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Gets msku_quantities.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\MskuQuantity[]
+     * @return MskuQuantity[]
      */
     public function getMskuQuantities() : array
     {
@@ -345,7 +345,7 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets msku_quantities.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\MskuQuantity[] $msku_quantities represents the quantity of an MSKU to print item labels for
+     * @param MskuQuantity[] $msku_quantities represents the quantity of an MSKU to print item labels for
      */
     public function setMskuQuantities(array $msku_quantities) : self
     {
@@ -365,7 +365,7 @@ class CreateMarketplaceItemLabelsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets page_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemLabelPageType $page_type page_type
+     * @param null|ItemLabelPageType $page_type page_type
      */
     public function setPageType(?ItemLabelPageType $page_type) : self
     {

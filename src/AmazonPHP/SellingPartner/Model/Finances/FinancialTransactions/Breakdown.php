@@ -219,7 +219,7 @@ class Breakdown implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets breakdown_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Currency $breakdown_amount breakdown_amount
+     * @param null|Currency $breakdown_amount breakdown_amount
      */
     public function setBreakdownAmount(?Currency $breakdown_amount) : self
     {
@@ -230,8 +230,6 @@ class Breakdown implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
 
     /**
      * Gets breakdowns.
-     *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Breakdown
      */
     public function getBreakdowns() : ?self
     {
@@ -241,7 +239,7 @@ class Breakdown implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets breakdowns.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Breakdown $breakdowns breakdowns
+     * @param null|Breakdown $breakdowns breakdowns
      */
     public function setBreakdowns(?self $breakdowns) : self
     {

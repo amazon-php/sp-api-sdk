@@ -231,7 +231,7 @@ class MskuPrepDetailInput implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets prep_category.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepCategory $prep_category prep_category
+     * @param PrepCategory $prep_category prep_category
      */
     public function setPrepCategory(PrepCategory $prep_category) : self
     {
@@ -243,7 +243,7 @@ class MskuPrepDetailInput implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets prep_types.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepType[]
+     * @return PrepType[]
      */
     public function getPrepTypes() : array
     {
@@ -253,7 +253,7 @@ class MskuPrepDetailInput implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets prep_types.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepType[] $prep_types a list of preparation types associated with a preparation category
+     * @param PrepType[] $prep_types a list of preparation types associated with a preparation category
      */
     public function setPrepTypes(array $prep_types) : self
     {

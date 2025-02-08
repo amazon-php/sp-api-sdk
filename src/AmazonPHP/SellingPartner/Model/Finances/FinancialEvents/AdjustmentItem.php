@@ -249,7 +249,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets per_unit_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $per_unit_amount per_unit_amount
+     * @param null|Currency $per_unit_amount per_unit_amount
      */
     public function setPerUnitAmount(?Currency $per_unit_amount) : self
     {
@@ -269,7 +269,7 @@ class AdjustmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets total_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $total_amount total_amount
+     * @param null|Currency $total_amount total_amount
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {

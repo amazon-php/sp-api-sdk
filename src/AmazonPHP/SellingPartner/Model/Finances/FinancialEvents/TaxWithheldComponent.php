@@ -198,7 +198,7 @@ class TaxWithheldComponent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets taxes_withheld.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[]
+     * @return null|ChargeComponent[]
      */
     public function getTaxesWithheld() : ?array
     {
@@ -208,7 +208,7 @@ class TaxWithheldComponent implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets taxes_withheld.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[] $taxes_withheld a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $taxes_withheld a list of charge information on the seller's account
      */
     public function setTaxesWithheld(?array $taxes_withheld) : self
     {

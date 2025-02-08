@@ -245,7 +245,7 @@ class InvalidReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets invalid_item_reason.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\InvalidItemReason $invalid_item_reason invalid_item_reason
+     * @param InvalidItemReason $invalid_item_reason invalid_item_reason
      */
     public function setInvalidItemReason(InvalidItemReason $invalid_item_reason) : self
     {

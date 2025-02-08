@@ -262,7 +262,7 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets vendor_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\VendorDetails $vendor_details vendor_details
+     * @param null|VendorDetails $vendor_details vendor_details
      */
     public function setVendorDetails(?VendorDetails $vendor_details) : self
     {
@@ -302,7 +302,7 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets ship_to_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $ship_to_party ship_to_party
+     * @param null|PartyIdentification $ship_to_party ship_to_party
      */
     public function setShipToParty(?PartyIdentification $ship_to_party) : self
     {
@@ -322,7 +322,7 @@ class ShipmentInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets ship_from_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $ship_from_party ship_from_party
+     * @param null|PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(?PartyIdentification $ship_from_party) : self
     {

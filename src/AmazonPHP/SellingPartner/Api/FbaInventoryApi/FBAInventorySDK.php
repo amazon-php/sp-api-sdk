@@ -135,7 +135,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
      * @param string $x_amzn_idempotency_token A unique token/requestId provided with each call to ensure idempotency. (required)
      * @param \AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryRequest $add_inventory_request_body List of items to add to Sandbox inventory. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function addInventoryRequest(AccessToken $accessToken, string $region, string $x_amzn_idempotency_token, \AmazonPHP\SellingPartner\Model\FBAInventory\AddInventoryRequest $add_inventory_request_body) : RequestInterface
     {
@@ -145,6 +145,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
                 'Missing the required parameter $x_amzn_idempotency_token when calling addInventory'
             );
         }
+
         // verify the required parameter 'add_inventory_request_body' is set
         if ($add_inventory_request_body === null || (\is_array($add_inventory_request_body) && \count($add_inventory_request_body) === 0)) {
             throw new InvalidArgumentException(
@@ -332,7 +333,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemRequest $create_inventory_item_request_body CreateInventoryItem Request Body Parameter. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createInventoryItemRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FBAInventory\CreateInventoryItemRequest $create_inventory_item_request_body) : RequestInterface
     {
@@ -520,7 +521,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
      * @param string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (required)
      * @param string $marketplace_id The marketplace ID for the marketplace for which the sellerSku is to be deleted. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function deleteInventoryItemRequest(AccessToken $accessToken, string $region, string $seller_sku, string $marketplace_id) : RequestInterface
     {
@@ -530,6 +531,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
                 'Missing the required parameter $seller_sku when calling deleteInventoryItem'
             );
         }
+
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
@@ -736,7 +738,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
      * @param null|string $seller_sku A single seller SKU used for querying the specified seller SKU inventory summaries. (optional)
      * @param null|string $next_token String token returned in the response of your previous request. The string token will expire 30 seconds after being created. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getInventorySummariesRequest(AccessToken $accessToken, string $region, string $granularity_type, string $granularity_id, array $marketplace_ids, ?bool $details = false, ?\DateTimeInterface $start_date_time = null, ?array $seller_skus = null, ?string $seller_sku = null, ?string $next_token = null) : RequestInterface
     {
@@ -746,12 +748,14 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
                 'Missing the required parameter $granularity_type when calling getInventorySummaries'
             );
         }
+
         // verify the required parameter 'granularity_id' is set
         if ($granularity_id === null || (\is_array($granularity_id) && \count($granularity_id) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $granularity_id when calling getInventorySummaries'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -782,6 +786,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toString($details);
         }
+
         // query params
         if (\is_array($granularity_type)) {
             $granularity_type = ObjectSerializer::serializeCollection($granularity_type, '', true);
@@ -790,6 +795,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
         if ($granularity_type !== null) {
             $queryParams['granularityType'] = ObjectSerializer::toString($granularity_type);
         }
+
         // query params
         if (\is_array($granularity_id)) {
             $granularity_id = ObjectSerializer::serializeCollection($granularity_id, '', true);
@@ -798,6 +804,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
         if ($granularity_id !== null) {
             $queryParams['granularityId'] = ObjectSerializer::toString($granularity_id);
         }
+
         // query params
         if (\is_array($start_date_time)) {
             $start_date_time = ObjectSerializer::serializeCollection($start_date_time, '', true);
@@ -806,6 +813,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
         if ($start_date_time !== null) {
             $queryParams['startDateTime'] = ObjectSerializer::toString($start_date_time);
         }
+
         // query params
         if (\is_array($seller_skus)) {
             $seller_skus = ObjectSerializer::serializeCollection($seller_skus, 'form', true);
@@ -814,6 +822,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
         if ($seller_skus !== null) {
             $queryParams['sellerSkus'] = ObjectSerializer::toString($seller_skus);
         }
+
         // query params
         if (\is_array($seller_sku)) {
             $seller_sku = ObjectSerializer::serializeCollection($seller_sku, '', true);
@@ -822,6 +831,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
         if ($seller_sku !== null) {
             $queryParams['sellerSku'] = ObjectSerializer::toString($seller_sku);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -830,6 +840,7 @@ final class FBAInventorySDK implements FBAInventorySDKInterface
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);

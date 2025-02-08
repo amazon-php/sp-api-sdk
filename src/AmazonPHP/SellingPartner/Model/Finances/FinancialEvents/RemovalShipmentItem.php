@@ -317,7 +317,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets revenue.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $revenue revenue
+     * @param null|Currency $revenue revenue
      */
     public function setRevenue(?Currency $revenue) : self
     {
@@ -337,7 +337,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets fee_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $fee_amount fee_amount
+     * @param null|Currency $fee_amount fee_amount
      */
     public function setFeeAmount(?Currency $fee_amount) : self
     {
@@ -357,7 +357,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets tax_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_amount tax_amount
+     * @param null|Currency $tax_amount tax_amount
      */
     public function setTaxAmount(?Currency $tax_amount) : self
     {
@@ -377,7 +377,7 @@ class RemovalShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets tax_withheld.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_withheld tax_withheld
+     * @param null|Currency $tax_withheld tax_withheld
      */
     public function setTaxWithheld(?Currency $tax_withheld) : self
     {

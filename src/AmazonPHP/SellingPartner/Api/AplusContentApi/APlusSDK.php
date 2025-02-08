@@ -135,7 +135,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createContentDocumentRequest(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : RequestInterface
     {
@@ -345,7 +345,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param string[] $included_data_set The set of A+ Content data types to include in the response. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getContentDocumentRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, array $included_data_set) : RequestInterface
     {
@@ -397,6 +397,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
@@ -583,7 +584,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param null|string[] $asin_set The set of ASINs. (optional)
      * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listContentDocumentAsinRelationsRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, ?array $included_data_set = null, ?array $asin_set = null, ?string $page_token = null) : RequestInterface
     {
@@ -632,6 +633,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($included_data_set)) {
             $included_data_set = ObjectSerializer::serializeCollection($included_data_set, 'form', true);
@@ -640,6 +642,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($included_data_set !== null) {
             $queryParams['includedDataSet'] = ObjectSerializer::toString($included_data_set);
         }
+
         // query params
         if (\is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);
@@ -648,6 +651,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($asin_set !== null) {
             $queryParams['asinSet'] = ObjectSerializer::toString($asin_set);
         }
+
         // query params
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -828,7 +832,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function postContentDocumentApprovalSubmissionRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : RequestInterface
     {
@@ -1043,7 +1047,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request The content document ASIN relations request details. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function postContentDocumentAsinRelationsRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentAsinRelationsRequest $post_content_document_asin_relations_request) : RequestInterface
     {
@@ -1271,7 +1275,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $content_reference_key The unique reference key for the A+ Content document. A content reference key cannot form a permalink and may change in the future. A content reference key is not guaranteed to match any A+ content identifier. (required)
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function postContentDocumentSuspendSubmissionRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id) : RequestInterface
     {
@@ -1484,7 +1488,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function searchContentDocumentsRequest(AccessToken $accessToken, string $region, string $marketplace_id, ?string $page_token = null) : RequestInterface
     {
@@ -1518,6 +1522,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -1691,7 +1696,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $asin The Amazon Standard Identification Number (ASIN). (required)
      * @param null|string $page_token A page token from the nextPageToken response element returned by your previous call to this operation. nextPageToken is returned when the results of a call exceed the page size. To get the next page of results, call the operation and include pageToken as the only parameter. Specifying pageToken with any other parameter will cause the request to fail. When no nextPageToken value is returned there are no more pages to return. A pageToken value is not usable across different operations. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function searchContentPublishRecordsRequest(AccessToken $accessToken, string $region, string $marketplace_id, string $asin, ?string $page_token = null) : RequestInterface
     {
@@ -1736,6 +1741,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($asin)) {
             $asin = ObjectSerializer::serializeCollection($asin, '', true);
@@ -1744,6 +1750,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($asin !== null) {
             $queryParams['asin'] = ObjectSerializer::toString($asin);
         }
+
         // query params
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);
@@ -1917,7 +1924,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param string $marketplace_id The identifier for the marketplace where the A+ Content is published. (required)
      * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateContentDocumentRequest(AccessToken $accessToken, string $region, string $content_reference_key, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request) : RequestInterface
     {
@@ -2147,7 +2154,7 @@ final class APlusSDK implements APlusSDKInterface
      * @param \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request The content document request details. (required)
      * @param null|string[] $asin_set The set of ASINs. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function validateContentDocumentAsinRelationsRequest(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\APlus\PostContentDocumentRequest $post_content_document_request, ?array $asin_set = null) : RequestInterface
     {
@@ -2184,6 +2191,7 @@ final class APlusSDK implements APlusSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($asin_set)) {
             $asin_set = ObjectSerializer::serializeCollection($asin_set, 'form', true);

@@ -345,7 +345,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets remit_to_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification $remit_to_party remit_to_party
+     * @param PartyIdentification $remit_to_party remit_to_party
      */
     public function setRemitToParty(PartyIdentification $remit_to_party) : self
     {
@@ -365,7 +365,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -385,7 +385,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets bill_to_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\PartyIdentification $bill_to_party bill_to_party
+     * @param null|PartyIdentification $bill_to_party bill_to_party
      */
     public function setBillToParty(?PartyIdentification $bill_to_party) : self
     {
@@ -445,7 +445,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets invoice_total.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Money $invoice_total invoice_total
+     * @param Money $invoice_total invoice_total
      */
     public function setInvoiceTotal(Money $invoice_total) : self
     {
@@ -457,7 +457,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets tax_totals.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\TaxDetail[]
+     * @return null|TaxDetail[]
      */
     public function getTaxTotals() : ?array
     {
@@ -467,7 +467,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets tax_totals.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\TaxDetail[] $tax_totals individual tax details per line item
+     * @param null|TaxDetail[] $tax_totals individual tax details per line item
      */
     public function setTaxTotals(?array $tax_totals) : self
     {
@@ -479,7 +479,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets additional_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\AdditionalDetails[]
+     * @return null|AdditionalDetails[]
      */
     public function getAdditionalDetails() : ?array
     {
@@ -489,7 +489,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets additional_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\AdditionalDetails[] $additional_details additional details provided by the selling party, for tax-related or other purposes
+     * @param null|AdditionalDetails[] $additional_details additional details provided by the selling party, for tax-related or other purposes
      */
     public function setAdditionalDetails(?array $additional_details) : self
     {
@@ -501,7 +501,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets charge_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ChargeDetails[]
+     * @return null|ChargeDetails[]
      */
     public function getChargeDetails() : ?array
     {
@@ -511,7 +511,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets charge_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\ChargeDetails[] $charge_details total charge amount details for all line items
+     * @param null|ChargeDetails[] $charge_details total charge amount details for all line items
      */
     public function setChargeDetails(?array $charge_details) : self
     {
@@ -523,7 +523,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\InvoiceItem[]
+     * @return InvoiceItem[]
      */
     public function getItems() : array
     {
@@ -533,7 +533,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\InvoiceItem[] $items provides the details of the items in this invoice
+     * @param InvoiceItem[] $items provides the details of the items in this invoice
      */
     public function setItems(array $items) : self
     {

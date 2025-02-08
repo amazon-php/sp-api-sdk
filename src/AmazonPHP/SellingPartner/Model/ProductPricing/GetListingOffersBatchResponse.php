@@ -179,7 +179,7 @@ class GetListingOffersBatchResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Gets responses.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersResponse[]
+     * @return null|ListingOffersResponse[]
      */
     public function getResponses() : ?array
     {
@@ -189,7 +189,7 @@ class GetListingOffersBatchResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets responses.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersResponse[] $responses a list of `getListingOffers` batched responses
+     * @param null|ListingOffersResponse[] $responses a list of `getListingOffers` batched responses
      */
     public function setResponses(?array $responses) : self
     {

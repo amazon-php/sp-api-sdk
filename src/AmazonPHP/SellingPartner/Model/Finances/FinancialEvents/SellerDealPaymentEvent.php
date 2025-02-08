@@ -333,7 +333,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets fee_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $fee_amount fee_amount
+     * @param null|Currency $fee_amount fee_amount
      */
     public function setFeeAmount(?Currency $fee_amount) : self
     {
@@ -353,7 +353,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets tax_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_amount tax_amount
+     * @param null|Currency $tax_amount tax_amount
      */
     public function setTaxAmount(?Currency $tax_amount) : self
     {
@@ -373,7 +373,7 @@ class SellerDealPaymentEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets total_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $total_amount total_amount
+     * @param null|Currency $total_amount total_amount
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {

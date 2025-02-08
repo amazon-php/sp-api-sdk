@@ -215,7 +215,7 @@ class PriceType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets landed_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $landed_price landed_price
+     * @param null|MoneyType $landed_price landed_price
      */
     public function setLandedPrice(?MoneyType $landed_price) : self
     {
@@ -235,7 +235,7 @@ class PriceType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets listing_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $listing_price listing_price
+     * @param MoneyType $listing_price listing_price
      */
     public function setListingPrice(MoneyType $listing_price) : self
     {
@@ -255,7 +255,7 @@ class PriceType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets shipping.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $shipping shipping
+     * @param null|MoneyType $shipping shipping
      */
     public function setShipping(?MoneyType $shipping) : self
     {
@@ -275,7 +275,7 @@ class PriceType implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets points.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\Points $points points
+     * @param null|Points $points points
      */
     public function setPoints(?Points $points) : self
     {

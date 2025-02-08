@@ -198,7 +198,7 @@ class InnerContainersDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets container_sequence_numbers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ContainerSequenceNumbers[]
+     * @return null|ContainerSequenceNumbers[]
      */
     public function getContainerSequenceNumbers() : ?array
     {
@@ -208,7 +208,7 @@ class InnerContainersDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets container_sequence_numbers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ContainerSequenceNumbers[] $container_sequence_numbers container sequence numbers that are involved in this shipment
+     * @param null|ContainerSequenceNumbers[] $container_sequence_numbers container sequence numbers that are involved in this shipment
      */
     public function setContainerSequenceNumbers(?array $container_sequence_numbers) : self
     {

@@ -223,7 +223,7 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets ship_to.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_to ship_to
+     * @param Address $ship_to ship_to
      */
     public function setShipTo(Address $ship_to) : self
     {
@@ -243,7 +243,7 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets ship_from.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_from ship_from
+     * @param Address $ship_from ship_from
      */
     public function setShipFrom(Address $ship_from) : self
     {
@@ -255,7 +255,7 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets service_types.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\ServiceType[]
+     * @return ServiceType[]
      */
     public function getServiceTypes() : array
     {
@@ -265,7 +265,7 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets service_types.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\ServiceType[] $service_types a list of service types that can be used to send the shipment
+     * @param ServiceType[] $service_types a list of service types that can be used to send the shipment
      */
     public function setServiceTypes(array $service_types) : self
     {
@@ -297,7 +297,7 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets container_specifications.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\ContainerSpecification[]
+     * @return ContainerSpecification[]
      */
     public function getContainerSpecifications() : array
     {
@@ -307,7 +307,7 @@ class GetRatesRequest implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets container_specifications.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\ContainerSpecification[] $container_specifications a list of container specifications
+     * @param ContainerSpecification[] $container_specifications a list of container specifications
      */
     public function setContainerSpecifications(array $container_specifications) : self
     {

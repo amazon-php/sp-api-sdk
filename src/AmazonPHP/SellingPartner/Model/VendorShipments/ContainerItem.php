@@ -225,7 +225,7 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets shipped_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity $shipped_quantity shipped_quantity
+     * @param ItemQuantity $shipped_quantity shipped_quantity
      */
     public function setShippedQuantity(ItemQuantity $shipped_quantity) : self
     {
@@ -245,7 +245,7 @@ class ContainerItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets item_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemDetails $item_details item_details
+     * @param null|ItemDetails $item_details item_details
      */
     public function setItemDetails(?ItemDetails $item_details) : self
     {

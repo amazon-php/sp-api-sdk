@@ -235,7 +235,7 @@ class Promotion implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets promotion_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $promotion_amount promotion_amount
+     * @param null|Currency $promotion_amount promotion_amount
      */
     public function setPromotionAmount(?Currency $promotion_amount) : self
     {

@@ -175,7 +175,7 @@ class Route implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Gets stops.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\Stop[]
+     * @return Stop[]
      */
     public function getStops() : array
     {
@@ -185,7 +185,7 @@ class Route implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets stops.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\Stop[] $stops the port or location involved in transporting the cargo, as specified in transportation contracts or operational plans
+     * @param Stop[] $stops the port or location involved in transporting the cargo, as specified in transportation contracts or operational plans
      */
     public function setStops(array $stops) : self
     {

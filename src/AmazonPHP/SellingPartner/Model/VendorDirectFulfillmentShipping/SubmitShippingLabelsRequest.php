@@ -172,7 +172,7 @@ class SubmitShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets shipping_label_requests.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelRequest[]
+     * @return null|ShippingLabelRequest[]
      */
     public function getShippingLabelRequests() : ?array
     {
@@ -182,7 +182,7 @@ class SubmitShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets shipping_label_requests.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabelRequest[] $shipping_label_requests an array of shipping label requests to be processed
+     * @param null|ShippingLabelRequest[] $shipping_label_requests an array of shipping label requests to be processed
      */
     public function setShippingLabelRequests(?array $shipping_label_requests) : self
     {

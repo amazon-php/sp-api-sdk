@@ -172,7 +172,7 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets tax_classifications.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\TaxClassification[]
+     * @return null|TaxClassification[]
      */
     public function getTaxClassifications() : ?array
     {
@@ -182,7 +182,7 @@ class MarketplaceTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets tax_classifications.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\TaxClassification[] $tax_classifications a list of tax classifications that apply to the order
+     * @param null|TaxClassification[] $tax_classifications a list of tax classifications that apply to the order
      */
     public function setTaxClassifications(?array $tax_classifications) : self
     {

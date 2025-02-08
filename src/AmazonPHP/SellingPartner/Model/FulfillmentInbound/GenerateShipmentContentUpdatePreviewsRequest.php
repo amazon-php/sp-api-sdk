@@ -201,7 +201,7 @@ class GenerateShipmentContentUpdatePreviewsRequest implements \ArrayAccess, \Jso
     /**
      * Gets boxes.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxUpdateInput[]
+     * @return BoxUpdateInput[]
      */
     public function getBoxes() : array
     {
@@ -211,7 +211,7 @@ class GenerateShipmentContentUpdatePreviewsRequest implements \ArrayAccess, \Jso
     /**
      * Sets boxes.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxUpdateInput[] $boxes a list of boxes that will be present in the shipment after the update
+     * @param BoxUpdateInput[] $boxes a list of boxes that will be present in the shipment after the update
      */
     public function setBoxes(array $boxes) : self
     {
@@ -223,7 +223,7 @@ class GenerateShipmentContentUpdatePreviewsRequest implements \ArrayAccess, \Jso
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[]
+     * @return ItemInput[]
      */
     public function getItems() : array
     {
@@ -233,7 +233,7 @@ class GenerateShipmentContentUpdatePreviewsRequest implements \ArrayAccess, \Jso
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[] $items a list of all items that will be present in the shipment after the update
+     * @param ItemInput[] $items a list of all items that will be present in the shipment after the update
      */
     public function setItems(array $items) : self
     {

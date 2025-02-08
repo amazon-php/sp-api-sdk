@@ -189,7 +189,7 @@ class ListFinancialEventGroupsResponse implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ListFinancialEventGroupsPayload $payload payload
+     * @param null|ListFinancialEventGroupsPayload $payload payload
      */
     public function setPayload(?ListFinancialEventGroupsPayload $payload) : self
     {
@@ -201,7 +201,7 @@ class ListFinancialEventGroupsResponse implements \ArrayAccess, \JsonSerializabl
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class ListFinancialEventGroupsResponse implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

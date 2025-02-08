@@ -241,7 +241,7 @@ class ServiceLocation implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Address $address address
+     * @param null|Address $address address
      */
     public function setAddress(?Address $address) : self
     {

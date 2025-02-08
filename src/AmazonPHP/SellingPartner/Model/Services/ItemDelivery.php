@@ -209,7 +209,7 @@ class ItemDelivery implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets item_delivery_promise.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\ItemDeliveryPromise $item_delivery_promise item_delivery_promise
+     * @param null|ItemDeliveryPromise $item_delivery_promise item_delivery_promise
      */
     public function setItemDeliveryPromise(?ItemDeliveryPromise $item_delivery_promise) : self
     {

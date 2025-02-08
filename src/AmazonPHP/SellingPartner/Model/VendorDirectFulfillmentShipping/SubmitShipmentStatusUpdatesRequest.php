@@ -175,7 +175,7 @@ class SubmitShipmentStatusUpdatesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Gets shipment_status_updates.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentStatusUpdate[]
+     * @return null|ShipmentStatusUpdate[]
      */
     public function getShipmentStatusUpdates() : ?array
     {
@@ -185,7 +185,7 @@ class SubmitShipmentStatusUpdatesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_status_updates.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentStatusUpdate[] $shipment_status_updates Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
+     * @param null|ShipmentStatusUpdate[] $shipment_status_updates Contains a list of one or more `ShipmentStatusUpdate` objects. Each `ShipmentStatusUpdate` object represents an update to the status of a specific shipment.
      */
     public function setShipmentStatusUpdates(?array $shipment_status_updates) : self
     {

@@ -209,7 +209,7 @@ class Label implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets label_specification.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification $label_specification label_specification
+     * @param null|LabelSpecification $label_specification label_specification
      */
     public function setLabelSpecification(?LabelSpecification $label_specification) : self
     {

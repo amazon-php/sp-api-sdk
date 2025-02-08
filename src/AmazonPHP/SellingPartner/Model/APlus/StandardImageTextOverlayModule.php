@@ -193,7 +193,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets overlay_color_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ColorType $overlay_color_type overlay_color_type
+     * @param ColorType $overlay_color_type overlay_color_type
      */
     public function setOverlayColorType(ColorType $overlay_color_type) : self
     {
@@ -213,7 +213,7 @@ class StandardImageTextOverlayModule implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextBlock $block block
+     * @param null|StandardImageTextBlock $block block
      */
     public function setBlock(?StandardImageTextBlock $block) : self
     {

@@ -205,7 +205,7 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets recovery_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $recovery_amount recovery_amount
+     * @param null|Currency $recovery_amount recovery_amount
      */
     public function setRecoveryAmount(?Currency $recovery_amount) : self
     {
@@ -225,7 +225,7 @@ class DebtRecoveryItem implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets original_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $original_amount original_amount
+     * @param null|Currency $original_amount original_amount
      */
     public function setOriginalAmount(?Currency $original_amount) : self
     {

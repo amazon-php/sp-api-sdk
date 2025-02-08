@@ -183,7 +183,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets text_list.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\TextItem[]
+     * @return TextItem[]
      */
     public function getTextList() : array
     {
@@ -193,7 +193,7 @@ class StandardTextListBlock implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets text_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\TextItem[] $text_list text_list
+     * @param TextItem[] $text_list text_list
      */
     public function setTextList(array $text_list) : self
     {

@@ -183,7 +183,7 @@ class AggregationFilter implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets aggregation_settings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\AggregationSettings $aggregation_settings aggregation_settings
+     * @param null|AggregationSettings $aggregation_settings aggregation_settings
      */
     public function setAggregationSettings(?AggregationSettings $aggregation_settings) : self
     {

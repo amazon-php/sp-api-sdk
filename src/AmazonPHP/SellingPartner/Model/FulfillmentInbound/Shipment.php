@@ -383,7 +383,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets contact_information.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ContactInformation $contact_information contact_information
+     * @param null|ContactInformation $contact_information contact_information
      */
     public function setContactInformation(?ContactInformation $contact_information) : self
     {
@@ -403,7 +403,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets dates.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dates $dates dates
+     * @param null|Dates $dates dates
      */
     public function setDates(?Dates $dates) : self
     {
@@ -423,7 +423,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets destination.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentDestination $destination destination
+     * @param ShipmentDestination $destination destination
      */
     public function setDestination(ShipmentDestination $destination) : self
     {
@@ -443,7 +443,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets freight_information.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\FreightInformation $freight_information freight_information
+     * @param null|FreightInformation $freight_information freight_information
      */
     public function setFreightInformation(?FreightInformation $freight_information) : self
     {
@@ -503,7 +503,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets selected_delivery_window.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SelectedDeliveryWindow $selected_delivery_window selected_delivery_window
+     * @param null|SelectedDeliveryWindow $selected_delivery_window selected_delivery_window
      */
     public function setSelectedDeliveryWindow(?SelectedDeliveryWindow $selected_delivery_window) : self
     {
@@ -535,7 +535,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Gets self_ship_appointment_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SelfShipAppointmentDetails[]
+     * @return null|SelfShipAppointmentDetails[]
      */
     public function getSelfShipAppointmentDetails() : ?array
     {
@@ -545,7 +545,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets self_ship_appointment_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\SelfShipAppointmentDetails[] $self_ship_appointment_details list of self ship appointment details
+     * @param null|SelfShipAppointmentDetails[] $self_ship_appointment_details list of self ship appointment details
      */
     public function setSelfShipAppointmentDetails(?array $self_ship_appointment_details) : self
     {
@@ -605,7 +605,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets source.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShipmentSource $source source
+     * @param ShipmentSource $source source
      */
     public function setSource(ShipmentSource $source) : self
     {
@@ -645,7 +645,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets tracking_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\TrackingDetails $tracking_details tracking_details
+     * @param null|TrackingDetails $tracking_details tracking_details
      */
     public function setTrackingDetails(?TrackingDetails $tracking_details) : self
     {

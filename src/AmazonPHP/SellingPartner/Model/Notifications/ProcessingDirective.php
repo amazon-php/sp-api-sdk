@@ -183,7 +183,7 @@ class ProcessingDirective implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets event_filter.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\EventFilter $event_filter event_filter
+     * @param null|EventFilter $event_filter event_filter
      */
     public function setEventFilter(?EventFilter $event_filter) : self
     {

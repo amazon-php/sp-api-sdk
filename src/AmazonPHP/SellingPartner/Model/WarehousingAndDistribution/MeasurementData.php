@@ -205,7 +205,7 @@ class MeasurementData implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PackageDimensions $dimensions dimensions
+     * @param null|PackageDimensions $dimensions dimensions
      */
     public function setDimensions(?PackageDimensions $dimensions) : self
     {
@@ -225,7 +225,7 @@ class MeasurementData implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets volume.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PackageVolume $volume volume
+     * @param null|PackageVolume $volume volume
      */
     public function setVolume(?PackageVolume $volume) : self
     {
@@ -245,7 +245,7 @@ class MeasurementData implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets weight.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PackageWeight $weight weight
+     * @param PackageWeight $weight weight
      */
     public function setWeight(PackageWeight $weight) : self
     {

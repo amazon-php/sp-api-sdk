@@ -307,7 +307,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets reserved_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ReservedQuantity $reserved_quantity reserved_quantity
+     * @param null|ReservedQuantity $reserved_quantity reserved_quantity
      */
     public function setReservedQuantity(?ReservedQuantity $reserved_quantity) : self
     {
@@ -327,7 +327,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets researching_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantity $researching_quantity researching_quantity
+     * @param null|ResearchingQuantity $researching_quantity researching_quantity
      */
     public function setResearchingQuantity(?ResearchingQuantity $researching_quantity) : self
     {
@@ -347,7 +347,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets unfulfillable_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\UnfulfillableQuantity $unfulfillable_quantity unfulfillable_quantity
+     * @param null|UnfulfillableQuantity $unfulfillable_quantity unfulfillable_quantity
      */
     public function setUnfulfillableQuantity(?UnfulfillableQuantity $unfulfillable_quantity) : self
     {

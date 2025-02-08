@@ -133,7 +133,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function cancelInboundPlanRequest(AccessToken $accessToken, string $region, string $inbound_plan_id) : RequestInterface
     {
@@ -336,7 +336,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CancelSelfShipAppointmentRequest $body The body of the request to &#x60;cancelSelfShipAppointment&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function cancelSelfShipAppointmentRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CancelSelfShipAppointmentRequest $body) : RequestInterface
     {
@@ -404,6 +404,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -581,7 +582,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id The shipment to confirm the delivery window option for. (required)
      * @param string $delivery_window_option_id The id of the delivery window option to be confirmed. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function confirmDeliveryWindowOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, string $delivery_window_option_id) : RequestInterface
     {
@@ -661,6 +662,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -669,6 +671,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($delivery_window_option_id !== null) {
             $resourcePath = \str_replace(
@@ -836,7 +839,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $packing_option_id Identifier of a packing option. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function confirmPackingOptionRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $packing_option_id) : RequestInterface
     {
@@ -897,6 +900,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($packing_option_id !== null) {
             $resourcePath = \str_replace(
@@ -1064,7 +1068,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $placement_option_id The identifier of a placement option. A placement option represents the shipment splits and destinations of SKUs. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function confirmPlacementOptionRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $placement_option_id) : RequestInterface
     {
@@ -1125,6 +1129,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($placement_option_id !== null) {
             $resourcePath = \str_replace(
@@ -1294,7 +1299,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param string $content_update_preview_id Identifier of a content update preview. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function confirmShipmentContentUpdatePreviewRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, string $content_update_preview_id) : RequestInterface
     {
@@ -1374,6 +1379,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -1382,6 +1388,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($content_update_preview_id !== null) {
             $resourcePath = \str_replace(
@@ -1549,7 +1556,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportationOptionsRequest $body The body of the request to &#x60;confirmTransportationOptions&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function confirmTransportationOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ConfirmTransportationOptionsRequest $body) : RequestInterface
     {
@@ -1763,7 +1770,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundPlanRequest $body The body of the request to &#x60;createInboundPlan&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createInboundPlanRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateInboundPlanRequest $body) : RequestInterface
     {
@@ -1949,7 +1956,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateMarketplaceItemLabelsRequest $body The body of the request to &#x60;createMarketplaceItemLabels&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createMarketplaceItemLabelsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\CreateMarketplaceItemLabelsRequest $body) : RequestInterface
     {
@@ -2137,7 +2144,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id The shipment to generate delivery window options for. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function generateDeliveryWindowOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id) : RequestInterface
     {
@@ -2198,6 +2205,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -2363,7 +2371,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function generatePackingOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id) : RequestInterface
     {
@@ -2564,7 +2572,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GeneratePlacementOptionsRequest $body The body of the request to &#x60;generatePlacementOptions&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function generatePlacementOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GeneratePlacementOptionsRequest $body) : RequestInterface
     {
@@ -2782,7 +2790,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GenerateSelfShipAppointmentSlotsRequest $body The body of the request to &#x60;generateSelfShipAppointmentSlots&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function generateSelfShipAppointmentSlotsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GenerateSelfShipAppointmentSlotsRequest $body) : RequestInterface
     {
@@ -2850,6 +2858,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -3027,7 +3036,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GenerateShipmentContentUpdatePreviewsRequest $body The body of the request to &#x60;generateShipmentContentUpdatePreviews&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function generateShipmentContentUpdatePreviewsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GenerateShipmentContentUpdatePreviewsRequest $body) : RequestInterface
     {
@@ -3095,6 +3104,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -3270,7 +3280,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GenerateTransportationOptionsRequest $body The body of the request to &#x60;generateTransportationOptions&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function generateTransportationOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\GenerateTransportationOptionsRequest $body) : RequestInterface
     {
@@ -3486,7 +3496,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getDeliveryChallanDocumentRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id) : RequestInterface
     {
@@ -3547,6 +3557,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -3712,7 +3723,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $operation_id Identifier of an asynchronous operation. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getInboundOperationStatusRequest(AccessToken $accessToken, string $region, string $operation_id) : RequestInterface
     {
@@ -3911,7 +3922,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getInboundPlanRequest(AccessToken $accessToken, string $region, string $inbound_plan_id) : RequestInterface
     {
@@ -4116,7 +4127,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of self ship appointment slots to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getSelfShipAppointmentSlotsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -4189,6 +4200,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -4210,6 +4222,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -4377,7 +4390,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id) : RequestInterface
     {
@@ -4438,6 +4451,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -4607,7 +4621,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param string $content_update_preview_id Identifier of a content update preview. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentContentUpdatePreviewRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, string $content_update_preview_id) : RequestInterface
     {
@@ -4687,6 +4701,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -4695,6 +4710,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($content_update_preview_id !== null) {
             $resourcePath = \str_replace(
@@ -4866,7 +4882,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of delivery window options to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listDeliveryWindowOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -4939,6 +4955,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -4960,6 +4977,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -5129,7 +5147,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of boxes to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listInboundPlanBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -5183,6 +5201,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -5365,7 +5384,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of items to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listInboundPlanItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -5419,6 +5438,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -5601,7 +5621,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of pallets to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listInboundPlanPalletsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -5655,6 +5675,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -5841,7 +5862,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|string $sort_by Sort by field. (optional)
      * @param null|string $sort_order The sort order. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listInboundPlansRequest(AccessToken $accessToken, string $region, ?int $page_size = 10, ?string $pagination_token = null, ?string $status = null, ?string $sort_by = null, ?string $sort_order = null) : RequestInterface
     {
@@ -5876,6 +5897,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -5884,6 +5906,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($pagination_token !== null) {
             $queryParams['paginationToken'] = ObjectSerializer::toString($pagination_token);
         }
+
         // query params
         if (\is_array($status)) {
             $status = ObjectSerializer::serializeCollection($status, '', true);
@@ -5892,6 +5915,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($status !== null) {
             $queryParams['status'] = ObjectSerializer::toString($status);
         }
+
         // query params
         if (\is_array($sort_by)) {
             $sort_by = ObjectSerializer::serializeCollection($sort_by, '', true);
@@ -5900,6 +5924,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($sort_by !== null) {
             $queryParams['sortBy'] = ObjectSerializer::toString($sort_by);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -6071,7 +6096,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
      * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listItemComplianceDetailsRequest(AccessToken $accessToken, string $region, array $mskus, string $marketplace_id) : RequestInterface
     {
@@ -6122,6 +6147,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $queryParams['mskus'] = $mskus;
             }
         }
+
         // query params
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
@@ -6297,7 +6323,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of packing group boxes to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listPackingGroupBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $packing_group_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -6370,6 +6396,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -6391,6 +6418,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($packing_group_id !== null) {
             $resourcePath = \str_replace(
@@ -6562,7 +6590,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of packing group items to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listPackingGroupItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $packing_group_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -6635,6 +6663,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -6656,6 +6685,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($packing_group_id !== null) {
             $resourcePath = \str_replace(
@@ -6825,7 +6855,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of packing options to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listPackingOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -6879,6 +6909,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -7061,7 +7092,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of placement options to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listPlacementOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -7115,6 +7146,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -7295,7 +7327,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $marketplace_id The marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param string[] $mskus A list of merchant SKUs, a merchant-supplied identifier of a specific SKU. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listPrepDetailsRequest(AccessToken $accessToken, string $region, string $marketplace_id, array $mskus) : RequestInterface
     {
@@ -7344,6 +7376,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if ($mskus !== null) {
             if ('form' === 'form' && \is_array($mskus)) {
@@ -7521,7 +7554,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of boxes to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listShipmentBoxesRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -7594,6 +7627,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -7615,6 +7649,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -7786,7 +7821,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of content update previews to return. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listShipmentContentUpdatePreviewsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -7859,6 +7894,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -7880,6 +7916,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -8051,7 +8088,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of items to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listShipmentItemsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -8124,6 +8161,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -8145,6 +8183,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -8316,7 +8355,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|int $page_size The number of pallets to return in the response matching the given query. (optional, default to 10)
      * @param null|string $pagination_token A token to fetch a certain page when there are multiple pages worth of results. The value of this token is fetched from the &#x60;pagination&#x60; returned in the API response. In the absence of the token value from the query parameter the API returns the first page of the result. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listShipmentPalletsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, ?int $page_size = 10, ?string $pagination_token = null) : RequestInterface
     {
@@ -8389,6 +8428,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -8410,6 +8450,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -8583,7 +8624,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param null|string $placement_option_id The placement option to get transportation options for. Either &#x60;placementOptionId&#x60; or &#x60;shipmentId&#x60; must be specified. (optional)
      * @param null|string $shipment_id The shipment to get transportation options for. Either &#x60;placementOptionId&#x60; or &#x60;shipmentId&#x60; must be specified. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listTransportationOptionsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, ?int $page_size = 10, ?string $pagination_token = null, ?string $placement_option_id = null, ?string $shipment_id = null) : RequestInterface
     {
@@ -8661,6 +8702,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($pagination_token)) {
             $pagination_token = ObjectSerializer::serializeCollection($pagination_token, '', true);
@@ -8669,6 +8711,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($pagination_token !== null) {
             $queryParams['paginationToken'] = ObjectSerializer::toString($pagination_token);
         }
+
         // query params
         if (\is_array($placement_option_id)) {
             $placement_option_id = ObjectSerializer::serializeCollection($placement_option_id, '', true);
@@ -8677,6 +8720,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
         if ($placement_option_id !== null) {
             $queryParams['placementOptionId'] = ObjectSerializer::toString($placement_option_id);
         }
+
         // query params
         if (\is_array($shipment_id)) {
             $shipment_id = ObjectSerializer::serializeCollection($shipment_id, '', true);
@@ -8861,7 +8905,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $slot_id An identifier to a self-ship appointment slot. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ScheduleSelfShipAppointmentRequest $body The body of the request to &#x60;scheduleSelfShipAppointment&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function scheduleSelfShipAppointmentRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, string $slot_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ScheduleSelfShipAppointmentRequest $body) : RequestInterface
     {
@@ -8948,6 +8992,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -8956,6 +9001,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($slot_id !== null) {
             $resourcePath = \str_replace(
@@ -9131,7 +9177,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPackingInformationRequest $body The body of the request to &#x60;setPackingInformation&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setPackingInformationRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPackingInformationRequest $body) : RequestInterface
     {
@@ -9345,7 +9391,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body The body of the request to &#x60;setPrepDetails&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function setPrepDetailsRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SetPrepDetailsRequest $body) : RequestInterface
     {
@@ -9528,7 +9574,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $inbound_plan_id Identifier of an inbound plan. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateInboundPlanNameRequest $body The body of the request to &#x60;updateInboundPlanName&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateInboundPlanNameRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateInboundPlanNameRequest $body) : RequestInterface
     {
@@ -9744,7 +9790,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $marketplace_id The Marketplace ID. For a list of possible values, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateItemComplianceDetailsRequest $body The body of the request to &#x60;updateItemComplianceDetails&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateItemComplianceDetailsRequest(AccessToken $accessToken, string $region, string $marketplace_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateItemComplianceDetailsRequest $body) : RequestInterface
     {
@@ -9953,7 +9999,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateShipmentNameRequest $body The body of the request to &#x60;updateShipmentName&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateShipmentNameRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateShipmentNameRequest $body) : RequestInterface
     {
@@ -10021,6 +10067,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -10198,7 +10245,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateShipmentSourceAddressRequest $body The body of the request to &#x60;updateShipmentSourceAddress&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateShipmentSourceAddressRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateShipmentSourceAddressRequest $body) : RequestInterface
     {
@@ -10266,6 +10313,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(
@@ -10443,7 +10491,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
      * @param string $shipment_id Identifier of a shipment. A shipment contains the boxes and units being inbounded. (required)
      * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateShipmentTrackingDetailsRequest $body The body of the request to &#x60;updateShipmentTrackingDetails&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateShipmentTrackingDetailsRequest(AccessToken $accessToken, string $region, string $inbound_plan_id, string $shipment_id, \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UpdateShipmentTrackingDetailsRequest $body) : RequestInterface
     {
@@ -10511,6 +10559,7 @@ final class FulfillmentInboundSDK implements FulfillmentInboundSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($shipment_id !== null) {
             $resourcePath = \str_replace(

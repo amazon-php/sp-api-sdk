@@ -257,7 +257,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets feature_skus.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSku[]
+     * @return null|FeatureSku[]
      */
     public function getFeatureSkus() : ?array
     {
@@ -267,7 +267,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets feature_skus.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSku[] $feature_skus an array of SKUs eligible for this feature and the quantity available
+     * @param null|FeatureSku[] $feature_skus an array of SKUs eligible for this feature and the quantity available
      */
     public function setFeatureSkus(?array $feature_skus) : self
     {

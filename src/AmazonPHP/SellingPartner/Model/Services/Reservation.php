@@ -279,7 +279,7 @@ class Reservation implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets availability.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord $availability availability
+     * @param AvailabilityRecord $availability availability
      */
     public function setAvailability(AvailabilityRecord $availability) : self
     {

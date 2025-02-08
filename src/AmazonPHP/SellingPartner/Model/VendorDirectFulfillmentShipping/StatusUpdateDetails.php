@@ -315,7 +315,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets status_location_address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Address $status_location_address status_location_address
+     * @param Address $status_location_address status_location_address
      */
     public function setStatusLocationAddress(Address $status_location_address) : self
     {
@@ -335,7 +335,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets shipment_schedule.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShipmentSchedule $shipment_schedule shipment_schedule
+     * @param null|ShipmentSchedule $shipment_schedule shipment_schedule
      */
     public function setShipmentSchedule(?ShipmentSchedule $shipment_schedule) : self
     {

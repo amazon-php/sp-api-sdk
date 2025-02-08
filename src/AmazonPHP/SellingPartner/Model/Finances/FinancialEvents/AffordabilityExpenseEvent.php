@@ -333,7 +333,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets base_expense.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $base_expense base_expense
+     * @param null|Currency $base_expense base_expense
      */
     public function setBaseExpense(?Currency $base_expense) : self
     {
@@ -353,7 +353,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets tax_type_cgst.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_type_cgst tax_type_cgst
+     * @param Currency $tax_type_cgst tax_type_cgst
      */
     public function setTaxTypeCgst(Currency $tax_type_cgst) : self
     {
@@ -373,7 +373,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets tax_type_sgst.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_type_sgst tax_type_sgst
+     * @param Currency $tax_type_sgst tax_type_sgst
      */
     public function setTaxTypeSgst(Currency $tax_type_sgst) : self
     {
@@ -393,7 +393,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets tax_type_igst.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_type_igst tax_type_igst
+     * @param Currency $tax_type_igst tax_type_igst
      */
     public function setTaxTypeIgst(Currency $tax_type_igst) : self
     {
@@ -413,7 +413,7 @@ class AffordabilityExpenseEvent implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets total_expense.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $total_expense total_expense
+     * @param null|Currency $total_expense total_expense
      */
     public function setTotalExpense(?Currency $total_expense) : self
     {

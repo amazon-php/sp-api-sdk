@@ -184,7 +184,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets item_charge_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[]
+     * @return null|ChargeComponent[]
      */
     public function getItemChargeList() : ?array
     {
@@ -194,7 +194,7 @@ class SAFETReimbursementItem implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets item_charge_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[] $item_charge_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $item_charge_list a list of charge information on the seller's account
      */
     public function setItemChargeList(?array $item_charge_list) : self
     {

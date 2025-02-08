@@ -261,7 +261,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets number_of_offers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCountType[]
+     * @return null|OfferCountType[]
      */
     public function getNumberOfOffers() : ?array
     {
@@ -271,7 +271,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets number_of_offers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCountType[] $number_of_offers number_of_offers
+     * @param null|OfferCountType[] $number_of_offers number_of_offers
      */
     public function setNumberOfOffers(?array $number_of_offers) : self
     {
@@ -283,7 +283,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets lowest_prices.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\LowestPriceType[]
+     * @return null|LowestPriceType[]
      */
     public function getLowestPrices() : ?array
     {
@@ -293,7 +293,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets lowest_prices.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\LowestPriceType[] $lowest_prices lowest_prices
+     * @param null|LowestPriceType[] $lowest_prices lowest_prices
      */
     public function setLowestPrices(?array $lowest_prices) : self
     {
@@ -305,7 +305,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets buy_box_prices.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\BuyBoxPriceType[]
+     * @return null|BuyBoxPriceType[]
      */
     public function getBuyBoxPrices() : ?array
     {
@@ -315,7 +315,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets buy_box_prices.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\BuyBoxPriceType[] $buy_box_prices buy_box_prices
+     * @param null|BuyBoxPriceType[] $buy_box_prices buy_box_prices
      */
     public function setBuyBoxPrices(?array $buy_box_prices) : self
     {
@@ -335,7 +335,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets list_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $list_price list_price
+     * @param null|MoneyType $list_price list_price
      */
     public function setListPrice(?MoneyType $list_price) : self
     {
@@ -355,7 +355,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets competitive_price_threshold.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $competitive_price_threshold competitive_price_threshold
+     * @param null|MoneyType $competitive_price_threshold competitive_price_threshold
      */
     public function setCompetitivePriceThreshold(?MoneyType $competitive_price_threshold) : self
     {
@@ -375,7 +375,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets suggested_lower_price_plus_shipping.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
+     * @param null|MoneyType $suggested_lower_price_plus_shipping suggested_lower_price_plus_shipping
      */
     public function setSuggestedLowerPricePlusShipping(?MoneyType $suggested_lower_price_plus_shipping) : self
     {
@@ -387,7 +387,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets sales_rankings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\SalesRankType[]
+     * @return null|SalesRankType[]
      */
     public function getSalesRankings() : ?array
     {
@@ -397,7 +397,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets sales_rankings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\SalesRankType[] $sales_rankings a list of sales rank information for the item, by category
+     * @param null|SalesRankType[] $sales_rankings a list of sales rank information for the item, by category
      */
     public function setSalesRankings(?array $sales_rankings) : self
     {
@@ -409,7 +409,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets buy_box_eligible_offers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCountType[]
+     * @return null|OfferCountType[]
      */
     public function getBuyBoxEligibleOffers() : ?array
     {
@@ -419,7 +419,7 @@ class Summary implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets buy_box_eligible_offers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCountType[] $buy_box_eligible_offers buy_box_eligible_offers
+     * @param null|OfferCountType[] $buy_box_eligible_offers buy_box_eligible_offers
      */
     public function setBuyBoxEligibleOffers(?array $buy_box_eligible_offers) : self
     {

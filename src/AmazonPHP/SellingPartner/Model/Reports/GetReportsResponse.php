@@ -181,7 +181,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets reports.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Reports\Report[]
+     * @return Report[]
      */
     public function getReports() : array
     {
@@ -191,7 +191,7 @@ class GetReportsResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets reports.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Reports\Report[] $reports a list of reports
+     * @param Report[] $reports a list of reports
      */
     public function setReports(array $reports) : self
     {

@@ -544,7 +544,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Gets shipment_status_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentStatusDetails[]
+     * @return null|ShipmentStatusDetails[]
      */
     public function getShipmentStatusDetails() : ?array
     {
@@ -554,7 +554,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets shipment_status_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentStatusDetails[] $shipment_status_details indicates the list of current shipment status details and when the last update was received from carrier this is available on shipment Details response
+     * @param null|ShipmentStatusDetails[] $shipment_status_details indicates the list of current shipment status details and when the last update was received from carrier this is available on shipment Details response
      */
     public function setShipmentStatusDetails(?array $shipment_status_details) : self
     {
@@ -654,7 +654,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -674,7 +674,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -694,7 +694,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets ship_to_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $ship_to_party ship_to_party
+     * @param PartyIdentification $ship_to_party ship_to_party
      */
     public function setShipToParty(PartyIdentification $ship_to_party) : self
     {
@@ -714,7 +714,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets shipment_measurements.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportShipmentMeasurements $shipment_measurements shipment_measurements
+     * @param null|TransportShipmentMeasurements $shipment_measurements shipment_measurements
      */
     public function setShipmentMeasurements(?TransportShipmentMeasurements $shipment_measurements) : self
     {
@@ -734,7 +734,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets collect_freight_pickup_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\CollectFreightPickupDetails $collect_freight_pickup_details collect_freight_pickup_details
+     * @param null|CollectFreightPickupDetails $collect_freight_pickup_details collect_freight_pickup_details
      */
     public function setCollectFreightPickupDetails(?CollectFreightPickupDetails $collect_freight_pickup_details) : self
     {
@@ -746,7 +746,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Gets purchase_orders.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\PurchaseOrders[]
+     * @return null|PurchaseOrders[]
      */
     public function getPurchaseOrders() : ?array
     {
@@ -756,7 +756,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets purchase_orders.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\PurchaseOrders[] $purchase_orders Indicates the purchase orders involved for the transportation request. This group is an array create 1 for each PO and list their corresponding items. This information is used for deciding the route,truck allocation and storage efficiently. This is a mandatory information for Buyer performing transportation from vendor warehouse (WePay/Collect)
+     * @param null|PurchaseOrders[] $purchase_orders Indicates the purchase orders involved for the transportation request. This group is an array create 1 for each PO and list their corresponding items. This information is used for deciding the route,truck allocation and storage efficiently. This is a mandatory information for Buyer performing transportation from vendor warehouse (WePay/Collect)
      */
     public function setPurchaseOrders(?array $purchase_orders) : self
     {
@@ -776,7 +776,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets import_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ImportDetails $import_details import_details
+     * @param null|ImportDetails $import_details import_details
      */
     public function setImportDetails(?ImportDetails $import_details) : self
     {
@@ -788,7 +788,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Gets containers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Containers[]
+     * @return null|Containers[]
      */
     public function getContainers() : ?array
     {
@@ -798,7 +798,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets containers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Containers[] $containers A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
+     * @param null|Containers[] $containers A list of the items in this transportation and their associated inner container details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
      */
     public function setContainers(?array $containers) : self
     {
@@ -818,7 +818,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets transportation_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetails $transportation_details transportation_details
+     * @param null|TransportationDetails $transportation_details transportation_details
      */
     public function setTransportationDetails(?TransportationDetails $transportation_details) : self
     {

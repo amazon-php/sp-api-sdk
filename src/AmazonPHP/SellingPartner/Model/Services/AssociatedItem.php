@@ -382,7 +382,7 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets item_delivery.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\ItemDelivery $item_delivery item_delivery
+     * @param null|ItemDelivery $item_delivery item_delivery
      */
     public function setItemDelivery(?ItemDelivery $item_delivery) : self
     {

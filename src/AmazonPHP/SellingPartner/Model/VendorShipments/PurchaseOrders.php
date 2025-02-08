@@ -250,7 +250,7 @@ class PurchaseOrders implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\PurchaseOrderItems[]
+     * @return null|PurchaseOrderItems[]
      */
     public function getItems() : ?array
     {
@@ -260,7 +260,7 @@ class PurchaseOrders implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\PurchaseOrderItems[] $items a list of the items that are associated to the PO in this transport and their associated details
+     * @param null|PurchaseOrderItems[] $items a list of the items that are associated to the PO in this transport and their associated details
      */
     public function setItems(?array $items) : self
     {

@@ -219,7 +219,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets related_identifiers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\ItemRelatedIdentifier[]
+     * @return null|ItemRelatedIdentifier[]
      */
     public function getRelatedIdentifiers() : ?array
     {
@@ -229,7 +229,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets related_identifiers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\ItemRelatedIdentifier[] $related_identifiers related business identifiers of the item in the transaction
+     * @param null|ItemRelatedIdentifier[] $related_identifiers related business identifiers of the item in the transaction
      */
     public function setRelatedIdentifiers(?array $related_identifiers) : self
     {
@@ -249,7 +249,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets total_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Currency $total_amount total_amount
+     * @param null|Currency $total_amount total_amount
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {
@@ -261,7 +261,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets breakdowns.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Breakdown[]
+     * @return null|Breakdown[]
      */
     public function getBreakdowns() : ?array
     {
@@ -271,7 +271,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets breakdowns.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Breakdown[] $breakdowns a list of breakdowns that provide details on how the total amount is calculated for the transaction
+     * @param null|Breakdown[] $breakdowns a list of breakdowns that provide details on how the total amount is calculated for the transaction
      */
     public function setBreakdowns(?array $breakdowns) : self
     {
@@ -283,7 +283,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets contexts.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Context[]
+     * @return null|Context[]
      */
     public function getContexts() : ?array
     {
@@ -293,7 +293,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets contexts.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Context[] $contexts a list of additional information about the item
+     * @param null|Context[] $contexts a list of additional information about the item
      */
     public function setContexts(?array $contexts) : self
     {

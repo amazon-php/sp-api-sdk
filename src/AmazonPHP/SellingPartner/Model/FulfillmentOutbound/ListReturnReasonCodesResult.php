@@ -172,7 +172,7 @@ class ListReturnReasonCodesResult implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets reason_code_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReasonCodeDetails[]
+     * @return null|ReasonCodeDetails[]
      */
     public function getReasonCodeDetails() : ?array
     {
@@ -182,7 +182,7 @@ class ListReturnReasonCodesResult implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets reason_code_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ReasonCodeDetails[] $reason_code_details an array of return reason code details
+     * @param null|ReasonCodeDetails[] $reason_code_details an array of return reason code details
      */
     public function setReasonCodeDetails(?array $reason_code_details) : self
     {

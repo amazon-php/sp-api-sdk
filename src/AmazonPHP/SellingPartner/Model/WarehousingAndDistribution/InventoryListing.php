@@ -181,7 +181,7 @@ class InventoryListing implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets inventory.
      *
-     * @return \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventorySummary[]
+     * @return InventorySummary[]
      */
     public function getInventory() : array
     {
@@ -191,7 +191,7 @@ class InventoryListing implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets inventory.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventorySummary[] $inventory list of inventory summaries
+     * @param InventorySummary[] $inventory list of inventory summaries
      */
     public function setInventory(array $inventory) : self
     {

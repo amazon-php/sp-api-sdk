@@ -185,7 +185,7 @@ class ScheduleSelfShipAppointmentResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets self_ship_appointment_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\SelfShipAppointmentDetails $self_ship_appointment_details self_ship_appointment_details
+     * @param SelfShipAppointmentDetails $self_ship_appointment_details self_ship_appointment_details
      */
     public function setSelfShipAppointmentDetails(SelfShipAppointmentDetails $self_ship_appointment_details) : self
     {

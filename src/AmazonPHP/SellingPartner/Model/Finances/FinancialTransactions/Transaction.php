@@ -257,7 +257,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets selling_partner_metadata.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\SellingPartnerMetadata $selling_partner_metadata selling_partner_metadata
+     * @param null|SellingPartnerMetadata $selling_partner_metadata selling_partner_metadata
      */
     public function setSellingPartnerMetadata(?SellingPartnerMetadata $selling_partner_metadata) : self
     {
@@ -269,7 +269,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets related_identifiers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\RelatedIdentifier[]
+     * @return null|RelatedIdentifier[]
      */
     public function getRelatedIdentifiers() : ?array
     {
@@ -279,7 +279,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets related_identifiers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\RelatedIdentifier[] $related_identifiers related business identifiers of the transaction
+     * @param null|RelatedIdentifier[] $related_identifiers related business identifiers of the transaction
      */
     public function setRelatedIdentifiers(?array $related_identifiers) : self
     {
@@ -399,7 +399,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets total_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Currency $total_amount total_amount
+     * @param null|Currency $total_amount total_amount
      */
     public function setTotalAmount(?Currency $total_amount) : self
     {
@@ -419,7 +419,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets marketplace_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\MarketplaceDetails $marketplace_details marketplace_details
+     * @param null|MarketplaceDetails $marketplace_details marketplace_details
      */
     public function setMarketplaceDetails(?MarketplaceDetails $marketplace_details) : self
     {
@@ -431,7 +431,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Item[]
+     * @return null|Item[]
      */
     public function getItems() : ?array
     {
@@ -441,7 +441,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Item[] $items a list of items in the transaction
+     * @param null|Item[] $items a list of items in the transaction
      */
     public function setItems(?array $items) : self
     {
@@ -453,7 +453,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets contexts.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Context[]
+     * @return null|Context[]
      */
     public function getContexts() : ?array
     {
@@ -463,7 +463,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets contexts.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Context[] $contexts a list of additional information about the item
+     * @param null|Context[] $contexts a list of additional information about the item
      */
     public function setContexts(?array $contexts) : self
     {
@@ -475,7 +475,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets breakdowns.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Breakdown[]
+     * @return null|Breakdown[]
      */
     public function getBreakdowns() : ?array
     {
@@ -485,7 +485,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets breakdowns.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Breakdown[] $breakdowns a list of breakdowns that provide details on how the total amount is calculated for the transaction
+     * @param null|Breakdown[] $breakdowns a list of breakdowns that provide details on how the total amount is calculated for the transaction
      */
     public function setBreakdowns(?array $breakdowns) : self
     {

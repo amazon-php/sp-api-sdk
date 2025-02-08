@@ -178,7 +178,7 @@ class GetDestinationsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets payload.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Destination[]
+     * @return null|Destination[]
      */
     public function getPayload() : ?array
     {
@@ -188,7 +188,7 @@ class GetDestinationsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Destination[] $payload a list of destinations
+     * @param null|Destination[] $payload a list of destinations
      */
     public function setPayload(?array $payload) : self
     {
@@ -200,7 +200,7 @@ class GetDestinationsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -210,7 +210,7 @@ class GetDestinationsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

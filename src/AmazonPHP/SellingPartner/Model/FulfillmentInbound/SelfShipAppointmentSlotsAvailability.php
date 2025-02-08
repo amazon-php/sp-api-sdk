@@ -198,7 +198,7 @@ class SelfShipAppointmentSlotsAvailability implements \ArrayAccess, \JsonSeriali
     /**
      * Gets slots.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\AppointmentSlot[]
+     * @return null|AppointmentSlot[]
      */
     public function getSlots() : ?array
     {
@@ -208,7 +208,7 @@ class SelfShipAppointmentSlotsAvailability implements \ArrayAccess, \JsonSeriali
     /**
      * Sets slots.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\AppointmentSlot[] $slots a list of appointment slots
+     * @param null|AppointmentSlot[] $slots a list of appointment slots
      */
     public function setSlots(?array $slots) : self
     {

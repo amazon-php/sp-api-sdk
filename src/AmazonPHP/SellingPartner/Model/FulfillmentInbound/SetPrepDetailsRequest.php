@@ -221,7 +221,7 @@ class SetPrepDetailsRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets msku_prep_details.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\MskuPrepDetailInput[]
+     * @return MskuPrepDetailInput[]
      */
     public function getMskuPrepDetails() : array
     {
@@ -231,7 +231,7 @@ class SetPrepDetailsRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets msku_prep_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\MskuPrepDetailInput[] $msku_prep_details a list of MSKUs and related prep details
+     * @param MskuPrepDetailInput[] $msku_prep_details a list of MSKUs and related prep details
      */
     public function setMskuPrepDetails(array $msku_prep_details) : self
     {

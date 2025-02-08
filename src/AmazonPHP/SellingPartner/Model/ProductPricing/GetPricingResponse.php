@@ -181,7 +181,7 @@ class GetPricingResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets payload.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Price[]
+     * @return null|Price[]
      */
     public function getPayload() : ?array
     {
@@ -191,7 +191,7 @@ class GetPricingResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\Price[] $payload payload
+     * @param null|Price[] $payload payload
      */
     public function setPayload(?array $payload) : self
     {
@@ -203,7 +203,7 @@ class GetPricingResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -213,7 +213,7 @@ class GetPricingResponse implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

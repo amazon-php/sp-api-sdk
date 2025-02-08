@@ -195,7 +195,7 @@ class ImageCropSpecification implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets size.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ImageDimensions $size size
+     * @param ImageDimensions $size size
      */
     public function setSize(ImageDimensions $size) : self
     {
@@ -215,7 +215,7 @@ class ImageCropSpecification implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets offset.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageOffsets $offset offset
+     * @param null|ImageOffsets $offset offset
      */
     public function setOffset(?ImageOffsets $offset) : self
     {

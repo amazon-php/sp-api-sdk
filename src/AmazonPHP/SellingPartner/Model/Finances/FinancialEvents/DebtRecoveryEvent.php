@@ -231,7 +231,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets recovery_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $recovery_amount recovery_amount
+     * @param null|Currency $recovery_amount recovery_amount
      */
     public function setRecoveryAmount(?Currency $recovery_amount) : self
     {
@@ -251,7 +251,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets over_payment_credit.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $over_payment_credit over_payment_credit
+     * @param null|Currency $over_payment_credit over_payment_credit
      */
     public function setOverPaymentCredit(?Currency $over_payment_credit) : self
     {
@@ -263,7 +263,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets debt_recovery_item_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\DebtRecoveryItem[]
+     * @return null|DebtRecoveryItem[]
      */
     public function getDebtRecoveryItemList() : ?array
     {
@@ -273,7 +273,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets debt_recovery_item_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\DebtRecoveryItem[] $debt_recovery_item_list a list of debt recovery item information
+     * @param null|DebtRecoveryItem[] $debt_recovery_item_list a list of debt recovery item information
      */
     public function setDebtRecoveryItemList(?array $debt_recovery_item_list) : self
     {
@@ -285,7 +285,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets charge_instrument_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeInstrument[]
+     * @return null|ChargeInstrument[]
      */
     public function getChargeInstrumentList() : ?array
     {
@@ -295,7 +295,7 @@ class DebtRecoveryEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets charge_instrument_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeInstrument[] $charge_instrument_list a list of payment instruments
+     * @param null|ChargeInstrument[] $charge_instrument_list a list of payment instruments
      */
     public function setChargeInstrumentList(?array $charge_instrument_list) : self
     {

@@ -135,7 +135,7 @@ final class FinancialTransfersSDK implements FinancialTransfersSDKInterface
      * @param string $marketplace_id The identifier of the marketplace from which you want to retrieve payment methods. For the list of possible marketplace identifiers, refer to [Marketplace IDs](https://developer-docs.amazon.com/sp-api/docs/marketplace-ids). (required)
      * @param null|string[] $payment_method_types A comma-separated list of the payment method types you want to include in the response. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getPaymentMethodsRequest(AccessToken $accessToken, string $region, string $marketplace_id, ?array $payment_method_types = null) : RequestInterface
     {
@@ -165,6 +165,7 @@ final class FinancialTransfersSDK implements FinancialTransfersSDKInterface
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($payment_method_types)) {
             $payment_method_types = ObjectSerializer::serializeCollection($payment_method_types, 'form', true);
@@ -334,7 +335,7 @@ final class FinancialTransfersSDK implements FinancialTransfersSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\Finances\FinancialTransfers\InitiatePayoutRequest $body The request body for the &#x60;initiatePayout&#x60; operation. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function initiatePayoutRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Finances\FinancialTransfers\InitiatePayoutRequest $body) : RequestInterface
     {

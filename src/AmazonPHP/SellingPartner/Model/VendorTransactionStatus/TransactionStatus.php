@@ -183,7 +183,7 @@ class TransactionStatus implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets transaction_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorTransactionStatus\Transaction $transaction_status transaction_status
+     * @param null|Transaction $transaction_status transaction_status
      */
     public function setTransactionStatus(?Transaction $transaction_status) : self
     {

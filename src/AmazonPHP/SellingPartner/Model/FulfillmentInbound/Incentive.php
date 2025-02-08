@@ -299,7 +299,7 @@ class Incentive implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets value.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Currency $value value
+     * @param Currency $value value
      */
     public function setValue(Currency $value) : self
     {

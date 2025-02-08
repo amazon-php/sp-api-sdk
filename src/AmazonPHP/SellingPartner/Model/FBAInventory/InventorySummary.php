@@ -311,7 +311,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets inventory_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\InventoryDetails $inventory_details inventory_details
+     * @param null|InventoryDetails $inventory_details inventory_details
      */
     public function setInventoryDetails(?InventoryDetails $inventory_details) : self
     {

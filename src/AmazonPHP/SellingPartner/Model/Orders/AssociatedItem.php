@@ -232,7 +232,7 @@ class AssociatedItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets association_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\AssociationType $association_type association_type
+     * @param null|AssociationType $association_type association_type
      */
     public function setAssociationType(?AssociationType $association_type) : self
     {

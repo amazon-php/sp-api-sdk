@@ -181,7 +181,7 @@ class DeliveryInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets delivery_document_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryDocument[]
+     * @return null|DeliveryDocument[]
      */
     public function getDeliveryDocumentList() : ?array
     {
@@ -191,7 +191,7 @@ class DeliveryInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets delivery_document_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryDocument[] $delivery_document_list a list of delivery documents for a package
+     * @param null|DeliveryDocument[] $delivery_document_list a list of delivery documents for a package
      */
     public function setDeliveryDocumentList(?array $delivery_document_list) : self
     {
@@ -211,7 +211,7 @@ class DeliveryInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets drop_off_location.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DropOffLocation $drop_off_location drop_off_location
+     * @param null|DropOffLocation $drop_off_location drop_off_location
      */
     public function setDropOffLocation(?DropOffLocation $drop_off_location) : self
     {

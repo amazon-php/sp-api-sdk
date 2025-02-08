@@ -191,7 +191,7 @@ class RangeSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets capacity_types.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\CapacityType[]
+     * @return null|CapacityType[]
      */
     public function getCapacityTypes() : ?array
     {
@@ -201,7 +201,7 @@ class RangeSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets capacity_types.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\CapacityType[] $capacity_types An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
+     * @param null|CapacityType[] $capacity_types An array of capacity types which are being requested. Default value is `[SCHEDULED_CAPACITY]`.
      */
     public function setCapacityTypes(?array $capacity_types) : self
     {

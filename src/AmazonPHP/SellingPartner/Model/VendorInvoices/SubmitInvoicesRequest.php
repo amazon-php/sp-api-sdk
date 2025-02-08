@@ -172,7 +172,7 @@ class SubmitInvoicesRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets invoices.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\Invoice[]
+     * @return null|Invoice[]
      */
     public function getInvoices() : ?array
     {
@@ -182,7 +182,7 @@ class SubmitInvoicesRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets invoices.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\Invoice[] $invoices an array of Invoice objects representing the invoices or credit notes to be submitted
+     * @param null|Invoice[] $invoices an array of Invoice objects representing the invoices or credit notes to be submitted
      */
     public function setInvoices(?array $invoices) : self
     {

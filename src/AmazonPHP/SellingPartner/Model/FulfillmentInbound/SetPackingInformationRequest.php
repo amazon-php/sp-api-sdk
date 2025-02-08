@@ -179,7 +179,7 @@ class SetPackingInformationRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Gets package_groupings.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageGroupingInput[]
+     * @return PackageGroupingInput[]
      */
     public function getPackageGroupings() : array
     {
@@ -189,7 +189,7 @@ class SetPackingInformationRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets package_groupings.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackageGroupingInput[] $package_groupings list of packing information for the inbound plan
+     * @param PackageGroupingInput[] $package_groupings list of packing information for the inbound plan
      */
     public function setPackageGroupings(array $package_groupings) : self
     {

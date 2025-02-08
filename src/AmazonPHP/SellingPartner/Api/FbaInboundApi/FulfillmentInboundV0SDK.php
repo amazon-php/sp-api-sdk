@@ -133,7 +133,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
      *
      * @param string $shipment_id A shipment identifier originally returned by the createInboundShipmentPlan operation. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getBillOfLadingRequest(AccessToken $accessToken, string $region, string $shipment_id) : RequestInterface
     {
@@ -334,7 +334,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
      * @param null|int $page_size The page size for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. Max value:1000. (optional)
      * @param null|int $page_start_index The page start index for paginating through the total packages&#39; labels. This is a required parameter for Non-Partnered LTL Shipments. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getLabelsRequest(AccessToken $accessToken, string $region, string $shipment_id, string $page_type, string $label_type, ?int $number_of_packages = null, ?array $package_labels_to_print = null, ?int $number_of_pallets = null, ?int $page_size = null, ?int $page_start_index = null) : RequestInterface
     {
@@ -344,12 +344,14 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
                 'Missing the required parameter $shipment_id when calling getLabels'
             );
         }
+
         // verify the required parameter 'page_type' is set
         if ($page_type === null || (\is_array($page_type) && \count($page_type) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $page_type when calling getLabels'
             );
         }
+
         // verify the required parameter 'label_type' is set
         if ($label_type === null || (\is_array($label_type) && \count($label_type) === 0)) {
             throw new InvalidArgumentException(
@@ -372,6 +374,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($page_type !== null) {
             $queryParams['PageType'] = ObjectSerializer::toString($page_type);
         }
+
         // query params
         if (\is_array($label_type)) {
             $label_type = ObjectSerializer::serializeCollection($label_type, '', true);
@@ -380,6 +383,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($label_type !== null) {
             $queryParams['LabelType'] = ObjectSerializer::toString($label_type);
         }
+
         // query params
         if (\is_array($number_of_packages)) {
             $number_of_packages = ObjectSerializer::serializeCollection($number_of_packages, '', true);
@@ -388,6 +392,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($number_of_packages !== null) {
             $queryParams['NumberOfPackages'] = ObjectSerializer::toString($number_of_packages);
         }
+
         // query params
         if (\is_array($package_labels_to_print)) {
             $package_labels_to_print = ObjectSerializer::serializeCollection($package_labels_to_print, 'form', true);
@@ -396,6 +401,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($package_labels_to_print !== null) {
             $queryParams['PackageLabelsToPrint'] = ObjectSerializer::toString($package_labels_to_print);
         }
+
         // query params
         if (\is_array($number_of_pallets)) {
             $number_of_pallets = ObjectSerializer::serializeCollection($number_of_pallets, '', true);
@@ -404,6 +410,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($number_of_pallets !== null) {
             $queryParams['NumberOfPallets'] = ObjectSerializer::toString($number_of_pallets);
         }
+
         // query params
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
@@ -412,6 +419,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($page_size !== null) {
             $queryParams['PageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($page_start_index)) {
             $page_start_index = ObjectSerializer::serializeCollection($page_start_index, '', true);
@@ -594,7 +602,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
      * @param null|string[] $seller_sku_list A list of SellerSKU values. Used to identify items for which you want labeling requirements and item preparation instructions for shipment to Amazon&#39;s fulfillment network. The SellerSKU is qualified by the Seller ID, which is included with every call to the Seller Partner API.  Note: Include seller SKUs that you have used to list items on Amazon&#39;s retail website. If you include a seller SKU that you have never used to list an item on Amazon&#39;s retail website, the seller SKU is returned in the InvalidSKUList property in the response. (optional)
      * @param null|string[] $asin_list A list of ASIN values. Used to identify items for which you want item preparation instructions to help with item sourcing decisions.  Note: ASINs must be included in the product catalog for at least one of the marketplaces that the seller  participates in. Any ASIN that is not included in the product catalog for at least one of the marketplaces that the seller participates in is returned in the InvalidASINList property in the response. You can find out which marketplaces a seller participates in by calling the getMarketplaceParticipations operation in the Selling Partner API for Sellers. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getPrepInstructionsRequest(AccessToken $accessToken, string $region, string $ship_to_country_code, ?array $seller_sku_list = null, ?array $asin_list = null) : RequestInterface
     {
@@ -628,6 +636,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($ship_to_country_code !== null) {
             $queryParams['ShipToCountryCode'] = ObjectSerializer::toString($ship_to_country_code);
         }
+
         // query params
         if (\is_array($seller_sku_list)) {
             $seller_sku_list = ObjectSerializer::serializeCollection($seller_sku_list, 'form', true);
@@ -636,6 +645,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($seller_sku_list !== null) {
             $queryParams['SellerSKUList'] = ObjectSerializer::toString($seller_sku_list);
         }
+
         // query params
         if (\is_array($asin_list)) {
             $asin_list = ObjectSerializer::serializeCollection($asin_list, 'form', true);
@@ -813,7 +823,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
      * @param null|\DateTimeInterface $last_updated_before A date used for selecting inbound shipment items that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
      * @param null|string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentItemsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : RequestInterface
     {
@@ -823,6 +833,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
                 'Missing the required parameter $query_type when calling getShipmentItems'
             );
         }
+
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
@@ -845,6 +856,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($last_updated_after !== null) {
             $queryParams['LastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
+
         // query params
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
@@ -853,6 +865,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($last_updated_before !== null) {
             $queryParams['LastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
+
         // query params
         if (\is_array($query_type)) {
             $query_type = ObjectSerializer::serializeCollection($query_type, '', true);
@@ -861,6 +874,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($query_type !== null) {
             $queryParams['QueryType'] = ObjectSerializer::toString($query_type);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -869,6 +883,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($next_token !== null) {
             $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
@@ -1040,7 +1055,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
      * @param string $shipment_id A shipment identifier used for selecting items in a specific inbound shipment. (required)
      * @param null|string $marketplace_id Deprecated. Do not use. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentItemsByShipmentIdRequest(AccessToken $accessToken, string $region, string $shipment_id, ?string $marketplace_id = null) : RequestInterface
     {
@@ -1248,7 +1263,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
      * @param null|\DateTimeInterface $last_updated_before A date used for selecting inbound shipments that were last updated before (or at) a specified time. The selection includes updates made by Amazon and by the seller. (optional)
      * @param null|string $next_token A string token returned in the response to your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getShipmentsRequest(AccessToken $accessToken, string $region, string $query_type, string $marketplace_id, ?array $shipment_status_list = null, ?array $shipment_id_list = null, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?string $next_token = null) : RequestInterface
     {
@@ -1258,6 +1273,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
                 'Missing the required parameter $query_type when calling getShipments'
             );
         }
+
         // verify the required parameter 'marketplace_id' is set
         if ($marketplace_id === null || (\is_array($marketplace_id) && \count($marketplace_id) === 0)) {
             throw new InvalidArgumentException(
@@ -1284,6 +1300,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($shipment_status_list !== null) {
             $queryParams['ShipmentStatusList'] = ObjectSerializer::toString($shipment_status_list);
         }
+
         // query params
         if (\is_array($shipment_id_list)) {
             $shipment_id_list = ObjectSerializer::serializeCollection($shipment_id_list, 'form', true);
@@ -1292,6 +1309,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($shipment_id_list !== null) {
             $queryParams['ShipmentIdList'] = ObjectSerializer::toString($shipment_id_list);
         }
+
         // query params
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
@@ -1300,6 +1318,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($last_updated_after !== null) {
             $queryParams['LastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
+
         // query params
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
@@ -1308,6 +1327,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($last_updated_before !== null) {
             $queryParams['LastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
+
         // query params
         if (\is_array($query_type)) {
             $query_type = ObjectSerializer::serializeCollection($query_type, '', true);
@@ -1316,6 +1336,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($query_type !== null) {
             $queryParams['QueryType'] = ObjectSerializer::toString($query_type);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -1324,6 +1345,7 @@ final class FulfillmentInboundV0SDK implements FulfillmentInboundV0SDKInterface
         if ($next_token !== null) {
             $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);

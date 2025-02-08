@@ -209,7 +209,7 @@ class ListFinancialEventsPayload implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets financial_events.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FinancialEvents $financial_events financial_events
+     * @param null|FinancialEvents $financial_events financial_events
      */
     public function setFinancialEvents(?FinancialEvents $financial_events) : self
     {

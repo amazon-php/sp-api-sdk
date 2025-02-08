@@ -409,7 +409,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets scope_of_work.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\ScopeOfWork $scope_of_work scope_of_work
+     * @param null|ScopeOfWork $scope_of_work scope_of_work
      */
     public function setScopeOfWork(?ScopeOfWork $scope_of_work) : self
     {
@@ -429,7 +429,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets seller.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Seller $seller seller
+     * @param null|Seller $seller seller
      */
     public function setSeller(?Seller $seller) : self
     {
@@ -449,7 +449,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets service_job_provider.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\ServiceJobProvider $service_job_provider service_job_provider
+     * @param null|ServiceJobProvider $service_job_provider service_job_provider
      */
     public function setServiceJobProvider(?ServiceJobProvider $service_job_provider) : self
     {
@@ -461,7 +461,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets preferred_appointment_times.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime[]
+     * @return null|AppointmentTime[]
      */
     public function getPreferredAppointmentTimes() : ?array
     {
@@ -471,7 +471,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets preferred_appointment_times.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime[] $preferred_appointment_times A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
+     * @param null|AppointmentTime[] $preferred_appointment_times A list of appointment windows preferred by the buyer. Included only if the buyer selected appointment windows when creating the order.
      */
     public function setPreferredAppointmentTimes(?array $preferred_appointment_times) : self
     {
@@ -483,7 +483,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets appointments.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Appointment[]
+     * @return null|Appointment[]
      */
     public function getAppointments() : ?array
     {
@@ -493,7 +493,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets appointments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Appointment[] $appointments a list of appointments
+     * @param null|Appointment[] $appointments a list of appointments
      */
     public function setAppointments(?array $appointments) : self
     {
@@ -573,7 +573,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets buyer.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Buyer $buyer buyer
+     * @param null|Buyer $buyer buyer
      */
     public function setBuyer(?Buyer $buyer) : self
     {
@@ -585,7 +585,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets associated_items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\AssociatedItem[]
+     * @return null|AssociatedItem[]
      */
     public function getAssociatedItems() : ?array
     {
@@ -595,7 +595,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets associated_items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\AssociatedItem[] $associated_items a list of items associated with the service job
+     * @param null|AssociatedItem[] $associated_items a list of items associated with the service job
      */
     public function setAssociatedItems(?array $associated_items) : self
     {
@@ -615,7 +615,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets service_location.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\ServiceLocation $service_location service_location
+     * @param null|ServiceLocation $service_location service_location
      */
     public function setServiceLocation(?ServiceLocation $service_location) : self
     {

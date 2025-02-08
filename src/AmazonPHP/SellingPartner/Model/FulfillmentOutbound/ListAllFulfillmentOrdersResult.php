@@ -198,7 +198,7 @@ class ListAllFulfillmentOrdersResult implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets fulfillment_orders.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrder[]
+     * @return null|FulfillmentOrder[]
      */
     public function getFulfillmentOrders() : ?array
     {
@@ -208,7 +208,7 @@ class ListAllFulfillmentOrdersResult implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets fulfillment_orders.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrder[] $fulfillment_orders an array of fulfillment order information
+     * @param null|FulfillmentOrder[] $fulfillment_orders an array of fulfillment order information
      */
     public function setFulfillmentOrders(?array $fulfillment_orders) : self
     {

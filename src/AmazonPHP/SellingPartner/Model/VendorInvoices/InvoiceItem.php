@@ -325,7 +325,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets invoiced_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\ItemQuantity $invoiced_quantity invoiced_quantity
+     * @param ItemQuantity $invoiced_quantity invoiced_quantity
      */
     public function setInvoicedQuantity(ItemQuantity $invoiced_quantity) : self
     {
@@ -345,7 +345,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets net_cost.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\Money $net_cost net_cost
+     * @param Money $net_cost net_cost
      */
     public function setNetCost(Money $net_cost) : self
     {
@@ -365,7 +365,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets net_cost_unit_of_measure.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\NetCostUnitOfMeasure $net_cost_unit_of_measure net_cost_unit_of_measure
+     * @param null|NetCostUnitOfMeasure $net_cost_unit_of_measure net_cost_unit_of_measure
      */
     public function setNetCostUnitOfMeasure(?NetCostUnitOfMeasure $net_cost_unit_of_measure) : self
     {
@@ -425,7 +425,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets credit_note_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\CreditNoteDetails $credit_note_details credit_note_details
+     * @param null|CreditNoteDetails $credit_note_details credit_note_details
      */
     public function setCreditNoteDetails(?CreditNoteDetails $credit_note_details) : self
     {
@@ -437,7 +437,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets tax_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[]
+     * @return null|TaxDetails[]
      */
     public function getTaxDetails() : ?array
     {
@@ -447,7 +447,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets tax_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[] $tax_details individual tax details per line item
+     * @param null|TaxDetails[] $tax_details individual tax details per line item
      */
     public function setTaxDetails(?array $tax_details) : self
     {
@@ -459,7 +459,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets charge_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\ChargeDetails[]
+     * @return null|ChargeDetails[]
      */
     public function getChargeDetails() : ?array
     {
@@ -469,7 +469,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets charge_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\ChargeDetails[] $charge_details individual charge details per line item
+     * @param null|ChargeDetails[] $charge_details individual charge details per line item
      */
     public function setChargeDetails(?array $charge_details) : self
     {
@@ -481,7 +481,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Gets allowance_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\AllowanceDetails[]
+     * @return null|AllowanceDetails[]
      */
     public function getAllowanceDetails() : ?array
     {
@@ -491,7 +491,7 @@ class InvoiceItem implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets allowance_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\AllowanceDetails[] $allowance_details individual allowance details per line item
+     * @param null|AllowanceDetails[] $allowance_details individual allowance details per line item
      */
     public function setAllowanceDetails(?array $allowance_details) : self
     {

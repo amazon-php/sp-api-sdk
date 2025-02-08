@@ -172,7 +172,7 @@ class TaxItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets tax_line_item.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxDetails[]
+     * @return null|TaxDetails[]
      */
     public function getTaxLineItem() : ?array
     {
@@ -182,7 +182,7 @@ class TaxItemDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets tax_line_item.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TaxDetails[] $tax_line_item a list of tax line items
+     * @param null|TaxDetails[] $tax_line_item a list of tax line items
      */
     public function setTaxLineItem(?array $tax_line_item) : self
     {

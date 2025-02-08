@@ -139,7 +139,7 @@ final class UploadsSDK implements UploadsSDKInterface
      * @param string $resource The resource for the upload destination that you are creating. For example, if you are creating an upload destination for the createLegalDisclosure operation of the Messaging API, the &#x60;{resource}&#x60; would be &#x60;/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;, and the entire path would be &#x60;/uploads/2020-11-01/uploadDestinations/messaging/v1/orders/{amazonOrderId}/messages/legalDisclosure&#x60;. If you are creating an upload destination for an Aplus content document, the &#x60;{resource}&#x60; would be &#x60;aplus/2020-11-01/contentDocuments&#x60; and the path would be &#x60;/uploads/v1/uploadDestinations/aplus/2020-11-01/contentDocuments&#x60;. (required)
      * @param null|string $content_type The content type of the file to be uploaded. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createUploadDestinationForResourceRequest(AccessToken $accessToken, string $region, array $marketplace_ids, string $content_md5, string $resource, ?string $content_type = null) : RequestInterface
     {
@@ -160,6 +160,7 @@ final class UploadsSDK implements UploadsSDKInterface
                 'Missing the required parameter $content_md5 when calling createUploadDestinationForResource'
             );
         }
+
         // verify the required parameter 'resource' is set
         if ($resource === null || (\is_array($resource) && \count($resource) === 0)) {
             throw new InvalidArgumentException(
@@ -182,6 +183,7 @@ final class UploadsSDK implements UploadsSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($content_md5)) {
             $content_md5 = ObjectSerializer::serializeCollection($content_md5, '', true);
@@ -190,6 +192,7 @@ final class UploadsSDK implements UploadsSDKInterface
         if ($content_md5 !== null) {
             $queryParams['contentMD5'] = ObjectSerializer::toString($content_md5);
         }
+
         // query params
         if (\is_array($content_type)) {
             $content_type = ObjectSerializer::serializeCollection($content_type, '', true);

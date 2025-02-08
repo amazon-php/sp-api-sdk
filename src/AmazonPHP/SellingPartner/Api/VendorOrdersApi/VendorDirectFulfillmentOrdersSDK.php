@@ -133,7 +133,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      *
      * @param string $purchase_order_number The order identifier for the purchase order that you want. Formatting Notes: alpha-numeric code. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderRequest(AccessToken $accessToken, string $region, string $purchase_order_number) : RequestInterface
     {
@@ -334,7 +334,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      * @param null|string $next_token Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)
      * @param null|bool $include_details When true, returns the complete purchase order details. Otherwise, only purchase order numbers are returned. (optional, default to 'true')
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrdersRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?string $status = null, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null, ?bool $include_details = true) : RequestInterface
     {
@@ -344,6 +344,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
                 'Missing the required parameter $created_after when calling getOrders'
             );
         }
+
         // verify the required parameter 'created_before' is set
         if ($created_before === null || (\is_array($created_before) && \count($created_before) === 0)) {
             throw new InvalidArgumentException(
@@ -374,6 +375,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
         if ($ship_from_party_id !== null) {
             $queryParams['shipFromPartyId'] = ObjectSerializer::toString($ship_from_party_id);
         }
+
         // query params
         if (\is_array($status)) {
             $status = ObjectSerializer::serializeCollection($status, '', true);
@@ -382,6 +384,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
         if ($status !== null) {
             $queryParams['status'] = ObjectSerializer::toString($status);
         }
+
         // query params
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
@@ -390,6 +393,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
+
         // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -398,6 +402,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
         if ($created_after !== null) {
             $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -406,6 +411,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
         if ($created_before !== null) {
             $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -414,6 +420,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -422,6 +429,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($include_details)) {
             $include_details = ObjectSerializer::serializeCollection($include_details, '', true);
@@ -591,7 +599,7 @@ final class VendorDirectFulfillmentOrdersSDK implements VendorDirectFulfillmentO
      *
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body The request body containing the acknowledgement to an order (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function submitAcknowledgementRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\SubmitAcknowledgementRequest $body) : RequestInterface
     {

@@ -172,7 +172,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Gets shipment_confirmations.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentConfirmation[]
+     * @return null|ShipmentConfirmation[]
      */
     public function getShipmentConfirmations() : ?array
     {
@@ -182,7 +182,7 @@ class SubmitShipmentConfirmationsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_confirmations.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentConfirmation[] $shipment_confirmations a list of one or more shipment confirmations
+     * @param null|ShipmentConfirmation[] $shipment_confirmations a list of one or more shipment confirmations
      */
     public function setShipmentConfirmations(?array $shipment_confirmations) : self
     {

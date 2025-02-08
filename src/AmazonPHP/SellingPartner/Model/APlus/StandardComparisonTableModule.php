@@ -193,7 +193,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Gets product_columns.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[]
+     * @return null|StandardComparisonProductBlock[]
      */
     public function getProductColumns() : ?array
     {
@@ -203,7 +203,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets product_columns.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardComparisonProductBlock[] $product_columns product_columns
+     * @param null|StandardComparisonProductBlock[] $product_columns product_columns
      */
     public function setProductColumns(?array $product_columns) : self
     {
@@ -215,7 +215,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Gets metric_row_labels.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[]
+     * @return null|PlainTextItem[]
      */
     public function getMetricRowLabels() : ?array
     {
@@ -225,7 +225,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets metric_row_labels.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\PlainTextItem[] $metric_row_labels metric_row_labels
+     * @param null|PlainTextItem[] $metric_row_labels metric_row_labels
      */
     public function setMetricRowLabels(?array $metric_row_labels) : self
     {

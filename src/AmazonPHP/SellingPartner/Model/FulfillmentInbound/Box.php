@@ -327,7 +327,7 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Sets content_information_source.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource $content_information_source content_information_source
+     * @param null|BoxContentInformationSource $content_information_source content_information_source
      */
     public function setContentInformationSource(?BoxContentInformationSource $content_information_source) : self
     {
@@ -347,7 +347,7 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Sets destination_region.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Region $destination_region destination_region
+     * @param null|Region $destination_region destination_region
      */
     public function setDestinationRegion(?Region $destination_region) : self
     {
@@ -367,7 +367,7 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Sets dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions $dimensions dimensions
+     * @param null|Dimensions $dimensions dimensions
      */
     public function setDimensions(?Dimensions $dimensions) : self
     {
@@ -419,7 +419,7 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Gets items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Item[]
+     * @return null|Item[]
      */
     public function getItems() : ?array
     {
@@ -429,7 +429,7 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Sets items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Item[] $items items contained within the box
+     * @param null|Item[] $items items contained within the box
      */
     public function setItems(?array $items) : self
     {
@@ -509,7 +509,7 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Sets weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight $weight weight
+     * @param null|Weight $weight weight
      */
     public function setWeight(?Weight $weight) : self
     {

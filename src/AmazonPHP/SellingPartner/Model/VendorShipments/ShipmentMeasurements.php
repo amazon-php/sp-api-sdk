@@ -205,7 +205,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets gross_shipment_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $gross_shipment_weight gross_shipment_weight
+     * @param null|Weight $gross_shipment_weight gross_shipment_weight
      */
     public function setGrossShipmentWeight(?Weight $gross_shipment_weight) : self
     {
@@ -225,7 +225,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets shipment_volume.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Volume $shipment_volume shipment_volume
+     * @param null|Volume $shipment_volume shipment_volume
      */
     public function setShipmentVolume(?Volume $shipment_volume) : self
     {

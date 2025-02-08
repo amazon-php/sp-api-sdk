@@ -209,7 +209,7 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets _links.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionResponseLinks $_links _links
+     * @param null|GetSolicitationActionResponseLinks $_links _links
      */
     public function setLinks(?GetSolicitationActionResponseLinks $_links) : self
     {
@@ -229,7 +229,7 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets _embedded.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSolicitationActionResponseEmbedded $_embedded _embedded
+     * @param null|GetSolicitationActionResponseEmbedded $_embedded _embedded
      */
     public function setEmbedded(?GetSolicitationActionResponseEmbedded $_embedded) : self
     {
@@ -249,7 +249,7 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\SolicitationsAction $payload payload
+     * @param null|SolicitationsAction $payload payload
      */
     public function setPayload(?SolicitationsAction $payload) : self
     {
@@ -261,7 +261,7 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Solicitations\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -271,7 +271,7 @@ class GetSolicitationActionResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

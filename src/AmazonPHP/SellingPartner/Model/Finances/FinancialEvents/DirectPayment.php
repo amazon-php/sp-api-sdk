@@ -209,7 +209,7 @@ class DirectPayment implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets direct_payment_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $direct_payment_amount direct_payment_amount
+     * @param null|Currency $direct_payment_amount direct_payment_amount
      */
     public function setDirectPaymentAmount(?Currency $direct_payment_amount) : self
     {

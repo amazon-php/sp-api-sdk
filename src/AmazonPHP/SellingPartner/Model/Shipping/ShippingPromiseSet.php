@@ -193,7 +193,7 @@ class ShippingPromiseSet implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets delivery_window.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\TimeRange $delivery_window delivery_window
+     * @param null|TimeRange $delivery_window delivery_window
      */
     public function setDeliveryWindow(?TimeRange $delivery_window) : self
     {
@@ -213,7 +213,7 @@ class ShippingPromiseSet implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets receive_window.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\TimeRange $receive_window receive_window
+     * @param null|TimeRange $receive_window receive_window
      */
     public function setReceiveWindow(?TimeRange $receive_window) : self
     {

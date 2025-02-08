@@ -291,7 +291,7 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets marketplace_participation_list.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Sellers\MarketplaceParticipation[]
+     * @return MarketplaceParticipation[]
      */
     public function getMarketplaceParticipationList() : array
     {
@@ -301,7 +301,7 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets marketplace_participation_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sellers\MarketplaceParticipation[] $marketplace_participation_list list of marketplace participations
+     * @param MarketplaceParticipation[] $marketplace_participation_list list of marketplace participations
      */
     public function setMarketplaceParticipationList(array $marketplace_participation_list) : self
     {
@@ -361,7 +361,7 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets business.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Sellers\Business $business business
+     * @param null|Business $business business
      */
     public function setBusiness(?Business $business) : self
     {
@@ -381,7 +381,7 @@ class Account implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets primary_contact.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Sellers\PrimaryContact $primary_contact primary_contact
+     * @param null|PrimaryContact $primary_contact primary_contact
      */
     public function setPrimaryContact(?PrimaryContact $primary_contact) : self
     {

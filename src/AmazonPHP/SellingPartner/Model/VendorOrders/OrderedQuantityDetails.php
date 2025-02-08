@@ -219,7 +219,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets ordered_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $ordered_quantity ordered_quantity
+     * @param null|ItemQuantity $ordered_quantity ordered_quantity
      */
     public function setOrderedQuantity(?ItemQuantity $ordered_quantity) : self
     {
@@ -239,7 +239,7 @@ class OrderedQuantityDetails implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets cancelled_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $cancelled_quantity cancelled_quantity
+     * @param null|ItemQuantity $cancelled_quantity cancelled_quantity
      */
     public function setCancelledQuantity(?ItemQuantity $cancelled_quantity) : self
     {

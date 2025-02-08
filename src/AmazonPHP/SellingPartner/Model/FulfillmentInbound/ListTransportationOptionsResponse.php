@@ -193,7 +193,7 @@ class ListTransportationOptionsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {
@@ -205,7 +205,7 @@ class ListTransportationOptionsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Gets transportation_options.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportationOption[]
+     * @return TransportationOption[]
      */
     public function getTransportationOptions() : array
     {
@@ -215,7 +215,7 @@ class ListTransportationOptionsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets transportation_options.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TransportationOption[] $transportation_options transportation options generated for the placement option
+     * @param TransportationOption[] $transportation_options transportation options generated for the placement option
      */
     public function setTransportationOptions(array $transportation_options) : self
     {

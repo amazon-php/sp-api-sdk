@@ -293,7 +293,7 @@ class PackedItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets packed_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ItemQuantity $packed_quantity packed_quantity
+     * @param ItemQuantity $packed_quantity packed_quantity
      */
     public function setPackedQuantity(ItemQuantity $packed_quantity) : self
     {

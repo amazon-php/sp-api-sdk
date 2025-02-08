@@ -195,7 +195,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Sets self.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject $self self
+     * @param LinkObject $self self
      */
     public function setSelf(LinkObject $self) : self
     {
@@ -207,7 +207,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Gets actions.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject[]
+     * @return LinkObject[]
      */
     public function getActions() : array
     {
@@ -217,7 +217,7 @@ class GetSolicitationActionsForOrderResponseLinks implements \ArrayAccess, \Json
     /**
      * Sets actions.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Solicitations\LinkObject[] $actions eligible actions for the specified amazonOrderId
+     * @param LinkObject[] $actions eligible actions for the specified amazonOrderId
      */
     public function setActions(array $actions) : self
     {

@@ -181,7 +181,7 @@ class ValidateContentDocumentAsinRelationsResponse implements \ArrayAccess, \Jso
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\Error[]
+     * @return null|Error[]
      */
     public function getWarnings() : ?array
     {
@@ -191,7 +191,7 @@ class ValidateContentDocumentAsinRelationsResponse implements \ArrayAccess, \Jso
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -203,7 +203,7 @@ class ValidateContentDocumentAsinRelationsResponse implements \ArrayAccess, \Jso
     /**
      * Gets errors.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\Error[]
+     * @return Error[]
      */
     public function getErrors() : array
     {
@@ -213,7 +213,7 @@ class ValidateContentDocumentAsinRelationsResponse implements \ArrayAccess, \Jso
     /**
      * Sets errors.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(array $errors) : self
     {

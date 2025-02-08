@@ -299,7 +299,7 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets issues.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\Issue[]
+     * @return null|Issue[]
      */
     public function getIssues() : ?array
     {
@@ -309,7 +309,7 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets issues.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\Issue[] $issues listings item issues related to the listings item submission
+     * @param null|Issue[] $issues listings item issues related to the listings item submission
      */
     public function setIssues(?array $issues) : self
     {
@@ -321,7 +321,7 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets identifiers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemIdentifiersByMarketplace[]
+     * @return null|ItemIdentifiersByMarketplace[]
      */
     public function getIdentifiers() : ?array
     {
@@ -331,7 +331,7 @@ class ListingsItemSubmissionResponse implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets identifiers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ListingsItems\ItemIdentifiersByMarketplace[] $identifiers identity attributes associated with the item in the Amazon catalog, such as the ASIN
+     * @param null|ItemIdentifiersByMarketplace[] $identifiers identity attributes associated with the item in the Amazon catalog, such as the ASIN
      */
     public function setIdentifiers(?array $identifiers) : self
     {

@@ -139,7 +139,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param string[] $marketplace_ids A comma-delimited list of Amazon marketplace identifiers for the request. (required)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function deleteListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null) : RequestInterface
     {
@@ -149,12 +149,14 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 'Missing the required parameter $seller_id when calling deleteListingsItem'
             );
         }
+
         // verify the required parameter 'sku' is set
         if ($sku === null || (\is_array($sku) && \count($sku) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $sku when calling deleteListingsItem'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -181,6 +183,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
@@ -202,6 +205,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($sku !== null) {
             $resourcePath = \str_replace(
@@ -375,7 +379,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      * @param null|string[] $included_data A comma-delimited list of data sets to include in the response. Default: &#x60;summaries&#x60;. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, ?string $issue_locale = null, ?array $included_data = null) : RequestInterface
     {
@@ -385,12 +389,14 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 'Missing the required parameter $seller_id when calling getListingsItem'
             );
         }
+
         // verify the required parameter 'sku' is set
         if ($sku === null || (\is_array($sku) && \count($sku) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $sku when calling getListingsItem'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -417,6 +423,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
@@ -425,6 +432,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($issue_locale !== null) {
             $queryParams['issueLocale'] = ObjectSerializer::toString($issue_locale);
         }
+
         // query params
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
@@ -446,6 +454,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($sku !== null) {
             $resourcePath = \str_replace(
@@ -623,7 +632,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param null|string $mode The mode of operation for the request. (optional)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function patchListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPatchRequest $body, ?array $included_data = null, ?string $mode = null, ?string $issue_locale = null) : RequestInterface
     {
@@ -633,12 +642,14 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 'Missing the required parameter $seller_id when calling patchListingsItem'
             );
         }
+
         // verify the required parameter 'sku' is set
         if ($sku === null || (\is_array($sku) && \count($sku) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $sku when calling patchListingsItem'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -672,6 +683,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
@@ -680,6 +692,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($included_data !== null) {
             $queryParams['includedData'] = ObjectSerializer::toString($included_data);
         }
+
         // query params
         if (\is_array($mode)) {
             $mode = ObjectSerializer::serializeCollection($mode, '', true);
@@ -688,6 +701,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($mode !== null) {
             $queryParams['mode'] = ObjectSerializer::toString($mode);
         }
+
         // query params
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
@@ -709,6 +723,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($sku !== null) {
             $resourcePath = \str_replace(
@@ -894,7 +909,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param null|string $mode The mode of operation for the request. (optional)
      * @param null|string $issue_locale A locale for localization of issues. When not provided, the default language code of the first marketplace is used. Examples: &#x60;en_US&#x60;, &#x60;fr_CA&#x60;, &#x60;fr_FR&#x60;. Localized messages default to &#x60;en_US&#x60; when a localization is not available in the specified locale. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function putListingsItemRequest(AccessToken $accessToken, string $region, string $seller_id, string $sku, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\ListingsItems\ListingsItemPutRequest $body, ?array $included_data = null, ?string $mode = null, ?string $issue_locale = null) : RequestInterface
     {
@@ -904,12 +919,14 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 'Missing the required parameter $seller_id when calling putListingsItem'
             );
         }
+
         // verify the required parameter 'sku' is set
         if ($sku === null || (\is_array($sku) && \count($sku) === 0)) {
             throw new InvalidArgumentException(
                 'Missing the required parameter $sku when calling putListingsItem'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -943,6 +960,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
@@ -951,6 +969,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($included_data !== null) {
             $queryParams['includedData'] = ObjectSerializer::toString($included_data);
         }
+
         // query params
         if (\is_array($mode)) {
             $mode = ObjectSerializer::serializeCollection($mode, '', true);
@@ -959,6 +978,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($mode !== null) {
             $queryParams['mode'] = ObjectSerializer::toString($mode);
         }
+
         // query params
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
@@ -980,6 +1000,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($sku !== null) {
             $resourcePath = \str_replace(
@@ -1189,7 +1210,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
      * @param null|int $page_size The number of results that you want to include on each page. (optional, default to 10)
      * @param null|string $page_token A token that you can use to fetch a specific page when there are multiple pages of results. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function searchListingsItemsRequest(AccessToken $accessToken, string $region, string $seller_id, array $marketplace_ids, ?string $issue_locale = null, ?array $included_data = null, ?array $identifiers = null, ?string $identifiers_type = null, ?string $variation_parent_sku = null, ?string $package_hierarchy_sku = null, ?\DateTimeInterface $created_after = null, ?\DateTimeInterface $created_before = null, ?\DateTimeInterface $last_updated_after = null, ?\DateTimeInterface $last_updated_before = null, ?array $with_issue_severity = null, ?array $with_status = null, ?array $without_status = null, ?string $sort_by = 'lastUpdatedDate', ?string $sort_order = 'DESC', ?int $page_size = 10, ?string $page_token = null) : RequestInterface
     {
@@ -1199,6 +1220,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
                 'Missing the required parameter $seller_id when calling searchListingsItems'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -1233,6 +1255,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($issue_locale)) {
             $issue_locale = ObjectSerializer::serializeCollection($issue_locale, '', true);
@@ -1241,6 +1264,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($issue_locale !== null) {
             $queryParams['issueLocale'] = ObjectSerializer::toString($issue_locale);
         }
+
         // query params
         if (\is_array($included_data)) {
             $included_data = ObjectSerializer::serializeCollection($included_data, 'form', true);
@@ -1249,6 +1273,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($included_data !== null) {
             $queryParams['includedData'] = ObjectSerializer::toString($included_data);
         }
+
         // query params
         if (\is_array($identifiers)) {
             $identifiers = ObjectSerializer::serializeCollection($identifiers, 'form', true);
@@ -1257,6 +1282,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($identifiers !== null) {
             $queryParams['identifiers'] = ObjectSerializer::toString($identifiers);
         }
+
         // query params
         if (\is_array($identifiers_type)) {
             $identifiers_type = ObjectSerializer::serializeCollection($identifiers_type, '', true);
@@ -1265,6 +1291,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($identifiers_type !== null) {
             $queryParams['identifiersType'] = ObjectSerializer::toString($identifiers_type);
         }
+
         // query params
         if (\is_array($variation_parent_sku)) {
             $variation_parent_sku = ObjectSerializer::serializeCollection($variation_parent_sku, '', true);
@@ -1273,6 +1300,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($variation_parent_sku !== null) {
             $queryParams['variationParentSku'] = ObjectSerializer::toString($variation_parent_sku);
         }
+
         // query params
         if (\is_array($package_hierarchy_sku)) {
             $package_hierarchy_sku = ObjectSerializer::serializeCollection($package_hierarchy_sku, '', true);
@@ -1281,6 +1309,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($package_hierarchy_sku !== null) {
             $queryParams['packageHierarchySku'] = ObjectSerializer::toString($package_hierarchy_sku);
         }
+
         // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -1289,6 +1318,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($created_after !== null) {
             $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -1297,6 +1327,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($created_before !== null) {
             $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
@@ -1305,6 +1336,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($last_updated_after !== null) {
             $queryParams['lastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
+
         // query params
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
@@ -1313,6 +1345,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($last_updated_before !== null) {
             $queryParams['lastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
+
         // query params
         if (\is_array($with_issue_severity)) {
             $with_issue_severity = ObjectSerializer::serializeCollection($with_issue_severity, 'form', true);
@@ -1321,6 +1354,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($with_issue_severity !== null) {
             $queryParams['withIssueSeverity'] = ObjectSerializer::toString($with_issue_severity);
         }
+
         // query params
         if (\is_array($with_status)) {
             $with_status = ObjectSerializer::serializeCollection($with_status, 'form', true);
@@ -1329,6 +1363,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($with_status !== null) {
             $queryParams['withStatus'] = ObjectSerializer::toString($with_status);
         }
+
         // query params
         if (\is_array($without_status)) {
             $without_status = ObjectSerializer::serializeCollection($without_status, 'form', true);
@@ -1337,6 +1372,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($without_status !== null) {
             $queryParams['withoutStatus'] = ObjectSerializer::toString($without_status);
         }
+
         // query params
         if (\is_array($sort_by)) {
             $sort_by = ObjectSerializer::serializeCollection($sort_by, '', true);
@@ -1345,6 +1381,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($sort_by !== null) {
             $queryParams['sortBy'] = ObjectSerializer::toString($sort_by);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -1353,6 +1390,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($page_size)) {
             $page_size = ObjectSerializer::serializeCollection($page_size, '', true);
@@ -1361,6 +1399,7 @@ final class ListingsItemsSDK implements ListingsItemsSDKInterface
         if ($page_size !== null) {
             $queryParams['pageSize'] = ObjectSerializer::toString($page_size);
         }
+
         // query params
         if (\is_array($page_token)) {
             $page_token = ObjectSerializer::serializeCollection($page_token, '', true);

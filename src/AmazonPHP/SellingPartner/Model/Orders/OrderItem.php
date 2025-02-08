@@ -582,7 +582,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Gets associated_items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\AssociatedItem[]
+     * @return null|AssociatedItem[]
      */
     public function getAssociatedItems() : ?array
     {
@@ -592,7 +592,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets associated_items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\AssociatedItem[] $associated_items A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
+     * @param null|AssociatedItem[] $associated_items A list of associated items that a customer has purchased with a product. For example, a tire installation service purchased with tires.
      */
     public function setAssociatedItems(?array $associated_items) : self
     {
@@ -672,7 +672,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets product_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ProductInfoDetail $product_info product_info
+     * @param null|ProductInfoDetail $product_info product_info
      */
     public function setProductInfo(?ProductInfoDetail $product_info) : self
     {
@@ -692,7 +692,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets points_granted.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\PointsGrantedDetail $points_granted points_granted
+     * @param null|PointsGrantedDetail $points_granted points_granted
      */
     public function setPointsGranted(?PointsGrantedDetail $points_granted) : self
     {
@@ -712,7 +712,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets item_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $item_price item_price
+     * @param null|Money $item_price item_price
      */
     public function setItemPrice(?Money $item_price) : self
     {
@@ -732,7 +732,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets shipping_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $shipping_price shipping_price
+     * @param null|Money $shipping_price shipping_price
      */
     public function setShippingPrice(?Money $shipping_price) : self
     {
@@ -752,7 +752,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets item_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $item_tax item_tax
+     * @param null|Money $item_tax item_tax
      */
     public function setItemTax(?Money $item_tax) : self
     {
@@ -772,7 +772,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets shipping_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $shipping_tax shipping_tax
+     * @param null|Money $shipping_tax shipping_tax
      */
     public function setShippingTax(?Money $shipping_tax) : self
     {
@@ -792,7 +792,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets shipping_discount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $shipping_discount shipping_discount
+     * @param null|Money $shipping_discount shipping_discount
      */
     public function setShippingDiscount(?Money $shipping_discount) : self
     {
@@ -812,7 +812,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets shipping_discount_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $shipping_discount_tax shipping_discount_tax
+     * @param null|Money $shipping_discount_tax shipping_discount_tax
      */
     public function setShippingDiscountTax(?Money $shipping_discount_tax) : self
     {
@@ -832,7 +832,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets promotion_discount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $promotion_discount promotion_discount
+     * @param null|Money $promotion_discount promotion_discount
      */
     public function setPromotionDiscount(?Money $promotion_discount) : self
     {
@@ -852,7 +852,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets promotion_discount_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $promotion_discount_tax promotion_discount_tax
+     * @param null|Money $promotion_discount_tax promotion_discount_tax
      */
     public function setPromotionDiscountTax(?Money $promotion_discount_tax) : self
     {
@@ -894,7 +894,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets cod_fee.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $cod_fee cod_fee
+     * @param null|Money $cod_fee cod_fee
      */
     public function setCodFee(?Money $cod_fee) : self
     {
@@ -914,7 +914,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets cod_fee_discount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $cod_fee_discount cod_fee_discount
+     * @param null|Money $cod_fee_discount cod_fee_discount
      */
     public function setCodFeeDiscount(?Money $cod_fee_discount) : self
     {
@@ -1074,7 +1074,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets tax_collection.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\TaxCollection $tax_collection tax_collection
+     * @param null|TaxCollection $tax_collection tax_collection
      */
     public function setTaxCollection(?TaxCollection $tax_collection) : self
     {
@@ -1194,7 +1194,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets buyer_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ItemBuyerInfo $buyer_info buyer_info
+     * @param null|ItemBuyerInfo $buyer_info buyer_info
      */
     public function setBuyerInfo(?ItemBuyerInfo $buyer_info) : self
     {
@@ -1214,7 +1214,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets buyer_requested_cancel.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BuyerRequestedCancel $buyer_requested_cancel buyer_requested_cancel
+     * @param null|BuyerRequestedCancel $buyer_requested_cancel buyer_requested_cancel
      */
     public function setBuyerRequestedCancel(?BuyerRequestedCancel $buyer_requested_cancel) : self
     {
@@ -1256,7 +1256,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets substitution_preferences.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\SubstitutionPreferences $substitution_preferences substitution_preferences
+     * @param null|SubstitutionPreferences $substitution_preferences substitution_preferences
      */
     public function setSubstitutionPreferences(?SubstitutionPreferences $substitution_preferences) : self
     {
@@ -1276,7 +1276,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets measurement.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Measurement $measurement measurement
+     * @param null|Measurement $measurement measurement
      */
     public function setMeasurement(?Measurement $measurement) : self
     {
@@ -1296,7 +1296,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets shipping_constraints.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ShippingConstraints $shipping_constraints shipping_constraints
+     * @param null|ShippingConstraints $shipping_constraints shipping_constraints
      */
     public function setShippingConstraints(?ShippingConstraints $shipping_constraints) : self
     {
@@ -1316,7 +1316,7 @@ class OrderItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets amazon_programs.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\AmazonPrograms $amazon_programs amazon_programs
+     * @param null|AmazonPrograms $amazon_programs amazon_programs
      */
     public function setAmazonPrograms(?AmazonPrograms $amazon_programs) : self
     {

@@ -137,7 +137,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function confirmCustomizationDetailsRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmCustomizationDetailsRequest $body) : RequestInterface
     {
@@ -147,6 +147,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling confirmCustomizationDetails'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -362,7 +363,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createAmazonMotorsRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateAmazonMotorsRequest $body) : RequestInterface
     {
@@ -372,6 +373,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createAmazonMotors'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -587,7 +589,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createConfirmDeliveryDetailsRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmDeliveryDetailsRequest $body) : RequestInterface
     {
@@ -597,6 +599,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createConfirmDeliveryDetails'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -812,7 +815,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createConfirmOrderDetailsRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmOrderDetailsRequest $body) : RequestInterface
     {
@@ -822,6 +825,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createConfirmOrderDetails'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -1037,7 +1041,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createConfirmServiceDetailsRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateConfirmServiceDetailsRequest $body) : RequestInterface
     {
@@ -1047,6 +1051,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createConfirmServiceDetails'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -1262,7 +1267,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createDigitalAccessKeyRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateDigitalAccessKeyRequest $body) : RequestInterface
     {
@@ -1272,6 +1277,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createDigitalAccessKey'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -1487,7 +1493,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createLegalDisclosureRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateLegalDisclosureRequest $body) : RequestInterface
     {
@@ -1497,6 +1503,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createLegalDisclosure'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -1710,7 +1717,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string $amazon_order_id An Amazon order identifier. This identifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createNegativeFeedbackRemovalRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : RequestInterface
     {
@@ -1720,6 +1727,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createNegativeFeedbackRemoval'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -1920,7 +1928,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createUnexpectedProblemRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateUnexpectedProblemRequest $body) : RequestInterface
     {
@@ -1930,6 +1938,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createUnexpectedProblem'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -2145,7 +2154,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createWarrantyRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\CreateWarrantyRequest $body) : RequestInterface
     {
@@ -2155,6 +2164,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling createWarranty'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -2368,7 +2378,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string $amazon_order_id An Amazon order identifier. This identifies the order for which a message is sent. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getAttributesRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : RequestInterface
     {
@@ -2378,6 +2388,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling getAttributes'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -2576,7 +2587,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string $amazon_order_id An Amazon order identifier. This specifies the order for which you want a list of available message types. (required)
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getMessagingActionsForOrderRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids) : RequestInterface
     {
@@ -2586,6 +2597,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling getMessagingActionsForOrder'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -2786,7 +2798,7 @@ final class MessagingSDK implements MessagingSDKInterface
      * @param string[] $marketplace_ids A marketplace identifier. This identifies the marketplace in which the order was placed. You can only specify one marketplace. (required)
      * @param \AmazonPHP\SellingPartner\Model\Messaging\InvoiceRequest $body This contains the message body for a message. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function sendInvoiceRequest(AccessToken $accessToken, string $region, string $amazon_order_id, array $marketplace_ids, \AmazonPHP\SellingPartner\Model\Messaging\InvoiceRequest $body) : RequestInterface
     {
@@ -2796,6 +2808,7 @@ final class MessagingSDK implements MessagingSDKInterface
                 'Missing the required parameter $amazon_order_id when calling sendInvoice'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(

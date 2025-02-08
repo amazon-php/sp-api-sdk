@@ -247,7 +247,7 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets fee_amount.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $fee_amount fee_amount
+     * @param MoneyType $fee_amount fee_amount
      */
     public function setFeeAmount(MoneyType $fee_amount) : self
     {
@@ -267,7 +267,7 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets fee_promotion.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $fee_promotion fee_promotion
+     * @param null|MoneyType $fee_promotion fee_promotion
      */
     public function setFeePromotion(?MoneyType $fee_promotion) : self
     {
@@ -287,7 +287,7 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets tax_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $tax_amount tax_amount
+     * @param null|MoneyType $tax_amount tax_amount
      */
     public function setTaxAmount(?MoneyType $tax_amount) : self
     {
@@ -307,7 +307,7 @@ class IncludedFeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets final_fee.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $final_fee final_fee
+     * @param MoneyType $final_fee final_fee
      */
     public function setFinalFee(MoneyType $final_fee) : self
     {

@@ -235,7 +235,7 @@ class TDSReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets reimbursed_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $reimbursed_amount reimbursed_amount
+     * @param null|Currency $reimbursed_amount reimbursed_amount
      */
     public function setReimbursedAmount(?Currency $reimbursed_amount) : self
     {

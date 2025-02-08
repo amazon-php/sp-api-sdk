@@ -186,7 +186,7 @@ class PrepInstruction implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets prep_owner.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\PrepOwner $prep_owner prep_owner
+     * @param null|PrepOwner $prep_owner prep_owner
      */
     public function setPrepOwner(?PrepOwner $prep_owner) : self
     {

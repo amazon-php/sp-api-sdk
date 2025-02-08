@@ -193,7 +193,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets label.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $label label
+     * @param null|TextComponent $label label
      */
     public function setLabel(?TextComponent $label) : self
     {
@@ -213,7 +213,7 @@ class StandardTextPairBlock implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets description.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $description description
+     * @param null|TextComponent $description description
      */
     public function setDescription(?TextComponent $description) : self
     {

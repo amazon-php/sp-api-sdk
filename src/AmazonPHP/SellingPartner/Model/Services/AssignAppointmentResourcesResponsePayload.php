@@ -172,7 +172,7 @@ class AssignAppointmentResourcesResponsePayload implements \ArrayAccess, \JsonSe
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Warning[]
+     * @return null|Warning[]
      */
     public function getWarnings() : ?array
     {
@@ -182,7 +182,7 @@ class AssignAppointmentResourcesResponsePayload implements \ArrayAccess, \JsonSe
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Warning[] $warnings a list of warnings returned in the sucessful execution response of an API request
+     * @param null|Warning[] $warnings a list of warnings returned in the sucessful execution response of an API request
      */
     public function setWarnings(?array $warnings) : self
     {

@@ -229,7 +229,7 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets fees_estimate_identifier.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateIdentifier $fees_estimate_identifier fees_estimate_identifier
+     * @param null|FeesEstimateIdentifier $fees_estimate_identifier fees_estimate_identifier
      */
     public function setFeesEstimateIdentifier(?FeesEstimateIdentifier $fees_estimate_identifier) : self
     {
@@ -249,7 +249,7 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets fees_estimate.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimate $fees_estimate fees_estimate
+     * @param null|FeesEstimate $fees_estimate fees_estimate
      */
     public function setFeesEstimate(?FeesEstimate $fees_estimate) : self
     {
@@ -269,7 +269,7 @@ class FeesEstimateResult implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets error.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateError $error error
+     * @param null|FeesEstimateError $error error
      */
     public function setError(?FeesEstimateError $error) : self
     {

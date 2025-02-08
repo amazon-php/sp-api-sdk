@@ -209,7 +209,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets total_charge.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Currency $total_charge total_charge
+     * @param null|Currency $total_charge total_charge
      */
     public function setTotalCharge(?Currency $total_charge) : self
     {
@@ -229,7 +229,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets billed_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Weight $billed_weight billed_weight
+     * @param null|Weight $billed_weight billed_weight
      */
     public function setBilledWeight(?Weight $billed_weight) : self
     {
@@ -249,7 +249,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets service_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\ServiceType $service_type service_type
+     * @param null|ServiceType $service_type service_type
      */
     public function setServiceType(?ServiceType $service_type) : self
     {
@@ -269,7 +269,7 @@ class AcceptedRate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets promise.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\ShippingPromiseSet $promise promise
+     * @param null|ShippingPromiseSet $promise promise
      */
     public function setPromise(?ShippingPromiseSet $promise) : self
     {

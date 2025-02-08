@@ -179,7 +179,7 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Gets responses.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersResponse[]
+     * @return null|ItemOffersResponse[]
      */
     public function getResponses() : ?array
     {
@@ -189,7 +189,7 @@ class GetItemOffersBatchResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets responses.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ItemOffersResponse[] $responses a list of `getItemOffers` batched responses
+     * @param null|ItemOffersResponse[] $responses a list of `getItemOffers` batched responses
      */
     public function setResponses(?array $responses) : self
     {

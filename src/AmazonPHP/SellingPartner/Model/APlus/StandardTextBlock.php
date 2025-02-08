@@ -193,7 +193,7 @@ class StandardTextBlock implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -213,7 +213,7 @@ class StandardTextBlock implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets body.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent $body body
+     * @param null|ParagraphComponent $body body
      */
     public function setBody(?ParagraphComponent $body) : self
     {

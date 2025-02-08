@@ -189,7 +189,7 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {
@@ -201,7 +201,7 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets shipping_labels.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel[]
+     * @return null|ShippingLabel[]
      */
     public function getShippingLabels() : ?array
     {
@@ -211,7 +211,7 @@ class ShippingLabelList implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets shipping_labels.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ShippingLabel[] $shipping_labels an array containing the details of the generated shipping labels
+     * @param null|ShippingLabel[] $shipping_labels an array containing the details of the generated shipping labels
      */
     public function setShippingLabels(?array $shipping_labels) : self
     {

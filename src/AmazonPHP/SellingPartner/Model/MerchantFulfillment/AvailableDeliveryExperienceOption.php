@@ -195,7 +195,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Sets delivery_experience_option.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\DeliveryExperienceOption $delivery_experience_option delivery_experience_option
+     * @param DeliveryExperienceOption $delivery_experience_option delivery_experience_option
      */
     public function setDeliveryExperienceOption(DeliveryExperienceOption $delivery_experience_option) : self
     {
@@ -215,7 +215,7 @@ class AvailableDeliveryExperienceOption implements \ArrayAccess, \JsonSerializab
     /**
      * Sets charge.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\CurrencyAmount $charge charge
+     * @param CurrencyAmount $charge charge
      */
     public function setCharge(CurrencyAmount $charge) : self
     {

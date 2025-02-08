@@ -193,7 +193,7 @@ class Amount implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets currency_code.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\CurrencyCode $currency_code currency_code
+     * @param CurrencyCode $currency_code currency_code
      */
     public function setCurrencyCode(CurrencyCode $currency_code) : self
     {

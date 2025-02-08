@@ -383,7 +383,7 @@ class TransportationDetails implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets carrier_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\CarrierDetails $carrier_details carrier_details
+     * @param null|CarrierDetails $carrier_details carrier_details
      */
     public function setCarrierDetails(?CarrierDetails $carrier_details) : self
     {

@@ -247,7 +247,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets reimbursed_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $reimbursed_amount reimbursed_amount
+     * @param null|Currency $reimbursed_amount reimbursed_amount
      */
     public function setReimbursedAmount(?Currency $reimbursed_amount) : self
     {
@@ -279,7 +279,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets safet_reimbursement_item_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\SAFETReimbursementItem[]
+     * @return null|SAFETReimbursementItem[]
      */
     public function getSafetReimbursementItemList() : ?array
     {
@@ -289,7 +289,7 @@ class SAFETReimbursementEvent implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets safet_reimbursement_item_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\SAFETReimbursementItem[] $safet_reimbursement_item_list a list of SAFETReimbursementItems
+     * @param null|SAFETReimbursementItem[] $safet_reimbursement_item_list a list of SAFETReimbursementItems
      */
     public function setSafetReimbursementItemList(?array $safet_reimbursement_item_list) : self
     {

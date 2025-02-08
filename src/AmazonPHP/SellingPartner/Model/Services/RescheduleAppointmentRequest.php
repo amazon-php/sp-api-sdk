@@ -195,7 +195,7 @@ class RescheduleAppointmentRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets appointment_time.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Services\AppointmentTimeInput $appointment_time appointment_time
+     * @param AppointmentTimeInput $appointment_time appointment_time
      */
     public function setAppointmentTime(AppointmentTimeInput $appointment_time) : self
     {

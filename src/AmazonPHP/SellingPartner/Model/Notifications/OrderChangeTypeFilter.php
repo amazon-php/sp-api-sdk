@@ -172,7 +172,7 @@ class OrderChangeTypeFilter implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets order_change_types.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\OrderChangeTypeEnum[]
+     * @return null|OrderChangeTypeEnum[]
      */
     public function getOrderChangeTypes() : ?array
     {
@@ -182,7 +182,7 @@ class OrderChangeTypeFilter implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets order_change_types.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\OrderChangeTypeEnum[] $order_change_types A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
+     * @param null|OrderChangeTypeEnum[] $order_change_types A list of order change types to subscribe to (for example: `BuyerRequestedChange`). To receive notifications of all change types, do not provide this list.
      */
     public function setOrderChangeTypes(?array $order_change_types) : self
     {

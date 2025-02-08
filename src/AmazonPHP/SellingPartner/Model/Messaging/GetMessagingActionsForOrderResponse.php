@@ -199,7 +199,7 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets _links.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponseLinks $_links _links
+     * @param null|GetMessagingActionsForOrderResponseLinks $_links _links
      */
     public function setLinks(?GetMessagingActionsForOrderResponseLinks $_links) : self
     {
@@ -219,7 +219,7 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets _embedded.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\GetMessagingActionsForOrderResponseEmbedded $_embedded _embedded
+     * @param null|GetMessagingActionsForOrderResponseEmbedded $_embedded _embedded
      */
     public function setEmbedded(?GetMessagingActionsForOrderResponseEmbedded $_embedded) : self
     {
@@ -231,7 +231,7 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -241,7 +241,7 @@ class GetMessagingActionsForOrderResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

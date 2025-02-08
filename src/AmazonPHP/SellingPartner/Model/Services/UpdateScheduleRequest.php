@@ -175,7 +175,7 @@ class UpdateScheduleRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets schedules.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord[]
+     * @return AvailabilityRecord[]
      */
     public function getSchedules() : array
     {
@@ -185,7 +185,7 @@ class UpdateScheduleRequest implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets schedules.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Services\AvailabilityRecord[] $schedules list of `AvailabilityRecord`s to represent the capacity of a resource over a time range
+     * @param AvailabilityRecord[] $schedules list of `AvailabilityRecord`s to represent the capacity of a resource over a time range
      */
     public function setSchedules(array $schedules) : self
     {

@@ -129,7 +129,7 @@ final class SellersSDK implements SellersSDKInterface
     /**
      * Create request for operation 'getAccount'.
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getAccountRequest(AccessToken $accessToken, string $region) : RequestInterface
     {
@@ -296,7 +296,7 @@ final class SellersSDK implements SellersSDKInterface
     /**
      * Create request for operation 'getMarketplaceParticipations'.
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getMarketplaceParticipationsRequest(AccessToken $accessToken, string $region) : RequestInterface
     {

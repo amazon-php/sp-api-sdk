@@ -251,7 +251,7 @@ class Event implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets location.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Location $location location
+     * @param null|Location $location location
      */
     public function setLocation(?Location $location) : self
     {

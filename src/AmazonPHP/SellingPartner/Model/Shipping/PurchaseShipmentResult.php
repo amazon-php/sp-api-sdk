@@ -225,7 +225,7 @@ class PurchaseShipmentResult implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets service_rate.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\ServiceRate $service_rate service_rate
+     * @param ServiceRate $service_rate service_rate
      */
     public function setServiceRate(ServiceRate $service_rate) : self
     {
@@ -237,7 +237,7 @@ class PurchaseShipmentResult implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets label_results.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\LabelResult[]
+     * @return LabelResult[]
      */
     public function getLabelResults() : array
     {
@@ -247,7 +247,7 @@ class PurchaseShipmentResult implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets label_results.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\LabelResult[] $label_results A list of label results
+     * @param LabelResult[] $label_results A list of label results
      */
     public function setLabelResults(array $label_results) : self
     {

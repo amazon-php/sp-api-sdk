@@ -291,7 +291,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets ship_from.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_from ship_from
+     * @param Address $ship_from ship_from
      */
     public function setShipFrom(Address $ship_from) : self
     {
@@ -311,7 +311,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets ship_to.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_to ship_to
+     * @param Address $ship_to ship_to
      */
     public function setShipTo(Address $ship_to) : self
     {
@@ -331,7 +331,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets accepted_rate.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate $accepted_rate accepted_rate
+     * @param null|AcceptedRate $accepted_rate accepted_rate
      */
     public function setAcceptedRate(?AcceptedRate $accepted_rate) : self
     {
@@ -351,7 +351,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets shipper.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Party $shipper shipper
+     * @param null|Party $shipper shipper
      */
     public function setShipper(?Party $shipper) : self
     {
@@ -363,7 +363,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Gets containers.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Container[]
+     * @return Container[]
      */
     public function getContainers() : array
     {
@@ -373,7 +373,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets containers.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Container[] $containers a list of container
+     * @param Container[] $containers a list of container
      */
     public function setContainers(array $containers) : self
     {

@@ -195,7 +195,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets marketplace_asin.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\ASINIdentifier $marketplace_asin marketplace_asin
+     * @param ASINIdentifier $marketplace_asin marketplace_asin
      */
     public function setMarketplaceAsin(ASINIdentifier $marketplace_asin) : self
     {
@@ -215,7 +215,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets sku_identifier.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\SellerSKUIdentifier $sku_identifier sku_identifier
+     * @param null|SellerSKUIdentifier $sku_identifier sku_identifier
      */
     public function setSkuIdentifier(?SellerSKUIdentifier $sku_identifier) : self
     {

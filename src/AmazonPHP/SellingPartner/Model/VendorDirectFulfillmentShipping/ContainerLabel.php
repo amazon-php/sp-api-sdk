@@ -239,7 +239,7 @@ class ContainerLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets format.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ContainerLabelFormat $format format
+     * @param ContainerLabelFormat $format format
      */
     public function setFormat(ContainerLabelFormat $format) : self
     {

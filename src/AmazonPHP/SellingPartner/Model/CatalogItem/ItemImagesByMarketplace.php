@@ -205,7 +205,7 @@ class ItemImagesByMarketplace implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets images.
      *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\ItemImage[]
+     * @return ItemImage[]
      */
     public function getImages() : array
     {
@@ -215,7 +215,7 @@ class ItemImagesByMarketplace implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets images.
      *
-     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\ItemImage[] $images images for an item in the Amazon catalog for the indicated Amazon marketplace
+     * @param ItemImage[] $images images for an item in the Amazon catalog for the indicated Amazon marketplace
      */
     public function setImages(array $images) : self
     {

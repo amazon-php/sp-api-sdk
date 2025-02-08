@@ -217,7 +217,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Gets carton_identifiers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ContainerIdentification[]
+     * @return null|ContainerIdentification[]
      */
     public function getCartonIdentifiers() : ?array
     {
@@ -227,7 +227,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets carton_identifiers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ContainerIdentification[] $carton_identifiers a list of carton identifiers
+     * @param null|ContainerIdentification[] $carton_identifiers a list of carton identifiers
      */
     public function setCartonIdentifiers(?array $carton_identifiers) : self
     {
@@ -267,7 +267,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions $dimensions dimensions
+     * @param null|Dimensions $dimensions dimensions
      */
     public function setDimensions(?Dimensions $dimensions) : self
     {
@@ -287,7 +287,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $weight weight
+     * @param null|Weight $weight weight
      */
     public function setWeight(?Weight $weight) : self
     {
@@ -319,7 +319,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ContainerItem[]
+     * @return ContainerItem[]
      */
     public function getItems() : array
     {
@@ -329,7 +329,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\ContainerItem[] $items a list of container item details
+     * @param ContainerItem[] $items a list of container item details
      */
     public function setItems(array $items) : self
     {

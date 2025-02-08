@@ -189,7 +189,7 @@ class TransportationLabels implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {
@@ -201,7 +201,7 @@ class TransportationLabels implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets transport_labels.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportLabel[]
+     * @return null|TransportLabel[]
      */
     public function getTransportLabels() : ?array
     {
@@ -211,7 +211,7 @@ class TransportationLabels implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets transport_labels.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportLabel[] $transport_labels a list of one or more ShipmentLabels
+     * @param null|TransportLabel[] $transport_labels a list of one or more ShipmentLabels
      */
     public function setTransportLabels(?array $transport_labels) : self
     {

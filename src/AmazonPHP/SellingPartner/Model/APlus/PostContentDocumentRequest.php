@@ -185,7 +185,7 @@ class PostContentDocumentRequest implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets content_document.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentDocument $content_document content_document
+     * @param ContentDocument $content_document content_document
      */
     public function setContentDocument(ContentDocument $content_document) : self
     {

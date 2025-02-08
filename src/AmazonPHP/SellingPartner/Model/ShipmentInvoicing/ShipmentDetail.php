@@ -349,7 +349,7 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets shipping_address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\Address $shipping_address shipping_address
+     * @param null|Address $shipping_address shipping_address
      */
     public function setShippingAddress(?Address $shipping_address) : self
     {
@@ -471,7 +471,7 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets buyer_tax_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\BuyerTaxInfo $buyer_tax_info buyer_tax_info
+     * @param null|BuyerTaxInfo $buyer_tax_info buyer_tax_info
      */
     public function setBuyerTaxInfo(?BuyerTaxInfo $buyer_tax_info) : self
     {
@@ -491,7 +491,7 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets marketplace_tax_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\MarketplaceTaxInfo $marketplace_tax_info marketplace_tax_info
+     * @param null|MarketplaceTaxInfo $marketplace_tax_info marketplace_tax_info
      */
     public function setMarketplaceTaxInfo(?MarketplaceTaxInfo $marketplace_tax_info) : self
     {
@@ -523,7 +523,7 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets shipment_items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentItem[]
+     * @return null|ShipmentItem[]
      */
     public function getShipmentItems() : ?array
     {
@@ -533,7 +533,7 @@ class ShipmentDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets shipment_items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentItem[] $shipment_items a list of shipment items
+     * @param null|ShipmentItem[] $shipment_items a list of shipment items
      */
     public function setShipmentItems(?array $shipment_items) : self
     {

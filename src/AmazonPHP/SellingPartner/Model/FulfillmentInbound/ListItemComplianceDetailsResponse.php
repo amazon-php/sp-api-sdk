@@ -172,7 +172,7 @@ class ListItemComplianceDetailsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Gets compliance_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ComplianceDetail[]
+     * @return null|ComplianceDetail[]
      */
     public function getComplianceDetails() : ?array
     {
@@ -182,7 +182,7 @@ class ListItemComplianceDetailsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets compliance_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ComplianceDetail[] $compliance_details list of compliance details
+     * @param null|ComplianceDetail[] $compliance_details list of compliance details
      */
     public function setComplianceDetails(?array $compliance_details) : self
     {

@@ -233,7 +233,7 @@ class Business implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets registered_business_address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sellers\Address $registered_business_address registered_business_address
+     * @param Address $registered_business_address registered_business_address
      */
     public function setRegisteredBusinessAddress(Address $registered_business_address) : self
     {

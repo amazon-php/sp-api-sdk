@@ -207,7 +207,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets classification_ranks.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemClassificationSalesRank[]
+     * @return null|ItemClassificationSalesRank[]
      */
     public function getClassificationRanks() : ?array
     {
@@ -217,7 +217,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets classification_ranks.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemClassificationSalesRank[] $classification_ranks sales ranks of an Amazon catalog item for an Amazon marketplace by classification
+     * @param null|ItemClassificationSalesRank[] $classification_ranks sales ranks of an Amazon catalog item for an Amazon marketplace by classification
      */
     public function setClassificationRanks(?array $classification_ranks) : self
     {
@@ -229,7 +229,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets display_group_ranks.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemDisplayGroupSalesRank[]
+     * @return null|ItemDisplayGroupSalesRank[]
      */
     public function getDisplayGroupRanks() : ?array
     {
@@ -239,7 +239,7 @@ class ItemSalesRanksByMarketplace implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets display_group_ranks.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemDisplayGroupSalesRank[] $display_group_ranks sales ranks of an Amazon catalog item for an Amazon marketplace by website display group
+     * @param null|ItemDisplayGroupSalesRank[] $display_group_ranks sales ranks of an Amazon catalog item for an Amazon marketplace by website display group
      */
     public function setDisplayGroupRanks(?array $display_group_ranks) : self
     {

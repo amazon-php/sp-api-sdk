@@ -253,7 +253,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets fee_amount.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $fee_amount fee_amount
+     * @param MoneyType $fee_amount fee_amount
      */
     public function setFeeAmount(MoneyType $fee_amount) : self
     {
@@ -273,7 +273,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets fee_promotion.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $fee_promotion fee_promotion
+     * @param null|MoneyType $fee_promotion fee_promotion
      */
     public function setFeePromotion(?MoneyType $fee_promotion) : self
     {
@@ -293,7 +293,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets tax_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $tax_amount tax_amount
+     * @param null|MoneyType $tax_amount tax_amount
      */
     public function setTaxAmount(?MoneyType $tax_amount) : self
     {
@@ -313,7 +313,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets final_fee.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $final_fee final_fee
+     * @param MoneyType $final_fee final_fee
      */
     public function setFinalFee(MoneyType $final_fee) : self
     {
@@ -325,7 +325,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Gets included_fee_detail_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\IncludedFeeDetail[]
+     * @return null|IncludedFeeDetail[]
      */
     public function getIncludedFeeDetailList() : ?array
     {
@@ -335,7 +335,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets included_fee_detail_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\IncludedFeeDetail[] $included_fee_detail_list a list of other fees that contribute to a given fee
+     * @param null|IncludedFeeDetail[] $included_fee_detail_list a list of other fees that contribute to a given fee
      */
     public function setIncludedFeeDetailList(?array $included_fee_detail_list) : self
     {

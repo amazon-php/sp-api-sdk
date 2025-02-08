@@ -223,7 +223,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Address $address address
+     * @param null|Address $address address
      */
     public function setAddress(?Address $address) : self
     {
@@ -243,7 +243,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets tax_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\TaxRegistrationDetails $tax_info tax_info
+     * @param null|TaxRegistrationDetails $tax_info tax_info
      */
     public function setTaxInfo(?TaxRegistrationDetails $tax_info) : self
     {

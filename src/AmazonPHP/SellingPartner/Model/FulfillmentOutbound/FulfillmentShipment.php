@@ -386,7 +386,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets fulfillment_shipment_item.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentShipmentItem[]
+     * @return FulfillmentShipmentItem[]
      */
     public function getFulfillmentShipmentItem() : array
     {
@@ -396,7 +396,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets fulfillment_shipment_item.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentShipmentItem[] $fulfillment_shipment_item an array of fulfillment shipment item information
+     * @param FulfillmentShipmentItem[] $fulfillment_shipment_item an array of fulfillment shipment item information
      */
     public function setFulfillmentShipmentItem(array $fulfillment_shipment_item) : self
     {
@@ -408,7 +408,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets fulfillment_shipment_package.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentShipmentPackage[]
+     * @return null|FulfillmentShipmentPackage[]
      */
     public function getFulfillmentShipmentPackage() : ?array
     {
@@ -418,7 +418,7 @@ class FulfillmentShipment implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets fulfillment_shipment_package.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentShipmentPackage[] $fulfillment_shipment_package an array of fulfillment shipment package information
+     * @param null|FulfillmentShipmentPackage[] $fulfillment_shipment_package an array of fulfillment shipment package information
      */
     public function setFulfillmentShipmentPackage(?array $fulfillment_shipment_package) : self
     {

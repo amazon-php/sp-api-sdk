@@ -305,7 +305,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets locker_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\LockerDetails $locker_details locker_details
+     * @param null|LockerDetails $locker_details locker_details
      */
     public function setLockerDetails(?LockerDetails $locker_details) : self
     {
@@ -325,7 +325,7 @@ class FulfillmentShipmentPackage implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets delivery_information.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryInformation $delivery_information delivery_information
+     * @param null|DeliveryInformation $delivery_information delivery_information
      */
     public function setDeliveryInformation(?DeliveryInformation $delivery_information) : self
     {

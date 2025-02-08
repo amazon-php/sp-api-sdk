@@ -203,7 +203,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets expiration_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ExpirationDetails[]
+     * @return null|ExpirationDetails[]
      */
     public function getExpirationDetails() : ?array
     {
@@ -213,7 +213,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets expiration_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\ExpirationDetails[] $expiration_details The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
+     * @param null|ExpirationDetails[] $expiration_details The expiration details of the inventory. This object will only appear if the `details` parameter in the request is set to `SHOW`.
      */
     public function setExpirationDetails(?array $expiration_details) : self
     {
@@ -233,7 +233,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets inventory_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryDetails $inventory_details inventory_details
+     * @param null|InventoryDetails $inventory_details inventory_details
      */
     public function setInventoryDetails(?InventoryDetails $inventory_details) : self
     {

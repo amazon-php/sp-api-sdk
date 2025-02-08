@@ -195,7 +195,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets shipment_request_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShipmentRequestDetails $shipment_request_details shipment_request_details
+     * @param ShipmentRequestDetails $shipment_request_details shipment_request_details
      */
     public function setShipmentRequestDetails(ShipmentRequestDetails $shipment_request_details) : self
     {
@@ -215,7 +215,7 @@ class GetEligibleShipmentServicesRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets shipping_offering_filter.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingOfferingFilter $shipping_offering_filter shipping_offering_filter
+     * @param null|ShippingOfferingFilter $shipping_offering_filter shipping_offering_filter
      */
     public function setShippingOfferingFilter(?ShippingOfferingFilter $shipping_offering_filter) : self
     {

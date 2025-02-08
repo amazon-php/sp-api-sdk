@@ -180,7 +180,7 @@ class SubmitFulfillmentOrderStatusUpdateRequest implements \ArrayAccess, \JsonSe
     /**
      * Sets fulfillment_order_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentOrderStatus $fulfillment_order_status fulfillment_order_status
+     * @param null|FulfillmentOrderStatus $fulfillment_order_status fulfillment_order_status
      */
     public function setFulfillmentOrderStatus(?FulfillmentOrderStatus $fulfillment_order_status) : self
     {

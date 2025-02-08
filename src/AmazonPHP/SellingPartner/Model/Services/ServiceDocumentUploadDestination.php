@@ -251,7 +251,7 @@ class ServiceDocumentUploadDestination implements \ArrayAccess, \JsonSerializabl
     /**
      * Sets encryption_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Services\EncryptionDetails $encryption_details encryption_details
+     * @param EncryptionDetails $encryption_details encryption_details
      */
     public function setEncryptionDetails(EncryptionDetails $encryption_details) : self
     {

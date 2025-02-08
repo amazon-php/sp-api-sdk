@@ -198,7 +198,7 @@ class ShippingConstraints implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets pallet_delivery.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ConstraintType $pallet_delivery pallet_delivery
+     * @param null|ConstraintType $pallet_delivery pallet_delivery
      */
     public function setPalletDelivery(?ConstraintType $pallet_delivery) : self
     {
@@ -218,7 +218,7 @@ class ShippingConstraints implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets signature_confirmation.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ConstraintType $signature_confirmation signature_confirmation
+     * @param null|ConstraintType $signature_confirmation signature_confirmation
      */
     public function setSignatureConfirmation(?ConstraintType $signature_confirmation) : self
     {
@@ -238,7 +238,7 @@ class ShippingConstraints implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets recipient_identity_verification.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ConstraintType $recipient_identity_verification recipient_identity_verification
+     * @param null|ConstraintType $recipient_identity_verification recipient_identity_verification
      */
     public function setRecipientIdentityVerification(?ConstraintType $recipient_identity_verification) : self
     {
@@ -258,7 +258,7 @@ class ShippingConstraints implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets recipient_age_verification.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ConstraintType $recipient_age_verification recipient_age_verification
+     * @param null|ConstraintType $recipient_age_verification recipient_age_verification
      */
     public function setRecipientAgeVerification(?ConstraintType $recipient_age_verification) : self
     {

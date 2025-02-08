@@ -206,7 +206,7 @@ class Length implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets unit.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\UnitOfLength $unit unit
+     * @param null|UnitOfLength $unit unit
      */
     public function setUnit(?UnitOfLength $unit) : self
     {

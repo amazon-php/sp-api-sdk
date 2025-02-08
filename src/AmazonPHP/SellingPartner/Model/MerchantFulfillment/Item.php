@@ -287,7 +287,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets item_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\Weight $item_weight item_weight
+     * @param null|Weight $item_weight item_weight
      */
     public function setItemWeight(?Weight $item_weight) : self
     {
@@ -341,7 +341,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets item_level_seller_inputs_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInputs[]
+     * @return null|AdditionalSellerInputs[]
      */
     public function getItemLevelSellerInputsList() : ?array
     {
@@ -351,7 +351,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets item_level_seller_inputs_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInputs[] $item_level_seller_inputs_list a list of additional seller input pairs required to purchase shipping
+     * @param null|AdditionalSellerInputs[] $item_level_seller_inputs_list a list of additional seller input pairs required to purchase shipping
      */
     public function setItemLevelSellerInputsList(?array $item_level_seller_inputs_list) : self
     {
@@ -371,7 +371,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets liquid_volume.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LiquidVolume $liquid_volume liquid_volume
+     * @param null|LiquidVolume $liquid_volume liquid_volume
      */
     public function setLiquidVolume(?LiquidVolume $liquid_volume) : self
     {
@@ -411,7 +411,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets dangerous_goods_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\DangerousGoodsDetails $dangerous_goods_details dangerous_goods_details
+     * @param null|DangerousGoodsDetails $dangerous_goods_details dangerous_goods_details
      */
     public function setDangerousGoodsDetails(?DangerousGoodsDetails $dangerous_goods_details) : self
     {

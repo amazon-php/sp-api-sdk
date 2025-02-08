@@ -133,7 +133,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createDestinationRequest(AccessToken $accessToken, string $region, \AmazonPHP\SellingPartner\Model\Notifications\CreateDestinationRequest $body) : RequestInterface
     {
@@ -321,7 +321,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function createSubscriptionRequest(AccessToken $accessToken, string $region, string $notification_type, \AmazonPHP\SellingPartner\Model\Notifications\CreateSubscriptionRequest $body) : RequestInterface
     {
@@ -331,6 +331,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
                 'Missing the required parameter $notification_type when calling createSubscription'
             );
         }
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(
@@ -522,7 +523,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @param string $destination_id The identifier for the destination that you want to delete. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function deleteDestinationRequest(AccessToken $accessToken, string $region, string $destination_id) : RequestInterface
     {
@@ -711,7 +712,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * @param string $subscription_id The identifier for the subscription that you want to delete. (required)
      * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function deleteSubscriptionByIdRequest(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : RequestInterface
     {
@@ -721,6 +722,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
                 'Missing the required parameter $subscription_id when calling deleteSubscriptionById'
             );
         }
+
         // verify the required parameter 'notification_type' is set
         if ($notification_type === null || (\is_array($notification_type) && \count($notification_type) === 0)) {
             throw new InvalidArgumentException(
@@ -747,6 +749,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($notification_type !== null) {
             $resourcePath = \str_replace(
@@ -912,7 +915,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      *
      * @param string $destination_id The identifier generated when you created the destination. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getDestinationRequest(AccessToken $accessToken, string $region, string $destination_id) : RequestInterface
     {
@@ -1095,7 +1098,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
     /**
      * Create request for operation 'getDestinations'.
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getDestinationsRequest(AccessToken $accessToken, string $region) : RequestInterface
     {
@@ -1268,7 +1271,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      * @param null|string $payload_version The version of the payload object to be used in the notification. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getSubscriptionRequest(AccessToken $accessToken, string $region, string $notification_type, ?string $payload_version = null) : RequestInterface
     {
@@ -1466,7 +1469,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
      * @param string $subscription_id The identifier for the subscription that you want to get. (required)
      * @param string $notification_type The type of notification.   For more information about notification types, refer to [Notification Type Values](https://developer-docs.amazon.com/sp-api/docs/notification-type-values). (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getSubscriptionByIdRequest(AccessToken $accessToken, string $region, string $subscription_id, string $notification_type) : RequestInterface
     {
@@ -1476,6 +1479,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
                 'Missing the required parameter $subscription_id when calling getSubscriptionById'
             );
         }
+
         // verify the required parameter 'notification_type' is set
         if ($notification_type === null || (\is_array($notification_type) && \count($notification_type) === 0)) {
             throw new InvalidArgumentException(
@@ -1502,6 +1506,7 @@ final class NotificationsSDK implements NotificationsSDKInterface
                 $resourcePath
             );
         }
+
         // path params
         if ($notification_type !== null) {
             $resourcePath = \str_replace(

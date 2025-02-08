@@ -303,7 +303,7 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets charge_amount.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\Money $charge_amount charge_amount
+     * @param Money $charge_amount charge_amount
      */
     public function setChargeAmount(Money $charge_amount) : self
     {
@@ -315,7 +315,7 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets tax_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[]
+     * @return null|TaxDetails[]
      */
     public function getTaxDetails() : ?array
     {
@@ -325,7 +325,7 @@ class ChargeDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets tax_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[] $tax_details tax amount details applied on this charge
+     * @param null|TaxDetails[] $tax_details tax amount details applied on this charge
      */
     public function setTaxDetails(?array $tax_details) : self
     {

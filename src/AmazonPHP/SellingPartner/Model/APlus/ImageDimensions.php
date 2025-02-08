@@ -197,7 +197,7 @@ class ImageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets width.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits $width width
+     * @param IntegerWithUnits $width width
      */
     public function setWidth(IntegerWithUnits $width) : self
     {
@@ -217,7 +217,7 @@ class ImageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets height.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\IntegerWithUnits $height height
+     * @param IntegerWithUnits $height height
      */
     public function setHeight(IntegerWithUnits $height) : self
     {

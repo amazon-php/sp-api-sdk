@@ -183,7 +183,7 @@ class ShipmentInvoiceStatusResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets shipments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatusInfo $shipments shipments
+     * @param null|ShipmentInvoiceStatusInfo $shipments shipments
      */
     public function setShipments(?ShipmentInvoiceStatusInfo $shipments) : self
     {

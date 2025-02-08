@@ -197,7 +197,7 @@ class ContainerSpecification implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets dimensions.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Dimensions $dimensions dimensions
+     * @param Dimensions $dimensions dimensions
      */
     public function setDimensions(Dimensions $dimensions) : self
     {
@@ -217,7 +217,7 @@ class ContainerSpecification implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets weight.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Weight $weight weight
+     * @param Weight $weight weight
      */
     public function setWeight(Weight $weight) : self
     {

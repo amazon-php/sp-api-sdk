@@ -277,7 +277,7 @@ class PurchaseOrderItems implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets shipped_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity $shipped_quantity shipped_quantity
+     * @param ItemQuantity $shipped_quantity shipped_quantity
      */
     public function setShippedQuantity(ItemQuantity $shipped_quantity) : self
     {
@@ -297,7 +297,7 @@ class PurchaseOrderItems implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets maximum_retail_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Money $maximum_retail_price maximum_retail_price
+     * @param null|Money $maximum_retail_price maximum_retail_price
      */
     public function setMaximumRetailPrice(?Money $maximum_retail_price) : self
     {

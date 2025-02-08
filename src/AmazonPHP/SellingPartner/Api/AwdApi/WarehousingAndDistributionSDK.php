@@ -135,7 +135,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
      * @param string $shipment_id ID for the shipment. A shipment contains the cases being inbounded. (required)
      * @param null|string $sku_quantities If equal to &#x60;SHOW&#x60;, the response includes the shipment SKU quantity details.  Defaults to &#x60;HIDE&#x60;, in which case the response does not contain SKU quantities (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getInboundShipmentRequest(AccessToken $accessToken, string $region, string $shipment_id, ?string $sku_quantities = null) : RequestInterface
     {
@@ -347,7 +347,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
      * @param null|int $max_results Maximum number of results to return. (optional, default to 25)
      * @param null|string $next_token A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listInboundShipmentsRequest(AccessToken $accessToken, string $region, ?string $sort_by = null, ?string $sort_order = null, ?string $shipment_status = null, ?\DateTimeInterface $updated_after = null, ?\DateTimeInterface $updated_before = null, ?int $max_results = 25, ?string $next_token = null) : RequestInterface
     {
@@ -374,6 +374,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($sort_by !== null) {
             $queryParams['sortBy'] = ObjectSerializer::toString($sort_by);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -382,6 +383,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($shipment_status)) {
             $shipment_status = ObjectSerializer::serializeCollection($shipment_status, '', true);
@@ -390,6 +392,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($shipment_status !== null) {
             $queryParams['shipmentStatus'] = ObjectSerializer::toString($shipment_status);
         }
+
         // query params
         if (\is_array($updated_after)) {
             $updated_after = ObjectSerializer::serializeCollection($updated_after, '', true);
@@ -398,6 +401,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($updated_after !== null) {
             $queryParams['updatedAfter'] = ObjectSerializer::toString($updated_after);
         }
+
         // query params
         if (\is_array($updated_before)) {
             $updated_before = ObjectSerializer::serializeCollection($updated_before, '', true);
@@ -406,6 +410,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($updated_before !== null) {
             $queryParams['updatedBefore'] = ObjectSerializer::toString($updated_before);
         }
+
         // query params
         if (\is_array($max_results)) {
             $max_results = ObjectSerializer::serializeCollection($max_results, '', true);
@@ -414,6 +419,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($max_results !== null) {
             $queryParams['maxResults'] = ObjectSerializer::toString($max_results);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -591,7 +597,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
      * @param null|string $next_token A token that is used to retrieve the next page of results. The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;maxResults&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
      * @param null|int $max_results Maximum number of results to return. (optional, default to 25)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listInventoryRequest(AccessToken $accessToken, string $region, ?string $sku = null, ?string $sort_order = null, ?string $details = null, ?string $next_token = null, ?int $max_results = 25) : RequestInterface
     {
@@ -618,6 +624,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($sku !== null) {
             $queryParams['sku'] = ObjectSerializer::toString($sku);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -626,6 +633,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($details)) {
             $details = ObjectSerializer::serializeCollection($details, '', true);
@@ -634,6 +642,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($details !== null) {
             $queryParams['details'] = ObjectSerializer::toString($details);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -642,6 +651,7 @@ final class WarehousingAndDistributionSDK implements WarehousingAndDistributionS
         if ($next_token !== null) {
             $queryParams['nextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($max_results)) {
             $max_results = ObjectSerializer::serializeCollection($max_results, '', true);

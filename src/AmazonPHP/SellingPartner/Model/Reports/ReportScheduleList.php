@@ -175,7 +175,7 @@ class ReportScheduleList implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets report_schedules.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule[]
+     * @return ReportSchedule[]
      */
     public function getReportSchedules() : array
     {
@@ -185,7 +185,7 @@ class ReportScheduleList implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets report_schedules.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Reports\ReportSchedule[] $report_schedules detailed information about a report schedule
+     * @param ReportSchedule[] $report_schedules detailed information about a report schedule
      */
     public function setReportSchedules(array $report_schedules) : self
     {

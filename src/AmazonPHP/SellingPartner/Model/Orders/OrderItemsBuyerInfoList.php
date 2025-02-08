@@ -191,7 +191,7 @@ class OrderItemsBuyerInfoList implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets order_items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\OrderItemBuyerInfo[]
+     * @return OrderItemBuyerInfo[]
      */
     public function getOrderItems() : array
     {
@@ -201,7 +201,7 @@ class OrderItemsBuyerInfoList implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets order_items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\OrderItemBuyerInfo[] $order_items a single order item's buyer information list
+     * @param OrderItemBuyerInfo[] $order_items a single order item's buyer information list
      */
     public function setOrderItems(array $order_items) : self
     {

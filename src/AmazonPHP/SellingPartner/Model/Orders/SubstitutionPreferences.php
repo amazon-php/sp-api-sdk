@@ -233,7 +233,7 @@ class SubstitutionPreferences implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets substitution_options.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\SubstitutionOption[]
+     * @return null|SubstitutionOption[]
      */
     public function getSubstitutionOptions() : ?array
     {
@@ -243,7 +243,7 @@ class SubstitutionPreferences implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets substitution_options.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\SubstitutionOption[] $substitution_options a collection of substitution options
+     * @param null|SubstitutionOption[] $substitution_options a collection of substitution options
      */
     public function setSubstitutionOptions(?array $substitution_options) : self
     {

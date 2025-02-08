@@ -185,7 +185,7 @@ class CreateContainerLabelResponse implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets container_label.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\ContainerLabel $container_label container_label
+     * @param ContainerLabel $container_label container_label
      */
     public function setContainerLabel(ContainerLabel $container_label) : self
     {

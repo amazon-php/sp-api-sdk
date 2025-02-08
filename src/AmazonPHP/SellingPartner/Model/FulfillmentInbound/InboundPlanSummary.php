@@ -367,7 +367,7 @@ class InboundPlanSummary implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets source_address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Address $source_address source_address
+     * @param Address $source_address source_address
      */
     public function setSourceAddress(Address $source_address) : self
     {
