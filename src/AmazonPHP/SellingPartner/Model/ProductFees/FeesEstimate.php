@@ -219,7 +219,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets total_fees_estimate.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $total_fees_estimate total_fees_estimate
+     * @param null|MoneyType $total_fees_estimate total_fees_estimate
      */
     public function setTotalFeesEstimate(?MoneyType $total_fees_estimate) : self
     {
@@ -231,7 +231,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets fee_detail_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductFees\FeeDetail[]
+     * @return null|FeeDetail[]
      */
     public function getFeeDetailList() : ?array
     {
@@ -241,7 +241,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets fee_detail_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\FeeDetail[] $fee_detail_list a list of other fees that contribute to a given fee
+     * @param null|FeeDetail[] $fee_detail_list a list of other fees that contribute to a given fee
      */
     public function setFeeDetailList(?array $fee_detail_list) : self
     {

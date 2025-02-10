@@ -191,7 +191,7 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\Error[]
+     * @return null|Error[]
      */
     public function getWarnings() : ?array
     {
@@ -201,7 +201,7 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -233,7 +233,7 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Gets publish_record_list.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[]
+     * @return PublishRecord[]
      */
     public function getPublishRecordList() : array
     {
@@ -243,7 +243,7 @@ class SearchContentPublishRecordsResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets publish_record_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\PublishRecord[] $publish_record_list a list of A+ Content publishing records
+     * @param PublishRecord[] $publish_record_list a list of A+ Content publishing records
      */
     public function setPublishRecordList(array $publish_record_list) : self
     {

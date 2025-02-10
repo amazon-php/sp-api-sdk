@@ -223,7 +223,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Gets pallet_identifiers.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\ContainerIdentification[]
+     * @return ContainerIdentification[]
      */
     public function getPalletIdentifiers() : array
     {
@@ -233,7 +233,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets pallet_identifiers.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\ContainerIdentification[] $pallet_identifiers a list of pallet identifiers
+     * @param ContainerIdentification[] $pallet_identifiers a list of pallet identifiers
      */
     public function setPalletIdentifiers(array $pallet_identifiers) : self
     {
@@ -293,7 +293,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Dimensions $dimensions dimensions
+     * @param null|Dimensions $dimensions dimensions
      */
     public function setDimensions(?Dimensions $dimensions) : self
     {
@@ -313,7 +313,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $weight weight
+     * @param null|Weight $weight weight
      */
     public function setWeight(?Weight $weight) : self
     {
@@ -333,7 +333,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets carton_reference_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\CartonReferenceDetails $carton_reference_details carton_reference_details
+     * @param null|CartonReferenceDetails $carton_reference_details carton_reference_details
      */
     public function setCartonReferenceDetails(?CartonReferenceDetails $carton_reference_details) : self
     {
@@ -345,7 +345,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Gets items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\ContainerItem[]
+     * @return null|ContainerItem[]
      */
     public function getItems() : ?array
     {
@@ -355,7 +355,7 @@ class Pallet implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ContainerItem[] $items a list of container item details
+     * @param null|ContainerItem[] $items a list of container item details
      */
     public function setItems(?array $items) : self
     {

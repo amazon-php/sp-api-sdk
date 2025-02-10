@@ -308,7 +308,7 @@ class FulfillmentPreviewItem implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets estimated_shipping_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight $estimated_shipping_weight estimated_shipping_weight
+     * @param null|Weight $estimated_shipping_weight estimated_shipping_weight
      */
     public function setEstimatedShippingWeight(?Weight $estimated_shipping_weight) : self
     {

@@ -175,7 +175,7 @@ class GetRatesResult implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets service_rates.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\ServiceRate[]
+     * @return ServiceRate[]
      */
     public function getServiceRates() : array
     {
@@ -185,7 +185,7 @@ class GetRatesResult implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets service_rates.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\ServiceRate[] $service_rates a list of service rates
+     * @param ServiceRate[] $service_rates a list of service rates
      */
     public function setServiceRates(array $service_rates) : self
     {

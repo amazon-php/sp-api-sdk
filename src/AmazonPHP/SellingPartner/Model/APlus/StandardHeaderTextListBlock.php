@@ -193,7 +193,7 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -213,7 +213,7 @@ class StandardHeaderTextListBlock implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets block.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardTextListBlock $block block
+     * @param null|StandardTextListBlock $block block
      */
     public function setBlock(?StandardTextListBlock $block) : self
     {

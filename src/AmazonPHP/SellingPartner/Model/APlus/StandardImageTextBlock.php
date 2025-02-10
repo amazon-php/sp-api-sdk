@@ -203,7 +203,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets image.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent $image image
+     * @param null|ImageComponent $image image
      */
     public function setImage(?ImageComponent $image) : self
     {
@@ -223,7 +223,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets headline.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $headline headline
+     * @param null|TextComponent $headline headline
      */
     public function setHeadline(?TextComponent $headline) : self
     {
@@ -243,7 +243,7 @@ class StandardImageTextBlock implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets body.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ParagraphComponent $body body
+     * @param null|ParagraphComponent $body body
      */
     public function setBody(?ParagraphComponent $body) : self
     {

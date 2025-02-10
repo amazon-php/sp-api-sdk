@@ -198,7 +198,7 @@ class ListTransactionsResponse implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Gets transactions.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Transaction[]
+     * @return null|Transaction[]
      */
     public function getTransactions() : ?array
     {
@@ -208,7 +208,7 @@ class ListTransactionsResponse implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets transactions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Transaction[] $transactions a list of transactions within the specified time period
+     * @param null|Transaction[] $transactions a list of transactions within the specified time period
      */
     public function setTransactions(?array $transactions) : self
     {

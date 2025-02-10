@@ -132,7 +132,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload Request body of &#x60;confirmShipment&#x60;. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function confirmShipmentRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentRequest $payload) : RequestInterface
     {
@@ -142,6 +142,7 @@ final class OrdersSDK implements OrdersSDKInterface
                 'Missing the required parameter $order_id when calling confirmShipment'
             );
         }
+
         // verify the required parameter 'payload' is set
         if ($payload === null || (\is_array($payload) && \count($payload) === 0)) {
             throw new InvalidArgumentException(
@@ -335,7 +336,7 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface
     {
@@ -524,7 +525,7 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @param string $order_id An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderAddressRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface
     {
@@ -713,7 +714,7 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @param string $order_id An &#x60;orderId&#x60; is an Amazon-defined order identifier, in 3-7-7 format. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderBuyerInfoRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface
     {
@@ -904,7 +905,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderItemsRequest(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : RequestInterface
     {
@@ -1104,7 +1105,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param null|string $next_token A string token returned in the response of your previous request. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderItemsBuyerInfoRequest(AccessToken $accessToken, string $region, string $order_id, ?string $next_token = null) : RequestInterface
     {
@@ -1302,7 +1303,7 @@ final class OrdersSDK implements OrdersSDKInterface
      *
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrderRegulatedInfoRequest(AccessToken $accessToken, string $region, string $order_id) : RequestInterface
     {
@@ -1533,7 +1534,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param null|string $latest_delivery_date_before Use this date to select orders with a latest delivery date before (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)
      * @param null|string $latest_delivery_date_after Use this date to select orders with a latest delivery date after (or at) a specified time. The date must be in [ISO 8601](https://developer-docs.amazon.com/sp-api/docs/iso-8601) format. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getOrdersRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?string $created_after = null, ?string $created_before = null, ?string $last_updated_after = null, ?string $last_updated_before = null, ?array $order_statuses = null, ?array $fulfillment_channels = null, ?array $payment_methods = null, ?string $buyer_email = null, ?string $seller_order_id = null, ?int $max_results_per_page = null, ?array $easy_ship_shipment_statuses = null, ?array $electronic_invoice_statuses = null, ?string $next_token = null, ?array $amazon_order_ids = null, ?string $actual_fulfillment_supply_source_id = null, ?bool $is_ispu = null, ?string $store_chain_store_id = null, ?string $earliest_delivery_date_before = null, ?string $earliest_delivery_date_after = null, ?string $latest_delivery_date_before = null, ?string $latest_delivery_date_after = null) : RequestInterface
     {
@@ -1567,6 +1568,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($created_after !== null) {
             $queryParams['CreatedAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -1575,6 +1577,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($created_before !== null) {
             $queryParams['CreatedBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($last_updated_after)) {
             $last_updated_after = ObjectSerializer::serializeCollection($last_updated_after, '', true);
@@ -1583,6 +1586,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($last_updated_after !== null) {
             $queryParams['LastUpdatedAfter'] = ObjectSerializer::toString($last_updated_after);
         }
+
         // query params
         if (\is_array($last_updated_before)) {
             $last_updated_before = ObjectSerializer::serializeCollection($last_updated_before, '', true);
@@ -1591,6 +1595,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($last_updated_before !== null) {
             $queryParams['LastUpdatedBefore'] = ObjectSerializer::toString($last_updated_before);
         }
+
         // query params
         if (\is_array($order_statuses)) {
             $order_statuses = ObjectSerializer::serializeCollection($order_statuses, 'form', true);
@@ -1599,6 +1604,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($order_statuses !== null) {
             $queryParams['OrderStatuses'] = ObjectSerializer::toString($order_statuses);
         }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -1607,6 +1613,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($marketplace_ids !== null) {
             $queryParams['MarketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($fulfillment_channels)) {
             $fulfillment_channels = ObjectSerializer::serializeCollection($fulfillment_channels, 'form', true);
@@ -1615,6 +1622,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($fulfillment_channels !== null) {
             $queryParams['FulfillmentChannels'] = ObjectSerializer::toString($fulfillment_channels);
         }
+
         // query params
         if (\is_array($payment_methods)) {
             $payment_methods = ObjectSerializer::serializeCollection($payment_methods, 'form', true);
@@ -1623,6 +1631,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($payment_methods !== null) {
             $queryParams['PaymentMethods'] = ObjectSerializer::toString($payment_methods);
         }
+
         // query params
         if (\is_array($buyer_email)) {
             $buyer_email = ObjectSerializer::serializeCollection($buyer_email, '', true);
@@ -1631,6 +1640,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($buyer_email !== null) {
             $queryParams['BuyerEmail'] = ObjectSerializer::toString($buyer_email);
         }
+
         // query params
         if (\is_array($seller_order_id)) {
             $seller_order_id = ObjectSerializer::serializeCollection($seller_order_id, '', true);
@@ -1639,6 +1649,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($seller_order_id !== null) {
             $queryParams['SellerOrderId'] = ObjectSerializer::toString($seller_order_id);
         }
+
         // query params
         if (\is_array($max_results_per_page)) {
             $max_results_per_page = ObjectSerializer::serializeCollection($max_results_per_page, '', true);
@@ -1647,6 +1658,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($max_results_per_page !== null) {
             $queryParams['MaxResultsPerPage'] = ObjectSerializer::toString($max_results_per_page);
         }
+
         // query params
         if (\is_array($easy_ship_shipment_statuses)) {
             $easy_ship_shipment_statuses = ObjectSerializer::serializeCollection($easy_ship_shipment_statuses, 'form', true);
@@ -1655,6 +1667,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($easy_ship_shipment_statuses !== null) {
             $queryParams['EasyShipShipmentStatuses'] = ObjectSerializer::toString($easy_ship_shipment_statuses);
         }
+
         // query params
         if (\is_array($electronic_invoice_statuses)) {
             $electronic_invoice_statuses = ObjectSerializer::serializeCollection($electronic_invoice_statuses, 'form', true);
@@ -1663,6 +1676,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($electronic_invoice_statuses !== null) {
             $queryParams['ElectronicInvoiceStatuses'] = ObjectSerializer::toString($electronic_invoice_statuses);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);
@@ -1671,6 +1685,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($next_token !== null) {
             $queryParams['NextToken'] = ObjectSerializer::toString($next_token);
         }
+
         // query params
         if (\is_array($amazon_order_ids)) {
             $amazon_order_ids = ObjectSerializer::serializeCollection($amazon_order_ids, 'form', true);
@@ -1679,6 +1694,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($amazon_order_ids !== null) {
             $queryParams['AmazonOrderIds'] = ObjectSerializer::toString($amazon_order_ids);
         }
+
         // query params
         if (\is_array($actual_fulfillment_supply_source_id)) {
             $actual_fulfillment_supply_source_id = ObjectSerializer::serializeCollection($actual_fulfillment_supply_source_id, '', true);
@@ -1687,6 +1703,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($actual_fulfillment_supply_source_id !== null) {
             $queryParams['ActualFulfillmentSupplySourceId'] = ObjectSerializer::toString($actual_fulfillment_supply_source_id);
         }
+
         // query params
         if (\is_array($is_ispu)) {
             $is_ispu = ObjectSerializer::serializeCollection($is_ispu, '', true);
@@ -1695,6 +1712,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($is_ispu !== null) {
             $queryParams['IsISPU'] = ObjectSerializer::toString($is_ispu);
         }
+
         // query params
         if (\is_array($store_chain_store_id)) {
             $store_chain_store_id = ObjectSerializer::serializeCollection($store_chain_store_id, '', true);
@@ -1703,6 +1721,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($store_chain_store_id !== null) {
             $queryParams['StoreChainStoreId'] = ObjectSerializer::toString($store_chain_store_id);
         }
+
         // query params
         if (\is_array($earliest_delivery_date_before)) {
             $earliest_delivery_date_before = ObjectSerializer::serializeCollection($earliest_delivery_date_before, '', true);
@@ -1711,6 +1730,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($earliest_delivery_date_before !== null) {
             $queryParams['EarliestDeliveryDateBefore'] = ObjectSerializer::toString($earliest_delivery_date_before);
         }
+
         // query params
         if (\is_array($earliest_delivery_date_after)) {
             $earliest_delivery_date_after = ObjectSerializer::serializeCollection($earliest_delivery_date_after, '', true);
@@ -1719,6 +1739,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($earliest_delivery_date_after !== null) {
             $queryParams['EarliestDeliveryDateAfter'] = ObjectSerializer::toString($earliest_delivery_date_after);
         }
+
         // query params
         if (\is_array($latest_delivery_date_before)) {
             $latest_delivery_date_before = ObjectSerializer::serializeCollection($latest_delivery_date_before, '', true);
@@ -1727,6 +1748,7 @@ final class OrdersSDK implements OrdersSDKInterface
         if ($latest_delivery_date_before !== null) {
             $queryParams['LatestDeliveryDateBefore'] = ObjectSerializer::toString($latest_delivery_date_before);
         }
+
         // query params
         if (\is_array($latest_delivery_date_after)) {
             $latest_delivery_date_after = ObjectSerializer::serializeCollection($latest_delivery_date_after, '', true);
@@ -1895,7 +1917,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload The request body for the &#x60;updateShipmentStatus&#x60; operation. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateShipmentStatusRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateShipmentStatusRequest $payload) : RequestInterface
     {
@@ -1905,6 +1927,7 @@ final class OrdersSDK implements OrdersSDKInterface
                 'Missing the required parameter $order_id when calling updateShipmentStatus'
             );
         }
+
         // verify the required parameter 'payload' is set
         if ($payload === null || (\is_array($payload) && \count($payload) === 0)) {
             throw new InvalidArgumentException(
@@ -2095,7 +2118,7 @@ final class OrdersSDK implements OrdersSDKInterface
      * @param string $order_id An Amazon-defined order identifier, in 3-7-7 format. (required)
      * @param \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload The request body for the &#x60;updateVerificationStatus&#x60; operation. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function updateVerificationStatusRequest(AccessToken $accessToken, string $region, string $order_id, \AmazonPHP\SellingPartner\Model\Orders\UpdateVerificationStatusRequest $payload) : RequestInterface
     {
@@ -2105,6 +2128,7 @@ final class OrdersSDK implements OrdersSDKInterface
                 'Missing the required parameter $order_id when calling updateVerificationStatus'
             );
         }
+
         // verify the required parameter 'payload' is set
         if ($payload === null || (\is_array($payload) && \count($payload) === 0)) {
             throw new InvalidArgumentException(

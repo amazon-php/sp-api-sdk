@@ -206,7 +206,7 @@ class LabelFormatOption implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets label_format.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\LabelFormat $label_format label_format
+     * @param null|LabelFormat $label_format label_format
      */
     public function setLabelFormat(?LabelFormat $label_format) : self
     {

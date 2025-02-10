@@ -183,7 +183,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets text_list.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\TextComponent[]
+     * @return TextComponent[]
      */
     public function getTextList() : array
     {
@@ -193,7 +193,7 @@ class ParagraphComponent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets text_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\TextComponent[] $text_list text_list
+     * @param TextComponent[] $text_list text_list
      */
     public function setTextList(array $text_list) : self
     {

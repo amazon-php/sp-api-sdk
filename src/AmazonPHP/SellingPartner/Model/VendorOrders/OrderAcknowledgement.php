@@ -235,7 +235,7 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -267,7 +267,7 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\OrderAcknowledgementItem[]
+     * @return OrderAcknowledgementItem[]
      */
     public function getItems() : array
     {
@@ -277,7 +277,7 @@ class OrderAcknowledgement implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\OrderAcknowledgementItem[] $items a list of the items being acknowledged with associated details
+     * @param OrderAcknowledgementItem[] $items a list of the items being acknowledged with associated details
      */
     public function setItems(array $items) : self
     {

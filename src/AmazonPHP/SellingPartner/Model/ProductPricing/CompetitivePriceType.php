@@ -257,7 +257,7 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\PriceType $price price
+     * @param PriceType $price price
      */
     public function setPrice(PriceType $price) : self
     {
@@ -317,7 +317,7 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets offer_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferCustomerType $offer_type offer_type
+     * @param null|OfferCustomerType $offer_type offer_type
      */
     public function setOfferType(?OfferCustomerType $offer_type) : self
     {
@@ -357,7 +357,7 @@ class CompetitivePriceType implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets quantity_discount_type.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\QuantityDiscountType $quantity_discount_type quantity_discount_type
+     * @param null|QuantityDiscountType $quantity_discount_type quantity_discount_type
      */
     public function setQuantityDiscountType(?QuantityDiscountType $quantity_discount_type) : self
     {

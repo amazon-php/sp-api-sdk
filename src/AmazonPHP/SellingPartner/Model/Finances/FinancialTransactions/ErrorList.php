@@ -175,7 +175,7 @@ class ErrorList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Gets errors.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Error[]
+     * @return Error[]
      */
     public function getErrors() : array
     {
@@ -185,7 +185,7 @@ class ErrorList implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
     /**
      * Sets errors.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Finances\FinancialTransactions\Error[] $errors the error responses that are returned when the request is unsuccessful
+     * @param Error[] $errors the error responses that are returned when the request is unsuccessful
      */
     public function setErrors(array $errors) : self
     {

@@ -178,7 +178,7 @@ class GetShipmentsResult implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets shipment_data.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\InboundShipmentInfo[]
+     * @return null|InboundShipmentInfo[]
      */
     public function getShipmentData() : ?array
     {
@@ -188,7 +188,7 @@ class GetShipmentsResult implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets shipment_data.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\InboundShipmentInfo[] $shipment_data a list of inbound shipment information
+     * @param null|InboundShipmentInfo[] $shipment_data a list of inbound shipment information
      */
     public function setShipmentData(?array $shipment_data) : self
     {

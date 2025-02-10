@@ -145,7 +145,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * @param null|string $requirements_enforced Identifies if the required attributes for a requirements set are enforced by the product type definition schema. Non-enforced requirements enable structural validation of individual attributes without all the required attributes being present (such as for partial updates). (optional, default to 'ENFORCED')
      * @param null|string $locale Locale for retrieving display labels and other presentation details. Defaults to the default language of the first marketplace in the request. (optional, default to 'DEFAULT')
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getDefinitionsProductTypeRequest(AccessToken $accessToken, string $region, string $product_type, array $marketplace_ids, ?string $seller_id = null, ?string $product_type_version = 'LATEST', ?string $requirements = 'LISTING', ?string $requirements_enforced = 'ENFORCED', ?string $locale = 'DEFAULT') : RequestInterface
     {
@@ -155,6 +155,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
                 'Missing the required parameter $product_type when calling getDefinitionsProductType'
             );
         }
+
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
             throw new InvalidArgumentException(
@@ -177,6 +178,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($seller_id !== null) {
             $queryParams['sellerId'] = ObjectSerializer::toString($seller_id);
         }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -185,6 +187,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($product_type_version)) {
             $product_type_version = ObjectSerializer::serializeCollection($product_type_version, '', true);
@@ -193,6 +196,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($product_type_version !== null) {
             $queryParams['productTypeVersion'] = ObjectSerializer::toString($product_type_version);
         }
+
         // query params
         if (\is_array($requirements)) {
             $requirements = ObjectSerializer::serializeCollection($requirements, '', true);
@@ -201,6 +205,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($requirements !== null) {
             $queryParams['requirements'] = ObjectSerializer::toString($requirements);
         }
+
         // query params
         if (\is_array($requirements_enforced)) {
             $requirements_enforced = ObjectSerializer::serializeCollection($requirements_enforced, '', true);
@@ -209,6 +214,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($requirements_enforced !== null) {
             $queryParams['requirementsEnforced'] = ObjectSerializer::toString($requirements_enforced);
         }
+
         // query params
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
@@ -395,7 +401,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
      * @param null|string $locale The locale for the display names in the response. Defaults to the primary locale of the marketplace. (optional)
      * @param null|string $search_locale The locale used for the &#x60;keywords&#x60; and &#x60;itemName&#x60; parameters. Defaults to the primary locale of the marketplace. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, array $marketplace_ids, ?array $keywords = null, ?string $item_name = null, ?string $locale = null, ?string $search_locale = null) : RequestInterface
     {
@@ -421,6 +427,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($keywords !== null) {
             $queryParams['keywords'] = ObjectSerializer::toString($keywords);
         }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
@@ -429,6 +436,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($marketplace_ids !== null) {
             $queryParams['marketplaceIds'] = ObjectSerializer::toString($marketplace_ids);
         }
+
         // query params
         if (\is_array($item_name)) {
             $item_name = ObjectSerializer::serializeCollection($item_name, '', true);
@@ -437,6 +445,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($item_name !== null) {
             $queryParams['itemName'] = ObjectSerializer::toString($item_name);
         }
+
         // query params
         if (\is_array($locale)) {
             $locale = ObjectSerializer::serializeCollection($locale, '', true);
@@ -445,6 +454,7 @@ final class ProductTypesDefinitionsSDK implements ProductTypesDefinitionsSDKInte
         if ($locale !== null) {
             $queryParams['locale'] = ObjectSerializer::toString($locale);
         }
+
         // query params
         if (\is_array($search_locale)) {
             $search_locale = ObjectSerializer::serializeCollection($search_locale, '', true);

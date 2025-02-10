@@ -250,7 +250,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Sets appointment_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\AppointmentTime $appointment_time appointment_time
+     * @param null|AppointmentTime $appointment_time appointment_time
      */
     public function setAppointmentTime(?AppointmentTime $appointment_time) : self
     {
@@ -262,7 +262,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Gets technicians.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Technician[]
+     * @return null|Technician[]
      */
     public function getTechnicians() : ?array
     {
@@ -272,7 +272,7 @@ class Poa implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
     /**
      * Sets technicians.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Technician[] $technicians a list of technicians
+     * @param null|Technician[] $technicians a list of technicians
      */
     public function setTechnicians(?array $technicians) : self
     {

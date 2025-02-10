@@ -197,7 +197,7 @@ class GetDeliveryOffersTerms implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets origin.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Origin $origin origin
+     * @param Origin $origin origin
      */
     public function setOrigin(Origin $origin) : self
     {
@@ -217,7 +217,7 @@ class GetDeliveryOffersTerms implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets destination.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Destination $destination destination
+     * @param Destination $destination destination
      */
     public function setDestination(Destination $destination) : self
     {

@@ -193,7 +193,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Gets shipping_service_list.
      *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingService[]
+     * @return ShippingService[]
      */
     public function getShippingServiceList() : array
     {
@@ -203,7 +203,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Sets shipping_service_list.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\ShippingService[] $shipping_service_list a list of shipping services offers
+     * @param ShippingService[] $shipping_service_list a list of shipping services offers
      */
     public function setShippingServiceList(array $shipping_service_list) : self
     {
@@ -215,7 +215,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Gets rejected_shipping_service_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\RejectedShippingService[]
+     * @return null|RejectedShippingService[]
      */
     public function getRejectedShippingServiceList() : ?array
     {
@@ -225,7 +225,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Sets rejected_shipping_service_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\RejectedShippingService[] $rejected_shipping_service_list List of services that are for some reason unavailable for this request
+     * @param null|RejectedShippingService[] $rejected_shipping_service_list List of services that are for some reason unavailable for this request
      */
     public function setRejectedShippingServiceList(?array $rejected_shipping_service_list) : self
     {
@@ -237,7 +237,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Gets temporarily_unavailable_carrier_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[]
+     * @return null|TemporarilyUnavailableCarrier[]
      */
     public function getTemporarilyUnavailableCarrierList() : ?array
     {
@@ -247,7 +247,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Sets temporarily_unavailable_carrier_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\TemporarilyUnavailableCarrier[] $temporarily_unavailable_carrier_list a list of temporarily unavailable carriers
+     * @param null|TemporarilyUnavailableCarrier[] $temporarily_unavailable_carrier_list a list of temporarily unavailable carriers
      */
     public function setTemporarilyUnavailableCarrierList(?array $temporarily_unavailable_carrier_list) : self
     {
@@ -259,7 +259,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Gets terms_and_conditions_not_accepted_carrier_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[]
+     * @return null|TermsAndConditionsNotAcceptedCarrier[]
      */
     public function getTermsAndConditionsNotAcceptedCarrierList() : ?array
     {
@@ -269,7 +269,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
     /**
      * Sets terms_and_conditions_not_accepted_carrier_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\TermsAndConditionsNotAcceptedCarrier[] $terms_and_conditions_not_accepted_carrier_list list of carriers whose terms and conditions were not accepted by the seller
+     * @param null|TermsAndConditionsNotAcceptedCarrier[] $terms_and_conditions_not_accepted_carrier_list list of carriers whose terms and conditions were not accepted by the seller
      */
     public function setTermsAndConditionsNotAcceptedCarrierList(?array $terms_and_conditions_not_accepted_carrier_list) : self
     {

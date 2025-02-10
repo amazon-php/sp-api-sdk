@@ -205,7 +205,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Sets status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\VerificationStatus $status status
+     * @param null|VerificationStatus $status status
      */
     public function setStatus(?VerificationStatus $status) : self
     {
@@ -265,7 +265,7 @@ class UpdateVerificationStatusRequestBody implements \ArrayAccess, \JsonSerializ
     /**
      * Sets verification_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\VerificationDetails $verification_details verification_details
+     * @param null|VerificationDetails $verification_details verification_details
      */
     public function setVerificationDetails(?VerificationDetails $verification_details) : self
     {

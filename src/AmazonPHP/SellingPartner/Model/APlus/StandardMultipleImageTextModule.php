@@ -172,7 +172,7 @@ class StandardMultipleImageTextModule implements \ArrayAccess, \JsonSerializable
     /**
      * Gets blocks.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextCaptionBlock[]
+     * @return null|StandardImageTextCaptionBlock[]
      */
     public function getBlocks() : ?array
     {
@@ -182,7 +182,7 @@ class StandardMultipleImageTextModule implements \ArrayAccess, \JsonSerializable
     /**
      * Sets blocks.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\StandardImageTextCaptionBlock[] $blocks blocks
+     * @param null|StandardImageTextCaptionBlock[] $blocks blocks
      */
     public function setBlocks(?array $blocks) : self
     {

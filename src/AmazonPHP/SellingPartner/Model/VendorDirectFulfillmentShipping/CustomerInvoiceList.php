@@ -189,7 +189,7 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {
@@ -201,7 +201,7 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets customer_invoices.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice[]
+     * @return null|CustomerInvoice[]
      */
     public function getCustomerInvoices() : ?array
     {
@@ -211,7 +211,7 @@ class CustomerInvoiceList implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets customer_invoices.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\CustomerInvoice[] $customer_invoices represents a customer invoice within the `CustomerInvoiceList`
+     * @param null|CustomerInvoice[] $customer_invoices represents a customer invoice within the `CustomerInvoiceList`
      */
     public function setCustomerInvoices(?array $customer_invoices) : self
     {

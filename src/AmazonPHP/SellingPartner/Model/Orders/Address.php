@@ -560,7 +560,7 @@ class Address implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets extended_fields.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\AddressExtendedFields $extended_fields extended_fields
+     * @param null|AddressExtendedFields $extended_fields extended_fields
      */
     public function setExtendedFields(?AddressExtendedFields $extended_fields) : self
     {

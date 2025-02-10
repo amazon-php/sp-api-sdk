@@ -288,7 +288,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets allowance_amount.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorInvoices\Money $allowance_amount allowance_amount
+     * @param Money $allowance_amount allowance_amount
      */
     public function setAllowanceAmount(Money $allowance_amount) : self
     {
@@ -300,7 +300,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets tax_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[]
+     * @return null|TaxDetails[]
      */
     public function getTaxDetails() : ?array
     {
@@ -310,7 +310,7 @@ class AllowanceDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets tax_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorInvoices\TaxDetails[] $tax_details tax amount details applied on this allowance
+     * @param null|TaxDetails[] $tax_details tax amount details applied on this allowance
      */
     public function setTaxDetails(?array $tax_details) : self
     {

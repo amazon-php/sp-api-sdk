@@ -193,7 +193,7 @@ class SubmitAcknowledgementResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\TransactionId $payload payload
+     * @param null|TransactionId $payload payload
      */
     public function setPayload(?TransactionId $payload) : self
     {
@@ -213,7 +213,7 @@ class SubmitAcknowledgementResponse implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\ErrorList $errors errors
+     * @param null|ErrorList $errors errors
      */
     public function setErrors(?ErrorList $errors) : self
     {

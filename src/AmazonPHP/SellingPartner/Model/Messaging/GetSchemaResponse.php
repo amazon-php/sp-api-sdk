@@ -195,7 +195,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets _links.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\GetSchemaResponseLinks $_links _links
+     * @param null|GetSchemaResponseLinks $_links _links
      */
     public function setLinks(?GetSchemaResponseLinks $_links) : self
     {
@@ -229,7 +229,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -239,7 +239,7 @@ class GetSchemaResponse implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

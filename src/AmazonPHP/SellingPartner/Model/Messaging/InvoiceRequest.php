@@ -172,7 +172,7 @@ class InvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets attachments.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\Attachment[]
+     * @return null|Attachment[]
      */
     public function getAttachments() : ?array
     {
@@ -182,7 +182,7 @@ class InvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets attachments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Attachment[] $attachments attachments to include in the message to the buyer
+     * @param null|Attachment[] $attachments attachments to include in the message to the buyer
      */
     public function setAttachments(?array $attachments) : self
     {

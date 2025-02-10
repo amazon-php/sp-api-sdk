@@ -243,7 +243,7 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -263,7 +263,7 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -283,7 +283,7 @@ class ShipmentStatusUpdate implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets status_update_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\StatusUpdateDetails $status_update_details status_update_details
+     * @param StatusUpdateDetails $status_update_details status_update_details
      */
     public function setStatusUpdateDetails(StatusUpdateDetails $status_update_details) : self
     {

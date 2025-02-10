@@ -189,7 +189,7 @@ class GetSubscriptionResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Subscription $payload payload
+     * @param null|Subscription $payload payload
      */
     public function setPayload(?Subscription $payload) : self
     {
@@ -201,7 +201,7 @@ class GetSubscriptionResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Notifications\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetSubscriptionResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Notifications\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

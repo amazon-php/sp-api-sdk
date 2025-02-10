@@ -255,7 +255,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets accepted_rate.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\AcceptedRate $accepted_rate accepted_rate
+     * @param AcceptedRate $accepted_rate accepted_rate
      */
     public function setAcceptedRate(AcceptedRate $accepted_rate) : self
     {
@@ -267,7 +267,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets label_results.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\LabelResult[]
+     * @return LabelResult[]
      */
     public function getLabelResults() : array
     {
@@ -277,7 +277,7 @@ class PurchaseLabelsResult implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets label_results.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\LabelResult[] $label_results A list of label results
+     * @param LabelResult[] $label_results A list of label results
      */
     public function setLabelResults(array $label_results) : self
     {

@@ -219,7 +219,7 @@ class BatchRequest implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets method.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\HttpMethod $method method
+     * @param HttpMethod $method method
      */
     public function setMethod(HttpMethod $method) : self
     {

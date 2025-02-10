@@ -209,7 +209,7 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets standard_id_for_label.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\StandardIdForLabel $standard_id_for_label standard_id_for_label
+     * @param null|StandardIdForLabel $standard_id_for_label standard_id_for_label
      */
     public function setStandardIdForLabel(?StandardIdForLabel $standard_id_for_label) : self
     {

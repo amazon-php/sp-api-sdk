@@ -178,7 +178,7 @@ class RequestedUpdates implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets boxes.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxUpdateInput[]
+     * @return null|BoxUpdateInput[]
      */
     public function getBoxes() : ?array
     {
@@ -188,7 +188,7 @@ class RequestedUpdates implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets boxes.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxUpdateInput[] $boxes a list of boxes that will be present in the shipment after the update
+     * @param null|BoxUpdateInput[] $boxes a list of boxes that will be present in the shipment after the update
      */
     public function setBoxes(?array $boxes) : self
     {
@@ -200,7 +200,7 @@ class RequestedUpdates implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[]
+     * @return null|ItemInput[]
      */
     public function getItems() : ?array
     {
@@ -210,7 +210,7 @@ class RequestedUpdates implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[] $items a list of all items that will be present in the shipment after the update
+     * @param null|ItemInput[] $items a list of all items that will be present in the shipment after the update
      */
     public function setItems(?array $items) : self
     {

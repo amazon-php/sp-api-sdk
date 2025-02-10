@@ -219,7 +219,7 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets identifiers.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\IdentifierType $identifiers identifiers
+     * @param IdentifierType $identifiers identifiers
      */
     public function setIdentifiers(IdentifierType $identifiers) : self
     {
@@ -283,7 +283,7 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets competitive_pricing.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePricingType $competitive_pricing competitive_pricing
+     * @param null|CompetitivePricingType $competitive_pricing competitive_pricing
      */
     public function setCompetitivePricing(?CompetitivePricingType $competitive_pricing) : self
     {
@@ -295,7 +295,7 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets sales_rankings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\SalesRankType[]
+     * @return null|SalesRankType[]
      */
     public function getSalesRankings() : ?array
     {
@@ -305,7 +305,7 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets sales_rankings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\SalesRankType[] $sales_rankings a list of sales rank information for the item, by category
+     * @param null|SalesRankType[] $sales_rankings a list of sales rank information for the item, by category
      */
     public function setSalesRankings(?array $sales_rankings) : self
     {
@@ -317,7 +317,7 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Gets offers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferType[]
+     * @return null|OfferType[]
      */
     public function getOffers() : ?array
     {
@@ -327,7 +327,7 @@ class Product implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
     /**
      * Sets offers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\OfferType[] $offers a list of offers
+     * @param null|OfferType[] $offers a list of offers
      */
     public function setOffers(?array $offers) : self
     {

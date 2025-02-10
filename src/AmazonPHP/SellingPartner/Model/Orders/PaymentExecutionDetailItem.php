@@ -195,7 +195,7 @@ class PaymentExecutionDetailItem implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets payment.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\Money $payment payment
+     * @param Money $payment payment
      */
     public function setPayment(Money $payment) : self
     {

@@ -277,7 +277,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets classifications.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassificationsByMarketplace[]
+     * @return null|ItemBrowseClassificationsByMarketplace[]
      */
     public function getClassifications() : ?array
     {
@@ -287,7 +287,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets classifications.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassificationsByMarketplace[] $classifications array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace
+     * @param null|ItemBrowseClassificationsByMarketplace[] $classifications array of classifications (browse nodes) associated with the item in the Amazon catalog by Amazon marketplace
      */
     public function setClassifications(?array $classifications) : self
     {
@@ -299,7 +299,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets dimensions.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemDimensionsByMarketplace[]
+     * @return null|ItemDimensionsByMarketplace[]
      */
     public function getDimensions() : ?array
     {
@@ -309,7 +309,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets dimensions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemDimensionsByMarketplace[] $dimensions array of dimensions associated with the item in the Amazon catalog by Amazon marketplace
+     * @param null|ItemDimensionsByMarketplace[] $dimensions array of dimensions associated with the item in the Amazon catalog by Amazon marketplace
      */
     public function setDimensions(?array $dimensions) : self
     {
@@ -321,7 +321,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets identifiers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemIdentifiersByMarketplace[]
+     * @return null|ItemIdentifiersByMarketplace[]
      */
     public function getIdentifiers() : ?array
     {
@@ -331,7 +331,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets identifiers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemIdentifiersByMarketplace[] $identifiers identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers
+     * @param null|ItemIdentifiersByMarketplace[] $identifiers identifiers associated with the item in the Amazon catalog, such as UPC and EAN identifiers
      */
     public function setIdentifiers(?array $identifiers) : self
     {
@@ -343,7 +343,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets images.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemImagesByMarketplace[]
+     * @return null|ItemImagesByMarketplace[]
      */
     public function getImages() : ?array
     {
@@ -353,7 +353,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets images.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemImagesByMarketplace[] $images images for an item in the Amazon catalog
+     * @param null|ItemImagesByMarketplace[] $images images for an item in the Amazon catalog
      */
     public function setImages(?array $images) : self
     {
@@ -365,7 +365,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets product_types.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemProductTypeByMarketplace[]
+     * @return null|ItemProductTypeByMarketplace[]
      */
     public function getProductTypes() : ?array
     {
@@ -375,7 +375,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets product_types.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemProductTypeByMarketplace[] $product_types product types associated with the Amazon catalog item
+     * @param null|ItemProductTypeByMarketplace[] $product_types product types associated with the Amazon catalog item
      */
     public function setProductTypes(?array $product_types) : self
     {
@@ -387,7 +387,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets relationships.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemRelationshipsByMarketplace[]
+     * @return null|ItemRelationshipsByMarketplace[]
      */
     public function getRelationships() : ?array
     {
@@ -397,7 +397,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets relationships.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemRelationshipsByMarketplace[] $relationships relationships by marketplace for an Amazon catalog item (for example, variations)
+     * @param null|ItemRelationshipsByMarketplace[] $relationships relationships by marketplace for an Amazon catalog item (for example, variations)
      */
     public function setRelationships(?array $relationships) : self
     {
@@ -409,7 +409,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets sales_ranks.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemSalesRanksByMarketplace[]
+     * @return null|ItemSalesRanksByMarketplace[]
      */
     public function getSalesRanks() : ?array
     {
@@ -419,7 +419,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets sales_ranks.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemSalesRanksByMarketplace[] $sales_ranks sales ranks of an Amazon catalog item
+     * @param null|ItemSalesRanksByMarketplace[] $sales_ranks sales ranks of an Amazon catalog item
      */
     public function setSalesRanks(?array $sales_ranks) : self
     {
@@ -431,7 +431,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets summaries.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemSummaryByMarketplace[]
+     * @return null|ItemSummaryByMarketplace[]
      */
     public function getSummaries() : ?array
     {
@@ -441,7 +441,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets summaries.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemSummaryByMarketplace[] $summaries summary details of an Amazon catalog item
+     * @param null|ItemSummaryByMarketplace[] $summaries summary details of an Amazon catalog item
      */
     public function setSummaries(?array $summaries) : self
     {
@@ -453,7 +453,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets vendor_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsByMarketplace[]
+     * @return null|ItemVendorDetailsByMarketplace[]
      */
     public function getVendorDetails() : ?array
     {
@@ -463,7 +463,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets vendor_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemVendorDetailsByMarketplace[] $vendor_details Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
+     * @param null|ItemVendorDetailsByMarketplace[] $vendor_details Vendor details associated with an Amazon catalog item. Vendor details are available to vendors only.
      */
     public function setVendorDetails(?array $vendor_details) : self
     {

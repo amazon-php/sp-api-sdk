@@ -271,7 +271,7 @@ class PackedItems implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets packed_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ItemQuantity $packed_quantity packed_quantity
+     * @param null|ItemQuantity $packed_quantity packed_quantity
      */
     public function setPackedQuantity(?ItemQuantity $packed_quantity) : self
     {
@@ -291,7 +291,7 @@ class PackedItems implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets item_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\PackageItemDetails $item_details item_details
+     * @param null|PackageItemDetails $item_details item_details
      */
     public function setItemDetails(?PackageItemDetails $item_details) : self
     {

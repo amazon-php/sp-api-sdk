@@ -175,7 +175,7 @@ class GetFeaturesResult implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets features.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Feature[]
+     * @return Feature[]
      */
     public function getFeatures() : array
     {
@@ -185,7 +185,7 @@ class GetFeaturesResult implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets features.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Feature[] $features an array of features
+     * @param Feature[] $features an array of features
      */
     public function setFeatures(array $features) : self
     {

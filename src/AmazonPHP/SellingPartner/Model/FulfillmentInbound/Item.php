@@ -409,7 +409,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Gets prep_instructions.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepInstruction[]
+     * @return PrepInstruction[]
      */
     public function getPrepInstructions() : array
     {
@@ -419,7 +419,7 @@ class Item implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfa
     /**
      * Sets prep_instructions.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PrepInstruction[] $prep_instructions special preparations that are required for an item
+     * @param PrepInstruction[] $prep_instructions special preparations that are required for an item
      */
     public function setPrepInstructions(array $prep_instructions) : self
     {

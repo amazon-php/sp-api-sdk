@@ -299,7 +299,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets ordered_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\ItemQuantity $ordered_quantity ordered_quantity
+     * @param ItemQuantity $ordered_quantity ordered_quantity
      */
     public function setOrderedQuantity(ItemQuantity $ordered_quantity) : self
     {
@@ -319,7 +319,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets net_cost.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $net_cost net_cost
+     * @param null|Money $net_cost net_cost
      */
     public function setNetCost(?Money $net_cost) : self
     {
@@ -339,7 +339,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets list_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\Money $list_price list_price
+     * @param null|Money $list_price list_price
      */
     public function setListPrice(?Money $list_price) : self
     {
@@ -371,7 +371,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Gets item_acknowledgements.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemAcknowledgement[]
+     * @return OrderItemAcknowledgement[]
      */
     public function getItemAcknowledgements() : array
     {
@@ -381,7 +381,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets item_acknowledgements.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorOrders\OrderItemAcknowledgement[] $item_acknowledgements this is used to indicate acknowledged quantity
+     * @param OrderItemAcknowledgement[] $item_acknowledgements this is used to indicate acknowledged quantity
      */
     public function setItemAcknowledgements(array $item_acknowledgements) : self
     {

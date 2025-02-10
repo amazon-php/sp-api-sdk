@@ -135,7 +135,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * @param string $asin The Amazon Standard Identification Number (ASIN) of the item. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getMyFeesEstimateForASINRequest(AccessToken $accessToken, string $region, string $asin, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {
@@ -145,6 +145,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
                 'Missing the required parameter $asin when calling getMyFeesEstimateForASIN'
             );
         }
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(
@@ -338,7 +339,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      * @param string $seller_sku Used to identify an item in the given marketplace. SellerSKU is qualified by the seller&#39;s SellerId, which is included with every operation that you submit. (required)
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getMyFeesEstimateForSKURequest(AccessToken $accessToken, string $region, string $seller_sku, \AmazonPHP\SellingPartner\Model\ProductFees\GetMyFeesEstimateRequest $body) : RequestInterface
     {
@@ -348,6 +349,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
                 'Missing the required parameter $seller_sku when calling getMyFeesEstimateForSKU'
             );
         }
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(
@@ -541,7 +543,7 @@ final class ProductFeesSDK implements ProductFeesSDKInterface
      *
      * @param \AmazonPHP\SellingPartner\Model\ProductFees\FeesEstimateByIdRequest[] $body (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getMyFeesEstimatesRequest(AccessToken $accessToken, string $region, array $body) : RequestInterface
     {

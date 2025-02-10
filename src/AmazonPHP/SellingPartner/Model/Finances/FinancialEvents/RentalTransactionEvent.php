@@ -313,7 +313,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets rental_charge_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[]
+     * @return null|ChargeComponent[]
      */
     public function getRentalChargeList() : ?array
     {
@@ -323,7 +323,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets rental_charge_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[] $rental_charge_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $rental_charge_list a list of charge information on the seller's account
      */
     public function setRentalChargeList(?array $rental_charge_list) : self
     {
@@ -335,7 +335,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets rental_fee_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[]
+     * @return null|FeeComponent[]
      */
     public function getRentalFeeList() : ?array
     {
@@ -345,7 +345,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets rental_fee_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[] $rental_fee_list a list of fee component information
+     * @param null|FeeComponent[] $rental_fee_list a list of fee component information
      */
     public function setRentalFeeList(?array $rental_fee_list) : self
     {
@@ -385,7 +385,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets rental_initial_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $rental_initial_value rental_initial_value
+     * @param null|Currency $rental_initial_value rental_initial_value
      */
     public function setRentalInitialValue(?Currency $rental_initial_value) : self
     {
@@ -405,7 +405,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets rental_reimbursement.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $rental_reimbursement rental_reimbursement
+     * @param null|Currency $rental_reimbursement rental_reimbursement
      */
     public function setRentalReimbursement(?Currency $rental_reimbursement) : self
     {
@@ -417,7 +417,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets rental_tax_withheld_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\TaxWithheldComponent[]
+     * @return null|TaxWithheldComponent[]
      */
     public function getRentalTaxWithheldList() : ?array
     {
@@ -427,7 +427,7 @@ class RentalTransactionEvent implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets rental_tax_withheld_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\TaxWithheldComponent[] $rental_tax_withheld_list a list of information about taxes withheld
+     * @param null|TaxWithheldComponent[] $rental_tax_withheld_list a list of information about taxes withheld
      */
     public function setRentalTaxWithheldList(?array $rental_tax_withheld_list) : self
     {

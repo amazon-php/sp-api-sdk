@@ -239,7 +239,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets label.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Shipping\Label $label label
+     * @param null|Label $label label
      */
     public function setLabel(?Label $label) : self
     {

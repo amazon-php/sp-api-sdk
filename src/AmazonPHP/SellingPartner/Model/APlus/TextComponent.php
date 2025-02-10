@@ -209,7 +209,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets decorator_set.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\Decorator[]
+     * @return null|Decorator[]
      */
     public function getDecoratorSet() : ?array
     {
@@ -219,7 +219,7 @@ class TextComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets decorator_set.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Decorator[] $decorator_set a set of content decorators
+     * @param null|Decorator[] $decorator_set a set of content decorators
      */
     public function setDecoratorSet(?array $decorator_set) : self
     {

@@ -189,7 +189,7 @@ class AmazonPrepFeesDetails implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets prep_instruction.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepInstruction $prep_instruction prep_instruction
+     * @param null|PrepInstruction $prep_instruction prep_instruction
      */
     public function setPrepInstruction(?PrepInstruction $prep_instruction) : self
     {
@@ -209,7 +209,7 @@ class AmazonPrepFeesDetails implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets fee_per_unit.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Amount $fee_per_unit fee_per_unit
+     * @param null|Amount $fee_per_unit fee_per_unit
      */
     public function setFeePerUnit(?Amount $fee_per_unit) : self
     {

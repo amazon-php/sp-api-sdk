@@ -175,7 +175,7 @@ class AssignAppointmentResourcesRequest implements \ArrayAccess, \JsonSerializab
     /**
      * Gets resources.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Services\AppointmentResource[]
+     * @return AppointmentResource[]
      */
     public function getResources() : array
     {
@@ -185,7 +185,7 @@ class AssignAppointmentResourcesRequest implements \ArrayAccess, \JsonSerializab
     /**
      * Sets resources.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Services\AppointmentResource[] $resources list of resources that performs or performed job appointment fulfillment
+     * @param AppointmentResource[] $resources list of resources that performs or performed job appointment fulfillment
      */
     public function setResources(array $resources) : self
     {

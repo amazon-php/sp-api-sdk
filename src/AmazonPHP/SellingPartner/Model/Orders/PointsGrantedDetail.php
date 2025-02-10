@@ -209,7 +209,7 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets points_monetary_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Money $points_monetary_value points_monetary_value
+     * @param null|Money $points_monetary_value points_monetary_value
      */
     public function setPointsMonetaryValue(?Money $points_monetary_value) : self
     {

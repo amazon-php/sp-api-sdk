@@ -331,7 +331,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets item_charge_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[]
+     * @return null|ChargeComponent[]
      */
     public function getItemChargeList() : ?array
     {
@@ -341,7 +341,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets item_charge_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[] $item_charge_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $item_charge_list a list of charge information on the seller's account
      */
     public function setItemChargeList(?array $item_charge_list) : self
     {
@@ -353,7 +353,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets item_charge_adjustment_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[]
+     * @return null|ChargeComponent[]
      */
     public function getItemChargeAdjustmentList() : ?array
     {
@@ -363,7 +363,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets item_charge_adjustment_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeComponent[] $item_charge_adjustment_list a list of charge information on the seller's account
+     * @param null|ChargeComponent[] $item_charge_adjustment_list a list of charge information on the seller's account
      */
     public function setItemChargeAdjustmentList(?array $item_charge_adjustment_list) : self
     {
@@ -375,7 +375,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets item_fee_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[]
+     * @return null|FeeComponent[]
      */
     public function getItemFeeList() : ?array
     {
@@ -385,7 +385,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets item_fee_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[] $item_fee_list a list of fee component information
+     * @param null|FeeComponent[] $item_fee_list a list of fee component information
      */
     public function setItemFeeList(?array $item_fee_list) : self
     {
@@ -397,7 +397,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets item_fee_adjustment_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[]
+     * @return null|FeeComponent[]
      */
     public function getItemFeeAdjustmentList() : ?array
     {
@@ -407,7 +407,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets item_fee_adjustment_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[] $item_fee_adjustment_list a list of fee component information
+     * @param null|FeeComponent[] $item_fee_adjustment_list a list of fee component information
      */
     public function setItemFeeAdjustmentList(?array $item_fee_adjustment_list) : self
     {
@@ -419,7 +419,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets item_tax_withheld_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\TaxWithheldComponent[]
+     * @return null|TaxWithheldComponent[]
      */
     public function getItemTaxWithheldList() : ?array
     {
@@ -429,7 +429,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets item_tax_withheld_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\TaxWithheldComponent[] $item_tax_withheld_list a list of information about taxes withheld
+     * @param null|TaxWithheldComponent[] $item_tax_withheld_list a list of information about taxes withheld
      */
     public function setItemTaxWithheldList(?array $item_tax_withheld_list) : self
     {
@@ -441,7 +441,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets promotion_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Promotion[]
+     * @return null|Promotion[]
      */
     public function getPromotionList() : ?array
     {
@@ -451,7 +451,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets promotion_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Promotion[] $promotion_list a list of promotions
+     * @param null|Promotion[] $promotion_list a list of promotions
      */
     public function setPromotionList(?array $promotion_list) : self
     {
@@ -463,7 +463,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets promotion_adjustment_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Promotion[]
+     * @return null|Promotion[]
      */
     public function getPromotionAdjustmentList() : ?array
     {
@@ -473,7 +473,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets promotion_adjustment_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Promotion[] $promotion_adjustment_list a list of promotions
+     * @param null|Promotion[] $promotion_adjustment_list a list of promotions
      */
     public function setPromotionAdjustmentList(?array $promotion_adjustment_list) : self
     {
@@ -493,7 +493,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets cost_of_points_granted.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $cost_of_points_granted cost_of_points_granted
+     * @param null|Currency $cost_of_points_granted cost_of_points_granted
      */
     public function setCostOfPointsGranted(?Currency $cost_of_points_granted) : self
     {
@@ -513,7 +513,7 @@ class ShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets cost_of_points_returned.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $cost_of_points_returned cost_of_points_returned
+     * @param null|Currency $cost_of_points_returned cost_of_points_returned
      */
     public function setCostOfPointsReturned(?Currency $cost_of_points_returned) : self
     {

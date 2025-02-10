@@ -195,7 +195,7 @@ class CreateDestinationRequest implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets resource_specification.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Notifications\DestinationResourceSpecification $resource_specification resource_specification
+     * @param DestinationResourceSpecification $resource_specification resource_specification
      */
     public function setResourceSpecification(DestinationResourceSpecification $resource_specification) : self
     {

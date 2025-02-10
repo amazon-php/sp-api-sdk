@@ -201,7 +201,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets headers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders $headers headers
+     * @param null|HttpResponseHeaders $headers headers
      */
     public function setHeaders(?HttpResponseHeaders $headers) : self
     {
@@ -221,7 +221,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine $status status
+     * @param null|GetOffersHttpStatusLine $status status
      */
     public function setStatus(?GetOffersHttpStatusLine $status) : self
     {
@@ -241,7 +241,7 @@ class BatchOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets body.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse $body body
+     * @param GetOffersResponse $body body
      */
     public function setBody(GetOffersResponse $body) : self
     {

@@ -191,7 +191,7 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\Error[]
+     * @return null|Error[]
      */
     public function getWarnings() : ?array
     {
@@ -201,7 +201,7 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -233,7 +233,7 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     /**
      * Gets asin_metadata_set.
      *
-     * @return \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[]
+     * @return AsinMetadata[]
      */
     public function getAsinMetadataSet() : array
     {
@@ -243,7 +243,7 @@ class ListContentDocumentAsinRelationsResponse implements \ArrayAccess, \JsonSer
     /**
      * Sets asin_metadata_set.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\AsinMetadata[] $asin_metadata_set the set of ASIN metadata
+     * @param AsinMetadata[] $asin_metadata_set the set of ASIN metadata
      */
     public function setAsinMetadataSet(array $asin_metadata_set) : self
     {

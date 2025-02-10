@@ -172,7 +172,7 @@ class SubmitAcknowledgementRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Gets acknowledgements.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderAcknowledgement[]
+     * @return null|OrderAcknowledgement[]
      */
     public function getAcknowledgements() : ?array
     {
@@ -182,7 +182,7 @@ class SubmitAcknowledgementRequest implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets acknowledgements.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorOrders\OrderAcknowledgement[] $acknowledgements an array of order acknowledgements to be submitted
+     * @param null|OrderAcknowledgement[] $acknowledgements an array of order acknowledgements to be submitted
      */
     public function setAcknowledgements(?array $acknowledgements) : self
     {

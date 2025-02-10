@@ -209,7 +209,7 @@ class ChargeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets charge_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $charge_amount charge_amount
+     * @param null|Currency $charge_amount charge_amount
      */
     public function setChargeAmount(?Currency $charge_amount) : self
     {

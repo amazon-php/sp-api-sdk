@@ -387,7 +387,7 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets per_unit_declared_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_declared_value per_unit_declared_value
+     * @param null|Money $per_unit_declared_value per_unit_declared_value
      */
     public function setPerUnitDeclaredValue(?Money $per_unit_declared_value) : self
     {
@@ -407,7 +407,7 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets per_unit_price.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_price per_unit_price
+     * @param null|Money $per_unit_price per_unit_price
      */
     public function setPerUnitPrice(?Money $per_unit_price) : self
     {
@@ -427,7 +427,7 @@ class CreateFulfillmentOrderItem implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets per_unit_tax.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Money $per_unit_tax per_unit_tax
+     * @param null|Money $per_unit_tax per_unit_tax
      */
     public function setPerUnitTax(?Money $per_unit_tax) : self
     {

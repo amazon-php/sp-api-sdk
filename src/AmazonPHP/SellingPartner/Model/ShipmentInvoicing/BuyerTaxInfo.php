@@ -224,7 +224,7 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Gets tax_classifications.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\TaxClassification[]
+     * @return null|TaxClassification[]
      */
     public function getTaxClassifications() : ?array
     {
@@ -234,7 +234,7 @@ class BuyerTaxInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets tax_classifications.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\TaxClassification[] $tax_classifications the list of tax classifications
+     * @param null|TaxClassification[] $tax_classifications the list of tax classifications
      */
     public function setTaxClassifications(?array $tax_classifications) : self
     {

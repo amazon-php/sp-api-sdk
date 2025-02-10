@@ -237,7 +237,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -257,7 +257,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -269,7 +269,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets containers.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Container[]
+     * @return null|Container[]
      */
     public function getContainers() : ?array
     {
@@ -279,7 +279,7 @@ class ShippingLabelRequest implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets containers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\Container[] $containers a list of the packages in this shipment
+     * @param null|Container[] $containers a list of the packages in this shipment
      */
     public function setContainers(?array $containers) : self
     {

@@ -183,7 +183,7 @@ class AggregationSettings implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets aggregation_time_period.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Notifications\AggregationTimePeriod $aggregation_time_period aggregation_time_period
+     * @param AggregationTimePeriod $aggregation_time_period aggregation_time_period
      */
     public function setAggregationTimePeriod(AggregationTimePeriod $aggregation_time_period) : self
     {

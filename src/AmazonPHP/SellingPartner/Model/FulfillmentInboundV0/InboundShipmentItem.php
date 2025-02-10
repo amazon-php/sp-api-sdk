@@ -361,7 +361,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets prep_details_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepDetails[]
+     * @return null|PrepDetails[]
      */
     public function getPrepDetailsList() : ?array
     {
@@ -371,7 +371,7 @@ class InboundShipmentItem implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets prep_details_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\PrepDetails[] $prep_details_list a list of preparation instructions and who is responsible for that preparation
+     * @param null|PrepDetails[] $prep_details_list a list of preparation instructions and who is responsible for that preparation
      */
     public function setPrepDetailsList(?array $prep_details_list) : self
     {

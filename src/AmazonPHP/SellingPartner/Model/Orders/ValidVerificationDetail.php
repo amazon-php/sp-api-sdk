@@ -205,7 +205,7 @@ class ValidVerificationDetail implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets valid_verification_statuses.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus[]
+     * @return VerificationStatus[]
      */
     public function getValidVerificationStatuses() : array
     {
@@ -215,7 +215,7 @@ class ValidVerificationDetail implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets valid_verification_statuses.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\VerificationStatus[] $valid_verification_statuses A list of valid verification statuses where the associated verification detail type may be provided. For example, if the value of this field is [\"Approved\"], calls to provide the associated verification detail will fail for orders with a `VerificationStatus` of `Pending`, `Rejected`, `Expired`, or `Cancelled`.
+     * @param VerificationStatus[] $valid_verification_statuses A list of valid verification statuses where the associated verification detail type may be provided. For example, if the value of this field is [\"Approved\"], calls to provide the associated verification detail will fail for orders with a `VerificationStatus` of `Pending`, `Rejected`, `Expired`, or `Cancelled`.
      */
     public function setValidVerificationStatuses(array $valid_verification_statuses) : self
     {

@@ -416,7 +416,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets browse_classification.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemBrowseClassification $browse_classification browse_classification
+     * @param null|ItemBrowseClassification $browse_classification browse_classification
      */
     public function setBrowseClassification(?ItemBrowseClassification $browse_classification) : self
     {
@@ -448,7 +448,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Gets contributors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemContributor[]
+     * @return null|ItemContributor[]
      */
     public function getContributors() : ?array
     {
@@ -458,7 +458,7 @@ class ItemSummaryByMarketplace implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets contributors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\CatalogItem\ItemContributor[] $contributors individual contributors to the creation of an item, such as the authors or actors
+     * @param null|ItemContributor[] $contributors individual contributors to the creation of an item, such as the authors or actors
      */
     public function setContributors(?array $contributors) : self
     {

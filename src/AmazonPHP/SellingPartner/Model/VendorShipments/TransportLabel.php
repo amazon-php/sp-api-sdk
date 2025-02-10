@@ -215,7 +215,7 @@ class TransportLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets shipment_information.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentInformation $shipment_information shipment_information
+     * @param null|ShipmentInformation $shipment_information shipment_information
      */
     public function setShipmentInformation(?ShipmentInformation $shipment_information) : self
     {
@@ -227,7 +227,7 @@ class TransportLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Gets label_data.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\LabelData[]
+     * @return null|LabelData[]
      */
     public function getLabelData() : ?array
     {
@@ -237,7 +237,7 @@ class TransportLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets label_data.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\LabelData[] $label_data indicates the label data,format and type associated
+     * @param null|LabelData[] $label_data indicates the label data,format and type associated
      */
     public function setLabelData(?array $label_data) : self
     {

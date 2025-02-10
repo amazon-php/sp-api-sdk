@@ -205,7 +205,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Gets attachments.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Messaging\Attachment[]
+     * @return null|Attachment[]
      */
     public function getAttachments() : ?array
     {
@@ -215,7 +215,7 @@ class CreateDigitalAccessKeyRequest implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets attachments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Messaging\Attachment[] $attachments attachments that you want to include in the message to the buyer
+     * @param null|Attachment[] $attachments attachments that you want to include in the message to the buyer
      */
     public function setAttachments(?array $attachments) : self
     {

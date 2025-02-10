@@ -250,7 +250,7 @@ class JobListing implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Gets jobs.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\ServiceJob[]
+     * @return null|ServiceJob[]
      */
     public function getJobs() : ?array
     {
@@ -260,7 +260,7 @@ class JobListing implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets jobs.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\ServiceJob[] $jobs list of job details for the given input
+     * @param null|ServiceJob[] $jobs list of job details for the given input
      */
     public function setJobs(?array $jobs) : self
     {

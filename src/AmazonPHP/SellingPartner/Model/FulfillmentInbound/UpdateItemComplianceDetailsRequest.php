@@ -223,7 +223,7 @@ class UpdateItemComplianceDetailsRequest implements \ArrayAccess, \JsonSerializa
     /**
      * Sets tax_details.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\TaxDetails $tax_details tax_details
+     * @param TaxDetails $tax_details tax_details
      */
     public function setTaxDetails(TaxDetails $tax_details) : self
     {

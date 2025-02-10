@@ -280,7 +280,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -300,7 +300,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -332,7 +332,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets label_data.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\LabelData[]
+     * @return LabelData[]
      */
     public function getLabelData() : array
     {
@@ -342,7 +342,7 @@ class ShippingLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets label_data.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentShipping\LabelData[] $label_data provides the details of the packages in this shipment
+     * @param LabelData[] $label_data provides the details of the packages in this shipment
      */
     public function setLabelData(array $label_data) : self
     {

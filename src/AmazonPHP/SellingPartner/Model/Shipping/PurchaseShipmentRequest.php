@@ -269,7 +269,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets ship_to.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_to ship_to
+     * @param Address $ship_to ship_to
      */
     public function setShipTo(Address $ship_to) : self
     {
@@ -289,7 +289,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets ship_from.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Address $ship_from ship_from
+     * @param Address $ship_from ship_from
      */
     public function setShipFrom(Address $ship_from) : self
     {
@@ -329,7 +329,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets service_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\ServiceType $service_type service_type
+     * @param ServiceType $service_type service_type
      */
     public function setServiceType(ServiceType $service_type) : self
     {
@@ -341,7 +341,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets containers.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Shipping\Container[]
+     * @return Container[]
      */
     public function getContainers() : array
     {
@@ -351,7 +351,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets containers.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\Container[] $containers a list of container
+     * @param Container[] $containers a list of container
      */
     public function setContainers(array $containers) : self
     {
@@ -371,7 +371,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets label_specification.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Shipping\LabelSpecification $label_specification label_specification
+     * @param LabelSpecification $label_specification label_specification
      */
     public function setLabelSpecification(LabelSpecification $label_specification) : self
     {

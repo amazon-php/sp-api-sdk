@@ -276,7 +276,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets fee_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[]
+     * @return null|FeeComponent[]
      */
     public function getFeeList() : ?array
     {
@@ -286,7 +286,7 @@ class TrialShipmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets fee_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\FeeComponent[] $fee_list a list of fee component information
+     * @param null|FeeComponent[] $fee_list a list of fee component information
      */
     public function setFeeList(?array $fee_list) : self
     {

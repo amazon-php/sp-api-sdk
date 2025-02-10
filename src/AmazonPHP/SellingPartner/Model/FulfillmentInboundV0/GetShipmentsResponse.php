@@ -189,7 +189,7 @@ class GetShipmentsResponse implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\GetShipmentsResult $payload payload
+     * @param null|GetShipmentsResult $payload payload
      */
     public function setPayload(?GetShipmentsResult $payload) : self
     {
@@ -201,7 +201,7 @@ class GetShipmentsResponse implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetShipmentsResponse implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInboundV0\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

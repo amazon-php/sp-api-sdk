@@ -189,7 +189,7 @@ class GetOrderResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Order $payload payload
+     * @param null|Order $payload payload
      */
     public function setPayload(?Order $payload) : self
     {
@@ -201,7 +201,7 @@ class GetOrderResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetOrderResponse implements \ArrayAccess, \JsonSerializable, \Stringable, 
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

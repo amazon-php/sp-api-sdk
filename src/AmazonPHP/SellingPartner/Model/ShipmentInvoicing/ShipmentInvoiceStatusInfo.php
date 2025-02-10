@@ -206,7 +206,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets invoice_status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ShipmentInvoicing\ShipmentInvoiceStatus $invoice_status invoice_status
+     * @param null|ShipmentInvoiceStatus $invoice_status invoice_status
      */
     public function setInvoiceStatus(?ShipmentInvoiceStatus $invoice_status) : self
     {

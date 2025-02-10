@@ -309,7 +309,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets acknowledgement_status.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\AcknowledgementStatus $acknowledgement_status acknowledgement_status
+     * @param AcknowledgementStatus $acknowledgement_status acknowledgement_status
      */
     public function setAcknowledgementStatus(AcknowledgementStatus $acknowledgement_status) : self
     {
@@ -329,7 +329,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -349,7 +349,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -361,7 +361,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Gets item_acknowledgements.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderItemAcknowledgement[]
+     * @return OrderItemAcknowledgement[]
      */
     public function getItemAcknowledgements() : array
     {
@@ -371,7 +371,7 @@ class OrderAcknowledgementItem implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets item_acknowledgements.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentOrders\OrderItemAcknowledgement[] $item_acknowledgements item details including acknowledged quantity
+     * @param OrderItemAcknowledgement[] $item_acknowledgements item details including acknowledged quantity
      */
     public function setItemAcknowledgements(array $item_acknowledgements) : self
     {

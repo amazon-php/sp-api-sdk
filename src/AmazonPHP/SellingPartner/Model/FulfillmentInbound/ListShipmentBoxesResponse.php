@@ -185,7 +185,7 @@ class ListShipmentBoxesResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Gets boxes.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Box[]
+     * @return Box[]
      */
     public function getBoxes() : array
     {
@@ -195,7 +195,7 @@ class ListShipmentBoxesResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets boxes.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Box[] $boxes a list of boxes in a shipment
+     * @param Box[] $boxes a list of boxes in a shipment
      */
     public function setBoxes(array $boxes) : self
     {
@@ -215,7 +215,7 @@ class ListShipmentBoxesResponse implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {

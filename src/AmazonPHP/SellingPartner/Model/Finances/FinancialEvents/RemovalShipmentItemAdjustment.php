@@ -307,7 +307,7 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets revenue_adjustment.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $revenue_adjustment revenue_adjustment
+     * @param null|Currency $revenue_adjustment revenue_adjustment
      */
     public function setRevenueAdjustment(?Currency $revenue_adjustment) : self
     {
@@ -327,7 +327,7 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets tax_amount_adjustment.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_amount_adjustment tax_amount_adjustment
+     * @param null|Currency $tax_amount_adjustment tax_amount_adjustment
      */
     public function setTaxAmountAdjustment(?Currency $tax_amount_adjustment) : self
     {
@@ -347,7 +347,7 @@ class RemovalShipmentItemAdjustment implements \ArrayAccess, \JsonSerializable, 
     /**
      * Sets tax_withheld_adjustment.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $tax_withheld_adjustment tax_withheld_adjustment
+     * @param null|Currency $tax_withheld_adjustment tax_withheld_adjustment
      */
     public function setTaxWithheldAdjustment(?Currency $tax_withheld_adjustment) : self
     {

@@ -211,7 +211,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets headers.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\HttpResponseHeaders $headers headers
+     * @param null|HttpResponseHeaders $headers headers
      */
     public function setHeaders(?HttpResponseHeaders $headers) : self
     {
@@ -231,7 +231,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets status.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersHttpStatusLine $status status
+     * @param null|GetOffersHttpStatusLine $status status
      */
     public function setStatus(?GetOffersHttpStatusLine $status) : self
     {
@@ -251,7 +251,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets body.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\GetOffersResponse $body body
+     * @param GetOffersResponse $body body
      */
     public function setBody(GetOffersResponse $body) : self
     {
@@ -271,7 +271,7 @@ class ListingOffersResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets request.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\ListingOffersRequestParams $request request
+     * @param null|ListingOffersRequestParams $request request
      */
     public function setRequest(?ListingOffersRequestParams $request) : self
     {

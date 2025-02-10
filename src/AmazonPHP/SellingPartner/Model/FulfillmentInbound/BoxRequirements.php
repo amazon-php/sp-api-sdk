@@ -185,7 +185,7 @@ class BoxRequirements implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets weight.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\WeightRange $weight weight
+     * @param WeightRange $weight weight
      */
     public function setWeight(WeightRange $weight) : self
     {

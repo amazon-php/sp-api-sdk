@@ -253,7 +253,7 @@ class AvailabilityRecord implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets recurrence.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Recurrence $recurrence recurrence
+     * @param null|Recurrence $recurrence recurrence
      */
     public function setRecurrence(?Recurrence $recurrence) : self
     {

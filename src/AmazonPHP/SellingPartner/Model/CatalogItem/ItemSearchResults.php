@@ -237,7 +237,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets pagination.
      *
-     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\Pagination $pagination pagination
+     * @param Pagination $pagination pagination
      */
     public function setPagination(Pagination $pagination) : self
     {
@@ -257,7 +257,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets refinements.
      *
-     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\Refinements $refinements refinements
+     * @param Refinements $refinements refinements
      */
     public function setRefinements(Refinements $refinements) : self
     {
@@ -269,7 +269,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\CatalogItem\Item[]
+     * @return Item[]
      */
     public function getItems() : array
     {
@@ -279,7 +279,7 @@ class ItemSearchResults implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\CatalogItem\Item[] $items a list of items from the Amazon catalog
+     * @param Item[] $items a list of items from the Amazon catalog
      */
     public function setItems(array $items) : self
     {

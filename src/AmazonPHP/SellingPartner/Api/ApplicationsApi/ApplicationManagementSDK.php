@@ -123,7 +123,7 @@ final class ApplicationManagementSDK implements ApplicationManagementSDKInterfac
     /**
      * Create request for operation 'rotateApplicationClientSecret'.
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function rotateApplicationClientSecretRequest(AccessToken $accessToken, string $region) : RequestInterface
     {

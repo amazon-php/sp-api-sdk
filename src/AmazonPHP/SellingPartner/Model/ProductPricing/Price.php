@@ -265,7 +265,7 @@ class Price implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
     /**
      * Sets product.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\Product $product product
+     * @param null|Product $product product
      */
     public function setProduct(?Product $product) : self
     {

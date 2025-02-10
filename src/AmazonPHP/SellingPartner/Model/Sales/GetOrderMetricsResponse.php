@@ -178,7 +178,7 @@ class GetOrderMetricsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets payload.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Sales\OrderMetricsInterval[]
+     * @return null|OrderMetricsInterval[]
      */
     public function getPayload() : ?array
     {
@@ -188,7 +188,7 @@ class GetOrderMetricsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Sales\OrderMetricsInterval[] $payload a set of order metrics, each scoped to a particular time interval
+     * @param null|OrderMetricsInterval[] $payload a set of order metrics, each scoped to a particular time interval
      */
     public function setPayload(?array $payload) : self
     {
@@ -200,7 +200,7 @@ class GetOrderMetricsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Sales\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -210,7 +210,7 @@ class GetOrderMetricsResponse implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Sales\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

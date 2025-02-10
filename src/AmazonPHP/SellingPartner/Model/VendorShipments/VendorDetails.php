@@ -189,7 +189,7 @@ class VendorDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets selling_party.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $selling_party selling_party
+     * @param null|PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(?PartyIdentification $selling_party) : self
     {

@@ -189,7 +189,7 @@ class SubmitInvoiceResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\TransactionReference $payload payload
+     * @param null|TransactionReference $payload payload
      */
     public function setPayload(?TransactionReference $payload) : self
     {
@@ -201,7 +201,7 @@ class SubmitInvoiceResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class SubmitInvoiceResponse implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentPayments\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

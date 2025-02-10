@@ -183,7 +183,7 @@ class GetSolicitationActionResponseEmbedded implements \ArrayAccess, \JsonSerial
     /**
      * Sets schema.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Solicitations\GetSchemaResponse $schema schema
+     * @param null|GetSchemaResponse $schema schema
      */
     public function setSchema(?GetSchemaResponse $schema) : self
     {

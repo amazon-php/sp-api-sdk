@@ -373,7 +373,7 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets order_items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentOrderItem[]
+     * @return ConfirmShipmentOrderItem[]
      */
     public function getOrderItems() : array
     {
@@ -383,7 +383,7 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets order_items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Orders\ConfirmShipmentOrderItem[] $order_items a list of order items
+     * @param ConfirmShipmentOrderItem[] $order_items a list of order items
      */
     public function setOrderItems(array $order_items) : self
     {

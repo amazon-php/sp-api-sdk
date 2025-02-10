@@ -295,7 +295,7 @@ class TransportationOption implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets carrier.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Carrier $carrier carrier
+     * @param Carrier $carrier carrier
      */
     public function setCarrier(Carrier $carrier) : self
     {
@@ -315,7 +315,7 @@ class TransportationOption implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets carrier_appointment.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\CarrierAppointment $carrier_appointment carrier_appointment
+     * @param null|CarrierAppointment $carrier_appointment carrier_appointment
      */
     public function setCarrierAppointment(?CarrierAppointment $carrier_appointment) : self
     {
@@ -357,7 +357,7 @@ class TransportationOption implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets quote.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Quote $quote quote
+     * @param null|Quote $quote quote
      */
     public function setQuote(?Quote $quote) : self
     {

@@ -275,7 +275,7 @@ class Transaction implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentTransactions\ErrorList $errors errors
+     * @param null|ErrorList $errors errors
      */
     public function setErrors(?ErrorList $errors) : self
     {

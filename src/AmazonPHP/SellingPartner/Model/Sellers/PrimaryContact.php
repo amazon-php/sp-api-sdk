@@ -221,7 +221,7 @@ class PrimaryContact implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets address.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sellers\Address $address address
+     * @param Address $address address
      */
     public function setAddress(Address $address) : self
     {

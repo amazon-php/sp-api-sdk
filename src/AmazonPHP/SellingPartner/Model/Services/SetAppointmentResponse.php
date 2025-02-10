@@ -211,7 +211,7 @@ class SetAppointmentResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Warning[]
+     * @return null|Warning[]
      */
     public function getWarnings() : ?array
     {
@@ -221,7 +221,7 @@ class SetAppointmentResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Warning[] $warnings a list of warnings returned in the sucessful execution response of an API request
+     * @param null|Warning[] $warnings a list of warnings returned in the sucessful execution response of an API request
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -233,7 +233,7 @@ class SetAppointmentResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -243,7 +243,7 @@ class SetAppointmentResponse implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

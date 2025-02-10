@@ -317,7 +317,7 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets average_unit_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sales\Money $average_unit_price average_unit_price
+     * @param Money $average_unit_price average_unit_price
      */
     public function setAverageUnitPrice(Money $average_unit_price) : self
     {
@@ -337,7 +337,7 @@ class OrderMetricsInterval implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets total_sales.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Sales\Money $total_sales total_sales
+     * @param Money $total_sales total_sales
      */
     public function setTotalSales(Money $total_sales) : self
     {

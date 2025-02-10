@@ -199,7 +199,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Address $address address
+     * @param null|Address $address address
      */
     public function setAddress(?Address $address) : self
     {
@@ -231,7 +231,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets tax_registration_details.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\TaxRegistrationDetails[]
+     * @return null|TaxRegistrationDetails[]
      */
     public function getTaxRegistrationDetails() : ?array
     {
@@ -241,7 +241,7 @@ class PartyIdentification implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets tax_registration_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\TaxRegistrationDetails[] $tax_registration_details tax registration details of the entity
+     * @param null|TaxRegistrationDetails[] $tax_registration_details tax registration details of the entity
      */
     public function setTaxRegistrationDetails(?array $tax_registration_details) : self
     {

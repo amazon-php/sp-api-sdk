@@ -506,7 +506,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets transportation_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\TransportationDetailsForShipmentConfirmation $transportation_details transportation_details
+     * @param null|TransportationDetailsForShipmentConfirmation $transportation_details transportation_details
      */
     public function setTransportationDetails(?TransportationDetailsForShipmentConfirmation $transportation_details) : self
     {
@@ -606,7 +606,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets selling_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $selling_party selling_party
+     * @param PartyIdentification $selling_party selling_party
      */
     public function setSellingParty(PartyIdentification $selling_party) : self
     {
@@ -626,7 +626,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets ship_from_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $ship_from_party ship_from_party
+     * @param PartyIdentification $ship_from_party ship_from_party
      */
     public function setShipFromParty(PartyIdentification $ship_from_party) : self
     {
@@ -646,7 +646,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets ship_to_party.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\PartyIdentification $ship_to_party ship_to_party
+     * @param PartyIdentification $ship_to_party ship_to_party
      */
     public function setShipToParty(PartyIdentification $ship_to_party) : self
     {
@@ -666,7 +666,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets shipment_measurements.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentMeasurements $shipment_measurements shipment_measurements
+     * @param null|ShipmentMeasurements $shipment_measurements shipment_measurements
      */
     public function setShipmentMeasurements(?ShipmentMeasurements $shipment_measurements) : self
     {
@@ -686,7 +686,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets import_details.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ImportDetails $import_details import_details
+     * @param null|ImportDetails $import_details import_details
      */
     public function setImportDetails(?ImportDetails $import_details) : self
     {
@@ -698,7 +698,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets shipped_items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\VendorShipments\Item[]
+     * @return Item[]
      */
     public function getShippedItems() : array
     {
@@ -708,7 +708,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets shipped_items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\VendorShipments\Item[] $shipped_items A list of the items in this shipment and their associated details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
+     * @param Item[] $shipped_items A list of the items in this shipment and their associated details. If any of the item detail fields are common at a carton or a pallet level, provide them at the corresponding carton or pallet level.
      */
     public function setShippedItems(array $shipped_items) : self
     {
@@ -720,7 +720,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets cartons.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Carton[]
+     * @return null|Carton[]
      */
     public function getCartons() : ?array
     {
@@ -730,7 +730,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets cartons.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Carton[] $cartons a list of the cartons in this shipment
+     * @param null|Carton[] $cartons a list of the cartons in this shipment
      */
     public function setCartons(?array $cartons) : self
     {
@@ -742,7 +742,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Gets pallets.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Pallet[]
+     * @return null|Pallet[]
      */
     public function getPallets() : ?array
     {
@@ -752,7 +752,7 @@ class ShipmentConfirmation implements \ArrayAccess, \JsonSerializable, \Stringab
     /**
      * Sets pallets.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Pallet[] $pallets a list of the pallets in this shipment
+     * @param null|Pallet[] $pallets a list of the pallets in this shipment
      */
     public function setPallets(?array $pallets) : self
     {

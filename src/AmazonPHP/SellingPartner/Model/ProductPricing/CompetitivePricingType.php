@@ -195,7 +195,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets competitive_prices.
      *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePriceType[]
+     * @return CompetitivePriceType[]
      */
     public function getCompetitivePrices() : array
     {
@@ -205,7 +205,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets competitive_prices.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\CompetitivePriceType[] $competitive_prices a list of competitive pricing information
+     * @param CompetitivePriceType[] $competitive_prices a list of competitive pricing information
      */
     public function setCompetitivePrices(array $competitive_prices) : self
     {
@@ -217,7 +217,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Gets number_of_offer_listings.
      *
-     * @return \AmazonPHP\SellingPartner\Model\ProductPricing\OfferListingCountType[]
+     * @return OfferListingCountType[]
      */
     public function getNumberOfOfferListings() : array
     {
@@ -227,7 +227,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets number_of_offer_listings.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductPricing\OfferListingCountType[] $number_of_offer_listings The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
+     * @param OfferListingCountType[] $number_of_offer_listings The number of active offer listings for the item that was submitted. The listing count is returned by condition, one for each listing condition value that is returned.
      */
     public function setNumberOfOfferListings(array $number_of_offer_listings) : self
     {
@@ -247,7 +247,7 @@ class CompetitivePricingType implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets trade_in_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $trade_in_value trade_in_value
+     * @param null|MoneyType $trade_in_value trade_in_value
      */
     public function setTradeInValue(?MoneyType $trade_in_value) : self
     {

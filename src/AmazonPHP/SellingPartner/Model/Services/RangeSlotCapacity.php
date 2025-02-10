@@ -204,7 +204,7 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets capacities.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\RangeCapacity[]
+     * @return null|RangeCapacity[]
      */
     public function getCapacities() : ?array
     {
@@ -214,7 +214,7 @@ class RangeSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets capacities.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\RangeCapacity[] $capacities array of range capacities where each entry is for a specific capacity type
+     * @param null|RangeCapacity[] $capacities array of range capacities where each entry is for a specific capacity type
      */
     public function setCapacities(?array $capacities) : self
     {

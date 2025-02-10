@@ -261,7 +261,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets discounts.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[]
+     * @return Incentive[]
      */
     public function getDiscounts() : array
     {
@@ -271,7 +271,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets discounts.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[] $discounts discount for the offered option
+     * @param Incentive[] $discounts discount for the offered option
      */
     public function setDiscounts(array $discounts) : self
     {
@@ -303,7 +303,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets fees.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[]
+     * @return Incentive[]
      */
     public function getFees() : array
     {
@@ -313,7 +313,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets fees.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Incentive[] $fees fee for the offered option
+     * @param Incentive[] $fees fee for the offered option
      */
     public function setFees(array $fees) : self
     {
@@ -387,7 +387,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets supported_configurations.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackingConfiguration[]
+     * @return PackingConfiguration[]
      */
     public function getSupportedConfigurations() : array
     {
@@ -397,7 +397,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets supported_configurations.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\PackingConfiguration[] $supported_configurations a list of possible configurations for this option
+     * @param PackingConfiguration[] $supported_configurations a list of possible configurations for this option
      */
     public function setSupportedConfigurations(array $supported_configurations) : self
     {
@@ -409,7 +409,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets supported_shipping_configurations.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingConfiguration[]
+     * @return ShippingConfiguration[]
      */
     public function getSupportedShippingConfigurations() : array
     {
@@ -419,7 +419,7 @@ class PackingOption implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets supported_shipping_configurations.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\ShippingConfiguration[] $supported_shipping_configurations **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
+     * @param ShippingConfiguration[] $supported_shipping_configurations **This field is deprecated**. Use the `shippingRequirements` property under `supportedConfigurations` instead. List of supported shipping modes.
      */
     public function setSupportedShippingConfigurations(array $supported_shipping_configurations) : self
     {

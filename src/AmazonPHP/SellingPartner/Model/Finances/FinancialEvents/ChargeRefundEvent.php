@@ -250,7 +250,7 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets charge_refund_transactions.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeRefundTransaction[]
+     * @return null|ChargeRefundTransaction[]
      */
     public function getChargeRefundTransactions() : ?array
     {
@@ -260,7 +260,7 @@ class ChargeRefundEvent implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets charge_refund_transactions.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\ChargeRefundTransaction[] $charge_refund_transactions A list of `ChargeRefund` transactions
+     * @param null|ChargeRefundTransaction[] $charge_refund_transactions A list of `ChargeRefund` transactions
      */
     public function setChargeRefundTransactions(?array $charge_refund_transactions) : self
     {

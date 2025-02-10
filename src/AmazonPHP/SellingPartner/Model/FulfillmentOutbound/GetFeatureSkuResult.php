@@ -301,7 +301,7 @@ class GetFeatureSkuResult implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets sku_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSku $sku_info sku_info
+     * @param null|FeatureSku $sku_info sku_info
      */
     public function setSkuInfo(?FeatureSku $sku_info) : self
     {

@@ -183,7 +183,7 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Gets warnings.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\APlus\Error[]
+     * @return null|Error[]
      */
     public function getWarnings() : ?array
     {
@@ -193,7 +193,7 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets warnings.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\Error[] $warnings a set of messages to the user, such as warnings or comments
+     * @param null|Error[] $warnings a set of messages to the user, such as warnings or comments
      */
     public function setWarnings(?array $warnings) : self
     {
@@ -213,7 +213,7 @@ class GetContentDocumentResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets content_record.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentRecord $content_record content_record
+     * @param ContentRecord $content_record content_record
      */
     public function setContentRecord(ContentRecord $content_record) : self
     {

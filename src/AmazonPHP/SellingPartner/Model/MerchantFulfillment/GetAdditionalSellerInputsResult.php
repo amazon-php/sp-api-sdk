@@ -178,7 +178,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Gets shipment_level_fields.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalInputs[]
+     * @return null|AdditionalInputs[]
      */
     public function getShipmentLevelFields() : ?array
     {
@@ -188,7 +188,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Sets shipment_level_fields.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalInputs[] $shipment_level_fields a list of additional inputs
+     * @param null|AdditionalInputs[] $shipment_level_fields a list of additional inputs
      */
     public function setShipmentLevelFields(?array $shipment_level_fields) : self
     {
@@ -200,7 +200,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Gets item_level_fields_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ItemLevelFields[]
+     * @return null|ItemLevelFields[]
      */
     public function getItemLevelFieldsList() : ?array
     {
@@ -210,7 +210,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
     /**
      * Sets item_level_fields_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ItemLevelFields[] $item_level_fields_list a list of item level fields
+     * @param null|ItemLevelFields[] $item_level_fields_list a list of item level fields
      */
     public function setItemLevelFieldsList(?array $item_level_fields_list) : self
     {

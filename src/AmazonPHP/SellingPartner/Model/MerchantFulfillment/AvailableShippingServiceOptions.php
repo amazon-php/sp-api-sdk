@@ -185,7 +185,7 @@ class AvailableShippingServiceOptions implements \ArrayAccess, \JsonSerializable
     /**
      * Gets available_carrier_will_pick_up_options.
      *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AvailableCarrierWillPickUpOption[]
+     * @return AvailableCarrierWillPickUpOption[]
      */
     public function getAvailableCarrierWillPickUpOptions() : array
     {
@@ -195,7 +195,7 @@ class AvailableShippingServiceOptions implements \ArrayAccess, \JsonSerializable
     /**
      * Sets available_carrier_will_pick_up_options.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AvailableCarrierWillPickUpOption[] $available_carrier_will_pick_up_options list of available carrier pickup options
+     * @param AvailableCarrierWillPickUpOption[] $available_carrier_will_pick_up_options list of available carrier pickup options
      */
     public function setAvailableCarrierWillPickUpOptions(array $available_carrier_will_pick_up_options) : self
     {
@@ -207,7 +207,7 @@ class AvailableShippingServiceOptions implements \ArrayAccess, \JsonSerializable
     /**
      * Gets available_delivery_experience_options.
      *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AvailableDeliveryExperienceOption[]
+     * @return AvailableDeliveryExperienceOption[]
      */
     public function getAvailableDeliveryExperienceOptions() : array
     {
@@ -217,7 +217,7 @@ class AvailableShippingServiceOptions implements \ArrayAccess, \JsonSerializable
     /**
      * Sets available_delivery_experience_options.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AvailableDeliveryExperienceOption[] $available_delivery_experience_options list of available delivery experience options
+     * @param AvailableDeliveryExperienceOption[] $available_delivery_experience_options list of available delivery experience options
      */
     public function setAvailableDeliveryExperienceOptions(array $available_delivery_experience_options) : self
     {

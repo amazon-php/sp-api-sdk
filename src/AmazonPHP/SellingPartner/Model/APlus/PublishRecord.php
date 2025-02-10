@@ -309,7 +309,7 @@ class PublishRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets content_type.
      *
-     * @param \AmazonPHP\SellingPartner\Model\APlus\ContentType $content_type content_type
+     * @param ContentType $content_type content_type
      */
     public function setContentType(ContentType $content_type) : self
     {

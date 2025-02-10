@@ -185,7 +185,7 @@ class ListDeliveryWindowOptionsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Gets delivery_window_options.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\DeliveryWindowOption[]
+     * @return DeliveryWindowOption[]
      */
     public function getDeliveryWindowOptions() : array
     {
@@ -195,7 +195,7 @@ class ListDeliveryWindowOptionsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets delivery_window_options.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\DeliveryWindowOption[] $delivery_window_options delivery window options generated for the placement option
+     * @param DeliveryWindowOption[] $delivery_window_options delivery window options generated for the placement option
      */
     public function setDeliveryWindowOptions(array $delivery_window_options) : self
     {
@@ -215,7 +215,7 @@ class ListDeliveryWindowOptionsResponse implements \ArrayAccess, \JsonSerializab
     /**
      * Sets pagination.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\Pagination $pagination pagination
+     * @param null|Pagination $pagination pagination
      */
     public function setPagination(?Pagination $pagination) : self
     {

@@ -17,6 +17,7 @@ $finder = PhpCsFixer\Finder::create()
 $config = new PhpCsFixer\Config();
 
 return $config
+    ->setParallelConfig(PhpCsFixer\Runner\Parallel\ParallelConfigFactory::detect())
     ->setRiskyAllowed(true)
     ->setUsingCache(false)
     ->setRules([
@@ -47,12 +48,18 @@ return $config
                 'while',
             ],
         ],
-        'braces' => true,
+        'braces_position' => true,
+        'control_structure_braces' => true,
+        'control_structure_continuation_position' => true,
+        'declare_parentheses' => true,
+        'no_multiple_statements_per_line' => true,
+        'single_space_around_construct' => true,
+        'statement_indentation' => true,
         'cast_spaces' => true,
         'class_attributes_separation' => ['elements' => ['const'=>'one', 'method'=>'one', 'property'=>'one']],
         'combine_consecutive_issets' => true,
         'combine_consecutive_unsets' => true,
-        'compact_nullable_typehint' => true,
+        'compact_nullable_type_declaration' => true,
         'concat_space' => ['spacing' => 'one'],
         'constant_case' => true,
         'declare_equal_normalize' => ['space' => 'none'],
@@ -65,7 +72,7 @@ return $config
         'explicit_string_variable' => true,
         'full_opening_tag' => true,
         'fully_qualified_strict_types' => true,
-        'function_typehint_space' => true,
+        'type_declaration_spaces' => true,
         'function_declaration' => true,
         'global_namespace_import' => [
             'import_classes' => false,
@@ -74,7 +81,7 @@ return $config
         ],
         'heredoc_to_nowdoc' => true,
         'increment_style' => [
-            'style' => PhpCsFixer\Fixer\Operator\IncrementStyleFixer::STYLE_POST,
+            'style' => 'post',
         ],
         'indentation_type' => true,
         'is_null' => true,
@@ -92,8 +99,8 @@ return $config
         'native_constant_invocation' => false,
         'native_function_casing' => false,
         'native_function_invocation' => ['include'=>['@all']],
-        'native_function_type_declaration_casing' => true,
-        'new_with_braces' => false,
+        'native_type_declaration_casing' => true,
+        'new_with_parentheses' => false,
         'no_alias_functions' => true,
         'no_alternative_syntax' => true,
         'no_blank_lines_after_class_opening' => true,
@@ -103,7 +110,24 @@ return $config
         'no_empty_comment' => true,
         'no_empty_phpdoc' => true,
         'no_empty_statement' => true,
-        'no_extra_blank_lines' => true,
+        'no_extra_blank_lines' => [
+            'tokens' => [
+                'attribute',
+                'break',
+                'case',
+                'continue',
+                'curly_brace_block',
+                'default',
+                'extra',
+                'parenthesis_brace_block',
+                'return',
+                'square_brace_block',
+                'switch',
+                'throw',
+                'use',
+                'use_trait',
+            ],
+        ],
         'no_homoglyph_names' => true,
         'no_leading_import_slash' => true,
         'no_leading_namespace_whitespace' => true,
@@ -115,14 +139,14 @@ return $config
         'no_singleline_whitespace_before_semicolons' => true,
         'no_spaces_after_function_name' => true,
         'no_spaces_around_offset' => true,
-        'no_spaces_inside_parenthesis' => true,
+        'spaces_inside_parentheses' => ['space' => 'none'],
         'no_superfluous_elseif' => true,
         'no_superfluous_phpdoc_tags' => true,
         'no_trailing_comma_in_singleline' => true,
         'no_trailing_whitespace' => true,
         'no_trailing_whitespace_in_comment' => true,
         'no_unneeded_control_parentheses' => true,
-        'no_unneeded_curly_braces' => true,
+        'no_unneeded_braces' => true,
         'no_unneeded_final_method' => true,
         'no_unreachable_default_argument_value' => true,
         'no_unset_on_property' => true,
@@ -160,9 +184,9 @@ return $config
         ],
         'ordered_imports' => [
             'imports_order' => [
-                PhpCsFixer\Fixer\Import\OrderedImportsFixer::IMPORT_TYPE_CONST,
-                PhpCsFixer\Fixer\Import\OrderedImportsFixer::IMPORT_TYPE_FUNCTION,
-                PhpCsFixer\Fixer\Import\OrderedImportsFixer::IMPORT_TYPE_CLASS,
+                'const',
+                'function',
+                'class',
             ]
         ],
         'ordered_interfaces' => [
@@ -188,8 +212,12 @@ return $config
         'phpdoc_types' => ['groups' => ['simple', 'meta']],
         'phpdoc_types_order' => true,
         'phpdoc_var_without_name' => true,
-        'phpdoc_to_param_type' => true,
-        'phpdoc_to_return_type' => true,
+        'phpdoc_to_param_type' => [
+            'union_types' => false,
+        ],
+        'phpdoc_to_return_type' => [
+            'union_types' => false,
+        ],
         'pow_to_exponentiation' => true,
         'protected_to_private' => true,
         'return_assignment' => true,

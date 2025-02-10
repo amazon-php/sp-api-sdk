@@ -267,7 +267,7 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets adjustment_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $adjustment_amount adjustment_amount
+     * @param null|Currency $adjustment_amount adjustment_amount
      */
     public function setAdjustmentAmount(?Currency $adjustment_amount) : self
     {
@@ -279,7 +279,7 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets adjustment_item_list.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\AdjustmentItem[]
+     * @return null|AdjustmentItem[]
      */
     public function getAdjustmentItemList() : ?array
     {
@@ -289,7 +289,7 @@ class AdjustmentEvent implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets adjustment_item_list.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\AdjustmentItem[] $adjustment_item_list a list of information about items in an adjustment to the seller's account
+     * @param null|AdjustmentItem[] $adjustment_item_list a list of information about items in an adjustment to the seller's account
      */
     public function setAdjustmentItemList(?array $adjustment_item_list) : self
     {

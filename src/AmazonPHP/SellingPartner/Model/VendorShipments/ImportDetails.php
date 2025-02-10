@@ -343,7 +343,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets route.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Route $route route
+     * @param null|Route $route route
      */
     public function setRoute(?Route $route) : self
     {
@@ -383,7 +383,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets billable_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Weight $billable_weight billable_weight
+     * @param null|Weight $billable_weight billable_weight
      */
     public function setBillableWeight(?Weight $billable_weight) : self
     {

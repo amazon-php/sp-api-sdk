@@ -133,7 +133,7 @@ final class VendorTransactionStatusSDK implements VendorTransactionStatusSDKInte
      *
      * @param string $transaction_id The GUID provided by Amazon in the &#39;transactionId&#39; field in response to the post request of a specific transaction. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getTransactionRequest(AccessToken $accessToken, string $region, string $transaction_id) : RequestInterface
     {

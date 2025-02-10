@@ -227,7 +227,7 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets content_metadata.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ContentMetadata $content_metadata content_metadata
+     * @param null|ContentMetadata $content_metadata content_metadata
      */
     public function setContentMetadata(?ContentMetadata $content_metadata) : self
     {
@@ -247,7 +247,7 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets content_document.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ContentDocument $content_document content_document
+     * @param null|ContentDocument $content_document content_document
      */
     public function setContentDocument(?ContentDocument $content_document) : self
     {

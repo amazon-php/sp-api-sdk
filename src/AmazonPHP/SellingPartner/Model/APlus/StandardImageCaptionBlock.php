@@ -193,7 +193,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets image.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\ImageComponent $image image
+     * @param null|ImageComponent $image image
      */
     public function setImage(?ImageComponent $image) : self
     {
@@ -213,7 +213,7 @@ class StandardImageCaptionBlock implements \ArrayAccess, \JsonSerializable, \Str
     /**
      * Sets caption.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\APlus\TextComponent $caption caption
+     * @param null|TextComponent $caption caption
      */
     public function setCaption(?TextComponent $caption) : self
     {

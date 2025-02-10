@@ -241,7 +241,7 @@ class BusinessHours implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Gets open_intervals.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\OpenInterval[]
+     * @return null|OpenInterval[]
      */
     public function getOpenIntervals() : ?array
     {
@@ -251,7 +251,7 @@ class BusinessHours implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets open_intervals.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\OpenInterval[] $open_intervals time window during the day when the business is open
+     * @param null|OpenInterval[] $open_intervals time window during the day when the business is open
      */
     public function setOpenIntervals(?array $open_intervals) : self
     {

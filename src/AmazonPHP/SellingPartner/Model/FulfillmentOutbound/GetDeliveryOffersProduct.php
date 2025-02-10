@@ -195,7 +195,7 @@ class GetDeliveryOffersProduct implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets product_identifier.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ProductIdentifier $product_identifier product_identifier
+     * @param ProductIdentifier $product_identifier product_identifier
      */
     public function setProductIdentifier(ProductIdentifier $product_identifier) : self
     {
@@ -215,7 +215,7 @@ class GetDeliveryOffersProduct implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Amount $amount amount
+     * @param null|Amount $amount amount
      */
     public function setAmount(?Amount $amount) : self
     {

@@ -189,7 +189,7 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets delivery_address.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\VariablePrecisionAddress $delivery_address delivery_address
+     * @param null|VariablePrecisionAddress $delivery_address delivery_address
      */
     public function setDeliveryAddress(?VariablePrecisionAddress $delivery_address) : self
     {

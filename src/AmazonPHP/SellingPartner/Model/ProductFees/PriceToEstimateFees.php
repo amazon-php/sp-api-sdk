@@ -205,7 +205,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets listing_price.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $listing_price listing_price
+     * @param MoneyType $listing_price listing_price
      */
     public function setListingPrice(MoneyType $listing_price) : self
     {
@@ -225,7 +225,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets shipping.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\MoneyType $shipping shipping
+     * @param null|MoneyType $shipping shipping
      */
     public function setShipping(?MoneyType $shipping) : self
     {
@@ -245,7 +245,7 @@ class PriceToEstimateFees implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets points.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductFees\Points $points points
+     * @param null|Points $points points
      */
     public function setPoints(?Points $points) : self
     {

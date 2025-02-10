@@ -227,7 +227,7 @@ class TransportationSelection implements \ArrayAccess, \JsonSerializable, \Strin
     /**
      * Sets contact_information.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ContactInformation $contact_information contact_information
+     * @param null|ContactInformation $contact_information contact_information
      */
     public function setContactInformation(?ContactInformation $contact_information) : self
     {

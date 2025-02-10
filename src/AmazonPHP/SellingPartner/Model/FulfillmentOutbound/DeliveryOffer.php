@@ -219,7 +219,7 @@ class DeliveryOffer implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets date_range.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DateRange $date_range date_range
+     * @param null|DateRange $date_range date_range
      */
     public function setDateRange(?DateRange $date_range) : self
     {
@@ -239,7 +239,7 @@ class DeliveryOffer implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
     /**
      * Sets policy.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryPolicy $policy policy
+     * @param null|DeliveryPolicy $policy policy
      */
     public function setPolicy(?DeliveryPolicy $policy) : self
     {

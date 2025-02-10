@@ -193,7 +193,7 @@ class OpenInterval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets start_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\OpenTimeInterval $start_time start_time
+     * @param null|OpenTimeInterval $start_time start_time
      */
     public function setStartTime(?OpenTimeInterval $start_time) : self
     {
@@ -213,7 +213,7 @@ class OpenInterval implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets end_time.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\OpenTimeInterval $end_time end_time
+     * @param null|OpenTimeInterval $end_time end_time
      */
     public function setEndTime(?OpenTimeInterval $end_time) : self
     {

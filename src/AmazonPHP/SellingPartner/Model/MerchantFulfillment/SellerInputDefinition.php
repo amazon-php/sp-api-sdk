@@ -269,7 +269,7 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets constraints.
      *
-     * @return \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Constraint[]
+     * @return Constraint[]
      */
     public function getConstraints() : array
     {
@@ -279,7 +279,7 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets constraints.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\Constraint[] $constraints list of constraints
+     * @param Constraint[] $constraints list of constraints
      */
     public function setConstraints(array $constraints) : self
     {
@@ -319,7 +319,7 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets input_target.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\InputTargetType $input_target input_target
+     * @param null|InputTargetType $input_target input_target
      */
     public function setInputTarget(?InputTargetType $input_target) : self
     {
@@ -339,7 +339,7 @@ class SellerInputDefinition implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets stored_value.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInput $stored_value stored_value
+     * @param AdditionalSellerInput $stored_value stored_value
      */
     public function setStoredValue(AdditionalSellerInput $stored_value) : self
     {

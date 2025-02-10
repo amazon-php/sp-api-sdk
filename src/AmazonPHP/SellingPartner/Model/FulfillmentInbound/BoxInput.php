@@ -231,7 +231,7 @@ class BoxInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets content_information_source.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\BoxContentInformationSource $content_information_source content_information_source
+     * @param BoxContentInformationSource $content_information_source content_information_source
      */
     public function setContentInformationSource(BoxContentInformationSource $content_information_source) : self
     {
@@ -251,7 +251,7 @@ class BoxInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets dimensions.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Dimensions $dimensions dimensions
+     * @param Dimensions $dimensions dimensions
      */
     public function setDimensions(Dimensions $dimensions) : self
     {
@@ -263,7 +263,7 @@ class BoxInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Gets items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[]
+     * @return null|ItemInput[]
      */
     public function getItems() : ?array
     {
@@ -273,7 +273,7 @@ class BoxInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentInbound\ItemInput[] $items The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
+     * @param null|ItemInput[] $items The items and their quantity in the box. This must be empty if the box `contentInformationSource` is `BARCODE_2D` or `MANUAL_PROCESS`.
      */
     public function setItems(?array $items) : self
     {
@@ -313,7 +313,7 @@ class BoxInput implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets weight.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\Weight $weight weight
+     * @param Weight $weight weight
      */
     public function setWeight(Weight $weight) : self
     {

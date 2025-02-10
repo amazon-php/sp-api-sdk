@@ -263,7 +263,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets shipping_speed_category.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ShippingSpeedCategory $shipping_speed_category shipping_speed_category
+     * @param ShippingSpeedCategory $shipping_speed_category shipping_speed_category
      */
     public function setShippingSpeedCategory(ShippingSpeedCategory $shipping_speed_category) : self
     {
@@ -283,7 +283,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets scheduled_delivery_info.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\ScheduledDeliveryInfo $scheduled_delivery_info scheduled_delivery_info
+     * @param null|ScheduledDeliveryInfo $scheduled_delivery_info scheduled_delivery_info
      */
     public function setScheduledDeliveryInfo(?ScheduledDeliveryInfo $scheduled_delivery_info) : self
     {
@@ -343,7 +343,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets estimated_shipping_weight.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Weight $estimated_shipping_weight estimated_shipping_weight
+     * @param null|Weight $estimated_shipping_weight estimated_shipping_weight
      */
     public function setEstimatedShippingWeight(?Weight $estimated_shipping_weight) : self
     {
@@ -355,7 +355,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets estimated_fees.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Fee[]
+     * @return null|Fee[]
      */
     public function getEstimatedFees() : ?array
     {
@@ -365,7 +365,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets estimated_fees.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\Fee[] $estimated_fees an array of fee type and cost pairs
+     * @param null|Fee[] $estimated_fees an array of fee type and cost pairs
      */
     public function setEstimatedFees(?array $estimated_fees) : self
     {
@@ -377,7 +377,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets fulfillment_preview_shipments.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPreviewShipment[]
+     * @return null|FulfillmentPreviewShipment[]
      */
     public function getFulfillmentPreviewShipments() : ?array
     {
@@ -387,7 +387,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets fulfillment_preview_shipments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPreviewShipment[] $fulfillment_preview_shipments an array of fulfillment preview shipment information
+     * @param null|FulfillmentPreviewShipment[] $fulfillment_preview_shipments an array of fulfillment preview shipment information
      */
     public function setFulfillmentPreviewShipments(?array $fulfillment_preview_shipments) : self
     {
@@ -399,7 +399,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets unfulfillable_preview_items.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UnfulfillablePreviewItem[]
+     * @return null|UnfulfillablePreviewItem[]
      */
     public function getUnfulfillablePreviewItems() : ?array
     {
@@ -409,7 +409,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets unfulfillable_preview_items.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\UnfulfillablePreviewItem[] $unfulfillable_preview_items an array of unfulfillable preview item information
+     * @param null|UnfulfillablePreviewItem[] $unfulfillable_preview_items an array of unfulfillable preview item information
      */
     public function setUnfulfillablePreviewItems(?array $unfulfillable_preview_items) : self
     {
@@ -463,7 +463,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Gets feature_constraints.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[]
+     * @return null|FeatureSettings[]
      */
     public function getFeatureConstraints() : ?array
     {
@@ -473,7 +473,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
     /**
      * Sets feature_constraints.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
+     * @param null|FeatureSettings[] $feature_constraints a list of features and their fulfillment policies to apply to the order
      */
     public function setFeatureConstraints(?array $feature_constraints) : self
     {

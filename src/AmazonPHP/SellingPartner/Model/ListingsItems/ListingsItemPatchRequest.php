@@ -209,7 +209,7 @@ class ListingsItemPatchRequest implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Gets patches.
      *
-     * @return \AmazonPHP\SellingPartner\Model\ListingsItems\PatchOperation[]
+     * @return PatchOperation[]
      */
     public function getPatches() : array
     {
@@ -219,7 +219,7 @@ class ListingsItemPatchRequest implements \ArrayAccess, \JsonSerializable, \Stri
     /**
      * Sets patches.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ListingsItems\PatchOperation[] $patches one or more JSON Patch operations to perform on the listings item
+     * @param PatchOperation[] $patches one or more JSON Patch operations to perform on the listings item
      */
     public function setPatches(array $patches) : self
     {

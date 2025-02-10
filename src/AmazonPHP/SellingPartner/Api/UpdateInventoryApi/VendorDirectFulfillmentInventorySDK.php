@@ -135,7 +135,7 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
      * @param string $warehouse_id Identifier for the warehouse for which to update inventory. (required)
      * @param \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body The request body containing the inventory update data to submit. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function submitInventoryUpdateRequest(AccessToken $accessToken, string $region, string $warehouse_id, \AmazonPHP\SellingPartner\Model\VendorDirectFulfillmentInventory\SubmitInventoryUpdateRequest $body) : RequestInterface
     {
@@ -145,6 +145,7 @@ final class VendorDirectFulfillmentInventorySDK implements VendorDirectFulfillme
                 'Missing the required parameter $warehouse_id when calling submitInventoryUpdate'
             );
         }
+
         // verify the required parameter 'body' is set
         if ($body === null || (\is_array($body) && \count($body) === 0)) {
             throw new InvalidArgumentException(

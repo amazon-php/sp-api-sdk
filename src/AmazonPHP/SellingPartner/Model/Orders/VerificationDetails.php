@@ -183,7 +183,7 @@ class VerificationDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets prescription_detail.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\PrescriptionDetail $prescription_detail prescription_detail
+     * @param null|PrescriptionDetail $prescription_detail prescription_detail
      */
     public function setPrescriptionDetail(?PrescriptionDetail $prescription_detail) : self
     {

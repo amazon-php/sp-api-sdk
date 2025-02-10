@@ -200,7 +200,7 @@ class Benefits implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Gets excluded_benefits.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ExcludedBenefit[]
+     * @return null|ExcludedBenefit[]
      */
     public function getExcludedBenefits() : ?array
     {
@@ -210,7 +210,7 @@ class Benefits implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
     /**
      * Sets excluded_benefits.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\MerchantFulfillment\ExcludedBenefit[] $excluded_benefits A list of excluded benefits. Refer to the `ExcludeBenefit` object for further documentation.
+     * @param null|ExcludedBenefit[] $excluded_benefits A list of excluded benefits. Refer to the `ExcludeBenefit` object for further documentation.
      */
     public function setExcludedBenefits(?array $excluded_benefits) : self
     {

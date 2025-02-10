@@ -230,7 +230,7 @@ class FixedSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Gets capacities.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Services\FixedSlot[]
+     * @return null|FixedSlot[]
      */
     public function getCapacities() : ?array
     {
@@ -240,7 +240,7 @@ class FixedSlotCapacity implements \ArrayAccess, \JsonSerializable, \Stringable,
     /**
      * Sets capacities.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Services\FixedSlot[] $capacities array of capacity slots in fixed slot format
+     * @param null|FixedSlot[] $capacities array of capacity slots in fixed slot format
      */
     public function setCapacities(?array $capacities) : self
     {

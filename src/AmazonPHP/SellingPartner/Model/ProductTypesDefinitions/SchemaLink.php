@@ -195,7 +195,7 @@ class SchemaLink implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
     /**
      * Sets link.
      *
-     * @param \AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\SchemaLinkLink $link link
+     * @param SchemaLinkLink $link link
      */
     public function setLink(SchemaLinkLink $link) : self
     {

@@ -135,7 +135,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      *
      * @param string $purchase_order_number Purchase order number of the shipment for which to return the invoice. (required)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getCustomerInvoiceRequest(AccessToken $accessToken, string $region, string $purchase_order_number) : RequestInterface
     {
@@ -338,7 +338,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
      * @param null|string $sort_order Sort ASC or DESC by order creation date. (optional)
      * @param null|string $next_token Used for pagination when there are more orders than the specified result size limit. The token value is returned in the previous API call. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function getCustomerInvoicesRequest(AccessToken $accessToken, string $region, \DateTimeInterface $created_after, \DateTimeInterface $created_before, ?string $ship_from_party_id = null, ?int $limit = null, ?string $sort_order = null, ?string $next_token = null) : RequestInterface
     {
@@ -348,6 +348,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
                 'Missing the required parameter $created_after when calling getCustomerInvoices'
             );
         }
+
         // verify the required parameter 'created_before' is set
         if ($created_before === null || (\is_array($created_before) && \count($created_before) === 0)) {
             throw new InvalidArgumentException(
@@ -378,6 +379,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
         if ($ship_from_party_id !== null) {
             $queryParams['shipFromPartyId'] = ObjectSerializer::toString($ship_from_party_id);
         }
+
         // query params
         if (\is_array($limit)) {
             $limit = ObjectSerializer::serializeCollection($limit, '', true);
@@ -386,6 +388,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
         if ($limit !== null) {
             $queryParams['limit'] = ObjectSerializer::toString($limit);
         }
+
         // query params
         if (\is_array($created_after)) {
             $created_after = ObjectSerializer::serializeCollection($created_after, '', true);
@@ -394,6 +397,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
         if ($created_after !== null) {
             $queryParams['createdAfter'] = ObjectSerializer::toString($created_after);
         }
+
         // query params
         if (\is_array($created_before)) {
             $created_before = ObjectSerializer::serializeCollection($created_before, '', true);
@@ -402,6 +406,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
         if ($created_before !== null) {
             $queryParams['createdBefore'] = ObjectSerializer::toString($created_before);
         }
+
         // query params
         if (\is_array($sort_order)) {
             $sort_order = ObjectSerializer::serializeCollection($sort_order, '', true);
@@ -410,6 +415,7 @@ final class VendorDirectFulfillmentShippingSDK implements VendorDirectFulfillmen
         if ($sort_order !== null) {
             $queryParams['sortOrder'] = ObjectSerializer::toString($sort_order);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);

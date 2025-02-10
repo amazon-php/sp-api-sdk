@@ -259,7 +259,7 @@ class WeightRange implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets unit.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\UnitOfWeight $unit unit
+     * @param UnitOfWeight $unit unit
      */
     public function setUnit(UnitOfWeight $unit) : self
     {

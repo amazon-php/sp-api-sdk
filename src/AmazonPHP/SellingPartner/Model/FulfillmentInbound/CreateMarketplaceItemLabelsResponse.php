@@ -175,7 +175,7 @@ class CreateMarketplaceItemLabelsResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Gets document_downloads.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentInbound\DocumentDownload[]
+     * @return DocumentDownload[]
      */
     public function getDocumentDownloads() : array
     {
@@ -185,7 +185,7 @@ class CreateMarketplaceItemLabelsResponse implements \ArrayAccess, \JsonSerializ
     /**
      * Sets document_downloads.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentInbound\DocumentDownload[] $document_downloads resources to download the requested document
+     * @param DocumentDownload[] $document_downloads resources to download the requested document
      */
     public function setDocumentDownloads(array $document_downloads) : self
     {

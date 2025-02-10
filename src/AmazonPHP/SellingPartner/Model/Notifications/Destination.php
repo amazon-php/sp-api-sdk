@@ -249,7 +249,7 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets resource.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Notifications\DestinationResource $resource resource
+     * @param DestinationResource $resource resource
      */
     public function setResource(DestinationResource $resource) : self
     {

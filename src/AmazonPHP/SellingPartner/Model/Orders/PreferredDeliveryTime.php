@@ -178,7 +178,7 @@ class PreferredDeliveryTime implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets business_hours.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\BusinessHours[]
+     * @return null|BusinessHours[]
      */
     public function getBusinessHours() : ?array
     {
@@ -188,7 +188,7 @@ class PreferredDeliveryTime implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets business_hours.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\BusinessHours[] $business_hours business hours when the business is open for deliveries
+     * @param null|BusinessHours[] $business_hours business hours when the business is open for deliveries
      */
     public function setBusinessHours(?array $business_hours) : self
     {
@@ -200,7 +200,7 @@ class PreferredDeliveryTime implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Gets exception_dates.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\Orders\ExceptionDates[]
+     * @return null|ExceptionDates[]
      */
     public function getExceptionDates() : ?array
     {
@@ -210,7 +210,7 @@ class PreferredDeliveryTime implements \ArrayAccess, \JsonSerializable, \Stringa
     /**
      * Sets exception_dates.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Orders\ExceptionDates[] $exception_dates dates when the business is closed during the next 30 days
+     * @param null|ExceptionDates[] $exception_dates dates when the business is closed during the next 30 days
      */
     public function setExceptionDates(?array $exception_dates) : self
     {

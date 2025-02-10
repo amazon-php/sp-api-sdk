@@ -319,7 +319,7 @@ class FailedAdhocDisbursementEvent implements \ArrayAccess, \JsonSerializable, \
     /**
      * Sets transfer_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $transfer_amount transfer_amount
+     * @param null|Currency $transfer_amount transfer_amount
      */
     public function setTransferAmount(?Currency $transfer_amount) : self
     {

@@ -209,7 +209,7 @@ class FeeComponent implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
     /**
      * Sets fee_amount.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\Finances\FinancialEvents\Currency $fee_amount fee_amount
+     * @param null|Currency $fee_amount fee_amount
      */
     public function setFeeAmount(?Currency $fee_amount) : self
     {

@@ -189,7 +189,7 @@ class GetShipmentDetailsResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets payload.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\ShipmentDetails $payload payload
+     * @param null|ShipmentDetails $payload payload
      */
     public function setPayload(?ShipmentDetails $payload) : self
     {
@@ -201,7 +201,7 @@ class GetShipmentDetailsResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Gets errors.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\VendorShipments\Error[]
+     * @return null|Error[]
      */
     public function getErrors() : ?array
     {
@@ -211,7 +211,7 @@ class GetShipmentDetailsResponse implements \ArrayAccess, \JsonSerializable, \St
     /**
      * Sets errors.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\VendorShipments\Error[] $errors a list of error responses returned when a request is unsuccessful
+     * @param null|Error[] $errors a list of error responses returned when a request is unsuccessful
      */
     public function setErrors(?array $errors) : self
     {

@@ -205,7 +205,7 @@ class SkuQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets expected_quantity.
      *
-     * @param \AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryQuantity $expected_quantity expected_quantity
+     * @param InventoryQuantity $expected_quantity expected_quantity
      */
     public function setExpectedQuantity(InventoryQuantity $expected_quantity) : self
     {
@@ -225,7 +225,7 @@ class SkuQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, Model
     /**
      * Sets received_quantity.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InventoryQuantity $received_quantity received_quantity
+     * @param null|InventoryQuantity $received_quantity received_quantity
      */
     public function setReceivedQuantity(?InventoryQuantity $received_quantity) : self
     {

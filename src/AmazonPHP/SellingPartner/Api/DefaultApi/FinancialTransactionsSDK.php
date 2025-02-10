@@ -139,7 +139,7 @@ final class FinancialTransactionsSDK implements FinancialTransactionsSDKInterfac
      * @param null|string $marketplace_id The ID of the marketplace from which you want to retrieve transactions. (optional)
      * @param null|string $next_token The response includes &#x60;nextToken&#x60; when the number of results exceeds the specified &#x60;pageSize&#x60; value. To get the next page of results, call the operation with this token and include the same arguments as the call that produced the token. To get a complete list, call this operation until &#x60;nextToken&#x60; is null. Note that this operation can return empty pages. (optional)
      *
-     * @throws \AmazonPHP\SellingPartner\Exception\InvalidArgumentException
+     * @throws InvalidArgumentException
      */
     public function listTransactionsRequest(AccessToken $accessToken, string $region, \DateTimeInterface $posted_after, ?\DateTimeInterface $posted_before = null, ?string $marketplace_id = null, ?string $next_token = null) : RequestInterface
     {
@@ -165,6 +165,7 @@ final class FinancialTransactionsSDK implements FinancialTransactionsSDKInterfac
         if ($posted_after !== null) {
             $queryParams['postedAfter'] = ObjectSerializer::toString($posted_after);
         }
+
         // query params
         if (\is_array($posted_before)) {
             $posted_before = ObjectSerializer::serializeCollection($posted_before, '', true);
@@ -173,6 +174,7 @@ final class FinancialTransactionsSDK implements FinancialTransactionsSDKInterfac
         if ($posted_before !== null) {
             $queryParams['postedBefore'] = ObjectSerializer::toString($posted_before);
         }
+
         // query params
         if (\is_array($marketplace_id)) {
             $marketplace_id = ObjectSerializer::serializeCollection($marketplace_id, '', true);
@@ -181,6 +183,7 @@ final class FinancialTransactionsSDK implements FinancialTransactionsSDKInterfac
         if ($marketplace_id !== null) {
             $queryParams['marketplaceId'] = ObjectSerializer::toString($marketplace_id);
         }
+
         // query params
         if (\is_array($next_token)) {
             $next_token = ObjectSerializer::serializeCollection($next_token, '', true);

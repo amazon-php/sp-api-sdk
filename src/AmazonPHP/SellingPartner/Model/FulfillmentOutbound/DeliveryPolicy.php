@@ -183,7 +183,7 @@ class DeliveryPolicy implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
     /**
      * Sets message.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\DeliveryMessage $message message
+     * @param null|DeliveryMessage $message message
      */
     public function setMessage(?DeliveryMessage $message) : self
     {

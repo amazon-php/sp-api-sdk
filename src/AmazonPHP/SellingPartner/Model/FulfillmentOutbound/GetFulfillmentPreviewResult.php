@@ -172,7 +172,7 @@ class GetFulfillmentPreviewResult implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Gets fulfillment_previews.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPreview[]
+     * @return null|FulfillmentPreview[]
      */
     public function getFulfillmentPreviews() : ?array
     {
@@ -182,7 +182,7 @@ class GetFulfillmentPreviewResult implements \ArrayAccess, \JsonSerializable, \S
     /**
      * Sets fulfillment_previews.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FulfillmentOutbound\FulfillmentPreview[] $fulfillment_previews an array of fulfillment preview information
+     * @param null|FulfillmentPreview[] $fulfillment_previews an array of fulfillment preview information
      */
     public function setFulfillmentPreviews(?array $fulfillment_previews) : self
     {

@@ -209,7 +209,7 @@ class Points implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
     /**
      * Sets points_monetary_value.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\ProductPricing\MoneyType $points_monetary_value points_monetary_value
+     * @param null|MoneyType $points_monetary_value points_monetary_value
      */
     public function setPointsMonetaryValue(?MoneyType $points_monetary_value) : self
     {

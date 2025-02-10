@@ -198,7 +198,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Gets researching_quantity_breakdown.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[]
+     * @return null|ResearchingQuantityEntry[]
      */
     public function getResearchingQuantityBreakdown() : ?array
     {
@@ -208,7 +208,7 @@ class ResearchingQuantity implements \ArrayAccess, \JsonSerializable, \Stringabl
     /**
      * Sets researching_quantity_breakdown.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\FBAInventory\ResearchingQuantityEntry[] $researching_quantity_breakdown a list of quantity details for items currently being researched
+     * @param null|ResearchingQuantityEntry[] $researching_quantity_breakdown a list of quantity details for items currently being researched
      */
     public function setResearchingQuantityBreakdown(?array $researching_quantity_breakdown) : self
     {

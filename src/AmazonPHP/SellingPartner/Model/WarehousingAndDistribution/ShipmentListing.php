@@ -198,7 +198,7 @@ class ShipmentListing implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Gets shipments.
      *
-     * @return null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentSummary[]
+     * @return null|InboundShipmentSummary[]
      */
     public function getShipments() : ?array
     {
@@ -208,7 +208,7 @@ class ShipmentListing implements \ArrayAccess, \JsonSerializable, \Stringable, M
     /**
      * Sets shipments.
      *
-     * @param null|\AmazonPHP\SellingPartner\Model\WarehousingAndDistribution\InboundShipmentSummary[] $shipments list of inbound shipment summaries
+     * @param null|InboundShipmentSummary[] $shipments list of inbound shipment summaries
      */
     public function setShipments(?array $shipments) : self
     {

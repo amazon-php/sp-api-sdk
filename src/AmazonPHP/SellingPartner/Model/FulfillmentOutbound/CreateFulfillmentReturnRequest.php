@@ -175,7 +175,7 @@ class CreateFulfillmentReturnRequest implements \ArrayAccess, \JsonSerializable,
     /**
      * Gets items.
      *
-     * @return \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateReturnItem[]
+     * @return CreateReturnItem[]
      */
     public function getItems() : array
     {
@@ -185,7 +185,7 @@ class CreateFulfillmentReturnRequest implements \ArrayAccess, \JsonSerializable,
     /**
      * Sets items.
      *
-     * @param \AmazonPHP\SellingPartner\Model\FulfillmentOutbound\CreateReturnItem[] $items an array of items to be returned
+     * @param CreateReturnItem[] $items an array of items to be returned
      */
     public function setItems(array $items) : self
     {

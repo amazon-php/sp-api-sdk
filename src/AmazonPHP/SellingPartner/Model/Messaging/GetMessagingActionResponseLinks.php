@@ -197,7 +197,7 @@ class GetMessagingActionResponseLinks implements \ArrayAccess, \JsonSerializable
     /**
      * Sets self.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Messaging\LinkObject $self self
+     * @param LinkObject $self self
      */
     public function setSelf(LinkObject $self) : self
     {
@@ -217,7 +217,7 @@ class GetMessagingActionResponseLinks implements \ArrayAccess, \JsonSerializable
     /**
      * Sets schema.
      *
-     * @param \AmazonPHP\SellingPartner\Model\Messaging\LinkObject $schema schema
+     * @param LinkObject $schema schema
      */
     public function setSchema(LinkObject $schema) : self
     {

@@ -215,7 +215,7 @@ class AdditionalSellerInputs implements \ArrayAccess, \JsonSerializable, \String
     /**
      * Sets additional_seller_input.
      *
-     * @param \AmazonPHP\SellingPartner\Model\MerchantFulfillment\AdditionalSellerInput $additional_seller_input additional_seller_input
+     * @param AdditionalSellerInput $additional_seller_input additional_seller_input
      */
     public function setAdditionalSellerInput(AdditionalSellerInput $additional_seller_input) : self
     {
