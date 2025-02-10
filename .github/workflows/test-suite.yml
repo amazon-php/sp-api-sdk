@@ -13,7 +13,7 @@ jobs:
   static-analyze:
     name: "Static Analyze"
 
-    runs-on: "ubuntu-latest"
+    runs-on: "ubuntu-20.04"
 
     steps:
       - name: "Checkout"
@@ -24,7 +24,7 @@ jobs:
         with:
           coverage: pcov
           tools: composer:v2
-          php-version: "8.1"
+          php-version: "8.2"
           ini-values: memory_limit=-1
 
       - name: "Get Composer Cache Directory"
@@ -57,9 +57,9 @@ jobs:
         dependencies:
           - "locked"
         php-version:
-          - "8.1"
+          - "8.2"
         operating-system:
-          - "ubuntu-latest"
+          - "ubuntu-20.04"
 
     steps:
       - name: "Checkout"

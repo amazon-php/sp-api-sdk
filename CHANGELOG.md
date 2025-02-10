@@ -1,10 +1,11 @@
-## [Unreleased] - 2025-02-07
+## [Unreleased] - 2025-02-10
 
 ### Added
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Add Financial Transfers SDK and Related Models.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Add Financial Transactions SDK and Related Models.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Changed
+- [#727](https://github.com/amazon-php/sp-api-sdk/pull/727) - **Update GitHub test-suite to use Ubuntu-20.04 and PHP 8.2** - [@jasonhebert](https://github.com/jasonhebert)
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Move Finances SDK and related models from Finances namespace to Finances/FinancialEvents namespace.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Rename FinancesSDK to FinancialEventsSDK.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Rename generator-finances.yaml to generator-finances-financial-events.yaml.** - [@jasonhebert](https://github.com/jasonhebert)
