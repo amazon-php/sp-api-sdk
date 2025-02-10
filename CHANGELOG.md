@@ -1,4 +1,4 @@
-## [Unreleased] - 2025-02-10
+## [7.0.0] - 2025-02-10
 
 ### Added
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Add Financial Transfers SDK and Related Models.** - [@jasonhebert](https://github.com/jasonhebert)
