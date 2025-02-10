@@ -5,6 +5,8 @@
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Add Financial Transactions SDK and Related Models.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Changed
+- [#725](https://github.com/amazon-php/sp-api-sdk/pull/725) - **Update PHP-CS-Fixer from version 3.2.0 to 3.68.5.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#725](https://github.com/amazon-php/sp-api-sdk/pull/725) - **Correct php-cs-fixer.php config for updates.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#727](https://github.com/amazon-php/sp-api-sdk/pull/727) - **Update GitHub test-suite to use Ubuntu-20.04 and PHP 8.2** - [@jasonhebert](https://github.com/jasonhebert)
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Move Finances SDK and related models from Finances namespace to Finances/FinancialEvents namespace.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Rename FinancesSDK to FinancialEventsSDK.** - [@jasonhebert](https://github.com/jasonhebert)
@@ -17,6 +19,7 @@
 - [#688](https://github.com/amazon-php/sp-api-sdk/pull/688) - **Add 7.x branch designation to README.md.** - [@jasonhebert](https://github.com/jasonhebert)
 
 ### Fixed
+- [#725](https://github.com/amazon-php/sp-api-sdk/pull/725) - **Correct api mustache template spacing and new-lines.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#723](https://github.com/amazon-php/sp-api-sdk/pull/723) - **Correct templates so that optional request method params are nullable.** - [@jasonhebert](https://github.com/jasonhebert)
 - [#689](https://github.com/amazon-php/sp-api-sdk/pull/689) - **Update checkout and cache GitHub workflow actions to v4** - [@jasonhebert](https://github.com/jasonhebert)
 
