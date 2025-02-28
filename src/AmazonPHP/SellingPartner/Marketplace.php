@@ -28,6 +28,7 @@ use AmazonPHP\SellingPartner\Exception\InvalidArgumentException;
  * @method static SG()
  * @method static AU()
  * @method static JP()
+ * @method static IE()
  */
 final class Marketplace
 {
@@ -157,6 +158,12 @@ final class Marketplace
             'id'     => 'A1VC38T7YXB528',
             'region' => Regions::FAR_EAST,
             'url'    => 'https://sellercentral.amazon.co.jp',
+        ],
+        'IE' => [
+            'name'   => 'Ireland',
+            'id'     => 'A28R8C7NBKEWEA',
+            'region' => Regions::EUROPE,
+            'url'    => 'https://sellercentral.amazon.ie',
         ],
     ];
 
