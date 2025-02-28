@@ -1,3 +1,8 @@
+## [Unreleased] - 2025-02-28
+
+### Added
+- [#734](https://github.com/amazon-php/sp-api-sdk/pull/734) - **Added the Ireland Marketplace** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [7.0.0] - 2025-02-10
 
 ### Added
