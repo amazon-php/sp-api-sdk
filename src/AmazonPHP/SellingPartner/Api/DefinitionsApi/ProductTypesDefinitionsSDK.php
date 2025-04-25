@@ -311,9 +311,9 @@ final class ProductTypesDefinitionsSDK
      * @throws \Plenty\AmazonPHP\SellingPartner\Exception\ApiException on non-2xx response
      * @throws \Plenty\AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null) : \Plenty\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
+    public function searchDefinitionsProductTypes(AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null, string $locale = null) : \Plenty\AmazonPHP\SellingPartner\Model\ProductTypesDefinitions\ProductTypeList
     {
-        $request = $this->searchDefinitionsProductTypesRequest($accessToken, $region, $marketplace_ids, $keywords);
+        $request = $this->searchDefinitionsProductTypesRequest($accessToken, $region, $marketplace_ids, $keywords, $locale);
 
         $this->configuration->extensions()->preRequest('ProductTypesDefinitions', 'searchDefinitionsProductTypes', $request);
 
@@ -407,7 +407,7 @@ final class ProductTypesDefinitionsSDK
      *
      * @throws \Plenty\AmazonPHP\SellingPartner\Exception\InvalidArgumentException
      */
-    public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null) : RequestInterface
+    public function searchDefinitionsProductTypesRequest(AccessToken $accessToken, string $region, array $marketplace_ids, array $keywords = null, string $locale = null) : RequestInterface
     {
         // verify the required parameter 'marketplace_ids' is set
         if ($marketplace_ids === null || (\is_array($marketplace_ids) && \count($marketplace_ids) === 0)) {
@@ -431,6 +431,12 @@ final class ProductTypesDefinitionsSDK
         if ($keywords !== null) {
             $queryParams['keywords'] = ObjectSerializer::toString($keywords);
         }
+
+        // query params
+        if ($locale !== null) {
+            $queryParams['locale'] = $locale;
+        }
+
         // query params
         if (\is_array($marketplace_ids)) {
             $marketplace_ids = ObjectSerializer::serializeCollection($marketplace_ids, 'form', true);
