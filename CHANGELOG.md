@@ -1,4 +1,4 @@
-## [Unreleased] - 2025-06-19
+## [7.1.1] - 2025-06-19
 
 ### Changed
 - [#753](https://github.com/amazon-php/sp-api-sdk/pull/753) - **Update GitHub test-suite to use Ubuntu-22.04** - [@jasonhebert](https://github.com/jasonhebert)
