@@ -124,7 +124,7 @@ final class LoggerConfiguration
         return $this;
     }
 
-    public function isSkipped(string $api, string $operation = null) : bool
+    public function isSkipped(string $api, string|null $operation = null) : bool
     {
         if (\in_array($api, $this->skippedAPIs, true)) {
             return true;
