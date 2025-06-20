@@ -100,7 +100,7 @@ class CreateRestrictedDataTokenRequest implements \ArrayAccess, \JsonSerializabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['target_application'] = $data['target_application'] ?? null;
         $this->container['restricted_resources'] = $data['restricted_resources'] ?? null;

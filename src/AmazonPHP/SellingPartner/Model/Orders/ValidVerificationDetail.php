@@ -100,7 +100,7 @@ class ValidVerificationDetail implements \ArrayAccess, \JsonSerializable, \Strin
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['verification_detail_type'] = $data['verification_detail_type'] ?? null;
         $this->container['valid_verification_statuses'] = $data['valid_verification_statuses'] ?? null;

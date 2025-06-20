@@ -100,7 +100,7 @@ class RejectionReason implements \ArrayAccess, \JsonSerializable, \Stringable, M
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['rejection_reason_id'] = $data['rejection_reason_id'] ?? null;
         $this->container['rejection_reason_description'] = $data['rejection_reason_description'] ?? null;

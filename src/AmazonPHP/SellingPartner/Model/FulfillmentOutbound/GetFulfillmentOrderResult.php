@@ -120,7 +120,7 @@ class GetFulfillmentOrderResult implements \ArrayAccess, \JsonSerializable, \Str
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['fulfillment_order'] = $data['fulfillment_order'] ?? null;
         $this->container['fulfillment_order_items'] = $data['fulfillment_order_items'] ?? null;

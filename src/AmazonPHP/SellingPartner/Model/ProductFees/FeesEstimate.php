@@ -105,7 +105,7 @@ class FeesEstimate implements \ArrayAccess, \JsonSerializable, \Stringable, Mode
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['time_of_fees_estimation'] = $data['time_of_fees_estimation'] ?? null;
         $this->container['total_fees_estimate'] = $data['total_fees_estimate'] ?? null;

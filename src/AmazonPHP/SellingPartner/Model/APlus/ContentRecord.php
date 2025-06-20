@@ -105,7 +105,7 @@ class ContentRecord implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['content_reference_key'] = $data['content_reference_key'] ?? null;
         $this->container['content_metadata'] = $data['content_metadata'] ?? null;

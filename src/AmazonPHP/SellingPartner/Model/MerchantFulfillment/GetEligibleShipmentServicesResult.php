@@ -110,7 +110,7 @@ class GetEligibleShipmentServicesResult implements \ArrayAccess, \JsonSerializab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipping_service_list'] = $data['shipping_service_list'] ?? null;
         $this->container['rejected_shipping_service_list'] = $data['rejected_shipping_service_list'] ?? null;

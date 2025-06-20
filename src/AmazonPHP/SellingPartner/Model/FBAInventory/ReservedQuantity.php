@@ -110,7 +110,7 @@ class ReservedQuantity implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['total_reserved_quantity'] = $data['total_reserved_quantity'] ?? null;
         $this->container['pending_customer_order_quantity'] = $data['pending_customer_order_quantity'] ?? null;

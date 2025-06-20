@@ -100,7 +100,7 @@ class LabelCustomization implements \ArrayAccess, \JsonSerializable, \Stringable
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['custom_text_for_label'] = $data['custom_text_for_label'] ?? null;
         $this->container['standard_id_for_label'] = $data['standard_id_for_label'] ?? null;

@@ -100,7 +100,7 @@ class GetDeliveryOffersTerms implements \ArrayAccess, \JsonSerializable, \String
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['origin'] = $data['origin'] ?? null;
         $this->container['destination'] = $data['destination'] ?? null;

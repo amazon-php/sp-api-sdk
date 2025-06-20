@@ -105,7 +105,7 @@ class PackingConfiguration implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['box_packing_methods'] = $data['box_packing_methods'] ?? null;
         $this->container['box_requirements'] = $data['box_requirements'] ?? null;

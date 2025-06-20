@@ -100,7 +100,7 @@ class ShippingConfiguration implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipping_mode'] = $data['shipping_mode'] ?? null;
         $this->container['shipping_solution'] = $data['shipping_solution'] ?? null;

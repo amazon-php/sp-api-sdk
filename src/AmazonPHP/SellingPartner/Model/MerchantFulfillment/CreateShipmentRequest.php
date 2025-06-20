@@ -120,7 +120,7 @@ class CreateShipmentRequest implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipment_request_details'] = $data['shipment_request_details'] ?? null;
         $this->container['shipping_service_id'] = $data['shipping_service_id'] ?? null;

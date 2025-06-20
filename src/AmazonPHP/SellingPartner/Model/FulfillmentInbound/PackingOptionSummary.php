@@ -100,7 +100,7 @@ class PackingOptionSummary implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['packing_option_id'] = $data['packing_option_id'] ?? null;
         $this->container['status'] = $data['status'] ?? null;

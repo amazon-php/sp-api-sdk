@@ -100,7 +100,7 @@ class PlainTextItem implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['position'] = $data['position'] ?? null;
         $this->container['value'] = $data['value'] ?? null;

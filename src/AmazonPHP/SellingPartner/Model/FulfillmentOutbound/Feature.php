@@ -105,7 +105,7 @@ class Feature implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['feature_name'] = $data['feature_name'] ?? null;
         $this->container['feature_description'] = $data['feature_description'] ?? null;

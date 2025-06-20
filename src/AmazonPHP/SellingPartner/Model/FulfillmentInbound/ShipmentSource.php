@@ -100,7 +100,7 @@ class ShipmentSource implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['address'] = $data['address'] ?? null;
         $this->container['source_type'] = $data['source_type'] ?? null;

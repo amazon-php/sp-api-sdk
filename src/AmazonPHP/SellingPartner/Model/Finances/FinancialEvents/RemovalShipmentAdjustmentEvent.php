@@ -120,7 +120,7 @@ class RemovalShipmentAdjustmentEvent implements \ArrayAccess, \JsonSerializable,
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['posted_date'] = $data['posted_date'] ?? null;
         $this->container['adjustment_event_id'] = $data['adjustment_event_id'] ?? null;

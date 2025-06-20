@@ -105,7 +105,7 @@ class TaxRate implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['cess_rate'] = $data['cess_rate'] ?? null;
         $this->container['gst_rate'] = $data['gst_rate'] ?? null;

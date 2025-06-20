@@ -115,7 +115,7 @@ class CreateReportSpecification implements \ArrayAccess, \JsonSerializable, \Str
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['report_options'] = $data['report_options'] ?? null;
         $this->container['report_type'] = $data['report_type'] ?? null;

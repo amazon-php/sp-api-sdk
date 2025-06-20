@@ -115,7 +115,7 @@ class InventorySummary implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['expiration_details'] = $data['expiration_details'] ?? null;
         $this->container['inventory_details'] = $data['inventory_details'] ?? null;

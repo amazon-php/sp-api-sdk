@@ -100,7 +100,7 @@ class DateRange implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['earliest'] = $data['earliest'] ?? null;
         $this->container['latest'] = $data['latest'] ?? null;

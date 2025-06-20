@@ -108,7 +108,7 @@ class TotalWeight implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['unit_of_measure'] = $data['unit_of_measure'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;

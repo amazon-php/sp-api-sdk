@@ -100,7 +100,7 @@ class AmazonPrepFeesDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['prep_instruction'] = $data['prep_instruction'] ?? null;
         $this->container['fee_per_unit'] = $data['fee_per_unit'] ?? null;

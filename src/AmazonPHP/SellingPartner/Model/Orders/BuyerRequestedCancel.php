@@ -100,7 +100,7 @@ class BuyerRequestedCancel implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['is_buyer_requested_cancel'] = $data['is_buyer_requested_cancel'] ?? null;
         $this->container['buyer_cancel_reason'] = $data['buyer_cancel_reason'] ?? null;

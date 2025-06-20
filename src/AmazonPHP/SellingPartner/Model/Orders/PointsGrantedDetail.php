@@ -100,7 +100,7 @@ class PointsGrantedDetail implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['points_number'] = $data['points_number'] ?? null;
         $this->container['points_monetary_value'] = $data['points_monetary_value'] ?? null;

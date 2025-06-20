@@ -120,7 +120,7 @@ class BoxUpdateInput implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['content_information_source'] = $data['content_information_source'] ?? null;
         $this->container['dimensions'] = $data['dimensions'] ?? null;

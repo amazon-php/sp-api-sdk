@@ -105,7 +105,7 @@ class InventoryDetails implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['available_distributable_quantity'] = $data['available_distributable_quantity'] ?? null;
         $this->container['replenishment_quantity'] = $data['replenishment_quantity'] ?? null;

@@ -120,7 +120,7 @@ class Carton implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['carton_identifiers'] = $data['carton_identifiers'] ?? null;
         $this->container['carton_sequence_number'] = $data['carton_sequence_number'] ?? null;

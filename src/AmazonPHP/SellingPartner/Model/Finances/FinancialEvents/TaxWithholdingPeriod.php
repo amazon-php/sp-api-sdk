@@ -100,7 +100,7 @@ class TaxWithholdingPeriod implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['start_date'] = $data['start_date'] ?? null;
         $this->container['end_date'] = $data['end_date'] ?? null;

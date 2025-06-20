@@ -105,7 +105,7 @@ class CreateShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['selling_party'] = $data['selling_party'] ?? null;
         $this->container['ship_from_party'] = $data['ship_from_party'] ?? null;

@@ -105,7 +105,7 @@ class Breakdown implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['breakdown_type'] = $data['breakdown_type'] ?? null;
         $this->container['breakdown_amount'] = $data['breakdown_amount'] ?? null;

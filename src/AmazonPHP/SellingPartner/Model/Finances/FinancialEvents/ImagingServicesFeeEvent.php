@@ -110,7 +110,7 @@ class ImagingServicesFeeEvent implements \ArrayAccess, \JsonSerializable, \Strin
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['imaging_request_billing_item_id'] = $data['imaging_request_billing_item_id'] ?? null;
         $this->container['asin'] = $data['asin'] ?? null;

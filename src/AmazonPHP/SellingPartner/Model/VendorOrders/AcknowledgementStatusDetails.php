@@ -105,7 +105,7 @@ class AcknowledgementStatusDetails implements \ArrayAccess, \JsonSerializable, \
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['acknowledgement_date'] = $data['acknowledgement_date'] ?? null;
         $this->container['accepted_quantity'] = $data['accepted_quantity'] ?? null;

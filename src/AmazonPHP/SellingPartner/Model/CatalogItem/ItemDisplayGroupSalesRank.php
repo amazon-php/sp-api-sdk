@@ -110,7 +110,7 @@ class ItemDisplayGroupSalesRank implements \ArrayAccess, \JsonSerializable, \Str
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['website_display_group'] = $data['website_display_group'] ?? null;
         $this->container['title'] = $data['title'] ?? null;

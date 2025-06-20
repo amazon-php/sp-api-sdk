@@ -105,7 +105,7 @@ class MarketplaceParticipation implements \ArrayAccess, \JsonSerializable, \Stri
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['marketplace'] = $data['marketplace'] ?? null;
         $this->container['participation'] = $data['participation'] ?? null;

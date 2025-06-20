@@ -145,7 +145,7 @@ class FulfillmentPreview implements \ArrayAccess, \JsonSerializable, \Stringable
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipping_speed_category'] = $data['shipping_speed_category'] ?? null;
         $this->container['scheduled_delivery_info'] = $data['scheduled_delivery_info'] ?? null;

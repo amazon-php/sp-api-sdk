@@ -105,7 +105,7 @@ class QuantityDiscountPriceType implements \ArrayAccess, \JsonSerializable, \Str
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['quantity_tier'] = $data['quantity_tier'] ?? null;
         $this->container['quantity_discount_type'] = $data['quantity_discount_type'] ?? null;

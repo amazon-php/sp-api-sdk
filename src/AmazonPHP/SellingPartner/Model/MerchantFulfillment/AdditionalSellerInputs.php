@@ -100,7 +100,7 @@ class AdditionalSellerInputs implements \ArrayAccess, \JsonSerializable, \String
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['additional_input_field_name'] = $data['additional_input_field_name'] ?? null;
         $this->container['additional_seller_input'] = $data['additional_seller_input'] ?? null;

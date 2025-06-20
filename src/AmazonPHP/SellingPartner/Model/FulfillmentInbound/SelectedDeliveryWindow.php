@@ -115,7 +115,7 @@ class SelectedDeliveryWindow implements \ArrayAccess, \JsonSerializable, \String
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['availability_type'] = $data['availability_type'] ?? null;
         $this->container['delivery_window_option_id'] = $data['delivery_window_option_id'] ?? null;

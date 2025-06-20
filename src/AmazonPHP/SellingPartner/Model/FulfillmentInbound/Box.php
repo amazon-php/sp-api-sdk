@@ -145,7 +145,7 @@ class Box implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterfac
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['box_id'] = $data['box_id'] ?? null;
         $this->container['content_information_source'] = $data['content_information_source'] ?? null;

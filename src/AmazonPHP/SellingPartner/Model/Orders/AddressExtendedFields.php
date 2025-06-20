@@ -110,7 +110,7 @@ class AddressExtendedFields implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['street_name'] = $data['street_name'] ?? null;
         $this->container['street_number'] = $data['street_number'] ?? null;

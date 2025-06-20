@@ -105,7 +105,7 @@ class ShipmentDestination implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['address'] = $data['address'] ?? null;
         $this->container['destination_type'] = $data['destination_type'] ?? null;

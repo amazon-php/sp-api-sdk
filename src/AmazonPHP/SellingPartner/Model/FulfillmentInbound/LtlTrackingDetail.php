@@ -100,7 +100,7 @@ class LtlTrackingDetail implements \ArrayAccess, \JsonSerializable, \Stringable,
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['bill_of_lading_number'] = $data['bill_of_lading_number'] ?? null;
         $this->container['freight_bill_number'] = $data['freight_bill_number'] ?? null;

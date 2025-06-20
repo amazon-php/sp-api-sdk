@@ -29,8 +29,8 @@ final class Configuration
         private string $accessKey,
         private string $secretKey,
         private ?string $securityToken = null,
-        Extensions $extensions = null,
-        LoggerConfiguration $loggerConfiguration = null
+        ?Extensions $extensions = null,
+        ?LoggerConfiguration $loggerConfiguration = null
     ) {
         // https://github.com/amzn/selling-partner-api-docs/blob/main/guides/en-US/developer-guide/SellingPartnerApiDeveloperGuide.md#include-a-user-agent-header-in-all-requests
         $this->userAgent = 'Library amazon-php/sp-api-php (language=PHP ' . \phpversion() . '; Platform=' . \php_uname('s') . ' ' . \php_uname('r') . ' ' . \php_uname('m') . ')';
@@ -158,7 +158,7 @@ final class Configuration
         return $this;
     }
 
-    public function setSkipLogging(string $api, string $operation = null) : self
+    public function setSkipLogging(string $api, ?string $operation = null) : self
     {
         if ($operation !== null) {
             $this->loggerConfiguration->skipAPIOperation($api, $operation);
@@ -171,7 +171,7 @@ final class Configuration
         return $this;
     }
 
-    public function setEnableLogging(string $api, string $operation = null) : self
+    public function setEnableLogging(string $api, ?string $operation = null) : self
     {
         if ($operation !== null) {
             $this->loggerConfiguration->enableAPIOperation($api, $operation);
@@ -184,7 +184,7 @@ final class Configuration
         return $this;
     }
 
-    public function loggingEnabled(string $api, string $operation = null) : bool
+    public function loggingEnabled(string $api, ?string $operation = null) : bool
     {
         return !$this->loggerConfiguration->isSkipped($api, $operation);
     }

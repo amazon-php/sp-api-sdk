@@ -95,7 +95,7 @@ class VerificationDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['prescription_detail'] = $data['prescription_detail'] ?? null;
     }

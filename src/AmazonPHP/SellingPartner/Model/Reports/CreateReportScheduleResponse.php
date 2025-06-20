@@ -95,7 +95,7 @@ class CreateReportScheduleResponse implements \ArrayAccess, \JsonSerializable, \
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['report_schedule_id'] = $data['report_schedule_id'] ?? null;
     }

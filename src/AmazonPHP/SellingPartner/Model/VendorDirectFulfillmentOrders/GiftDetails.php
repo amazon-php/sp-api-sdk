@@ -100,7 +100,7 @@ class GiftDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['gift_message'] = $data['gift_message'] ?? null;
         $this->container['gift_wrap_id'] = $data['gift_wrap_id'] ?? null;

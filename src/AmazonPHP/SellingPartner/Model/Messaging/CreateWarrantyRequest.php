@@ -105,7 +105,7 @@ class CreateWarrantyRequest implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['attachments'] = $data['attachments'] ?? null;
         $this->container['coverage_start_date'] = $data['coverage_start_date'] ?? null;

@@ -107,7 +107,7 @@ class ReportDocument implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['report_document_id'] = $data['report_document_id'] ?? null;
         $this->container['url'] = $data['url'] ?? null;

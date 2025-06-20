@@ -105,7 +105,7 @@ class ContainerLabel implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['container_tracking_number'] = $data['container_tracking_number'] ?? null;
         $this->container['content'] = $data['content'] ?? null;

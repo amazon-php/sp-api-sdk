@@ -17,7 +17,7 @@ final class ApiException extends Exception
      * @param null|string[] $responseHeaders HTTP response header
      * @param null|\stdClass|string $responseBody HTTP decoded body of the server response either as \stdClass or string
      */
-    public function __construct(string $message = '', int $code = 0, protected ?array $responseHeaders = null, protected $responseBody = null, \Throwable $previousException = null)
+    public function __construct(string $message = '', int $code = 0, protected ?array $responseHeaders = null, protected $responseBody = null, ?\Throwable $previousException = null)
     {
         parent::__construct($message, $code, $previousException);
     }

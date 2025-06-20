@@ -110,7 +110,7 @@ class ShipmentMeasurements implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['gross_shipment_weight'] = $data['gross_shipment_weight'] ?? null;
         $this->container['shipment_volume'] = $data['shipment_volume'] ?? null;

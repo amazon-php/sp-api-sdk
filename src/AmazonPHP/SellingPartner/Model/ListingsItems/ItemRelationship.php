@@ -114,7 +114,7 @@ class ItemRelationship implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['child_skus'] = $data['child_skus'] ?? null;
         $this->container['parent_skus'] = $data['parent_skus'] ?? null;

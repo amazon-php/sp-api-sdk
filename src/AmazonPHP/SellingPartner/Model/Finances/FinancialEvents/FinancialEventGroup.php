@@ -145,7 +145,7 @@ class FinancialEventGroup implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['financial_event_group_id'] = $data['financial_event_group_id'] ?? null;
         $this->container['processing_status'] = $data['processing_status'] ?? null;

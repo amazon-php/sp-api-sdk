@@ -105,7 +105,7 @@ class OrderItemsList implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['order_items'] = $data['order_items'] ?? null;
         $this->container['next_token'] = $data['next_token'] ?? null;

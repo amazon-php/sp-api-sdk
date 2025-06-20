@@ -117,7 +117,7 @@ class LabelData implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['label_sequence_number'] = $data['label_sequence_number'] ?? null;
         $this->container['label_format'] = $data['label_format'] ?? null;

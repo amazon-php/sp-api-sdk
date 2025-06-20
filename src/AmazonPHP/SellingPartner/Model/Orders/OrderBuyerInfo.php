@@ -120,7 +120,7 @@ class OrderBuyerInfo implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
         $this->container['buyer_email'] = $data['buyer_email'] ?? null;

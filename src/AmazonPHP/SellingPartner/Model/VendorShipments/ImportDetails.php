@@ -145,7 +145,7 @@ class ImportDetails implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['method_of_payment'] = $data['method_of_payment'] ?? null;
         $this->container['seal_number'] = $data['seal_number'] ?? null;

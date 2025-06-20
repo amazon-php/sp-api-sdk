@@ -110,7 +110,7 @@ class FixedSlotCapacityQuery implements \ArrayAccess, \JsonSerializable, \String
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['capacity_types'] = $data['capacity_types'] ?? null;
         $this->container['slot_duration'] = $data['slot_duration'] ?? null;

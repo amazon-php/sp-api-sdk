@@ -110,7 +110,7 @@ class ContainerIdentification implements \ArrayAccess, \JsonSerializable, \Strin
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['container_identification_type'] = $data['container_identification_type'] ?? null;
         $this->container['container_identification_number'] = $data['container_identification_number'] ?? null;

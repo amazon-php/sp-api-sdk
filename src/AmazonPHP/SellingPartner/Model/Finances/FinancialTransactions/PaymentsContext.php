@@ -110,7 +110,7 @@ class PaymentsContext implements \ArrayAccess, \JsonSerializable, \Stringable, M
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['payment_type'] = $data['payment_type'] ?? null;
         $this->container['payment_method'] = $data['payment_method'] ?? null;

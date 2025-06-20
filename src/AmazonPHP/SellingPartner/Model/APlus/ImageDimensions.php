@@ -100,7 +100,7 @@ class ImageDimensions implements \ArrayAccess, \JsonSerializable, \Stringable, M
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['width'] = $data['width'] ?? null;
         $this->container['height'] = $data['height'] ?? null;

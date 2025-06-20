@@ -110,7 +110,7 @@ class StandardThreeImageTextModule implements \ArrayAccess, \JsonSerializable, \
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['headline'] = $data['headline'] ?? null;
         $this->container['block1'] = $data['block1'] ?? null;

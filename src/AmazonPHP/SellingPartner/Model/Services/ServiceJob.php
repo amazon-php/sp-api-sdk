@@ -174,7 +174,7 @@ class ServiceJob implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['create_time'] = $data['create_time'] ?? null;
         $this->container['service_job_id'] = $data['service_job_id'] ?? null;

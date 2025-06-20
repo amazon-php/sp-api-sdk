@@ -105,7 +105,7 @@ class Window implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInter
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['editable_until'] = $data['editable_until'] ?? null;
         $this->container['end'] = $data['end'] ?? null;

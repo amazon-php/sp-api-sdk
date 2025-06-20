@@ -100,7 +100,7 @@ class HttpResponseHeaders implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['date'] = $data['date'] ?? null;
         $this->container['x_amzn_request_id'] = $data['x_amzn_request_id'] ?? null;

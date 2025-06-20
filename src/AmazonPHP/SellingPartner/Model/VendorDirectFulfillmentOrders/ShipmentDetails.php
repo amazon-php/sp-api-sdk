@@ -125,7 +125,7 @@ class ShipmentDetails implements \ArrayAccess, \JsonSerializable, \Stringable, M
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['is_priority_shipment'] = $data['is_priority_shipment'] ?? null;
         $this->container['is_scheduled_delivery_shipment'] = $data['is_scheduled_delivery_shipment'] ?? null;

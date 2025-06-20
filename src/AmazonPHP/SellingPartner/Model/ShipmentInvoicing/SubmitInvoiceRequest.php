@@ -105,7 +105,7 @@ class SubmitInvoiceRequest implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['invoice_content'] = $data['invoice_content'] ?? null;
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
