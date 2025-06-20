@@ -1,3 +1,9 @@
+## [Unreleased] - 2025-06-20
+
+### Changed
+- [#754](https://github.com/amazon-php/sp-api-sdk/pull/754) - **Added rules to PHP CS Fixer to modify implicit null parameters to explicitly null.** - [@jasonhebert](https://github.com/jasonhebert)
+- [#754](https://github.com/amazon-php/sp-api-sdk/pull/754) - **Updated codebase to apply new explicitly declared nullable method parameters.** - [@jasonhebert](https://github.com/jasonhebert)
+
 ## [7.1.1] - 2025-06-19
 
 ### Changed
