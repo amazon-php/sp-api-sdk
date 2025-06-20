@@ -100,7 +100,7 @@ class LoanServicingEvent implements \ArrayAccess, \JsonSerializable, \Stringable
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['loan_amount'] = $data['loan_amount'] ?? null;
         $this->container['source_business_event_type'] = $data['source_business_event_type'] ?? null;

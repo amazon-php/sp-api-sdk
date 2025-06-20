@@ -120,7 +120,7 @@ class FeeDetail implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['fee_type'] = $data['fee_type'] ?? null;
         $this->container['fee_amount'] = $data['fee_amount'] ?? null;

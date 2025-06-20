@@ -95,7 +95,7 @@ class Package implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInte
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['package_tracking_number'] = $data['package_tracking_number'] ?? null;
     }

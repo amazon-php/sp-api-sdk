@@ -100,7 +100,7 @@ class ListFinancialEventGroupsPayload implements \ArrayAccess, \JsonSerializable
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['next_token'] = $data['next_token'] ?? null;
         $this->container['financial_event_group_list'] = $data['financial_event_group_list'] ?? null;

@@ -100,7 +100,7 @@ class LabelFormatOption implements \ArrayAccess, \JsonSerializable, \Stringable,
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['include_packing_slip_with_label'] = $data['include_packing_slip_with_label'] ?? null;
         $this->container['label_format'] = $data['label_format'] ?? null;

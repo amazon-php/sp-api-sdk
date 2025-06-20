@@ -114,7 +114,7 @@ class RegulatedInformationField implements \ArrayAccess, \JsonSerializable, \Str
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['field_id'] = $data['field_id'] ?? null;
         $this->container['field_label'] = $data['field_label'] ?? null;

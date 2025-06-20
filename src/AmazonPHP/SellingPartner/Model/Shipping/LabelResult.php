@@ -105,7 +105,7 @@ class LabelResult implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['container_reference_id'] = $data['container_reference_id'] ?? null;
         $this->container['tracking_id'] = $data['tracking_id'] ?? null;

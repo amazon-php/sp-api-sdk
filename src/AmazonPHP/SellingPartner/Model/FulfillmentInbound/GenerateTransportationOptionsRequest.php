@@ -100,7 +100,7 @@ class GenerateTransportationOptionsRequest implements \ArrayAccess, \JsonSeriali
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['placement_option_id'] = $data['placement_option_id'] ?? null;
         $this->container['shipment_transportation_configurations'] = $data['shipment_transportation_configurations'] ?? null;

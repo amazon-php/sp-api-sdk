@@ -105,7 +105,7 @@ class ShipmentSchedule implements \ArrayAccess, \JsonSerializable, \Stringable, 
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['estimated_delivery_date_time'] = $data['estimated_delivery_date_time'] ?? null;
         $this->container['appt_window_start_date_time'] = $data['appt_window_start_date_time'] ?? null;

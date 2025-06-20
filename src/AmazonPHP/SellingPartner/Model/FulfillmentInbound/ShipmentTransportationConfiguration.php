@@ -115,7 +115,7 @@ class ShipmentTransportationConfiguration implements \ArrayAccess, \JsonSerializ
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['contact_information'] = $data['contact_information'] ?? null;
         $this->container['freight_information'] = $data['freight_information'] ?? null;

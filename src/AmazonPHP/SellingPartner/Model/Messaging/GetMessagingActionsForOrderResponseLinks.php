@@ -100,7 +100,7 @@ class GetMessagingActionsForOrderResponseLinks implements \ArrayAccess, \JsonSer
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['self'] = $data['self'] ?? null;
         $this->container['actions'] = $data['actions'] ?? null;

@@ -125,7 +125,7 @@ class CreditNoteDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['reference_invoice_number'] = $data['reference_invoice_number'] ?? null;
         $this->container['debit_note_number'] = $data['debit_note_number'] ?? null;

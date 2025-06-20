@@ -100,7 +100,7 @@ class IdentifierType implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['marketplace_asin'] = $data['marketplace_asin'] ?? null;
         $this->container['sku_identifier'] = $data['sku_identifier'] ?? null;

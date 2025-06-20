@@ -110,7 +110,7 @@ class GetFeatureInventoryResult implements \ArrayAccess, \JsonSerializable, \Str
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
         $this->container['feature_name'] = $data['feature_name'] ?? null;

@@ -100,7 +100,7 @@ class CarrierCode implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['carrier_code_type'] = $data['carrier_code_type'] ?? null;
         $this->container['carrier_code_value'] = $data['carrier_code_value'] ?? null;

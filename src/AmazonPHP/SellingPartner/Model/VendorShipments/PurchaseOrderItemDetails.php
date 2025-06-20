@@ -95,7 +95,7 @@ class PurchaseOrderItemDetails implements \ArrayAccess, \JsonSerializable, \Stri
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['maximum_retail_price'] = $data['maximum_retail_price'] ?? null;
     }

@@ -100,7 +100,7 @@ class DirectPayment implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['direct_payment_type'] = $data['direct_payment_type'] ?? null;
         $this->container['direct_payment_amount'] = $data['direct_payment_amount'] ?? null;

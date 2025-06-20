@@ -100,7 +100,7 @@ class GetInventorySummariesResult implements \ArrayAccess, \JsonSerializable, \S
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['granularity'] = $data['granularity'] ?? null;
         $this->container['inventory_summaries'] = $data['inventory_summaries'] ?? null;

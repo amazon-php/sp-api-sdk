@@ -100,7 +100,7 @@ class ListInboundPlanItemsResponse implements \ArrayAccess, \JsonSerializable, \
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['items'] = $data['items'] ?? null;
         $this->container['pagination'] = $data['pagination'] ?? null;

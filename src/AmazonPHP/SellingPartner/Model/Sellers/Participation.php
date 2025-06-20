@@ -100,7 +100,7 @@ class Participation implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['is_participating'] = $data['is_participating'] ?? null;
         $this->container['has_suspended_listings'] = $data['has_suspended_listings'] ?? null;

@@ -125,7 +125,7 @@ class Shipment implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInt
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipment_id'] = $data['shipment_id'] ?? null;
         $this->container['client_reference_id'] = $data['client_reference_id'] ?? null;

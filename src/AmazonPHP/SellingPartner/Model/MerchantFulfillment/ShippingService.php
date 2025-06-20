@@ -160,7 +160,7 @@ class ShippingService implements \ArrayAccess, \JsonSerializable, \Stringable, M
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipping_service_name'] = $data['shipping_service_name'] ?? null;
         $this->container['carrier_name'] = $data['carrier_name'] ?? null;

@@ -111,7 +111,7 @@ class ListingsItemPutRequest implements \ArrayAccess, \JsonSerializable, \String
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['product_type'] = $data['product_type'] ?? null;
         $this->container['requirements'] = $data['requirements'] ?? null;

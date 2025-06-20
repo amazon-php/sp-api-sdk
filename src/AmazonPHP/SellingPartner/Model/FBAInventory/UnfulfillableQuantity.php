@@ -125,7 +125,7 @@ class UnfulfillableQuantity implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['total_unfulfillable_quantity'] = $data['total_unfulfillable_quantity'] ?? null;
         $this->container['customer_damaged_quantity'] = $data['customer_damaged_quantity'] ?? null;

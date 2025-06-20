@@ -100,7 +100,7 @@ class MarketplaceDetails implements \ArrayAccess, \JsonSerializable, \Stringable
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['marketplace_id'] = $data['marketplace_id'] ?? null;
         $this->container['marketplace_name'] = $data['marketplace_name'] ?? null;

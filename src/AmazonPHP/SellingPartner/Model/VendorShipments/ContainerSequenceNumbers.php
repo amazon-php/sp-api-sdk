@@ -95,7 +95,7 @@ class ContainerSequenceNumbers implements \ArrayAccess, \JsonSerializable, \Stri
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['container_sequence_number'] = $data['container_sequence_number'] ?? null;
     }

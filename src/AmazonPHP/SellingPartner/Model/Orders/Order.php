@@ -365,7 +365,7 @@ class Order implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['amazon_order_id'] = $data['amazon_order_id'] ?? null;
         $this->container['seller_order_id'] = $data['seller_order_id'] ?? null;

@@ -114,7 +114,7 @@ class EventFilter implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['aggregation_settings'] = $data['aggregation_settings'] ?? null;
         $this->container['marketplace_ids'] = $data['marketplace_ids'] ?? null;

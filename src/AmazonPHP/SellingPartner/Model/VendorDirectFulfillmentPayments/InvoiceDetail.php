@@ -155,7 +155,7 @@ class InvoiceDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['invoice_number'] = $data['invoice_number'] ?? null;
         $this->container['invoice_date'] = $data['invoice_date'] ?? null;

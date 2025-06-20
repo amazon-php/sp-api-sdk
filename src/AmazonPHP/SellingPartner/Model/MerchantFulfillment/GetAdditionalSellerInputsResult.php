@@ -100,7 +100,7 @@ class GetAdditionalSellerInputsResult implements \ArrayAccess, \JsonSerializable
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipment_level_fields'] = $data['shipment_level_fields'] ?? null;
         $this->container['item_level_fields_list'] = $data['item_level_fields_list'] ?? null;

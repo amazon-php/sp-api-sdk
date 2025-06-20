@@ -105,7 +105,7 @@ class TransportationSelection implements \ArrayAccess, \JsonSerializable, \Strin
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['contact_information'] = $data['contact_information'] ?? null;
         $this->container['shipment_id'] = $data['shipment_id'] ?? null;

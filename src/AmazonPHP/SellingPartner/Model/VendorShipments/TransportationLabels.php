@@ -100,7 +100,7 @@ class TransportationLabels implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['pagination'] = $data['pagination'] ?? null;
         $this->container['transport_labels'] = $data['transport_labels'] ?? null;

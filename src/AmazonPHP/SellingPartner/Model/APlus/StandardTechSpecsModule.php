@@ -105,7 +105,7 @@ class StandardTechSpecsModule implements \ArrayAccess, \JsonSerializable, \Strin
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['headline'] = $data['headline'] ?? null;
         $this->container['specification_list'] = $data['specification_list'] ?? null;

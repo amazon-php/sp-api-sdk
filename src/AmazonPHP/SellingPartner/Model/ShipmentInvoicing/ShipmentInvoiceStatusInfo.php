@@ -100,7 +100,7 @@ class ShipmentInvoiceStatusInfo implements \ArrayAccess, \JsonSerializable, \Str
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['amazon_shipment_id'] = $data['amazon_shipment_id'] ?? null;
         $this->container['invoice_status'] = $data['invoice_status'] ?? null;

@@ -95,7 +95,7 @@ class SubmitShippingLabelsRequest implements \ArrayAccess, \JsonSerializable, \S
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipping_label_requests'] = $data['shipping_label_requests'] ?? null;
     }

@@ -120,7 +120,7 @@ class StatusUpdateDetails implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['tracking_number'] = $data['tracking_number'] ?? null;
         $this->container['status_code'] = $data['status_code'] ?? null;

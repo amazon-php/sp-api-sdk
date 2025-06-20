@@ -100,7 +100,7 @@ class AvailableCarrierWillPickUpOption implements \ArrayAccess, \JsonSerializabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['carrier_will_pick_up_option'] = $data['carrier_will_pick_up_option'] ?? null;
         $this->container['charge'] = $data['charge'] ?? null;

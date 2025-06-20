@@ -100,7 +100,7 @@ class StandardComparisonTableModule implements \ArrayAccess, \JsonSerializable, 
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['product_columns'] = $data['product_columns'] ?? null;
         $this->container['metric_row_labels'] = $data['metric_row_labels'] ?? null;

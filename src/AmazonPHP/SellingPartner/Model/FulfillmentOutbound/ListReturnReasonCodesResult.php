@@ -95,7 +95,7 @@ class ListReturnReasonCodesResult implements \ArrayAccess, \JsonSerializable, \S
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['reason_code_details'] = $data['reason_code_details'] ?? null;
     }

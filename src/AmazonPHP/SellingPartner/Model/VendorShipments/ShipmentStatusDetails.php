@@ -108,7 +108,7 @@ class ShipmentStatusDetails implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['shipment_status'] = $data['shipment_status'] ?? null;
         $this->container['shipment_status_date'] = $data['shipment_status_date'] ?? null;

@@ -100,7 +100,7 @@ class PreferredDeliveryTime implements \ArrayAccess, \JsonSerializable, \Stringa
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['business_hours'] = $data['business_hours'] ?? null;
         $this->container['exception_dates'] = $data['exception_dates'] ?? null;

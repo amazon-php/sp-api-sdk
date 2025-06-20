@@ -100,7 +100,7 @@ class Money implements \ArrayAccess, \JsonSerializable, \Stringable, ModelInterf
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['currency_code'] = $data['currency_code'] ?? null;
         $this->container['amount'] = $data['amount'] ?? null;

@@ -100,7 +100,7 @@ class ExpirationDetails implements \ArrayAccess, \JsonSerializable, \Stringable,
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['expiration'] = $data['expiration'] ?? null;
         $this->container['onhand_quantity'] = $data['onhand_quantity'] ?? null;

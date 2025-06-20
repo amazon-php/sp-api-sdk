@@ -105,7 +105,7 @@ class SearchContentDocumentsResponse implements \ArrayAccess, \JsonSerializable,
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['warnings'] = $data['warnings'] ?? null;
         $this->container['next_page_token'] = $data['next_page_token'] ?? null;

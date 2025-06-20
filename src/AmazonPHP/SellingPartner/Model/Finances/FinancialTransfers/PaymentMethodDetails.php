@@ -125,7 +125,7 @@ class PaymentMethodDetails implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['account_holder_name'] = $data['account_holder_name'] ?? null;
         $this->container['payment_method_id'] = $data['payment_method_id'] ?? null;

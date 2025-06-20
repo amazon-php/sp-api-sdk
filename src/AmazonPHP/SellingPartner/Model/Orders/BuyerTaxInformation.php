@@ -110,7 +110,7 @@ class BuyerTaxInformation implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['buyer_legal_company_name'] = $data['buyer_legal_company_name'] ?? null;
         $this->container['buyer_business_address'] = $data['buyer_business_address'] ?? null;

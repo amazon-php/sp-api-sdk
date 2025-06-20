@@ -111,7 +111,7 @@ class PatchOperation implements \ArrayAccess, \JsonSerializable, \Stringable, Mo
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['op'] = $data['op'] ?? null;
         $this->container['path'] = $data['path'] ?? null;

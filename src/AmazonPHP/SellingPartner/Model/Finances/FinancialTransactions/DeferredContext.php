@@ -105,7 +105,7 @@ class DeferredContext implements \ArrayAccess, \JsonSerializable, \Stringable, M
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['deferral_reason'] = $data['deferral_reason'] ?? null;
         $this->container['maturity_date'] = $data['maturity_date'] ?? null;

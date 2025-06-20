@@ -100,7 +100,7 @@ class DeliveryPreferences implements \ArrayAccess, \JsonSerializable, \Stringabl
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['delivery_instructions'] = $data['delivery_instructions'] ?? null;
         $this->container['drop_off_location'] = $data['drop_off_location'] ?? null;

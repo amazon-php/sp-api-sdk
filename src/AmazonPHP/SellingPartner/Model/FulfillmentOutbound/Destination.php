@@ -100,7 +100,7 @@ class Destination implements \ArrayAccess, \JsonSerializable, \Stringable, Model
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['delivery_address'] = $data['delivery_address'] ?? null;
         $this->container['ip_address'] = $data['ip_address'] ?? null;

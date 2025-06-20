@@ -145,7 +145,7 @@ class ReturnItem implements \ArrayAccess, \JsonSerializable, \Stringable, ModelI
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['seller_return_item_id'] = $data['seller_return_item_id'] ?? null;
         $this->container['seller_fulfillment_order_item_id'] = $data['seller_fulfillment_order_item_id'] ?? null;

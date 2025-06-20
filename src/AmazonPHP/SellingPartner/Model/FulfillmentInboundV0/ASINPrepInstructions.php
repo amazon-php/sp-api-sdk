@@ -110,7 +110,7 @@ class ASINPrepInstructions implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['asin'] = $data['asin'] ?? null;
         $this->container['barcode_instruction'] = $data['barcode_instruction'] ?? null;

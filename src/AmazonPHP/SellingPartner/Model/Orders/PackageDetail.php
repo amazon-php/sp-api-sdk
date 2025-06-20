@@ -130,7 +130,7 @@ class PackageDetail implements \ArrayAccess, \JsonSerializable, \Stringable, Mod
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['package_reference_id'] = $data['package_reference_id'] ?? null;
         $this->container['carrier_code'] = $data['carrier_code'] ?? null;

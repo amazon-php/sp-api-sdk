@@ -116,7 +116,7 @@ class TransportationDetailsForShipmentConfirmation implements \ArrayAccess, \Jso
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['carrier_scac'] = $data['carrier_scac'] ?? null;
         $this->container['carrier_shipment_reference_number'] = $data['carrier_shipment_reference_number'] ?? null;

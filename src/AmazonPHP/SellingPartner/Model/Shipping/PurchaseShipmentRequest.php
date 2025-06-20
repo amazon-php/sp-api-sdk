@@ -125,7 +125,7 @@ class PurchaseShipmentRequest implements \ArrayAccess, \JsonSerializable, \Strin
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['client_reference_id'] = $data['client_reference_id'] ?? null;
         $this->container['ship_to'] = $data['ship_to'] ?? null;

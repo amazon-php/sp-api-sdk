@@ -100,7 +100,7 @@ class ShipmentListing implements \ArrayAccess, \JsonSerializable, \Stringable, M
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['next_token'] = $data['next_token'] ?? null;
         $this->container['shipments'] = $data['shipments'] ?? null;

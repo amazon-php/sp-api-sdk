@@ -115,7 +115,7 @@ class FixedSlot implements \ArrayAccess, \JsonSerializable, \Stringable, ModelIn
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['start_date_time'] = $data['start_date_time'] ?? null;
         $this->container['scheduled_capacity'] = $data['scheduled_capacity'] ?? null;

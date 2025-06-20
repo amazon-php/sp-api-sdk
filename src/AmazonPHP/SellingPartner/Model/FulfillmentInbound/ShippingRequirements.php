@@ -100,7 +100,7 @@ class ShippingRequirements implements \ArrayAccess, \JsonSerializable, \Stringab
      * @param null|mixed[] $data Associated array of property values
      *                           initializing the model
      */
-    public function __construct(array $data = null)
+    public function __construct(?array $data = null)
     {
         $this->container['modes'] = $data['modes'] ?? null;
         $this->container['solution'] = $data['solution'] ?? null;
