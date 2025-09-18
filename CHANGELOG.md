@@ -1,3 +1,8 @@
+## [Unreleased] - 2025-09-18
+
+### Changed
+- [a368de](https://github.com/amazon-php/sp-api-sdk/commit/a368de54dab5cacc9169e99ad05694e169cc0824) - **Remove political statements from README** - [@norberttech](https://github.com/norberttech)
+
 ## [7.2.0] - 2025-06-20
 
 ### Changed
